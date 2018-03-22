@@ -1,0 +1,28 @@
+project(demiurge)
+set (PROJECT demiurge)
+set(VERSION 1.0.0)
+cmake_minimum_required(VERSION 2.6)
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -pthread")
+
+set(AIGER_INCLUDE_DIR    $ENV{DEMIURGETP}/aiger-1.9.4/)
+set(AIGER_LIBRARIES      $ENV{DEMIURGETP}/aiger-1.9.4/aiger.o)
+set(DEPQBF_INCLUDE_DIR   $ENV{DEMIURGETP}/depqbf/)
+set(DEPQBF_LIBRARIES     $ENV{DEMIURGETP}/depqbf/libqdpll.a)
+set(BLOQQER_INCLUDE_DIR  $ENV{DEMIURGETP}/bloqqer/)
+set(BLOQQER_LIBRARIES    $ENV{DEMIURGETP}/bloqqer/libbloqqer.a)
+set(LINGELING_INCLUDE_DIR  $ENV{DEMIURGETP}/lingeling/)
+set(LINGELING_LIBRARIES    $ENV{DEMIURGETP}/lingeling/liblgl.a)
+set(MINISAT_INCLUDE_DIR  $ENV{DEMIURGETP}/minisat/)
+set(MINISAT_LIBRARIES  $ENV{DEMIURGETP}/minisat/core/lib.a)
+set(PICOSAT_INCLUDE_DIR  $ENV{DEMIURGETP}/picosat/)
+set(PICOSAT_LIBRARIES  $ENV{DEMIURGETP}/picosat/libpicosat.a)
+
+add_subdirectory(src)
+
+## how are shared libraries found ?
+if(APPLE)
+  set(LD_LIB_VAR "DYLD_LIBRARY_PATH")
+else(APPLE)
+  set(LD_LIB_VAR "LD_LIBRARY_PATH")
+endif(APPLE)

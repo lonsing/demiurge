@@ -1,0 +1,614 @@
+\hypertarget{classLearnSynthSAT}{\section{Learn\-Synth\-S\-A\-T Class Reference}
+\label{classLearnSynthSAT}\index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}}
+}
+
+
+Implements a learning-\/based synthesis using two S\-A\-T solvers.  
+
+
+
+
+{\ttfamily \#include $<$Learn\-Synth\-S\-A\-T.\-h$>$}
+
+Inheritance diagram for Learn\-Synth\-S\-A\-T\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classLearnSynthSAT}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLearnSynthSAT_a0d2a30dcdd8a601aaea8ddf689717bcc}{Learn\-Synth\-S\-A\-T} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classLearnSynthSAT_a2cb64f16d981276fe946d0fa0cf0bd09}{$\sim$\-Learn\-Synth\-S\-A\-T} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classLearnSynthSAT_a13a50b2649f44d37761fdbff26e9c0c0}{run} ()
+\begin{DoxyCompactList}\small\item\em Executes this back-\/end. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classLearnSynthSAT_a055b4699184d09bb7f6b15052ac684db}{compute\-Winning\-Region} ()
+\begin{DoxyCompactList}\small\item\em Computes the winning region and stores the result in \hyperlink{classLearnSynthSAT_aced2bce789c7a93ed4b5391dd0690616}{winning\-\_\-region\-\_\-}. \end{DoxyCompactList}\item 
+bool \hyperlink{classLearnSynthSAT_a49541a9cff8002ca31e0044ae35546a2}{compute\-Winning\-Region\-Plain} ()
+\begin{DoxyCompactList}\small\item\em Uses the standard method to compute a winning region. \end{DoxyCompactList}\item 
+bool \hyperlink{classLearnSynthSAT_aa981048565f10183c30c4dc0576de6b6}{compute\-Winning\-Region\-R\-G} ()
+\begin{DoxyCompactList}\small\item\em Compute a winning region with optimization R\-G when generalizing counterexamples. \end{DoxyCompactList}\item 
+bool \hyperlink{classLearnSynthSAT_a2d54b84ce5e87b7b2d398226faa501b0}{compute\-Winning\-Region\-R\-G\-R\-C} ()
+\begin{DoxyCompactList}\small\item\em Compute a winning region with optimization R\-G and R\-C enabled. \end{DoxyCompactList}\item 
+int \hyperlink{classLearnSynthSAT_ab7a72deebcdf330a28931720d085547d}{present\-To\-Previous} (int literal) const 
+\begin{DoxyCompactList}\small\item\em Returns the previous-\/state copy of a literal. \end{DoxyCompactList}\item 
+void \hyperlink{classLearnSynthSAT_a5340af48fec2799116e4271eddff6c92}{present\-To\-Previous} (vector$<$ int $>$ \&cube\-\_\-or\-\_\-clause) const 
+\begin{DoxyCompactList}\small\item\em Computes the previous-\/state copy of a cube or clause. \end{DoxyCompactList}\item 
+void \hyperlink{classLearnSynthSAT_a1062ed5d0994b4fb1453285811d69f53}{present\-To\-Previous} (\hyperlink{classCNF}{C\-N\-F} \&cnf) const 
+\begin{DoxyCompactList}\small\item\em Computes the previous-\/state copy of a \hyperlink{classCNF}{C\-N\-F}. \end{DoxyCompactList}\item 
+void \hyperlink{classLearnSynthSAT_a83be7c843ad7ffb8a15a377b2227c891}{debug\-Check\-Win\-Reg} ()
+\begin{DoxyCompactList}\small\item\em Checks a winning region computed with optimization R\-C for correctness. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLearnStatisticsSAT}{Learn\-Statistics\-S\-A\-T} \hyperlink{classLearnSynthSAT_a2175c687276e00fa0fe3e158680affc1}{statistics\-\_\-}
+\begin{DoxyCompactList}\small\item\em Stores and maintains statistics and performance measures. \end{DoxyCompactList}\item 
+\hyperlink{classCNF}{C\-N\-F} \hyperlink{classLearnSynthSAT_aced2bce789c7a93ed4b5391dd0690616}{winning\-\_\-region\-\_\-}
+\begin{DoxyCompactList}\small\item\em The current over-\/approximation of the winning region. \end{DoxyCompactList}\item 
+\hyperlink{classCNF}{C\-N\-F} \hyperlink{classLearnSynthSAT_aaa79e8772e9ce8e59dc14e3bb1784256}{winning\-\_\-region\-\_\-large\-\_\-}
+\begin{DoxyCompactList}\small\item\em The current over-\/approximation of the winning region in an uncompressed form. \end{DoxyCompactList}\item 
+\hyperlink{classCNF}{C\-N\-F} \hyperlink{classLearnSynthSAT_a6289a4f041ca85ce44a33143fab42888}{prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-}
+\begin{DoxyCompactList}\small\item\em Says\-: the current state is initial or the previous transition relation holds. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classLearnSynthSAT_a98f676db61a949cd9c9626e165f378a4}{current\-\_\-to\-\_\-previous\-\_\-map\-\_\-}
+\begin{DoxyCompactList}\small\item\em A map from present-\/state variables to their previous-\/state copy. \end{DoxyCompactList}\item 
+int \hyperlink{classLearnSynthSAT_ace0511849ad0020364743f54dd75afee}{current\-\_\-state\-\_\-is\-\_\-initial\-\_\-}
+\begin{DoxyCompactList}\small\item\em A literal that is true if the current state is initial and false otherwise. \end{DoxyCompactList}\item 
+\hyperlink{classCNF}{C\-N\-F} \hyperlink{classLearnSynthSAT_a1b0ed51f21b9fbb8cc0954e011968389}{different\-\_\-from\-\_\-prev\-\_\-or\-\_\-initial\-\_\-}
+\begin{DoxyCompactList}\small\item\em Says\-: the current state is different from the previous one. \end{DoxyCompactList}\item 
+\hyperlink{classSatSolver}{Sat\-Solver} $\ast$ \hyperlink{classLearnSynthSAT_a97e5c03d47cb7f237104472972b12c1c}{solver\-\_\-i\-\_\-}
+\begin{DoxyCompactList}\small\item\em The solver for computing counterexample-\/candidates if optimization R\-C is disabled. \end{DoxyCompactList}\item 
+\hyperlink{classSatSolver}{Sat\-Solver} $\ast$ \hyperlink{classLearnSynthSAT_abb28d64291205442f1df055049ef0195}{solver\-\_\-ctrl\-\_\-}
+\begin{DoxyCompactList}\small\item\em The solver for checking counterexample-\/candidates. \end{DoxyCompactList}\item 
+\hyperlink{classSatSolver}{Sat\-Solver} $\ast$ \hyperlink{classLearnSynthSAT_ae7f4a4e3546f46ad1256e203311226cf}{solver\-\_\-i\-\_\-ind\-\_\-}
+\begin{DoxyCompactList}\small\item\em The solver for computing counterexample-\/candidates if optimization R\-C is enabled. \end{DoxyCompactList}\item 
+\hyperlink{classSatSolver}{Sat\-Solver} $\ast$ \hyperlink{classLearnSynthSAT_ab81d5f53e078238feb1e948a5a5366ff}{solver\-\_\-ctrl\-\_\-ind\-\_\-}
+\begin{DoxyCompactList}\small\item\em The solver for generalizing counterexamples if optimization R\-G is endabled. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLearnSynthSAT_ae4a63ec1333eb53c2026f4e170dc12e1}{Learn\-Synth\-S\-A\-T} (const \hyperlink{classLearnSynthSAT}{Learn\-Synth\-S\-A\-T} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classLearnSynthSAT}{Learn\-Synth\-S\-A\-T} \& \hyperlink{classLearnSynthSAT_af61b7eb7b2f4b88f358bc0d28b774293}{operator=} (const \hyperlink{classLearnSynthSAT}{Learn\-Synth\-S\-A\-T} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implements a learning-\/based synthesis using two S\-A\-T solvers. 
+
+The working principle of the algorithm implemented in this class is very similar to \hyperlink{classLearnSynthQBF}{Learn\-Synth\-Q\-B\-F}\-: We start by setting the winning region F to the set of all safe states P. In a loop, we first compute a counterexample to the correctness of this guess in form of a state from which the antagonist (controlling the uncontrollable inputs i) can enforce to leave F. The state is represented as a cube over all state-\/variables. Next, this state-\/cube is generalized into a larger region of states by dropping literals as long as the cube contains only states that are winning for the antagonist (and hence must be removed or have already been removed from F). Finally, the generalized cube is removed from F. The next iteration checks for counterexample-\/state on the refined F. This is repeated until no more counterexample-\/states exist (then the specification is realizable and F is a winning region) or the initial state has been removed from F (in which case the specification is unrealizable).
+
+The difference to \hyperlink{classLearnSynthQBF}{Learn\-Synth\-Q\-B\-F} is that this class uses two competing S\-A\-T-\/solvers to compute a counterexample. First, solver \hyperlink{classLearnSynthSAT_a97e5c03d47cb7f237104472972b12c1c}{solver\-\_\-i\-\_\-} finds some input values i that could be chosen by the antagonist in order to leave the \hyperlink{classLearnSynthSAT_aced2bce789c7a93ed4b5391dd0690616}{winning\-\_\-region\-\_\-}. Next, \hyperlink{classLearnSynthSAT_abb28d64291205442f1df055049ef0195}{solver\-\_\-ctrl\-\_\-} checks if there exists a response of the protagonist to chose control values c such that the winning region is not left. If no such response exists, then we have found a counterexample. Otherwise, we exclude the state-\/input combination found by \hyperlink{classLearnSynthSAT_a97e5c03d47cb7f237104472972b12c1c}{solver\-\_\-i\-\_\-} (after generalizing it into a larger set of state-\/input pairs) and try again. There is also an optimization which allows to use \hyperlink{classLearnSynthSAT_a97e5c03d47cb7f237104472972b12c1c}{solver\-\_\-i\-\_\-} incrementally\-: The next state-\/copy of the winning region is updated only lazily. Also the generalization of counterexamples is implemented with a Q\-B\-F-\/solver instead of a S\-A\-T solver. Details and background can be found in the V\-M\-C\-A\-I'14 paper \char`\"{}\-S\-A\-T-\/\-Based
+\-Synthesis Methods for Safety Specs\char`\"{}.
+
+The procedure outlined above is implemented in \hyperlink{classLearnSynthSAT_a49541a9cff8002ca31e0044ae35546a2}{compute\-Winning\-Region\-Plain()}. Some variants of this procedure are implemented in other methods of this class. The method \hyperlink{classLearnSynthSAT_aa981048565f10183c30c4dc0576de6b6}{compute\-Winning\-Region\-R\-G()} also uses inductive reachability reasoning in the generalization of counterexamples, just like \hyperlink{classLearnSynthQBFInd}{Learn\-Synth\-Q\-B\-F\-Ind}. The method \hyperlink{classLearnSynthSAT_a2d54b84ce5e87b7b2d398226faa501b0}{compute\-Winning\-Region\-R\-G\-R\-C()} uses inductive reachability reasoning also during the computation or counterexamples. These extensions are described as optimization R\-G and optimization R\-C in the V\-M\-C\-A\-I'14 paper. Command-\/line parameters (--mode) decide which of these methods to use.
+
+Finally the \hyperlink{classQBFCertImplExtractor}{Q\-B\-F\-Cert\-Impl\-Extractor} is used to extract a circuit.
+
+\begin{DoxyAuthor}{Author}
+Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0.\-0 
+\end{DoxyVersion}
+
+
+Definition at line 84 of file Learn\-Synth\-S\-A\-T.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classLearnSynthSAT_a0d2a30dcdd8a601aaea8ddf689717bcc}{\index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}!Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}}
+\index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}!LearnSynthSAT@{Learn\-Synth\-S\-A\-T}}
+\subsubsection[{Learn\-Synth\-S\-A\-T}]{\setlength{\rightskip}{0pt plus 5cm}Learn\-Synth\-S\-A\-T\-::\-Learn\-Synth\-S\-A\-T (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLearnSynthSAT_a0d2a30dcdd8a601aaea8ddf689717bcc}
+
+
+Constructor. 
+
+
+
+Definition at line 41 of file Learn\-Synth\-S\-A\-T.\-cpp.
+
+
+
+References C\-N\-F\-::add2\-Lit\-Clause(), C\-N\-F\-::add3\-Lit\-Clause(), C\-N\-F\-::add\-Clause(), Var\-Manager\-::create\-Fresh\-Prev\-Var(), Var\-Manager\-::create\-Fresh\-Tmp\-Var(), Var\-Info\-::\-C\-T\-R\-L, current\-\_\-state\-\_\-is\-\_\-initial\-\_\-, current\-\_\-to\-\_\-previous\-\_\-map\-\_\-, different\-\_\-from\-\_\-prev\-\_\-or\-\_\-initial\-\_\-, C\-N\-F\-::get\-Clauses(), Var\-Manager\-::get\-Max\-C\-N\-F\-Var(), A\-I\-G2\-C\-N\-F\-::get\-Trans(), Var\-Manager\-::get\-Vars\-Of\-Type(), Var\-Info\-::\-I\-N\-P\-U\-T, Var\-Manager\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), Var\-Info\-::\-N\-E\-X\-T\-\_\-\-S\-T\-A\-T\-E, Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, present\-To\-Previous(), prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-, C\-N\-F\-::swap\-With(), and Var\-Info\-::\-T\-M\-P.
+
+\hypertarget{classLearnSynthSAT_a2cb64f16d981276fe946d0fa0cf0bd09}{\index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}!$\sim$\-Learn\-Synth\-S\-A\-T@{$\sim$\-Learn\-Synth\-S\-A\-T}}
+\index{$\sim$\-Learn\-Synth\-S\-A\-T@{$\sim$\-Learn\-Synth\-S\-A\-T}!LearnSynthSAT@{Learn\-Synth\-S\-A\-T}}
+\subsubsection[{$\sim$\-Learn\-Synth\-S\-A\-T}]{\setlength{\rightskip}{0pt plus 5cm}Learn\-Synth\-S\-A\-T\-::$\sim$\-Learn\-Synth\-S\-A\-T (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classLearnSynthSAT_a2cb64f16d981276fe946d0fa0cf0bd09}
+
+
+Destructor. 
+
+
+
+Definition at line 104 of file Learn\-Synth\-S\-A\-T.\-cpp.
+
+
+
+References solver\-\_\-ctrl\-\_\-, solver\-\_\-ctrl\-\_\-ind\-\_\-, solver\-\_\-i\-\_\-, and solver\-\_\-i\-\_\-ind\-\_\-.
+
+\hypertarget{classLearnSynthSAT_ae4a63ec1333eb53c2026f4e170dc12e1}{\index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}!Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}}
+\index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}!LearnSynthSAT@{Learn\-Synth\-S\-A\-T}}
+\subsubsection[{Learn\-Synth\-S\-A\-T}]{\setlength{\rightskip}{0pt plus 5cm}Learn\-Synth\-S\-A\-T\-::\-Learn\-Synth\-S\-A\-T (
+\begin{DoxyParamCaption}
+\item[{const {\bf Learn\-Synth\-S\-A\-T} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classLearnSynthSAT_ae4a63ec1333eb53c2026f4e170dc12e1}
+
+
+Copy constructor. 
+
+The copy constructor is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classLearnSynthSAT_a055b4699184d09bb7f6b15052ac684db}{\index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}!compute\-Winning\-Region@{compute\-Winning\-Region}}
+\index{compute\-Winning\-Region@{compute\-Winning\-Region}!LearnSynthSAT@{Learn\-Synth\-S\-A\-T}}
+\subsubsection[{compute\-Winning\-Region}]{\setlength{\rightskip}{0pt plus 5cm}bool Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthSAT_a055b4699184d09bb7f6b15052ac684db}
+
+
+Computes the winning region and stores the result in \hyperlink{classLearnSynthSAT_aced2bce789c7a93ed4b5391dd0690616}{winning\-\_\-region\-\_\-}. 
+
+Depending on the command-\/line parameters (--mode) this method calls one of 
+\begin{DoxyItemize}
+\item \hyperlink{classLearnSynthSAT_a49541a9cff8002ca31e0044ae35546a2}{compute\-Winning\-Region\-Plain()} 
+\item \hyperlink{classLearnSynthSAT_aa981048565f10183c30c4dc0576de6b6}{compute\-Winning\-Region\-R\-G()} 
+\item \hyperlink{classLearnSynthSAT_a2d54b84ce5e87b7b2d398226faa501b0}{compute\-Winning\-Region\-R\-G\-R\-C()} 
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+True if the specification was realizable, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 152 of file Learn\-Synth\-S\-A\-T.\-cpp.
+
+
+
+References compute\-Winning\-Region\-Plain(), compute\-Winning\-Region\-R\-G(), compute\-Winning\-Region\-R\-G\-R\-C(), debug\-Check\-Win\-Reg(), Options\-::get\-Back\-End\-Mode(), Options\-::instance(), and winning\-\_\-region\-\_\-.
+
+
+
+Referenced by run().
+
+\hypertarget{classLearnSynthSAT_a49541a9cff8002ca31e0044ae35546a2}{\index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}!compute\-Winning\-Region\-Plain@{compute\-Winning\-Region\-Plain}}
+\index{compute\-Winning\-Region\-Plain@{compute\-Winning\-Region\-Plain}!LearnSynthSAT@{Learn\-Synth\-S\-A\-T}}
+\subsubsection[{compute\-Winning\-Region\-Plain}]{\setlength{\rightskip}{0pt plus 5cm}bool Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthSAT_a49541a9cff8002ca31e0044ae35546a2}
+
+
+Uses the standard method to compute a winning region. 
+
+The standard method works as described in the class description.
+
+\begin{DoxyReturn}{Returns}
+True if the specification was realizable, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 178 of file Learn\-Synth\-S\-A\-T.\-cpp.
+
+
+
+References C\-N\-F\-::add\-Clause\-And\-Simplify(), C\-N\-F\-::add\-C\-N\-F(), C\-N\-F\-::clear(), Utils\-::compress\-State\-C\-N\-F(), Utils\-::contains\-Init(), Var\-Info\-::\-C\-T\-R\-L, Sat\-Solver\-::do\-Min\-Cores(), Sat\-Solver\-::do\-Rand\-Models(), Utils\-::extract(), A\-I\-G2\-C\-N\-F\-::get\-Next\-Safe\-States(), A\-I\-G2\-C\-N\-F\-::get\-Next\-Unsafe\-States(), A\-I\-G2\-C\-N\-F\-::get\-Safe\-States(), A\-I\-G2\-C\-N\-F\-::get\-Trans(), Var\-Manager\-::get\-Vars\-Of\-Type(), Sat\-Solver\-::inc\-Add\-Clause(), Sat\-Solver\-::inc\-Add\-C\-N\-F(), Sat\-Solver\-::inc\-Is\-Sat\-Model\-Or\-Core(), Var\-Info\-::\-I\-N\-P\-U\-T, Var\-Manager\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), L\-\_\-\-D\-B\-G, M\-A\-S\-S\-E\-R\-T, C\-N\-F\-::negate(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Check\-Candidate\-Failed(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Check\-Candidate\-Found(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Compute\-Candidate(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Refine(), Learn\-Statistics\-S\-A\-T\-::notify\-Before\-Check\-Candidate(), Learn\-Statistics\-S\-A\-T\-::notify\-Before\-Compute\-Candidate(), Learn\-Statistics\-S\-A\-T\-::notify\-Before\-Refine(), Learn\-Statistics\-S\-A\-T\-::notify\-Restart(), Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, Var\-Manager\-::reset\-To\-Last\-Push(), solver\-\_\-ctrl\-\_\-, solver\-\_\-i\-\_\-, Sat\-Solver\-::start\-Incremental\-Session(), statistics\-\_\-, Utils\-::swap\-Present\-To\-Next(), C\-N\-F\-::swap\-Present\-To\-Next(), winning\-\_\-region\-\_\-, and winning\-\_\-region\-\_\-large\-\_\-.
+
+
+
+Referenced by compute\-Winning\-Region().
+
+\hypertarget{classLearnSynthSAT_aa981048565f10183c30c4dc0576de6b6}{\index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}!compute\-Winning\-Region\-R\-G@{compute\-Winning\-Region\-R\-G}}
+\index{compute\-Winning\-Region\-R\-G@{compute\-Winning\-Region\-R\-G}!LearnSynthSAT@{Learn\-Synth\-S\-A\-T}}
+\subsubsection[{compute\-Winning\-Region\-R\-G}]{\setlength{\rightskip}{0pt plus 5cm}bool Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthSAT_aa981048565f10183c30c4dc0576de6b6}
+
+
+Compute a winning region with optimization R\-G when generalizing counterexamples. 
+
+Optimization R\-G is described in \hyperlink{classLearnSynthQBFInd}{Learn\-Synth\-Q\-B\-F\-Ind} already. In a nutshell, the generalization query is modified so a state that prevents generalization must be either initial or have a predecessor in F. Otherwise it is unreachable and we do not care. This means that we can remove states that are winning for the protagonist from the winning region of they are unreachalbe in the final implementation.
+
+\begin{DoxyReturn}{Returns}
+True if the specification was realizable, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 326 of file Learn\-Synth\-S\-A\-T.\-cpp.
+
+
+
+References C\-N\-F\-::add\-Clause\-And\-Simplify(), C\-N\-F\-::add\-C\-N\-F(), C\-N\-F\-::clear(), Utils\-::compress\-State\-C\-N\-F(), Utils\-::contains\-Init(), Var\-Info\-::\-C\-T\-R\-L, current\-\_\-state\-\_\-is\-\_\-initial\-\_\-, current\-\_\-to\-\_\-previous\-\_\-map\-\_\-, Sat\-Solver\-::do\-Min\-Cores(), Sat\-Solver\-::do\-Rand\-Models(), Utils\-::extract(), Var\-Manager\-::get\-All\-Non\-Temp\-Vars(), A\-I\-G2\-C\-N\-F\-::get\-Next\-Safe\-States(), A\-I\-G2\-C\-N\-F\-::get\-Next\-Unsafe\-States(), Var\-Manager\-::get\-Pres\-Error\-State\-Var(), A\-I\-G2\-C\-N\-F\-::get\-Safe\-States(), A\-I\-G2\-C\-N\-F\-::get\-Trans(), Var\-Manager\-::get\-Vars\-Of\-Type(), Sat\-Solver\-::inc\-Add\-Clause(), Sat\-Solver\-::inc\-Add\-C\-N\-F(), Sat\-Solver\-::inc\-Add\-Cube(), Sat\-Solver\-::inc\-Add\-Neg\-Cube\-As\-Clause(), Sat\-Solver\-::inc\-Add\-Unit\-Clause(), Sat\-Solver\-::inc\-Is\-Sat(), Sat\-Solver\-::inc\-Is\-Sat\-Model\-Or\-Core(), Sat\-Solver\-::inc\-Pop(), Sat\-Solver\-::inc\-Push(), Var\-Info\-::\-I\-N\-P\-U\-T, Var\-Manager\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), L\-\_\-\-D\-B\-G, M\-A\-S\-S\-E\-R\-T, C\-N\-F\-::negate(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Check\-Candidate\-Failed(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Check\-Candidate\-Found(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Compute\-Candidate(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Refine(), Learn\-Statistics\-S\-A\-T\-::notify\-Before\-Check\-Candidate(), Learn\-Statistics\-S\-A\-T\-::notify\-Before\-Compute\-Candidate(), Learn\-Statistics\-S\-A\-T\-::notify\-Before\-Refine(), Learn\-Statistics\-S\-A\-T\-::notify\-Restart(), Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, present\-To\-Previous(), prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-, Utils\-::remove(), Var\-Manager\-::reset\-To\-Last\-Push(), solver\-\_\-ctrl\-\_\-, solver\-\_\-ctrl\-\_\-ind\-\_\-, solver\-\_\-i\-\_\-, Sat\-Solver\-::start\-Incremental\-Session(), statistics\-\_\-, Utils\-::swap\-Present\-To\-Next(), C\-N\-F\-::swap\-Present\-To\-Next(), winning\-\_\-region\-\_\-, and winning\-\_\-region\-\_\-large\-\_\-.
+
+
+
+Referenced by compute\-Winning\-Region().
+
+\hypertarget{classLearnSynthSAT_a2d54b84ce5e87b7b2d398226faa501b0}{\index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}!compute\-Winning\-Region\-R\-G\-R\-C@{compute\-Winning\-Region\-R\-G\-R\-C}}
+\index{compute\-Winning\-Region\-R\-G\-R\-C@{compute\-Winning\-Region\-R\-G\-R\-C}!LearnSynthSAT@{Learn\-Synth\-S\-A\-T}}
+\subsubsection[{compute\-Winning\-Region\-R\-G\-R\-C}]{\setlength{\rightskip}{0pt plus 5cm}bool Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthSAT_a2d54b84ce5e87b7b2d398226faa501b0}
+
+
+Compute a winning region with optimization R\-G and R\-C enabled. 
+
+In addition to optimization R\-G (see \hyperlink{classLearnSynthSAT_aa981048565f10183c30c4dc0576de6b6}{compute\-Winning\-Region\-R\-G()}), this method also applies optimization R\-C as described in \hyperlink{classLearnSynthQBFInd}{Learn\-Synth\-Q\-B\-F\-Ind}. In a nutshell, the queries to compute counterexamples are modified in such a way that the counterexample-\/state is either initial or has a predecessor in the current over-\/approximation of the winning region. Otherwise, the state is unreachable and can be ignored.
+
+\begin{DoxyReturn}{Returns}
+True if the specification was realizable, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 510 of file Learn\-Synth\-S\-A\-T.\-cpp.
+
+
+
+References C\-N\-F\-::add\-Clause\-And\-Simplify(), C\-N\-F\-::add\-C\-N\-F(), C\-N\-F\-::clear(), Utils\-::compress\-State\-C\-N\-F(), Utils\-::contains\-Init(), Var\-Info\-::\-C\-T\-R\-L, current\-\_\-state\-\_\-is\-\_\-initial\-\_\-, current\-\_\-to\-\_\-previous\-\_\-map\-\_\-, different\-\_\-from\-\_\-prev\-\_\-or\-\_\-initial\-\_\-, Sat\-Solver\-::do\-Min\-Cores(), Sat\-Solver\-::do\-Rand\-Models(), Utils\-::extract(), Var\-Manager\-::get\-All\-Non\-Temp\-Vars(), A\-I\-G2\-C\-N\-F\-::get\-Next\-Safe\-States(), A\-I\-G2\-C\-N\-F\-::get\-Next\-Unsafe\-States(), Var\-Manager\-::get\-Pres\-Error\-State\-Var(), A\-I\-G2\-C\-N\-F\-::get\-Safe\-States(), A\-I\-G2\-C\-N\-F\-::get\-Trans(), Var\-Manager\-::get\-Vars\-Of\-Type(), Sat\-Solver\-::inc\-Add\-Clause(), Sat\-Solver\-::inc\-Add\-C\-N\-F(), Sat\-Solver\-::inc\-Add\-Cube(), Sat\-Solver\-::inc\-Add\-Neg\-Cube\-As\-Clause(), Sat\-Solver\-::inc\-Add\-Unit\-Clause(), Sat\-Solver\-::inc\-Is\-Sat(), Sat\-Solver\-::inc\-Is\-Sat\-Model\-Or\-Core(), Sat\-Solver\-::inc\-Pop(), Sat\-Solver\-::inc\-Push(), Var\-Info\-::\-I\-N\-P\-U\-T, Var\-Manager\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), L\-\_\-\-D\-B\-G, M\-A\-S\-S\-E\-R\-T, C\-N\-F\-::negate(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Check\-Candidate\-Failed(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Check\-Candidate\-Found(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Compute\-Candidate(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Refine(), Learn\-Statistics\-S\-A\-T\-::notify\-Before\-Check\-Candidate(), Learn\-Statistics\-S\-A\-T\-::notify\-Before\-Compute\-Candidate(), Learn\-Statistics\-S\-A\-T\-::notify\-Before\-Refine(), Learn\-Statistics\-S\-A\-T\-::notify\-Restart(), Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, present\-To\-Previous(), prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-, Utils\-::remove(), Var\-Manager\-::reset\-To\-Last\-Push(), solver\-\_\-ctrl\-\_\-, solver\-\_\-ctrl\-\_\-ind\-\_\-, solver\-\_\-i\-\_\-, solver\-\_\-i\-\_\-ind\-\_\-, Sat\-Solver\-::start\-Incremental\-Session(), statistics\-\_\-, Utils\-::swap\-Present\-To\-Next(), C\-N\-F\-::swap\-Present\-To\-Next(), winning\-\_\-region\-\_\-, and winning\-\_\-region\-\_\-large\-\_\-.
+
+
+
+Referenced by compute\-Winning\-Region().
+
+\hypertarget{classLearnSynthSAT_a83be7c843ad7ffb8a15a377b2227c891}{\index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}!debug\-Check\-Win\-Reg@{debug\-Check\-Win\-Reg}}
+\index{debug\-Check\-Win\-Reg@{debug\-Check\-Win\-Reg}!LearnSynthSAT@{Learn\-Synth\-S\-A\-T}}
+\subsubsection[{debug\-Check\-Win\-Reg}]{\setlength{\rightskip}{0pt plus 5cm}void Learn\-Synth\-S\-A\-T\-::debug\-Check\-Win\-Reg (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthSAT_a83be7c843ad7ffb8a15a377b2227c891}
+
+
+Checks a winning region computed with optimization R\-C for correctness. 
+
+We usually check the correctness of the winning region in debug-\/mode by calling \hyperlink{classUtils_acc29602987b73022546a6d752a7e093f}{Utils\-::debug\-Check\-Win\-Reg()}. However, this method of \hyperlink{classUtils}{Utils} does not work for winning regions that have been computed with optimization R\-C enabled. In such cases we this method. 
+
+Definition at line 753 of file Learn\-Synth\-S\-A\-T.\-cpp.
+
+
+
+References Q\-B\-F\-Solver\-::\-A, C\-N\-F\-::add\-C\-N\-F(), C\-N\-F\-::clear(), Var\-Info\-::\-C\-T\-R\-L, different\-\_\-from\-\_\-prev\-\_\-or\-\_\-initial\-\_\-, Q\-B\-F\-Solver\-::\-E, Var\-Info\-::\-I\-N\-P\-U\-T, A\-I\-G2\-C\-N\-F\-::instance(), Dep\-Q\-B\-F\-Api\-::is\-Sat(), Lingeling\-Api\-::is\-Sat(), L\-\_\-\-D\-B\-G, M\-A\-S\-S\-E\-R\-T, C\-N\-F\-::negate(), Var\-Info\-::\-N\-E\-X\-T\-\_\-\-S\-T\-A\-T\-E, Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, present\-To\-Previous(), Var\-Info\-::\-P\-R\-E\-V, prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-, C\-N\-F\-::swap\-Present\-To\-Next(), Var\-Info\-::\-T\-M\-P, and winning\-\_\-region\-\_\-.
+
+
+
+Referenced by compute\-Winning\-Region().
+
+\hypertarget{classLearnSynthSAT_af61b7eb7b2f4b88f358bc0d28b774293}{\index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}!operator=@{operator=}}
+\index{operator=@{operator=}!LearnSynthSAT@{Learn\-Synth\-S\-A\-T}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Learn\-Synth\-S\-A\-T}\& Learn\-Synth\-S\-A\-T\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Learn\-Synth\-S\-A\-T} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classLearnSynthSAT_af61b7eb7b2f4b88f358bc0d28b774293}
+
+
+Assignment operator. 
+
+The assignment operator is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the assignment, i.\-e, $\ast$this. 
+\end{DoxyReturn}
+\hypertarget{classLearnSynthSAT_ab7a72deebcdf330a28931720d085547d}{\index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}!present\-To\-Previous@{present\-To\-Previous}}
+\index{present\-To\-Previous@{present\-To\-Previous}!LearnSynthSAT@{Learn\-Synth\-S\-A\-T}}
+\subsubsection[{present\-To\-Previous}]{\setlength{\rightskip}{0pt plus 5cm}int Learn\-Synth\-S\-A\-T\-::present\-To\-Previous (
+\begin{DoxyParamCaption}
+\item[{int}]{literal}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthSAT_ab7a72deebcdf330a28931720d085547d}
+
+
+Returns the previous-\/state copy of a literal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em literal} & The literal to transform. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The previous-\/state copy of a literal. 
+\end{DoxyReturn}
+
+
+Definition at line 723 of file Learn\-Synth\-S\-A\-T.\-cpp.
+
+
+
+References current\-\_\-to\-\_\-previous\-\_\-map\-\_\-.
+
+
+
+Referenced by compute\-Winning\-Region\-R\-G(), compute\-Winning\-Region\-R\-G\-R\-C(), debug\-Check\-Win\-Reg(), Learn\-Synth\-S\-A\-T(), and present\-To\-Previous().
+
+\hypertarget{classLearnSynthSAT_a5340af48fec2799116e4271eddff6c92}{\index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}!present\-To\-Previous@{present\-To\-Previous}}
+\index{present\-To\-Previous@{present\-To\-Previous}!LearnSynthSAT@{Learn\-Synth\-S\-A\-T}}
+\subsubsection[{present\-To\-Previous}]{\setlength{\rightskip}{0pt plus 5cm}void Learn\-Synth\-S\-A\-T\-::present\-To\-Previous (
+\begin{DoxyParamCaption}
+\item[{vector$<$ int $>$ \&}]{cube\-\_\-or\-\_\-clause}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthSAT_a5340af48fec2799116e4271eddff6c92}
+
+
+Computes the previous-\/state copy of a cube or clause. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cube\-\_\-or\-\_\-clause} & A cube or clause (in form of a vector of literals) over the present state variables. This vector is overwritten by the corresponding cube of clause over the previous-\/state literals (i.\-e., all literals are replaced by their previous-\/state copy). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 733 of file Learn\-Synth\-S\-A\-T.\-cpp.
+
+
+
+References present\-To\-Previous().
+
+\hypertarget{classLearnSynthSAT_a1062ed5d0994b4fb1453285811d69f53}{\index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}!present\-To\-Previous@{present\-To\-Previous}}
+\index{present\-To\-Previous@{present\-To\-Previous}!LearnSynthSAT@{Learn\-Synth\-S\-A\-T}}
+\subsubsection[{present\-To\-Previous}]{\setlength{\rightskip}{0pt plus 5cm}void Learn\-Synth\-S\-A\-T\-::present\-To\-Previous (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-N\-F} \&}]{cnf}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthSAT_a1062ed5d0994b4fb1453285811d69f53}
+
+
+Computes the previous-\/state copy of a \hyperlink{classCNF}{C\-N\-F}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cnf} & A \hyperlink{classCNF}{C\-N\-F} formula over the present state variables. This \hyperlink{classCNF}{C\-N\-F} is overwritten by the corresponding \hyperlink{classCNF}{C\-N\-F} over the previous-\/state literals (i.\-e., all literals are replaced by their previous-\/state copy). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 740 of file Learn\-Synth\-S\-A\-T.\-cpp.
+
+
+
+References C\-N\-F\-::add\-Clause(), C\-N\-F\-::clear(), C\-N\-F\-::get\-Clauses(), and present\-To\-Previous().
+
+\hypertarget{classLearnSynthSAT_a13a50b2649f44d37761fdbff26e9c0c0}{\index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}!run@{run}}
+\index{run@{run}!LearnSynthSAT@{Learn\-Synth\-S\-A\-T}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}bool Learn\-Synth\-S\-A\-T\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classLearnSynthSAT_a13a50b2649f44d37761fdbff26e9c0c0}
+
+
+Executes this back-\/end. 
+
+The working principle of this method is very similar to \hyperlink{classLearnSynthQBF_aed85bb2fe317a5fdc7eef71fe598c606}{Learn\-Synth\-Q\-B\-F\-::run()}\-: We start by setting the winning region F to the set of all safe states P. In a loop, we first compute a counterexample to the correctness of this guess in form of a state from which the antagonist (controlling the uncontrollable inputs i) can enforce to leave F. The state is represented as a cube over all state-\/variables. Next, this state-\/cube is generalized into a larger region of states by dropping literals as long as the cube contains only states that are winning for the antagonist (and hence must be removed or have already been removed from F). Finally, the generalized cube is removed from F. The next iteration checks for counterexample-\/state on the refined F. This is repeated until no more counterexample-\/states exist (then the specification is realizable and F is a winning region) or the initial state has been removed from F (in which case the specification is unrealizable). The difference to \hyperlink{classLearnSynthQBF}{Learn\-Synth\-Q\-B\-F} is that this method uses two competing S\-A\-T-\/solvers to compute a counterexample. First, solver \hyperlink{classLearnSynthSAT_a97e5c03d47cb7f237104472972b12c1c}{solver\-\_\-i\-\_\-} finds some input values i that could be chosen by the antagonist in order to leave the \hyperlink{classLearnSynthSAT_aced2bce789c7a93ed4b5391dd0690616}{winning\-\_\-region\-\_\-}. Next, \hyperlink{classLearnSynthSAT_abb28d64291205442f1df055049ef0195}{solver\-\_\-ctrl\-\_\-} checks if there exists a response of the protagonist to chose control values c such that the winning region is not left. If no such response exists, then we have found a counterexample. Otherwise, we exclude the state-\/input combination found by \hyperlink{classLearnSynthSAT_a97e5c03d47cb7f237104472972b12c1c}{solver\-\_\-i\-\_\-} (after generalizing it into a larger set of state-\/input pairs) and try again. There is also an optimization which allows to use \hyperlink{classLearnSynthSAT_a97e5c03d47cb7f237104472972b12c1c}{solver\-\_\-i\-\_\-} incrementally\-: The next state-\/copy of the winning region is updated only lazily. Also the generalization of counterexamples is implemented with a Q\-B\-F-\/solver instead of a S\-A\-T solver. Details and background can be found in the V\-M\-C\-A\-I'14 paper \char`\"{}\-S\-A\-T-\/\-Based
+\-Synthesis Methods for Safety Specs\char`\"{}.
+
+Command-\/line parameters (--mode) are used to select different variants of this method. There is 
+\begin{DoxyItemize}
+\item the standard method as described above, 
+\item a variant which uses inductive reachability reasoning in the generalization of counterexamples, just like \hyperlink{classLearnSynthQBFInd}{Learn\-Synth\-Q\-B\-F\-Ind} (optimization 'R\-G') 
+\item a variant which uses inductive reachability reasoning also in the computation of counterexamples, just like \hyperlink{classLearnSynthQBFInd}{Learn\-Synth\-Q\-B\-F\-Ind} (optimization 'R\-G' and 'R\-C') 
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+True if the specification was realizable, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classBackEnd_a099e717dc71e9cc2d838b1ca86340590}{Back\-End}.
+
+
+
+Definition at line 117 of file Learn\-Synth\-S\-A\-T.\-cpp.
+
+
+
+References compute\-Winning\-Region(), Q\-B\-F\-Cert\-Impl\-Extractor\-::extract\-Circuit(), Var\-Manager\-::instance(), Options\-::instance(), L\-\_\-\-I\-N\-F, L\-\_\-\-R\-E\-S, Learn\-Statistics\-S\-A\-T\-::log\-Statistics(), M\-A\-S\-S\-E\-R\-T, Learn\-Statistics\-S\-A\-T\-::notify\-Rel\-Det\-End(), Learn\-Statistics\-S\-A\-T\-::notify\-Rel\-Det\-Start(), Learn\-Statistics\-S\-A\-T\-::notify\-Win\-Reg\-End(), Learn\-Statistics\-S\-A\-T\-::notify\-Win\-Reg\-Start(), Var\-Manager\-::push(), statistics\-\_\-, and winning\-\_\-region\-\_\-.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classLearnSynthSAT_ace0511849ad0020364743f54dd75afee}{\index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}!current\-\_\-state\-\_\-is\-\_\-initial\-\_\-@{current\-\_\-state\-\_\-is\-\_\-initial\-\_\-}}
+\index{current\-\_\-state\-\_\-is\-\_\-initial\-\_\-@{current\-\_\-state\-\_\-is\-\_\-initial\-\_\-}!LearnSynthSAT@{Learn\-Synth\-S\-A\-T}}
+\subsubsection[{current\-\_\-state\-\_\-is\-\_\-initial\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int Learn\-Synth\-S\-A\-T\-::current\-\_\-state\-\_\-is\-\_\-initial\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthSAT_ace0511849ad0020364743f54dd75afee}
+
+
+A literal that is true if the current state is initial and false otherwise. 
+
+The clauses assigning the literal are part of \hyperlink{classLearnSynthSAT_a6289a4f041ca85ce44a33143fab42888}{prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-}. 
+
+Definition at line 271 of file Learn\-Synth\-S\-A\-T.\-h.
+
+
+
+Referenced by compute\-Winning\-Region\-R\-G(), compute\-Winning\-Region\-R\-G\-R\-C(), and Learn\-Synth\-S\-A\-T().
+
+\hypertarget{classLearnSynthSAT_a98f676db61a949cd9c9626e165f378a4}{\index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}!current\-\_\-to\-\_\-previous\-\_\-map\-\_\-@{current\-\_\-to\-\_\-previous\-\_\-map\-\_\-}}
+\index{current\-\_\-to\-\_\-previous\-\_\-map\-\_\-@{current\-\_\-to\-\_\-previous\-\_\-map\-\_\-}!LearnSynthSAT@{Learn\-Synth\-S\-A\-T}}
+\subsubsection[{current\-\_\-to\-\_\-previous\-\_\-map\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ Learn\-Synth\-S\-A\-T\-::current\-\_\-to\-\_\-previous\-\_\-map\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthSAT_a98f676db61a949cd9c9626e165f378a4}
+
+
+A map from present-\/state variables to their previous-\/state copy. 
+
+
+
+Definition at line 264 of file Learn\-Synth\-S\-A\-T.\-h.
+
+
+
+Referenced by compute\-Winning\-Region\-R\-G(), compute\-Winning\-Region\-R\-G\-R\-C(), Learn\-Synth\-S\-A\-T(), and present\-To\-Previous().
+
+\hypertarget{classLearnSynthSAT_a1b0ed51f21b9fbb8cc0954e011968389}{\index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}!different\-\_\-from\-\_\-prev\-\_\-or\-\_\-initial\-\_\-@{different\-\_\-from\-\_\-prev\-\_\-or\-\_\-initial\-\_\-}}
+\index{different\-\_\-from\-\_\-prev\-\_\-or\-\_\-initial\-\_\-@{different\-\_\-from\-\_\-prev\-\_\-or\-\_\-initial\-\_\-}!LearnSynthSAT@{Learn\-Synth\-S\-A\-T}}
+\subsubsection[{different\-\_\-from\-\_\-prev\-\_\-or\-\_\-initial\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} Learn\-Synth\-S\-A\-T\-::different\-\_\-from\-\_\-prev\-\_\-or\-\_\-initial\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthSAT_a1b0ed51f21b9fbb8cc0954e011968389}
+
+
+Says\-: the current state is different from the previous one. 
+
+This \hyperlink{classCNF}{C\-N\-F} expresses that the current state is different from the previous state. This is an important building block for the \hyperlink{classCNF}{C\-N\-F} to compute counterexamples if optimization R\-C is enabled. 
+
+Definition at line 280 of file Learn\-Synth\-S\-A\-T.\-h.
+
+
+
+Referenced by compute\-Winning\-Region\-R\-G\-R\-C(), debug\-Check\-Win\-Reg(), and Learn\-Synth\-S\-A\-T().
+
+\hypertarget{classLearnSynthSAT_a6289a4f041ca85ce44a33143fab42888}{\index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}!prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-@{prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-}}
+\index{prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-@{prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-}!LearnSynthSAT@{Learn\-Synth\-S\-A\-T}}
+\subsubsection[{prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} Learn\-Synth\-S\-A\-T\-::prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthSAT_a6289a4f041ca85ce44a33143fab42888}
+
+
+Says\-: the current state is initial or the previous transition relation holds. 
+
+This \hyperlink{classCNF}{C\-N\-F} expresses that the current state is initial or the previous-\/state copy of the transition relation holds. This is an important building block for the \hyperlink{classCNF}{C\-N\-F} to compute or generalize counterexamples if optimization R\-G or R\-C is enabled. 
+
+Definition at line 259 of file Learn\-Synth\-S\-A\-T.\-h.
+
+
+
+Referenced by compute\-Winning\-Region\-R\-G(), compute\-Winning\-Region\-R\-G\-R\-C(), debug\-Check\-Win\-Reg(), and Learn\-Synth\-S\-A\-T().
+
+\hypertarget{classLearnSynthSAT_abb28d64291205442f1df055049ef0195}{\index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}!solver\-\_\-ctrl\-\_\-@{solver\-\_\-ctrl\-\_\-}}
+\index{solver\-\_\-ctrl\-\_\-@{solver\-\_\-ctrl\-\_\-}!LearnSynthSAT@{Learn\-Synth\-S\-A\-T}}
+\subsubsection[{solver\-\_\-ctrl\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sat\-Solver}$\ast$ Learn\-Synth\-S\-A\-T\-::solver\-\_\-ctrl\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthSAT_abb28d64291205442f1df055049ef0195}
+
+
+The solver for checking counterexample-\/candidates. 
+
+It is also used to generalize counterexamples if optimization R\-G is disabled. 
+
+Definition at line 292 of file Learn\-Synth\-S\-A\-T.\-h.
+
+
+
+Referenced by compute\-Winning\-Region\-Plain(), compute\-Winning\-Region\-R\-G(), compute\-Winning\-Region\-R\-G\-R\-C(), and $\sim$\-Learn\-Synth\-S\-A\-T().
+
+\hypertarget{classLearnSynthSAT_ab81d5f53e078238feb1e948a5a5366ff}{\index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}!solver\-\_\-ctrl\-\_\-ind\-\_\-@{solver\-\_\-ctrl\-\_\-ind\-\_\-}}
+\index{solver\-\_\-ctrl\-\_\-ind\-\_\-@{solver\-\_\-ctrl\-\_\-ind\-\_\-}!LearnSynthSAT@{Learn\-Synth\-S\-A\-T}}
+\subsubsection[{solver\-\_\-ctrl\-\_\-ind\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sat\-Solver}$\ast$ Learn\-Synth\-S\-A\-T\-::solver\-\_\-ctrl\-\_\-ind\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthSAT_ab81d5f53e078238feb1e948a5a5366ff}
+
+
+The solver for generalizing counterexamples if optimization R\-G is endabled. 
+
+
+
+Definition at line 302 of file Learn\-Synth\-S\-A\-T.\-h.
+
+
+
+Referenced by compute\-Winning\-Region\-R\-G(), compute\-Winning\-Region\-R\-G\-R\-C(), and $\sim$\-Learn\-Synth\-S\-A\-T().
+
+\hypertarget{classLearnSynthSAT_a97e5c03d47cb7f237104472972b12c1c}{\index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}!solver\-\_\-i\-\_\-@{solver\-\_\-i\-\_\-}}
+\index{solver\-\_\-i\-\_\-@{solver\-\_\-i\-\_\-}!LearnSynthSAT@{Learn\-Synth\-S\-A\-T}}
+\subsubsection[{solver\-\_\-i\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sat\-Solver}$\ast$ Learn\-Synth\-S\-A\-T\-::solver\-\_\-i\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthSAT_a97e5c03d47cb7f237104472972b12c1c}
+
+
+The solver for computing counterexample-\/candidates if optimization R\-C is disabled. 
+
+
+
+Definition at line 285 of file Learn\-Synth\-S\-A\-T.\-h.
+
+
+
+Referenced by compute\-Winning\-Region\-Plain(), compute\-Winning\-Region\-R\-G(), compute\-Winning\-Region\-R\-G\-R\-C(), and $\sim$\-Learn\-Synth\-S\-A\-T().
+
+\hypertarget{classLearnSynthSAT_ae7f4a4e3546f46ad1256e203311226cf}{\index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}!solver\-\_\-i\-\_\-ind\-\_\-@{solver\-\_\-i\-\_\-ind\-\_\-}}
+\index{solver\-\_\-i\-\_\-ind\-\_\-@{solver\-\_\-i\-\_\-ind\-\_\-}!LearnSynthSAT@{Learn\-Synth\-S\-A\-T}}
+\subsubsection[{solver\-\_\-i\-\_\-ind\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sat\-Solver}$\ast$ Learn\-Synth\-S\-A\-T\-::solver\-\_\-i\-\_\-ind\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthSAT_ae7f4a4e3546f46ad1256e203311226cf}
+
+
+The solver for computing counterexample-\/candidates if optimization R\-C is enabled. 
+
+
+
+Definition at line 297 of file Learn\-Synth\-S\-A\-T.\-h.
+
+
+
+Referenced by compute\-Winning\-Region\-R\-G\-R\-C(), and $\sim$\-Learn\-Synth\-S\-A\-T().
+
+\hypertarget{classLearnSynthSAT_a2175c687276e00fa0fe3e158680affc1}{\index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}!statistics\-\_\-@{statistics\-\_\-}}
+\index{statistics\-\_\-@{statistics\-\_\-}!LearnSynthSAT@{Learn\-Synth\-S\-A\-T}}
+\subsubsection[{statistics\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Learn\-Statistics\-S\-A\-T} Learn\-Synth\-S\-A\-T\-::statistics\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthSAT_a2175c687276e00fa0fe3e158680affc1}
+
+
+Stores and maintains statistics and performance measures. 
+
+
+
+Definition at line 230 of file Learn\-Synth\-S\-A\-T.\-h.
+
+
+
+Referenced by compute\-Winning\-Region\-Plain(), compute\-Winning\-Region\-R\-G(), compute\-Winning\-Region\-R\-G\-R\-C(), and run().
+
+\hypertarget{classLearnSynthSAT_aced2bce789c7a93ed4b5391dd0690616}{\index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}!winning\-\_\-region\-\_\-@{winning\-\_\-region\-\_\-}}
+\index{winning\-\_\-region\-\_\-@{winning\-\_\-region\-\_\-}!LearnSynthSAT@{Learn\-Synth\-S\-A\-T}}
+\subsubsection[{winning\-\_\-region\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} Learn\-Synth\-S\-A\-T\-::winning\-\_\-region\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthSAT_aced2bce789c7a93ed4b5391dd0690616}
+
+
+The current over-\/approximation of the winning region. 
+
+Only when \hyperlink{classLearnSynthSAT_a055b4699184d09bb7f6b15052ac684db}{compute\-Winning\-Region()} is done, this field will store the correct winning region. 
+
+Definition at line 238 of file Learn\-Synth\-S\-A\-T.\-h.
+
+
+
+Referenced by compute\-Winning\-Region(), compute\-Winning\-Region\-Plain(), compute\-Winning\-Region\-R\-G(), compute\-Winning\-Region\-R\-G\-R\-C(), debug\-Check\-Win\-Reg(), and run().
+
+\hypertarget{classLearnSynthSAT_aaa79e8772e9ce8e59dc14e3bb1784256}{\index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}!winning\-\_\-region\-\_\-large\-\_\-@{winning\-\_\-region\-\_\-large\-\_\-}}
+\index{winning\-\_\-region\-\_\-large\-\_\-@{winning\-\_\-region\-\_\-large\-\_\-}!LearnSynthSAT@{Learn\-Synth\-S\-A\-T}}
+\subsubsection[{winning\-\_\-region\-\_\-large\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} Learn\-Synth\-S\-A\-T\-::winning\-\_\-region\-\_\-large\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthSAT_aaa79e8772e9ce8e59dc14e3bb1784256}
+
+
+The current over-\/approximation of the winning region in an uncompressed form. 
+
+This \hyperlink{classCNF}{C\-N\-F} is logically equivalent to \hyperlink{classLearnSynthSAT_aced2bce789c7a93ed4b5391dd0690616}{winning\-\_\-region\-\_\-}. However, \hyperlink{classLearnSynthSAT_aced2bce789c7a93ed4b5391dd0690616}{winning\-\_\-region\-\_\-} is 'compressed' from time to time by removing redundant clauses (clauses that are implied by other clauses in the winning region). This field stores the uncompressed version of the winning region. Having the uncompressed winning region can be good because throwing away redundant clauses is not always beneficial. The \hyperlink{classCNF}{C\-N\-F} get smaller, but the solver may have to re-\/discover the removed clauses. 
+
+Definition at line 250 of file Learn\-Synth\-S\-A\-T.\-h.
+
+
+
+Referenced by compute\-Winning\-Region\-Plain(), compute\-Winning\-Region\-R\-G(), and compute\-Winning\-Region\-R\-G\-R\-C().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{LearnSynthSAT_8h}{Learn\-Synth\-S\-A\-T.\-h}\item 
+src/\hyperlink{LearnSynthSAT_8cpp}{Learn\-Synth\-S\-A\-T.\-cpp}\end{DoxyCompactItemize}

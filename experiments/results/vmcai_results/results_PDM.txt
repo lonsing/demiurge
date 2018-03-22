@@ -1,0 +1,1091 @@
+=====================  unr.aag =====================
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (unrealizable)
+=====================  eq1.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 2
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  ex1.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 3
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  ex2.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 4
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add2n.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 3
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add2y.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 3
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add4n.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 3
+[LOG] Overall execution time: 0.09 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.14 sec (Real time) / 0.09 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add4y.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 3
+[LOG] Overall execution time: 0.07 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.07 sec (Real time) / 0.07 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add6n.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 3
+[LOG] Overall execution time: 3.12 sec CPU time.
+[LOG] Overall execution time: 3 sec real time.
+Synthesis time: 3.13 sec (Real time) / 3.12 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add6y.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 3
+[LOG] Overall execution time: 2.65 sec CPU time.
+[LOG] Overall execution time: 2 sec real time.
+Synthesis time: 2.66 sec (Real time) / 2.65 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add8n.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 3
+[LOG] Overall execution time: 125.77 sec CPU time.
+[LOG] Overall execution time: 126 sec real time.
+Synthesis time: 125.78 sec (Real time) / 125.73 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add8y.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 3
+[LOG] Overall execution time: 86.77 sec CPU time.
+[LOG] Overall execution time: 87 sec real time.
+Synthesis time: 86.79 sec (Real time) / 86.69 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add10n.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 9999.50 sec (User CPU time)
+Timeout: 1
+=====================  add10y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.02 sec (Real time) / 9999.07 sec (User CPU time)
+Timeout: 1
+=====================  add12n.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.02 sec (Real time) / 9999.63 sec (User CPU time)
+Timeout: 1
+=====================  add12y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 9999.78 sec (User CPU time)
+Timeout: 1
+=====================  add14n.aag =====================
+=====================  add14y.aag =====================
+=====================  add16n.aag =====================
+=====================  add16y.aag =====================
+=====================  add18n.aag =====================
+=====================  add18y.aag =====================
+=====================  add20n.aag =====================
+=====================  add20y.aag =====================
+=====================  cnt2n.aag =====================
+[LOG] Found two equal clause sets: R2 and R3
+[LOG] Nr of iterations: 4
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt2y.aag =====================
+[LOG] Found two equal clause sets: R2 and R3
+[LOG] Nr of iterations: 4
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt3n.aag =====================
+[LOG] Found two equal clause sets: R4 and R5
+[LOG] Nr of iterations: 8
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt3y.aag =====================
+[LOG] Found two equal clause sets: R4 and R5
+[LOG] Nr of iterations: 8
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt4n.aag =====================
+[LOG] Found two equal clause sets: R8 and R9
+[LOG] Nr of iterations: 16
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt4y.aag =====================
+[LOG] Found two equal clause sets: R8 and R9
+[LOG] Nr of iterations: 16
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt5n.aag =====================
+[LOG] Found two equal clause sets: R16 and R17
+[LOG] Nr of iterations: 32
+[LOG] Overall execution time: 0.01 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.02 sec (Real time) / 0.01 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt5y.aag =====================
+[LOG] Found two equal clause sets: R16 and R17
+[LOG] Nr of iterations: 32
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt6n.aag =====================
+[LOG] Found two equal clause sets: R32 and R33
+[LOG] Nr of iterations: 64
+[LOG] Overall execution time: 0.1 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.10 sec (Real time) / 0.10 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt6y.aag =====================
+[LOG] Found two equal clause sets: R32 and R33
+[LOG] Nr of iterations: 64
+[LOG] Overall execution time: 0.06 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.06 sec (Real time) / 0.06 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt7n.aag =====================
+[LOG] Found two equal clause sets: R64 and R65
+[LOG] Nr of iterations: 128
+[LOG] Overall execution time: 0.6 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.62 sec (Real time) / 0.59 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt7y.aag =====================
+[LOG] Found two equal clause sets: R64 and R65
+[LOG] Nr of iterations: 128
+[LOG] Overall execution time: 0.4 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.41 sec (Real time) / 0.40 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt8n.aag =====================
+[LOG] Found two equal clause sets: R128 and R129
+[LOG] Nr of iterations: 256
+[LOG] Overall execution time: 3.93 sec CPU time.
+[LOG] Overall execution time: 4 sec real time.
+Synthesis time: 3.95 sec (Real time) / 3.90 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt8y.aag =====================
+[LOG] Found two equal clause sets: R128 and R129
+[LOG] Nr of iterations: 256
+[LOG] Overall execution time: 3.08 sec CPU time.
+[LOG] Overall execution time: 3 sec real time.
+Synthesis time: 3.10 sec (Real time) / 3.06 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt9n.aag =====================
+[LOG] Found two equal clause sets: R256 and R257
+[LOG] Nr of iterations: 512
+[LOG] Overall execution time: 26.81 sec CPU time.
+[LOG] Overall execution time: 27 sec real time.
+Synthesis time: 26.84 sec (Real time) / 26.73 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt9y.aag =====================
+[LOG] Found two equal clause sets: R256 and R257
+[LOG] Nr of iterations: 512
+[LOG] Overall execution time: 24.18 sec CPU time.
+[LOG] Overall execution time: 24 sec real time.
+Synthesis time: 24.20 sec (Real time) / 24.12 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt10n.aag =====================
+[LOG] Found two equal clause sets: R512 and R513
+[LOG] Nr of iterations: 1024
+[LOG] Overall execution time: 212.6 sec CPU time.
+[LOG] Overall execution time: 213 sec real time.
+Synthesis time: 212.64 sec (Real time) / 212.34 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt10y.aag =====================
+[LOG] Found two equal clause sets: R512 and R513
+[LOG] Nr of iterations: 1024
+[LOG] Overall execution time: 207.58 sec CPU time.
+[LOG] Overall execution time: 207 sec real time.
+Synthesis time: 207.63 sec (Real time) / 207.33 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt11n.aag =====================
+[LOG] Found two equal clause sets: R1024 and R1025
+[LOG] Nr of iterations: 2048
+[LOG] Overall execution time: 1846.41 sec CPU time.
+[LOG] Overall execution time: 1847 sec real time.
+Synthesis time: 1846.48 sec (Real time) / 1845.39 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt11y.aag =====================
+[LOG] Found two equal clause sets: R1024 and R1025
+[LOG] Nr of iterations: 2048
+[LOG] Overall execution time: 1800.64 sec CPU time.
+[LOG] Overall execution time: 1800 sec real time.
+Synthesis time: 1800.71 sec (Real time) / 1799.84 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt15n.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.18 sec (Real time) / 9998.54 sec (User CPU time)
+Timeout: 1
+=====================  cnt15y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.17 sec (Real time) / 9998.59 sec (User CPU time)
+Timeout: 1
+=====================  cnt20n.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.21 sec (Real time) / 9998.28 sec (User CPU time)
+Timeout: 1
+=====================  cnt20y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.16 sec (Real time) / 9998.48 sec (User CPU time)
+Timeout: 1
+=====================  cnt25n.aag =====================
+=====================  cnt25y.aag =====================
+=====================  cnt30n.aag =====================
+=====================  cnt30y.aag =====================
+=====================  mv2n.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 4
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv2y.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 4
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs2n.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 4
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs2y.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 4
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv4n.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 4
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv4y.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 4
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs4n.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 4
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs4y.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 4
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv8n.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 4
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv8y.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 4
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs8n.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 4
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs8y.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 4
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv12n.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 4
+[LOG] Overall execution time: 0.01 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.02 sec (Real time) / 0.01 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv12y.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 4
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs12n.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 4
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs12y.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 4
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv16n.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 4
+[LOG] Overall execution time: 0.02 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv16y.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 4
+[LOG] Overall execution time: 0.01 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs16n.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 4
+[LOG] Overall execution time: 0.01 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs16y.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 4
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs18n.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 4
+[LOG] Overall execution time: 0.01 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs18y.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 4
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv20n.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 4
+[LOG] Overall execution time: 0.04 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.04 sec (Real time) / 0.04 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv20y.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 4
+[LOG] Overall execution time: 0.02 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs20n.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 4
+[LOG] Overall execution time: 0.01 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs20y.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 4
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs22n.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 4
+[LOG] Overall execution time: 0.01 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs22y.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 4
+[LOG] Overall execution time: 0.01 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs24n.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 4
+[LOG] Overall execution time: 0.02 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs24y.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 4
+[LOG] Overall execution time: 0.01 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs28n.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 4
+[LOG] Overall execution time: 0.02 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.03 sec (Real time) / 0.02 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs28y.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 4
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mult2.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 2
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mult4.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 2
+[LOG] Overall execution time: 0.1 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.11 sec (Real time) / 0.11 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mult5.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 2
+[LOG] Overall execution time: 0.94 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.95 sec (Real time) / 0.94 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mult6.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 2
+[LOG] Overall execution time: 6.69 sec CPU time.
+[LOG] Overall execution time: 6 sec real time.
+Synthesis time: 6.72 sec (Real time) / 6.69 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mult7.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 2
+[LOG] Overall execution time: 44.63 sec CPU time.
+[LOG] Overall execution time: 45 sec real time.
+Synthesis time: 44.65 sec (Real time) / 44.63 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mult8.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 2
+[LOG] Overall execution time: 284.24 sec CPU time.
+[LOG] Overall execution time: 284 sec real time.
+Synthesis time: 284.26 sec (Real time) / 284.18 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mult9.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 2
+[LOG] Overall execution time: 1634.53 sec CPU time.
+[LOG] Overall execution time: 1635 sec real time.
+Synthesis time: 1634.49 sec (Real time) / 1634.37 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mult10.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.02 sec (Real time) / 9999.36 sec (User CPU time)
+Timeout: 1
+=====================  mult11.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 9999.88 sec (User CPU time)
+Timeout: 1
+=====================  mult12.aag =====================
+=====================  mult13.aag =====================
+=====================  mult14.aag =====================
+=====================  mult15.aag =====================
+=====================  mult16.aag =====================
+=====================  bs8n.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 3
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  bs8y.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 3
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  bs16n.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 3
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  bs16y.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 3
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  bs32n.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 3
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  bs32y.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 3
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  bs64n.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 3
+[LOG] Overall execution time: 0.01 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.02 sec (Real time) / 0.01 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  bs64y.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 3
+[LOG] Overall execution time: 0.02 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  bs128n.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 3
+[LOG] Overall execution time: 0.04 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.04 sec (Real time) / 0.04 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  bs128y.aag =====================
+[LOG] Found two equal clause sets: R1 and R2
+[LOG] Nr of iterations: 3
+[LOG] Overall execution time: 0.04 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.04 sec (Real time) / 0.03 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay2n.aag =====================
+[LOG] Found two equal clause sets: R4 and R5
+[LOG] Nr of iterations: 6
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay2y.aag =====================
+[LOG] Found two equal clause sets: R4 and R5
+[LOG] Nr of iterations: 6
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay4n.aag =====================
+[LOG] Found two equal clause sets: R16 and R17
+[LOG] Nr of iterations: 18
+[LOG] Overall execution time: 0.01 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay4y.aag =====================
+[LOG] Found two equal clause sets: R16 and R17
+[LOG] Nr of iterations: 18
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay6n.aag =====================
+[LOG] Found two equal clause sets: R64 and R65
+[LOG] Nr of iterations: 66
+[LOG] Overall execution time: 0.32 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.33 sec (Real time) / 0.32 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay6y.aag =====================
+[LOG] Found two equal clause sets: R64 and R65
+[LOG] Nr of iterations: 66
+[LOG] Overall execution time: 0.11 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.12 sec (Real time) / 0.11 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay8n.aag =====================
+[LOG] Found two equal clause sets: R256 and R257
+[LOG] Nr of iterations: 258
+[LOG] Overall execution time: 5.52 sec CPU time.
+[LOG] Overall execution time: 5 sec real time.
+Synthesis time: 5.54 sec (Real time) / 5.47 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay8y.aag =====================
+[LOG] Found two equal clause sets: R256 and R257
+[LOG] Nr of iterations: 258
+[LOG] Overall execution time: 4.08 sec CPU time.
+[LOG] Overall execution time: 4 sec real time.
+Synthesis time: 4.10 sec (Real time) / 4.04 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay10n.aag =====================
+[LOG] Found two equal clause sets: R256 and R257
+[LOG] Nr of iterations: 258
+[LOG] Overall execution time: 8.49 sec CPU time.
+[LOG] Overall execution time: 9 sec real time.
+Synthesis time: 8.51 sec (Real time) / 8.41 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay10y.aag =====================
+[LOG] Found two equal clause sets: R256 and R257
+[LOG] Nr of iterations: 258
+[LOG] Overall execution time: 8.1 sec CPU time.
+[LOG] Overall execution time: 8 sec real time.
+Synthesis time: 8.12 sec (Real time) / 8.04 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay12n.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.33 sec (Real time) / 9997.83 sec (User CPU time)
+Timeout: 1
+=====================  stay12y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.22 sec (Real time) / 9998.15 sec (User CPU time)
+Timeout: 1
+=====================  stay14n.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.32 sec (Real time) / 9997.66 sec (User CPU time)
+Timeout: 1
+=====================  stay14y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.26 sec (Real time) / 9998.10 sec (User CPU time)
+Timeout: 1
+=====================  stay16n.aag =====================
+=====================  stay16y.aag =====================
+=====================  stay18n.aag =====================
+=====================  stay18y.aag =====================
+=====================  stay20n.aag =====================
+=====================  stay20y.aag =====================
+=====================  stay22n.aag =====================
+=====================  stay22y.aag =====================
+=====================  stay24n.aag =====================
+=====================  stay24y.aag =====================
+=====================  genbuf1c3y.aag =====================
+[LOG] Found two equal clause sets: R24 and R25
+[LOG] Nr of iterations: 71
+[LOG] Overall execution time: 10.88 sec CPU time.
+[LOG] Overall execution time: 11 sec real time.
+Synthesis time: 10.90 sec (Real time) / 10.82 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  genbuf2c3y.aag =====================
+[LOG] Found two equal clause sets: R65 and R66
+[LOG] Nr of iterations: 148
+[LOG] Overall execution time: 605.13 sec CPU time.
+[LOG] Overall execution time: 605 sec real time.
+Synthesis time: 605.22 sec (Real time) / 603.92 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  genbuf3c3y.aag =====================
+[LOG] Found two equal clause sets: R70 and R71
+[LOG] Nr of iterations: 161
+[LOG] Overall execution time: 3750.63 sec CPU time.
+[LOG] Overall execution time: 3751 sec real time.
+Synthesis time: 3750.73 sec (Real time) / 3746.88 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  genbuf4c3y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.59 sec (Real time) / 9993.53 sec (User CPU time)
+Timeout: 1
+=====================  genbuf5c3y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.44 sec (Real time) / 9994.99 sec (User CPU time)
+Timeout: 1
+=====================  genbuf6c3y.aag =====================
+=====================  genbuf7c3y.aag =====================
+=====================  genbuf8c3y.aag =====================
+=====================  genbuf9c3y.aag =====================
+=====================  genbuf10c3y.aag =====================
+=====================  genbuf11c3y.aag =====================
+=====================  genbuf12c3y.aag =====================
+=====================  genbuf13c3y.aag =====================
+=====================  genbuf14c3y.aag =====================
+=====================  genbuf15c3y.aag =====================
+=====================  genbuf16c3y.aag =====================
+=====================  genbuf1b4y.aag =====================
+[LOG] Found two equal clause sets: R22 and R23
+[LOG] Nr of iterations: 46
+[LOG] Overall execution time: 6.67 sec CPU time.
+[LOG] Overall execution time: 7 sec real time.
+Synthesis time: 6.68 sec (Real time) / 6.62 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  genbuf2b4y.aag =====================
+[LOG] Found two equal clause sets: R79 and R80
+[LOG] Nr of iterations: 160
+[LOG] Overall execution time: 1065.89 sec CPU time.
+[LOG] Overall execution time: 1066 sec real time.
+Synthesis time: 1066.03 sec (Real time) / 1064.09 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  genbuf3b4y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.73 sec (Real time) / 9992.59 sec (User CPU time)
+Timeout: 1
+=====================  genbuf4b4y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.53 sec (Real time) / 9994.49 sec (User CPU time)
+Timeout: 1
+=====================  genbuf5b4y.aag =====================
+=====================  genbuf6b4y.aag =====================
+=====================  genbuf7b4y.aag =====================
+=====================  genbuf8b4y.aag =====================
+=====================  genbuf9b4y.aag =====================
+=====================  genbuf10b4y.aag =====================
+=====================  genbuf11b4y.aag =====================
+=====================  genbuf12b4y.aag =====================
+=====================  genbuf13b4y.aag =====================
+=====================  genbuf14b4y.aag =====================
+=====================  genbuf15b4y.aag =====================
+=====================  genbuf16b4y.aag =====================
+=====================  genbuf1f4y.aag =====================
+[LOG] Found two equal clause sets: R22 and R23
+[LOG] Nr of iterations: 50
+[LOG] Overall execution time: 6.58 sec CPU time.
+[LOG] Overall execution time: 7 sec real time.
+Synthesis time: 6.59 sec (Real time) / 6.54 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  genbuf2f4y.aag =====================
+[LOG] Found two equal clause sets: R99 and R100
+[LOG] Nr of iterations: 203
+[LOG] Overall execution time: 1786.43 sec CPU time.
+[LOG] Overall execution time: 1786 sec real time.
+Synthesis time: 1786.61 sec (Real time) / 1783.41 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  genbuf3f4y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.64 sec (Real time) / 9992.87 sec (User CPU time)
+Timeout: 1
+=====================  genbuf4f4y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.34 sec (Real time) / 9995.33 sec (User CPU time)
+Timeout: 1
+=====================  genbuf5f5y.aag =====================
+=====================  genbuf6f6y.aag =====================
+=====================  genbuf7f7y.aag =====================
+=====================  genbuf8f8y.aag =====================
+=====================  genbuf9f9y.aag =====================
+=====================  genbuf10f10y.aag =====================
+=====================  genbuf11f11y.aag =====================
+=====================  genbuf12f12y.aag =====================
+=====================  genbuf13f13y.aag =====================
+=====================  genbuf14f14y.aag =====================
+=====================  genbuf15f15y.aag =====================
+=====================  genbuf16f16y.aag =====================
+=====================  amba2c7y.aag =====================
+[LOG] Found two equal clause sets: R53 and R54
+[LOG] Nr of iterations: 108
+[LOG] Overall execution time: 646.8 sec CPU time.
+[LOG] Overall execution time: 646 sec real time.
+Synthesis time: 646.88 sec (Real time) / 645.60 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  amba3c5y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.40 sec (Real time) / 9995.15 sec (User CPU time)
+Timeout: 1
+=====================  amba4c7y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.27 sec (Real time) / 9996.16 sec (User CPU time)
+Timeout: 1
+=====================  amba5c5y.aag =====================
+=====================  amba6c5y.aag =====================
+=====================  amba7c5y.aag =====================
+=====================  amba8c7y.aag =====================
+=====================  amba9c5y.aag =====================
+=====================  amba10c5y.aag =====================
+=====================  amba2b9y.aag =====================
+[LOG] Found two equal clause sets: R50 and R51
+[LOG] Nr of iterations: 100
+[LOG] Overall execution time: 1150.83 sec CPU time.
+[LOG] Overall execution time: 1151 sec real time.
+Synthesis time: 1150.95 sec (Real time) / 1149.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  amba3b5y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.34 sec (Real time) / 9995.98 sec (User CPU time)
+Timeout: 1
+=====================  amba4b9y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.14 sec (Real time) / 9998.01 sec (User CPU time)
+Timeout: 1
+=====================  amba5b5y.aag =====================
+=====================  amba6b5y.aag =====================
+=====================  amba7b5y.aag =====================
+=====================  amba8b6y.aag =====================
+=====================  amba9b5y.aag =====================
+=====================  amba10b5y.aag =====================
+=====================  amba2f9y.aag =====================
+[LOG] Found two equal clause sets: R58 and R59
+[LOG] Nr of iterations: 94
+[LOG] Overall execution time: 1013.35 sec CPU time.
+[LOG] Overall execution time: 1013 sec real time.
+Synthesis time: 1013.43 sec (Real time) / 1011.92 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  amba3f9y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.27 sec (Real time) / 9996.91 sec (User CPU time)
+Timeout: 1
+=====================  amba4f25y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.11 sec (Real time) / 9998.18 sec (User CPU time)
+Timeout: 1
+=====================  amba5f17y.aag =====================
+=====================  amba6f21y.aag =====================
+=====================  amba7f25y.aag =====================
+=====================  amba8f57y.aag =====================
+=====================  amba9f33y.aag =====================
+=====================  amba10f37y.aag =====================

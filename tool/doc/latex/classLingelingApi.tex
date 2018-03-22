@@ -1,0 +1,947 @@
+\hypertarget{classLingelingApi}{\section{Lingeling\-Api Class Reference}
+\label{classLingelingApi}\index{Lingeling\-Api@{Lingeling\-Api}}
+}
+
+
+Interfaces the Lingeling S\-A\-T-\/solver via its A\-P\-I.  
+
+
+
+
+{\ttfamily \#include $<$Lingeling\-Api.\-h$>$}
+
+Inheritance diagram for Lingeling\-Api\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classLingelingApi}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLingelingApi_a9a66bc58b8bbe631c82d3c80173c947f}{Lingeling\-Api} (bool rand\-\_\-models=false, bool min\-\_\-cores=true)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classLingelingApi_aae29bce532ab33b867d5cc4c96f80cd2}{$\sim$\-Lingeling\-Api} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classLingelingApi_a38358f64ded244e2e3d843d0565f0177}{is\-Sat} (const \hyperlink{classCNF}{C\-N\-F} \&cnf)
+\begin{DoxyCompactList}\small\item\em Checks if a \hyperlink{classCNF}{C\-N\-F} is satisfiable. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classLingelingApi_a8f147b59f0ebabc35a20d295f28d499f}{is\-Sat\-Model\-Or\-Core} (const \hyperlink{classCNF}{C\-N\-F} \&cnf, const vector$<$ int $>$ \&assumptions, const vector$<$ int $>$ \&vars\-\_\-of\-\_\-interest, vector$<$ int $>$ \&model\-\_\-or\-\_\-core)
+\begin{DoxyCompactList}\small\item\em Checks if a \hyperlink{classCNF}{C\-N\-F} is satisfiable and extracts a model or an unsatisfiable core. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classLingelingApi_a844da6cbdf38b7cc8abd0b1710350be2}{start\-Incremental\-Session} (const vector$<$ int $>$ \&vars\-\_\-to\-\_\-keep, bool use\-\_\-push=true)
+\begin{DoxyCompactList}\small\item\em Starts a new incremental session. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classLingelingApi_a4200b2ca7b1694898434ae9764f5baf6}{clear\-Incremental\-Session} ()
+\begin{DoxyCompactList}\small\item\em Deletes the solver instance that is used in the incremental session. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classLingelingApi_ae9e54e64007c98add90e142a5c38d4bc}{inc\-Add\-C\-N\-F} (const \hyperlink{classCNF}{C\-N\-F} \&cnf)
+\begin{DoxyCompactList}\small\item\em Adds a new \hyperlink{classCNF}{C\-N\-F} to the current incremental session. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classLingelingApi_afb3e0d0ab541b89ef6c281145f53105f}{inc\-Add\-Clause} (const vector$<$ int $>$ \&clause)
+\begin{DoxyCompactList}\small\item\em Adds a new clause to the current incremental session. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classLingelingApi_aa5c928ad16d2dc79d42b977237d377e0}{inc\-Add\-Unit\-Clause} (int lit)
+\begin{DoxyCompactList}\small\item\em Adds a new unit clause to the current incremental session. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classLingelingApi_a54bf3198e6bb2dd3ebda768272337955}{inc\-Add2\-Lit\-Clause} (int lit1, int lit2)
+\begin{DoxyCompactList}\small\item\em Adds a new clause consisting of 2 literals to the current incremental session. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classLingelingApi_ad05f795bbf472fe5386164a74a8ecd86}{inc\-Add3\-Lit\-Clause} (int lit1, int lit2, int lit3)
+\begin{DoxyCompactList}\small\item\em Adds a new clause consisting of 3 literals to the current incremental session. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classLingelingApi_a6dc0eb0582d6afda381fc05a5820433c}{inc\-Add\-Cube} (const vector$<$ int $>$ \&cube)
+\begin{DoxyCompactList}\small\item\em Adds a new cube to the current incremental session. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classLingelingApi_afefd24f97e49aed7cbaf25140a6b7741}{inc\-Add\-Neg\-Cube\-As\-Clause} (const vector$<$ int $>$ \&cube)
+\begin{DoxyCompactList}\small\item\em Adds the negation of a given cube (which is a clause) to the incremental session. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classLingelingApi_a7a96e3b1078e40305f8b5e329f0a1e26}{inc\-Is\-Sat} ()
+\begin{DoxyCompactList}\small\item\em Checks if a the \hyperlink{classCNF}{C\-N\-F} in the incremental session is satisfiable. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classLingelingApi_a192ddd0f1d27617570c759b3496ea90d}{inc\-Is\-Sat} (const vector$<$ int $>$ \&assumptions)
+\begin{DoxyCompactList}\small\item\em Checks if a the \hyperlink{classCNF}{C\-N\-F} in the incremental session is satisfiable under assumptions. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classLingelingApi_a5f70806ab80cb622f4f7286f66284c4e}{inc\-Is\-Sat\-Model\-Or\-Core} (const vector$<$ int $>$ \&assumptions, const vector$<$ int $>$ \&vars\-\_\-of\-\_\-interest, vector$<$ int $>$ \&model\-\_\-or\-\_\-core)
+\begin{DoxyCompactList}\small\item\em Checks the \hyperlink{classCNF}{C\-N\-F} in the incremental session and computes a model or unsat core. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classLingelingApi_a95680a60e64dccddbe007ef7d4c8a960}{inc\-Is\-Sat\-Model\-Or\-Core} (const vector$<$ int $>$ \&core\-\_\-assumptions, const vector$<$ int $>$ \&more\-\_\-assumptions, const vector$<$ int $>$ \&vars\-\_\-of\-\_\-interest, vector$<$ int $>$ \&model\-\_\-or\-\_\-core)
+\begin{DoxyCompactList}\small\item\em Computes a satisfying assignment or core using additional assumptions. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classLingelingApi_a91c858d2a36a4fbe580909a793802a76}{inc\-Push} ()
+\begin{DoxyCompactList}\small\item\em Stores the current state of the incremental session on a stack. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classLingelingApi_afe43e1243338a332803fff470eedbf7a}{inc\-Pop} ()
+\begin{DoxyCompactList}\small\item\em Restores the incremental session back to the point where \hyperlink{classLingelingApi_a91c858d2a36a4fbe580909a793802a76}{inc\-Push()} was called. \end{DoxyCompactList}\item 
+void \hyperlink{classSatSolver_a159fc9658709e5aeba2844a09454b2cb}{do\-Min\-Cores} (bool min\-\_\-cores=true)
+\begin{DoxyCompactList}\small\item\em Enables or disables the computation of M\-I\-N\-I\-M\-A\-L unsatisfiable cores. \end{DoxyCompactList}\item 
+void \hyperlink{classSatSolver_ae229c5e277350710412fce0e867dc566}{do\-Rand\-Models} (bool rand\-\_\-models=true)
+\begin{DoxyCompactList}\small\item\em Enables or disables the randomization of satisfying assignments. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef list$<$ L\-G\-L $\ast$ $>$\\*
+\-::const\-\_\-iterator \hyperlink{classLingelingApi_a5c16b047da9b5bd344f30a855dac52e7}{Stack\-Const\-Iter}
+\begin{DoxyCompactList}\small\item\em A type for a const-\/iterator over the incremental session stack. \end{DoxyCompactList}\item 
+typedef list$<$ L\-G\-L $\ast$ $>$\-::iterator \hyperlink{classLingelingApi_aa4ab290e2a0f65677b6e58b675741535}{Stack\-Iter}
+\begin{DoxyCompactList}\small\item\em A type for an iterator over the incremental session stack. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classLingelingApi_a1b2cec409be65f2bf885593c83d73883}{rand\-Model} (L\-G\-L $\ast$solver, const vector$<$ int $>$ \&assumptions, vector$<$ int $>$ \&model)
+\begin{DoxyCompactList}\small\item\em A helper to randomize a satisfying assignment after it has been computed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+list$<$ L\-G\-L $\ast$ $>$ \hyperlink{classLingelingApi_af9b5703f6611337668def5aaf6be465a}{incr\-\_\-stack\-\_\-}
+\begin{DoxyCompactList}\small\item\em A stack of incremental session contexts. \end{DoxyCompactList}\item 
+bool \hyperlink{classSatSolver_adfeecebfd09606c82b5c57cfe5aad813}{min\-\_\-cores\-\_\-}
+\begin{DoxyCompactList}\small\item\em Indicates if the unsat cores returned by the solver should be minimized further. \end{DoxyCompactList}\item 
+bool \hyperlink{classSatSolver_a73fed24d8fb4da85ef82dc53ac5f28c7}{rand\-\_\-models\-\_\-}
+\begin{DoxyCompactList}\small\item\em Indicates if satisfying assignments should be randomized. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLingelingApi_ac2716f603b9029e3083a1039eb1ed0bd}{Lingeling\-Api} (const \hyperlink{classLingelingApi}{Lingeling\-Api} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classLingelingApi}{Lingeling\-Api} \& \hyperlink{classLingelingApi_a1963aa6729bd9203863010b9bbdb1683}{operator=} (const \hyperlink{classLingelingApi}{Lingeling\-Api} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interfaces the Lingeling S\-A\-T-\/solver via its A\-P\-I. 
+
+This class represents an interface to the S\-A\-T-\/solver Lingeling (see \href{http://fmv.jku.at/lingeling/}{\tt http\-://fmv.\-jku.\-at/lingeling/}). It is a concrete implementation of the \hyperlink{classSatSolver}{Sat\-Solver} interface. For a given \hyperlink{classCNF}{C\-N\-F}, this class is able to determine satisfiability. Furthermore, in case of satisfiability, it can extract satisfying assignments. In case of unsatisfiability, it can compute an unsatisfiable core. It can be used in two different ways. In the incremental usage scenario, all information the solver has learned so far is retained. Methods for incremental solving start with 'inc'. Other methods (like \hyperlink{classLingelingApi_a38358f64ded244e2e3d843d0565f0177}{is\-Sat()} or \hyperlink{classLingelingApi_a8f147b59f0ebabc35a20d295f28d499f}{is\-Sat\-Model\-Or\-Core()}) instantiate a fresh solver instance for every call.
+
+\begin{DoxyAuthor}{Author}
+Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0.\-0 
+\end{DoxyVersion}
+
+
+Definition at line 55 of file Lingeling\-Api.\-h.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classLingelingApi_a5c16b047da9b5bd344f30a855dac52e7}{\index{Lingeling\-Api@{Lingeling\-Api}!Stack\-Const\-Iter@{Stack\-Const\-Iter}}
+\index{Stack\-Const\-Iter@{Stack\-Const\-Iter}!LingelingApi@{Lingeling\-Api}}
+\subsubsection[{Stack\-Const\-Iter}]{\setlength{\rightskip}{0pt plus 5cm}list$<$ L\-G\-L $\ast$ $>$\-::const\-\_\-iterator {\bf Lingeling\-Api\-::\-Stack\-Const\-Iter}\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLingelingApi_a5c16b047da9b5bd344f30a855dac52e7}
+
+
+A type for a const-\/iterator over the incremental session stack. 
+
+
+
+Definition at line 390 of file Lingeling\-Api.\-h.
+
+\hypertarget{classLingelingApi_aa4ab290e2a0f65677b6e58b675741535}{\index{Lingeling\-Api@{Lingeling\-Api}!Stack\-Iter@{Stack\-Iter}}
+\index{Stack\-Iter@{Stack\-Iter}!LingelingApi@{Lingeling\-Api}}
+\subsubsection[{Stack\-Iter}]{\setlength{\rightskip}{0pt plus 5cm}list$<$ L\-G\-L $\ast$ $>$\-::iterator {\bf Lingeling\-Api\-::\-Stack\-Iter}\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLingelingApi_aa4ab290e2a0f65677b6e58b675741535}
+
+
+A type for an iterator over the incremental session stack. 
+
+
+
+Definition at line 396 of file Lingeling\-Api.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classLingelingApi_a9a66bc58b8bbe631c82d3c80173c947f}{\index{Lingeling\-Api@{Lingeling\-Api}!Lingeling\-Api@{Lingeling\-Api}}
+\index{Lingeling\-Api@{Lingeling\-Api}!LingelingApi@{Lingeling\-Api}}
+\subsubsection[{Lingeling\-Api}]{\setlength{\rightskip}{0pt plus 5cm}Lingeling\-Api\-::\-Lingeling\-Api (
+\begin{DoxyParamCaption}
+\item[{bool}]{rand\-\_\-models = {\ttfamily false}, }
+\item[{bool}]{min\-\_\-cores = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}\label{classLingelingApi_a9a66bc58b8bbe631c82d3c80173c947f}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rand\-\_\-models} & A flag indicating if satisfying assignments should be randomized. This is done in a post-\/processing step (values are flipped randomly and then we check if this still constitutes a satisfying assignment). This is expensive. If this parameter is skipped, then satisfying assignments are not randomized. \\
+\hline
+{\em min\-\_\-cores} & A flag indicating if unsatisfiable cores returned by the solver should be minimized further by trying to drop one literal after the other. This makes the calls slower but produces potentially smaller cubes. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 38 of file Lingeling\-Api.\-cpp.
+
+\hypertarget{classLingelingApi_aae29bce532ab33b867d5cc4c96f80cd2}{\index{Lingeling\-Api@{Lingeling\-Api}!$\sim$\-Lingeling\-Api@{$\sim$\-Lingeling\-Api}}
+\index{$\sim$\-Lingeling\-Api@{$\sim$\-Lingeling\-Api}!LingelingApi@{Lingeling\-Api}}
+\subsubsection[{$\sim$\-Lingeling\-Api}]{\setlength{\rightskip}{0pt plus 5cm}Lingeling\-Api\-::$\sim$\-Lingeling\-Api (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classLingelingApi_aae29bce532ab33b867d5cc4c96f80cd2}
+
+
+Destructor. 
+
+
+
+Definition at line 45 of file Lingeling\-Api.\-cpp.
+
+
+
+References clear\-Incremental\-Session().
+
+\hypertarget{classLingelingApi_ac2716f603b9029e3083a1039eb1ed0bd}{\index{Lingeling\-Api@{Lingeling\-Api}!Lingeling\-Api@{Lingeling\-Api}}
+\index{Lingeling\-Api@{Lingeling\-Api}!LingelingApi@{Lingeling\-Api}}
+\subsubsection[{Lingeling\-Api}]{\setlength{\rightskip}{0pt plus 5cm}Lingeling\-Api\-::\-Lingeling\-Api (
+\begin{DoxyParamCaption}
+\item[{const {\bf Lingeling\-Api} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classLingelingApi_ac2716f603b9029e3083a1039eb1ed0bd}
+
+
+Copy constructor. 
+
+The copy constructor is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classLingelingApi_a4200b2ca7b1694898434ae9764f5baf6}{\index{Lingeling\-Api@{Lingeling\-Api}!clear\-Incremental\-Session@{clear\-Incremental\-Session}}
+\index{clear\-Incremental\-Session@{clear\-Incremental\-Session}!LingelingApi@{Lingeling\-Api}}
+\subsubsection[{clear\-Incremental\-Session}]{\setlength{\rightskip}{0pt plus 5cm}void Lingeling\-Api\-::clear\-Incremental\-Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classLingelingApi_a4200b2ca7b1694898434ae9764f5baf6}
+
+
+Deletes the solver instance that is used in the incremental session. 
+
+
+
+Implements \hyperlink{classSatSolver_a8118d2900f7acf31497cd2a27ad3b713}{Sat\-Solver}.
+
+
+
+Definition at line 151 of file Lingeling\-Api.\-cpp.
+
+
+
+References incr\-\_\-stack\-\_\-.
+
+
+
+Referenced by start\-Incremental\-Session(), and $\sim$\-Lingeling\-Api().
+
+\hypertarget{classSatSolver_a159fc9658709e5aeba2844a09454b2cb}{\index{Lingeling\-Api@{Lingeling\-Api}!do\-Min\-Cores@{do\-Min\-Cores}}
+\index{do\-Min\-Cores@{do\-Min\-Cores}!LingelingApi@{Lingeling\-Api}}
+\subsubsection[{do\-Min\-Cores}]{\setlength{\rightskip}{0pt plus 5cm}void Sat\-Solver\-::do\-Min\-Cores (
+\begin{DoxyParamCaption}
+\item[{bool}]{min\-\_\-cores = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}}\label{classSatSolver_a159fc9658709e5aeba2844a09454b2cb}
+
+
+Enables or disables the computation of M\-I\-N\-I\-M\-A\-L unsatisfiable cores. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min\-\_\-cores} & A flag indicating if unsatisfiable cores returned by the solver should be minimized further by trying to drop one literal after the other. This makes the calls slower but produces potentially smaller cubes. If the parameter is skipped the computation of minimal cores is enabled. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 47 of file Sat\-Solver.\-cpp.
+
+
+
+References Sat\-Solver\-::min\-\_\-cores\-\_\-.
+
+
+
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), and Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C().
+
+\hypertarget{classSatSolver_ae229c5e277350710412fce0e867dc566}{\index{Lingeling\-Api@{Lingeling\-Api}!do\-Rand\-Models@{do\-Rand\-Models}}
+\index{do\-Rand\-Models@{do\-Rand\-Models}!LingelingApi@{Lingeling\-Api}}
+\subsubsection[{do\-Rand\-Models}]{\setlength{\rightskip}{0pt plus 5cm}void Sat\-Solver\-::do\-Rand\-Models (
+\begin{DoxyParamCaption}
+\item[{bool}]{rand\-\_\-models = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}}\label{classSatSolver_ae229c5e277350710412fce0e867dc566}
+
+
+Enables or disables the randomization of satisfying assignments. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rand\-\_\-models} & A flag indicating if satisfying assignments should be randomized. This is done in a post-\/processing step (values are flipped randomly and then we check if this still constitutes a satisfying assignment). This is expensive. If this parameter is skipped, then randomization is enabled. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 53 of file Sat\-Solver.\-cpp.
+
+
+
+References Sat\-Solver\-::rand\-\_\-models\-\_\-.
+
+
+
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), and Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C().
+
+\hypertarget{classLingelingApi_a54bf3198e6bb2dd3ebda768272337955}{\index{Lingeling\-Api@{Lingeling\-Api}!inc\-Add2\-Lit\-Clause@{inc\-Add2\-Lit\-Clause}}
+\index{inc\-Add2\-Lit\-Clause@{inc\-Add2\-Lit\-Clause}!LingelingApi@{Lingeling\-Api}}
+\subsubsection[{inc\-Add2\-Lit\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}void Lingeling\-Api\-::inc\-Add2\-Lit\-Clause (
+\begin{DoxyParamCaption}
+\item[{int}]{lit1, }
+\item[{int}]{lit2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classLingelingApi_a54bf3198e6bb2dd3ebda768272337955}
+
+
+Adds a new clause consisting of 2 literals to the current incremental session. 
+
+\begin{DoxyPrecond}{Precondition}
+\hyperlink{classLingelingApi_a844da6cbdf38b7cc8abd0b1710350be2}{start\-Incremental\-Session()} must have been called before. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em lit1} & The first literal of the clause to add to the currently open incremental session. If this method is called after solving for the first time, be sure that the passed literal talks about a variables that have been mentioned in vars\-\_\-to\-\_\-keep when calling \hyperlink{classLingelingApi_a844da6cbdf38b7cc8abd0b1710350be2}{start\-Incremental\-Session()}. Otherwise, strange things can happen. \\
+\hline
+{\em lit2} & The second literal of the clause to add to the currently open incremental session (must be contained in vars\-\_\-to\-\_\-keep as well). \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classSatSolver_a791be541b59ef58a29a1c517fca943e7}{Sat\-Solver}.
+
+
+
+Definition at line 192 of file Lingeling\-Api.\-cpp.
+
+
+
+References incr\-\_\-stack\-\_\-, and M\-A\-S\-S\-E\-R\-T.
+
+\hypertarget{classLingelingApi_ad05f795bbf472fe5386164a74a8ecd86}{\index{Lingeling\-Api@{Lingeling\-Api}!inc\-Add3\-Lit\-Clause@{inc\-Add3\-Lit\-Clause}}
+\index{inc\-Add3\-Lit\-Clause@{inc\-Add3\-Lit\-Clause}!LingelingApi@{Lingeling\-Api}}
+\subsubsection[{inc\-Add3\-Lit\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}void Lingeling\-Api\-::inc\-Add3\-Lit\-Clause (
+\begin{DoxyParamCaption}
+\item[{int}]{lit1, }
+\item[{int}]{lit2, }
+\item[{int}]{lit3}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classLingelingApi_ad05f795bbf472fe5386164a74a8ecd86}
+
+
+Adds a new clause consisting of 3 literals to the current incremental session. 
+
+\begin{DoxyPrecond}{Precondition}
+\hyperlink{classLingelingApi_a844da6cbdf38b7cc8abd0b1710350be2}{start\-Incremental\-Session()} must have been called before. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em lit1} & The first literal of the clause to add to the currently open incremental session. If this method is called after solving for the first time, be sure that the passed literal talks about a variables that have been mentioned in vars\-\_\-to\-\_\-keep when calling \hyperlink{classLingelingApi_a844da6cbdf38b7cc8abd0b1710350be2}{start\-Incremental\-Session()}. Otherwise, strange things can happen. \\
+\hline
+{\em lit2} & The second literal of the clause to add to the currently open incremental session (must be contained in vars\-\_\-to\-\_\-keep as well). \\
+\hline
+{\em lit3} & The third literal of the clause to add to the currently open incremental session (must be contained in vars\-\_\-to\-\_\-keep as well). \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classSatSolver_abca288874a1b8ab1a90cb274eb885ace}{Sat\-Solver}.
+
+
+
+Definition at line 202 of file Lingeling\-Api.\-cpp.
+
+
+
+References incr\-\_\-stack\-\_\-, and M\-A\-S\-S\-E\-R\-T.
+
+\hypertarget{classLingelingApi_afb3e0d0ab541b89ef6c281145f53105f}{\index{Lingeling\-Api@{Lingeling\-Api}!inc\-Add\-Clause@{inc\-Add\-Clause}}
+\index{inc\-Add\-Clause@{inc\-Add\-Clause}!LingelingApi@{Lingeling\-Api}}
+\subsubsection[{inc\-Add\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}void Lingeling\-Api\-::inc\-Add\-Clause (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{clause}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classLingelingApi_afb3e0d0ab541b89ef6c281145f53105f}
+
+
+Adds a new clause to the current incremental session. 
+
+\begin{DoxyPrecond}{Precondition}
+\hyperlink{classLingelingApi_a844da6cbdf38b7cc8abd0b1710350be2}{start\-Incremental\-Session()} must have been called before. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em clause} & The clause (a disjunction of literals) to add (conjunct) to the currently open incremental session. If this method is called after solving for the first time, be sure that the passed clause talks only about variables that have been mentioned in vars\-\_\-to\-\_\-keep when calling \hyperlink{classLingelingApi_a844da6cbdf38b7cc8abd0b1710350be2}{start\-Incremental\-Session()}. Otherwise, strange things can happen. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classSatSolver_a9f91c104238b6e091513e0aa46970840}{Sat\-Solver}.
+
+
+
+Definition at line 173 of file Lingeling\-Api.\-cpp.
+
+
+
+References incr\-\_\-stack\-\_\-, and M\-A\-S\-S\-E\-R\-T.
+
+\hypertarget{classLingelingApi_ae9e54e64007c98add90e142a5c38d4bc}{\index{Lingeling\-Api@{Lingeling\-Api}!inc\-Add\-C\-N\-F@{inc\-Add\-C\-N\-F}}
+\index{inc\-Add\-C\-N\-F@{inc\-Add\-C\-N\-F}!LingelingApi@{Lingeling\-Api}}
+\subsubsection[{inc\-Add\-C\-N\-F}]{\setlength{\rightskip}{0pt plus 5cm}void Lingeling\-Api\-::inc\-Add\-C\-N\-F (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{cnf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classLingelingApi_ae9e54e64007c98add90e142a5c38d4bc}
+
+
+Adds a new \hyperlink{classCNF}{C\-N\-F} to the current incremental session. 
+
+\begin{DoxyPrecond}{Precondition}
+\hyperlink{classLingelingApi_a844da6cbdf38b7cc8abd0b1710350be2}{start\-Incremental\-Session()} must have been called before. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em cnf} & The \hyperlink{classCNF}{C\-N\-F} to add to the currently open incremental session. If this method is called after solving for the first time, be sure that the passed \hyperlink{classCNF}{C\-N\-F} talks only about variables that have been mentioned in vars\-\_\-to\-\_\-keep when calling \hyperlink{classLingelingApi_a844da6cbdf38b7cc8abd0b1710350be2}{start\-Incremental\-Session()}. Otherwise, strange things can happen. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classSatSolver_ab2581b192cb2c39a81a416a9f7416c9e}{Sat\-Solver}.
+
+
+
+Definition at line 159 of file Lingeling\-Api.\-cpp.
+
+
+
+References C\-N\-F\-::get\-Clauses(), incr\-\_\-stack\-\_\-, and M\-A\-S\-S\-E\-R\-T.
+
+\hypertarget{classLingelingApi_a6dc0eb0582d6afda381fc05a5820433c}{\index{Lingeling\-Api@{Lingeling\-Api}!inc\-Add\-Cube@{inc\-Add\-Cube}}
+\index{inc\-Add\-Cube@{inc\-Add\-Cube}!LingelingApi@{Lingeling\-Api}}
+\subsubsection[{inc\-Add\-Cube}]{\setlength{\rightskip}{0pt plus 5cm}void Lingeling\-Api\-::inc\-Add\-Cube (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{cube}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classLingelingApi_a6dc0eb0582d6afda381fc05a5820433c}
+
+
+Adds a new cube to the current incremental session. 
+
+That is, all literals of the cube are added as unit clauses to the current incremental session. For instance, if the cube \mbox{[}2, -\/4, 8\mbox{]} is passed as argument, then this method adds the three unit clauses \mbox{[}2\mbox{]}, \mbox{[}-\/4\mbox{]}, \mbox{[}8\mbox{]}.
+
+\begin{DoxyPrecond}{Precondition}
+\hyperlink{classLingelingApi_a844da6cbdf38b7cc8abd0b1710350be2}{start\-Incremental\-Session()} must have been called before. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em cube} & The cube (a conjunction of literals) to add (conjunct) to the currently open incremental session. All literals of this cube will be added as unit clauses. If this method is called after solving for the first time, be sure that the passed clause talks only about variables that have been mentioned in vars\-\_\-to\-\_\-keep when calling \hyperlink{classLingelingApi_a844da6cbdf38b7cc8abd0b1710350be2}{start\-Incremental\-Session()}. Otherwise, strange things can happen. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classSatSolver_a1f04f34bb04174489ed18d0b62241004}{Sat\-Solver}.
+
+
+
+Definition at line 213 of file Lingeling\-Api.\-cpp.
+
+
+
+References incr\-\_\-stack\-\_\-, and M\-A\-S\-S\-E\-R\-T.
+
+
+
+Referenced by inc\-Is\-Sat\-Model\-Or\-Core().
+
+\hypertarget{classLingelingApi_afefd24f97e49aed7cbaf25140a6b7741}{\index{Lingeling\-Api@{Lingeling\-Api}!inc\-Add\-Neg\-Cube\-As\-Clause@{inc\-Add\-Neg\-Cube\-As\-Clause}}
+\index{inc\-Add\-Neg\-Cube\-As\-Clause@{inc\-Add\-Neg\-Cube\-As\-Clause}!LingelingApi@{Lingeling\-Api}}
+\subsubsection[{inc\-Add\-Neg\-Cube\-As\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}void Lingeling\-Api\-::inc\-Add\-Neg\-Cube\-As\-Clause (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{cube}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classLingelingApi_afefd24f97e49aed7cbaf25140a6b7741}
+
+
+Adds the negation of a given cube (which is a clause) to the incremental session. 
+
+For instance, if the cube \mbox{[}2, -\/4, 8\mbox{]} is passed as argument, then this method adds the clauses \mbox{[}-\/2, 4, -\/8\mbox{]} to the current incremental session.
+
+\begin{DoxyPrecond}{Precondition}
+\hyperlink{classLingelingApi_a844da6cbdf38b7cc8abd0b1710350be2}{start\-Incremental\-Session()} must have been called before. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em cube} & The cube (a conjunction of literals) to negate and add (conjunct) to the currently open incremental session. If this method is called after solving for the first time, be sure that the passed cube talks only about variables that have been mentioned in vars\-\_\-to\-\_\-keep when calling \hyperlink{classLingelingApi_a844da6cbdf38b7cc8abd0b1710350be2}{start\-Incremental\-Session()}. Otherwise, strange things can happen. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classSatSolver_a6be2c564289a59057c4c6728a3aa9c2b}{Sat\-Solver}.
+
+
+
+Definition at line 225 of file Lingeling\-Api.\-cpp.
+
+
+
+References incr\-\_\-stack\-\_\-, and M\-A\-S\-S\-E\-R\-T.
+
+\hypertarget{classLingelingApi_aa5c928ad16d2dc79d42b977237d377e0}{\index{Lingeling\-Api@{Lingeling\-Api}!inc\-Add\-Unit\-Clause@{inc\-Add\-Unit\-Clause}}
+\index{inc\-Add\-Unit\-Clause@{inc\-Add\-Unit\-Clause}!LingelingApi@{Lingeling\-Api}}
+\subsubsection[{inc\-Add\-Unit\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}void Lingeling\-Api\-::inc\-Add\-Unit\-Clause (
+\begin{DoxyParamCaption}
+\item[{int}]{lit}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classLingelingApi_aa5c928ad16d2dc79d42b977237d377e0}
+
+
+Adds a new unit clause to the current incremental session. 
+
+\begin{DoxyPrecond}{Precondition}
+\hyperlink{classLingelingApi_a844da6cbdf38b7cc8abd0b1710350be2}{start\-Incremental\-Session()} must have been called before. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em lit} & The (one and only) literal of the unit clause to add to the currently open incremental session. If this method is called after solving for the first time, be sure that the passed literal talks about a variables that have been mentioned in vars\-\_\-to\-\_\-keep when calling \hyperlink{classLingelingApi_a844da6cbdf38b7cc8abd0b1710350be2}{start\-Incremental\-Session()}. Otherwise, strange things can happen. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classSatSolver_a5b39c45cd2a1abfe96c681515dfddb77}{Sat\-Solver}.
+
+
+
+Definition at line 183 of file Lingeling\-Api.\-cpp.
+
+
+
+References incr\-\_\-stack\-\_\-, and M\-A\-S\-S\-E\-R\-T.
+
+\hypertarget{classLingelingApi_a7a96e3b1078e40305f8b5e329f0a1e26}{\index{Lingeling\-Api@{Lingeling\-Api}!inc\-Is\-Sat@{inc\-Is\-Sat}}
+\index{inc\-Is\-Sat@{inc\-Is\-Sat}!LingelingApi@{Lingeling\-Api}}
+\subsubsection[{inc\-Is\-Sat}]{\setlength{\rightskip}{0pt plus 5cm}bool Lingeling\-Api\-::inc\-Is\-Sat (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classLingelingApi_a7a96e3b1078e40305f8b5e329f0a1e26}
+
+
+Checks if a the \hyperlink{classCNF}{C\-N\-F} in the incremental session is satisfiable. 
+
+\begin{DoxyPrecond}{Precondition}
+\hyperlink{classLingelingApi_a844da6cbdf38b7cc8abd0b1710350be2}{start\-Incremental\-Session()} must have been called before. 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+True in case of satisfiability, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classSatSolver_ab1aab4b96a36b2003450067a3799ae23}{Sat\-Solver}.
+
+
+
+Definition at line 235 of file Lingeling\-Api.\-cpp.
+
+
+
+References incr\-\_\-stack\-\_\-, and M\-A\-S\-S\-E\-R\-T.
+
+\hypertarget{classLingelingApi_a192ddd0f1d27617570c759b3496ea90d}{\index{Lingeling\-Api@{Lingeling\-Api}!inc\-Is\-Sat@{inc\-Is\-Sat}}
+\index{inc\-Is\-Sat@{inc\-Is\-Sat}!LingelingApi@{Lingeling\-Api}}
+\subsubsection[{inc\-Is\-Sat}]{\setlength{\rightskip}{0pt plus 5cm}bool Lingeling\-Api\-::inc\-Is\-Sat (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{assumptions}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classLingelingApi_a192ddd0f1d27617570c759b3496ea90d}
+
+
+Checks if a the \hyperlink{classCNF}{C\-N\-F} in the incremental session is satisfiable under assumptions. 
+
+This method checks if the \hyperlink{classCNF}{C\-N\-F} in the incremental session is satisfiable given that all literals passed in the vector 'assumptions' are true. The assumptions are not persistently added to the \hyperlink{classCNF}{C\-N\-F} of the incremental session.
+
+\begin{DoxyPrecond}{Precondition}
+\hyperlink{classLingelingApi_a844da6cbdf38b7cc8abd0b1710350be2}{start\-Incremental\-Session()} must have been called before. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em assumptions} & A vector of literals. This method then checks if the \hyperlink{classCNF}{C\-N\-F} of the incremental session is satisfiable given that all literals passed in this vector are true. The assumptions are not persistently added to the \hyperlink{classCNF}{C\-N\-F}. The assumptions must be a subset of the vars\-\_\-to\-\_\-keep passed to \hyperlink{classLingelingApi_a844da6cbdf38b7cc8abd0b1710350be2}{start\-Incremental\-Session()}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True in case of satisfiability, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classSatSolver_a1864787a33621efac7fc75fb6b25f080}{Sat\-Solver}.
+
+
+
+Definition at line 248 of file Lingeling\-Api.\-cpp.
+
+
+
+References incr\-\_\-stack\-\_\-, and M\-A\-S\-S\-E\-R\-T.
+
+\hypertarget{classLingelingApi_a5f70806ab80cb622f4f7286f66284c4e}{\index{Lingeling\-Api@{Lingeling\-Api}!inc\-Is\-Sat\-Model\-Or\-Core@{inc\-Is\-Sat\-Model\-Or\-Core}}
+\index{inc\-Is\-Sat\-Model\-Or\-Core@{inc\-Is\-Sat\-Model\-Or\-Core}!LingelingApi@{Lingeling\-Api}}
+\subsubsection[{inc\-Is\-Sat\-Model\-Or\-Core}]{\setlength{\rightskip}{0pt plus 5cm}bool Lingeling\-Api\-::inc\-Is\-Sat\-Model\-Or\-Core (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{assumptions, }
+\item[{const vector$<$ int $>$ \&}]{vars\-\_\-of\-\_\-interest, }
+\item[{vector$<$ int $>$ \&}]{model\-\_\-or\-\_\-core}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classLingelingApi_a5f70806ab80cb622f4f7286f66284c4e}
+
+
+Checks the \hyperlink{classCNF}{C\-N\-F} in the incremental session and computes a model or unsat core. 
+
+This method checks if the \hyperlink{classCNF}{C\-N\-F} of the incremental session is satisfiable given that all literals passed in the vector 'assumptions' is true. If this is the case, then a satisfying assignment will be written into model\-\_\-or\-\_\-core. You can specify which variables you want to have in the satisfying assignment using the vars\-\_\-of\-\_\-interest vector. The reason is that your \hyperlink{classCNF}{C\-N\-F} may contain thousands of temporary variables stemming from some Tseitin encoding, but usually one in only interested in the value of a few variables. In case of unsatisfiability, an unsatisfiable core is stored in model\-\_\-or\-\_\-core. The unsatisfiable core is a subset of the literals passed in 'assumptions' such that the \hyperlink{classCNF}{C\-N\-F} is still unsatisfiable when these literals hold.
+
+
+\begin{DoxyParams}{Parameters}
+{\em assumptions} & A vector of literals. This method then checks if the \hyperlink{classCNF}{C\-N\-F} of the incremental session is satisfiable given that all literals passed in this vector are true. The assumptions are not persistently added to the \hyperlink{classCNF}{C\-N\-F}. The assumptions must be a subset of the vars\-\_\-to\-\_\-keep passed to \hyperlink{classLingelingApi_a844da6cbdf38b7cc8abd0b1710350be2}{start\-Incremental\-Session()}. \\
+\hline
+{\em vars\-\_\-of\-\_\-interest} & The variables for which you want to have a value in case of satisfiability. vars\-\_\-of\-\_\-interest must be a subset of the vars\-\_\-to\-\_\-keep passed to \hyperlink{classLingelingApi_a844da6cbdf38b7cc8abd0b1710350be2}{start\-Incremental\-Session()}. \\
+\hline
+{\em model\-\_\-or\-\_\-core} & An empty vector. Depending on the outcome of the call, either a satisfying assignment (a cube over the variables passed in vars\-\_\-of\-\_\-interest) or an unsatisfiable core (a subset of the literals passed in 'assumptions') will be written into this vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True in case of satisfiability (of the \hyperlink{classCNF}{C\-N\-F} of the incremental session in conjunction conjuncted with all assumptions), false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classSatSolver_ad387fc06bacf2d48847f779c9db8461a}{Sat\-Solver}.
+
+
+
+Definition at line 264 of file Lingeling\-Api.\-cpp.
+
+
+
+References incr\-\_\-stack\-\_\-, M\-A\-S\-S\-E\-R\-T, Sat\-Solver\-::min\-\_\-cores\-\_\-, Sat\-Solver\-::rand\-\_\-models\-\_\-, rand\-Model(), and Utils\-::remove().
+
+
+
+Referenced by inc\-Is\-Sat\-Model\-Or\-Core().
+
+\hypertarget{classLingelingApi_a95680a60e64dccddbe007ef7d4c8a960}{\index{Lingeling\-Api@{Lingeling\-Api}!inc\-Is\-Sat\-Model\-Or\-Core@{inc\-Is\-Sat\-Model\-Or\-Core}}
+\index{inc\-Is\-Sat\-Model\-Or\-Core@{inc\-Is\-Sat\-Model\-Or\-Core}!LingelingApi@{Lingeling\-Api}}
+\subsubsection[{inc\-Is\-Sat\-Model\-Or\-Core}]{\setlength{\rightskip}{0pt plus 5cm}bool Lingeling\-Api\-::inc\-Is\-Sat\-Model\-Or\-Core (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{core\-\_\-assumptions, }
+\item[{const vector$<$ int $>$ \&}]{more\-\_\-assumptions, }
+\item[{const vector$<$ int $>$ \&}]{vars\-\_\-of\-\_\-interest, }
+\item[{vector$<$ int $>$ \&}]{model\-\_\-or\-\_\-core}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classLingelingApi_a95680a60e64dccddbe007ef7d4c8a960}
+
+
+Computes a satisfying assignment or core using additional assumptions. 
+
+In contrast to the previous method, this one allows to define two sets of assumptions. The core\-\_\-assumptions are used as basis for extracting an unsatisfiable core in case of unsatisfiability. The more\-\_\-assumptions are assumed but not considered for the computation of unsatisfiable cores. This is convenient to avoid calls to \hyperlink{classLingelingApi_a91c858d2a36a4fbe580909a793802a76}{inc\-Push()} and \hyperlink{classLingelingApi_afe43e1243338a332803fff470eedbf7a}{inc\-Pop()} when temporarily working under assumptions that should not be minimized for the unsatisfiable core.
+
+
+\begin{DoxyParams}{Parameters}
+{\em core\-\_\-assumptions} & A vector of literals. This method then checks if the \hyperlink{classCNF}{C\-N\-F} of the incremental session is satisfiable given that all literals passed in this vector and all literals passed in more\-\_\-assumptions are true. However, for computing the the unsatisfiable core, only the core\-\_\-assumptions will be minimized and the more\-\_\-assumptions stay as they are. That is, in case of unsatisfiability, model\-\_\-or\-\_\-core will contain a subset X of the core\-\_\-assumptions such that X \& more\-\_\-assumptions \& incremental\-\_\-cnf is still unsatisfiable. core\-\_\-assumptions must be a subset of the vars\-\_\-to\-\_\-keep passed to \hyperlink{classLingelingApi_a844da6cbdf38b7cc8abd0b1710350be2}{start\-Incremental\-Session()}. \\
+\hline
+{\em more\-\_\-assumptions} & A vector of assumptions that are assumed, but not minimized when an unsatisfiable core is computed. That is, in case of unsatisfiability, model\-\_\-or\-\_\-core will contain a subset X of the core\-\_\-assumptions such that X \& more\-\_\-assumptions \& incremental\-\_\-cnf is still unsatisfiable. more\-\_\-assumptions must be a subset of the vars\-\_\-to\-\_\-keep passed to \hyperlink{classLingelingApi_a844da6cbdf38b7cc8abd0b1710350be2}{start\-Incremental\-Session()}. \\
+\hline
+{\em vars\-\_\-of\-\_\-interest} & The variables for which you want to have a value in case of satisfiability. vars\-\_\-of\-\_\-interest must be a subset of the vars\-\_\-to\-\_\-keep passed to \hyperlink{classLingelingApi_a844da6cbdf38b7cc8abd0b1710350be2}{start\-Incremental\-Session()}. \\
+\hline
+{\em model\-\_\-or\-\_\-core} & An empty vector. Depending on the outcome of the call, either a satisfying assignment (a cube over the variables passed in vars\-\_\-of\-\_\-interest) or an unsatisfiable core (a subset of the literals passed in 'core\-\_\-assumptions') will be written into this vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True in case of satisfiability (of the \hyperlink{classCNF}{C\-N\-F} of the incremental session in conjunction conjuncted with all assumptions), false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classSatSolver_a29225bfab1f352cae27c68e9bda4d409}{Sat\-Solver}.
+
+
+
+Definition at line 329 of file Lingeling\-Api.\-cpp.
+
+
+
+References inc\-Add\-Cube(), inc\-Is\-Sat\-Model\-Or\-Core(), inc\-Pop(), and inc\-Push().
+
+\hypertarget{classLingelingApi_afe43e1243338a332803fff470eedbf7a}{\index{Lingeling\-Api@{Lingeling\-Api}!inc\-Pop@{inc\-Pop}}
+\index{inc\-Pop@{inc\-Pop}!LingelingApi@{Lingeling\-Api}}
+\subsubsection[{inc\-Pop}]{\setlength{\rightskip}{0pt plus 5cm}void Lingeling\-Api\-::inc\-Pop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classLingelingApi_afe43e1243338a332803fff470eedbf7a}
+
+
+Restores the incremental session back to the point where \hyperlink{classLingelingApi_a91c858d2a36a4fbe580909a793802a76}{inc\-Push()} was called. 
+
+
+
+Implements \hyperlink{classSatSolver_a436aae045eb04141c834df0b55947ee5}{Sat\-Solver}.
+
+
+
+Definition at line 423 of file Lingeling\-Api.\-cpp.
+
+
+
+References incr\-\_\-stack\-\_\-, and M\-A\-S\-S\-E\-R\-T.
+
+
+
+Referenced by inc\-Is\-Sat\-Model\-Or\-Core().
+
+\hypertarget{classLingelingApi_a91c858d2a36a4fbe580909a793802a76}{\index{Lingeling\-Api@{Lingeling\-Api}!inc\-Push@{inc\-Push}}
+\index{inc\-Push@{inc\-Push}!LingelingApi@{Lingeling\-Api}}
+\subsubsection[{inc\-Push}]{\setlength{\rightskip}{0pt plus 5cm}void Lingeling\-Api\-::inc\-Push (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classLingelingApi_a91c858d2a36a4fbe580909a793802a76}
+
+
+Stores the current state of the incremental session on a stack. 
+
+The state can be restored later by calling \hyperlink{classLingelingApi_afe43e1243338a332803fff470eedbf7a}{inc\-Pop()}. 
+
+Implements \hyperlink{classSatSolver_a4da0dff7082a91429e3311d279605be4}{Sat\-Solver}.
+
+
+
+Definition at line 413 of file Lingeling\-Api.\-cpp.
+
+
+
+References incr\-\_\-stack\-\_\-, and M\-A\-S\-S\-E\-R\-T.
+
+
+
+Referenced by inc\-Is\-Sat\-Model\-Or\-Core().
+
+\hypertarget{classLingelingApi_a38358f64ded244e2e3d843d0565f0177}{\index{Lingeling\-Api@{Lingeling\-Api}!is\-Sat@{is\-Sat}}
+\index{is\-Sat@{is\-Sat}!LingelingApi@{Lingeling\-Api}}
+\subsubsection[{is\-Sat}]{\setlength{\rightskip}{0pt plus 5cm}bool Lingeling\-Api\-::is\-Sat (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{cnf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classLingelingApi_a38358f64ded244e2e3d843d0565f0177}
+
+
+Checks if a \hyperlink{classCNF}{C\-N\-F} is satisfiable. 
+
+This method is not incremental. At aver call to this method, a new solver instance is created and deleted afterwards. This method does not interfere with an incremental session that may be open in parallel.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cnf} & The \hyperlink{classCNF}{C\-N\-F} formula for which we want to know if it is satisfiable. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True in case of satisfiability, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classSatSolver_a82f60f60db464fbe5c66a20ad673a573}{Sat\-Solver}.
+
+
+
+Definition at line 51 of file Lingeling\-Api.\-cpp.
+
+
+
+References C\-N\-F\-::get\-Clauses(), and M\-A\-S\-S\-E\-R\-T.
+
+
+
+Referenced by Learn\-Synth\-S\-A\-T\-::debug\-Check\-Win\-Reg(), Learn\-Synth\-Q\-B\-F\-Ind\-::debug\-Check\-Win\-Reg\-Reach(), and is\-Sat\-Model\-Or\-Core().
+
+\hypertarget{classLingelingApi_a8f147b59f0ebabc35a20d295f28d499f}{\index{Lingeling\-Api@{Lingeling\-Api}!is\-Sat\-Model\-Or\-Core@{is\-Sat\-Model\-Or\-Core}}
+\index{is\-Sat\-Model\-Or\-Core@{is\-Sat\-Model\-Or\-Core}!LingelingApi@{Lingeling\-Api}}
+\subsubsection[{is\-Sat\-Model\-Or\-Core}]{\setlength{\rightskip}{0pt plus 5cm}bool Lingeling\-Api\-::is\-Sat\-Model\-Or\-Core (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{cnf, }
+\item[{const vector$<$ int $>$ \&}]{assumptions, }
+\item[{const vector$<$ int $>$ \&}]{vars\-\_\-of\-\_\-interest, }
+\item[{vector$<$ int $>$ \&}]{model\-\_\-or\-\_\-core}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classLingelingApi_a8f147b59f0ebabc35a20d295f28d499f}
+
+
+Checks if a \hyperlink{classCNF}{C\-N\-F} is satisfiable and extracts a model or an unsatisfiable core. 
+
+This method is not incremental. At aver call to this method, a new solver instance is created and deleted afterwards. This method does not interfere with an incremental session that may be open in parallel. This method checks if the passed \hyperlink{classCNF}{C\-N\-F} is satisfiable given that all literals passed in the vector 'assumptions' is true. If this is the case, then a satisfying assignment will be written into model\-\_\-or\-\_\-core. You can specify which variables you want to have in the satisfying assignment using the vars\-\_\-of\-\_\-interest vector. The reason is that you \hyperlink{classCNF}{C\-N\-F} may contain thousands of temporary variables stemming from some Tseitin encoding, but usually one in only interested in the value of a few variables. In case of unsatisfiability, an unsatisfiable core is stored in model\-\_\-or\-\_\-core. The unsatisfiable core is a subset of the literals passed in 'assumptions' such that the \hyperlink{classCNF}{C\-N\-F} is still unsatisfiable when these literals hold.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cnf} & The \hyperlink{classCNF}{C\-N\-F} formula for which we want to know if it is satisfiable (in conjunction with the assumptions). \\
+\hline
+{\em assumptions} & A vector of literals. These literals are conjuncted to the \hyperlink{classCNF}{C\-N\-F} before solving. If you do not have any assumptions but want to decide the satisfiability of the cnf only, then simply leave this vector empty. \\
+\hline
+{\em vars\-\_\-of\-\_\-interest} & The variables for which you want to have a value in case of satisfiability. \\
+\hline
+{\em model\-\_\-or\-\_\-core} & An empty vector. Depending on the outcome of the call, either a satisfying assignment (a cube over the variables passed in vars\-\_\-of\-\_\-interest) or an unsatisfiable core (a subset of the literals passed in 'assumptions') will be written into this vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True in case of satisfiability (of the \hyperlink{classCNF}{C\-N\-F} conjuncted with all assumptions), false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classSatSolver_ad5cfce08969be5aaf5cd705c12c68818}{Sat\-Solver}.
+
+
+
+Definition at line 72 of file Lingeling\-Api.\-cpp.
+
+
+
+References C\-N\-F\-::add1\-Lit\-Clause(), C\-N\-F\-::get\-Clauses(), is\-Sat(), M\-A\-S\-S\-E\-R\-T, Sat\-Solver\-::min\-\_\-cores\-\_\-, Sat\-Solver\-::rand\-\_\-models\-\_\-, rand\-Model(), and Utils\-::remove().
+
+\hypertarget{classLingelingApi_a1963aa6729bd9203863010b9bbdb1683}{\index{Lingeling\-Api@{Lingeling\-Api}!operator=@{operator=}}
+\index{operator=@{operator=}!LingelingApi@{Lingeling\-Api}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Lingeling\-Api}\& Lingeling\-Api\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Lingeling\-Api} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classLingelingApi_a1963aa6729bd9203863010b9bbdb1683}
+
+
+Assignment operator. 
+
+The assignment operator is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the assignment, i.\-e, $\ast$this. 
+\end{DoxyReturn}
+\hypertarget{classLingelingApi_a1b2cec409be65f2bf885593c83d73883}{\index{Lingeling\-Api@{Lingeling\-Api}!rand\-Model@{rand\-Model}}
+\index{rand\-Model@{rand\-Model}!LingelingApi@{Lingeling\-Api}}
+\subsubsection[{rand\-Model}]{\setlength{\rightskip}{0pt plus 5cm}void Lingeling\-Api\-::rand\-Model (
+\begin{DoxyParamCaption}
+\item[{L\-G\-L $\ast$}]{solver, }
+\item[{const vector$<$ int $>$ \&}]{assumptions, }
+\item[{vector$<$ int $>$ \&}]{model}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLingelingApi_a1b2cec409be65f2bf885593c83d73883}
+
+
+A helper to randomize a satisfying assignment after it has been computed. 
+
+This is done by flipping values of variables randomly and then checking if the modified assignment is still satisfies the formula. This is expensive. However, changing the decision heuristic to a random one seems even more expensive in first experiments.
+
+\begin{DoxyPrecond}{Precondition}
+solver != N\-U\-L\-L 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em solver} & The solver containing the \hyperlink{classCNF}{C\-N\-F} for which the satisfying assignment has been computed. \\
+\hline
+{\em assumptions} & Additional assumptions under which the \hyperlink{classCNF}{C\-N\-F} should be solved. This can be an empty vector if there are no assumptions. \\
+\hline
+{\em model} & The satisfying assignment that has been found and should now be randomized. It will be modified in place, i.\-e., this vector will contain the randomized model after this method is done. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 432 of file Lingeling\-Api.\-cpp.
+
+
+
+References M\-A\-S\-S\-E\-R\-T.
+
+
+
+Referenced by inc\-Is\-Sat\-Model\-Or\-Core(), and is\-Sat\-Model\-Or\-Core().
+
+\hypertarget{classLingelingApi_a844da6cbdf38b7cc8abd0b1710350be2}{\index{Lingeling\-Api@{Lingeling\-Api}!start\-Incremental\-Session@{start\-Incremental\-Session}}
+\index{start\-Incremental\-Session@{start\-Incremental\-Session}!LingelingApi@{Lingeling\-Api}}
+\subsubsection[{start\-Incremental\-Session}]{\setlength{\rightskip}{0pt plus 5cm}void Lingeling\-Api\-::start\-Incremental\-Session (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{vars\-\_\-to\-\_\-keep, }
+\item[{bool}]{use\-\_\-push = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classLingelingApi_a844da6cbdf38b7cc8abd0b1710350be2}
+
+
+Starts a new incremental session. 
+
+Every instance of this class can have at most one open incremental session. If there is an old open incremental session it will be closed before. An incremental session allows you to execute sequences of calls, where the information the solver learned in previous calls is retained and may speedup later calls. You can add new clauses between calls, but you cannot remove clauses.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vars\-\_\-to\-\_\-keep} & A set of variables the solver should not optimize away. Clauses added later in an incremental session can only talk about variables contained in this vector. \\
+\hline
+{\em use\-\_\-push} & A hint to the solver if you are ever going to use \hyperlink{classLingelingApi_a91c858d2a36a4fbe580909a793802a76}{inc\-Push()} or \hyperlink{classLingelingApi_afe43e1243338a332803fff470eedbf7a}{inc\-Pop()}. In the implementation of this class, this information is completely ignored. Other solver implementations (like \hyperlink{classMiniSatApi}{Mini\-Sat\-Api}) do not support push and and pop natively, so we have to make a workaround. This workaround is expensive and we can safe some computation time if we skip it when we will not need it. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classSatSolver_a74603f84c3f2383a5fc44d5a8093cbea}{Sat\-Solver}.
+
+
+
+Definition at line 138 of file Lingeling\-Api.\-cpp.
+
+
+
+References clear\-Incremental\-Session(), and incr\-\_\-stack\-\_\-.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classLingelingApi_af9b5703f6611337668def5aaf6be465a}{\index{Lingeling\-Api@{Lingeling\-Api}!incr\-\_\-stack\-\_\-@{incr\-\_\-stack\-\_\-}}
+\index{incr\-\_\-stack\-\_\-@{incr\-\_\-stack\-\_\-}!LingelingApi@{Lingeling\-Api}}
+\subsubsection[{incr\-\_\-stack\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}list$<$L\-G\-L$\ast$$>$ Lingeling\-Api\-::incr\-\_\-stack\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLingelingApi_af9b5703f6611337668def5aaf6be465a}
+
+
+A stack of incremental session contexts. 
+
+The incremental session is store on a stack to support \hyperlink{classLingelingApi_a91c858d2a36a4fbe580909a793802a76}{inc\-Push()} and \hyperlink{classLingelingApi_afe43e1243338a332803fff470eedbf7a}{inc\-Pop()}. The current session is always at the top of the stack (the end of the list). 
+
+Definition at line 384 of file Lingeling\-Api.\-h.
+
+
+
+Referenced by clear\-Incremental\-Session(), inc\-Add2\-Lit\-Clause(), inc\-Add3\-Lit\-Clause(), inc\-Add\-Clause(), inc\-Add\-C\-N\-F(), inc\-Add\-Cube(), inc\-Add\-Neg\-Cube\-As\-Clause(), inc\-Add\-Unit\-Clause(), inc\-Is\-Sat(), inc\-Is\-Sat\-Model\-Or\-Core(), inc\-Pop(), inc\-Push(), and start\-Incremental\-Session().
+
+\hypertarget{classSatSolver_adfeecebfd09606c82b5c57cfe5aad813}{\index{Lingeling\-Api@{Lingeling\-Api}!min\-\_\-cores\-\_\-@{min\-\_\-cores\-\_\-}}
+\index{min\-\_\-cores\-\_\-@{min\-\_\-cores\-\_\-}!LingelingApi@{Lingeling\-Api}}
+\subsubsection[{min\-\_\-cores\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}bool Sat\-Solver\-::min\-\_\-cores\-\_\-\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classSatSolver_adfeecebfd09606c82b5c57cfe5aad813}
+
+
+Indicates if the unsat cores returned by the solver should be minimized further. 
+
+
+
+Definition at line 428 of file Sat\-Solver.\-h.
+
+
+
+Referenced by Sat\-Solver\-::do\-Min\-Cores(), inc\-Is\-Sat\-Model\-Or\-Core(), Pico\-Sat\-Api\-::inc\-Is\-Sat\-Model\-Or\-Core(), Mini\-Sat\-Api\-::inc\-Is\-Sat\-Model\-Or\-Core(), is\-Sat\-Model\-Or\-Core(), Pico\-Sat\-Api\-::is\-Sat\-Model\-Or\-Core(), and Mini\-Sat\-Api\-::is\-Sat\-Model\-Or\-Core().
+
+\hypertarget{classSatSolver_a73fed24d8fb4da85ef82dc53ac5f28c7}{\index{Lingeling\-Api@{Lingeling\-Api}!rand\-\_\-models\-\_\-@{rand\-\_\-models\-\_\-}}
+\index{rand\-\_\-models\-\_\-@{rand\-\_\-models\-\_\-}!LingelingApi@{Lingeling\-Api}}
+\subsubsection[{rand\-\_\-models\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}bool Sat\-Solver\-::rand\-\_\-models\-\_\-\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classSatSolver_a73fed24d8fb4da85ef82dc53ac5f28c7}
+
+
+Indicates if satisfying assignments should be randomized. 
+
+
+
+Definition at line 433 of file Sat\-Solver.\-h.
+
+
+
+Referenced by Sat\-Solver\-::do\-Rand\-Models(), inc\-Is\-Sat\-Model\-Or\-Core(), Pico\-Sat\-Api\-::inc\-Is\-Sat\-Model\-Or\-Core(), Mini\-Sat\-Api\-::inc\-Is\-Sat\-Model\-Or\-Core(), is\-Sat\-Model\-Or\-Core(), Pico\-Sat\-Api\-::is\-Sat\-Model\-Or\-Core(), and Mini\-Sat\-Api\-::is\-Sat\-Model\-Or\-Core().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{LingelingApi_8h}{Lingeling\-Api.\-h}\item 
+src/\hyperlink{LingelingApi_8cpp}{Lingeling\-Api.\-cpp}\end{DoxyCompactItemize}

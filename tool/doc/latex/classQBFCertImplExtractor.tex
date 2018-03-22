@@ -1,0 +1,231 @@
+\hypertarget{classQBFCertImplExtractor}{\section{Q\-B\-F\-Cert\-Impl\-Extractor Class Reference}
+\label{classQBFCertImplExtractor}\index{Q\-B\-F\-Cert\-Impl\-Extractor@{Q\-B\-F\-Cert\-Impl\-Extractor}}
+}
+
+
+Given a winning region in \hyperlink{classCNF}{C\-N\-F}, this method extracts a circuit using Q\-B\-F\-Cert.  
+
+
+
+
+{\ttfamily \#include $<$Q\-B\-F\-Cert\-Impl\-Extractor.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classQBFCertImplExtractor_a1775a11abdad2797b0f7e7e1105bfb2b}{Q\-B\-F\-Cert\-Impl\-Extractor} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classQBFCertImplExtractor_a52dfc285e9b75484e500b21ff4c35919}{$\sim$\-Q\-B\-F\-Cert\-Impl\-Extractor} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classQBFCertImplExtractor_a3ff8c8d92df6d7ed01fe193ca880c14e}{extract\-Circuit} (const \hyperlink{classCNF}{C\-N\-F} \&winning\-\_\-region)
+\begin{DoxyCompactList}\small\item\em Extracts a circuit from the winning region. \end{DoxyCompactList}\item 
+void \hyperlink{classQBFCertImplExtractor_a47577070a52f5d95b194a863e6b86893}{extract\-Circuit} (const \hyperlink{classCNF}{C\-N\-F} \&winning\-\_\-region, const \hyperlink{classCNF}{C\-N\-F} \&neg\-\_\-winning\-\_\-region)
+\begin{DoxyCompactList}\small\item\em Extracts a circuit from the winning region and its negation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\-\_\-t \hyperlink{classQBFCertImplExtractor_a30f9aea9a9cb3b2662cb4eee1ac73687}{parse\-Q\-B\-F\-Cert\-Answer} (const string \&answer, vector$<$ vector$<$ int $>$ $>$ \&and\-\_\-gates) const 
+\begin{DoxyCompactList}\small\item\em Parses the answer of Q\-B\-F\-Cert. \end{DoxyCompactList}\item 
+void \hyperlink{classQBFCertImplExtractor_a86906e053e6a487037927c1e209ea473}{dump\-Res\-Aiger\-Lib} (size\-\_\-t max\-\_\-var\-\_\-idx, const vector$<$ vector$<$ int $>$ $>$ \&and\-\_\-gates)
+\begin{DoxyCompactList}\small\item\em Dumps the final system into the output file specified by the user. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Given a winning region in \hyperlink{classCNF}{C\-N\-F}, this method extracts a circuit using Q\-B\-F\-Cert. 
+
+Q\-B\-F\-Cert (see \href{http://fmv.jku.at/qbfcert/}{\tt http\-://fmv.\-jku.\-at/qbfcert/}) is a framework for computing Skolem or Herbrand functions as witnesses for quantified Boolean formulas. We use it to compute circuits from a winning region. Let W be the winning region. Then we can compute a circuit as a skolem function for the c-\/signals in\-: \par
+ ~ forall x,i\-: exists c,x'\-: (!\-W) $|$ (T \& W') \par
+ However, for performance reasons, we actually compute Herbrand functions for the c-\/signals in the formula\-: \par
+ ~ exists x,i\-: forall c\-: exists x'\-: W \& T \& !\-W' \par
+ Q\-B\-F\-Cert outputs the result in A\-I\-G\-E\-R format. Hence, all we have to do in order to obtain the final output of our tool is to embed this A\-I\-G\-E\-R-\/circuits for the c-\/signals in the input A\-I\-G\-E\-R file.
+
+\begin{DoxyAuthor}{Author}
+Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0.\-0 
+\end{DoxyVersion}
+
+
+Definition at line 56 of file Q\-B\-F\-Cert\-Impl\-Extractor.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classQBFCertImplExtractor_a1775a11abdad2797b0f7e7e1105bfb2b}{\index{Q\-B\-F\-Cert\-Impl\-Extractor@{Q\-B\-F\-Cert\-Impl\-Extractor}!Q\-B\-F\-Cert\-Impl\-Extractor@{Q\-B\-F\-Cert\-Impl\-Extractor}}
+\index{Q\-B\-F\-Cert\-Impl\-Extractor@{Q\-B\-F\-Cert\-Impl\-Extractor}!QBFCertImplExtractor@{Q\-B\-F\-Cert\-Impl\-Extractor}}
+\subsubsection[{Q\-B\-F\-Cert\-Impl\-Extractor}]{\setlength{\rightskip}{0pt plus 5cm}Q\-B\-F\-Cert\-Impl\-Extractor\-::\-Q\-B\-F\-Cert\-Impl\-Extractor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classQBFCertImplExtractor_a1775a11abdad2797b0f7e7e1105bfb2b}
+
+
+Constructor. 
+
+
+
+Definition at line 83 of file Q\-B\-F\-Cert\-Impl\-Extractor.\-cpp.
+
+\hypertarget{classQBFCertImplExtractor_a52dfc285e9b75484e500b21ff4c35919}{\index{Q\-B\-F\-Cert\-Impl\-Extractor@{Q\-B\-F\-Cert\-Impl\-Extractor}!$\sim$\-Q\-B\-F\-Cert\-Impl\-Extractor@{$\sim$\-Q\-B\-F\-Cert\-Impl\-Extractor}}
+\index{$\sim$\-Q\-B\-F\-Cert\-Impl\-Extractor@{$\sim$\-Q\-B\-F\-Cert\-Impl\-Extractor}!QBFCertImplExtractor@{Q\-B\-F\-Cert\-Impl\-Extractor}}
+\subsubsection[{$\sim$\-Q\-B\-F\-Cert\-Impl\-Extractor}]{\setlength{\rightskip}{0pt plus 5cm}Q\-B\-F\-Cert\-Impl\-Extractor\-::$\sim$\-Q\-B\-F\-Cert\-Impl\-Extractor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classQBFCertImplExtractor_a52dfc285e9b75484e500b21ff4c35919}
+
+
+Destructor. 
+
+
+
+Definition at line 89 of file Q\-B\-F\-Cert\-Impl\-Extractor.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classQBFCertImplExtractor_a86906e053e6a487037927c1e209ea473}{\index{Q\-B\-F\-Cert\-Impl\-Extractor@{Q\-B\-F\-Cert\-Impl\-Extractor}!dump\-Res\-Aiger\-Lib@{dump\-Res\-Aiger\-Lib}}
+\index{dump\-Res\-Aiger\-Lib@{dump\-Res\-Aiger\-Lib}!QBFCertImplExtractor@{Q\-B\-F\-Cert\-Impl\-Extractor}}
+\subsubsection[{dump\-Res\-Aiger\-Lib}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-B\-F\-Cert\-Impl\-Extractor\-::dump\-Res\-Aiger\-Lib (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{max\-\_\-var\-\_\-idx, }
+\item[{const vector$<$ vector$<$ int $>$ $>$ \&}]{and\-\_\-gates}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classQBFCertImplExtractor_a86906e053e6a487037927c1e209ea473}
+
+
+Dumps the final system into the output file specified by the user. 
+
+All we have to do in order to obtain the final output of our tool is to embed the A\-I\-G\-E\-R-\/circuits returned by Q\-B\-F\-Cert into input A\-I\-G\-E\-R file. That is, the c-\/inputs have to be removed and the A\-N\-D-\/gates defining the c-\/signals have to be inserted. This is done by this method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\-\_\-var\-\_\-idx} & The maximal variable index that is used in the resulting A\-N\-D gates (as returned by \hyperlink{classQBFCertImplExtractor_a30f9aea9a9cb3b2662cb4eee1ac73687}{parse\-Q\-B\-F\-Cert\-Answer}). \\
+\hline
+{\em and\-\_\-gates} & An empty vector. This method writes the A\-N\-D-\/gates to define the c-\/signals into this vector. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 230 of file Q\-B\-F\-Cert\-Impl\-Extractor.\-cpp.
+
+
+
+References Options\-::get\-Aig\-In\-File\-Name(), Options\-::get\-Aig\-Out\-File\-Name(), Options\-::instance(), M\-A\-S\-S\-E\-R\-T, and String\-Utils\-::to\-Lower\-Case\-In().
+
+
+
+Referenced by extract\-Circuit().
+
+\hypertarget{classQBFCertImplExtractor_a3ff8c8d92df6d7ed01fe193ca880c14e}{\index{Q\-B\-F\-Cert\-Impl\-Extractor@{Q\-B\-F\-Cert\-Impl\-Extractor}!extract\-Circuit@{extract\-Circuit}}
+\index{extract\-Circuit@{extract\-Circuit}!QBFCertImplExtractor@{Q\-B\-F\-Cert\-Impl\-Extractor}}
+\subsubsection[{extract\-Circuit}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-B\-F\-Cert\-Impl\-Extractor\-::extract\-Circuit (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{winning\-\_\-region}
+\end{DoxyParamCaption}
+)}}\label{classQBFCertImplExtractor_a3ff8c8d92df6d7ed01fe193ca880c14e}
+
+
+Extracts a circuit from the winning region. 
+
+The result is written into the output file specified by the user. This method uses Q\-B\-F\-Cert to compute a solution. Q\-B\-F\-Cert (see \href{http://fmv.jku.at/qbfcert/}{\tt http\-://fmv.\-jku.\-at/qbfcert/}) is a framework for computing Skolem or Herbrand functions as witnesses for quantified Boolean formulas. We use it to compute circuits from a winning region. Let W be the winning region. Then we can compute a circuit as a skolem function for the c-\/signals in\-: \par
+ ~ forall x,i\-: exists c,x'\-: (!\-W) $|$ (T \& W') \par
+ However, for performance reasons, we actually compute Herbrand functions for the c-\/signals in the formula\-: \par
+ ~ exists x,i\-: forall c\-: exists x'\-: W \& T \& !\-W' \par
+ Q\-B\-F\-Cert outputs the result in A\-I\-G\-E\-R format. Hence, all we have to do in order to obtain the final output of our tool is to embed this A\-I\-G\-E\-R-\/circuits for the c-\/signals in the input A\-I\-G\-E\-R file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em winning\-\_\-region} & The winning region from which the circuit should be extracted. For circuit extraction we need both the winning region and its negation. The negation is computed inside this function. If you already have a negation, use the other method. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 95 of file Q\-B\-F\-Cert\-Impl\-Extractor.\-cpp.
+
+
+
+References Utils\-::compress\-State\-C\-N\-F(), and C\-N\-F\-::negate().
+
+
+
+Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::run(), I\-F\-M13\-Synth\-::run(), Template\-Synth\-::run(), Parallel\-Learner\-::run(), Learn\-Synth\-Q\-B\-F\-::run(), Learn\-Synth\-S\-A\-T\-::run(), and Learn\-Synth\-Q\-B\-F\-Ind\-::run().
+
+\hypertarget{classQBFCertImplExtractor_a47577070a52f5d95b194a863e6b86893}{\index{Q\-B\-F\-Cert\-Impl\-Extractor@{Q\-B\-F\-Cert\-Impl\-Extractor}!extract\-Circuit@{extract\-Circuit}}
+\index{extract\-Circuit@{extract\-Circuit}!QBFCertImplExtractor@{Q\-B\-F\-Cert\-Impl\-Extractor}}
+\subsubsection[{extract\-Circuit}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-B\-F\-Cert\-Impl\-Extractor\-::extract\-Circuit (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{winning\-\_\-region, }
+\item[{const {\bf C\-N\-F} \&}]{neg\-\_\-winning\-\_\-region}
+\end{DoxyParamCaption}
+)}}\label{classQBFCertImplExtractor_a47577070a52f5d95b194a863e6b86893}
+
+
+Extracts a circuit from the winning region and its negation. 
+
+The result is written into the output file specified by the user. This method should be preferred if you have the winning region and its negation available. The other method computes the negation by itself and may introduce quite a lot of temporary variables.
+
+This method uses Q\-B\-F\-Cert to compute a solution. Q\-B\-F\-Cert (see \href{http://fmv.jku.at/qbfcert/}{\tt http\-://fmv.\-jku.\-at/qbfcert/}) is a framework for computing Skolem or Herbrand functions as witnesses for quantified Boolean formulas. We use it to compute circuits from a winning region. Let W be the winning region. Then we can compute a circuit as a skolem function for the c-\/signals in\-: \par
+ ~ forall x,i\-: exists c,x'\-: (!\-W) $|$ (T \& W') \par
+ However, for performance reasons, we actually compute Herbrand functions for the c-\/signals in the formula\-: \par
+ ~ exists x,i\-: forall c\-: exists x'\-: W \& T \& !\-W' \par
+ Q\-B\-F\-Cert outputs the result in A\-I\-G\-E\-R format. Hence, all we have to do in order to obtain the final output of our tool is to embed this A\-I\-G\-E\-R-\/circuits for the c-\/signals in the input A\-I\-G\-E\-R file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em winning\-\_\-region} & The winning region from which the circuit should be extracted. \\
+\hline
+{\em neg\-\_\-winning\-\_\-region} & The negation of the winning region. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 105 of file Q\-B\-F\-Cert\-Impl\-Extractor.\-cpp.
+
+
+
+References Q\-B\-F\-Solver\-::\-A, C\-N\-F\-::add\-C\-N\-F(), Var\-Info\-::\-C\-T\-R\-L, dump\-Res\-Aiger\-Lib(), Q\-B\-F\-Solver\-::\-E, Var\-Info\-::\-I\-N\-P\-U\-T, A\-I\-G2\-C\-N\-F\-::instance(), Ext\-Q\-B\-F\-Solver\-::is\-Sat(), L\-\_\-\-I\-N\-F, M\-A\-S\-S\-E\-R\-T, Var\-Info\-::\-N\-E\-X\-T\-\_\-\-S\-T\-A\-T\-E, parse\-Q\-B\-F\-Cert\-Answer(), Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, Dep\-Q\-B\-F\-Ext\-::qbf\-Cert(), C\-N\-F\-::swap\-Present\-To\-Next(), and Var\-Info\-::\-T\-M\-P.
+
+\hypertarget{classQBFCertImplExtractor_a30f9aea9a9cb3b2662cb4eee1ac73687}{\index{Q\-B\-F\-Cert\-Impl\-Extractor@{Q\-B\-F\-Cert\-Impl\-Extractor}!parse\-Q\-B\-F\-Cert\-Answer@{parse\-Q\-B\-F\-Cert\-Answer}}
+\index{parse\-Q\-B\-F\-Cert\-Answer@{parse\-Q\-B\-F\-Cert\-Answer}!QBFCertImplExtractor@{Q\-B\-F\-Cert\-Impl\-Extractor}}
+\subsubsection[{parse\-Q\-B\-F\-Cert\-Answer}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Q\-B\-F\-Cert\-Impl\-Extractor\-::parse\-Q\-B\-F\-Cert\-Answer (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{answer, }
+\item[{vector$<$ vector$<$ int $>$ $>$ \&}]{and\-\_\-gates}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{classQBFCertImplExtractor_a30f9aea9a9cb3b2662cb4eee1ac73687}
+
+
+Parses the answer of Q\-B\-F\-Cert. 
+
+Q\-B\-F\-Cert is called in an external process and produces a an A\-I\-G\-E\-R file that contains the result (the circuits for the c-\/signals). This method parses the result. The main thing this method does is that it renames variables. The A\-I\-G\-E\-R file returned by Q\-B\-F\-Cert uses the variable indices as they occur in the C\-N\-Fs. We must map them back to the original variable indices that were used in the A\-I\-G\-E\-R input file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em answer} & The string-\/representation of the A\-I\-G\-E\-R file produced by Q\-B\-F\-Cert. \\
+\hline
+{\em and\-\_\-gates} & An empty vector. This method writes the A\-N\-D-\/gates to define the c-\/signals into this vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The maximal variable index that is used in the resulting A\-N\-D gates. 
+\end{DoxyReturn}
+
+
+Definition at line 146 of file Q\-B\-F\-Cert\-Impl\-Extractor.\-cpp.
+
+
+
+References Var\-Info\-::\-C\-T\-R\-L, Var\-Manager\-::get\-Info(), Var\-Info\-::get\-Lit\-In\-A\-I\-G(), Var\-Manager\-::get\-Max\-A\-I\-G\-Var(), Var\-Manager\-::get\-Vars\-Of\-Type(), Var\-Manager\-::instance(), L\-\_\-\-D\-B\-G, M\-A\-S\-S\-E\-R\-T, and String\-Utils\-::split\-Lines().
+
+
+
+Referenced by extract\-Circuit().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{QBFCertImplExtractor_8h}{Q\-B\-F\-Cert\-Impl\-Extractor.\-h}\item 
+src/\hyperlink{QBFCertImplExtractor_8cpp}{Q\-B\-F\-Cert\-Impl\-Extractor.\-cpp}\end{DoxyCompactItemize}

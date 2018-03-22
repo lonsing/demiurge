@@ -1,0 +1,4210 @@
+=====================  unr.aag =====================
+[LOG] Nr. of bad state candidate computations: 1
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 0
+[LOG] Nr. of bad state candidate checks: 0
+[LOG]  Successful: 0
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 0 --> 0
+[LOG]  Average bad state cube size reduction: 0 --> 0
+[LOG] Nr. of refinements: 0
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 0 --> 0
+[LOG]  Average refinement cube size reduction: 0 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (unrealizable)
+=====================  eq1.aag =====================
+[LOG] Nr. of bad state candidate computations: 3
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 0
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 0
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 0 --> 0
+[LOG]  Average bad state cube size reduction: 0 --> 0
+[LOG] Nr. of refinements: 2
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 4 --> 1
+[LOG]  Average refinement cube size reduction: 2 --> 0.5
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  ex1.aag =====================
+[LOG] Nr. of bad state candidate computations: 2
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 0
+[LOG] Nr. of bad state candidate checks: 1
+[LOG]  Successful: 0
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 0 --> 0
+[LOG]  Average bad state cube size reduction: 0 --> 0
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 3 --> 0
+[LOG]  Average refinement cube size reduction: 3 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  ex2.aag =====================
+[LOG] Nr. of bad state candidate computations: 3
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 0
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 0
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 0 --> 0
+[LOG]  Average bad state cube size reduction: 0 --> 0
+[LOG] Nr. of refinements: 2
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 14 --> 1
+[LOG]  Average refinement cube size reduction: 7 --> 0.5
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add2n.aag =====================
+[LOG] Nr. of bad state candidate computations: 18
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 16
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 3 --> 2
+[LOG]  Average bad state cube size reduction: 3 --> 2
+[LOG] Nr. of refinements: 15
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 105 --> 33
+[LOG]  Average refinement cube size reduction: 7 --> 2.2
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add2y.aag =====================
+[LOG] Nr. of bad state candidate computations: 15
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 13
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 3 --> 2
+[LOG]  Average bad state cube size reduction: 3 --> 2
+[LOG] Nr. of refinements: 12
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 84 --> 29
+[LOG]  Average refinement cube size reduction: 7 --> 2.41667
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add4n.aag =====================
+[LOG] Nr. of bad state candidate computations: 257
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 255
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 3 --> 2
+[LOG]  Average bad state cube size reduction: 3 --> 2
+[LOG] Nr. of refinements: 254
+[LOG]  Refinements took:
+[LOG]    0.04 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.00015748 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 2794 --> 1037
+[LOG]  Average refinement cube size reduction: 11 --> 4.08268
+[LOG] Winning region computation time: 0.04 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.04 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.07 sec (Real time) / 0.04 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add4y.aag =====================
+[LOG] Nr. of bad state candidate computations: 257
+[LOG]  Bad state computations took:
+[LOG]    0.01 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    3.89105e-05 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 255
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 3 --> 2
+[LOG]  Average bad state cube size reduction: 3 --> 2
+[LOG] Nr. of refinements: 254
+[LOG]  Refinements took:
+[LOG]    0.03 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.00011811 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 2794 --> 1034
+[LOG]  Average refinement cube size reduction: 11 --> 4.07087
+[LOG] Winning region computation time: 0.04 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.04 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.04 sec (Real time) / 0.04 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add6n.aag =====================
+[LOG] Nr. of bad state candidate computations: 4097
+[LOG]  Bad state computations took:
+[LOG]    0.13 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    3.17305e-05 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 4095
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0.21 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    5.12821e-05 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 3 --> 2
+[LOG]  Average bad state cube size reduction: 3 --> 2
+[LOG] Nr. of refinements: 4094
+[LOG]  Refinements took:
+[LOG]    1.52 sec CPU time in total.
+[LOG]    2 sec real time in total.
+[LOG]    0.000371275 sec CPU time on average.
+[LOG]    0.00048852 sec real time on average.
+[LOG]  Total refinement cube size reduction: 61410 --> 24608
+[LOG]  Average refinement cube size reduction: 15 --> 6.01075
+[LOG] Winning region computation time: 1.94 sec CPU time.
+[LOG] Winning region computation time: 2 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 1.94 sec CPU time.
+[LOG] Overall execution time: 2 sec real time.
+Synthesis time: 1.95 sec (Real time) / 1.74 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add6y.aag =====================
+[LOG] Nr. of bad state candidate computations: 4097
+[LOG]  Bad state computations took:
+[LOG]    0.09 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    2.19673e-05 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 4095
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0.13 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    3.1746e-05 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 3 --> 2
+[LOG]  Average bad state cube size reduction: 3 --> 2
+[LOG] Nr. of refinements: 4094
+[LOG]  Refinements took:
+[LOG]    1.46 sec CPU time in total.
+[LOG]    2 sec real time in total.
+[LOG]    0.000356619 sec CPU time on average.
+[LOG]    0.00048852 sec real time on average.
+[LOG]  Total refinement cube size reduction: 61410 --> 24605
+[LOG]  Average refinement cube size reduction: 15 --> 6.01001
+[LOG] Winning region computation time: 1.76 sec CPU time.
+[LOG] Winning region computation time: 2 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 1.76 sec CPU time.
+[LOG] Overall execution time: 2 sec real time.
+Synthesis time: 1.77 sec (Real time) / 1.58 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add8n.aag =====================
+[LOG] Nr. of bad state candidate computations: 65536
+[LOG]  Bad state computations took:
+[LOG]    11.32 sec CPU time in total.
+[LOG]    16 sec real time in total.
+[LOG]    0.000172729 sec CPU time on average.
+[LOG]    0.000244141 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 65534
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    5.63 sec CPU time in total.
+[LOG]    9 sec real time in total.
+[LOG]    8.59096e-05 sec CPU time on average.
+[LOG]    0.000137333 sec real time on average.
+[LOG]  Total bad state cube size reduction: 3 --> 2
+[LOG]  Average bad state cube size reduction: 3 --> 2
+[LOG] Nr. of refinements: 65533
+[LOG]  Refinements took:
+[LOG]    352.06 sec CPU time in total.
+[LOG]    351 sec real time in total.
+[LOG]    0.00537226 sec CPU time on average.
+[LOG]    0.00535608 sec real time on average.
+[LOG]  Total refinement cube size reduction: 1245127 --> 524338
+[LOG]  Average refinement cube size reduction: 19 --> 8.00113
+[LOG] Winning region computation time: 393.23 sec CPU time.
+[LOG] Winning region computation time: 393 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 393.23 sec CPU time.
+[LOG] Overall execution time: 393 sec real time.
+Synthesis time: 393.23 sec (Real time) / 388.98 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add8y.aag =====================
+[LOG] Nr. of bad state candidate computations: 65530
+[LOG]  Bad state computations took:
+[LOG]    12.74 sec CPU time in total.
+[LOG]    15 sec real time in total.
+[LOG]    0.000194415 sec CPU time on average.
+[LOG]    0.000228903 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 65528
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    7.53 sec CPU time in total.
+[LOG]    4 sec real time in total.
+[LOG]    0.000114913 sec CPU time on average.
+[LOG]    6.10426e-05 sec real time on average.
+[LOG]  Total bad state cube size reduction: 3 --> 2
+[LOG]  Average bad state cube size reduction: 3 --> 2
+[LOG] Nr. of refinements: 65527
+[LOG]  Refinements took:
+[LOG]    443.52 sec CPU time in total.
+[LOG]    428 sec real time in total.
+[LOG]    0.00676851 sec CPU time on average.
+[LOG]    0.00653166 sec real time on average.
+[LOG]  Total refinement cube size reduction: 1245013 --> 524306
+[LOG]  Average refinement cube size reduction: 19 --> 8.00137
+[LOG] Winning region computation time: 509.04 sec CPU time.
+[LOG] Winning region computation time: 509 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 509.04 sec CPU time.
+[LOG] Overall execution time: 509 sec real time.
+Synthesis time: 509.04 sec (Real time) / 504.65 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add10n.aag =====================
+Command terminated by signal 9
+Synthesis time: 10100.00 sec (Real time) / 10080.18 sec (User CPU time)
+Timeout: 1
+=====================  add10y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10100.00 sec (Real time) / 10081.46 sec (User CPU time)
+Timeout: 1
+=====================  add12n.aag =====================
+Command terminated by signal 9
+Synthesis time: 10100.00 sec (Real time) / 9018.01 sec (User CPU time)
+Timeout: 1
+=====================  add12y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10100.00 sec (Real time) / 9159.97 sec (User CPU time)
+Timeout: 1
+=====================  add14n.aag =====================
+=====================  add14y.aag =====================
+=====================  add16n.aag =====================
+=====================  add16y.aag =====================
+=====================  add18n.aag =====================
+=====================  add18y.aag =====================
+=====================  add20n.aag =====================
+=====================  add20y.aag =====================
+=====================  cnt2n.aag =====================
+[LOG] Nr. of bad state candidate computations: 6
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 2
+[LOG] Nr. of bad state candidate checks: 3
+[LOG]  Successful: 2
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 8 --> 5
+[LOG]  Average bad state cube size reduction: 4 --> 2.5
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 5 --> 0
+[LOG]  Average refinement cube size reduction: 5 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt2y.aag =====================
+[LOG] Nr. of bad state candidate computations: 6
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 2
+[LOG] Nr. of bad state candidate checks: 3
+[LOG]  Successful: 2
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 8 --> 5
+[LOG]  Average bad state cube size reduction: 4 --> 2.5
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 5 --> 0
+[LOG]  Average refinement cube size reduction: 5 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt3n.aag =====================
+[LOG] Nr. of bad state candidate computations: 10
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 4
+[LOG] Nr. of bad state candidate checks: 5
+[LOG]  Successful: 4
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 20 --> 12
+[LOG]  Average bad state cube size reduction: 5 --> 3
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 6 --> 0
+[LOG]  Average refinement cube size reduction: 6 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt3y.aag =====================
+[LOG] Nr. of bad state candidate computations: 10
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 4
+[LOG] Nr. of bad state candidate checks: 5
+[LOG]  Successful: 4
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 20 --> 12
+[LOG]  Average bad state cube size reduction: 5 --> 3
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 6 --> 0
+[LOG]  Average refinement cube size reduction: 6 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt4n.aag =====================
+[LOG] Nr. of bad state candidate computations: 18
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 8
+[LOG] Nr. of bad state candidate checks: 9
+[LOG]  Successful: 8
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 48 --> 28
+[LOG]  Average bad state cube size reduction: 6 --> 3.5
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 7 --> 0
+[LOG]  Average refinement cube size reduction: 7 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt4y.aag =====================
+[LOG] Nr. of bad state candidate computations: 18
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 8
+[LOG] Nr. of bad state candidate checks: 9
+[LOG]  Successful: 8
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 48 --> 28
+[LOG]  Average bad state cube size reduction: 6 --> 3.5
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 7 --> 0
+[LOG]  Average refinement cube size reduction: 7 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt5n.aag =====================
+[LOG] Nr. of bad state candidate computations: 34
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 16
+[LOG] Nr. of bad state candidate checks: 17
+[LOG]  Successful: 16
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 112 --> 64
+[LOG]  Average bad state cube size reduction: 7 --> 4
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 8 --> 0
+[LOG]  Average refinement cube size reduction: 8 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt5y.aag =====================
+[LOG] Nr. of bad state candidate computations: 34
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 16
+[LOG] Nr. of bad state candidate checks: 17
+[LOG]  Successful: 16
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 112 --> 64
+[LOG]  Average bad state cube size reduction: 7 --> 4
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 8 --> 0
+[LOG]  Average refinement cube size reduction: 8 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt6n.aag =====================
+[LOG] Nr. of bad state candidate computations: 66
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 32
+[LOG] Nr. of bad state candidate checks: 33
+[LOG]  Successful: 32
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 256 --> 144
+[LOG]  Average bad state cube size reduction: 8 --> 4.5
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 9 --> 0
+[LOG]  Average refinement cube size reduction: 9 --> 0
+[LOG] Winning region computation time: 0.01 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.01 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt6y.aag =====================
+[LOG] Nr. of bad state candidate computations: 66
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 32
+[LOG] Nr. of bad state candidate checks: 33
+[LOG]  Successful: 32
+[LOG]  Bad state candidate checks took:
+[LOG]    0.01 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.00030303 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 256 --> 144
+[LOG]  Average bad state cube size reduction: 8 --> 4.5
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 9 --> 0
+[LOG]  Average refinement cube size reduction: 9 --> 0
+[LOG] Winning region computation time: 0.01 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.01 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt7n.aag =====================
+[LOG] Nr. of bad state candidate computations: 130
+[LOG]  Bad state computations took:
+[LOG]    0.03 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.000230769 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 64
+[LOG] Nr. of bad state candidate checks: 65
+[LOG]  Successful: 64
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    1 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0.0153846 sec real time on average.
+[LOG]  Total bad state cube size reduction: 576 --> 320
+[LOG]  Average bad state cube size reduction: 9 --> 5
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 10 --> 0
+[LOG]  Average refinement cube size reduction: 10 --> 0
+[LOG] Winning region computation time: 0.04 sec CPU time.
+[LOG] Winning region computation time: 1 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.04 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.06 sec (Real time) / 0.04 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt7y.aag =====================
+[LOG] Nr. of bad state candidate computations: 130
+[LOG]  Bad state computations took:
+[LOG]    0.01 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    7.69231e-05 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 64
+[LOG] Nr. of bad state candidate checks: 65
+[LOG]  Successful: 64
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 576 --> 320
+[LOG]  Average bad state cube size reduction: 9 --> 5
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 10 --> 0
+[LOG]  Average refinement cube size reduction: 10 --> 0
+[LOG] Winning region computation time: 0.02 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.02 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.03 sec (Real time) / 0.02 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt8n.aag =====================
+[LOG] Nr. of bad state candidate computations: 258
+[LOG]  Bad state computations took:
+[LOG]    0.02 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    7.75194e-05 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 128
+[LOG] Nr. of bad state candidate checks: 129
+[LOG]  Successful: 128
+[LOG]  Bad state candidate checks took:
+[LOG]    0.04 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.000310078 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 1280 --> 704
+[LOG]  Average bad state cube size reduction: 10 --> 5.5
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 11 --> 0
+[LOG]  Average refinement cube size reduction: 11 --> 0
+[LOG] Winning region computation time: 0.12 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.12 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.13 sec (Real time) / 0.11 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt8y.aag =====================
+[LOG] Nr. of bad state candidate computations: 258
+[LOG]  Bad state computations took:
+[LOG]    0.01 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    3.87597e-05 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 128
+[LOG] Nr. of bad state candidate checks: 129
+[LOG]  Successful: 128
+[LOG]  Bad state candidate checks took:
+[LOG]    0.01 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    7.75194e-05 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 1280 --> 704
+[LOG]  Average bad state cube size reduction: 10 --> 5.5
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 11 --> 0
+[LOG]  Average refinement cube size reduction: 11 --> 0
+[LOG] Winning region computation time: 0.06 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.06 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.07 sec (Real time) / 0.06 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt9n.aag =====================
+[LOG] Nr. of bad state candidate computations: 514
+[LOG]  Bad state computations took:
+[LOG]    0.14 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.000272374 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 256
+[LOG] Nr. of bad state candidate checks: 257
+[LOG]  Successful: 256
+[LOG]  Bad state candidate checks took:
+[LOG]    0.05 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.000194553 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 2816 --> 1536
+[LOG]  Average bad state cube size reduction: 11 --> 6
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 12 --> 0
+[LOG]  Average refinement cube size reduction: 12 --> 0
+[LOG] Winning region computation time: 0.28 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.28 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.30 sec (Real time) / 0.24 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt9y.aag =====================
+[LOG] Nr. of bad state candidate computations: 514
+[LOG]  Bad state computations took:
+[LOG]    0.05 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    9.72763e-05 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 256
+[LOG] Nr. of bad state candidate checks: 257
+[LOG]  Successful: 256
+[LOG]  Bad state candidate checks took:
+[LOG]    0.05 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.000194553 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 2816 --> 1536
+[LOG]  Average bad state cube size reduction: 11 --> 6
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 12 --> 0
+[LOG]  Average refinement cube size reduction: 12 --> 0
+[LOG] Winning region computation time: 0.16 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.16 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.17 sec (Real time) / 0.15 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt10n.aag =====================
+[LOG] Nr. of bad state candidate computations: 1026
+[LOG]  Bad state computations took:
+[LOG]    0.2 sec CPU time in total.
+[LOG]    1 sec real time in total.
+[LOG]    0.000194932 sec CPU time on average.
+[LOG]    0.000974659 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 512
+[LOG] Nr. of bad state candidate checks: 513
+[LOG]  Successful: 512
+[LOG]  Bad state candidate checks took:
+[LOG]    0.27 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.000526316 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 6144 --> 3328
+[LOG]  Average bad state cube size reduction: 12 --> 6.5
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 13 --> 0
+[LOG]  Average refinement cube size reduction: 13 --> 0
+[LOG] Winning region computation time: 0.69 sec CPU time.
+[LOG] Winning region computation time: 1 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.69 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.70 sec (Real time) / 0.61 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt10y.aag =====================
+[LOG] Nr. of bad state candidate computations: 1026
+[LOG]  Bad state computations took:
+[LOG]    0.11 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.000107212 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 512
+[LOG] Nr. of bad state candidate checks: 513
+[LOG]  Successful: 512
+[LOG]  Bad state candidate checks took:
+[LOG]    0.16 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.000311891 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 6144 --> 3328
+[LOG]  Average bad state cube size reduction: 12 --> 6.5
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 13 --> 0
+[LOG]  Average refinement cube size reduction: 13 --> 0
+[LOG] Winning region computation time: 0.41 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.41 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.43 sec (Real time) / 0.35 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt11n.aag =====================
+[LOG] Nr. of bad state candidate computations: 2050
+[LOG]  Bad state computations took:
+[LOG]    0.42 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.000204878 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1024
+[LOG] Nr. of bad state candidate checks: 1025
+[LOG]  Successful: 1024
+[LOG]  Bad state candidate checks took:
+[LOG]    0.65 sec CPU time in total.
+[LOG]    1 sec real time in total.
+[LOG]    0.000634146 sec CPU time on average.
+[LOG]    0.00097561 sec real time on average.
+[LOG]  Total bad state cube size reduction: 13312 --> 7168
+[LOG]  Average bad state cube size reduction: 13 --> 7
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 14 --> 0
+[LOG]  Average refinement cube size reduction: 14 --> 0
+[LOG] Winning region computation time: 1.7 sec CPU time.
+[LOG] Winning region computation time: 1 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 1.7 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 1.72 sec (Real time) / 1.56 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt11y.aag =====================
+[LOG] Nr. of bad state candidate computations: 2050
+[LOG]  Bad state computations took:
+[LOG]    0.24 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.000117073 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1024
+[LOG] Nr. of bad state candidate checks: 1025
+[LOG]  Successful: 1024
+[LOG]  Bad state candidate checks took:
+[LOG]    0.56 sec CPU time in total.
+[LOG]    1 sec real time in total.
+[LOG]    0.000546341 sec CPU time on average.
+[LOG]    0.00097561 sec real time on average.
+[LOG]  Total bad state cube size reduction: 13312 --> 7168
+[LOG]  Average bad state cube size reduction: 13 --> 7
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 14 --> 0
+[LOG]  Average refinement cube size reduction: 14 --> 0
+[LOG] Winning region computation time: 1.08 sec CPU time.
+[LOG] Winning region computation time: 1 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 1.08 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 1.09 sec (Real time) / 0.97 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt15n.aag =====================
+[LOG] Nr. of bad state candidate computations: 32770
+[LOG]  Bad state computations took:
+[LOG]    13.17 sec CPU time in total.
+[LOG]    15 sec real time in total.
+[LOG]    0.000401892 sec CPU time on average.
+[LOG]    0.000457736 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 16384
+[LOG] Nr. of bad state candidate checks: 16385
+[LOG]  Successful: 16384
+[LOG]  Bad state candidate checks took:
+[LOG]    201.52 sec CPU time in total.
+[LOG]    204 sec real time in total.
+[LOG]    0.0122991 sec CPU time on average.
+[LOG]    0.0124504 sec real time on average.
+[LOG]  Total bad state cube size reduction: 278528 --> 147456
+[LOG]  Average bad state cube size reduction: 17 --> 9
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 18 --> 0
+[LOG]  Average refinement cube size reduction: 18 --> 0
+[LOG] Winning region computation time: 234.51 sec CPU time.
+[LOG] Winning region computation time: 235 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 234.51 sec CPU time.
+[LOG] Overall execution time: 235 sec real time.
+Synthesis time: 234.51 sec (Real time) / 230.05 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt15y.aag =====================
+[LOG] Nr. of bad state candidate computations: 32770
+[LOG]  Bad state computations took:
+[LOG]    6.25 sec CPU time in total.
+[LOG]    3 sec real time in total.
+[LOG]    0.000190723 sec CPU time on average.
+[LOG]    9.15471e-05 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 16384
+[LOG] Nr. of bad state candidate checks: 16385
+[LOG]  Successful: 16384
+[LOG]  Bad state candidate checks took:
+[LOG]    193.02 sec CPU time in total.
+[LOG]    196 sec real time in total.
+[LOG]    0.0117803 sec CPU time on average.
+[LOG]    0.0119622 sec real time on average.
+[LOG]  Total bad state cube size reduction: 278528 --> 147456
+[LOG]  Average bad state cube size reduction: 17 --> 9
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 18 --> 0
+[LOG]  Average refinement cube size reduction: 18 --> 0
+[LOG] Winning region computation time: 219.61 sec CPU time.
+[LOG] Winning region computation time: 220 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 219.61 sec CPU time.
+[LOG] Overall execution time: 220 sec real time.
+Synthesis time: 219.63 sec (Real time) / 215.75 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt20n.aag =====================
+Command terminated by signal 9
+Synthesis time: 10100.00 sec (Real time) / 10073.50 sec (User CPU time)
+Timeout: 1
+=====================  cnt20y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10100.00 sec (Real time) / 10078.06 sec (User CPU time)
+Timeout: 1
+=====================  cnt25n.aag =====================
+Command terminated by signal 9
+Synthesis time: 10100.00 sec (Real time) / 10073.64 sec (User CPU time)
+Timeout: 1
+=====================  cnt25y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10100.00 sec (Real time) / 10078.71 sec (User CPU time)
+Timeout: 1
+=====================  cnt30n.aag =====================
+=====================  cnt30y.aag =====================
+=====================  mv2n.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 4 --> 3
+[LOG]  Average bad state cube size reduction: 4 --> 3
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 5 --> 0
+[LOG]  Average refinement cube size reduction: 5 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv2y.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 4 --> 3
+[LOG]  Average bad state cube size reduction: 4 --> 3
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 5 --> 0
+[LOG]  Average refinement cube size reduction: 5 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs2n.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 4 --> 3
+[LOG]  Average bad state cube size reduction: 4 --> 3
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 5 --> 0
+[LOG]  Average refinement cube size reduction: 5 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs2y.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 4 --> 3
+[LOG]  Average bad state cube size reduction: 4 --> 3
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 5 --> 0
+[LOG]  Average refinement cube size reduction: 5 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv4n.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 6 --> 5
+[LOG]  Average bad state cube size reduction: 6 --> 5
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 9 --> 0
+[LOG]  Average refinement cube size reduction: 9 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv4y.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 6 --> 5
+[LOG]  Average bad state cube size reduction: 6 --> 5
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 9 --> 0
+[LOG]  Average refinement cube size reduction: 9 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs4n.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 6 --> 5
+[LOG]  Average bad state cube size reduction: 6 --> 5
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 9 --> 0
+[LOG]  Average refinement cube size reduction: 9 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs4y.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 6 --> 5
+[LOG]  Average bad state cube size reduction: 6 --> 5
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 9 --> 0
+[LOG]  Average refinement cube size reduction: 9 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv8n.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 10 --> 9
+[LOG]  Average bad state cube size reduction: 10 --> 9
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 17 --> 0
+[LOG]  Average refinement cube size reduction: 17 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv8y.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 10 --> 9
+[LOG]  Average bad state cube size reduction: 10 --> 9
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 17 --> 0
+[LOG]  Average refinement cube size reduction: 17 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs8n.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 10 --> 9
+[LOG]  Average bad state cube size reduction: 10 --> 9
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 17 --> 0
+[LOG]  Average refinement cube size reduction: 17 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs8y.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 10 --> 9
+[LOG]  Average bad state cube size reduction: 10 --> 9
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 17 --> 0
+[LOG]  Average refinement cube size reduction: 17 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv12n.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 14 --> 13
+[LOG]  Average bad state cube size reduction: 14 --> 13
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 25 --> 0
+[LOG]  Average refinement cube size reduction: 25 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv12y.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 14 --> 13
+[LOG]  Average bad state cube size reduction: 14 --> 13
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 25 --> 0
+[LOG]  Average refinement cube size reduction: 25 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs12n.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 14 --> 13
+[LOG]  Average bad state cube size reduction: 14 --> 13
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 25 --> 0
+[LOG]  Average refinement cube size reduction: 25 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs12y.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 14 --> 13
+[LOG]  Average bad state cube size reduction: 14 --> 13
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 25 --> 0
+[LOG]  Average refinement cube size reduction: 25 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv16n.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 18 --> 17
+[LOG]  Average bad state cube size reduction: 18 --> 17
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 33 --> 0
+[LOG]  Average refinement cube size reduction: 33 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv16y.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 18 --> 17
+[LOG]  Average bad state cube size reduction: 18 --> 17
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 33 --> 0
+[LOG]  Average refinement cube size reduction: 33 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs16n.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 18 --> 17
+[LOG]  Average bad state cube size reduction: 18 --> 17
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 33 --> 0
+[LOG]  Average refinement cube size reduction: 33 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs16y.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 18 --> 17
+[LOG]  Average bad state cube size reduction: 18 --> 17
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 33 --> 0
+[LOG]  Average refinement cube size reduction: 33 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs18n.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 20 --> 19
+[LOG]  Average bad state cube size reduction: 20 --> 19
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 37 --> 0
+[LOG]  Average refinement cube size reduction: 37 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs18y.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 20 --> 19
+[LOG]  Average bad state cube size reduction: 20 --> 19
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 37 --> 0
+[LOG]  Average refinement cube size reduction: 37 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv20n.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 22 --> 21
+[LOG]  Average bad state cube size reduction: 22 --> 21
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 41 --> 0
+[LOG]  Average refinement cube size reduction: 41 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv20y.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 22 --> 21
+[LOG]  Average bad state cube size reduction: 22 --> 21
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 41 --> 0
+[LOG]  Average refinement cube size reduction: 41 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs20n.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 22 --> 21
+[LOG]  Average bad state cube size reduction: 22 --> 21
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 41 --> 0
+[LOG]  Average refinement cube size reduction: 41 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs20y.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 22 --> 21
+[LOG]  Average bad state cube size reduction: 22 --> 21
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 41 --> 0
+[LOG]  Average refinement cube size reduction: 41 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs22n.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 24 --> 23
+[LOG]  Average bad state cube size reduction: 24 --> 23
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 45 --> 0
+[LOG]  Average refinement cube size reduction: 45 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs22y.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 24 --> 23
+[LOG]  Average bad state cube size reduction: 24 --> 23
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 45 --> 0
+[LOG]  Average refinement cube size reduction: 45 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs24n.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 26 --> 25
+[LOG]  Average bad state cube size reduction: 26 --> 25
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 49 --> 0
+[LOG]  Average refinement cube size reduction: 49 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs24y.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 26 --> 25
+[LOG]  Average bad state cube size reduction: 26 --> 25
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 49 --> 0
+[LOG]  Average refinement cube size reduction: 49 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs28n.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 30 --> 29
+[LOG]  Average bad state cube size reduction: 30 --> 29
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 57 --> 0
+[LOG]  Average refinement cube size reduction: 57 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs28y.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 30 --> 29
+[LOG]  Average bad state cube size reduction: 30 --> 29
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 57 --> 0
+[LOG]  Average refinement cube size reduction: 57 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mult2.aag =====================
+[LOG] Nr. of bad state candidate computations: 12
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 0
+[LOG] Nr. of bad state candidate checks: 11
+[LOG]  Successful: 0
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 0 --> 0
+[LOG]  Average bad state cube size reduction: 0 --> 0
+[LOG] Nr. of refinements: 11
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 55 --> 25
+[LOG]  Average refinement cube size reduction: 5 --> 2.27273
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mult4.aag =====================
+[LOG] Nr. of bad state candidate computations: 229
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 0
+[LOG] Nr. of bad state candidate checks: 228
+[LOG]  Successful: 0
+[LOG]  Bad state candidate checks took:
+[LOG]    0.01 sec CPU time in total.
+[LOG]    1 sec real time in total.
+[LOG]    4.38596e-05 sec CPU time on average.
+[LOG]    0.00438596 sec real time on average.
+[LOG]  Total bad state cube size reduction: 0 --> 0
+[LOG]  Average bad state cube size reduction: 0 --> 0
+[LOG] Nr. of refinements: 228
+[LOG]  Refinements took:
+[LOG]    0.06 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.000263158 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 2052 --> 883
+[LOG]  Average refinement cube size reduction: 9 --> 3.87281
+[LOG] Winning region computation time: 0.07 sec CPU time.
+[LOG] Winning region computation time: 1 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.07 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.07 sec (Real time) / 0.05 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mult5.aag =====================
+[LOG] Nr. of bad state candidate computations: 965
+[LOG]  Bad state computations took:
+[LOG]    0.04 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    4.14508e-05 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 0
+[LOG] Nr. of bad state candidate checks: 964
+[LOG]  Successful: 0
+[LOG]  Bad state candidate checks took:
+[LOG]    0.11 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.000114108 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 0 --> 0
+[LOG]  Average bad state cube size reduction: 0 --> 0
+[LOG] Nr. of refinements: 964
+[LOG]  Refinements took:
+[LOG]    0.35 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.000363071 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 10604 --> 4742
+[LOG]  Average refinement cube size reduction: 11 --> 4.91909
+[LOG] Winning region computation time: 0.5 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.5 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.52 sec (Real time) / 0.47 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mult6.aag =====================
+[LOG] Nr. of bad state candidate computations: 3971
+[LOG]  Bad state computations took:
+[LOG]    0.23 sec CPU time in total.
+[LOG]    1 sec real time in total.
+[LOG]    5.79199e-05 sec CPU time on average.
+[LOG]    0.000251826 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 0
+[LOG] Nr. of bad state candidate checks: 3970
+[LOG]  Successful: 0
+[LOG]  Bad state candidate checks took:
+[LOG]    0.5 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.000125945 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 0 --> 0
+[LOG]  Average bad state cube size reduction: 0 --> 0
+[LOG] Nr. of refinements: 3970
+[LOG]  Refinements took:
+[LOG]    3.25 sec CPU time in total.
+[LOG]    3 sec real time in total.
+[LOG]    0.00081864 sec CPU time on average.
+[LOG]    0.000755668 sec real time on average.
+[LOG]  Total refinement cube size reduction: 51610 --> 23692
+[LOG]  Average refinement cube size reduction: 13 --> 5.96776
+[LOG] Winning region computation time: 4.1 sec CPU time.
+[LOG] Winning region computation time: 4 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 4.1 sec CPU time.
+[LOG] Overall execution time: 4 sec real time.
+Synthesis time: 4.13 sec (Real time) / 3.84 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mult7.aag =====================
+[LOG] Nr. of bad state candidate computations: 16132
+[LOG]  Bad state computations took:
+[LOG]    2 sec CPU time in total.
+[LOG]    4 sec real time in total.
+[LOG]    0.000123977 sec CPU time on average.
+[LOG]    0.000247954 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 0
+[LOG] Nr. of bad state candidate checks: 16131
+[LOG]  Successful: 0
+[LOG]  Bad state candidate checks took:
+[LOG]    3.51 sec CPU time in total.
+[LOG]    6 sec real time in total.
+[LOG]    0.000217593 sec CPU time on average.
+[LOG]    0.000371955 sec real time on average.
+[LOG]  Total bad state cube size reduction: 0 --> 0
+[LOG]  Average bad state cube size reduction: 0 --> 0
+[LOG] Nr. of refinements: 16131
+[LOG]  Refinements took:
+[LOG]    30.58 sec CPU time in total.
+[LOG]    27 sec real time in total.
+[LOG]    0.00189573 sec CPU time on average.
+[LOG]    0.0016738 sec real time on average.
+[LOG]  Total refinement cube size reduction: 241965 --> 112877
+[LOG]  Average refinement cube size reduction: 15 --> 6.99752
+[LOG] Winning region computation time: 37.2 sec CPU time.
+[LOG] Winning region computation time: 37 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 37.2 sec CPU time.
+[LOG] Overall execution time: 37 sec real time.
+Synthesis time: 37.22 sec (Real time) / 36.19 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mult8.aag =====================
+[LOG] Nr. of bad state candidate computations: 65027
+[LOG]  Bad state computations took:
+[LOG]    42.25 sec CPU time in total.
+[LOG]    40 sec real time in total.
+[LOG]    0.00064973 sec CPU time on average.
+[LOG]    0.000615129 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 0
+[LOG] Nr. of bad state candidate checks: 65026
+[LOG]  Successful: 0
+[LOG]  Bad state candidate checks took:
+[LOG]    26.64 sec CPU time in total.
+[LOG]    34 sec real time in total.
+[LOG]    0.000409682 sec CPU time on average.
+[LOG]    0.000522868 sec real time on average.
+[LOG]  Total bad state cube size reduction: 0 --> 0
+[LOG]  Average bad state cube size reduction: 0 --> 0
+[LOG] Nr. of refinements: 65026
+[LOG]  Refinements took:
+[LOG]    683.43 sec CPU time in total.
+[LOG]    689 sec real time in total.
+[LOG]    0.0105101 sec CPU time on average.
+[LOG]    0.0105958 sec real time on average.
+[LOG]  Total refinement cube size reduction: 1105442 --> 548382
+[LOG]  Average refinement cube size reduction: 17 --> 8.43327
+[LOG] Winning region computation time: 817.79 sec CPU time.
+[LOG] Winning region computation time: 818 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 817.79 sec CPU time.
+[LOG] Overall execution time: 818 sec real time.
+Synthesis time: 817.79 sec (Real time) / 812.46 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mult9.aag =====================
+Command terminated by signal 9
+Synthesis time: 10100.01 sec (Real time) / 9276.87 sec (User CPU time)
+Timeout: 1
+=====================  mult10.aag =====================
+Command terminated by signal 9
+Synthesis time: 10100.00 sec (Real time) / 9163.40 sec (User CPU time)
+Timeout: 1
+=====================  mult11.aag =====================
+Command terminated by signal 9
+Synthesis time: 10100.00 sec (Real time) / 9168.64 sec (User CPU time)
+Timeout: 1
+=====================  mult12.aag =====================
+=====================  mult13.aag =====================
+=====================  mult14.aag =====================
+=====================  mult15.aag =====================
+=====================  mult16.aag =====================
+=====================  bs8n.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 10 --> 2
+[LOG]  Average bad state cube size reduction: 10 --> 2
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 12 --> 0
+[LOG]  Average refinement cube size reduction: 12 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  bs8y.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 10 --> 2
+[LOG]  Average bad state cube size reduction: 10 --> 2
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 12 --> 0
+[LOG]  Average refinement cube size reduction: 12 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  bs16n.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 18 --> 2
+[LOG]  Average bad state cube size reduction: 18 --> 2
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 22 --> 0
+[LOG]  Average refinement cube size reduction: 22 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  bs16y.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 18 --> 2
+[LOG]  Average bad state cube size reduction: 18 --> 2
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 22 --> 0
+[LOG]  Average refinement cube size reduction: 22 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  bs32n.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 34 --> 2
+[LOG]  Average bad state cube size reduction: 34 --> 2
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 39 --> 0
+[LOG]  Average refinement cube size reduction: 39 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  bs32y.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 34 --> 2
+[LOG]  Average bad state cube size reduction: 34 --> 2
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 39 --> 0
+[LOG]  Average refinement cube size reduction: 39 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  bs64n.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 66 --> 2
+[LOG]  Average bad state cube size reduction: 66 --> 2
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 72 --> 0
+[LOG]  Average refinement cube size reduction: 72 --> 0
+[LOG] Winning region computation time: 0.01 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.01 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  bs64y.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 66 --> 2
+[LOG]  Average bad state cube size reduction: 66 --> 2
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 72 --> 0
+[LOG]  Average refinement cube size reduction: 72 --> 0
+[LOG] Winning region computation time: 0.01 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.01 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  bs128n.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0.01 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.005 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 130 --> 2
+[LOG]  Average bad state cube size reduction: 130 --> 2
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 137 --> 0
+[LOG]  Average refinement cube size reduction: 137 --> 0
+[LOG] Winning region computation time: 0.02 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.02 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.04 sec (Real time) / 0.03 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  bs128y.aag =====================
+[LOG] Nr. of bad state candidate computations: 4
+[LOG]  Bad state computations took:
+[LOG]    0.01 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.0025 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1
+[LOG] Nr. of bad state candidate checks: 2
+[LOG]  Successful: 1
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 130 --> 2
+[LOG]  Average bad state cube size reduction: 130 --> 2
+[LOG] Nr. of refinements: 1
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 137 --> 0
+[LOG]  Average refinement cube size reduction: 137 --> 0
+[LOG] Winning region computation time: 0.03 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.03 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.04 sec (Real time) / 0.03 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay2n.aag =====================
+[LOG] Nr. of bad state candidate computations: 14
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 4
+[LOG] Nr. of bad state candidate checks: 9
+[LOG]  Successful: 4
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 20 --> 12
+[LOG]  Average bad state cube size reduction: 5 --> 3
+[LOG] Nr. of refinements: 5
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 35 --> 4
+[LOG]  Average refinement cube size reduction: 7 --> 0.8
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay2y.aag =====================
+[LOG] Nr. of bad state candidate computations: 16
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 4
+[LOG] Nr. of bad state candidate checks: 11
+[LOG]  Successful: 4
+[LOG]  Bad state candidate checks took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 20 --> 12
+[LOG]  Average bad state cube size reduction: 5 --> 3
+[LOG] Nr. of refinements: 7
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 49 --> 9
+[LOG]  Average refinement cube size reduction: 7 --> 1.28571
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay4n.aag =====================
+[LOG] Nr. of bad state candidate computations: 78
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 16
+[LOG] Nr. of bad state candidate checks: 61
+[LOG]  Successful: 16
+[LOG]  Bad state candidate checks took:
+[LOG]    0.01 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.000163934 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 112 --> 64
+[LOG]  Average bad state cube size reduction: 7 --> 4
+[LOG] Nr. of refinements: 45
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 495 --> 115
+[LOG]  Average refinement cube size reduction: 11 --> 2.55556
+[LOG] Winning region computation time: 0.02 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.02 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay4y.aag =====================
+[LOG] Nr. of bad state candidate computations: 78
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 16
+[LOG] Nr. of bad state candidate checks: 61
+[LOG]  Successful: 16
+[LOG]  Bad state candidate checks took:
+[LOG]    0.01 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.000163934 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 112 --> 64
+[LOG]  Average bad state cube size reduction: 7 --> 4
+[LOG] Nr. of refinements: 45
+[LOG]  Refinements took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 495 --> 114
+[LOG]  Average refinement cube size reduction: 11 --> 2.53333
+[LOG] Winning region computation time: 0.01 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.01 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.02 sec (Real time) / 0.01 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay6n.aag =====================
+[LOG] Nr. of bad state candidate computations: 314
+[LOG]  Bad state computations took:
+[LOG]    0.03 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    9.55414e-05 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 64
+[LOG] Nr. of bad state candidate checks: 249
+[LOG]  Successful: 64
+[LOG]  Bad state candidate checks took:
+[LOG]    0.05 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.000200803 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 576 --> 320
+[LOG]  Average bad state cube size reduction: 9 --> 5
+[LOG] Nr. of refinements: 185
+[LOG]  Refinements took:
+[LOG]    0.03 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.000162162 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 2775 --> 735
+[LOG]  Average refinement cube size reduction: 15 --> 3.97297
+[LOG] Winning region computation time: 0.13 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.13 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.14 sec (Real time) / 0.11 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay6y.aag =====================
+[LOG] Nr. of bad state candidate computations: 690
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 64
+[LOG] Nr. of bad state candidate checks: 625
+[LOG]  Successful: 64
+[LOG]  Bad state candidate checks took:
+[LOG]    0.14 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.000224 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 576 --> 320
+[LOG]  Average bad state cube size reduction: 9 --> 5
+[LOG] Nr. of refinements: 561
+[LOG]  Refinements took:
+[LOG]    0.02 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    3.56506e-05 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 8415 --> 2296
+[LOG]  Average refinement cube size reduction: 15 --> 4.09269
+[LOG] Winning region computation time: 0.17 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.17 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.18 sec (Real time) / 0.17 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay8n.aag =====================
+[LOG] Nr. of bad state candidate computations: 1242
+[LOG]  Bad state computations took:
+[LOG]    0.18 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.000144928 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 256
+[LOG] Nr. of bad state candidate checks: 985
+[LOG]  Successful: 256
+[LOG]  Bad state candidate checks took:
+[LOG]    0.37 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.000375635 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total bad state cube size reduction: 2816 --> 1536
+[LOG]  Average bad state cube size reduction: 11 --> 6
+[LOG] Nr. of refinements: 729
+[LOG]  Refinements took:
+[LOG]    0.32 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.000438957 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Total refinement cube size reduction: 13851 --> 3814
+[LOG]  Average refinement cube size reduction: 19 --> 5.23182
+[LOG] Winning region computation time: 1.06 sec CPU time.
+[LOG] Winning region computation time: 1 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 1.06 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 1.07 sec (Real time) / 0.94 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay8y.aag =====================
+[LOG] Nr. of bad state candidate computations: 8898
+[LOG]  Bad state computations took:
+[LOG]    0.37 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    4.15824e-05 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 256
+[LOG] Nr. of bad state candidate checks: 8641
+[LOG]  Successful: 256
+[LOG]  Bad state candidate checks took:
+[LOG]    1.28 sec CPU time in total.
+[LOG]    3 sec real time in total.
+[LOG]    0.000148131 sec CPU time on average.
+[LOG]    0.000347182 sec real time on average.
+[LOG]  Total bad state cube size reduction: 2816 --> 1536
+[LOG]  Average bad state cube size reduction: 11 --> 6
+[LOG] Nr. of refinements: 8385
+[LOG]  Refinements took:
+[LOG]    1.86 sec CPU time in total.
+[LOG]    1 sec real time in total.
+[LOG]    0.000221825 sec CPU time on average.
+[LOG]    0.000119261 sec real time on average.
+[LOG]  Total refinement cube size reduction: 159315 --> 44960
+[LOG]  Average refinement cube size reduction: 19 --> 5.36196
+[LOG] Winning region computation time: 3.81 sec CPU time.
+[LOG] Winning region computation time: 4 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 3.81 sec CPU time.
+[LOG] Overall execution time: 4 sec real time.
+Synthesis time: 3.83 sec (Real time) / 3.51 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay10n.aag =====================
+[LOG] Nr. of bad state candidate computations: 8402
+[LOG]  Bad state computations took:
+[LOG]    1.51 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.000179719 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1024
+[LOG] Nr. of bad state candidate checks: 7377
+[LOG]  Successful: 1024
+[LOG]  Bad state candidate checks took:
+[LOG]    4.14 sec CPU time in total.
+[LOG]    6 sec real time in total.
+[LOG]    0.000561204 sec CPU time on average.
+[LOG]    0.000813339 sec real time on average.
+[LOG]  Total bad state cube size reduction: 13312 --> 7424
+[LOG]  Average bad state cube size reduction: 13 --> 7.25
+[LOG] Nr. of refinements: 6353
+[LOG]  Refinements took:
+[LOG]    3.87 sec CPU time in total.
+[LOG]    4 sec real time in total.
+[LOG]    0.000609161 sec CPU time on average.
+[LOG]    0.000629624 sec real time on average.
+[LOG]  Total refinement cube size reduction: 146119 --> 35370
+[LOG]  Average refinement cube size reduction: 23 --> 5.56745
+[LOG] Winning region computation time: 11.46 sec CPU time.
+[LOG] Winning region computation time: 12 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 11.46 sec CPU time.
+[LOG] Overall execution time: 12 sec real time.
+Synthesis time: 11.47 sec (Real time) / 10.83 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay10y.aag =====================
+[LOG] Nr. of bad state candidate computations: 45795
+[LOG]  Bad state computations took:
+[LOG]    3.02 sec CPU time in total.
+[LOG]    1 sec real time in total.
+[LOG]    6.59461e-05 sec CPU time on average.
+[LOG]    2.18364e-05 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 1024
+[LOG] Nr. of bad state candidate checks: 44770
+[LOG]  Successful: 1024
+[LOG]  Bad state candidate checks took:
+[LOG]    18.29 sec CPU time in total.
+[LOG]    20 sec real time in total.
+[LOG]    0.000408532 sec CPU time on average.
+[LOG]    0.000446728 sec real time on average.
+[LOG]  Total bad state cube size reduction: 13312 --> 7424
+[LOG]  Average bad state cube size reduction: 13 --> 7.25
+[LOG] Nr. of refinements: 43746
+[LOG]  Refinements took:
+[LOG]    16 sec CPU time in total.
+[LOG]    15 sec real time in total.
+[LOG]    0.000365748 sec CPU time on average.
+[LOG]    0.000342888 sec real time on average.
+[LOG]  Total refinement cube size reduction: 1006158 --> 283060
+[LOG]  Average refinement cube size reduction: 23 --> 6.47053
+[LOG] Winning region computation time: 39.01 sec CPU time.
+[LOG] Winning region computation time: 39 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 39.01 sec CPU time.
+[LOG] Overall execution time: 39 sec real time.
+Synthesis time: 39.02 sec (Real time) / 37.17 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay12n.aag =====================
+[LOG] Nr. of bad state candidate computations: 22492
+[LOG]  Bad state computations took:
+[LOG]    6.2 sec CPU time in total.
+[LOG]    11 sec real time in total.
+[LOG]    0.000275654 sec CPU time on average.
+[LOG]    0.000489063 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 4096
+[LOG] Nr. of bad state candidate checks: 18395
+[LOG]  Successful: 4096
+[LOG]  Bad state candidate checks took:
+[LOG]    34.51 sec CPU time in total.
+[LOG]    26 sec real time in total.
+[LOG]    0.00187605 sec CPU time on average.
+[LOG]    0.00141343 sec real time on average.
+[LOG]  Total bad state cube size reduction: 61440 --> 32768
+[LOG]  Average bad state cube size reduction: 15 --> 8
+[LOG] Nr. of refinements: 14299
+[LOG]  Refinements took:
+[LOG]    17.31 sec CPU time in total.
+[LOG]    25 sec real time in total.
+[LOG]    0.00121057 sec CPU time on average.
+[LOG]    0.00174837 sec real time on average.
+[LOG]  Total refinement cube size reduction: 386073 --> 119722
+[LOG]  Average refinement cube size reduction: 27 --> 8.37275
+[LOG] Winning region computation time: 69.83 sec CPU time.
+[LOG] Winning region computation time: 70 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 69.83 sec CPU time.
+[LOG] Overall execution time: 70 sec real time.
+Synthesis time: 70.04 sec (Real time) / 67.24 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay12y.aag =====================
+[LOG] Nr. of bad state candidate computations: 1824615
+[LOG]  Bad state computations took:
+[LOG]    136.41 sec CPU time in total.
+[LOG]    148 sec real time in total.
+[LOG]    7.4761e-05 sec CPU time on average.
+[LOG]    8.1113e-05 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 4096
+[LOG] Nr. of bad state candidate checks: 1820518
+[LOG]  Successful: 4096
+[LOG]  Bad state candidate checks took:
+[LOG]    1906.78 sec CPU time in total.
+[LOG]    1907 sec real time in total.
+[LOG]    0.00104738 sec CPU time on average.
+[LOG]    0.0010475 sec real time on average.
+[LOG]  Total bad state cube size reduction: 61440 --> 32768
+[LOG]  Average bad state cube size reduction: 15 --> 8
+[LOG] Nr. of refinements: 1816422
+[LOG]  Refinements took:
+[LOG]    1082.12 sec CPU time in total.
+[LOG]    1071 sec real time in total.
+[LOG]    0.000595743 sec CPU time on average.
+[LOG]    0.000589621 sec real time on average.
+[LOG]  Total refinement cube size reduction: 49043394 --> 13806161
+[LOG]  Average refinement cube size reduction: 27 --> 7.60075
+[LOG] Winning region computation time: 3175.06 sec CPU time.
+[LOG] Winning region computation time: 3175 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 3175.06 sec CPU time.
+[LOG] Overall execution time: 3175 sec real time.
+Synthesis time: 3174.94 sec (Real time) / 3098.66 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay14n.aag =====================
+[LOG] Nr. of bad state candidate computations: 77211
+[LOG]  Bad state computations took:
+[LOG]    32.22 sec CPU time in total.
+[LOG]    48 sec real time in total.
+[LOG]    0.000417298 sec CPU time on average.
+[LOG]    0.000621673 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 16384
+[LOG] Nr. of bad state candidate checks: 60826
+[LOG]  Successful: 16384
+[LOG]  Bad state candidate checks took:
+[LOG]    606.86 sec CPU time in total.
+[LOG]    588 sec real time in total.
+[LOG]    0.00997698 sec CPU time on average.
+[LOG]    0.00966692 sec real time on average.
+[LOG]  Total bad state cube size reduction: 278528 --> 147456
+[LOG]  Average bad state cube size reduction: 17 --> 9
+[LOG] Nr. of refinements: 44442
+[LOG]  Refinements took:
+[LOG]    92.14 sec CPU time in total.
+[LOG]    97 sec real time in total.
+[LOG]    0.00207326 sec CPU time on average.
+[LOG]    0.00218262 sec real time on average.
+[LOG]  Total refinement cube size reduction: 1377702 --> 390840
+[LOG]  Average refinement cube size reduction: 31 --> 8.79438
+[LOG] Winning region computation time: 806.75 sec CPU time.
+[LOG] Winning region computation time: 807 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 806.75 sec CPU time.
+[LOG] Overall execution time: 807 sec real time.
+Synthesis time: 806.74 sec (Real time) / 781.15 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay14y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10100.00 sec (Real time) / 9904.59 sec (User CPU time)
+Timeout: 1
+=====================  stay16n.aag =====================
+Command terminated by signal 9
+Synthesis time: 10100.00 sec (Real time) / 9842.32 sec (User CPU time)
+Timeout: 1
+=====================  stay16y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10100.00 sec (Real time) / 9906.03 sec (User CPU time)
+Timeout: 1
+=====================  stay18n.aag =====================
+Command terminated by signal 9
+Synthesis time: 10100.00 sec (Real time) / 10014.87 sec (User CPU time)
+Timeout: 1
+=====================  stay18y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10100.00 sec (Real time) / 9934.42 sec (User CPU time)
+Timeout: 1
+=====================  stay20n.aag =====================
+=====================  stay20y.aag =====================
+=====================  stay22n.aag =====================
+=====================  stay22y.aag =====================
+=====================  stay24n.aag =====================
+=====================  stay24y.aag =====================
+=====================  genbuf1c3y.aag =====================
+[LOG] Nr. of bad state candidate computations: 4155
+[LOG]  Bad state computations took:
+[LOG]    0.16 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    3.85078e-05 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 13
+[LOG] Nr. of bad state candidate checks: 4141
+[LOG]  Successful: 1268
+[LOG]  Bad state candidate checks took:
+[LOG]    2.68 sec CPU time in total.
+[LOG]    3 sec real time in total.
+[LOG]    0.000647187 sec CPU time on average.
+[LOG]    0.000724463 sec real time on average.
+[LOG]  Total bad state cube size reduction: 27896 --> 10598
+[LOG]  Average bad state cube size reduction: 22 --> 8.35804
+[LOG] Nr. of refinements: 2873
+[LOG]  Refinements took:
+[LOG]    1.58 sec CPU time in total.
+[LOG]    1 sec real time in total.
+[LOG]    0.000549948 sec CPU time on average.
+[LOG]    0.000348068 sec real time on average.
+[LOG]  Total refinement cube size reduction: 77571 --> 11265
+[LOG]  Average refinement cube size reduction: 27 --> 3.92099
+[LOG] Winning region computation time: 4.57 sec CPU time.
+[LOG] Winning region computation time: 4 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 4.57 sec CPU time.
+[LOG] Overall execution time: 4 sec real time.
+Synthesis time: 4.59 sec (Real time) / 4.26 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  genbuf2c3y.aag =====================
+[LOG] Nr. of bad state candidate computations: 21734
+[LOG]  Bad state computations took:
+[LOG]    2.17 sec CPU time in total.
+[LOG]    1 sec real time in total.
+[LOG]    9.98436e-05 sec CPU time on average.
+[LOG]    4.60109e-05 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 13
+[LOG] Nr. of bad state candidate checks: 21720
+[LOG]  Successful: 5236
+[LOG]  Bad state candidate checks took:
+[LOG]    50.61 sec CPU time in total.
+[LOG]    57 sec real time in total.
+[LOG]    0.00233011 sec CPU time on average.
+[LOG]    0.00262431 sec real time on average.
+[LOG]  Total bad state cube size reduction: 130900 --> 49372
+[LOG]  Average bad state cube size reduction: 25 --> 9.42934
+[LOG] Nr. of refinements: 16484
+[LOG]  Refinements took:
+[LOG]    22.97 sec CPU time in total.
+[LOG]    18 sec real time in total.
+[LOG]    0.00139347 sec CPU time on average.
+[LOG]    0.00109197 sec real time on average.
+[LOG]  Total refinement cube size reduction: 511004 --> 88763
+[LOG]  Average refinement cube size reduction: 31 --> 5.3848
+[LOG] Winning region computation time: 77.77 sec CPU time.
+[LOG] Winning region computation time: 78 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 77.77 sec CPU time.
+[LOG] Overall execution time: 78 sec real time.
+Synthesis time: 77.78 sec (Real time) / 75.36 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  genbuf3c3y.aag =====================
+[LOG] Nr. of bad state candidate computations: 59157
+[LOG]  Bad state computations took:
+[LOG]    11.74 sec CPU time in total.
+[LOG]    15 sec real time in total.
+[LOG]    0.000198455 sec CPU time on average.
+[LOG]    0.000253563 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 14
+[LOG] Nr. of bad state candidate checks: 59142
+[LOG]  Successful: 8753
+[LOG]  Bad state candidate checks took:
+[LOG]    292.03 sec CPU time in total.
+[LOG]    297 sec real time in total.
+[LOG]    0.00493778 sec CPU time on average.
+[LOG]    0.00502181 sec real time on average.
+[LOG]  Total bad state cube size reduction: 245084 --> 92306
+[LOG]  Average bad state cube size reduction: 28 --> 10.5456
+[LOG] Nr. of refinements: 50389
+[LOG]  Refinements took:
+[LOG]    137.64 sec CPU time in total.
+[LOG]    128 sec real time in total.
+[LOG]    0.00273155 sec CPU time on average.
+[LOG]    0.00254024 sec real time on average.
+[LOG]  Total refinement cube size reduction: 1763615 --> 298675
+[LOG]  Average refinement cube size reduction: 35 --> 5.92738
+[LOG] Winning region computation time: 451.93 sec CPU time.
+[LOG] Winning region computation time: 452 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 451.94 sec CPU time.
+[LOG] Overall execution time: 452 sec real time.
+Synthesis time: 451.94 sec (Real time) / 441.07 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  genbuf4c3y.aag =====================
+[LOG] Nr. of bad state candidate computations: 186074
+[LOG]  Bad state computations took:
+[LOG]    115.99 sec CPU time in total.
+[LOG]    123 sec real time in total.
+[LOG]    0.000623354 sec CPU time on average.
+[LOG]    0.000661027 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 15
+[LOG] Nr. of bad state candidate checks: 186058
+[LOG]  Successful: 46980
+[LOG]  Bad state candidate checks took:
+[LOG]    7811.63 sec CPU time in total.
+[LOG]    7777 sec real time in total.
+[LOG]    0.0419849 sec CPU time on average.
+[LOG]    0.0417988 sec real time on average.
+[LOG]  Total bad state cube size reduction: 1456380 --> 533498
+[LOG]  Average bad state cube size reduction: 31 --> 11.3559
+[LOG] Nr. of refinements: 139078
+[LOG]  Refinements took:
+[LOG]    1226.87 sec CPU time in total.
+[LOG]    1259 sec real time in total.
+[LOG]    0.00882145 sec CPU time on average.
+[LOG]    0.00905247 sec real time on average.
+[LOG]  Total refinement cube size reduction: 5424042 --> 941629
+[LOG]  Average refinement cube size reduction: 39 --> 6.77051
+[LOG] Winning region computation time: 9427.8 sec CPU time.
+[LOG] Winning region computation time: 9428 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 9427.81 sec CPU time.
+[LOG] Overall execution time: 9428 sec real time.
+Synthesis time: 9427.42 sec (Real time) / 9284.32 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  genbuf5c3y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10100.00 sec (Real time) / 9888.65 sec (User CPU time)
+Timeout: 1
+=====================  genbuf6c3y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10100.00 sec (Real time) / 9753.43 sec (User CPU time)
+Timeout: 1
+=====================  genbuf7c3y.aag =====================
+=====================  genbuf8c3y.aag =====================
+=====================  genbuf9c3y.aag =====================
+=====================  genbuf10c3y.aag =====================
+=====================  genbuf11c3y.aag =====================
+=====================  genbuf12c3y.aag =====================
+=====================  genbuf13c3y.aag =====================
+=====================  genbuf14c3y.aag =====================
+=====================  genbuf15c3y.aag =====================
+=====================  genbuf16c3y.aag =====================
+=====================  genbuf1b4y.aag =====================
+[LOG] Nr. of bad state candidate computations: 5155
+[LOG]  Bad state computations took:
+[LOG]    0.33 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    6.40155e-05 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 11
+[LOG] Nr. of bad state candidate checks: 5143
+[LOG]  Successful: 1071
+[LOG]  Bad state candidate checks took:
+[LOG]    3.15 sec CPU time in total.
+[LOG]    1 sec real time in total.
+[LOG]    0.000612483 sec CPU time on average.
+[LOG]    0.000194439 sec real time on average.
+[LOG]  Total bad state cube size reduction: 25704 --> 10743
+[LOG]  Average bad state cube size reduction: 24 --> 10.0308
+[LOG] Nr. of refinements: 4072
+[LOG]  Refinements took:
+[LOG]    2.66 sec CPU time in total.
+[LOG]    5 sec real time in total.
+[LOG]    0.000653242 sec CPU time on average.
+[LOG]    0.0012279 sec real time on average.
+[LOG]  Total refinement cube size reduction: 118088 --> 17531
+[LOG]  Average refinement cube size reduction: 29 --> 4.30526
+[LOG] Winning region computation time: 6.36 sec CPU time.
+[LOG] Winning region computation time: 6 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 6.36 sec CPU time.
+[LOG] Overall execution time: 6 sec real time.
+Synthesis time: 6.38 sec (Real time) / 5.86 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  genbuf2b4y.aag =====================
+[LOG] Nr. of bad state candidate computations: 22704
+[LOG]  Bad state computations took:
+[LOG]    3.71 sec CPU time in total.
+[LOG]    4 sec real time in total.
+[LOG]    0.000163407 sec CPU time on average.
+[LOG]    0.00017618 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 10
+[LOG] Nr. of bad state candidate checks: 22693
+[LOG]  Successful: 3659
+[LOG]  Bad state candidate checks took:
+[LOG]    49.51 sec CPU time in total.
+[LOG]    47 sec real time in total.
+[LOG]    0.00218173 sec CPU time on average.
+[LOG]    0.00207112 sec real time on average.
+[LOG]  Total bad state cube size reduction: 98793 --> 44986
+[LOG]  Average bad state cube size reduction: 27 --> 12.2946
+[LOG] Nr. of refinements: 19034
+[LOG]  Refinements took:
+[LOG]    37.55 sec CPU time in total.
+[LOG]    42 sec real time in total.
+[LOG]    0.00197279 sec CPU time on average.
+[LOG]    0.00220658 sec real time on average.
+[LOG]  Total refinement cube size reduction: 628122 --> 104359
+[LOG]  Average refinement cube size reduction: 33 --> 5.48277
+[LOG] Winning region computation time: 93.6 sec CPU time.
+[LOG] Winning region computation time: 94 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 93.6 sec CPU time.
+[LOG] Overall execution time: 94 sec real time.
+Synthesis time: 93.61 sec (Real time) / 90.54 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  genbuf3b4y.aag =====================
+[LOG] Nr. of bad state candidate computations: 82028
+[LOG]  Bad state computations took:
+[LOG]    41.3 sec CPU time in total.
+[LOG]    41 sec real time in total.
+[LOG]    0.000503487 sec CPU time on average.
+[LOG]    0.000499829 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 11
+[LOG] Nr. of bad state candidate checks: 82016
+[LOG]  Successful: 10837
+[LOG]  Bad state candidate checks took:
+[LOG]    702.28 sec CPU time in total.
+[LOG]    671 sec real time in total.
+[LOG]    0.00856272 sec CPU time on average.
+[LOG]    0.00818133 sec real time on average.
+[LOG]  Total bad state cube size reduction: 335947 --> 148553
+[LOG]  Average bad state cube size reduction: 31 --> 13.7079
+[LOG] Nr. of refinements: 71179
+[LOG]  Refinements took:
+[LOG]    459.89 sec CPU time in total.
+[LOG]    494 sec real time in total.
+[LOG]    0.00646103 sec CPU time on average.
+[LOG]    0.00694025 sec real time on average.
+[LOG]  Total refinement cube size reduction: 2704802 --> 454689
+[LOG]  Average refinement cube size reduction: 38 --> 6.38797
+[LOG] Winning region computation time: 1241.2 sec CPU time.
+[LOG] Winning region computation time: 1241 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 1241.2 sec CPU time.
+[LOG] Overall execution time: 1241 sec real time.
+Synthesis time: 1241.17 sec (Real time) / 1221.92 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  genbuf4b4y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10100.00 sec (Real time) / 9990.60 sec (User CPU time)
+Timeout: 1
+=====================  genbuf5b4y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10100.00 sec (Real time) / 9768.15 sec (User CPU time)
+Timeout: 1
+=====================  genbuf6b4y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10100.01 sec (Real time) / 9772.77 sec (User CPU time)
+Timeout: 1
+=====================  genbuf7b4y.aag =====================
+=====================  genbuf8b4y.aag =====================
+=====================  genbuf9b4y.aag =====================
+=====================  genbuf10b4y.aag =====================
+=====================  genbuf11b4y.aag =====================
+=====================  genbuf12b4y.aag =====================
+=====================  genbuf13b4y.aag =====================
+=====================  genbuf14b4y.aag =====================
+=====================  genbuf15b4y.aag =====================
+=====================  genbuf16b4y.aag =====================
+=====================  genbuf1f4y.aag =====================
+[LOG] Nr. of bad state candidate computations: 4468
+[LOG]  Bad state computations took:
+[LOG]    0.25 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    5.59534e-05 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 9
+[LOG] Nr. of bad state candidate checks: 4458
+[LOG]  Successful: 998
+[LOG]  Bad state candidate checks took:
+[LOG]    2.59 sec CPU time in total.
+[LOG]    2 sec real time in total.
+[LOG]    0.000580978 sec CPU time on average.
+[LOG]    0.000448632 sec real time on average.
+[LOG]  Total bad state cube size reduction: 23952 --> 9257
+[LOG]  Average bad state cube size reduction: 24 --> 9.27555
+[LOG] Nr. of refinements: 3460
+[LOG]  Refinements took:
+[LOG]    2.01 sec CPU time in total.
+[LOG]    3 sec real time in total.
+[LOG]    0.000580925 sec CPU time on average.
+[LOG]    0.000867052 sec real time on average.
+[LOG]  Total refinement cube size reduction: 100340 --> 14607
+[LOG]  Average refinement cube size reduction: 29 --> 4.22168
+[LOG] Winning region computation time: 4.99 sec CPU time.
+[LOG] Winning region computation time: 5 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 4.99 sec CPU time.
+[LOG] Overall execution time: 5 sec real time.
+Synthesis time: 5.01 sec (Real time) / 4.69 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  genbuf2f4y.aag =====================
+[LOG] Nr. of bad state candidate computations: 18196
+[LOG]  Bad state computations took:
+[LOG]    2.31 sec CPU time in total.
+[LOG]    3 sec real time in total.
+[LOG]    0.000126951 sec CPU time on average.
+[LOG]    0.000164871 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 9
+[LOG] Nr. of bad state candidate checks: 18186
+[LOG]  Successful: 2540
+[LOG]  Bad state candidate checks took:
+[LOG]    24.39 sec CPU time in total.
+[LOG]    22 sec real time in total.
+[LOG]    0.00134114 sec CPU time on average.
+[LOG]    0.00120972 sec real time on average.
+[LOG]  Total bad state cube size reduction: 68580 --> 26735
+[LOG]  Average bad state cube size reduction: 27 --> 10.5256
+[LOG] Nr. of refinements: 15646
+[LOG]  Refinements took:
+[LOG]    19.63 sec CPU time in total.
+[LOG]    22 sec real time in total.
+[LOG]    0.00125463 sec CPU time on average.
+[LOG]    0.00140611 sec real time on average.
+[LOG]  Total refinement cube size reduction: 516318 --> 82247
+[LOG]  Average refinement cube size reduction: 33 --> 5.25674
+[LOG] Winning region computation time: 47.47 sec CPU time.
+[LOG] Winning region computation time: 47 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 47.47 sec CPU time.
+[LOG] Overall execution time: 47 sec real time.
+Synthesis time: 47.48 sec (Real time) / 45.16 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  genbuf3f4y.aag =====================
+[LOG] Nr. of bad state candidate computations: 76340
+[LOG]  Bad state computations took:
+[LOG]    22.02 sec CPU time in total.
+[LOG]    13 sec real time in total.
+[LOG]    0.000288446 sec CPU time on average.
+[LOG]    0.000170291 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 9
+[LOG] Nr. of bad state candidate checks: 76330
+[LOG]  Successful: 9348
+[LOG]  Bad state candidate checks took:
+[LOG]    491.52 sec CPU time in total.
+[LOG]    505 sec real time in total.
+[LOG]    0.00643941 sec CPU time on average.
+[LOG]    0.00661601 sec real time on average.
+[LOG]  Total bad state cube size reduction: 289788 --> 110186
+[LOG]  Average bad state cube size reduction: 31 --> 11.7871
+[LOG] Nr. of refinements: 66982
+[LOG]  Refinements took:
+[LOG]    285.44 sec CPU time in total.
+[LOG]    287 sec real time in total.
+[LOG]    0.00426144 sec CPU time on average.
+[LOG]    0.00428473 sec real time on average.
+[LOG]  Total refinement cube size reduction: 2545316 --> 431505
+[LOG]  Average refinement cube size reduction: 38 --> 6.4421
+[LOG] Winning region computation time: 819.11 sec CPU time.
+[LOG] Winning region computation time: 820 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 819.11 sec CPU time.
+[LOG] Overall execution time: 820 sec real time.
+Synthesis time: 819.09 sec (Real time) / 803.43 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  genbuf4f4y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10100.00 sec (Real time) / 10003.75 sec (User CPU time)
+Timeout: 1
+=====================  genbuf5f5y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10100.00 sec (Real time) / 9888.22 sec (User CPU time)
+Timeout: 1
+=====================  genbuf6f6y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10100.00 sec (Real time) / 9831.20 sec (User CPU time)
+Timeout: 1
+=====================  genbuf7f7y.aag =====================
+=====================  genbuf8f8y.aag =====================
+=====================  genbuf9f9y.aag =====================
+=====================  genbuf10f10y.aag =====================
+=====================  genbuf11f11y.aag =====================
+=====================  genbuf12f12y.aag =====================
+=====================  genbuf13f13y.aag =====================
+=====================  genbuf14f14y.aag =====================
+=====================  genbuf15f15y.aag =====================
+=====================  genbuf16f16y.aag =====================
+=====================  amba2c7y.aag =====================
+[LOG] Nr. of bad state candidate computations: 27897
+[LOG]  Bad state computations took:
+[LOG]    2.23 sec CPU time in total.
+[LOG]    1 sec real time in total.
+[LOG]    7.99369e-05 sec CPU time on average.
+[LOG]    3.58461e-05 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 17
+[LOG] Nr. of bad state candidate checks: 27879
+[LOG]  Successful: 745
+[LOG]  Bad state candidate checks took:
+[LOG]    9.26 sec CPU time in total.
+[LOG]    14 sec real time in total.
+[LOG]    0.00033215 sec CPU time on average.
+[LOG]    0.00050217 sec real time on average.
+[LOG]  Total bad state cube size reduction: 21605 --> 6699
+[LOG]  Average bad state cube size reduction: 29 --> 8.99195
+[LOG] Nr. of refinements: 27134
+[LOG]  Refinements took:
+[LOG]    25.92 sec CPU time in total.
+[LOG]    23 sec real time in total.
+[LOG]    0.000955259 sec CPU time on average.
+[LOG]    0.000847645 sec real time on average.
+[LOG]  Total refinement cube size reduction: 976824 --> 145624
+[LOG]  Average refinement cube size reduction: 36 --> 5.36685
+[LOG] Winning region computation time: 38.13 sec CPU time.
+[LOG] Winning region computation time: 38 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 38.13 sec CPU time.
+[LOG] Overall execution time: 38 sec real time.
+Synthesis time: 38.14 sec (Real time) / 34.63 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  amba3c5y.aag =====================
+[LOG] Nr. of bad state candidate computations: 97017
+[LOG]  Bad state computations took:
+[LOG]    15.87 sec CPU time in total.
+[LOG]    23 sec real time in total.
+[LOG]    0.00016358 sec CPU time on average.
+[LOG]    0.000237072 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 11
+[LOG] Nr. of bad state candidate checks: 97005
+[LOG]  Successful: 2146
+[LOG]  Bad state candidate checks took:
+[LOG]    89.74 sec CPU time in total.
+[LOG]    85 sec real time in total.
+[LOG]    0.000925107 sec CPU time on average.
+[LOG]    0.000876243 sec real time on average.
+[LOG]  Total bad state cube size reduction: 75110 --> 19979
+[LOG]  Average bad state cube size reduction: 35 --> 9.30988
+[LOG] Nr. of refinements: 94859
+[LOG]  Refinements took:
+[LOG]    223.78 sec CPU time in total.
+[LOG]    217 sec real time in total.
+[LOG]    0.00235908 sec CPU time on average.
+[LOG]    0.00228761 sec real time on average.
+[LOG]  Total refinement cube size reduction: 4173796 --> 632640
+[LOG]  Average refinement cube size reduction: 44 --> 6.66927
+[LOG] Winning region computation time: 336.5 sec CPU time.
+[LOG] Winning region computation time: 336 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 336.5 sec CPU time.
+[LOG] Overall execution time: 336 sec real time.
+Synthesis time: 336.50 sec (Real time) / 320.23 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  amba4c7y.aag =====================
+[LOG] Nr. of bad state candidate computations: 422308
+[LOG]  Bad state computations took:
+[LOG]    156.26 sec CPU time in total.
+[LOG]    145 sec real time in total.
+[LOG]    0.000370014 sec CPU time on average.
+[LOG]    0.000343351 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 18
+[LOG] Nr. of bad state candidate checks: 422289
+[LOG]  Successful: 5009
+[LOG]  Bad state candidate checks took:
+[LOG]    1126.25 sec CPU time in total.
+[LOG]    1199 sec real time in total.
+[LOG]    0.00266701 sec CPU time on average.
+[LOG]    0.00283929 sec real time on average.
+[LOG]  Total bad state cube size reduction: 195351 --> 54748
+[LOG]  Average bad state cube size reduction: 39 --> 10.9299
+[LOG] Nr. of refinements: 417280
+[LOG]  Refinements took:
+[LOG]    2557.44 sec CPU time in total.
+[LOG]    2523 sec real time in total.
+[LOG]    0.00612883 sec CPU time on average.
+[LOG]    0.0060463 sec real time on average.
+[LOG]  Total refinement cube size reduction: 20864000 --> 3126142
+[LOG]  Average refinement cube size reduction: 50 --> 7.49171
+[LOG] Winning region computation time: 3989.58 sec CPU time.
+[LOG] Winning region computation time: 3990 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 3989.59 sec CPU time.
+[LOG] Overall execution time: 3990 sec real time.
+Synthesis time: 3989.43 sec (Real time) / 3867.05 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  amba5c5y.aag =====================
+[LOG] Nr. of bad state candidate computations: 430968
+[LOG]  Bad state computations took:
+[LOG]    233.46 sec CPU time in total.
+[LOG]    224 sec real time in total.
+[LOG]    0.000541711 sec CPU time on average.
+[LOG]    0.00051976 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 12
+[LOG] Nr. of bad state candidate checks: 430955
+[LOG]  Successful: 4819
+[LOG]  Bad state candidate checks took:
+[LOG]    1261.38 sec CPU time in total.
+[LOG]    1172 sec real time in total.
+[LOG]    0.00292694 sec CPU time on average.
+[LOG]    0.00271954 sec real time on average.
+[LOG]  Total bad state cube size reduction: 212036 --> 51417
+[LOG]  Average bad state cube size reduction: 44 --> 10.6696
+[LOG] Nr. of refinements: 426136
+[LOG]  Refinements took:
+[LOG]    4317.28 sec CPU time in total.
+[LOG]    4382 sec real time in total.
+[LOG]    0.0101312 sec CPU time on average.
+[LOG]    0.0102831 sec real time on average.
+[LOG]  Total refinement cube size reduction: 24289752 --> 3327132
+[LOG]  Average refinement cube size reduction: 57 --> 7.80768
+[LOG] Winning region computation time: 6073.3 sec CPU time.
+[LOG] Winning region computation time: 6073 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 6073.31 sec CPU time.
+[LOG] Overall execution time: 6073 sec real time.
+Synthesis time: 6073.13 sec (Real time) / 5897.18 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  amba6c5y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10100.00 sec (Real time) / 9772.03 sec (User CPU time)
+Timeout: 1
+=====================  amba7c5y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10100.00 sec (Real time) / 9684.14 sec (User CPU time)
+Timeout: 1
+=====================  amba8c7y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10100.00 sec (Real time) / 9734.71 sec (User CPU time)
+Timeout: 1
+=====================  amba9c5y.aag =====================
+=====================  amba10c5y.aag =====================
+=====================  amba2b9y.aag =====================
+[LOG] Nr. of bad state candidate computations: 31788
+[LOG]  Bad state computations took:
+[LOG]    2.68 sec CPU time in total.
+[LOG]    4 sec real time in total.
+[LOG]    8.43085e-05 sec CPU time on average.
+[LOG]    0.000125834 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 16
+[LOG] Nr. of bad state candidate checks: 31771
+[LOG]  Successful: 1383
+[LOG]  Bad state candidate checks took:
+[LOG]    19.7 sec CPU time in total.
+[LOG]    21 sec real time in total.
+[LOG]    0.000620062 sec CPU time on average.
+[LOG]    0.00066098 sec real time on average.
+[LOG]  Total bad state cube size reduction: 44256 --> 15385
+[LOG]  Average bad state cube size reduction: 32 --> 11.1244
+[LOG] Nr. of refinements: 30388
+[LOG]  Refinements took:
+[LOG]    44.02 sec CPU time in total.
+[LOG]    43 sec real time in total.
+[LOG]    0.0014486 sec CPU time on average.
+[LOG]    0.00141503 sec real time on average.
+[LOG]  Total refinement cube size reduction: 1185132 --> 170645
+[LOG]  Average refinement cube size reduction: 39 --> 5.61554
+[LOG] Winning region computation time: 67.76 sec CPU time.
+[LOG] Winning region computation time: 68 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 67.76 sec CPU time.
+[LOG] Overall execution time: 68 sec real time.
+Synthesis time: 67.77 sec (Real time) / 63.11 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  amba3b5y.aag =====================
+[LOG] Nr. of bad state candidate computations: 78546
+[LOG]  Bad state computations took:
+[LOG]    15.44 sec CPU time in total.
+[LOG]    12 sec real time in total.
+[LOG]    0.000196573 sec CPU time on average.
+[LOG]    0.000152777 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 8
+[LOG] Nr. of bad state candidate checks: 78537
+[LOG]  Successful: 2366
+[LOG]  Bad state candidate checks took:
+[LOG]    92.97 sec CPU time in total.
+[LOG]    89 sec real time in total.
+[LOG]    0.00118377 sec CPU time on average.
+[LOG]    0.00113322 sec real time on average.
+[LOG]  Total bad state cube size reduction: 87542 --> 26386
+[LOG]  Average bad state cube size reduction: 37 --> 11.1522
+[LOG] Nr. of refinements: 76171
+[LOG]  Refinements took:
+[LOG]    219.07 sec CPU time in total.
+[LOG]    230 sec real time in total.
+[LOG]    0.00287603 sec CPU time on average.
+[LOG]    0.00301952 sec real time on average.
+[LOG]  Total refinement cube size reduction: 3503866 --> 480914
+[LOG]  Average refinement cube size reduction: 46 --> 6.31361
+[LOG] Winning region computation time: 335.71 sec CPU time.
+[LOG] Winning region computation time: 336 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 335.72 sec CPU time.
+[LOG] Overall execution time: 336 sec real time.
+Synthesis time: 335.72 sec (Real time) / 321.49 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  amba4b9y.aag =====================
+[LOG] Nr. of bad state candidate computations: 357135
+[LOG]  Bad state computations took:
+[LOG]    205.26 sec CPU time in total.
+[LOG]    225 sec real time in total.
+[LOG]    0.000574741 sec CPU time on average.
+[LOG]    0.000630014 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 14
+[LOG] Nr. of bad state candidate checks: 357120
+[LOG]  Successful: 10731
+[LOG]  Bad state candidate checks took:
+[LOG]    2071.4 sec CPU time in total.
+[LOG]    2092 sec real time in total.
+[LOG]    0.00580029 sec CPU time on average.
+[LOG]    0.00585797 sec real time on average.
+[LOG]  Total bad state cube size reduction: 461433 --> 148294
+[LOG]  Average bad state cube size reduction: 43 --> 13.8192
+[LOG] Nr. of refinements: 346389
+[LOG]  Refinements took:
+[LOG]    3159.83 sec CPU time in total.
+[LOG]    3130 sec real time in total.
+[LOG]    0.0091222 sec CPU time on average.
+[LOG]    0.00903608 sec real time on average.
+[LOG]  Total refinement cube size reduction: 18705006 --> 2469690
+[LOG]  Average refinement cube size reduction: 54 --> 7.12982
+[LOG] Winning region computation time: 5620.37 sec CPU time.
+[LOG] Winning region computation time: 5620 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 5620.38 sec CPU time.
+[LOG] Overall execution time: 5620 sec real time.
+Synthesis time: 5620.14 sec (Real time) / 5521.80 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  amba5b5y.aag =====================
+[LOG] Nr. of bad state candidate computations: 297692
+[LOG]  Bad state computations took:
+[LOG]    180.12 sec CPU time in total.
+[LOG]    164 sec real time in total.
+[LOG]    0.000605055 sec CPU time on average.
+[LOG]    0.000550905 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 7
+[LOG] Nr. of bad state candidate checks: 297684
+[LOG]  Successful: 7573
+[LOG]  Bad state candidate checks took:
+[LOG]    1117.66 sec CPU time in total.
+[LOG]    1118 sec real time in total.
+[LOG]    0.00375452 sec CPU time on average.
+[LOG]    0.00375566 sec real time on average.
+[LOG]  Total bad state cube size reduction: 363504 --> 95572
+[LOG]  Average bad state cube size reduction: 48 --> 12.6201
+[LOG] Nr. of refinements: 290111
+[LOG]  Refinements took:
+[LOG]    3039.71 sec CPU time in total.
+[LOG]    3055 sec real time in total.
+[LOG]    0.0104777 sec CPU time on average.
+[LOG]    0.0105305 sec real time on average.
+[LOG]  Total refinement cube size reduction: 17696771 --> 2123968
+[LOG]  Average refinement cube size reduction: 61 --> 7.32123
+[LOG] Winning region computation time: 4497.91 sec CPU time.
+[LOG] Winning region computation time: 4498 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 4497.92 sec CPU time.
+[LOG] Overall execution time: 4498 sec real time.
+Synthesis time: 4497.71 sec (Real time) / 4358.64 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  amba6b5y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10100.41 sec (Real time) / 9831.15 sec (User CPU time)
+Timeout: 1
+=====================  amba7b5y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10100.00 sec (Real time) / 9370.00 sec (User CPU time)
+Timeout: 1
+=====================  amba8b6y.aag =====================
+=====================  amba9b5y.aag =====================
+=====================  amba10b5y.aag =====================
+=====================  amba2f9y.aag =====================
+[LOG] Nr. of bad state candidate computations: 16894
+[LOG]  Bad state computations took:
+[LOG]    1.34 sec CPU time in total.
+[LOG]    1 sec real time in total.
+[LOG]    7.93181e-05 sec CPU time on average.
+[LOG]    5.91926e-05 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 11
+[LOG] Nr. of bad state candidate checks: 16882
+[LOG]  Successful: 970
+[LOG]  Bad state candidate checks took:
+[LOG]    7.89 sec CPU time in total.
+[LOG]    12 sec real time in total.
+[LOG]    0.000467362 sec CPU time on average.
+[LOG]    0.000710816 sec real time on average.
+[LOG]  Total bad state cube size reduction: 31040 --> 8620
+[LOG]  Average bad state cube size reduction: 32 --> 8.8866
+[LOG] Nr. of refinements: 15912
+[LOG]  Refinements took:
+[LOG]    18.6 sec CPU time in total.
+[LOG]    16 sec real time in total.
+[LOG]    0.00116893 sec CPU time on average.
+[LOG]    0.00100553 sec real time on average.
+[LOG]  Total refinement cube size reduction: 620568 --> 86965
+[LOG]  Average refinement cube size reduction: 39 --> 5.46537
+[LOG] Winning region computation time: 28.37 sec CPU time.
+[LOG] Winning region computation time: 29 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 28.38 sec CPU time.
+[LOG] Overall execution time: 29 sec real time.
+Synthesis time: 28.40 sec (Real time) / 25.94 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  amba3f9y.aag =====================
+[LOG] Nr. of bad state candidate computations: 239938
+[LOG]  Bad state computations took:
+[LOG]    73.16 sec CPU time in total.
+[LOG]    72 sec real time in total.
+[LOG]    0.000304912 sec CPU time on average.
+[LOG]    0.000300078 sec real time on average.
+[LOG]  Nr. of restarts in bad state candidate computations: 14
+[LOG] Nr. of bad state candidate checks: 239923
+[LOG]  Successful: 3329
+[LOG]  Bad state candidate checks took:
+[LOG]    435.8 sec CPU time in total.
+[LOG]    432 sec real time in total.
+[LOG]    0.00181642 sec CPU time on average.
+[LOG]    0.00180058 sec real time on average.
+[LOG]  Total bad state cube size reduction: 126502 --> 34040
+[LOG]  Average bad state cube size reduction: 38 --> 10.2253
+[LOG] Nr. of refinements: 236594
+[LOG]  Refinements took:
+[LOG]    1087.99 sec CPU time in total.
+[LOG]    1084 sec real time in total.
+[LOG]    0.00459855 sec CPU time on average.
+[LOG]    0.00458169 sec real time on average.
+[LOG]  Total refinement cube size reduction: 11119918 --> 1613372
+[LOG]  Average refinement cube size reduction: 47 --> 6.81916
+[LOG] Winning region computation time: 1648.26 sec CPU time.
+[LOG] Winning region computation time: 1648 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 1648.26 sec CPU time.
+[LOG] Overall execution time: 1648 sec real time.
+Synthesis time: 1648.21 sec (Real time) / 1601.06 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  amba4f25y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10100.00 sec (Real time) / 9927.18 sec (User CPU time)
+Timeout: 1
+=====================  amba5f17y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10100.00 sec (Real time) / 8973.84 sec (User CPU time)
+Timeout: 1
+=====================  amba6f21y.aag =====================
+=====================  amba7f25y.aag =====================
+=====================  amba8f57y.aag =====================
+=====================  amba9f33y.aag =====================
+=====================  amba10f37y.aag =====================

@@ -1,0 +1,915 @@
+\hypertarget{classClauseExplorerSAT}{\section{Clause\-Explorer\-S\-A\-T Class Reference}
+\label{classClauseExplorerSAT}\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}}
+}
+
+
+Implements the method of \hyperlink{classLearnSynthSAT}{Learn\-Synth\-S\-A\-T} in a parallelized way.  
+
+
+
+
+{\ttfamily \#include $<$Parallel\-Learner.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classClauseExplorerSAT_afef2a28a6052b9d42de7d33736d53439}{Clause\-Explorer\-S\-A\-T} (size\-\_\-t instance\-\_\-nr, \hyperlink{classParallelLearner}{Parallel\-Learner} \&coordinator)
+\begin{DoxyCompactList}\small\item\em Constructor if optimization R\-G is disabled. \end{DoxyCompactList}\item 
+\hyperlink{classClauseExplorerSAT_aeb039a6f4bcccd7a899c22afbd2fd821}{Clause\-Explorer\-S\-A\-T} (size\-\_\-t instance\-\_\-nr, \hyperlink{classParallelLearner}{Parallel\-Learner} \&coordinator, const \hyperlink{classCNF}{C\-N\-F} \&prev\-\_\-trans\-\_\-or\-\_\-initial, const vector$<$ int $>$ \&current\-\_\-to\-\_\-previous\-\_\-map, int current\-\_\-state\-\_\-is\-\_\-initial)
+\begin{DoxyCompactList}\small\item\em Constructor if optimization R\-G is enabled. \end{DoxyCompactList}\item 
+virtual \hyperlink{classClauseExplorerSAT_aa5e321a156ef7fa6e21946594e500668}{$\sim$\-Clause\-Explorer\-S\-A\-T} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classClauseExplorerSAT_aae50270504a523ae79458c7eb1f2e9d1}{explore\-Clauses} ()
+\begin{DoxyCompactList}\small\item\em The work-\/horse of this class. \end{DoxyCompactList}\item 
+void \hyperlink{classClauseExplorerSAT_a36134b9b6f662c44de73e76146c256bd}{notify\-Before\-New\-Info} ()
+\begin{DoxyCompactList}\small\item\em The method must be called before new information is passed to this object. \end{DoxyCompactList}\item 
+void \hyperlink{classClauseExplorerSAT_a8289e4ba9921717f705a1b2fb2655761}{notify\-After\-New\-Info} ()
+\begin{DoxyCompactList}\small\item\em The method must be called after new information is passed to this object. \end{DoxyCompactList}\item 
+void \hyperlink{classClauseExplorerSAT_ad507ce2b3b33e0e5b27237fd24954d82}{notify\-New\-Win\-Reg\-Clause} (const vector$<$ int $>$ \&clause, int src)
+\begin{DoxyCompactList}\small\item\em Notifies this worker about a new winning region clause. \end{DoxyCompactList}\item 
+void \hyperlink{classClauseExplorerSAT_a1898760d3aec582ffbd0c5dc5460f8f9}{notify\-New\-Useless\-Input\-Clause} (const vector$<$ int $>$ \&clause, int level)
+\begin{DoxyCompactList}\small\item\em Notifies this Clause\-Explorer\-S\-A\-T-\/instance that a new U-\/clause is available. \end{DoxyCompactList}\item 
+void \hyperlink{classClauseExplorerSAT_ab08aedd836a12bdc325da6e3b0f8b711}{notify\-Restart} (const \hyperlink{classCNF}{C\-N\-F} \&restart\-\_\-with\-\_\-cnf)
+\begin{DoxyCompactList}\small\item\em Notifies this Clause\-Explorer\-S\-A\-T-\/instance that it should restart its solver. \end{DoxyCompactList}\item 
+const \hyperlink{classLearnStatisticsSAT}{Learn\-Statistics\-S\-A\-T} \& \hyperlink{classClauseExplorerSAT_a9798ab0d723cc896feef36e2fbf5311a}{get\-Statistics} () const 
+\begin{DoxyCompactList}\small\item\em Returns the statistics and performance measures computed by this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classClauseExplorerSAT_aca3490db608f1c3a4a832e67654dd246}{consider\-New\-Info\-From\-Others} ()
+\begin{DoxyCompactList}\small\item\em Considers new information discovered by other threads in the solvers. \end{DoxyCompactList}\item 
+bool \hyperlink{classClauseExplorerSAT_a0515689c4464599e0d2d3c350d710d75}{wait\-Until\-Ongoing\-Restart\-Done} ()
+\begin{DoxyCompactList}\small\item\em Checks if some other thread is computing a restart. If yes\-: waits until it is done. \end{DoxyCompactList}\item 
+int \hyperlink{classClauseExplorerSAT_add20a0c539fdf734af6b0f49f2ba4ad9}{present\-To\-Previous} (int literal) const 
+\begin{DoxyCompactList}\small\item\em Returns the previous-\/state copy of a literal. \end{DoxyCompactList}\item 
+void \hyperlink{classClauseExplorerSAT_ae91fa23b183aa81824f16c3477643184}{present\-To\-Previous} (vector$<$ int $>$ \&cube\-\_\-or\-\_\-clause) const 
+\begin{DoxyCompactList}\small\item\em Computes the previous-\/state copy of a cube or clause. \end{DoxyCompactList}\item 
+void \hyperlink{classClauseExplorerSAT_a42355860aef189f2b89356ff347dab4d}{present\-To\-Previous} (\hyperlink{classCNF}{C\-N\-F} \&cnf) const 
+\begin{DoxyCompactList}\small\item\em Computes the previous-\/state copy of a \hyperlink{classCNF}{C\-N\-F}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\-\_\-t \hyperlink{classClauseExplorerSAT_ab9ff4163b38a8ce70e07b78ea2e76cc2}{instance\-\_\-nr\-\_\-}
+\begin{DoxyCompactList}\small\item\em A unique instance number. \end{DoxyCompactList}\item 
+bool \hyperlink{classClauseExplorerSAT_aca59e0b38c8a8fea9cf35d174969c41e}{use\-\_\-ind\-\_\-}
+\begin{DoxyCompactList}\small\item\em A flag indicating if optimization R\-G should be used. \end{DoxyCompactList}\item 
+\hyperlink{classLearnStatisticsSAT}{Learn\-Statistics\-S\-A\-T} \hyperlink{classClauseExplorerSAT_a1d37eb0233177911835bc073fbe1c224}{statistics\-\_\-}
+\begin{DoxyCompactList}\small\item\em Stores and maintains statistics and performance measures. \end{DoxyCompactList}\item 
+\hyperlink{classParallelLearner}{Parallel\-Learner} \& \hyperlink{classClauseExplorerSAT_a8909bb332c60d7611763ca5976fbe6f6}{coordinator\-\_\-}
+\begin{DoxyCompactList}\small\item\em A reference to the coordinator. \end{DoxyCompactList}\item 
+bool \hyperlink{classClauseExplorerSAT_a3edc259c6f39cce098ab18a2dce7f262}{precise\-\_\-}
+\begin{DoxyCompactList}\small\item\em A flag indicating if the next-\/state copy of the winning region is accurate. \end{DoxyCompactList}\item 
+\hyperlink{classSatSolver}{Sat\-Solver} $\ast$ \hyperlink{classClauseExplorerSAT_a65b5b3d04ff5be8bfec60d3dcf86e4d0}{solver\-\_\-i\-\_\-}
+\begin{DoxyCompactList}\small\item\em The solver for computing counterexample-\/candidates. \end{DoxyCompactList}\item 
+\hyperlink{classSatSolver}{Sat\-Solver} $\ast$ \hyperlink{classClauseExplorerSAT_a7884d171120e8397140e30fdc28767eb}{solver\-\_\-ctrl\-\_\-}
+\begin{DoxyCompactList}\small\item\em The solver for checking counterexample-\/candidates. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classClauseExplorerSAT_a9d9c6caf1a451ed22a096c2ef5e8bbc2}{vars\-\_\-to\-\_\-keep\-\_\-}
+\begin{DoxyCompactList}\small\item\em A set of variables the solver should not optimize by the S\-A\-T-\/solver. \end{DoxyCompactList}\item 
+mutex \hyperlink{classClauseExplorerSAT_a674651f8fbf9ed93264ce3369bd5332b}{new\-\_\-info\-\_\-lock\-\_\-}
+\begin{DoxyCompactList}\small\item\em A lock to protect many fields from race conditions. \end{DoxyCompactList}\item 
+\hyperlink{classCNF}{C\-N\-F} \hyperlink{classClauseExplorerSAT_a1a9dc7f76967c8164e9625df34dec172}{restart\-\_\-with\-\_\-cnf\-\_\-}
+\begin{DoxyCompactList}\small\item\em A \hyperlink{classCNF}{C\-N\-F} to restart solver\-\_\-i\-\_\- with. \end{DoxyCompactList}\item 
+\hyperlink{classCNF}{C\-N\-F} \hyperlink{classClauseExplorerSAT_a2c3e73b4c0529b9139354a965d34e81f}{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-for\-\_\-solver\-\_\-i\-\_\-}
+\begin{DoxyCompactList}\small\item\em All new winning region clauses that have not yet been fed into solver\-\_\-i\-\_\-. \end{DoxyCompactList}\item 
+\hyperlink{classCNF}{C\-N\-F} \hyperlink{classClauseExplorerSAT_a7d923928f3cb6209b29f5cc5104b5fe2}{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-for\-\_\-solver\-\_\-ctrl\-\_\-}
+\begin{DoxyCompactList}\small\item\em All new winning region clauses that have not yet been fed into solver\-\_\-ctrl\-\_\-. \end{DoxyCompactList}\item 
+\hyperlink{classCNF}{C\-N\-F} \hyperlink{classClauseExplorerSAT_a70c8edd590d75994ee354d591909cd35}{new\-\_\-foreign\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-for\-\_\-solver\-\_\-i\-\_\-}
+\begin{DoxyCompactList}\small\item\em All foreign winning region clauses that have not yet been fed into solver\-\_\-i\-\_\-. \end{DoxyCompactList}\item 
+\hyperlink{classCNF}{C\-N\-F} \hyperlink{classClauseExplorerSAT_a3d1bdb9a6484c85af655a4eed1ee5f19}{new\-\_\-useless\-\_\-input\-\_\-clauses\-\_\-}
+\begin{DoxyCompactList}\small\item\em All U-\/clauses that have not yet been added to \hyperlink{classClauseExplorerSAT_a65b5b3d04ff5be8bfec60d3dcf86e4d0}{solver\-\_\-i\-\_\-}. \end{DoxyCompactList}\item 
+int \hyperlink{classClauseExplorerSAT_a67eeafbba9da9c87534f7ef26531a57a}{new\-\_\-useless\-\_\-input\-\_\-clauses\-\_\-level\-\_\-}
+\begin{DoxyCompactList}\small\item\em The level on which the clauses in \hyperlink{classClauseExplorerSAT_a3d1bdb9a6484c85af655a4eed1ee5f19}{new\-\_\-useless\-\_\-input\-\_\-clauses\-\_\-} have been found. \end{DoxyCompactList}\item 
+int \hyperlink{classClauseExplorerSAT_a0b5d716111026dd1cb4efe5855e2fe2f}{restart\-\_\-level\-\_\-}
+\begin{DoxyCompactList}\small\item\em The number of solver restarts that have already been performed. \end{DoxyCompactList}\item 
+int \hyperlink{classClauseExplorerSAT_adf9bfe4390d34e57e25f269afa1e7b25}{new\-\_\-restart\-\_\-level\-\_\-}
+\begin{DoxyCompactList}\small\item\em The restart level we have after we consider \hyperlink{classClauseExplorerSAT_a1a9dc7f76967c8164e9625df34dec172}{restart\-\_\-with\-\_\-cnf\-\_\-}. \end{DoxyCompactList}\item 
+\hyperlink{classSatSolver}{Sat\-Solver} $\ast$ \hyperlink{classClauseExplorerSAT_aba4c9ed8ccc28d89c094f3cd80157f3f}{solver\-\_\-ctrl\-\_\-ind\-\_\-}
+\begin{DoxyCompactList}\small\item\em The solver for generalizing counterexamples if optimization R\-G is endabled. \end{DoxyCompactList}\item 
+\hyperlink{classCNF}{C\-N\-F} \hyperlink{classClauseExplorerSAT_a445dd961b44b493e184ff42207132ea1}{prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-}
+\begin{DoxyCompactList}\small\item\em Says\-: the current state is initial or the previous transition relation holds. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classClauseExplorerSAT_aecf42678820d41d716fb23f833066da2}{current\-\_\-to\-\_\-previous\-\_\-map\-\_\-}
+\begin{DoxyCompactList}\small\item\em A map from present-\/state variables to their previous-\/state copy. \end{DoxyCompactList}\item 
+int \hyperlink{classClauseExplorerSAT_a210b4a062e0a949536b172d904a2219f}{current\-\_\-state\-\_\-is\-\_\-initial\-\_\-}
+\begin{DoxyCompactList}\small\item\em Says\-: the current state is initial or the previous transition relation holds. \end{DoxyCompactList}\item 
+int \hyperlink{classClauseExplorerSAT_ab98b3cf3447591b3e390e3d3a1d595e5}{prev\-\_\-safe\-\_\-}
+\begin{DoxyCompactList}\small\item\em A literal saying that the previous-\/state is safe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classClauseExplorerSAT_ad7a7e6be6d2450e716b2132308bdeeea}{Clause\-Explorer\-S\-A\-T} (const \hyperlink{classClauseExplorerSAT}{Clause\-Explorer\-S\-A\-T} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classClauseExplorerSAT}{Clause\-Explorer\-S\-A\-T} \& \hyperlink{classClauseExplorerSAT_a1b2f9a77392cebd3e648d1696685e9b4}{operator=} (const \hyperlink{classClauseExplorerSAT}{Clause\-Explorer\-S\-A\-T} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implements the method of \hyperlink{classLearnSynthSAT}{Learn\-Synth\-S\-A\-T} in a parallelized way. 
+
+This class basically implements the same method as \hyperlink{classLearnSynthSAT}{Learn\-Synth\-S\-A\-T}. It only has a few additional methods to communicate with other threads. Whenever it finds a new clause of the winning region, it communicates this clause to all other worker-\/threads (via the \hyperlink{classParallelLearner}{Parallel\-Learner}, which acts as a coordinator). Also, if it finds out that some state-\/input combination is not useful for the antagonist in trying to leave the winning region, it communicates a clause to all other instances of the same class. For that to work, all Clause\-Explorer\-S\-A\-T-\/instances must be synchronized to a certain extend\-: All Clause\-Explorer\-S\-A\-T-\/instances must do solver restarts simultaneously, i.\-e., they must all work with the same next-\/state copy of the winning region. This is done by coordinating and communicating solver restarts via the \hyperlink{classParallelLearner}{Parallel\-Learner}.
+
+\begin{DoxyAuthor}{Author}
+Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0.\-0 
+\end{DoxyVersion}
+
+
+Definition at line 401 of file Parallel\-Learner.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classClauseExplorerSAT_afef2a28a6052b9d42de7d33736d53439}{\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}}
+\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!ClauseExplorerSAT@{Clause\-Explorer\-S\-A\-T}}
+\subsubsection[{Clause\-Explorer\-S\-A\-T}]{\setlength{\rightskip}{0pt plus 5cm}Clause\-Explorer\-S\-A\-T\-::\-Clause\-Explorer\-S\-A\-T (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{instance\-\_\-nr, }
+\item[{{\bf Parallel\-Learner} \&}]{coordinator}
+\end{DoxyParamCaption}
+)}}\label{classClauseExplorerSAT_afef2a28a6052b9d42de7d33736d53439}
+
+
+Constructor if optimization R\-G is disabled. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em instance\-\_\-nr} & A unique instance number. It is used to bring in some asymmetry between the different Clause\-Explorer\-S\-A\-T-\/instances\-: depending on the instance number, the instance selects a different \hyperlink{classSatSolver}{Sat\-Solver} to use. \\
+\hline
+{\em coordinator} & A reference to the coordinator. All communication to other worker-\/threads is done via the coordinator. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 472 of file Parallel\-Learner.\-cpp.
+
+
+
+References solver\-\_\-ctrl\-\_\-, and solver\-\_\-i\-\_\-.
+
+\hypertarget{classClauseExplorerSAT_aeb039a6f4bcccd7a899c22afbd2fd821}{\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}}
+\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!ClauseExplorerSAT@{Clause\-Explorer\-S\-A\-T}}
+\subsubsection[{Clause\-Explorer\-S\-A\-T}]{\setlength{\rightskip}{0pt plus 5cm}Clause\-Explorer\-S\-A\-T\-::\-Clause\-Explorer\-S\-A\-T (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{instance\-\_\-nr, }
+\item[{{\bf Parallel\-Learner} \&}]{coordinator, }
+\item[{const {\bf C\-N\-F} \&}]{prev\-\_\-trans\-\_\-or\-\_\-initial, }
+\item[{const vector$<$ int $>$ \&}]{current\-\_\-to\-\_\-previous\-\_\-map, }
+\item[{int}]{current\-\_\-state\-\_\-is\-\_\-initial}
+\end{DoxyParamCaption}
+)}}\label{classClauseExplorerSAT_aeb039a6f4bcccd7a899c22afbd2fd821}
+
+
+Constructor if optimization R\-G is enabled. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em instance\-\_\-nr} & A unique instance number. It is used to bring in some asymmetry between the different Clause\-Explorer\-S\-A\-T-\/instances\-: depending on the instance number, the instance selects a different \hyperlink{classSatSolver}{Sat\-Solver} to use. \\
+\hline
+{\em coordinator} & A reference to the coordinator. All communication to other worker-\/threads is done via the coordinator. \\
+\hline
+{\em prev\-\_\-trans\-\_\-or\-\_\-initial} & A \hyperlink{classCNF}{C\-N\-F} that says\-: the current state is initial or the previous transition relation holds. This is an important building block for the \hyperlink{classCNF}{C\-N\-F} to generalize counterexamples if optimization R\-G is enabled. This \hyperlink{classCNF}{C\-N\-F} is computed only once by the \hyperlink{classParallelLearner}{Parallel\-Learner} and passed to all \hyperlink{classClauseExplorerSAT}{Clause\-Explorer\-S\-A\-T} instances. \\
+\hline
+{\em current\-\_\-to\-\_\-previous\-\_\-map} & A map from present-\/state variables to their previous-\/state copy. This map is computed only once by the \hyperlink{classParallelLearner}{Parallel\-Learner} and passed to all \hyperlink{classClauseExplorerSAT}{Clause\-Explorer\-S\-A\-T} instances. \\
+\hline
+{\em current\-\_\-state\-\_\-is\-\_\-initial} & A literal that is true if the current state is initial and false otherwise. The clauses assigning the literal are part of prev\-\_\-trans\-\_\-or\-\_\-initial. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 511 of file Parallel\-Learner.\-cpp.
+
+
+
+References solver\-\_\-ctrl\-\_\-, solver\-\_\-ctrl\-\_\-ind\-\_\-, and solver\-\_\-i\-\_\-.
+
+\hypertarget{classClauseExplorerSAT_aa5e321a156ef7fa6e21946594e500668}{\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!$\sim$\-Clause\-Explorer\-S\-A\-T@{$\sim$\-Clause\-Explorer\-S\-A\-T}}
+\index{$\sim$\-Clause\-Explorer\-S\-A\-T@{$\sim$\-Clause\-Explorer\-S\-A\-T}!ClauseExplorerSAT@{Clause\-Explorer\-S\-A\-T}}
+\subsubsection[{$\sim$\-Clause\-Explorer\-S\-A\-T}]{\setlength{\rightskip}{0pt plus 5cm}Clause\-Explorer\-S\-A\-T\-::$\sim$\-Clause\-Explorer\-S\-A\-T (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classClauseExplorerSAT_aa5e321a156ef7fa6e21946594e500668}
+
+
+Destructor. 
+
+
+
+Definition at line 567 of file Parallel\-Learner.\-cpp.
+
+
+
+References solver\-\_\-ctrl\-\_\-, solver\-\_\-ctrl\-\_\-ind\-\_\-, and solver\-\_\-i\-\_\-.
+
+\hypertarget{classClauseExplorerSAT_ad7a7e6be6d2450e716b2132308bdeeea}{\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}}
+\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!ClauseExplorerSAT@{Clause\-Explorer\-S\-A\-T}}
+\subsubsection[{Clause\-Explorer\-S\-A\-T}]{\setlength{\rightskip}{0pt plus 5cm}Clause\-Explorer\-S\-A\-T\-::\-Clause\-Explorer\-S\-A\-T (
+\begin{DoxyParamCaption}
+\item[{const {\bf Clause\-Explorer\-S\-A\-T} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classClauseExplorerSAT_ad7a7e6be6d2450e716b2132308bdeeea}
+
+
+Copy constructor. 
+
+The copy constructor is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classClauseExplorerSAT_aca3490db608f1c3a4a832e67654dd246}{\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!consider\-New\-Info\-From\-Others@{consider\-New\-Info\-From\-Others}}
+\index{consider\-New\-Info\-From\-Others@{consider\-New\-Info\-From\-Others}!ClauseExplorerSAT@{Clause\-Explorer\-S\-A\-T}}
+\subsubsection[{consider\-New\-Info\-From\-Others}]{\setlength{\rightskip}{0pt plus 5cm}void Clause\-Explorer\-S\-A\-T\-::consider\-New\-Info\-From\-Others (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classClauseExplorerSAT_aca3490db608f1c3a4a832e67654dd246}
+
+
+Considers new information discovered by other threads in the solvers. 
+
+New information includes\-: 
+\begin{DoxyItemize}
+\item A new \hyperlink{classCNF}{C\-N\-F} for the solver to compute counterexamples (we need to do a restart). This info came from \hyperlink{classClauseExplorerSAT_ab08aedd836a12bdc325da6e3b0f8b711}{notify\-Restart()}. 
+\item New clauses refining the winning region (coming from \hyperlink{classClauseExplorerSAT_ad507ce2b3b33e0e5b27237fd24954d82}{notify\-New\-Win\-Reg\-Clause()}). 
+\item New clauses defining useless state-\/input combinations (coming from \hyperlink{classClauseExplorerSAT_a1898760d3aec582ffbd0c5dc5460f8f9}{notify\-New\-Useless\-Input\-Clause()}). 
+\end{DoxyItemize}
+
+Definition at line 773 of file Parallel\-Learner.\-cpp.
+
+
+
+References C\-N\-F\-::clear(), C\-N\-F\-::get\-Nr\-Of\-Clauses(), Sat\-Solver\-::inc\-Add\-C\-N\-F(), new\-\_\-foreign\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-for\-\_\-solver\-\_\-i\-\_\-, new\-\_\-info\-\_\-lock\-\_\-, new\-\_\-restart\-\_\-level\-\_\-, new\-\_\-useless\-\_\-input\-\_\-clauses\-\_\-, new\-\_\-useless\-\_\-input\-\_\-clauses\-\_\-level\-\_\-, new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-for\-\_\-solver\-\_\-ctrl\-\_\-, new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-for\-\_\-solver\-\_\-i\-\_\-, Learn\-Statistics\-S\-A\-T\-::notify\-Restart(), precise\-\_\-, present\-To\-Previous(), restart\-\_\-level\-\_\-, restart\-\_\-with\-\_\-cnf\-\_\-, solver\-\_\-ctrl\-\_\-, solver\-\_\-ctrl\-\_\-ind\-\_\-, solver\-\_\-i\-\_\-, Sat\-Solver\-::start\-Incremental\-Session(), statistics\-\_\-, C\-N\-F\-::swap\-Present\-To\-Next(), use\-\_\-ind\-\_\-, and vars\-\_\-to\-\_\-keep\-\_\-.
+
+
+
+Referenced by explore\-Clauses().
+
+\hypertarget{classClauseExplorerSAT_aae50270504a523ae79458c7eb1f2e9d1}{\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!explore\-Clauses@{explore\-Clauses}}
+\index{explore\-Clauses@{explore\-Clauses}!ClauseExplorerSAT@{Clause\-Explorer\-S\-A\-T}}
+\subsubsection[{explore\-Clauses}]{\setlength{\rightskip}{0pt plus 5cm}void Clause\-Explorer\-S\-A\-T\-::explore\-Clauses (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classClauseExplorerSAT_aae50270504a523ae79458c7eb1f2e9d1}
+
+
+The work-\/horse of this class. 
+
+This method computes clauses refining the winning region, just like \hyperlink{classLearnSynthSAT}{Learn\-Synth\-S\-A\-T}. It only has a few additional methods to communicate with other threads. Whenever it finds a new clause of the winning region, it communicates it to all other worker-\/threads (via the \hyperlink{classParallelLearner}{Parallel\-Learner}, which acts as a coordinator). Also, if it finds out that some state-\/input combination is not useful for the antagonist in trying to leave the winning region, it communicates a clause to all other instances of the same class. In every iteration, it also considers all new incoming clauses found by others. All Clause\-Explorer\-S\-A\-T-\/instances must be synchronized to a certain extend\-: All Clause\-Explorer\-S\-A\-T-\/instances must do solver restarts simultaneously, i.\-e., they must all work with the same next-\/state copy of the winning region. This is done by coordinating and communicating solver restarts via the \hyperlink{classParallelLearner}{Parallel\-Learner}. 
+
+Definition at line 578 of file Parallel\-Learner.\-cpp.
+
+
+
+References consider\-New\-Info\-From\-Others(), Utils\-::contains\-Init(), coordinator\-\_\-, Var\-Info\-::\-C\-T\-R\-L, current\-\_\-state\-\_\-is\-\_\-initial\-\_\-, E\-X\-P\-L, Utils\-::extract(), A\-I\-G2\-C\-N\-F\-::get\-Next\-Safe\-States(), A\-I\-G2\-C\-N\-F\-::get\-Next\-Unsafe\-States(), A\-I\-G2\-C\-N\-F\-::get\-Safe\-States(), A\-I\-G2\-C\-N\-F\-::get\-Trans(), Var\-Manager\-::get\-Vars\-Of\-Type(), Sat\-Solver\-::inc\-Add\-C\-N\-F(), Sat\-Solver\-::inc\-Add\-Cube(), Sat\-Solver\-::inc\-Add\-Neg\-Cube\-As\-Clause(), Sat\-Solver\-::inc\-Add\-Unit\-Clause(), Sat\-Solver\-::inc\-Is\-Sat(), Sat\-Solver\-::inc\-Is\-Sat\-Model\-Or\-Core(), Sat\-Solver\-::inc\-Pop(), Sat\-Solver\-::inc\-Push(), Var\-Info\-::\-I\-N\-P\-U\-T, Var\-Manager\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), instance\-\_\-nr\-\_\-, L\-\_\-\-D\-B\-G, M\-A\-S\-S\-E\-R\-T, Learn\-Statistics\-S\-A\-T\-::notify\-After\-Check\-Candidate\-Failed(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Check\-Candidate\-Found(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Compute\-Candidate(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Refine(), Learn\-Statistics\-S\-A\-T\-::notify\-Before\-Check\-Candidate(), Learn\-Statistics\-S\-A\-T\-::notify\-Before\-Compute\-Candidate(), Learn\-Statistics\-S\-A\-T\-::notify\-Before\-Refine(), Parallel\-Learner\-::notify\-New\-Counterexample(), Parallel\-Learner\-::notify\-New\-Useless\-Input\-Clause(), Parallel\-Learner\-::notify\-New\-Win\-Reg\-Clause(), precise\-\_\-, Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, present\-To\-Previous(), prev\-\_\-safe\-\_\-, prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-, Utils\-::randomize(), R\-E\-A\-L\-I\-Z\-A\-B\-L\-E, Utils\-::remove(), restart\-\_\-level\-\_\-, Parallel\-Learner\-::result\-\_\-, solver\-\_\-ctrl\-\_\-, solver\-\_\-ctrl\-\_\-ind\-\_\-, solver\-\_\-i\-\_\-, Sat\-Solver\-::start\-Incremental\-Session(), statistics\-\_\-, Utils\-::swap\-Present\-To\-Next(), Parallel\-Learner\-::trigger\-Explorer\-Restart(), U\-N\-K\-N\-O\-W\-N, U\-N\-R\-E\-A\-L\-I\-Z\-A\-B\-L\-E, use\-\_\-ind\-\_\-, vars\-\_\-to\-\_\-keep\-\_\-, and wait\-Until\-Ongoing\-Restart\-Done().
+
+
+
+Referenced by Parallel\-Learner\-::run().
+
+\hypertarget{classClauseExplorerSAT_a9798ab0d723cc896feef36e2fbf5311a}{\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!get\-Statistics@{get\-Statistics}}
+\index{get\-Statistics@{get\-Statistics}!ClauseExplorerSAT@{Clause\-Explorer\-S\-A\-T}}
+\subsubsection[{get\-Statistics}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Learn\-Statistics\-S\-A\-T} \& Clause\-Explorer\-S\-A\-T\-::get\-Statistics (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classClauseExplorerSAT_a9798ab0d723cc896feef36e2fbf5311a}
+
+
+Returns the statistics and performance measures computed by this object. 
+
+It is used by the \hyperlink{classParallelLearner}{Parallel\-Learner} to merge the statistics of the different workers.
+
+\begin{DoxyReturn}{Returns}
+The statistics and performance measures computed by this object. 
+\end{DoxyReturn}
+
+
+Definition at line 767 of file Parallel\-Learner.\-cpp.
+
+
+
+References statistics\-\_\-.
+
+\hypertarget{classClauseExplorerSAT_a8289e4ba9921717f705a1b2fb2655761}{\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!notify\-After\-New\-Info@{notify\-After\-New\-Info}}
+\index{notify\-After\-New\-Info@{notify\-After\-New\-Info}!ClauseExplorerSAT@{Clause\-Explorer\-S\-A\-T}}
+\subsubsection[{notify\-After\-New\-Info}]{\setlength{\rightskip}{0pt plus 5cm}void Clause\-Explorer\-S\-A\-T\-::notify\-After\-New\-Info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classClauseExplorerSAT_a8289e4ba9921717f705a1b2fb2655761}
+
+
+The method must be called after new information is passed to this object. 
+
+See \hyperlink{classClauseExplorerSAT_a36134b9b6f662c44de73e76146c256bd}{notify\-Before\-New\-Info()} for an explanation. 
+
+Definition at line 724 of file Parallel\-Learner.\-cpp.
+
+
+
+References new\-\_\-info\-\_\-lock\-\_\-.
+
+\hypertarget{classClauseExplorerSAT_a36134b9b6f662c44de73e76146c256bd}{\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!notify\-Before\-New\-Info@{notify\-Before\-New\-Info}}
+\index{notify\-Before\-New\-Info@{notify\-Before\-New\-Info}!ClauseExplorerSAT@{Clause\-Explorer\-S\-A\-T}}
+\subsubsection[{notify\-Before\-New\-Info}]{\setlength{\rightskip}{0pt plus 5cm}void Clause\-Explorer\-S\-A\-T\-::notify\-Before\-New\-Info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classClauseExplorerSAT_a36134b9b6f662c44de73e76146c256bd}
+
+
+The method must be called before new information is passed to this object. 
+
+After the new information has been set, \hyperlink{classClauseExplorerSAT_a8289e4ba9921717f705a1b2fb2655761}{notify\-After\-New\-Info()} must be called. This way the coordinator (the \hyperlink{classParallelLearner}{Parallel\-Learner}) can inform all Clause\-Explorer\-S\-A\-T-\/instances simultaneously\-: It calls \hyperlink{classClauseExplorerSAT_a36134b9b6f662c44de73e76146c256bd}{notify\-Before\-New\-Info()} on all instances, then communicates the new information to all instances, then calls \hyperlink{classClauseExplorerSAT_a8289e4ba9921717f705a1b2fb2655761}{notify\-After\-New\-Info()} on all instances. This way, no thread can work with the new information before the others got it. This method must be used for \hyperlink{classClauseExplorerSAT_ad507ce2b3b33e0e5b27237fd24954d82}{notify\-New\-Win\-Reg\-Clause()}, \hyperlink{classClauseExplorerSAT_a1898760d3aec582ffbd0c5dc5460f8f9}{notify\-New\-Useless\-Input\-Clause()}, and \hyperlink{classClauseExplorerSAT_a1898760d3aec582ffbd0c5dc5460f8f9}{notify\-New\-Useless\-Input\-Clause()}. If this method finds out that the specification is realizable or unrealizable, it sets the flag \hyperlink{classParallelLearner_a757f8817809cce5c0408cdc41d6db1b8}{Parallel\-Learner\-::result\-\_\-} accordingly. It also polls this flag regularly. If it has been set by some other thread, it quits. 
+
+Definition at line 718 of file Parallel\-Learner.\-cpp.
+
+
+
+References new\-\_\-info\-\_\-lock\-\_\-.
+
+\hypertarget{classClauseExplorerSAT_a1898760d3aec582ffbd0c5dc5460f8f9}{\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!notify\-New\-Useless\-Input\-Clause@{notify\-New\-Useless\-Input\-Clause}}
+\index{notify\-New\-Useless\-Input\-Clause@{notify\-New\-Useless\-Input\-Clause}!ClauseExplorerSAT@{Clause\-Explorer\-S\-A\-T}}
+\subsubsection[{notify\-New\-Useless\-Input\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}void Clause\-Explorer\-S\-A\-T\-::notify\-New\-Useless\-Input\-Clause (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{clause, }
+\item[{int}]{level}
+\end{DoxyParamCaption}
+)}}\label{classClauseExplorerSAT_a1898760d3aec582ffbd0c5dc5460f8f9}
+
+
+Notifies this Clause\-Explorer\-S\-A\-T-\/instance that a new U-\/clause is available. 
+
+A U-\/clause states that a certain state-\/input is useless for the antagonist in trying to leave the winning region (see \hyperlink{classLearnSynthSAT}{Learn\-Synth\-S\-A\-T} for details). If one \hyperlink{classClauseExplorerSAT}{Clause\-Explorer\-S\-A\-T} discovers such a clause, it communicates it to all other Clause\-Explorer\-S\-A\-T-\/instances such that they can also benefit from it and do not need to re-\/discover the same fact again.
+
+\begin{DoxyNote}{Note}
+Be sure to call \hyperlink{classClauseExplorerSAT_a36134b9b6f662c44de73e76146c256bd}{notify\-Before\-New\-Info()} before this method and \hyperlink{classClauseExplorerSAT_a8289e4ba9921717f705a1b2fb2655761}{notify\-After\-New\-Info()} after calling this method. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em clause} & A new U-\/clause stating that a certain state-\/input is useless for the antagonist in trying to leave the winning region (see \hyperlink{classLearnSynthSAT}{Learn\-Synth\-S\-A\-T} for details). \\
+\hline
+{\em level} & The restart level (the number of solver restarts that have already been performed. This information allows this instance to decide whether or not this clause is useful for her (or if it is already out-\/dated). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 745 of file Parallel\-Learner.\-cpp.
+
+
+
+References C\-N\-F\-::add\-Clause(), C\-N\-F\-::clear(), new\-\_\-useless\-\_\-input\-\_\-clauses\-\_\-, and new\-\_\-useless\-\_\-input\-\_\-clauses\-\_\-level\-\_\-.
+
+\hypertarget{classClauseExplorerSAT_ad507ce2b3b33e0e5b27237fd24954d82}{\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!notify\-New\-Win\-Reg\-Clause@{notify\-New\-Win\-Reg\-Clause}}
+\index{notify\-New\-Win\-Reg\-Clause@{notify\-New\-Win\-Reg\-Clause}!ClauseExplorerSAT@{Clause\-Explorer\-S\-A\-T}}
+\subsubsection[{notify\-New\-Win\-Reg\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}void Clause\-Explorer\-S\-A\-T\-::notify\-New\-Win\-Reg\-Clause (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{clause, }
+\item[{int}]{src}
+\end{DoxyParamCaption}
+)}}\label{classClauseExplorerSAT_ad507ce2b3b33e0e5b27237fd24954d82}
+
+
+Notifies this worker about a new winning region clause. 
+
+\begin{DoxyNote}{Note}
+Be sure to call \hyperlink{classClauseExplorerSAT_a36134b9b6f662c44de73e76146c256bd}{notify\-Before\-New\-Info()} before this method and \hyperlink{classClauseExplorerSAT_a8289e4ba9921717f705a1b2fb2655761}{notify\-After\-New\-Info()} after calling this method. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em clause} & The new clause that has been discovered. \\
+\hline
+{\em src} & An integer number defining which kind of worker-\/thread discovered the clause. For performance reasons, this method distinguishes between clauses discovered by Clause\-Explorer\-S\-A\-T-\/instances, and clauses discovered by other kinds of workers. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 730 of file Parallel\-Learner.\-cpp.
+
+
+
+References C\-N\-F\-::add\-Clause(), E\-X\-P\-L, new\-\_\-foreign\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-for\-\_\-solver\-\_\-i\-\_\-, new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-for\-\_\-solver\-\_\-ctrl\-\_\-, and new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-for\-\_\-solver\-\_\-i\-\_\-.
+
+\hypertarget{classClauseExplorerSAT_ab08aedd836a12bdc325da6e3b0f8b711}{\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!notify\-Restart@{notify\-Restart}}
+\index{notify\-Restart@{notify\-Restart}!ClauseExplorerSAT@{Clause\-Explorer\-S\-A\-T}}
+\subsubsection[{notify\-Restart}]{\setlength{\rightskip}{0pt plus 5cm}void Clause\-Explorer\-S\-A\-T\-::notify\-Restart (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{restart\-\_\-with\-\_\-cnf}
+\end{DoxyParamCaption}
+)}}\label{classClauseExplorerSAT_ab08aedd836a12bdc325da6e3b0f8b711}
+
+
+Notifies this Clause\-Explorer\-S\-A\-T-\/instance that it should restart its solver. 
+
+The \hyperlink{classClauseExplorerSAT}{Clause\-Explorer\-S\-A\-T} update their next-\/state copy of the winning region only in a lazy manner. This allows them to use incremental S\-A\-T-\/solving more effectively. See \hyperlink{classLearnSynthSAT}{Learn\-Synth\-S\-A\-T} for a description. If no more solutions exists with one next-\/state copy of the winning region, it must be updated to the newest version. This method tells this instance that such a newer version should be used.
+
+It is absolutely important that all \hyperlink{classClauseExplorerSAT}{Clause\-Explorer\-S\-A\-T} instances work with the same next-\/state copy of the winning region. Otherwise, they could not exchange U-\/clauses (or rather, the U-\/clause discovered by one thread would not make sense for the other).
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classClauseExplorerSAT_a1898760d3aec582ffbd0c5dc5460f8f9}{notify\-New\-Useless\-Input\-Clause()} 
+
+\hyperlink{classParallelLearner_a2b8e4330afb7e99c19d2d7da15c30cc3}{Parallel\-Learner\-::trigger\-Explorer\-Restart()} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em restart\-\_\-with\-\_\-cnf} & The \hyperlink{classCNF}{C\-N\-F} for W \& T \& !\-W', where W is the current over-\/approximation of the winning region. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 757 of file Parallel\-Learner.\-cpp.
+
+
+
+References C\-N\-F\-::clear(), new\-\_\-foreign\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-for\-\_\-solver\-\_\-i\-\_\-, new\-\_\-restart\-\_\-level\-\_\-, new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-for\-\_\-solver\-\_\-i\-\_\-, and restart\-\_\-with\-\_\-cnf\-\_\-.
+
+\hypertarget{classClauseExplorerSAT_a1b2f9a77392cebd3e648d1696685e9b4}{\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!operator=@{operator=}}
+\index{operator=@{operator=}!ClauseExplorerSAT@{Clause\-Explorer\-S\-A\-T}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Clause\-Explorer\-S\-A\-T}\& Clause\-Explorer\-S\-A\-T\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Clause\-Explorer\-S\-A\-T} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classClauseExplorerSAT_a1b2f9a77392cebd3e648d1696685e9b4}
+
+
+Assignment operator. 
+
+The assignment operator is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the assignment, i.\-e, $\ast$this. 
+\end{DoxyReturn}
+\hypertarget{classClauseExplorerSAT_add20a0c539fdf734af6b0f49f2ba4ad9}{\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!present\-To\-Previous@{present\-To\-Previous}}
+\index{present\-To\-Previous@{present\-To\-Previous}!ClauseExplorerSAT@{Clause\-Explorer\-S\-A\-T}}
+\subsubsection[{present\-To\-Previous}]{\setlength{\rightskip}{0pt plus 5cm}int Clause\-Explorer\-S\-A\-T\-::present\-To\-Previous (
+\begin{DoxyParamCaption}
+\item[{int}]{literal}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{classClauseExplorerSAT_add20a0c539fdf734af6b0f49f2ba4ad9}
+
+
+Returns the previous-\/state copy of a literal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em literal} & The literal to transform. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The previous-\/state copy of a literal. 
+\end{DoxyReturn}
+
+
+Definition at line 841 of file Parallel\-Learner.\-cpp.
+
+
+
+References current\-\_\-to\-\_\-previous\-\_\-map\-\_\-.
+
+
+
+Referenced by consider\-New\-Info\-From\-Others(), explore\-Clauses(), and present\-To\-Previous().
+
+\hypertarget{classClauseExplorerSAT_ae91fa23b183aa81824f16c3477643184}{\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!present\-To\-Previous@{present\-To\-Previous}}
+\index{present\-To\-Previous@{present\-To\-Previous}!ClauseExplorerSAT@{Clause\-Explorer\-S\-A\-T}}
+\subsubsection[{present\-To\-Previous}]{\setlength{\rightskip}{0pt plus 5cm}void Clause\-Explorer\-S\-A\-T\-::present\-To\-Previous (
+\begin{DoxyParamCaption}
+\item[{vector$<$ int $>$ \&}]{cube\-\_\-or\-\_\-clause}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{classClauseExplorerSAT_ae91fa23b183aa81824f16c3477643184}
+
+
+Computes the previous-\/state copy of a cube or clause. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cube\-\_\-or\-\_\-clause} & A cube or clause (in form of a vector of literals) over the present state variables. This vector is overwritten by the corresponding cube of clause over the previous-\/state literals (i.\-e., all literals are replaced by their previous-\/state copy). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 851 of file Parallel\-Learner.\-cpp.
+
+
+
+References present\-To\-Previous().
+
+\hypertarget{classClauseExplorerSAT_a42355860aef189f2b89356ff347dab4d}{\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!present\-To\-Previous@{present\-To\-Previous}}
+\index{present\-To\-Previous@{present\-To\-Previous}!ClauseExplorerSAT@{Clause\-Explorer\-S\-A\-T}}
+\subsubsection[{present\-To\-Previous}]{\setlength{\rightskip}{0pt plus 5cm}void Clause\-Explorer\-S\-A\-T\-::present\-To\-Previous (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-N\-F} \&}]{cnf}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{classClauseExplorerSAT_a42355860aef189f2b89356ff347dab4d}
+
+
+Computes the previous-\/state copy of a \hyperlink{classCNF}{C\-N\-F}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cnf} & A \hyperlink{classCNF}{C\-N\-F} formula over the present state variables. This \hyperlink{classCNF}{C\-N\-F} is overwritten by the corresponding \hyperlink{classCNF}{C\-N\-F} over the previous-\/state literals (i.\-e., all literals are replaced by their previous-\/state copy). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 858 of file Parallel\-Learner.\-cpp.
+
+
+
+References C\-N\-F\-::add\-Clause(), C\-N\-F\-::clear(), C\-N\-F\-::get\-Clauses(), and present\-To\-Previous().
+
+\hypertarget{classClauseExplorerSAT_a0515689c4464599e0d2d3c350d710d75}{\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!wait\-Until\-Ongoing\-Restart\-Done@{wait\-Until\-Ongoing\-Restart\-Done}}
+\index{wait\-Until\-Ongoing\-Restart\-Done@{wait\-Until\-Ongoing\-Restart\-Done}!ClauseExplorerSAT@{Clause\-Explorer\-S\-A\-T}}
+\subsubsection[{wait\-Until\-Ongoing\-Restart\-Done}]{\setlength{\rightskip}{0pt plus 5cm}bool Clause\-Explorer\-S\-A\-T\-::wait\-Until\-Ongoing\-Restart\-Done (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classClauseExplorerSAT_a0515689c4464599e0d2d3c350d710d75}
+
+
+Checks if some other thread is computing a restart. If yes\-: waits until it is done. 
+
+This is just a performance optimization. Before we trigger a restart, we check if someone else is already working on a restart (computing a restart point takes some time because we also compress the \hyperlink{classCNF}{C\-N\-F} of the winning region for performance reasons). If so, we wait until it is done. Otherwise, we would do two very similar restarts one after the other. This would be correct, but more inefficient.
+
+\begin{DoxyReturn}{Returns}
+True if a restart is available. False otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 827 of file Parallel\-Learner.\-cpp.
+
+
+
+References coordinator\-\_\-, C\-N\-F\-::get\-Nr\-Of\-Clauses(), new\-\_\-info\-\_\-lock\-\_\-, restart\-\_\-with\-\_\-cnf\-\_\-, and Parallel\-Learner\-::var\-\_\-man\-\_\-lock\-\_\-.
+
+
+
+Referenced by explore\-Clauses().
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classClauseExplorerSAT_a8909bb332c60d7611763ca5976fbe6f6}{\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!coordinator\-\_\-@{coordinator\-\_\-}}
+\index{coordinator\-\_\-@{coordinator\-\_\-}!ClauseExplorerSAT@{Clause\-Explorer\-S\-A\-T}}
+\subsubsection[{coordinator\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Parallel\-Learner}\& Clause\-Explorer\-S\-A\-T\-::coordinator\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classClauseExplorerSAT_a8909bb332c60d7611763ca5976fbe6f6}
+
+
+A reference to the coordinator. 
+
+All communication to other worker-\/threads is done via the coordinator. 
+
+Definition at line 634 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by explore\-Clauses(), and wait\-Until\-Ongoing\-Restart\-Done().
+
+\hypertarget{classClauseExplorerSAT_a210b4a062e0a949536b172d904a2219f}{\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!current\-\_\-state\-\_\-is\-\_\-initial\-\_\-@{current\-\_\-state\-\_\-is\-\_\-initial\-\_\-}}
+\index{current\-\_\-state\-\_\-is\-\_\-initial\-\_\-@{current\-\_\-state\-\_\-is\-\_\-initial\-\_\-}!ClauseExplorerSAT@{Clause\-Explorer\-S\-A\-T}}
+\subsubsection[{current\-\_\-state\-\_\-is\-\_\-initial\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int Clause\-Explorer\-S\-A\-T\-::current\-\_\-state\-\_\-is\-\_\-initial\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classClauseExplorerSAT_a210b4a062e0a949536b172d904a2219f}
+
+
+Says\-: the current state is initial or the previous transition relation holds. 
+
+This \hyperlink{classCNF}{C\-N\-F} expresses that the current state is initial or the previous-\/state copy of the transition relation holds. This is an important building block for the \hyperlink{classCNF}{C\-N\-F} to generalize counterexamples if optimization R\-G is enabled. If optimization R\-G is disabled, then this field is meaningless. 
+
+Definition at line 787 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by explore\-Clauses().
+
+\hypertarget{classClauseExplorerSAT_aecf42678820d41d716fb23f833066da2}{\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!current\-\_\-to\-\_\-previous\-\_\-map\-\_\-@{current\-\_\-to\-\_\-previous\-\_\-map\-\_\-}}
+\index{current\-\_\-to\-\_\-previous\-\_\-map\-\_\-@{current\-\_\-to\-\_\-previous\-\_\-map\-\_\-}!ClauseExplorerSAT@{Clause\-Explorer\-S\-A\-T}}
+\subsubsection[{current\-\_\-to\-\_\-previous\-\_\-map\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ Clause\-Explorer\-S\-A\-T\-::current\-\_\-to\-\_\-previous\-\_\-map\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classClauseExplorerSAT_aecf42678820d41d716fb23f833066da2}
+
+
+A map from present-\/state variables to their previous-\/state copy. 
+
+If optimization R\-G is disabled, then this \hyperlink{classCNF}{C\-N\-F} is empty. 
+
+Definition at line 776 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by present\-To\-Previous().
+
+\hypertarget{classClauseExplorerSAT_ab9ff4163b38a8ce70e07b78ea2e76cc2}{\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!instance\-\_\-nr\-\_\-@{instance\-\_\-nr\-\_\-}}
+\index{instance\-\_\-nr\-\_\-@{instance\-\_\-nr\-\_\-}!ClauseExplorerSAT@{Clause\-Explorer\-S\-A\-T}}
+\subsubsection[{instance\-\_\-nr\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Clause\-Explorer\-S\-A\-T\-::instance\-\_\-nr\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classClauseExplorerSAT_ab9ff4163b38a8ce70e07b78ea2e76cc2}
+
+
+A unique instance number. 
+
+It is used to bring in some asymmetry between the different Clause\-Explorer\-S\-A\-T-\/instances\-: depending on the instance number, the instance selects a different \hyperlink{classSatSolver}{Sat\-Solver} to use. Furthermore, it is used for debugging to print more meaningful messages (W\-H\-O is printing a message). 
+
+Definition at line 613 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by explore\-Clauses().
+
+\hypertarget{classClauseExplorerSAT_a70c8edd590d75994ee354d591909cd35}{\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!new\-\_\-foreign\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-for\-\_\-solver\-\_\-i\-\_\-@{new\-\_\-foreign\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-for\-\_\-solver\-\_\-i\-\_\-}}
+\index{new\-\_\-foreign\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-for\-\_\-solver\-\_\-i\-\_\-@{new\-\_\-foreign\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-for\-\_\-solver\-\_\-i\-\_\-}!ClauseExplorerSAT@{Clause\-Explorer\-S\-A\-T}}
+\subsubsection[{new\-\_\-foreign\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-for\-\_\-solver\-\_\-i\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} Clause\-Explorer\-S\-A\-T\-::new\-\_\-foreign\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-for\-\_\-solver\-\_\-i\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classClauseExplorerSAT_a70c8edd590d75994ee354d591909cd35}
+
+
+All foreign winning region clauses that have not yet been fed into solver\-\_\-i\-\_\-. 
+
+This \hyperlink{classCNF}{C\-N\-F} contains only clauses that have not been discovered by Clause\-Explorer\-S\-A\-T-\/threads. Clauses discovered by Clause\-Explorer\-S\-A\-T-\/threads are stored in \hyperlink{classClauseExplorerSAT_a2c3e73b4c0529b9139354a965d34e81f}{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-for\-\_\-solver\-\_\-i\-\_\-}. Clauses discovered by other threads are handled in a special way for performance reasons. They are not added immediately because this could make the solver imprecise, which prevents it from terminating. Foreign clauses are only added if the \hyperlink{classClauseExplorerSAT_a65b5b3d04ff5be8bfec60d3dcf86e4d0}{solver\-\_\-i\-\_\-} is already imprecise (precise\-\_\- is false). Otherwise, other threads could spam Clause\-Explorer\-S\-A\-T-\/threads with clauses that prevent the Clause\-Explorer\-S\-A\-T-\/threads from being precise long enough to conclude realizability. (Acutally I don't know if this is really an issue, but the optimization is implemented just in case). 
+
+Definition at line 722 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by consider\-New\-Info\-From\-Others(), notify\-New\-Win\-Reg\-Clause(), and notify\-Restart().
+
+\hypertarget{classClauseExplorerSAT_a674651f8fbf9ed93264ce3369bd5332b}{\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!new\-\_\-info\-\_\-lock\-\_\-@{new\-\_\-info\-\_\-lock\-\_\-}}
+\index{new\-\_\-info\-\_\-lock\-\_\-@{new\-\_\-info\-\_\-lock\-\_\-}!ClauseExplorerSAT@{Clause\-Explorer\-S\-A\-T}}
+\subsubsection[{new\-\_\-info\-\_\-lock\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}mutex Clause\-Explorer\-S\-A\-T\-::new\-\_\-info\-\_\-lock\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classClauseExplorerSAT_a674651f8fbf9ed93264ce3369bd5332b}
+
+
+A lock to protect many fields from race conditions. 
+
+This lock protects the fields 
+\begin{DoxyItemize}
+\item \hyperlink{classClauseExplorerSAT_a1a9dc7f76967c8164e9625df34dec172}{restart\-\_\-with\-\_\-cnf\-\_\-} 
+\item \hyperlink{classClauseExplorerSAT_a2c3e73b4c0529b9139354a965d34e81f}{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-for\-\_\-solver\-\_\-i\-\_\-} 
+\item \hyperlink{classClauseExplorerSAT_a7d923928f3cb6209b29f5cc5104b5fe2}{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-for\-\_\-solver\-\_\-ctrl\-\_\-} 
+\item \hyperlink{classClauseExplorerSAT_a70c8edd590d75994ee354d591909cd35}{new\-\_\-foreign\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-for\-\_\-solver\-\_\-i\-\_\-} 
+\item \hyperlink{classClauseExplorerSAT_a3d1bdb9a6484c85af655a4eed1ee5f19}{new\-\_\-useless\-\_\-input\-\_\-clauses\-\_\-} 
+\item \hyperlink{classClauseExplorerSAT_a67eeafbba9da9c87534f7ef26531a57a}{new\-\_\-useless\-\_\-input\-\_\-clauses\-\_\-level\-\_\-} 
+\end{DoxyItemize}From race conditions. These fields are modified by other threads when new information comes in. They are read by this thread when this new information is taken into account.
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000008}{Todo}]A more fine-\/grained locking could improve the performance. \end{DoxyRefDesc}
+
+
+Definition at line 679 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by consider\-New\-Info\-From\-Others(), notify\-After\-New\-Info(), notify\-Before\-New\-Info(), and wait\-Until\-Ongoing\-Restart\-Done().
+
+\hypertarget{classClauseExplorerSAT_adf9bfe4390d34e57e25f269afa1e7b25}{\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!new\-\_\-restart\-\_\-level\-\_\-@{new\-\_\-restart\-\_\-level\-\_\-}}
+\index{new\-\_\-restart\-\_\-level\-\_\-@{new\-\_\-restart\-\_\-level\-\_\-}!ClauseExplorerSAT@{Clause\-Explorer\-S\-A\-T}}
+\subsubsection[{new\-\_\-restart\-\_\-level\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int Clause\-Explorer\-S\-A\-T\-::new\-\_\-restart\-\_\-level\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classClauseExplorerSAT_adf9bfe4390d34e57e25f269afa1e7b25}
+
+
+The restart level we have after we consider \hyperlink{classClauseExplorerSAT_a1a9dc7f76967c8164e9625df34dec172}{restart\-\_\-with\-\_\-cnf\-\_\-}. 
+
+The thing is\-: this thread can skip a restart level completely if it does not get scheduled often. In this case, we have to increase our restart level by more than one when we actually do the restart (consider \hyperlink{classClauseExplorerSAT_a1a9dc7f76967c8164e9625df34dec172}{restart\-\_\-with\-\_\-cnf\-\_\-}). The new restart level is tracked by this field. 
+
+Definition at line 754 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by consider\-New\-Info\-From\-Others(), and notify\-Restart().
+
+\hypertarget{classClauseExplorerSAT_a3d1bdb9a6484c85af655a4eed1ee5f19}{\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!new\-\_\-useless\-\_\-input\-\_\-clauses\-\_\-@{new\-\_\-useless\-\_\-input\-\_\-clauses\-\_\-}}
+\index{new\-\_\-useless\-\_\-input\-\_\-clauses\-\_\-@{new\-\_\-useless\-\_\-input\-\_\-clauses\-\_\-}!ClauseExplorerSAT@{Clause\-Explorer\-S\-A\-T}}
+\subsubsection[{new\-\_\-useless\-\_\-input\-\_\-clauses\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} Clause\-Explorer\-S\-A\-T\-::new\-\_\-useless\-\_\-input\-\_\-clauses\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classClauseExplorerSAT_a3d1bdb9a6484c85af655a4eed1ee5f19}
+
+
+All U-\/clauses that have not yet been added to \hyperlink{classClauseExplorerSAT_a65b5b3d04ff5be8bfec60d3dcf86e4d0}{solver\-\_\-i\-\_\-}. 
+
+A U-\/clause states that a certain state-\/input is useless for the antagonist in trying to leave the winning region (see \hyperlink{classLearnSynthSAT}{Learn\-Synth\-S\-A\-T} for details). 
+
+Definition at line 730 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by consider\-New\-Info\-From\-Others(), and notify\-New\-Useless\-Input\-Clause().
+
+\hypertarget{classClauseExplorerSAT_a67eeafbba9da9c87534f7ef26531a57a}{\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!new\-\_\-useless\-\_\-input\-\_\-clauses\-\_\-level\-\_\-@{new\-\_\-useless\-\_\-input\-\_\-clauses\-\_\-level\-\_\-}}
+\index{new\-\_\-useless\-\_\-input\-\_\-clauses\-\_\-level\-\_\-@{new\-\_\-useless\-\_\-input\-\_\-clauses\-\_\-level\-\_\-}!ClauseExplorerSAT@{Clause\-Explorer\-S\-A\-T}}
+\subsubsection[{new\-\_\-useless\-\_\-input\-\_\-clauses\-\_\-level\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int Clause\-Explorer\-S\-A\-T\-::new\-\_\-useless\-\_\-input\-\_\-clauses\-\_\-level\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classClauseExplorerSAT_a67eeafbba9da9c87534f7ef26531a57a}
+
+
+The level on which the clauses in \hyperlink{classClauseExplorerSAT_a3d1bdb9a6484c85af655a4eed1ee5f19}{new\-\_\-useless\-\_\-input\-\_\-clauses\-\_\-} have been found. 
+
+'Level' means the number of solver restarts that have already been performed. \hyperlink{classClauseExplorerSAT_a3d1bdb9a6484c85af655a4eed1ee5f19}{new\-\_\-useless\-\_\-input\-\_\-clauses\-\_\-} are only considered if their level matches the \hyperlink{classClauseExplorerSAT_a0b5d716111026dd1cb4efe5855e2fe2f}{restart\-\_\-level\-\_\-} of this object. 
+
+Definition at line 739 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by consider\-New\-Info\-From\-Others(), and notify\-New\-Useless\-Input\-Clause().
+
+\hypertarget{classClauseExplorerSAT_a7d923928f3cb6209b29f5cc5104b5fe2}{\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-for\-\_\-solver\-\_\-ctrl\-\_\-@{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-for\-\_\-solver\-\_\-ctrl\-\_\-}}
+\index{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-for\-\_\-solver\-\_\-ctrl\-\_\-@{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-for\-\_\-solver\-\_\-ctrl\-\_\-}!ClauseExplorerSAT@{Clause\-Explorer\-S\-A\-T}}
+\subsubsection[{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-for\-\_\-solver\-\_\-ctrl\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} Clause\-Explorer\-S\-A\-T\-::new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-for\-\_\-solver\-\_\-ctrl\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classClauseExplorerSAT_a7d923928f3cb6209b29f5cc5104b5fe2}
+
+
+All new winning region clauses that have not yet been fed into solver\-\_\-ctrl\-\_\-. 
+
+We do not distinguish clauses discovered by Clause\-Explorer\-S\-A\-T-\/threads and clauses discovered by other threads. We also add all clauses to solver\-\_\-ctrl\-\_\- immediately. 
+
+Definition at line 706 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by consider\-New\-Info\-From\-Others(), and notify\-New\-Win\-Reg\-Clause().
+
+\hypertarget{classClauseExplorerSAT_a2c3e73b4c0529b9139354a965d34e81f}{\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-for\-\_\-solver\-\_\-i\-\_\-@{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-for\-\_\-solver\-\_\-i\-\_\-}}
+\index{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-for\-\_\-solver\-\_\-i\-\_\-@{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-for\-\_\-solver\-\_\-i\-\_\-}!ClauseExplorerSAT@{Clause\-Explorer\-S\-A\-T}}
+\subsubsection[{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-for\-\_\-solver\-\_\-i\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} Clause\-Explorer\-S\-A\-T\-::new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-for\-\_\-solver\-\_\-i\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classClauseExplorerSAT_a2c3e73b4c0529b9139354a965d34e81f}
+
+
+All new winning region clauses that have not yet been fed into solver\-\_\-i\-\_\-. 
+
+This \hyperlink{classCNF}{C\-N\-F} contains only clauses that have been discovered by Clause\-Explorer\-S\-A\-T-\/threads. Clauses discovered by other threads are stored in \hyperlink{classClauseExplorerSAT_a70c8edd590d75994ee354d591909cd35}{new\-\_\-foreign\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-for\-\_\-solver\-\_\-i\-\_\-} because they are treaded specially (for performance reasons). 
+
+Definition at line 698 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by consider\-New\-Info\-From\-Others(), notify\-New\-Win\-Reg\-Clause(), and notify\-Restart().
+
+\hypertarget{classClauseExplorerSAT_a3edc259c6f39cce098ab18a2dce7f262}{\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!precise\-\_\-@{precise\-\_\-}}
+\index{precise\-\_\-@{precise\-\_\-}!ClauseExplorerSAT@{Clause\-Explorer\-S\-A\-T}}
+\subsubsection[{precise\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}bool Clause\-Explorer\-S\-A\-T\-::precise\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classClauseExplorerSAT_a3edc259c6f39cce098ab18a2dce7f262}
+
+
+A flag indicating if the next-\/state copy of the winning region is accurate. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classLearnSynthSAT}{Learn\-Synth\-S\-A\-T} 
+\end{DoxySeeAlso}
+
+
+Definition at line 641 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by consider\-New\-Info\-From\-Others(), and explore\-Clauses().
+
+\hypertarget{classClauseExplorerSAT_ab98b3cf3447591b3e390e3d3a1d595e5}{\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!prev\-\_\-safe\-\_\-@{prev\-\_\-safe\-\_\-}}
+\index{prev\-\_\-safe\-\_\-@{prev\-\_\-safe\-\_\-}!ClauseExplorerSAT@{Clause\-Explorer\-S\-A\-T}}
+\subsubsection[{prev\-\_\-safe\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int Clause\-Explorer\-S\-A\-T\-::prev\-\_\-safe\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classClauseExplorerSAT_ab98b3cf3447591b3e390e3d3a1d595e5}
+
+
+A literal saying that the previous-\/state is safe. 
+
+We store this literal here and do not read it out of the \hyperlink{classVarManager}{Var\-Manager} again and again to avoid a concurrency issue. The \hyperlink{classVarManager}{Var\-Manager} is sometimes modified (new temporary variables are created). This does not affect the literal defining safe states. However, we do not want to lock reading-\/accesses to the variable manager and we do not want to read out the variable manager in an inconsistent state. Hence, we read it out once and store it. If optimization R\-G is disabled, then this field is meaningless. 
+
+Definition at line 799 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by explore\-Clauses().
+
+\hypertarget{classClauseExplorerSAT_a445dd961b44b493e184ff42207132ea1}{\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-@{prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-}}
+\index{prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-@{prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-}!ClauseExplorerSAT@{Clause\-Explorer\-S\-A\-T}}
+\subsubsection[{prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} Clause\-Explorer\-S\-A\-T\-::prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classClauseExplorerSAT_a445dd961b44b493e184ff42207132ea1}
+
+
+Says\-: the current state is initial or the previous transition relation holds. 
+
+This \hyperlink{classCNF}{C\-N\-F} expresses that the current state is initial or the previous-\/state copy of the transition relation holds. This is an important building block for the \hyperlink{classCNF}{C\-N\-F} to generalize counterexamples if optimization R\-G is enabled. If optimization R\-G is disabled, then this \hyperlink{classCNF}{C\-N\-F} is empty. 
+
+Definition at line 769 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by explore\-Clauses().
+
+\hypertarget{classClauseExplorerSAT_a0b5d716111026dd1cb4efe5855e2fe2f}{\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!restart\-\_\-level\-\_\-@{restart\-\_\-level\-\_\-}}
+\index{restart\-\_\-level\-\_\-@{restart\-\_\-level\-\_\-}!ClauseExplorerSAT@{Clause\-Explorer\-S\-A\-T}}
+\subsubsection[{restart\-\_\-level\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int Clause\-Explorer\-S\-A\-T\-::restart\-\_\-level\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classClauseExplorerSAT_a0b5d716111026dd1cb4efe5855e2fe2f}
+
+
+The number of solver restarts that have already been performed. 
+
+
+
+Definition at line 744 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by consider\-New\-Info\-From\-Others(), and explore\-Clauses().
+
+\hypertarget{classClauseExplorerSAT_a1a9dc7f76967c8164e9625df34dec172}{\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!restart\-\_\-with\-\_\-cnf\-\_\-@{restart\-\_\-with\-\_\-cnf\-\_\-}}
+\index{restart\-\_\-with\-\_\-cnf\-\_\-@{restart\-\_\-with\-\_\-cnf\-\_\-}!ClauseExplorerSAT@{Clause\-Explorer\-S\-A\-T}}
+\subsubsection[{restart\-\_\-with\-\_\-cnf\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} Clause\-Explorer\-S\-A\-T\-::restart\-\_\-with\-\_\-cnf\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classClauseExplorerSAT_a1a9dc7f76967c8164e9625df34dec172}
+
+
+A \hyperlink{classCNF}{C\-N\-F} to restart solver\-\_\-i\-\_\- with. 
+
+This \hyperlink{classCNF}{C\-N\-F} contains F \& T \& !\-F', where F is the current over-\/approximation of the winning region if a restart of solver\-\_\-i\-\_\- needs to be done. If no restart needs to be done, then this \hyperlink{classCNF}{C\-N\-F} is empty (i.\-e., true). 
+
+Definition at line 688 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by consider\-New\-Info\-From\-Others(), notify\-Restart(), and wait\-Until\-Ongoing\-Restart\-Done().
+
+\hypertarget{classClauseExplorerSAT_a7884d171120e8397140e30fdc28767eb}{\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!solver\-\_\-ctrl\-\_\-@{solver\-\_\-ctrl\-\_\-}}
+\index{solver\-\_\-ctrl\-\_\-@{solver\-\_\-ctrl\-\_\-}!ClauseExplorerSAT@{Clause\-Explorer\-S\-A\-T}}
+\subsubsection[{solver\-\_\-ctrl\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sat\-Solver}$\ast$ Clause\-Explorer\-S\-A\-T\-::solver\-\_\-ctrl\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classClauseExplorerSAT_a7884d171120e8397140e30fdc28767eb}
+
+
+The solver for checking counterexample-\/candidates. 
+
+It is also used to generalize counterexamples if optimization R\-G is disabled. 
+
+Definition at line 653 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by Clause\-Explorer\-S\-A\-T(), consider\-New\-Info\-From\-Others(), explore\-Clauses(), and $\sim$\-Clause\-Explorer\-S\-A\-T().
+
+\hypertarget{classClauseExplorerSAT_aba4c9ed8ccc28d89c094f3cd80157f3f}{\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!solver\-\_\-ctrl\-\_\-ind\-\_\-@{solver\-\_\-ctrl\-\_\-ind\-\_\-}}
+\index{solver\-\_\-ctrl\-\_\-ind\-\_\-@{solver\-\_\-ctrl\-\_\-ind\-\_\-}!ClauseExplorerSAT@{Clause\-Explorer\-S\-A\-T}}
+\subsubsection[{solver\-\_\-ctrl\-\_\-ind\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sat\-Solver}$\ast$ Clause\-Explorer\-S\-A\-T\-::solver\-\_\-ctrl\-\_\-ind\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classClauseExplorerSAT_aba4c9ed8ccc28d89c094f3cd80157f3f}
+
+
+The solver for generalizing counterexamples if optimization R\-G is endabled. 
+
+
+
+Definition at line 759 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by Clause\-Explorer\-S\-A\-T(), consider\-New\-Info\-From\-Others(), explore\-Clauses(), and $\sim$\-Clause\-Explorer\-S\-A\-T().
+
+\hypertarget{classClauseExplorerSAT_a65b5b3d04ff5be8bfec60d3dcf86e4d0}{\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!solver\-\_\-i\-\_\-@{solver\-\_\-i\-\_\-}}
+\index{solver\-\_\-i\-\_\-@{solver\-\_\-i\-\_\-}!ClauseExplorerSAT@{Clause\-Explorer\-S\-A\-T}}
+\subsubsection[{solver\-\_\-i\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sat\-Solver}$\ast$ Clause\-Explorer\-S\-A\-T\-::solver\-\_\-i\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classClauseExplorerSAT_a65b5b3d04ff5be8bfec60d3dcf86e4d0}
+
+
+The solver for computing counterexample-\/candidates. 
+
+
+
+Definition at line 646 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by Clause\-Explorer\-S\-A\-T(), consider\-New\-Info\-From\-Others(), explore\-Clauses(), and $\sim$\-Clause\-Explorer\-S\-A\-T().
+
+\hypertarget{classClauseExplorerSAT_a1d37eb0233177911835bc073fbe1c224}{\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!statistics\-\_\-@{statistics\-\_\-}}
+\index{statistics\-\_\-@{statistics\-\_\-}!ClauseExplorerSAT@{Clause\-Explorer\-S\-A\-T}}
+\subsubsection[{statistics\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Learn\-Statistics\-S\-A\-T} Clause\-Explorer\-S\-A\-T\-::statistics\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classClauseExplorerSAT_a1d37eb0233177911835bc073fbe1c224}
+
+
+Stores and maintains statistics and performance measures. 
+
+Basically, this is a merge of the statistics from all worker-\/threads. 
+
+Definition at line 627 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by consider\-New\-Info\-From\-Others(), explore\-Clauses(), and get\-Statistics().
+
+\hypertarget{classClauseExplorerSAT_aca59e0b38c8a8fea9cf35d174969c41e}{\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!use\-\_\-ind\-\_\-@{use\-\_\-ind\-\_\-}}
+\index{use\-\_\-ind\-\_\-@{use\-\_\-ind\-\_\-}!ClauseExplorerSAT@{Clause\-Explorer\-S\-A\-T}}
+\subsubsection[{use\-\_\-ind\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}bool Clause\-Explorer\-S\-A\-T\-::use\-\_\-ind\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classClauseExplorerSAT_aca59e0b38c8a8fea9cf35d174969c41e}
+
+
+A flag indicating if optimization R\-G should be used. 
+
+See \hyperlink{classLearnSynthQBFInd}{Learn\-Synth\-Q\-B\-F\-Ind} for an explanation. 
+
+Definition at line 620 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by consider\-New\-Info\-From\-Others(), and explore\-Clauses().
+
+\hypertarget{classClauseExplorerSAT_a9d9c6caf1a451ed22a096c2ef5e8bbc2}{\index{Clause\-Explorer\-S\-A\-T@{Clause\-Explorer\-S\-A\-T}!vars\-\_\-to\-\_\-keep\-\_\-@{vars\-\_\-to\-\_\-keep\-\_\-}}
+\index{vars\-\_\-to\-\_\-keep\-\_\-@{vars\-\_\-to\-\_\-keep\-\_\-}!ClauseExplorerSAT@{Clause\-Explorer\-S\-A\-T}}
+\subsubsection[{vars\-\_\-to\-\_\-keep\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ Clause\-Explorer\-S\-A\-T\-::vars\-\_\-to\-\_\-keep\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classClauseExplorerSAT_a9d9c6caf1a451ed22a096c2ef5e8bbc2}
+
+
+A set of variables the solver should not optimize by the S\-A\-T-\/solver. 
+
+These are all variables except for temporary ones (type \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cfa84a2d8d86f004930fe564dc5b395b29f}{Var\-Info\-::\-T\-M\-P}). 
+
+Definition at line 660 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by consider\-New\-Info\-From\-Others(), and explore\-Clauses().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{ParallelLearner_8h}{Parallel\-Learner.\-h}\item 
+src/\hyperlink{ParallelLearner_8cpp}{Parallel\-Learner.\-cpp}\end{DoxyCompactItemize}

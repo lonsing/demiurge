@@ -1,0 +1,765 @@
+\hypertarget{classSatSolver}{\section{Sat\-Solver Class Reference}
+\label{classSatSolver}\index{Sat\-Solver@{Sat\-Solver}}
+}
+
+
+An abstract interface for all S\-A\-T-\/solver implementations.  
+
+
+
+
+{\ttfamily \#include $<$Sat\-Solver.\-h$>$}
+
+Inheritance diagram for Sat\-Solver\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classSatSolver}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSatSolver_a2abb0a2a75d1c3559946956ac19dc89e}{Sat\-Solver} (bool rand\-\_\-models=false, bool min\-\_\-cores=true)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classSatSolver_aeefe936d75dbdca120805d650a12e989}{$\sim$\-Sat\-Solver} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classSatSolver_a159fc9658709e5aeba2844a09454b2cb}{do\-Min\-Cores} (bool min\-\_\-cores=true)
+\begin{DoxyCompactList}\small\item\em Enables or disables the computation of M\-I\-N\-I\-M\-A\-L unsatisfiable cores. \end{DoxyCompactList}\item 
+void \hyperlink{classSatSolver_ae229c5e277350710412fce0e867dc566}{do\-Rand\-Models} (bool rand\-\_\-models=true)
+\begin{DoxyCompactList}\small\item\em Enables or disables the randomization of satisfying assignments. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classSatSolver_a82f60f60db464fbe5c66a20ad673a573}{is\-Sat} (const \hyperlink{classCNF}{C\-N\-F} \&cnf)=0
+\begin{DoxyCompactList}\small\item\em Checks if a \hyperlink{classCNF}{C\-N\-F} is satisfiable. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classSatSolver_ad5cfce08969be5aaf5cd705c12c68818}{is\-Sat\-Model\-Or\-Core} (const \hyperlink{classCNF}{C\-N\-F} \&cnf, const vector$<$ int $>$ \&assumptions, const vector$<$ int $>$ \&vars\-\_\-of\-\_\-interest, vector$<$ int $>$ \&model\-\_\-or\-\_\-core)=0
+\begin{DoxyCompactList}\small\item\em Checks if a \hyperlink{classCNF}{C\-N\-F} is satisfiable and extracts a model or an unsatisfiable core. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classSatSolver_a74603f84c3f2383a5fc44d5a8093cbea}{start\-Incremental\-Session} (const vector$<$ int $>$ \&vars\-\_\-to\-\_\-keep, bool use\-\_\-push=true)=0
+\begin{DoxyCompactList}\small\item\em Starts a new incremental session. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classSatSolver_a8118d2900f7acf31497cd2a27ad3b713}{clear\-Incremental\-Session} ()=0
+\begin{DoxyCompactList}\small\item\em Deletes the solver instance that is used in the incremental session. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classSatSolver_ab2581b192cb2c39a81a416a9f7416c9e}{inc\-Add\-C\-N\-F} (const \hyperlink{classCNF}{C\-N\-F} \&cnf)=0
+\begin{DoxyCompactList}\small\item\em Adds a new \hyperlink{classCNF}{C\-N\-F} to the current incremental session. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classSatSolver_a9f91c104238b6e091513e0aa46970840}{inc\-Add\-Clause} (const vector$<$ int $>$ \&clause)=0
+\begin{DoxyCompactList}\small\item\em Adds a new clause to the current incremental session. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classSatSolver_a5b39c45cd2a1abfe96c681515dfddb77}{inc\-Add\-Unit\-Clause} (int lit)=0
+\begin{DoxyCompactList}\small\item\em Adds a new unit clause to the current incremental session. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classSatSolver_a791be541b59ef58a29a1c517fca943e7}{inc\-Add2\-Lit\-Clause} (int lit1, int lit2)=0
+\begin{DoxyCompactList}\small\item\em Adds a new clause consisting of 2 literals to the current incremental session. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classSatSolver_abca288874a1b8ab1a90cb274eb885ace}{inc\-Add3\-Lit\-Clause} (int lit1, int lit2, int lit3)=0
+\begin{DoxyCompactList}\small\item\em Adds a new clause consisting of 3 literals to the current incremental session. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classSatSolver_a1f04f34bb04174489ed18d0b62241004}{inc\-Add\-Cube} (const vector$<$ int $>$ \&cube)=0
+\begin{DoxyCompactList}\small\item\em Adds a new cube to the current incremental session. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classSatSolver_a6be2c564289a59057c4c6728a3aa9c2b}{inc\-Add\-Neg\-Cube\-As\-Clause} (const vector$<$ int $>$ \&cube)=0
+\begin{DoxyCompactList}\small\item\em Adds the negation of a given cube (which is a clause) to the incremental session. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classSatSolver_ab1aab4b96a36b2003450067a3799ae23}{inc\-Is\-Sat} ()=0
+\begin{DoxyCompactList}\small\item\em Checks if a the \hyperlink{classCNF}{C\-N\-F} in the incremental session is satisfiable. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classSatSolver_a1864787a33621efac7fc75fb6b25f080}{inc\-Is\-Sat} (const vector$<$ int $>$ \&assumptions)=0
+\begin{DoxyCompactList}\small\item\em Checks if a the \hyperlink{classCNF}{C\-N\-F} in the incremental session is satisfiable under assumptions. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classSatSolver_ad387fc06bacf2d48847f779c9db8461a}{inc\-Is\-Sat\-Model\-Or\-Core} (const vector$<$ int $>$ \&assumptions, const vector$<$ int $>$ \&vars\-\_\-of\-\_\-interest, vector$<$ int $>$ \&model\-\_\-or\-\_\-core)=0
+\begin{DoxyCompactList}\small\item\em Checks the \hyperlink{classCNF}{C\-N\-F} in the incremental session and computes a model or unsat core. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classSatSolver_a29225bfab1f352cae27c68e9bda4d409}{inc\-Is\-Sat\-Model\-Or\-Core} (const vector$<$ int $>$ \&core\-\_\-assumptions, const vector$<$ int $>$ \&more\-\_\-assumptions, const vector$<$ int $>$ \&vars\-\_\-of\-\_\-interest, vector$<$ int $>$ \&model\-\_\-or\-\_\-core)=0
+\begin{DoxyCompactList}\small\item\em Computes a satisfying assignment or core using additional assumptions. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classSatSolver_a4da0dff7082a91429e3311d279605be4}{inc\-Push} ()=0
+\begin{DoxyCompactList}\small\item\em Stores the current state of the incremental session on a stack. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classSatSolver_a436aae045eb04141c834df0b55947ee5}{inc\-Pop} ()=0
+\begin{DoxyCompactList}\small\item\em Restores the incremental session back to the point where \hyperlink{classSatSolver_a4da0dff7082a91429e3311d279605be4}{inc\-Push()} was called. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classSatSolver_adfeecebfd09606c82b5c57cfe5aad813}{min\-\_\-cores\-\_\-}
+\begin{DoxyCompactList}\small\item\em Indicates if the unsat cores returned by the solver should be minimized further. \end{DoxyCompactList}\item 
+bool \hyperlink{classSatSolver_a73fed24d8fb4da85ef82dc53ac5f28c7}{rand\-\_\-models\-\_\-}
+\begin{DoxyCompactList}\small\item\em Indicates if satisfying assignments should be randomized. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSatSolver_a0821aa3a3fababd9b070f758b6e788cc}{Sat\-Solver} (const \hyperlink{classSatSolver}{Sat\-Solver} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classSatSolver}{Sat\-Solver} \& \hyperlink{classSatSolver_a9dc824ecbeaf4f0505403b284f6fe047}{operator=} (const \hyperlink{classSatSolver}{Sat\-Solver} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An abstract interface for all S\-A\-T-\/solver implementations. 
+
+This class represents an abstract interface all S\-A\-T-\/solver instances. You cannot instantiate objects of this class. You need to instantiate objects of one of the derived classes (e.\-g., \hyperlink{classLingelingApi}{Lingeling\-Api}, \hyperlink{classMiniSatApi}{Mini\-Sat\-Api}, \hyperlink{classPicoSatApi}{Pico\-Sat\-Api}) instead. Typically, you will call \hyperlink{classOptions_aed3731b7c89433cd485cff35ca4bdcd7}{Options\-::get\-S\-A\-T\-Solver()} to get a concrete instance of a \hyperlink{classSatSolver}{Sat\-Solver} (namely the one the user selected with command-\/line parameters).
+
+For a given \hyperlink{classCNF}{C\-N\-F}, a \hyperlink{classSatSolver}{Sat\-Solver} is able to determine satisfiability. Furthermore, in case of satisfiability, it can extract satisfying assignments. In case of unsatisfiability, it can compute an unsatisfiable core. It can be used in two different ways. In the incremental usage scenario, all information the solver has learned so far is retained. Methods for incremental solving start with 'inc'. Other methods (like \hyperlink{classSatSolver_a82f60f60db464fbe5c66a20ad673a573}{is\-Sat()} or \hyperlink{classSatSolver_ad5cfce08969be5aaf5cd705c12c68818}{is\-Sat\-Model\-Or\-Core()}) instantiate a fresh solver instance for every call.
+
+\begin{DoxyAuthor}{Author}
+Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0.\-0 
+\end{DoxyVersion}
+
+
+Definition at line 58 of file Sat\-Solver.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classSatSolver_a2abb0a2a75d1c3559946956ac19dc89e}{\index{Sat\-Solver@{Sat\-Solver}!Sat\-Solver@{Sat\-Solver}}
+\index{Sat\-Solver@{Sat\-Solver}!SatSolver@{Sat\-Solver}}
+\subsubsection[{Sat\-Solver}]{\setlength{\rightskip}{0pt plus 5cm}Sat\-Solver\-::\-Sat\-Solver (
+\begin{DoxyParamCaption}
+\item[{bool}]{rand\-\_\-models = {\ttfamily false}, }
+\item[{bool}]{min\-\_\-cores = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}\label{classSatSolver_a2abb0a2a75d1c3559946956ac19dc89e}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rand\-\_\-models} & A flag indicating if satisfying assignments should be randomized. This is done in a post-\/processing step (values are flipped randomly and then we check if this still constitutes a satisfying assignment). This is expensive. If this parameter is skipped, then satisfying assignments are not randomized. \\
+\hline
+{\em min\-\_\-cores} & A flag indicating if unsatisfiable cores returned by the solver should be minimized further by trying to drop one literal after the other. This makes the calls slower but produces potentially smaller cubes. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 33 of file Sat\-Solver.\-cpp.
+
+\hypertarget{classSatSolver_aeefe936d75dbdca120805d650a12e989}{\index{Sat\-Solver@{Sat\-Solver}!$\sim$\-Sat\-Solver@{$\sim$\-Sat\-Solver}}
+\index{$\sim$\-Sat\-Solver@{$\sim$\-Sat\-Solver}!SatSolver@{Sat\-Solver}}
+\subsubsection[{$\sim$\-Sat\-Solver}]{\setlength{\rightskip}{0pt plus 5cm}Sat\-Solver\-::$\sim$\-Sat\-Solver (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classSatSolver_aeefe936d75dbdca120805d650a12e989}
+
+
+Destructor. 
+
+
+
+Definition at line 41 of file Sat\-Solver.\-cpp.
+
+\hypertarget{classSatSolver_a0821aa3a3fababd9b070f758b6e788cc}{\index{Sat\-Solver@{Sat\-Solver}!Sat\-Solver@{Sat\-Solver}}
+\index{Sat\-Solver@{Sat\-Solver}!SatSolver@{Sat\-Solver}}
+\subsubsection[{Sat\-Solver}]{\setlength{\rightskip}{0pt plus 5cm}Sat\-Solver\-::\-Sat\-Solver (
+\begin{DoxyParamCaption}
+\item[{const {\bf Sat\-Solver} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classSatSolver_a0821aa3a3fababd9b070f758b6e788cc}
+
+
+Copy constructor. 
+
+The copy constructor is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classSatSolver_a8118d2900f7acf31497cd2a27ad3b713}{\index{Sat\-Solver@{Sat\-Solver}!clear\-Incremental\-Session@{clear\-Incremental\-Session}}
+\index{clear\-Incremental\-Session@{clear\-Incremental\-Session}!SatSolver@{Sat\-Solver}}
+\subsubsection[{clear\-Incremental\-Session}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Sat\-Solver\-::clear\-Incremental\-Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classSatSolver_a8118d2900f7acf31497cd2a27ad3b713}
+
+
+Deletes the solver instance that is used in the incremental session. 
+
+
+
+Implemented in \hyperlink{classMiniSatApi_a237754c78357ed0a84894e811806b618}{Mini\-Sat\-Api}, \hyperlink{classPicoSatApi_ae53598723725fd3203e2e32411392dab}{Pico\-Sat\-Api}, and \hyperlink{classLingelingApi_a4200b2ca7b1694898434ae9764f5baf6}{Lingeling\-Api}.
+
+\hypertarget{classSatSolver_a159fc9658709e5aeba2844a09454b2cb}{\index{Sat\-Solver@{Sat\-Solver}!do\-Min\-Cores@{do\-Min\-Cores}}
+\index{do\-Min\-Cores@{do\-Min\-Cores}!SatSolver@{Sat\-Solver}}
+\subsubsection[{do\-Min\-Cores}]{\setlength{\rightskip}{0pt plus 5cm}void Sat\-Solver\-::do\-Min\-Cores (
+\begin{DoxyParamCaption}
+\item[{bool}]{min\-\_\-cores = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}\label{classSatSolver_a159fc9658709e5aeba2844a09454b2cb}
+
+
+Enables or disables the computation of M\-I\-N\-I\-M\-A\-L unsatisfiable cores. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min\-\_\-cores} & A flag indicating if unsatisfiable cores returned by the solver should be minimized further by trying to drop one literal after the other. This makes the calls slower but produces potentially smaller cubes. If the parameter is skipped the computation of minimal cores is enabled. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 47 of file Sat\-Solver.\-cpp.
+
+
+
+References min\-\_\-cores\-\_\-.
+
+
+
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), and Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C().
+
+\hypertarget{classSatSolver_ae229c5e277350710412fce0e867dc566}{\index{Sat\-Solver@{Sat\-Solver}!do\-Rand\-Models@{do\-Rand\-Models}}
+\index{do\-Rand\-Models@{do\-Rand\-Models}!SatSolver@{Sat\-Solver}}
+\subsubsection[{do\-Rand\-Models}]{\setlength{\rightskip}{0pt plus 5cm}void Sat\-Solver\-::do\-Rand\-Models (
+\begin{DoxyParamCaption}
+\item[{bool}]{rand\-\_\-models = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}\label{classSatSolver_ae229c5e277350710412fce0e867dc566}
+
+
+Enables or disables the randomization of satisfying assignments. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rand\-\_\-models} & A flag indicating if satisfying assignments should be randomized. This is done in a post-\/processing step (values are flipped randomly and then we check if this still constitutes a satisfying assignment). This is expensive. If this parameter is skipped, then randomization is enabled. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 53 of file Sat\-Solver.\-cpp.
+
+
+
+References rand\-\_\-models\-\_\-.
+
+
+
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), and Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C().
+
+\hypertarget{classSatSolver_a791be541b59ef58a29a1c517fca943e7}{\index{Sat\-Solver@{Sat\-Solver}!inc\-Add2\-Lit\-Clause@{inc\-Add2\-Lit\-Clause}}
+\index{inc\-Add2\-Lit\-Clause@{inc\-Add2\-Lit\-Clause}!SatSolver@{Sat\-Solver}}
+\subsubsection[{inc\-Add2\-Lit\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Sat\-Solver\-::inc\-Add2\-Lit\-Clause (
+\begin{DoxyParamCaption}
+\item[{int}]{lit1, }
+\item[{int}]{lit2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classSatSolver_a791be541b59ef58a29a1c517fca943e7}
+
+
+Adds a new clause consisting of 2 literals to the current incremental session. 
+
+This is an abstract method which must be implemented in all derived classes (all classes implementing this interface).
+
+\begin{DoxyPrecond}{Precondition}
+\hyperlink{classSatSolver_a74603f84c3f2383a5fc44d5a8093cbea}{start\-Incremental\-Session()} must have been called before. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em lit1} & The first literal of the clause to add to the currently open incremental session. If this method is called after solving for the first time, be sure that the passed literal talks about a variables that have been mentioned in vars\-\_\-to\-\_\-keep when calling \hyperlink{classSatSolver_a74603f84c3f2383a5fc44d5a8093cbea}{start\-Incremental\-Session()}. \\
+\hline
+{\em lit2} & The second literal of the clause to add to the currently open incremental session (must be contained in vars\-\_\-to\-\_\-keep as well). \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classMiniSatApi_a56c4758ee7466cd7fa48a682fee76fd3}{Mini\-Sat\-Api}, \hyperlink{classPicoSatApi_a5c31301a2b0dfc70251f285e737a6fc2}{Pico\-Sat\-Api}, and \hyperlink{classLingelingApi_a54bf3198e6bb2dd3ebda768272337955}{Lingeling\-Api}.
+
+\hypertarget{classSatSolver_abca288874a1b8ab1a90cb274eb885ace}{\index{Sat\-Solver@{Sat\-Solver}!inc\-Add3\-Lit\-Clause@{inc\-Add3\-Lit\-Clause}}
+\index{inc\-Add3\-Lit\-Clause@{inc\-Add3\-Lit\-Clause}!SatSolver@{Sat\-Solver}}
+\subsubsection[{inc\-Add3\-Lit\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Sat\-Solver\-::inc\-Add3\-Lit\-Clause (
+\begin{DoxyParamCaption}
+\item[{int}]{lit1, }
+\item[{int}]{lit2, }
+\item[{int}]{lit3}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classSatSolver_abca288874a1b8ab1a90cb274eb885ace}
+
+
+Adds a new clause consisting of 3 literals to the current incremental session. 
+
+This is an abstract method which must be implemented in all derived classes (all classes implementing this interface).
+
+\begin{DoxyPrecond}{Precondition}
+\hyperlink{classSatSolver_a74603f84c3f2383a5fc44d5a8093cbea}{start\-Incremental\-Session()} must have been called before. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em lit1} & The first literal of the clause to add to the currently open incremental session. If this method is called after solving for the first time, be sure that the passed literal talks about a variables that have been mentioned in vars\-\_\-to\-\_\-keep when calling \hyperlink{classSatSolver_a74603f84c3f2383a5fc44d5a8093cbea}{start\-Incremental\-Session()}. \\
+\hline
+{\em lit2} & The second literal of the clause to add to the currently open incremental session (must be contained in vars\-\_\-to\-\_\-keep as well). \\
+\hline
+{\em lit3} & The third literal of the clause to add to the currently open incremental session (must be contained in vars\-\_\-to\-\_\-keep as well). \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classMiniSatApi_aee9556c8c5de695fa5d7aa7cfde57877}{Mini\-Sat\-Api}, \hyperlink{classPicoSatApi_a1daeb6e2b3bfa3eee44a7bf1b278dd86}{Pico\-Sat\-Api}, and \hyperlink{classLingelingApi_ad05f795bbf472fe5386164a74a8ecd86}{Lingeling\-Api}.
+
+\hypertarget{classSatSolver_a9f91c104238b6e091513e0aa46970840}{\index{Sat\-Solver@{Sat\-Solver}!inc\-Add\-Clause@{inc\-Add\-Clause}}
+\index{inc\-Add\-Clause@{inc\-Add\-Clause}!SatSolver@{Sat\-Solver}}
+\subsubsection[{inc\-Add\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Sat\-Solver\-::inc\-Add\-Clause (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{clause}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classSatSolver_a9f91c104238b6e091513e0aa46970840}
+
+
+Adds a new clause to the current incremental session. 
+
+This is an abstract method which must be implemented in all derived classes (all classes implementing this interface).
+
+\begin{DoxyPrecond}{Precondition}
+\hyperlink{classSatSolver_a74603f84c3f2383a5fc44d5a8093cbea}{start\-Incremental\-Session()} must have been called before. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em clause} & The clause (a disjunction of literals) to add (conjunct) to the currently open incremental session. If this method is called after solving for the first time, be sure that the passed clause talks only about variables that have been mentioned in vars\-\_\-to\-\_\-keep when calling \hyperlink{classSatSolver_a74603f84c3f2383a5fc44d5a8093cbea}{start\-Incremental\-Session()}. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classMiniSatApi_af2115a84419b7480ff55b747f7ddd60a}{Mini\-Sat\-Api}, \hyperlink{classPicoSatApi_aaafa1c5c7f1058029127a39a32ceada6}{Pico\-Sat\-Api}, and \hyperlink{classLingelingApi_afb3e0d0ab541b89ef6c281145f53105f}{Lingeling\-Api}.
+
+
+
+Referenced by I\-F\-M13\-Synth\-::add\-Blocked\-State(), I\-F\-M13\-Explorer\-::add\-Blocked\-State(), I\-F\-M13\-Synth\-::add\-Blocked\-Transition(), I\-F\-M13\-Explorer\-::add\-Blocked\-Transition(), I\-F\-M13\-Synth\-::add\-Lose(), Utils\-::compress\-State\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::compute\-Counterexample\-S\-A\-T(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One\-S\-A\-T(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), I\-F\-M13\-Synth\-::propagate\-Blocked\-States(), and I\-F\-M13\-Explorer\-::propagate\-Blocked\-States().
+
+\hypertarget{classSatSolver_ab2581b192cb2c39a81a416a9f7416c9e}{\index{Sat\-Solver@{Sat\-Solver}!inc\-Add\-C\-N\-F@{inc\-Add\-C\-N\-F}}
+\index{inc\-Add\-C\-N\-F@{inc\-Add\-C\-N\-F}!SatSolver@{Sat\-Solver}}
+\subsubsection[{inc\-Add\-C\-N\-F}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Sat\-Solver\-::inc\-Add\-C\-N\-F (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{cnf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classSatSolver_ab2581b192cb2c39a81a416a9f7416c9e}
+
+
+Adds a new \hyperlink{classCNF}{C\-N\-F} to the current incremental session. 
+
+This is an abstract method which must be implemented in all derived classes (all classes implementing this interface).
+
+\begin{DoxyPrecond}{Precondition}
+\hyperlink{classSatSolver_a74603f84c3f2383a5fc44d5a8093cbea}{start\-Incremental\-Session()} must have been called before. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em cnf} & The \hyperlink{classCNF}{C\-N\-F} to add to the currently open incremental session. If this method is called after solving for the first time, be sure that the passed \hyperlink{classCNF}{C\-N\-F} talks only about variables that have been mentioned in vars\-\_\-to\-\_\-keep when calling \hyperlink{classSatSolver_a74603f84c3f2383a5fc44d5a8093cbea}{start\-Incremental\-Session()}. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classMiniSatApi_ae5ffe2811e01051c5206c9e4865a7102}{Mini\-Sat\-Api}, \hyperlink{classPicoSatApi_a619b3cb3b059b06c34f84d9ae123c042}{Pico\-Sat\-Api}, and \hyperlink{classLingelingApi_ae9e54e64007c98add90e142a5c38d4bc}{Lingeling\-Api}.
+
+
+
+Referenced by Counter\-Gen\-S\-A\-T\-::compress\-Bored(), Utils\-::compress\-State\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::compute\-Counterexample\-S\-A\-T(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::consider\-New\-Info\-From\-Others(), Counter\-Gen\-S\-A\-T\-::consider\-New\-Info\-From\-Others(), I\-F\-M13\-Explorer\-::consider\-New\-Info\-From\-Others(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), I\-F\-M13\-Explorer\-::\-I\-F\-M13\-Explorer(), I\-F\-M13\-Synth\-::\-I\-F\-M13\-Synth(), and Learn\-Synth\-Q\-B\-F\-::\-Learn\-Synth\-Q\-B\-F().
+
+\hypertarget{classSatSolver_a1f04f34bb04174489ed18d0b62241004}{\index{Sat\-Solver@{Sat\-Solver}!inc\-Add\-Cube@{inc\-Add\-Cube}}
+\index{inc\-Add\-Cube@{inc\-Add\-Cube}!SatSolver@{Sat\-Solver}}
+\subsubsection[{inc\-Add\-Cube}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Sat\-Solver\-::inc\-Add\-Cube (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{cube}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classSatSolver_a1f04f34bb04174489ed18d0b62241004}
+
+
+Adds a new cube to the current incremental session. 
+
+That is, all literals of the cube are added as unit clauses to the current incremental session. For instance, if the cube \mbox{[}2, -\/4, 8\mbox{]} is passed as argument, then this method adds the three unit clauses \mbox{[}2\mbox{]}, \mbox{[}-\/4\mbox{]}, \mbox{[}8\mbox{]}.
+
+This is an abstract method which must be implemented in all derived classes (all classes implementing this interface).
+
+\begin{DoxyPrecond}{Precondition}
+\hyperlink{classSatSolver_a74603f84c3f2383a5fc44d5a8093cbea}{start\-Incremental\-Session()} must have been called before. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em cube} & The cube (a conjunction of literals) to add (conjunct) to the currently open incremental session. All literals of this cube will be added as unit clauses. If this method is called after solving for the first time, be sure that the passed clause talks only about variables that have been mentioned in vars\-\_\-to\-\_\-keep when calling \hyperlink{classSatSolver_a74603f84c3f2383a5fc44d5a8093cbea}{start\-Incremental\-Session()}. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classMiniSatApi_a41e16a2e8757846fa17e010c5cc1ff16}{Mini\-Sat\-Api}, \hyperlink{classPicoSatApi_ae0a7dd7da9ead164560f454e29457453}{Pico\-Sat\-Api}, and \hyperlink{classLingelingApi_a6dc0eb0582d6afda381fc05a5820433c}{Lingeling\-Api}.
+
+
+
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), and Counter\-Gen\-S\-A\-T\-::generalize\-Ce\-Futher().
+
+\hypertarget{classSatSolver_a6be2c564289a59057c4c6728a3aa9c2b}{\index{Sat\-Solver@{Sat\-Solver}!inc\-Add\-Neg\-Cube\-As\-Clause@{inc\-Add\-Neg\-Cube\-As\-Clause}}
+\index{inc\-Add\-Neg\-Cube\-As\-Clause@{inc\-Add\-Neg\-Cube\-As\-Clause}!SatSolver@{Sat\-Solver}}
+\subsubsection[{inc\-Add\-Neg\-Cube\-As\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Sat\-Solver\-::inc\-Add\-Neg\-Cube\-As\-Clause (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{cube}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classSatSolver_a6be2c564289a59057c4c6728a3aa9c2b}
+
+
+Adds the negation of a given cube (which is a clause) to the incremental session. 
+
+For instance, if the cube \mbox{[}2, -\/4, 8\mbox{]} is passed as argument, then this method adds the clauses \mbox{[}-\/2, 4, -\/8\mbox{]} to the current incremental session.
+
+This is an abstract method which must be implemented in all derived classes (all classes implementing this interface).
+
+\begin{DoxyPrecond}{Precondition}
+\hyperlink{classSatSolver_a74603f84c3f2383a5fc44d5a8093cbea}{start\-Incremental\-Session()} must have been called before. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em cube} & The cube (a conjunction of literals) to negate and add (conjunct) to the currently open incremental session. If this method is called after solving for the first time, be sure that the passed cube talks only about variables that have been mentioned in vars\-\_\-to\-\_\-keep when calling \hyperlink{classSatSolver_a74603f84c3f2383a5fc44d5a8093cbea}{start\-Incremental\-Session()}. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classMiniSatApi_a49afe5c41bb036a31f65f98621e82846}{Mini\-Sat\-Api}, \hyperlink{classPicoSatApi_ace9bfbd0c8cbd62c3e92d2b208bb7b66}{Pico\-Sat\-Api}, and \hyperlink{classLingelingApi_afefd24f97e49aed7cbaf25140a6b7741}{Lingeling\-Api}.
+
+
+
+Referenced by Counter\-Gen\-S\-A\-T\-::compress\-Bored(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), and Counter\-Gen\-S\-A\-T\-::generalize\-Ce\-Futher().
+
+\hypertarget{classSatSolver_a5b39c45cd2a1abfe96c681515dfddb77}{\index{Sat\-Solver@{Sat\-Solver}!inc\-Add\-Unit\-Clause@{inc\-Add\-Unit\-Clause}}
+\index{inc\-Add\-Unit\-Clause@{inc\-Add\-Unit\-Clause}!SatSolver@{Sat\-Solver}}
+\subsubsection[{inc\-Add\-Unit\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Sat\-Solver\-::inc\-Add\-Unit\-Clause (
+\begin{DoxyParamCaption}
+\item[{int}]{lit}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classSatSolver_a5b39c45cd2a1abfe96c681515dfddb77}
+
+
+Adds a new unit clause to the current incremental session. 
+
+This is an abstract method which must be implemented in all derived classes (all classes implementing this interface).
+
+\begin{DoxyPrecond}{Precondition}
+\hyperlink{classSatSolver_a74603f84c3f2383a5fc44d5a8093cbea}{start\-Incremental\-Session()} must have been called before. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em lit} & The (one and only) literal of the unit clause to add to the currently open incremental session. If this method is called after solving for the first time, be sure that the passed literal talks about a variables that have been mentioned in vars\-\_\-to\-\_\-keep when calling \hyperlink{classSatSolver_a74603f84c3f2383a5fc44d5a8093cbea}{start\-Incremental\-Session()}. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classMiniSatApi_ade09bb38667bb23f2ac993e2d6c66408}{Mini\-Sat\-Api}, \hyperlink{classPicoSatApi_a0ef01830dacfd23f63928b44ff3df788}{Pico\-Sat\-Api}, and \hyperlink{classLingelingApi_aa5c928ad16d2dc79d42b977237d377e0}{Lingeling\-Api}.
+
+
+
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), and Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples().
+
+\hypertarget{classSatSolver_ab1aab4b96a36b2003450067a3799ae23}{\index{Sat\-Solver@{Sat\-Solver}!inc\-Is\-Sat@{inc\-Is\-Sat}}
+\index{inc\-Is\-Sat@{inc\-Is\-Sat}!SatSolver@{Sat\-Solver}}
+\subsubsection[{inc\-Is\-Sat}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Sat\-Solver\-::inc\-Is\-Sat (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classSatSolver_ab1aab4b96a36b2003450067a3799ae23}
+
+
+Checks if a the \hyperlink{classCNF}{C\-N\-F} in the incremental session is satisfiable. 
+
+This is an abstract method which must be implemented in all derived classes (all classes implementing this interface).
+
+\begin{DoxyPrecond}{Precondition}
+\hyperlink{classSatSolver_a74603f84c3f2383a5fc44d5a8093cbea}{start\-Incremental\-Session()} must have been called before. 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+True in case of satisfiability, false otherwise. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classMiniSatApi_a4c6ba65381002eb3f90e8e0df1606759}{Mini\-Sat\-Api}, \hyperlink{classPicoSatApi_a0d1237c039315d572fb0828c59435177}{Pico\-Sat\-Api}, and \hyperlink{classLingelingApi_a7a96e3b1078e40305f8b5e329f0a1e26}{Lingeling\-Api}.
+
+
+
+Referenced by I\-F\-M13\-Synth\-::add\-Blocked\-State(), I\-F\-M13\-Explorer\-::add\-Blocked\-State(), Counter\-Gen\-S\-A\-T\-::bored(), Counter\-Gen\-S\-A\-T\-::compress\-Bored(), Utils\-::compress\-State\-C\-N\-F(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), Counter\-Gen\-S\-A\-T\-::generalize\-Ce\-Futher(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), I\-F\-M13\-Synth\-::propagate\-Blocked\-States(), and I\-F\-M13\-Explorer\-::propagate\-Blocked\-States().
+
+\hypertarget{classSatSolver_a1864787a33621efac7fc75fb6b25f080}{\index{Sat\-Solver@{Sat\-Solver}!inc\-Is\-Sat@{inc\-Is\-Sat}}
+\index{inc\-Is\-Sat@{inc\-Is\-Sat}!SatSolver@{Sat\-Solver}}
+\subsubsection[{inc\-Is\-Sat}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Sat\-Solver\-::inc\-Is\-Sat (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{assumptions}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classSatSolver_a1864787a33621efac7fc75fb6b25f080}
+
+
+Checks if a the \hyperlink{classCNF}{C\-N\-F} in the incremental session is satisfiable under assumptions. 
+
+This method checks if the \hyperlink{classCNF}{C\-N\-F} in the incremental session is satisfiable given that all literals passed in the vector 'assumptions' are true. The assumptions are not persistently added to the \hyperlink{classCNF}{C\-N\-F} of the incremental session.
+
+This is an abstract method which must be implemented in all derived classes (all classes implementing this interface).
+
+\begin{DoxyPrecond}{Precondition}
+\hyperlink{classSatSolver_a74603f84c3f2383a5fc44d5a8093cbea}{start\-Incremental\-Session()} must have been called before. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em assumptions} & A vector of literals. This method then checks if the \hyperlink{classCNF}{C\-N\-F} of the incremental session is satisfiable given that all literals passed in this vector are true. The assumptions are not persistently added to the \hyperlink{classCNF}{C\-N\-F}. The assumptions must be a subset of the vars\-\_\-to\-\_\-keep passed to \hyperlink{classSatSolver_a74603f84c3f2383a5fc44d5a8093cbea}{start\-Incremental\-Session()}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True in case of satisfiability, false otherwise. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classMiniSatApi_a40421bac2739bacb68f3c7083810694b}{Mini\-Sat\-Api}, \hyperlink{classPicoSatApi_abebe28c72303235d2fdc915bbf4752c0}{Pico\-Sat\-Api}, and \hyperlink{classLingelingApi_a192ddd0f1d27617570c759b3496ea90d}{Lingeling\-Api}.
+
+\hypertarget{classSatSolver_ad387fc06bacf2d48847f779c9db8461a}{\index{Sat\-Solver@{Sat\-Solver}!inc\-Is\-Sat\-Model\-Or\-Core@{inc\-Is\-Sat\-Model\-Or\-Core}}
+\index{inc\-Is\-Sat\-Model\-Or\-Core@{inc\-Is\-Sat\-Model\-Or\-Core}!SatSolver@{Sat\-Solver}}
+\subsubsection[{inc\-Is\-Sat\-Model\-Or\-Core}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Sat\-Solver\-::inc\-Is\-Sat\-Model\-Or\-Core (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{assumptions, }
+\item[{const vector$<$ int $>$ \&}]{vars\-\_\-of\-\_\-interest, }
+\item[{vector$<$ int $>$ \&}]{model\-\_\-or\-\_\-core}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classSatSolver_ad387fc06bacf2d48847f779c9db8461a}
+
+
+Checks the \hyperlink{classCNF}{C\-N\-F} in the incremental session and computes a model or unsat core. 
+
+This method checks if the \hyperlink{classCNF}{C\-N\-F} of the incremental session is satisfiable given that all literals passed in the vector 'assumptions' is true. If this is the case, then a satisfying assignment will be written into model\-\_\-or\-\_\-core. You can specify which variables you want to have in the satisfying assignment using the vars\-\_\-of\-\_\-interest vector. The reason is that your \hyperlink{classCNF}{C\-N\-F} may contain thousands of temporary variables stemming from some Tseitin encoding, but usually one in only interested in the value of a few variables. In case of unsatisfiability, an unsatisfiable core is stored in model\-\_\-or\-\_\-core. The unsatisfiable core is a subset of the literals passed in 'assumptions' such that the \hyperlink{classCNF}{C\-N\-F} is still unsatisfiable when these literals hold.
+
+This is an abstract method which must be implemented in all derived classes (all classes implementing this interface).
+
+
+\begin{DoxyParams}{Parameters}
+{\em assumptions} & A vector of literals. This method then checks if the \hyperlink{classCNF}{C\-N\-F} of the incremental session is satisfiable given that all literals passed in this vector are true. The assumptions are not persistently added to the \hyperlink{classCNF}{C\-N\-F}. The assumptions must be a subset of the vars\-\_\-to\-\_\-keep passed to \hyperlink{classSatSolver_a74603f84c3f2383a5fc44d5a8093cbea}{start\-Incremental\-Session()}. \\
+\hline
+{\em vars\-\_\-of\-\_\-interest} & The variables for which you want to have a value in case of satisfiability. vars\-\_\-of\-\_\-interest must be a subset of the vars\-\_\-to\-\_\-keep passed to \hyperlink{classSatSolver_a74603f84c3f2383a5fc44d5a8093cbea}{start\-Incremental\-Session()}. \\
+\hline
+{\em model\-\_\-or\-\_\-core} & An empty vector. Depending on the outcome of the call, either a satisfying assignment (a cube over the variables passed in vars\-\_\-of\-\_\-interest) or an unsatisfiable core (a subset of the literals passed in 'assumptions') will be written into this vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True in case of satisfiability (of the \hyperlink{classCNF}{C\-N\-F} of the incremental session in conjunction conjuncted with all assumptions), false otherwise. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classMiniSatApi_afb886d40bb45b5cf2fadb7aee1a06b3e}{Mini\-Sat\-Api}, \hyperlink{classPicoSatApi_aa8c0dbf4587ff4666ce20fd325364c4a}{Pico\-Sat\-Api}, and \hyperlink{classLingelingApi_a5f70806ab80cb622f4f7286f66284c4e}{Lingeling\-Api}.
+
+
+
+Referenced by Utils\-::compress\-State\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::compute\-Counterexample\-S\-A\-T(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), I\-F\-M13\-Synth\-::gen\-And\-Block\-Trans(), I\-F\-M13\-Explorer\-::gen\-And\-Block\-Trans(), Counter\-Gen\-S\-A\-T\-::generalize\-Ce\-Futher(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexample(), I\-F\-M13\-Synth\-::rec\-Block\-Cube(), and I\-F\-M13\-Explorer\-::rec\-Block\-Cube().
+
+\hypertarget{classSatSolver_a29225bfab1f352cae27c68e9bda4d409}{\index{Sat\-Solver@{Sat\-Solver}!inc\-Is\-Sat\-Model\-Or\-Core@{inc\-Is\-Sat\-Model\-Or\-Core}}
+\index{inc\-Is\-Sat\-Model\-Or\-Core@{inc\-Is\-Sat\-Model\-Or\-Core}!SatSolver@{Sat\-Solver}}
+\subsubsection[{inc\-Is\-Sat\-Model\-Or\-Core}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Sat\-Solver\-::inc\-Is\-Sat\-Model\-Or\-Core (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{core\-\_\-assumptions, }
+\item[{const vector$<$ int $>$ \&}]{more\-\_\-assumptions, }
+\item[{const vector$<$ int $>$ \&}]{vars\-\_\-of\-\_\-interest, }
+\item[{vector$<$ int $>$ \&}]{model\-\_\-or\-\_\-core}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classSatSolver_a29225bfab1f352cae27c68e9bda4d409}
+
+
+Computes a satisfying assignment or core using additional assumptions. 
+
+In contrast to the previous method, this one allows to define two sets of assumptions. The core\-\_\-assumptions are used as basis for extracting an unsatisfiable core in case of unsatisfiability. The more\-\_\-assumptions are assumed but not considered for the computation of unsatisfiable cores. This is convenient to avoid calls to \hyperlink{classSatSolver_a4da0dff7082a91429e3311d279605be4}{inc\-Push()} and \hyperlink{classSatSolver_a436aae045eb04141c834df0b55947ee5}{inc\-Pop()} when temporarily working under assumptions that should not be minimized for the unsatisfiable core.
+
+This is an abstract method which must be implemented in all derived classes (all classes implementing this interface).
+
+
+\begin{DoxyParams}{Parameters}
+{\em core\-\_\-assumptions} & A vector of literals. This method then checks if the \hyperlink{classCNF}{C\-N\-F} of the incremental session is satisfiable given that all literals passed in this vector and all literals passed in more\-\_\-assumptions are true. However, for computing the the unsatisfiable core, only the core\-\_\-assumptions will be minimized and the more\-\_\-assumptions stay as they are. That is, in case of unsatisfiability, model\-\_\-or\-\_\-core will contain a subset X of the core\-\_\-assumptions such that X \& more\-\_\-assumptions \& incremental\-\_\-cnf is still unsatisfiable. core\-\_\-assumptions must be a subset of the vars\-\_\-to\-\_\-keep passed to \hyperlink{classSatSolver_a74603f84c3f2383a5fc44d5a8093cbea}{start\-Incremental\-Session()}. \\
+\hline
+{\em more\-\_\-assumptions} & A vector of assumptions that are assumed, but not minimized when an unsatisfiable core is computed. That is, in case of unsatisfiability, model\-\_\-or\-\_\-core will contain a subset X of the core\-\_\-assumptions such that X \& more\-\_\-assumptions \& incremental\-\_\-cnf is still unsatisfiable. more\-\_\-assumptions must be a subset of the vars\-\_\-to\-\_\-keep passed to \hyperlink{classSatSolver_a74603f84c3f2383a5fc44d5a8093cbea}{start\-Incremental\-Session()}. \\
+\hline
+{\em vars\-\_\-of\-\_\-interest} & The variables for which you want to have a value in case of satisfiability. vars\-\_\-of\-\_\-interest must be a subset of the vars\-\_\-to\-\_\-keep passed to \hyperlink{classSatSolver_a74603f84c3f2383a5fc44d5a8093cbea}{start\-Incremental\-Session()}. \\
+\hline
+{\em model\-\_\-or\-\_\-core} & An empty vector. Depending on the outcome of the call, either a satisfying assignment (a cube over the variables passed in vars\-\_\-of\-\_\-interest) or an unsatisfiable core (a subset of the literals passed in 'core\-\_\-assumptions') will be written into this vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True in case of satisfiability (of the \hyperlink{classCNF}{C\-N\-F} of the incremental session in conjunction conjuncted with all assumptions), false otherwise. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classMiniSatApi_a776b2b0563b52f52152dcec931b7f557}{Mini\-Sat\-Api}, \hyperlink{classPicoSatApi_ada5b2d2ba3cf20b0ab007a62cc73028a}{Pico\-Sat\-Api}, and \hyperlink{classLingelingApi_a95680a60e64dccddbe007ef7d4c8a960}{Lingeling\-Api}.
+
+\hypertarget{classSatSolver_a436aae045eb04141c834df0b55947ee5}{\index{Sat\-Solver@{Sat\-Solver}!inc\-Pop@{inc\-Pop}}
+\index{inc\-Pop@{inc\-Pop}!SatSolver@{Sat\-Solver}}
+\subsubsection[{inc\-Pop}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Sat\-Solver\-::inc\-Pop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classSatSolver_a436aae045eb04141c834df0b55947ee5}
+
+
+Restores the incremental session back to the point where \hyperlink{classSatSolver_a4da0dff7082a91429e3311d279605be4}{inc\-Push()} was called. 
+
+This is an abstract method which must be implemented in all derived classes (all classes implementing this interface). 
+
+Implemented in \hyperlink{classMiniSatApi_af388f97db15f77baeb420a8fef74ca6a}{Mini\-Sat\-Api}, \hyperlink{classPicoSatApi_a045c7a5229d4e45095922e1315c5c282}{Pico\-Sat\-Api}, and \hyperlink{classLingelingApi_afe43e1243338a332803fff470eedbf7a}{Lingeling\-Api}.
+
+
+
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), and Counter\-Gen\-S\-A\-T\-::generalize\-Ce\-Futher().
+
+\hypertarget{classSatSolver_a4da0dff7082a91429e3311d279605be4}{\index{Sat\-Solver@{Sat\-Solver}!inc\-Push@{inc\-Push}}
+\index{inc\-Push@{inc\-Push}!SatSolver@{Sat\-Solver}}
+\subsubsection[{inc\-Push}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Sat\-Solver\-::inc\-Push (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classSatSolver_a4da0dff7082a91429e3311d279605be4}
+
+
+Stores the current state of the incremental session on a stack. 
+
+The state can be restored later by calling \hyperlink{classSatSolver_a436aae045eb04141c834df0b55947ee5}{inc\-Pop()}.
+
+This is an abstract method which must be implemented in all derived classes (all classes implementing this interface). 
+
+Implemented in \hyperlink{classMiniSatApi_a27013ace25320f68252bef5ba9f2e9ad}{Mini\-Sat\-Api}, \hyperlink{classPicoSatApi_a523f9de3a59f927cb6ad0729e1caaac7}{Pico\-Sat\-Api}, and \hyperlink{classLingelingApi_a91c858d2a36a4fbe580909a793802a76}{Lingeling\-Api}.
+
+
+
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), and Counter\-Gen\-S\-A\-T\-::generalize\-Ce\-Futher().
+
+\hypertarget{classSatSolver_a82f60f60db464fbe5c66a20ad673a573}{\index{Sat\-Solver@{Sat\-Solver}!is\-Sat@{is\-Sat}}
+\index{is\-Sat@{is\-Sat}!SatSolver@{Sat\-Solver}}
+\subsubsection[{is\-Sat}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Sat\-Solver\-::is\-Sat (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{cnf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classSatSolver_a82f60f60db464fbe5c66a20ad673a573}
+
+
+Checks if a \hyperlink{classCNF}{C\-N\-F} is satisfiable. 
+
+This method is not incremental. At aver call to this method, a new solver instance is created and deleted afterwards. This method does not interfere with an incremental session that may be open in parallel.
+
+This is an abstract method which must be implemented in all derived classes (all classes implementing this interface).
+
+
+\begin{DoxyParams}{Parameters}
+{\em cnf} & The \hyperlink{classCNF}{C\-N\-F} formula for which we want to know if it is satisfiable. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True in case of satisfiability, false otherwise. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classMiniSatApi_a73b93ecb947723a96ef6fbd436640e12}{Mini\-Sat\-Api}, \hyperlink{classLingelingApi_a38358f64ded244e2e3d843d0565f0177}{Lingeling\-Api}, and \hyperlink{classPicoSatApi_a46ea721c61e298d87403476607ba9fe6}{Pico\-Sat\-Api}.
+
+
+
+Referenced by I\-F\-M13\-Synth\-::debug\-Check\-Invariants(), Utils\-::debug\-Check\-Win\-Reg(), and Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses().
+
+\hypertarget{classSatSolver_ad5cfce08969be5aaf5cd705c12c68818}{\index{Sat\-Solver@{Sat\-Solver}!is\-Sat\-Model\-Or\-Core@{is\-Sat\-Model\-Or\-Core}}
+\index{is\-Sat\-Model\-Or\-Core@{is\-Sat\-Model\-Or\-Core}!SatSolver@{Sat\-Solver}}
+\subsubsection[{is\-Sat\-Model\-Or\-Core}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Sat\-Solver\-::is\-Sat\-Model\-Or\-Core (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{cnf, }
+\item[{const vector$<$ int $>$ \&}]{assumptions, }
+\item[{const vector$<$ int $>$ \&}]{vars\-\_\-of\-\_\-interest, }
+\item[{vector$<$ int $>$ \&}]{model\-\_\-or\-\_\-core}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classSatSolver_ad5cfce08969be5aaf5cd705c12c68818}
+
+
+Checks if a \hyperlink{classCNF}{C\-N\-F} is satisfiable and extracts a model or an unsatisfiable core. 
+
+This method is not incremental. At aver call to this method, a new solver instance is created and deleted afterwards. This method does not interfere with an incremental session that may be open in parallel. This method checks if the passed \hyperlink{classCNF}{C\-N\-F} is satisfiable given that all literals passed in the vector 'assumptions' is true. If this is the case, then a satisfying assignment will be written into model\-\_\-or\-\_\-core. You can specify which variables you want to have in the satisfying assignment using the vars\-\_\-of\-\_\-interest vector. The reason is that you \hyperlink{classCNF}{C\-N\-F} may contain thousands of temporary variables stemming from some Tseitin encoding, but usually one in only interested in the value of a few variables. In case of unsatisfiability, an unsatisfiable core is stored in model\-\_\-or\-\_\-core. The unsatisfiable core is a subset of the literals passed in 'assumptions' such that the \hyperlink{classCNF}{C\-N\-F} is still unsatisfiable when these literals hold.
+
+This is an abstract method which must be implemented in all derived classes (all classes implementing this interface).
+
+
+\begin{DoxyParams}{Parameters}
+{\em cnf} & The \hyperlink{classCNF}{C\-N\-F} formula for which we want to know if it is satisfiable (in conjunction with the assumptions). \\
+\hline
+{\em assumptions} & A vector of literals. These literals are conjuncted to the \hyperlink{classCNF}{C\-N\-F} before solving. If you do not have any assumptions but want to decide the satisfiability of the cnf only, then simply leave this vector empty. \\
+\hline
+{\em vars\-\_\-of\-\_\-interest} & The variables for which you want to have a value in case of satisfiability. \\
+\hline
+{\em model\-\_\-or\-\_\-core} & An empty vector. Depending on the outcome of the call, either a satisfying assignment (a cube over the variables passed in vars\-\_\-of\-\_\-interest) or an unsatisfiable core (a subset of the literals passed in 'assumptions') will be written into this vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True in case of satisfiability (of the \hyperlink{classCNF}{C\-N\-F} conjuncted with all assumptions), false otherwise. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classMiniSatApi_a7f846d8c4a5a652cb83460852c09dfb3}{Mini\-Sat\-Api}, \hyperlink{classLingelingApi_a8f147b59f0ebabc35a20d295f28d499f}{Lingeling\-Api}, and \hyperlink{classPicoSatApi_a00dda1bd348d46bbfbf506f7735946da}{Pico\-Sat\-Api}.
+
+\hypertarget{classSatSolver_a9dc824ecbeaf4f0505403b284f6fe047}{\index{Sat\-Solver@{Sat\-Solver}!operator=@{operator=}}
+\index{operator=@{operator=}!SatSolver@{Sat\-Solver}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sat\-Solver}\& Sat\-Solver\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Sat\-Solver} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classSatSolver_a9dc824ecbeaf4f0505403b284f6fe047}
+
+
+Assignment operator. 
+
+The assignment operator is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the assignment, i.\-e, $\ast$this. 
+\end{DoxyReturn}
+\hypertarget{classSatSolver_a74603f84c3f2383a5fc44d5a8093cbea}{\index{Sat\-Solver@{Sat\-Solver}!start\-Incremental\-Session@{start\-Incremental\-Session}}
+\index{start\-Incremental\-Session@{start\-Incremental\-Session}!SatSolver@{Sat\-Solver}}
+\subsubsection[{start\-Incremental\-Session}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Sat\-Solver\-::start\-Incremental\-Session (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{vars\-\_\-to\-\_\-keep, }
+\item[{bool}]{use\-\_\-push = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classSatSolver_a74603f84c3f2383a5fc44d5a8093cbea}
+
+
+Starts a new incremental session. 
+
+Every instance of this class can have at most one open incremental session. If there is an old open incremental session it will be closed before. An incremental session allows you to execute sequences of calls, where the information the solver learned in previous calls is retained and may speedup later calls. You can add new clauses between calls, but you cannot remove clauses.
+
+This is an abstract method which must be implemented in all derived classes (all classes implementing this interface).
+
+
+\begin{DoxyParams}{Parameters}
+{\em vars\-\_\-to\-\_\-keep} & A set of variables the solver should not optimize away. Clauses added later in an incremental session can only talk about variables contained in this vector. \\
+\hline
+{\em use\-\_\-push} & A hint to the solver if you are ever going to use \hyperlink{classSatSolver_a4da0dff7082a91429e3311d279605be4}{inc\-Push()} or \hyperlink{classSatSolver_a436aae045eb04141c834df0b55947ee5}{inc\-Pop()}. Some solver implementations (like \hyperlink{classMiniSatApi}{Mini\-Sat\-Api}) do not support push and and pop natively, so we have to make a workaround. This workaround is expensive and we can safe some computation time if we skip it when we will not need it. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classMiniSatApi_afe6f184e440ffe7f9b3a86045c15b450}{Mini\-Sat\-Api}, \hyperlink{classPicoSatApi_a5e32634944d14142ab0e2c4fdeb12d85}{Pico\-Sat\-Api}, and \hyperlink{classLingelingApi_a844da6cbdf38b7cc8abd0b1710350be2}{Lingeling\-Api}.
+
+
+
+Referenced by Counter\-Gen\-S\-A\-T\-::compress\-Bored(), Utils\-::compress\-State\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::compute\-Counterexample\-S\-A\-T(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::consider\-New\-Info\-From\-Others(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), I\-F\-M13\-Explorer\-::\-I\-F\-M13\-Explorer(), I\-F\-M13\-Synth\-::\-I\-F\-M13\-Synth(), and Learn\-Synth\-Q\-B\-F\-::\-Learn\-Synth\-Q\-B\-F().
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classSatSolver_adfeecebfd09606c82b5c57cfe5aad813}{\index{Sat\-Solver@{Sat\-Solver}!min\-\_\-cores\-\_\-@{min\-\_\-cores\-\_\-}}
+\index{min\-\_\-cores\-\_\-@{min\-\_\-cores\-\_\-}!SatSolver@{Sat\-Solver}}
+\subsubsection[{min\-\_\-cores\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}bool Sat\-Solver\-::min\-\_\-cores\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classSatSolver_adfeecebfd09606c82b5c57cfe5aad813}
+
+
+Indicates if the unsat cores returned by the solver should be minimized further. 
+
+
+
+Definition at line 428 of file Sat\-Solver.\-h.
+
+
+
+Referenced by do\-Min\-Cores(), Lingeling\-Api\-::inc\-Is\-Sat\-Model\-Or\-Core(), Pico\-Sat\-Api\-::inc\-Is\-Sat\-Model\-Or\-Core(), Mini\-Sat\-Api\-::inc\-Is\-Sat\-Model\-Or\-Core(), Lingeling\-Api\-::is\-Sat\-Model\-Or\-Core(), Pico\-Sat\-Api\-::is\-Sat\-Model\-Or\-Core(), and Mini\-Sat\-Api\-::is\-Sat\-Model\-Or\-Core().
+
+\hypertarget{classSatSolver_a73fed24d8fb4da85ef82dc53ac5f28c7}{\index{Sat\-Solver@{Sat\-Solver}!rand\-\_\-models\-\_\-@{rand\-\_\-models\-\_\-}}
+\index{rand\-\_\-models\-\_\-@{rand\-\_\-models\-\_\-}!SatSolver@{Sat\-Solver}}
+\subsubsection[{rand\-\_\-models\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}bool Sat\-Solver\-::rand\-\_\-models\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classSatSolver_a73fed24d8fb4da85ef82dc53ac5f28c7}
+
+
+Indicates if satisfying assignments should be randomized. 
+
+
+
+Definition at line 433 of file Sat\-Solver.\-h.
+
+
+
+Referenced by do\-Rand\-Models(), Lingeling\-Api\-::inc\-Is\-Sat\-Model\-Or\-Core(), Pico\-Sat\-Api\-::inc\-Is\-Sat\-Model\-Or\-Core(), Mini\-Sat\-Api\-::inc\-Is\-Sat\-Model\-Or\-Core(), Lingeling\-Api\-::is\-Sat\-Model\-Or\-Core(), Pico\-Sat\-Api\-::is\-Sat\-Model\-Or\-Core(), and Mini\-Sat\-Api\-::is\-Sat\-Model\-Or\-Core().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{SatSolver_8h}{Sat\-Solver.\-h}\item 
+src/\hyperlink{SatSolver_8cpp}{Sat\-Solver.\-cpp}\end{DoxyCompactItemize}

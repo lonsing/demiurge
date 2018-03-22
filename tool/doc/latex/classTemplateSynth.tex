@@ -1,0 +1,240 @@
+\hypertarget{classTemplateSynth}{\section{Template\-Synth Class Reference}
+\label{classTemplateSynth}\index{Template\-Synth@{Template\-Synth}}
+}
+
+
+Implements a template-\/based synthesis using a Q\-B\-F solver.  
+
+
+
+
+{\ttfamily \#include $<$Template\-Synth.\-h$>$}
+
+Inheritance diagram for Template\-Synth\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTemplateSynth}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTemplateSynth_a157066a0bba6b543ac9cc6ff3a4223d7}{Template\-Synth} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classTemplateSynth_a5d540c9d4dc6696b53768a27ac74c569}{$\sim$\-Template\-Synth} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classTemplateSynth_a5ad9855736c7d4dfdec08280d2424f80}{run} ()
+\begin{DoxyCompactList}\small\item\em Executes this back-\/end. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classTemplateSynth_ae334e4a6c30a324cfd4d0c05a32b191c}{compute\-Winning\-Region} ()
+\begin{DoxyCompactList}\small\item\em Computes the winning region as instantiation of a generic template. \end{DoxyCompactList}\item 
+bool \hyperlink{classTemplateSynth_a499d1c0069b41ce11a6c7e7679fd4ece}{find\-Win\-Reg\-C\-N\-F\-Templ} (size\-\_\-t nr\-\_\-of\-\_\-clauses)
+\begin{DoxyCompactList}\small\item\em Computes the winning region as instantiation of a generic \hyperlink{classCNF}{C\-N\-F} template. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCNF}{C\-N\-F} \hyperlink{classTemplateSynth_a4e147629eae6a542dd87d72902df68c8}{winning\-\_\-region\-\_\-}
+\begin{DoxyCompactList}\small\item\em The resulting winning region. \end{DoxyCompactList}\item 
+\hyperlink{classQBFSolver}{Q\-B\-F\-Solver} $\ast$ \hyperlink{classTemplateSynth_a08ec20197bf16a10546a7e6cf3719727}{qbf\-\_\-solver\-\_\-}
+\begin{DoxyCompactList}\small\item\em The Q\-B\-F-\/solver to use for solving the queries. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implements a template-\/based synthesis using a Q\-B\-F solver. 
+
+We are searching for a winning region W(x) such that\-: 
+\begin{DoxyEnumerate}
+\item I(x) =$>$ W(x)\-: every initial state is contained in the winning region 
+\item W(x) =$>$ P(x)\-: every state of the winning region is safe 
+\item forall x,i\-: exists c,x'\-: W(x) =$>$ (T(x,i,c,x') \& W(x'))\-: from every state in the winning region we can enforce to stay in the winning region by setting the c-\/signals appropriately. 
+\end{DoxyEnumerate}In this class, we encode the search for such a winning region symbolically. We define a template W(x,k) for the winning region. The variables k are template parameters. Their values define a concrete function W(x). Then we simply solve the query \par
+ ~ exists k\-: forall x,i\-: exists c,x'\-: I(x) =$>$ W(x,k) \& W(x,k) =$>$ P(x) \& W(x,k) =$>$ (T(x,i,c,x') \& W(x',k)) \par
+ with a single Q\-B\-F-\/solver call. The ask the solver for a satisfying assignment to the variables k. These values define a concrete function W(x), which is our winning region. The difficult question is how to define a generic template W(x,k) for the winning region. At the moment, only one possibility is implemented, namely defining W(x,k) as a parameterized \hyperlink{classCNF}{C\-N\-F} over the state variables x with parameters k. But there are many other options like parameterized And-\/\-Inverter-\/\-Graphs with parameters defining the interconnects, etc. The \hyperlink{classCNF}{C\-N\-F} template fixes a maximum number N of clauses. It has three groups of parameters. 
+\begin{DoxyItemize}
+\item The parameters kc\mbox{[}i\mbox{]} (with 1 $<$= i $<$= N) define if clause i occurs in the \hyperlink{classCNF}{C\-N\-F} or not. 
+\item The parameters kv\mbox{[}i\mbox{]}\mbox{[}j\mbox{]} (with 1 $<$= i $<$= N, 1 $<$= j $<$= $|$x$|$) define if state variable xj occurs in clause i or not. 
+\item The parameters kn\mbox{[}i\mbox{]}\mbox{[}j\mbox{]} (with 1 $<$= i $<$= N, 1 $<$= j $<$= $|$x$|$) define if state variable xj occurs in clause i only negated or unnegated. If kv\mbox{[}i\mbox{]}\mbox{[}j\mbox{]}=false, then kn\mbox{[}i\mbox{]}\mbox{[}j\mbox{]} is irrelevant. 
+\end{DoxyItemize}The union of all these parameters forms k. Concrete values for all k define a concrete \hyperlink{classCNF}{C\-N\-F} formula over the state variables x (i.\-e., a concrete winning region). We chose N in the following way\-: we start with N=1. On failure, we increase N (multiply by 4).
+
+Finally the \hyperlink{classQBFCertImplExtractor}{Q\-B\-F\-Cert\-Impl\-Extractor} is used to extract a circuit from the winning region.
+
+\begin{DoxyAuthor}{Author}
+Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0.\-0 
+\end{DoxyVersion}
+
+
+Definition at line 83 of file Template\-Synth.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classTemplateSynth_a157066a0bba6b543ac9cc6ff3a4223d7}{\index{Template\-Synth@{Template\-Synth}!Template\-Synth@{Template\-Synth}}
+\index{Template\-Synth@{Template\-Synth}!TemplateSynth@{Template\-Synth}}
+\subsubsection[{Template\-Synth}]{\setlength{\rightskip}{0pt plus 5cm}Template\-Synth\-::\-Template\-Synth (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTemplateSynth_a157066a0bba6b543ac9cc6ff3a4223d7}
+
+
+Constructor. 
+
+
+
+Definition at line 42 of file Template\-Synth.\-cpp.
+
+\hypertarget{classTemplateSynth_a5d540c9d4dc6696b53768a27ac74c569}{\index{Template\-Synth@{Template\-Synth}!$\sim$\-Template\-Synth@{$\sim$\-Template\-Synth}}
+\index{$\sim$\-Template\-Synth@{$\sim$\-Template\-Synth}!TemplateSynth@{Template\-Synth}}
+\subsubsection[{$\sim$\-Template\-Synth}]{\setlength{\rightskip}{0pt plus 5cm}Template\-Synth\-::$\sim$\-Template\-Synth (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classTemplateSynth_a5d540c9d4dc6696b53768a27ac74c569}
+
+
+Destructor. 
+
+
+
+Definition at line 50 of file Template\-Synth.\-cpp.
+
+
+
+References qbf\-\_\-solver\-\_\-.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classTemplateSynth_ae334e4a6c30a324cfd4d0c05a32b191c}{\index{Template\-Synth@{Template\-Synth}!compute\-Winning\-Region@{compute\-Winning\-Region}}
+\index{compute\-Winning\-Region@{compute\-Winning\-Region}!TemplateSynth@{Template\-Synth}}
+\subsubsection[{compute\-Winning\-Region}]{\setlength{\rightskip}{0pt plus 5cm}bool Template\-Synth\-::compute\-Winning\-Region (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTemplateSynth_ae334e4a6c30a324cfd4d0c05a32b191c}
+
+
+Computes the winning region as instantiation of a generic template. 
+
+This works as explained in the description of the class.
+
+\begin{DoxyReturn}{Returns}
+True if the specification was realizable, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 82 of file Template\-Synth.\-cpp.
+
+
+
+References find\-Win\-Reg\-C\-N\-F\-Templ(), Var\-Manager\-::get\-Vars\-Of\-Type(), Var\-Manager\-::instance(), L\-\_\-\-I\-N\-F, L\-\_\-\-L\-O\-G, Var\-Manager\-::pop(), Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, and Var\-Manager\-::push().
+
+
+
+Referenced by run().
+
+\hypertarget{classTemplateSynth_a499d1c0069b41ce11a6c7e7679fd4ece}{\index{Template\-Synth@{Template\-Synth}!find\-Win\-Reg\-C\-N\-F\-Templ@{find\-Win\-Reg\-C\-N\-F\-Templ}}
+\index{find\-Win\-Reg\-C\-N\-F\-Templ@{find\-Win\-Reg\-C\-N\-F\-Templ}!TemplateSynth@{Template\-Synth}}
+\subsubsection[{find\-Win\-Reg\-C\-N\-F\-Templ}]{\setlength{\rightskip}{0pt plus 5cm}bool Template\-Synth\-::find\-Win\-Reg\-C\-N\-F\-Templ (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{nr\-\_\-of\-\_\-clauses}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTemplateSynth_a499d1c0069b41ce11a6c7e7679fd4ece}
+
+
+Computes the winning region as instantiation of a generic \hyperlink{classCNF}{C\-N\-F} template. 
+
+This works as explained in the description of the class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nr\-\_\-of\-\_\-clauses} & The number N of clauses to use in the template. Choosing a good value for this parameter is difficult. If it is chosen to low, then we may not find a solution even if one exists. If it is chosen to high, then we waste computational resources. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a solution is found with the given number of clauses, false otherwise. If this method returns false, then this does not mean that the specification is unrealizable. It may be that nr\-\_\-of\-\_\-clauses has been chosen too low. 
+\end{DoxyReturn}
+
+
+Definition at line 115 of file Template\-Synth.\-cpp.
+
+
+
+References Q\-B\-F\-Solver\-::\-A, C\-N\-F\-::add1\-Lit\-Clause(), C\-N\-F\-::add2\-Lit\-Clause(), C\-N\-F\-::add4\-Lit\-Clause(), C\-N\-F\-::add\-Clause(), C\-N\-F\-::add\-C\-N\-F(), Var\-Manager\-::create\-Fresh\-Templ\-Param(), Var\-Manager\-::create\-Fresh\-Tmp\-Var(), Var\-Info\-::\-C\-T\-R\-L, Q\-B\-F\-Solver\-::\-E, Var\-Manager\-::get\-Max\-C\-N\-F\-Var(), Var\-Manager\-::get\-Next\-Error\-State\-Var(), Var\-Manager\-::get\-Pres\-Error\-State\-Var(), A\-I\-G2\-C\-N\-F\-::get\-T(), A\-I\-G2\-C\-N\-F\-::get\-Trans\-Eq\-T(), Var\-Manager\-::get\-Vars\-Of\-Type(), Var\-Info\-::\-I\-N\-P\-U\-T, Var\-Manager\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), Q\-B\-F\-Solver\-::is\-Sat\-Model(), Var\-Info\-::\-N\-E\-X\-T\-\_\-\-S\-T\-A\-T\-E, Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, qbf\-\_\-solver\-\_\-, Var\-Info\-::\-T\-E\-M\-P\-L\-\_\-\-P\-A\-R\-A\-M\-S, Var\-Info\-::\-T\-M\-P, and winning\-\_\-region\-\_\-.
+
+
+
+Referenced by compute\-Winning\-Region().
+
+\hypertarget{classTemplateSynth_a5ad9855736c7d4dfdec08280d2424f80}{\index{Template\-Synth@{Template\-Synth}!run@{run}}
+\index{run@{run}!TemplateSynth@{Template\-Synth}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}bool Template\-Synth\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classTemplateSynth_a5ad9855736c7d4dfdec08280d2424f80}
+
+
+Executes this back-\/end. 
+
+The back-\/end works as explained in the description of the class.
+
+\begin{DoxyReturn}{Returns}
+True if the specification was realizable, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classBackEnd_a099e717dc71e9cc2d838b1ca86340590}{Back\-End}.
+
+
+
+Definition at line 57 of file Template\-Synth.\-cpp.
+
+
+
+References compute\-Winning\-Region(), Utils\-::debug\-Check\-Win\-Reg(), Q\-B\-F\-Cert\-Impl\-Extractor\-::extract\-Circuit(), Options\-::instance(), L\-\_\-\-I\-N\-F, L\-\_\-\-R\-E\-S, and winning\-\_\-region\-\_\-.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classTemplateSynth_a08ec20197bf16a10546a7e6cf3719727}{\index{Template\-Synth@{Template\-Synth}!qbf\-\_\-solver\-\_\-@{qbf\-\_\-solver\-\_\-}}
+\index{qbf\-\_\-solver\-\_\-@{qbf\-\_\-solver\-\_\-}!TemplateSynth@{Template\-Synth}}
+\subsubsection[{qbf\-\_\-solver\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\-B\-F\-Solver}$\ast$ Template\-Synth\-::qbf\-\_\-solver\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTemplateSynth_a08ec20197bf16a10546a7e6cf3719727}
+
+
+The Q\-B\-F-\/solver to use for solving the queries. 
+
+
+
+Definition at line 140 of file Template\-Synth.\-h.
+
+
+
+Referenced by find\-Win\-Reg\-C\-N\-F\-Templ(), and $\sim$\-Template\-Synth().
+
+\hypertarget{classTemplateSynth_a4e147629eae6a542dd87d72902df68c8}{\index{Template\-Synth@{Template\-Synth}!winning\-\_\-region\-\_\-@{winning\-\_\-region\-\_\-}}
+\index{winning\-\_\-region\-\_\-@{winning\-\_\-region\-\_\-}!TemplateSynth@{Template\-Synth}}
+\subsubsection[{winning\-\_\-region\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} Template\-Synth\-::winning\-\_\-region\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTemplateSynth_a4e147629eae6a542dd87d72902df68c8}
+
+
+The resulting winning region. 
+
+
+
+Definition at line 135 of file Template\-Synth.\-h.
+
+
+
+Referenced by find\-Win\-Reg\-C\-N\-F\-Templ(), and run().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{TemplateSynth_8h}{Template\-Synth.\-h}\item 
+src/\hyperlink{TemplateSynth_8cpp}{Template\-Synth.\-cpp}\end{DoxyCompactItemize}

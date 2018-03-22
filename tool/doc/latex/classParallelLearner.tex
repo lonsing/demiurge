@@ -1,0 +1,757 @@
+\hypertarget{classParallelLearner}{\section{Parallel\-Learner Class Reference}
+\label{classParallelLearner}\index{Parallel\-Learner@{Parallel\-Learner}}
+}
+
+
+The coordinator of the parallelized implementation.  
+
+
+
+
+{\ttfamily \#include $<$Parallel\-Learner.\-h$>$}
+
+Inheritance diagram for Parallel\-Learner\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classParallelLearner}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classParallelLearner_a469e826d756c7c1a932128cfb17ce380}{Parallel\-Learner} (size\-\_\-t nr\-\_\-of\-\_\-threads)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classParallelLearner_a42d85a531cab28bdcb345c37a0b08730}{$\sim$\-Parallel\-Learner} ()
+\begin{DoxyCompactList}\small\item\em Desctructor. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classParallelLearner_a93acb74e7c8504d0ef2bd3697441b745}{run} ()
+\begin{DoxyCompactList}\small\item\em Runs the back-\/end. \end{DoxyCompactList}\item 
+void \hyperlink{classParallelLearner_a10b8346745051c95f05a1bc8356fcf8d}{notify\-New\-Win\-Reg\-Clause} (const vector$<$ int $>$ \&clause, int src)
+\begin{DoxyCompactList}\small\item\em Notifies all worker-\/threads that a new clause of the winning region is available. \end{DoxyCompactList}\item 
+void \hyperlink{classParallelLearner_a0a8405e4fb7331f3f3df2711fdaebdab}{notify\-New\-Useless\-Input\-Clause} (const vector$<$ int $>$ \&clause, int level)
+\begin{DoxyCompactList}\small\item\em Notifies all Clause\-Explorer\-S\-A\-T-\/threads that a new U-\/clause is available. \end{DoxyCompactList}\item 
+void \hyperlink{classParallelLearner_a8c59cc455059943f8f9cdb8a60526f5c}{notify\-New\-Counterexample} (const vector$<$ int $>$ \&ce, const vector$<$ int $>$ \&gen)
+\begin{DoxyCompactList}\small\item\em Adds a new counterexample to the \hyperlink{classParallelLearner}{Parallel\-Learner}'s database. \end{DoxyCompactList}\item 
+void \hyperlink{classParallelLearner_a2b8e4330afb7e99c19d2d7da15c30cc3}{trigger\-Explorer\-Restart} ()
+\begin{DoxyCompactList}\small\item\em Computes a new restart point and notifies it to all Clause\-Explorer\-S\-A\-T-\/instances. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classParallelLearner_a757f8817809cce5c0408cdc41d6db1b8}{result\-\_\-}
+\begin{DoxyCompactList}\small\item\em An integer number containing the realizability verdict. \end{DoxyCompactList}\item 
+\hyperlink{classCNF}{C\-N\-F} \hyperlink{classParallelLearner_a7c8383543ff98d7a0356a237756dcdd6}{winning\-\_\-region\-\_\-}
+\begin{DoxyCompactList}\small\item\em The current version of the winning region. \end{DoxyCompactList}\item 
+mutex \hyperlink{classParallelLearner_a196a4500dfd66a4b9110659b4a10dead}{winning\-\_\-region\-\_\-lock\-\_\-}
+\begin{DoxyCompactList}\small\item\em A lock that protects the \hyperlink{classParallelLearner_a7c8383543ff98d7a0356a237756dcdd6}{winning\-\_\-region\-\_\-} from race-\/conditions. \end{DoxyCompactList}\item 
+\hyperlink{classCNF}{C\-N\-F} \hyperlink{classParallelLearner_aba6b363071d9a39d7b368cec5b629c25}{unminimized\-\_\-clauses\-\_\-}
+\begin{DoxyCompactList}\small\item\em All clauses of the winning region that have not yet been minimized. \end{DoxyCompactList}\item 
+mutex \hyperlink{classParallelLearner_aa16d364d9fdd0c2fe5180ee1b023a4ec}{unminimized\-\_\-clauses\-\_\-lock\-\_\-}
+\begin{DoxyCompactList}\small\item\em A lock that protects the \hyperlink{classParallelLearner_aba6b363071d9a39d7b368cec5b629c25}{unminimized\-\_\-clauses\-\_\-} from race-\/conditions. \end{DoxyCompactList}\item 
+list$<$ pair$<$ vector$<$ int $>$\\*
+, vector$<$ int $>$ $>$ $>$ \hyperlink{classParallelLearner_a974943e3e2145b3407f689b64acdd33f}{counterexamples\-\_\-}
+\begin{DoxyCompactList}\small\item\em The counterexample-\/cubes together with their computed generalizations. \end{DoxyCompactList}\item 
+mutex \hyperlink{classParallelLearner_a454c81908f2d3cb4c24b042739adc4ec}{counterexamples\-\_\-lock\-\_\-}
+\begin{DoxyCompactList}\small\item\em A lock that protects the \hyperlink{classParallelLearner_a974943e3e2145b3407f689b64acdd33f}{counterexamples\-\_\-} from race-\/conditions. \end{DoxyCompactList}\item 
+mutex \hyperlink{classParallelLearner_abdd409a5ef29bd4ba6b7213e9d4a067b}{var\-\_\-man\-\_\-lock\-\_\-}
+\begin{DoxyCompactList}\small\item\em A lock that must be hold when the \hyperlink{classVarManager}{Var\-Manager} is modified. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static mutex \hyperlink{classParallelLearner_a5bc71a2c35fa976d792bf0e80de31a39}{print\-\_\-lock\-\_\-}
+\begin{DoxyCompactList}\small\item\em A lock used to synchronize the printing of debugging messages. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classParallelLearner_a2b87f1f2526786a4402d695026272d33}{compute\-Previous\-Trans} ()
+\begin{DoxyCompactList}\small\item\em A helper function to compute the previous-\/state copy of the transition relation. \end{DoxyCompactList}\item 
+int \hyperlink{classParallelLearner_aa97595b50d1bba411824c2a60337e081}{present\-To\-Previous} (int literal) const 
+\begin{DoxyCompactList}\small\item\em Returns the previous-\/state copy of a literal. \end{DoxyCompactList}\item 
+void \hyperlink{classParallelLearner_ae3330a141c8ba3ca7c5687824dbf4edc}{present\-To\-Previous} (vector$<$ int $>$ \&cube\-\_\-or\-\_\-clause) const 
+\begin{DoxyCompactList}\small\item\em Computes the previous-\/state copy of a cube or clause. \end{DoxyCompactList}\item 
+void \hyperlink{classParallelLearner_acce71499ce9d8672116139f231376151}{present\-To\-Previous} (\hyperlink{classCNF}{C\-N\-F} \&cnf) const 
+\begin{DoxyCompactList}\small\item\em Computes the previous-\/state copy of a \hyperlink{classCNF}{C\-N\-F}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classParallelLearner_aebaf891aada574da650732795f041dbe}{use\-\_\-ind\-\_\-}
+\begin{DoxyCompactList}\small\item\em A flag indicating if optimization R\-G should be used. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classParallelLearner_a170a0abad017845877039684507e7a66}{nr\-\_\-of\-\_\-threads\-\_\-}
+\begin{DoxyCompactList}\small\item\em The number of threads to instantiate and execute. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classClauseExplorerSAT}{Clause\-Explorer\-S\-A\-T} $\ast$ $>$ \hyperlink{classParallelLearner_a0e8b5dd12c8ae14089d3ce3117da3c16}{clause\-\_\-explorers\-\_\-}
+\begin{DoxyCompactList}\small\item\em The Clause\-Explorer\-S\-A\-T-\/instances to execute in a separate thread. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classIFM13Explorer}{I\-F\-M13\-Explorer} $\ast$ $>$ \hyperlink{classParallelLearner_a614707a21f36d75a9fd06be57ee421d0}{ifm\-\_\-explorers\-\_\-}
+\begin{DoxyCompactList}\small\item\em The I\-F\-M13\-Explorer-\/instances to execute in a separate thread. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classClauseMinimizerQBF}{Clause\-Minimizer\-Q\-B\-F} $\ast$ $>$ \hyperlink{classParallelLearner_adb5aa1e016e04c607073eaf90d994dc7}{clause\-\_\-minimizers\-\_\-}
+\begin{DoxyCompactList}\small\item\em The Clause\-Minimizer\-Q\-B\-F-\/instances to execute in a separate thread. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classCounterGenSAT}{Counter\-Gen\-S\-A\-T} $\ast$ $>$ \hyperlink{classParallelLearner_a46cc16764d7ea8ffafe8d1b696c35df3}{ce\-\_\-generalizers\-\_\-}
+\begin{DoxyCompactList}\small\item\em The Counter\-Gen\-S\-A\-T-\/instances to execute in a separate thread. \end{DoxyCompactList}\item 
+\hyperlink{classLearnStatisticsSAT}{Learn\-Statistics\-S\-A\-T} \hyperlink{classParallelLearner_abfb2e28ec1a0f8775d3f14f75415a8bd}{statistics\-\_\-}
+\begin{DoxyCompactList}\small\item\em Stores and maintains statistics and performance measures. \end{DoxyCompactList}\item 
+\hyperlink{classCNF}{C\-N\-F} \hyperlink{classParallelLearner_ac73d9338262855f61f23a65d1df0647c}{prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-}
+\begin{DoxyCompactList}\small\item\em Says\-: the current state is initial or the previous transition relation holds. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classParallelLearner_a6f8dfda6aa8640345057023ed85882b9}{current\-\_\-to\-\_\-previous\-\_\-map\-\_\-}
+\begin{DoxyCompactList}\small\item\em A map from present-\/state variables to their previous-\/state copy. \end{DoxyCompactList}\item 
+int \hyperlink{classParallelLearner_ae9293a4afd3c52690bcac2ad03884121}{current\-\_\-state\-\_\-is\-\_\-initial\-\_\-}
+\begin{DoxyCompactList}\small\item\em A literal that is true if the current state is initial and false otherwise. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classParallelLearner_a7857993d63e497f5c946030c3127a578}{Parallel\-Learner} (const \hyperlink{classParallelLearner}{Parallel\-Learner} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classParallelLearner}{Parallel\-Learner} \& \hyperlink{classParallelLearner_a870e6d78e50b8aed63555e797ff6cce4}{operator=} (const \hyperlink{classParallelLearner}{Parallel\-Learner} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The coordinator of the parallelized implementation. 
+
+This class implements a parallelized version of the learning-\/based synthesis methods. The idea is to combine various different techniques to refine an over-\/approximation of the winning region with new clauses. There is a lot of flexibility to play with. We can have threads discovering new clauses with S\-A\-T-\/ or Q\-B\-F-\/based learning techniques, we can have threads minimizing existing clauses with a Q\-B\-F solver, etc. All threads share a common clause database. If (new or refined) clauses are discovered, they are communicated to all threads such that all of them can benefit from the new clauses in the next call. The threads performing actual work are implemented in other classes. This class is just the coordinator which starts the worker-\/threads and forwards information about new clauses to the worker-\/threads.
+
+The parallel implementation has two advantages. First, it exploits hardware parallelism (modern C\-P\-Us have many cores), which means (potentially) shorter computation times. Second, it is an easy way of combining different methods. With one thread, one would have come up with points where to switch from one method to the other and back. Hence, it may also be useful to use the parallelized implementation even if only one core is available.
+
+The question which methods we should combine how in order to achieve the best speed-\/up is not yet fully solved. This class is just one attempt, and can be seen as a playground for combining different methods.
+
+\begin{DoxyAuthor}{Author}
+Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0.\-0 
+\end{DoxyVersion}
+
+
+Definition at line 77 of file Parallel\-Learner.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classParallelLearner_a469e826d756c7c1a932128cfb17ce380}{\index{Parallel\-Learner@{Parallel\-Learner}!Parallel\-Learner@{Parallel\-Learner}}
+\index{Parallel\-Learner@{Parallel\-Learner}!ParallelLearner@{Parallel\-Learner}}
+\subsubsection[{Parallel\-Learner}]{\setlength{\rightskip}{0pt plus 5cm}Parallel\-Learner\-::\-Parallel\-Learner (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{nr\-\_\-of\-\_\-threads}
+\end{DoxyParamCaption}
+)}}\label{classParallelLearner_a469e826d756c7c1a932128cfb17ce380}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nr\-\_\-of\-\_\-threads} & The number of threads to create. This does not have to be the number of cores in your C\-P\-U. It can also make sense to combine several methods running in several threads on one single core. The methods can complement each other and achieve a speedup compared to one single method in isolation. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 116 of file Parallel\-Learner.\-cpp.
+
+
+
+References ce\-\_\-generalizers\-\_\-, clause\-\_\-explorers\-\_\-, clause\-\_\-minimizers\-\_\-, compute\-Previous\-Trans(), current\-\_\-state\-\_\-is\-\_\-initial\-\_\-, current\-\_\-to\-\_\-previous\-\_\-map\-\_\-, Options\-::get\-Back\-End\-Mode(), ifm\-\_\-explorers\-\_\-, Options\-::instance(), M\-A\-S\-S\-E\-R\-T, prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-, and use\-\_\-ind\-\_\-.
+
+\hypertarget{classParallelLearner_a42d85a531cab28bdcb345c37a0b08730}{\index{Parallel\-Learner@{Parallel\-Learner}!$\sim$\-Parallel\-Learner@{$\sim$\-Parallel\-Learner}}
+\index{$\sim$\-Parallel\-Learner@{$\sim$\-Parallel\-Learner}!ParallelLearner@{Parallel\-Learner}}
+\subsubsection[{$\sim$\-Parallel\-Learner}]{\setlength{\rightskip}{0pt plus 5cm}Parallel\-Learner\-::$\sim$\-Parallel\-Learner (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classParallelLearner_a42d85a531cab28bdcb345c37a0b08730}
+
+
+Desctructor. 
+
+
+
+Definition at line 225 of file Parallel\-Learner.\-cpp.
+
+
+
+References ce\-\_\-generalizers\-\_\-, clause\-\_\-explorers\-\_\-, clause\-\_\-minimizers\-\_\-, and ifm\-\_\-explorers\-\_\-.
+
+\hypertarget{classParallelLearner_a7857993d63e497f5c946030c3127a578}{\index{Parallel\-Learner@{Parallel\-Learner}!Parallel\-Learner@{Parallel\-Learner}}
+\index{Parallel\-Learner@{Parallel\-Learner}!ParallelLearner@{Parallel\-Learner}}
+\subsubsection[{Parallel\-Learner}]{\setlength{\rightskip}{0pt plus 5cm}Parallel\-Learner\-::\-Parallel\-Learner (
+\begin{DoxyParamCaption}
+\item[{const {\bf Parallel\-Learner} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classParallelLearner_a7857993d63e497f5c946030c3127a578}
+
+
+Copy constructor. 
+
+The copy constructor is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classParallelLearner_a2b87f1f2526786a4402d695026272d33}{\index{Parallel\-Learner@{Parallel\-Learner}!compute\-Previous\-Trans@{compute\-Previous\-Trans}}
+\index{compute\-Previous\-Trans@{compute\-Previous\-Trans}!ParallelLearner@{Parallel\-Learner}}
+\subsubsection[{compute\-Previous\-Trans}]{\setlength{\rightskip}{0pt plus 5cm}void Parallel\-Learner\-::compute\-Previous\-Trans (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParallelLearner_a2b87f1f2526786a4402d695026272d33}
+
+
+A helper function to compute the previous-\/state copy of the transition relation. 
+
+This is needed if optimization R\-G is enabled (see \hyperlink{classLearnSynthQBFInd}{Learn\-Synth\-Q\-B\-F\-Ind}). 
+
+Definition at line 405 of file Parallel\-Learner.\-cpp.
+
+
+
+References C\-N\-F\-::add2\-Lit\-Clause(), Var\-Manager\-::create\-Fresh\-Prev\-Var(), Var\-Manager\-::create\-Fresh\-Tmp\-Var(), Var\-Info\-::\-C\-T\-R\-L, current\-\_\-state\-\_\-is\-\_\-initial\-\_\-, current\-\_\-to\-\_\-previous\-\_\-map\-\_\-, C\-N\-F\-::get\-Clauses(), Var\-Manager\-::get\-Max\-C\-N\-F\-Var(), A\-I\-G2\-C\-N\-F\-::get\-Trans(), Var\-Manager\-::get\-Vars\-Of\-Type(), Var\-Info\-::\-I\-N\-P\-U\-T, Var\-Manager\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), Var\-Info\-::\-N\-E\-X\-T\-\_\-\-S\-T\-A\-T\-E, Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, present\-To\-Previous(), prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-, C\-N\-F\-::swap\-With(), and Var\-Info\-::\-T\-M\-P.
+
+
+
+Referenced by Parallel\-Learner().
+
+\hypertarget{classParallelLearner_a8c59cc455059943f8f9cdb8a60526f5c}{\index{Parallel\-Learner@{Parallel\-Learner}!notify\-New\-Counterexample@{notify\-New\-Counterexample}}
+\index{notify\-New\-Counterexample@{notify\-New\-Counterexample}!ParallelLearner@{Parallel\-Learner}}
+\subsubsection[{notify\-New\-Counterexample}]{\setlength{\rightskip}{0pt plus 5cm}void Parallel\-Learner\-::notify\-New\-Counterexample (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{ce, }
+\item[{const vector$<$ int $>$ \&}]{gen}
+\end{DoxyParamCaption}
+)}}\label{classParallelLearner_a8c59cc455059943f8f9cdb8a60526f5c}
+
+
+Adds a new counterexample to the \hyperlink{classParallelLearner}{Parallel\-Learner}'s database. 
+
+A counterexample is a state-\/input combination with which the antagonist can enforce to leave the winning region. The counterexample is stored together with a generalization (some literals dropped) that has already been computed. This information can then be used by Counter\-Gen\-S\-A\-T-\/threads. They take such a counterexample and compute all other generalizations (generalizations other than 'gen').
+
+
+\begin{DoxyParams}{Parameters}
+{\em ce} & This is a cube of the current-\/state variables and the uncontrollable inputs. With this state-\/input combination, the antagonist can enforce to leave the winning region. That is, there are no control-\/values such that the successor state is in the winning region again. \\
+\hline
+{\em gen} & One generalization of the counterexample. This is a subset of the literals of ce such that no control-\/values can lead to a successor state inside the winning region. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 368 of file Parallel\-Learner.\-cpp.
+
+
+
+References ce\-\_\-generalizers\-\_\-, counterexamples\-\_\-, and counterexamples\-\_\-lock\-\_\-.
+
+
+
+Referenced by Clause\-Explorer\-S\-A\-T\-::explore\-Clauses().
+
+\hypertarget{classParallelLearner_a0a8405e4fb7331f3f3df2711fdaebdab}{\index{Parallel\-Learner@{Parallel\-Learner}!notify\-New\-Useless\-Input\-Clause@{notify\-New\-Useless\-Input\-Clause}}
+\index{notify\-New\-Useless\-Input\-Clause@{notify\-New\-Useless\-Input\-Clause}!ParallelLearner@{Parallel\-Learner}}
+\subsubsection[{notify\-New\-Useless\-Input\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}void Parallel\-Learner\-::notify\-New\-Useless\-Input\-Clause (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{clause, }
+\item[{int}]{level}
+\end{DoxyParamCaption}
+)}}\label{classParallelLearner_a0a8405e4fb7331f3f3df2711fdaebdab}
+
+
+Notifies all Clause\-Explorer\-S\-A\-T-\/threads that a new U-\/clause is available. 
+
+In essence, the \hyperlink{classClauseExplorerSAT}{Clause\-Explorer\-S\-A\-T} implements the same S\-A\-T-\/based learning method as \hyperlink{classLearnSynthSAT}{Learn\-Synth\-S\-A\-T}. It has just a few additional features which allow the implementation to communicate with others. A U-\/clause states that a certain state-\/input is useless for the antagonist in trying to leave the winning region (see \hyperlink{classLearnSynthSAT}{Learn\-Synth\-S\-A\-T} for details). If one \hyperlink{classClauseExplorerSAT}{Clause\-Explorer\-S\-A\-T} discovers such a clause, it communicates it to all other Clause\-Explorer\-S\-A\-T-\/instances such that they can also benefit from it and do not need to re-\/discover the same fact again. For that to work, all \hyperlink{classClauseExplorerSAT}{Clause\-Explorer\-S\-A\-T} must be synchronized to a certain extend\-: All \hyperlink{classClauseExplorerSAT}{Clause\-Explorer\-S\-A\-T} must do solver restarts simultaneously. We pass the restart-\/level (the number of restarts done so far) as additional parameter so that every Clause\-Explorer\-S\-A\-T-\/instances can then decide if this clause is helpful for him, or already out-\/dated.
+
+
+\begin{DoxyParams}{Parameters}
+{\em clause} & A new U-\/clause stating that a certain state-\/input is useless for the antagonist in trying to leave the winning region (see \hyperlink{classLearnSynthSAT}{Learn\-Synth\-S\-A\-T} for details). \\
+\hline
+{\em level} & The restart level (the number of solver restarts that have already been performed. This information allows the receiver instance to decide whether or not this clause is useful for her (or if it is already out-\/dated). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 356 of file Parallel\-Learner.\-cpp.
+
+
+
+References clause\-\_\-explorers\-\_\-.
+
+
+
+Referenced by Clause\-Explorer\-S\-A\-T\-::explore\-Clauses().
+
+\hypertarget{classParallelLearner_a10b8346745051c95f05a1bc8356fcf8d}{\index{Parallel\-Learner@{Parallel\-Learner}!notify\-New\-Win\-Reg\-Clause@{notify\-New\-Win\-Reg\-Clause}}
+\index{notify\-New\-Win\-Reg\-Clause@{notify\-New\-Win\-Reg\-Clause}!ParallelLearner@{Parallel\-Learner}}
+\subsubsection[{notify\-New\-Win\-Reg\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}void Parallel\-Learner\-::notify\-New\-Win\-Reg\-Clause (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{clause, }
+\item[{int}]{src}
+\end{DoxyParamCaption}
+)}}\label{classParallelLearner_a10b8346745051c95f05a1bc8356fcf8d}
+
+
+Notifies all worker-\/threads that a new clause of the winning region is available. 
+
+It also adds this clause to our global clause database \hyperlink{classParallelLearner_a7c8383543ff98d7a0356a237756dcdd6}{winning\-\_\-region\-\_\-}. 
+\begin{DoxyParams}{Parameters}
+{\em clause} & The new clause that has been discovered. \\
+\hline
+{\em src} & An integer number defining which kind of worker-\/thread discovered the clause. Some worker-\/threads may treat clauses from different sources in a special way. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 326 of file Parallel\-Learner.\-cpp.
+
+
+
+References C\-N\-F\-::add\-Clause(), C\-N\-F\-::add\-Clause\-And\-Simplify(), ce\-\_\-generalizers\-\_\-, clause\-\_\-explorers\-\_\-, clause\-\_\-minimizers\-\_\-, ifm\-\_\-explorers\-\_\-, M\-I\-N, unminimized\-\_\-clauses\-\_\-, unminimized\-\_\-clauses\-\_\-lock\-\_\-, winning\-\_\-region\-\_\-, and winning\-\_\-region\-\_\-lock\-\_\-.
+
+
+
+Referenced by I\-F\-M13\-Explorer\-::add\-Lose(), Counter\-Gen\-S\-A\-T\-::bored(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), and Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses().
+
+\hypertarget{classParallelLearner_a870e6d78e50b8aed63555e797ff6cce4}{\index{Parallel\-Learner@{Parallel\-Learner}!operator=@{operator=}}
+\index{operator=@{operator=}!ParallelLearner@{Parallel\-Learner}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Parallel\-Learner}\& Parallel\-Learner\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Parallel\-Learner} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classParallelLearner_a870e6d78e50b8aed63555e797ff6cce4}
+
+
+Assignment operator. 
+
+The assignment operator is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the assignment, i.\-e, $\ast$this. 
+\end{DoxyReturn}
+\hypertarget{classParallelLearner_aa97595b50d1bba411824c2a60337e081}{\index{Parallel\-Learner@{Parallel\-Learner}!present\-To\-Previous@{present\-To\-Previous}}
+\index{present\-To\-Previous@{present\-To\-Previous}!ParallelLearner@{Parallel\-Learner}}
+\subsubsection[{present\-To\-Previous}]{\setlength{\rightskip}{0pt plus 5cm}int Parallel\-Learner\-::present\-To\-Previous (
+\begin{DoxyParamCaption}
+\item[{int}]{literal}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParallelLearner_aa97595b50d1bba411824c2a60337e081}
+
+
+Returns the previous-\/state copy of a literal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em literal} & The literal to transform. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The previous-\/state copy of a literal. 
+\end{DoxyReturn}
+
+
+Definition at line 442 of file Parallel\-Learner.\-cpp.
+
+
+
+References current\-\_\-to\-\_\-previous\-\_\-map\-\_\-.
+
+
+
+Referenced by compute\-Previous\-Trans(), and present\-To\-Previous().
+
+\hypertarget{classParallelLearner_ae3330a141c8ba3ca7c5687824dbf4edc}{\index{Parallel\-Learner@{Parallel\-Learner}!present\-To\-Previous@{present\-To\-Previous}}
+\index{present\-To\-Previous@{present\-To\-Previous}!ParallelLearner@{Parallel\-Learner}}
+\subsubsection[{present\-To\-Previous}]{\setlength{\rightskip}{0pt plus 5cm}void Parallel\-Learner\-::present\-To\-Previous (
+\begin{DoxyParamCaption}
+\item[{vector$<$ int $>$ \&}]{cube\-\_\-or\-\_\-clause}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParallelLearner_ae3330a141c8ba3ca7c5687824dbf4edc}
+
+
+Computes the previous-\/state copy of a cube or clause. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cube\-\_\-or\-\_\-clause} & A cube or clause (in form of a vector of literals) over the present state variables. This vector is overwritten by the corresponding cube of clause over the previous-\/state literals (i.\-e., all literals are replaced by their previous-\/state copy). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 452 of file Parallel\-Learner.\-cpp.
+
+
+
+References present\-To\-Previous().
+
+\hypertarget{classParallelLearner_acce71499ce9d8672116139f231376151}{\index{Parallel\-Learner@{Parallel\-Learner}!present\-To\-Previous@{present\-To\-Previous}}
+\index{present\-To\-Previous@{present\-To\-Previous}!ParallelLearner@{Parallel\-Learner}}
+\subsubsection[{present\-To\-Previous}]{\setlength{\rightskip}{0pt plus 5cm}void Parallel\-Learner\-::present\-To\-Previous (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-N\-F} \&}]{cnf}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParallelLearner_acce71499ce9d8672116139f231376151}
+
+
+Computes the previous-\/state copy of a \hyperlink{classCNF}{C\-N\-F}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cnf} & A \hyperlink{classCNF}{C\-N\-F} formula over the present state variables. This \hyperlink{classCNF}{C\-N\-F} is overwritten by the corresponding \hyperlink{classCNF}{C\-N\-F} over the previous-\/state literals (i.\-e., all literals are replaced by their previous-\/state copy). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 459 of file Parallel\-Learner.\-cpp.
+
+
+
+References C\-N\-F\-::add\-Clause(), C\-N\-F\-::clear(), C\-N\-F\-::get\-Clauses(), and present\-To\-Previous().
+
+\hypertarget{classParallelLearner_a93acb74e7c8504d0ef2bd3697441b745}{\index{Parallel\-Learner@{Parallel\-Learner}!run@{run}}
+\index{run@{run}!ParallelLearner@{Parallel\-Learner}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}bool Parallel\-Learner\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classParallelLearner_a93acb74e7c8504d0ef2bd3697441b745}
+
+
+Runs the back-\/end. 
+
+This method mainly starts the worker-\/threads and waits until they are finished. The \hyperlink{classParallelLearner}{Parallel\-Learner} itself does not do any work. It does not even run in an own thread. All the work is done in the worker-\/threads.
+
+\begin{DoxyReturn}{Returns}
+True if the specification was realizable, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classBackEnd_a099e717dc71e9cc2d838b1ca86340590}{Back\-End}.
+
+
+
+Definition at line 245 of file Parallel\-Learner.\-cpp.
+
+
+
+References C\-N\-F\-::add\-C\-N\-F(), ce\-\_\-generalizers\-\_\-, clause\-\_\-explorers\-\_\-, clause\-\_\-minimizers\-\_\-, C\-N\-F\-::clear(), Utils\-::debug\-Check\-Win\-Reg(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), I\-F\-M13\-Explorer\-::explore\-Clauses(), Q\-B\-F\-Cert\-Impl\-Extractor\-::extract\-Circuit(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), ifm\-\_\-explorers\-\_\-, Var\-Manager\-::instance(), Options\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), L\-\_\-\-I\-N\-F, L\-\_\-\-R\-E\-S, Learn\-Statistics\-S\-A\-T\-::log\-Statistics(), M\-A\-S\-S\-E\-R\-T, Learn\-Statistics\-S\-A\-T\-::merge\-With(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses(), Learn\-Statistics\-S\-A\-T\-::notify\-Rel\-Det\-End(), Learn\-Statistics\-S\-A\-T\-::notify\-Rel\-Det\-Start(), Learn\-Statistics\-S\-A\-T\-::notify\-Win\-Reg\-End(), Learn\-Statistics\-S\-A\-T\-::notify\-Win\-Reg\-Start(), nr\-\_\-of\-\_\-threads\-\_\-, Var\-Manager\-::push(), result\-\_\-, statistics\-\_\-, U\-N\-R\-E\-A\-L\-I\-Z\-A\-B\-L\-E, and winning\-\_\-region\-\_\-.
+
+\hypertarget{classParallelLearner_a2b8e4330afb7e99c19d2d7da15c30cc3}{\index{Parallel\-Learner@{Parallel\-Learner}!trigger\-Explorer\-Restart@{trigger\-Explorer\-Restart}}
+\index{trigger\-Explorer\-Restart@{trigger\-Explorer\-Restart}!ParallelLearner@{Parallel\-Learner}}
+\subsubsection[{trigger\-Explorer\-Restart}]{\setlength{\rightskip}{0pt plus 5cm}void Parallel\-Learner\-::trigger\-Explorer\-Restart (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classParallelLearner_a2b8e4330afb7e99c19d2d7da15c30cc3}
+
+
+Computes a new restart point and notifies it to all Clause\-Explorer\-S\-A\-T-\/instances. 
+
+The \hyperlink{classClauseExplorerSAT}{Clause\-Explorer\-S\-A\-T} update their next-\/state copy of the winning region only in a lazy manner. This allows them to use incremental S\-A\-T-\/solving more effectively. See \hyperlink{classLearnSynthSAT}{Learn\-Synth\-S\-A\-T} for a description. If no more solutions exists with one next-\/state copy of the winning region, it must be updated to the newest version. This is done by this method. A new next-\/state copy of the winning region is computed and communicated to all Clause\-Explorer\-S\-A\-T-\/instances. It is absolutely important that all \hyperlink{classClauseExplorerSAT}{Clause\-Explorer\-S\-A\-T} instances work with the same next-\/state copy of the winning region. Otherwise, they could not exchange U-\/clauses (or rather, the U-\/clause discovered by one thread would not make sense for the other). See also \hyperlink{classParallelLearner_a0a8405e4fb7331f3f3df2711fdaebdab}{notify\-New\-Useless\-Input\-Clause()}. 
+
+Definition at line 379 of file Parallel\-Learner.\-cpp.
+
+
+
+References C\-N\-F\-::add\-C\-N\-F(), clause\-\_\-explorers\-\_\-, Utils\-::compress\-State\-C\-N\-F(), Var\-Manager\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), C\-N\-F\-::negate(), Var\-Manager\-::reset\-To\-Last\-Push(), C\-N\-F\-::swap\-Present\-To\-Next(), var\-\_\-man\-\_\-lock\-\_\-, winning\-\_\-region\-\_\-, and winning\-\_\-region\-\_\-lock\-\_\-.
+
+
+
+Referenced by Clause\-Explorer\-S\-A\-T\-::explore\-Clauses().
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classParallelLearner_a46cc16764d7ea8ffafe8d1b696c35df3}{\index{Parallel\-Learner@{Parallel\-Learner}!ce\-\_\-generalizers\-\_\-@{ce\-\_\-generalizers\-\_\-}}
+\index{ce\-\_\-generalizers\-\_\-@{ce\-\_\-generalizers\-\_\-}!ParallelLearner@{Parallel\-Learner}}
+\subsubsection[{ce\-\_\-generalizers\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf Counter\-Gen\-S\-A\-T}$\ast$$>$ Parallel\-Learner\-::ce\-\_\-generalizers\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParallelLearner_a46cc16764d7ea8ffafe8d1b696c35df3}
+
+
+The Counter\-Gen\-S\-A\-T-\/instances to execute in a separate thread. 
+
+
+
+Definition at line 330 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by notify\-New\-Counterexample(), notify\-New\-Win\-Reg\-Clause(), Parallel\-Learner(), run(), and $\sim$\-Parallel\-Learner().
+
+\hypertarget{classParallelLearner_a0e8b5dd12c8ae14089d3ce3117da3c16}{\index{Parallel\-Learner@{Parallel\-Learner}!clause\-\_\-explorers\-\_\-@{clause\-\_\-explorers\-\_\-}}
+\index{clause\-\_\-explorers\-\_\-@{clause\-\_\-explorers\-\_\-}!ParallelLearner@{Parallel\-Learner}}
+\subsubsection[{clause\-\_\-explorers\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf Clause\-Explorer\-S\-A\-T}$\ast$$>$ Parallel\-Learner\-::clause\-\_\-explorers\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParallelLearner_a0e8b5dd12c8ae14089d3ce3117da3c16}
+
+
+The Clause\-Explorer\-S\-A\-T-\/instances to execute in a separate thread. 
+
+
+
+Definition at line 315 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by notify\-New\-Useless\-Input\-Clause(), notify\-New\-Win\-Reg\-Clause(), Parallel\-Learner(), run(), trigger\-Explorer\-Restart(), and $\sim$\-Parallel\-Learner().
+
+\hypertarget{classParallelLearner_adb5aa1e016e04c607073eaf90d994dc7}{\index{Parallel\-Learner@{Parallel\-Learner}!clause\-\_\-minimizers\-\_\-@{clause\-\_\-minimizers\-\_\-}}
+\index{clause\-\_\-minimizers\-\_\-@{clause\-\_\-minimizers\-\_\-}!ParallelLearner@{Parallel\-Learner}}
+\subsubsection[{clause\-\_\-minimizers\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf Clause\-Minimizer\-Q\-B\-F}$\ast$$>$ Parallel\-Learner\-::clause\-\_\-minimizers\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParallelLearner_adb5aa1e016e04c607073eaf90d994dc7}
+
+
+The Clause\-Minimizer\-Q\-B\-F-\/instances to execute in a separate thread. 
+
+
+
+Definition at line 325 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by notify\-New\-Win\-Reg\-Clause(), Parallel\-Learner(), run(), and $\sim$\-Parallel\-Learner().
+
+\hypertarget{classParallelLearner_a974943e3e2145b3407f689b64acdd33f}{\index{Parallel\-Learner@{Parallel\-Learner}!counterexamples\-\_\-@{counterexamples\-\_\-}}
+\index{counterexamples\-\_\-@{counterexamples\-\_\-}!ParallelLearner@{Parallel\-Learner}}
+\subsubsection[{counterexamples\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}list$<$pair$<$vector$<$int$>$, vector$<$int$>$ $>$ $>$ Parallel\-Learner\-::counterexamples\-\_\-}}\label{classParallelLearner_a974943e3e2145b3407f689b64acdd33f}
+
+
+The counterexample-\/cubes together with their computed generalizations. 
+
+The first item of the pairs stored in this list is always the counterexample itself. The second item of the pair is the generalization that has already been computed.
+
+A counterexample is a state-\/input combination with which the antagonist can enforce to leave the winning region. The generalization is a sub-\/cube of the counterexample. This information can then be used by Counter\-Gen\-S\-A\-T-\/threads. They take such a counterexample and compute all other generalizations. 
+
+Definition at line 236 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), and notify\-New\-Counterexample().
+
+\hypertarget{classParallelLearner_a454c81908f2d3cb4c24b042739adc4ec}{\index{Parallel\-Learner@{Parallel\-Learner}!counterexamples\-\_\-lock\-\_\-@{counterexamples\-\_\-lock\-\_\-}}
+\index{counterexamples\-\_\-lock\-\_\-@{counterexamples\-\_\-lock\-\_\-}!ParallelLearner@{Parallel\-Learner}}
+\subsubsection[{counterexamples\-\_\-lock\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}mutex Parallel\-Learner\-::counterexamples\-\_\-lock\-\_\-}}\label{classParallelLearner_a454c81908f2d3cb4c24b042739adc4ec}
+
+
+A lock that protects the \hyperlink{classParallelLearner_a974943e3e2145b3407f689b64acdd33f}{counterexamples\-\_\-} from race-\/conditions. 
+
+Many worker-\/threads modify the \hyperlink{classParallelLearner_a974943e3e2145b3407f689b64acdd33f}{counterexamples\-\_\-} (add new ones). This lock ensures that only one thread is modifying the \hyperlink{classParallelLearner_a974943e3e2145b3407f689b64acdd33f}{counterexamples\-\_\-} at one time. 
+
+Definition at line 244 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), and notify\-New\-Counterexample().
+
+\hypertarget{classParallelLearner_ae9293a4afd3c52690bcac2ad03884121}{\index{Parallel\-Learner@{Parallel\-Learner}!current\-\_\-state\-\_\-is\-\_\-initial\-\_\-@{current\-\_\-state\-\_\-is\-\_\-initial\-\_\-}}
+\index{current\-\_\-state\-\_\-is\-\_\-initial\-\_\-@{current\-\_\-state\-\_\-is\-\_\-initial\-\_\-}!ParallelLearner@{Parallel\-Learner}}
+\subsubsection[{current\-\_\-state\-\_\-is\-\_\-initial\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int Parallel\-Learner\-::current\-\_\-state\-\_\-is\-\_\-initial\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParallelLearner_ae9293a4afd3c52690bcac2ad03884121}
+
+
+A literal that is true if the current state is initial and false otherwise. 
+
+The clauses assigning the literal are part of \hyperlink{classParallelLearner_ac73d9338262855f61f23a65d1df0647c}{prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-}. 
+
+Definition at line 358 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by compute\-Previous\-Trans(), and Parallel\-Learner().
+
+\hypertarget{classParallelLearner_a6f8dfda6aa8640345057023ed85882b9}{\index{Parallel\-Learner@{Parallel\-Learner}!current\-\_\-to\-\_\-previous\-\_\-map\-\_\-@{current\-\_\-to\-\_\-previous\-\_\-map\-\_\-}}
+\index{current\-\_\-to\-\_\-previous\-\_\-map\-\_\-@{current\-\_\-to\-\_\-previous\-\_\-map\-\_\-}!ParallelLearner@{Parallel\-Learner}}
+\subsubsection[{current\-\_\-to\-\_\-previous\-\_\-map\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ Parallel\-Learner\-::current\-\_\-to\-\_\-previous\-\_\-map\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParallelLearner_a6f8dfda6aa8640345057023ed85882b9}
+
+
+A map from present-\/state variables to their previous-\/state copy. 
+
+
+
+Definition at line 351 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by compute\-Previous\-Trans(), Parallel\-Learner(), and present\-To\-Previous().
+
+\hypertarget{classParallelLearner_a614707a21f36d75a9fd06be57ee421d0}{\index{Parallel\-Learner@{Parallel\-Learner}!ifm\-\_\-explorers\-\_\-@{ifm\-\_\-explorers\-\_\-}}
+\index{ifm\-\_\-explorers\-\_\-@{ifm\-\_\-explorers\-\_\-}!ParallelLearner@{Parallel\-Learner}}
+\subsubsection[{ifm\-\_\-explorers\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf I\-F\-M13\-Explorer}$\ast$$>$ Parallel\-Learner\-::ifm\-\_\-explorers\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParallelLearner_a614707a21f36d75a9fd06be57ee421d0}
+
+
+The I\-F\-M13\-Explorer-\/instances to execute in a separate thread. 
+
+
+
+Definition at line 320 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by notify\-New\-Win\-Reg\-Clause(), Parallel\-Learner(), run(), and $\sim$\-Parallel\-Learner().
+
+\hypertarget{classParallelLearner_a170a0abad017845877039684507e7a66}{\index{Parallel\-Learner@{Parallel\-Learner}!nr\-\_\-of\-\_\-threads\-\_\-@{nr\-\_\-of\-\_\-threads\-\_\-}}
+\index{nr\-\_\-of\-\_\-threads\-\_\-@{nr\-\_\-of\-\_\-threads\-\_\-}!ParallelLearner@{Parallel\-Learner}}
+\subsubsection[{nr\-\_\-of\-\_\-threads\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Parallel\-Learner\-::nr\-\_\-of\-\_\-threads\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParallelLearner_a170a0abad017845877039684507e7a66}
+
+
+The number of threads to instantiate and execute. 
+
+
+
+Definition at line 310 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by run().
+
+\hypertarget{classParallelLearner_ac73d9338262855f61f23a65d1df0647c}{\index{Parallel\-Learner@{Parallel\-Learner}!prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-@{prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-}}
+\index{prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-@{prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-}!ParallelLearner@{Parallel\-Learner}}
+\subsubsection[{prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} Parallel\-Learner\-::prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParallelLearner_ac73d9338262855f61f23a65d1df0647c}
+
+
+Says\-: the current state is initial or the previous transition relation holds. 
+
+This \hyperlink{classCNF}{C\-N\-F} expresses that the current state is initial or the previous-\/state copy of the transition relation holds. This is an important building block for the \hyperlink{classCNF}{C\-N\-F} to generalize counterexamples if optimization R\-G is enabled. 
+
+Definition at line 346 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by compute\-Previous\-Trans(), and Parallel\-Learner().
+
+\hypertarget{classParallelLearner_a5bc71a2c35fa976d792bf0e80de31a39}{\index{Parallel\-Learner@{Parallel\-Learner}!print\-\_\-lock\-\_\-@{print\-\_\-lock\-\_\-}}
+\index{print\-\_\-lock\-\_\-@{print\-\_\-lock\-\_\-}!ParallelLearner@{Parallel\-Learner}}
+\subsubsection[{print\-\_\-lock\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}mutex Parallel\-Learner\-::print\-\_\-lock\-\_\-\hspace{0.3cm}{\ttfamily [static]}}}\label{classParallelLearner_a5bc71a2c35fa976d792bf0e80de31a39}
+
+
+A lock used to synchronize the printing of debugging messages. 
+
+Debugging race conditions or other bugs in this implementation is tough. In order to prevent debugging messages from being interleaved strangely, this lock is used. It makes debug messages printed with the P\-L\-O\-G macro appear one after the other. 
+
+Definition at line 253 of file Parallel\-Learner.\-h.
+
+\hypertarget{classParallelLearner_a757f8817809cce5c0408cdc41d6db1b8}{\index{Parallel\-Learner@{Parallel\-Learner}!result\-\_\-@{result\-\_\-}}
+\index{result\-\_\-@{result\-\_\-}!ParallelLearner@{Parallel\-Learner}}
+\subsubsection[{result\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int Parallel\-Learner\-::result\-\_\-}}\label{classParallelLearner_a757f8817809cce5c0408cdc41d6db1b8}
+
+
+An integer number containing the realizability verdict. 
+
+There are three possible value. 
+\begin{DoxyItemize}
+\item U\-N\-K\-N\-O\-W\-N = 0\-: used as long as no thread has found a solution. 
+\item R\-E\-A\-L\-I\-Z\-A\-B\-L\-E = 1\-: used if some thread concludes that the spec must be realizable. 
+\item U\-N\-R\-E\-A\-L\-I\-Z\-A\-B\-L\-E = 2\-: used if some thread concludes that the spec must be unrealizable. 
+\end{DoxyItemize}All worker-\/threads poll this flag from time to time. If the value is still U\-N\-K\-N\-O\-W\-N they continue to work. If they see that the values is not U\-N\-K\-N\-O\-W\-N anymore they stop assuming that some other thread has already found the solution. If one thread finds an answer to the realizability question it sets the flag (the \hyperlink{classParallelLearner_a7c8383543ff98d7a0356a237756dcdd6}{winning\-\_\-region\-\_\-} must be precise enough then already). 
+
+Definition at line 189 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by Counter\-Gen\-S\-A\-T\-::bored(), Counter\-Gen\-S\-A\-T\-::compress\-Bored(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), I\-F\-M13\-Explorer\-::explore\-Clauses(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses(), I\-F\-M13\-Explorer\-::propagate\-Blocked\-States(), I\-F\-M13\-Explorer\-::rec\-Block\-Cube(), and run().
+
+\hypertarget{classParallelLearner_abfb2e28ec1a0f8775d3f14f75415a8bd}{\index{Parallel\-Learner@{Parallel\-Learner}!statistics\-\_\-@{statistics\-\_\-}}
+\index{statistics\-\_\-@{statistics\-\_\-}!ParallelLearner@{Parallel\-Learner}}
+\subsubsection[{statistics\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Learn\-Statistics\-S\-A\-T} Parallel\-Learner\-::statistics\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParallelLearner_abfb2e28ec1a0f8775d3f14f75415a8bd}
+
+
+Stores and maintains statistics and performance measures. 
+
+Basically, this is a merge of the statistics from all worker-\/threads. 
+
+Definition at line 337 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by run().
+
+\hypertarget{classParallelLearner_aba6b363071d9a39d7b368cec5b629c25}{\index{Parallel\-Learner@{Parallel\-Learner}!unminimized\-\_\-clauses\-\_\-@{unminimized\-\_\-clauses\-\_\-}}
+\index{unminimized\-\_\-clauses\-\_\-@{unminimized\-\_\-clauses\-\_\-}!ParallelLearner@{Parallel\-Learner}}
+\subsubsection[{unminimized\-\_\-clauses\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} Parallel\-Learner\-::unminimized\-\_\-clauses\-\_\-}}\label{classParallelLearner_aba6b363071d9a39d7b368cec5b629c25}
+
+
+All clauses of the winning region that have not yet been minimized. 
+
+Whenever a clause is added to \hyperlink{classParallelLearner_a7c8383543ff98d7a0356a237756dcdd6}{winning\-\_\-region\-\_\-}, it is also added to this field. Clause\-Minimizer\-Q\-B\-F-\/instances then take clauses from \hyperlink{classParallelLearner_aba6b363071d9a39d7b368cec5b629c25}{unminimized\-\_\-clauses\-\_\-} and try to minimize them further. This is done to prevent that clauses are minimized twice or multiple times. 
+
+Definition at line 215 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses(), and notify\-New\-Win\-Reg\-Clause().
+
+\hypertarget{classParallelLearner_aa16d364d9fdd0c2fe5180ee1b023a4ec}{\index{Parallel\-Learner@{Parallel\-Learner}!unminimized\-\_\-clauses\-\_\-lock\-\_\-@{unminimized\-\_\-clauses\-\_\-lock\-\_\-}}
+\index{unminimized\-\_\-clauses\-\_\-lock\-\_\-@{unminimized\-\_\-clauses\-\_\-lock\-\_\-}!ParallelLearner@{Parallel\-Learner}}
+\subsubsection[{unminimized\-\_\-clauses\-\_\-lock\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}mutex Parallel\-Learner\-::unminimized\-\_\-clauses\-\_\-lock\-\_\-}}\label{classParallelLearner_aa16d364d9fdd0c2fe5180ee1b023a4ec}
+
+
+A lock that protects the \hyperlink{classParallelLearner_aba6b363071d9a39d7b368cec5b629c25}{unminimized\-\_\-clauses\-\_\-} from race-\/conditions. 
+
+Many worker-\/threads refine the \hyperlink{classParallelLearner_aba6b363071d9a39d7b368cec5b629c25}{unminimized\-\_\-clauses\-\_\-} (add new clauses). This lock ensures that only one thread is modifying the \hyperlink{classParallelLearner_aba6b363071d9a39d7b368cec5b629c25}{unminimized\-\_\-clauses\-\_\-} at one time. 
+
+Definition at line 223 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses(), and notify\-New\-Win\-Reg\-Clause().
+
+\hypertarget{classParallelLearner_aebaf891aada574da650732795f041dbe}{\index{Parallel\-Learner@{Parallel\-Learner}!use\-\_\-ind\-\_\-@{use\-\_\-ind\-\_\-}}
+\index{use\-\_\-ind\-\_\-@{use\-\_\-ind\-\_\-}!ParallelLearner@{Parallel\-Learner}}
+\subsubsection[{use\-\_\-ind\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}bool Parallel\-Learner\-::use\-\_\-ind\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParallelLearner_aebaf891aada574da650732795f041dbe}
+
+
+A flag indicating if optimization R\-G should be used. 
+
+See \hyperlink{classLearnSynthQBFInd}{Learn\-Synth\-Q\-B\-F\-Ind} for an explanation. 
+
+Definition at line 305 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by Parallel\-Learner().
+
+\hypertarget{classParallelLearner_abdd409a5ef29bd4ba6b7213e9d4a067b}{\index{Parallel\-Learner@{Parallel\-Learner}!var\-\_\-man\-\_\-lock\-\_\-@{var\-\_\-man\-\_\-lock\-\_\-}}
+\index{var\-\_\-man\-\_\-lock\-\_\-@{var\-\_\-man\-\_\-lock\-\_\-}!ParallelLearner@{Parallel\-Learner}}
+\subsubsection[{var\-\_\-man\-\_\-lock\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}mutex Parallel\-Learner\-::var\-\_\-man\-\_\-lock\-\_\-}}\label{classParallelLearner_abdd409a5ef29bd4ba6b7213e9d4a067b}
+
+
+A lock that must be hold when the \hyperlink{classVarManager}{Var\-Manager} is modified. 
+
+Sometimes (at the moment only when doing restarts in \hyperlink{classParallelLearner_a2b8e4330afb7e99c19d2d7da15c30cc3}{trigger\-Explorer\-Restart()}) we need to modify the \hyperlink{classVarManager}{Var\-Manager}, e.\-g., if we create new variables. This lock is used to prevent race-\/conditions in these operations. It must be held whenever the \hyperlink{classVarManager}{Var\-Manager} is modified. 
+
+Definition at line 262 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by trigger\-Explorer\-Restart(), and Clause\-Explorer\-S\-A\-T\-::wait\-Until\-Ongoing\-Restart\-Done().
+
+\hypertarget{classParallelLearner_a7c8383543ff98d7a0356a237756dcdd6}{\index{Parallel\-Learner@{Parallel\-Learner}!winning\-\_\-region\-\_\-@{winning\-\_\-region\-\_\-}}
+\index{winning\-\_\-region\-\_\-@{winning\-\_\-region\-\_\-}!ParallelLearner@{Parallel\-Learner}}
+\subsubsection[{winning\-\_\-region\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} Parallel\-Learner\-::winning\-\_\-region\-\_\-}}\label{classParallelLearner_a7c8383543ff98d7a0356a237756dcdd6}
+
+
+The current version of the winning region. 
+
+All worker-\/threads discover or minimize clauses of the winning region. This is the current version of the winning region. 
+
+Definition at line 197 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses(), notify\-New\-Win\-Reg\-Clause(), run(), and trigger\-Explorer\-Restart().
+
+\hypertarget{classParallelLearner_a196a4500dfd66a4b9110659b4a10dead}{\index{Parallel\-Learner@{Parallel\-Learner}!winning\-\_\-region\-\_\-lock\-\_\-@{winning\-\_\-region\-\_\-lock\-\_\-}}
+\index{winning\-\_\-region\-\_\-lock\-\_\-@{winning\-\_\-region\-\_\-lock\-\_\-}!ParallelLearner@{Parallel\-Learner}}
+\subsubsection[{winning\-\_\-region\-\_\-lock\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}mutex Parallel\-Learner\-::winning\-\_\-region\-\_\-lock\-\_\-}}\label{classParallelLearner_a196a4500dfd66a4b9110659b4a10dead}
+
+
+A lock that protects the \hyperlink{classParallelLearner_a7c8383543ff98d7a0356a237756dcdd6}{winning\-\_\-region\-\_\-} from race-\/conditions. 
+
+Many worker-\/threads refine the \hyperlink{classParallelLearner_a7c8383543ff98d7a0356a237756dcdd6}{winning\-\_\-region\-\_\-} (add new clauses). This lock ensures that only one thread is modifying the \hyperlink{classParallelLearner_a7c8383543ff98d7a0356a237756dcdd6}{winning\-\_\-region\-\_\-} at one time. 
+
+Definition at line 205 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses(), notify\-New\-Win\-Reg\-Clause(), and trigger\-Explorer\-Restart().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{ParallelLearner_8h}{Parallel\-Learner.\-h}\item 
+src/\hyperlink{ParallelLearner_8cpp}{Parallel\-Learner.\-cpp}\end{DoxyCompactItemize}

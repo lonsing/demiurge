@@ -1,0 +1,282 @@
+\hypertarget{classStopwatch}{\section{Stopwatch Class Reference}
+\label{classStopwatch}\index{Stopwatch@{Stopwatch}}
+}
+
+
+Implements a stopwatch that can be used to measure execution time.  
+
+
+
+
+{\ttfamily \#include $<$Stopwatch.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classStopwatch_a534c433482f8fe8144c91c0fe37aac20}{$\sim$\-Stopwatch} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{Stopwatch_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{Point\-In\-Time} \hyperlink{classStopwatch_ae4e530c454d40a88256a76744d3d8a12}{start} ()
+\begin{DoxyCompactList}\small\item\em Starts the stopwatch. \end{DoxyCompactList}\item 
+static double \hyperlink{classStopwatch_a27dda7191760c2822e3aad879805e013}{get\-C\-P\-U\-Time\-Sec} (const \hyperlink{Stopwatch_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{Point\-In\-Time} \&start\-\_\-time)
+\begin{DoxyCompactList}\small\item\em Returns the elapsed C\-P\-U time in seconds. \end{DoxyCompactList}\item 
+static double \hyperlink{classStopwatch_a7ba33aa62a14801f379e05e8d4f98d2a}{get\-C\-P\-U\-Time\-Milli\-Sec} (const \hyperlink{Stopwatch_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{Point\-In\-Time} \&start\-\_\-time)
+\begin{DoxyCompactList}\small\item\em Returns the elapsed C\-P\-U time in milliseconds. \end{DoxyCompactList}\item 
+static size\-\_\-t \hyperlink{classStopwatch_a700dbdfb01479ece147c15d149eba157}{get\-Real\-Time\-Sec} (const \hyperlink{Stopwatch_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{Point\-In\-Time} \&start\-\_\-time)
+\begin{DoxyCompactList}\small\item\em Returns the elapsed real-\/time in seconds. \end{DoxyCompactList}\item 
+static string \hyperlink{classStopwatch_a4b6869082a043c822dc22944e4c1a5e2}{get\-Time\-As\-String} (const \hyperlink{Stopwatch_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{Point\-In\-Time} \&start\-\_\-time)
+\begin{DoxyCompactList}\small\item\em Returns both the C\-P\-U time and the elapsed time as string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classStopwatch_a628b5ebeed5df065dd847e68fb6336cf}{Stopwatch} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classStopwatch_a53702b14c791136a2e333fad94fecbf0}{Stopwatch} (const \hyperlink{classStopwatch}{Stopwatch} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classStopwatch}{Stopwatch} \& \hyperlink{classStopwatch_a70e4b31db345295ec12253d1f68dc288}{operator=} (const \hyperlink{classStopwatch}{Stopwatch} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implements a stopwatch that can be used to measure execution time. 
+
+The stopwatch is able to find out both elapsed C\-P\-U time and elapsed realtime. C\-P\-U time is meant to be used for precise measurements of short time periods. For longer periods, it may overflow (typically after 36 minutes in a 32 bit machine; on a 64-\/bit machine this usually does not happen). Use \hyperlink{classStopwatch_a700dbdfb01479ece147c15d149eba157}{get\-Real\-Time\-Sec()} to crosscheck.
+
+Usage example\-: 
+\begin{DoxyCode}
+\hyperlink{Stopwatch_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{PointInTime} start\_time = \hyperlink{classStopwatch_ae4e530c454d40a88256a76744d3d8a12}{Stopwatch::start}();
+doFirstPart();
+\textcolor{keywordtype}{double} first\_part\_cpu = \hyperlink{classStopwatch_a27dda7191760c2822e3aad879805e013}{Stopwatch::getCPUTimeSec}(
+      start\_time);
+\hyperlink{Logger_8h_a081139c373685d15bfc9f0afebe00542}{L\_LOG}(\textcolor{stringliteral}{"doFirstPart() took "} << first\_part\_cpu << \textcolor{stringliteral}{" seconds of CPU time."});
+doSecondPart();
+\textcolor{keywordtype}{double} all\_real\_time = \hyperlink{classStopwatch_a700dbdfb01479ece147c15d149eba157}{Stopwatch::getRealTimeSec}(
+      start\_time);
+\hyperlink{Logger_8h_a081139c373685d15bfc9f0afebe00542}{L\_LOG}(\textcolor{stringliteral}{"The whole computation took "} << all\_real\_time << \textcolor{stringliteral}{" seconds
+       (real-time)."});
+\end{DoxyCode}
+
+
+\begin{DoxyAuthor}{Author}
+Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0.\-0 
+\end{DoxyVersion}
+
+
+Definition at line 66 of file Stopwatch.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classStopwatch_a534c433482f8fe8144c91c0fe37aac20}{\index{Stopwatch@{Stopwatch}!$\sim$\-Stopwatch@{$\sim$\-Stopwatch}}
+\index{$\sim$\-Stopwatch@{$\sim$\-Stopwatch}!Stopwatch@{Stopwatch}}
+\subsubsection[{$\sim$\-Stopwatch}]{\setlength{\rightskip}{0pt plus 5cm}Stopwatch\-::$\sim$\-Stopwatch (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classStopwatch_a534c433482f8fe8144c91c0fe37aac20}
+
+
+Destructor. 
+
+
+
+Definition at line 70 of file Stopwatch.\-cpp.
+
+\hypertarget{classStopwatch_a628b5ebeed5df065dd847e68fb6336cf}{\index{Stopwatch@{Stopwatch}!Stopwatch@{Stopwatch}}
+\index{Stopwatch@{Stopwatch}!Stopwatch@{Stopwatch}}
+\subsubsection[{Stopwatch}]{\setlength{\rightskip}{0pt plus 5cm}Stopwatch\-::\-Stopwatch (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classStopwatch_a628b5ebeed5df065dd847e68fb6336cf}
+
+
+Constructor. 
+
+Constructor is private. Use the static methods instead. \hypertarget{classStopwatch_a53702b14c791136a2e333fad94fecbf0}{\index{Stopwatch@{Stopwatch}!Stopwatch@{Stopwatch}}
+\index{Stopwatch@{Stopwatch}!Stopwatch@{Stopwatch}}
+\subsubsection[{Stopwatch}]{\setlength{\rightskip}{0pt plus 5cm}Stopwatch\-::\-Stopwatch (
+\begin{DoxyParamCaption}
+\item[{const {\bf Stopwatch} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classStopwatch_a53702b14c791136a2e333fad94fecbf0}
+
+
+Copy constructor. 
+
+The copy constructor is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classStopwatch_a7ba33aa62a14801f379e05e8d4f98d2a}{\index{Stopwatch@{Stopwatch}!get\-C\-P\-U\-Time\-Milli\-Sec@{get\-C\-P\-U\-Time\-Milli\-Sec}}
+\index{get\-C\-P\-U\-Time\-Milli\-Sec@{get\-C\-P\-U\-Time\-Milli\-Sec}!Stopwatch@{Stopwatch}}
+\subsubsection[{get\-C\-P\-U\-Time\-Milli\-Sec}]{\setlength{\rightskip}{0pt plus 5cm}double Stopwatch\-::get\-C\-P\-U\-Time\-Milli\-Sec (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point\-In\-Time} \&}]{start\-\_\-time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classStopwatch_a7ba33aa62a14801f379e05e8d4f98d2a}
+
+
+Returns the elapsed C\-P\-U time in milliseconds. 
+
+C\-P\-U time is meant to be used for precise measurements of short time periods. For longer periods, it may overflow (typically after 36 minutes in a 32 bit machine; on a 64-\/bit machine this usually does not happen). Use \hyperlink{classStopwatch_a700dbdfb01479ece147c15d149eba157}{get\-Real\-Time\-Sec()} to crosscheck.
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\-\_\-time} & The start time as produced by the \hyperlink{classStopwatch_ae4e530c454d40a88256a76744d3d8a12}{start()} method. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The C\-P\-U time elapsed since the corresponding call to \hyperlink{classStopwatch_ae4e530c454d40a88256a76744d3d8a12}{start()}, in milliseconds. 
+\end{DoxyReturn}
+
+
+Definition at line 48 of file Stopwatch.\-cpp.
+
+\hypertarget{classStopwatch_a27dda7191760c2822e3aad879805e013}{\index{Stopwatch@{Stopwatch}!get\-C\-P\-U\-Time\-Sec@{get\-C\-P\-U\-Time\-Sec}}
+\index{get\-C\-P\-U\-Time\-Sec@{get\-C\-P\-U\-Time\-Sec}!Stopwatch@{Stopwatch}}
+\subsubsection[{get\-C\-P\-U\-Time\-Sec}]{\setlength{\rightskip}{0pt plus 5cm}double Stopwatch\-::get\-C\-P\-U\-Time\-Sec (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point\-In\-Time} \&}]{start\-\_\-time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classStopwatch_a27dda7191760c2822e3aad879805e013}
+
+
+Returns the elapsed C\-P\-U time in seconds. 
+
+C\-P\-U time is meant to be used for precise measurements of short time periods. For longer periods, it may overflow (typically after 36 minutes in a 32 bit machine; on a 64-\/bit machine this usually does not happen). Use \hyperlink{classStopwatch_a700dbdfb01479ece147c15d149eba157}{get\-Real\-Time\-Sec()} to crosscheck.
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\-\_\-time} & The start time as produced by the \hyperlink{classStopwatch_ae4e530c454d40a88256a76744d3d8a12}{start()} method. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The C\-P\-U time elapsed since the corresponding call to \hyperlink{classStopwatch_ae4e530c454d40a88256a76744d3d8a12}{start()}, in seconds. 
+\end{DoxyReturn}
+
+
+Definition at line 41 of file Stopwatch.\-cpp.
+
+
+
+Referenced by get\-Time\-As\-String(), main(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Check\-Candidate\-Failed(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Check\-Candidate\-Found(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Compute\-Candidate(), Learn\-Statistics\-Q\-B\-F\-::notify\-After\-Compute\-Cube(), Learn\-Statistics\-Q\-B\-F\-::notify\-After\-Cube\-Min(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Refine(), Learn\-Statistics\-Q\-B\-F\-::notify\-Rel\-Det\-End(), Learn\-Statistics\-S\-A\-T\-::notify\-Rel\-Det\-End(), Learn\-Statistics\-Q\-B\-F\-::notify\-Win\-Reg\-End(), and Learn\-Statistics\-S\-A\-T\-::notify\-Win\-Reg\-End().
+
+\hypertarget{classStopwatch_a700dbdfb01479ece147c15d149eba157}{\index{Stopwatch@{Stopwatch}!get\-Real\-Time\-Sec@{get\-Real\-Time\-Sec}}
+\index{get\-Real\-Time\-Sec@{get\-Real\-Time\-Sec}!Stopwatch@{Stopwatch}}
+\subsubsection[{get\-Real\-Time\-Sec}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Stopwatch\-::get\-Real\-Time\-Sec (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point\-In\-Time} \&}]{start\-\_\-time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classStopwatch_a700dbdfb01479ece147c15d149eba157}
+
+
+Returns the elapsed real-\/time in seconds. 
+
+This method returns the elapsed real-\/time in a rather coarse way. You can use it to check whether the C\-P\-U-\/time counter had an overflow.
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\-\_\-time} & The start time as produced by the \hyperlink{classStopwatch_ae4e530c454d40a88256a76744d3d8a12}{start()} method. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The real-\/time elapsed since the corresponding call to \hyperlink{classStopwatch_ae4e530c454d40a88256a76744d3d8a12}{start()}, in seconds. 
+\end{DoxyReturn}
+
+
+Definition at line 55 of file Stopwatch.\-cpp.
+
+
+
+Referenced by get\-Time\-As\-String(), main(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Check\-Candidate\-Failed(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Check\-Candidate\-Found(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Compute\-Candidate(), Learn\-Statistics\-Q\-B\-F\-::notify\-After\-Compute\-Cube(), Learn\-Statistics\-Q\-B\-F\-::notify\-After\-Cube\-Min(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Refine(), Learn\-Statistics\-Q\-B\-F\-::notify\-Rel\-Det\-End(), Learn\-Statistics\-S\-A\-T\-::notify\-Rel\-Det\-End(), Learn\-Statistics\-Q\-B\-F\-::notify\-Win\-Reg\-End(), and Learn\-Statistics\-S\-A\-T\-::notify\-Win\-Reg\-End().
+
+\hypertarget{classStopwatch_a4b6869082a043c822dc22944e4c1a5e2}{\index{Stopwatch@{Stopwatch}!get\-Time\-As\-String@{get\-Time\-As\-String}}
+\index{get\-Time\-As\-String@{get\-Time\-As\-String}!Stopwatch@{Stopwatch}}
+\subsubsection[{get\-Time\-As\-String}]{\setlength{\rightskip}{0pt plus 5cm}string Stopwatch\-::get\-Time\-As\-String (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point\-In\-Time} \&}]{start\-\_\-time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classStopwatch_a4b6869082a043c822dc22944e4c1a5e2}
+
+
+Returns both the C\-P\-U time and the elapsed time as string. 
+
+This method returns the string 'X\-X s (Y\-Y s)', where X\-X is the elapsed C\-P\-U time and Y\-Y is the elapsed real-\/time.
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\-\_\-time} & The start time as produced by the \hyperlink{classStopwatch_ae4e530c454d40a88256a76744d3d8a12}{start()} method. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Both the C\-P\-U time and the elapsed time as string. 
+\end{DoxyReturn}
+
+
+Definition at line 62 of file Stopwatch.\-cpp.
+
+
+
+References get\-C\-P\-U\-Time\-Sec(), and get\-Real\-Time\-Sec().
+
+\hypertarget{classStopwatch_a70e4b31db345295ec12253d1f68dc288}{\index{Stopwatch@{Stopwatch}!operator=@{operator=}}
+\index{operator=@{operator=}!Stopwatch@{Stopwatch}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Stopwatch}\& Stopwatch\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Stopwatch} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classStopwatch_a70e4b31db345295ec12253d1f68dc288}
+
+
+Assignment operator. 
+
+The assignment operator is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the assignment, i.\-e, $\ast$this. 
+\end{DoxyReturn}
+\hypertarget{classStopwatch_ae4e530c454d40a88256a76744d3d8a12}{\index{Stopwatch@{Stopwatch}!start@{start}}
+\index{start@{start}!Stopwatch@{Stopwatch}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point\-In\-Time} Stopwatch\-::start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classStopwatch_ae4e530c454d40a88256a76744d3d8a12}
+
+
+Starts the stopwatch. 
+
+\begin{DoxyReturn}{Returns}
+Information about the moment in time where the stopwatch was started. 
+\end{DoxyReturn}
+
+
+Definition at line 33 of file Stopwatch.\-cpp.
+
+
+
+Referenced by main(), Learn\-Statistics\-S\-A\-T\-::notify\-Before\-Check\-Candidate(), Learn\-Statistics\-S\-A\-T\-::notify\-Before\-Compute\-Candidate(), Learn\-Statistics\-Q\-B\-F\-::notify\-Before\-Compute\-Cube(), Learn\-Statistics\-Q\-B\-F\-::notify\-Before\-Cube\-Min(), Learn\-Statistics\-S\-A\-T\-::notify\-Before\-Refine(), Learn\-Statistics\-Q\-B\-F\-::notify\-Rel\-Det\-Start(), Learn\-Statistics\-S\-A\-T\-::notify\-Rel\-Det\-Start(), Learn\-Statistics\-Q\-B\-F\-::notify\-Win\-Reg\-Start(), and Learn\-Statistics\-S\-A\-T\-::notify\-Win\-Reg\-Start().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{Stopwatch_8h}{Stopwatch.\-h}\item 
+src/\hyperlink{Stopwatch_8cpp}{Stopwatch.\-cpp}\end{DoxyCompactItemize}

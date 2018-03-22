@@ -1,0 +1,980 @@
+\hypertarget{classVarManager}{\section{Var\-Manager Class Reference}
+\label{classVarManager}\index{Var\-Manager@{Var\-Manager}}
+}
+
+
+Stores and maintains all Boolean variables that have (ever) been created.  
+
+
+
+
+{\ttfamily \#include $<$Var\-Manager.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classVarManager_a45201ce6cef8d48c0ae9d69b1d3870aa}{init\-From\-Aig} (aiger $\ast$aig, const vector$<$ bool $>$ \&refs)
+\begin{DoxyCompactList}\small\item\em Initializes the \hyperlink{classVarManager}{Var\-Manager} from the A\-I\-G\-E\-R input file structure. \end{DoxyCompactList}\item 
+void \hyperlink{classVarManager_abfb2f96f2037ef8d6aa89b1e25f71a13}{clear} ()
+\begin{DoxyCompactList}\small\item\em Completely clears the \hyperlink{classVarManager}{Var\-Manager}. All variables are gone then. \end{DoxyCompactList}\item 
+int \hyperlink{classVarManager_aa718b7329981e7e5cd845190ef487b7d}{create\-Fresh\-Tmp\-Var} ()
+\begin{DoxyCompactList}\small\item\em Creates and returns a fresh variable of type \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cfa84a2d8d86f004930fe564dc5b395b29f}{Var\-Info\-::\-T\-M\-P}. \end{DoxyCompactList}\item 
+int \hyperlink{classVarManager_a0474d06bb55484941de3407d0d35a1ec}{create\-Fresh\-Tmp\-Var} (const string \&name)
+\begin{DoxyCompactList}\small\item\em Creates and returns a fresh named variable of type \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cfa84a2d8d86f004930fe564dc5b395b29f}{Var\-Info\-::\-T\-M\-P}. \end{DoxyCompactList}\item 
+int \hyperlink{classVarManager_af06342ed30ae9ef3440ceea268821c39}{create\-Fresh\-Templ\-Param} ()
+\begin{DoxyCompactList}\small\item\em Creates and returns a fresh variable of type \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cfa5df778a9d0a12c26b1725f2440d66ff4}{Var\-Info\-::\-T\-E\-M\-P\-L\-\_\-\-P\-A\-R\-A\-M\-S}. \end{DoxyCompactList}\item 
+int \hyperlink{classVarManager_ad05222a9e211e348c0d24224f6aa9e30}{create\-Fresh\-Templ\-Param} (const string \&name)
+\begin{DoxyCompactList}\small\item\em Creates and returns a fresh named variable of type \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cfa5df778a9d0a12c26b1725f2440d66ff4}{Var\-Info\-::\-T\-E\-M\-P\-L\-\_\-\-P\-A\-R\-A\-M\-S}. \end{DoxyCompactList}\item 
+int \hyperlink{classVarManager_adf8ceeecece1626b6570a4741639a25f}{create\-Fresh\-Prev\-Var} ()
+\begin{DoxyCompactList}\small\item\em Creates and returns a fresh variable of type \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cfa055ef2ea16e83d02bc2b9f2f7f7666df}{Var\-Info\-::\-P\-R\-E\-V}. \end{DoxyCompactList}\item 
+int \hyperlink{classVarManager_a9ba4164cf6fce6ca6f0311f2c820686a}{create\-Fresh\-Prev\-Var} (const string \&name)
+\begin{DoxyCompactList}\small\item\em Creates and returns a fresh named variable of type \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cfa055ef2ea16e83d02bc2b9f2f7f7666df}{Var\-Info\-::\-P\-R\-E\-V}. \end{DoxyCompactList}\item 
+const \hyperlink{classVarInfo}{Var\-Info} \& \hyperlink{classVarManager_a2c7bcd84b002efa9f10c622401efb13f}{get\-Info} (int var\-\_\-in\-\_\-cnf) const 
+\begin{DoxyCompactList}\small\item\em Returns additional information to a \hyperlink{classCNF}{C\-N\-F} variable. \end{DoxyCompactList}\item 
+int \hyperlink{classVarManager_a9015ec7f557feb7619fdc0f7e18b57fa}{aig\-Lit\-To\-Cnf\-Lit} (unsigned aig\-\_\-lit) const 
+\begin{DoxyCompactList}\small\item\em Takes an A\-I\-G\-E\-R literal and returns the corresponding C\-N\-F-\/literal. \end{DoxyCompactList}\item 
+const vector$<$ int $>$ \& \hyperlink{classVarManager_a9da8cbfff80af5b7b8c2910fa815ee8a}{get\-Vars\-Of\-Type} (\hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cf}{Var\-Info\-::\-Var\-Kind} var\-\_\-kind) const 
+\begin{DoxyCompactList}\small\item\em Returns the \hyperlink{classCNF}{C\-N\-F} representation of all variables of a given kind. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classVarManager_a919243b695dc887455b686f7f5de2b78}{get\-All\-Non\-Temp\-Vars} () const 
+\begin{DoxyCompactList}\small\item\em Returns the \hyperlink{classCNF}{C\-N\-F} representation of all variables that are not of type \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cfa84a2d8d86f004930fe564dc5b395b29f}{Var\-Info\-::\-T\-M\-P}. \end{DoxyCompactList}\item 
+int \hyperlink{classVarManager_ad513fd225fca60d46a32b506adac917a}{get\-Pres\-Error\-State\-Var} () const 
+\begin{DoxyCompactList}\small\item\em Returns the present-\/state variable saying that we have a safety error now. \end{DoxyCompactList}\item 
+int \hyperlink{classVarManager_a6e3b7a26534cdc707086a9e850dcbd5e}{get\-Next\-Error\-State\-Var} () const 
+\begin{DoxyCompactList}\small\item\em Returns the next-\/state variable saying that we have a safety error next. \end{DoxyCompactList}\item 
+int \hyperlink{classVarManager_ae6cdfc7d517427cfe8619c123dc72b9b}{get\-Max\-C\-N\-F\-Var} () const 
+\begin{DoxyCompactList}\small\item\em Returns the maximum index of all \hyperlink{classCNF}{C\-N\-F} variables. \end{DoxyCompactList}\item 
+int \hyperlink{classVarManager_a95f50cca9e5612c4a8cc644fc8d67788}{get\-Max\-A\-I\-G\-Var} () const 
+\begin{DoxyCompactList}\small\item\em Returns the maximum index of all A\-I\-G\-E\-R variables. \end{DoxyCompactList}\item 
+string \hyperlink{classVarManager_aca1c867d5be7a7f38b6884dbd399419e}{to\-String} ()
+\begin{DoxyCompactList}\small\item\em Returns a string containing all (or most) information stored in this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classVarManager}{Var\-Manager} \& \hyperlink{classVarManager_ac1a84b367c26dfc5ee9e612f7d61b288}{instance} ()
+\begin{DoxyCompactList}\small\item\em Returns the one and only instance of this class. \end{DoxyCompactList}\item 
+static void \hyperlink{classVarManager_a8ca6373bb644693c2995e6473b47566f}{push} ()
+\begin{DoxyCompactList}\small\item\em Pushes the current state of this object onto a stack. \end{DoxyCompactList}\item 
+static void \hyperlink{classVarManager_a6f2350621a62b97ca06d3469dc9d65f1}{pop} ()
+\begin{DoxyCompactList}\small\item\em Restores the \hyperlink{classVarManager}{Var\-Manager} to the last push and removes the data from the stack. \end{DoxyCompactList}\item 
+static void \hyperlink{classVarManager_a127668367698d32229f58a7ecb9c2ba2}{reset\-To\-Last\-Push} ()
+\begin{DoxyCompactList}\small\item\em Restores the \hyperlink{classVarManager}{Var\-Manager} to the last push but does not pop the stack. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef map$<$ int, \hyperlink{classVarInfo}{Var\-Info} $>$\\*
+\-::const\-\_\-iterator \hyperlink{classVarManager_a93880917008b13ac5ce12b40312d3f4b}{Vars\-Const\-Iter}
+\begin{DoxyCompactList}\small\item\em A type for a const-\/iterator over the variable map. \end{DoxyCompactList}\item 
+typedef map$<$ int, \hyperlink{classVarInfo}{Var\-Info} $>$\\*
+\-::iterator \hyperlink{classVarManager_a822fe2321e2d48725e4d9e63ab22843f}{Var\-Iter}
+\begin{DoxyCompactList}\small\item\em A type for an iterator over the variable map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+map$<$ int, \hyperlink{classVarInfo}{Var\-Info} $>$ \hyperlink{classVarManager_a22299c4735b0191e0f81048882692a45}{vars\-\_\-}
+\begin{DoxyCompactList}\small\item\em All variables created so far. \end{DoxyCompactList}\item 
+int \hyperlink{classVarManager_aa790c99974d2aa97ed1848e49c4c82c6}{max\-\_\-cnf\-\_\-var\-\_\-}
+\begin{DoxyCompactList}\small\item\em The maximum index of all \hyperlink{classCNF}{C\-N\-F} variables. \end{DoxyCompactList}\item 
+int \hyperlink{classVarManager_af5877424c2c4ef563bd3278f85dd3c2d}{max\-\_\-aig\-\_\-var\-\_\-}
+\begin{DoxyCompactList}\small\item\em The maximum index of all A\-I\-G\-E\-R variables. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classVarManager_abaa6d10a62f138bdc932a8e76c709849}{aig\-\_\-to\-\_\-cnf\-\_\-lit\-\_\-map\-\_\-}
+\begin{DoxyCompactList}\small\item\em A map from A\-I\-G\-E\-R literals to \hyperlink{classCNF}{C\-N\-F} literals. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classVarManager_a04609c1f6a3c87c10abcfbd3850a2f87}{inputs\-\_\-}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classCNF}{C\-N\-F} representation of all (uncontrollable) inputs (type Var\-Manager\-::\-I\-N\-P\-U\-T). \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classVarManager_acb66edc1a4fc8ccc25321a59fe1668ff}{ctrl\-\_\-vars\-\_\-}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classCNF}{C\-N\-F} representation of all control signals (type Var\-Manager\-::\-C\-T\-R\-L). \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classVarManager_a25edf00cec0e31f140aabdf3a245a54c}{pres\-\_\-state\-\_\-vars\-\_\-}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classCNF}{C\-N\-F} representation of all state variables (type Var\-Manager\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E). \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classVarManager_a2a697fcb384c73821d88104ac904f4e9}{next\-\_\-state\-\_\-vars\-\_\-}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classCNF}{C\-N\-F} representation of all next-\/state variables (type Var\-Manager\-::\-N\-E\-X\-T\-\_\-\-S\-T\-A\-T\-E). \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classVarManager_aa22f9522aa27237a2dee30503c20e45f}{tmp\-\_\-vars\-\_\-}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classCNF}{C\-N\-F} representation of all temporary variables (type Var\-Manager\-::\-T\-M\-P). \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classVarManager_aea1a2e16d5a0ff433d47a4f28cc2ae3b}{templs\-\_\-params\-\_\-}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classCNF}{C\-N\-F} representation of all parameters (type Var\-Manager\-::\-T\-E\-M\-P\-L\-\_\-\-P\-A\-R\-A\-M\-S). \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classVarManager_add744e4a073f7fd7bc595b053ac94774}{prev\-\_\-vars\-\_\-}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classCNF}{C\-N\-F} representation of all previous-\/step variables (type Var\-Manager\-::\-P\-R\-E\-V). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVarManager_a45bd9ed93e1c1303a9dff791e998cbc5}{Var\-Manager} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classVarManager_a72b49931cef85f483f35146e92eb4da5}{$\sim$\-Var\-Manager} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{classVarManager_a5be5f509e4939b010a770b3df400a84f}{Var\-Manager} (const \hyperlink{classVarManager}{Var\-Manager} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classVarManager}{Var\-Manager} \& \hyperlink{classVarManager_abdc12c45522a97f361d736cf05fa1798}{operator=} (const \hyperlink{classVarManager}{Var\-Manager} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static vector$<$ \hyperlink{classVarManager}{Var\-Manager} $\ast$ $>$ \hyperlink{classVarManager_aba622884c64d1a16cd086b34cb71acd8}{stack\-\_\-}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Stores and maintains all Boolean variables that have (ever) been created. 
+
+This is mainly a container which stores all Boolean variables that have been created. It also provides methods to create new variables, to retrieve variables of different kinds, and to get additional information to variables.
+
+This class is implemented as a Singleton. That is, you cannot instantiate objects of this class with the constructor. Use the method \hyperlink{classVarManager_ac1a84b367c26dfc5ee9e612f7d61b288}{instance() } to obtain the one and only instance of this class. 
+
+Definition at line 50 of file Var\-Manager.\-h.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classVarManager_a822fe2321e2d48725e4d9e63ab22843f}{\index{Var\-Manager@{Var\-Manager}!Var\-Iter@{Var\-Iter}}
+\index{Var\-Iter@{Var\-Iter}!VarManager@{Var\-Manager}}
+\subsubsection[{Var\-Iter}]{\setlength{\rightskip}{0pt plus 5cm}map$<$ int, {\bf Var\-Info} $>$\-::iterator {\bf Var\-Manager\-::\-Var\-Iter}\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVarManager_a822fe2321e2d48725e4d9e63ab22843f}
+
+
+A type for an iterator over the variable map. 
+
+
+
+Definition at line 335 of file Var\-Manager.\-h.
+
+\hypertarget{classVarManager_a93880917008b13ac5ce12b40312d3f4b}{\index{Var\-Manager@{Var\-Manager}!Vars\-Const\-Iter@{Vars\-Const\-Iter}}
+\index{Vars\-Const\-Iter@{Vars\-Const\-Iter}!VarManager@{Var\-Manager}}
+\subsubsection[{Vars\-Const\-Iter}]{\setlength{\rightskip}{0pt plus 5cm}map$<$ int, {\bf Var\-Info} $>$\-::const\-\_\-iterator {\bf Var\-Manager\-::\-Vars\-Const\-Iter}\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVarManager_a93880917008b13ac5ce12b40312d3f4b}
+
+
+A type for a const-\/iterator over the variable map. 
+
+
+
+Definition at line 329 of file Var\-Manager.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classVarManager_a45bd9ed93e1c1303a9dff791e998cbc5}{\index{Var\-Manager@{Var\-Manager}!Var\-Manager@{Var\-Manager}}
+\index{Var\-Manager@{Var\-Manager}!VarManager@{Var\-Manager}}
+\subsubsection[{Var\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}Var\-Manager\-::\-Var\-Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classVarManager_a45bd9ed93e1c1303a9dff791e998cbc5}
+
+
+Constructor. 
+
+The constructor is disabled (set private) as this method is implemented as a Singleton. Use the method \hyperlink{classVarManager_ac1a84b367c26dfc5ee9e612f7d61b288}{instance() } to obtain the one and only instance of this class. 
+
+Definition at line 369 of file Var\-Manager.\-cpp.
+
+
+
+References templs\-\_\-params\-\_\-.
+
+
+
+Referenced by instance(), and push().
+
+\hypertarget{classVarManager_a72b49931cef85f483f35146e92eb4da5}{\index{Var\-Manager@{Var\-Manager}!$\sim$\-Var\-Manager@{$\sim$\-Var\-Manager}}
+\index{$\sim$\-Var\-Manager@{$\sim$\-Var\-Manager}!VarManager@{Var\-Manager}}
+\subsubsection[{$\sim$\-Var\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}Var\-Manager\-::$\sim$\-Var\-Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classVarManager_a72b49931cef85f483f35146e92eb4da5}
+
+
+Destructor. 
+
+The destructor is disabled (set private) as this method is implemented as a Singleton. One cannot instantiate objects of this class, so there is no need to be able to delete them. 
+
+Definition at line 375 of file Var\-Manager.\-cpp.
+
+\hypertarget{classVarManager_a5be5f509e4939b010a770b3df400a84f}{\index{Var\-Manager@{Var\-Manager}!Var\-Manager@{Var\-Manager}}
+\index{Var\-Manager@{Var\-Manager}!VarManager@{Var\-Manager}}
+\subsubsection[{Var\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}Var\-Manager\-::\-Var\-Manager (
+\begin{DoxyParamCaption}
+\item[{const {\bf Var\-Manager} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classVarManager_a5be5f509e4939b010a770b3df400a84f}
+
+
+Copy constructor. 
+
+The copy constructor is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 381 of file Var\-Manager.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classVarManager_a9015ec7f557feb7619fdc0f7e18b57fa}{\index{Var\-Manager@{Var\-Manager}!aig\-Lit\-To\-Cnf\-Lit@{aig\-Lit\-To\-Cnf\-Lit}}
+\index{aig\-Lit\-To\-Cnf\-Lit@{aig\-Lit\-To\-Cnf\-Lit}!VarManager@{Var\-Manager}}
+\subsubsection[{aig\-Lit\-To\-Cnf\-Lit}]{\setlength{\rightskip}{0pt plus 5cm}int Var\-Manager\-::aig\-Lit\-To\-Cnf\-Lit (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{aig\-\_\-lit}
+\end{DoxyParamCaption}
+) const}}\label{classVarManager_a9015ec7f557feb7619fdc0f7e18b57fa}
+
+
+Takes an A\-I\-G\-E\-R literal and returns the corresponding C\-N\-F-\/literal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em aig\-\_\-lit} & Some A\-I\-G\-E\-R literal. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The corresponding \hyperlink{classCNF}{C\-N\-F} literal. 
+\end{DoxyReturn}
+
+
+Definition at line 274 of file Var\-Manager.\-cpp.
+
+
+
+References aig\-\_\-to\-\_\-cnf\-\_\-lit\-\_\-map\-\_\-, and M\-A\-S\-S\-E\-R\-T.
+
+
+
+Referenced by A\-I\-G2\-C\-N\-F\-::init\-From\-Aig().
+
+\hypertarget{classVarManager_abfb2f96f2037ef8d6aa89b1e25f71a13}{\index{Var\-Manager@{Var\-Manager}!clear@{clear}}
+\index{clear@{clear}!VarManager@{Var\-Manager}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void Var\-Manager\-::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVarManager_abfb2f96f2037ef8d6aa89b1e25f71a13}
+
+
+Completely clears the \hyperlink{classVarManager}{Var\-Manager}. All variables are gone then. 
+
+
+
+Definition at line 203 of file Var\-Manager.\-cpp.
+
+
+
+References aig\-\_\-to\-\_\-cnf\-\_\-lit\-\_\-map\-\_\-, ctrl\-\_\-vars\-\_\-, inputs\-\_\-, max\-\_\-aig\-\_\-var\-\_\-, max\-\_\-cnf\-\_\-var\-\_\-, next\-\_\-state\-\_\-vars\-\_\-, pres\-\_\-state\-\_\-vars\-\_\-, prev\-\_\-vars\-\_\-, templs\-\_\-params\-\_\-, tmp\-\_\-vars\-\_\-, and vars\-\_\-.
+
+
+
+Referenced by init\-From\-Aig().
+
+\hypertarget{classVarManager_adf8ceeecece1626b6570a4741639a25f}{\index{Var\-Manager@{Var\-Manager}!create\-Fresh\-Prev\-Var@{create\-Fresh\-Prev\-Var}}
+\index{create\-Fresh\-Prev\-Var@{create\-Fresh\-Prev\-Var}!VarManager@{Var\-Manager}}
+\subsubsection[{create\-Fresh\-Prev\-Var}]{\setlength{\rightskip}{0pt plus 5cm}int Var\-Manager\-::create\-Fresh\-Prev\-Var (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVarManager_adf8ceeecece1626b6570a4741639a25f}
+
+
+Creates and returns a fresh variable of type \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cfa055ef2ea16e83d02bc2b9f2f7f7666df}{Var\-Info\-::\-P\-R\-E\-V}. 
+
+\begin{DoxyReturn}{Returns}
+The (\hyperlink{classCNF}{C\-N\-F} representation of the) newly created fresh previous-\/time-\/step variable. 
+\end{DoxyReturn}
+
+
+Definition at line 251 of file Var\-Manager.\-cpp.
+
+
+
+Referenced by Parallel\-Learner\-::compute\-Previous\-Trans(), Learn\-Synth\-Q\-B\-F\-Ind\-::\-Learn\-Synth\-Q\-B\-F\-Ind(), and Learn\-Synth\-S\-A\-T\-::\-Learn\-Synth\-S\-A\-T().
+
+\hypertarget{classVarManager_a9ba4164cf6fce6ca6f0311f2c820686a}{\index{Var\-Manager@{Var\-Manager}!create\-Fresh\-Prev\-Var@{create\-Fresh\-Prev\-Var}}
+\index{create\-Fresh\-Prev\-Var@{create\-Fresh\-Prev\-Var}!VarManager@{Var\-Manager}}
+\subsubsection[{create\-Fresh\-Prev\-Var}]{\setlength{\rightskip}{0pt plus 5cm}int Var\-Manager\-::create\-Fresh\-Prev\-Var (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{name}
+\end{DoxyParamCaption}
+)}}\label{classVarManager_a9ba4164cf6fce6ca6f0311f2c820686a}
+
+
+Creates and returns a fresh named variable of type \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cfa055ef2ea16e83d02bc2b9f2f7f7666df}{Var\-Info\-::\-P\-R\-E\-V}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the newly created previous-\/time-\/step variable. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The (\hyperlink{classCNF}{C\-N\-F} representation of the) newly created fresh previous-\/time-\/step variable. 
+\end{DoxyReturn}
+
+
+Definition at line 257 of file Var\-Manager.\-cpp.
+
+
+
+References max\-\_\-cnf\-\_\-var\-\_\-, Var\-Info\-::\-P\-R\-E\-V, prev\-\_\-vars\-\_\-, and vars\-\_\-.
+
+\hypertarget{classVarManager_af06342ed30ae9ef3440ceea268821c39}{\index{Var\-Manager@{Var\-Manager}!create\-Fresh\-Templ\-Param@{create\-Fresh\-Templ\-Param}}
+\index{create\-Fresh\-Templ\-Param@{create\-Fresh\-Templ\-Param}!VarManager@{Var\-Manager}}
+\subsubsection[{create\-Fresh\-Templ\-Param}]{\setlength{\rightskip}{0pt plus 5cm}int Var\-Manager\-::create\-Fresh\-Templ\-Param (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVarManager_af06342ed30ae9ef3440ceea268821c39}
+
+
+Creates and returns a fresh variable of type \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cfa5df778a9d0a12c26b1725f2440d66ff4}{Var\-Info\-::\-T\-E\-M\-P\-L\-\_\-\-P\-A\-R\-A\-M\-S}. 
+
+\begin{DoxyReturn}{Returns}
+The (\hyperlink{classCNF}{C\-N\-F} representation of the) newly created fresh parameter variable. 
+\end{DoxyReturn}
+
+
+Definition at line 235 of file Var\-Manager.\-cpp.
+
+
+
+Referenced by Template\-Synth\-::find\-Win\-Reg\-C\-N\-F\-Templ().
+
+\hypertarget{classVarManager_ad05222a9e211e348c0d24224f6aa9e30}{\index{Var\-Manager@{Var\-Manager}!create\-Fresh\-Templ\-Param@{create\-Fresh\-Templ\-Param}}
+\index{create\-Fresh\-Templ\-Param@{create\-Fresh\-Templ\-Param}!VarManager@{Var\-Manager}}
+\subsubsection[{create\-Fresh\-Templ\-Param}]{\setlength{\rightskip}{0pt plus 5cm}int Var\-Manager\-::create\-Fresh\-Templ\-Param (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{name}
+\end{DoxyParamCaption}
+)}}\label{classVarManager_ad05222a9e211e348c0d24224f6aa9e30}
+
+
+Creates and returns a fresh named variable of type \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cfa5df778a9d0a12c26b1725f2440d66ff4}{Var\-Info\-::\-T\-E\-M\-P\-L\-\_\-\-P\-A\-R\-A\-M\-S}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the newly created parameter variable. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The (\hyperlink{classCNF}{C\-N\-F} representation of the) newly created fresh parameter variable. 
+\end{DoxyReturn}
+
+
+Definition at line 241 of file Var\-Manager.\-cpp.
+
+
+
+References max\-\_\-cnf\-\_\-var\-\_\-, Var\-Info\-::\-T\-E\-M\-P\-L\-\_\-\-P\-A\-R\-A\-M\-S, templs\-\_\-params\-\_\-, and vars\-\_\-.
+
+\hypertarget{classVarManager_aa718b7329981e7e5cd845190ef487b7d}{\index{Var\-Manager@{Var\-Manager}!create\-Fresh\-Tmp\-Var@{create\-Fresh\-Tmp\-Var}}
+\index{create\-Fresh\-Tmp\-Var@{create\-Fresh\-Tmp\-Var}!VarManager@{Var\-Manager}}
+\subsubsection[{create\-Fresh\-Tmp\-Var}]{\setlength{\rightskip}{0pt plus 5cm}int Var\-Manager\-::create\-Fresh\-Tmp\-Var (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVarManager_aa718b7329981e7e5cd845190ef487b7d}
+
+
+Creates and returns a fresh variable of type \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cfa84a2d8d86f004930fe564dc5b395b29f}{Var\-Info\-::\-T\-M\-P}. 
+
+\begin{DoxyReturn}{Returns}
+The (\hyperlink{classCNF}{C\-N\-F} representation of the) newly created fresh temporary variable. 
+\end{DoxyReturn}
+
+
+Definition at line 219 of file Var\-Manager.\-cpp.
+
+
+
+Referenced by Parallel\-Learner\-::compute\-Previous\-Trans(), Template\-Synth\-::find\-Win\-Reg\-C\-N\-F\-Templ(), A\-I\-G2\-C\-N\-F\-::init\-From\-Aig(), Learn\-Synth\-Q\-B\-F\-Ind\-::\-Learn\-Synth\-Q\-B\-F\-Ind(), Learn\-Synth\-S\-A\-T\-::\-Learn\-Synth\-S\-A\-T(), and C\-N\-F\-::negate().
+
+\hypertarget{classVarManager_a0474d06bb55484941de3407d0d35a1ec}{\index{Var\-Manager@{Var\-Manager}!create\-Fresh\-Tmp\-Var@{create\-Fresh\-Tmp\-Var}}
+\index{create\-Fresh\-Tmp\-Var@{create\-Fresh\-Tmp\-Var}!VarManager@{Var\-Manager}}
+\subsubsection[{create\-Fresh\-Tmp\-Var}]{\setlength{\rightskip}{0pt plus 5cm}int Var\-Manager\-::create\-Fresh\-Tmp\-Var (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{name}
+\end{DoxyParamCaption}
+)}}\label{classVarManager_a0474d06bb55484941de3407d0d35a1ec}
+
+
+Creates and returns a fresh named variable of type \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cfa84a2d8d86f004930fe564dc5b395b29f}{Var\-Info\-::\-T\-M\-P}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the newly created temporary variable. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The (\hyperlink{classCNF}{C\-N\-F} representation of the) newly created fresh temporary variable. 
+\end{DoxyReturn}
+
+
+Definition at line 225 of file Var\-Manager.\-cpp.
+
+
+
+References max\-\_\-cnf\-\_\-var\-\_\-, Var\-Info\-::\-T\-M\-P, tmp\-\_\-vars\-\_\-, and vars\-\_\-.
+
+\hypertarget{classVarManager_a919243b695dc887455b686f7f5de2b78}{\index{Var\-Manager@{Var\-Manager}!get\-All\-Non\-Temp\-Vars@{get\-All\-Non\-Temp\-Vars}}
+\index{get\-All\-Non\-Temp\-Vars@{get\-All\-Non\-Temp\-Vars}!VarManager@{Var\-Manager}}
+\subsubsection[{get\-All\-Non\-Temp\-Vars}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ int $>$ Var\-Manager\-::get\-All\-Non\-Temp\-Vars (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classVarManager_a919243b695dc887455b686f7f5de2b78}
+
+
+Returns the \hyperlink{classCNF}{C\-N\-F} representation of all variables that are not of type \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cfa84a2d8d86f004930fe564dc5b395b29f}{Var\-Info\-::\-T\-M\-P}. 
+
+\begin{DoxyReturn}{Returns}
+The \hyperlink{classCNF}{C\-N\-F} representation of all variables that are not of type \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cfa84a2d8d86f004930fe564dc5b395b29f}{Var\-Info\-::\-T\-M\-P}. 
+\end{DoxyReturn}
+
+
+Definition at line 300 of file Var\-Manager.\-cpp.
+
+
+
+References ctrl\-\_\-vars\-\_\-, inputs\-\_\-, next\-\_\-state\-\_\-vars\-\_\-, pres\-\_\-state\-\_\-vars\-\_\-, prev\-\_\-vars\-\_\-, and templs\-\_\-params\-\_\-.
+
+
+
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), and Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C().
+
+\hypertarget{classVarManager_a2c7bcd84b002efa9f10c622401efb13f}{\index{Var\-Manager@{Var\-Manager}!get\-Info@{get\-Info}}
+\index{get\-Info@{get\-Info}!VarManager@{Var\-Manager}}
+\subsubsection[{get\-Info}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Var\-Info} \& Var\-Manager\-::get\-Info (
+\begin{DoxyParamCaption}
+\item[{int}]{var\-\_\-in\-\_\-cnf}
+\end{DoxyParamCaption}
+) const}}\label{classVarManager_a2c7bcd84b002efa9f10c622401efb13f}
+
+
+Returns additional information to a \hyperlink{classCNF}{C\-N\-F} variable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var\-\_\-in\-\_\-cnf} & The \hyperlink{classCNF}{C\-N\-F} representation of the variable for which additional information is requested. It is an error if the requested variable does not exist. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Additional information to a \hyperlink{classCNF}{C\-N\-F} variable. 
+\end{DoxyReturn}
+
+
+Definition at line 267 of file Var\-Manager.\-cpp.
+
+
+
+References M\-A\-S\-S\-E\-R\-T, and vars\-\_\-.
+
+
+
+Referenced by Q\-B\-F\-Cert\-Impl\-Extractor\-::parse\-Q\-B\-F\-Cert\-Answer(), Learn\-Synth\-Q\-B\-F\-Inc\-::restrict\-To\-States(), Learn\-Synth\-Q\-B\-F\-::restrict\-To\-States(), and Learn\-Synth\-Q\-B\-F\-Ind\-::restrict\-To\-States().
+
+\hypertarget{classVarManager_a95f50cca9e5612c4a8cc644fc8d67788}{\index{Var\-Manager@{Var\-Manager}!get\-Max\-A\-I\-G\-Var@{get\-Max\-A\-I\-G\-Var}}
+\index{get\-Max\-A\-I\-G\-Var@{get\-Max\-A\-I\-G\-Var}!VarManager@{Var\-Manager}}
+\subsubsection[{get\-Max\-A\-I\-G\-Var}]{\setlength{\rightskip}{0pt plus 5cm}int Var\-Manager\-::get\-Max\-A\-I\-G\-Var (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classVarManager_a95f50cca9e5612c4a8cc644fc8d67788}
+
+
+Returns the maximum index of all A\-I\-G\-E\-R variables. 
+
+\begin{DoxyReturn}{Returns}
+The maximum index of all A\-I\-G\-E\-R variables. That is, if the value N is returned, then this means that there exists the A\-I\-G\-E\-R-\/variables 1,2,3,...,N. The exists no A\-I\-G\-E\-R-\/variable with index greater than N. 
+\end{DoxyReturn}
+
+
+Definition at line 338 of file Var\-Manager.\-cpp.
+
+
+
+References max\-\_\-aig\-\_\-var\-\_\-.
+
+
+
+Referenced by Q\-B\-F\-Cert\-Impl\-Extractor\-::parse\-Q\-B\-F\-Cert\-Answer().
+
+\hypertarget{classVarManager_ae6cdfc7d517427cfe8619c123dc72b9b}{\index{Var\-Manager@{Var\-Manager}!get\-Max\-C\-N\-F\-Var@{get\-Max\-C\-N\-F\-Var}}
+\index{get\-Max\-C\-N\-F\-Var@{get\-Max\-C\-N\-F\-Var}!VarManager@{Var\-Manager}}
+\subsubsection[{get\-Max\-C\-N\-F\-Var}]{\setlength{\rightskip}{0pt plus 5cm}int Var\-Manager\-::get\-Max\-C\-N\-F\-Var (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classVarManager_ae6cdfc7d517427cfe8619c123dc72b9b}
+
+
+Returns the maximum index of all \hyperlink{classCNF}{C\-N\-F} variables. 
+
+\begin{DoxyReturn}{Returns}
+The maximum index of all \hyperlink{classCNF}{C\-N\-F} variables. That is, if the value N is returned, then this means that there exists the C\-N\-F-\/variables 1,2,3,...,N. The exists no C\-N\-F-\/variable with index greater than N. 
+\end{DoxyReturn}
+
+
+Definition at line 332 of file Var\-Manager.\-cpp.
+
+
+
+References max\-\_\-cnf\-\_\-var\-\_\-.
+
+
+
+Referenced by Parallel\-Learner\-::compute\-Previous\-Trans(), Ext\-Q\-B\-F\-Solver\-::dump\-Q\-B\-F(), Template\-Synth\-::find\-Win\-Reg\-C\-N\-F\-Templ(), Dep\-Q\-B\-F\-Api\-::init\-Bloqqer(), Dep\-Q\-B\-F\-Api\-Inc\-::init\-Bloqqer(), Dep\-Q\-B\-F\-Api\-::init\-Dep\-Q\-B\-F(), Dep\-Q\-B\-F\-Api\-Inc\-::init\-Dep\-Q\-B\-F(), Learn\-Synth\-Q\-B\-F\-Ind\-::\-Learn\-Synth\-Q\-B\-F\-Ind(), Learn\-Synth\-S\-A\-T\-::\-Learn\-Synth\-S\-A\-T(), Dep\-Q\-B\-F\-Api\-Inc\-::start\-Incremental\-Session(), Utils\-::swap\-Present\-To\-Next(), and C\-N\-F\-::swap\-Present\-To\-Next().
+
+\hypertarget{classVarManager_a6e3b7a26534cdc707086a9e850dcbd5e}{\index{Var\-Manager@{Var\-Manager}!get\-Next\-Error\-State\-Var@{get\-Next\-Error\-State\-Var}}
+\index{get\-Next\-Error\-State\-Var@{get\-Next\-Error\-State\-Var}!VarManager@{Var\-Manager}}
+\subsubsection[{get\-Next\-Error\-State\-Var}]{\setlength{\rightskip}{0pt plus 5cm}int Var\-Manager\-::get\-Next\-Error\-State\-Var (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classVarManager_a6e3b7a26534cdc707086a9e850dcbd5e}
+
+
+Returns the next-\/state variable saying that we have a safety error next. 
+
+In the A\-I\-G\-E\-R input file, the error is an output. It can depend on the current state and the input. In order to have a notion of safe and unsafe states, we 'latch' this error output and make it part of the state space. This is supposed to make the life of the synthesis algorithm easier.
+
+\begin{DoxyReturn}{Returns}
+The (\hyperlink{classCNF}{C\-N\-F} representation of the) next-\/state variable saying that we have a safety error in the next time step. This is the next-\/state copy of the variable returned by \hyperlink{classVarManager_ad513fd225fca60d46a32b506adac917a}{get\-Pres\-Error\-State\-Var()}. 
+\end{DoxyReturn}
+
+
+Definition at line 326 of file Var\-Manager.\-cpp.
+
+
+
+References next\-\_\-state\-\_\-vars\-\_\-.
+
+
+
+Referenced by Template\-Synth\-::find\-Win\-Reg\-C\-N\-F\-Templ(), and A\-I\-G2\-C\-N\-F\-::init\-From\-Aig().
+
+\hypertarget{classVarManager_ad513fd225fca60d46a32b506adac917a}{\index{Var\-Manager@{Var\-Manager}!get\-Pres\-Error\-State\-Var@{get\-Pres\-Error\-State\-Var}}
+\index{get\-Pres\-Error\-State\-Var@{get\-Pres\-Error\-State\-Var}!VarManager@{Var\-Manager}}
+\subsubsection[{get\-Pres\-Error\-State\-Var}]{\setlength{\rightskip}{0pt plus 5cm}int Var\-Manager\-::get\-Pres\-Error\-State\-Var (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classVarManager_ad513fd225fca60d46a32b506adac917a}
+
+
+Returns the present-\/state variable saying that we have a safety error now. 
+
+In the A\-I\-G\-E\-R input file, the error is an output. It can depend on the current state and the input. In order to have a notion of safe and unsafe states, we 'latch' this error output and make it part of the state space. This is supposed to make the life of the synthesis algorithm easier.
+
+\begin{DoxyReturn}{Returns}
+The (\hyperlink{classCNF}{C\-N\-F} representation of the) present-\/state variable saying that we have a safety error now. 
+\end{DoxyReturn}
+
+
+Definition at line 320 of file Var\-Manager.\-cpp.
+
+
+
+References pres\-\_\-state\-\_\-vars\-\_\-.
+
+
+
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Template\-Synth\-::find\-Win\-Reg\-C\-N\-F\-Templ(), A\-I\-G2\-C\-N\-F\-::init\-From\-Aig(), Learn\-Synth\-Q\-B\-F\-Inc\-::restrict\-To\-States(), Learn\-Synth\-Q\-B\-F\-::restrict\-To\-States(), and Learn\-Synth\-Q\-B\-F\-Ind\-::restrict\-To\-States().
+
+\hypertarget{classVarManager_a9da8cbfff80af5b7b8c2910fa815ee8a}{\index{Var\-Manager@{Var\-Manager}!get\-Vars\-Of\-Type@{get\-Vars\-Of\-Type}}
+\index{get\-Vars\-Of\-Type@{get\-Vars\-Of\-Type}!VarManager@{Var\-Manager}}
+\subsubsection[{get\-Vars\-Of\-Type}]{\setlength{\rightskip}{0pt plus 5cm}const vector$<$ int $>$ \& Var\-Manager\-::get\-Vars\-Of\-Type (
+\begin{DoxyParamCaption}
+\item[{{\bf Var\-Info\-::\-Var\-Kind}}]{var\-\_\-kind}
+\end{DoxyParamCaption}
+) const}}\label{classVarManager_a9da8cbfff80af5b7b8c2910fa815ee8a}
+
+
+Returns the \hyperlink{classCNF}{C\-N\-F} representation of all variables of a given kind. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var\-\_\-kind} & The requested variable kind. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{classCNF}{C\-N\-F} representation of all variables of the given kind. 
+\end{DoxyReturn}
+
+
+Definition at line 281 of file Var\-Manager.\-cpp.
+
+
+
+References Var\-Info\-::\-C\-T\-R\-L, ctrl\-\_\-vars\-\_\-, Var\-Info\-::\-I\-N\-P\-U\-T, inputs\-\_\-, Var\-Info\-::\-N\-E\-X\-T\-\_\-\-S\-T\-A\-T\-E, next\-\_\-state\-\_\-vars\-\_\-, Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, pres\-\_\-state\-\_\-vars\-\_\-, Var\-Info\-::\-P\-R\-E\-V, prev\-\_\-vars\-\_\-, Var\-Info\-::\-T\-E\-M\-P\-L\-\_\-\-P\-A\-R\-A\-M\-S, templs\-\_\-params\-\_\-, and tmp\-\_\-vars\-\_\-.
+
+
+
+Referenced by Clause\-Minimizer\-Q\-B\-F\-::\-Clause\-Minimizer\-Q\-B\-F(), Learn\-Synth\-Q\-B\-F\-::compute\-Counterexample\-S\-A\-T(), Parallel\-Learner\-::compute\-Previous\-Trans(), I\-F\-M13\-Synth\-::compute\-Winning\-Region(), Template\-Synth\-::compute\-Winning\-Region(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One\-S\-A\-T(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Dep\-Q\-B\-F\-Api\-::debug\-Check\-Bloqqer\-Model(), Dep\-Q\-B\-F\-Api\-Inc\-::debug\-Check\-Bloqqer\-Model(), Ext\-Q\-B\-F\-Solver\-::dump\-Q\-B\-F(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), Utils\-::extract(), Utils\-::extract\-Next\-As\-Present(), Utils\-::extract\-Pres\-In(), Template\-Synth\-::find\-Win\-Reg\-C\-N\-F\-Templ(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), I\-F\-M13\-Explorer\-::\-I\-F\-M13\-Explorer(), I\-F\-M13\-Synth\-::\-I\-F\-M13\-Synth(), Dep\-Q\-B\-F\-Api\-::init\-Bloqqer(), Dep\-Q\-B\-F\-Api\-Inc\-::init\-Bloqqer(), Dep\-Q\-B\-F\-Api\-::init\-Dep\-Q\-B\-F(), Dep\-Q\-B\-F\-Api\-Inc\-::init\-Dep\-Q\-B\-F(), A\-I\-G2\-C\-N\-F\-::init\-From\-Aig(), Dep\-Q\-B\-F\-Api\-::is\-Sat\-Model(), Dep\-Q\-B\-F\-Api\-Inc\-::is\-Sat\-Model(), Learn\-Synth\-Q\-B\-F\-Ind\-::\-Learn\-Synth\-Q\-B\-F\-Ind(), Learn\-Synth\-S\-A\-T\-::\-Learn\-Synth\-S\-A\-T(), Q\-B\-F\-Cert\-Impl\-Extractor\-::parse\-Q\-B\-F\-Cert\-Answer(), Dep\-Q\-B\-F\-Api\-Inc\-::start\-Incremental\-Session(), Utils\-::swap\-Present\-To\-Next(), and C\-N\-F\-::swap\-Present\-To\-Next().
+
+\hypertarget{classVarManager_a45201ce6cef8d48c0ae9d69b1d3870aa}{\index{Var\-Manager@{Var\-Manager}!init\-From\-Aig@{init\-From\-Aig}}
+\index{init\-From\-Aig@{init\-From\-Aig}!VarManager@{Var\-Manager}}
+\subsubsection[{init\-From\-Aig}]{\setlength{\rightskip}{0pt plus 5cm}void Var\-Manager\-::init\-From\-Aig (
+\begin{DoxyParamCaption}
+\item[{aiger $\ast$}]{aig, }
+\item[{const vector$<$ bool $>$ \&}]{refs}
+\end{DoxyParamCaption}
+)}}\label{classVarManager_a45201ce6cef8d48c0ae9d69b1d3870aa}
+
+
+Initializes the \hyperlink{classVarManager}{Var\-Manager} from the A\-I\-G\-E\-R input file structure. 
+
+That is, this method creates variables for all signals that occur in the A\-I\-G\-E\-R circuit. An additional vector defines which signals of the A\-I\-G\-E\-R circuit are actually going to be used.
+
+
+\begin{DoxyParams}{Parameters}
+{\em aig} & An A\-I\-G\-E\-R structure defining a circuit. This is typically the content of the A\-I\-G\-E\-R input file. We create variables for the signals occurring in this structure. \\
+\hline
+{\em refs} & A vector defining which signals are actually going to be used. It maps A\-I\-G\-E\-R literals to either true or false. If a literal is mapped to true, we will create a variable for it, otherwise not. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 92 of file Var\-Manager.\-cpp.
+
+
+
+References aig\-\_\-to\-\_\-cnf\-\_\-lit\-\_\-map\-\_\-, clear(), Var\-Info\-::\-C\-T\-R\-L, ctrl\-\_\-vars\-\_\-, Var\-Info\-::\-I\-N\-P\-U\-T, inputs\-\_\-, M\-A\-S\-S\-E\-R\-T, max\-\_\-aig\-\_\-var\-\_\-, max\-\_\-cnf\-\_\-var\-\_\-, Var\-Info\-::\-N\-E\-X\-T\-\_\-\-S\-T\-A\-T\-E, next\-\_\-state\-\_\-vars\-\_\-, Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, pres\-\_\-state\-\_\-vars\-\_\-, Var\-Info\-::\-T\-M\-P, tmp\-\_\-vars\-\_\-, String\-Utils\-::to\-Lower\-Case(), and vars\-\_\-.
+
+
+
+Referenced by A\-I\-G2\-C\-N\-F\-::init\-From\-Aig().
+
+\hypertarget{classVarManager_ac1a84b367c26dfc5ee9e612f7d61b288}{\index{Var\-Manager@{Var\-Manager}!instance@{instance}}
+\index{instance@{instance}!VarManager@{Var\-Manager}}
+\subsubsection[{instance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Var\-Manager} \& Var\-Manager\-::instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classVarManager_ac1a84b367c26dfc5ee9e612f7d61b288}
+
+
+Returns the one and only instance of this class. 
+
+This class is implemented as a Singleton. That is, you cannot instantiate objects of this class with the constructor. Use this method to obtain the one and only instance of this class.
+
+\begin{DoxyReturn}{Returns}
+The one and only instance of this class. 
+\end{DoxyReturn}
+
+
+Definition at line 41 of file Var\-Manager.\-cpp.
+
+
+
+References M\-A\-S\-S\-E\-R\-T, stack\-\_\-, and Var\-Manager().
+
+
+
+Referenced by I\-F\-M13\-Synth\-::add\-Blocked\-State(), Clause\-Minimizer\-Q\-B\-F\-::\-Clause\-Minimizer\-Q\-B\-F(), Counter\-Gen\-S\-A\-T\-::compress\-Bored(), Utils\-::compress\-State\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::compute\-Counterexample\-S\-A\-T(), Parallel\-Learner\-::compute\-Previous\-Trans(), I\-F\-M13\-Synth\-::compute\-Winning\-Region(), Template\-Synth\-::compute\-Winning\-Region(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One\-S\-A\-T(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Dep\-Q\-B\-F\-Api\-::debug\-Check\-Bloqqer\-Model(), Dep\-Q\-B\-F\-Api\-Inc\-::debug\-Check\-Bloqqer\-Model(), Ext\-Q\-B\-F\-Solver\-::dump\-Q\-B\-F(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), Utils\-::extract(), Utils\-::extract\-Next\-As\-Present(), Utils\-::extract\-Pres\-In(), Template\-Synth\-::find\-Win\-Reg\-C\-N\-F\-Templ(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), I\-F\-M13\-Explorer\-::\-I\-F\-M13\-Explorer(), I\-F\-M13\-Synth\-::\-I\-F\-M13\-Synth(), Dep\-Q\-B\-F\-Api\-::init\-Bloqqer(), Dep\-Q\-B\-F\-Api\-Inc\-::init\-Bloqqer(), Dep\-Q\-B\-F\-Api\-::init\-Dep\-Q\-B\-F(), Dep\-Q\-B\-F\-Api\-Inc\-::init\-Dep\-Q\-B\-F(), A\-I\-G2\-C\-N\-F\-::init\-From\-Aig(), Dep\-Q\-B\-F\-Api\-::is\-Sat\-Model(), Dep\-Q\-B\-F\-Api\-Inc\-::is\-Sat\-Model(), Learn\-Synth\-Q\-B\-F\-Ind\-::\-Learn\-Synth\-Q\-B\-F\-Ind(), Learn\-Synth\-S\-A\-T\-::\-Learn\-Synth\-S\-A\-T(), main(), C\-N\-F\-::negate(), Q\-B\-F\-Cert\-Impl\-Extractor\-::parse\-Q\-B\-F\-Cert\-Answer(), Learn\-Synth\-Q\-B\-F\-Inc\-::restrict\-To\-States(), Learn\-Synth\-Q\-B\-F\-::restrict\-To\-States(), Learn\-Synth\-Q\-B\-F\-Ind\-::restrict\-To\-States(), Learn\-Synth\-Q\-B\-F\-Inc\-::run(), Parallel\-Learner\-::run(), Learn\-Synth\-Q\-B\-F\-::run(), Learn\-Synth\-S\-A\-T\-::run(), Learn\-Synth\-Q\-B\-F\-Ind\-::run(), Dep\-Q\-B\-F\-Api\-Inc\-::start\-Incremental\-Session(), Utils\-::swap\-Present\-To\-Next(), C\-N\-F\-::swap\-Present\-To\-Next(), and Parallel\-Learner\-::trigger\-Explorer\-Restart().
+
+\hypertarget{classVarManager_abdc12c45522a97f361d736cf05fa1798}{\index{Var\-Manager@{Var\-Manager}!operator=@{operator=}}
+\index{operator=@{operator=}!VarManager@{Var\-Manager}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Var\-Manager}\& Var\-Manager\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Var\-Manager} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classVarManager_abdc12c45522a97f361d736cf05fa1798}
+
+
+Assignment operator. 
+
+The assignment operator is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the assignment, i.\-e, $\ast$this. 
+\end{DoxyReturn}
+\hypertarget{classVarManager_a6f2350621a62b97ca06d3469dc9d65f1}{\index{Var\-Manager@{Var\-Manager}!pop@{pop}}
+\index{pop@{pop}!VarManager@{Var\-Manager}}
+\subsubsection[{pop}]{\setlength{\rightskip}{0pt plus 5cm}void Var\-Manager\-::pop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classVarManager_a6f2350621a62b97ca06d3469dc9d65f1}
+
+
+Restores the \hyperlink{classVarManager}{Var\-Manager} to the last push and removes the data from the stack. 
+
+
+
+Definition at line 82 of file Var\-Manager.\-cpp.
+
+
+
+References stack\-\_\-.
+
+
+
+Referenced by Template\-Synth\-::compute\-Winning\-Region().
+
+\hypertarget{classVarManager_a8ca6373bb644693c2995e6473b47566f}{\index{Var\-Manager@{Var\-Manager}!push@{push}}
+\index{push@{push}!VarManager@{Var\-Manager}}
+\subsubsection[{push}]{\setlength{\rightskip}{0pt plus 5cm}void Var\-Manager\-::push (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classVarManager_a8ca6373bb644693c2995e6473b47566f}
+
+
+Pushes the current state of this object onto a stack. 
+
+The methods \hyperlink{classVarManager_a6f2350621a62b97ca06d3469dc9d65f1}{pop()} and \hyperlink{classVarManager_a127668367698d32229f58a7ecb9c2ba2}{reset\-To\-Last\-Push()} can then be used later to restore the pushed state again. This can be convenient for the following reason. Certain methods may create tons of temporary variables, which are not used after a certain point. All these temporary variables may slow down this class and may consume quite a bit of memory. The temporary variables can be discarded by calling a \hyperlink{classVarManager_a8ca6373bb644693c2995e6473b47566f}{push()} before and a \hyperlink{classVarManager_a6f2350621a62b97ca06d3469dc9d65f1}{pop()} or \hyperlink{classVarManager_a127668367698d32229f58a7ecb9c2ba2}{reset\-To\-Last\-Push()} after the code block that produces all the temporary variables. But there are other scenarios, of course. 
+
+Definition at line 55 of file Var\-Manager.\-cpp.
+
+
+
+References stack\-\_\-, and Var\-Manager().
+
+
+
+Referenced by Template\-Synth\-::compute\-Winning\-Region(), Learn\-Synth\-Q\-B\-F\-Inc\-::run(), Parallel\-Learner\-::run(), Learn\-Synth\-Q\-B\-F\-::run(), Learn\-Synth\-S\-A\-T\-::run(), and Learn\-Synth\-Q\-B\-F\-Ind\-::run().
+
+\hypertarget{classVarManager_a127668367698d32229f58a7ecb9c2ba2}{\index{Var\-Manager@{Var\-Manager}!reset\-To\-Last\-Push@{reset\-To\-Last\-Push}}
+\index{reset\-To\-Last\-Push@{reset\-To\-Last\-Push}!VarManager@{Var\-Manager}}
+\subsubsection[{reset\-To\-Last\-Push}]{\setlength{\rightskip}{0pt plus 5cm}void Var\-Manager\-::reset\-To\-Last\-Push (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classVarManager_a127668367698d32229f58a7ecb9c2ba2}
+
+
+Restores the \hyperlink{classVarManager}{Var\-Manager} to the last push but does not pop the stack. 
+
+That is, you can call \hyperlink{classVarManager_a127668367698d32229f58a7ecb9c2ba2}{reset\-To\-Last\-Push()} several times to restore the state of the \hyperlink{classVarManager}{Var\-Manager}. E.\-g. 
+\begin{DoxyCode}
+\hyperlink{classVarManager_ac1a84b367c26dfc5ee9e612f7d61b288}{VarManager::instance}().\hyperlink{classVarManager_a8ca6373bb644693c2995e6473b47566f}{push}()
+ \textcolor{comment}{// do something}
+\hyperlink{classVarManager_ac1a84b367c26dfc5ee9e612f7d61b288}{VarManager::instance}().\hyperlink{classVarManager_a127668367698d32229f58a7ecb9c2ba2}{resetToLastPush}()
+ \textcolor{comment}{// do something else}
+\hyperlink{classVarManager_ac1a84b367c26dfc5ee9e612f7d61b288}{VarManager::instance}().\hyperlink{classVarManager_a127668367698d32229f58a7ecb9c2ba2}{resetToLastPush}()
+ \textcolor{comment}{// and so on}
+\end{DoxyCode}
+ This is not possible with \hyperlink{classVarManager_a6f2350621a62b97ca06d3469dc9d65f1}{pop()}. 
+
+Definition at line 63 of file Var\-Manager.\-cpp.
+
+
+
+References aig\-\_\-to\-\_\-cnf\-\_\-lit\-\_\-map\-\_\-, ctrl\-\_\-vars\-\_\-, inputs\-\_\-, M\-A\-S\-S\-E\-R\-T, max\-\_\-aig\-\_\-var\-\_\-, max\-\_\-cnf\-\_\-var\-\_\-, next\-\_\-state\-\_\-vars\-\_\-, pres\-\_\-state\-\_\-vars\-\_\-, prev\-\_\-vars\-\_\-, stack\-\_\-, templs\-\_\-params\-\_\-, tmp\-\_\-vars\-\_\-, and vars\-\_\-.
+
+
+
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Learn\-Synth\-Q\-B\-F\-Inc\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Ind\-::recompute\-Check\-C\-N\-F(), and Parallel\-Learner\-::trigger\-Explorer\-Restart().
+
+\hypertarget{classVarManager_aca1c867d5be7a7f38b6884dbd399419e}{\index{Var\-Manager@{Var\-Manager}!to\-String@{to\-String}}
+\index{to\-String@{to\-String}!VarManager@{Var\-Manager}}
+\subsubsection[{to\-String}]{\setlength{\rightskip}{0pt plus 5cm}string Var\-Manager\-::to\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVarManager_aca1c867d5be7a7f38b6884dbd399419e}
+
+
+Returns a string containing all (or most) information stored in this object. 
+
+This is mainly useful for debugging.
+
+\begin{DoxyReturn}{Returns}
+A string containing all (or most) information stored in this object. 
+\end{DoxyReturn}
+
+
+Definition at line 344 of file Var\-Manager.\-cpp.
+
+
+
+References Var\-Info\-::\-C\-T\-R\-L, Var\-Info\-::get\-Kind(), Var\-Info\-::get\-Lit\-In\-A\-I\-G(), Var\-Info\-::get\-Lit\-In\-C\-N\-F(), Var\-Info\-::get\-Name(), Var\-Info\-::\-I\-N\-P\-U\-T, Var\-Info\-::\-N\-E\-X\-T\-\_\-\-S\-T\-A\-T\-E, Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, Var\-Info\-::\-P\-R\-E\-V, Var\-Info\-::\-T\-E\-M\-P\-L\-\_\-\-P\-A\-R\-A\-M\-S, Var\-Info\-::\-T\-M\-P, and vars\-\_\-.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classVarManager_abaa6d10a62f138bdc932a8e76c709849}{\index{Var\-Manager@{Var\-Manager}!aig\-\_\-to\-\_\-cnf\-\_\-lit\-\_\-map\-\_\-@{aig\-\_\-to\-\_\-cnf\-\_\-lit\-\_\-map\-\_\-}}
+\index{aig\-\_\-to\-\_\-cnf\-\_\-lit\-\_\-map\-\_\-@{aig\-\_\-to\-\_\-cnf\-\_\-lit\-\_\-map\-\_\-}!VarManager@{Var\-Manager}}
+\subsubsection[{aig\-\_\-to\-\_\-cnf\-\_\-lit\-\_\-map\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ Var\-Manager\-::aig\-\_\-to\-\_\-cnf\-\_\-lit\-\_\-map\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVarManager_abaa6d10a62f138bdc932a8e76c709849}
+
+
+A map from A\-I\-G\-E\-R literals to \hyperlink{classCNF}{C\-N\-F} literals. 
+
+This map is implemented as a vector because the number of A\-I\-G\-E\-R literals is defined by the input file and does not change. 
+
+Definition at line 284 of file Var\-Manager.\-h.
+
+
+
+Referenced by aig\-Lit\-To\-Cnf\-Lit(), clear(), init\-From\-Aig(), and reset\-To\-Last\-Push().
+
+\hypertarget{classVarManager_acb66edc1a4fc8ccc25321a59fe1668ff}{\index{Var\-Manager@{Var\-Manager}!ctrl\-\_\-vars\-\_\-@{ctrl\-\_\-vars\-\_\-}}
+\index{ctrl\-\_\-vars\-\_\-@{ctrl\-\_\-vars\-\_\-}!VarManager@{Var\-Manager}}
+\subsubsection[{ctrl\-\_\-vars\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ Var\-Manager\-::ctrl\-\_\-vars\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVarManager_acb66edc1a4fc8ccc25321a59fe1668ff}
+
+
+The \hyperlink{classCNF}{C\-N\-F} representation of all control signals (type Var\-Manager\-::\-C\-T\-R\-L). 
+
+
+
+Definition at line 294 of file Var\-Manager.\-h.
+
+
+
+Referenced by clear(), get\-All\-Non\-Temp\-Vars(), get\-Vars\-Of\-Type(), init\-From\-Aig(), and reset\-To\-Last\-Push().
+
+\hypertarget{classVarManager_a04609c1f6a3c87c10abcfbd3850a2f87}{\index{Var\-Manager@{Var\-Manager}!inputs\-\_\-@{inputs\-\_\-}}
+\index{inputs\-\_\-@{inputs\-\_\-}!VarManager@{Var\-Manager}}
+\subsubsection[{inputs\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ Var\-Manager\-::inputs\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVarManager_a04609c1f6a3c87c10abcfbd3850a2f87}
+
+
+The \hyperlink{classCNF}{C\-N\-F} representation of all (uncontrollable) inputs (type Var\-Manager\-::\-I\-N\-P\-U\-T). 
+
+
+
+Definition at line 289 of file Var\-Manager.\-h.
+
+
+
+Referenced by clear(), get\-All\-Non\-Temp\-Vars(), get\-Vars\-Of\-Type(), init\-From\-Aig(), and reset\-To\-Last\-Push().
+
+\hypertarget{classVarManager_af5877424c2c4ef563bd3278f85dd3c2d}{\index{Var\-Manager@{Var\-Manager}!max\-\_\-aig\-\_\-var\-\_\-@{max\-\_\-aig\-\_\-var\-\_\-}}
+\index{max\-\_\-aig\-\_\-var\-\_\-@{max\-\_\-aig\-\_\-var\-\_\-}!VarManager@{Var\-Manager}}
+\subsubsection[{max\-\_\-aig\-\_\-var\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int Var\-Manager\-::max\-\_\-aig\-\_\-var\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVarManager_af5877424c2c4ef563bd3278f85dd3c2d}
+
+
+The maximum index of all A\-I\-G\-E\-R variables. 
+
+That means\-: there exists the A\-I\-G\-E\-R-\/variables 1,2,3,...,max\-\_\-aig\-\_\-var\-\_\-. The exists no A\-I\-G\-E\-R-\/variable with index greater than max\-\_\-aig\-\_\-var\-\_\-. 
+
+Definition at line 276 of file Var\-Manager.\-h.
+
+
+
+Referenced by clear(), get\-Max\-A\-I\-G\-Var(), init\-From\-Aig(), and reset\-To\-Last\-Push().
+
+\hypertarget{classVarManager_aa790c99974d2aa97ed1848e49c4c82c6}{\index{Var\-Manager@{Var\-Manager}!max\-\_\-cnf\-\_\-var\-\_\-@{max\-\_\-cnf\-\_\-var\-\_\-}}
+\index{max\-\_\-cnf\-\_\-var\-\_\-@{max\-\_\-cnf\-\_\-var\-\_\-}!VarManager@{Var\-Manager}}
+\subsubsection[{max\-\_\-cnf\-\_\-var\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int Var\-Manager\-::max\-\_\-cnf\-\_\-var\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVarManager_aa790c99974d2aa97ed1848e49c4c82c6}
+
+
+The maximum index of all \hyperlink{classCNF}{C\-N\-F} variables. 
+
+That means\-: there exists the C\-N\-F-\/variables 1,2,3,...,max\-\_\-cnf\-\_\-var\-\_\-. The exists no C\-N\-F-\/variable with index greater than max\-\_\-cnf\-\_\-var\-\_\-. 
+
+Definition at line 268 of file Var\-Manager.\-h.
+
+
+
+Referenced by clear(), create\-Fresh\-Prev\-Var(), create\-Fresh\-Templ\-Param(), create\-Fresh\-Tmp\-Var(), get\-Max\-C\-N\-F\-Var(), init\-From\-Aig(), and reset\-To\-Last\-Push().
+
+\hypertarget{classVarManager_a2a697fcb384c73821d88104ac904f4e9}{\index{Var\-Manager@{Var\-Manager}!next\-\_\-state\-\_\-vars\-\_\-@{next\-\_\-state\-\_\-vars\-\_\-}}
+\index{next\-\_\-state\-\_\-vars\-\_\-@{next\-\_\-state\-\_\-vars\-\_\-}!VarManager@{Var\-Manager}}
+\subsubsection[{next\-\_\-state\-\_\-vars\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ Var\-Manager\-::next\-\_\-state\-\_\-vars\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVarManager_a2a697fcb384c73821d88104ac904f4e9}
+
+
+The \hyperlink{classCNF}{C\-N\-F} representation of all next-\/state variables (type Var\-Manager\-::\-N\-E\-X\-T\-\_\-\-S\-T\-A\-T\-E). 
+
+\hyperlink{classVarManager_a25edf00cec0e31f140aabdf3a245a54c}{pres\-\_\-state\-\_\-vars\-\_\-} and \hyperlink{classVarManager_a2a697fcb384c73821d88104ac904f4e9}{next\-\_\-state\-\_\-vars\-\_\-} have the same length. \hyperlink{classVarManager_a2a697fcb384c73821d88104ac904f4e9}{next\-\_\-state\-\_\-vars\-\_\-} contains the next-\/state copies of all \hyperlink{classVarManager_a25edf00cec0e31f140aabdf3a245a54c}{pres\-\_\-state\-\_\-vars\-\_\-}. 
+
+Definition at line 307 of file Var\-Manager.\-h.
+
+
+
+Referenced by clear(), get\-All\-Non\-Temp\-Vars(), get\-Next\-Error\-State\-Var(), get\-Vars\-Of\-Type(), init\-From\-Aig(), and reset\-To\-Last\-Push().
+
+\hypertarget{classVarManager_a25edf00cec0e31f140aabdf3a245a54c}{\index{Var\-Manager@{Var\-Manager}!pres\-\_\-state\-\_\-vars\-\_\-@{pres\-\_\-state\-\_\-vars\-\_\-}}
+\index{pres\-\_\-state\-\_\-vars\-\_\-@{pres\-\_\-state\-\_\-vars\-\_\-}!VarManager@{Var\-Manager}}
+\subsubsection[{pres\-\_\-state\-\_\-vars\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ Var\-Manager\-::pres\-\_\-state\-\_\-vars\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVarManager_a25edf00cec0e31f140aabdf3a245a54c}
+
+
+The \hyperlink{classCNF}{C\-N\-F} representation of all state variables (type Var\-Manager\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E). 
+
+
+
+Definition at line 299 of file Var\-Manager.\-h.
+
+
+
+Referenced by clear(), get\-All\-Non\-Temp\-Vars(), get\-Pres\-Error\-State\-Var(), get\-Vars\-Of\-Type(), init\-From\-Aig(), and reset\-To\-Last\-Push().
+
+\hypertarget{classVarManager_add744e4a073f7fd7bc595b053ac94774}{\index{Var\-Manager@{Var\-Manager}!prev\-\_\-vars\-\_\-@{prev\-\_\-vars\-\_\-}}
+\index{prev\-\_\-vars\-\_\-@{prev\-\_\-vars\-\_\-}!VarManager@{Var\-Manager}}
+\subsubsection[{prev\-\_\-vars\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ Var\-Manager\-::prev\-\_\-vars\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVarManager_add744e4a073f7fd7bc595b053ac94774}
+
+
+The \hyperlink{classCNF}{C\-N\-F} representation of all previous-\/step variables (type Var\-Manager\-::\-P\-R\-E\-V). 
+
+
+
+Definition at line 322 of file Var\-Manager.\-h.
+
+
+
+Referenced by clear(), create\-Fresh\-Prev\-Var(), get\-All\-Non\-Temp\-Vars(), get\-Vars\-Of\-Type(), and reset\-To\-Last\-Push().
+
+\hypertarget{classVarManager_aba622884c64d1a16cd086b34cb71acd8}{\index{Var\-Manager@{Var\-Manager}!stack\-\_\-@{stack\-\_\-}}
+\index{stack\-\_\-@{stack\-\_\-}!VarManager@{Var\-Manager}}
+\subsubsection[{stack\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Var\-Manager} $\ast$ $>$ Var\-Manager\-::stack\-\_\-\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classVarManager_aba622884c64d1a16cd086b34cb71acd8}
+A stack for the instances of this object.
+
+This is a singleton. However, we allow \hyperlink{classVarManager_a8ca6373bb644693c2995e6473b47566f}{push()} and \hyperlink{classVarManager_a6f2350621a62b97ca06d3469dc9d65f1}{pop()}, so we store the stack of \hyperlink{classVarManager}{Var\-Manager} configurations on a stack. The current \hyperlink{classVarManager}{Var\-Manager} is always located at the top of the stack (the end of the vector). 
+
+Definition at line 384 of file Var\-Manager.\-h.
+
+
+
+Referenced by instance(), pop(), push(), and reset\-To\-Last\-Push().
+
+\hypertarget{classVarManager_aea1a2e16d5a0ff433d47a4f28cc2ae3b}{\index{Var\-Manager@{Var\-Manager}!templs\-\_\-params\-\_\-@{templs\-\_\-params\-\_\-}}
+\index{templs\-\_\-params\-\_\-@{templs\-\_\-params\-\_\-}!VarManager@{Var\-Manager}}
+\subsubsection[{templs\-\_\-params\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ Var\-Manager\-::templs\-\_\-params\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVarManager_aea1a2e16d5a0ff433d47a4f28cc2ae3b}
+
+
+The \hyperlink{classCNF}{C\-N\-F} representation of all parameters (type Var\-Manager\-::\-T\-E\-M\-P\-L\-\_\-\-P\-A\-R\-A\-M\-S). 
+
+
+
+Definition at line 317 of file Var\-Manager.\-h.
+
+
+
+Referenced by clear(), create\-Fresh\-Templ\-Param(), get\-All\-Non\-Temp\-Vars(), get\-Vars\-Of\-Type(), reset\-To\-Last\-Push(), and Var\-Manager().
+
+\hypertarget{classVarManager_aa22f9522aa27237a2dee30503c20e45f}{\index{Var\-Manager@{Var\-Manager}!tmp\-\_\-vars\-\_\-@{tmp\-\_\-vars\-\_\-}}
+\index{tmp\-\_\-vars\-\_\-@{tmp\-\_\-vars\-\_\-}!VarManager@{Var\-Manager}}
+\subsubsection[{tmp\-\_\-vars\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ Var\-Manager\-::tmp\-\_\-vars\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVarManager_aa22f9522aa27237a2dee30503c20e45f}
+
+
+The \hyperlink{classCNF}{C\-N\-F} representation of all temporary variables (type Var\-Manager\-::\-T\-M\-P). 
+
+
+
+Definition at line 312 of file Var\-Manager.\-h.
+
+
+
+Referenced by clear(), create\-Fresh\-Tmp\-Var(), get\-Vars\-Of\-Type(), init\-From\-Aig(), and reset\-To\-Last\-Push().
+
+\hypertarget{classVarManager_a22299c4735b0191e0f81048882692a45}{\index{Var\-Manager@{Var\-Manager}!vars\-\_\-@{vars\-\_\-}}
+\index{vars\-\_\-@{vars\-\_\-}!VarManager@{Var\-Manager}}
+\subsubsection[{vars\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}map$<$int, {\bf Var\-Info}$>$ Var\-Manager\-::vars\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVarManager_a22299c4735b0191e0f81048882692a45}
+
+
+All variables created so far. 
+
+The variables are stored in a map where the key is the C\-N\-F-\/representation of the variable, and the value is a \hyperlink{classVarInfo}{Var\-Info} object storing additional information to this variable. 
+
+Definition at line 260 of file Var\-Manager.\-h.
+
+
+
+Referenced by clear(), create\-Fresh\-Prev\-Var(), create\-Fresh\-Templ\-Param(), create\-Fresh\-Tmp\-Var(), get\-Info(), init\-From\-Aig(), reset\-To\-Last\-Push(), and to\-String().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{VarManager_8h}{Var\-Manager.\-h}\item 
+src/\hyperlink{VarManager_8cpp}{Var\-Manager.\-cpp}\end{DoxyCompactItemize}

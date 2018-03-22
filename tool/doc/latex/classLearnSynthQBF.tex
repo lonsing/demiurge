@@ -1,0 +1,829 @@
+\hypertarget{classLearnSynthQBF}{\section{Learn\-Synth\-Q\-B\-F Class Reference}
+\label{classLearnSynthQBF}\index{Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}}
+}
+
+
+Implements a learning-\/based synthesis using a Q\-B\-F solver.  
+
+
+
+
+{\ttfamily \#include $<$Learn\-Synth\-Q\-B\-F.\-h$>$}
+
+Inheritance diagram for Learn\-Synth\-Q\-B\-F\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classLearnSynthQBF}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLearnSynthQBF_ae961d7172f13d52df1b2a7801eb0b0e9}{Learn\-Synth\-Q\-B\-F} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classLearnSynthQBF_a692e516f27fd78a44884b715688bd7d9}{$\sim$\-Learn\-Synth\-Q\-B\-F} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classLearnSynthQBF_aed85bb2fe317a5fdc7eef71fe598c606}{run} ()
+\begin{DoxyCompactList}\small\item\em Executes this back-\/end. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classLearnSynthQBF_ae8219ab3e4987775e1d6a006a9d38f4d}{compute\-Winning\-Region} ()
+\begin{DoxyCompactList}\small\item\em Computes the winning region and stores the result in \hyperlink{classLearnSynthQBF_a9c6b41f7df5f4ed4bfc5930136fc1152}{winning\-\_\-region\-\_\-}. \end{DoxyCompactList}\item 
+bool \hyperlink{classLearnSynthQBF_ac538cd53082bad1c8c45a7e178dfa4cb}{compute\-Winning\-Region\-One} ()
+\begin{DoxyCompactList}\small\item\em Uses the standard method to compute the winning region. \end{DoxyCompactList}\item 
+bool \hyperlink{classLearnSynthQBF_af8c897056a5018ff1717ea2d76f6cd8f}{compute\-Winning\-Region\-One\-S\-A\-T} ()
+\begin{DoxyCompactList}\small\item\em Computes the winning region, using two S\-A\-T-\/solvers to compute counterexamples. \end{DoxyCompactList}\item 
+bool \hyperlink{classLearnSynthQBF_a09a9ecb2b77c540cdcc327a35cd15c18}{compute\-Winning\-Region\-All} ()
+\begin{DoxyCompactList}\small\item\em Computes the winning region, always computing all counterexample generalizations. \end{DoxyCompactList}\item 
+bool \hyperlink{classLearnSynthQBF_a04b8dd6e26d646a6f197afb362168408}{compute\-Counterexample\-Q\-B\-F} (vector$<$ int $>$ \&ce)
+\begin{DoxyCompactList}\small\item\em Computes a counterexample-\/state using a Q\-B\-F-\/solver. \end{DoxyCompactList}\item 
+bool \hyperlink{classLearnSynthQBF_a3221800bf3f040b66b8a790bab4c82b5}{compute\-Counterexample\-S\-A\-T} (vector$<$ int $>$ \&ce)
+\begin{DoxyCompactList}\small\item\em Computes a counterexample-\/state using two competing S\-A\-T-\/solvers. \end{DoxyCompactList}\item 
+bool \hyperlink{classLearnSynthQBF_a73856a79be3fb7e260485bcda7c31f80}{compute\-Blocking\-Clause} (vector$<$ int $>$ \&ce, vector$<$ int $>$ \&blocking\-\_\-clause)
+\begin{DoxyCompactList}\small\item\em Computes a blocking clause for a counterexample. \end{DoxyCompactList}\item 
+bool \hyperlink{classLearnSynthQBF_affa7b4583cc17d01f4c82fd57e763e1f}{compute\-All\-Blocking\-Clauses} (vector$<$ int $>$ \&ce, vector$<$ vector$<$ int $>$ $>$ \&blocking\-\_\-clauses)
+\begin{DoxyCompactList}\small\item\em Computes all minimal blocking clauses for a counterexample. \end{DoxyCompactList}\item 
+void \hyperlink{classLearnSynthQBF_adf5b9d45d6f69575ed5257fe9a869893}{reduce\-Existing\-Clauses} ()
+\begin{DoxyCompactList}\small\item\em Tries to drop literals from clauses in the winning region. \end{DoxyCompactList}\item 
+void \hyperlink{classLearnSynthQBF_aa46d02268fe5ea73789280058ec75136}{recompute\-Check\-C\-N\-F} (bool take\-\_\-small\-\_\-win=true)
+\begin{DoxyCompactList}\small\item\em Recomputes the \hyperlink{classCNF}{C\-N\-F} (of the Q\-B\-F) that is used for computing counterexamples. \end{DoxyCompactList}\item 
+void \hyperlink{classLearnSynthQBF_aa1c6d16c3db9057bfa515b06b7a7ffe9}{recompute\-Gen\-C\-N\-F} (bool take\-\_\-small\-\_\-win=true)
+\begin{DoxyCompactList}\small\item\em Recomputes the \hyperlink{classCNF}{C\-N\-F} (of the Q\-B\-F) that is used for generalizing counterexamples. \end{DoxyCompactList}\item 
+void \hyperlink{classLearnSynthQBF_a704edaade039b09520815b581fe98b47}{restrict\-To\-States} (vector$<$ int $>$ \&vec) const 
+\begin{DoxyCompactList}\small\item\em Restricts a vector of literals (a cube or clause) to state-\/variables only. \end{DoxyCompactList}\item 
+bool \hyperlink{classLearnSynthQBF_a9eed607741968f74e31976e8ca40a62f}{generalize\-Counterexample} (vector$<$ int $>$ \&ce, bool check\-\_\-sat=true) const 
+\begin{DoxyCompactList}\small\item\em Generalizes a counterexample-\/state by dropping literals. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCNF}{C\-N\-F} \hyperlink{classLearnSynthQBF_a9c6b41f7df5f4ed4bfc5930136fc1152}{winning\-\_\-region\-\_\-}
+\begin{DoxyCompactList}\small\item\em The current over-\/approximation of the winning region. \end{DoxyCompactList}\item 
+\hyperlink{classCNF}{C\-N\-F} \hyperlink{classLearnSynthQBF_aa9b460cdc140c3969a32ea77982181d2}{winning\-\_\-region\-\_\-large\-\_\-}
+\begin{DoxyCompactList}\small\item\em The current over-\/approximation of the winning region in an uncompressed form. \end{DoxyCompactList}\item 
+\hyperlink{classLearnStatisticsQBF}{Learn\-Statistics\-Q\-B\-F} \hyperlink{classLearnSynthQBF_a85c46943042fdcfd672ce2251ef49cd9}{statistics\-\_\-}
+\begin{DoxyCompactList}\small\item\em Stores and maintains statistics and performance measures. \end{DoxyCompactList}\item 
+\hyperlink{classQBFSolver}{Q\-B\-F\-Solver} $\ast$ \hyperlink{classLearnSynthQBF_a8b4c4279f543a0adea992fccf22009f4}{qbf\-\_\-solver\-\_\-}
+\begin{DoxyCompactList}\small\item\em The Q\-B\-F-\/solver used for all queries. \end{DoxyCompactList}\item 
+vector$<$ pair$<$ \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cf}{Var\-Info\-::\-Var\-Kind}, \\*
+\hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Q\-B\-F\-Solver\-::\-Quant} $>$ $>$ \hyperlink{classLearnSynthQBF_afafe15fef745bb97ac36741cbe00d4c1}{check\-\_\-quant\-\_\-}
+\begin{DoxyCompactList}\small\item\em The quantifier prefix of the Q\-B\-F for computing counterexamples. \end{DoxyCompactList}\item 
+\hyperlink{classCNF}{C\-N\-F} \hyperlink{classLearnSynthQBF_afe20b32b1b8c07a237322825c91a36f0}{check\-\_\-cnf\-\_\-}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classCNF}{C\-N\-F} matrix of the Q\-B\-F for computing counterexamples. \end{DoxyCompactList}\item 
+vector$<$ pair$<$ \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cf}{Var\-Info\-::\-Var\-Kind}, \\*
+\hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Q\-B\-F\-Solver\-::\-Quant} $>$ $>$ \hyperlink{classLearnSynthQBF_a2a6687cca6f45b9684d3bd6e7cc8c20c}{gen\-\_\-quant\-\_\-}
+\begin{DoxyCompactList}\small\item\em The quantifier prefix of the Q\-B\-F for generalizing counterexamples. \end{DoxyCompactList}\item 
+\hyperlink{classCNF}{C\-N\-F} \hyperlink{classLearnSynthQBF_adb0678a7c034958c31bd5d92615e9859}{generalize\-\_\-clause\-\_\-cnf\-\_\-}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classCNF}{C\-N\-F} matrix of the Q\-B\-F for generalizing counterexamples. \end{DoxyCompactList}\item 
+\hyperlink{classSatSolver}{Sat\-Solver} $\ast$ \hyperlink{classLearnSynthQBF_ada2e8c87c0ca0d83c484d6181ea5a788}{solver\-\_\-i\-\_\-}
+\begin{DoxyCompactList}\small\item\em The S\-A\-T-\/solver for antagonist moves when using \hyperlink{classLearnSynthQBF_a3221800bf3f040b66b8a790bab4c82b5}{compute\-Counterexample\-S\-A\-T()}. \end{DoxyCompactList}\item 
+\hyperlink{classSatSolver}{Sat\-Solver} $\ast$ \hyperlink{classLearnSynthQBF_a14f20d46129ad1fe2db8272348a7e589}{solver\-\_\-ctrl\-\_\-}
+\begin{DoxyCompactList}\small\item\em The S\-A\-T-\/solver for protagonist moves when using \hyperlink{classLearnSynthQBF_a3221800bf3f040b66b8a790bab4c82b5}{compute\-Counterexample\-S\-A\-T()}. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classLearnSynthQBF_a227ff215ffb411e57686aa3d8e7f7026}{incremental\-\_\-vars\-\_\-to\-\_\-keep\-\_\-}
+\begin{DoxyCompactList}\small\item\em A list of variables the S\-A\-T-\/solver should not optimize away. \end{DoxyCompactList}\item 
+bool \hyperlink{classLearnSynthQBF_ae65774a2b9e6137d6ff45cbf755d4843}{solver\-\_\-i\-\_\-precise\-\_\-}
+\begin{DoxyCompactList}\small\item\em A flag indicating if solver\-\_\-i\-\_\- is precise. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLearnSynthQBF_ad8d67501811be3fc0366e19df7f8d10a}{Learn\-Synth\-Q\-B\-F} (const \hyperlink{classLearnSynthQBF}{Learn\-Synth\-Q\-B\-F} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classLearnSynthQBF}{Learn\-Synth\-Q\-B\-F} \& \hyperlink{classLearnSynthQBF_a143bc7b32f7511ddbdbdec01c2e43578}{operator=} (const \hyperlink{classLearnSynthQBF}{Learn\-Synth\-Q\-B\-F} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implements a learning-\/based synthesis using a Q\-B\-F solver. 
+
+The computation of the winning region works as follows. We start with the initial guess that the winning region F is the set of all state states P. In a loop, we first compute a counterexample to the correctness of this guess in form of a state from which the antagonist (controlling the uncontrollable inputs i) can enforce to leave F. The state is represented as a cube over all state-\/variables. Next, this state-\/cube is generalized into a larger region of states by dropping literals as long as the cube contains only states that are winning for the antagonist (and hence must be removed or have already been removed from F). Finally, the generalized cube is removed from F. The next iteration checks for counterexample-\/state on the refined F. This is repeated until no more counterexample-\/states exist (then the specification is realizable and F is a winning region) or the initial state has been removed from F (in which case the specification is unrealizable).
+
+This procedure is implemented in \hyperlink{classLearnSynthQBF_ac538cd53082bad1c8c45a7e178dfa4cb}{compute\-Winning\-Region\-One()}. Some variants of this procedure are implemented in other methods of this class. The method \hyperlink{classLearnSynthQBF_af8c897056a5018ff1717ea2d76f6cd8f}{compute\-Winning\-Region\-One\-S\-A\-T()} uses two S\-A\-T solvers instead of a Q\-B\-F solver to compute a counterexample-\/state. The method \hyperlink{classLearnSynthQBF_a09a9ecb2b77c540cdcc327a35cd15c18}{compute\-Winning\-Region\-All()} computes (and excludes) not only one generalization of the counterexample but all generalizations. Command-\/line parameters (--mode) decide which of these methods to use.
+
+Finally the \hyperlink{classQBFCertImplExtractor}{Q\-B\-F\-Cert\-Impl\-Extractor} is used to extract a circuit.
+
+\begin{DoxyAuthor}{Author}
+Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0.\-0 
+\end{DoxyVersion}
+
+
+Definition at line 71 of file Learn\-Synth\-Q\-B\-F.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classLearnSynthQBF_ae961d7172f13d52df1b2a7801eb0b0e9}{\index{Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}!Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}}
+\index{Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}!LearnSynthQBF@{Learn\-Synth\-Q\-B\-F}}
+\subsubsection[{Learn\-Synth\-Q\-B\-F}]{\setlength{\rightskip}{0pt plus 5cm}Learn\-Synth\-Q\-B\-F\-::\-Learn\-Synth\-Q\-B\-F (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLearnSynthQBF_ae961d7172f13d52df1b2a7801eb0b0e9}
+
+
+Constructor. 
+
+
+
+Definition at line 40 of file Learn\-Synth\-Q\-B\-F.\-cpp.
+
+
+
+References Q\-B\-F\-Solver\-::\-A, check\-\_\-quant\-\_\-, Var\-Info\-::\-C\-T\-R\-L, Q\-B\-F\-Solver\-::\-E, gen\-\_\-quant\-\_\-, Sat\-Solver\-::inc\-Add\-C\-N\-F(), incremental\-\_\-vars\-\_\-to\-\_\-keep\-\_\-, Var\-Info\-::\-I\-N\-P\-U\-T, A\-I\-G2\-C\-N\-F\-::instance(), Var\-Info\-::\-N\-E\-X\-T\-\_\-\-S\-T\-A\-T\-E, Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, solver\-\_\-ctrl\-\_\-, solver\-\_\-i\-\_\-, solver\-\_\-i\-\_\-precise\-\_\-, Sat\-Solver\-::start\-Incremental\-Session(), and Var\-Info\-::\-T\-M\-P.
+
+\hypertarget{classLearnSynthQBF_a692e516f27fd78a44884b715688bd7d9}{\index{Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}!$\sim$\-Learn\-Synth\-Q\-B\-F@{$\sim$\-Learn\-Synth\-Q\-B\-F}}
+\index{$\sim$\-Learn\-Synth\-Q\-B\-F@{$\sim$\-Learn\-Synth\-Q\-B\-F}!LearnSynthQBF@{Learn\-Synth\-Q\-B\-F}}
+\subsubsection[{$\sim$\-Learn\-Synth\-Q\-B\-F}]{\setlength{\rightskip}{0pt plus 5cm}Learn\-Synth\-Q\-B\-F\-::$\sim$\-Learn\-Synth\-Q\-B\-F (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classLearnSynthQBF_a692e516f27fd78a44884b715688bd7d9}
+
+
+Destructor. 
+
+
+
+Definition at line 78 of file Learn\-Synth\-Q\-B\-F.\-cpp.
+
+
+
+References qbf\-\_\-solver\-\_\-, solver\-\_\-ctrl\-\_\-, and solver\-\_\-i\-\_\-.
+
+\hypertarget{classLearnSynthQBF_ad8d67501811be3fc0366e19df7f8d10a}{\index{Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}!Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}}
+\index{Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}!LearnSynthQBF@{Learn\-Synth\-Q\-B\-F}}
+\subsubsection[{Learn\-Synth\-Q\-B\-F}]{\setlength{\rightskip}{0pt plus 5cm}Learn\-Synth\-Q\-B\-F\-::\-Learn\-Synth\-Q\-B\-F (
+\begin{DoxyParamCaption}
+\item[{const {\bf Learn\-Synth\-Q\-B\-F} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classLearnSynthQBF_ad8d67501811be3fc0366e19df7f8d10a}
+
+
+Copy constructor. 
+
+The copy constructor is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classLearnSynthQBF_affa7b4583cc17d01f4c82fd57e763e1f}{\index{Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}!compute\-All\-Blocking\-Clauses@{compute\-All\-Blocking\-Clauses}}
+\index{compute\-All\-Blocking\-Clauses@{compute\-All\-Blocking\-Clauses}!LearnSynthQBF@{Learn\-Synth\-Q\-B\-F}}
+\subsubsection[{compute\-All\-Blocking\-Clauses}]{\setlength{\rightskip}{0pt plus 5cm}bool Learn\-Synth\-Q\-B\-F\-::compute\-All\-Blocking\-Clauses (
+\begin{DoxyParamCaption}
+\item[{vector$<$ int $>$ \&}]{ce, }
+\item[{vector$<$ vector$<$ int $>$ $>$ \&}]{blocking\-\_\-clauses}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthQBF_affa7b4583cc17d01f4c82fd57e763e1f}
+
+
+Computes all minimal blocking clauses for a counterexample. 
+
+This method is like \hyperlink{classLearnSynthQBF_a73856a79be3fb7e260485bcda7c31f80}{compute\-Blocking\-Clause()}. However, instead of computing just one generalization of the counterexample (and the corresponding blocking clause) it computes all minimal generalizations (and corresponding blocking clauses). It does so using a simple hitting set tree algorithm as presented by \char`\"{}\-Raymond Reiter\-: A Theory of Diagnosis
+from First Principles. Artif. Intell. 32(1)\-: 57-\/95 (1987)\char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ce} & The counterexample to block. It is a full or partial cube over the state variables. \\
+\hline
+{\em blocking\-\_\-clauses} & An empty vector. It is used to store the computed blocking clauses. The counterexample falsifies all blocking clauses in this vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+False if one of the blocking clauses blocks the initial state. This means that the initial state is removed from the winning region, i.\-e., the specification is unrealizable. True is returned otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 449 of file Learn\-Synth\-Q\-B\-F.\-cpp.
+
+
+
+References C\-N\-F\-::add\-Clause(), Utils\-::contains\-Init(), generalize\-\_\-clause\-\_\-cnf\-\_\-, generalize\-Counterexample(), Utils\-::intersection\-Empty(), Utils\-::negate\-Literals(), Learn\-Statistics\-Q\-B\-F\-::notify\-After\-Cube\-Min(), Learn\-Statistics\-Q\-B\-F\-::notify\-Before\-Cube\-Min(), Learn\-Statistics\-Q\-B\-F\-::notify\-Cube\-Min(), Utils\-::remove(), statistics\-\_\-, and Utils\-::swap\-Present\-To\-Next().
+
+
+
+Referenced by compute\-Winning\-Region\-All().
+
+\hypertarget{classLearnSynthQBF_a73856a79be3fb7e260485bcda7c31f80}{\index{Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}!compute\-Blocking\-Clause@{compute\-Blocking\-Clause}}
+\index{compute\-Blocking\-Clause@{compute\-Blocking\-Clause}!LearnSynthQBF@{Learn\-Synth\-Q\-B\-F}}
+\subsubsection[{compute\-Blocking\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}bool Learn\-Synth\-Q\-B\-F\-::compute\-Blocking\-Clause (
+\begin{DoxyParamCaption}
+\item[{vector$<$ int $>$ \&}]{ce, }
+\item[{vector$<$ int $>$ \&}]{blocking\-\_\-clause}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthQBF_a73856a79be3fb7e260485bcda7c31f80}
+
+
+Computes a blocking clause for a counterexample. 
+
+A naive blocking clause would be the plain negation of the counterexample. However, in order to boost the overall performance of the algorithm, we generalize the counterexample before we negate it. This is done by dropping literals from the counterexample-\/cube as long as all states in the cube are counterexamples (or have already been removed from the winning region). The method also checks if the blocking clause blocks the initial state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ce} & The counterexample to block. It is a full or partial cube over the state variables. \\
+\hline
+{\em blocking\-\_\-clause} & An empty vector. It is used to store the computed blocking clause. The counterexample falsifies the blocking clause. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+False if the blocking clause blocks the initial state. This means that the initial state is removed from the winning region, i.\-e., the specification is unrealizable. True is returned otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 431 of file Learn\-Synth\-Q\-B\-F.\-cpp.
+
+
+
+References Utils\-::contains\-Init(), generalize\-Counterexample(), L\-\_\-\-D\-B\-G, Utils\-::negate\-Literals(), Learn\-Statistics\-Q\-B\-F\-::notify\-After\-Cube\-Min(), Learn\-Statistics\-Q\-B\-F\-::notify\-Before\-Cube\-Min(), Utils\-::randomize(), and statistics\-\_\-.
+
+
+
+Referenced by compute\-Winning\-Region\-One(), and compute\-Winning\-Region\-One\-S\-A\-T().
+
+\hypertarget{classLearnSynthQBF_a04b8dd6e26d646a6f197afb362168408}{\index{Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}!compute\-Counterexample\-Q\-B\-F@{compute\-Counterexample\-Q\-B\-F}}
+\index{compute\-Counterexample\-Q\-B\-F@{compute\-Counterexample\-Q\-B\-F}!LearnSynthQBF@{Learn\-Synth\-Q\-B\-F}}
+\subsubsection[{compute\-Counterexample\-Q\-B\-F}]{\setlength{\rightskip}{0pt plus 5cm}bool Learn\-Synth\-Q\-B\-F\-::compute\-Counterexample\-Q\-B\-F (
+\begin{DoxyParamCaption}
+\item[{vector$<$ int $>$ \&}]{ce}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthQBF_a04b8dd6e26d646a6f197afb362168408}
+
+
+Computes a counterexample-\/state using a Q\-B\-F-\/solver. 
+
+'Counterexample' here means\-: counterexample to the correctness of the current guess of the winning region. A counterexample is simply a state (represented as cube over the state variables) from which the antagonist can enforce to leave the winning region. This method uses a single call to a Q\-B\-F-\/solver in order to find such a state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ce} & An empty vector. The computed counterexample is stored in this vector in form of a cube over the state variables. The cube does not necessarily contain all state variables. If some state variables are irrelevant, then they may be omitted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a counterexample was found, false if no counterexample exists. 
+\end{DoxyReturn}
+
+
+Definition at line 332 of file Learn\-Synth\-Q\-B\-F.\-cpp.
+
+
+
+References check\-\_\-cnf\-\_\-, check\-\_\-quant\-\_\-, Q\-B\-F\-Solver\-::is\-Sat\-Model(), Learn\-Statistics\-Q\-B\-F\-::notify\-After\-Compute\-Cube(), Learn\-Statistics\-Q\-B\-F\-::notify\-Before\-Compute\-Cube(), qbf\-\_\-solver\-\_\-, restrict\-To\-States(), and statistics\-\_\-.
+
+
+
+Referenced by compute\-Winning\-Region\-All(), and compute\-Winning\-Region\-One().
+
+\hypertarget{classLearnSynthQBF_a3221800bf3f040b66b8a790bab4c82b5}{\index{Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}!compute\-Counterexample\-S\-A\-T@{compute\-Counterexample\-S\-A\-T}}
+\index{compute\-Counterexample\-S\-A\-T@{compute\-Counterexample\-S\-A\-T}!LearnSynthQBF@{Learn\-Synth\-Q\-B\-F}}
+\subsubsection[{compute\-Counterexample\-S\-A\-T}]{\setlength{\rightskip}{0pt plus 5cm}bool Learn\-Synth\-Q\-B\-F\-::compute\-Counterexample\-S\-A\-T (
+\begin{DoxyParamCaption}
+\item[{vector$<$ int $>$ \&}]{ce}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthQBF_a3221800bf3f040b66b8a790bab4c82b5}
+
+
+Computes a counterexample-\/state using two competing S\-A\-T-\/solvers. 
+
+'Counterexample' here means\-: counterexample to the correctness of the current guess of the winning region. A counterexample is simply a state (represented as cube over the state variables) from which the antagonist can enforce to leave the winning region. This method uses two competing S\-A\-T-\/solvers in order to find such a state. First, solver \hyperlink{classLearnSynthQBF_ada2e8c87c0ca0d83c484d6181ea5a788}{solver\-\_\-i\-\_\-} finds some input values i that could be chosen by the antagonist in order to leave the \hyperlink{classLearnSynthQBF_a9c6b41f7df5f4ed4bfc5930136fc1152}{winning\-\_\-region\-\_\-}. Next, solver\-\_\-ctrl\-\_\- checks if there exists a response of the protagonist to chose control values c such that the winning region is not left. If no such response exists, then we have found a counterexample. Otherwise, we exclude the state-\/input combination found by \hyperlink{classLearnSynthQBF_ada2e8c87c0ca0d83c484d6181ea5a788}{solver\-\_\-i\-\_\-} and try again.
+
+There is also an optimization which allows to use \hyperlink{classLearnSynthQBF_ada2e8c87c0ca0d83c484d6181ea5a788}{solver\-\_\-i\-\_\-} incrementally\-: The next state-\/copy of the winning region is updated only lazily.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ce} & An empty vector. The computed counterexample is stored in this vector in form of a cube over the state variables. The cube does not necessarily contain all state variables. If some state variables are irrelevant, then they may be omitted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a counterexample was found, false if no counterexample exists. 
+\end{DoxyReturn}
+
+
+Definition at line 344 of file Learn\-Synth\-Q\-B\-F.\-cpp.
+
+
+
+References C\-N\-F\-::add\-C\-N\-F(), Utils\-::compress\-State\-C\-N\-F(), Var\-Info\-::\-C\-T\-R\-L, Utils\-::extract(), Var\-Manager\-::get\-Vars\-Of\-Type(), Sat\-Solver\-::inc\-Add\-Clause(), Sat\-Solver\-::inc\-Add\-C\-N\-F(), Sat\-Solver\-::inc\-Is\-Sat\-Model\-Or\-Core(), incremental\-\_\-vars\-\_\-to\-\_\-keep\-\_\-, Var\-Info\-::\-I\-N\-P\-U\-T, Var\-Manager\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), L\-\_\-\-D\-B\-G, M\-A\-S\-S\-E\-R\-T, C\-N\-F\-::negate(), Learn\-Statistics\-Q\-B\-F\-::notify\-After\-Compute\-Cube(), Learn\-Statistics\-Q\-B\-F\-::notify\-Before\-Compute\-Cube(), Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, solver\-\_\-ctrl\-\_\-, solver\-\_\-i\-\_\-, solver\-\_\-i\-\_\-precise\-\_\-, Sat\-Solver\-::start\-Incremental\-Session(), statistics\-\_\-, C\-N\-F\-::swap\-Present\-To\-Next(), and winning\-\_\-region\-\_\-.
+
+
+
+Referenced by compute\-Winning\-Region\-One\-S\-A\-T().
+
+\hypertarget{classLearnSynthQBF_ae8219ab3e4987775e1d6a006a9d38f4d}{\index{Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}!compute\-Winning\-Region@{compute\-Winning\-Region}}
+\index{compute\-Winning\-Region@{compute\-Winning\-Region}!LearnSynthQBF@{Learn\-Synth\-Q\-B\-F}}
+\subsubsection[{compute\-Winning\-Region}]{\setlength{\rightskip}{0pt plus 5cm}bool Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthQBF_ae8219ab3e4987775e1d6a006a9d38f4d}
+
+
+Computes the winning region and stores the result in \hyperlink{classLearnSynthQBF_a9c6b41f7df5f4ed4bfc5930136fc1152}{winning\-\_\-region\-\_\-}. 
+
+Depending on the command-\/line parameters (--mode) this method calls one of 
+\begin{DoxyItemize}
+\item \hyperlink{classLearnSynthQBF_ac538cd53082bad1c8c45a7e178dfa4cb}{compute\-Winning\-Region\-One()} 
+\item \hyperlink{classLearnSynthQBF_af8c897056a5018ff1717ea2d76f6cd8f}{compute\-Winning\-Region\-One\-S\-A\-T()} 
+\item \hyperlink{classLearnSynthQBF_a09a9ecb2b77c540cdcc327a35cd15c18}{compute\-Winning\-Region\-All()} 
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+True if the specification was realizable, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 124 of file Learn\-Synth\-Q\-B\-F.\-cpp.
+
+
+
+References compute\-Winning\-Region\-All(), compute\-Winning\-Region\-One(), compute\-Winning\-Region\-One\-S\-A\-T(), and Options\-::instance().
+
+
+
+Referenced by run().
+
+\hypertarget{classLearnSynthQBF_a09a9ecb2b77c540cdcc327a35cd15c18}{\index{Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}!compute\-Winning\-Region\-All@{compute\-Winning\-Region\-All}}
+\index{compute\-Winning\-Region\-All@{compute\-Winning\-Region\-All}!LearnSynthQBF@{Learn\-Synth\-Q\-B\-F}}
+\subsubsection[{compute\-Winning\-Region\-All}]{\setlength{\rightskip}{0pt plus 5cm}bool Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-All (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthQBF_a09a9ecb2b77c540cdcc327a35cd15c18}
+
+
+Computes the winning region, always computing all counterexample generalizations. 
+
+The working principle is the same as for \hyperlink{classLearnSynthQBF_ac538cd53082bad1c8c45a7e178dfa4cb}{compute\-Winning\-Region\-One()}. The only difference is that this method computes and excludes all counterexample generalizations instead of just one.
+
+\begin{DoxyReturn}{Returns}
+True if the specification was realizable, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 266 of file Learn\-Synth\-Q\-B\-F.\-cpp.
+
+
+
+References C\-N\-F\-::add\-Clause\-And\-Simplify(), check\-\_\-cnf\-\_\-, C\-N\-F\-::clear(), Utils\-::compress\-State\-C\-N\-F(), compute\-All\-Blocking\-Clauses(), compute\-Counterexample\-Q\-B\-F(), Var\-Info\-::\-C\-T\-R\-L, Logger\-::\-D\-B\-G, Utils\-::debug\-Print(), generalize\-\_\-clause\-\_\-cnf\-\_\-, C\-N\-F\-::get\-Nr\-Of\-Clauses(), C\-N\-F\-::get\-Nr\-Of\-Lits(), A\-I\-G2\-C\-N\-F\-::get\-Safe\-States(), Var\-Manager\-::get\-Vars\-Of\-Type(), Var\-Info\-::\-I\-N\-P\-U\-T, Var\-Manager\-::instance(), Logger\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), Logger\-::is\-Enabled(), L\-\_\-\-D\-B\-G, Learn\-Statistics\-Q\-B\-F\-::log\-Statistics(), Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, recompute\-Check\-C\-N\-F(), recompute\-Gen\-C\-N\-F(), reduce\-Existing\-Clauses(), statistics\-\_\-, winning\-\_\-region\-\_\-, and winning\-\_\-region\-\_\-large\-\_\-.
+
+
+
+Referenced by compute\-Winning\-Region().
+
+\hypertarget{classLearnSynthQBF_ac538cd53082bad1c8c45a7e178dfa4cb}{\index{Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}!compute\-Winning\-Region\-One@{compute\-Winning\-Region\-One}}
+\index{compute\-Winning\-Region\-One@{compute\-Winning\-Region\-One}!LearnSynthQBF@{Learn\-Synth\-Q\-B\-F}}
+\subsubsection[{compute\-Winning\-Region\-One}]{\setlength{\rightskip}{0pt plus 5cm}bool Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthQBF_ac538cd53082bad1c8c45a7e178dfa4cb}
+
+
+Uses the standard method to compute the winning region. 
+
+This standard method works as follows. We start with the initial guess that the winning region F is the set of all state states P. In a loop, we first compute a counterexample to the correctness of this guess in form of a state from which the antagonist (controlling the uncontrollable inputs i) can enforce to leave F. The state is represented as a cube over all state-\/variables. Next, this state-\/cube is generalized into a larger region of states by dropping literals as long as the cube contains only states that are winning for the antagonist (and hence must be removed or have already been removed from F). Finally, the generalized cube is removed from F. The next iteration checks for counterexample-\/state on the refined F. This is repeated until no more counterexample-\/states exist (then the specification is realizable and F is a winning region) or the initial state has been removed from F (in which case the specification is unrealizable).
+
+\begin{DoxyReturn}{Returns}
+True if the specification was realizable, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 134 of file Learn\-Synth\-Q\-B\-F.\-cpp.
+
+
+
+References C\-N\-F\-::add\-Clause\-And\-Simplify(), check\-\_\-cnf\-\_\-, C\-N\-F\-::clear(), Utils\-::compress\-State\-C\-N\-F(), compute\-Blocking\-Clause(), compute\-Counterexample\-Q\-B\-F(), Var\-Info\-::\-C\-T\-R\-L, Logger\-::\-D\-B\-G, Utils\-::debug\-Print(), generalize\-\_\-clause\-\_\-cnf\-\_\-, C\-N\-F\-::get\-Nr\-Of\-Clauses(), C\-N\-F\-::get\-Nr\-Of\-Lits(), A\-I\-G2\-C\-N\-F\-::get\-Safe\-States(), Var\-Manager\-::get\-Vars\-Of\-Type(), Var\-Info\-::\-I\-N\-P\-U\-T, Var\-Manager\-::instance(), Logger\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), Logger\-::is\-Enabled(), L\-\_\-\-D\-B\-G, Learn\-Statistics\-Q\-B\-F\-::log\-Statistics(), Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, recompute\-Check\-C\-N\-F(), recompute\-Gen\-C\-N\-F(), statistics\-\_\-, Utils\-::swap\-Present\-To\-Next(), winning\-\_\-region\-\_\-, and winning\-\_\-region\-\_\-large\-\_\-.
+
+
+
+Referenced by compute\-Winning\-Region().
+
+\hypertarget{classLearnSynthQBF_af8c897056a5018ff1717ea2d76f6cd8f}{\index{Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}!compute\-Winning\-Region\-One\-S\-A\-T@{compute\-Winning\-Region\-One\-S\-A\-T}}
+\index{compute\-Winning\-Region\-One\-S\-A\-T@{compute\-Winning\-Region\-One\-S\-A\-T}!LearnSynthQBF@{Learn\-Synth\-Q\-B\-F}}
+\subsubsection[{compute\-Winning\-Region\-One\-S\-A\-T}]{\setlength{\rightskip}{0pt plus 5cm}bool Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One\-S\-A\-T (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthQBF_af8c897056a5018ff1717ea2d76f6cd8f}
+
+
+Computes the winning region, using two S\-A\-T-\/solvers to compute counterexamples. 
+
+The working principle is the same as for \hyperlink{classLearnSynthQBF_ac538cd53082bad1c8c45a7e178dfa4cb}{compute\-Winning\-Region\-One()}. The only difference is that counterexample-\/states (states from which the antagonist controlling the inputs i can enforce to leave the winning region) are computed using two competing S\-A\-T-\/solvers instead of a Q\-B\-F-\/solver.
+
+\begin{DoxyReturn}{Returns}
+True if the specification was realizable, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 203 of file Learn\-Synth\-Q\-B\-F.\-cpp.
+
+
+
+References C\-N\-F\-::add\-Clause\-And\-Simplify(), check\-\_\-cnf\-\_\-, C\-N\-F\-::clear(), compute\-Blocking\-Clause(), compute\-Counterexample\-S\-A\-T(), Var\-Info\-::\-C\-T\-R\-L, Logger\-::\-D\-B\-G, Utils\-::debug\-Print(), generalize\-\_\-clause\-\_\-cnf\-\_\-, C\-N\-F\-::get\-Nr\-Of\-Clauses(), C\-N\-F\-::get\-Nr\-Of\-Lits(), A\-I\-G2\-C\-N\-F\-::get\-Safe\-States(), Var\-Manager\-::get\-Vars\-Of\-Type(), Sat\-Solver\-::inc\-Add\-Clause(), Var\-Info\-::\-I\-N\-P\-U\-T, Var\-Manager\-::instance(), Logger\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), Logger\-::is\-Enabled(), L\-\_\-\-D\-B\-G, Learn\-Statistics\-Q\-B\-F\-::log\-Statistics(), Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, recompute\-Gen\-C\-N\-F(), solver\-\_\-ctrl\-\_\-, solver\-\_\-i\-\_\-, statistics\-\_\-, Utils\-::swap\-Present\-To\-Next(), winning\-\_\-region\-\_\-, and winning\-\_\-region\-\_\-large\-\_\-.
+
+
+
+Referenced by compute\-Winning\-Region().
+
+\hypertarget{classLearnSynthQBF_a9eed607741968f74e31976e8ca40a62f}{\index{Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}!generalize\-Counterexample@{generalize\-Counterexample}}
+\index{generalize\-Counterexample@{generalize\-Counterexample}!LearnSynthQBF@{Learn\-Synth\-Q\-B\-F}}
+\subsubsection[{generalize\-Counterexample}]{\setlength{\rightskip}{0pt plus 5cm}bool Learn\-Synth\-Q\-B\-F\-::generalize\-Counterexample (
+\begin{DoxyParamCaption}
+\item[{vector$<$ int $>$ \&}]{ce, }
+\item[{bool}]{check\-\_\-sat = {\ttfamily true}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthQBF_a9eed607741968f74e31976e8ca40a62f}
+
+
+Generalizes a counterexample-\/state by dropping literals. 
+
+This method generalizes a counterexample-\/state (a cube over the present-\/state variables) by dropping literals as long as all states in the cube are counterexamples (or have already been removed from the winning region). Optionally, this method also checks if the passed vector is a valid (generalization of a) counterexample.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ce} & The counterexample to generalize (it will be overwritten by its own generalization). This is a complete or partial cube over the present state variables. \\
+\hline
+{\em check\-\_\-sat} & If set to true, then this method checks if the passed counterexample vector is indeed a valid (generalization of a) counterexample. If set to false, then this step is skipped. If this parameter is true and the passed vector is not a valid counterexample, then it will not be modified. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the passed vector is a valid (generalization of a) counterexample, or if the check was skipped by setting check\-\_\-sat = false. False is returned only if the check was performed (check\-\_\-sat = true) and the passed vector is not a valid counterexample. 
+\end{DoxyReturn}
+
+
+Definition at line 626 of file Learn\-Synth\-Q\-B\-F.\-cpp.
+
+
+
+References C\-N\-F\-::add\-Cube(), C\-N\-F\-::add\-Neg\-Cube\-As\-Clause(), gen\-\_\-quant\-\_\-, generalize\-\_\-clause\-\_\-cnf\-\_\-, Q\-B\-F\-Solver\-::is\-Sat(), qbf\-\_\-solver\-\_\-, Utils\-::remove(), Utils\-::sort(), and Utils\-::swap\-Present\-To\-Next().
+
+
+
+Referenced by compute\-All\-Blocking\-Clauses(), and compute\-Blocking\-Clause().
+
+\hypertarget{classLearnSynthQBF_a143bc7b32f7511ddbdbdec01c2e43578}{\index{Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}!operator=@{operator=}}
+\index{operator=@{operator=}!LearnSynthQBF@{Learn\-Synth\-Q\-B\-F}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Learn\-Synth\-Q\-B\-F}\& Learn\-Synth\-Q\-B\-F\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Learn\-Synth\-Q\-B\-F} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classLearnSynthQBF_a143bc7b32f7511ddbdbdec01c2e43578}
+
+
+Assignment operator. 
+
+The assignment operator is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the assignment, i.\-e, $\ast$this. 
+\end{DoxyReturn}
+\hypertarget{classLearnSynthQBF_aa46d02268fe5ea73789280058ec75136}{\index{Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}!recompute\-Check\-C\-N\-F@{recompute\-Check\-C\-N\-F}}
+\index{recompute\-Check\-C\-N\-F@{recompute\-Check\-C\-N\-F}!LearnSynthQBF@{Learn\-Synth\-Q\-B\-F}}
+\subsubsection[{recompute\-Check\-C\-N\-F}]{\setlength{\rightskip}{0pt plus 5cm}void Learn\-Synth\-Q\-B\-F\-::recompute\-Check\-C\-N\-F (
+\begin{DoxyParamCaption}
+\item[{bool}]{take\-\_\-small\-\_\-win = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthQBF_aa46d02268fe5ea73789280058ec75136}
+
+
+Recomputes the \hyperlink{classCNF}{C\-N\-F} (of the Q\-B\-F) that is used for computing counterexamples. 
+
+The \hyperlink{classCNF}{C\-N\-F} used for computing counterexamples is F \& T \& !\-F', where F is the \hyperlink{classLearnSynthQBF_a9c6b41f7df5f4ed4bfc5930136fc1152}{winning\-\_\-region\-\_\-}. The result is stored in \hyperlink{classLearnSynthQBF_afe20b32b1b8c07a237322825c91a36f0}{check\-\_\-cnf\-\_\-}. Since F is constantly updated with new clauses, \hyperlink{classLearnSynthQBF_afe20b32b1b8c07a237322825c91a36f0}{check\-\_\-cnf\-\_\-} needs to be updated as well. In an old version, we updated the \hyperlink{classLearnSynthQBF_afe20b32b1b8c07a237322825c91a36f0}{check\-\_\-cnf\-\_\-} in place, modifying only the clauses that need to be modified. This gives quite ugly code. Since this operation is not performance critical (compared to Q\-B\-F-\/solving), we now recompute check\-\_\-cnf\-\_\- completely in each iteration.
+
+
+\begin{DoxyParams}{Parameters}
+{\em take\-\_\-small\-\_\-win} & If this parameter is true (or omitted) the \hyperlink{classLearnSynthQBF_a9c6b41f7df5f4ed4bfc5930136fc1152}{winning\-\_\-region\-\_\-} is used to compute the \hyperlink{classLearnSynthQBF_afe20b32b1b8c07a237322825c91a36f0}{check\-\_\-cnf\-\_\-}. Otherwise, the \hyperlink{classLearnSynthQBF_aa9b460cdc140c3969a32ea77982181d2}{winning\-\_\-region\-\_\-large\-\_\-} is used. The difference between these two winning region versions is as follows. From time to we remove redundant clauses (clauses implied by other clauses) from \hyperlink{classLearnSynthQBF_a9c6b41f7df5f4ed4bfc5930136fc1152}{winning\-\_\-region\-\_\-} but not from \hyperlink{classLearnSynthQBF_aa9b460cdc140c3969a32ea77982181d2}{winning\-\_\-region\-\_\-large\-\_\-}. Hence, \hyperlink{classLearnSynthQBF_a9c6b41f7df5f4ed4bfc5930136fc1152}{winning\-\_\-region\-\_\-} is often smaller, but \hyperlink{classLearnSynthQBF_aa9b460cdc140c3969a32ea77982181d2}{winning\-\_\-region\-\_\-large\-\_\-} may contain clauses the solver may have to learn when using \hyperlink{classLearnSynthQBF_a9c6b41f7df5f4ed4bfc5930136fc1152}{winning\-\_\-region\-\_\-}. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 564 of file Learn\-Synth\-Q\-B\-F.\-cpp.
+
+
+
+References C\-N\-F\-::add\-C\-N\-F(), check\-\_\-cnf\-\_\-, C\-N\-F\-::clear(), A\-I\-G2\-C\-N\-F\-::instance(), C\-N\-F\-::negate(), Var\-Manager\-::reset\-To\-Last\-Push(), C\-N\-F\-::swap\-Present\-To\-Next(), winning\-\_\-region\-\_\-, and winning\-\_\-region\-\_\-large\-\_\-.
+
+
+
+Referenced by compute\-Winning\-Region\-All(), and compute\-Winning\-Region\-One().
+
+\hypertarget{classLearnSynthQBF_aa1c6d16c3db9057bfa515b06b7a7ffe9}{\index{Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}!recompute\-Gen\-C\-N\-F@{recompute\-Gen\-C\-N\-F}}
+\index{recompute\-Gen\-C\-N\-F@{recompute\-Gen\-C\-N\-F}!LearnSynthQBF@{Learn\-Synth\-Q\-B\-F}}
+\subsubsection[{recompute\-Gen\-C\-N\-F}]{\setlength{\rightskip}{0pt plus 5cm}void Learn\-Synth\-Q\-B\-F\-::recompute\-Gen\-C\-N\-F (
+\begin{DoxyParamCaption}
+\item[{bool}]{take\-\_\-small\-\_\-win = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthQBF_aa1c6d16c3db9057bfa515b06b7a7ffe9}
+
+
+Recomputes the \hyperlink{classCNF}{C\-N\-F} (of the Q\-B\-F) that is used for generalizing counterexamples. 
+
+The \hyperlink{classCNF}{C\-N\-F} used for generalizing counterexamples is F \& T \& F', where F is the \hyperlink{classLearnSynthQBF_a9c6b41f7df5f4ed4bfc5930136fc1152}{winning\-\_\-region\-\_\-}. The result is stored in \hyperlink{classLearnSynthQBF_adb0678a7c034958c31bd5d92615e9859}{generalize\-\_\-clause\-\_\-cnf\-\_\-}. Since F is constantly updated with new clauses, \hyperlink{classLearnSynthQBF_adb0678a7c034958c31bd5d92615e9859}{generalize\-\_\-clause\-\_\-cnf\-\_\-} needs to be updated as well. In an old version, we updated the \hyperlink{classLearnSynthQBF_adb0678a7c034958c31bd5d92615e9859}{generalize\-\_\-clause\-\_\-cnf\-\_\-} in place. This results in ugly code at some places (especially when the \hyperlink{classLearnSynthQBF_a9c6b41f7df5f4ed4bfc5930136fc1152}{winning\-\_\-region\-\_\-} is compressed or simplified). Since this operation is not performance critical (compared to Q\-B\-F-\/solving), we now recompute \hyperlink{classLearnSynthQBF_adb0678a7c034958c31bd5d92615e9859}{generalize\-\_\-clause\-\_\-cnf\-\_\-} completely in each iteration.
+
+
+\begin{DoxyParams}{Parameters}
+{\em take\-\_\-small\-\_\-win} & If this parameter is true (or omitted) the \hyperlink{classLearnSynthQBF_a9c6b41f7df5f4ed4bfc5930136fc1152}{winning\-\_\-region\-\_\-} is used to compute the \hyperlink{classLearnSynthQBF_adb0678a7c034958c31bd5d92615e9859}{generalize\-\_\-clause\-\_\-cnf\-\_\-}. Otherwise, the \hyperlink{classLearnSynthQBF_aa9b460cdc140c3969a32ea77982181d2}{winning\-\_\-region\-\_\-large\-\_\-} is used. The difference between these two winning region versions is as follows. From time to we remove redundant clauses (clauses implied by other clauses) from \hyperlink{classLearnSynthQBF_a9c6b41f7df5f4ed4bfc5930136fc1152}{winning\-\_\-region\-\_\-} but not from \hyperlink{classLearnSynthQBF_aa9b460cdc140c3969a32ea77982181d2}{winning\-\_\-region\-\_\-large\-\_\-}. Hence, \hyperlink{classLearnSynthQBF_a9c6b41f7df5f4ed4bfc5930136fc1152}{winning\-\_\-region\-\_\-} is often smaller, but \hyperlink{classLearnSynthQBF_aa9b460cdc140c3969a32ea77982181d2}{winning\-\_\-region\-\_\-large\-\_\-} may contain clauses the solver may have to learn when using \hyperlink{classLearnSynthQBF_a9c6b41f7df5f4ed4bfc5930136fc1152}{winning\-\_\-region\-\_\-}. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 587 of file Learn\-Synth\-Q\-B\-F.\-cpp.
+
+
+
+References C\-N\-F\-::add\-C\-N\-F(), C\-N\-F\-::clear(), generalize\-\_\-clause\-\_\-cnf\-\_\-, A\-I\-G2\-C\-N\-F\-::instance(), C\-N\-F\-::swap\-Present\-To\-Next(), winning\-\_\-region\-\_\-, and winning\-\_\-region\-\_\-large\-\_\-.
+
+
+
+Referenced by compute\-Winning\-Region\-All(), compute\-Winning\-Region\-One(), and compute\-Winning\-Region\-One\-S\-A\-T().
+
+\hypertarget{classLearnSynthQBF_adf5b9d45d6f69575ed5257fe9a869893}{\index{Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}!reduce\-Existing\-Clauses@{reduce\-Existing\-Clauses}}
+\index{reduce\-Existing\-Clauses@{reduce\-Existing\-Clauses}!LearnSynthQBF@{Learn\-Synth\-Q\-B\-F}}
+\subsubsection[{reduce\-Existing\-Clauses}]{\setlength{\rightskip}{0pt plus 5cm}void Learn\-Synth\-Q\-B\-F\-::reduce\-Existing\-Clauses (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthQBF_adf5b9d45d6f69575ed5257fe9a869893}
+
+
+Tries to drop literals from clauses in the winning region. 
+
+This method examines all clauses (in \hyperlink{classLearnSynthQBF_a9c6b41f7df5f4ed4bfc5930136fc1152}{winning\-\_\-region\-\_\-}) that have already been computed and checks if more literals can be dropped. This is done in the same way as for dropping literals when generalizing a counterexample.
+
+The intuition behind this method is that, even if a literal could not be dropped before, it could be dropped at a later point in time because the winning region has been refined in the meantime. However, in practice, typically only very few additional literals can be dropped, so this method often does not pay off. 
+
+Definition at line 531 of file Learn\-Synth\-Q\-B\-F.\-cpp.
+
+
+
+References C\-N\-F\-::add\-Clause\-And\-Simplify(), C\-N\-F\-::add\-Neg\-Clause\-As\-Cube(), gen\-\_\-quant\-\_\-, generalize\-\_\-clause\-\_\-cnf\-\_\-, C\-N\-F\-::get\-Clauses(), C\-N\-F\-::get\-Nr\-Of\-Clauses(), C\-N\-F\-::get\-Nr\-Of\-Lits(), Q\-B\-F\-Solver\-::is\-Sat(), L\-\_\-\-D\-B\-G, Learn\-Statistics\-Q\-B\-F\-::notify\-After\-Cube\-Min(), Learn\-Statistics\-Q\-B\-F\-::notify\-Before\-Cube\-Min(), qbf\-\_\-solver\-\_\-, Utils\-::remove(), statistics\-\_\-, winning\-\_\-region\-\_\-, and winning\-\_\-region\-\_\-large\-\_\-.
+
+
+
+Referenced by compute\-Winning\-Region\-All().
+
+\hypertarget{classLearnSynthQBF_a704edaade039b09520815b581fe98b47}{\index{Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}!restrict\-To\-States@{restrict\-To\-States}}
+\index{restrict\-To\-States@{restrict\-To\-States}!LearnSynthQBF@{Learn\-Synth\-Q\-B\-F}}
+\subsubsection[{restrict\-To\-States}]{\setlength{\rightskip}{0pt plus 5cm}void Learn\-Synth\-Q\-B\-F\-::restrict\-To\-States (
+\begin{DoxyParamCaption}
+\item[{vector$<$ int $>$ \&}]{vec}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthQBF_a704edaade039b09520815b581fe98b47}
+
+
+Restricts a vector of literals (a cube or clause) to state-\/variables only. 
+
+That is, all literals that do not talk about present state variables are removed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & The vector of literals (the cube or clause) to restricts to state-\/variables only. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 607 of file Learn\-Synth\-Q\-B\-F.\-cpp.
+
+
+
+References Var\-Manager\-::get\-Info(), Var\-Info\-::get\-Kind(), Var\-Manager\-::get\-Pres\-Error\-State\-Var(), Var\-Manager\-::instance(), and Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E.
+
+
+
+Referenced by compute\-Counterexample\-Q\-B\-F().
+
+\hypertarget{classLearnSynthQBF_aed85bb2fe317a5fdc7eef71fe598c606}{\index{Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}!run@{run}}
+\index{run@{run}!LearnSynthQBF@{Learn\-Synth\-Q\-B\-F}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}bool Learn\-Synth\-Q\-B\-F\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classLearnSynthQBF_aed85bb2fe317a5fdc7eef71fe598c606}
+
+
+Executes this back-\/end. 
+
+The computation of the winning region works as follows. We start with the initial guess that the winning region F is the set of all state states P. In a loop, we first compute a counterexample to the correctness of this guess in form of a state from which the antagonist (controlling the uncontrollable inputs i) can enforce to leave F. The state is represented as a cube over all state-\/variables. Next, this state-\/cube is generalized into a larger region of states by dropping literals as long as the cube contains only states that are winning for the antagonist (and hence must be removed or have already been removed from F). Finally, the generalized cube is removed from F. The next iteration checks for counterexample-\/state on the refined F. This is repeated until no more counterexample-\/states exist (then the specification is realizable and F is a winning region) or the initial state has been removed from F (in which case the specification is unrealizable).
+
+Command-\/line parameters (--mode) are used to select different variants of this method. There is 
+\begin{DoxyItemize}
+\item the standard method as described above, 
+\item a variant which computes counterexamples using two S\-A\-T-\/solvers instead of a Q\-B\-F solver, 
+\item a variant which computes and excludes all counterexample-\/generalizations instead of just one. 
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+True if the specification was realizable, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classBackEnd_a099e717dc71e9cc2d838b1ca86340590}{Back\-End}.
+
+
+
+Definition at line 89 of file Learn\-Synth\-Q\-B\-F.\-cpp.
+
+
+
+References compute\-Winning\-Region(), Utils\-::debug\-Check\-Win\-Reg(), Q\-B\-F\-Cert\-Impl\-Extractor\-::extract\-Circuit(), Var\-Manager\-::instance(), Options\-::instance(), L\-\_\-\-I\-N\-F, L\-\_\-\-R\-E\-S, Learn\-Statistics\-Q\-B\-F\-::log\-Statistics(), Learn\-Statistics\-Q\-B\-F\-::notify\-Rel\-Det\-End(), Learn\-Statistics\-Q\-B\-F\-::notify\-Rel\-Det\-Start(), Learn\-Statistics\-Q\-B\-F\-::notify\-Win\-Reg\-End(), Learn\-Statistics\-Q\-B\-F\-::notify\-Win\-Reg\-Start(), Var\-Manager\-::push(), statistics\-\_\-, and winning\-\_\-region\-\_\-.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classLearnSynthQBF_afe20b32b1b8c07a237322825c91a36f0}{\index{Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}!check\-\_\-cnf\-\_\-@{check\-\_\-cnf\-\_\-}}
+\index{check\-\_\-cnf\-\_\-@{check\-\_\-cnf\-\_\-}!LearnSynthQBF@{Learn\-Synth\-Q\-B\-F}}
+\subsubsection[{check\-\_\-cnf\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} Learn\-Synth\-Q\-B\-F\-::check\-\_\-cnf\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthQBF_afe20b32b1b8c07a237322825c91a36f0}
+
+
+The \hyperlink{classCNF}{C\-N\-F} matrix of the Q\-B\-F for computing counterexamples. 
+
+This \hyperlink{classCNF}{C\-N\-F} is always F \& T \& !\-F', where F is the \hyperlink{classLearnSynthQBF_a9c6b41f7df5f4ed4bfc5930136fc1152}{winning\-\_\-region\-\_\-}. 
+
+Definition at line 382 of file Learn\-Synth\-Q\-B\-F.\-h.
+
+
+
+Referenced by compute\-Counterexample\-Q\-B\-F(), compute\-Winning\-Region\-All(), compute\-Winning\-Region\-One(), compute\-Winning\-Region\-One\-S\-A\-T(), and recompute\-Check\-C\-N\-F().
+
+\hypertarget{classLearnSynthQBF_afafe15fef745bb97ac36741cbe00d4c1}{\index{Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}!check\-\_\-quant\-\_\-@{check\-\_\-quant\-\_\-}}
+\index{check\-\_\-quant\-\_\-@{check\-\_\-quant\-\_\-}!LearnSynthQBF@{Learn\-Synth\-Q\-B\-F}}
+\subsubsection[{check\-\_\-quant\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$pair$<${\bf Var\-Info\-::\-Var\-Kind}, {\bf Q\-B\-F\-Solver\-::\-Quant}$>$ $>$ Learn\-Synth\-Q\-B\-F\-::check\-\_\-quant\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthQBF_afafe15fef745bb97ac36741cbe00d4c1}
+
+
+The quantifier prefix of the Q\-B\-F for computing counterexamples. 
+
+This quantifier prefix is always exists x,i\-: forall c\-: exists x',tmp\-: 
+
+Definition at line 375 of file Learn\-Synth\-Q\-B\-F.\-h.
+
+
+
+Referenced by compute\-Counterexample\-Q\-B\-F(), and Learn\-Synth\-Q\-B\-F().
+
+\hypertarget{classLearnSynthQBF_a2a6687cca6f45b9684d3bd6e7cc8c20c}{\index{Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}!gen\-\_\-quant\-\_\-@{gen\-\_\-quant\-\_\-}}
+\index{gen\-\_\-quant\-\_\-@{gen\-\_\-quant\-\_\-}!LearnSynthQBF@{Learn\-Synth\-Q\-B\-F}}
+\subsubsection[{gen\-\_\-quant\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$pair$<${\bf Var\-Info\-::\-Var\-Kind}, {\bf Q\-B\-F\-Solver\-::\-Quant}$>$ $>$ Learn\-Synth\-Q\-B\-F\-::gen\-\_\-quant\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthQBF_a2a6687cca6f45b9684d3bd6e7cc8c20c}
+
+
+The quantifier prefix of the Q\-B\-F for generalizing counterexamples. 
+
+This quantifier prefix is always exists x\-: forall i\-: exists c,x',tmp\-: 
+
+Definition at line 390 of file Learn\-Synth\-Q\-B\-F.\-h.
+
+
+
+Referenced by generalize\-Counterexample(), Learn\-Synth\-Q\-B\-F(), and reduce\-Existing\-Clauses().
+
+\hypertarget{classLearnSynthQBF_adb0678a7c034958c31bd5d92615e9859}{\index{Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}!generalize\-\_\-clause\-\_\-cnf\-\_\-@{generalize\-\_\-clause\-\_\-cnf\-\_\-}}
+\index{generalize\-\_\-clause\-\_\-cnf\-\_\-@{generalize\-\_\-clause\-\_\-cnf\-\_\-}!LearnSynthQBF@{Learn\-Synth\-Q\-B\-F}}
+\subsubsection[{generalize\-\_\-clause\-\_\-cnf\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} Learn\-Synth\-Q\-B\-F\-::generalize\-\_\-clause\-\_\-cnf\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthQBF_adb0678a7c034958c31bd5d92615e9859}
+
+
+The \hyperlink{classCNF}{C\-N\-F} matrix of the Q\-B\-F for generalizing counterexamples. 
+
+This \hyperlink{classCNF}{C\-N\-F} is always F \& T \& F', where F is the \hyperlink{classLearnSynthQBF_a9c6b41f7df5f4ed4bfc5930136fc1152}{winning\-\_\-region\-\_\-}. 
+
+Definition at line 397 of file Learn\-Synth\-Q\-B\-F.\-h.
+
+
+
+Referenced by compute\-All\-Blocking\-Clauses(), compute\-Winning\-Region\-All(), compute\-Winning\-Region\-One(), compute\-Winning\-Region\-One\-S\-A\-T(), generalize\-Counterexample(), recompute\-Gen\-C\-N\-F(), and reduce\-Existing\-Clauses().
+
+\hypertarget{classLearnSynthQBF_a227ff215ffb411e57686aa3d8e7f7026}{\index{Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}!incremental\-\_\-vars\-\_\-to\-\_\-keep\-\_\-@{incremental\-\_\-vars\-\_\-to\-\_\-keep\-\_\-}}
+\index{incremental\-\_\-vars\-\_\-to\-\_\-keep\-\_\-@{incremental\-\_\-vars\-\_\-to\-\_\-keep\-\_\-}!LearnSynthQBF@{Learn\-Synth\-Q\-B\-F}}
+\subsubsection[{incremental\-\_\-vars\-\_\-to\-\_\-keep\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ Learn\-Synth\-Q\-B\-F\-::incremental\-\_\-vars\-\_\-to\-\_\-keep\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthQBF_a227ff215ffb411e57686aa3d8e7f7026}
+
+
+A list of variables the S\-A\-T-\/solver should not optimize away. 
+
+
+
+Definition at line 420 of file Learn\-Synth\-Q\-B\-F.\-h.
+
+
+
+Referenced by compute\-Counterexample\-S\-A\-T(), and Learn\-Synth\-Q\-B\-F().
+
+\hypertarget{classLearnSynthQBF_a8b4c4279f543a0adea992fccf22009f4}{\index{Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}!qbf\-\_\-solver\-\_\-@{qbf\-\_\-solver\-\_\-}}
+\index{qbf\-\_\-solver\-\_\-@{qbf\-\_\-solver\-\_\-}!LearnSynthQBF@{Learn\-Synth\-Q\-B\-F}}
+\subsubsection[{qbf\-\_\-solver\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\-B\-F\-Solver}$\ast$ Learn\-Synth\-Q\-B\-F\-::qbf\-\_\-solver\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthQBF_a8b4c4279f543a0adea992fccf22009f4}
+
+
+The Q\-B\-F-\/solver used for all queries. 
+
+The type of solver is selected with command-\/line arguments. 
+
+Definition at line 367 of file Learn\-Synth\-Q\-B\-F.\-h.
+
+
+
+Referenced by compute\-Counterexample\-Q\-B\-F(), generalize\-Counterexample(), reduce\-Existing\-Clauses(), and $\sim$\-Learn\-Synth\-Q\-B\-F().
+
+\hypertarget{classLearnSynthQBF_a14f20d46129ad1fe2db8272348a7e589}{\index{Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}!solver\-\_\-ctrl\-\_\-@{solver\-\_\-ctrl\-\_\-}}
+\index{solver\-\_\-ctrl\-\_\-@{solver\-\_\-ctrl\-\_\-}!LearnSynthQBF@{Learn\-Synth\-Q\-B\-F}}
+\subsubsection[{solver\-\_\-ctrl\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sat\-Solver}$\ast$ Learn\-Synth\-Q\-B\-F\-::solver\-\_\-ctrl\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthQBF_a14f20d46129ad1fe2db8272348a7e589}
+
+
+The S\-A\-T-\/solver for protagonist moves when using \hyperlink{classLearnSynthQBF_a3221800bf3f040b66b8a790bab4c82b5}{compute\-Counterexample\-S\-A\-T()}. 
+
+It stores the \hyperlink{classCNF}{C\-N\-F} F \& T \& !\-F', where F is the \hyperlink{classLearnSynthQBF_a9c6b41f7df5f4ed4bfc5930136fc1152}{winning\-\_\-region\-\_\-}. However, !\-F' is only updated lazily for performance reasons (this way, incremental solving can be exploited better). 
+
+Definition at line 415 of file Learn\-Synth\-Q\-B\-F.\-h.
+
+
+
+Referenced by compute\-Counterexample\-S\-A\-T(), compute\-Winning\-Region\-One\-S\-A\-T(), Learn\-Synth\-Q\-B\-F(), and $\sim$\-Learn\-Synth\-Q\-B\-F().
+
+\hypertarget{classLearnSynthQBF_ada2e8c87c0ca0d83c484d6181ea5a788}{\index{Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}!solver\-\_\-i\-\_\-@{solver\-\_\-i\-\_\-}}
+\index{solver\-\_\-i\-\_\-@{solver\-\_\-i\-\_\-}!LearnSynthQBF@{Learn\-Synth\-Q\-B\-F}}
+\subsubsection[{solver\-\_\-i\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sat\-Solver}$\ast$ Learn\-Synth\-Q\-B\-F\-::solver\-\_\-i\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthQBF_ada2e8c87c0ca0d83c484d6181ea5a788}
+
+
+The S\-A\-T-\/solver for antagonist moves when using \hyperlink{classLearnSynthQBF_a3221800bf3f040b66b8a790bab4c82b5}{compute\-Counterexample\-S\-A\-T()}. 
+
+It stores the \hyperlink{classCNF}{C\-N\-F} F \& T \& !\-F', where F is the \hyperlink{classLearnSynthQBF_a9c6b41f7df5f4ed4bfc5930136fc1152}{winning\-\_\-region\-\_\-}. However, !\-F' is only updated lazily for performance reasons (this way, incremental solving can be exploited better). 
+
+Definition at line 406 of file Learn\-Synth\-Q\-B\-F.\-h.
+
+
+
+Referenced by compute\-Counterexample\-S\-A\-T(), compute\-Winning\-Region\-One\-S\-A\-T(), Learn\-Synth\-Q\-B\-F(), and $\sim$\-Learn\-Synth\-Q\-B\-F().
+
+\hypertarget{classLearnSynthQBF_ae65774a2b9e6137d6ff45cbf755d4843}{\index{Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}!solver\-\_\-i\-\_\-precise\-\_\-@{solver\-\_\-i\-\_\-precise\-\_\-}}
+\index{solver\-\_\-i\-\_\-precise\-\_\-@{solver\-\_\-i\-\_\-precise\-\_\-}!LearnSynthQBF@{Learn\-Synth\-Q\-B\-F}}
+\subsubsection[{solver\-\_\-i\-\_\-precise\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}bool Learn\-Synth\-Q\-B\-F\-::solver\-\_\-i\-\_\-precise\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthQBF_ae65774a2b9e6137d6ff45cbf755d4843}
+
+
+A flag indicating if solver\-\_\-i\-\_\- is precise. 
+
+We update the next-\/state copy of the winning region in solver\-\_\-i\-\_\- only lazily to better support incremental solving. If this flag is true, then this means that the next-\/state copy of the winning region is accurate in solver\-\_\-i\-\_\-. If this flag is false, then we must not trust any unsatisfiability verdicts coming from solver\-\_\-i\-\_\- (but need to update the next-\/state copy of the winning region instead). 
+
+Definition at line 431 of file Learn\-Synth\-Q\-B\-F.\-h.
+
+
+
+Referenced by compute\-Counterexample\-S\-A\-T(), and Learn\-Synth\-Q\-B\-F().
+
+\hypertarget{classLearnSynthQBF_a85c46943042fdcfd672ce2251ef49cd9}{\index{Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}!statistics\-\_\-@{statistics\-\_\-}}
+\index{statistics\-\_\-@{statistics\-\_\-}!LearnSynthQBF@{Learn\-Synth\-Q\-B\-F}}
+\subsubsection[{statistics\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Learn\-Statistics\-Q\-B\-F} Learn\-Synth\-Q\-B\-F\-::statistics\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthQBF_a85c46943042fdcfd672ce2251ef49cd9}
+
+
+Stores and maintains statistics and performance measures. 
+
+
+
+Definition at line 360 of file Learn\-Synth\-Q\-B\-F.\-h.
+
+
+
+Referenced by compute\-All\-Blocking\-Clauses(), compute\-Blocking\-Clause(), compute\-Counterexample\-Q\-B\-F(), compute\-Counterexample\-S\-A\-T(), compute\-Winning\-Region\-All(), compute\-Winning\-Region\-One(), compute\-Winning\-Region\-One\-S\-A\-T(), reduce\-Existing\-Clauses(), and run().
+
+\hypertarget{classLearnSynthQBF_a9c6b41f7df5f4ed4bfc5930136fc1152}{\index{Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}!winning\-\_\-region\-\_\-@{winning\-\_\-region\-\_\-}}
+\index{winning\-\_\-region\-\_\-@{winning\-\_\-region\-\_\-}!LearnSynthQBF@{Learn\-Synth\-Q\-B\-F}}
+\subsubsection[{winning\-\_\-region\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} Learn\-Synth\-Q\-B\-F\-::winning\-\_\-region\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthQBF_a9c6b41f7df5f4ed4bfc5930136fc1152}
+
+
+The current over-\/approximation of the winning region. 
+
+Only when \hyperlink{classLearnSynthQBF_ae8219ab3e4987775e1d6a006a9d38f4d}{compute\-Winning\-Region()} is done, this field will store the correct winning region. 
+
+Definition at line 343 of file Learn\-Synth\-Q\-B\-F.\-h.
+
+
+
+Referenced by compute\-Counterexample\-S\-A\-T(), compute\-Winning\-Region\-All(), compute\-Winning\-Region\-One(), compute\-Winning\-Region\-One\-S\-A\-T(), recompute\-Check\-C\-N\-F(), recompute\-Gen\-C\-N\-F(), reduce\-Existing\-Clauses(), and run().
+
+\hypertarget{classLearnSynthQBF_aa9b460cdc140c3969a32ea77982181d2}{\index{Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}!winning\-\_\-region\-\_\-large\-\_\-@{winning\-\_\-region\-\_\-large\-\_\-}}
+\index{winning\-\_\-region\-\_\-large\-\_\-@{winning\-\_\-region\-\_\-large\-\_\-}!LearnSynthQBF@{Learn\-Synth\-Q\-B\-F}}
+\subsubsection[{winning\-\_\-region\-\_\-large\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} Learn\-Synth\-Q\-B\-F\-::winning\-\_\-region\-\_\-large\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthQBF_aa9b460cdc140c3969a32ea77982181d2}
+
+
+The current over-\/approximation of the winning region in an uncompressed form. 
+
+This \hyperlink{classCNF}{C\-N\-F} is logically equivalent to \hyperlink{classLearnSynthQBF_a9c6b41f7df5f4ed4bfc5930136fc1152}{winning\-\_\-region\-\_\-}. However, \hyperlink{classLearnSynthQBF_a9c6b41f7df5f4ed4bfc5930136fc1152}{winning\-\_\-region\-\_\-} is 'compressed' from time to time by removing redundant clauses (clauses that are implied by other clauses in the winning region). This field stores the uncompressed version of the winning region. Having the uncompressed winning region can be good because throwing away redundant clauses is not always beneficial. The \hyperlink{classCNF}{C\-N\-F} get smaller, but the solver may have to re-\/discover the removed clauses. 
+
+Definition at line 355 of file Learn\-Synth\-Q\-B\-F.\-h.
+
+
+
+Referenced by compute\-Winning\-Region\-All(), compute\-Winning\-Region\-One(), compute\-Winning\-Region\-One\-S\-A\-T(), recompute\-Check\-C\-N\-F(), recompute\-Gen\-C\-N\-F(), and reduce\-Existing\-Clauses().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{LearnSynthQBF_8h}{Learn\-Synth\-Q\-B\-F.\-h}\item 
+src/\hyperlink{LearnSynthQBF_8cpp}{Learn\-Synth\-Q\-B\-F.\-cpp}\end{DoxyCompactItemize}

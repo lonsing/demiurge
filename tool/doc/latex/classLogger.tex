@@ -1,0 +1,433 @@
+\hypertarget{classLogger}{\section{Logger Class Reference}
+\label{classLogger}\index{Logger@{Logger}}
+}
+
+
+Prints messages of different kind, which can all be enabled and disabled.  
+
+
+
+
+{\ttfamily \#include $<$Logger.\-h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classLogger_ac9e601f90bf326ce2088de52018861dc}{Logtype} \{ \\*
+\hyperlink{classLogger_ac9e601f90bf326ce2088de52018861dca482a49db2a0d40e2ae358619edb1633e}{E\-R\-R} =  0, 
+\hyperlink{classLogger_ac9e601f90bf326ce2088de52018861dca90d291baa55088591aae64883cfc58bd}{W\-R\-N} =  1, 
+\hyperlink{classLogger_ac9e601f90bf326ce2088de52018861dca97ed8522dfcbb2cdf29c7f46e583f42f}{R\-E\-S} =  2, 
+\hyperlink{classLogger_ac9e601f90bf326ce2088de52018861dca174739f9b95ebbf75fbb89001f72443b}{I\-N\-F} =  3, 
+\\*
+\hyperlink{classLogger_ac9e601f90bf326ce2088de52018861dcaecb59ecf12f943da56b6944a3053dc09}{D\-B\-G} =  4, 
+\hyperlink{classLogger_ac9e601f90bf326ce2088de52018861dca07be7495a7931bee16f5d94b3671f5de}{L\-O\-G} =  5
+ \}
+\begin{DoxyCompactList}\small\item\em A type for the kind of message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classLogger_a9ae40dbcf05113315595e387b2776d2e}{enable} (\hyperlink{classLogger_ac9e601f90bf326ce2088de52018861dc}{Logtype} lt)
+\begin{DoxyCompactList}\small\item\em Enables the printing of a certain kind of message. \end{DoxyCompactList}\item 
+void \hyperlink{classLogger_af314cd99569d9384d419be84b471941b}{disable} (\hyperlink{classLogger_ac9e601f90bf326ce2088de52018861dc}{Logtype} lt)
+\begin{DoxyCompactList}\small\item\em Disables the printing of a certain kind of message. \end{DoxyCompactList}\item 
+bool \hyperlink{classLogger_a4dd35dedf6e079909fea430eace0ca88}{is\-Enabled} (\hyperlink{classLogger_ac9e601f90bf326ce2088de52018861dc}{Logtype} lt) const 
+\begin{DoxyCompactList}\small\item\em Checks if a certain kind of message is enabled. \end{DoxyCompactList}\item 
+ostream \& \hyperlink{classLogger_ac1418f03089428bfb7f3805b7709f2cb}{get\-Ostream} (\hyperlink{classLogger_ac9e601f90bf326ce2088de52018861dc}{Logtype} lt)
+\begin{DoxyCompactList}\small\item\em Returns the output stream for a certain kind of message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classLogger}{Logger} \& \hyperlink{classLogger_a4aa4d7c3b98f6e12e7ea8253da5ea0cd}{instance} ()
+\begin{DoxyCompactList}\small\item\em Returns the one and only instance of this class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ ostream $\ast$ $>$ \hyperlink{classLogger_a6e3fde7c57b8e2ba82876ad2972c375b}{streams\-\_\-}
+\begin{DoxyCompactList}\small\item\em The output streams to be used for the different kinds of messages. \end{DoxyCompactList}\item 
+vector$<$ bool $>$ \hyperlink{classLogger_a615ed59ba1b2d79509bfeddcc8406398}{enabled\-\_\-}
+\begin{DoxyCompactList}\small\item\em The flags indicating which kind of message is enabled. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classLogger}{Logger} $\ast$ \hyperlink{classLogger_a4f56ea837ef338071364583d6368b7c8}{instance\-\_\-} = N\-U\-L\-L
+\begin{DoxyCompactList}\small\item\em The one and only instance of this class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLogger_abc41bfb031d896170c7675fa96a6b30c}{Logger} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classLogger_acb668a9e186a25fbaad2e4af6d1ed00a}{$\sim$\-Logger} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{classLogger_a25dabaa7b9631ab7e7988b6b610c6f3a}{Logger} (const \hyperlink{classLogger}{Logger} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classLogger}{Logger} \& \hyperlink{classLogger_aa2c434460d394a7600e6806d10df9c8c}{operator=} (const \hyperlink{classLogger}{Logger} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Prints messages of different kind, which can all be enabled and disabled. 
+
+This utility class is able to print 6 different types of messages\-: E\-R\-R\-O\-Rs, W\-A\-R\-N\-I\-N\-Gs R\-E\-S\-U\-L\-Ts, I\-N\-F\-Os, D\-E\-B\-U\-G messages and L\-O\-G messages. Every kind of message can be enabled and disabled. Do not directly print to stdout or stderr but use this class instead (except for special cases like printing messages before this \hyperlink{classLogger}{Logger} has been initialized).
+
+This class is implemented as a Singleton. That is, you cannot instantiate objects of this class with the constructor. Use the method \hyperlink{classLogger_a4aa4d7c3b98f6e12e7ea8253da5ea0cd}{instance() } to obtain the one and only instance of this class.
+
+\begin{DoxyAuthor}{Author}
+Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0.\-0 
+\end{DoxyVersion}
+
+
+Definition at line 52 of file Logger.\-h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classLogger_ac9e601f90bf326ce2088de52018861dc}{\index{Logger@{Logger}!Logtype@{Logtype}}
+\index{Logtype@{Logtype}!Logger@{Logger}}
+\subsubsection[{Logtype}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Logger\-::\-Logtype}}}\label{classLogger_ac9e601f90bf326ce2088de52018861dc}
+
+
+A type for the kind of message. 
+
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{E\-R\-R@{E\-R\-R}!Logger@{Logger}}\index{Logger@{Logger}!E\-R\-R@{E\-R\-R}}\item[{\em 
+\hypertarget{classLogger_ac9e601f90bf326ce2088de52018861dca482a49db2a0d40e2ae358619edb1633e}{E\-R\-R}\label{classLogger_ac9e601f90bf326ce2088de52018861dca482a49db2a0d40e2ae358619edb1633e}
+}]The value for error messages. Use this kind for messages like 'could not open file'. \index{W\-R\-N@{W\-R\-N}!Logger@{Logger}}\index{Logger@{Logger}!W\-R\-N@{W\-R\-N}}\item[{\em 
+\hypertarget{classLogger_ac9e601f90bf326ce2088de52018861dca90d291baa55088591aae64883cfc58bd}{W\-R\-N}\label{classLogger_ac9e601f90bf326ce2088de52018861dca90d291baa55088591aae64883cfc58bd}
+}]The value for warnings. Use this kind for messages like 'pending signal'. \index{R\-E\-S@{R\-E\-S}!Logger@{Logger}}\index{Logger@{Logger}!R\-E\-S@{R\-E\-S}}\item[{\em 
+\hypertarget{classLogger_ac9e601f90bf326ce2088de52018861dca97ed8522dfcbb2cdf29c7f46e583f42f}{R\-E\-S}\label{classLogger_ac9e601f90bf326ce2088de52018861dca97ed8522dfcbb2cdf29c7f46e583f42f}
+}]The value for printing results. Use this kind for messages like 'the spec is realizable'. \index{I\-N\-F@{I\-N\-F}!Logger@{Logger}}\index{Logger@{Logger}!I\-N\-F@{I\-N\-F}}\item[{\em 
+\hypertarget{classLogger_ac9e601f90bf326ce2088de52018861dca174739f9b95ebbf75fbb89001f72443b}{I\-N\-F}\label{classLogger_ac9e601f90bf326ce2088de52018861dca174739f9b95ebbf75fbb89001f72443b}
+}]The value for printing additional information. Use this kind for messages like 'starting to compute a circuit ...'. \index{D\-B\-G@{D\-B\-G}!Logger@{Logger}}\index{Logger@{Logger}!D\-B\-G@{D\-B\-G}}\item[{\em 
+\hypertarget{classLogger_ac9e601f90bf326ce2088de52018861dcaecb59ecf12f943da56b6944a3053dc09}{D\-B\-G}\label{classLogger_ac9e601f90bf326ce2088de52018861dcaecb59ecf12f943da56b6944a3053dc09}
+}]The value for printing debug messages. Use this kind for messages like 'the aiger literal 4 corresponds to 12 in \hyperlink{classCNF}{C\-N\-F}'. \index{L\-O\-G@{L\-O\-G}!Logger@{Logger}}\index{Logger@{Logger}!L\-O\-G@{L\-O\-G}}\item[{\em 
+\hypertarget{classLogger_ac9e601f90bf326ce2088de52018861dca07be7495a7931bee16f5d94b3671f5de}{L\-O\-G}\label{classLogger_ac9e601f90bf326ce2088de52018861dca07be7495a7931bee16f5d94b3671f5de}
+}]The value for printing log messages. This is typically used for performance measures in messages like 'computing the winning region took 16 seconds'. \end{description}
+\end{Desc}
+
+
+
+Definition at line 70 of file Logger.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classLogger_abc41bfb031d896170c7675fa96a6b30c}{\index{Logger@{Logger}!Logger@{Logger}}
+\index{Logger@{Logger}!Logger@{Logger}}
+\subsubsection[{Logger}]{\setlength{\rightskip}{0pt plus 5cm}Logger\-::\-Logger (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classLogger_abc41bfb031d896170c7675fa96a6b30c}
+
+
+Constructor. 
+
+The constructor is disabled (set private) as this method is implemented as a Singleton. Use the method \hyperlink{classLogger_a4aa4d7c3b98f6e12e7ea8253da5ea0cd}{instance } to obtain the one and only instance of this class. 
+
+Definition at line 45 of file Logger.\-cpp.
+
+
+
+References enabled\-\_\-, and streams\-\_\-.
+
+
+
+Referenced by instance().
+
+\hypertarget{classLogger_acb668a9e186a25fbaad2e4af6d1ed00a}{\index{Logger@{Logger}!$\sim$\-Logger@{$\sim$\-Logger}}
+\index{$\sim$\-Logger@{$\sim$\-Logger}!Logger@{Logger}}
+\subsubsection[{$\sim$\-Logger}]{\setlength{\rightskip}{0pt plus 5cm}Logger\-::$\sim$\-Logger (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classLogger_acb668a9e186a25fbaad2e4af6d1ed00a}
+
+
+Destructor. 
+
+The destructor is disabled (set private) as this method is implemented as a Singleton. One cannot instantiate objects of this class, so there is no need to be able to delete them. 
+
+Definition at line 62 of file Logger.\-cpp.
+
+
+
+References streams\-\_\-.
+
+\hypertarget{classLogger_a25dabaa7b9631ab7e7988b6b610c6f3a}{\index{Logger@{Logger}!Logger@{Logger}}
+\index{Logger@{Logger}!Logger@{Logger}}
+\subsubsection[{Logger}]{\setlength{\rightskip}{0pt plus 5cm}Logger\-::\-Logger (
+\begin{DoxyParamCaption}
+\item[{const {\bf Logger} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classLogger_a25dabaa7b9631ab7e7988b6b610c6f3a}
+
+
+Copy constructor. 
+
+The copy constructor is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classLogger_af314cd99569d9384d419be84b471941b}{\index{Logger@{Logger}!disable@{disable}}
+\index{disable@{disable}!Logger@{Logger}}
+\subsubsection[{disable}]{\setlength{\rightskip}{0pt plus 5cm}void Logger\-::disable (
+\begin{DoxyParamCaption}
+\item[{{\bf Logtype}}]{lt}
+\end{DoxyParamCaption}
+)}}\label{classLogger_af314cd99569d9384d419be84b471941b}
+
+
+Disables the printing of a certain kind of message. 
+
+If a message kind is disabled, all messaged of this type are discarded.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lt} & The kind of message to disable. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 73 of file Logger.\-cpp.
+
+
+
+References enabled\-\_\-.
+
+
+
+Referenced by Options\-::init\-Logger().
+
+\hypertarget{classLogger_a9ae40dbcf05113315595e387b2776d2e}{\index{Logger@{Logger}!enable@{enable}}
+\index{enable@{enable}!Logger@{Logger}}
+\subsubsection[{enable}]{\setlength{\rightskip}{0pt plus 5cm}void Logger\-::enable (
+\begin{DoxyParamCaption}
+\item[{{\bf Logtype}}]{lt}
+\end{DoxyParamCaption}
+)}}\label{classLogger_a9ae40dbcf05113315595e387b2776d2e}
+
+
+Enables the printing of a certain kind of message. 
+
+If a message kind is disabled, all messaged of this type are discarded.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lt} & The kind of message to enable. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 79 of file Logger.\-cpp.
+
+
+
+References enabled\-\_\-.
+
+
+
+Referenced by Options\-::init\-Logger().
+
+\hypertarget{classLogger_ac1418f03089428bfb7f3805b7709f2cb}{\index{Logger@{Logger}!get\-Ostream@{get\-Ostream}}
+\index{get\-Ostream@{get\-Ostream}!Logger@{Logger}}
+\subsubsection[{get\-Ostream}]{\setlength{\rightskip}{0pt plus 5cm}ostream \& Logger\-::get\-Ostream (
+\begin{DoxyParamCaption}
+\item[{{\bf Logtype}}]{lt}
+\end{DoxyParamCaption}
+)}}\label{classLogger_ac1418f03089428bfb7f3805b7709f2cb}
+
+
+Returns the output stream for a certain kind of message. 
+
+Use this method to pipe arbitrary messages into the requested streams. See also the macros 
+\begin{DoxyItemize}
+\item \hyperlink{Logger_8h_ab46d591f7a5eb63fee458a99279a2d00}{L\-\_\-\-E\-R\-R} 
+\item \hyperlink{Logger_8h_aafa8924b4aff539836a162a1cdf5e047}{L\-\_\-\-W\-R\-N} 
+\item \hyperlink{Logger_8h_adf55585b6b559a75e33ee291410f9a9e}{L\-\_\-\-R\-E\-S} 
+\item \hyperlink{Logger_8h_a5442b95c710d1b2d4c306693fce02997}{L\-\_\-\-I\-N\-F} 
+\item \hyperlink{Logger_8h_a5ba9fef95c1aa2be83162fd9f0992c05}{L\-\_\-\-D\-B\-G} 
+\item \hyperlink{Logger_8h_a081139c373685d15bfc9f0afebe00542}{L\-\_\-\-L\-O\-G} 
+\end{DoxyItemize}which might be more convenient to use.
+
+\begin{DoxyNote}{Note}
+This method does not check if the particular kind of message is enabled or disabled, i.\-e, it allows you to print messages although they are disabled. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em lt} & The kind of message for which the output stream is requested. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The output stream for this message. 
+\end{DoxyReturn}
+
+
+Definition at line 91 of file Logger.\-cpp.
+
+
+
+References M\-A\-S\-S\-E\-R\-T, and streams\-\_\-.
+
+\hypertarget{classLogger_a4aa4d7c3b98f6e12e7ea8253da5ea0cd}{\index{Logger@{Logger}!instance@{instance}}
+\index{instance@{instance}!Logger@{Logger}}
+\subsubsection[{instance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Logger} \& Logger\-::instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classLogger_a4aa4d7c3b98f6e12e7ea8253da5ea0cd}
+
+
+Returns the one and only instance of this class. 
+
+This class is implemented as a Singleton. That is, you cannot instantiate objects of this class with the constructor. Use this method to obtain the one and only instance of this class.
+
+\begin{DoxyReturn}{Returns}
+The one and only instance of this class. 
+\end{DoxyReturn}
+
+
+Definition at line 36 of file Logger.\-cpp.
+
+
+
+References instance\-\_\-, Logger(), and M\-A\-S\-S\-E\-R\-T.
+
+
+
+Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-One(), and Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One\-S\-A\-T().
+
+\hypertarget{classLogger_a4dd35dedf6e079909fea430eace0ca88}{\index{Logger@{Logger}!is\-Enabled@{is\-Enabled}}
+\index{is\-Enabled@{is\-Enabled}!Logger@{Logger}}
+\subsubsection[{is\-Enabled}]{\setlength{\rightskip}{0pt plus 5cm}bool Logger\-::is\-Enabled (
+\begin{DoxyParamCaption}
+\item[{{\bf Logtype}}]{lt}
+\end{DoxyParamCaption}
+) const}}\label{classLogger_a4dd35dedf6e079909fea430eace0ca88}
+
+
+Checks if a certain kind of message is enabled. 
+
+If a message kind is disabled, all messaged of this type are discarded.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lt} & The kind of message in question. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if this kind of message is enabled, false if it is disabled. 
+\end{DoxyReturn}
+
+
+Definition at line 85 of file Logger.\-cpp.
+
+
+
+References enabled\-\_\-.
+
+
+
+Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-One(), and Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One\-S\-A\-T().
+
+\hypertarget{classLogger_aa2c434460d394a7600e6806d10df9c8c}{\index{Logger@{Logger}!operator=@{operator=}}
+\index{operator=@{operator=}!Logger@{Logger}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Logger}\& Logger\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Logger} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classLogger_aa2c434460d394a7600e6806d10df9c8c}
+
+
+Assignment operator. 
+
+The assignment operator is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the assignment, i.\-e, $\ast$this. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classLogger_a615ed59ba1b2d79509bfeddcc8406398}{\index{Logger@{Logger}!enabled\-\_\-@{enabled\-\_\-}}
+\index{enabled\-\_\-@{enabled\-\_\-}!Logger@{Logger}}
+\subsubsection[{enabled\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$bool$>$ Logger\-::enabled\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLogger_a615ed59ba1b2d79509bfeddcc8406398}
+
+
+The flags indicating which kind of message is enabled. 
+
+The order in the array is as following\-: 
+\begin{DoxyItemize}
+\item enabled\-\_\-\mbox{[}0\mbox{]} is true if errors are enabled. 
+\item enabled\-\_\-\mbox{[}1\mbox{]} is true if warnings are enabled. 
+\item enabled\-\_\-\mbox{[}2\mbox{]} is true if results are enabled. 
+\item enabled\-\_\-\mbox{[}3\mbox{]} is true if infos are enabled. 
+\item enabled\-\_\-\mbox{[}4\mbox{]} is true if debug messages are enabled. 
+\item enabled\-\_\-\mbox{[}5\mbox{]} is true if log messages are enabled. 
+\end{DoxyItemize}
+
+Definition at line 201 of file Logger.\-h.
+
+
+
+Referenced by disable(), enable(), is\-Enabled(), and Logger().
+
+\hypertarget{classLogger_a4f56ea837ef338071364583d6368b7c8}{\index{Logger@{Logger}!instance\-\_\-@{instance\-\_\-}}
+\index{instance\-\_\-@{instance\-\_\-}!Logger@{Logger}}
+\subsubsection[{instance\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Logger} $\ast$ Logger\-::instance\-\_\- = N\-U\-L\-L\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classLogger_a4f56ea837ef338071364583d6368b7c8}
+
+
+The one and only instance of this class. 
+
+
+
+Definition at line 171 of file Logger.\-h.
+
+
+
+Referenced by instance().
+
+\hypertarget{classLogger_a6e3fde7c57b8e2ba82876ad2972c375b}{\index{Logger@{Logger}!streams\-\_\-@{streams\-\_\-}}
+\index{streams\-\_\-@{streams\-\_\-}!Logger@{Logger}}
+\subsubsection[{streams\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ostream$\ast$$>$ Logger\-::streams\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLogger_a6e3fde7c57b8e2ba82876ad2972c375b}
+
+
+The output streams to be used for the different kinds of messages. 
+
+The order in the array is as following\-: 
+\begin{DoxyItemize}
+\item streams\-\_\-\mbox{[}0\mbox{]} is the output stream for errors (Logtype\-::\-E\-R\-R) 
+\item streams\-\_\-\mbox{[}1\mbox{]} is the output stream for warnings (Logtype\-::\-W\-R\-N) 
+\item streams\-\_\-\mbox{[}2\mbox{]} is the output stream for results (Logtype\-::\-R\-E\-S) 
+\item streams\-\_\-\mbox{[}3\mbox{]} is the output stream for infos (Logtype\-::\-I\-N\-F) 
+\item streams\-\_\-\mbox{[}4\mbox{]} is the output stream for debug messages (Logtype\-::\-D\-B\-G) 
+\item streams\-\_\-\mbox{[}5\mbox{]} is the output stream for log messages (Logtype\-::\-L\-O\-G) 
+\end{DoxyItemize}
+
+Definition at line 186 of file Logger.\-h.
+
+
+
+Referenced by get\-Ostream(), Logger(), and $\sim$\-Logger().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{Logger_8h}{Logger.\-h}\item 
+src/\hyperlink{Logger_8cpp}{Logger.\-cpp}\end{DoxyCompactItemize}

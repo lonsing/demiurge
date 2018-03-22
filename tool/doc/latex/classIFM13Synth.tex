@@ -1,0 +1,899 @@
+\hypertarget{classIFM13Synth}{\section{I\-F\-M13\-Synth Class Reference}
+\label{classIFM13Synth}\index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}}
+}
+
+
+Implements the S\-A\-T-\/based synthesis method published at I\-F\-M'13.  
+
+
+
+
+{\ttfamily \#include $<$I\-F\-M13\-Synth.\-h$>$}
+
+Inheritance diagram for I\-F\-M13\-Synth\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classIFM13Synth}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classIFM13Synth_a4df6eb2628d3a8fd6462434a2adea84b}{I\-F\-M13\-Synth} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classIFM13Synth_ad042200b1639e702af49e55088a52f52}{$\sim$\-I\-F\-M13\-Synth} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classIFM13Synth_a42adb4f76d88199d92b1bedb58a139f8}{run} ()
+\begin{DoxyCompactList}\small\item\em Executes the back-\/end (which is implemented as described in the I\-F\-M'13 paper). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classIFM13Synth_a51c6831265e1daf7d0120c0dd954a0c4}{compute\-Winning\-Region} ()
+\begin{DoxyCompactList}\small\item\em Computes the set of states from which the specification can be fulfilled. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classIFM13Synth_ad9262224ce1ddbda37d748fbecfe5d8e}{propagate\-Blocked\-States} (size\-\_\-t max\-\_\-level)
+\begin{DoxyCompactList}\small\item\em Propagates clauses forward and searches for equivalent clause sets. \end{DoxyCompactList}\item 
+bool \hyperlink{classIFM13Synth_af46e431e089225b58148ee317d523123}{rec\-Block\-Cube} (const vector$<$ int $>$ \&state\-\_\-cube, size\-\_\-t level)
+\begin{DoxyCompactList}\small\item\em Analyzes the rank of the passed state. \end{DoxyCompactList}\item 
+void \hyperlink{classIFM13Synth_a0aa3bd29c1621efda5abb30dd9357214}{add\-Blocked\-Transition} (const vector$<$ int $>$ \&state\-\_\-in\-\_\-cube, size\-\_\-t level)
+\begin{DoxyCompactList}\small\item\em Marks a state-\/input-\/pair as blocked. \end{DoxyCompactList}\item 
+void \hyperlink{classIFM13Synth_a31eb626e5ca0232d187e3471e8fed348}{add\-Blocked\-State} (const vector$<$ int $>$ \&state\-\_\-cube, size\-\_\-t level)
+\begin{DoxyCompactList}\small\item\em Removes a state(-\/cube) from the frame R\mbox{[}level\mbox{]}. \end{DoxyCompactList}\item 
+bool \hyperlink{classIFM13Synth_a27c2617424cad795b9af575a85e75071}{is\-Blocked} (const vector$<$ int $>$ \&state\-\_\-cube, size\-\_\-t level)
+\begin{DoxyCompactList}\small\item\em Checks if a state is contained in a certain frame. \end{DoxyCompactList}\item 
+void \hyperlink{classIFM13Synth_adf319a6748eda4aa29017a561752b262}{add\-Lose} (const vector$<$ int $>$ \&state\-\_\-cube)
+\begin{DoxyCompactList}\small\item\em Removes a state(-\/cube) from the current over-\/approximation of the winning region. \end{DoxyCompactList}\item 
+bool \hyperlink{classIFM13Synth_aca85bf07810f6c8cc3c3125895daf56f}{is\-Lose} (const vector$<$ int $>$ \&state\-\_\-cube)
+\begin{DoxyCompactList}\small\item\em Checks if a state satisfies the current over-\/approximation of the winning region. \end{DoxyCompactList}\item 
+void \hyperlink{classIFM13Synth_a1edccb04c096bb68a6fb2a8245f3129b}{gen\-And\-Block\-Trans} (const vector$<$ int $>$ \&state\-\_\-in\-\_\-cube, const vector$<$ int $>$ \&ctrl\-\_\-cube, size\-\_\-t level)
+\begin{DoxyCompactList}\small\item\em Generalizes and excludes a blocked transition. \end{DoxyCompactList}\item 
+\hyperlink{classCNF}{C\-N\-F} \& \hyperlink{classIFM13Synth_a050f0c3c5089ef6c5f793878bd60abc9}{get\-R} (size\-\_\-t index)
+\begin{DoxyCompactList}\small\item\em Returns the frame R\mbox{[}index\mbox{]} in \hyperlink{classCNF}{C\-N\-F}. \end{DoxyCompactList}\item 
+\hyperlink{classCNF}{C\-N\-F} \& \hyperlink{classIFM13Synth_a396e520b9db59b73a46a2315ee3123b4}{get\-U} (size\-\_\-t index)
+\begin{DoxyCompactList}\small\item\em Returns the blocked transitions U\mbox{[}index\mbox{]} in \hyperlink{classCNF}{C\-N\-F}. \end{DoxyCompactList}\item 
+\hyperlink{classSatSolver}{Sat\-Solver} $\ast$ \hyperlink{classIFM13Synth_ae97c0b41568cf25e163ab9b309f0dcaa}{get\-Goto\-Next\-Lower\-Solver} (size\-\_\-t index)
+\begin{DoxyCompactList}\small\item\em Returns a solver with \hyperlink{classCNF}{C\-N\-F}\-: U\mbox{[}index\mbox{]} \& T \& R\mbox{[}index-\/1\mbox{]}'. \end{DoxyCompactList}\item 
+\hyperlink{classSatSolver}{Sat\-Solver} $\ast$ \hyperlink{classIFM13Synth_af087a4ddf9026bb48a752c03e539d9da}{get\-Gen\-Block\-Trans\-Solver} (size\-\_\-t index)
+\begin{DoxyCompactList}\small\item\em Returns a solver with \hyperlink{classCNF}{C\-N\-F}\-: T \& R\mbox{[}index-\/1\mbox{]}'. \end{DoxyCompactList}\item 
+\hyperlink{classIFMProofObligation}{I\-F\-M\-Proof\-Obligation} \hyperlink{classIFM13Synth_a6bd825fad36c8cd64afbc2b17fff8b69}{pop\-Min} (list$<$ \hyperlink{classIFMProofObligation}{I\-F\-M\-Proof\-Obligation} $>$ \&queue)
+\begin{DoxyCompactList}\small\item\em Takes a list of proof obligations and removes the element with lowest rank. \end{DoxyCompactList}\item 
+void \hyperlink{classIFM13Synth_a986f63c9895b2999fe2ed27e38df4b84}{debug\-Print\-Rs} () const 
+\begin{DoxyCompactList}\small\item\em A debugging utility to print all frames. \end{DoxyCompactList}\item 
+void \hyperlink{classIFM13Synth_a3957fbd604e2a188e924f39d62c4cab4}{debug\-Check\-Invariants} (size\-\_\-t k)
+\begin{DoxyCompactList}\small\item\em A debugging utility check invariants of the data structures. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \hyperlink{classCNF}{C\-N\-F} $>$ \hyperlink{classIFM13Synth_a10aead75cfca1b96cdd6c17f6825a9b7}{r\-\_\-}
+\begin{DoxyCompactList}\small\item\em The frames R\mbox{[}\mbox{]} of the algorithm. Each frame represents a set of states in \hyperlink{classCNF}{C\-N\-F}. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classCNF}{C\-N\-F} $>$ \hyperlink{classIFM13Synth_a493a9f0a3f2880597a89d48766706099}{u\-\_\-}
+\begin{DoxyCompactList}\small\item\em The blocked transitions U\mbox{[}\mbox{]} of the algorithm. \end{DoxyCompactList}\item 
+\hyperlink{classCNF}{C\-N\-F} \hyperlink{classIFM13Synth_ab6b54169dc042466704a4e6ceee4e94d}{win\-\_\-}
+\begin{DoxyCompactList}\small\item\em The current over-\/approximation of the winning region W (for the protagonist). \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classSatSolver}{Sat\-Solver} $\ast$ $>$ \hyperlink{classIFM13Synth_a4b964deefde7cd2cc4d81c8ea6f66976}{goto\-\_\-next\-\_\-lower\-\_\-solvers\-\_\-}
+\begin{DoxyCompactList}\small\item\em The solvers storing the \hyperlink{classCNF}{C\-N\-F}\-: U\mbox{[}k\mbox{]} \& T \& R\mbox{[}k-\/1\mbox{]}'. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classSatSolver}{Sat\-Solver} $\ast$ $>$ \hyperlink{classIFM13Synth_a950a68d4f0efeca411ead2d4439aed9d}{gen\-\_\-block\-\_\-trans\-\_\-solvers\-\_\-}
+\begin{DoxyCompactList}\small\item\em The solvers storing the \hyperlink{classCNF}{C\-N\-F}\-: T \& R\mbox{[}k-\/1\mbox{]}'. \end{DoxyCompactList}\item 
+\hyperlink{classSatSolver}{Sat\-Solver} $\ast$ \hyperlink{classIFM13Synth_a08f52e41085966317cfc516bd52dc3b3}{goto\-\_\-win\-\_\-solver\-\_\-}
+\begin{DoxyCompactList}\small\item\em A solver that stores the \hyperlink{classCNF}{C\-N\-F}\-: T \& W'. \end{DoxyCompactList}\item 
+\hyperlink{classCNF}{C\-N\-F} \hyperlink{classIFM13Synth_a9b05f84db78c1ac1a2a8f74212f66c64}{winning\-\_\-region\-\_\-}
+\begin{DoxyCompactList}\small\item\em The final winning region as computed by \hyperlink{classIFM13Synth_a51c6831265e1daf7d0120c0dd954a0c4}{compute\-Winning\-Region}. \end{DoxyCompactList}\item 
+\hyperlink{classCNF}{C\-N\-F} \hyperlink{classIFM13Synth_a334e8e6b638c8c57da3db0c3d161231b}{neg\-\_\-winning\-\_\-region\-\_\-}
+\begin{DoxyCompactList}\small\item\em The negated winning region as computed by \hyperlink{classIFM13Synth_a51c6831265e1daf7d0120c0dd954a0c4}{compute\-Winning\-Region}. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classIFM13Synth_ac35a6617ca45b2aa1823c99ae7c984a4}{sin\-\_\-}
+\begin{DoxyCompactList}\small\item\em The vector of present-\/ and next-\/state variables, and uncontrollable inputs. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classIFM13Synth_abb5b5fc0fe0db0e7aff06d22547e00bd}{sicn\-\_\-}
+\begin{DoxyCompactList}\small\item\em The vector of present-\/ and next-\/state variables, and all inputs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classIFM13Synth_aaa3a0095cffcd56cc6f13ba80362a589}{I\-F\-M13\-Synth} (const \hyperlink{classIFM13Synth}{I\-F\-M13\-Synth} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classIFM13Synth}{I\-F\-M13\-Synth} \& \hyperlink{classIFM13Synth_abbce31c761c00c1fca82f93dede10931}{operator=} (const \hyperlink{classIFM13Synth}{I\-F\-M13\-Synth} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implements the S\-A\-T-\/based synthesis method published at I\-F\-M'13. 
+
+This class is a re-\/implementation of the S\-A\-T-\/based synthesis method published in the paper\-: \char`\"{}\-Andreas Morgenstern, Manuel Gesell, Klaus Schneider\-: Solving Games Using
+\-Incremental Induction, I\-F\-M 2013, pages 177-\/191\char`\"{}. It is based on the description given in the paper with only a few additional optimizations following the paper \char`\"{}\-Niklas Een, Alan Mishchenko, Robert K. Brayton\-: Efficient implementation of property
+directed reachability, F\-M\-C\-A\-D 2011, pages 125-\/134\char`\"{}. All these optimizations are clearly marked in the source code. In order to understand the code in this class, you should read the I\-F\-M'13 paper first. After that, you will find a one-\/to-\/one correspondence between the functions described in the paper and the methods of this class.
+
+The I\-F\-M'13 publication only describes how to determine realizability, but not how extract a winning region from this computation. Our implementation also extracts a winning region (the set R\mbox{[}i\mbox{]} such that R\mbox{[}i\mbox{]} = R\mbox{[}i-\/1\mbox{]}).
+
+\begin{DoxyNote}{Note}
+This is not the original implementation of the I\-F\-M'13 paper, it is a re-\/implementation. The re-\/implementation is based on the paper only. The original implementation may contain more optimizations. 
+\end{DoxyNote}
+\begin{DoxyAuthor}{Author}
+Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0.\-0 
+\end{DoxyVersion}
+
+
+Definition at line 64 of file I\-F\-M13\-Synth.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classIFM13Synth_a4df6eb2628d3a8fd6462434a2adea84b}{\index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}!I\-F\-M13\-Synth@{I\-F\-M13\-Synth}}
+\index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}!IFM13Synth@{I\-F\-M13\-Synth}}
+\subsubsection[{I\-F\-M13\-Synth}]{\setlength{\rightskip}{0pt plus 5cm}I\-F\-M13\-Synth\-::\-I\-F\-M13\-Synth (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classIFM13Synth_a4df6eb2628d3a8fd6462434a2adea84b}
+
+
+Constructor. 
+
+
+
+Definition at line 54 of file I\-F\-M13\-Synth.\-cpp.
+
+
+
+References C\-N\-F\-::add\-C\-N\-F(), Var\-Info\-::\-C\-T\-R\-L, gen\-\_\-block\-\_\-trans\-\_\-solvers\-\_\-, Options\-::get\-S\-A\-T\-Solver(), Var\-Manager\-::get\-Vars\-Of\-Type(), goto\-\_\-next\-\_\-lower\-\_\-solvers\-\_\-, goto\-\_\-win\-\_\-solver\-\_\-, Sat\-Solver\-::inc\-Add\-C\-N\-F(), Var\-Info\-::\-I\-N\-P\-U\-T, Var\-Manager\-::instance(), Options\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), Var\-Info\-::\-N\-E\-X\-T\-\_\-\-S\-T\-A\-T\-E, Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, r\-\_\-, sicn\-\_\-, sin\-\_\-, Sat\-Solver\-::start\-Incremental\-Session(), u\-\_\-, and win\-\_\-.
+
+\hypertarget{classIFM13Synth_ad042200b1639e702af49e55088a52f52}{\index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}!$\sim$\-I\-F\-M13\-Synth@{$\sim$\-I\-F\-M13\-Synth}}
+\index{$\sim$\-I\-F\-M13\-Synth@{$\sim$\-I\-F\-M13\-Synth}!IFM13Synth@{I\-F\-M13\-Synth}}
+\subsubsection[{$\sim$\-I\-F\-M13\-Synth}]{\setlength{\rightskip}{0pt plus 5cm}I\-F\-M13\-Synth\-::$\sim$\-I\-F\-M13\-Synth (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classIFM13Synth_ad042200b1639e702af49e55088a52f52}
+
+
+Destructor. 
+
+
+
+Definition at line 102 of file I\-F\-M13\-Synth.\-cpp.
+
+
+
+References gen\-\_\-block\-\_\-trans\-\_\-solvers\-\_\-, goto\-\_\-next\-\_\-lower\-\_\-solvers\-\_\-, and goto\-\_\-win\-\_\-solver\-\_\-.
+
+\hypertarget{classIFM13Synth_aaa3a0095cffcd56cc6f13ba80362a589}{\index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}!I\-F\-M13\-Synth@{I\-F\-M13\-Synth}}
+\index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}!IFM13Synth@{I\-F\-M13\-Synth}}
+\subsubsection[{I\-F\-M13\-Synth}]{\setlength{\rightskip}{0pt plus 5cm}I\-F\-M13\-Synth\-::\-I\-F\-M13\-Synth (
+\begin{DoxyParamCaption}
+\item[{const {\bf I\-F\-M13\-Synth} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classIFM13Synth_aaa3a0095cffcd56cc6f13ba80362a589}
+
+
+Copy constructor. 
+
+The copy constructor is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classIFM13Synth_a31eb626e5ca0232d187e3471e8fed348}{\index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}!add\-Blocked\-State@{add\-Blocked\-State}}
+\index{add\-Blocked\-State@{add\-Blocked\-State}!IFM13Synth@{I\-F\-M13\-Synth}}
+\subsubsection[{add\-Blocked\-State}]{\setlength{\rightskip}{0pt plus 5cm}void I\-F\-M13\-Synth\-::add\-Blocked\-State (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{state\-\_\-cube, }
+\item[{size\-\_\-t}]{level}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Synth_a31eb626e5ca0232d187e3471e8fed348}
+
+
+Removes a state(-\/cube) from the frame R\mbox{[}level\mbox{]}. 
+
+This method updates R\mbox{[}level\mbox{]} \-:= R\mbox{[}level\mbox{]} \& !state\-\_\-cube. state\-\_\-cube is a potentially incomplete state-\/cube. We also update the R-\/sets of all smaller levels in the same way for syntactic containment reasons (as described in the paper).
+
+
+\begin{DoxyParams}{Parameters}
+{\em state\-\_\-cube} & The state-\/cube that should be removed from R\mbox{[}level\mbox{]}. The cube is potentially incomplete, i.\-e., can represent a larger set of states. \\
+\hline
+{\em level} & The level in which the state should be blocked (i.\-e., removed form the corresponding frame R\mbox{[}level\mbox{]}). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 347 of file I\-F\-M13\-Synth.\-cpp.
+
+
+
+References C\-N\-F\-::add\-Clause(), get\-Gen\-Block\-Trans\-Solver(), get\-Goto\-Next\-Lower\-Solver(), get\-R(), Sat\-Solver\-::inc\-Add\-Clause(), Sat\-Solver\-::inc\-Is\-Sat(), Var\-Manager\-::instance(), r\-\_\-, and Utils\-::swap\-Present\-To\-Next().
+
+
+
+Referenced by rec\-Block\-Cube().
+
+\hypertarget{classIFM13Synth_a0aa3bd29c1621efda5abb30dd9357214}{\index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}!add\-Blocked\-Transition@{add\-Blocked\-Transition}}
+\index{add\-Blocked\-Transition@{add\-Blocked\-Transition}!IFM13Synth@{I\-F\-M13\-Synth}}
+\subsubsection[{add\-Blocked\-Transition}]{\setlength{\rightskip}{0pt plus 5cm}void I\-F\-M13\-Synth\-::add\-Blocked\-Transition (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{state\-\_\-in\-\_\-cube, }
+\item[{size\-\_\-t}]{level}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Synth_a0aa3bd29c1621efda5abb30dd9357214}
+
+
+Marks a state-\/input-\/pair as blocked. 
+
+The meaning is\-: we want to store the fact that a certain state-\/input pair is not helpful for the antagonist (the party controlling the inputs i) in trying to move from R\mbox{[}level\mbox{]} to R\mbox{[}level-\/1\mbox{]}. Hence, we update U\mbox{[}level\mbox{]} \-:= U\mbox{[}level\mbox{]} \& !state\-\_\-in\-\_\-cube. We also update the U-\/sets of all smaller levels in the same way for syntactic containment reasons (as described in the paper).
+
+
+\begin{DoxyParams}{Parameters}
+{\em state\-\_\-in\-\_\-cube} & The state-\/input pair as a cube over present state variables and uncontrollable inputs. The cube is potentially incomplete, i.\-e., can represent a larger set of state-\/input pairs. \\
+\hline
+{\em level} & The level in which the transition should be blocked (i.\-e., the state-\/input pair should by marked as useless for the antagonist). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 332 of file I\-F\-M13\-Synth.\-cpp.
+
+
+
+References C\-N\-F\-::add\-Clause\-And\-Simplify(), get\-Goto\-Next\-Lower\-Solver(), get\-U(), and Sat\-Solver\-::inc\-Add\-Clause().
+
+
+
+Referenced by gen\-And\-Block\-Trans().
+
+\hypertarget{classIFM13Synth_adf319a6748eda4aa29017a561752b262}{\index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}!add\-Lose@{add\-Lose}}
+\index{add\-Lose@{add\-Lose}!IFM13Synth@{I\-F\-M13\-Synth}}
+\subsubsection[{add\-Lose}]{\setlength{\rightskip}{0pt plus 5cm}void I\-F\-M13\-Synth\-::add\-Lose (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{state\-\_\-cube}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Synth_adf319a6748eda4aa29017a561752b262}
+
+
+Removes a state(-\/cube) from the current over-\/approximation of the winning region. 
+
+This method updates W \-:= W \& !state\-\_\-cube. state\-\_\-cube is a potentially incomplete state-\/cube.
+
+
+\begin{DoxyParams}{Parameters}
+{\em state\-\_\-cube} & The state-\/cube that should be removed from the current over-\/approximation of the winning region. The cube is potentially incomplete, i.\-e., \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 401 of file I\-F\-M13\-Synth.\-cpp.
+
+
+
+References C\-N\-F\-::add\-Clause\-And\-Simplify(), goto\-\_\-win\-\_\-solver\-\_\-, Sat\-Solver\-::inc\-Add\-Clause(), Utils\-::swap\-Present\-To\-Next(), and win\-\_\-.
+
+
+
+Referenced by rec\-Block\-Cube().
+
+\hypertarget{classIFM13Synth_a51c6831265e1daf7d0120c0dd954a0c4}{\index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}!compute\-Winning\-Region@{compute\-Winning\-Region}}
+\index{compute\-Winning\-Region@{compute\-Winning\-Region}!IFM13Synth@{I\-F\-M13\-Synth}}
+\subsubsection[{compute\-Winning\-Region}]{\setlength{\rightskip}{0pt plus 5cm}bool I\-F\-M13\-Synth\-::compute\-Winning\-Region (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Synth_a51c6831265e1daf7d0120c0dd954a0c4}
+
+
+Computes the set of states from which the specification can be fulfilled. 
+
+\begin{DoxyReturn}{Returns}
+True if the specification is realizable, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 141 of file I\-F\-M13\-Synth.\-cpp.
+
+
+
+References debug\-Check\-Invariants(), get\-R(), Var\-Manager\-::get\-Vars\-Of\-Type(), Var\-Manager\-::instance(), I\-S\-\_\-\-L\-O\-S\-E, L\-\_\-\-D\-B\-G, L\-\_\-\-L\-O\-G, neg\-\_\-winning\-\_\-region\-\_\-, C\-N\-F\-::negate(), Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, propagate\-Blocked\-States(), rec\-Block\-Cube(), and winning\-\_\-region\-\_\-.
+
+
+
+Referenced by run().
+
+\hypertarget{classIFM13Synth_a3957fbd604e2a188e924f39d62c4cab4}{\index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}!debug\-Check\-Invariants@{debug\-Check\-Invariants}}
+\index{debug\-Check\-Invariants@{debug\-Check\-Invariants}!IFM13Synth@{I\-F\-M13\-Synth}}
+\subsubsection[{debug\-Check\-Invariants}]{\setlength{\rightskip}{0pt plus 5cm}void I\-F\-M13\-Synth\-::debug\-Check\-Invariants (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{k}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Synth_a3957fbd604e2a188e924f39d62c4cab4}
+
+
+A debugging utility check invariants of the data structures. 
+
+The checks are only performed in debug-\/mode. In release-\/mode, this function does nothing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em k} & The maximum level up until which the invariants should be checked. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 498 of file I\-F\-M13\-Synth.\-cpp.
+
+
+
+References Q\-B\-F\-Solver\-::\-A, C\-N\-F\-::add\-C\-N\-F(), C\-N\-F\-::clear(), Var\-Info\-::\-C\-T\-R\-L, Q\-B\-F\-Solver\-::\-E, get\-R(), Options\-::get\-S\-A\-T\-Solver(), get\-U(), Var\-Info\-::\-I\-N\-P\-U\-T, Options\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), Dep\-Q\-B\-F\-Api\-::is\-Sat(), Sat\-Solver\-::is\-Sat(), M\-A\-S\-S\-E\-R\-T, C\-N\-F\-::negate(), Var\-Info\-::\-N\-E\-X\-T\-\_\-\-S\-T\-A\-T\-E, Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, C\-N\-F\-::swap\-Present\-To\-Next(), Var\-Info\-::\-T\-M\-P, and win\-\_\-.
+
+
+
+Referenced by compute\-Winning\-Region().
+
+\hypertarget{classIFM13Synth_a986f63c9895b2999fe2ed27e38df4b84}{\index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}!debug\-Print\-Rs@{debug\-Print\-Rs}}
+\index{debug\-Print\-Rs@{debug\-Print\-Rs}!IFM13Synth@{I\-F\-M13\-Synth}}
+\subsubsection[{debug\-Print\-Rs}]{\setlength{\rightskip}{0pt plus 5cm}void I\-F\-M13\-Synth\-::debug\-Print\-Rs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Synth_a986f63c9895b2999fe2ed27e38df4b84}
+
+
+A debugging utility to print all frames. 
+
+Do this for small examples only. 
+
+Definition at line 488 of file I\-F\-M13\-Synth.\-cpp.
+
+
+
+References L\-\_\-\-D\-B\-G, and r\-\_\-.
+
+\hypertarget{classIFM13Synth_a1edccb04c096bb68a6fb2a8245f3129b}{\index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}!gen\-And\-Block\-Trans@{gen\-And\-Block\-Trans}}
+\index{gen\-And\-Block\-Trans@{gen\-And\-Block\-Trans}!IFM13Synth@{I\-F\-M13\-Synth}}
+\subsubsection[{gen\-And\-Block\-Trans}]{\setlength{\rightskip}{0pt plus 5cm}void I\-F\-M13\-Synth\-::gen\-And\-Block\-Trans (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{state\-\_\-in\-\_\-cube, }
+\item[{const vector$<$ int $>$ \&}]{ctrl\-\_\-cube, }
+\item[{size\-\_\-t}]{level}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Synth_a1edccb04c096bb68a6fb2a8245f3129b}
+
+
+Generalizes and excludes a blocked transition. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state\-\_\-in\-\_\-cube} & The state-\/input cube (the transition) that should be generalized and and blocked. \\
+\hline
+{\em ctrl\-\_\-cube} & The control signals that can be chosen by the protagonist in order to avoid ending up in R\mbox{[}level-\/1\mbox{]}. \\
+\hline
+{\em level} & The frame in which the transition should be blocked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+False if state\-\_\-cube satisfies W, true otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 418 of file I\-F\-M13\-Synth.\-cpp.
+
+
+
+References add\-Blocked\-Transition(), get\-Gen\-Block\-Trans\-Solver(), Sat\-Solver\-::inc\-Is\-Sat\-Model\-Or\-Core(), and M\-A\-S\-S\-E\-R\-T.
+
+
+
+Referenced by rec\-Block\-Cube().
+
+\hypertarget{classIFM13Synth_af087a4ddf9026bb48a752c03e539d9da}{\index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}!get\-Gen\-Block\-Trans\-Solver@{get\-Gen\-Block\-Trans\-Solver}}
+\index{get\-Gen\-Block\-Trans\-Solver@{get\-Gen\-Block\-Trans\-Solver}!IFM13Synth@{I\-F\-M13\-Synth}}
+\subsubsection[{get\-Gen\-Block\-Trans\-Solver}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sat\-Solver} $\ast$ I\-F\-M13\-Synth\-::get\-Gen\-Block\-Trans\-Solver (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Synth_af087a4ddf9026bb48a752c03e539d9da}
+
+
+Returns a solver with \hyperlink{classCNF}{C\-N\-F}\-: T \& R\mbox{[}index-\/1\mbox{]}'. 
+
+This solver is used to generalize blocked transitions. If the solver for this index does not yet exists, it is created.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the requested solver. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A solver with \hyperlink{classCNF}{C\-N\-F}\-: T \& R\mbox{[}index-\/1\mbox{]}'. get\-Gen\-Block\-Trans\-Solver(0) returns N\-U\-L\-L. 
+\end{DoxyReturn}
+
+
+Definition at line 459 of file I\-F\-M13\-Synth.\-cpp.
+
+
+
+References gen\-\_\-block\-\_\-trans\-\_\-solvers\-\_\-, Options\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), and sicn\-\_\-.
+
+
+
+Referenced by add\-Blocked\-State(), gen\-And\-Block\-Trans(), and propagate\-Blocked\-States().
+
+\hypertarget{classIFM13Synth_ae97c0b41568cf25e163ab9b309f0dcaa}{\index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}!get\-Goto\-Next\-Lower\-Solver@{get\-Goto\-Next\-Lower\-Solver}}
+\index{get\-Goto\-Next\-Lower\-Solver@{get\-Goto\-Next\-Lower\-Solver}!IFM13Synth@{I\-F\-M13\-Synth}}
+\subsubsection[{get\-Goto\-Next\-Lower\-Solver}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sat\-Solver} $\ast$ I\-F\-M13\-Synth\-::get\-Goto\-Next\-Lower\-Solver (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Synth_ae97c0b41568cf25e163ab9b309f0dcaa}
+
+
+Returns a solver with \hyperlink{classCNF}{C\-N\-F}\-: U\mbox{[}index\mbox{]} \& T \& R\mbox{[}index-\/1\mbox{]}'. 
+
+This solver is used to search for moves the antagonist can make in order to reach R\mbox{[}index-\/1\mbox{]}. If the solver for this index does not yet exists, it is created.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the requested solver. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A solver with \hyperlink{classCNF}{C\-N\-F}\-: U\mbox{[}index\mbox{]} \& T \& R\mbox{[}index-\/1\mbox{]}'. get\-Goto\-Next\-Lower\-Solver(0) returns N\-U\-L\-L. 
+\end{DoxyReturn}
+
+
+Definition at line 447 of file I\-F\-M13\-Synth.\-cpp.
+
+
+
+References goto\-\_\-next\-\_\-lower\-\_\-solvers\-\_\-, Options\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), and sicn\-\_\-.
+
+
+
+Referenced by add\-Blocked\-State(), add\-Blocked\-Transition(), propagate\-Blocked\-States(), and rec\-Block\-Cube().
+
+\hypertarget{classIFM13Synth_a050f0c3c5089ef6c5f793878bd60abc9}{\index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}!get\-R@{get\-R}}
+\index{get\-R@{get\-R}!IFM13Synth@{I\-F\-M13\-Synth}}
+\subsubsection[{get\-R}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} \& I\-F\-M13\-Synth\-::get\-R (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Synth_a050f0c3c5089ef6c5f793878bd60abc9}
+
+
+Returns the frame R\mbox{[}index\mbox{]} in \hyperlink{classCNF}{C\-N\-F}. 
+
+If the frame with this index does not yet exists, it is created.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the requested frame. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The frame R\mbox{[}index\mbox{]} in \hyperlink{classCNF}{C\-N\-F}. 
+\end{DoxyReturn}
+
+
+Definition at line 431 of file I\-F\-M13\-Synth.\-cpp.
+
+
+
+References r\-\_\-.
+
+
+
+Referenced by add\-Blocked\-State(), compute\-Winning\-Region(), debug\-Check\-Invariants(), is\-Blocked(), and propagate\-Blocked\-States().
+
+\hypertarget{classIFM13Synth_a396e520b9db59b73a46a2315ee3123b4}{\index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}!get\-U@{get\-U}}
+\index{get\-U@{get\-U}!IFM13Synth@{I\-F\-M13\-Synth}}
+\subsubsection[{get\-U}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} \& I\-F\-M13\-Synth\-::get\-U (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Synth_a396e520b9db59b73a46a2315ee3123b4}
+
+
+Returns the blocked transitions U\mbox{[}index\mbox{]} in \hyperlink{classCNF}{C\-N\-F}. 
+
+If the set of blocked transitions with this index does not yet exists, it is created. This function is actually only needed for debugging purposes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the requested set of blocked transitions. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The set U\mbox{[}index\mbox{]} of blocked transitions in \hyperlink{classCNF}{C\-N\-F}. 
+\end{DoxyReturn}
+
+
+Definition at line 439 of file I\-F\-M13\-Synth.\-cpp.
+
+
+
+References u\-\_\-.
+
+
+
+Referenced by add\-Blocked\-Transition(), and debug\-Check\-Invariants().
+
+\hypertarget{classIFM13Synth_a27c2617424cad795b9af575a85e75071}{\index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}!is\-Blocked@{is\-Blocked}}
+\index{is\-Blocked@{is\-Blocked}!IFM13Synth@{I\-F\-M13\-Synth}}
+\subsubsection[{is\-Blocked}]{\setlength{\rightskip}{0pt plus 5cm}bool I\-F\-M13\-Synth\-::is\-Blocked (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{state\-\_\-cube, }
+\item[{size\-\_\-t}]{level}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Synth_a27c2617424cad795b9af575a85e75071}
+
+
+Checks if a state is contained in a certain frame. 
+
+The passed state cube is complete, i.\-e., contains all state variables. Hence, containment can be (and is) checked syntactically. We simply check if state\-\_\-cube satisfies all clauses of R\mbox{[}level\mbox{]}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em state\-\_\-cube} & A full cube over the present state variables. \\
+\hline
+{\em level} & The index i of a certain frame R\mbox{[}i\mbox{]}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+False if state\-\_\-cube satisfies R\mbox{[}level\mbox{]}, true otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 395 of file I\-F\-M13\-Synth.\-cpp.
+
+
+
+References get\-R(), and C\-N\-F\-::is\-Sat\-By().
+
+
+
+Referenced by rec\-Block\-Cube().
+
+\hypertarget{classIFM13Synth_aca85bf07810f6c8cc3c3125895daf56f}{\index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}!is\-Lose@{is\-Lose}}
+\index{is\-Lose@{is\-Lose}!IFM13Synth@{I\-F\-M13\-Synth}}
+\subsubsection[{is\-Lose}]{\setlength{\rightskip}{0pt plus 5cm}bool I\-F\-M13\-Synth\-::is\-Lose (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{state\-\_\-cube}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Synth_aca85bf07810f6c8cc3c3125895daf56f}
+
+
+Checks if a state satisfies the current over-\/approximation of the winning region. 
+
+The passed state cube is complete, i.\-e., contains all state variables. Hence, containment can be (and is) checked syntactically. We simply check if state\-\_\-cube satisfies all clauses of W (stored in \hyperlink{classIFM13Synth_ab6b54169dc042466704a4e6ceee4e94d}{win\-\_\- }).
+
+
+\begin{DoxyParams}{Parameters}
+{\em state\-\_\-cube} & A full cube over the present state variables. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+False if state\-\_\-cube satisfies W, true otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 412 of file I\-F\-M13\-Synth.\-cpp.
+
+
+
+References C\-N\-F\-::is\-Sat\-By(), and win\-\_\-.
+
+
+
+Referenced by rec\-Block\-Cube().
+
+\hypertarget{classIFM13Synth_abbce31c761c00c1fca82f93dede10931}{\index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}!operator=@{operator=}}
+\index{operator=@{operator=}!IFM13Synth@{I\-F\-M13\-Synth}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-F\-M13\-Synth}\& I\-F\-M13\-Synth\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf I\-F\-M13\-Synth} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classIFM13Synth_abbce31c761c00c1fca82f93dede10931}
+
+
+Assignment operator. 
+
+The assignment operator is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the assignment, i.\-e, $\ast$this. 
+\end{DoxyReturn}
+\hypertarget{classIFM13Synth_a6bd825fad36c8cd64afbc2b17fff8b69}{\index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}!pop\-Min@{pop\-Min}}
+\index{pop\-Min@{pop\-Min}!IFM13Synth@{I\-F\-M13\-Synth}}
+\subsubsection[{pop\-Min}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-F\-M\-Proof\-Obligation} I\-F\-M13\-Synth\-::pop\-Min (
+\begin{DoxyParamCaption}
+\item[{list$<$ {\bf I\-F\-M\-Proof\-Obligation} $>$ \&}]{queue}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Synth_a6bd825fad36c8cd64afbc2b17fff8b69}
+
+
+Takes a list of proof obligations and removes the element with lowest rank. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em queue} & A list of proof obligations. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The element that has been removed from the list. It is always the element (among the elements) with minimal rank. 
+\end{DoxyReturn}
+
+
+Definition at line 471 of file I\-F\-M13\-Synth.\-cpp.
+
+
+
+References M\-A\-S\-S\-E\-R\-T.
+
+
+
+Referenced by rec\-Block\-Cube().
+
+\hypertarget{classIFM13Synth_ad9262224ce1ddbda37d748fbecfe5d8e}{\index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}!propagate\-Blocked\-States@{propagate\-Blocked\-States}}
+\index{propagate\-Blocked\-States@{propagate\-Blocked\-States}!IFM13Synth@{I\-F\-M13\-Synth}}
+\subsubsection[{propagate\-Blocked\-States}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t I\-F\-M13\-Synth\-::propagate\-Blocked\-States (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{max\-\_\-level}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Synth_ad9262224ce1ddbda37d748fbecfe5d8e}
+
+
+Propagates clauses forward and searches for equivalent clause sets. 
+
+Similar to I\-C3, this method propagates clauses of frames forward. It also checks if two adjacent clauses sets become syntactically equal.
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\-\_\-level} & The maximum frame level until which propagation should be performed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number N returned by this method has the following meaning\-: N=0 means that no equal clause sets have been found. N $>$ 0 means that R\mbox{[}N\mbox{]} = R\mbox{[}N-\/1\mbox{]}. 
+\end{DoxyReturn}
+
+
+Definition at line 173 of file I\-F\-M13\-Synth.\-cpp.
+
+
+
+References C\-N\-F\-::get\-Clauses(), get\-Gen\-Block\-Trans\-Solver(), get\-Goto\-Next\-Lower\-Solver(), get\-R(), Sat\-Solver\-::inc\-Add\-Clause(), Sat\-Solver\-::inc\-Is\-Sat(), C\-N\-F\-::remove\-Duplicates(), Utils\-::swap\-Present\-To\-Next(), and C\-N\-F\-::swap\-With().
+
+
+
+Referenced by compute\-Winning\-Region().
+
+\hypertarget{classIFM13Synth_af46e431e089225b58148ee317d523123}{\index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}!rec\-Block\-Cube@{rec\-Block\-Cube}}
+\index{rec\-Block\-Cube@{rec\-Block\-Cube}!IFM13Synth@{I\-F\-M13\-Synth}}
+\subsubsection[{rec\-Block\-Cube}]{\setlength{\rightskip}{0pt plus 5cm}bool I\-F\-M13\-Synth\-::rec\-Block\-Cube (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{state\-\_\-cube, }
+\item[{size\-\_\-t}]{level}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Synth_af46e431e089225b58148ee317d523123}
+
+
+Analyzes the rank of the passed state. 
+
+There are two possible conclusions\-: (a) the rank of the state is $>$ level, (b) the rank of the state is $<$= level. In order to analyze a certain state, this method may analyze some of its successor states first (using a queue of proof obligations internally). This method is always called for the initial state only.
+
+
+\begin{DoxyParams}{Parameters}
+{\em state\-\_\-cube} & A full cube over the state variables, describing the state that should be analyzed. \\
+\hline
+{\em level} & The level for the analysis (this method checks if the rank of the state is $>$ level or $<$= level). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-S\-\_\-\-G\-R\-E\-A\-T\-E\-R (an alias for true) if the rank of the state is $>$ level. I\-S\-\_\-\-L\-O\-S\-E (an alias for false) otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 225 of file I\-F\-M13\-Synth.\-cpp.
+
+
+
+References add\-Blocked\-State(), add\-Lose(), Utils\-::contains\-Init(), Var\-Info\-::\-C\-T\-R\-L, Utils\-::extract(), Utils\-::extract\-Next\-As\-Present(), Utils\-::extract\-Pres\-In(), gen\-And\-Block\-Trans(), get\-Goto\-Next\-Lower\-Solver(), I\-F\-M\-Proof\-Obligation\-::get\-Level(), I\-F\-M\-Proof\-Obligation\-::get\-Pre\-Ctrl\-Cube(), I\-F\-M\-Proof\-Obligation\-::get\-Pre\-State\-In\-Cube(), I\-F\-M\-Proof\-Obligation\-::get\-State(), goto\-\_\-win\-\_\-solver\-\_\-, I\-F\-M\-Proof\-Obligation\-::has\-Pre(), Sat\-Solver\-::inc\-Is\-Sat\-Model\-Or\-Core(), Var\-Info\-::\-I\-N\-P\-U\-T, I\-S\-\_\-\-G\-R\-E\-A\-T\-E\-R, I\-S\-\_\-\-L\-O\-S\-E, is\-Blocked(), is\-Lose(), pop\-Min(), Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, sicn\-\_\-, and sin\-\_\-.
+
+
+
+Referenced by compute\-Winning\-Region().
+
+\hypertarget{classIFM13Synth_a42adb4f76d88199d92b1bedb58a139f8}{\index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}!run@{run}}
+\index{run@{run}!IFM13Synth@{I\-F\-M13\-Synth}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}bool I\-F\-M13\-Synth\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classIFM13Synth_a42adb4f76d88199d92b1bedb58a139f8}
+
+
+Executes the back-\/end (which is implemented as described in the I\-F\-M'13 paper). 
+
+This method is the workhorse of this class. It implements the S\-A\-T-\/based synthesis method published in the paper\-: \char`\"{}\-Andreas Morgenstern, Manuel Gesell, Klaus Schneider\-: Solving
+\-Games Using Incremental Induction, I\-F\-M 2013, pages 177-\/191\char`\"{}. It is based on the description given in the paper with only a few additional optimizations following the paper \char`\"{}\-Niklas Een, Alan Mishchenko, Robert K. Brayton\-: Efficient implementation of
+property directed reachability, F\-M\-C\-A\-D 2011, pages 125-\/134\char`\"{}. All these optimizations are clearly marked in the source code. In order to understand the code in this class, you should read the I\-F\-M'13 paper first. After that, you will find a one-\/to-\/one correspondence between the functions described in the paper and the methods of this class.
+
+The I\-F\-M'13 publication only describes how to determine realizability, but not how extract a winning region from this computation. Our implementation also extracts a winning region (the set R\mbox{[}i\mbox{]} such that R\mbox{[}i\mbox{]} = R\mbox{[}i-\/1\mbox{]}).
+
+\begin{DoxyReturn}{Returns}
+True if the specification was realizable, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classBackEnd_a099e717dc71e9cc2d838b1ca86340590}{Back\-End}.
+
+
+
+Definition at line 117 of file I\-F\-M13\-Synth.\-cpp.
+
+
+
+References compute\-Winning\-Region(), Utils\-::debug\-Check\-Win\-Reg(), Q\-B\-F\-Cert\-Impl\-Extractor\-::extract\-Circuit(), Options\-::instance(), L\-\_\-\-I\-N\-F, L\-\_\-\-R\-E\-S, neg\-\_\-winning\-\_\-region\-\_\-, and winning\-\_\-region\-\_\-.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classIFM13Synth_a950a68d4f0efeca411ead2d4439aed9d}{\index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}!gen\-\_\-block\-\_\-trans\-\_\-solvers\-\_\-@{gen\-\_\-block\-\_\-trans\-\_\-solvers\-\_\-}}
+\index{gen\-\_\-block\-\_\-trans\-\_\-solvers\-\_\-@{gen\-\_\-block\-\_\-trans\-\_\-solvers\-\_\-}!IFM13Synth@{I\-F\-M13\-Synth}}
+\subsubsection[{gen\-\_\-block\-\_\-trans\-\_\-solvers\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf Sat\-Solver}$\ast$$>$ I\-F\-M13\-Synth\-::gen\-\_\-block\-\_\-trans\-\_\-solvers\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Synth_a950a68d4f0efeca411ead2d4439aed9d}
+
+
+The solvers storing the \hyperlink{classCNF}{C\-N\-F}\-: T \& R\mbox{[}k-\/1\mbox{]}'. 
+
+You should use \hyperlink{classIFM13Synth_af087a4ddf9026bb48a752c03e539d9da}{get\-Gen\-Block\-Trans\-Solver() } to access these solvers. The reason is that this method initializes the solvers if they do not yet exist. gen\-\_\-block\-\_\-trans\-\_\-solvers\-\_\-\mbox{[}0\mbox{]} is always N\-U\-L\-L. 
+
+Definition at line 329 of file I\-F\-M13\-Synth.\-h.
+
+
+
+Referenced by get\-Gen\-Block\-Trans\-Solver(), I\-F\-M13\-Synth(), and $\sim$\-I\-F\-M13\-Synth().
+
+\hypertarget{classIFM13Synth_a4b964deefde7cd2cc4d81c8ea6f66976}{\index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}!goto\-\_\-next\-\_\-lower\-\_\-solvers\-\_\-@{goto\-\_\-next\-\_\-lower\-\_\-solvers\-\_\-}}
+\index{goto\-\_\-next\-\_\-lower\-\_\-solvers\-\_\-@{goto\-\_\-next\-\_\-lower\-\_\-solvers\-\_\-}!IFM13Synth@{I\-F\-M13\-Synth}}
+\subsubsection[{goto\-\_\-next\-\_\-lower\-\_\-solvers\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf Sat\-Solver}$\ast$$>$ I\-F\-M13\-Synth\-::goto\-\_\-next\-\_\-lower\-\_\-solvers\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Synth_a4b964deefde7cd2cc4d81c8ea6f66976}
+
+
+The solvers storing the \hyperlink{classCNF}{C\-N\-F}\-: U\mbox{[}k\mbox{]} \& T \& R\mbox{[}k-\/1\mbox{]}'. 
+
+These solvers are used to search for moves the antagonist can make in order to reach R\mbox{[}k-\/1\mbox{]}. You should use \hyperlink{classIFM13Synth_ae97c0b41568cf25e163ab9b309f0dcaa}{get\-Goto\-Next\-Lower\-Solver() } to access these solvers. The reason is that this method initializes the solvers if they do not yet exist. goto\-\_\-next\-\_\-lower\-\_\-solvers\-\_\-\mbox{[}0\mbox{]} is always N\-U\-L\-L. 
+
+Definition at line 320 of file I\-F\-M13\-Synth.\-h.
+
+
+
+Referenced by get\-Goto\-Next\-Lower\-Solver(), I\-F\-M13\-Synth(), and $\sim$\-I\-F\-M13\-Synth().
+
+\hypertarget{classIFM13Synth_a08f52e41085966317cfc516bd52dc3b3}{\index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}!goto\-\_\-win\-\_\-solver\-\_\-@{goto\-\_\-win\-\_\-solver\-\_\-}}
+\index{goto\-\_\-win\-\_\-solver\-\_\-@{goto\-\_\-win\-\_\-solver\-\_\-}!IFM13Synth@{I\-F\-M13\-Synth}}
+\subsubsection[{goto\-\_\-win\-\_\-solver\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sat\-Solver}$\ast$ I\-F\-M13\-Synth\-::goto\-\_\-win\-\_\-solver\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Synth_a08f52e41085966317cfc516bd52dc3b3}
+
+
+A solver that stores the \hyperlink{classCNF}{C\-N\-F}\-: T \& W'. 
+
+
+
+Definition at line 334 of file I\-F\-M13\-Synth.\-h.
+
+
+
+Referenced by add\-Lose(), I\-F\-M13\-Synth(), rec\-Block\-Cube(), and $\sim$\-I\-F\-M13\-Synth().
+
+\hypertarget{classIFM13Synth_a334e8e6b638c8c57da3db0c3d161231b}{\index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}!neg\-\_\-winning\-\_\-region\-\_\-@{neg\-\_\-winning\-\_\-region\-\_\-}}
+\index{neg\-\_\-winning\-\_\-region\-\_\-@{neg\-\_\-winning\-\_\-region\-\_\-}!IFM13Synth@{I\-F\-M13\-Synth}}
+\subsubsection[{neg\-\_\-winning\-\_\-region\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} I\-F\-M13\-Synth\-::neg\-\_\-winning\-\_\-region\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Synth_a334e8e6b638c8c57da3db0c3d161231b}
+
+
+The negated winning region as computed by \hyperlink{classIFM13Synth_a51c6831265e1daf7d0120c0dd954a0c4}{compute\-Winning\-Region}. 
+
+
+
+Definition at line 344 of file I\-F\-M13\-Synth.\-h.
+
+
+
+Referenced by compute\-Winning\-Region(), and run().
+
+\hypertarget{classIFM13Synth_a10aead75cfca1b96cdd6c17f6825a9b7}{\index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}!r\-\_\-@{r\-\_\-}}
+\index{r\-\_\-@{r\-\_\-}!IFM13Synth@{I\-F\-M13\-Synth}}
+\subsubsection[{r\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf C\-N\-F}$>$ I\-F\-M13\-Synth\-::r\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Synth_a10aead75cfca1b96cdd6c17f6825a9b7}
+
+
+The frames R\mbox{[}\mbox{]} of the algorithm. Each frame represents a set of states in \hyperlink{classCNF}{C\-N\-F}. 
+
+You should use \hyperlink{classIFM13Synth_a050f0c3c5089ef6c5f793878bd60abc9}{get\-R() } to access the frames. The reason is that this method initializes frames if they do not yet exist. 
+
+Definition at line 294 of file I\-F\-M13\-Synth.\-h.
+
+
+
+Referenced by add\-Blocked\-State(), debug\-Print\-Rs(), get\-R(), and I\-F\-M13\-Synth().
+
+\hypertarget{classIFM13Synth_abb5b5fc0fe0db0e7aff06d22547e00bd}{\index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}!sicn\-\_\-@{sicn\-\_\-}}
+\index{sicn\-\_\-@{sicn\-\_\-}!IFM13Synth@{I\-F\-M13\-Synth}}
+\subsubsection[{sicn\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ I\-F\-M13\-Synth\-::sicn\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Synth_abb5b5fc0fe0db0e7aff06d22547e00bd}
+
+
+The vector of present-\/ and next-\/state variables, and all inputs. 
+
+
+
+Definition at line 354 of file I\-F\-M13\-Synth.\-h.
+
+
+
+Referenced by get\-Gen\-Block\-Trans\-Solver(), get\-Goto\-Next\-Lower\-Solver(), I\-F\-M13\-Synth(), and rec\-Block\-Cube().
+
+\hypertarget{classIFM13Synth_ac35a6617ca45b2aa1823c99ae7c984a4}{\index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}!sin\-\_\-@{sin\-\_\-}}
+\index{sin\-\_\-@{sin\-\_\-}!IFM13Synth@{I\-F\-M13\-Synth}}
+\subsubsection[{sin\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ I\-F\-M13\-Synth\-::sin\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Synth_ac35a6617ca45b2aa1823c99ae7c984a4}
+
+
+The vector of present-\/ and next-\/state variables, and uncontrollable inputs. 
+
+
+
+Definition at line 349 of file I\-F\-M13\-Synth.\-h.
+
+
+
+Referenced by I\-F\-M13\-Synth(), and rec\-Block\-Cube().
+
+\hypertarget{classIFM13Synth_a493a9f0a3f2880597a89d48766706099}{\index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}!u\-\_\-@{u\-\_\-}}
+\index{u\-\_\-@{u\-\_\-}!IFM13Synth@{I\-F\-M13\-Synth}}
+\subsubsection[{u\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf C\-N\-F}$>$ I\-F\-M13\-Synth\-::u\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Synth_a493a9f0a3f2880597a89d48766706099}
+
+
+The blocked transitions U\mbox{[}\mbox{]} of the algorithm. 
+
+These sets are maintained only in debug mode. In release-\/mode they are only present inside the goto\-\_\-next\-\_\-lower\-\_\-solvers\-\_\-. You should use \hyperlink{classIFM13Synth_a396e520b9db59b73a46a2315ee3123b4}{get\-U() } to access the frames. The reason is that this method initializes elements if they do not yet exist. 
+
+Definition at line 304 of file I\-F\-M13\-Synth.\-h.
+
+
+
+Referenced by get\-U(), and I\-F\-M13\-Synth().
+
+\hypertarget{classIFM13Synth_ab6b54169dc042466704a4e6ceee4e94d}{\index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}!win\-\_\-@{win\-\_\-}}
+\index{win\-\_\-@{win\-\_\-}!IFM13Synth@{I\-F\-M13\-Synth}}
+\subsubsection[{win\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} I\-F\-M13\-Synth\-::win\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Synth_ab6b54169dc042466704a4e6ceee4e94d}
+
+
+The current over-\/approximation of the winning region W (for the protagonist). 
+
+
+
+Definition at line 309 of file I\-F\-M13\-Synth.\-h.
+
+
+
+Referenced by add\-Lose(), debug\-Check\-Invariants(), I\-F\-M13\-Synth(), and is\-Lose().
+
+\hypertarget{classIFM13Synth_a9b05f84db78c1ac1a2a8f74212f66c64}{\index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}!winning\-\_\-region\-\_\-@{winning\-\_\-region\-\_\-}}
+\index{winning\-\_\-region\-\_\-@{winning\-\_\-region\-\_\-}!IFM13Synth@{I\-F\-M13\-Synth}}
+\subsubsection[{winning\-\_\-region\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} I\-F\-M13\-Synth\-::winning\-\_\-region\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Synth_a9b05f84db78c1ac1a2a8f74212f66c64}
+
+
+The final winning region as computed by \hyperlink{classIFM13Synth_a51c6831265e1daf7d0120c0dd954a0c4}{compute\-Winning\-Region}. 
+
+
+
+Definition at line 339 of file I\-F\-M13\-Synth.\-h.
+
+
+
+Referenced by compute\-Winning\-Region(), and run().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{IFM13Synth_8h}{I\-F\-M13\-Synth.\-h}\item 
+src/\hyperlink{IFM13Synth_8cpp}{I\-F\-M13\-Synth.\-cpp}\end{DoxyCompactItemize}

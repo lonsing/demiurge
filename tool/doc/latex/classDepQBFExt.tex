@@ -1,0 +1,665 @@
+\hypertarget{classDepQBFExt}{\section{Dep\-Q\-B\-F\-Ext Class Reference}
+\label{classDepQBFExt}\index{Dep\-Q\-B\-F\-Ext@{Dep\-Q\-B\-F\-Ext}}
+}
+
+
+Calls the Dep\-Q\-B\-F Q\-B\-F-\/solver in a separate process, communicating with files.  
+
+
+
+
+{\ttfamily \#include $<$Dep\-Q\-B\-F\-Ext.\-h$>$}
+
+Inheritance diagram for Dep\-Q\-B\-F\-Ext\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classDepQBFExt}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} \{ \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7a090ab4a5b262710ccd80e97d72f9a7b3}{E}, 
+\hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7afd6518d5d985aa8346ac071e4c0d8ee0}{A}
+ \}
+\begin{DoxyCompactList}\small\item\em A type for the different kinds of quantifiers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDepQBFExt_a4544322ebc125d28e583106baf2c71cb}{Dep\-Q\-B\-F\-Ext} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classDepQBFExt_a6425c670e11fb6f2315171e27f850954}{$\sim$\-Dep\-Q\-B\-F\-Ext} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual string \hyperlink{classDepQBFExt_a18ef56586e1d2d06048cd8aadeeacc74}{qbf\-Cert} (const vector$<$ pair$<$ \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cf}{Var\-Info\-::\-Var\-Kind}, \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} $>$ $>$ \&quantifier\-\_\-prefix, const \hyperlink{classCNF}{C\-N\-F} \&cnf)
+\begin{DoxyCompactList}\small\item\em Executes the Q\-B\-F-\/\-Cert framework to compute Skolem functions for Q\-B\-Fs. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classExtQBFSolver_abec25b97170b79b42b85d1d4ec825a39}{is\-Sat} (const vector$<$ pair$<$ \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cf}{Var\-Info\-::\-Var\-Kind}, \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} $>$ $>$ \&quantifier\-\_\-prefix, const \hyperlink{classCNF}{C\-N\-F} \&cnf)
+\begin{DoxyCompactList}\small\item\em Checks if a given Q\-B\-F is satisfiable (with quantification over variable kinds). \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classExtQBFSolver_adc1bacec3307200dd90b260789e4c808}{is\-Sat} (const vector$<$ pair$<$ vector$<$ int $>$, \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} $>$ $>$ \&quantifier\-\_\-prefix, const \hyperlink{classCNF}{C\-N\-F} \&cnf)
+\begin{DoxyCompactList}\small\item\em Checks if a given Q\-B\-F is satisfiable (with quantification over variable sets). \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classExtQBFSolver_ad66c53343ce9c03eea6e4b5e7753f1b3}{is\-Sat\-Model} (const vector$<$ pair$<$ \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cf}{Var\-Info\-::\-Var\-Kind}, \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} $>$ $>$ \&quantifier\-\_\-prefix, const \hyperlink{classCNF}{C\-N\-F} \&cnf, vector$<$ int $>$ \&model)
+\begin{DoxyCompactList}\small\item\em Checks satisfiability and extracts a model (quantifying over variable kinds). \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classExtQBFSolver_a3add00496f016c2e60a188ce9daa1da1}{is\-Sat\-Model} (const vector$<$ pair$<$ vector$<$ int $>$, \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} $>$ $>$ \&quantifier\-\_\-prefix, const \hyperlink{classCNF}{C\-N\-F} \&cnf, vector$<$ int $>$ \&model)
+\begin{DoxyCompactList}\small\item\em Checks satisfiability and extracts a model (quantifying over variable sets). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classExtQBFSolver_abebb2acbb5afd5b205254246f39f3e33}{dump\-Q\-B\-F} (const vector$<$ pair$<$ \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cf}{Var\-Info\-::\-Var\-Kind}, \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} $>$ $>$ \&quantifier\-\_\-prefix, const \hyperlink{classCNF}{C\-N\-F} \&cnf, const string \&filename)
+\begin{DoxyCompactList}\small\item\em Dumps a Q\-B\-F (quantification over variable kinds) into a file in Q\-D\-I\-M\-A\-C\-S format. \end{DoxyCompactList}\item 
+static void \hyperlink{classExtQBFSolver_a7e329d1fdce2cf65390930b01cf3a32b}{dump\-Q\-B\-F} (const vector$<$ pair$<$ vector$<$ int $>$, \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} $>$ $>$ \&quantifier\-\_\-prefix, const \hyperlink{classCNF}{C\-N\-F} \&cnf, const string \&filename)
+\begin{DoxyCompactList}\small\item\em Dumps a Q\-B\-F (quantification over variable kinds) into a file in Q\-D\-I\-M\-A\-C\-S format. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual string \hyperlink{classDepQBFExt_a64f0c17958bd64cfd20a1f2478f68077}{get\-Solver\-Command} () const 
+\begin{DoxyCompactList}\small\item\em Returns the command to execute Dep\-Q\-B\-F. \end{DoxyCompactList}\item 
+virtual string \hyperlink{classDepQBFExt_a72321fcf85a52333c0f7e83004a3f119}{get\-Solver\-Command\-Model} () const 
+\begin{DoxyCompactList}\small\item\em Returns the command to execute Dep\-Q\-B\-F such that it produces models. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classExtQBFSolver_a11ddbf3980824453238071e8a036f804}{parse\-Answer} (int ret) const 
+\begin{DoxyCompactList}\small\item\em Parses the answer of the Q\-B\-F solver to get the satisfiability verdict. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classExtQBFSolver_a3b43f437ee9286b62be1de73932b6636}{parse\-Model} (int ret, vector$<$ int $>$ \&model) const 
+\begin{DoxyCompactList}\small\item\em Parses the answer of the Q\-B\-F solver to get the satisfiability verdict and a model. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classExtQBFSolver_a3ee48837c5e937e4d3a5b3c2a6b761d3}{cleanup} ()
+\begin{DoxyCompactList}\small\item\em Deletes the temporary files that have been used for communication. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{classDepQBFExt_a4c952a6d69e93efc5cd6c5491f85c5b3}{path\-\_\-to\-\_\-deqqbf\-\_\-}
+\begin{DoxyCompactList}\small\item\em The path to the Dep\-Q\-B\-F executable. \end{DoxyCompactList}\item 
+string \hyperlink{classDepQBFExt_a05676410e9b70c5e83cb13b708e2f178}{path\-\_\-to\-\_\-qbfcert\-\_\-}
+\begin{DoxyCompactList}\small\item\em The path to the Q\-B\-F-\/\-Cert script. \end{DoxyCompactList}\item 
+string \hyperlink{classExtQBFSolver_a04d2ff483c22a11344e46d66ae7e76b1}{in\-\_\-file\-\_\-name\-\_\-}
+\begin{DoxyCompactList}\small\item\em The name of the Q\-D\-I\-M\-A\-C\-S file containing the Q\-B\-F to be solved. \end{DoxyCompactList}\item 
+string \hyperlink{classExtQBFSolver_a0efb35aa9b807dec521ad3406eaf664d}{out\-\_\-file\-\_\-name\-\_\-}
+\begin{DoxyCompactList}\small\item\em The name of the file that is produced by the Q\-B\-F-\/solver (containing the model). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDepQBFExt_ae711230c91a8990450466d085a34bcc2}{Dep\-Q\-B\-F\-Ext} (const \hyperlink{classDepQBFExt}{Dep\-Q\-B\-F\-Ext} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classDepQBFExt}{Dep\-Q\-B\-F\-Ext} \& \hyperlink{classDepQBFExt_a25779db93932e28f4f7cbddaa8636fdb}{operator=} (const \hyperlink{classDepQBFExt}{Dep\-Q\-B\-F\-Ext} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Calls the Dep\-Q\-B\-F Q\-B\-F-\/solver in a separate process, communicating with files. 
+
+This class represents an interface to the Q\-B\-F-\/solver Dep\-Q\-B\-F (see \href{https://github.com/lonsing/depqbf}{\tt https\-://github.\-com/lonsing/depqbf}). For a given Quantified Boolean formula (a \hyperlink{classCNF}{C\-N\-F} with a quantifier prefix), this class is able to determine satisfiability. Furthermore, in case of satisfiability, it can extract satisfying assignments for variables quantified existentially on the outermost level. The Dep\-Q\-B\-F solver is executed in a separate process. Communication with this process works via files.
+
+Most of work is actually implemented in the base class \hyperlink{classExtQBFSolver}{Ext\-Q\-B\-F\-Solver}. This class mainly overrides some methods which are specific for Dep\-Q\-B\-F. However, it also interfaces the Q\-B\-F-\/\-Cert framework (see \href{http://fmv.jku.at/qbfcert/}{\tt http\-://fmv.\-jku.\-at/qbfcert/}), which uses Dep\-Q\-B\-F to extract Skolem functions for Q\-B\-Fs.
+
+\begin{DoxyAuthor}{Author}
+Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0.\-0 
+\end{DoxyVersion}
+
+
+Definition at line 55 of file Dep\-Q\-B\-F\-Ext.\-h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{\index{Dep\-Q\-B\-F\-Ext@{Dep\-Q\-B\-F\-Ext}!Quant@{Quant}}
+\index{Quant@{Quant}!DepQBFExt@{Dep\-Q\-B\-F\-Ext}}
+\subsubsection[{Quant}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Q\-B\-F\-Solver\-::\-Quant}\hspace{0.3cm}{\ttfamily [inherited]}}}\label{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}
+
+
+A type for the different kinds of quantifiers. 
+
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{E@{E}!Dep\-Q\-B\-F\-Ext@{Dep\-Q\-B\-F\-Ext}}\index{Dep\-Q\-B\-F\-Ext@{Dep\-Q\-B\-F\-Ext}!E@{E}}\item[{\em 
+\hypertarget{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7a090ab4a5b262710ccd80e97d72f9a7b3}{E}\label{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7a090ab4a5b262710ccd80e97d72f9a7b3}
+}]The value for existential quantification. \index{A@{A}!Dep\-Q\-B\-F\-Ext@{Dep\-Q\-B\-F\-Ext}}\index{Dep\-Q\-B\-F\-Ext@{Dep\-Q\-B\-F\-Ext}!A@{A}}\item[{\em 
+\hypertarget{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7afd6518d5d985aa8346ac071e4c0d8ee0}{A}\label{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7afd6518d5d985aa8346ac071e4c0d8ee0}
+}]The value for universal quantification. \end{description}
+\end{Desc}
+
+
+
+Definition at line 56 of file Q\-B\-F\-Solver.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classDepQBFExt_a4544322ebc125d28e583106baf2c71cb}{\index{Dep\-Q\-B\-F\-Ext@{Dep\-Q\-B\-F\-Ext}!Dep\-Q\-B\-F\-Ext@{Dep\-Q\-B\-F\-Ext}}
+\index{Dep\-Q\-B\-F\-Ext@{Dep\-Q\-B\-F\-Ext}!DepQBFExt@{Dep\-Q\-B\-F\-Ext}}
+\subsubsection[{Dep\-Q\-B\-F\-Ext}]{\setlength{\rightskip}{0pt plus 5cm}Dep\-Q\-B\-F\-Ext\-::\-Dep\-Q\-B\-F\-Ext (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDepQBFExt_a4544322ebc125d28e583106baf2c71cb}
+
+
+Constructor. 
+
+
+
+Definition at line 38 of file Dep\-Q\-B\-F\-Ext.\-cpp.
+
+
+
+References M\-A\-S\-S\-E\-R\-T, path\-\_\-to\-\_\-deqqbf\-\_\-, path\-\_\-to\-\_\-qbfcert\-\_\-, and Options\-::\-T\-P\-\_\-\-V\-A\-R.
+
+\hypertarget{classDepQBFExt_a6425c670e11fb6f2315171e27f850954}{\index{Dep\-Q\-B\-F\-Ext@{Dep\-Q\-B\-F\-Ext}!$\sim$\-Dep\-Q\-B\-F\-Ext@{$\sim$\-Dep\-Q\-B\-F\-Ext}}
+\index{$\sim$\-Dep\-Q\-B\-F\-Ext@{$\sim$\-Dep\-Q\-B\-F\-Ext}!DepQBFExt@{Dep\-Q\-B\-F\-Ext}}
+\subsubsection[{$\sim$\-Dep\-Q\-B\-F\-Ext}]{\setlength{\rightskip}{0pt plus 5cm}Dep\-Q\-B\-F\-Ext\-::$\sim$\-Dep\-Q\-B\-F\-Ext (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDepQBFExt_a6425c670e11fb6f2315171e27f850954}
+
+
+Destructor. 
+
+
+
+Definition at line 50 of file Dep\-Q\-B\-F\-Ext.\-cpp.
+
+\hypertarget{classDepQBFExt_ae711230c91a8990450466d085a34bcc2}{\index{Dep\-Q\-B\-F\-Ext@{Dep\-Q\-B\-F\-Ext}!Dep\-Q\-B\-F\-Ext@{Dep\-Q\-B\-F\-Ext}}
+\index{Dep\-Q\-B\-F\-Ext@{Dep\-Q\-B\-F\-Ext}!DepQBFExt@{Dep\-Q\-B\-F\-Ext}}
+\subsubsection[{Dep\-Q\-B\-F\-Ext}]{\setlength{\rightskip}{0pt plus 5cm}Dep\-Q\-B\-F\-Ext\-::\-Dep\-Q\-B\-F\-Ext (
+\begin{DoxyParamCaption}
+\item[{const {\bf Dep\-Q\-B\-F\-Ext} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classDepQBFExt_ae711230c91a8990450466d085a34bcc2}
+
+
+Copy constructor. 
+
+The copy constructor is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classExtQBFSolver_a3ee48837c5e937e4d3a5b3c2a6b761d3}{\index{Dep\-Q\-B\-F\-Ext@{Dep\-Q\-B\-F\-Ext}!cleanup@{cleanup}}
+\index{cleanup@{cleanup}!DepQBFExt@{Dep\-Q\-B\-F\-Ext}}
+\subsubsection[{cleanup}]{\setlength{\rightskip}{0pt plus 5cm}void Ext\-Q\-B\-F\-Solver\-::cleanup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}}\label{classExtQBFSolver_a3ee48837c5e937e4d3a5b3c2a6b761d3}
+
+
+Deletes the temporary files that have been used for communication. 
+
+
+
+Definition at line 214 of file Ext\-Q\-B\-F\-Solver.\-cpp.
+
+
+
+References Ext\-Q\-B\-F\-Solver\-::in\-\_\-file\-\_\-name\-\_\-, and Ext\-Q\-B\-F\-Solver\-::out\-\_\-file\-\_\-name\-\_\-.
+
+
+
+Referenced by Ext\-Q\-B\-F\-Solver\-::is\-Sat(), Ext\-Q\-B\-F\-Solver\-::is\-Sat\-Model(), and qbf\-Cert().
+
+\hypertarget{classExtQBFSolver_abebb2acbb5afd5b205254246f39f3e33}{\index{Dep\-Q\-B\-F\-Ext@{Dep\-Q\-B\-F\-Ext}!dump\-Q\-B\-F@{dump\-Q\-B\-F}}
+\index{dump\-Q\-B\-F@{dump\-Q\-B\-F}!DepQBFExt@{Dep\-Q\-B\-F\-Ext}}
+\subsubsection[{dump\-Q\-B\-F}]{\setlength{\rightskip}{0pt plus 5cm}void Ext\-Q\-B\-F\-Solver\-::dump\-Q\-B\-F (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ pair$<$ {\bf Var\-Info\-::\-Var\-Kind}, {\bf Quant} $>$ $>$ \&}]{quantifier\-\_\-prefix, }
+\item[{const {\bf C\-N\-F} \&}]{cnf, }
+\item[{const string \&}]{filename}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}}\label{classExtQBFSolver_abebb2acbb5afd5b205254246f39f3e33}
+
+
+Dumps a Q\-B\-F (quantification over variable kinds) into a file in Q\-D\-I\-M\-A\-C\-S format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantifier\-\_\-prefix} & The quantifier prefix as a vector of pairs. vector\mbox{[}0\mbox{]} is the leftmost (i.\-e., outermost) quantifier block. The pairs in the quantifier\-\_\-prefix assign an existential or universal quantifier to every kind of variable that occurs in the cnf. \\
+\hline
+{\em cnf} & A Boolean formula in \hyperlink{classCNF}{C\-N\-F}. \\
+\hline
+{\em filename} & The name of the file (including path) to write to. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 104 of file Ext\-Q\-B\-F\-Solver.\-cpp.
+
+
+
+References Q\-B\-F\-Solver\-::\-E, Var\-Manager\-::get\-Max\-C\-N\-F\-Var(), C\-N\-F\-::get\-Nr\-Of\-Clauses(), Var\-Manager\-::get\-Vars\-Of\-Type(), Var\-Manager\-::instance(), and C\-N\-F\-::to\-String().
+
+
+
+Referenced by Dep\-Q\-B\-F\-Api\-::debug\-Check\-Bloqqer\-Model(), Dep\-Q\-B\-F\-Api\-Inc\-::debug\-Check\-Bloqqer\-Model(), Dep\-Q\-B\-F\-Api\-::debug\-Check\-Bloqqer\-Verdict(), Dep\-Q\-B\-F\-Api\-Inc\-::debug\-Check\-Bloqqer\-Verdict(), Ext\-Q\-B\-F\-Solver\-::is\-Sat(), Ext\-Q\-B\-F\-Solver\-::is\-Sat\-Model(), and qbf\-Cert().
+
+\hypertarget{classExtQBFSolver_a7e329d1fdce2cf65390930b01cf3a32b}{\index{Dep\-Q\-B\-F\-Ext@{Dep\-Q\-B\-F\-Ext}!dump\-Q\-B\-F@{dump\-Q\-B\-F}}
+\index{dump\-Q\-B\-F@{dump\-Q\-B\-F}!DepQBFExt@{Dep\-Q\-B\-F\-Ext}}
+\subsubsection[{dump\-Q\-B\-F}]{\setlength{\rightskip}{0pt plus 5cm}void Ext\-Q\-B\-F\-Solver\-::dump\-Q\-B\-F (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ pair$<$ vector$<$ int $>$, {\bf Quant} $>$ $>$ \&}]{quantifier\-\_\-prefix, }
+\item[{const {\bf C\-N\-F} \&}]{cnf, }
+\item[{const string \&}]{filename}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}}\label{classExtQBFSolver_a7e329d1fdce2cf65390930b01cf3a32b}
+
+
+Dumps a Q\-B\-F (quantification over variable kinds) into a file in Q\-D\-I\-M\-A\-C\-S format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantifier\-\_\-prefix} & The quantifier prefix as a vector of pairs. vector\mbox{[}0\mbox{]} is the leftmost (i.\-e., outermost) quantifier block. The pairs in the quantifier\-\_\-prefix assign an existential or universal quantifier to different sets of variables occurring in the cnf. \\
+\hline
+{\em cnf} & A Boolean formula in \hyperlink{classCNF}{C\-N\-F}. \\
+\hline
+{\em filename} & The name of the file (including path) to write to. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 137 of file Ext\-Q\-B\-F\-Solver.\-cpp.
+
+
+
+References Q\-B\-F\-Solver\-::\-E, C\-N\-F\-::get\-Nr\-Of\-Clauses(), and C\-N\-F\-::to\-String().
+
+\hypertarget{classDepQBFExt_a64f0c17958bd64cfd20a1f2478f68077}{\index{Dep\-Q\-B\-F\-Ext@{Dep\-Q\-B\-F\-Ext}!get\-Solver\-Command@{get\-Solver\-Command}}
+\index{get\-Solver\-Command@{get\-Solver\-Command}!DepQBFExt@{Dep\-Q\-B\-F\-Ext}}
+\subsubsection[{get\-Solver\-Command}]{\setlength{\rightskip}{0pt plus 5cm}string Dep\-Q\-B\-F\-Ext\-::get\-Solver\-Command (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classDepQBFExt_a64f0c17958bd64cfd20a1f2478f68077}
+
+
+Returns the command to execute Dep\-Q\-B\-F. 
+
+\begin{DoxyReturn}{Returns}
+The command to execute Dep\-Q\-B\-F. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classExtQBFSolver_aec4c2d830f72283e2fbabf4a3f62a640}{Ext\-Q\-B\-F\-Solver}.
+
+
+
+Definition at line 75 of file Dep\-Q\-B\-F\-Ext.\-cpp.
+
+
+
+References Ext\-Q\-B\-F\-Solver\-::in\-\_\-file\-\_\-name\-\_\-, Ext\-Q\-B\-F\-Solver\-::out\-\_\-file\-\_\-name\-\_\-, and path\-\_\-to\-\_\-deqqbf\-\_\-.
+
+\hypertarget{classDepQBFExt_a72321fcf85a52333c0f7e83004a3f119}{\index{Dep\-Q\-B\-F\-Ext@{Dep\-Q\-B\-F\-Ext}!get\-Solver\-Command\-Model@{get\-Solver\-Command\-Model}}
+\index{get\-Solver\-Command\-Model@{get\-Solver\-Command\-Model}!DepQBFExt@{Dep\-Q\-B\-F\-Ext}}
+\subsubsection[{get\-Solver\-Command\-Model}]{\setlength{\rightskip}{0pt plus 5cm}string Dep\-Q\-B\-F\-Ext\-::get\-Solver\-Command\-Model (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classDepQBFExt_a72321fcf85a52333c0f7e83004a3f119}
+
+
+Returns the command to execute Dep\-Q\-B\-F such that it produces models. 
+
+\begin{DoxyReturn}{Returns}
+The command to execute Dep\-Q\-B\-F such that it produces models. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classExtQBFSolver_ac2bc9e4817cfa1a54195d7d9f1c7d3bd}{Ext\-Q\-B\-F\-Solver}.
+
+
+
+Definition at line 81 of file Dep\-Q\-B\-F\-Ext.\-cpp.
+
+
+
+References Ext\-Q\-B\-F\-Solver\-::in\-\_\-file\-\_\-name\-\_\-, Ext\-Q\-B\-F\-Solver\-::out\-\_\-file\-\_\-name\-\_\-, and path\-\_\-to\-\_\-deqqbf\-\_\-.
+
+\hypertarget{classExtQBFSolver_abec25b97170b79b42b85d1d4ec825a39}{\index{Dep\-Q\-B\-F\-Ext@{Dep\-Q\-B\-F\-Ext}!is\-Sat@{is\-Sat}}
+\index{is\-Sat@{is\-Sat}!DepQBFExt@{Dep\-Q\-B\-F\-Ext}}
+\subsubsection[{is\-Sat}]{\setlength{\rightskip}{0pt plus 5cm}bool Ext\-Q\-B\-F\-Solver\-::is\-Sat (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ pair$<$ {\bf Var\-Info\-::\-Var\-Kind}, {\bf Quant} $>$ $>$ \&}]{quantifier\-\_\-prefix, }
+\item[{const {\bf C\-N\-F} \&}]{cnf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}}\label{classExtQBFSolver_abec25b97170b79b42b85d1d4ec825a39}
+
+
+Checks if a given Q\-B\-F is satisfiable (with quantification over variable kinds). 
+
+The Q\-B\-F consists of a quantifier prefix and a Boolean formula in \hyperlink{classCNF}{C\-N\-F}. The quantifier prefix assigns an existential or universal quantifier to every kind of variable. The Q\-B\-F is dumped into a file, a Q\-B\-F-\/solver is called, and the exit code is used to infer the satisfiability result.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantifier\-\_\-prefix} & The quantifier prefix as a vector of pairs. vector\mbox{[}0\mbox{]} is the leftmost (i.\-e., outermost) quantifier block. The pairs in the quantifier\-\_\-prefix assign an existential or universal quantifier to every kind of variable that occurs in the cnf. \\
+\hline
+{\em cnf} & A Boolean formula in \hyperlink{classCNF}{C\-N\-F}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the Q\-B\-F is satisfiable, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classQBFSolver_a53ef157391b176dfbd2a77a1e31befc3}{Q\-B\-F\-Solver}.
+
+
+
+Definition at line 54 of file Ext\-Q\-B\-F\-Solver.\-cpp.
+
+
+
+References Ext\-Q\-B\-F\-Solver\-::cleanup(), Ext\-Q\-B\-F\-Solver\-::dump\-Q\-B\-F(), Ext\-Q\-B\-F\-Solver\-::get\-Solver\-Command(), Ext\-Q\-B\-F\-Solver\-::in\-\_\-file\-\_\-name\-\_\-, and Ext\-Q\-B\-F\-Solver\-::parse\-Answer().
+
+
+
+Referenced by Q\-B\-F\-Cert\-Impl\-Extractor\-::extract\-Circuit().
+
+\hypertarget{classExtQBFSolver_adc1bacec3307200dd90b260789e4c808}{\index{Dep\-Q\-B\-F\-Ext@{Dep\-Q\-B\-F\-Ext}!is\-Sat@{is\-Sat}}
+\index{is\-Sat@{is\-Sat}!DepQBFExt@{Dep\-Q\-B\-F\-Ext}}
+\subsubsection[{is\-Sat}]{\setlength{\rightskip}{0pt plus 5cm}bool Ext\-Q\-B\-F\-Solver\-::is\-Sat (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ pair$<$ vector$<$ int $>$, {\bf Quant} $>$ $>$ \&}]{quantifier\-\_\-prefix, }
+\item[{const {\bf C\-N\-F} \&}]{cnf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}}\label{classExtQBFSolver_adc1bacec3307200dd90b260789e4c808}
+
+
+Checks if a given Q\-B\-F is satisfiable (with quantification over variable sets). 
+
+The Q\-B\-F consists of a quantifier prefix and a Boolean formula in \hyperlink{classCNF}{C\-N\-F}. The quantifier prefix assigns an existential or universal quantifier to different sets variable. The Q\-B\-F is dumped into a file, a Q\-B\-F-\/solver is called, and the exit code is used to infer the satisfiability result.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantifier\-\_\-prefix} & The quantifier prefix as a vector of pairs. vector\mbox{[}0\mbox{]} is the leftmost (i.\-e., outermost) quantifier block. The pairs in the quantifier\-\_\-prefix assign an existential or universal quantifier to different sets of variables occurring in the cnf. \\
+\hline
+{\em cnf} & A Boolean formula in \hyperlink{classCNF}{C\-N\-F}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the Q\-B\-F is satisfiable, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classQBFSolver_aca37de5801e36d4749b80b6c8c2023a9}{Q\-B\-F\-Solver}.
+
+
+
+Definition at line 66 of file Ext\-Q\-B\-F\-Solver.\-cpp.
+
+
+
+References Ext\-Q\-B\-F\-Solver\-::cleanup(), Ext\-Q\-B\-F\-Solver\-::dump\-Q\-B\-F(), Ext\-Q\-B\-F\-Solver\-::get\-Solver\-Command(), Ext\-Q\-B\-F\-Solver\-::in\-\_\-file\-\_\-name\-\_\-, and Ext\-Q\-B\-F\-Solver\-::parse\-Answer().
+
+\hypertarget{classExtQBFSolver_ad66c53343ce9c03eea6e4b5e7753f1b3}{\index{Dep\-Q\-B\-F\-Ext@{Dep\-Q\-B\-F\-Ext}!is\-Sat\-Model@{is\-Sat\-Model}}
+\index{is\-Sat\-Model@{is\-Sat\-Model}!DepQBFExt@{Dep\-Q\-B\-F\-Ext}}
+\subsubsection[{is\-Sat\-Model}]{\setlength{\rightskip}{0pt plus 5cm}bool Ext\-Q\-B\-F\-Solver\-::is\-Sat\-Model (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ pair$<$ {\bf Var\-Info\-::\-Var\-Kind}, {\bf Quant} $>$ $>$ \&}]{quantifier\-\_\-prefix, }
+\item[{const {\bf C\-N\-F} \&}]{cnf, }
+\item[{vector$<$ int $>$ \&}]{model}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}}\label{classExtQBFSolver_ad66c53343ce9c03eea6e4b5e7753f1b3}
+
+
+Checks satisfiability and extracts a model (quantifying over variable kinds). 
+
+Just like \hyperlink{classExtQBFSolver_abec25b97170b79b42b85d1d4ec825a39}{is\-Sat() }, this method checks a quantified Boolean formula for satisfiability. If the Q\-B\-F is satisfiable, this method also extracts a model (a satisfying assignment) for all variables which are quantified existentially on the outermost level. The model is provided as cube\-: negated variables in the cube are F\-A\-L\-S\-E, unnegated ones are T\-R\-U\-E.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantifier\-\_\-prefix} & The quantifier prefix as a vector of pairs. vector\mbox{[}0\mbox{]} is the leftmost (i.\-e., outermost) quantifier block. The pairs in the quantifier\-\_\-prefix assign an existential or universal quantifier to every kind of variable that occurs in the cnf. \\
+\hline
+{\em cnf} & A Boolean formula in \hyperlink{classCNF}{C\-N\-F}. \\
+\hline
+{\em model} & The resulting model in form of a cube in case of satisfiability. Negated variables in the cube are F\-A\-L\-S\-E, unnegated ones are T\-R\-U\-E. If the formula is unsatisfiable (this method returns false) then this parameter is not modified. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the Q\-B\-F is satisfiable, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classQBFSolver_a76fc0c757a2c039816e3e06547f06d5c}{Q\-B\-F\-Solver}.
+
+
+
+Definition at line 78 of file Ext\-Q\-B\-F\-Solver.\-cpp.
+
+
+
+References Ext\-Q\-B\-F\-Solver\-::cleanup(), Ext\-Q\-B\-F\-Solver\-::dump\-Q\-B\-F(), Ext\-Q\-B\-F\-Solver\-::get\-Solver\-Command\-Model(), Ext\-Q\-B\-F\-Solver\-::in\-\_\-file\-\_\-name\-\_\-, and Ext\-Q\-B\-F\-Solver\-::parse\-Model().
+
+\hypertarget{classExtQBFSolver_a3add00496f016c2e60a188ce9daa1da1}{\index{Dep\-Q\-B\-F\-Ext@{Dep\-Q\-B\-F\-Ext}!is\-Sat\-Model@{is\-Sat\-Model}}
+\index{is\-Sat\-Model@{is\-Sat\-Model}!DepQBFExt@{Dep\-Q\-B\-F\-Ext}}
+\subsubsection[{is\-Sat\-Model}]{\setlength{\rightskip}{0pt plus 5cm}bool Ext\-Q\-B\-F\-Solver\-::is\-Sat\-Model (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ pair$<$ vector$<$ int $>$, {\bf Quant} $>$ $>$ \&}]{quantifier\-\_\-prefix, }
+\item[{const {\bf C\-N\-F} \&}]{cnf, }
+\item[{vector$<$ int $>$ \&}]{model}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}}\label{classExtQBFSolver_a3add00496f016c2e60a188ce9daa1da1}
+
+
+Checks satisfiability and extracts a model (quantifying over variable sets). 
+
+Just like \hyperlink{classExtQBFSolver_abec25b97170b79b42b85d1d4ec825a39}{is\-Sat() }, this method checks a quantified Boolean formula for satisfiability. If the Q\-B\-F is satisfiable, this method also extracts a model (a satisfying assignment) for all variables which are quantified existentially on the outermost level. The model is provided as cube\-: negated variables in the cube are F\-A\-L\-S\-E, unnegated ones are T\-R\-U\-E.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantifier\-\_\-prefix} & The quantifier prefix as a vector of pairs. vector\mbox{[}0\mbox{]} is the leftmost (i.\-e., outermost) quantifier block. The pairs in the quantifier\-\_\-prefix assign an existential or universal quantifier to different sets of variables occurring in the cnf. \\
+\hline
+{\em cnf} & A Boolean formula in \hyperlink{classCNF}{C\-N\-F}. \\
+\hline
+{\em model} & The resulting model in form of a cube in case of satisfiability. Negated variables in the cube are F\-A\-L\-S\-E, unnegated ones are T\-R\-U\-E. If the formula is unsatisfiable (this method returns false) then this parameter is not modified. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the Q\-B\-F is satisfiable, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classQBFSolver_a12f2ce57b778b9efe729d63bf881493d}{Q\-B\-F\-Solver}.
+
+
+
+Definition at line 91 of file Ext\-Q\-B\-F\-Solver.\-cpp.
+
+
+
+References Ext\-Q\-B\-F\-Solver\-::cleanup(), Ext\-Q\-B\-F\-Solver\-::dump\-Q\-B\-F(), Ext\-Q\-B\-F\-Solver\-::get\-Solver\-Command\-Model(), Ext\-Q\-B\-F\-Solver\-::in\-\_\-file\-\_\-name\-\_\-, and Ext\-Q\-B\-F\-Solver\-::parse\-Model().
+
+\hypertarget{classDepQBFExt_a25779db93932e28f4f7cbddaa8636fdb}{\index{Dep\-Q\-B\-F\-Ext@{Dep\-Q\-B\-F\-Ext}!operator=@{operator=}}
+\index{operator=@{operator=}!DepQBFExt@{Dep\-Q\-B\-F\-Ext}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dep\-Q\-B\-F\-Ext}\& Dep\-Q\-B\-F\-Ext\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Dep\-Q\-B\-F\-Ext} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classDepQBFExt_a25779db93932e28f4f7cbddaa8636fdb}
+
+
+Assignment operator. 
+
+The assignment operator is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the assignment, i.\-e, $\ast$this. 
+\end{DoxyReturn}
+\hypertarget{classExtQBFSolver_a11ddbf3980824453238071e8a036f804}{\index{Dep\-Q\-B\-F\-Ext@{Dep\-Q\-B\-F\-Ext}!parse\-Answer@{parse\-Answer}}
+\index{parse\-Answer@{parse\-Answer}!DepQBFExt@{Dep\-Q\-B\-F\-Ext}}
+\subsubsection[{parse\-Answer}]{\setlength{\rightskip}{0pt plus 5cm}bool Ext\-Q\-B\-F\-Solver\-::parse\-Answer (
+\begin{DoxyParamCaption}
+\item[{int}]{ret}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}}\label{classExtQBFSolver_a11ddbf3980824453238071e8a036f804}
+
+
+Parses the answer of the Q\-B\-F solver to get the satisfiability verdict. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ret} & The exit code of the process running the Q\-B\-F solver. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True in case of satisfiability, false for unsatisfiability. 
+\end{DoxyReturn}
+
+
+Definition at line 179 of file Ext\-Q\-B\-F\-Solver.\-cpp.
+
+
+
+References M\-A\-S\-S\-E\-R\-T.
+
+
+
+Referenced by Ext\-Q\-B\-F\-Solver\-::is\-Sat().
+
+\hypertarget{classExtQBFSolver_a3b43f437ee9286b62be1de73932b6636}{\index{Dep\-Q\-B\-F\-Ext@{Dep\-Q\-B\-F\-Ext}!parse\-Model@{parse\-Model}}
+\index{parse\-Model@{parse\-Model}!DepQBFExt@{Dep\-Q\-B\-F\-Ext}}
+\subsubsection[{parse\-Model}]{\setlength{\rightskip}{0pt plus 5cm}bool Ext\-Q\-B\-F\-Solver\-::parse\-Model (
+\begin{DoxyParamCaption}
+\item[{int}]{ret, }
+\item[{vector$<$ int $>$ \&}]{model}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}}\label{classExtQBFSolver_a3b43f437ee9286b62be1de73932b6636}
+
+
+Parses the answer of the Q\-B\-F solver to get the satisfiability verdict and a model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ret} & The exit code of the process running the Q\-B\-F solver. \\
+\hline
+{\em model} & An empty vector. In case of satisfiability, this method will write a satisfying assignment in form of a cube into this vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True in case of satisfiability, false for unsatisfiability. 
+\end{DoxyReturn}
+
+
+Definition at line 188 of file Ext\-Q\-B\-F\-Solver.\-cpp.
+
+
+
+References M\-A\-S\-S\-E\-R\-T, Ext\-Q\-B\-F\-Solver\-::out\-\_\-file\-\_\-name\-\_\-, and File\-Utils\-::read\-File().
+
+
+
+Referenced by Ext\-Q\-B\-F\-Solver\-::is\-Sat\-Model().
+
+\hypertarget{classDepQBFExt_a18ef56586e1d2d06048cd8aadeeacc74}{\index{Dep\-Q\-B\-F\-Ext@{Dep\-Q\-B\-F\-Ext}!qbf\-Cert@{qbf\-Cert}}
+\index{qbf\-Cert@{qbf\-Cert}!DepQBFExt@{Dep\-Q\-B\-F\-Ext}}
+\subsubsection[{qbf\-Cert}]{\setlength{\rightskip}{0pt plus 5cm}string Dep\-Q\-B\-F\-Ext\-::qbf\-Cert (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ pair$<$ {\bf Var\-Info\-::\-Var\-Kind}, {\bf Quant} $>$ $>$ \&}]{quantifier\-\_\-prefix, }
+\item[{const {\bf C\-N\-F} \&}]{cnf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDepQBFExt_a18ef56586e1d2d06048cd8aadeeacc74}
+
+
+Executes the Q\-B\-F-\/\-Cert framework to compute Skolem functions for Q\-B\-Fs. 
+
+The Q\-B\-F consists of a quantifier prefix and a Boolean formula in \hyperlink{classCNF}{C\-N\-F}. The quantifier prefix assigns an existential or universal quantifier to every kind of variable.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantifier\-\_\-prefix} & The quantifier prefix as a vector of pairs. vector\mbox{[}0\mbox{]} is the leftmost (i.\-e., outermost) quantifier block. The pairs in the quantifier\-\_\-prefix assign an existential or universal quantifier to every kind of variable that occurs in the cnf. \\
+\hline
+{\em cnf} & A Boolean formula in \hyperlink{classCNF}{C\-N\-F}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string representation of the resulting Skolem functions in A\-I\-G\-E\-R format. 
+\end{DoxyReturn}
+
+
+Definition at line 56 of file Dep\-Q\-B\-F\-Ext.\-cpp.
+
+
+
+References Ext\-Q\-B\-F\-Solver\-::cleanup(), Ext\-Q\-B\-F\-Solver\-::dump\-Q\-B\-F(), Ext\-Q\-B\-F\-Solver\-::in\-\_\-file\-\_\-name\-\_\-, M\-A\-S\-S\-E\-R\-T, path\-\_\-to\-\_\-qbfcert\-\_\-, and File\-Utils\-::read\-File().
+
+
+
+Referenced by Q\-B\-F\-Cert\-Impl\-Extractor\-::extract\-Circuit().
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classExtQBFSolver_a04d2ff483c22a11344e46d66ae7e76b1}{\index{Dep\-Q\-B\-F\-Ext@{Dep\-Q\-B\-F\-Ext}!in\-\_\-file\-\_\-name\-\_\-@{in\-\_\-file\-\_\-name\-\_\-}}
+\index{in\-\_\-file\-\_\-name\-\_\-@{in\-\_\-file\-\_\-name\-\_\-}!DepQBFExt@{Dep\-Q\-B\-F\-Ext}}
+\subsubsection[{in\-\_\-file\-\_\-name\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}string Ext\-Q\-B\-F\-Solver\-::in\-\_\-file\-\_\-name\-\_\-\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classExtQBFSolver_a04d2ff483c22a11344e46d66ae7e76b1}
+
+
+The name of the Q\-D\-I\-M\-A\-C\-S file containing the Q\-B\-F to be solved. 
+
+
+
+Definition at line 225 of file Ext\-Q\-B\-F\-Solver.\-h.
+
+
+
+Referenced by Ext\-Q\-B\-F\-Solver\-::cleanup(), Ext\-Q\-B\-F\-Solver\-::\-Ext\-Q\-B\-F\-Solver(), Qu\-B\-E\-Ext\-::get\-Solver\-Command(), get\-Solver\-Command(), Qu\-B\-E\-Ext\-::get\-Solver\-Command\-Model(), get\-Solver\-Command\-Model(), Ext\-Q\-B\-F\-Solver\-::is\-Sat(), Ext\-Q\-B\-F\-Solver\-::is\-Sat\-Model(), and qbf\-Cert().
+
+\hypertarget{classExtQBFSolver_a0efb35aa9b807dec521ad3406eaf664d}{\index{Dep\-Q\-B\-F\-Ext@{Dep\-Q\-B\-F\-Ext}!out\-\_\-file\-\_\-name\-\_\-@{out\-\_\-file\-\_\-name\-\_\-}}
+\index{out\-\_\-file\-\_\-name\-\_\-@{out\-\_\-file\-\_\-name\-\_\-}!DepQBFExt@{Dep\-Q\-B\-F\-Ext}}
+\subsubsection[{out\-\_\-file\-\_\-name\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}string Ext\-Q\-B\-F\-Solver\-::out\-\_\-file\-\_\-name\-\_\-\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classExtQBFSolver_a0efb35aa9b807dec521ad3406eaf664d}
+
+
+The name of the file that is produced by the Q\-B\-F-\/solver (containing the model). 
+
+
+
+Definition at line 230 of file Ext\-Q\-B\-F\-Solver.\-h.
+
+
+
+Referenced by Ext\-Q\-B\-F\-Solver\-::cleanup(), Ext\-Q\-B\-F\-Solver\-::\-Ext\-Q\-B\-F\-Solver(), Qu\-B\-E\-Ext\-::get\-Solver\-Command(), get\-Solver\-Command(), Qu\-B\-E\-Ext\-::get\-Solver\-Command\-Model(), get\-Solver\-Command\-Model(), and Ext\-Q\-B\-F\-Solver\-::parse\-Model().
+
+\hypertarget{classDepQBFExt_a4c952a6d69e93efc5cd6c5491f85c5b3}{\index{Dep\-Q\-B\-F\-Ext@{Dep\-Q\-B\-F\-Ext}!path\-\_\-to\-\_\-deqqbf\-\_\-@{path\-\_\-to\-\_\-deqqbf\-\_\-}}
+\index{path\-\_\-to\-\_\-deqqbf\-\_\-@{path\-\_\-to\-\_\-deqqbf\-\_\-}!DepQBFExt@{Dep\-Q\-B\-F\-Ext}}
+\subsubsection[{path\-\_\-to\-\_\-deqqbf\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}string Dep\-Q\-B\-F\-Ext\-::path\-\_\-to\-\_\-deqqbf\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classDepQBFExt_a4c952a6d69e93efc5cd6c5491f85c5b3}
+
+
+The path to the Dep\-Q\-B\-F executable. 
+
+
+
+Definition at line 104 of file Dep\-Q\-B\-F\-Ext.\-h.
+
+
+
+Referenced by Dep\-Q\-B\-F\-Ext(), get\-Solver\-Command(), and get\-Solver\-Command\-Model().
+
+\hypertarget{classDepQBFExt_a05676410e9b70c5e83cb13b708e2f178}{\index{Dep\-Q\-B\-F\-Ext@{Dep\-Q\-B\-F\-Ext}!path\-\_\-to\-\_\-qbfcert\-\_\-@{path\-\_\-to\-\_\-qbfcert\-\_\-}}
+\index{path\-\_\-to\-\_\-qbfcert\-\_\-@{path\-\_\-to\-\_\-qbfcert\-\_\-}!DepQBFExt@{Dep\-Q\-B\-F\-Ext}}
+\subsubsection[{path\-\_\-to\-\_\-qbfcert\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}string Dep\-Q\-B\-F\-Ext\-::path\-\_\-to\-\_\-qbfcert\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classDepQBFExt_a05676410e9b70c5e83cb13b708e2f178}
+
+
+The path to the Q\-B\-F-\/\-Cert script. 
+
+
+
+Definition at line 109 of file Dep\-Q\-B\-F\-Ext.\-h.
+
+
+
+Referenced by Dep\-Q\-B\-F\-Ext(), and qbf\-Cert().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{DepQBFExt_8h}{Dep\-Q\-B\-F\-Ext.\-h}\item 
+src/\hyperlink{DepQBFExt_8cpp}{Dep\-Q\-B\-F\-Ext.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,905 @@
+\hypertarget{classLearnStatisticsSAT}{\section{Learn\-Statistics\-S\-A\-T Class Reference}
+\label{classLearnStatisticsSAT}\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}}
+}
+
+
+Collects statistics and performance data for \hyperlink{classLearnSynthSAT}{Learn\-Synth\-S\-A\-T}.  
+
+
+
+
+{\ttfamily \#include $<$Learn\-Statistics\-S\-A\-T.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLearnStatisticsSAT_af7e87ab9cc1a82e5775fbf49b5edb532}{Learn\-Statistics\-S\-A\-T} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classLearnStatisticsSAT_a0296238cfd7a8e1d50b1694427fc6863}{$\sim$\-Learn\-Statistics\-S\-A\-T} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classLearnStatisticsSAT_ae75ccaa0f80d08aebfc98a953e997579}{notify\-Win\-Reg\-Start} ()
+\begin{DoxyCompactList}\small\item\em Called before the computation of the winning region starts. \end{DoxyCompactList}\item 
+void \hyperlink{classLearnStatisticsSAT_aef1a7fa18629a82aacde388741a2534c}{notify\-Win\-Reg\-End} ()
+\begin{DoxyCompactList}\small\item\em Called after the computation of the winning region is done. \end{DoxyCompactList}\item 
+void \hyperlink{classLearnStatisticsSAT_aa90c46fe634b5d230579c5f0cb0b96ad}{notify\-Rel\-Det\-Start} ()
+\begin{DoxyCompactList}\small\item\em Called before the relation determinization (the computation of circuits) starts. \end{DoxyCompactList}\item 
+void \hyperlink{classLearnStatisticsSAT_aa438b39955c3fc5079c27ad5df743ea8}{notify\-Rel\-Det\-End} ()
+\begin{DoxyCompactList}\small\item\em Called after the relation determinization (the computation of circuits) starts. \end{DoxyCompactList}\item 
+void \hyperlink{classLearnStatisticsSAT_aed53fb25ba247b25f867df76a71c95dd}{notify\-Before\-Compute\-Candidate} ()
+\begin{DoxyCompactList}\small\item\em Called before the S\-A\-T solver is called to compute a counterexample-\/candidate. \end{DoxyCompactList}\item 
+void \hyperlink{classLearnStatisticsSAT_a4bebe07e8978f3866867ecf7ef432035}{notify\-After\-Compute\-Candidate} ()
+\begin{DoxyCompactList}\small\item\em Called after the S\-A\-T solver is done computing a counterexample-\/candidate. \end{DoxyCompactList}\item 
+void \hyperlink{classLearnStatisticsSAT_aecd9d61c097ec9209a19ee7dee5feff2}{notify\-Restart} ()
+\begin{DoxyCompactList}\small\item\em Called whenever the incremental session of the solver is restarted. \end{DoxyCompactList}\item 
+void \hyperlink{classLearnStatisticsSAT_aafb51499184443e1c38eeec61370b96a}{notify\-Before\-Check\-Candidate} ()
+\begin{DoxyCompactList}\small\item\em Called before the S\-A\-T solver is called to check a counterexample-\/candidate. \end{DoxyCompactList}\item 
+void \hyperlink{classLearnStatisticsSAT_a229bd4450b739bc802dff5c43a8e212b}{notify\-After\-Check\-Candidate\-Found} (size\-\_\-t from\-\_\-size, size\-\_\-t to\-\_\-size)
+\begin{DoxyCompactList}\small\item\em Called after the S\-A\-T solver successfully checked a counterexample-\/candidate. \end{DoxyCompactList}\item 
+void \hyperlink{classLearnStatisticsSAT_a84d6d5295f13de1943cf236565f0d135}{notify\-After\-Check\-Candidate\-Failed} ()
+\begin{DoxyCompactList}\small\item\em Called after the S\-A\-T solver unsuccessfully checked a counterexample-\/candidate. \end{DoxyCompactList}\item 
+void \hyperlink{classLearnStatisticsSAT_a2734b3bcda5ca2195ecdb174d98a1433}{notify\-Before\-Refine} ()
+\begin{DoxyCompactList}\small\item\em Called before the S\-A\-T solver is called to refine the U-\/set. \end{DoxyCompactList}\item 
+void \hyperlink{classLearnStatisticsSAT_a0f5e0bc85daa6d051b1cd0144b1f5bda}{notify\-After\-Refine} (size\-\_\-t from\-\_\-size, size\-\_\-t to\-\_\-size)
+\begin{DoxyCompactList}\small\item\em Called after the S\-A\-T solver is done refining the U-\/set. \end{DoxyCompactList}\item 
+void \hyperlink{classLearnStatisticsSAT_a4dac4632cddd2726893c5709a556181b}{merge\-With} (const \hyperlink{classLearnStatisticsSAT}{Learn\-Statistics\-S\-A\-T} \&other)
+\begin{DoxyCompactList}\small\item\em Merges the data store in this object with statistics stored in another object. \end{DoxyCompactList}\item 
+void \hyperlink{classLearnStatisticsSAT_a8c66d3d4b1987b269e598037b689e09a}{log\-Statistics} () const 
+\begin{DoxyCompactList}\small\item\em Writes the statistics to stdout as messages of type \hyperlink{classLogger_ac9e601f90bf326ce2088de52018861dca07be7495a7931bee16f5d94b3671f5de}{Logger\-::\-L\-O\-G}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Stopwatch_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{Point\-In\-Time} \hyperlink{classLearnStatisticsSAT_a04c8091b3380c8d756d40aabeefbfbe1}{win\-\_\-reg\-\_\-start\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em The time when the computation of the winning region was started. \end{DoxyCompactList}\item 
+double \hyperlink{classLearnStatisticsSAT_af9823be5155743223790ae01b91b7ca8}{win\-\_\-reg\-\_\-cpu\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em The winning region computation time in C\-P\-U-\/seconds. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classLearnStatisticsSAT_a97f7a6ccfc2d6677ae8a6c16dddd6b71}{win\-\_\-reg\-\_\-real\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em Like \hyperlink{classLearnStatisticsSAT_af9823be5155743223790ae01b91b7ca8}{win\-\_\-reg\-\_\-cpu\-\_\-time\-\_\-} but real-\/time. \end{DoxyCompactList}\item 
+\hyperlink{Stopwatch_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{Point\-In\-Time} \hyperlink{classLearnStatisticsSAT_af02bb7ecbdb583b8c49191581dcbe607}{rel\-\_\-det\-\_\-start\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em The time when the computation of the circuits was started. \end{DoxyCompactList}\item 
+double \hyperlink{classLearnStatisticsSAT_aa7d1ca100b6ad0500931ca80d1439f28}{rel\-\_\-det\-\_\-cpu\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em circuit computation time in C\-P\-U-\/seconds. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classLearnStatisticsSAT_a65bb33d1f5088fc9ed2f947b87e8d4cb}{rel\-\_\-det\-\_\-real\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em Like \hyperlink{classLearnStatisticsSAT_aa7d1ca100b6ad0500931ca80d1439f28}{rel\-\_\-det\-\_\-cpu\-\_\-time\-\_\-} but real-\/time. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classLearnStatisticsSAT_a02de895c31e4c58396d5f07154e21561}{nr\-\_\-of\-\_\-cand\-\_\-comp\-\_\-}
+\begin{DoxyCompactList}\small\item\em The total number of candidate computations. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classLearnStatisticsSAT_a07c8eee4a3c82762e3a94e38440f3adb}{nr\-\_\-of\-\_\-restarts\-\_\-}
+\begin{DoxyCompactList}\small\item\em The total number solver restarts (starting a new incremental session). \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classLearnStatisticsSAT_a1c3b6dff92cbcec06c944606c3555b64}{nr\-\_\-of\-\_\-cand\-\_\-checks\-\_\-}
+\begin{DoxyCompactList}\small\item\em The total number of candidate checks. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classLearnStatisticsSAT_aa059a13f6afcf98a04be072aa5ce3f1d}{nr\-\_\-of\-\_\-succ\-\_\-checks\-\_\-}
+\begin{DoxyCompactList}\small\item\em The total number of successful candidate checks. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classLearnStatisticsSAT_a2d6735aa7c84c50967b3bb779d2a0a86}{sum\-\_\-check\-\_\-size\-\_\-from\-\_\-}
+\begin{DoxyCompactList}\small\item\em The sum of the counterexample cube sizes (nr of literals) before minimization. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classLearnStatisticsSAT_ae805d5a2fc2f724d325136a9f30e6b4b}{sum\-\_\-check\-\_\-size\-\_\-to\-\_\-}
+\begin{DoxyCompactList}\small\item\em The sum of the counterexample cube sizes (nr of literals) after minimization. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classLearnStatisticsSAT_afa9b3c4bb24e7f6ebd9593dfb916c11e}{nr\-\_\-of\-\_\-refines\-\_\-}
+\begin{DoxyCompactList}\small\item\em The number of refinements of the useless state-\/input pairs. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classLearnStatisticsSAT_a7f36ead437ee4833c96342d812551cce}{sum\-\_\-refine\-\_\-size\-\_\-from\-\_\-}
+\begin{DoxyCompactList}\small\item\em The sum of the useless state-\/input-\/cube sizes (nr of literals) before minimization. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classLearnStatisticsSAT_ab64cce193c819cdd5c3a6838d99eb0a7}{sum\-\_\-refine\-\_\-size\-\_\-to\-\_\-}
+\begin{DoxyCompactList}\small\item\em The sum of the useless state-\/input-\/cube sizes (nr of literals) after minimization. \end{DoxyCompactList}\item 
+\hyperlink{Stopwatch_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{Point\-In\-Time} \hyperlink{classLearnStatisticsSAT_a73f2f0e2ee619df05b22261e7b691320}{cand\-\_\-comp\-\_\-start\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em The time when the last computation of a counterexample-\/candidate was started. \end{DoxyCompactList}\item 
+double \hyperlink{classLearnStatisticsSAT_af977c00fbf0f9978f92dd5c997577a06}{cand\-\_\-comp\-\_\-cpu\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em The total candidate computation time in C\-P\-U-\/seconds. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classLearnStatisticsSAT_a278872231b15ff010ae4e3a60e8d8f11}{cand\-\_\-comp\-\_\-real\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em Like \hyperlink{classLearnStatisticsSAT_af977c00fbf0f9978f92dd5c997577a06}{cand\-\_\-comp\-\_\-cpu\-\_\-time\-\_\-} but real-\/time. \end{DoxyCompactList}\item 
+\hyperlink{Stopwatch_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{Point\-In\-Time} \hyperlink{classLearnStatisticsSAT_a1effa4c15e4349fb1e6f62ad6c79d6c5}{cand\-\_\-check\-\_\-start\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em The time when the last check of a counterexample-\/candidate was started. \end{DoxyCompactList}\item 
+double \hyperlink{classLearnStatisticsSAT_a2ab5cd522b7a4d700a11c0bb430baa81}{cand\-\_\-check\-\_\-cpu\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em The total candidate checking time in C\-P\-U-\/seconds. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classLearnStatisticsSAT_a2e0611b0c6f80cbc7b36f25ce5e89db9}{cand\-\_\-check\-\_\-real\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em Like \hyperlink{classLearnStatisticsSAT_a2ab5cd522b7a4d700a11c0bb430baa81}{cand\-\_\-check\-\_\-cpu\-\_\-time\-\_\-} but real-\/time. \end{DoxyCompactList}\item 
+\hyperlink{Stopwatch_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{Point\-In\-Time} \hyperlink{classLearnStatisticsSAT_af358ee7d57095acbb602d9b9e1329dd2}{refine\-\_\-start\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em The time when the last useless state-\/input-\/cube generalization was started. \end{DoxyCompactList}\item 
+double \hyperlink{classLearnStatisticsSAT_ad50f0623e605d349f3221f9e1332805d}{refine\-\_\-cpu\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em The total useless state-\/input-\/cube generalization time in C\-P\-U-\/seconds. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classLearnStatisticsSAT_aa36efa6b1b2bfef8ca65095952c5c35e}{refine\-\_\-real\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em Like \hyperlink{classLearnStatisticsSAT_a2ab5cd522b7a4d700a11c0bb430baa81}{cand\-\_\-check\-\_\-cpu\-\_\-time\-\_\-} but real-\/time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLearnStatisticsSAT_a7742a608e500e2b15a9a73b09653f4d7}{Learn\-Statistics\-S\-A\-T} (const \hyperlink{classLearnStatisticsSAT}{Learn\-Statistics\-S\-A\-T} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classLearnStatisticsSAT}{Learn\-Statistics\-S\-A\-T} \& \hyperlink{classLearnStatisticsSAT_affa4808714ffa665d57a49993cdca5ec}{operator=} (const \hyperlink{classLearnStatisticsSAT}{Learn\-Statistics\-S\-A\-T} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Collects statistics and performance data for \hyperlink{classLearnSynthSAT}{Learn\-Synth\-S\-A\-T}. 
+
+This class collects statistics and performance data for the learning-\/based synthesis method implemented with two S\-A\-T solvers instead of a Q\-B\-F-\/solver (implemented in the class \hyperlink{classLearnSynthSAT}{Learn\-Synth\-S\-A\-T}). 
+
+Definition at line 44 of file Learn\-Statistics\-S\-A\-T.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classLearnStatisticsSAT_af7e87ab9cc1a82e5775fbf49b5edb532}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}}
+\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{Learn\-Statistics\-S\-A\-T}]{\setlength{\rightskip}{0pt plus 5cm}Learn\-Statistics\-S\-A\-T\-::\-Learn\-Statistics\-S\-A\-T (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLearnStatisticsSAT_af7e87ab9cc1a82e5775fbf49b5edb532}
+
+
+Constructor. 
+
+
+
+Definition at line 34 of file Learn\-Statistics\-S\-A\-T.\-cpp.
+
+\hypertarget{classLearnStatisticsSAT_a0296238cfd7a8e1d50b1694427fc6863}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!$\sim$\-Learn\-Statistics\-S\-A\-T@{$\sim$\-Learn\-Statistics\-S\-A\-T}}
+\index{$\sim$\-Learn\-Statistics\-S\-A\-T@{$\sim$\-Learn\-Statistics\-S\-A\-T}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{$\sim$\-Learn\-Statistics\-S\-A\-T}]{\setlength{\rightskip}{0pt plus 5cm}Learn\-Statistics\-S\-A\-T\-::$\sim$\-Learn\-Statistics\-S\-A\-T (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classLearnStatisticsSAT_a0296238cfd7a8e1d50b1694427fc6863}
+
+
+Destructor. 
+
+
+
+Definition at line 59 of file Learn\-Statistics\-S\-A\-T.\-cpp.
+
+\hypertarget{classLearnStatisticsSAT_a7742a608e500e2b15a9a73b09653f4d7}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}}
+\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{Learn\-Statistics\-S\-A\-T}]{\setlength{\rightskip}{0pt plus 5cm}Learn\-Statistics\-S\-A\-T\-::\-Learn\-Statistics\-S\-A\-T (
+\begin{DoxyParamCaption}
+\item[{const {\bf Learn\-Statistics\-S\-A\-T} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classLearnStatisticsSAT_a7742a608e500e2b15a9a73b09653f4d7}
+
+
+Copy constructor. 
+
+The copy constructor is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classLearnStatisticsSAT_a8c66d3d4b1987b269e598037b689e09a}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!log\-Statistics@{log\-Statistics}}
+\index{log\-Statistics@{log\-Statistics}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{log\-Statistics}]{\setlength{\rightskip}{0pt plus 5cm}void Learn\-Statistics\-S\-A\-T\-::log\-Statistics (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classLearnStatisticsSAT_a8c66d3d4b1987b269e598037b689e09a}
+
+
+Writes the statistics to stdout as messages of type \hyperlink{classLogger_ac9e601f90bf326ce2088de52018861dca07be7495a7931bee16f5d94b3671f5de}{Logger\-::\-L\-O\-G}. 
+
+If messages of type \hyperlink{classLogger_ac9e601f90bf326ce2088de52018861dca07be7495a7931bee16f5d94b3671f5de}{Logger\-::\-L\-O\-G} are disabled (see \hyperlink{classLogger}{Logger}), then nothing happens. 
+
+Definition at line 177 of file Learn\-Statistics\-S\-A\-T.\-cpp.
+
+
+
+References cand\-\_\-check\-\_\-cpu\-\_\-time\-\_\-, cand\-\_\-check\-\_\-real\-\_\-time\-\_\-, cand\-\_\-comp\-\_\-cpu\-\_\-time\-\_\-, cand\-\_\-comp\-\_\-real\-\_\-time\-\_\-, L\-\_\-\-L\-O\-G, nr\-\_\-of\-\_\-cand\-\_\-checks\-\_\-, nr\-\_\-of\-\_\-cand\-\_\-comp\-\_\-, nr\-\_\-of\-\_\-refines\-\_\-, nr\-\_\-of\-\_\-restarts\-\_\-, nr\-\_\-of\-\_\-succ\-\_\-checks\-\_\-, refine\-\_\-cpu\-\_\-time\-\_\-, refine\-\_\-real\-\_\-time\-\_\-, rel\-\_\-det\-\_\-cpu\-\_\-time\-\_\-, rel\-\_\-det\-\_\-real\-\_\-time\-\_\-, sum\-\_\-check\-\_\-size\-\_\-from\-\_\-, sum\-\_\-check\-\_\-size\-\_\-to\-\_\-, sum\-\_\-refine\-\_\-size\-\_\-from\-\_\-, sum\-\_\-refine\-\_\-size\-\_\-to\-\_\-, win\-\_\-reg\-\_\-cpu\-\_\-time\-\_\-, and win\-\_\-reg\-\_\-real\-\_\-time\-\_\-.
+
+
+
+Referenced by Parallel\-Learner\-::run(), and Learn\-Synth\-S\-A\-T\-::run().
+
+\hypertarget{classLearnStatisticsSAT_a4dac4632cddd2726893c5709a556181b}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!merge\-With@{merge\-With}}
+\index{merge\-With@{merge\-With}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{merge\-With}]{\setlength{\rightskip}{0pt plus 5cm}void Learn\-Statistics\-S\-A\-T\-::merge\-With (
+\begin{DoxyParamCaption}
+\item[{const {\bf Learn\-Statistics\-S\-A\-T} \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{classLearnStatisticsSAT_a4dac4632cddd2726893c5709a556181b}
+
+
+Merges the data store in this object with statistics stored in another object. 
+
+This is done by summing all (corresponding) execution times and iteration counters. 
+\begin{DoxyParams}{Parameters}
+{\em other} & The source object that should be merged into this object. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 153 of file Learn\-Statistics\-S\-A\-T.\-cpp.
+
+
+
+References cand\-\_\-check\-\_\-cpu\-\_\-time\-\_\-, cand\-\_\-check\-\_\-real\-\_\-time\-\_\-, cand\-\_\-comp\-\_\-cpu\-\_\-time\-\_\-, cand\-\_\-comp\-\_\-real\-\_\-time\-\_\-, nr\-\_\-of\-\_\-cand\-\_\-checks\-\_\-, nr\-\_\-of\-\_\-cand\-\_\-comp\-\_\-, nr\-\_\-of\-\_\-refines\-\_\-, nr\-\_\-of\-\_\-restarts\-\_\-, nr\-\_\-of\-\_\-succ\-\_\-checks\-\_\-, refine\-\_\-cpu\-\_\-time\-\_\-, refine\-\_\-real\-\_\-time\-\_\-, rel\-\_\-det\-\_\-cpu\-\_\-time\-\_\-, rel\-\_\-det\-\_\-real\-\_\-time\-\_\-, sum\-\_\-check\-\_\-size\-\_\-from\-\_\-, sum\-\_\-check\-\_\-size\-\_\-to\-\_\-, sum\-\_\-refine\-\_\-size\-\_\-from\-\_\-, sum\-\_\-refine\-\_\-size\-\_\-to\-\_\-, win\-\_\-reg\-\_\-cpu\-\_\-time\-\_\-, and win\-\_\-reg\-\_\-real\-\_\-time\-\_\-.
+
+
+
+Referenced by Parallel\-Learner\-::run().
+
+\hypertarget{classLearnStatisticsSAT_a84d6d5295f13de1943cf236565f0d135}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!notify\-After\-Check\-Candidate\-Failed@{notify\-After\-Check\-Candidate\-Failed}}
+\index{notify\-After\-Check\-Candidate\-Failed@{notify\-After\-Check\-Candidate\-Failed}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{notify\-After\-Check\-Candidate\-Failed}]{\setlength{\rightskip}{0pt plus 5cm}void Learn\-Statistics\-S\-A\-T\-::notify\-After\-Check\-Candidate\-Failed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLearnStatisticsSAT_a84d6d5295f13de1943cf236565f0d135}
+
+
+Called after the S\-A\-T solver unsuccessfully checked a counterexample-\/candidate. 
+
+This method just reads out the \hyperlink{classStopwatch}{Stopwatch} and stores the execution time. 
+
+Definition at line 129 of file Learn\-Statistics\-S\-A\-T.\-cpp.
+
+
+
+References cand\-\_\-check\-\_\-cpu\-\_\-time\-\_\-, cand\-\_\-check\-\_\-real\-\_\-time\-\_\-, cand\-\_\-check\-\_\-start\-\_\-time\-\_\-, Stopwatch\-::get\-C\-P\-U\-Time\-Sec(), Stopwatch\-::get\-Real\-Time\-Sec(), and nr\-\_\-of\-\_\-cand\-\_\-checks\-\_\-.
+
+
+
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), and Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples().
+
+\hypertarget{classLearnStatisticsSAT_a229bd4450b739bc802dff5c43a8e212b}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!notify\-After\-Check\-Candidate\-Found@{notify\-After\-Check\-Candidate\-Found}}
+\index{notify\-After\-Check\-Candidate\-Found@{notify\-After\-Check\-Candidate\-Found}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{notify\-After\-Check\-Candidate\-Found}]{\setlength{\rightskip}{0pt plus 5cm}void Learn\-Statistics\-S\-A\-T\-::notify\-After\-Check\-Candidate\-Found (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{from\-\_\-size, }
+\item[{size\-\_\-t}]{to\-\_\-size}
+\end{DoxyParamCaption}
+)}}\label{classLearnStatisticsSAT_a229bd4450b739bc802dff5c43a8e212b}
+
+
+Called after the S\-A\-T solver successfully checked a counterexample-\/candidate. 
+
+This method just reads out the \hyperlink{classStopwatch}{Stopwatch} and stores the execution time. Furthermore, it stores the results of generalizing the counterexample.
+
+
+\begin{DoxyParams}{Parameters}
+{\em from\-\_\-size} & The size of the counterexample (number of literals in the cube) before minimization (by computing an unsatisfiable core). \\
+\hline
+{\em to\-\_\-size} & The size of the counterexample (number of literals in the cube) after minimization (by computing an unsatisfiable core). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 118 of file Learn\-Statistics\-S\-A\-T.\-cpp.
+
+
+
+References cand\-\_\-check\-\_\-cpu\-\_\-time\-\_\-, cand\-\_\-check\-\_\-real\-\_\-time\-\_\-, cand\-\_\-check\-\_\-start\-\_\-time\-\_\-, Stopwatch\-::get\-C\-P\-U\-Time\-Sec(), Stopwatch\-::get\-Real\-Time\-Sec(), nr\-\_\-of\-\_\-cand\-\_\-checks\-\_\-, nr\-\_\-of\-\_\-succ\-\_\-checks\-\_\-, sum\-\_\-check\-\_\-size\-\_\-from\-\_\-, and sum\-\_\-check\-\_\-size\-\_\-to\-\_\-.
+
+
+
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), and Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples().
+
+\hypertarget{classLearnStatisticsSAT_a4bebe07e8978f3866867ecf7ef432035}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!notify\-After\-Compute\-Candidate@{notify\-After\-Compute\-Candidate}}
+\index{notify\-After\-Compute\-Candidate@{notify\-After\-Compute\-Candidate}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{notify\-After\-Compute\-Candidate}]{\setlength{\rightskip}{0pt plus 5cm}void Learn\-Statistics\-S\-A\-T\-::notify\-After\-Compute\-Candidate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLearnStatisticsSAT_a4bebe07e8978f3866867ecf7ef432035}
+
+
+Called after the S\-A\-T solver is done computing a counterexample-\/candidate. 
+
+This method just reads out the \hyperlink{classStopwatch}{Stopwatch} and stores the execution time. 
+
+Definition at line 98 of file Learn\-Statistics\-S\-A\-T.\-cpp.
+
+
+
+References cand\-\_\-comp\-\_\-cpu\-\_\-time\-\_\-, cand\-\_\-comp\-\_\-real\-\_\-time\-\_\-, cand\-\_\-comp\-\_\-start\-\_\-time\-\_\-, Stopwatch\-::get\-C\-P\-U\-Time\-Sec(), Stopwatch\-::get\-Real\-Time\-Sec(), and nr\-\_\-of\-\_\-cand\-\_\-comp\-\_\-.
+
+
+
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), and Clause\-Explorer\-S\-A\-T\-::explore\-Clauses().
+
+\hypertarget{classLearnStatisticsSAT_a0f5e0bc85daa6d051b1cd0144b1f5bda}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!notify\-After\-Refine@{notify\-After\-Refine}}
+\index{notify\-After\-Refine@{notify\-After\-Refine}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{notify\-After\-Refine}]{\setlength{\rightskip}{0pt plus 5cm}void Learn\-Statistics\-S\-A\-T\-::notify\-After\-Refine (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{from\-\_\-size, }
+\item[{size\-\_\-t}]{to\-\_\-size}
+\end{DoxyParamCaption}
+)}}\label{classLearnStatisticsSAT_a0f5e0bc85daa6d051b1cd0144b1f5bda}
+
+
+Called after the S\-A\-T solver is done refining the U-\/set. 
+
+This method just reads out the \hyperlink{classStopwatch}{Stopwatch} and stores the execution time. Furthermore, it stores the results of generalizing the useless state-\/input cube.
+
+
+\begin{DoxyParams}{Parameters}
+{\em from\-\_\-size} & The size of the useless state-\/input cube (number of literals in the cube) before minimization (by computing an unsatisfiable core). \\
+\hline
+{\em to\-\_\-size} & The size of the useless state-\/input cube (number of literals in the cube) after minimization (by computing an unsatisfiable core). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 143 of file Learn\-Statistics\-S\-A\-T.\-cpp.
+
+
+
+References Stopwatch\-::get\-C\-P\-U\-Time\-Sec(), Stopwatch\-::get\-Real\-Time\-Sec(), nr\-\_\-of\-\_\-refines\-\_\-, refine\-\_\-cpu\-\_\-time\-\_\-, refine\-\_\-real\-\_\-time\-\_\-, refine\-\_\-start\-\_\-time\-\_\-, sum\-\_\-refine\-\_\-size\-\_\-from\-\_\-, and sum\-\_\-refine\-\_\-size\-\_\-to\-\_\-.
+
+
+
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), and Clause\-Explorer\-S\-A\-T\-::explore\-Clauses().
+
+\hypertarget{classLearnStatisticsSAT_aafb51499184443e1c38eeec61370b96a}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!notify\-Before\-Check\-Candidate@{notify\-Before\-Check\-Candidate}}
+\index{notify\-Before\-Check\-Candidate@{notify\-Before\-Check\-Candidate}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{notify\-Before\-Check\-Candidate}]{\setlength{\rightskip}{0pt plus 5cm}void Learn\-Statistics\-S\-A\-T\-::notify\-Before\-Check\-Candidate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLearnStatisticsSAT_aafb51499184443e1c38eeec61370b96a}
+
+
+Called before the S\-A\-T solver is called to check a counterexample-\/candidate. 
+
+This method just starts a \hyperlink{classStopwatch}{Stopwatch}. 
+
+Definition at line 112 of file Learn\-Statistics\-S\-A\-T.\-cpp.
+
+
+
+References cand\-\_\-check\-\_\-start\-\_\-time\-\_\-, and Stopwatch\-::start().
+
+
+
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), and Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples().
+
+\hypertarget{classLearnStatisticsSAT_aed53fb25ba247b25f867df76a71c95dd}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!notify\-Before\-Compute\-Candidate@{notify\-Before\-Compute\-Candidate}}
+\index{notify\-Before\-Compute\-Candidate@{notify\-Before\-Compute\-Candidate}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{notify\-Before\-Compute\-Candidate}]{\setlength{\rightskip}{0pt plus 5cm}void Learn\-Statistics\-S\-A\-T\-::notify\-Before\-Compute\-Candidate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLearnStatisticsSAT_aed53fb25ba247b25f867df76a71c95dd}
+
+
+Called before the S\-A\-T solver is called to compute a counterexample-\/candidate. 
+
+This method just starts a \hyperlink{classStopwatch}{Stopwatch}. 
+
+Definition at line 92 of file Learn\-Statistics\-S\-A\-T.\-cpp.
+
+
+
+References cand\-\_\-comp\-\_\-start\-\_\-time\-\_\-, and Stopwatch\-::start().
+
+
+
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), and Clause\-Explorer\-S\-A\-T\-::explore\-Clauses().
+
+\hypertarget{classLearnStatisticsSAT_a2734b3bcda5ca2195ecdb174d98a1433}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!notify\-Before\-Refine@{notify\-Before\-Refine}}
+\index{notify\-Before\-Refine@{notify\-Before\-Refine}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{notify\-Before\-Refine}]{\setlength{\rightskip}{0pt plus 5cm}void Learn\-Statistics\-S\-A\-T\-::notify\-Before\-Refine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLearnStatisticsSAT_a2734b3bcda5ca2195ecdb174d98a1433}
+
+
+Called before the S\-A\-T solver is called to refine the U-\/set. 
+
+Refining the U-\/set means computing an unsatisfiable core of a state-\/input cube that is useless for the antagonist in trying to break out of the winning region. This method just starts a \hyperlink{classStopwatch}{Stopwatch}. 
+
+Definition at line 137 of file Learn\-Statistics\-S\-A\-T.\-cpp.
+
+
+
+References refine\-\_\-start\-\_\-time\-\_\-, and Stopwatch\-::start().
+
+
+
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), and Clause\-Explorer\-S\-A\-T\-::explore\-Clauses().
+
+\hypertarget{classLearnStatisticsSAT_aa438b39955c3fc5079c27ad5df743ea8}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!notify\-Rel\-Det\-End@{notify\-Rel\-Det\-End}}
+\index{notify\-Rel\-Det\-End@{notify\-Rel\-Det\-End}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{notify\-Rel\-Det\-End}]{\setlength{\rightskip}{0pt plus 5cm}void Learn\-Statistics\-S\-A\-T\-::notify\-Rel\-Det\-End (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLearnStatisticsSAT_aa438b39955c3fc5079c27ad5df743ea8}
+
+
+Called after the relation determinization (the computation of circuits) starts. 
+
+This method just reads out the \hyperlink{classStopwatch}{Stopwatch} and stores the execution time. 
+
+Definition at line 84 of file Learn\-Statistics\-S\-A\-T.\-cpp.
+
+
+
+References Stopwatch\-::get\-C\-P\-U\-Time\-Sec(), Stopwatch\-::get\-Real\-Time\-Sec(), rel\-\_\-det\-\_\-cpu\-\_\-time\-\_\-, rel\-\_\-det\-\_\-real\-\_\-time\-\_\-, and rel\-\_\-det\-\_\-start\-\_\-time\-\_\-.
+
+
+
+Referenced by Parallel\-Learner\-::run(), and Learn\-Synth\-S\-A\-T\-::run().
+
+\hypertarget{classLearnStatisticsSAT_aa90c46fe634b5d230579c5f0cb0b96ad}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!notify\-Rel\-Det\-Start@{notify\-Rel\-Det\-Start}}
+\index{notify\-Rel\-Det\-Start@{notify\-Rel\-Det\-Start}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{notify\-Rel\-Det\-Start}]{\setlength{\rightskip}{0pt plus 5cm}void Learn\-Statistics\-S\-A\-T\-::notify\-Rel\-Det\-Start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLearnStatisticsSAT_aa90c46fe634b5d230579c5f0cb0b96ad}
+
+
+Called before the relation determinization (the computation of circuits) starts. 
+
+This method just starts a \hyperlink{classStopwatch}{Stopwatch}. 
+
+Definition at line 78 of file Learn\-Statistics\-S\-A\-T.\-cpp.
+
+
+
+References rel\-\_\-det\-\_\-start\-\_\-time\-\_\-, and Stopwatch\-::start().
+
+
+
+Referenced by Parallel\-Learner\-::run(), and Learn\-Synth\-S\-A\-T\-::run().
+
+\hypertarget{classLearnStatisticsSAT_aecd9d61c097ec9209a19ee7dee5feff2}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!notify\-Restart@{notify\-Restart}}
+\index{notify\-Restart@{notify\-Restart}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{notify\-Restart}]{\setlength{\rightskip}{0pt plus 5cm}void Learn\-Statistics\-S\-A\-T\-::notify\-Restart (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLearnStatisticsSAT_aecd9d61c097ec9209a19ee7dee5feff2}
+
+
+Called whenever the incremental session of the solver is restarted. 
+
+This method is called to count the number of performed restarts. 
+
+Definition at line 106 of file Learn\-Statistics\-S\-A\-T.\-cpp.
+
+
+
+References nr\-\_\-of\-\_\-restarts\-\_\-.
+
+
+
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), and Clause\-Explorer\-S\-A\-T\-::consider\-New\-Info\-From\-Others().
+
+\hypertarget{classLearnStatisticsSAT_aef1a7fa18629a82aacde388741a2534c}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!notify\-Win\-Reg\-End@{notify\-Win\-Reg\-End}}
+\index{notify\-Win\-Reg\-End@{notify\-Win\-Reg\-End}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{notify\-Win\-Reg\-End}]{\setlength{\rightskip}{0pt plus 5cm}void Learn\-Statistics\-S\-A\-T\-::notify\-Win\-Reg\-End (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLearnStatisticsSAT_aef1a7fa18629a82aacde388741a2534c}
+
+
+Called after the computation of the winning region is done. 
+
+This method just reads out the \hyperlink{classStopwatch}{Stopwatch} and stores the execution time. 
+
+Definition at line 71 of file Learn\-Statistics\-S\-A\-T.\-cpp.
+
+
+
+References Stopwatch\-::get\-C\-P\-U\-Time\-Sec(), Stopwatch\-::get\-Real\-Time\-Sec(), win\-\_\-reg\-\_\-cpu\-\_\-time\-\_\-, win\-\_\-reg\-\_\-real\-\_\-time\-\_\-, and win\-\_\-reg\-\_\-start\-\_\-time\-\_\-.
+
+
+
+Referenced by Parallel\-Learner\-::run(), and Learn\-Synth\-S\-A\-T\-::run().
+
+\hypertarget{classLearnStatisticsSAT_ae75ccaa0f80d08aebfc98a953e997579}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!notify\-Win\-Reg\-Start@{notify\-Win\-Reg\-Start}}
+\index{notify\-Win\-Reg\-Start@{notify\-Win\-Reg\-Start}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{notify\-Win\-Reg\-Start}]{\setlength{\rightskip}{0pt plus 5cm}void Learn\-Statistics\-S\-A\-T\-::notify\-Win\-Reg\-Start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLearnStatisticsSAT_ae75ccaa0f80d08aebfc98a953e997579}
+
+
+Called before the computation of the winning region starts. 
+
+This method just starts a \hyperlink{classStopwatch}{Stopwatch}. 
+
+Definition at line 65 of file Learn\-Statistics\-S\-A\-T.\-cpp.
+
+
+
+References Stopwatch\-::start(), and win\-\_\-reg\-\_\-start\-\_\-time\-\_\-.
+
+
+
+Referenced by Parallel\-Learner\-::run(), and Learn\-Synth\-S\-A\-T\-::run().
+
+\hypertarget{classLearnStatisticsSAT_affa4808714ffa665d57a49993cdca5ec}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!operator=@{operator=}}
+\index{operator=@{operator=}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Learn\-Statistics\-S\-A\-T}\& Learn\-Statistics\-S\-A\-T\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Learn\-Statistics\-S\-A\-T} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classLearnStatisticsSAT_affa4808714ffa665d57a49993cdca5ec}
+
+
+Assignment operator. 
+
+The assignment operator is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the assignment, i.\-e, $\ast$this. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classLearnStatisticsSAT_a2ab5cd522b7a4d700a11c0bb430baa81}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!cand\-\_\-check\-\_\-cpu\-\_\-time\-\_\-@{cand\-\_\-check\-\_\-cpu\-\_\-time\-\_\-}}
+\index{cand\-\_\-check\-\_\-cpu\-\_\-time\-\_\-@{cand\-\_\-check\-\_\-cpu\-\_\-time\-\_\-}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{cand\-\_\-check\-\_\-cpu\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double Learn\-Statistics\-S\-A\-T\-::cand\-\_\-check\-\_\-cpu\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsSAT_a2ab5cd522b7a4d700a11c0bb430baa81}
+
+
+The total candidate checking time in C\-P\-U-\/seconds. 
+
+
+
+Definition at line 279 of file Learn\-Statistics\-S\-A\-T.\-h.
+
+
+
+Referenced by log\-Statistics(), merge\-With(), notify\-After\-Check\-Candidate\-Failed(), and notify\-After\-Check\-Candidate\-Found().
+
+\hypertarget{classLearnStatisticsSAT_a2e0611b0c6f80cbc7b36f25ce5e89db9}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!cand\-\_\-check\-\_\-real\-\_\-time\-\_\-@{cand\-\_\-check\-\_\-real\-\_\-time\-\_\-}}
+\index{cand\-\_\-check\-\_\-real\-\_\-time\-\_\-@{cand\-\_\-check\-\_\-real\-\_\-time\-\_\-}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{cand\-\_\-check\-\_\-real\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Learn\-Statistics\-S\-A\-T\-::cand\-\_\-check\-\_\-real\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsSAT_a2e0611b0c6f80cbc7b36f25ce5e89db9}
+
+
+Like \hyperlink{classLearnStatisticsSAT_a2ab5cd522b7a4d700a11c0bb430baa81}{cand\-\_\-check\-\_\-cpu\-\_\-time\-\_\-} but real-\/time. 
+
+
+
+Definition at line 284 of file Learn\-Statistics\-S\-A\-T.\-h.
+
+
+
+Referenced by log\-Statistics(), merge\-With(), notify\-After\-Check\-Candidate\-Failed(), and notify\-After\-Check\-Candidate\-Found().
+
+\hypertarget{classLearnStatisticsSAT_a1effa4c15e4349fb1e6f62ad6c79d6c5}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!cand\-\_\-check\-\_\-start\-\_\-time\-\_\-@{cand\-\_\-check\-\_\-start\-\_\-time\-\_\-}}
+\index{cand\-\_\-check\-\_\-start\-\_\-time\-\_\-@{cand\-\_\-check\-\_\-start\-\_\-time\-\_\-}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{cand\-\_\-check\-\_\-start\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point\-In\-Time} Learn\-Statistics\-S\-A\-T\-::cand\-\_\-check\-\_\-start\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsSAT_a1effa4c15e4349fb1e6f62ad6c79d6c5}
+
+
+The time when the last check of a counterexample-\/candidate was started. 
+
+
+
+Definition at line 274 of file Learn\-Statistics\-S\-A\-T.\-h.
+
+
+
+Referenced by notify\-After\-Check\-Candidate\-Failed(), notify\-After\-Check\-Candidate\-Found(), and notify\-Before\-Check\-Candidate().
+
+\hypertarget{classLearnStatisticsSAT_af977c00fbf0f9978f92dd5c997577a06}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!cand\-\_\-comp\-\_\-cpu\-\_\-time\-\_\-@{cand\-\_\-comp\-\_\-cpu\-\_\-time\-\_\-}}
+\index{cand\-\_\-comp\-\_\-cpu\-\_\-time\-\_\-@{cand\-\_\-comp\-\_\-cpu\-\_\-time\-\_\-}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{cand\-\_\-comp\-\_\-cpu\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double Learn\-Statistics\-S\-A\-T\-::cand\-\_\-comp\-\_\-cpu\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsSAT_af977c00fbf0f9978f92dd5c997577a06}
+
+
+The total candidate computation time in C\-P\-U-\/seconds. 
+
+
+
+Definition at line 264 of file Learn\-Statistics\-S\-A\-T.\-h.
+
+
+
+Referenced by log\-Statistics(), merge\-With(), and notify\-After\-Compute\-Candidate().
+
+\hypertarget{classLearnStatisticsSAT_a278872231b15ff010ae4e3a60e8d8f11}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!cand\-\_\-comp\-\_\-real\-\_\-time\-\_\-@{cand\-\_\-comp\-\_\-real\-\_\-time\-\_\-}}
+\index{cand\-\_\-comp\-\_\-real\-\_\-time\-\_\-@{cand\-\_\-comp\-\_\-real\-\_\-time\-\_\-}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{cand\-\_\-comp\-\_\-real\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Learn\-Statistics\-S\-A\-T\-::cand\-\_\-comp\-\_\-real\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsSAT_a278872231b15ff010ae4e3a60e8d8f11}
+
+
+Like \hyperlink{classLearnStatisticsSAT_af977c00fbf0f9978f92dd5c997577a06}{cand\-\_\-comp\-\_\-cpu\-\_\-time\-\_\-} but real-\/time. 
+
+
+
+Definition at line 269 of file Learn\-Statistics\-S\-A\-T.\-h.
+
+
+
+Referenced by log\-Statistics(), merge\-With(), and notify\-After\-Compute\-Candidate().
+
+\hypertarget{classLearnStatisticsSAT_a73f2f0e2ee619df05b22261e7b691320}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!cand\-\_\-comp\-\_\-start\-\_\-time\-\_\-@{cand\-\_\-comp\-\_\-start\-\_\-time\-\_\-}}
+\index{cand\-\_\-comp\-\_\-start\-\_\-time\-\_\-@{cand\-\_\-comp\-\_\-start\-\_\-time\-\_\-}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{cand\-\_\-comp\-\_\-start\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point\-In\-Time} Learn\-Statistics\-S\-A\-T\-::cand\-\_\-comp\-\_\-start\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsSAT_a73f2f0e2ee619df05b22261e7b691320}
+
+
+The time when the last computation of a counterexample-\/candidate was started. 
+
+
+
+Definition at line 259 of file Learn\-Statistics\-S\-A\-T.\-h.
+
+
+
+Referenced by notify\-After\-Compute\-Candidate(), and notify\-Before\-Compute\-Candidate().
+
+\hypertarget{classLearnStatisticsSAT_a1c3b6dff92cbcec06c944606c3555b64}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!nr\-\_\-of\-\_\-cand\-\_\-checks\-\_\-@{nr\-\_\-of\-\_\-cand\-\_\-checks\-\_\-}}
+\index{nr\-\_\-of\-\_\-cand\-\_\-checks\-\_\-@{nr\-\_\-of\-\_\-cand\-\_\-checks\-\_\-}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{nr\-\_\-of\-\_\-cand\-\_\-checks\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Learn\-Statistics\-S\-A\-T\-::nr\-\_\-of\-\_\-cand\-\_\-checks\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsSAT_a1c3b6dff92cbcec06c944606c3555b64}
+
+
+The total number of candidate checks. 
+
+
+
+Definition at line 216 of file Learn\-Statistics\-S\-A\-T.\-h.
+
+
+
+Referenced by log\-Statistics(), merge\-With(), notify\-After\-Check\-Candidate\-Failed(), and notify\-After\-Check\-Candidate\-Found().
+
+\hypertarget{classLearnStatisticsSAT_a02de895c31e4c58396d5f07154e21561}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!nr\-\_\-of\-\_\-cand\-\_\-comp\-\_\-@{nr\-\_\-of\-\_\-cand\-\_\-comp\-\_\-}}
+\index{nr\-\_\-of\-\_\-cand\-\_\-comp\-\_\-@{nr\-\_\-of\-\_\-cand\-\_\-comp\-\_\-}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{nr\-\_\-of\-\_\-cand\-\_\-comp\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Learn\-Statistics\-S\-A\-T\-::nr\-\_\-of\-\_\-cand\-\_\-comp\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsSAT_a02de895c31e4c58396d5f07154e21561}
+
+
+The total number of candidate computations. 
+
+
+
+Definition at line 206 of file Learn\-Statistics\-S\-A\-T.\-h.
+
+
+
+Referenced by log\-Statistics(), merge\-With(), and notify\-After\-Compute\-Candidate().
+
+\hypertarget{classLearnStatisticsSAT_afa9b3c4bb24e7f6ebd9593dfb916c11e}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!nr\-\_\-of\-\_\-refines\-\_\-@{nr\-\_\-of\-\_\-refines\-\_\-}}
+\index{nr\-\_\-of\-\_\-refines\-\_\-@{nr\-\_\-of\-\_\-refines\-\_\-}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{nr\-\_\-of\-\_\-refines\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Learn\-Statistics\-S\-A\-T\-::nr\-\_\-of\-\_\-refines\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsSAT_afa9b3c4bb24e7f6ebd9593dfb916c11e}
+
+
+The number of refinements of the useless state-\/input pairs. 
+
+
+
+Definition at line 240 of file Learn\-Statistics\-S\-A\-T.\-h.
+
+
+
+Referenced by log\-Statistics(), merge\-With(), and notify\-After\-Refine().
+
+\hypertarget{classLearnStatisticsSAT_a07c8eee4a3c82762e3a94e38440f3adb}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!nr\-\_\-of\-\_\-restarts\-\_\-@{nr\-\_\-of\-\_\-restarts\-\_\-}}
+\index{nr\-\_\-of\-\_\-restarts\-\_\-@{nr\-\_\-of\-\_\-restarts\-\_\-}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{nr\-\_\-of\-\_\-restarts\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Learn\-Statistics\-S\-A\-T\-::nr\-\_\-of\-\_\-restarts\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsSAT_a07c8eee4a3c82762e3a94e38440f3adb}
+
+
+The total number solver restarts (starting a new incremental session). 
+
+
+
+Definition at line 211 of file Learn\-Statistics\-S\-A\-T.\-h.
+
+
+
+Referenced by log\-Statistics(), merge\-With(), and notify\-Restart().
+
+\hypertarget{classLearnStatisticsSAT_aa059a13f6afcf98a04be072aa5ce3f1d}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!nr\-\_\-of\-\_\-succ\-\_\-checks\-\_\-@{nr\-\_\-of\-\_\-succ\-\_\-checks\-\_\-}}
+\index{nr\-\_\-of\-\_\-succ\-\_\-checks\-\_\-@{nr\-\_\-of\-\_\-succ\-\_\-checks\-\_\-}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{nr\-\_\-of\-\_\-succ\-\_\-checks\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Learn\-Statistics\-S\-A\-T\-::nr\-\_\-of\-\_\-succ\-\_\-checks\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsSAT_aa059a13f6afcf98a04be072aa5ce3f1d}
+
+
+The total number of successful candidate checks. 
+
+
+
+Definition at line 221 of file Learn\-Statistics\-S\-A\-T.\-h.
+
+
+
+Referenced by log\-Statistics(), merge\-With(), and notify\-After\-Check\-Candidate\-Found().
+
+\hypertarget{classLearnStatisticsSAT_ad50f0623e605d349f3221f9e1332805d}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!refine\-\_\-cpu\-\_\-time\-\_\-@{refine\-\_\-cpu\-\_\-time\-\_\-}}
+\index{refine\-\_\-cpu\-\_\-time\-\_\-@{refine\-\_\-cpu\-\_\-time\-\_\-}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{refine\-\_\-cpu\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double Learn\-Statistics\-S\-A\-T\-::refine\-\_\-cpu\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsSAT_ad50f0623e605d349f3221f9e1332805d}
+
+
+The total useless state-\/input-\/cube generalization time in C\-P\-U-\/seconds. 
+
+
+
+Definition at line 294 of file Learn\-Statistics\-S\-A\-T.\-h.
+
+
+
+Referenced by log\-Statistics(), merge\-With(), and notify\-After\-Refine().
+
+\hypertarget{classLearnStatisticsSAT_aa36efa6b1b2bfef8ca65095952c5c35e}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!refine\-\_\-real\-\_\-time\-\_\-@{refine\-\_\-real\-\_\-time\-\_\-}}
+\index{refine\-\_\-real\-\_\-time\-\_\-@{refine\-\_\-real\-\_\-time\-\_\-}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{refine\-\_\-real\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Learn\-Statistics\-S\-A\-T\-::refine\-\_\-real\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsSAT_aa36efa6b1b2bfef8ca65095952c5c35e}
+
+
+Like \hyperlink{classLearnStatisticsSAT_a2ab5cd522b7a4d700a11c0bb430baa81}{cand\-\_\-check\-\_\-cpu\-\_\-time\-\_\-} but real-\/time. 
+
+
+
+Definition at line 299 of file Learn\-Statistics\-S\-A\-T.\-h.
+
+
+
+Referenced by log\-Statistics(), merge\-With(), and notify\-After\-Refine().
+
+\hypertarget{classLearnStatisticsSAT_af358ee7d57095acbb602d9b9e1329dd2}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!refine\-\_\-start\-\_\-time\-\_\-@{refine\-\_\-start\-\_\-time\-\_\-}}
+\index{refine\-\_\-start\-\_\-time\-\_\-@{refine\-\_\-start\-\_\-time\-\_\-}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{refine\-\_\-start\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point\-In\-Time} Learn\-Statistics\-S\-A\-T\-::refine\-\_\-start\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsSAT_af358ee7d57095acbb602d9b9e1329dd2}
+
+
+The time when the last useless state-\/input-\/cube generalization was started. 
+
+
+
+Definition at line 289 of file Learn\-Statistics\-S\-A\-T.\-h.
+
+
+
+Referenced by notify\-After\-Refine(), and notify\-Before\-Refine().
+
+\hypertarget{classLearnStatisticsSAT_aa7d1ca100b6ad0500931ca80d1439f28}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!rel\-\_\-det\-\_\-cpu\-\_\-time\-\_\-@{rel\-\_\-det\-\_\-cpu\-\_\-time\-\_\-}}
+\index{rel\-\_\-det\-\_\-cpu\-\_\-time\-\_\-@{rel\-\_\-det\-\_\-cpu\-\_\-time\-\_\-}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{rel\-\_\-det\-\_\-cpu\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double Learn\-Statistics\-S\-A\-T\-::rel\-\_\-det\-\_\-cpu\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsSAT_aa7d1ca100b6ad0500931ca80d1439f28}
+
+
+circuit computation time in C\-P\-U-\/seconds. 
+
+
+
+Definition at line 196 of file Learn\-Statistics\-S\-A\-T.\-h.
+
+
+
+Referenced by log\-Statistics(), merge\-With(), and notify\-Rel\-Det\-End().
+
+\hypertarget{classLearnStatisticsSAT_a65bb33d1f5088fc9ed2f947b87e8d4cb}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!rel\-\_\-det\-\_\-real\-\_\-time\-\_\-@{rel\-\_\-det\-\_\-real\-\_\-time\-\_\-}}
+\index{rel\-\_\-det\-\_\-real\-\_\-time\-\_\-@{rel\-\_\-det\-\_\-real\-\_\-time\-\_\-}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{rel\-\_\-det\-\_\-real\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Learn\-Statistics\-S\-A\-T\-::rel\-\_\-det\-\_\-real\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsSAT_a65bb33d1f5088fc9ed2f947b87e8d4cb}
+
+
+Like \hyperlink{classLearnStatisticsSAT_aa7d1ca100b6ad0500931ca80d1439f28}{rel\-\_\-det\-\_\-cpu\-\_\-time\-\_\-} but real-\/time. 
+
+
+
+Definition at line 201 of file Learn\-Statistics\-S\-A\-T.\-h.
+
+
+
+Referenced by log\-Statistics(), merge\-With(), and notify\-Rel\-Det\-End().
+
+\hypertarget{classLearnStatisticsSAT_af02bb7ecbdb583b8c49191581dcbe607}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!rel\-\_\-det\-\_\-start\-\_\-time\-\_\-@{rel\-\_\-det\-\_\-start\-\_\-time\-\_\-}}
+\index{rel\-\_\-det\-\_\-start\-\_\-time\-\_\-@{rel\-\_\-det\-\_\-start\-\_\-time\-\_\-}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{rel\-\_\-det\-\_\-start\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point\-In\-Time} Learn\-Statistics\-S\-A\-T\-::rel\-\_\-det\-\_\-start\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsSAT_af02bb7ecbdb583b8c49191581dcbe607}
+
+
+The time when the computation of the circuits was started. 
+
+
+
+Definition at line 191 of file Learn\-Statistics\-S\-A\-T.\-h.
+
+
+
+Referenced by notify\-Rel\-Det\-End(), and notify\-Rel\-Det\-Start().
+
+\hypertarget{classLearnStatisticsSAT_a2d6735aa7c84c50967b3bb779d2a0a86}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!sum\-\_\-check\-\_\-size\-\_\-from\-\_\-@{sum\-\_\-check\-\_\-size\-\_\-from\-\_\-}}
+\index{sum\-\_\-check\-\_\-size\-\_\-from\-\_\-@{sum\-\_\-check\-\_\-size\-\_\-from\-\_\-}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{sum\-\_\-check\-\_\-size\-\_\-from\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Learn\-Statistics\-S\-A\-T\-::sum\-\_\-check\-\_\-size\-\_\-from\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsSAT_a2d6735aa7c84c50967b3bb779d2a0a86}
+
+
+The sum of the counterexample cube sizes (nr of literals) before minimization. 
+
+This is tracked to assess the effectiveness of the minimization (=generalization). 
+
+Definition at line 228 of file Learn\-Statistics\-S\-A\-T.\-h.
+
+
+
+Referenced by log\-Statistics(), merge\-With(), and notify\-After\-Check\-Candidate\-Found().
+
+\hypertarget{classLearnStatisticsSAT_ae805d5a2fc2f724d325136a9f30e6b4b}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!sum\-\_\-check\-\_\-size\-\_\-to\-\_\-@{sum\-\_\-check\-\_\-size\-\_\-to\-\_\-}}
+\index{sum\-\_\-check\-\_\-size\-\_\-to\-\_\-@{sum\-\_\-check\-\_\-size\-\_\-to\-\_\-}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{sum\-\_\-check\-\_\-size\-\_\-to\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Learn\-Statistics\-S\-A\-T\-::sum\-\_\-check\-\_\-size\-\_\-to\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsSAT_ae805d5a2fc2f724d325136a9f30e6b4b}
+
+
+The sum of the counterexample cube sizes (nr of literals) after minimization. 
+
+This is tracked to assess the effectiveness of the minimization (=generalization). 
+
+Definition at line 235 of file Learn\-Statistics\-S\-A\-T.\-h.
+
+
+
+Referenced by log\-Statistics(), merge\-With(), and notify\-After\-Check\-Candidate\-Found().
+
+\hypertarget{classLearnStatisticsSAT_a7f36ead437ee4833c96342d812551cce}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!sum\-\_\-refine\-\_\-size\-\_\-from\-\_\-@{sum\-\_\-refine\-\_\-size\-\_\-from\-\_\-}}
+\index{sum\-\_\-refine\-\_\-size\-\_\-from\-\_\-@{sum\-\_\-refine\-\_\-size\-\_\-from\-\_\-}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{sum\-\_\-refine\-\_\-size\-\_\-from\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Learn\-Statistics\-S\-A\-T\-::sum\-\_\-refine\-\_\-size\-\_\-from\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsSAT_a7f36ead437ee4833c96342d812551cce}
+
+
+The sum of the useless state-\/input-\/cube sizes (nr of literals) before minimization. 
+
+This is tracked to assess the effectiveness of the minimization (=generalization). 
+
+Definition at line 247 of file Learn\-Statistics\-S\-A\-T.\-h.
+
+
+
+Referenced by log\-Statistics(), merge\-With(), and notify\-After\-Refine().
+
+\hypertarget{classLearnStatisticsSAT_ab64cce193c819cdd5c3a6838d99eb0a7}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!sum\-\_\-refine\-\_\-size\-\_\-to\-\_\-@{sum\-\_\-refine\-\_\-size\-\_\-to\-\_\-}}
+\index{sum\-\_\-refine\-\_\-size\-\_\-to\-\_\-@{sum\-\_\-refine\-\_\-size\-\_\-to\-\_\-}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{sum\-\_\-refine\-\_\-size\-\_\-to\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Learn\-Statistics\-S\-A\-T\-::sum\-\_\-refine\-\_\-size\-\_\-to\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsSAT_ab64cce193c819cdd5c3a6838d99eb0a7}
+
+
+The sum of the useless state-\/input-\/cube sizes (nr of literals) after minimization. 
+
+This is tracked to assess the effectiveness of the minimization (=generalization). 
+
+Definition at line 254 of file Learn\-Statistics\-S\-A\-T.\-h.
+
+
+
+Referenced by log\-Statistics(), merge\-With(), and notify\-After\-Refine().
+
+\hypertarget{classLearnStatisticsSAT_af9823be5155743223790ae01b91b7ca8}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!win\-\_\-reg\-\_\-cpu\-\_\-time\-\_\-@{win\-\_\-reg\-\_\-cpu\-\_\-time\-\_\-}}
+\index{win\-\_\-reg\-\_\-cpu\-\_\-time\-\_\-@{win\-\_\-reg\-\_\-cpu\-\_\-time\-\_\-}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{win\-\_\-reg\-\_\-cpu\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double Learn\-Statistics\-S\-A\-T\-::win\-\_\-reg\-\_\-cpu\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsSAT_af9823be5155743223790ae01b91b7ca8}
+
+
+The winning region computation time in C\-P\-U-\/seconds. 
+
+
+
+Definition at line 181 of file Learn\-Statistics\-S\-A\-T.\-h.
+
+
+
+Referenced by log\-Statistics(), merge\-With(), and notify\-Win\-Reg\-End().
+
+\hypertarget{classLearnStatisticsSAT_a97f7a6ccfc2d6677ae8a6c16dddd6b71}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!win\-\_\-reg\-\_\-real\-\_\-time\-\_\-@{win\-\_\-reg\-\_\-real\-\_\-time\-\_\-}}
+\index{win\-\_\-reg\-\_\-real\-\_\-time\-\_\-@{win\-\_\-reg\-\_\-real\-\_\-time\-\_\-}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{win\-\_\-reg\-\_\-real\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Learn\-Statistics\-S\-A\-T\-::win\-\_\-reg\-\_\-real\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsSAT_a97f7a6ccfc2d6677ae8a6c16dddd6b71}
+
+
+Like \hyperlink{classLearnStatisticsSAT_af9823be5155743223790ae01b91b7ca8}{win\-\_\-reg\-\_\-cpu\-\_\-time\-\_\-} but real-\/time. 
+
+
+
+Definition at line 186 of file Learn\-Statistics\-S\-A\-T.\-h.
+
+
+
+Referenced by log\-Statistics(), merge\-With(), and notify\-Win\-Reg\-End().
+
+\hypertarget{classLearnStatisticsSAT_a04c8091b3380c8d756d40aabeefbfbe1}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!win\-\_\-reg\-\_\-start\-\_\-time\-\_\-@{win\-\_\-reg\-\_\-start\-\_\-time\-\_\-}}
+\index{win\-\_\-reg\-\_\-start\-\_\-time\-\_\-@{win\-\_\-reg\-\_\-start\-\_\-time\-\_\-}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
+\subsubsection[{win\-\_\-reg\-\_\-start\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point\-In\-Time} Learn\-Statistics\-S\-A\-T\-::win\-\_\-reg\-\_\-start\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsSAT_a04c8091b3380c8d756d40aabeefbfbe1}
+
+
+The time when the computation of the winning region was started. 
+
+
+
+Definition at line 176 of file Learn\-Statistics\-S\-A\-T.\-h.
+
+
+
+Referenced by notify\-Win\-Reg\-End(), and notify\-Win\-Reg\-Start().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{LearnStatisticsSAT_8h}{Learn\-Statistics\-S\-A\-T.\-h}\item 
+src/\hyperlink{LearnStatisticsSAT_8cpp}{Learn\-Statistics\-S\-A\-T.\-cpp}\end{DoxyCompactItemize}

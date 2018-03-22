@@ -1,0 +1,3015 @@
+=====================  unr.aag =====================
+[LOG] Nr. of bad state computations for winning region: 1
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 0
+[LOG]  Cube minimizations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 0 --> 0
+[LOG] Average cube size reduction: 0 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (unrealizable)
+=====================  eq1.aag =====================
+[LOG] Nr. of bad state computations for winning region: 1
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 0
+[LOG]  Cube minimizations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 0 --> 0
+[LOG] Average cube size reduction: 0 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  ex1.aag =====================
+[LOG] Nr. of bad state computations for winning region: 1
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 0
+[LOG]  Cube minimizations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 0 --> 0
+[LOG] Average cube size reduction: 0 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  ex2.aag =====================
+[LOG] Nr. of bad state computations for winning region: 1
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 0
+[LOG]  Cube minimizations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 0 --> 0
+[LOG] Average cube size reduction: 0 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add2n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0.01 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.005 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 2 --> 1
+[LOG] Average cube size reduction: 2 --> 1
+[LOG] Winning region computation time: 0.01 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.01 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add2y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 2 --> 1
+[LOG] Average cube size reduction: 2 --> 1
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add4n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0.05 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.025 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0.01 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.01 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 2 --> 1
+[LOG] Average cube size reduction: 2 --> 1
+[LOG] Winning region computation time: 0.06 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.06 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.06 sec (Real time) / 0.02 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add4y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0.04 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.02 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0.01 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.01 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 2 --> 1
+[LOG] Average cube size reduction: 2 --> 1
+[LOG] Winning region computation time: 0.05 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.05 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.05 sec (Real time) / 0.01 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add6n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0.35 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.175 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0.02 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.02 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 2 --> 1
+[LOG] Average cube size reduction: 2 --> 1
+[LOG] Winning region computation time: 0.37 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.37 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.39 sec (Real time) / 0.27 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add6y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0.29 sec CPU time in total.
+[LOG]    1 sec real time in total.
+[LOG]    0.145 sec CPU time on average.
+[LOG]    0.5 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0.01 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.01 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 2 --> 1
+[LOG] Average cube size reduction: 2 --> 1
+[LOG] Winning region computation time: 0.3 sec CPU time.
+[LOG] Winning region computation time: 1 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.3 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.32 sec (Real time) / 0.22 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add8n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    2.81 sec CPU time in total.
+[LOG]    2 sec real time in total.
+[LOG]    1.405 sec CPU time on average.
+[LOG]    1 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0.02 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.02 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 2 --> 1
+[LOG] Average cube size reduction: 2 --> 1
+[LOG] Winning region computation time: 2.83 sec CPU time.
+[LOG] Winning region computation time: 2 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 2.83 sec CPU time.
+[LOG] Overall execution time: 2 sec real time.
+Synthesis time: 2.84 sec (Real time) / 2.72 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add8y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    2.49 sec CPU time in total.
+[LOG]    3 sec real time in total.
+[LOG]    1.245 sec CPU time on average.
+[LOG]    1.5 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0.01 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.01 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 2 --> 1
+[LOG] Average cube size reduction: 2 --> 1
+[LOG] Winning region computation time: 2.5 sec CPU time.
+[LOG] Winning region computation time: 3 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 2.5 sec CPU time.
+[LOG] Overall execution time: 3 sec real time.
+Synthesis time: 2.53 sec (Real time) / 2.44 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add10n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    274.22 sec CPU time in total.
+[LOG]    274 sec real time in total.
+[LOG]    137.11 sec CPU time on average.
+[LOG]    137 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0.03 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.03 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 2 --> 1
+[LOG] Average cube size reduction: 2 --> 1
+[LOG] Winning region computation time: 274.25 sec CPU time.
+[LOG] Winning region computation time: 274 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 274.26 sec CPU time.
+[LOG] Overall execution time: 274 sec real time.
+Synthesis time: 274.26 sec (Real time) / 274.13 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add10y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    123.83 sec CPU time in total.
+[LOG]    124 sec real time in total.
+[LOG]    61.915 sec CPU time on average.
+[LOG]    62 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0.03 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.03 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 2 --> 1
+[LOG] Average cube size reduction: 2 --> 1
+[LOG] Winning region computation time: 123.86 sec CPU time.
+[LOG] Winning region computation time: 124 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 123.87 sec CPU time.
+[LOG] Overall execution time: 124 sec real time.
+Synthesis time: 123.88 sec (Real time) / 123.78 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add12n.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 10000.15 sec (User CPU time)
+Timeout: 1
+=====================  add12y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.00 sec (Real time) / 10000.26 sec (User CPU time)
+Timeout: 1
+=====================  add14n.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 10000.21 sec (User CPU time)
+Timeout: 1
+=====================  add14y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.00 sec (Real time) / 10000.19 sec (User CPU time)
+Timeout: 1
+=====================  add16n.aag =====================
+=====================  add16y.aag =====================
+=====================  add18n.aag =====================
+=====================  add18y.aag =====================
+=====================  add20n.aag =====================
+=====================  add20y.aag =====================
+=====================  cnt2n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 3 --> 1
+[LOG] Average cube size reduction: 3 --> 1
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt2y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 3 --> 1
+[LOG] Average cube size reduction: 3 --> 1
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt3n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 3
+[LOG]  Bad state computations took:
+[LOG]    0.01 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.00333333 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 2
+[LOG]  Cube minimizations took:
+[LOG]    0.03 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.015 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 8 --> 3
+[LOG] Average cube size reduction: 4 --> 1.5
+[LOG] Winning region computation time: 0.04 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.04 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.05 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt3y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 3
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 2
+[LOG]  Cube minimizations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 8 --> 3
+[LOG] Average cube size reduction: 4 --> 1.5
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt4n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 5
+[LOG]  Bad state computations took:
+[LOG]    0.04 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.008 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 4
+[LOG]  Cube minimizations took:
+[LOG]    0.08 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.02 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 20 --> 8
+[LOG] Average cube size reduction: 5 --> 2
+[LOG] Winning region computation time: 0.12 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.12 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.13 sec (Real time) / 0.04 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt4y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 5
+[LOG]  Bad state computations took:
+[LOG]    0.01 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.002 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 4
+[LOG]  Cube minimizations took:
+[LOG]    0.02 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.005 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 20 --> 8
+[LOG] Average cube size reduction: 5 --> 2
+[LOG] Winning region computation time: 0.03 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.03 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.04 sec (Real time) / 0.01 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt5n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 9
+[LOG]  Bad state computations took:
+[LOG]    0.14 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.0155556 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 8
+[LOG]  Cube minimizations took:
+[LOG]    0.34 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.0425 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 48 --> 20
+[LOG] Average cube size reduction: 6 --> 2.5
+[LOG] Winning region computation time: 0.48 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.48 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.49 sec (Real time) / 0.14 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt5y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 9
+[LOG]  Bad state computations took:
+[LOG]    0.07 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.00777778 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 8
+[LOG]  Cube minimizations took:
+[LOG]    0.06 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.0075 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 48 --> 20
+[LOG] Average cube size reduction: 6 --> 2.5
+[LOG] Winning region computation time: 0.13 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.13 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.14 sec (Real time) / 0.02 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt6n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 17
+[LOG]  Bad state computations took:
+[LOG]    0.35 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.0205882 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 16
+[LOG]  Cube minimizations took:
+[LOG]    1.01 sec CPU time in total.
+[LOG]    2 sec real time in total.
+[LOG]    0.063125 sec CPU time on average.
+[LOG]    0.125 sec real time on average.
+[LOG] Total cube size reduction: 112 --> 48
+[LOG] Average cube size reduction: 7 --> 3
+[LOG] Winning region computation time: 1.37 sec CPU time.
+[LOG] Winning region computation time: 2 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 1.37 sec CPU time.
+[LOG] Overall execution time: 2 sec real time.
+Synthesis time: 1.37 sec (Real time) / 0.42 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt6y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 17
+[LOG]  Bad state computations took:
+[LOG]    0.15 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.00882353 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 16
+[LOG]  Cube minimizations took:
+[LOG]    0.24 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.015 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 112 --> 48
+[LOG] Average cube size reduction: 7 --> 3
+[LOG] Winning region computation time: 0.4 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.4 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.42 sec (Real time) / 0.07 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt7n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 33
+[LOG]  Bad state computations took:
+[LOG]    0.9 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.0272727 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 32
+[LOG]  Cube minimizations took:
+[LOG]    2.79 sec CPU time in total.
+[LOG]    4 sec real time in total.
+[LOG]    0.0871875 sec CPU time on average.
+[LOG]    0.125 sec real time on average.
+[LOG] Total cube size reduction: 256 --> 112
+[LOG] Average cube size reduction: 8 --> 3.5
+[LOG] Winning region computation time: 3.7 sec CPU time.
+[LOG] Winning region computation time: 4 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 3.7 sec CPU time.
+[LOG] Overall execution time: 4 sec real time.
+Synthesis time: 3.71 sec (Real time) / 0.94 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt7y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 33
+[LOG]  Bad state computations took:
+[LOG]    0.4 sec CPU time in total.
+[LOG]    1 sec real time in total.
+[LOG]    0.0121212 sec CPU time on average.
+[LOG]    0.030303 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 32
+[LOG]  Cube minimizations took:
+[LOG]    0.71 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.0221875 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 256 --> 112
+[LOG] Average cube size reduction: 8 --> 3.5
+[LOG] Winning region computation time: 1.11 sec CPU time.
+[LOG] Winning region computation time: 1 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 1.11 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 1.13 sec (Real time) / 0.28 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt8n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 65
+[LOG]  Bad state computations took:
+[LOG]    2.32 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.0356923 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 64
+[LOG]  Cube minimizations took:
+[LOG]    7.43 sec CPU time in total.
+[LOG]    10 sec real time in total.
+[LOG]    0.116094 sec CPU time on average.
+[LOG]    0.15625 sec real time on average.
+[LOG] Total cube size reduction: 576 --> 256
+[LOG] Average cube size reduction: 9 --> 4
+[LOG] Winning region computation time: 9.76 sec CPU time.
+[LOG] Winning region computation time: 10 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 9.76 sec CPU time.
+[LOG] Overall execution time: 10 sec real time.
+Synthesis time: 9.78 sec (Real time) / 2.58 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt8y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 65
+[LOG]  Bad state computations took:
+[LOG]    1.06 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.0163077 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 64
+[LOG]  Cube minimizations took:
+[LOG]    1.83 sec CPU time in total.
+[LOG]    3 sec real time in total.
+[LOG]    0.0285938 sec CPU time on average.
+[LOG]    0.046875 sec real time on average.
+[LOG] Total cube size reduction: 576 --> 256
+[LOG] Average cube size reduction: 9 --> 4
+[LOG] Winning region computation time: 2.89 sec CPU time.
+[LOG] Winning region computation time: 3 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 2.89 sec CPU time.
+[LOG] Overall execution time: 3 sec real time.
+Synthesis time: 2.90 sec (Real time) / 0.81 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt9n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 129
+[LOG]  Bad state computations took:
+[LOG]    5.57 sec CPU time in total.
+[LOG]    8 sec real time in total.
+[LOG]    0.0431783 sec CPU time on average.
+[LOG]    0.0620155 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 128
+[LOG]  Cube minimizations took:
+[LOG]    19.47 sec CPU time in total.
+[LOG]    17 sec real time in total.
+[LOG]    0.152109 sec CPU time on average.
+[LOG]    0.132812 sec real time on average.
+[LOG] Total cube size reduction: 1280 --> 576
+[LOG] Average cube size reduction: 10 --> 4.5
+[LOG] Winning region computation time: 25.08 sec CPU time.
+[LOG] Winning region computation time: 25 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 25.08 sec CPU time.
+[LOG] Overall execution time: 25 sec real time.
+Synthesis time: 25.09 sec (Real time) / 6.60 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt9y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 129
+[LOG]  Bad state computations took:
+[LOG]    2.49 sec CPU time in total.
+[LOG]    3 sec real time in total.
+[LOG]    0.0193023 sec CPU time on average.
+[LOG]    0.0232558 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 128
+[LOG]  Cube minimizations took:
+[LOG]    4.99 sec CPU time in total.
+[LOG]    4 sec real time in total.
+[LOG]    0.0389844 sec CPU time on average.
+[LOG]    0.03125 sec real time on average.
+[LOG] Total cube size reduction: 1280 --> 576
+[LOG] Average cube size reduction: 10 --> 4.5
+[LOG] Winning region computation time: 7.48 sec CPU time.
+[LOG] Winning region computation time: 7 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 7.48 sec CPU time.
+[LOG] Overall execution time: 7 sec real time.
+Synthesis time: 7.49 sec (Real time) / 1.97 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt10n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 257
+[LOG]  Bad state computations took:
+[LOG]    13.24 sec CPU time in total.
+[LOG]    18 sec real time in total.
+[LOG]    0.0515175 sec CPU time on average.
+[LOG]    0.0700389 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 256
+[LOG]  Cube minimizations took:
+[LOG]    49.69 sec CPU time in total.
+[LOG]    44 sec real time in total.
+[LOG]    0.194102 sec CPU time on average.
+[LOG]    0.171875 sec real time on average.
+[LOG] Total cube size reduction: 2816 --> 1280
+[LOG] Average cube size reduction: 11 --> 5
+[LOG] Winning region computation time: 62.96 sec CPU time.
+[LOG] Winning region computation time: 62 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 62.96 sec CPU time.
+[LOG] Overall execution time: 62 sec real time.
+Synthesis time: 62.98 sec (Real time) / 16.44 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt10y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 257
+[LOG]  Bad state computations took:
+[LOG]    6.23 sec CPU time in total.
+[LOG]    5 sec real time in total.
+[LOG]    0.0242412 sec CPU time on average.
+[LOG]    0.0194553 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 256
+[LOG]  Cube minimizations took:
+[LOG]    12.66 sec CPU time in total.
+[LOG]    13 sec real time in total.
+[LOG]    0.0494531 sec CPU time on average.
+[LOG]    0.0507812 sec real time on average.
+[LOG] Total cube size reduction: 2816 --> 1280
+[LOG] Average cube size reduction: 11 --> 5
+[LOG] Winning region computation time: 18.93 sec CPU time.
+[LOG] Winning region computation time: 18 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 18.93 sec CPU time.
+[LOG] Overall execution time: 18 sec real time.
+Synthesis time: 18.96 sec (Real time) / 5.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt11n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 513
+[LOG]  Bad state computations took:
+[LOG]    30.83 sec CPU time in total.
+[LOG]    36 sec real time in total.
+[LOG]    0.0600975 sec CPU time on average.
+[LOG]    0.0701754 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 512
+[LOG]  Cube minimizations took:
+[LOG]    121.33 sec CPU time in total.
+[LOG]    117 sec real time in total.
+[LOG]    0.236973 sec CPU time on average.
+[LOG]    0.228516 sec real time on average.
+[LOG] Total cube size reduction: 6144 --> 2816
+[LOG] Average cube size reduction: 12 --> 5.5
+[LOG] Winning region computation time: 152.42 sec CPU time.
+[LOG] Winning region computation time: 153 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 152.43 sec CPU time.
+[LOG] Overall execution time: 153 sec real time.
+Synthesis time: 152.44 sec (Real time) / 40.12 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt11y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 513
+[LOG]  Bad state computations took:
+[LOG]    14.96 sec CPU time in total.
+[LOG]    18 sec real time in total.
+[LOG]    0.0291618 sec CPU time on average.
+[LOG]    0.0350877 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 512
+[LOG]  Cube minimizations took:
+[LOG]    30.52 sec CPU time in total.
+[LOG]    28 sec real time in total.
+[LOG]    0.0596094 sec CPU time on average.
+[LOG]    0.0546875 sec real time on average.
+[LOG] Total cube size reduction: 6144 --> 2816
+[LOG] Average cube size reduction: 12 --> 5.5
+[LOG] Winning region computation time: 45.56 sec CPU time.
+[LOG] Winning region computation time: 46 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 45.56 sec CPU time.
+[LOG] Overall execution time: 46 sec real time.
+Synthesis time: 45.57 sec (Real time) / 12.47 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt15n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 8193
+[LOG]  Bad state computations took:
+[LOG]    828.63 sec CPU time in total.
+[LOG]    806 sec real time in total.
+[LOG]    0.101139 sec CPU time on average.
+[LOG]    0.0983767 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 8192
+[LOG]  Cube minimizations took:
+[LOG]    4023.61 sec CPU time in total.
+[LOG]    4045 sec real time in total.
+[LOG]    0.491163 sec CPU time on average.
+[LOG]    0.493774 sec real time on average.
+[LOG] Total cube size reduction: 131072 --> 61440
+[LOG] Average cube size reduction: 16 --> 7.5
+[LOG] Winning region computation time: 4856.61 sec CPU time.
+[LOG] Winning region computation time: 4856 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 4856.61 sec CPU time.
+[LOG] Overall execution time: 4856 sec real time.
+Synthesis time: 4856.34 sec (Real time) / 1262.93 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt15y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 8193
+[LOG]  Bad state computations took:
+[LOG]    423.96 sec CPU time in total.
+[LOG]    400 sec real time in total.
+[LOG]    0.0517466 sec CPU time on average.
+[LOG]    0.0488222 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 8192
+[LOG]  Cube minimizations took:
+[LOG]    1115.86 sec CPU time in total.
+[LOG]    1137 sec real time in total.
+[LOG]    0.136213 sec CPU time on average.
+[LOG]    0.138794 sec real time on average.
+[LOG] Total cube size reduction: 131072 --> 61440
+[LOG] Average cube size reduction: 16 --> 7.5
+[LOG] Winning region computation time: 1542.53 sec CPU time.
+[LOG] Winning region computation time: 1542 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 1542.53 sec CPU time.
+[LOG] Overall execution time: 1542 sec real time.
+Synthesis time: 1542.46 sec (Real time) / 409.27 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt20n.aag =====================
+Command terminated by signal 9
+Synthesis time: 9999.99 sec (Real time) / 2626.49 sec (User CPU time)
+Timeout: 1
+=====================  cnt20y.aag =====================
+Command terminated by signal 9
+Synthesis time: 9999.99 sec (Real time) / 2615.07 sec (User CPU time)
+Timeout: 1
+=====================  cnt25n.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.00 sec (Real time) / 2645.06 sec (User CPU time)
+Timeout: 1
+=====================  cnt25y.aag =====================
+Command terminated by signal 9
+Synthesis time: 9999.99 sec (Real time) / 2580.04 sec (User CPU time)
+Timeout: 1
+=====================  cnt30n.aag =====================
+=====================  cnt30y.aag =====================
+=====================  mv2n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 3 --> 2
+[LOG] Average cube size reduction: 3 --> 2
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv2y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 3 --> 2
+[LOG] Average cube size reduction: 3 --> 2
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs2n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 3 --> 2
+[LOG] Average cube size reduction: 3 --> 2
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs2y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 3 --> 2
+[LOG] Average cube size reduction: 3 --> 2
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv4n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0.02 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.01 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0.04 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.04 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 5 --> 4
+[LOG] Average cube size reduction: 5 --> 4
+[LOG] Winning region computation time: 0.06 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.06 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.07 sec (Real time) / 0.01 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv4y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0.01 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.005 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0.02 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.02 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 5 --> 4
+[LOG] Average cube size reduction: 5 --> 4
+[LOG] Winning region computation time: 0.03 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.03 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.04 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs4n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0.01 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.005 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0.03 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.03 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 5 --> 4
+[LOG] Average cube size reduction: 5 --> 4
+[LOG] Winning region computation time: 0.04 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.04 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.05 sec (Real time) / 0.02 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs4y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0.01 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.005 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 5 --> 4
+[LOG] Average cube size reduction: 5 --> 4
+[LOG] Winning region computation time: 0.01 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.01 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv8n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0.16 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.08 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0.23 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.23 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 9 --> 8
+[LOG] Average cube size reduction: 9 --> 8
+[LOG] Winning region computation time: 0.4 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.4 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.43 sec (Real time) / 0.11 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv8y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0.06 sec CPU time in total.
+[LOG]    1 sec real time in total.
+[LOG]    0.03 sec CPU time on average.
+[LOG]    0.5 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0.14 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.14 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 9 --> 8
+[LOG] Average cube size reduction: 9 --> 8
+[LOG] Winning region computation time: 0.2 sec CPU time.
+[LOG] Winning region computation time: 1 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.2 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.22 sec (Real time) / 0.06 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs8n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0.04 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.02 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0.17 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.17 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 9 --> 8
+[LOG] Average cube size reduction: 9 --> 8
+[LOG] Winning region computation time: 0.21 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.21 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.23 sec (Real time) / 0.04 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs8y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0.03 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.015 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0.03 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.03 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 9 --> 8
+[LOG] Average cube size reduction: 9 --> 8
+[LOG] Winning region computation time: 0.06 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.06 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.07 sec (Real time) / 0.02 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv12n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0.21 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.105 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0.64 sec CPU time in total.
+[LOG]    1 sec real time in total.
+[LOG]    0.64 sec CPU time on average.
+[LOG]    1 sec real time on average.
+[LOG] Total cube size reduction: 13 --> 12
+[LOG] Average cube size reduction: 13 --> 12
+[LOG] Winning region computation time: 0.85 sec CPU time.
+[LOG] Winning region computation time: 1 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.85 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.86 sec (Real time) / 0.27 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv12y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0.17 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.085 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0.36 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.36 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 13 --> 12
+[LOG] Average cube size reduction: 13 --> 12
+[LOG] Winning region computation time: 0.53 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.53 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.55 sec (Real time) / 0.12 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs12n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0.19 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.095 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0.43 sec CPU time in total.
+[LOG]    1 sec real time in total.
+[LOG]    0.43 sec CPU time on average.
+[LOG]    1 sec real time on average.
+[LOG] Total cube size reduction: 13 --> 12
+[LOG] Average cube size reduction: 13 --> 12
+[LOG] Winning region computation time: 0.62 sec CPU time.
+[LOG] Winning region computation time: 1 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.62 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.63 sec (Real time) / 0.14 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs12y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0.13 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.065 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0.09 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.09 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 13 --> 12
+[LOG] Average cube size reduction: 13 --> 12
+[LOG] Winning region computation time: 0.22 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.22 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.23 sec (Real time) / 0.10 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv16n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0.26 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.13 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    1.26 sec CPU time in total.
+[LOG]    2 sec real time in total.
+[LOG]    1.26 sec CPU time on average.
+[LOG]    2 sec real time on average.
+[LOG] Total cube size reduction: 17 --> 16
+[LOG] Average cube size reduction: 17 --> 16
+[LOG] Winning region computation time: 1.52 sec CPU time.
+[LOG] Winning region computation time: 2 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 1.52 sec CPU time.
+[LOG] Overall execution time: 2 sec real time.
+Synthesis time: 1.53 sec (Real time) / 0.38 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv16y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0.25 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.125 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0.69 sec CPU time in total.
+[LOG]    1 sec real time in total.
+[LOG]    0.69 sec CPU time on average.
+[LOG]    1 sec real time on average.
+[LOG] Total cube size reduction: 17 --> 16
+[LOG] Average cube size reduction: 17 --> 16
+[LOG] Winning region computation time: 0.94 sec CPU time.
+[LOG] Winning region computation time: 1 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.94 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.95 sec (Real time) / 0.17 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs16n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0.19 sec CPU time in total.
+[LOG]    1 sec real time in total.
+[LOG]    0.095 sec CPU time on average.
+[LOG]    0.5 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0.68 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.68 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 17 --> 16
+[LOG] Average cube size reduction: 17 --> 16
+[LOG] Winning region computation time: 0.87 sec CPU time.
+[LOG] Winning region computation time: 1 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.87 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.89 sec (Real time) / 0.31 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs16y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0.21 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.105 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0.16 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.16 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 17 --> 16
+[LOG] Average cube size reduction: 17 --> 16
+[LOG] Winning region computation time: 0.37 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.37 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.39 sec (Real time) / 0.14 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs18n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0.2 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.1 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0.58 sec CPU time in total.
+[LOG]    1 sec real time in total.
+[LOG]    0.58 sec CPU time on average.
+[LOG]    1 sec real time on average.
+[LOG] Total cube size reduction: 19 --> 18
+[LOG] Average cube size reduction: 19 --> 18
+[LOG] Winning region computation time: 0.78 sec CPU time.
+[LOG] Winning region computation time: 1 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.78 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.79 sec (Real time) / 0.16 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs18y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0.15 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.075 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0.21 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.21 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 19 --> 18
+[LOG] Average cube size reduction: 19 --> 18
+[LOG] Winning region computation time: 0.36 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.36 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.38 sec (Real time) / 0.13 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv20n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0.3 sec CPU time in total.
+[LOG]    1 sec real time in total.
+[LOG]    0.15 sec CPU time on average.
+[LOG]    0.5 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    2.11 sec CPU time in total.
+[LOG]    2 sec real time in total.
+[LOG]    2.11 sec CPU time on average.
+[LOG]    2 sec real time on average.
+[LOG] Total cube size reduction: 21 --> 20
+[LOG] Average cube size reduction: 21 --> 20
+[LOG] Winning region computation time: 2.41 sec CPU time.
+[LOG] Winning region computation time: 3 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 2.41 sec CPU time.
+[LOG] Overall execution time: 3 sec real time.
+Synthesis time: 2.43 sec (Real time) / 0.64 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv20y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0.22 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.11 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    1.18 sec CPU time in total.
+[LOG]    1 sec real time in total.
+[LOG]    1.18 sec CPU time on average.
+[LOG]    1 sec real time on average.
+[LOG] Total cube size reduction: 21 --> 20
+[LOG] Average cube size reduction: 21 --> 20
+[LOG] Winning region computation time: 1.4 sec CPU time.
+[LOG] Winning region computation time: 1 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 1.4 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 1.41 sec (Real time) / 0.44 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs20n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0.2 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.1 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0.72 sec CPU time in total.
+[LOG]    1 sec real time in total.
+[LOG]    0.72 sec CPU time on average.
+[LOG]    1 sec real time on average.
+[LOG] Total cube size reduction: 21 --> 20
+[LOG] Average cube size reduction: 21 --> 20
+[LOG] Winning region computation time: 0.92 sec CPU time.
+[LOG] Winning region computation time: 1 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.92 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.94 sec (Real time) / 0.26 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs20y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0.11 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.055 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0.26 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.26 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 21 --> 20
+[LOG] Average cube size reduction: 21 --> 20
+[LOG] Winning region computation time: 0.37 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.37 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.39 sec (Real time) / 0.15 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs22n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0.18 sec CPU time in total.
+[LOG]    1 sec real time in total.
+[LOG]    0.09 sec CPU time on average.
+[LOG]    0.5 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0.84 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.84 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 23 --> 22
+[LOG] Average cube size reduction: 23 --> 22
+[LOG] Winning region computation time: 1.02 sec CPU time.
+[LOG] Winning region computation time: 1 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 1.02 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 1.04 sec (Real time) / 0.28 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs22y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0.14 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.07 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0.31 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.31 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 23 --> 22
+[LOG] Average cube size reduction: 23 --> 22
+[LOG] Winning region computation time: 0.45 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.45 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.47 sec (Real time) / 0.16 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs24n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0.2 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.1 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    1.02 sec CPU time in total.
+[LOG]    1 sec real time in total.
+[LOG]    1.02 sec CPU time on average.
+[LOG]    1 sec real time on average.
+[LOG] Total cube size reduction: 25 --> 24
+[LOG] Average cube size reduction: 25 --> 24
+[LOG] Winning region computation time: 1.22 sec CPU time.
+[LOG] Winning region computation time: 1 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 1.22 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 1.24 sec (Real time) / 0.36 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs24y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0.15 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.075 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0.37 sec CPU time in total.
+[LOG]    1 sec real time in total.
+[LOG]    0.37 sec CPU time on average.
+[LOG]    1 sec real time on average.
+[LOG] Total cube size reduction: 25 --> 24
+[LOG] Average cube size reduction: 25 --> 24
+[LOG] Winning region computation time: 0.52 sec CPU time.
+[LOG] Winning region computation time: 1 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.52 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.54 sec (Real time) / 0.17 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs28n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0.26 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.13 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    1.33 sec CPU time in total.
+[LOG]    1 sec real time in total.
+[LOG]    1.33 sec CPU time on average.
+[LOG]    1 sec real time on average.
+[LOG] Total cube size reduction: 29 --> 28
+[LOG] Average cube size reduction: 29 --> 28
+[LOG] Winning region computation time: 1.59 sec CPU time.
+[LOG] Winning region computation time: 1 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 1.59 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 1.60 sec (Real time) / 0.45 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs28y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0.18 sec CPU time in total.
+[LOG]    1 sec real time in total.
+[LOG]    0.09 sec CPU time on average.
+[LOG]    0.5 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0.52 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.52 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 29 --> 28
+[LOG] Average cube size reduction: 29 --> 28
+[LOG] Winning region computation time: 0.7 sec CPU time.
+[LOG] Winning region computation time: 1 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.7 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.72 sec (Real time) / 0.18 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mult2.aag =====================
+[LOG] Nr. of bad state computations for winning region: 1
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 0
+[LOG]  Cube minimizations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 0 --> 0
+[LOG] Average cube size reduction: 0 --> 0
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mult4.aag =====================
+[LOG] Nr. of bad state computations for winning region: 1
+[LOG]  Bad state computations took:
+[LOG]    0.13 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.13 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 0
+[LOG]  Cube minimizations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 0 --> 0
+[LOG] Average cube size reduction: 0 --> 0
+[LOG] Winning region computation time: 0.13 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.13 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.14 sec (Real time) / 0.09 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mult5.aag =====================
+[LOG] Nr. of bad state computations for winning region: 1
+[LOG]  Bad state computations took:
+[LOG]    0.21 sec CPU time in total.
+[LOG]    1 sec real time in total.
+[LOG]    0.21 sec CPU time on average.
+[LOG]    1 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 0
+[LOG]  Cube minimizations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 0 --> 0
+[LOG] Average cube size reduction: 0 --> 0
+[LOG] Winning region computation time: 0.21 sec CPU time.
+[LOG] Winning region computation time: 1 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.21 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.23 sec (Real time) / 0.16 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mult6.aag =====================
+[LOG] Nr. of bad state computations for winning region: 1
+[LOG]  Bad state computations took:
+[LOG]    0.84 sec CPU time in total.
+[LOG]    1 sec real time in total.
+[LOG]    0.84 sec CPU time on average.
+[LOG]    1 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 0
+[LOG]  Cube minimizations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 0 --> 0
+[LOG] Average cube size reduction: 0 --> 0
+[LOG] Winning region computation time: 0.84 sec CPU time.
+[LOG] Winning region computation time: 1 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.84 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.86 sec (Real time) / 0.78 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mult7.aag =====================
+[LOG] Nr. of bad state computations for winning region: 1
+[LOG]  Bad state computations took:
+[LOG]    5.09 sec CPU time in total.
+[LOG]    5 sec real time in total.
+[LOG]    5.09 sec CPU time on average.
+[LOG]    5 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 0
+[LOG]  Cube minimizations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 0 --> 0
+[LOG] Average cube size reduction: 0 --> 0
+[LOG] Winning region computation time: 5.09 sec CPU time.
+[LOG] Winning region computation time: 5 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 5.1 sec CPU time.
+[LOG] Overall execution time: 5 sec real time.
+Synthesis time: 5.10 sec (Real time) / 5.02 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mult8.aag =====================
+[LOG] Nr. of bad state computations for winning region: 1
+[LOG]  Bad state computations took:
+[LOG]    14.94 sec CPU time in total.
+[LOG]    15 sec real time in total.
+[LOG]    14.94 sec CPU time on average.
+[LOG]    15 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 0
+[LOG]  Cube minimizations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 0 --> 0
+[LOG] Average cube size reduction: 0 --> 0
+[LOG] Winning region computation time: 14.94 sec CPU time.
+[LOG] Winning region computation time: 15 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 14.95 sec CPU time.
+[LOG] Overall execution time: 15 sec real time.
+Synthesis time: 14.97 sec (Real time) / 14.86 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mult9.aag =====================
+[LOG] Nr. of bad state computations for winning region: 1
+[LOG]  Bad state computations took:
+[LOG]    386.24 sec CPU time in total.
+[LOG]    386 sec real time in total.
+[LOG]    386.24 sec CPU time on average.
+[LOG]    386 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 0
+[LOG]  Cube minimizations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 0 --> 0
+[LOG] Average cube size reduction: 0 --> 0
+[LOG] Winning region computation time: 386.24 sec CPU time.
+[LOG] Winning region computation time: 386 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 386.24 sec CPU time.
+[LOG] Overall execution time: 386 sec real time.
+Synthesis time: 386.26 sec (Real time) / 386.10 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mult10.aag =====================
+[LOG] Nr. of bad state computations for winning region: 1
+[LOG]  Bad state computations took:
+[LOG]    1927.34 sec CPU time in total.
+[LOG]    1927 sec real time in total.
+[LOG]    1927.34 sec CPU time on average.
+[LOG]    1927 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 0
+[LOG]  Cube minimizations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 0 --> 0
+[LOG] Average cube size reduction: 0 --> 0
+[LOG] Winning region computation time: 1927.34 sec CPU time.
+[LOG] Winning region computation time: 1927 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 1927.34 sec CPU time.
+[LOG] Overall execution time: 1927 sec real time.
+Synthesis time: 1927.26 sec (Real time) / 1927.10 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mult11.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.00 sec (Real time) / 10000.11 sec (User CPU time)
+Timeout: 1
+=====================  mult12.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.03 sec (Real time) / 10000.09 sec (User CPU time)
+Timeout: 1
+=====================  mult13.aag =====================
+=====================  mult14.aag =====================
+=====================  mult15.aag =====================
+=====================  mult16.aag =====================
+=====================  bs8n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0.03 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.03 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 9 --> 2
+[LOG] Average cube size reduction: 9 --> 2
+[LOG] Winning region computation time: 0.03 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.03 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.05 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  bs8y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 3
+[LOG]  Bad state computations took:
+[LOG]    0.02 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.00666667 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 2
+[LOG]  Cube minimizations took:
+[LOG]    0.06 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.03 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 18 --> 4
+[LOG] Average cube size reduction: 9 --> 2
+[LOG] Winning region computation time: 0.08 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.08 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.08 sec (Real time) / 0.02 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  bs16n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 3
+[LOG]  Bad state computations took:
+[LOG]    0.11 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.0366667 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 2
+[LOG]  Cube minimizations took:
+[LOG]    0.3 sec CPU time in total.
+[LOG]    1 sec real time in total.
+[LOG]    0.15 sec CPU time on average.
+[LOG]    0.5 sec real time on average.
+[LOG] Total cube size reduction: 34 --> 4
+[LOG] Average cube size reduction: 17 --> 2
+[LOG] Winning region computation time: 0.41 sec CPU time.
+[LOG] Winning region computation time: 1 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.41 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.43 sec (Real time) / 0.15 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  bs16y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0.04 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.02 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    0.16 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.16 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 17 --> 2
+[LOG] Average cube size reduction: 17 --> 2
+[LOG] Winning region computation time: 0.2 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.2 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.22 sec (Real time) / 0.03 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  bs32n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 3
+[LOG]  Bad state computations took:
+[LOG]    0.21 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.07 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 2
+[LOG]  Cube minimizations took:
+[LOG]    1.12 sec CPU time in total.
+[LOG]    1 sec real time in total.
+[LOG]    0.56 sec CPU time on average.
+[LOG]    0.5 sec real time on average.
+[LOG] Total cube size reduction: 66 --> 4
+[LOG] Average cube size reduction: 33 --> 2
+[LOG] Winning region computation time: 1.33 sec CPU time.
+[LOG] Winning region computation time: 1 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 1.33 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 1.34 sec (Real time) / 0.35 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  bs32y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 3
+[LOG]  Bad state computations took:
+[LOG]    0.22 sec CPU time in total.
+[LOG]    1 sec real time in total.
+[LOG]    0.0733333 sec CPU time on average.
+[LOG]    0.333333 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 2
+[LOG]  Cube minimizations took:
+[LOG]    1.11 sec CPU time in total.
+[LOG]    1 sec real time in total.
+[LOG]    0.555 sec CPU time on average.
+[LOG]    0.5 sec real time on average.
+[LOG] Total cube size reduction: 66 --> 4
+[LOG] Average cube size reduction: 33 --> 2
+[LOG] Winning region computation time: 1.34 sec CPU time.
+[LOG] Winning region computation time: 2 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 1.35 sec CPU time.
+[LOG] Overall execution time: 2 sec real time.
+Synthesis time: 1.36 sec (Real time) / 0.46 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  bs64n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0.29 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.145 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    2.03 sec CPU time in total.
+[LOG]    2 sec real time in total.
+[LOG]    2.03 sec CPU time on average.
+[LOG]    2 sec real time on average.
+[LOG] Total cube size reduction: 65 --> 2
+[LOG] Average cube size reduction: 65 --> 2
+[LOG] Winning region computation time: 2.32 sec CPU time.
+[LOG] Winning region computation time: 2 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 2.32 sec CPU time.
+[LOG] Overall execution time: 2 sec real time.
+Synthesis time: 2.34 sec (Real time) / 0.80 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  bs64y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0.29 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.145 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    2.22 sec CPU time in total.
+[LOG]    3 sec real time in total.
+[LOG]    2.22 sec CPU time on average.
+[LOG]    3 sec real time on average.
+[LOG] Total cube size reduction: 65 --> 2
+[LOG] Average cube size reduction: 65 --> 2
+[LOG] Winning region computation time: 2.51 sec CPU time.
+[LOG] Winning region computation time: 3 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 2.51 sec CPU time.
+[LOG] Overall execution time: 3 sec real time.
+Synthesis time: 2.52 sec (Real time) / 0.77 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  bs128n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2
+[LOG]  Bad state computations took:
+[LOG]    0.66 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.33 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1
+[LOG]  Cube minimizations took:
+[LOG]    8.95 sec CPU time in total.
+[LOG]    9 sec real time in total.
+[LOG]    8.95 sec CPU time on average.
+[LOG]    9 sec real time on average.
+[LOG] Total cube size reduction: 129 --> 2
+[LOG] Average cube size reduction: 129 --> 2
+[LOG] Winning region computation time: 9.63 sec CPU time.
+[LOG] Winning region computation time: 9 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 9.63 sec CPU time.
+[LOG] Overall execution time: 9 sec real time.
+Synthesis time: 9.66 sec (Real time) / 3.50 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  bs128y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 3
+[LOG]  Bad state computations took:
+[LOG]    1.28 sec CPU time in total.
+[LOG]    2 sec real time in total.
+[LOG]    0.426667 sec CPU time on average.
+[LOG]    0.666667 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 2
+[LOG]  Cube minimizations took:
+[LOG]    18.26 sec CPU time in total.
+[LOG]    18 sec real time in total.
+[LOG]    9.13 sec CPU time on average.
+[LOG]    9 sec real time on average.
+[LOG] Total cube size reduction: 258 --> 4
+[LOG] Average cube size reduction: 129 --> 2
+[LOG] Winning region computation time: 19.56 sec CPU time.
+[LOG] Winning region computation time: 20 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 19.58 sec CPU time.
+[LOG] Overall execution time: 20 sec real time.
+Synthesis time: 19.62 sec (Real time) / 7.24 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay2n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 3
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 2
+[LOG]  Cube minimizations took:
+[LOG]    0.01 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.005 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 8 --> 3
+[LOG] Average cube size reduction: 4 --> 1.5
+[LOG] Winning region computation time: 0.01 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.01 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.02 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay2y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 3
+[LOG]  Bad state computations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 2
+[LOG]  Cube minimizations took:
+[LOG]    0 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 8 --> 3
+[LOG] Average cube size reduction: 4 --> 1.5
+[LOG] Winning region computation time: 0 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay4n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 9
+[LOG]  Bad state computations took:
+[LOG]    0.13 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.0144444 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 8
+[LOG]  Cube minimizations took:
+[LOG]    0.32 sec CPU time in total.
+[LOG]    1 sec real time in total.
+[LOG]    0.04 sec CPU time on average.
+[LOG]    0.125 sec real time on average.
+[LOG] Total cube size reduction: 48 --> 20
+[LOG] Average cube size reduction: 6 --> 2.5
+[LOG] Winning region computation time: 0.46 sec CPU time.
+[LOG] Winning region computation time: 1 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.46 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.48 sec (Real time) / 0.11 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay4y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 9
+[LOG]  Bad state computations took:
+[LOG]    0.09 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.01 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 8
+[LOG]  Cube minimizations took:
+[LOG]    0.2 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.025 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Total cube size reduction: 48 --> 20
+[LOG] Average cube size reduction: 6 --> 2.5
+[LOG] Winning region computation time: 0.29 sec CPU time.
+[LOG] Winning region computation time: 0 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 0.29 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.30 sec (Real time) / 0.10 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay6n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 33
+[LOG]  Bad state computations took:
+[LOG]    2.39 sec CPU time in total.
+[LOG]    2 sec real time in total.
+[LOG]    0.0724242 sec CPU time on average.
+[LOG]    0.0606061 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 32
+[LOG]  Cube minimizations took:
+[LOG]    5.55 sec CPU time in total.
+[LOG]    6 sec real time in total.
+[LOG]    0.173438 sec CPU time on average.
+[LOG]    0.1875 sec real time on average.
+[LOG] Total cube size reduction: 256 --> 112
+[LOG] Average cube size reduction: 8 --> 3.5
+[LOG] Winning region computation time: 7.95 sec CPU time.
+[LOG] Winning region computation time: 8 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 7.96 sec CPU time.
+[LOG] Overall execution time: 8 sec real time.
+Synthesis time: 7.98 sec (Real time) / 2.29 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay6y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 33
+[LOG]  Bad state computations took:
+[LOG]    1.3 sec CPU time in total.
+[LOG]    0 sec real time in total.
+[LOG]    0.0393939 sec CPU time on average.
+[LOG]    0 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 32
+[LOG]  Cube minimizations took:
+[LOG]    2.78 sec CPU time in total.
+[LOG]    4 sec real time in total.
+[LOG]    0.086875 sec CPU time on average.
+[LOG]    0.125 sec real time on average.
+[LOG] Total cube size reduction: 256 --> 112
+[LOG] Average cube size reduction: 8 --> 3.5
+[LOG] Winning region computation time: 4.1 sec CPU time.
+[LOG] Winning region computation time: 4 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 4.11 sec CPU time.
+[LOG] Overall execution time: 4 sec real time.
+Synthesis time: 4.13 sec (Real time) / 1.32 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay8n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 129
+[LOG]  Bad state computations took:
+[LOG]    23.51 sec CPU time in total.
+[LOG]    23 sec real time in total.
+[LOG]    0.182248 sec CPU time on average.
+[LOG]    0.178295 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 128
+[LOG]  Cube minimizations took:
+[LOG]    60.9 sec CPU time in total.
+[LOG]    62 sec real time in total.
+[LOG]    0.475781 sec CPU time on average.
+[LOG]    0.484375 sec real time on average.
+[LOG] Total cube size reduction: 1280 --> 576
+[LOG] Average cube size reduction: 10 --> 4.5
+[LOG] Winning region computation time: 84.47 sec CPU time.
+[LOG] Winning region computation time: 85 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 84.47 sec CPU time.
+[LOG] Overall execution time: 85 sec real time.
+Synthesis time: 84.48 sec (Real time) / 24.22 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay8y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 129
+[LOG]  Bad state computations took:
+[LOG]    13.75 sec CPU time in total.
+[LOG]    15 sec real time in total.
+[LOG]    0.106589 sec CPU time on average.
+[LOG]    0.116279 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 128
+[LOG]  Cube minimizations took:
+[LOG]    27.9 sec CPU time in total.
+[LOG]    26 sec real time in total.
+[LOG]    0.217969 sec CPU time on average.
+[LOG]    0.203125 sec real time on average.
+[LOG] Total cube size reduction: 1280 --> 576
+[LOG] Average cube size reduction: 10 --> 4.5
+[LOG] Winning region computation time: 41.7 sec CPU time.
+[LOG] Winning region computation time: 41 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 41.7 sec CPU time.
+[LOG] Overall execution time: 41 sec real time.
+Synthesis time: 41.72 sec (Real time) / 13.01 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay10n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 513
+[LOG]  Bad state computations took:
+[LOG]    201.12 sec CPU time in total.
+[LOG]    203 sec real time in total.
+[LOG]    0.392047 sec CPU time on average.
+[LOG]    0.395712 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 512
+[LOG]  Cube minimizations took:
+[LOG]    545.14 sec CPU time in total.
+[LOG]    543 sec real time in total.
+[LOG]    1.06473 sec CPU time on average.
+[LOG]    1.06055 sec real time on average.
+[LOG] Total cube size reduction: 6144 --> 2944
+[LOG] Average cube size reduction: 12 --> 5.75
+[LOG] Winning region computation time: 746.82 sec CPU time.
+[LOG] Winning region computation time: 747 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 746.82 sec CPU time.
+[LOG] Overall execution time: 747 sec real time.
+Synthesis time: 746.79 sec (Real time) / 215.28 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay10y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 513
+[LOG]  Bad state computations took:
+[LOG]    125.6 sec CPU time in total.
+[LOG]    135 sec real time in total.
+[LOG]    0.244834 sec CPU time on average.
+[LOG]    0.263158 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 512
+[LOG]  Cube minimizations took:
+[LOG]    238.92 sec CPU time in total.
+[LOG]    229 sec real time in total.
+[LOG]    0.466641 sec CPU time on average.
+[LOG]    0.447266 sec real time on average.
+[LOG] Total cube size reduction: 6144 --> 2944
+[LOG] Average cube size reduction: 12 --> 5.75
+[LOG] Winning region computation time: 364.98 sec CPU time.
+[LOG] Winning region computation time: 365 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 364.98 sec CPU time.
+[LOG] Overall execution time: 365 sec real time.
+Synthesis time: 364.98 sec (Real time) / 114.65 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay12n.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2049
+[LOG]  Bad state computations took:
+[LOG]    1166.37 sec CPU time in total.
+[LOG]    1146 sec real time in total.
+[LOG]    0.569239 sec CPU time on average.
+[LOG]    0.559297 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 2048
+[LOG]  Cube minimizations took:
+[LOG]    3803.91 sec CPU time in total.
+[LOG]    3824 sec real time in total.
+[LOG]    1.85738 sec CPU time on average.
+[LOG]    1.86719 sec real time on average.
+[LOG] Total cube size reduction: 28672 --> 13312
+[LOG] Average cube size reduction: 14 --> 6.5
+[LOG] Winning region computation time: 4974.07 sec CPU time.
+[LOG] Winning region computation time: 4974 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 4974.07 sec CPU time.
+[LOG] Overall execution time: 4974 sec real time.
+Synthesis time: 4973.81 sec (Real time) / 1484.94 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay12y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 2049
+[LOG]  Bad state computations took:
+[LOG]    658.72 sec CPU time in total.
+[LOG]    679 sec real time in total.
+[LOG]    0.321484 sec CPU time on average.
+[LOG]    0.331381 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 2048
+[LOG]  Cube minimizations took:
+[LOG]    1637.67 sec CPU time in total.
+[LOG]    1619 sec real time in total.
+[LOG]    0.799644 sec CPU time on average.
+[LOG]    0.790527 sec real time on average.
+[LOG] Total cube size reduction: 28672 --> 13312
+[LOG] Average cube size reduction: 14 --> 6.5
+[LOG] Winning region computation time: 2298.83 sec CPU time.
+[LOG] Winning region computation time: 2299 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 2298.83 sec CPU time.
+[LOG] Overall execution time: 2299 sec real time.
+Synthesis time: 2298.72 sec (Real time) / 751.39 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay14n.aag =====================
+Command terminated by signal 9
+Synthesis time: 9999.99 sec (Real time) / 3516.55 sec (User CPU time)
+Timeout: 1
+=====================  stay14y.aag =====================
+Command terminated by signal 9
+Synthesis time: 9999.99 sec (Real time) / 3708.40 sec (User CPU time)
+Timeout: 1
+=====================  stay16n.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.00 sec (Real time) / 4959.57 sec (User CPU time)
+Timeout: 1
+=====================  stay16y.aag =====================
+Command terminated by signal 9
+Synthesis time: 9999.99 sec (Real time) / 5208.28 sec (User CPU time)
+Timeout: 1
+=====================  stay18n.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.00 sec (Real time) / 9665.79 sec (User CPU time)
+Timeout: 1
+=====================  stay18y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.00 sec (Real time) / 7039.05 sec (User CPU time)
+Timeout: 1
+=====================  stay20n.aag =====================
+=====================  stay20y.aag =====================
+=====================  stay22n.aag =====================
+=====================  stay22y.aag =====================
+=====================  stay24n.aag =====================
+=====================  stay24y.aag =====================
+=====================  genbuf1c3y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 192
+[LOG]  Bad state computations took:
+[LOG]    47.51 sec CPU time in total.
+[LOG]    57 sec real time in total.
+[LOG]    0.247448 sec CPU time on average.
+[LOG]    0.296875 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 191
+[LOG]  Cube minimizations took:
+[LOG]    37.37 sec CPU time in total.
+[LOG]    28 sec real time in total.
+[LOG]    0.195654 sec CPU time on average.
+[LOG]    0.146597 sec real time on average.
+[LOG] Total cube size reduction: 4011 --> 1116
+[LOG] Average cube size reduction: 21 --> 5.84293
+[LOG] Winning region computation time: 85.13 sec CPU time.
+[LOG] Winning region computation time: 85 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 85.13 sec CPU time.
+[LOG] Overall execution time: 85 sec real time.
+Synthesis time: 85.14 sec (Real time) / 30.40 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  genbuf2c3y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 378
+[LOG]  Bad state computations took:
+[LOG]    161.76 sec CPU time in total.
+[LOG]    157 sec real time in total.
+[LOG]    0.427937 sec CPU time on average.
+[LOG]    0.415344 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 377
+[LOG]  Cube minimizations took:
+[LOG]    117.66 sec CPU time in total.
+[LOG]    122 sec real time in total.
+[LOG]    0.312095 sec CPU time on average.
+[LOG]    0.323607 sec real time on average.
+[LOG] Total cube size reduction: 9048 --> 2632
+[LOG] Average cube size reduction: 24 --> 6.98143
+[LOG] Winning region computation time: 280.23 sec CPU time.
+[LOG] Winning region computation time: 280 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 280.24 sec CPU time.
+[LOG] Overall execution time: 280 sec real time.
+Synthesis time: 280.24 sec (Real time) / 110.72 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  genbuf3c3y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 624
+[LOG]  Bad state computations took:
+[LOG]    458.03 sec CPU time in total.
+[LOG]    465 sec real time in total.
+[LOG]    0.734022 sec CPU time on average.
+[LOG]    0.745192 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 623
+[LOG]  Cube minimizations took:
+[LOG]    330.84 sec CPU time in total.
+[LOG]    326 sec real time in total.
+[LOG]    0.531043 sec CPU time on average.
+[LOG]    0.523274 sec real time on average.
+[LOG] Total cube size reduction: 16821 --> 5220
+[LOG] Average cube size reduction: 27 --> 8.37881
+[LOG] Winning region computation time: 792.01 sec CPU time.
+[LOG] Winning region computation time: 792 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 792.01 sec CPU time.
+[LOG] Overall execution time: 792 sec real time.
+Synthesis time: 792.02 sec (Real time) / 382.15 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  genbuf4c3y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 383
+[LOG]  Bad state computations took:
+[LOG]    394.27 sec CPU time in total.
+[LOG]    395 sec real time in total.
+[LOG]    1.02943 sec CPU time on average.
+[LOG]    1.03133 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 382
+[LOG]  Cube minimizations took:
+[LOG]    243.18 sec CPU time in total.
+[LOG]    243 sec real time in total.
+[LOG]    0.636597 sec CPU time on average.
+[LOG]    0.636126 sec real time on average.
+[LOG] Total cube size reduction: 11460 --> 3386
+[LOG] Average cube size reduction: 30 --> 8.86387
+[LOG] Winning region computation time: 638.72 sec CPU time.
+[LOG] Winning region computation time: 639 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 638.72 sec CPU time.
+[LOG] Overall execution time: 639 sec real time.
+Synthesis time: 638.70 sec (Real time) / 362.49 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  genbuf5c3y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 756
+[LOG]  Bad state computations took:
+[LOG]    6893.98 sec CPU time in total.
+[LOG]    6892 sec real time in total.
+[LOG]    9.11902 sec CPU time on average.
+[LOG]    9.1164 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 755
+[LOG]  Cube minimizations took:
+[LOG]    768.17 sec CPU time in total.
+[LOG]    770 sec real time in total.
+[LOG]    1.01744 sec CPU time on average.
+[LOG]    1.01987 sec real time on average.
+[LOG] Total cube size reduction: 24915 --> 7372
+[LOG] Average cube size reduction: 33 --> 9.76424
+[LOG] Winning region computation time: 7668.73 sec CPU time.
+[LOG] Winning region computation time: 7668 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 7668.74 sec CPU time.
+[LOG] Overall execution time: 7668 sec real time.
+Synthesis time: 7668.38 sec (Real time) / 6830.67 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  genbuf6c3y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.02 sec (Real time) / 9214.05 sec (User CPU time)
+Timeout: 1
+=====================  genbuf7c3y.aag =====================
+=====================  genbuf8c3y.aag =====================
+=====================  genbuf9c3y.aag =====================
+=====================  genbuf10c3y.aag =====================
+=====================  genbuf11c3y.aag =====================
+=====================  genbuf12c3y.aag =====================
+=====================  genbuf13c3y.aag =====================
+=====================  genbuf14c3y.aag =====================
+=====================  genbuf15c3y.aag =====================
+=====================  genbuf16c3y.aag =====================
+=====================  genbuf1b4y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 139
+[LOG]  Bad state computations took:
+[LOG]    42.6 sec CPU time in total.
+[LOG]    42 sec real time in total.
+[LOG]    0.306475 sec CPU time on average.
+[LOG]    0.302158 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 138
+[LOG]  Cube minimizations took:
+[LOG]    30.44 sec CPU time in total.
+[LOG]    31 sec real time in total.
+[LOG]    0.22058 sec CPU time on average.
+[LOG]    0.224638 sec real time on average.
+[LOG] Total cube size reduction: 3174 --> 857
+[LOG] Average cube size reduction: 23 --> 6.21014
+[LOG] Winning region computation time: 73.26 sec CPU time.
+[LOG] Winning region computation time: 73 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 73.26 sec CPU time.
+[LOG] Overall execution time: 73 sec real time.
+Synthesis time: 73.30 sec (Real time) / 27.94 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  genbuf2b4y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 199
+[LOG]  Bad state computations took:
+[LOG]    89.4 sec CPU time in total.
+[LOG]    83 sec real time in total.
+[LOG]    0.449246 sec CPU time on average.
+[LOG]    0.417085 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 198
+[LOG]  Cube minimizations took:
+[LOG]    65.19 sec CPU time in total.
+[LOG]    72 sec real time in total.
+[LOG]    0.329242 sec CPU time on average.
+[LOG]    0.363636 sec real time on average.
+[LOG] Total cube size reduction: 5148 --> 1496
+[LOG] Average cube size reduction: 26 --> 7.55556
+[LOG] Winning region computation time: 154.94 sec CPU time.
+[LOG] Winning region computation time: 155 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 154.94 sec CPU time.
+[LOG] Overall execution time: 155 sec real time.
+Synthesis time: 154.95 sec (Real time) / 62.15 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  genbuf3b4y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 229
+[LOG]  Bad state computations took:
+[LOG]    214.18 sec CPU time in total.
+[LOG]    212 sec real time in total.
+[LOG]    0.935284 sec CPU time on average.
+[LOG]    0.925764 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 228
+[LOG]  Cube minimizations took:
+[LOG]    120.56 sec CPU time in total.
+[LOG]    123 sec real time in total.
+[LOG]    0.528772 sec CPU time on average.
+[LOG]    0.539474 sec real time on average.
+[LOG] Total cube size reduction: 6840 --> 2157
+[LOG] Average cube size reduction: 30 --> 9.46053
+[LOG] Winning region computation time: 335.49 sec CPU time.
+[LOG] Winning region computation time: 335 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 335.49 sec CPU time.
+[LOG] Overall execution time: 335 sec real time.
+Synthesis time: 335.50 sec (Real time) / 195.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  genbuf4b4y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 674
+[LOG]  Bad state computations took:
+[LOG]    2243.97 sec CPU time in total.
+[LOG]    2251 sec real time in total.
+[LOG]    3.32933 sec CPU time on average.
+[LOG]    3.33976 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 673
+[LOG]  Cube minimizations took:
+[LOG]    603.48 sec CPU time in total.
+[LOG]    597 sec real time in total.
+[LOG]    0.896701 sec CPU time on average.
+[LOG]    0.887073 sec real time on average.
+[LOG] Total cube size reduction: 22209 --> 6906
+[LOG] Average cube size reduction: 33 --> 10.2615
+[LOG] Winning region computation time: 2853.22 sec CPU time.
+[LOG] Winning region computation time: 2853 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 2853.23 sec CPU time.
+[LOG] Overall execution time: 2853 sec real time.
+Synthesis time: 2853.10 sec (Real time) / 2189.18 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  genbuf5b4y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.00 sec (Real time) / 9116.20 sec (User CPU time)
+Timeout: 1
+=====================  genbuf6b4y.aag =====================
+Command terminated by signal 9
+Synthesis time: 9999.99 sec (Real time) / 8466.09 sec (User CPU time)
+Timeout: 1
+=====================  genbuf7b4y.aag =====================
+=====================  genbuf8b4y.aag =====================
+=====================  genbuf9b4y.aag =====================
+=====================  genbuf10b4y.aag =====================
+=====================  genbuf11b4y.aag =====================
+=====================  genbuf12b4y.aag =====================
+=====================  genbuf13b4y.aag =====================
+=====================  genbuf14b4y.aag =====================
+=====================  genbuf15b4y.aag =====================
+=====================  genbuf16b4y.aag =====================
+=====================  genbuf1f4y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 130
+[LOG]  Bad state computations took:
+[LOG]    32.14 sec CPU time in total.
+[LOG]    31 sec real time in total.
+[LOG]    0.247231 sec CPU time on average.
+[LOG]    0.238462 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 129
+[LOG]  Cube minimizations took:
+[LOG]    29.86 sec CPU time in total.
+[LOG]    31 sec real time in total.
+[LOG]    0.231473 sec CPU time on average.
+[LOG]    0.24031 sec real time on average.
+[LOG] Total cube size reduction: 2967 --> 816
+[LOG] Average cube size reduction: 23 --> 6.32558
+[LOG] Winning region computation time: 62.23 sec CPU time.
+[LOG] Winning region computation time: 62 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 62.23 sec CPU time.
+[LOG] Overall execution time: 62 sec real time.
+Synthesis time: 62.24 sec (Real time) / 21.78 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  genbuf2f4y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 253
+[LOG]  Bad state computations took:
+[LOG]    147.51 sec CPU time in total.
+[LOG]    140 sec real time in total.
+[LOG]    0.583043 sec CPU time on average.
+[LOG]    0.55336 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 252
+[LOG]  Cube minimizations took:
+[LOG]    88.48 sec CPU time in total.
+[LOG]    95 sec real time in total.
+[LOG]    0.351111 sec CPU time on average.
+[LOG]    0.376984 sec real time on average.
+[LOG] Total cube size reduction: 6552 --> 1982
+[LOG] Average cube size reduction: 26 --> 7.86508
+[LOG] Winning region computation time: 236.68 sec CPU time.
+[LOG] Winning region computation time: 237 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 236.68 sec CPU time.
+[LOG] Overall execution time: 237 sec real time.
+Synthesis time: 236.70 sec (Real time) / 113.59 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  genbuf3f4y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 322
+[LOG]  Bad state computations took:
+[LOG]    474.26 sec CPU time in total.
+[LOG]    476 sec real time in total.
+[LOG]    1.47286 sec CPU time on average.
+[LOG]    1.47826 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 321
+[LOG]  Cube minimizations took:
+[LOG]    184.09 sec CPU time in total.
+[LOG]    178 sec real time in total.
+[LOG]    0.573489 sec CPU time on average.
+[LOG]    0.554517 sec real time on average.
+[LOG] Total cube size reduction: 9630 --> 2787
+[LOG] Average cube size reduction: 30 --> 8.68224
+[LOG] Winning region computation time: 659.6 sec CPU time.
+[LOG] Winning region computation time: 660 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 659.6 sec CPU time.
+[LOG] Overall execution time: 660 sec real time.
+Synthesis time: 659.58 sec (Real time) / 439.71 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  genbuf4f4y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 1053
+[LOG]  Bad state computations took:
+[LOG]    6064.61 sec CPU time in total.
+[LOG]    6083 sec real time in total.
+[LOG]    5.75936 sec CPU time on average.
+[LOG]    5.77683 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 1052
+[LOG]  Cube minimizations took:
+[LOG]    1198.87 sec CPU time in total.
+[LOG]    1181 sec real time in total.
+[LOG]    1.13961 sec CPU time on average.
+[LOG]    1.12262 sec real time on average.
+[LOG] Total cube size reduction: 34716 --> 9965
+[LOG] Average cube size reduction: 33 --> 9.47243
+[LOG] Winning region computation time: 7279.12 sec CPU time.
+[LOG] Winning region computation time: 7278 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 7279.12 sec CPU time.
+[LOG] Overall execution time: 7278 sec real time.
+Synthesis time: 7278.79 sec (Real time) / 5977.57 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  genbuf5f5y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.02 sec (Real time) / 7769.95 sec (User CPU time)
+Timeout: 1
+=====================  genbuf6f6y.aag =====================
+=====================  genbuf7f7y.aag =====================
+=====================  genbuf8f8y.aag =====================
+=====================  genbuf9f9y.aag =====================
+=====================  genbuf10f10y.aag =====================
+=====================  genbuf11f11y.aag =====================
+=====================  genbuf12f12y.aag =====================
+=====================  genbuf13f13y.aag =====================
+=====================  genbuf14f14y.aag =====================
+=====================  genbuf15f15y.aag =====================
+=====================  genbuf16f16y.aag =====================
+=====================  amba2c7y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 783
+[LOG]  Bad state computations took:
+[LOG]    1073.03 sec CPU time in total.
+[LOG]    1069 sec real time in total.
+[LOG]    1.37041 sec CPU time on average.
+[LOG]    1.36526 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 782
+[LOG]  Cube minimizations took:
+[LOG]    392.69 sec CPU time in total.
+[LOG]    396 sec real time in total.
+[LOG]    0.502161 sec CPU time on average.
+[LOG]    0.506394 sec real time on average.
+[LOG] Total cube size reduction: 21896 --> 5893
+[LOG] Average cube size reduction: 28 --> 7.53581
+[LOG] Winning region computation time: 1469.58 sec CPU time.
+[LOG] Winning region computation time: 1470 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 1469.59 sec CPU time.
+[LOG] Overall execution time: 1470 sec real time.
+Synthesis time: 1469.55 sec (Real time) / 958.53 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  amba3c5y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 7351.83 sec (User CPU time)
+Timeout: 1
+=====================  amba4c7y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.00 sec (Real time) / 6913.90 sec (User CPU time)
+Timeout: 1
+=====================  amba5c5y.aag =====================
+=====================  amba6c5y.aag =====================
+=====================  amba7c5y.aag =====================
+=====================  amba8c7y.aag =====================
+=====================  amba9c5y.aag =====================
+=====================  amba10c5y.aag =====================
+=====================  amba2b9y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 874
+[LOG]  Bad state computations took:
+[LOG]    2789.19 sec CPU time in total.
+[LOG]    2827 sec real time in total.
+[LOG]    3.19129 sec CPU time on average.
+[LOG]    3.23455 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 873
+[LOG]  Cube minimizations took:
+[LOG]    615.7 sec CPU time in total.
+[LOG]    576 sec real time in total.
+[LOG]    0.705269 sec CPU time on average.
+[LOG]    0.659794 sec real time on average.
+[LOG] Total cube size reduction: 27063 --> 7177
+[LOG] Average cube size reduction: 31 --> 8.22108
+[LOG] Winning region computation time: 3412.97 sec CPU time.
+[LOG] Winning region computation time: 3413 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 3412.97 sec CPU time.
+[LOG] Overall execution time: 3419 sec real time.
+Synthesis time: 3419.19 sec (Real time) / 2679.36 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  amba3b5y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 8947.97 sec (User CPU time)
+Timeout: 1
+=====================  amba4b9y.aag =====================
+=====================  amba5b5y.aag =====================
+=====================  amba6b5y.aag =====================
+=====================  amba7b5y.aag =====================
+=====================  amba8b6y.aag =====================
+=====================  amba9b5y.aag =====================
+=====================  amba10b5y.aag =====================
+=====================  amba2f9y.aag =====================
+[LOG] Nr. of bad state computations for winning region: 774
+[LOG]  Bad state computations took:
+[LOG]    2569.12 sec CPU time in total.
+[LOG]    2572 sec real time in total.
+[LOG]    3.31928 sec CPU time on average.
+[LOG]    3.323 sec real time on average.
+[LOG] Nr. of cube minimizations for winning region: 773
+[LOG]  Cube minimizations took:
+[LOG]    510.94 sec CPU time in total.
+[LOG]    511 sec real time in total.
+[LOG]    0.660983 sec CPU time on average.
+[LOG]    0.661061 sec real time on average.
+[LOG] Total cube size reduction: 23963 --> 5540
+[LOG] Average cube size reduction: 31 --> 7.16688
+[LOG] Winning region computation time: 3086.3 sec CPU time.
+[LOG] Winning region computation time: 3087 sec real time.
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Overall execution time: 3086.31 sec CPU time.
+[LOG] Overall execution time: 3087 sec real time.
+Synthesis time: 3086.28 sec (Real time) / 2491.96 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  amba3f9y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.02 sec (Real time) / 8265.56 sec (User CPU time)
+Timeout: 1
+=====================  amba4f25y.aag =====================
+=====================  amba5f17y.aag =====================
+=====================  amba6f21y.aag =====================
+=====================  amba7f25y.aag =====================
+=====================  amba8f57y.aag =====================
+=====================  amba9f33y.aag =====================
+=====================  amba10f37y.aag =====================

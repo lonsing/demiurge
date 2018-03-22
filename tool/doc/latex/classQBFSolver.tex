@@ -1,0 +1,295 @@
+\hypertarget{classQBFSolver}{\section{Q\-B\-F\-Solver Class Reference}
+\label{classQBFSolver}\index{Q\-B\-F\-Solver@{Q\-B\-F\-Solver}}
+}
+
+
+An abstract interface for all Q\-B\-F-\/solver implementations.  
+
+
+
+
+{\ttfamily \#include $<$Q\-B\-F\-Solver.\-h$>$}
+
+Inheritance diagram for Q\-B\-F\-Solver\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classQBFSolver}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} \{ \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7a090ab4a5b262710ccd80e97d72f9a7b3}{E}, 
+\hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7afd6518d5d985aa8346ac071e4c0d8ee0}{A}
+ \}
+\begin{DoxyCompactList}\small\item\em A type for the different kinds of quantifiers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classQBFSolver_ab5a0b6c6cdcbb64a93a9d3dee844ddd3}{Q\-B\-F\-Solver} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classQBFSolver_a46d8bcb3b6ba6299eea0ae21973d7049}{$\sim$\-Q\-B\-F\-Solver} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classQBFSolver_a53ef157391b176dfbd2a77a1e31befc3}{is\-Sat} (const vector$<$ pair$<$ \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cf}{Var\-Info\-::\-Var\-Kind}, \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} $>$ $>$ \&quantifier\-\_\-prefix, const \hyperlink{classCNF}{C\-N\-F} \&cnf)=0
+\begin{DoxyCompactList}\small\item\em Checks if a given Q\-B\-F is satisfiable (with quantification over variable kinds). \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classQBFSolver_aca37de5801e36d4749b80b6c8c2023a9}{is\-Sat} (const vector$<$ pair$<$ vector$<$ int $>$, \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} $>$ $>$ \&quantifier\-\_\-prefix, const \hyperlink{classCNF}{C\-N\-F} \&cnf)=0
+\begin{DoxyCompactList}\small\item\em Checks if a given Q\-B\-F is satisfiable (with quantification over variable sets). \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classQBFSolver_a76fc0c757a2c039816e3e06547f06d5c}{is\-Sat\-Model} (const vector$<$ pair$<$ \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cf}{Var\-Info\-::\-Var\-Kind}, \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} $>$ $>$ \&quantifier\-\_\-prefix, const \hyperlink{classCNF}{C\-N\-F} \&cnf, vector$<$ int $>$ \&model)=0
+\begin{DoxyCompactList}\small\item\em Checks satisfiability and extracts a model (quantifying over variable kinds). \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classQBFSolver_a12f2ce57b778b9efe729d63bf881493d}{is\-Sat\-Model} (const vector$<$ pair$<$ vector$<$ int $>$, \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} $>$ $>$ \&quantifier\-\_\-prefix, const \hyperlink{classCNF}{C\-N\-F} \&cnf, vector$<$ int $>$ \&model)=0
+\begin{DoxyCompactList}\small\item\em Checks satisfiability and extracts a model (quantifying over variable sets). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classQBFSolver_a37724e17445199de54e0b78307214e78}{Q\-B\-F\-Solver} (const \hyperlink{classQBFSolver}{Q\-B\-F\-Solver} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classQBFSolver}{Q\-B\-F\-Solver} \& \hyperlink{classQBFSolver_a0ee7d775a4f07b088924e9e31d800a53}{operator=} (const \hyperlink{classQBFSolver}{Q\-B\-F\-Solver} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An abstract interface for all Q\-B\-F-\/solver implementations. 
+
+This class represents an abstract interface all Q\-B\-F-\/solver instances. You cannot instantiate objects of this class. You need to instantiate objects of one of the derived classes (e.\-g., \hyperlink{classDepQBFApi}{Dep\-Q\-B\-F\-Api}, \hyperlink{classDepQBFExt}{Dep\-Q\-B\-F\-Ext}, \hyperlink{classQuBEExt}{Qu\-B\-E\-Ext}) instead. For a given Quantified Boolean formula (a \hyperlink{classCNF}{C\-N\-F} with a quantifier prefix), a \hyperlink{classQBFSolver}{Q\-B\-F\-Solver} is able to determine satisfiability. Furthermore, in case of satisfiability, it can extract satisfying assignments for variables quantified existentially on the outermost level. 
+
+Definition at line 49 of file Q\-B\-F\-Solver.\-h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{\index{Q\-B\-F\-Solver@{Q\-B\-F\-Solver}!Quant@{Quant}}
+\index{Quant@{Quant}!QBFSolver@{Q\-B\-F\-Solver}}
+\subsubsection[{Quant}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Q\-B\-F\-Solver\-::\-Quant}}}\label{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}
+
+
+A type for the different kinds of quantifiers. 
+
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{E@{E}!Q\-B\-F\-Solver@{Q\-B\-F\-Solver}}\index{Q\-B\-F\-Solver@{Q\-B\-F\-Solver}!E@{E}}\item[{\em 
+\hypertarget{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7a090ab4a5b262710ccd80e97d72f9a7b3}{E}\label{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7a090ab4a5b262710ccd80e97d72f9a7b3}
+}]The value for existential quantification. \index{A@{A}!Q\-B\-F\-Solver@{Q\-B\-F\-Solver}}\index{Q\-B\-F\-Solver@{Q\-B\-F\-Solver}!A@{A}}\item[{\em 
+\hypertarget{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7afd6518d5d985aa8346ac071e4c0d8ee0}{A}\label{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7afd6518d5d985aa8346ac071e4c0d8ee0}
+}]The value for universal quantification. \end{description}
+\end{Desc}
+
+
+
+Definition at line 56 of file Q\-B\-F\-Solver.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classQBFSolver_ab5a0b6c6cdcbb64a93a9d3dee844ddd3}{\index{Q\-B\-F\-Solver@{Q\-B\-F\-Solver}!Q\-B\-F\-Solver@{Q\-B\-F\-Solver}}
+\index{Q\-B\-F\-Solver@{Q\-B\-F\-Solver}!QBFSolver@{Q\-B\-F\-Solver}}
+\subsubsection[{Q\-B\-F\-Solver}]{\setlength{\rightskip}{0pt plus 5cm}Q\-B\-F\-Solver\-::\-Q\-B\-F\-Solver (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classQBFSolver_ab5a0b6c6cdcbb64a93a9d3dee844ddd3}
+
+
+Constructor. 
+
+
+
+Definition at line 33 of file Q\-B\-F\-Solver.\-cpp.
+
+\hypertarget{classQBFSolver_a46d8bcb3b6ba6299eea0ae21973d7049}{\index{Q\-B\-F\-Solver@{Q\-B\-F\-Solver}!$\sim$\-Q\-B\-F\-Solver@{$\sim$\-Q\-B\-F\-Solver}}
+\index{$\sim$\-Q\-B\-F\-Solver@{$\sim$\-Q\-B\-F\-Solver}!QBFSolver@{Q\-B\-F\-Solver}}
+\subsubsection[{$\sim$\-Q\-B\-F\-Solver}]{\setlength{\rightskip}{0pt plus 5cm}Q\-B\-F\-Solver\-::$\sim$\-Q\-B\-F\-Solver (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classQBFSolver_a46d8bcb3b6ba6299eea0ae21973d7049}
+
+
+Destructor. 
+
+
+
+Definition at line 39 of file Q\-B\-F\-Solver.\-cpp.
+
+\hypertarget{classQBFSolver_a37724e17445199de54e0b78307214e78}{\index{Q\-B\-F\-Solver@{Q\-B\-F\-Solver}!Q\-B\-F\-Solver@{Q\-B\-F\-Solver}}
+\index{Q\-B\-F\-Solver@{Q\-B\-F\-Solver}!QBFSolver@{Q\-B\-F\-Solver}}
+\subsubsection[{Q\-B\-F\-Solver}]{\setlength{\rightskip}{0pt plus 5cm}Q\-B\-F\-Solver\-::\-Q\-B\-F\-Solver (
+\begin{DoxyParamCaption}
+\item[{const {\bf Q\-B\-F\-Solver} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classQBFSolver_a37724e17445199de54e0b78307214e78}
+
+
+Copy constructor. 
+
+The copy constructor is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classQBFSolver_a53ef157391b176dfbd2a77a1e31befc3}{\index{Q\-B\-F\-Solver@{Q\-B\-F\-Solver}!is\-Sat@{is\-Sat}}
+\index{is\-Sat@{is\-Sat}!QBFSolver@{Q\-B\-F\-Solver}}
+\subsubsection[{is\-Sat}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Q\-B\-F\-Solver\-::is\-Sat (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ pair$<$ {\bf Var\-Info\-::\-Var\-Kind}, {\bf Quant} $>$ $>$ \&}]{quantifier\-\_\-prefix, }
+\item[{const {\bf C\-N\-F} \&}]{cnf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classQBFSolver_a53ef157391b176dfbd2a77a1e31befc3}
+
+
+Checks if a given Q\-B\-F is satisfiable (with quantification over variable kinds). 
+
+The Q\-B\-F consists of a quantifier prefix and a Boolean formula in \hyperlink{classCNF}{C\-N\-F}. The quantifier prefix assigns an existential or universal quantifier to every kind of variable.
+
+This is an abstract method which must be implemented in all derived classes (all classes implementing this interface).
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantifier\-\_\-prefix} & The quantifier prefix as a vector of pairs. vector\mbox{[}0\mbox{]} is the leftmost (i.\-e., outermost) quantifier block. The pairs in the quantifier\-\_\-prefix assign an existential or universal quantifier to every kind of variable that occurs in the cnf. \\
+\hline
+{\em cnf} & A Boolean formula in \hyperlink{classCNF}{C\-N\-F}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the Q\-B\-F is satisfiable, false otherwise. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classDepQBFApiInc_a7c99e11dd78c20aafb159c3633daae1d}{Dep\-Q\-B\-F\-Api\-Inc}, \hyperlink{classDepQBFApi_a1f755841365d67f4c704bf919cb4f8b5}{Dep\-Q\-B\-F\-Api}, and \hyperlink{classExtQBFSolver_abec25b97170b79b42b85d1d4ec825a39}{Ext\-Q\-B\-F\-Solver}.
+
+
+
+Referenced by Learn\-Synth\-Q\-B\-F\-Ind\-::debug\-Check\-Win\-Reg\-Reach(), Learn\-Synth\-Q\-B\-F\-::generalize\-Counterexample(), Learn\-Synth\-Q\-B\-F\-Ind\-::generalize\-Counterexample(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses(), Learn\-Synth\-Q\-B\-F\-::reduce\-Existing\-Clauses(), and Learn\-Synth\-Q\-B\-F\-Ind\-::reduce\-Existing\-Clauses().
+
+\hypertarget{classQBFSolver_aca37de5801e36d4749b80b6c8c2023a9}{\index{Q\-B\-F\-Solver@{Q\-B\-F\-Solver}!is\-Sat@{is\-Sat}}
+\index{is\-Sat@{is\-Sat}!QBFSolver@{Q\-B\-F\-Solver}}
+\subsubsection[{is\-Sat}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Q\-B\-F\-Solver\-::is\-Sat (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ pair$<$ vector$<$ int $>$, {\bf Quant} $>$ $>$ \&}]{quantifier\-\_\-prefix, }
+\item[{const {\bf C\-N\-F} \&}]{cnf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classQBFSolver_aca37de5801e36d4749b80b6c8c2023a9}
+
+
+Checks if a given Q\-B\-F is satisfiable (with quantification over variable sets). 
+
+The Q\-B\-F consists of a quantifier prefix and a Boolean formula in \hyperlink{classCNF}{C\-N\-F}. The quantifier prefix assigns an existential or universal quantifier to different sets variable.
+
+This is an abstract method which must be implemented in all derived classes (all classes implementing this interface).
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantifier\-\_\-prefix} & The quantifier prefix as a vector of pairs. vector\mbox{[}0\mbox{]} is the leftmost (i.\-e., outermost) quantifier block. The pairs in the quantifier\-\_\-prefix assign an existential or universal quantifier to different sets of variables occurring in the cnf. \\
+\hline
+{\em cnf} & A Boolean formula in \hyperlink{classCNF}{C\-N\-F}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the Q\-B\-F is satisfiable, false otherwise. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classDepQBFApiInc_a33426c8cfba9cfe5504bdf9c28f988a2}{Dep\-Q\-B\-F\-Api\-Inc}, \hyperlink{classDepQBFApi_a8b220fef622b400b37d8298f29826938}{Dep\-Q\-B\-F\-Api}, and \hyperlink{classExtQBFSolver_adc1bacec3307200dd90b260789e4c808}{Ext\-Q\-B\-F\-Solver}.
+
+\hypertarget{classQBFSolver_a76fc0c757a2c039816e3e06547f06d5c}{\index{Q\-B\-F\-Solver@{Q\-B\-F\-Solver}!is\-Sat\-Model@{is\-Sat\-Model}}
+\index{is\-Sat\-Model@{is\-Sat\-Model}!QBFSolver@{Q\-B\-F\-Solver}}
+\subsubsection[{is\-Sat\-Model}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Q\-B\-F\-Solver\-::is\-Sat\-Model (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ pair$<$ {\bf Var\-Info\-::\-Var\-Kind}, {\bf Quant} $>$ $>$ \&}]{quantifier\-\_\-prefix, }
+\item[{const {\bf C\-N\-F} \&}]{cnf, }
+\item[{vector$<$ int $>$ \&}]{model}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classQBFSolver_a76fc0c757a2c039816e3e06547f06d5c}
+
+
+Checks satisfiability and extracts a model (quantifying over variable kinds). 
+
+Just like \hyperlink{classQBFSolver_a53ef157391b176dfbd2a77a1e31befc3}{is\-Sat() }, this method checks a quantified Boolean formula for satisfiability. If the Q\-B\-F is satisfiable, this method also extracts a model (a satisfying assignment) for all variables which are quantified existentially on the outermost level. The model is provided as cube\-: negated variables in the cube are F\-A\-L\-S\-E, unnegated ones are T\-R\-U\-E.
+
+This is an abstract method which must be implemented in all derived classes (all classes implementing this interface).
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantifier\-\_\-prefix} & The quantifier prefix as a vector of pairs. vector\mbox{[}0\mbox{]} is the leftmost (i.\-e., outermost) quantifier block. The pairs in the quantifier\-\_\-prefix assign an existential or universal quantifier to every kind of variable that occurs in the cnf. \\
+\hline
+{\em cnf} & A Boolean formula in \hyperlink{classCNF}{C\-N\-F}. \\
+\hline
+{\em model} & The resulting model in form of a cube in case of satisfiability. Negated variables in the cube are F\-A\-L\-S\-E, unnegated ones are T\-R\-U\-E. If the formula is unsatisfiable (this method returns false) then this parameter is not modified. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the Q\-B\-F is satisfiable, false otherwise. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classDepQBFApiInc_a76c8046078bcd13fe864e1b8621ed6c3}{Dep\-Q\-B\-F\-Api\-Inc}, \hyperlink{classDepQBFApi_af70faa0b2136fe04e2a22743f2ca7c8e}{Dep\-Q\-B\-F\-Api}, and \hyperlink{classExtQBFSolver_ad66c53343ce9c03eea6e4b5e7753f1b3}{Ext\-Q\-B\-F\-Solver}.
+
+
+
+Referenced by Learn\-Synth\-Q\-B\-F\-::compute\-Counterexample\-Q\-B\-F(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Counterexample\-Q\-B\-F(), and Template\-Synth\-::find\-Win\-Reg\-C\-N\-F\-Templ().
+
+\hypertarget{classQBFSolver_a12f2ce57b778b9efe729d63bf881493d}{\index{Q\-B\-F\-Solver@{Q\-B\-F\-Solver}!is\-Sat\-Model@{is\-Sat\-Model}}
+\index{is\-Sat\-Model@{is\-Sat\-Model}!QBFSolver@{Q\-B\-F\-Solver}}
+\subsubsection[{is\-Sat\-Model}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Q\-B\-F\-Solver\-::is\-Sat\-Model (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ pair$<$ vector$<$ int $>$, {\bf Quant} $>$ $>$ \&}]{quantifier\-\_\-prefix, }
+\item[{const {\bf C\-N\-F} \&}]{cnf, }
+\item[{vector$<$ int $>$ \&}]{model}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classQBFSolver_a12f2ce57b778b9efe729d63bf881493d}
+
+
+Checks satisfiability and extracts a model (quantifying over variable sets). 
+
+Just like \hyperlink{classQBFSolver_a53ef157391b176dfbd2a77a1e31befc3}{is\-Sat() }, this method checks a quantified Boolean formula for satisfiability. If the Q\-B\-F is satisfiable, this method also extracts a model (a satisfying assignment) for all variables which are quantified existentially on the outermost level. The model is provided as cube\-: negated variables in the cube are F\-A\-L\-S\-E, unnegated ones are T\-R\-U\-E.
+
+This is an abstract method which must be implemented in all derived classes (all classes implementing this interface).
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantifier\-\_\-prefix} & The quantifier prefix as a vector of pairs. vector\mbox{[}0\mbox{]} is the leftmost (i.\-e., outermost) quantifier block. The pairs in the quantifier\-\_\-prefix assign an existential or universal quantifier to different sets of variables occurring in the cnf. \\
+\hline
+{\em cnf} & A Boolean formula in \hyperlink{classCNF}{C\-N\-F}. \\
+\hline
+{\em model} & The resulting model in form of a cube in case of satisfiability. Negated variables in the cube are F\-A\-L\-S\-E, unnegated ones are T\-R\-U\-E. If the formula is unsatisfiable (this method returns false) then this parameter is not modified. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the Q\-B\-F is satisfiable, false otherwise. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classDepQBFApiInc_a61c1de56b115323863c326b248d10acb}{Dep\-Q\-B\-F\-Api\-Inc}, \hyperlink{classDepQBFApi_a4278bfb0cf01f21e9aa6333e14e4f5af}{Dep\-Q\-B\-F\-Api}, and \hyperlink{classExtQBFSolver_a3add00496f016c2e60a188ce9daa1da1}{Ext\-Q\-B\-F\-Solver}.
+
+\hypertarget{classQBFSolver_a0ee7d775a4f07b088924e9e31d800a53}{\index{Q\-B\-F\-Solver@{Q\-B\-F\-Solver}!operator=@{operator=}}
+\index{operator=@{operator=}!QBFSolver@{Q\-B\-F\-Solver}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\-B\-F\-Solver}\& Q\-B\-F\-Solver\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Q\-B\-F\-Solver} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classQBFSolver_a0ee7d775a4f07b088924e9e31d800a53}
+
+
+Assignment operator. 
+
+The assignment operator is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the assignment, i.\-e, $\ast$this. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{QBFSolver_8h}{Q\-B\-F\-Solver.\-h}\item 
+src/\hyperlink{QBFSolver_8cpp}{Q\-B\-F\-Solver.\-cpp}\end{DoxyCompactItemize}

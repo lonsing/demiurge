@@ -1,0 +1,64 @@
+\hypertarget{IFM13Synth_8cpp}{\section{src/\-I\-F\-M13\-Synth.cpp File Reference}
+\label{IFM13Synth_8cpp}\index{src/\-I\-F\-M13\-Synth.\-cpp@{src/\-I\-F\-M13\-Synth.\-cpp}}
+}
+
+
+Contains the definition of the class \hyperlink{classIFM13Synth}{I\-F\-M13\-Synth}.  
+
+
+{\ttfamily \#include \char`\"{}I\-F\-M13\-Synth.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Var\-Manager.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Options.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}A\-I\-G2\-C\-N\-F.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Logger.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Sat\-Solver.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Dep\-Q\-B\-F\-Api.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Q\-B\-F\-Cert\-Impl\-Extractor.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{IFM13Synth_8cpp_aa7427327f72d969747adde3ac7f42729}{I\-S\-\_\-\-L\-O\-S\-E}~false
+\begin{DoxyCompactList}\small\item\em A constant for the result\-: 'the state is losing'. \end{DoxyCompactList}\item 
+\#define \hyperlink{IFM13Synth_8cpp_ac41fa28e287ec0bc04bef6fbac5c16b4}{I\-S\-\_\-\-G\-R\-E\-A\-T\-E\-R}~true
+\begin{DoxyCompactList}\small\item\em A constant for the result\-: 'the rank of the state is greater'. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains the definition of the class \hyperlink{classIFM13Synth}{I\-F\-M13\-Synth}. 
+
+Definition in file \hyperlink{IFM13Synth_8cpp_source}{I\-F\-M13\-Synth.\-cpp}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{IFM13Synth_8cpp_ac41fa28e287ec0bc04bef6fbac5c16b4}{\index{I\-F\-M13\-Synth.\-cpp@{I\-F\-M13\-Synth.\-cpp}!I\-S\-\_\-\-G\-R\-E\-A\-T\-E\-R@{I\-S\-\_\-\-G\-R\-E\-A\-T\-E\-R}}
+\index{I\-S\-\_\-\-G\-R\-E\-A\-T\-E\-R@{I\-S\-\_\-\-G\-R\-E\-A\-T\-E\-R}!IFM13Synth.cpp@{I\-F\-M13\-Synth.\-cpp}}
+\subsubsection[{I\-S\-\_\-\-G\-R\-E\-A\-T\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-S\-\_\-\-G\-R\-E\-A\-T\-E\-R~true}}\label{IFM13Synth_8cpp_ac41fa28e287ec0bc04bef6fbac5c16b4}
+
+
+A constant for the result\-: 'the rank of the state is greater'. 
+
+
+
+Definition at line 51 of file I\-F\-M13\-Synth.\-cpp.
+
+
+
+Referenced by I\-F\-M13\-Synth\-::rec\-Block\-Cube().
+
+\hypertarget{IFM13Synth_8cpp_aa7427327f72d969747adde3ac7f42729}{\index{I\-F\-M13\-Synth.\-cpp@{I\-F\-M13\-Synth.\-cpp}!I\-S\-\_\-\-L\-O\-S\-E@{I\-S\-\_\-\-L\-O\-S\-E}}
+\index{I\-S\-\_\-\-L\-O\-S\-E@{I\-S\-\_\-\-L\-O\-S\-E}!IFM13Synth.cpp@{I\-F\-M13\-Synth.\-cpp}}
+\subsubsection[{I\-S\-\_\-\-L\-O\-S\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-S\-\_\-\-L\-O\-S\-E~false}}\label{IFM13Synth_8cpp_aa7427327f72d969747adde3ac7f42729}
+
+
+A constant for the result\-: 'the state is losing'. 
+
+
+
+Definition at line 45 of file I\-F\-M13\-Synth.\-cpp.
+
+
+
+Referenced by I\-F\-M13\-Synth\-::compute\-Winning\-Region(), and I\-F\-M13\-Synth\-::rec\-Block\-Cube().
+

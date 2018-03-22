@@ -1,0 +1,817 @@
+=====================  unr.aag =====================
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.13 sec (Real time) / 0.02 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (unrealizable)
+=====================  eq1.aag =====================
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.02 sec (Real time) / 0.01 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  ex1.aag =====================
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.03 sec (Real time) / 0.01 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  ex2.aag =====================
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 2 sec real time.
+Synthesis time: 2.77 sec (Real time) / 2.74 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add2n.aag =====================
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.61 sec (Real time) / 0.59 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add2y.aag =====================
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.49 sec (Real time) / 0.47 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add4n.aag =====================
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 125 sec real time.
+Synthesis time: 124.80 sec (Real time) / 123.82 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add4y.aag =====================
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 120 sec real time.
+Synthesis time: 120.01 sec (Real time) / 119.17 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add6n.aag =====================
+Command terminated by signal 6
+Synthesis time: 343.88 sec (Real time) / 341.36 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  add6y.aag =====================
+Command terminated by signal 6
+Synthesis time: 296.83 sec (Real time) / 294.75 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  add8n.aag =====================
+Command terminated by signal 6
+Synthesis time: 308.13 sec (Real time) / 305.93 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  add8y.aag =====================
+Command terminated by signal 6
+Synthesis time: 318.58 sec (Real time) / 316.41 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  add10n.aag =====================
+Command terminated by signal 6
+Synthesis time: 293.89 sec (Real time) / 291.76 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  add10y.aag =====================
+Command terminated by signal 6
+Synthesis time: 386.07 sec (Real time) / 383.60 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  add12n.aag =====================
+Command terminated by signal 6
+Synthesis time: 382.88 sec (Real time) / 380.45 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  add12y.aag =====================
+Command terminated by signal 6
+Synthesis time: 400.73 sec (Real time) / 398.28 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  add14n.aag =====================
+Command terminated by signal 6
+Synthesis time: 303.41 sec (Real time) / 301.28 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  add14y.aag =====================
+Command terminated by signal 6
+Synthesis time: 353.94 sec (Real time) / 351.59 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  add16n.aag =====================
+Command terminated by signal 6
+Synthesis time: 429.49 sec (Real time) / 426.99 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  add16y.aag =====================
+Command terminated by signal 6
+Synthesis time: 352.01 sec (Real time) / 349.71 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  add18n.aag =====================
+Command terminated by signal 6
+Synthesis time: 437.34 sec (Real time) / 434.69 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  add18y.aag =====================
+Command terminated by signal 6
+Synthesis time: 426.62 sec (Real time) / 424.06 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  add20n.aag =====================
+Command terminated by signal 6
+Synthesis time: 289.06 sec (Real time) / 286.87 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  add20y.aag =====================
+Command terminated by signal 6
+Synthesis time: 419.91 sec (Real time) / 417.33 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  cnt2n.aag =====================
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.09 sec (Real time) / 0.07 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt2y.aag =====================
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.07 sec (Real time) / 0.06 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt3n.aag =====================
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.60 sec (Real time) / 0.58 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt3y.aag =====================
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.50 sec (Real time) / 0.48 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt4n.aag =====================
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 5 sec real time.
+Synthesis time: 5.06 sec (Real time) / 4.95 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt4y.aag =====================
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 2 sec real time.
+Synthesis time: 1.84 sec (Real time) / 1.81 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt5n.aag =====================
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 40 sec real time.
+Synthesis time: 39.24 sec (Real time) / 38.87 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt5y.aag =====================
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 14 sec real time.
+Synthesis time: 14.23 sec (Real time) / 14.11 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt6n.aag =====================
+Command terminated by signal 6
+Synthesis time: 225.61 sec (Real time) / 223.58 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  cnt6y.aag =====================
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 81 sec real time.
+Synthesis time: 80.83 sec (Real time) / 80.23 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt7n.aag =====================
+Command terminated by signal 6
+Synthesis time: 346.47 sec (Real time) / 344.07 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  cnt7y.aag =====================
+Command terminated by signal 6
+Synthesis time: 372.53 sec (Real time) / 369.89 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  cnt8n.aag =====================
+Command terminated by signal 6
+Synthesis time: 369.99 sec (Real time) / 367.50 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  cnt8y.aag =====================
+Command terminated by signal 6
+Synthesis time: 474.18 sec (Real time) / 471.14 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  cnt9n.aag =====================
+Command terminated by signal 6
+Synthesis time: 416.61 sec (Real time) / 413.99 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  cnt9y.aag =====================
+Command terminated by signal 6
+Synthesis time: 567.06 sec (Real time) / 563.83 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  cnt10n.aag =====================
+Command terminated by signal 6
+Synthesis time: 516.70 sec (Real time) / 513.84 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  cnt10y.aag =====================
+Command terminated by signal 6
+Synthesis time: 550.75 sec (Real time) / 547.50 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  cnt11n.aag =====================
+Command terminated by signal 6
+Synthesis time: 308.79 sec (Real time) / 306.46 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  cnt11y.aag =====================
+Command terminated by signal 6
+Synthesis time: 295.43 sec (Real time) / 293.26 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  cnt15n.aag =====================
+Command terminated by signal 6
+Synthesis time: 269.63 sec (Real time) / 267.40 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  cnt15y.aag =====================
+Command terminated by signal 6
+Synthesis time: 211.37 sec (Real time) / 209.53 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  cnt20n.aag =====================
+Command terminated by signal 6
+Synthesis time: 317.32 sec (Real time) / 315.21 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  cnt20y.aag =====================
+Command terminated by signal 6
+Synthesis time: 357.51 sec (Real time) / 355.11 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  cnt25n.aag =====================
+Command terminated by signal 6
+Synthesis time: 316.15 sec (Real time) / 313.99 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  cnt25y.aag =====================
+Command terminated by signal 6
+Synthesis time: 198.08 sec (Real time) / 196.17 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  cnt30n.aag =====================
+Command terminated by signal 6
+Synthesis time: 485.96 sec (Real time) / 483.24 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  cnt30y.aag =====================
+Command terminated by signal 6
+Synthesis time: 233.83 sec (Real time) / 231.86 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  mv2n.aag =====================
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.11 sec (Real time) / 0.10 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv2y.aag =====================
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.09 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs2n.aag =====================
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.11 sec (Real time) / 0.10 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs2y.aag =====================
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.08 sec (Real time) / 0.07 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv4n.aag =====================
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 94 sec real time.
+Synthesis time: 94.01 sec (Real time) / 93.19 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv4y.aag =====================
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 85 sec real time.
+Synthesis time: 84.38 sec (Real time) / 83.71 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs4n.aag =====================
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 54 sec real time.
+Synthesis time: 54.55 sec (Real time) / 54.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs4y.aag =====================
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 53 sec real time.
+Synthesis time: 52.88 sec (Real time) / 52.30 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv8n.aag =====================
+Command terminated by signal 6
+Synthesis time: 482.59 sec (Real time) / 479.60 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  mv8y.aag =====================
+Command terminated by signal 6
+Synthesis time: 428.02 sec (Real time) / 425.39 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  mvs8n.aag =====================
+Command terminated by signal 6
+Synthesis time: 539.18 sec (Real time) / 536.13 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  mvs8y.aag =====================
+Command terminated by signal 6
+Synthesis time: 889.05 sec (Real time) / 884.79 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  mv12n.aag =====================
+Command terminated by signal 6
+Synthesis time: 508.34 sec (Real time) / 505.51 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  mv12y.aag =====================
+Command terminated by signal 6
+Synthesis time: 318.97 sec (Real time) / 316.73 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  mvs12n.aag =====================
+Command terminated by signal 6
+Synthesis time: 393.71 sec (Real time) / 391.16 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  mvs12y.aag =====================
+Command terminated by signal 6
+Synthesis time: 453.81 sec (Real time) / 451.05 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  mv16n.aag =====================
+Command terminated by signal 6
+Synthesis time: 606.46 sec (Real time) / 601.03 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  mv16y.aag =====================
+Command terminated by signal 6
+Synthesis time: 232.05 sec (Real time) / 230.19 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  mvs16n.aag =====================
+Command terminated by signal 6
+Synthesis time: 569.59 sec (Real time) / 566.47 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  mvs16y.aag =====================
+Command terminated by signal 6
+Synthesis time: 615.56 sec (Real time) / 612.17 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  mvs18n.aag =====================
+Command terminated by signal 6
+Synthesis time: 1023.85 sec (Real time) / 1019.11 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  mvs18y.aag =====================
+Command terminated by signal 6
+Synthesis time: 898.40 sec (Real time) / 894.13 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  mv20n.aag =====================
+Command terminated by signal 6
+Synthesis time: 603.80 sec (Real time) / 600.48 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  mv20y.aag =====================
+Command terminated by signal 6
+Synthesis time: 394.91 sec (Real time) / 392.39 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  mvs20n.aag =====================
+Command terminated by signal 6
+Synthesis time: 691.69 sec (Real time) / 688.42 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  mvs20y.aag =====================
+Command terminated by signal 6
+Synthesis time: 767.45 sec (Real time) / 763.65 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  mvs22n.aag =====================
+Command terminated by signal 6
+Synthesis time: 482.87 sec (Real time) / 480.17 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  mvs22y.aag =====================
+Command terminated by signal 6
+Synthesis time: 659.91 sec (Real time) / 656.55 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  mvs24n.aag =====================
+Command terminated by signal 6
+Synthesis time: 559.45 sec (Real time) / 556.37 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  mvs24y.aag =====================
+Command terminated by signal 6
+Synthesis time: 461.72 sec (Real time) / 459.02 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  mvs28n.aag =====================
+Command terminated by signal 6
+Synthesis time: 260.35 sec (Real time) / 258.17 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  mvs28y.aag =====================
+Command terminated by signal 6
+Synthesis time: 559.73 sec (Real time) / 556.69 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  mult2.aag =====================
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.06 sec (Real time) / 0.05 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mult4.aag =====================
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 30 sec real time.
+Synthesis time: 29.94 sec (Real time) / 29.62 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mult5.aag =====================
+Command terminated by signal 6
+Synthesis time: 255.22 sec (Real time) / 253.13 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  mult6.aag =====================
+Command terminated by signal 6
+Synthesis time: 279.94 sec (Real time) / 277.74 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  mult7.aag =====================
+Command terminated by signal 6
+Synthesis time: 295.73 sec (Real time) / 293.58 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  mult8.aag =====================
+Command terminated by signal 6
+Synthesis time: 315.53 sec (Real time) / 313.51 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  mult9.aag =====================
+Command terminated by signal 6
+Synthesis time: 337.06 sec (Real time) / 334.69 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  mult10.aag =====================
+Command terminated by signal 6
+Synthesis time: 306.94 sec (Real time) / 304.77 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  mult11.aag =====================
+Command terminated by signal 6
+Synthesis time: 315.13 sec (Real time) / 312.81 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  mult12.aag =====================
+Command terminated by signal 6
+Synthesis time: 309.92 sec (Real time) / 307.47 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  mult13.aag =====================
+Command terminated by signal 6
+Synthesis time: 286.47 sec (Real time) / 284.02 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  mult14.aag =====================
+Command terminated by signal 6
+Synthesis time: 260.62 sec (Real time) / 258.42 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  mult15.aag =====================
+Command terminated by signal 6
+Synthesis time: 286.45 sec (Real time) / 283.78 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  mult16.aag =====================
+Command terminated by signal 6
+Synthesis time: 249.17 sec (Real time) / 246.82 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  bs8n.aag =====================
+Command terminated by signal 6
+Synthesis time: 279.00 sec (Real time) / 276.76 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  bs8y.aag =====================
+Command terminated by signal 6
+Synthesis time: 294.58 sec (Real time) / 281.94 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  bs16n.aag =====================
+Command terminated by signal 6
+Synthesis time: 506.85 sec (Real time) / 503.75 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  bs16y.aag =====================
+Command terminated by signal 6
+Synthesis time: 701.90 sec (Real time) / 698.35 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  bs32n.aag =====================
+Command terminated by signal 6
+Synthesis time: 382.66 sec (Real time) / 380.05 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  bs32y.aag =====================
+Command terminated by signal 6
+Synthesis time: 447.63 sec (Real time) / 444.82 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  bs64n.aag =====================
+Command terminated by signal 6
+Synthesis time: 402.53 sec (Real time) / 399.57 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  bs64y.aag =====================
+Command terminated by signal 6
+Synthesis time: 320.74 sec (Real time) / 318.11 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  bs128n.aag =====================
+Command terminated by signal 6
+Synthesis time: 415.80 sec (Real time) / 413.06 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  bs128y.aag =====================
+Command terminated by signal 6
+Synthesis time: 416.77 sec (Real time) / 413.98 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  stay2n.aag =====================
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 3 sec real time.
+Synthesis time: 2.71 sec (Real time) / 2.37 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay2y.aag =====================
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 2 sec real time.
+Synthesis time: 2.14 sec (Real time) / 2.10 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay4n.aag =====================
+Command terminated by signal 6
+Synthesis time: 298.17 sec (Real time) / 295.90 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  stay4y.aag =====================
+Command terminated by signal 6
+Synthesis time: 296.59 sec (Real time) / 294.23 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  stay6n.aag =====================
+Command terminated by signal 6
+Synthesis time: 326.24 sec (Real time) / 323.67 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  stay6y.aag =====================
+Command terminated by signal 6
+Synthesis time: 388.59 sec (Real time) / 385.89 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  stay8n.aag =====================
+Command terminated by signal 6
+Synthesis time: 338.54 sec (Real time) / 336.12 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  stay8y.aag =====================
+Command terminated by signal 6
+Synthesis time: 345.69 sec (Real time) / 343.17 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  stay10n.aag =====================
+Command terminated by signal 6
+Synthesis time: 237.67 sec (Real time) / 235.64 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  stay10y.aag =====================
+Command terminated by signal 6
+Synthesis time: 294.91 sec (Real time) / 292.55 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  stay12n.aag =====================
+Command terminated by signal 6
+Synthesis time: 262.74 sec (Real time) / 260.68 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  stay12y.aag =====================
+Command terminated by signal 6
+Synthesis time: 463.61 sec (Real time) / 460.69 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  stay14n.aag =====================
+Command terminated by signal 6
+Synthesis time: 340.96 sec (Real time) / 338.53 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  stay14y.aag =====================
+Command terminated by signal 6
+Synthesis time: 650.96 sec (Real time) / 647.74 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  stay16n.aag =====================
+Command terminated by signal 6
+Synthesis time: 487.78 sec (Real time) / 484.81 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  stay16y.aag =====================
+Command terminated by signal 6
+Synthesis time: 362.35 sec (Real time) / 359.91 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  stay18n.aag =====================
+Command terminated by signal 6
+Synthesis time: 872.98 sec (Real time) / 868.66 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  stay18y.aag =====================
+Command terminated by signal 6
+Synthesis time: 907.17 sec (Real time) / 902.73 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  stay20n.aag =====================
+Command terminated by signal 6
+Synthesis time: 875.59 sec (Real time) / 871.17 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  stay20y.aag =====================
+Command terminated by signal 6
+Synthesis time: 1012.44 sec (Real time) / 1007.64 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  stay22n.aag =====================
+Command terminated by signal 6
+Synthesis time: 717.75 sec (Real time) / 713.34 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  stay22y.aag =====================
+Command terminated by signal 6
+Synthesis time: 599.67 sec (Real time) / 596.38 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  stay24n.aag =====================
+Command terminated by signal 6
+Synthesis time: 578.70 sec (Real time) / 574.97 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  stay24y.aag =====================
+Command terminated by signal 6
+Synthesis time: 423.39 sec (Real time) / 420.48 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  genbuf1c3y.aag =====================
+Command terminated by signal 6
+Synthesis time: 257.20 sec (Real time) / 255.04 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  genbuf2c3y.aag =====================
+=====================  genbuf3c3y.aag =====================
+=====================  genbuf4c3y.aag =====================
+=====================  genbuf5c3y.aag =====================
+=====================  genbuf6c3y.aag =====================
+=====================  genbuf7c3y.aag =====================
+=====================  genbuf8c3y.aag =====================
+=====================  genbuf9c3y.aag =====================
+=====================  genbuf10c3y.aag =====================
+=====================  genbuf11c3y.aag =====================
+=====================  genbuf12c3y.aag =====================
+=====================  genbuf13c3y.aag =====================
+=====================  genbuf14c3y.aag =====================
+=====================  genbuf15c3y.aag =====================
+=====================  genbuf16c3y.aag =====================
+=====================  genbuf1b4y.aag =====================
+Command terminated by signal 6
+Synthesis time: 271.66 sec (Real time) / 269.46 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  genbuf2b4y.aag =====================
+=====================  genbuf3b4y.aag =====================
+=====================  genbuf4b4y.aag =====================
+=====================  genbuf5b4y.aag =====================
+=====================  genbuf6b4y.aag =====================
+=====================  genbuf7b4y.aag =====================
+=====================  genbuf8b4y.aag =====================
+=====================  genbuf9b4y.aag =====================
+=====================  genbuf10b4y.aag =====================
+=====================  genbuf11b4y.aag =====================
+=====================  genbuf12b4y.aag =====================
+=====================  genbuf13b4y.aag =====================
+=====================  genbuf14b4y.aag =====================
+=====================  genbuf15b4y.aag =====================
+=====================  genbuf16b4y.aag =====================
+=====================  genbuf1f4y.aag =====================
+Command terminated by signal 6
+Synthesis time: 253.12 sec (Real time) / 251.17 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  genbuf2f4y.aag =====================
+=====================  genbuf3f4y.aag =====================
+=====================  genbuf4f4y.aag =====================
+=====================  genbuf5f5y.aag =====================
+=====================  genbuf6f6y.aag =====================
+=====================  genbuf7f7y.aag =====================
+=====================  genbuf8f8y.aag =====================
+=====================  genbuf9f9y.aag =====================
+=====================  genbuf10f10y.aag =====================
+=====================  genbuf11f11y.aag =====================
+=====================  genbuf12f12y.aag =====================
+=====================  genbuf13f13y.aag =====================
+=====================  genbuf14f14y.aag =====================
+=====================  genbuf15f15y.aag =====================
+=====================  genbuf16f16y.aag =====================
+=====================  amba2c7y.aag =====================
+Command terminated by signal 6
+Synthesis time: 217.86 sec (Real time) / 215.88 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  amba3c5y.aag =====================
+=====================  amba4c7y.aag =====================
+=====================  amba5c5y.aag =====================
+=====================  amba6c5y.aag =====================
+=====================  amba7c5y.aag =====================
+=====================  amba8c7y.aag =====================
+=====================  amba9c5y.aag =====================
+=====================  amba10c5y.aag =====================
+=====================  amba2b9y.aag =====================
+Command terminated by signal 6
+Synthesis time: 330.33 sec (Real time) / 327.94 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  amba3b5y.aag =====================
+=====================  amba4b9y.aag =====================
+=====================  amba5b5y.aag =====================
+=====================  amba6b5y.aag =====================
+=====================  amba7b5y.aag =====================
+=====================  amba8b6y.aag =====================
+=====================  amba9b5y.aag =====================
+=====================  amba10b5y.aag =====================
+=====================  amba2f9y.aag =====================
+Command terminated by signal 6
+Synthesis time: 464.01 sec (Real time) / 461.20 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  amba3f9y.aag =====================
+=====================  amba4f25y.aag =====================
+=====================  amba5f17y.aag =====================
+=====================  amba6f21y.aag =====================
+=====================  amba7f25y.aag =====================
+=====================  amba8f57y.aag =====================
+=====================  amba9f33y.aag =====================
+=====================  amba10f37y.aag =====================

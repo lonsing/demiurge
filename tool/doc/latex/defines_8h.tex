@@ -1,0 +1,73 @@
+\hypertarget{defines_8h}{\section{src/defines.h File Reference}
+\label{defines_8h}\index{src/defines.\-h@{src/defines.\-h}}
+}
+
+
+Includes some often used header files and names from the std\-:\-: namespace.  
+
+
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$list$>$}\\*
+{\ttfamily \#include $<$map$>$}\\*
+{\ttfamily \#include $<$set$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include $<$algorithm$>$}\\*
+{\ttfamily \#include $<$limits$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{defines_8h_aad30151c28f3061eefc56c68da2fb96d}{M\-A\-S\-S\-E\-R\-T}(condition, message)
+\begin{DoxyCompactList}\small\item\em A macro for an assertion associated with an error message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Includes some often used header files and names from the std\-:\-: namespace. 
+
+Definition in file \hyperlink{defines_8h_source}{defines.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{defines_8h_aad30151c28f3061eefc56c68da2fb96d}{\index{defines.\-h@{defines.\-h}!M\-A\-S\-S\-E\-R\-T@{M\-A\-S\-S\-E\-R\-T}}
+\index{M\-A\-S\-S\-E\-R\-T@{M\-A\-S\-S\-E\-R\-T}!defines.h@{defines.\-h}}
+\subsubsection[{M\-A\-S\-S\-E\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-S\-S\-E\-R\-T(
+\begin{DoxyParamCaption}
+\item[{}]{condition, }
+\item[{}]{message}
+\end{DoxyParamCaption}
+)}}\label{defines_8h_aad30151c28f3061eefc56c68da2fb96d}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\{                                                                            \(\backslash\)
+  if(!(condition))                                                           \(\backslash\)
+  \{                                                                          \(\backslash\)
+    std::cerr << \_\_FILE\_\_ << \textcolor{stringliteral}{" ("} << \_\_LINE\_\_ << \textcolor{stringliteral}{") : "} << message << endl;  \(\backslash\)
+    abort();                                                                 \(\backslash\)
+  \}                                                                          \(\backslash\)
+\}
+\end{DoxyCode}
+
+
+A macro for an assertion associated with an error message. 
+
+If the condition evaluates to false, the error message is printed and the program terminates.
+
+
+\begin{DoxyParams}{Parameters}
+{\em condition} & The condition of the assertion. If this condition evaluates to false, then the error message is printed. \\
+\hline
+{\em message} & The error message to be printed upon assertion violation. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 59 of file defines.\-h.
+
+
+
+Referenced by Var\-Manager\-::aig\-Lit\-To\-Cnf\-Lit(), Dep\-Q\-B\-F\-Api\-Inc\-::clear\-Incremental\-Session(), Utils\-::compress\-State\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::compute\-Counterexample\-S\-A\-T(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Dep\-Q\-B\-F\-Api\-::debug\-Check\-Bloqqer\-Model(), Dep\-Q\-B\-F\-Api\-Inc\-::debug\-Check\-Bloqqer\-Model(), Dep\-Q\-B\-F\-Api\-::debug\-Check\-Bloqqer\-Verdict(), Dep\-Q\-B\-F\-Api\-Inc\-::debug\-Check\-Bloqqer\-Verdict(), I\-F\-M13\-Synth\-::debug\-Check\-Invariants(), Learn\-Synth\-S\-A\-T\-::debug\-Check\-Win\-Reg(), Utils\-::debug\-Check\-Win\-Reg(), Learn\-Synth\-Q\-B\-F\-Ind\-::debug\-Check\-Win\-Reg\-Reach(), Dep\-Q\-B\-F\-Ext\-::\-Dep\-Q\-B\-F\-Ext(), Q\-B\-F\-Cert\-Impl\-Extractor\-::dump\-Res\-Aiger\-Lib(), E\-P\-R\-Synthesizer\-::\-E\-P\-R\-Synthesizer(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), Q\-B\-F\-Cert\-Impl\-Extractor\-::extract\-Circuit(), Dep\-Q\-B\-F\-Api\-Inc\-::extract\-Core(), I\-F\-M13\-Synth\-::gen\-And\-Block\-Trans(), I\-F\-M13\-Explorer\-::gen\-And\-Block\-Trans(), Counter\-Gen\-S\-A\-T\-::generalize\-Ce\-Futher(), Var\-Manager\-::get\-Info(), Logger\-::get\-Ostream(), Options\-::get\-Q\-B\-F\-Solver(), Options\-::get\-S\-A\-T\-Solver(), Options\-::get\-Tmp\-Dir\-Name(), Lingeling\-Api\-::inc\-Add2\-Lit\-Clause(), Pico\-Sat\-Api\-::inc\-Add2\-Lit\-Clause(), Mini\-Sat\-Api\-::inc\-Add2\-Lit\-Clause(), Lingeling\-Api\-::inc\-Add3\-Lit\-Clause(), Pico\-Sat\-Api\-::inc\-Add3\-Lit\-Clause(), Mini\-Sat\-Api\-::inc\-Add3\-Lit\-Clause(), Lingeling\-Api\-::inc\-Add\-Clause(), Pico\-Sat\-Api\-::inc\-Add\-Clause(), Mini\-Sat\-Api\-::inc\-Add\-Clause(), Dep\-Q\-B\-F\-Api\-Inc\-::inc\-Add\-Clause(), Lingeling\-Api\-::inc\-Add\-C\-N\-F(), Pico\-Sat\-Api\-::inc\-Add\-C\-N\-F(), Mini\-Sat\-Api\-::inc\-Add\-C\-N\-F(), Dep\-Q\-B\-F\-Api\-Inc\-::inc\-Add\-C\-N\-F(), Dep\-Q\-B\-F\-Api\-Inc\-::inc\-Add\-Cube(), Lingeling\-Api\-::inc\-Add\-Cube(), Pico\-Sat\-Api\-::inc\-Add\-Cube(), Mini\-Sat\-Api\-::inc\-Add\-Cube(), Lingeling\-Api\-::inc\-Add\-Neg\-Cube\-As\-Clause(), Pico\-Sat\-Api\-::inc\-Add\-Neg\-Cube\-As\-Clause(), Mini\-Sat\-Api\-::inc\-Add\-Neg\-Cube\-As\-Clause(), Lingeling\-Api\-::inc\-Add\-Unit\-Clause(), Pico\-Sat\-Api\-::inc\-Add\-Unit\-Clause(), Mini\-Sat\-Api\-::inc\-Add\-Unit\-Clause(), Dep\-Q\-B\-F\-Api\-Inc\-::inc\-Is\-Sat(), Lingeling\-Api\-::inc\-Is\-Sat(), Pico\-Sat\-Api\-::inc\-Is\-Sat(), Mini\-Sat\-Api\-::inc\-Is\-Sat(), Dep\-Q\-B\-F\-Api\-Inc\-::inc\-Is\-Sat\-Model\-Or\-Core(), Lingeling\-Api\-::inc\-Is\-Sat\-Model\-Or\-Core(), Pico\-Sat\-Api\-::inc\-Is\-Sat\-Model\-Or\-Core(), Mini\-Sat\-Api\-::inc\-Is\-Sat\-Model\-Or\-Core(), Lingeling\-Api\-::inc\-Pop(), Pico\-Sat\-Api\-::inc\-Pop(), Mini\-Sat\-Api\-::inc\-Pop(), Lingeling\-Api\-::inc\-Push(), Pico\-Sat\-Api\-::inc\-Push(), Mini\-Sat\-Api\-::inc\-Push(), Var\-Manager\-::init\-From\-Aig(), Var\-Manager\-::instance(), Logger\-::instance(), Options\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), Dep\-Q\-B\-F\-Api\-::is\-Sat(), Dep\-Q\-B\-F\-Api\-Inc\-::is\-Sat(), Pico\-Sat\-Api\-::is\-Sat(), Lingeling\-Api\-::is\-Sat(), Dep\-Q\-B\-F\-Api\-::is\-Sat\-Model(), Dep\-Q\-B\-F\-Api\-Inc\-::is\-Sat\-Model(), Lingeling\-Api\-::is\-Sat\-Model\-Or\-Core(), Pico\-Sat\-Api\-::is\-Sat\-Model\-Or\-Core(), main(), Parallel\-Learner\-::\-Parallel\-Learner(), Ext\-Q\-B\-F\-Solver\-::parse\-Answer(), Ext\-Q\-B\-F\-Solver\-::parse\-Model(), Q\-B\-F\-Cert\-Impl\-Extractor\-::parse\-Q\-B\-F\-Cert\-Answer(), I\-F\-M13\-Synth\-::pop\-Min(), I\-F\-M13\-Explorer\-::pop\-Min(), Dep\-Q\-B\-F\-Ext\-::qbf\-Cert(), Qu\-B\-E\-Ext\-::\-Qu\-B\-E\-Ext(), Lingeling\-Api\-::rand\-Model(), Pico\-Sat\-Api\-::rand\-Model(), File\-Utils\-::read\-File(), C\-N\-F\-::remove\-Smallest(), Var\-Manager\-::reset\-To\-Last\-Push(), Parallel\-Learner\-::run(), E\-P\-R\-Synthesizer\-::run(), Learn\-Synth\-S\-A\-T\-::run(), Learn\-Synth\-Q\-B\-F\-Ind\-::run(), I\-F\-M\-Proof\-Obligation\-::set\-Pre(), Dep\-Q\-B\-F\-Api\-Inc\-::start\-Incremental\-Session(), Utils\-::swap\-Present\-To\-Next(), and C\-N\-F\-::swap\-Present\-To\-Next().
+

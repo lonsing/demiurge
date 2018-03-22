@@ -1,0 +1,419 @@
+\hypertarget{classIFMProofObligation}{\section{I\-F\-M\-Proof\-Obligation Class Reference}
+\label{classIFMProofObligation}\index{I\-F\-M\-Proof\-Obligation@{I\-F\-M\-Proof\-Obligation}}
+}
+
+
+A helper-\/class for \hyperlink{classIFM13Synth}{I\-F\-M13\-Synth}, representing an open proof obligation.  
+
+
+
+
+{\ttfamily \#include $<$I\-F\-M\-Proof\-Obligation.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classIFMProofObligation_a5c774e39decb6399858b22192ce91ccb}{I\-F\-M\-Proof\-Obligation} (const vector$<$ int $>$ \&state\-\_\-cube, size\-\_\-t state\-\_\-level)
+\begin{DoxyCompactList}\small\item\em Constructor omitting the predecessor. \end{DoxyCompactList}\item 
+\hyperlink{classIFMProofObligation_ae1a80b72265ebee8fe33461119bf2ab1}{I\-F\-M\-Proof\-Obligation} (const vector$<$ int $>$ \&state\-\_\-cube, size\-\_\-t state\-\_\-level, const vector$<$ int $>$ \&pre\-\_\-state\-\_\-in\-\_\-cube, const vector$<$ int $>$ \&pre\-\_\-ctrl\-\_\-cube)
+\begin{DoxyCompactList}\small\item\em Constructor also setting a predecessor. \end{DoxyCompactList}\item 
+\hyperlink{classIFMProofObligation_a4f7d62a51ba4dfa4398b415034a320c6}{I\-F\-M\-Proof\-Obligation} (const \hyperlink{classIFMProofObligation}{I\-F\-M\-Proof\-Obligation} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classIFMProofObligation}{I\-F\-M\-Proof\-Obligation} \& \hyperlink{classIFMProofObligation_ab314748b1ee6226ca48ef7a69bedff6e}{operator=} (const \hyperlink{classIFMProofObligation}{I\-F\-M\-Proof\-Obligation} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+virtual \hyperlink{classIFMProofObligation_afcb88686953a327b0340fbf51cae2f1c}{$\sim$\-I\-F\-M\-Proof\-Obligation} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+const vector$<$ int $>$ \& \hyperlink{classIFMProofObligation_a75083a8658b5dbc8b7d824081876170e}{get\-State} () const 
+\begin{DoxyCompactList}\small\item\em Returns the state in question in form of a full cube over the state variables. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classIFMProofObligation_acf55ebc5c8e1720d770c99e76fb02ec5}{get\-Level} () const 
+\begin{DoxyCompactList}\small\item\em Returns the level in question. \end{DoxyCompactList}\item 
+bool \hyperlink{classIFMProofObligation_ad8175e23cff3378d2feb7c5bae2c171f}{has\-Pre} () const 
+\begin{DoxyCompactList}\small\item\em Checks if a preprocessor was set. \end{DoxyCompactList}\item 
+const vector$<$ int $>$ \& \hyperlink{classIFMProofObligation_ab9c20d91b552ef862c37837b9d707895}{get\-Pre\-State\-In\-Cube} () const 
+\begin{DoxyCompactList}\small\item\em Returns the predecessor together with the inputs of the transition. \end{DoxyCompactList}\item 
+const vector$<$ int $>$ \& \hyperlink{classIFMProofObligation_a577815e5d3e6205c0c3b09934489100e}{get\-Pre\-Ctrl\-Cube} () const 
+\begin{DoxyCompactList}\small\item\em Returns the control values of the transition from the predecessor to the state. \end{DoxyCompactList}\item 
+void \hyperlink{classIFMProofObligation_a3bca5075c133d0717af164407c2403ae}{set\-Pre} (const vector$<$ int $>$ \&pre\-\_\-state\-\_\-in\-\_\-cube, const vector$<$ int $>$ \&pre\-\_\-ctrl\-\_\-cube)
+\begin{DoxyCompactList}\small\item\em Sets the predecessor and the transition to the current state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ int $>$ \hyperlink{classIFMProofObligation_a688b714ebad4010c14e11355a73faf3c}{state\-\_\-cube\-\_\-}
+\begin{DoxyCompactList}\small\item\em A full cube over the state-\/variables. It represents the state in question. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classIFMProofObligation_a6207c16b84a41450a8ca31ed8a35b4ea}{state\-\_\-level\-\_\-}
+\begin{DoxyCompactList}\small\item\em The level of the proof obligation. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classIFMProofObligation_a949c4d45bd6986a2349edc8f39f38e3f}{pre\-\_\-state\-\_\-in\-\_\-cube\-\_\-}
+\begin{DoxyCompactList}\small\item\em The predecessor of \hyperlink{classIFMProofObligation_a688b714ebad4010c14e11355a73faf3c}{state\-\_\-cube\-\_\-} and the inputs of the transition. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classIFMProofObligation_ac29130636a6423e42daf1616754c6c29}{pre\-\_\-ctrl\-\_\-cube\-\_\-}
+\begin{DoxyCompactList}\small\item\em The control signal values of the transition to \hyperlink{classIFMProofObligation_a688b714ebad4010c14e11355a73faf3c}{state\-\_\-cube\-\_\-}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A helper-\/class for \hyperlink{classIFM13Synth}{I\-F\-M13\-Synth}, representing an open proof obligation. 
+
+This is a simple container without any intelligence. Basically, a proof obligation is a state together with a level. The intuitive meaning is that we need to check if the rank of the state is greater than the level or not. In addition, this class also stores information about the predecessor-\/state that was responsible for adding the current state as a proof obligation. This enables some optimizations.
+
+\begin{DoxyAuthor}{Author}
+Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0.\-0 
+\end{DoxyVersion}
+
+
+Definition at line 49 of file I\-F\-M\-Proof\-Obligation.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classIFMProofObligation_a5c774e39decb6399858b22192ce91ccb}{\index{I\-F\-M\-Proof\-Obligation@{I\-F\-M\-Proof\-Obligation}!I\-F\-M\-Proof\-Obligation@{I\-F\-M\-Proof\-Obligation}}
+\index{I\-F\-M\-Proof\-Obligation@{I\-F\-M\-Proof\-Obligation}!IFMProofObligation@{I\-F\-M\-Proof\-Obligation}}
+\subsubsection[{I\-F\-M\-Proof\-Obligation}]{\setlength{\rightskip}{0pt plus 5cm}I\-F\-M\-Proof\-Obligation\-::\-I\-F\-M\-Proof\-Obligation (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{state\-\_\-cube, }
+\item[{size\-\_\-t}]{state\-\_\-level}
+\end{DoxyParamCaption}
+)}}\label{classIFMProofObligation_a5c774e39decb6399858b22192ce91ccb}
+
+
+Constructor omitting the predecessor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state\-\_\-cube} & A full cube over the state-\/variables. It represents the state in question. \\
+\hline
+{\em state\-\_\-level} & The level of the proof obligation (the proof obligation means\-: check if the rank of the state greater than this level or not). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 33 of file I\-F\-M\-Proof\-Obligation.\-cpp.
+
+\hypertarget{classIFMProofObligation_ae1a80b72265ebee8fe33461119bf2ab1}{\index{I\-F\-M\-Proof\-Obligation@{I\-F\-M\-Proof\-Obligation}!I\-F\-M\-Proof\-Obligation@{I\-F\-M\-Proof\-Obligation}}
+\index{I\-F\-M\-Proof\-Obligation@{I\-F\-M\-Proof\-Obligation}!IFMProofObligation@{I\-F\-M\-Proof\-Obligation}}
+\subsubsection[{I\-F\-M\-Proof\-Obligation}]{\setlength{\rightskip}{0pt plus 5cm}I\-F\-M\-Proof\-Obligation\-::\-I\-F\-M\-Proof\-Obligation (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{state\-\_\-cube, }
+\item[{size\-\_\-t}]{state\-\_\-level, }
+\item[{const vector$<$ int $>$ \&}]{pre\-\_\-state\-\_\-in\-\_\-cube, }
+\item[{const vector$<$ int $>$ \&}]{pre\-\_\-ctrl\-\_\-cube}
+\end{DoxyParamCaption}
+)}}\label{classIFMProofObligation_ae1a80b72265ebee8fe33461119bf2ab1}
+
+
+Constructor also setting a predecessor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state\-\_\-cube} & A full cube over the state-\/variables. It represents the state in question. \\
+\hline
+{\em state\-\_\-level} & The level of the proof obligation (the proof obligation means\-: check if the rank of the state greater than this level or not). \\
+\hline
+{\em pre\-\_\-state\-\_\-in\-\_\-cube} & A full cube over the state variables and the uncontrollable inputs. It defines the predecessor of state\-\_\-cube and the input that was used to go from this predecessor to the state\-\_\-cube. \\
+\hline
+{\em pre\-\_\-ctrl\-\_\-cube} & The control signal values (in form of a full cube) that were used to traverse from the predecessor to the current state. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 41 of file I\-F\-M\-Proof\-Obligation.\-cpp.
+
+\hypertarget{classIFMProofObligation_a4f7d62a51ba4dfa4398b415034a320c6}{\index{I\-F\-M\-Proof\-Obligation@{I\-F\-M\-Proof\-Obligation}!I\-F\-M\-Proof\-Obligation@{I\-F\-M\-Proof\-Obligation}}
+\index{I\-F\-M\-Proof\-Obligation@{I\-F\-M\-Proof\-Obligation}!IFMProofObligation@{I\-F\-M\-Proof\-Obligation}}
+\subsubsection[{I\-F\-M\-Proof\-Obligation}]{\setlength{\rightskip}{0pt plus 5cm}I\-F\-M\-Proof\-Obligation\-::\-I\-F\-M\-Proof\-Obligation (
+\begin{DoxyParamCaption}
+\item[{const {\bf I\-F\-M\-Proof\-Obligation} \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{classIFMProofObligation_a4f7d62a51ba4dfa4398b415034a320c6}
+
+
+Copy constructor. 
+
+Makes a (deep) copy of the \hyperlink{classIFMProofObligation}{I\-F\-M\-Proof\-Obligation}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the (deep) copy. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 54 of file I\-F\-M\-Proof\-Obligation.\-cpp.
+
+\hypertarget{classIFMProofObligation_afcb88686953a327b0340fbf51cae2f1c}{\index{I\-F\-M\-Proof\-Obligation@{I\-F\-M\-Proof\-Obligation}!$\sim$\-I\-F\-M\-Proof\-Obligation@{$\sim$\-I\-F\-M\-Proof\-Obligation}}
+\index{$\sim$\-I\-F\-M\-Proof\-Obligation@{$\sim$\-I\-F\-M\-Proof\-Obligation}!IFMProofObligation@{I\-F\-M\-Proof\-Obligation}}
+\subsubsection[{$\sim$\-I\-F\-M\-Proof\-Obligation}]{\setlength{\rightskip}{0pt plus 5cm}I\-F\-M\-Proof\-Obligation\-::$\sim$\-I\-F\-M\-Proof\-Obligation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classIFMProofObligation_afcb88686953a327b0340fbf51cae2f1c}
+
+
+Destructor. 
+
+
+
+Definition at line 74 of file I\-F\-M\-Proof\-Obligation.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classIFMProofObligation_acf55ebc5c8e1720d770c99e76fb02ec5}{\index{I\-F\-M\-Proof\-Obligation@{I\-F\-M\-Proof\-Obligation}!get\-Level@{get\-Level}}
+\index{get\-Level@{get\-Level}!IFMProofObligation@{I\-F\-M\-Proof\-Obligation}}
+\subsubsection[{get\-Level}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t I\-F\-M\-Proof\-Obligation\-::get\-Level (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classIFMProofObligation_acf55ebc5c8e1720d770c99e76fb02ec5}
+
+
+Returns the level in question. 
+
+The proof obligation means\-: check if the rank of the state greater than this level or not.
+
+\begin{DoxyReturn}{Returns}
+The level in question. 
+\end{DoxyReturn}
+
+
+Definition at line 86 of file I\-F\-M\-Proof\-Obligation.\-cpp.
+
+
+
+References state\-\_\-level\-\_\-.
+
+
+
+Referenced by I\-F\-M13\-Synth\-::rec\-Block\-Cube(), and I\-F\-M13\-Explorer\-::rec\-Block\-Cube().
+
+\hypertarget{classIFMProofObligation_a577815e5d3e6205c0c3b09934489100e}{\index{I\-F\-M\-Proof\-Obligation@{I\-F\-M\-Proof\-Obligation}!get\-Pre\-Ctrl\-Cube@{get\-Pre\-Ctrl\-Cube}}
+\index{get\-Pre\-Ctrl\-Cube@{get\-Pre\-Ctrl\-Cube}!IFMProofObligation@{I\-F\-M\-Proof\-Obligation}}
+\subsubsection[{get\-Pre\-Ctrl\-Cube}]{\setlength{\rightskip}{0pt plus 5cm}const vector$<$ int $>$ \& I\-F\-M\-Proof\-Obligation\-::get\-Pre\-Ctrl\-Cube (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classIFMProofObligation_a577815e5d3e6205c0c3b09934489100e}
+
+
+Returns the control values of the transition from the predecessor to the state. 
+
+\begin{DoxyReturn}{Returns}
+The control signal values (in form of a full cube) that were used to traverse from the predecessor to the current state. 
+\end{DoxyReturn}
+
+
+Definition at line 104 of file I\-F\-M\-Proof\-Obligation.\-cpp.
+
+
+
+References pre\-\_\-ctrl\-\_\-cube\-\_\-.
+
+
+
+Referenced by I\-F\-M13\-Synth\-::rec\-Block\-Cube(), and I\-F\-M13\-Explorer\-::rec\-Block\-Cube().
+
+\hypertarget{classIFMProofObligation_ab9c20d91b552ef862c37837b9d707895}{\index{I\-F\-M\-Proof\-Obligation@{I\-F\-M\-Proof\-Obligation}!get\-Pre\-State\-In\-Cube@{get\-Pre\-State\-In\-Cube}}
+\index{get\-Pre\-State\-In\-Cube@{get\-Pre\-State\-In\-Cube}!IFMProofObligation@{I\-F\-M\-Proof\-Obligation}}
+\subsubsection[{get\-Pre\-State\-In\-Cube}]{\setlength{\rightskip}{0pt plus 5cm}const vector$<$ int $>$ \& I\-F\-M\-Proof\-Obligation\-::get\-Pre\-State\-In\-Cube (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classIFMProofObligation_ab9c20d91b552ef862c37837b9d707895}
+
+
+Returns the predecessor together with the inputs of the transition. 
+
+\begin{DoxyReturn}{Returns}
+A full cube over the state variables and the uncontrollable inputs. It defines the predecessor of state in question and the input that was used to go from this predecessor to the state in question. 
+\end{DoxyReturn}
+
+
+Definition at line 98 of file I\-F\-M\-Proof\-Obligation.\-cpp.
+
+
+
+References pre\-\_\-state\-\_\-in\-\_\-cube\-\_\-.
+
+
+
+Referenced by I\-F\-M13\-Synth\-::rec\-Block\-Cube(), and I\-F\-M13\-Explorer\-::rec\-Block\-Cube().
+
+\hypertarget{classIFMProofObligation_a75083a8658b5dbc8b7d824081876170e}{\index{I\-F\-M\-Proof\-Obligation@{I\-F\-M\-Proof\-Obligation}!get\-State@{get\-State}}
+\index{get\-State@{get\-State}!IFMProofObligation@{I\-F\-M\-Proof\-Obligation}}
+\subsubsection[{get\-State}]{\setlength{\rightskip}{0pt plus 5cm}const vector$<$ int $>$ \& I\-F\-M\-Proof\-Obligation\-::get\-State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classIFMProofObligation_a75083a8658b5dbc8b7d824081876170e}
+
+
+Returns the state in question in form of a full cube over the state variables. 
+
+\begin{DoxyReturn}{Returns}
+The state in question in form of a full cube over the state variables. 
+\end{DoxyReturn}
+
+
+Definition at line 80 of file I\-F\-M\-Proof\-Obligation.\-cpp.
+
+
+
+References state\-\_\-cube\-\_\-.
+
+
+
+Referenced by I\-F\-M13\-Synth\-::rec\-Block\-Cube(), and I\-F\-M13\-Explorer\-::rec\-Block\-Cube().
+
+\hypertarget{classIFMProofObligation_ad8175e23cff3378d2feb7c5bae2c171f}{\index{I\-F\-M\-Proof\-Obligation@{I\-F\-M\-Proof\-Obligation}!has\-Pre@{has\-Pre}}
+\index{has\-Pre@{has\-Pre}!IFMProofObligation@{I\-F\-M\-Proof\-Obligation}}
+\subsubsection[{has\-Pre}]{\setlength{\rightskip}{0pt plus 5cm}bool I\-F\-M\-Proof\-Obligation\-::has\-Pre (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classIFMProofObligation_ad8175e23cff3378d2feb7c5bae2c171f}
+
+
+Checks if a preprocessor was set. 
+
+\begin{DoxyReturn}{Returns}
+True if a predecessor was set (either via the constructor or with \hyperlink{classIFMProofObligation_a3bca5075c133d0717af164407c2403ae}{set\-Pre() }. The methods \hyperlink{classIFMProofObligation_ab9c20d91b552ef862c37837b9d707895}{get\-Pre\-State\-In\-Cube() } and \hyperlink{classIFMProofObligation_a577815e5d3e6205c0c3b09934489100e}{get\-Pre\-Ctrl\-Cube() } only return useful values if this method returns true. 
+\end{DoxyReturn}
+
+
+Definition at line 92 of file I\-F\-M\-Proof\-Obligation.\-cpp.
+
+
+
+References pre\-\_\-ctrl\-\_\-cube\-\_\-.
+
+
+
+Referenced by I\-F\-M13\-Synth\-::rec\-Block\-Cube(), and I\-F\-M13\-Explorer\-::rec\-Block\-Cube().
+
+\hypertarget{classIFMProofObligation_ab314748b1ee6226ca48ef7a69bedff6e}{\index{I\-F\-M\-Proof\-Obligation@{I\-F\-M\-Proof\-Obligation}!operator=@{operator=}}
+\index{operator=@{operator=}!IFMProofObligation@{I\-F\-M\-Proof\-Obligation}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-F\-M\-Proof\-Obligation} \& I\-F\-M\-Proof\-Obligation\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf I\-F\-M\-Proof\-Obligation} \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{classIFMProofObligation_ab314748b1ee6226ca48ef7a69bedff6e}
+
+
+Assignment operator. 
+
+Makes this object a deep copy of another object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the (deep) copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the assignment, i.\-e, $\ast$this. 
+\end{DoxyReturn}
+
+
+Definition at line 64 of file I\-F\-M\-Proof\-Obligation.\-cpp.
+
+
+
+References pre\-\_\-ctrl\-\_\-cube\-\_\-, pre\-\_\-state\-\_\-in\-\_\-cube\-\_\-, state\-\_\-cube\-\_\-, and state\-\_\-level\-\_\-.
+
+\hypertarget{classIFMProofObligation_a3bca5075c133d0717af164407c2403ae}{\index{I\-F\-M\-Proof\-Obligation@{I\-F\-M\-Proof\-Obligation}!set\-Pre@{set\-Pre}}
+\index{set\-Pre@{set\-Pre}!IFMProofObligation@{I\-F\-M\-Proof\-Obligation}}
+\subsubsection[{set\-Pre}]{\setlength{\rightskip}{0pt plus 5cm}void I\-F\-M\-Proof\-Obligation\-::set\-Pre (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{pre\-\_\-state\-\_\-in\-\_\-cube, }
+\item[{const vector$<$ int $>$ \&}]{pre\-\_\-ctrl\-\_\-cube}
+\end{DoxyParamCaption}
+)}}\label{classIFMProofObligation_a3bca5075c133d0717af164407c2403ae}
+
+
+Sets the predecessor and the transition to the current state. 
+
+Setting the predecessor can also be done with the right constructor. This method does the same thing, but after the object has been created.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pre\-\_\-state\-\_\-in\-\_\-cube} & A full cube over the state variables and the uncontrollable inputs. It defines the predecessor of state\-\_\-cube and the input that was used to go from this predecessor to the state\-\_\-cube. \\
+\hline
+{\em pre\-\_\-ctrl\-\_\-cube} & The control signal values (in form of a full cube) that were used to traverse from the predecessor to the current state. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 110 of file I\-F\-M\-Proof\-Obligation.\-cpp.
+
+
+
+References M\-A\-S\-S\-E\-R\-T, pre\-\_\-ctrl\-\_\-cube\-\_\-, and pre\-\_\-state\-\_\-in\-\_\-cube\-\_\-.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classIFMProofObligation_ac29130636a6423e42daf1616754c6c29}{\index{I\-F\-M\-Proof\-Obligation@{I\-F\-M\-Proof\-Obligation}!pre\-\_\-ctrl\-\_\-cube\-\_\-@{pre\-\_\-ctrl\-\_\-cube\-\_\-}}
+\index{pre\-\_\-ctrl\-\_\-cube\-\_\-@{pre\-\_\-ctrl\-\_\-cube\-\_\-}!IFMProofObligation@{I\-F\-M\-Proof\-Obligation}}
+\subsubsection[{pre\-\_\-ctrl\-\_\-cube\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ I\-F\-M\-Proof\-Obligation\-::pre\-\_\-ctrl\-\_\-cube\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFMProofObligation_ac29130636a6423e42daf1616754c6c29}
+
+
+The control signal values of the transition to \hyperlink{classIFMProofObligation_a688b714ebad4010c14e11355a73faf3c}{state\-\_\-cube\-\_\-}. 
+
+The control signal values (in form of a full cube) that were used to traverse from the predecessor to the current state. 
+
+Definition at line 191 of file I\-F\-M\-Proof\-Obligation.\-h.
+
+
+
+Referenced by get\-Pre\-Ctrl\-Cube(), has\-Pre(), operator=(), and set\-Pre().
+
+\hypertarget{classIFMProofObligation_a949c4d45bd6986a2349edc8f39f38e3f}{\index{I\-F\-M\-Proof\-Obligation@{I\-F\-M\-Proof\-Obligation}!pre\-\_\-state\-\_\-in\-\_\-cube\-\_\-@{pre\-\_\-state\-\_\-in\-\_\-cube\-\_\-}}
+\index{pre\-\_\-state\-\_\-in\-\_\-cube\-\_\-@{pre\-\_\-state\-\_\-in\-\_\-cube\-\_\-}!IFMProofObligation@{I\-F\-M\-Proof\-Obligation}}
+\subsubsection[{pre\-\_\-state\-\_\-in\-\_\-cube\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ I\-F\-M\-Proof\-Obligation\-::pre\-\_\-state\-\_\-in\-\_\-cube\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFMProofObligation_a949c4d45bd6986a2349edc8f39f38e3f}
+
+
+The predecessor of \hyperlink{classIFMProofObligation_a688b714ebad4010c14e11355a73faf3c}{state\-\_\-cube\-\_\-} and the inputs of the transition. 
+
+This is a full cube over the state variables and the uncontrollable inputs. It defines the predecessor of state\-\_\-cube and the input that was used to go from this predecessor to the \hyperlink{classIFMProofObligation_a688b714ebad4010c14e11355a73faf3c}{state\-\_\-cube\-\_\-}. 
+
+Definition at line 183 of file I\-F\-M\-Proof\-Obligation.\-h.
+
+
+
+Referenced by get\-Pre\-State\-In\-Cube(), operator=(), and set\-Pre().
+
+\hypertarget{classIFMProofObligation_a688b714ebad4010c14e11355a73faf3c}{\index{I\-F\-M\-Proof\-Obligation@{I\-F\-M\-Proof\-Obligation}!state\-\_\-cube\-\_\-@{state\-\_\-cube\-\_\-}}
+\index{state\-\_\-cube\-\_\-@{state\-\_\-cube\-\_\-}!IFMProofObligation@{I\-F\-M\-Proof\-Obligation}}
+\subsubsection[{state\-\_\-cube\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ I\-F\-M\-Proof\-Obligation\-::state\-\_\-cube\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFMProofObligation_a688b714ebad4010c14e11355a73faf3c}
+
+
+A full cube over the state-\/variables. It represents the state in question. 
+
+
+
+Definition at line 167 of file I\-F\-M\-Proof\-Obligation.\-h.
+
+
+
+Referenced by get\-State(), and operator=().
+
+\hypertarget{classIFMProofObligation_a6207c16b84a41450a8ca31ed8a35b4ea}{\index{I\-F\-M\-Proof\-Obligation@{I\-F\-M\-Proof\-Obligation}!state\-\_\-level\-\_\-@{state\-\_\-level\-\_\-}}
+\index{state\-\_\-level\-\_\-@{state\-\_\-level\-\_\-}!IFMProofObligation@{I\-F\-M\-Proof\-Obligation}}
+\subsubsection[{state\-\_\-level\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t I\-F\-M\-Proof\-Obligation\-::state\-\_\-level\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFMProofObligation_a6207c16b84a41450a8ca31ed8a35b4ea}
+
+
+The level of the proof obligation. 
+
+The proof obligation means\-: check if the rank of the state greater than this level or not. 
+
+Definition at line 174 of file I\-F\-M\-Proof\-Obligation.\-h.
+
+
+
+Referenced by get\-Level(), and operator=().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{IFMProofObligation_8h}{I\-F\-M\-Proof\-Obligation.\-h}\item 
+src/\hyperlink{IFMProofObligation_8cpp}{I\-F\-M\-Proof\-Obligation.\-cpp}\end{DoxyCompactItemize}

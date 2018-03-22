@@ -1,0 +1,649 @@
+\hypertarget{classAIG2CNF}{\section{A\-I\-G2\-C\-N\-F Class Reference}
+\label{classAIG2CNF}\index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}}
+}
+
+
+Transforms an A\-I\-G\-E\-R specification into \hyperlink{classCNF}{C\-N\-F}.  
+
+
+
+
+{\ttfamily \#include $<$A\-I\-G2\-C\-N\-F.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classAIG2CNF_aa872708acbdc2bcb1bd23da9a1db2833}{init\-From\-Aig} (aiger $\ast$aig)
+\begin{DoxyCompactList}\small\item\em Initializes this class from an aiger structure. \end{DoxyCompactList}\item 
+void \hyperlink{classAIG2CNF_a4e3be4d76137eb30a6bed5885f709f29}{clear} ()
+\begin{DoxyCompactList}\small\item\em Clears all the C\-N\-Fs constructed by \hyperlink{classAIG2CNF_aa872708acbdc2bcb1bd23da9a1db2833}{init\-From\-Aig() }. \end{DoxyCompactList}\item 
+const \hyperlink{classCNF}{C\-N\-F} \& \hyperlink{classAIG2CNF_a02f56e622e210868ffafcdee4ad9fea2}{get\-Trans} () const 
+\begin{DoxyCompactList}\small\item\em Returns the transition relation in \hyperlink{classCNF}{C\-N\-F}. \end{DoxyCompactList}\item 
+const \hyperlink{classCNF}{C\-N\-F} \& \hyperlink{classAIG2CNF_add8899c00619a3c182e78d21b988d748}{get\-Trans\-Eq\-T} () const 
+\begin{DoxyCompactList}\small\item\em Returns a \hyperlink{classCNF}{C\-N\-F} saying that the transition holds iff a certain literal is true. \end{DoxyCompactList}\item 
+int \hyperlink{classAIG2CNF_a50f4e351f8d3f3f73b80e70849f00fe1}{get\-T} () const 
+\begin{DoxyCompactList}\small\item\em Returns the literal assigned by \hyperlink{classAIG2CNF_add8899c00619a3c182e78d21b988d748}{get\-Trans\-Eq\-T() }. \end{DoxyCompactList}\item 
+const \hyperlink{classCNF}{C\-N\-F} \& \hyperlink{classAIG2CNF_ac71ea2d9f9280c8bb3d20d109e892e2d}{get\-Safe\-States} () const 
+\begin{DoxyCompactList}\small\item\em Returns a \hyperlink{classCNF}{C\-N\-F} representing the set of safe states. \end{DoxyCompactList}\item 
+const \hyperlink{classCNF}{C\-N\-F} \& \hyperlink{classAIG2CNF_a7e6e6af6ac83605669918008b12d30e7}{get\-Unsafe\-States} () const 
+\begin{DoxyCompactList}\small\item\em Returns a \hyperlink{classCNF}{C\-N\-F} representing the set of unsafe states. \end{DoxyCompactList}\item 
+const \hyperlink{classCNF}{C\-N\-F} \& \hyperlink{classAIG2CNF_af04a7275b64d96d7c16c5c8c8668b93c}{get\-Next\-Safe\-States} () const 
+\begin{DoxyCompactList}\small\item\em Returns a \hyperlink{classCNF}{C\-N\-F} saying that the next state is safe. \end{DoxyCompactList}\item 
+const \hyperlink{classCNF}{C\-N\-F} \& \hyperlink{classAIG2CNF_a1bec5428f2f5f6efa41810a308ebbe1f}{get\-Next\-Unsafe\-States} () const 
+\begin{DoxyCompactList}\small\item\em Returns a \hyperlink{classCNF}{C\-N\-F} saying that the next state is unsafe. \end{DoxyCompactList}\item 
+const \hyperlink{classCNF}{C\-N\-F} \& \hyperlink{classAIG2CNF_ae20be327c24ca3ed7493b56a254d6a63}{get\-Initial} () const 
+\begin{DoxyCompactList}\small\item\em Returns a \hyperlink{classCNF}{C\-N\-F} representing the initial state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classAIG2CNF}{A\-I\-G2\-C\-N\-F} \& \hyperlink{classAIG2CNF_a7a4db833018cb851ab608004b4e651e4}{instance} ()
+\begin{DoxyCompactList}\small\item\em Returns the one and only instance of this class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCNF}{C\-N\-F} \hyperlink{classAIG2CNF_aedcb9a8efe69fe03721fdc17c5d11bfc}{trans\-\_\-}
+\begin{DoxyCompactList}\small\item\em The transition relation in \hyperlink{classCNF}{C\-N\-F}. \end{DoxyCompactList}\item 
+\hyperlink{classCNF}{C\-N\-F} \hyperlink{classAIG2CNF_af7e9b65092f626865a4aa541a48e4f1b}{trans\-\_\-eq\-\_\-t\-\_\-}
+\begin{DoxyCompactList}\small\item\em A \hyperlink{classCNF}{C\-N\-F} saying that the transition holds iff \hyperlink{classAIG2CNF_af2a7f6ecdcec3b5b2f37a11b0adde65a}{t\-\_\- } is true. \end{DoxyCompactList}\item 
+int \hyperlink{classAIG2CNF_af2a7f6ecdcec3b5b2f37a11b0adde65a}{t\-\_\-}
+\begin{DoxyCompactList}\small\item\em The literal assigned by \hyperlink{classAIG2CNF_af7e9b65092f626865a4aa541a48e4f1b}{trans\-\_\-eq\-\_\-t\-\_\- }. \end{DoxyCompactList}\item 
+\hyperlink{classCNF}{C\-N\-F} \hyperlink{classAIG2CNF_a394d2a3600bc3bec864cf08acac61437}{safe\-\_\-}
+\begin{DoxyCompactList}\small\item\em A \hyperlink{classCNF}{C\-N\-F} representing the set of safe states. \end{DoxyCompactList}\item 
+\hyperlink{classCNF}{C\-N\-F} \hyperlink{classAIG2CNF_afbfcf3a27261a2283a99362d2527d64f}{unsafe\-\_\-}
+\begin{DoxyCompactList}\small\item\em A \hyperlink{classCNF}{C\-N\-F} representing the set of unsafe states. \end{DoxyCompactList}\item 
+\hyperlink{classCNF}{C\-N\-F} \hyperlink{classAIG2CNF_a057c6a3159253267c99f115b7d724ee2}{next\-\_\-safe\-\_\-}
+\begin{DoxyCompactList}\small\item\em A \hyperlink{classCNF}{C\-N\-F} saying that the next state is safe. \end{DoxyCompactList}\item 
+\hyperlink{classCNF}{C\-N\-F} \hyperlink{classAIG2CNF_a0430b9b4ff38a7b0ae339fb0abd191c9}{next\-\_\-unsafe\-\_\-}
+\begin{DoxyCompactList}\small\item\em A \hyperlink{classCNF}{C\-N\-F} saying that the next state is unsafe. \end{DoxyCompactList}\item 
+\hyperlink{classCNF}{C\-N\-F} \hyperlink{classAIG2CNF_a83d0b27b61d672ecf2bd007e0d473439}{initial\-\_\-}
+\begin{DoxyCompactList}\small\item\em A \hyperlink{classCNF}{C\-N\-F} representing the initial state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classAIG2CNF_a2da966a41a8ff74e6ecebf0d1d3d3829}{A\-I\-G2\-C\-N\-F} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classAIG2CNF_ab97283bcce3d32f458ed7717b452e931}{$\sim$\-A\-I\-G2\-C\-N\-F} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{classAIG2CNF_a2b3b1fac1ae78ff3c9dac99cd7b63d9d}{A\-I\-G2\-C\-N\-F} (const \hyperlink{classAIG2CNF}{A\-I\-G2\-C\-N\-F} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classAIG2CNF}{A\-I\-G2\-C\-N\-F} \& \hyperlink{classAIG2CNF_a1ee82fcfe444616f35078957ec762489}{operator=} (const \hyperlink{classAIG2CNF}{A\-I\-G2\-C\-N\-F} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classAIG2CNF}{A\-I\-G2\-C\-N\-F} $\ast$ \hyperlink{classAIG2CNF_ae298ae4804c63f5bac4dfab7528d35ad}{instance\-\_\-} = N\-U\-L\-L
+\begin{DoxyCompactList}\small\item\em The one and only instance of this class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Transforms an A\-I\-G\-E\-R specification into \hyperlink{classCNF}{C\-N\-F}. 
+
+This class creates \hyperlink{classCNF}{C\-N\-F} formulas representing the transition relation as well as the initial state, and the set of safe states from an A\-I\-G\-E\-R specification. It does not parse the A\-I\-G\-E\-R file itself, but expects that this has already been done with the A\-I\-G\-E\-R utility tools (see \href{http://fmv.jku.at/aiger/}{\tt http\-://fmv.\-jku.\-at/aiger/}). This class then analyzes the resulting 'aiger' structure to build the corresponding C\-N\-Fs. It is compatible with A\-I\-G\-E\-R version 1.\-9.\-4. This class can parse A\-I\-G\-E\-R structures that are compatible with input format for the synthesis competition (see \href{http://www.syntcomp.org/}{\tt http\-://www.\-syntcomp.\-org/}). That is, the A\-I\-G\-E\-R structure is expected to have exactly one output\-: This output signals that an error occurred. The synthesis problem addressed by this tool is to prevent the error-\/output form over becoming T\-R\-U\-E. Controllable inputs are identified via their name. If an input signal has a name that starts with 'controllable\-\_\-', then it is considered as controllable.
+
+The resulting transition relation is a \hyperlink{classCNF}{C\-N\-F} T(x,i,c,x') that talks about the current state bits x, the uncontrollable inputs i, the controllable inputs c, and the next state copies x' of the state bits x. The transition relation is 
+\begin{DoxyItemize}
+\item complete, i.\-e., forall x,i,c\-: exists x'\-: T(x,i,c,x'). 
+\item deterministic, i.\-e., forall x,i,c,x1',x2'\-: (T(x,i,c,x1') A\-N\-D T(x,i,c,x2')) implies (x1' = x2') 
+\end{DoxyItemize}This means\-: for every state and input, the next state is uniquely defined.
+
+There is only one initial state. It is the state where all state-\/bits are set to F\-A\-L\-S\-E. (This may change with newer A\-I\-G\-E\-R versions in the future).
+
+The set of safe states is identified by one special state bit. This special state bit does not exist in the original A\-I\-G\-E\-R file but is introduced by this class. This transformation (encoded in the transition relation) is supposed to make the life of the synthesis algorithms easier.
+
+This class is implemented as a Singleton. That is, you cannot instantiate objects of this class with the constructor. Use the method \hyperlink{classAIG2CNF_a7a4db833018cb851ab608004b4e651e4}{instance() } to obtain the one and only instance of this class.
+
+\begin{DoxyAuthor}{Author}
+Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0.\-0 
+\end{DoxyVersion}
+
+
+Definition at line 80 of file A\-I\-G2\-C\-N\-F.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classAIG2CNF_a2da966a41a8ff74e6ecebf0d1d3d3829}{\index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}!A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}}
+\index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}!AIG2CNF@{A\-I\-G2\-C\-N\-F}}
+\subsubsection[{A\-I\-G2\-C\-N\-F}]{\setlength{\rightskip}{0pt plus 5cm}A\-I\-G2\-C\-N\-F\-::\-A\-I\-G2\-C\-N\-F (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classAIG2CNF_a2da966a41a8ff74e6ecebf0d1d3d3829}
+
+
+Constructor. 
+
+The constructor is disabled (set private) as this method is implemented as a Singleton. Use the method \hyperlink{classAIG2CNF_a7a4db833018cb851ab608004b4e651e4}{instance() } to obtain the one and only instance of this class. 
+
+Definition at line 249 of file A\-I\-G2\-C\-N\-F.\-cpp.
+
+
+
+Referenced by instance().
+
+\hypertarget{classAIG2CNF_ab97283bcce3d32f458ed7717b452e931}{\index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}!$\sim$\-A\-I\-G2\-C\-N\-F@{$\sim$\-A\-I\-G2\-C\-N\-F}}
+\index{$\sim$\-A\-I\-G2\-C\-N\-F@{$\sim$\-A\-I\-G2\-C\-N\-F}!AIG2CNF@{A\-I\-G2\-C\-N\-F}}
+\subsubsection[{$\sim$\-A\-I\-G2\-C\-N\-F}]{\setlength{\rightskip}{0pt plus 5cm}A\-I\-G2\-C\-N\-F\-::$\sim$\-A\-I\-G2\-C\-N\-F (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classAIG2CNF_ab97283bcce3d32f458ed7717b452e931}
+
+
+Destructor. 
+
+The destructor is disabled (set private) as this method is implemented as a Singleton. One cannot instantiate objects of this class, so there is no need to be able to delete them. 
+
+Definition at line 255 of file A\-I\-G2\-C\-N\-F.\-cpp.
+
+\hypertarget{classAIG2CNF_a2b3b1fac1ae78ff3c9dac99cd7b63d9d}{\index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}!A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}}
+\index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}!AIG2CNF@{A\-I\-G2\-C\-N\-F}}
+\subsubsection[{A\-I\-G2\-C\-N\-F}]{\setlength{\rightskip}{0pt plus 5cm}A\-I\-G2\-C\-N\-F\-::\-A\-I\-G2\-C\-N\-F (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\-I\-G2\-C\-N\-F} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classAIG2CNF_a2b3b1fac1ae78ff3c9dac99cd7b63d9d}
+
+
+Copy constructor. 
+
+The copy constructor is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classAIG2CNF_a4e3be4d76137eb30a6bed5885f709f29}{\index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}!clear@{clear}}
+\index{clear@{clear}!AIG2CNF@{A\-I\-G2\-C\-N\-F}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void A\-I\-G2\-C\-N\-F\-::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classAIG2CNF_a4e3be4d76137eb30a6bed5885f709f29}
+
+
+Clears all the C\-N\-Fs constructed by \hyperlink{classAIG2CNF_aa872708acbdc2bcb1bd23da9a1db2833}{init\-From\-Aig() }. 
+
+
+
+Definition at line 188 of file A\-I\-G2\-C\-N\-F.\-cpp.
+
+
+
+References C\-N\-F\-::clear(), initial\-\_\-, next\-\_\-safe\-\_\-, next\-\_\-unsafe\-\_\-, safe\-\_\-, t\-\_\-, trans\-\_\-, trans\-\_\-eq\-\_\-t\-\_\-, and unsafe\-\_\-.
+
+
+
+Referenced by init\-From\-Aig().
+
+\hypertarget{classAIG2CNF_ae20be327c24ca3ed7493b56a254d6a63}{\index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}!get\-Initial@{get\-Initial}}
+\index{get\-Initial@{get\-Initial}!AIG2CNF@{A\-I\-G2\-C\-N\-F}}
+\subsubsection[{get\-Initial}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-N\-F} \& A\-I\-G2\-C\-N\-F\-::get\-Initial (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classAIG2CNF_ae20be327c24ca3ed7493b56a254d6a63}
+
+
+Returns a \hyperlink{classCNF}{C\-N\-F} representing the initial state. 
+
+There is exactly one initial state (this is a restriction imposed by the A\-I\-G\-E\-R format which serves as input for our tool). Furthermore, the initial state is always characterized by having all state bits set to F\-A\-L\-S\-E. However, this may change with future A\-I\-G\-E\-R versions.
+
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classCNF}{C\-N\-F} representing the initial state. 
+\end{DoxyReturn}
+
+
+Definition at line 243 of file A\-I\-G2\-C\-N\-F.\-cpp.
+
+
+
+References initial\-\_\-.
+
+\hypertarget{classAIG2CNF_af04a7275b64d96d7c16c5c8c8668b93c}{\index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}!get\-Next\-Safe\-States@{get\-Next\-Safe\-States}}
+\index{get\-Next\-Safe\-States@{get\-Next\-Safe\-States}!AIG2CNF@{A\-I\-G2\-C\-N\-F}}
+\subsubsection[{get\-Next\-Safe\-States}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-N\-F} \& A\-I\-G2\-C\-N\-F\-::get\-Next\-Safe\-States (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classAIG2CNF_af04a7275b64d96d7c16c5c8c8668b93c}
+
+
+Returns a \hyperlink{classCNF}{C\-N\-F} saying that the next state is safe. 
+
+The set of safe next states is actually characterized by one single state bit, namely the next states where the variable \hyperlink{classVarManager_ac1a84b367c26dfc5ee9e612f7d61b288}{Var\-Manager\-::instance()}.get\-Next\-Error\-State\-Var() is F\-A\-L\-S\-E. The returned \hyperlink{classCNF}{C\-N\-F} asserts exactly this.
+
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classCNF}{C\-N\-F} saying that the next state is safe. 
+\end{DoxyReturn}
+
+
+Definition at line 231 of file A\-I\-G2\-C\-N\-F.\-cpp.
+
+
+
+References next\-\_\-safe\-\_\-.
+
+
+
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), and Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples().
+
+\hypertarget{classAIG2CNF_a1bec5428f2f5f6efa41810a308ebbe1f}{\index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}!get\-Next\-Unsafe\-States@{get\-Next\-Unsafe\-States}}
+\index{get\-Next\-Unsafe\-States@{get\-Next\-Unsafe\-States}!AIG2CNF@{A\-I\-G2\-C\-N\-F}}
+\subsubsection[{get\-Next\-Unsafe\-States}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-N\-F} \& A\-I\-G2\-C\-N\-F\-::get\-Next\-Unsafe\-States (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classAIG2CNF_a1bec5428f2f5f6efa41810a308ebbe1f}
+
+
+Returns a \hyperlink{classCNF}{C\-N\-F} saying that the next state is unsafe. 
+
+The set of unsafe next states is actually characterized by one single state bit, namely the next states where the variable \hyperlink{classVarManager_ac1a84b367c26dfc5ee9e612f7d61b288}{Var\-Manager\-::instance()}.get\-Next\-Error\-State\-Var() is T\-R\-U\-E. The returned \hyperlink{classCNF}{C\-N\-F} asserts exactly this.
+
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classCNF}{C\-N\-F} saying that the next state is unsafe. 
+\end{DoxyReturn}
+
+
+Definition at line 237 of file A\-I\-G2\-C\-N\-F.\-cpp.
+
+
+
+References next\-\_\-unsafe\-\_\-.
+
+
+
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), and Clause\-Explorer\-S\-A\-T\-::explore\-Clauses().
+
+\hypertarget{classAIG2CNF_ac71ea2d9f9280c8bb3d20d109e892e2d}{\index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}!get\-Safe\-States@{get\-Safe\-States}}
+\index{get\-Safe\-States@{get\-Safe\-States}!AIG2CNF@{A\-I\-G2\-C\-N\-F}}
+\subsubsection[{get\-Safe\-States}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-N\-F} \& A\-I\-G2\-C\-N\-F\-::get\-Safe\-States (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classAIG2CNF_ac71ea2d9f9280c8bb3d20d109e892e2d}
+
+
+Returns a \hyperlink{classCNF}{C\-N\-F} representing the set of safe states. 
+
+The set of safe states is actually characterized by one single state bit, namely the states where the variable \hyperlink{classVarManager_ac1a84b367c26dfc5ee9e612f7d61b288}{Var\-Manager\-::instance()}.get\-Pres\-Error\-State\-Var() is F\-A\-L\-S\-E. The returned \hyperlink{classCNF}{C\-N\-F} asserts exactly this.
+
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classCNF}{C\-N\-F} representing the set of safe states. 
+\end{DoxyReturn}
+
+
+Definition at line 219 of file A\-I\-G2\-C\-N\-F.\-cpp.
+
+
+
+References safe\-\_\-.
+
+
+
+Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One\-S\-A\-T(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), and Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples().
+
+\hypertarget{classAIG2CNF_a50f4e351f8d3f3f73b80e70849f00fe1}{\index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}!get\-T@{get\-T}}
+\index{get\-T@{get\-T}!AIG2CNF@{A\-I\-G2\-C\-N\-F}}
+\subsubsection[{get\-T}]{\setlength{\rightskip}{0pt plus 5cm}int A\-I\-G2\-C\-N\-F\-::get\-T (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classAIG2CNF_a50f4e351f8d3f3f73b80e70849f00fe1}
+
+
+Returns the literal assigned by \hyperlink{classAIG2CNF_add8899c00619a3c182e78d21b988d748}{get\-Trans\-Eq\-T() }. 
+
+The method \hyperlink{classAIG2CNF_add8899c00619a3c182e78d21b988d748}{get\-Trans\-Eq\-T() } returns a \hyperlink{classCNF}{C\-N\-F} that asserts T(x,i,c,x') $<$-\/$>$ l, where l is the literal returned by this method. This can be useful if you need the negated transition relation, if you want to use the the transition relation in some complicated formula, or if your formula should contain the transition relation several times (e.\-g. A \& T $|$ B \& !\-T) .
+
+\begin{DoxyReturn}{Returns}
+The literal assigned by \hyperlink{classAIG2CNF_add8899c00619a3c182e78d21b988d748}{get\-Trans\-Eq\-T() } 
+\end{DoxyReturn}
+
+
+Definition at line 213 of file A\-I\-G2\-C\-N\-F.\-cpp.
+
+
+
+References t\-\_\-.
+
+
+
+Referenced by Template\-Synth\-::find\-Win\-Reg\-C\-N\-F\-Templ().
+
+\hypertarget{classAIG2CNF_a02f56e622e210868ffafcdee4ad9fea2}{\index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}!get\-Trans@{get\-Trans}}
+\index{get\-Trans@{get\-Trans}!AIG2CNF@{A\-I\-G2\-C\-N\-F}}
+\subsubsection[{get\-Trans}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-N\-F} \& A\-I\-G2\-C\-N\-F\-::get\-Trans (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classAIG2CNF_a02f56e622e210868ffafcdee4ad9fea2}
+
+
+Returns the transition relation in \hyperlink{classCNF}{C\-N\-F}. 
+
+The returned transition relation is a \hyperlink{classCNF}{C\-N\-F} T(x,i,c,x') that talks about the current state bits x, the uncontrollable inputs i, the controllable inputs c, and the next state copies x' of the state bits x. The transition relation is 
+\begin{DoxyItemize}
+\item complete, i.\-e., forall x,i,c\-: exists x'\-: T(x,i,c,x'). 
+\item deterministic, i.\-e., forall x,i,c,x1',x2'\-: (T(x,i,c,x1') A\-N\-D T(x,i,c,x2')) implies (x1' = x2') 
+\end{DoxyItemize}This means\-: for every state and input, the next state is uniquely defined.
+
+\begin{DoxyReturn}{Returns}
+The transition relation in \hyperlink{classCNF}{C\-N\-F}. 
+\end{DoxyReturn}
+
+
+Definition at line 201 of file A\-I\-G2\-C\-N\-F.\-cpp.
+
+
+
+References trans\-\_\-.
+
+
+
+Referenced by Parallel\-Learner\-::compute\-Previous\-Trans(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), Learn\-Synth\-Q\-B\-F\-Ind\-::\-Learn\-Synth\-Q\-B\-F\-Ind(), and Learn\-Synth\-S\-A\-T\-::\-Learn\-Synth\-S\-A\-T().
+
+\hypertarget{classAIG2CNF_add8899c00619a3c182e78d21b988d748}{\index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}!get\-Trans\-Eq\-T@{get\-Trans\-Eq\-T}}
+\index{get\-Trans\-Eq\-T@{get\-Trans\-Eq\-T}!AIG2CNF@{A\-I\-G2\-C\-N\-F}}
+\subsubsection[{get\-Trans\-Eq\-T}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-N\-F} \& A\-I\-G2\-C\-N\-F\-::get\-Trans\-Eq\-T (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classAIG2CNF_add8899c00619a3c182e78d21b988d748}
+
+
+Returns a \hyperlink{classCNF}{C\-N\-F} saying that the transition holds iff a certain literal is true. 
+
+The returned \hyperlink{classCNF}{C\-N\-F} asserts T(x,i,c,x') $<$-\/$>$ l, where l is the literal returned by \hyperlink{classAIG2CNF_a50f4e351f8d3f3f73b80e70849f00fe1}{get\-T() }. This can be useful if you need the negated transition relation, if you want to use the the transition relation in some complicated formula, or if your formula should contain the transition relation several times (e.\-g. A \& T $|$ B \& !\-T) .
+
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classCNF}{C\-N\-F} saying that the transition holds iff a certain literal is true. 
+\end{DoxyReturn}
+
+
+Definition at line 207 of file A\-I\-G2\-C\-N\-F.\-cpp.
+
+
+
+References trans\-\_\-eq\-\_\-t\-\_\-.
+
+
+
+Referenced by Template\-Synth\-::find\-Win\-Reg\-C\-N\-F\-Templ().
+
+\hypertarget{classAIG2CNF_a7e6e6af6ac83605669918008b12d30e7}{\index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}!get\-Unsafe\-States@{get\-Unsafe\-States}}
+\index{get\-Unsafe\-States@{get\-Unsafe\-States}!AIG2CNF@{A\-I\-G2\-C\-N\-F}}
+\subsubsection[{get\-Unsafe\-States}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-N\-F} \& A\-I\-G2\-C\-N\-F\-::get\-Unsafe\-States (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classAIG2CNF_a7e6e6af6ac83605669918008b12d30e7}
+
+
+Returns a \hyperlink{classCNF}{C\-N\-F} representing the set of unsafe states. 
+
+The set of unsafe states is actually characterized by one single state bit, namely the states where the variable \hyperlink{classVarManager_ac1a84b367c26dfc5ee9e612f7d61b288}{Var\-Manager\-::instance()}.get\-Pres\-Error\-State\-Var() is T\-R\-U\-E. The returned \hyperlink{classCNF}{C\-N\-F} asserts exactly this.
+
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classCNF}{C\-N\-F} representing the set of unsafe states. 
+\end{DoxyReturn}
+
+
+Definition at line 225 of file A\-I\-G2\-C\-N\-F.\-cpp.
+
+
+
+References unsafe\-\_\-.
+
+\hypertarget{classAIG2CNF_aa872708acbdc2bcb1bd23da9a1db2833}{\index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}!init\-From\-Aig@{init\-From\-Aig}}
+\index{init\-From\-Aig@{init\-From\-Aig}!AIG2CNF@{A\-I\-G2\-C\-N\-F}}
+\subsubsection[{init\-From\-Aig}]{\setlength{\rightskip}{0pt plus 5cm}void A\-I\-G2\-C\-N\-F\-::init\-From\-Aig (
+\begin{DoxyParamCaption}
+\item[{aiger $\ast$}]{aig}
+\end{DoxyParamCaption}
+)}}\label{classAIG2CNF_aa872708acbdc2bcb1bd23da9a1db2833}
+
+
+Initializes this class from an aiger structure. 
+
+This method actually builds the C\-N\-Fs formulas representing the transition relation as well as the initial state, and the set of safe states from an A\-I\-G\-E\-R specification. This is where all the magic happens. This method is called once in beginning before a back-\/end is started. The back-\/ends can then access the constructed C\-N\-Fs. This method also initializes the \hyperlink{classVarManager}{Var\-Manager} with the correct sets of variables.
+
+This method can parse A\-I\-G\-E\-R structures that are compatible with input format for the synthesis competition (see \href{http://www.syntcomp.org/}{\tt http\-://www.\-syntcomp.\-org/}). That is, the A\-I\-G\-E\-R structure is expected to have exactly one output\-: This output signals that an error occurred. The synthesis problem addressed by this tool is to prevent the error-\/output form over becoming T\-R\-U\-E. Controllable inputs are identified via their name. If an input signal has a name that starts with 'controllable\-\_\-', then it is considered as controllable.
+
+The resulting transition relation is a \hyperlink{classCNF}{C\-N\-F} T(x,i,c,x') that talks about the current state bits x, the uncontrollable inputs i, the controllable inputs c, and the next state copies x' of the state bits x. The transition relation is 
+\begin{DoxyItemize}
+\item complete, i.\-e., forall x,i,c\-: exists x'\-: T(x,i,c,x'). 
+\item deterministic, i.\-e., forall x,i,c,x1',x2'\-: (T(x,i,c,x1') A\-N\-D T(x,i,c,x2')) implies (x1' = x2') 
+\end{DoxyItemize}This means\-: for every state and input, the next state is uniquely defined.
+
+There is only one initial state. It is the state where all state-\/bits are set to F\-A\-L\-S\-E. (This may change with newer A\-I\-G\-E\-R versions in the future).
+
+The set of safe states is identified by one special state bit. This special state bit does not exist in the original A\-I\-G\-E\-R file but is introduced by this class. This transformation (encoded in the transition relation) is supposed to make the life of the synthesis algorithms easier.
+
+\begin{DoxyPrecond}{Precondition}
+aig != N\-U\-L\-L 
+
+aig-\/$>$num\-\_\-outputs == 1 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em aig} & The aiger structure as parsed by the A\-I\-G\-E\-R utilities. The current implementation assumes version 1.\-9.\-4 of the A\-I\-G\-E\-R utilities. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 50 of file A\-I\-G2\-C\-N\-F.\-cpp.
+
+
+
+References C\-N\-F\-::add1\-Lit\-Clause(), C\-N\-F\-::add2\-Lit\-Clause(), C\-N\-F\-::add3\-Lit\-Clause(), C\-N\-F\-::add\-Clause(), Var\-Manager\-::aig\-Lit\-To\-Cnf\-Lit(), clear(), Var\-Manager\-::create\-Fresh\-Tmp\-Var(), Var\-Manager\-::get\-Next\-Error\-State\-Var(), Var\-Manager\-::get\-Pres\-Error\-State\-Var(), Var\-Manager\-::get\-Vars\-Of\-Type(), Var\-Manager\-::init\-From\-Aig(), initial\-\_\-, Var\-Manager\-::instance(), instance(), next\-\_\-safe\-\_\-, Var\-Info\-::\-N\-E\-X\-T\-\_\-\-S\-T\-A\-T\-E, next\-\_\-unsafe\-\_\-, Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, safe\-\_\-, t\-\_\-, trans\-\_\-, trans\-\_\-eq\-\_\-t\-\_\-, and unsafe\-\_\-.
+
+
+
+Referenced by main().
+
+\hypertarget{classAIG2CNF_a7a4db833018cb851ab608004b4e651e4}{\index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}!instance@{instance}}
+\index{instance@{instance}!AIG2CNF@{A\-I\-G2\-C\-N\-F}}
+\subsubsection[{instance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-I\-G2\-C\-N\-F} \& A\-I\-G2\-C\-N\-F\-::instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classAIG2CNF_a7a4db833018cb851ab608004b4e651e4}
+
+
+Returns the one and only instance of this class. 
+
+This class is implemented as a Singleton. That is, you cannot instantiate objects of this class with the constructor. Use this method to obtain the one and only instance of this class.
+
+\begin{DoxyReturn}{Returns}
+The one and only instance of this class. 
+\end{DoxyReturn}
+
+
+Definition at line 41 of file A\-I\-G2\-C\-N\-F.\-cpp.
+
+
+
+References A\-I\-G2\-C\-N\-F(), instance\-\_\-, and M\-A\-S\-S\-E\-R\-T.
+
+
+
+Referenced by Counter\-Gen\-S\-A\-T\-::compress\-Bored(), Learn\-Synth\-Q\-B\-F\-::compute\-Counterexample\-S\-A\-T(), Parallel\-Learner\-::compute\-Previous\-Trans(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One\-S\-A\-T(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), I\-F\-M13\-Synth\-::debug\-Check\-Invariants(), Learn\-Synth\-S\-A\-T\-::debug\-Check\-Win\-Reg(), Utils\-::debug\-Check\-Win\-Reg(), Learn\-Synth\-Q\-B\-F\-Ind\-::debug\-Check\-Win\-Reg\-Reach(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), Q\-B\-F\-Cert\-Impl\-Extractor\-::extract\-Circuit(), Template\-Synth\-::find\-Win\-Reg\-C\-N\-F\-Templ(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), I\-F\-M13\-Synth\-::get\-Gen\-Block\-Trans\-Solver(), I\-F\-M13\-Explorer\-::get\-Gen\-Block\-Trans\-Solver(), I\-F\-M13\-Synth\-::get\-Goto\-Next\-Lower\-Solver(), I\-F\-M13\-Explorer\-::get\-Goto\-Next\-Lower\-Solver(), I\-F\-M13\-Explorer\-::\-I\-F\-M13\-Explorer(), I\-F\-M13\-Synth\-::\-I\-F\-M13\-Synth(), init\-From\-Aig(), Learn\-Synth\-Q\-B\-F\-::\-Learn\-Synth\-Q\-B\-F(), Learn\-Synth\-Q\-B\-F\-Ind\-::\-Learn\-Synth\-Q\-B\-F\-Ind(), Learn\-Synth\-S\-A\-T\-::\-Learn\-Synth\-S\-A\-T(), main(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses(), Learn\-Synth\-Q\-B\-F\-Inc\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Ind\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Inc\-::recompute\-Gen\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::recompute\-Gen\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Ind\-::recompute\-Gen\-C\-N\-F(), Parallel\-Learner\-::run(), and Parallel\-Learner\-::trigger\-Explorer\-Restart().
+
+\hypertarget{classAIG2CNF_a1ee82fcfe444616f35078957ec762489}{\index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}!operator=@{operator=}}
+\index{operator=@{operator=}!AIG2CNF@{A\-I\-G2\-C\-N\-F}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-I\-G2\-C\-N\-F}\& A\-I\-G2\-C\-N\-F\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\-I\-G2\-C\-N\-F} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classAIG2CNF_a1ee82fcfe444616f35078957ec762489}
+
+
+Assignment operator. 
+
+The assignment operator is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the assignment, i.\-e, $\ast$this. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classAIG2CNF_a83d0b27b61d672ecf2bd007e0d473439}{\index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}!initial\-\_\-@{initial\-\_\-}}
+\index{initial\-\_\-@{initial\-\_\-}!AIG2CNF@{A\-I\-G2\-C\-N\-F}}
+\subsubsection[{initial\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} A\-I\-G2\-C\-N\-F\-::initial\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classAIG2CNF_a83d0b27b61d672ecf2bd007e0d473439}
+
+
+A \hyperlink{classCNF}{C\-N\-F} representing the initial state. 
+
+There is exactly one initial state (this is a restriction imposed by the A\-I\-G\-E\-R format which serves as input for our tool). Furthermore, the initial state is always characterized by having all state bits set to F\-A\-L\-S\-E. However, this may change with future A\-I\-G\-E\-R versions. 
+
+Definition at line 319 of file A\-I\-G2\-C\-N\-F.\-h.
+
+
+
+Referenced by clear(), get\-Initial(), and init\-From\-Aig().
+
+\hypertarget{classAIG2CNF_ae298ae4804c63f5bac4dfab7528d35ad}{\index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}!instance\-\_\-@{instance\-\_\-}}
+\index{instance\-\_\-@{instance\-\_\-}!AIG2CNF@{A\-I\-G2\-C\-N\-F}}
+\subsubsection[{instance\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-I\-G2\-C\-N\-F} $\ast$ A\-I\-G2\-C\-N\-F\-::instance\-\_\- = N\-U\-L\-L\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classAIG2CNF_ae298ae4804c63f5bac4dfab7528d35ad}
+
+
+The one and only instance of this class. 
+
+
+
+Definition at line 363 of file A\-I\-G2\-C\-N\-F.\-h.
+
+
+
+Referenced by instance().
+
+\hypertarget{classAIG2CNF_a057c6a3159253267c99f115b7d724ee2}{\index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}!next\-\_\-safe\-\_\-@{next\-\_\-safe\-\_\-}}
+\index{next\-\_\-safe\-\_\-@{next\-\_\-safe\-\_\-}!AIG2CNF@{A\-I\-G2\-C\-N\-F}}
+\subsubsection[{next\-\_\-safe\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} A\-I\-G2\-C\-N\-F\-::next\-\_\-safe\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classAIG2CNF_a057c6a3159253267c99f115b7d724ee2}
+
+
+A \hyperlink{classCNF}{C\-N\-F} saying that the next state is safe. 
+
+The set of safe next states is actually characterized by one single state bit, namely the next states where the variable \hyperlink{classVarManager_ac1a84b367c26dfc5ee9e612f7d61b288}{Var\-Manager\-::instance()}.get\-Next\-Error\-State\-Var() is F\-A\-L\-S\-E. This \hyperlink{classCNF}{C\-N\-F} asserts exactly this. 
+
+Definition at line 300 of file A\-I\-G2\-C\-N\-F.\-h.
+
+
+
+Referenced by clear(), get\-Next\-Safe\-States(), and init\-From\-Aig().
+
+\hypertarget{classAIG2CNF_a0430b9b4ff38a7b0ae339fb0abd191c9}{\index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}!next\-\_\-unsafe\-\_\-@{next\-\_\-unsafe\-\_\-}}
+\index{next\-\_\-unsafe\-\_\-@{next\-\_\-unsafe\-\_\-}!AIG2CNF@{A\-I\-G2\-C\-N\-F}}
+\subsubsection[{next\-\_\-unsafe\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} A\-I\-G2\-C\-N\-F\-::next\-\_\-unsafe\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classAIG2CNF_a0430b9b4ff38a7b0ae339fb0abd191c9}
+
+
+A \hyperlink{classCNF}{C\-N\-F} saying that the next state is unsafe. 
+
+The set of unsafe next states is actually characterized by one single state bit, namely the next states where the variable \hyperlink{classVarManager_ac1a84b367c26dfc5ee9e612f7d61b288}{Var\-Manager\-::instance()}.get\-Next\-Error\-State\-Var() is T\-R\-U\-E. This \hyperlink{classCNF}{C\-N\-F} asserts exactly this. 
+
+Definition at line 309 of file A\-I\-G2\-C\-N\-F.\-h.
+
+
+
+Referenced by clear(), get\-Next\-Unsafe\-States(), and init\-From\-Aig().
+
+\hypertarget{classAIG2CNF_a394d2a3600bc3bec864cf08acac61437}{\index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}!safe\-\_\-@{safe\-\_\-}}
+\index{safe\-\_\-@{safe\-\_\-}!AIG2CNF@{A\-I\-G2\-C\-N\-F}}
+\subsubsection[{safe\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} A\-I\-G2\-C\-N\-F\-::safe\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classAIG2CNF_a394d2a3600bc3bec864cf08acac61437}
+
+
+A \hyperlink{classCNF}{C\-N\-F} representing the set of safe states. 
+
+The set of safe states is actually characterized by one single state bit, namely the states where the variable \hyperlink{classVarManager_ac1a84b367c26dfc5ee9e612f7d61b288}{Var\-Manager\-::instance()}.get\-Pres\-Error\-State\-Var() is F\-A\-L\-S\-E. This \hyperlink{classCNF}{C\-N\-F} asserts exactly this. 
+
+Definition at line 282 of file A\-I\-G2\-C\-N\-F.\-h.
+
+
+
+Referenced by clear(), get\-Safe\-States(), and init\-From\-Aig().
+
+\hypertarget{classAIG2CNF_af2a7f6ecdcec3b5b2f37a11b0adde65a}{\index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}!t\-\_\-@{t\-\_\-}}
+\index{t\-\_\-@{t\-\_\-}!AIG2CNF@{A\-I\-G2\-C\-N\-F}}
+\subsubsection[{t\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int A\-I\-G2\-C\-N\-F\-::t\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classAIG2CNF_af2a7f6ecdcec3b5b2f37a11b0adde65a}
+
+
+The literal assigned by \hyperlink{classAIG2CNF_af7e9b65092f626865a4aa541a48e4f1b}{trans\-\_\-eq\-\_\-t\-\_\- }. 
+
+The \hyperlink{classCNF}{C\-N\-F} \hyperlink{classAIG2CNF_af7e9b65092f626865a4aa541a48e4f1b}{trans\-\_\-eq\-\_\-t\-\_\- } asserts T(x,i,c,x') $<$-\/$>$ \hyperlink{classAIG2CNF_af2a7f6ecdcec3b5b2f37a11b0adde65a}{t\-\_\- }. 
+
+Definition at line 273 of file A\-I\-G2\-C\-N\-F.\-h.
+
+
+
+Referenced by clear(), get\-T(), and init\-From\-Aig().
+
+\hypertarget{classAIG2CNF_aedcb9a8efe69fe03721fdc17c5d11bfc}{\index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}!trans\-\_\-@{trans\-\_\-}}
+\index{trans\-\_\-@{trans\-\_\-}!AIG2CNF@{A\-I\-G2\-C\-N\-F}}
+\subsubsection[{trans\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} A\-I\-G2\-C\-N\-F\-::trans\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classAIG2CNF_aedcb9a8efe69fe03721fdc17c5d11bfc}
+
+
+The transition relation in \hyperlink{classCNF}{C\-N\-F}. 
+
+The transition relation is a \hyperlink{classCNF}{C\-N\-F} T(x,i,c,x') that talks about the current state bits x, the uncontrollable inputs i, the controllable inputs c, and the next state copies x' of the state bits x. The transition relation is 
+\begin{DoxyItemize}
+\item complete, i.\-e., forall x,i,c\-: exists x'\-: T(x,i,c,x'). 
+\item deterministic, i.\-e., forall x,i,c,x1',x2'\-: (T(x,i,c,x1') A\-N\-D T(x,i,c,x2')) implies (x1' = x2') 
+\end{DoxyItemize}This means\-: for every state and input, the next state is uniquely defined. 
+
+Definition at line 255 of file A\-I\-G2\-C\-N\-F.\-h.
+
+
+
+Referenced by clear(), get\-Trans(), and init\-From\-Aig().
+
+\hypertarget{classAIG2CNF_af7e9b65092f626865a4aa541a48e4f1b}{\index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}!trans\-\_\-eq\-\_\-t\-\_\-@{trans\-\_\-eq\-\_\-t\-\_\-}}
+\index{trans\-\_\-eq\-\_\-t\-\_\-@{trans\-\_\-eq\-\_\-t\-\_\-}!AIG2CNF@{A\-I\-G2\-C\-N\-F}}
+\subsubsection[{trans\-\_\-eq\-\_\-t\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} A\-I\-G2\-C\-N\-F\-::trans\-\_\-eq\-\_\-t\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classAIG2CNF_af7e9b65092f626865a4aa541a48e4f1b}
+
+
+A \hyperlink{classCNF}{C\-N\-F} saying that the transition holds iff \hyperlink{classAIG2CNF_af2a7f6ecdcec3b5b2f37a11b0adde65a}{t\-\_\- } is true. 
+
+This \hyperlink{classCNF}{C\-N\-F} asserts T(x,i,c,x') $<$-\/$>$ \hyperlink{classAIG2CNF_af2a7f6ecdcec3b5b2f37a11b0adde65a}{t\-\_\- }. This can be useful if you need the negated transition relation, if you want to use the the transition relation in some complicated formula, or if your formula should contain the transition relation several times (e.\-g. A \& T $|$ B \& !\-T) . 
+
+Definition at line 265 of file A\-I\-G2\-C\-N\-F.\-h.
+
+
+
+Referenced by clear(), get\-Trans\-Eq\-T(), and init\-From\-Aig().
+
+\hypertarget{classAIG2CNF_afbfcf3a27261a2283a99362d2527d64f}{\index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}!unsafe\-\_\-@{unsafe\-\_\-}}
+\index{unsafe\-\_\-@{unsafe\-\_\-}!AIG2CNF@{A\-I\-G2\-C\-N\-F}}
+\subsubsection[{unsafe\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} A\-I\-G2\-C\-N\-F\-::unsafe\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classAIG2CNF_afbfcf3a27261a2283a99362d2527d64f}
+
+
+A \hyperlink{classCNF}{C\-N\-F} representing the set of unsafe states. 
+
+The set of unsafe states is actually characterized by one single state bit, namely the states where the variable \hyperlink{classVarManager_ac1a84b367c26dfc5ee9e612f7d61b288}{Var\-Manager\-::instance()}.get\-Pres\-Error\-State\-Var() is T\-R\-U\-E. This \hyperlink{classCNF}{C\-N\-F} asserts exactly this. 
+
+Definition at line 291 of file A\-I\-G2\-C\-N\-F.\-h.
+
+
+
+Referenced by clear(), get\-Unsafe\-States(), and init\-From\-Aig().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{AIG2CNF_8h}{A\-I\-G2\-C\-N\-F.\-h}\item 
+src/\hyperlink{AIG2CNF_8cpp}{A\-I\-G2\-C\-N\-F.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,124 @@
+\hypertarget{MiniSatApi_8cpp}{\section{src/\-Mini\-Sat\-Api.cpp File Reference}
+\label{MiniSatApi_8cpp}\index{src/\-Mini\-Sat\-Api.\-cpp@{src/\-Mini\-Sat\-Api.\-cpp}}
+}
+
+
+Contains the definition of the class \hyperlink{classMiniSatApi}{Mini\-Sat\-Api}.  
+
+
+{\ttfamily \#include \char`\"{}Mini\-Sat\-Api.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core/\-Solver.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}C\-N\-F.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Lit \hyperlink{MiniSatApi_8cpp_a769e92af84743aa66aa9731eb932bef9}{c2m} (Solver \&s, int lit)
+\begin{DoxyCompactList}\small\item\em Transforms a \hyperlink{classCNF}{C\-N\-F} literal to the corresponding literal used by Mini\-Sat. \end{DoxyCompactList}\item 
+int \hyperlink{MiniSatApi_8cpp_ac2dec081f044725205386fd383bc4735}{m2c} (Lit lit)
+\item 
+void \hyperlink{MiniSatApi_8cpp_a3e5f57079a6ccdc39d7f5581f3c0b059}{rand\-Model} (Solver \&solver, const vec$<$ Lit $>$ \&assumptions, vector$<$ int $>$ \&model)
+\begin{DoxyCompactList}\small\item\em A helper to randomize a satisfying assignment after it has been computed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains the definition of the class \hyperlink{classMiniSatApi}{Mini\-Sat\-Api}. 
+
+Definition in file \hyperlink{MiniSatApi_8cpp_source}{Mini\-Sat\-Api.\-cpp}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{MiniSatApi_8cpp_a769e92af84743aa66aa9731eb932bef9}{\index{Mini\-Sat\-Api.\-cpp@{Mini\-Sat\-Api.\-cpp}!c2m@{c2m}}
+\index{c2m@{c2m}!MiniSatApi.cpp@{Mini\-Sat\-Api.\-cpp}}
+\subsubsection[{c2m}]{\setlength{\rightskip}{0pt plus 5cm}Lit c2m (
+\begin{DoxyParamCaption}
+\item[{Solver \&}]{s, }
+\item[{int}]{lit}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{MiniSatApi_8cpp_a769e92af84743aa66aa9731eb932bef9}
+
+
+Transforms a \hyperlink{classCNF}{C\-N\-F} literal to the corresponding literal used by Mini\-Sat. 
+
+In our \hyperlink{classCNF}{C\-N\-F} we use -\/7 to denote the negation of the literal 7. Mini\-Sat toggles the least significant bit to encode negation. Hence we need utility functions to transform literals between the two notations. This function is the inverse function of \hyperlink{MiniSatApi_8cpp_ac2dec081f044725205386fd383bc4735}{m2c()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The solver instance in which the literal should be used. \\
+\hline
+{\em lit} & The \hyperlink{classCNF}{C\-N\-F} literal to transform into the corresponding literal used by Mini\-Sat. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The corresponding literal used by Mini\-Sat. 
+\end{DoxyReturn}
+
+
+Definition at line 61 of file Mini\-Sat\-Api.\-cpp.
+
+
+
+Referenced by Mini\-Sat\-Api\-::inc\-Add2\-Lit\-Clause(), Mini\-Sat\-Api\-::inc\-Add3\-Lit\-Clause(), Mini\-Sat\-Api\-::inc\-Add\-Clause(), Mini\-Sat\-Api\-::inc\-Add\-C\-N\-F(), Mini\-Sat\-Api\-::inc\-Add\-Cube(), Mini\-Sat\-Api\-::inc\-Add\-Neg\-Cube\-As\-Clause(), Mini\-Sat\-Api\-::inc\-Add\-Unit\-Clause(), Mini\-Sat\-Api\-::inc\-Is\-Sat(), Mini\-Sat\-Api\-::inc\-Is\-Sat\-Model\-Or\-Core(), Mini\-Sat\-Api\-::inc\-Push(), Mini\-Sat\-Api\-::is\-Sat(), Mini\-Sat\-Api\-::is\-Sat\-Model\-Or\-Core(), and rand\-Model().
+
+\hypertarget{MiniSatApi_8cpp_ac2dec081f044725205386fd383bc4735}{\index{Mini\-Sat\-Api.\-cpp@{Mini\-Sat\-Api.\-cpp}!m2c@{m2c}}
+\index{m2c@{m2c}!MiniSatApi.cpp@{Mini\-Sat\-Api.\-cpp}}
+\subsubsection[{m2c}]{\setlength{\rightskip}{0pt plus 5cm}int m2c (
+\begin{DoxyParamCaption}
+\item[{Lit}]{lit}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{MiniSatApi_8cpp_ac2dec081f044725205386fd383bc4735}
+In our \hyperlink{classCNF}{C\-N\-F} we use -\/7 to denote the negation of the literal 7. Mini\-Sat toggles the least significant bit to encode negation. Hence we need utility functions to transform literals between the two notations. This function is the inverse function of \hyperlink{MiniSatApi_8cpp_a769e92af84743aa66aa9731eb932bef9}{c2m()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lit} & The Mini\-Sat literal to transform. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The corresponding C\-N\-F-\/literal. 
+\end{DoxyReturn}
+
+
+Definition at line 83 of file Mini\-Sat\-Api.\-cpp.
+
+
+
+Referenced by Mini\-Sat\-Api\-::inc\-Is\-Sat\-Model\-Or\-Core(), and Mini\-Sat\-Api\-::is\-Sat\-Model\-Or\-Core().
+
+\hypertarget{MiniSatApi_8cpp_a3e5f57079a6ccdc39d7f5581f3c0b059}{\index{Mini\-Sat\-Api.\-cpp@{Mini\-Sat\-Api.\-cpp}!rand\-Model@{rand\-Model}}
+\index{rand\-Model@{rand\-Model}!MiniSatApi.cpp@{Mini\-Sat\-Api.\-cpp}}
+\subsubsection[{rand\-Model}]{\setlength{\rightskip}{0pt plus 5cm}void rand\-Model (
+\begin{DoxyParamCaption}
+\item[{Solver \&}]{solver, }
+\item[{const vec$<$ Lit $>$ \&}]{assumptions, }
+\item[{vector$<$ int $>$ \&}]{model}
+\end{DoxyParamCaption}
+)}}\label{MiniSatApi_8cpp_a3e5f57079a6ccdc39d7f5581f3c0b059}
+
+
+A helper to randomize a satisfying assignment after it has been computed. 
+
+This is done by flipping values of variables randomly and then checking if the modified assignment is still satisfies the formula. This is expensive. However, changing the decision heuristic to a random one seems even more expensive in first experiments. This method is not declared in the header file because this would require to include all the Mini\-Sat internals in the header file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em solver} & The solver containing the \hyperlink{classCNF}{C\-N\-F} for which the satisfying assignment has been computed. \\
+\hline
+{\em assumptions} & Additional assumptions under which the \hyperlink{classCNF}{C\-N\-F} should be solved. This can be an empty vector if there are no assumptions. \\
+\hline
+{\em model} & The satisfying assignment that has been found and should now be randomized. It will be modified in place, i.\-e., this vector will contain the randomized model after this method is done. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 108 of file Mini\-Sat\-Api.\-cpp.
+
+
+
+References c2m().
+
+
+
+Referenced by Mini\-Sat\-Api\-::inc\-Is\-Sat\-Model\-Or\-Core(), and Mini\-Sat\-Api\-::is\-Sat\-Model\-Or\-Core().
+

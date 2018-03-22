@@ -1,0 +1,216 @@
+\hypertarget{classFileUtils}{\section{File\-Utils Class Reference}
+\label{classFileUtils}\index{File\-Utils@{File\-Utils}}
+}
+
+
+Contains utility functions for access to files.  
+
+
+
+
+{\ttfamily \#include $<$File\-Utils.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classFileUtils_a113a3a0ae84133a66408b20da027c0c7}{$\sim$\-File\-Utils} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classFileUtils_aa4a1c5a23271a5c284541504fffd2ba6}{file\-Exists} (const string \&file\-\_\-name)
+\begin{DoxyCompactList}\small\item\em Checks if a file exists. \end{DoxyCompactList}\item 
+static bool \hyperlink{classFileUtils_a1079af04bf2282d524df691ac8124879}{read\-File} (const string \&file\-\_\-name, string \&file\-\_\-content)
+\begin{DoxyCompactList}\small\item\em Reads the content of a file into a string. \end{DoxyCompactList}\item 
+static bool \hyperlink{classFileUtils_a812ab360ba9b90eb50c73f95e7e001ba}{write\-File} (const string \&file\-\_\-name, const string \&file\-\_\-content)
+\begin{DoxyCompactList}\small\item\em Writes the content of a string into a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classFileUtils_abb87f1bbabb1164634e428aee3559b10}{File\-Utils} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classFileUtils_a0453599aa15cd007a27422bd74dd84c8}{File\-Utils} (const \hyperlink{classFileUtils}{File\-Utils} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classFileUtils}{File\-Utils} \& \hyperlink{classFileUtils_a588f4d21844dbaf5275512e65c846781}{operator=} (const \hyperlink{classFileUtils}{File\-Utils} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains utility functions for access to files. 
+
+\begin{DoxyAuthor}{Author}
+Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0.\-0 
+\end{DoxyVersion}
+
+
+Definition at line 42 of file File\-Utils.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classFileUtils_a113a3a0ae84133a66408b20da027c0c7}{\index{File\-Utils@{File\-Utils}!$\sim$\-File\-Utils@{$\sim$\-File\-Utils}}
+\index{$\sim$\-File\-Utils@{$\sim$\-File\-Utils}!FileUtils@{File\-Utils}}
+\subsubsection[{$\sim$\-File\-Utils}]{\setlength{\rightskip}{0pt plus 5cm}File\-Utils\-::$\sim$\-File\-Utils (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classFileUtils_a113a3a0ae84133a66408b20da027c0c7}
+
+
+Destructor. 
+
+
+
+Definition at line 85 of file File\-Utils.\-cpp.
+
+\hypertarget{classFileUtils_abb87f1bbabb1164634e428aee3559b10}{\index{File\-Utils@{File\-Utils}!File\-Utils@{File\-Utils}}
+\index{File\-Utils@{File\-Utils}!FileUtils@{File\-Utils}}
+\subsubsection[{File\-Utils}]{\setlength{\rightskip}{0pt plus 5cm}File\-Utils\-::\-File\-Utils (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classFileUtils_abb87f1bbabb1164634e428aee3559b10}
+
+
+Constructor. 
+
+The constructor is private and not implemented. Use the static methods. \hypertarget{classFileUtils_a0453599aa15cd007a27422bd74dd84c8}{\index{File\-Utils@{File\-Utils}!File\-Utils@{File\-Utils}}
+\index{File\-Utils@{File\-Utils}!FileUtils@{File\-Utils}}
+\subsubsection[{File\-Utils}]{\setlength{\rightskip}{0pt plus 5cm}File\-Utils\-::\-File\-Utils (
+\begin{DoxyParamCaption}
+\item[{const {\bf File\-Utils} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classFileUtils_a0453599aa15cd007a27422bd74dd84c8}
+
+
+Copy constructor. 
+
+The copy constructor is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classFileUtils_aa4a1c5a23271a5c284541504fffd2ba6}{\index{File\-Utils@{File\-Utils}!file\-Exists@{file\-Exists}}
+\index{file\-Exists@{file\-Exists}!FileUtils@{File\-Utils}}
+\subsubsection[{file\-Exists}]{\setlength{\rightskip}{0pt plus 5cm}bool File\-Utils\-::file\-Exists (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{file\-\_\-name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classFileUtils_aa4a1c5a23271a5c284541504fffd2ba6}
+
+
+Checks if a file exists. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\-\_\-name} & The name of the file to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the file exists (and could be opened), false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 33 of file File\-Utils.\-cpp.
+
+\hypertarget{classFileUtils_a588f4d21844dbaf5275512e65c846781}{\index{File\-Utils@{File\-Utils}!operator=@{operator=}}
+\index{operator=@{operator=}!FileUtils@{File\-Utils}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf File\-Utils}\& File\-Utils\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf File\-Utils} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classFileUtils_a588f4d21844dbaf5275512e65c846781}
+
+
+Assignment operator. 
+
+The assignment operator is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the assignment, i.\-e, $\ast$this. 
+\end{DoxyReturn}
+\hypertarget{classFileUtils_a1079af04bf2282d524df691ac8124879}{\index{File\-Utils@{File\-Utils}!read\-File@{read\-File}}
+\index{read\-File@{read\-File}!FileUtils@{File\-Utils}}
+\subsubsection[{read\-File}]{\setlength{\rightskip}{0pt plus 5cm}bool File\-Utils\-::read\-File (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{file\-\_\-name, }
+\item[{string \&}]{file\-\_\-content}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classFileUtils_a1079af04bf2282d524df691ac8124879}
+
+
+Reads the content of a file into a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\-\_\-name} & The name of the file to read. \\
+\hline
+{\em file\-\_\-content} & The read file content is appended to this string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if file reading was successful, false otherwise (e.\-g. because the file does not exist, could not be opened, etc.) 
+\end{DoxyReturn}
+
+
+Definition at line 42 of file File\-Utils.\-cpp.
+
+
+
+References M\-A\-S\-S\-E\-R\-T.
+
+
+
+Referenced by Ext\-Q\-B\-F\-Solver\-::parse\-Model(), Dep\-Q\-B\-F\-Ext\-::qbf\-Cert(), and E\-P\-R\-Synthesizer\-::run().
+
+\hypertarget{classFileUtils_a812ab360ba9b90eb50c73f95e7e001ba}{\index{File\-Utils@{File\-Utils}!write\-File@{write\-File}}
+\index{write\-File@{write\-File}!FileUtils@{File\-Utils}}
+\subsubsection[{write\-File}]{\setlength{\rightskip}{0pt plus 5cm}bool File\-Utils\-::write\-File (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{file\-\_\-name, }
+\item[{const string \&}]{file\-\_\-content}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classFileUtils_a812ab360ba9b90eb50c73f95e7e001ba}
+
+
+Writes the content of a string into a file. 
+
+If the file already exists, it is overwritten. The directory into which the file should be written must exist.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\-\_\-name} & The name of the file to write. \\
+\hline
+{\em file\-\_\-content} & The content to write into this file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if writing was successful, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 71 of file File\-Utils.\-cpp.
+
+
+
+Referenced by E\-P\-R\-Synthesizer\-::run().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{FileUtils_8h}{File\-Utils.\-h}\item 
+src/\hyperlink{FileUtils_8cpp}{File\-Utils.\-cpp}\end{DoxyCompactItemize}

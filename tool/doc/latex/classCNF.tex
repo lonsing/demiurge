@@ -1,0 +1,914 @@
+\hypertarget{classCNF}{\section{C\-N\-F Class Reference}
+\label{classCNF}\index{C\-N\-F@{C\-N\-F}}
+}
+
+
+Represents a propositional formula in Conjunctive Normal Form.  
+
+
+
+
+{\ttfamily \#include $<$C\-N\-F.\-h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef list$<$ vector$<$ int $>$\\*
+ $>$\-::const\-\_\-iterator \hyperlink{classCNF_a0d29737450f8bbc9f8549235577881ec}{Clause\-Const\-Iter}
+\begin{DoxyCompactList}\small\item\em A type for a const-\/iterator over the clauses. \end{DoxyCompactList}\item 
+typedef list$<$ vector$<$ int $>$\\*
+ $>$\-::iterator \hyperlink{classCNF_a6bb7b9142923d0af71a49e4b29c258d1}{Clause\-Iter}
+\begin{DoxyCompactList}\small\item\em A type for an iterator over the clauses. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCNF_a69a2e604fd0dc79be4799ff90c7ef362}{C\-N\-F} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classCNF_acdf16631121bace295ef4440f8a38777}{C\-N\-F} (const \hyperlink{classCNF}{C\-N\-F} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classCNF}{C\-N\-F} \& \hyperlink{classCNF_aa61ef2c2b49d4182993ccbd0e7877322}{operator=} (const \hyperlink{classCNF}{C\-N\-F} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+virtual \hyperlink{classCNF_abc31a76163fb0d56de79d2e228a3f3d1}{$\sim$\-C\-N\-F} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classCNF_aa6b76fdc15481f7899d71f7cc8fa5f45}{clear} ()
+\begin{DoxyCompactList}\small\item\em Clears the \hyperlink{classCNF}{C\-N\-F}, i.\-e., sets the \hyperlink{classCNF}{C\-N\-F} back to T\-R\-U\-E (the empty set of clauses). \end{DoxyCompactList}\item 
+void \hyperlink{classCNF_af3d87d407464eeda15426bdd75f15a7f}{add\-Clause} (const vector$<$ int $>$ \&clause)
+\begin{DoxyCompactList}\small\item\em Adds a new clause to the \hyperlink{classCNF}{C\-N\-F}. \end{DoxyCompactList}\item 
+void \hyperlink{classCNF_a1e98842bbdcb8666d40289b15b943682}{add\-Neg\-Clause\-As\-Cube} (const vector$<$ int $>$ \&clause)
+\begin{DoxyCompactList}\small\item\em Conjuncts the \hyperlink{classCNF}{C\-N\-F} with the negation of a given clause (which is a cube then). \end{DoxyCompactList}\item 
+void \hyperlink{classCNF_aa8621fad1a9a7b3022a79f5f735f5da2}{add\-Cube} (const vector$<$ int $>$ \&cube)
+\begin{DoxyCompactList}\small\item\em Conjuncts the \hyperlink{classCNF}{C\-N\-F} with a given cube. \end{DoxyCompactList}\item 
+void \hyperlink{classCNF_a84d01cd19e3032fb8d3bc7eaaaa40e34}{add\-Neg\-Cube\-As\-Clause} (const vector$<$ int $>$ \&cube)
+\begin{DoxyCompactList}\small\item\em Conjuncts the \hyperlink{classCNF}{C\-N\-F} with the negation of a given cube (which is a clause then). \end{DoxyCompactList}\item 
+bool \hyperlink{classCNF_a05caebe9e73a96d5f1050b3950434700}{add\-Clause\-And\-Simplify} (const vector$<$ int $>$ \&clause)
+\begin{DoxyCompactList}\small\item\em Adds a new clause to the \hyperlink{classCNF}{C\-N\-F}, and then simplifies the \hyperlink{classCNF}{C\-N\-F}. \end{DoxyCompactList}\item 
+void \hyperlink{classCNF_a8216b088c24fea1fd0cb1eecd16daabf}{add1\-Lit\-Clause} (int lit1)
+\begin{DoxyCompactList}\small\item\em Adds a unit clause to the \hyperlink{classCNF}{C\-N\-F}. \end{DoxyCompactList}\item 
+void \hyperlink{classCNF_adf7334d8029d4882cfb5ee21b01ac668}{add2\-Lit\-Clause} (int lit1, int lit2)
+\begin{DoxyCompactList}\small\item\em Adds a clause consisting of two literal to the \hyperlink{classCNF}{C\-N\-F}. \end{DoxyCompactList}\item 
+void \hyperlink{classCNF_a14154cae28b27dffc53239af7b39c4b4}{add3\-Lit\-Clause} (int lit1, int lit2, int lit3)
+\begin{DoxyCompactList}\small\item\em Adds a clause consisting of three literal to the \hyperlink{classCNF}{C\-N\-F}. \end{DoxyCompactList}\item 
+void \hyperlink{classCNF_adc908d03185c0baad55c5b240ed667b3}{add4\-Lit\-Clause} (int lit1, int lit2, int lit3, int lit4)
+\begin{DoxyCompactList}\small\item\em Adds a clause consisting of four literal to the \hyperlink{classCNF}{C\-N\-F}. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classCNF_ad2ccf3122438927b7d5989c34651bd7e}{remove\-Smallest} ()
+\begin{DoxyCompactList}\small\item\em Removes and returns the smallest clause (least number of literals). \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classCNF_ac7fef61f8d052bfca0f5cd8f80ca8e1d}{remove\-Some\-Clause} ()
+\begin{DoxyCompactList}\small\item\em Removes and returns some clause. \end{DoxyCompactList}\item 
+void \hyperlink{classCNF_a037291a95be5b4ec0c14755fd0e18826}{add\-C\-N\-F} (const \hyperlink{classCNF}{C\-N\-F} \&cnf)
+\begin{DoxyCompactList}\small\item\em Conjuncts the \hyperlink{classCNF}{C\-N\-F} with another \hyperlink{classCNF}{C\-N\-F}. \end{DoxyCompactList}\item 
+void \hyperlink{classCNF_aff6cbbe38a345089b278061f9d0195be}{swap\-Present\-To\-Next} ()
+\begin{DoxyCompactList}\small\item\em Replaces all current-\/state variables in the \hyperlink{classCNF}{C\-N\-F} with their next-\/state copy. \end{DoxyCompactList}\item 
+void \hyperlink{classCNF_a1d4371fd3b970bde2e8542ab5ad0f881}{negate} ()
+\begin{DoxyCompactList}\small\item\em Negates this \hyperlink{classCNF}{C\-N\-F}. \end{DoxyCompactList}\item 
+void \hyperlink{classCNF_a39c340549f7acdc1393a5572f3e007cf}{swap\-With} (list$<$ vector$<$ int $>$ $>$ \&clauses)
+\begin{DoxyCompactList}\small\item\em Swaps the content of this \hyperlink{classCNF}{C\-N\-F} with the passed set of clauses. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classCNF_ad0bf994acbde601aa482f3d94ef1cb71}{get\-Nr\-Of\-Clauses} () const 
+\begin{DoxyCompactList}\small\item\em Returns the number of clauses in this \hyperlink{classCNF}{C\-N\-F}. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classCNF_a4fafd0324a1c4c7f345b8df7f931aafa}{get\-Nr\-Of\-Lits} () const 
+\begin{DoxyCompactList}\small\item\em Returns the sum of the sizes of all clauses in the \hyperlink{classCNF}{C\-N\-F}. \end{DoxyCompactList}\item 
+string \hyperlink{classCNF_ae15ec06cc22d6cda868febd1708d331b}{to\-String} () const 
+\begin{DoxyCompactList}\small\item\em Returns a string representation of the \hyperlink{classCNF}{C\-N\-F} in D\-I\-M\-A\-C\-S format. \end{DoxyCompactList}\item 
+const list$<$ vector$<$ int $>$ $>$ \& \hyperlink{classCNF_a9532acac619c098668460a4c97cbbc0f}{get\-Clauses} () const 
+\begin{DoxyCompactList}\small\item\em Returns the clauses of the \hyperlink{classCNF}{C\-N\-F} as list of vectors. \end{DoxyCompactList}\item 
+void \hyperlink{classCNF_a7a3345272f6c5332aa5118e80284f61f}{simplify} ()
+\begin{DoxyCompactList}\small\item\em Simplifies the \hyperlink{classCNF}{C\-N\-F} syntactically. \end{DoxyCompactList}\item 
+void \hyperlink{classCNF_a08cf05fc87ad59d65b0b03d8d3f61029}{remove\-Duplicates} ()
+\begin{DoxyCompactList}\small\item\em Removes all duplicates from the \hyperlink{classCNF}{C\-N\-F}. \end{DoxyCompactList}\item 
+bool \hyperlink{classCNF_ac0fc121fe92bc190aeeaf351703fe111}{is\-Sat\-By} (const vector$<$ int $>$ \&cube) const 
+\begin{DoxyCompactList}\small\item\em Checks if the \hyperlink{classCNF}{C\-N\-F} is satisfied by a certain variable assignment. \end{DoxyCompactList}\item 
+bool \hyperlink{classCNF_a5ce0741b551948faff1d3365871b2218}{operator==} (const \hyperlink{classCNF}{C\-N\-F} \&other) const 
+\begin{DoxyCompactList}\small\item\em Compares two C\-N\-Fs syntactically. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+list$<$ vector$<$ int $>$ $>$ \hyperlink{classCNF_acc8cc195dc20d00c47d6a2282b45a612}{clauses\-\_\-}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classCNF}{C\-N\-F} represented as list of clauses (in turn being vectors of literals). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents a propositional formula in Conjunctive Normal Form. 
+
+This class also provides many methods for manipulating C\-N\-Fs conveniently.
+
+A Conjunctive Normal Form formula is a conjunction of clauses. Each clause is a disjunction of literals. A literal is a Boolean variable or its negation. Internally, every literal is represented as integer number (0 is not used). Every clause is a vector of literals. A \hyperlink{classCNF}{C\-N\-F} is a list of clauses. This representation was chosen for pragmatic reasons\-: we often manipulate clauses, so we chose a simple representation which can be manipulated efficiently. The \hyperlink{classCNF}{C\-N\-F} is a list (and no vector) of clauses because we often append clauses, which can be inefficient with vectors. Furthermore, we usually do not need random access to individual clauses.
+
+Other options would be (a) to sort the literals in the clauses, (b) represent clauses as sets, (c) represent a \hyperlink{classCNF}{C\-N\-F} as set of sets of integers, etc. So far, we considered these options an over-\/kill because the time for manipulating C\-N\-Fs is negligable compared to S\-A\-T-\/ or Q\-B\-F-\/solving time.
+
+\begin{DoxyAuthor}{Author}
+Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0.\-0 
+\end{DoxyVersion}
+
+
+Definition at line 59 of file C\-N\-F.\-h.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classCNF_a0d29737450f8bbc9f8549235577881ec}{\index{C\-N\-F@{C\-N\-F}!Clause\-Const\-Iter@{Clause\-Const\-Iter}}
+\index{Clause\-Const\-Iter@{Clause\-Const\-Iter}!CNF@{C\-N\-F}}
+\subsubsection[{Clause\-Const\-Iter}]{\setlength{\rightskip}{0pt plus 5cm}list$<$ vector$<$ int $>$ $>$\-::const\-\_\-iterator {\bf C\-N\-F\-::\-Clause\-Const\-Iter}}}\label{classCNF_a0d29737450f8bbc9f8549235577881ec}
+
+
+A type for a const-\/iterator over the clauses. 
+
+
+
+Definition at line 322 of file C\-N\-F.\-h.
+
+\hypertarget{classCNF_a6bb7b9142923d0af71a49e4b29c258d1}{\index{C\-N\-F@{C\-N\-F}!Clause\-Iter@{Clause\-Iter}}
+\index{Clause\-Iter@{Clause\-Iter}!CNF@{C\-N\-F}}
+\subsubsection[{Clause\-Iter}]{\setlength{\rightskip}{0pt plus 5cm}list$<$ vector$<$ int $>$ $>$\-::iterator {\bf C\-N\-F\-::\-Clause\-Iter}}}\label{classCNF_a6bb7b9142923d0af71a49e4b29c258d1}
+
+
+A type for an iterator over the clauses. 
+
+
+
+Definition at line 328 of file C\-N\-F.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCNF_a69a2e604fd0dc79be4799ff90c7ef362}{\index{C\-N\-F@{C\-N\-F}!C\-N\-F@{C\-N\-F}}
+\index{C\-N\-F@{C\-N\-F}!CNF@{C\-N\-F}}
+\subsubsection[{C\-N\-F}]{\setlength{\rightskip}{0pt plus 5cm}C\-N\-F\-::\-C\-N\-F (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCNF_a69a2e604fd0dc79be4799ff90c7ef362}
+
+
+Constructor. 
+
+After construction, the \hyperlink{classCNF}{C\-N\-F} represents the empty set of clauses, i.\-e., the formula T\-R\-U\-E. 
+
+Definition at line 39 of file C\-N\-F.\-cpp.
+
+\hypertarget{classCNF_acdf16631121bace295ef4440f8a38777}{\index{C\-N\-F@{C\-N\-F}!C\-N\-F@{C\-N\-F}}
+\index{C\-N\-F@{C\-N\-F}!CNF@{C\-N\-F}}
+\subsubsection[{C\-N\-F}]{\setlength{\rightskip}{0pt plus 5cm}C\-N\-F\-::\-C\-N\-F (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{classCNF_acdf16631121bace295ef4440f8a38777}
+
+
+Copy constructor. 
+
+Makes a (deep) copy of the \hyperlink{classCNF}{C\-N\-F}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the (deep) copy. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 45 of file C\-N\-F.\-cpp.
+
+\hypertarget{classCNF_abc31a76163fb0d56de79d2e228a3f3d1}{\index{C\-N\-F@{C\-N\-F}!$\sim$\-C\-N\-F@{$\sim$\-C\-N\-F}}
+\index{$\sim$\-C\-N\-F@{$\sim$\-C\-N\-F}!CNF@{C\-N\-F}}
+\subsubsection[{$\sim$\-C\-N\-F}]{\setlength{\rightskip}{0pt plus 5cm}C\-N\-F\-::$\sim$\-C\-N\-F (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCNF_abc31a76163fb0d56de79d2e228a3f3d1}
+
+
+Destructor. 
+
+
+
+Definition at line 58 of file C\-N\-F.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCNF_a8216b088c24fea1fd0cb1eecd16daabf}{\index{C\-N\-F@{C\-N\-F}!add1\-Lit\-Clause@{add1\-Lit\-Clause}}
+\index{add1\-Lit\-Clause@{add1\-Lit\-Clause}!CNF@{C\-N\-F}}
+\subsubsection[{add1\-Lit\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}void C\-N\-F\-::add1\-Lit\-Clause (
+\begin{DoxyParamCaption}
+\item[{int}]{lit1}
+\end{DoxyParamCaption}
+)}}\label{classCNF_a8216b088c24fea1fd0cb1eecd16daabf}
+
+
+Adds a unit clause to the \hyperlink{classCNF}{C\-N\-F}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lit1} & The (one and only) literal of the unit clause to add. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 122 of file C\-N\-F.\-cpp.
+
+
+
+References clauses\-\_\-.
+
+
+
+Referenced by add\-Cube(), add\-Neg\-Clause\-As\-Cube(), Template\-Synth\-::find\-Win\-Reg\-C\-N\-F\-Templ(), A\-I\-G2\-C\-N\-F\-::init\-From\-Aig(), Lingeling\-Api\-::is\-Sat\-Model\-Or\-Core(), Pico\-Sat\-Api\-::is\-Sat\-Model\-Or\-Core(), and Mini\-Sat\-Api\-::is\-Sat\-Model\-Or\-Core().
+
+\hypertarget{classCNF_adf7334d8029d4882cfb5ee21b01ac668}{\index{C\-N\-F@{C\-N\-F}!add2\-Lit\-Clause@{add2\-Lit\-Clause}}
+\index{add2\-Lit\-Clause@{add2\-Lit\-Clause}!CNF@{C\-N\-F}}
+\subsubsection[{add2\-Lit\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}void C\-N\-F\-::add2\-Lit\-Clause (
+\begin{DoxyParamCaption}
+\item[{int}]{lit1, }
+\item[{int}]{lit2}
+\end{DoxyParamCaption}
+)}}\label{classCNF_adf7334d8029d4882cfb5ee21b01ac668}
+
+
+Adds a clause consisting of two literal to the \hyperlink{classCNF}{C\-N\-F}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lit1} & The first literal of the clause to add. \\
+\hline
+{\em lit2} & The second literal of the clause to add. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 130 of file C\-N\-F.\-cpp.
+
+
+
+References clauses\-\_\-.
+
+
+
+Referenced by Parallel\-Learner\-::compute\-Previous\-Trans(), Template\-Synth\-::find\-Win\-Reg\-C\-N\-F\-Templ(), A\-I\-G2\-C\-N\-F\-::init\-From\-Aig(), Learn\-Synth\-Q\-B\-F\-Ind\-::\-Learn\-Synth\-Q\-B\-F\-Ind(), Learn\-Synth\-S\-A\-T\-::\-Learn\-Synth\-S\-A\-T(), and negate().
+
+\hypertarget{classCNF_a14154cae28b27dffc53239af7b39c4b4}{\index{C\-N\-F@{C\-N\-F}!add3\-Lit\-Clause@{add3\-Lit\-Clause}}
+\index{add3\-Lit\-Clause@{add3\-Lit\-Clause}!CNF@{C\-N\-F}}
+\subsubsection[{add3\-Lit\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}void C\-N\-F\-::add3\-Lit\-Clause (
+\begin{DoxyParamCaption}
+\item[{int}]{lit1, }
+\item[{int}]{lit2, }
+\item[{int}]{lit3}
+\end{DoxyParamCaption}
+)}}\label{classCNF_a14154cae28b27dffc53239af7b39c4b4}
+
+
+Adds a clause consisting of three literal to the \hyperlink{classCNF}{C\-N\-F}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lit1} & The first literal of the clause to add. \\
+\hline
+{\em lit2} & The second literal of the clause to add. \\
+\hline
+{\em lit3} & The third literal of the clause to add. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 139 of file C\-N\-F.\-cpp.
+
+
+
+References clauses\-\_\-.
+
+
+
+Referenced by A\-I\-G2\-C\-N\-F\-::init\-From\-Aig(), Learn\-Synth\-Q\-B\-F\-Ind\-::\-Learn\-Synth\-Q\-B\-F\-Ind(), and Learn\-Synth\-S\-A\-T\-::\-Learn\-Synth\-S\-A\-T().
+
+\hypertarget{classCNF_adc908d03185c0baad55c5b240ed667b3}{\index{C\-N\-F@{C\-N\-F}!add4\-Lit\-Clause@{add4\-Lit\-Clause}}
+\index{add4\-Lit\-Clause@{add4\-Lit\-Clause}!CNF@{C\-N\-F}}
+\subsubsection[{add4\-Lit\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}void C\-N\-F\-::add4\-Lit\-Clause (
+\begin{DoxyParamCaption}
+\item[{int}]{lit1, }
+\item[{int}]{lit2, }
+\item[{int}]{lit3, }
+\item[{int}]{lit4}
+\end{DoxyParamCaption}
+)}}\label{classCNF_adc908d03185c0baad55c5b240ed667b3}
+
+
+Adds a clause consisting of four literal to the \hyperlink{classCNF}{C\-N\-F}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lit1} & The first literal of the clause to add. \\
+\hline
+{\em lit2} & The second literal of the clause to add. \\
+\hline
+{\em lit3} & The third literal of the clause to add. \\
+\hline
+{\em lit4} & The fourth literal of the clause to add. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 149 of file C\-N\-F.\-cpp.
+
+
+
+References clauses\-\_\-.
+
+
+
+Referenced by Template\-Synth\-::find\-Win\-Reg\-C\-N\-F\-Templ().
+
+\hypertarget{classCNF_af3d87d407464eeda15426bdd75f15a7f}{\index{C\-N\-F@{C\-N\-F}!add\-Clause@{add\-Clause}}
+\index{add\-Clause@{add\-Clause}!CNF@{C\-N\-F}}
+\subsubsection[{add\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}void C\-N\-F\-::add\-Clause (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{clause}
+\end{DoxyParamCaption}
+)}}\label{classCNF_af3d87d407464eeda15426bdd75f15a7f}
+
+
+Adds a new clause to the \hyperlink{classCNF}{C\-N\-F}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clause} & The new clause to add. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 70 of file C\-N\-F.\-cpp.
+
+
+
+References clauses\-\_\-.
+
+
+
+Referenced by I\-F\-M13\-Synth\-::add\-Blocked\-State(), I\-F\-M13\-Explorer\-::add\-Blocked\-State(), Utils\-::compress\-State\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-All\-Blocking\-Clauses(), Learn\-Synth\-Q\-B\-F\-::compute\-All\-Blocking\-Clauses(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-All\-Blocking\-Clauses(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Blocking\-Clause(), Template\-Synth\-::find\-Win\-Reg\-C\-N\-F\-Templ(), A\-I\-G2\-C\-N\-F\-::init\-From\-Aig(), Learn\-Synth\-Q\-B\-F\-Ind\-::\-Learn\-Synth\-Q\-B\-F\-Ind(), Learn\-Synth\-S\-A\-T\-::\-Learn\-Synth\-S\-A\-T(), Clause\-Explorer\-S\-A\-T\-::notify\-New\-Useless\-Input\-Clause(), Parallel\-Learner\-::notify\-New\-Win\-Reg\-Clause(), Clause\-Explorer\-S\-A\-T\-::notify\-New\-Win\-Reg\-Clause(), Counter\-Gen\-S\-A\-T\-::notify\-New\-Win\-Reg\-Clause(), I\-F\-M13\-Explorer\-::notify\-New\-Win\-Reg\-Clause(), Learn\-Synth\-S\-A\-T\-::present\-To\-Previous(), Parallel\-Learner\-::present\-To\-Previous(), Learn\-Synth\-Q\-B\-F\-Ind\-::present\-To\-Previous(), Clause\-Explorer\-S\-A\-T\-::present\-To\-Previous(), Counter\-Gen\-S\-A\-T\-::present\-To\-Previous(), Learn\-Synth\-Q\-B\-F\-Inc\-::reduce\-Existing\-Clauses(), and Learn\-Synth\-Q\-B\-F\-Ind\-::reduce\-Existing\-Clauses().
+
+\hypertarget{classCNF_a05caebe9e73a96d5f1050b3950434700}{\index{C\-N\-F@{C\-N\-F}!add\-Clause\-And\-Simplify@{add\-Clause\-And\-Simplify}}
+\index{add\-Clause\-And\-Simplify@{add\-Clause\-And\-Simplify}!CNF@{C\-N\-F}}
+\subsubsection[{add\-Clause\-And\-Simplify}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-N\-F\-::add\-Clause\-And\-Simplify (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{clause}
+\end{DoxyParamCaption}
+)}}\label{classCNF_a05caebe9e73a96d5f1050b3950434700}
+
+
+Adds a new clause to the \hyperlink{classCNF}{C\-N\-F}, and then simplifies the \hyperlink{classCNF}{C\-N\-F}. 
+
+The only simplification we do is to remove all clauses which form a superset of the newly added clause.
+
+
+\begin{DoxyParams}{Parameters}
+{\em clause} & The new clause to add. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if some clauses were removed due to simplification, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 99 of file C\-N\-F.\-cpp.
+
+
+
+References clauses\-\_\-, and Utils\-::is\-Subset().
+
+
+
+Referenced by I\-F\-M13\-Synth\-::add\-Blocked\-Transition(), I\-F\-M13\-Explorer\-::add\-Blocked\-Transition(), I\-F\-M13\-Synth\-::add\-Lose(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One\-S\-A\-T(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Parallel\-Learner\-::notify\-New\-Win\-Reg\-Clause(), Learn\-Synth\-Q\-B\-F\-Inc\-::reduce\-Existing\-Clauses(), Learn\-Synth\-Q\-B\-F\-::reduce\-Existing\-Clauses(), and Learn\-Synth\-Q\-B\-F\-Ind\-::reduce\-Existing\-Clauses().
+
+\hypertarget{classCNF_a037291a95be5b4ec0c14755fd0e18826}{\index{C\-N\-F@{C\-N\-F}!add\-C\-N\-F@{add\-C\-N\-F}}
+\index{add\-C\-N\-F@{add\-C\-N\-F}!CNF@{C\-N\-F}}
+\subsubsection[{add\-C\-N\-F}]{\setlength{\rightskip}{0pt plus 5cm}void C\-N\-F\-::add\-C\-N\-F (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{cnf}
+\end{DoxyParamCaption}
+)}}\label{classCNF_a037291a95be5b4ec0c14755fd0e18826}
+
+
+Conjuncts the \hyperlink{classCNF}{C\-N\-F} with another \hyperlink{classCNF}{C\-N\-F}. 
+
+That is, this method appends all clauses of the other \hyperlink{classCNF}{C\-N\-F} to this one.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cnf} & The \hyperlink{classCNF}{C\-N\-F} that shall be conjuncted to this \hyperlink{classCNF}{C\-N\-F}. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 183 of file C\-N\-F.\-cpp.
+
+
+
+References clauses\-\_\-.
+
+
+
+Referenced by Learn\-Synth\-Q\-B\-F\-::compute\-Counterexample\-S\-A\-T(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), I\-F\-M13\-Explorer\-::consider\-New\-Info\-From\-Others(), I\-F\-M13\-Synth\-::debug\-Check\-Invariants(), Learn\-Synth\-S\-A\-T\-::debug\-Check\-Win\-Reg(), Utils\-::debug\-Check\-Win\-Reg(), Learn\-Synth\-Q\-B\-F\-Ind\-::debug\-Check\-Win\-Reg\-Reach(), Q\-B\-F\-Cert\-Impl\-Extractor\-::extract\-Circuit(), Template\-Synth\-::find\-Win\-Reg\-C\-N\-F\-Templ(), I\-F\-M13\-Explorer\-::\-I\-F\-M13\-Explorer(), I\-F\-M13\-Synth\-::\-I\-F\-M13\-Synth(), Learn\-Synth\-Q\-B\-F\-Ind\-::\-Learn\-Synth\-Q\-B\-F\-Ind(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses(), Learn\-Synth\-Q\-B\-F\-Inc\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Ind\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Inc\-::recompute\-Gen\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::recompute\-Gen\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Ind\-::recompute\-Gen\-C\-N\-F(), Parallel\-Learner\-::run(), and Parallel\-Learner\-::trigger\-Explorer\-Restart().
+
+\hypertarget{classCNF_aa8621fad1a9a7b3022a79f5f735f5da2}{\index{C\-N\-F@{C\-N\-F}!add\-Cube@{add\-Cube}}
+\index{add\-Cube@{add\-Cube}!CNF@{C\-N\-F}}
+\subsubsection[{add\-Cube}]{\setlength{\rightskip}{0pt plus 5cm}void C\-N\-F\-::add\-Cube (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{cube}
+\end{DoxyParamCaption}
+)}}\label{classCNF_aa8621fad1a9a7b3022a79f5f735f5da2}
+
+
+Conjuncts the \hyperlink{classCNF}{C\-N\-F} with a given cube. 
+
+This means\-: every literal of the cube is added as a unit clause to the \hyperlink{classCNF}{C\-N\-F}. For instance, if the cube \mbox{[}2, -\/4, 8\mbox{]} is passed as argument, then this method adds the three unit clauses \mbox{[}2\mbox{]}, \mbox{[}-\/4\mbox{]}, \mbox{[}8\mbox{]} to the \hyperlink{classCNF}{C\-N\-F}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cube} & The new cube to add. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 83 of file C\-N\-F.\-cpp.
+
+
+
+References add1\-Lit\-Clause().
+
+
+
+Referenced by Dep\-Q\-B\-F\-Api\-::debug\-Check\-Bloqqer\-Model(), Dep\-Q\-B\-F\-Api\-Inc\-::debug\-Check\-Bloqqer\-Model(), Learn\-Synth\-Q\-B\-F\-::generalize\-Counterexample(), and Learn\-Synth\-Q\-B\-F\-Ind\-::generalize\-Counterexample().
+
+\hypertarget{classCNF_a1e98842bbdcb8666d40289b15b943682}{\index{C\-N\-F@{C\-N\-F}!add\-Neg\-Clause\-As\-Cube@{add\-Neg\-Clause\-As\-Cube}}
+\index{add\-Neg\-Clause\-As\-Cube@{add\-Neg\-Clause\-As\-Cube}!CNF@{C\-N\-F}}
+\subsubsection[{add\-Neg\-Clause\-As\-Cube}]{\setlength{\rightskip}{0pt plus 5cm}void C\-N\-F\-::add\-Neg\-Clause\-As\-Cube (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{clause}
+\end{DoxyParamCaption}
+)}}\label{classCNF_a1e98842bbdcb8666d40289b15b943682}
+
+
+Conjuncts the \hyperlink{classCNF}{C\-N\-F} with the negation of a given clause (which is a cube then). 
+
+For instance, if the clause \mbox{[}2, -\/4, 8\mbox{]} is passed as argument, then this method adds the the three unit clauses \mbox{[}-\/2\mbox{]}, \mbox{[}4\mbox{]}, \mbox{[}-\/8\mbox{]} to the \hyperlink{classCNF}{C\-N\-F}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em clause} & The clause which's negation should be conjuncted to the \hyperlink{classCNF}{C\-N\-F}. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 76 of file C\-N\-F.\-cpp.
+
+
+
+References add1\-Lit\-Clause().
+
+
+
+Referenced by Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses(), Learn\-Synth\-Q\-B\-F\-::reduce\-Existing\-Clauses(), and Learn\-Synth\-Q\-B\-F\-Ind\-::reduce\-Existing\-Clauses().
+
+\hypertarget{classCNF_a84d01cd19e3032fb8d3bc7eaaaa40e34}{\index{C\-N\-F@{C\-N\-F}!add\-Neg\-Cube\-As\-Clause@{add\-Neg\-Cube\-As\-Clause}}
+\index{add\-Neg\-Cube\-As\-Clause@{add\-Neg\-Cube\-As\-Clause}!CNF@{C\-N\-F}}
+\subsubsection[{add\-Neg\-Cube\-As\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}void C\-N\-F\-::add\-Neg\-Cube\-As\-Clause (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{cube}
+\end{DoxyParamCaption}
+)}}\label{classCNF_a84d01cd19e3032fb8d3bc7eaaaa40e34}
+
+
+Conjuncts the \hyperlink{classCNF}{C\-N\-F} with the negation of a given cube (which is a clause then). 
+
+For instance, if the cube \mbox{[}2, -\/4, 8\mbox{]} is passed as argument, then this method adds the clauses \mbox{[}-\/2, 4, -\/8\mbox{]} to the \hyperlink{classCNF}{C\-N\-F}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cube} & The cube which's negation should be conjuncted to the \hyperlink{classCNF}{C\-N\-F}. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 90 of file C\-N\-F.\-cpp.
+
+
+
+References clauses\-\_\-.
+
+
+
+Referenced by Utils\-::compress\-State\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::generalize\-Counterexample(), and Learn\-Synth\-Q\-B\-F\-Ind\-::generalize\-Counterexample().
+
+\hypertarget{classCNF_aa6b76fdc15481f7899d71f7cc8fa5f45}{\index{C\-N\-F@{C\-N\-F}!clear@{clear}}
+\index{clear@{clear}!CNF@{C\-N\-F}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void C\-N\-F\-::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCNF_aa6b76fdc15481f7899d71f7cc8fa5f45}
+
+
+Clears the \hyperlink{classCNF}{C\-N\-F}, i.\-e., sets the \hyperlink{classCNF}{C\-N\-F} back to T\-R\-U\-E (the empty set of clauses). 
+
+
+
+Definition at line 64 of file C\-N\-F.\-cpp.
+
+
+
+References clauses\-\_\-.
+
+
+
+Referenced by A\-I\-G2\-C\-N\-F\-::clear(), Utils\-::compress\-State\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One\-S\-A\-T(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::consider\-New\-Info\-From\-Others(), Counter\-Gen\-S\-A\-T\-::consider\-New\-Info\-From\-Others(), I\-F\-M13\-Explorer\-::consider\-New\-Info\-From\-Others(), I\-F\-M13\-Synth\-::debug\-Check\-Invariants(), Learn\-Synth\-S\-A\-T\-::debug\-Check\-Win\-Reg(), Utils\-::debug\-Check\-Win\-Reg(), Learn\-Synth\-Q\-B\-F\-Ind\-::debug\-Check\-Win\-Reg\-Reach(), Clause\-Explorer\-S\-A\-T\-::notify\-New\-Useless\-Input\-Clause(), Clause\-Explorer\-S\-A\-T\-::notify\-Restart(), Learn\-Synth\-S\-A\-T\-::present\-To\-Previous(), Parallel\-Learner\-::present\-To\-Previous(), Learn\-Synth\-Q\-B\-F\-Ind\-::present\-To\-Previous(), Clause\-Explorer\-S\-A\-T\-::present\-To\-Previous(), Counter\-Gen\-S\-A\-T\-::present\-To\-Previous(), Learn\-Synth\-Q\-B\-F\-Inc\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Ind\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Inc\-::recompute\-Gen\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::recompute\-Gen\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Ind\-::recompute\-Gen\-C\-N\-F(), and Parallel\-Learner\-::run().
+
+\hypertarget{classCNF_a9532acac619c098668460a4c97cbbc0f}{\index{C\-N\-F@{C\-N\-F}!get\-Clauses@{get\-Clauses}}
+\index{get\-Clauses@{get\-Clauses}!CNF@{C\-N\-F}}
+\subsubsection[{get\-Clauses}]{\setlength{\rightskip}{0pt plus 5cm}const list$<$ vector$<$ int $>$ $>$ \& C\-N\-F\-::get\-Clauses (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCNF_a9532acac619c098668460a4c97cbbc0f}
+
+
+Returns the clauses of the \hyperlink{classCNF}{C\-N\-F} as list of vectors. 
+
+\begin{DoxyReturn}{Returns}
+The clauses of the \hyperlink{classCNF}{C\-N\-F} as list of vectors. 
+\end{DoxyReturn}
+
+
+Definition at line 273 of file C\-N\-F.\-cpp.
+
+
+
+References clauses\-\_\-.
+
+
+
+Referenced by Utils\-::compress\-State\-C\-N\-F(), Parallel\-Learner\-::compute\-Previous\-Trans(), Lingeling\-Api\-::inc\-Add\-C\-N\-F(), Pico\-Sat\-Api\-::inc\-Add\-C\-N\-F(), Mini\-Sat\-Api\-::inc\-Add\-C\-N\-F(), Dep\-Q\-B\-F\-Api\-Inc\-::inc\-Add\-C\-N\-F(), Dep\-Q\-B\-F\-Api\-::init\-Bloqqer(), Dep\-Q\-B\-F\-Api\-Inc\-::init\-Bloqqer(), Dep\-Q\-B\-F\-Api\-::init\-Dep\-Q\-B\-F(), Dep\-Q\-B\-F\-Api\-Inc\-::init\-Dep\-Q\-B\-F(), Pico\-Sat\-Api\-::is\-Sat(), Lingeling\-Api\-::is\-Sat(), Mini\-Sat\-Api\-::is\-Sat(), Pico\-Sat\-Api\-::is\-Sat\-Model\-Or\-Core(), Lingeling\-Api\-::is\-Sat\-Model\-Or\-Core(), Mini\-Sat\-Api\-::is\-Sat\-Model\-Or\-Core(), Learn\-Synth\-Q\-B\-F\-Ind\-::\-Learn\-Synth\-Q\-B\-F\-Ind(), Learn\-Synth\-S\-A\-T\-::\-Learn\-Synth\-S\-A\-T(), Learn\-Synth\-S\-A\-T\-::present\-To\-Previous(), Parallel\-Learner\-::present\-To\-Previous(), Learn\-Synth\-Q\-B\-F\-Ind\-::present\-To\-Previous(), Clause\-Explorer\-S\-A\-T\-::present\-To\-Previous(), Counter\-Gen\-S\-A\-T\-::present\-To\-Previous(), I\-F\-M13\-Synth\-::propagate\-Blocked\-States(), I\-F\-M13\-Explorer\-::propagate\-Blocked\-States(), Learn\-Synth\-Q\-B\-F\-Inc\-::reduce\-Existing\-Clauses(), Learn\-Synth\-Q\-B\-F\-::reduce\-Existing\-Clauses(), and Learn\-Synth\-Q\-B\-F\-Ind\-::reduce\-Existing\-Clauses().
+
+\hypertarget{classCNF_ad0bf994acbde601aa482f3d94ef1cb71}{\index{C\-N\-F@{C\-N\-F}!get\-Nr\-Of\-Clauses@{get\-Nr\-Of\-Clauses}}
+\index{get\-Nr\-Of\-Clauses@{get\-Nr\-Of\-Clauses}!CNF@{C\-N\-F}}
+\subsubsection[{get\-Nr\-Of\-Clauses}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t C\-N\-F\-::get\-Nr\-Of\-Clauses (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCNF_ad0bf994acbde601aa482f3d94ef1cb71}
+
+
+Returns the number of clauses in this \hyperlink{classCNF}{C\-N\-F}. 
+
+\begin{DoxyReturn}{Returns}
+The number of clauses in this \hyperlink{classCNF}{C\-N\-F}. 
+\end{DoxyReturn}
+
+
+Definition at line 245 of file C\-N\-F.\-cpp.
+
+
+
+References clauses\-\_\-.
+
+
+
+Referenced by Utils\-::compress\-State\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One\-S\-A\-T(), Clause\-Explorer\-S\-A\-T\-::consider\-New\-Info\-From\-Others(), Counter\-Gen\-S\-A\-T\-::consider\-New\-Info\-From\-Others(), Ext\-Q\-B\-F\-Solver\-::dump\-Q\-B\-F(), Dep\-Q\-B\-F\-Api\-::init\-Bloqqer(), Dep\-Q\-B\-F\-Api\-Inc\-::init\-Bloqqer(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses(), Learn\-Synth\-Q\-B\-F\-Inc\-::reduce\-Existing\-Clauses(), Learn\-Synth\-Q\-B\-F\-::reduce\-Existing\-Clauses(), Learn\-Synth\-Q\-B\-F\-Ind\-::reduce\-Existing\-Clauses(), and Clause\-Explorer\-S\-A\-T\-::wait\-Until\-Ongoing\-Restart\-Done().
+
+\hypertarget{classCNF_a4fafd0324a1c4c7f345b8df7f931aafa}{\index{C\-N\-F@{C\-N\-F}!get\-Nr\-Of\-Lits@{get\-Nr\-Of\-Lits}}
+\index{get\-Nr\-Of\-Lits@{get\-Nr\-Of\-Lits}!CNF@{C\-N\-F}}
+\subsubsection[{get\-Nr\-Of\-Lits}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t C\-N\-F\-::get\-Nr\-Of\-Lits (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCNF_a4fafd0324a1c4c7f345b8df7f931aafa}
+
+
+Returns the sum of the sizes of all clauses in the \hyperlink{classCNF}{C\-N\-F}. 
+
+That is, if a literal is contained in several clauses then it is counted several times. This is a measure of the size of the \hyperlink{classCNF}{C\-N\-F}.
+
+\begin{DoxyReturn}{Returns}
+The sum of the sizes of all clauses in the \hyperlink{classCNF}{C\-N\-F}. 
+\end{DoxyReturn}
+
+
+Definition at line 251 of file C\-N\-F.\-cpp.
+
+
+
+References clauses\-\_\-.
+
+
+
+Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One\-S\-A\-T(), Learn\-Synth\-Q\-B\-F\-Inc\-::reduce\-Existing\-Clauses(), Learn\-Synth\-Q\-B\-F\-::reduce\-Existing\-Clauses(), and Learn\-Synth\-Q\-B\-F\-Ind\-::reduce\-Existing\-Clauses().
+
+\hypertarget{classCNF_ac0fc121fe92bc190aeeaf351703fe111}{\index{C\-N\-F@{C\-N\-F}!is\-Sat\-By@{is\-Sat\-By}}
+\index{is\-Sat\-By@{is\-Sat\-By}!CNF@{C\-N\-F}}
+\subsubsection[{is\-Sat\-By}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-N\-F\-::is\-Sat\-By (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{cube}
+\end{DoxyParamCaption}
+) const}}\label{classCNF_ac0fc121fe92bc190aeeaf351703fe111}
+
+
+Checks if the \hyperlink{classCNF}{C\-N\-F} is satisfied by a certain variable assignment. 
+
+This is a purely syntactic check, i.\-e., no S\-A\-T-\/solver is involved. The variable assignment is passed as a cube with the following meaning\-: variables occurring positively in the cube are set to T\-R\-U\-E, variables occurring in negative polarity are set to F\-A\-L\-S\-E.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cube} & The variable assignment in form of a cube\-: variables occurring positively in the cube are interpreted as T\-R\-U\-E, variables occurring in negative polarity are considered to be F\-A\-L\-S\-E. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the \hyperlink{classCNF}{C\-N\-F} is satisfied by the passed variable assignment, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 322 of file C\-N\-F.\-cpp.
+
+
+
+References clauses\-\_\-.
+
+
+
+Referenced by I\-F\-M13\-Synth\-::is\-Blocked(), I\-F\-M13\-Explorer\-::is\-Blocked(), I\-F\-M13\-Synth\-::is\-Lose(), and I\-F\-M13\-Explorer\-::is\-Lose().
+
+\hypertarget{classCNF_a1d4371fd3b970bde2e8542ab5ad0f881}{\index{C\-N\-F@{C\-N\-F}!negate@{negate}}
+\index{negate@{negate}!CNF@{C\-N\-F}}
+\subsubsection[{negate}]{\setlength{\rightskip}{0pt plus 5cm}void C\-N\-F\-::negate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCNF_a1d4371fd3b970bde2e8542ab5ad0f881}
+
+
+Negates this \hyperlink{classCNF}{C\-N\-F}. 
+
+Be careful\-: this is an 'expensive' operation in the sense that the resulting \hyperlink{classCNF}{C\-N\-F} can be significantly larger. This method introduces fresh temporary variables (Tseitin variables) The freshly introduced variables are of type Var\-Kind\-::\-T\-M\-P. Hence, this method also modifies the state of the \hyperlink{classVarManager}{Var\-Manager}. If you call \hyperlink{classCNF_a1d4371fd3b970bde2e8542ab5ad0f881}{negate()} twice you will end up with a formula that is equisatisfiable to the original formula, but potentially much much larger. 
+
+Definition at line 217 of file C\-N\-F.\-cpp.
+
+
+
+References add2\-Lit\-Clause(), clauses\-\_\-, Var\-Manager\-::create\-Fresh\-Tmp\-Var(), and Var\-Manager\-::instance().
+
+
+
+Referenced by Learn\-Synth\-Q\-B\-F\-::compute\-Counterexample\-S\-A\-T(), I\-F\-M13\-Synth\-::compute\-Winning\-Region(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), I\-F\-M13\-Synth\-::debug\-Check\-Invariants(), Learn\-Synth\-S\-A\-T\-::debug\-Check\-Win\-Reg(), Utils\-::debug\-Check\-Win\-Reg(), Learn\-Synth\-Q\-B\-F\-Ind\-::debug\-Check\-Win\-Reg\-Reach(), Q\-B\-F\-Cert\-Impl\-Extractor\-::extract\-Circuit(), Learn\-Synth\-Q\-B\-F\-Inc\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Ind\-::recompute\-Check\-C\-N\-F(), and Parallel\-Learner\-::trigger\-Explorer\-Restart().
+
+\hypertarget{classCNF_aa61ef2c2b49d4182993ccbd0e7877322}{\index{C\-N\-F@{C\-N\-F}!operator=@{operator=}}
+\index{operator=@{operator=}!CNF@{C\-N\-F}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} \& C\-N\-F\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCNF_aa61ef2c2b49d4182993ccbd0e7877322}
+
+
+Assignment operator. 
+
+Makes this object a deep copy of another object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the (deep) copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the assignment, i.\-e, $\ast$this. 
+\end{DoxyReturn}
+
+
+Definition at line 51 of file C\-N\-F.\-cpp.
+
+
+
+References clauses\-\_\-.
+
+\hypertarget{classCNF_a5ce0741b551948faff1d3365871b2218}{\index{C\-N\-F@{C\-N\-F}!operator==@{operator==}}
+\index{operator==@{operator==}!CNF@{C\-N\-F}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-N\-F\-::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{other}
+\end{DoxyParamCaption}
+) const}}\label{classCNF_a5ce0741b551948faff1d3365871b2218}
+
+
+Compares two C\-N\-Fs syntactically. 
+
+This is a purely syntactical check, i.\-e., no S\-A\-T-\/solving is involved. If this method returns true, then the two C\-N\-Fs are definitely equivalent. If it returns False, it could still be that they are equivalent.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The other \hyperlink{classCNF}{C\-N\-F} to compare with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the two C\-N\-Fs are syntactically equivalent, False otherwise. If false is returned, then the two C\-N\-Fs can still be equivalent. 
+\end{DoxyReturn}
+
+
+Definition at line 346 of file C\-N\-F.\-cpp.
+
+
+
+References clauses\-\_\-.
+
+\hypertarget{classCNF_a08cf05fc87ad59d65b0b03d8d3f61029}{\index{C\-N\-F@{C\-N\-F}!remove\-Duplicates@{remove\-Duplicates}}
+\index{remove\-Duplicates@{remove\-Duplicates}!CNF@{C\-N\-F}}
+\subsubsection[{remove\-Duplicates}]{\setlength{\rightskip}{0pt plus 5cm}void C\-N\-F\-::remove\-Duplicates (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCNF_a08cf05fc87ad59d65b0b03d8d3f61029}
+
+
+Removes all duplicates from the \hyperlink{classCNF}{C\-N\-F}. 
+
+This method does even more\-: it transforms the \hyperlink{classCNF}{C\-N\-F} into a set of sets, and back. This means that all clauses and literals in clauses will be sorted according to a certain criterion after executing this method. The reason for this method is\-: sometimes we would actually prefer a representation of clauses as sets of sets. 
+
+Definition at line 311 of file C\-N\-F.\-cpp.
+
+
+
+References clauses\-\_\-.
+
+
+
+Referenced by I\-F\-M13\-Synth\-::propagate\-Blocked\-States(), and I\-F\-M13\-Explorer\-::propagate\-Blocked\-States().
+
+\hypertarget{classCNF_ad2ccf3122438927b7d5989c34651bd7e}{\index{C\-N\-F@{C\-N\-F}!remove\-Smallest@{remove\-Smallest}}
+\index{remove\-Smallest@{remove\-Smallest}!CNF@{C\-N\-F}}
+\subsubsection[{remove\-Smallest}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ int $>$ C\-N\-F\-::remove\-Smallest (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCNF_ad2ccf3122438927b7d5989c34651bd7e}
+
+
+Removes and returns the smallest clause (least number of literals). 
+
+It is guaranteed that the removed clause is among the clauses with the lowest cardinality. If there are more such clauses, an arbitrary one is chosen.
+
+\begin{DoxyReturn}{Returns}
+The clause that has been removed from the \hyperlink{classCNF}{C\-N\-F}. 
+\end{DoxyReturn}
+
+
+Definition at line 160 of file C\-N\-F.\-cpp.
+
+
+
+References clauses\-\_\-, and M\-A\-S\-S\-E\-R\-T.
+
+
+
+Referenced by Utils\-::compress\-State\-C\-N\-F(), and Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses().
+
+\hypertarget{classCNF_ac7fef61f8d052bfca0f5cd8f80ca8e1d}{\index{C\-N\-F@{C\-N\-F}!remove\-Some\-Clause@{remove\-Some\-Clause}}
+\index{remove\-Some\-Clause@{remove\-Some\-Clause}!CNF@{C\-N\-F}}
+\subsubsection[{remove\-Some\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ int $>$ C\-N\-F\-::remove\-Some\-Clause (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCNF_ac7fef61f8d052bfca0f5cd8f80ca8e1d}
+
+
+Removes and returns some clause. 
+
+\begin{DoxyReturn}{Returns}
+The clause that has been removed from the \hyperlink{classCNF}{C\-N\-F}. 
+\end{DoxyReturn}
+
+
+Definition at line 175 of file C\-N\-F.\-cpp.
+
+
+
+References clauses\-\_\-.
+
+\hypertarget{classCNF_a7a3345272f6c5332aa5118e80284f61f}{\index{C\-N\-F@{C\-N\-F}!simplify@{simplify}}
+\index{simplify@{simplify}!CNF@{C\-N\-F}}
+\subsubsection[{simplify}]{\setlength{\rightskip}{0pt plus 5cm}void C\-N\-F\-::simplify (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCNF_a7a3345272f6c5332aa5118e80284f61f}
+
+
+Simplifies the \hyperlink{classCNF}{C\-N\-F} syntactically. 
+
+The only simplification we do is to remove all clauses which form a superset of other clauses. 
+
+Definition at line 279 of file C\-N\-F.\-cpp.
+
+
+
+References clauses\-\_\-, Utils\-::is\-Subset(), and L\-\_\-\-D\-B\-G.
+
+\hypertarget{classCNF_aff6cbbe38a345089b278061f9d0195be}{\index{C\-N\-F@{C\-N\-F}!swap\-Present\-To\-Next@{swap\-Present\-To\-Next}}
+\index{swap\-Present\-To\-Next@{swap\-Present\-To\-Next}!CNF@{C\-N\-F}}
+\subsubsection[{swap\-Present\-To\-Next}]{\setlength{\rightskip}{0pt plus 5cm}void C\-N\-F\-::swap\-Present\-To\-Next (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCNF_aff6cbbe38a345089b278061f9d0195be}
+
+
+Replaces all current-\/state variables in the \hyperlink{classCNF}{C\-N\-F} with their next-\/state copy. 
+
+
+
+Definition at line 189 of file C\-N\-F.\-cpp.
+
+
+
+References clauses\-\_\-, Var\-Manager\-::get\-Max\-C\-N\-F\-Var(), Var\-Manager\-::get\-Vars\-Of\-Type(), Var\-Manager\-::instance(), M\-A\-S\-S\-E\-R\-T, Var\-Info\-::\-N\-E\-X\-T\-\_\-\-S\-T\-A\-T\-E, and Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E.
+
+
+
+Referenced by Learn\-Synth\-Q\-B\-F\-::compute\-Counterexample\-S\-A\-T(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::consider\-New\-Info\-From\-Others(), Counter\-Gen\-S\-A\-T\-::consider\-New\-Info\-From\-Others(), I\-F\-M13\-Explorer\-::consider\-New\-Info\-From\-Others(), I\-F\-M13\-Synth\-::debug\-Check\-Invariants(), Learn\-Synth\-S\-A\-T\-::debug\-Check\-Win\-Reg(), Utils\-::debug\-Check\-Win\-Reg(), Learn\-Synth\-Q\-B\-F\-Ind\-::debug\-Check\-Win\-Reg\-Reach(), Q\-B\-F\-Cert\-Impl\-Extractor\-::extract\-Circuit(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses(), Learn\-Synth\-Q\-B\-F\-Inc\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Ind\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Inc\-::recompute\-Gen\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::recompute\-Gen\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Ind\-::recompute\-Gen\-C\-N\-F(), and Parallel\-Learner\-::trigger\-Explorer\-Restart().
+
+\hypertarget{classCNF_a39c340549f7acdc1393a5572f3e007cf}{\index{C\-N\-F@{C\-N\-F}!swap\-With@{swap\-With}}
+\index{swap\-With@{swap\-With}!CNF@{C\-N\-F}}
+\subsubsection[{swap\-With}]{\setlength{\rightskip}{0pt plus 5cm}void C\-N\-F\-::swap\-With (
+\begin{DoxyParamCaption}
+\item[{list$<$ vector$<$ int $>$ $>$ \&}]{clauses}
+\end{DoxyParamCaption}
+)}}\label{classCNF_a39c340549f7acdc1393a5572f3e007cf}
+
+
+Swaps the content of this \hyperlink{classCNF}{C\-N\-F} with the passed set of clauses. 
+
+This is cheaper than copying or assigning.
+
+
+\begin{DoxyParams}{Parameters}
+{\em clauses} & The clause set to swap content with. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 239 of file C\-N\-F.\-cpp.
+
+
+
+References clauses\-\_\-.
+
+
+
+Referenced by Parallel\-Learner\-::compute\-Previous\-Trans(), Learn\-Synth\-Q\-B\-F\-Ind\-::\-Learn\-Synth\-Q\-B\-F\-Ind(), Learn\-Synth\-S\-A\-T\-::\-Learn\-Synth\-S\-A\-T(), I\-F\-M13\-Synth\-::propagate\-Blocked\-States(), and I\-F\-M13\-Explorer\-::propagate\-Blocked\-States().
+
+\hypertarget{classCNF_ae15ec06cc22d6cda868febd1708d331b}{\index{C\-N\-F@{C\-N\-F}!to\-String@{to\-String}}
+\index{to\-String@{to\-String}!CNF@{C\-N\-F}}
+\subsubsection[{to\-String}]{\setlength{\rightskip}{0pt plus 5cm}string C\-N\-F\-::to\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCNF_ae15ec06cc22d6cda868febd1708d331b}
+
+
+Returns a string representation of the \hyperlink{classCNF}{C\-N\-F} in D\-I\-M\-A\-C\-S format. 
+
+The string is returned in D\-I\-M\-A\-C\-S format, i.\-e., you can pass this string directly on to S\-A\-T-\/ and Q\-B\-F-\/solvers. D\-I\-M\-A\-C\-S format means\-: every clause is printed as the list of its literals. Clauses are terminated by the special number '0' (which cannot be a literal).
+
+\begin{DoxyReturn}{Returns}
+A string representation of the \hyperlink{classCNF}{C\-N\-F} in D\-I\-M\-A\-C\-S format. 
+\end{DoxyReturn}
+
+
+Definition at line 260 of file C\-N\-F.\-cpp.
+
+
+
+References clauses\-\_\-.
+
+
+
+Referenced by Ext\-Q\-B\-F\-Solver\-::dump\-Q\-B\-F().
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCNF_acc8cc195dc20d00c47d6a2282b45a612}{\index{C\-N\-F@{C\-N\-F}!clauses\-\_\-@{clauses\-\_\-}}
+\index{clauses\-\_\-@{clauses\-\_\-}!CNF@{C\-N\-F}}
+\subsubsection[{clauses\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}list$<$vector$<$int$>$ $>$ C\-N\-F\-::clauses\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCNF_acc8cc195dc20d00c47d6a2282b45a612}
+
+
+The \hyperlink{classCNF}{C\-N\-F} represented as list of clauses (in turn being vectors of literals). 
+
+
+
+Definition at line 335 of file C\-N\-F.\-h.
+
+
+
+Referenced by add1\-Lit\-Clause(), add2\-Lit\-Clause(), add3\-Lit\-Clause(), add4\-Lit\-Clause(), add\-Clause(), add\-Clause\-And\-Simplify(), add\-C\-N\-F(), add\-Neg\-Cube\-As\-Clause(), clear(), get\-Clauses(), get\-Nr\-Of\-Clauses(), get\-Nr\-Of\-Lits(), is\-Sat\-By(), negate(), operator=(), operator==(), remove\-Duplicates(), remove\-Smallest(), remove\-Some\-Clause(), simplify(), swap\-Present\-To\-Next(), swap\-With(), and to\-String().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{CNF_8h}{C\-N\-F.\-h}\item 
+src/\hyperlink{CNF_8cpp}{C\-N\-F.\-cpp}\end{DoxyCompactItemize}

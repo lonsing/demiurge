@@ -1,0 +1,237 @@
+\hypertarget{classClauseMinimizerQBF}{\section{Clause\-Minimizer\-Q\-B\-F Class Reference}
+\label{classClauseMinimizerQBF}\index{Clause\-Minimizer\-Q\-B\-F@{Clause\-Minimizer\-Q\-B\-F}}
+}
+
+
+Uses a Q\-B\-F solver to minimize existing winning region clauses further.  
+
+
+
+
+{\ttfamily \#include $<$Parallel\-Learner.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classClauseMinimizerQBF_a546fc0244b0e271cc79f86e8f45e7631}{Clause\-Minimizer\-Q\-B\-F} (\hyperlink{classParallelLearner}{Parallel\-Learner} \&coordinator)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classClauseMinimizerQBF_af3d84d76f410d1c0184e29990262d4d3}{$\sim$\-Clause\-Minimizer\-Q\-B\-F} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classClauseMinimizerQBF_a5f6aca824bfe92db2355483d40db140f}{minimize\-Clauses} ()
+\begin{DoxyCompactList}\small\item\em The work-\/horse of this class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classParallelLearner}{Parallel\-Learner} \& \hyperlink{classClauseMinimizerQBF_afff0ec1ad36fe55af388320c9b55f162}{coordinator\-\_\-}
+\begin{DoxyCompactList}\small\item\em A reference to the coordinator. \end{DoxyCompactList}\item 
+vector$<$ pair$<$ vector$<$ int $>$\\*
+, \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Q\-B\-F\-Solver\-::\-Quant} $>$ $>$ \hyperlink{classClauseMinimizerQBF_a4bd08f4de32c9a738e48cae22b93fa22}{gen\-\_\-quant\-\_\-}
+\begin{DoxyCompactList}\small\item\em The quantifier prefix of the Q\-B\-F for generalizing clauses. \end{DoxyCompactList}\item 
+\hyperlink{classQBFSolver}{Q\-B\-F\-Solver} $\ast$ \hyperlink{classClauseMinimizerQBF_abca59a55100d8667effffdd26da5c7f7}{qbf\-\_\-solver\-\_\-}
+\begin{DoxyCompactList}\small\item\em The Q\-B\-F-\/solver used for the generalization queries. \end{DoxyCompactList}\item 
+\hyperlink{classSatSolver}{Sat\-Solver} $\ast$ \hyperlink{classClauseMinimizerQBF_af0b9ee5117475b01e377f730fba6d4fb}{sat\-\_\-solver\-\_\-}
+\begin{DoxyCompactList}\small\item\em A \hyperlink{classSatSolver}{Sat\-Solver} to check if minimized clauses are already implied by others. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classClauseMinimizerQBF_ac6392b5d3f312013b93d60d3a6f47283}{Clause\-Minimizer\-Q\-B\-F} (const \hyperlink{classClauseMinimizerQBF}{Clause\-Minimizer\-Q\-B\-F} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classClauseMinimizerQBF}{Clause\-Minimizer\-Q\-B\-F} \& \hyperlink{classClauseMinimizerQBF_a42489977ed8a763f6ea8912c6d45218f}{operator=} (const \hyperlink{classClauseMinimizerQBF}{Clause\-Minimizer\-Q\-B\-F} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Uses a Q\-B\-F solver to minimize existing winning region clauses further. 
+
+This class is very simple\-: it just takes clauses from the winning region and tries to minimize them further using a Q\-B\-F solver. The minimization is done in the very same way in \hyperlink{classLearnSynthQBF}{Learn\-Synth\-Q\-B\-F}.
+
+\begin{DoxyAuthor}{Author}
+Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0.\-0 
+\end{DoxyVersion}
+
+
+Definition at line 1170 of file Parallel\-Learner.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classClauseMinimizerQBF_a546fc0244b0e271cc79f86e8f45e7631}{\index{Clause\-Minimizer\-Q\-B\-F@{Clause\-Minimizer\-Q\-B\-F}!Clause\-Minimizer\-Q\-B\-F@{Clause\-Minimizer\-Q\-B\-F}}
+\index{Clause\-Minimizer\-Q\-B\-F@{Clause\-Minimizer\-Q\-B\-F}!ClauseMinimizerQBF@{Clause\-Minimizer\-Q\-B\-F}}
+\subsubsection[{Clause\-Minimizer\-Q\-B\-F}]{\setlength{\rightskip}{0pt plus 5cm}Clause\-Minimizer\-Q\-B\-F\-::\-Clause\-Minimizer\-Q\-B\-F (
+\begin{DoxyParamCaption}
+\item[{{\bf Parallel\-Learner} \&}]{coordinator}
+\end{DoxyParamCaption}
+)}}\label{classClauseMinimizerQBF_a546fc0244b0e271cc79f86e8f45e7631}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coordinator} & A reference to the coordinator. All communication to other worker-\/threads is done via the coordinator. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1263 of file Parallel\-Learner.\-cpp.
+
+
+
+References Q\-B\-F\-Solver\-::\-A, Var\-Info\-::\-C\-T\-R\-L, Q\-B\-F\-Solver\-::\-E, gen\-\_\-quant\-\_\-, Var\-Manager\-::get\-Vars\-Of\-Type(), Var\-Info\-::\-I\-N\-P\-U\-T, Var\-Manager\-::instance(), Var\-Info\-::\-N\-E\-X\-T\-\_\-\-S\-T\-A\-T\-E, Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, and Var\-Info\-::\-T\-M\-P.
+
+\hypertarget{classClauseMinimizerQBF_af3d84d76f410d1c0184e29990262d4d3}{\index{Clause\-Minimizer\-Q\-B\-F@{Clause\-Minimizer\-Q\-B\-F}!$\sim$\-Clause\-Minimizer\-Q\-B\-F@{$\sim$\-Clause\-Minimizer\-Q\-B\-F}}
+\index{$\sim$\-Clause\-Minimizer\-Q\-B\-F@{$\sim$\-Clause\-Minimizer\-Q\-B\-F}!ClauseMinimizerQBF@{Clause\-Minimizer\-Q\-B\-F}}
+\subsubsection[{$\sim$\-Clause\-Minimizer\-Q\-B\-F}]{\setlength{\rightskip}{0pt plus 5cm}Clause\-Minimizer\-Q\-B\-F\-::$\sim$\-Clause\-Minimizer\-Q\-B\-F (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classClauseMinimizerQBF_af3d84d76f410d1c0184e29990262d4d3}
+
+
+Destructor. 
+
+
+
+Definition at line 1283 of file Parallel\-Learner.\-cpp.
+
+
+
+References qbf\-\_\-solver\-\_\-, and sat\-\_\-solver\-\_\-.
+
+\hypertarget{classClauseMinimizerQBF_ac6392b5d3f312013b93d60d3a6f47283}{\index{Clause\-Minimizer\-Q\-B\-F@{Clause\-Minimizer\-Q\-B\-F}!Clause\-Minimizer\-Q\-B\-F@{Clause\-Minimizer\-Q\-B\-F}}
+\index{Clause\-Minimizer\-Q\-B\-F@{Clause\-Minimizer\-Q\-B\-F}!ClauseMinimizerQBF@{Clause\-Minimizer\-Q\-B\-F}}
+\subsubsection[{Clause\-Minimizer\-Q\-B\-F}]{\setlength{\rightskip}{0pt plus 5cm}Clause\-Minimizer\-Q\-B\-F\-::\-Clause\-Minimizer\-Q\-B\-F (
+\begin{DoxyParamCaption}
+\item[{const {\bf Clause\-Minimizer\-Q\-B\-F} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classClauseMinimizerQBF_ac6392b5d3f312013b93d60d3a6f47283}
+
+
+Copy constructor. 
+
+The copy constructor is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classClauseMinimizerQBF_a5f6aca824bfe92db2355483d40db140f}{\index{Clause\-Minimizer\-Q\-B\-F@{Clause\-Minimizer\-Q\-B\-F}!minimize\-Clauses@{minimize\-Clauses}}
+\index{minimize\-Clauses@{minimize\-Clauses}!ClauseMinimizerQBF@{Clause\-Minimizer\-Q\-B\-F}}
+\subsubsection[{minimize\-Clauses}]{\setlength{\rightskip}{0pt plus 5cm}void Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classClauseMinimizerQBF_a5f6aca824bfe92db2355483d40db140f}
+
+
+The work-\/horse of this class. 
+
+It takes clauses from the winning region and tries to minimize them further using a Q\-B\-F-\/solver. The minimization is done in the very same way in \hyperlink{classLearnSynthQBF}{Learn\-Synth\-Q\-B\-F}. In every iteration, this method also considers all new incoming clauses found by others. If it finds out that the specification is realizable or unrealizable, it sets the flag \hyperlink{classParallelLearner_a757f8817809cce5c0408cdc41d6db1b8}{Parallel\-Learner\-::result\-\_\-} accordingly. It also polls this flag regularly. If it has been set by some other thread, it quits. 
+
+Definition at line 1293 of file Parallel\-Learner.\-cpp.
+
+
+
+References C\-N\-F\-::add\-C\-N\-F(), C\-N\-F\-::add\-Neg\-Clause\-As\-Cube(), Utils\-::contains\-Init(), coordinator\-\_\-, gen\-\_\-quant\-\_\-, C\-N\-F\-::get\-Nr\-Of\-Clauses(), A\-I\-G2\-C\-N\-F\-::instance(), Q\-B\-F\-Solver\-::is\-Sat(), Sat\-Solver\-::is\-Sat(), M\-I\-N, Utils\-::negate\-Literals(), Parallel\-Learner\-::notify\-New\-Win\-Reg\-Clause(), qbf\-\_\-solver\-\_\-, Utils\-::randomize(), Utils\-::remove(), C\-N\-F\-::remove\-Smallest(), Parallel\-Learner\-::result\-\_\-, sat\-\_\-solver\-\_\-, C\-N\-F\-::swap\-Present\-To\-Next(), U\-N\-K\-N\-O\-W\-N, Parallel\-Learner\-::unminimized\-\_\-clauses\-\_\-, Parallel\-Learner\-::unminimized\-\_\-clauses\-\_\-lock\-\_\-, U\-N\-R\-E\-A\-L\-I\-Z\-A\-B\-L\-E, Parallel\-Learner\-::winning\-\_\-region\-\_\-, and Parallel\-Learner\-::winning\-\_\-region\-\_\-lock\-\_\-.
+
+
+
+Referenced by Parallel\-Learner\-::run().
+
+\hypertarget{classClauseMinimizerQBF_a42489977ed8a763f6ea8912c6d45218f}{\index{Clause\-Minimizer\-Q\-B\-F@{Clause\-Minimizer\-Q\-B\-F}!operator=@{operator=}}
+\index{operator=@{operator=}!ClauseMinimizerQBF@{Clause\-Minimizer\-Q\-B\-F}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Clause\-Minimizer\-Q\-B\-F}\& Clause\-Minimizer\-Q\-B\-F\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Clause\-Minimizer\-Q\-B\-F} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classClauseMinimizerQBF_a42489977ed8a763f6ea8912c6d45218f}
+
+
+Assignment operator. 
+
+The assignment operator is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the assignment, i.\-e, $\ast$this. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classClauseMinimizerQBF_afff0ec1ad36fe55af388320c9b55f162}{\index{Clause\-Minimizer\-Q\-B\-F@{Clause\-Minimizer\-Q\-B\-F}!coordinator\-\_\-@{coordinator\-\_\-}}
+\index{coordinator\-\_\-@{coordinator\-\_\-}!ClauseMinimizerQBF@{Clause\-Minimizer\-Q\-B\-F}}
+\subsubsection[{coordinator\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Parallel\-Learner}\& Clause\-Minimizer\-Q\-B\-F\-::coordinator\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classClauseMinimizerQBF_afff0ec1ad36fe55af388320c9b55f162}
+
+
+A reference to the coordinator. 
+
+All communication to other worker-\/threads is done via the coordinator. 
+
+Definition at line 1206 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by minimize\-Clauses().
+
+\hypertarget{classClauseMinimizerQBF_a4bd08f4de32c9a738e48cae22b93fa22}{\index{Clause\-Minimizer\-Q\-B\-F@{Clause\-Minimizer\-Q\-B\-F}!gen\-\_\-quant\-\_\-@{gen\-\_\-quant\-\_\-}}
+\index{gen\-\_\-quant\-\_\-@{gen\-\_\-quant\-\_\-}!ClauseMinimizerQBF@{Clause\-Minimizer\-Q\-B\-F}}
+\subsubsection[{gen\-\_\-quant\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$pair$<$vector$<$int$>$, {\bf Q\-B\-F\-Solver\-::\-Quant}$>$ $>$ Clause\-Minimizer\-Q\-B\-F\-::gen\-\_\-quant\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classClauseMinimizerQBF_a4bd08f4de32c9a738e48cae22b93fa22}
+
+
+The quantifier prefix of the Q\-B\-F for generalizing clauses. 
+
+This quantifier prefix is always exists x\-: forall i\-: exists c,x',tmp\-: 
+
+Definition at line 1214 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by Clause\-Minimizer\-Q\-B\-F(), and minimize\-Clauses().
+
+\hypertarget{classClauseMinimizerQBF_abca59a55100d8667effffdd26da5c7f7}{\index{Clause\-Minimizer\-Q\-B\-F@{Clause\-Minimizer\-Q\-B\-F}!qbf\-\_\-solver\-\_\-@{qbf\-\_\-solver\-\_\-}}
+\index{qbf\-\_\-solver\-\_\-@{qbf\-\_\-solver\-\_\-}!ClauseMinimizerQBF@{Clause\-Minimizer\-Q\-B\-F}}
+\subsubsection[{qbf\-\_\-solver\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\-B\-F\-Solver}$\ast$ Clause\-Minimizer\-Q\-B\-F\-::qbf\-\_\-solver\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classClauseMinimizerQBF_abca59a55100d8667effffdd26da5c7f7}
+
+
+The Q\-B\-F-\/solver used for the generalization queries. 
+
+The type of solver is selected with command-\/line arguments. 
+
+Definition at line 1221 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by minimize\-Clauses(), and $\sim$\-Clause\-Minimizer\-Q\-B\-F().
+
+\hypertarget{classClauseMinimizerQBF_af0b9ee5117475b01e377f730fba6d4fb}{\index{Clause\-Minimizer\-Q\-B\-F@{Clause\-Minimizer\-Q\-B\-F}!sat\-\_\-solver\-\_\-@{sat\-\_\-solver\-\_\-}}
+\index{sat\-\_\-solver\-\_\-@{sat\-\_\-solver\-\_\-}!ClauseMinimizerQBF@{Clause\-Minimizer\-Q\-B\-F}}
+\subsubsection[{sat\-\_\-solver\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sat\-Solver}$\ast$ Clause\-Minimizer\-Q\-B\-F\-::sat\-\_\-solver\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classClauseMinimizerQBF_af0b9ee5117475b01e377f730fba6d4fb}
+
+
+A \hyperlink{classSatSolver}{Sat\-Solver} to check if minimized clauses are already implied by others. 
+
+
+
+Definition at line 1226 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by minimize\-Clauses(), and $\sim$\-Clause\-Minimizer\-Q\-B\-F().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{ParallelLearner_8h}{Parallel\-Learner.\-h}\item 
+src/\hyperlink{ParallelLearner_8cpp}{Parallel\-Learner.\-cpp}\end{DoxyCompactItemize}

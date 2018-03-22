@@ -1,0 +1,953 @@
+\hypertarget{classMiniSatApi}{\section{Mini\-Sat\-Api Class Reference}
+\label{classMiniSatApi}\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}}
+}
+
+
+Interfaces the Mini\-Sat S\-A\-T-\/solver via its A\-P\-I.  
+
+
+
+
+{\ttfamily \#include $<$Mini\-Sat\-Api.\-h$>$}
+
+Inheritance diagram for Mini\-Sat\-Api\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classMiniSatApi}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMiniSatApi_a1252284d34189f954aaf497b3441b182}{Mini\-Sat\-Api} (bool rand\-\_\-models=false, bool min\-\_\-cores=true)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classMiniSatApi_ac45e31c4ce50ddd87df83d97d4c3ac2e}{$\sim$\-Mini\-Sat\-Api} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classMiniSatApi_a73b93ecb947723a96ef6fbd436640e12}{is\-Sat} (const \hyperlink{classCNF}{C\-N\-F} \&cnf)
+\begin{DoxyCompactList}\small\item\em Checks if a \hyperlink{classCNF}{C\-N\-F} is satisfiable. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classMiniSatApi_a7f846d8c4a5a652cb83460852c09dfb3}{is\-Sat\-Model\-Or\-Core} (const \hyperlink{classCNF}{C\-N\-F} \&cnf, const vector$<$ int $>$ \&assumptions, const vector$<$ int $>$ \&vars\-\_\-of\-\_\-interest, vector$<$ int $>$ \&model\-\_\-or\-\_\-core)
+\begin{DoxyCompactList}\small\item\em Checks if a \hyperlink{classCNF}{C\-N\-F} is satisfiable and extracts a model or an unsatisfiable core. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classMiniSatApi_afe6f184e440ffe7f9b3a86045c15b450}{start\-Incremental\-Session} (const vector$<$ int $>$ \&vars\-\_\-to\-\_\-keep, bool use\-\_\-push=true)
+\begin{DoxyCompactList}\small\item\em Starts a new incremental session. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classMiniSatApi_a237754c78357ed0a84894e811806b618}{clear\-Incremental\-Session} ()
+\begin{DoxyCompactList}\small\item\em Deletes the solver instance that is used in the incremental session. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classMiniSatApi_ae5ffe2811e01051c5206c9e4865a7102}{inc\-Add\-C\-N\-F} (const \hyperlink{classCNF}{C\-N\-F} \&cnf)
+\begin{DoxyCompactList}\small\item\em Adds a new \hyperlink{classCNF}{C\-N\-F} to the current incremental session. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classMiniSatApi_af2115a84419b7480ff55b747f7ddd60a}{inc\-Add\-Clause} (const vector$<$ int $>$ \&clause)
+\begin{DoxyCompactList}\small\item\em Adds a new clause to the current incremental session. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classMiniSatApi_ade09bb38667bb23f2ac993e2d6c66408}{inc\-Add\-Unit\-Clause} (int lit)
+\begin{DoxyCompactList}\small\item\em Adds a new unit clause to the current incremental session. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classMiniSatApi_a56c4758ee7466cd7fa48a682fee76fd3}{inc\-Add2\-Lit\-Clause} (int lit1, int lit2)
+\begin{DoxyCompactList}\small\item\em Adds a new clause consisting of 2 literals to the current incremental session. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classMiniSatApi_aee9556c8c5de695fa5d7aa7cfde57877}{inc\-Add3\-Lit\-Clause} (int lit1, int lit2, int lit3)
+\begin{DoxyCompactList}\small\item\em Adds a new clause consisting of 3 literals to the current incremental session. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classMiniSatApi_a41e16a2e8757846fa17e010c5cc1ff16}{inc\-Add\-Cube} (const vector$<$ int $>$ \&cube)
+\begin{DoxyCompactList}\small\item\em Adds a new cube to the current incremental session. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classMiniSatApi_a49afe5c41bb036a31f65f98621e82846}{inc\-Add\-Neg\-Cube\-As\-Clause} (const vector$<$ int $>$ \&cube)
+\begin{DoxyCompactList}\small\item\em Adds the negation of a given cube (which is a clause) to the incremental session. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classMiniSatApi_a4c6ba65381002eb3f90e8e0df1606759}{inc\-Is\-Sat} ()
+\begin{DoxyCompactList}\small\item\em Checks if a the \hyperlink{classCNF}{C\-N\-F} in the incremental session is satisfiable. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classMiniSatApi_a40421bac2739bacb68f3c7083810694b}{inc\-Is\-Sat} (const vector$<$ int $>$ \&assumptions)
+\begin{DoxyCompactList}\small\item\em Checks if a the \hyperlink{classCNF}{C\-N\-F} in the incremental session is satisfiable under assumptions. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classMiniSatApi_afb886d40bb45b5cf2fadb7aee1a06b3e}{inc\-Is\-Sat\-Model\-Or\-Core} (const vector$<$ int $>$ \&assumptions, const vector$<$ int $>$ \&vars\-\_\-of\-\_\-interest, vector$<$ int $>$ \&model\-\_\-or\-\_\-core)
+\begin{DoxyCompactList}\small\item\em Checks the \hyperlink{classCNF}{C\-N\-F} in the incremental session and computes a model or unsat core. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classMiniSatApi_a776b2b0563b52f52152dcec931b7f557}{inc\-Is\-Sat\-Model\-Or\-Core} (const vector$<$ int $>$ \&core\-\_\-assumptions, const vector$<$ int $>$ \&more\-\_\-assumptions, const vector$<$ int $>$ \&vars\-\_\-of\-\_\-interest, vector$<$ int $>$ \&model\-\_\-or\-\_\-core)
+\begin{DoxyCompactList}\small\item\em Computes a satisfying assignment or core using additional assumptions. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classMiniSatApi_a27013ace25320f68252bef5ba9f2e9ad}{inc\-Push} ()
+\begin{DoxyCompactList}\small\item\em Stores the current state of the incremental session on a stack. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classMiniSatApi_af388f97db15f77baeb420a8fef74ca6a}{inc\-Pop} ()
+\begin{DoxyCompactList}\small\item\em Restores the incremental session back to the point where \hyperlink{classMiniSatApi_a27013ace25320f68252bef5ba9f2e9ad}{inc\-Push()} was called. \end{DoxyCompactList}\item 
+void \hyperlink{classSatSolver_a159fc9658709e5aeba2844a09454b2cb}{do\-Min\-Cores} (bool min\-\_\-cores=true)
+\begin{DoxyCompactList}\small\item\em Enables or disables the computation of M\-I\-N\-I\-M\-A\-L unsatisfiable cores. \end{DoxyCompactList}\item 
+void \hyperlink{classSatSolver_ae229c5e277350710412fce0e867dc566}{do\-Rand\-Models} (bool rand\-\_\-models=true)
+\begin{DoxyCompactList}\small\item\em Enables or disables the randomization of satisfying assignments. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef list$<$ Minisat\-::\-Solver $\ast$ $>$\\*
+\-::const\-\_\-iterator \hyperlink{classMiniSatApi_aa4c233a841e489de9a59622e18df4678}{Stack\-Const\-Iter}
+\begin{DoxyCompactList}\small\item\em A type for a const-\/iterator over the incremental session stack. \end{DoxyCompactList}\item 
+typedef list$<$ Minisat\-::\-Solver $\ast$ $>$\\*
+\-::iterator \hyperlink{classMiniSatApi_a46469116348b199bae1b92d209b969c0}{Stack\-Iter}
+\begin{DoxyCompactList}\small\item\em A type for an iterator over the incremental session stack. \end{DoxyCompactList}\item 
+typedef list$<$ \hyperlink{classCNF}{C\-N\-F} $\ast$ $>$\\*
+\-::const\-\_\-iterator \hyperlink{classMiniSatApi_a1d7b9074d64167fb10552e58a9a84ddb}{Stack\-C\-N\-F\-Const\-Iter}
+\begin{DoxyCompactList}\small\item\em A type for a const-\/iterator over the C\-N\-Fs of the incremental sessions. \end{DoxyCompactList}\item 
+typedef list$<$ \hyperlink{classCNF}{C\-N\-F} $\ast$ $>$\-::iterator \hyperlink{classMiniSatApi_a12ef23c063731cbdb7405de0e670f6a7}{Stack\-C\-N\-F\-Iter}
+\begin{DoxyCompactList}\small\item\em A type for an iterator over the C\-N\-Fs of the incremental sessions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+list$<$ Minisat\-::\-Solver $\ast$ $>$ \hyperlink{classMiniSatApi_ab9dcac91d11eef23cc40d7478464c414}{incr\-\_\-stack\-\_\-}
+\begin{DoxyCompactList}\small\item\em A stack of incremental session contexts. \end{DoxyCompactList}\item 
+list$<$ \hyperlink{classCNF}{C\-N\-F} $\ast$ $>$ \hyperlink{classMiniSatApi_aca2da2d02879e4a05c09124ff84cc4cd}{incr\-\_\-stack\-\_\-cnfs\-\_\-}
+\begin{DoxyCompactList}\small\item\em A C\-N\-Fs that are stored in the incremental session contexts. \end{DoxyCompactList}\item 
+bool \hyperlink{classMiniSatApi_a9d1530348f713264a41d6115e4cfb62e}{use\-\_\-push\-\_\-}
+\begin{DoxyCompactList}\small\item\em A flag indicating if \hyperlink{classMiniSatApi_a27013ace25320f68252bef5ba9f2e9ad}{inc\-Push()} and \hyperlink{classMiniSatApi_af388f97db15f77baeb420a8fef74ca6a}{inc\-Pop()} are ever going to be used. \end{DoxyCompactList}\item 
+bool \hyperlink{classSatSolver_adfeecebfd09606c82b5c57cfe5aad813}{min\-\_\-cores\-\_\-}
+\begin{DoxyCompactList}\small\item\em Indicates if the unsat cores returned by the solver should be minimized further. \end{DoxyCompactList}\item 
+bool \hyperlink{classSatSolver_a73fed24d8fb4da85ef82dc53ac5f28c7}{rand\-\_\-models\-\_\-}
+\begin{DoxyCompactList}\small\item\em Indicates if satisfying assignments should be randomized. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMiniSatApi_a8e3fa0e62bbb5afeed319f041cf408f8}{Mini\-Sat\-Api} (const \hyperlink{classMiniSatApi}{Mini\-Sat\-Api} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classMiniSatApi}{Mini\-Sat\-Api} \& \hyperlink{classMiniSatApi_ac8b49e6f14079c5705ae16e764d436d1}{operator=} (const \hyperlink{classMiniSatApi}{Mini\-Sat\-Api} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interfaces the Mini\-Sat S\-A\-T-\/solver via its A\-P\-I. 
+
+This class represents an interface to the S\-A\-T-\/solver Minisat (see \href{http://minisat.se}{\tt http\-://minisat.\-se}). It is a concrete implementation of the \hyperlink{classSatSolver}{Sat\-Solver} interface. For a given \hyperlink{classCNF}{C\-N\-F}, this class is able to determine satisfiability. Furthermore, in case of satisfiability, it can extract satisfying assignments. In case of unsatisfiability, it can compute an unsatisfiable core. It can be used in two different ways. In the incremental usage scenario, all information the solver has learned so far is retained. Methods for incremental solving start with 'inc'. Other methods (like \hyperlink{classMiniSatApi_a73b93ecb947723a96ef6fbd436640e12}{is\-Sat()} or \hyperlink{classMiniSatApi_a7f846d8c4a5a652cb83460852c09dfb3}{is\-Sat\-Model\-Or\-Core()}) instantiate a fresh solver instance for every call.
+
+\begin{DoxyAuthor}{Author}
+Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0.\-0 
+\end{DoxyVersion}
+
+
+Definition at line 58 of file Mini\-Sat\-Api.\-h.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classMiniSatApi_a1d7b9074d64167fb10552e58a9a84ddb}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!Stack\-C\-N\-F\-Const\-Iter@{Stack\-C\-N\-F\-Const\-Iter}}
+\index{Stack\-C\-N\-F\-Const\-Iter@{Stack\-C\-N\-F\-Const\-Iter}!MiniSatApi@{Mini\-Sat\-Api}}
+\subsubsection[{Stack\-C\-N\-F\-Const\-Iter}]{\setlength{\rightskip}{0pt plus 5cm}list$<$ {\bf C\-N\-F} $\ast$ $>$\-::const\-\_\-iterator {\bf Mini\-Sat\-Api\-::\-Stack\-C\-N\-F\-Const\-Iter}\hspace{0.3cm}{\ttfamily [protected]}}}\label{classMiniSatApi_a1d7b9074d64167fb10552e58a9a84ddb}
+
+
+A type for a const-\/iterator over the C\-N\-Fs of the incremental sessions. 
+
+
+
+Definition at line 432 of file Mini\-Sat\-Api.\-h.
+
+\hypertarget{classMiniSatApi_a12ef23c063731cbdb7405de0e670f6a7}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!Stack\-C\-N\-F\-Iter@{Stack\-C\-N\-F\-Iter}}
+\index{Stack\-C\-N\-F\-Iter@{Stack\-C\-N\-F\-Iter}!MiniSatApi@{Mini\-Sat\-Api}}
+\subsubsection[{Stack\-C\-N\-F\-Iter}]{\setlength{\rightskip}{0pt plus 5cm}list$<$ {\bf C\-N\-F} $\ast$ $>$\-::iterator {\bf Mini\-Sat\-Api\-::\-Stack\-C\-N\-F\-Iter}\hspace{0.3cm}{\ttfamily [protected]}}}\label{classMiniSatApi_a12ef23c063731cbdb7405de0e670f6a7}
+
+
+A type for an iterator over the C\-N\-Fs of the incremental sessions. 
+
+
+
+Definition at line 438 of file Mini\-Sat\-Api.\-h.
+
+\hypertarget{classMiniSatApi_aa4c233a841e489de9a59622e18df4678}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!Stack\-Const\-Iter@{Stack\-Const\-Iter}}
+\index{Stack\-Const\-Iter@{Stack\-Const\-Iter}!MiniSatApi@{Mini\-Sat\-Api}}
+\subsubsection[{Stack\-Const\-Iter}]{\setlength{\rightskip}{0pt plus 5cm}list$<$ Minisat\-::\-Solver $\ast$ $>$\-::const\-\_\-iterator {\bf Mini\-Sat\-Api\-::\-Stack\-Const\-Iter}\hspace{0.3cm}{\ttfamily [protected]}}}\label{classMiniSatApi_aa4c233a841e489de9a59622e18df4678}
+
+
+A type for a const-\/iterator over the incremental session stack. 
+
+
+
+Definition at line 420 of file Mini\-Sat\-Api.\-h.
+
+\hypertarget{classMiniSatApi_a46469116348b199bae1b92d209b969c0}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!Stack\-Iter@{Stack\-Iter}}
+\index{Stack\-Iter@{Stack\-Iter}!MiniSatApi@{Mini\-Sat\-Api}}
+\subsubsection[{Stack\-Iter}]{\setlength{\rightskip}{0pt plus 5cm}list$<$ Minisat\-::\-Solver $\ast$ $>$\-::iterator {\bf Mini\-Sat\-Api\-::\-Stack\-Iter}\hspace{0.3cm}{\ttfamily [protected]}}}\label{classMiniSatApi_a46469116348b199bae1b92d209b969c0}
+
+
+A type for an iterator over the incremental session stack. 
+
+
+
+Definition at line 426 of file Mini\-Sat\-Api.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classMiniSatApi_a1252284d34189f954aaf497b3441b182}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!Mini\-Sat\-Api@{Mini\-Sat\-Api}}
+\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!MiniSatApi@{Mini\-Sat\-Api}}
+\subsubsection[{Mini\-Sat\-Api}]{\setlength{\rightskip}{0pt plus 5cm}Mini\-Sat\-Api\-::\-Mini\-Sat\-Api (
+\begin{DoxyParamCaption}
+\item[{bool}]{rand\-\_\-models = {\ttfamily false}, }
+\item[{bool}]{min\-\_\-cores = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}\label{classMiniSatApi_a1252284d34189f954aaf497b3441b182}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rand\-\_\-models} & A flag indicating if satisfying assignments should be randomized. This is done in a post-\/processing step (values are flipped randomly and then we check if this still constitutes a satisfying assignment). This is expensive. If this parameter is skipped, then satisfying assignments are not randomized. \\
+\hline
+{\em min\-\_\-cores} & A flag indicating if unsatisfiable cores returned by the solver should be minimized further by trying to drop one literal after the other. This makes the calls slower but produces potentially smaller cubes. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 38 of file Mini\-Sat\-Api.\-cpp.
+
+\hypertarget{classMiniSatApi_ac45e31c4ce50ddd87df83d97d4c3ac2e}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!$\sim$\-Mini\-Sat\-Api@{$\sim$\-Mini\-Sat\-Api}}
+\index{$\sim$\-Mini\-Sat\-Api@{$\sim$\-Mini\-Sat\-Api}!MiniSatApi@{Mini\-Sat\-Api}}
+\subsubsection[{$\sim$\-Mini\-Sat\-Api}]{\setlength{\rightskip}{0pt plus 5cm}Mini\-Sat\-Api\-::$\sim$\-Mini\-Sat\-Api (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classMiniSatApi_ac45e31c4ce50ddd87df83d97d4c3ac2e}
+
+
+Destructor. 
+
+
+
+Definition at line 46 of file Mini\-Sat\-Api.\-cpp.
+
+
+
+References clear\-Incremental\-Session().
+
+\hypertarget{classMiniSatApi_a8e3fa0e62bbb5afeed319f041cf408f8}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!Mini\-Sat\-Api@{Mini\-Sat\-Api}}
+\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!MiniSatApi@{Mini\-Sat\-Api}}
+\subsubsection[{Mini\-Sat\-Api}]{\setlength{\rightskip}{0pt plus 5cm}Mini\-Sat\-Api\-::\-Mini\-Sat\-Api (
+\begin{DoxyParamCaption}
+\item[{const {\bf Mini\-Sat\-Api} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classMiniSatApi_a8e3fa0e62bbb5afeed319f041cf408f8}
+
+
+Copy constructor. 
+
+The copy constructor is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classMiniSatApi_a237754c78357ed0a84894e811806b618}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!clear\-Incremental\-Session@{clear\-Incremental\-Session}}
+\index{clear\-Incremental\-Session@{clear\-Incremental\-Session}!MiniSatApi@{Mini\-Sat\-Api}}
+\subsubsection[{clear\-Incremental\-Session}]{\setlength{\rightskip}{0pt plus 5cm}void Mini\-Sat\-Api\-::clear\-Incremental\-Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classMiniSatApi_a237754c78357ed0a84894e811806b618}
+
+
+Deletes the solver instance that is used in the incremental session. 
+
+
+
+Implements \hyperlink{classSatSolver_a8118d2900f7acf31497cd2a27ad3b713}{Sat\-Solver}.
+
+
+
+Definition at line 218 of file Mini\-Sat\-Api.\-cpp.
+
+
+
+References incr\-\_\-stack\-\_\-, and incr\-\_\-stack\-\_\-cnfs\-\_\-.
+
+
+
+Referenced by start\-Incremental\-Session(), and $\sim$\-Mini\-Sat\-Api().
+
+\hypertarget{classSatSolver_a159fc9658709e5aeba2844a09454b2cb}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!do\-Min\-Cores@{do\-Min\-Cores}}
+\index{do\-Min\-Cores@{do\-Min\-Cores}!MiniSatApi@{Mini\-Sat\-Api}}
+\subsubsection[{do\-Min\-Cores}]{\setlength{\rightskip}{0pt plus 5cm}void Sat\-Solver\-::do\-Min\-Cores (
+\begin{DoxyParamCaption}
+\item[{bool}]{min\-\_\-cores = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}}\label{classSatSolver_a159fc9658709e5aeba2844a09454b2cb}
+
+
+Enables or disables the computation of M\-I\-N\-I\-M\-A\-L unsatisfiable cores. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min\-\_\-cores} & A flag indicating if unsatisfiable cores returned by the solver should be minimized further by trying to drop one literal after the other. This makes the calls slower but produces potentially smaller cubes. If the parameter is skipped the computation of minimal cores is enabled. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 47 of file Sat\-Solver.\-cpp.
+
+
+
+References Sat\-Solver\-::min\-\_\-cores\-\_\-.
+
+
+
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), and Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C().
+
+\hypertarget{classSatSolver_ae229c5e277350710412fce0e867dc566}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!do\-Rand\-Models@{do\-Rand\-Models}}
+\index{do\-Rand\-Models@{do\-Rand\-Models}!MiniSatApi@{Mini\-Sat\-Api}}
+\subsubsection[{do\-Rand\-Models}]{\setlength{\rightskip}{0pt plus 5cm}void Sat\-Solver\-::do\-Rand\-Models (
+\begin{DoxyParamCaption}
+\item[{bool}]{rand\-\_\-models = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}}\label{classSatSolver_ae229c5e277350710412fce0e867dc566}
+
+
+Enables or disables the randomization of satisfying assignments. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rand\-\_\-models} & A flag indicating if satisfying assignments should be randomized. This is done in a post-\/processing step (values are flipped randomly and then we check if this still constitutes a satisfying assignment). This is expensive. If this parameter is skipped, then randomization is enabled. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 53 of file Sat\-Solver.\-cpp.
+
+
+
+References Sat\-Solver\-::rand\-\_\-models\-\_\-.
+
+
+
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), and Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C().
+
+\hypertarget{classMiniSatApi_a56c4758ee7466cd7fa48a682fee76fd3}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!inc\-Add2\-Lit\-Clause@{inc\-Add2\-Lit\-Clause}}
+\index{inc\-Add2\-Lit\-Clause@{inc\-Add2\-Lit\-Clause}!MiniSatApi@{Mini\-Sat\-Api}}
+\subsubsection[{inc\-Add2\-Lit\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}void Mini\-Sat\-Api\-::inc\-Add2\-Lit\-Clause (
+\begin{DoxyParamCaption}
+\item[{int}]{lit1, }
+\item[{int}]{lit2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classMiniSatApi_a56c4758ee7466cd7fa48a682fee76fd3}
+
+
+Adds a new clause consisting of 2 literals to the current incremental session. 
+
+\begin{DoxyPrecond}{Precondition}
+\hyperlink{classMiniSatApi_afe6f184e440ffe7f9b3a86045c15b450}{start\-Incremental\-Session()} must have been called before. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em lit1} & The first literal of the clause to add to the currently open incremental session. If this method is called after solving for the first time, be sure that the passed literal talks about a variables that have been mentioned in vars\-\_\-to\-\_\-keep when calling \hyperlink{classMiniSatApi_afe6f184e440ffe7f9b3a86045c15b450}{start\-Incremental\-Session()}. Actually, the implementation in T\-H\-I\-S class does not care, but other implementations of the \hyperlink{classSatSolver}{Sat\-Solver} interface do. Hence, you should not violate this property to have the solver instances exchangeable. \\
+\hline
+{\em lit2} & The second literal of the clause to add to the currently open incremental session (must be contained in vars\-\_\-to\-\_\-keep as well). \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classSatSolver_a791be541b59ef58a29a1c517fca943e7}{Sat\-Solver}.
+
+
+
+Definition at line 269 of file Mini\-Sat\-Api.\-cpp.
+
+
+
+References c2m(), incr\-\_\-stack\-\_\-, incr\-\_\-stack\-\_\-cnfs\-\_\-, M\-A\-S\-S\-E\-R\-T, and use\-\_\-push\-\_\-.
+
+\hypertarget{classMiniSatApi_aee9556c8c5de695fa5d7aa7cfde57877}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!inc\-Add3\-Lit\-Clause@{inc\-Add3\-Lit\-Clause}}
+\index{inc\-Add3\-Lit\-Clause@{inc\-Add3\-Lit\-Clause}!MiniSatApi@{Mini\-Sat\-Api}}
+\subsubsection[{inc\-Add3\-Lit\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}void Mini\-Sat\-Api\-::inc\-Add3\-Lit\-Clause (
+\begin{DoxyParamCaption}
+\item[{int}]{lit1, }
+\item[{int}]{lit2, }
+\item[{int}]{lit3}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classMiniSatApi_aee9556c8c5de695fa5d7aa7cfde57877}
+
+
+Adds a new clause consisting of 3 literals to the current incremental session. 
+
+\begin{DoxyPrecond}{Precondition}
+\hyperlink{classMiniSatApi_afe6f184e440ffe7f9b3a86045c15b450}{start\-Incremental\-Session()} must have been called before. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em lit1} & The first literal of the clause to add to the currently open incremental session. If this method is called after solving for the first time, be sure that the passed literal talks about a variables that have been mentioned in vars\-\_\-to\-\_\-keep when calling \hyperlink{classMiniSatApi_afe6f184e440ffe7f9b3a86045c15b450}{start\-Incremental\-Session()}. Actually, the implementation in T\-H\-I\-S class does not care, but other implementations of the \hyperlink{classSatSolver}{Sat\-Solver} interface do. Hence, you should not violate this property to have the solver instances exchangeable. \\
+\hline
+{\em lit2} & The second literal of the clause to add to the currently open incremental session (must be contained in vars\-\_\-to\-\_\-keep as well). \\
+\hline
+{\em lit3} & The third literal of the clause to add to the currently open incremental session (must be contained in vars\-\_\-to\-\_\-keep as well). \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classSatSolver_abca288874a1b8ab1a90cb274eb885ace}{Sat\-Solver}.
+
+
+
+Definition at line 279 of file Mini\-Sat\-Api.\-cpp.
+
+
+
+References c2m(), incr\-\_\-stack\-\_\-, incr\-\_\-stack\-\_\-cnfs\-\_\-, M\-A\-S\-S\-E\-R\-T, and use\-\_\-push\-\_\-.
+
+\hypertarget{classMiniSatApi_af2115a84419b7480ff55b747f7ddd60a}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!inc\-Add\-Clause@{inc\-Add\-Clause}}
+\index{inc\-Add\-Clause@{inc\-Add\-Clause}!MiniSatApi@{Mini\-Sat\-Api}}
+\subsubsection[{inc\-Add\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}void Mini\-Sat\-Api\-::inc\-Add\-Clause (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{clause}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classMiniSatApi_af2115a84419b7480ff55b747f7ddd60a}
+
+
+Adds a new clause to the current incremental session. 
+
+\begin{DoxyPrecond}{Precondition}
+\hyperlink{classMiniSatApi_afe6f184e440ffe7f9b3a86045c15b450}{start\-Incremental\-Session()} must have been called before. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em clause} & The clause (a disjunction of literals) to add (conjunct) to the currently open incremental session. If this method is called after solving for the first time, be sure that the passed clause talks only about variables that have been mentioned in vars\-\_\-to\-\_\-keep when calling \hyperlink{classMiniSatApi_afe6f184e440ffe7f9b3a86045c15b450}{start\-Incremental\-Session()}. Actually, the implementation in T\-H\-I\-S class does not care, but other implementations of the \hyperlink{classSatSolver}{Sat\-Solver} interface do. Hence, you should not violate this property to have the solver instances exchangeable. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classSatSolver_a9f91c104238b6e091513e0aa46970840}{Sat\-Solver}.
+
+
+
+Definition at line 246 of file Mini\-Sat\-Api.\-cpp.
+
+
+
+References c2m(), incr\-\_\-stack\-\_\-, incr\-\_\-stack\-\_\-cnfs\-\_\-, M\-A\-S\-S\-E\-R\-T, and use\-\_\-push\-\_\-.
+
+\hypertarget{classMiniSatApi_ae5ffe2811e01051c5206c9e4865a7102}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!inc\-Add\-C\-N\-F@{inc\-Add\-C\-N\-F}}
+\index{inc\-Add\-C\-N\-F@{inc\-Add\-C\-N\-F}!MiniSatApi@{Mini\-Sat\-Api}}
+\subsubsection[{inc\-Add\-C\-N\-F}]{\setlength{\rightskip}{0pt plus 5cm}void Mini\-Sat\-Api\-::inc\-Add\-C\-N\-F (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{cnf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classMiniSatApi_ae5ffe2811e01051c5206c9e4865a7102}
+
+
+Adds a new \hyperlink{classCNF}{C\-N\-F} to the current incremental session. 
+
+\begin{DoxyPrecond}{Precondition}
+\hyperlink{classMiniSatApi_afe6f184e440ffe7f9b3a86045c15b450}{start\-Incremental\-Session()} must have been called before. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em cnf} & The \hyperlink{classCNF}{C\-N\-F} to add to the currently open incremental session. If this method is called after solving for the first time, be sure that the passed \hyperlink{classCNF}{C\-N\-F} talks only about variables that have been mentioned in vars\-\_\-to\-\_\-keep when calling \hyperlink{classMiniSatApi_afe6f184e440ffe7f9b3a86045c15b450}{start\-Incremental\-Session()}. Actually, the implementation in T\-H\-I\-S class does not care, but other implementations of the \hyperlink{classSatSolver}{Sat\-Solver} interface do. Hence, you should not violate this property to have the solver instances exchangeable. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classSatSolver_ab2581b192cb2c39a81a416a9f7416c9e}{Sat\-Solver}.
+
+
+
+Definition at line 229 of file Mini\-Sat\-Api.\-cpp.
+
+
+
+References c2m(), C\-N\-F\-::get\-Clauses(), incr\-\_\-stack\-\_\-, incr\-\_\-stack\-\_\-cnfs\-\_\-, M\-A\-S\-S\-E\-R\-T, and use\-\_\-push\-\_\-.
+
+\hypertarget{classMiniSatApi_a41e16a2e8757846fa17e010c5cc1ff16}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!inc\-Add\-Cube@{inc\-Add\-Cube}}
+\index{inc\-Add\-Cube@{inc\-Add\-Cube}!MiniSatApi@{Mini\-Sat\-Api}}
+\subsubsection[{inc\-Add\-Cube}]{\setlength{\rightskip}{0pt plus 5cm}void Mini\-Sat\-Api\-::inc\-Add\-Cube (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{cube}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classMiniSatApi_a41e16a2e8757846fa17e010c5cc1ff16}
+
+
+Adds a new cube to the current incremental session. 
+
+That is, all literals of the cube are added as unit clauses to the current incremental session. For instance, if the cube \mbox{[}2, -\/4, 8\mbox{]} is passed as argument, then this method adds the three unit clauses \mbox{[}2\mbox{]}, \mbox{[}-\/4\mbox{]}, \mbox{[}8\mbox{]}.
+
+\begin{DoxyPrecond}{Precondition}
+\hyperlink{classMiniSatApi_afe6f184e440ffe7f9b3a86045c15b450}{start\-Incremental\-Session()} must have been called before. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em cube} & The cube (a conjunction of literals) to add (conjunct) to the currently open incremental session. All literals of this cube will be added as unit clauses. If this method is called after solving for the first time, be sure that the passed clause talks only about variables that have been mentioned in vars\-\_\-to\-\_\-keep when calling \hyperlink{classMiniSatApi_afe6f184e440ffe7f9b3a86045c15b450}{start\-Incremental\-Session()}. Actually, the implementation in T\-H\-I\-S class does not care, but other implementations of the \hyperlink{classSatSolver}{Sat\-Solver} interface do. Hence, you should not violate this property to have the solver instances exchangeable. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classSatSolver_a1f04f34bb04174489ed18d0b62241004}{Sat\-Solver}.
+
+
+
+Definition at line 289 of file Mini\-Sat\-Api.\-cpp.
+
+
+
+References c2m(), incr\-\_\-stack\-\_\-, incr\-\_\-stack\-\_\-cnfs\-\_\-, M\-A\-S\-S\-E\-R\-T, and use\-\_\-push\-\_\-.
+
+\hypertarget{classMiniSatApi_a49afe5c41bb036a31f65f98621e82846}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!inc\-Add\-Neg\-Cube\-As\-Clause@{inc\-Add\-Neg\-Cube\-As\-Clause}}
+\index{inc\-Add\-Neg\-Cube\-As\-Clause@{inc\-Add\-Neg\-Cube\-As\-Clause}!MiniSatApi@{Mini\-Sat\-Api}}
+\subsubsection[{inc\-Add\-Neg\-Cube\-As\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}void Mini\-Sat\-Api\-::inc\-Add\-Neg\-Cube\-As\-Clause (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{cube}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classMiniSatApi_a49afe5c41bb036a31f65f98621e82846}
+
+
+Adds the negation of a given cube (which is a clause) to the incremental session. 
+
+For instance, if the cube \mbox{[}2, -\/4, 8\mbox{]} is passed as argument, then this method adds the clauses \mbox{[}-\/2, 4, -\/8\mbox{]} to the current incremental session.
+
+\begin{DoxyPrecond}{Precondition}
+\hyperlink{classMiniSatApi_afe6f184e440ffe7f9b3a86045c15b450}{start\-Incremental\-Session()} must have been called before. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em cube} & The cube (a conjunction of literals) to negate and add (conjunct) to the currently open incremental session. If this method is called after solving for the first time, be sure that the passed cube talks only about variables that have been mentioned in vars\-\_\-to\-\_\-keep when calling \hyperlink{classMiniSatApi_afe6f184e440ffe7f9b3a86045c15b450}{start\-Incremental\-Session()}. Actually, the implementation in T\-H\-I\-S class does not care, but other implementations of the \hyperlink{classSatSolver}{Sat\-Solver} interface do. Hence, you should not violate this property to have the solver instances exchangeable. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classSatSolver_a6be2c564289a59057c4c6728a3aa9c2b}{Sat\-Solver}.
+
+
+
+Definition at line 300 of file Mini\-Sat\-Api.\-cpp.
+
+
+
+References c2m(), incr\-\_\-stack\-\_\-, incr\-\_\-stack\-\_\-cnfs\-\_\-, M\-A\-S\-S\-E\-R\-T, and use\-\_\-push\-\_\-.
+
+\hypertarget{classMiniSatApi_ade09bb38667bb23f2ac993e2d6c66408}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!inc\-Add\-Unit\-Clause@{inc\-Add\-Unit\-Clause}}
+\index{inc\-Add\-Unit\-Clause@{inc\-Add\-Unit\-Clause}!MiniSatApi@{Mini\-Sat\-Api}}
+\subsubsection[{inc\-Add\-Unit\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}void Mini\-Sat\-Api\-::inc\-Add\-Unit\-Clause (
+\begin{DoxyParamCaption}
+\item[{int}]{lit}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classMiniSatApi_ade09bb38667bb23f2ac993e2d6c66408}
+
+
+Adds a new unit clause to the current incremental session. 
+
+\begin{DoxyPrecond}{Precondition}
+\hyperlink{classMiniSatApi_afe6f184e440ffe7f9b3a86045c15b450}{start\-Incremental\-Session()} must have been called before. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em lit} & The (one and only) literal of the unit clause to add to the currently open incremental session. If this method is called after solving for the first time, be sure that the passed literal talks about a variables that have been mentioned in vars\-\_\-to\-\_\-keep when calling \hyperlink{classMiniSatApi_afe6f184e440ffe7f9b3a86045c15b450}{start\-Incremental\-Session()}. Actually, the implementation in T\-H\-I\-S class does not care, but other implementations of the \hyperlink{classSatSolver}{Sat\-Solver} interface do. Hence, you should not violate this property to have the solver instances exchangeable. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classSatSolver_a5b39c45cd2a1abfe96c681515dfddb77}{Sat\-Solver}.
+
+
+
+Definition at line 259 of file Mini\-Sat\-Api.\-cpp.
+
+
+
+References c2m(), incr\-\_\-stack\-\_\-, incr\-\_\-stack\-\_\-cnfs\-\_\-, M\-A\-S\-S\-E\-R\-T, and use\-\_\-push\-\_\-.
+
+\hypertarget{classMiniSatApi_a4c6ba65381002eb3f90e8e0df1606759}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!inc\-Is\-Sat@{inc\-Is\-Sat}}
+\index{inc\-Is\-Sat@{inc\-Is\-Sat}!MiniSatApi@{Mini\-Sat\-Api}}
+\subsubsection[{inc\-Is\-Sat}]{\setlength{\rightskip}{0pt plus 5cm}bool Mini\-Sat\-Api\-::inc\-Is\-Sat (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classMiniSatApi_a4c6ba65381002eb3f90e8e0df1606759}
+
+
+Checks if a the \hyperlink{classCNF}{C\-N\-F} in the incremental session is satisfiable. 
+
+\begin{DoxyPrecond}{Precondition}
+\hyperlink{classMiniSatApi_afe6f184e440ffe7f9b3a86045c15b450}{start\-Incremental\-Session()} must have been called before. 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+True in case of satisfiability, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classSatSolver_ab1aab4b96a36b2003450067a3799ae23}{Sat\-Solver}.
+
+
+
+Definition at line 313 of file Mini\-Sat\-Api.\-cpp.
+
+
+
+References incr\-\_\-stack\-\_\-, and M\-A\-S\-S\-E\-R\-T.
+
+\hypertarget{classMiniSatApi_a40421bac2739bacb68f3c7083810694b}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!inc\-Is\-Sat@{inc\-Is\-Sat}}
+\index{inc\-Is\-Sat@{inc\-Is\-Sat}!MiniSatApi@{Mini\-Sat\-Api}}
+\subsubsection[{inc\-Is\-Sat}]{\setlength{\rightskip}{0pt plus 5cm}bool Mini\-Sat\-Api\-::inc\-Is\-Sat (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{assumptions}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classMiniSatApi_a40421bac2739bacb68f3c7083810694b}
+
+
+Checks if a the \hyperlink{classCNF}{C\-N\-F} in the incremental session is satisfiable under assumptions. 
+
+This method checks if the \hyperlink{classCNF}{C\-N\-F} in the incremental session is satisfiable given that all literals passed in the vector 'assumptions' are true. The assumptions are not persistently added to the \hyperlink{classCNF}{C\-N\-F} of the incremental session.
+
+\begin{DoxyPrecond}{Precondition}
+\hyperlink{classMiniSatApi_afe6f184e440ffe7f9b3a86045c15b450}{start\-Incremental\-Session()} must have been called before. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em assumptions} & A vector of literals. This method then checks if the \hyperlink{classCNF}{C\-N\-F} of the incremental session is satisfiable given that all literals passed in this vector are true. The assumptions are not persistently added to the \hyperlink{classCNF}{C\-N\-F}. The assumptions must be a subset of the vars\-\_\-to\-\_\-keep passed to \hyperlink{classMiniSatApi_afe6f184e440ffe7f9b3a86045c15b450}{start\-Incremental\-Session()}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True in case of satisfiability, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classSatSolver_a1864787a33621efac7fc75fb6b25f080}{Sat\-Solver}.
+
+
+
+Definition at line 320 of file Mini\-Sat\-Api.\-cpp.
+
+
+
+References c2m(), incr\-\_\-stack\-\_\-, and M\-A\-S\-S\-E\-R\-T.
+
+\hypertarget{classMiniSatApi_afb886d40bb45b5cf2fadb7aee1a06b3e}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!inc\-Is\-Sat\-Model\-Or\-Core@{inc\-Is\-Sat\-Model\-Or\-Core}}
+\index{inc\-Is\-Sat\-Model\-Or\-Core@{inc\-Is\-Sat\-Model\-Or\-Core}!MiniSatApi@{Mini\-Sat\-Api}}
+\subsubsection[{inc\-Is\-Sat\-Model\-Or\-Core}]{\setlength{\rightskip}{0pt plus 5cm}bool Mini\-Sat\-Api\-::inc\-Is\-Sat\-Model\-Or\-Core (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{assumptions, }
+\item[{const vector$<$ int $>$ \&}]{vars\-\_\-of\-\_\-interest, }
+\item[{vector$<$ int $>$ \&}]{model\-\_\-or\-\_\-core}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classMiniSatApi_afb886d40bb45b5cf2fadb7aee1a06b3e}
+
+
+Checks the \hyperlink{classCNF}{C\-N\-F} in the incremental session and computes a model or unsat core. 
+
+This method checks if the \hyperlink{classCNF}{C\-N\-F} of the incremental session is satisfiable given that all literals passed in the vector 'assumptions' is true. If this is the case, then a satisfying assignment will be written into model\-\_\-or\-\_\-core. You can specify which variables you want to have in the satisfying assignment using the vars\-\_\-of\-\_\-interest vector. The reason is that your \hyperlink{classCNF}{C\-N\-F} may contain thousands of temporary variables stemming from some Tseitin encoding, but usually one in only interested in the value of a few variables. In case of unsatisfiability, an unsatisfiable core is stored in model\-\_\-or\-\_\-core. The unsatisfiable core is a subset of the literals passed in 'assumptions' such that the \hyperlink{classCNF}{C\-N\-F} is still unsatisfiable when these literals hold.
+
+
+\begin{DoxyParams}{Parameters}
+{\em assumptions} & A vector of literals. This method then checks if the \hyperlink{classCNF}{C\-N\-F} of the incremental session is satisfiable given that all literals passed in this vector are true. The assumptions are not persistently added to the \hyperlink{classCNF}{C\-N\-F}. The assumptions must be a subset of the vars\-\_\-to\-\_\-keep passed to \hyperlink{classMiniSatApi_afe6f184e440ffe7f9b3a86045c15b450}{start\-Incremental\-Session()}. \\
+\hline
+{\em vars\-\_\-of\-\_\-interest} & The variables for which you want to have a value in case of satisfiability. vars\-\_\-of\-\_\-interest must be a subset of the vars\-\_\-to\-\_\-keep passed to \hyperlink{classMiniSatApi_afe6f184e440ffe7f9b3a86045c15b450}{start\-Incremental\-Session()}. \\
+\hline
+{\em model\-\_\-or\-\_\-core} & An empty vector. Depending on the outcome of the call, either a satisfying assignment (a cube over the variables passed in vars\-\_\-of\-\_\-interest) or an unsatisfiable core (a subset of the literals passed in 'assumptions') will be written into this vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True in case of satisfiability (of the \hyperlink{classCNF}{C\-N\-F} of the incremental session in conjunction conjuncted with all assumptions), false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classSatSolver_ad387fc06bacf2d48847f779c9db8461a}{Sat\-Solver}.
+
+
+
+Definition at line 331 of file Mini\-Sat\-Api.\-cpp.
+
+
+
+References c2m(), incr\-\_\-stack\-\_\-, m2c(), M\-A\-S\-S\-E\-R\-T, Sat\-Solver\-::min\-\_\-cores\-\_\-, Sat\-Solver\-::rand\-\_\-models\-\_\-, rand\-Model(), and Utils\-::remove().
+
+\hypertarget{classMiniSatApi_a776b2b0563b52f52152dcec931b7f557}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!inc\-Is\-Sat\-Model\-Or\-Core@{inc\-Is\-Sat\-Model\-Or\-Core}}
+\index{inc\-Is\-Sat\-Model\-Or\-Core@{inc\-Is\-Sat\-Model\-Or\-Core}!MiniSatApi@{Mini\-Sat\-Api}}
+\subsubsection[{inc\-Is\-Sat\-Model\-Or\-Core}]{\setlength{\rightskip}{0pt plus 5cm}bool Mini\-Sat\-Api\-::inc\-Is\-Sat\-Model\-Or\-Core (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{core\-\_\-assumptions, }
+\item[{const vector$<$ int $>$ \&}]{more\-\_\-assumptions, }
+\item[{const vector$<$ int $>$ \&}]{vars\-\_\-of\-\_\-interest, }
+\item[{vector$<$ int $>$ \&}]{model\-\_\-or\-\_\-core}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classMiniSatApi_a776b2b0563b52f52152dcec931b7f557}
+
+
+Computes a satisfying assignment or core using additional assumptions. 
+
+In contrast to the previous method, this one allows to define two sets of assumptions. The core\-\_\-assumptions are used as basis for extracting an unsatisfiable core in case of unsatisfiability. The more\-\_\-assumptions are assumed but not considered for the computation of unsatisfiable cores. This is convenient to avoid calls to \hyperlink{classMiniSatApi_a27013ace25320f68252bef5ba9f2e9ad}{inc\-Push()} and \hyperlink{classMiniSatApi_af388f97db15f77baeb420a8fef74ca6a}{inc\-Pop()} when temporarily working under assumptions that should not be minimized for the unsatisfiable core.
+
+
+\begin{DoxyParams}{Parameters}
+{\em core\-\_\-assumptions} & A vector of literals. This method then checks if the \hyperlink{classCNF}{C\-N\-F} of the incremental session is satisfiable given that all literals passed in this vector and all literals passed in more\-\_\-assumptions are true. However, for computing the the unsatisfiable core, only the core\-\_\-assumptions will be minimized and the more\-\_\-assumptions stay as they are. That is, in case of unsatisfiability, model\-\_\-or\-\_\-core will contain a subset X of the core\-\_\-assumptions such that X \& more\-\_\-assumptions \& incremental\-\_\-cnf is still unsatisfiable. core\-\_\-assumptions must be a subset of the vars\-\_\-to\-\_\-keep passed to \hyperlink{classMiniSatApi_afe6f184e440ffe7f9b3a86045c15b450}{start\-Incremental\-Session()}. \\
+\hline
+{\em more\-\_\-assumptions} & A vector of assumptions that are assumed, but not minimized when an unsatisfiable core is computed. That is, in case of unsatisfiability, model\-\_\-or\-\_\-core will contain a subset X of the core\-\_\-assumptions such that X \& more\-\_\-assumptions \& incremental\-\_\-cnf is still unsatisfiable. more\-\_\-assumptions must be a subset of the vars\-\_\-to\-\_\-keep passed to \hyperlink{classMiniSatApi_afe6f184e440ffe7f9b3a86045c15b450}{start\-Incremental\-Session()}. \\
+\hline
+{\em vars\-\_\-of\-\_\-interest} & The variables for which you want to have a value in case of satisfiability. vars\-\_\-of\-\_\-interest must be a subset of the vars\-\_\-to\-\_\-keep passed to \hyperlink{classMiniSatApi_afe6f184e440ffe7f9b3a86045c15b450}{start\-Incremental\-Session()}. \\
+\hline
+{\em model\-\_\-or\-\_\-core} & An empty vector. Depending on the outcome of the call, either a satisfying assignment (a cube over the variables passed in vars\-\_\-of\-\_\-interest) or an unsatisfiable core (a subset of the literals passed in 'core\-\_\-assumptions') will be written into this vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True in case of satisfiability (of the \hyperlink{classCNF}{C\-N\-F} of the incremental session in conjunction conjuncted with all assumptions), false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classSatSolver_a29225bfab1f352cae27c68e9bda4d409}{Sat\-Solver}.
+
+
+
+Definition at line 389 of file Mini\-Sat\-Api.\-cpp.
+
+
+
+References c2m(), incr\-\_\-stack\-\_\-, m2c(), M\-A\-S\-S\-E\-R\-T, Sat\-Solver\-::min\-\_\-cores\-\_\-, Sat\-Solver\-::rand\-\_\-models\-\_\-, rand\-Model(), and Utils\-::remove().
+
+\hypertarget{classMiniSatApi_af388f97db15f77baeb420a8fef74ca6a}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!inc\-Pop@{inc\-Pop}}
+\index{inc\-Pop@{inc\-Pop}!MiniSatApi@{Mini\-Sat\-Api}}
+\subsubsection[{inc\-Pop}]{\setlength{\rightskip}{0pt plus 5cm}void Mini\-Sat\-Api\-::inc\-Pop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classMiniSatApi_af388f97db15f77baeb420a8fef74ca6a}
+
+
+Restores the incremental session back to the point where \hyperlink{classMiniSatApi_a27013ace25320f68252bef5ba9f2e9ad}{inc\-Push()} was called. 
+
+
+
+Implements \hyperlink{classSatSolver_a436aae045eb04141c834df0b55947ee5}{Sat\-Solver}.
+
+
+
+Definition at line 483 of file Mini\-Sat\-Api.\-cpp.
+
+
+
+References incr\-\_\-stack\-\_\-, incr\-\_\-stack\-\_\-cnfs\-\_\-, and M\-A\-S\-S\-E\-R\-T.
+
+\hypertarget{classMiniSatApi_a27013ace25320f68252bef5ba9f2e9ad}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!inc\-Push@{inc\-Push}}
+\index{inc\-Push@{inc\-Push}!MiniSatApi@{Mini\-Sat\-Api}}
+\subsubsection[{inc\-Push}]{\setlength{\rightskip}{0pt plus 5cm}void Mini\-Sat\-Api\-::inc\-Push (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classMiniSatApi_a27013ace25320f68252bef5ba9f2e9ad}
+
+
+Stores the current state of the incremental session on a stack. 
+
+The state can be restored later by calling \hyperlink{classMiniSatApi_af388f97db15f77baeb420a8fef74ca6a}{inc\-Pop()}. Mini\-Sat does not support push and pop natively. Also, Mini\-Sat does not allow to copy a a solver instance. Hence, we do a workaround\-: we create a new solver instance and feed it with the \hyperlink{classCNF}{C\-N\-F} that has been fed into the original solver instance. Clauses learned by the original solver are not transferred. For this to work, we track all clauses that are added to the original solver. This means some computational overhead. We can save this overhead if we tell \hyperlink{classMiniSatApi_afe6f184e440ffe7f9b3a86045c15b450}{start\-Incremental\-Session()} that \hyperlink{classMiniSatApi_a27013ace25320f68252bef5ba9f2e9ad}{inc\-Push()} will never be called.
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000005}{Todo}]Try to improve this workaround with activation variables or by extracting the learned clauses from the original solver instance or by implementing a copy-\/function for Mini\-Sat solver instances. \end{DoxyRefDesc}
+
+
+Implements \hyperlink{classSatSolver_a4da0dff7082a91429e3311d279605be4}{Sat\-Solver}.
+
+
+
+Definition at line 463 of file Mini\-Sat\-Api.\-cpp.
+
+
+
+References c2m(), incr\-\_\-stack\-\_\-, incr\-\_\-stack\-\_\-cnfs\-\_\-, M\-A\-S\-S\-E\-R\-T, and use\-\_\-push\-\_\-.
+
+\hypertarget{classMiniSatApi_a73b93ecb947723a96ef6fbd436640e12}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!is\-Sat@{is\-Sat}}
+\index{is\-Sat@{is\-Sat}!MiniSatApi@{Mini\-Sat\-Api}}
+\subsubsection[{is\-Sat}]{\setlength{\rightskip}{0pt plus 5cm}bool Mini\-Sat\-Api\-::is\-Sat (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{cnf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classMiniSatApi_a73b93ecb947723a96ef6fbd436640e12}
+
+
+Checks if a \hyperlink{classCNF}{C\-N\-F} is satisfiable. 
+
+This method is not incremental. At aver call to this method, a new solver instance is created and deleted afterwards. This method does not interfere with an incremental session that may be open in parallel.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cnf} & The \hyperlink{classCNF}{C\-N\-F} formula for which we want to know if it is satisfiable. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True in case of satisfiability, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classSatSolver_a82f60f60db464fbe5c66a20ad673a573}{Sat\-Solver}.
+
+
+
+Definition at line 129 of file Mini\-Sat\-Api.\-cpp.
+
+
+
+References c2m(), and C\-N\-F\-::get\-Clauses().
+
+
+
+Referenced by is\-Sat\-Model\-Or\-Core().
+
+\hypertarget{classMiniSatApi_a7f846d8c4a5a652cb83460852c09dfb3}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!is\-Sat\-Model\-Or\-Core@{is\-Sat\-Model\-Or\-Core}}
+\index{is\-Sat\-Model\-Or\-Core@{is\-Sat\-Model\-Or\-Core}!MiniSatApi@{Mini\-Sat\-Api}}
+\subsubsection[{is\-Sat\-Model\-Or\-Core}]{\setlength{\rightskip}{0pt plus 5cm}bool Mini\-Sat\-Api\-::is\-Sat\-Model\-Or\-Core (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{cnf, }
+\item[{const vector$<$ int $>$ \&}]{assumptions, }
+\item[{const vector$<$ int $>$ \&}]{vars\-\_\-of\-\_\-interest, }
+\item[{vector$<$ int $>$ \&}]{model\-\_\-or\-\_\-core}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classMiniSatApi_a7f846d8c4a5a652cb83460852c09dfb3}
+
+
+Checks if a \hyperlink{classCNF}{C\-N\-F} is satisfiable and extracts a model or an unsatisfiable core. 
+
+This method is not incremental. At aver call to this method, a new solver instance is created and deleted afterwards. This method does not interfere with an incremental session that may be open in parallel. This method checks if the passed \hyperlink{classCNF}{C\-N\-F} is satisfiable given that all literals passed in the vector 'assumptions' is true. If this is the case, then a satisfying assignment will be written into model\-\_\-or\-\_\-core. You can specify which variables you want to have in the satisfying assignment using the vars\-\_\-of\-\_\-interest vector. The reason is that you \hyperlink{classCNF}{C\-N\-F} may contain thousands of temporary variables stemming from some Tseitin encoding, but usually one in only interested in the value of a few variables. In case of unsatisfiability, an unsatisfiable core is stored in model\-\_\-or\-\_\-core. The unsatisfiable core is a subset of the literals passed in 'assumptions' such that the \hyperlink{classCNF}{C\-N\-F} is still unsatisfiable when these literals hold.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cnf} & The \hyperlink{classCNF}{C\-N\-F} formula for which we want to know if it is satisfiable (in conjunction with the assumptions). \\
+\hline
+{\em assumptions} & A vector of literals. These literals are conjuncted to the \hyperlink{classCNF}{C\-N\-F} before solving. If you do not have any assumptions but want to decide the satisfiability of the cnf only, then simply leave this vector empty. \\
+\hline
+{\em vars\-\_\-of\-\_\-interest} & The variables for which you want to have a value in case of satisfiability. \\
+\hline
+{\em model\-\_\-or\-\_\-core} & An empty vector. Depending on the outcome of the call, either a satisfying assignment (a cube over the variables passed in vars\-\_\-of\-\_\-interest) or an unsatisfiable core (a subset of the literals passed in 'assumptions') will be written into this vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True in case of satisfiability (of the \hyperlink{classCNF}{C\-N\-F} conjuncted with all assumptions), false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classSatSolver_ad5cfce08969be5aaf5cd705c12c68818}{Sat\-Solver}.
+
+
+
+Definition at line 144 of file Mini\-Sat\-Api.\-cpp.
+
+
+
+References C\-N\-F\-::add1\-Lit\-Clause(), c2m(), C\-N\-F\-::get\-Clauses(), is\-Sat(), m2c(), Sat\-Solver\-::min\-\_\-cores\-\_\-, Sat\-Solver\-::rand\-\_\-models\-\_\-, rand\-Model(), and Utils\-::remove().
+
+\hypertarget{classMiniSatApi_ac8b49e6f14079c5705ae16e764d436d1}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!operator=@{operator=}}
+\index{operator=@{operator=}!MiniSatApi@{Mini\-Sat\-Api}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mini\-Sat\-Api}\& Mini\-Sat\-Api\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Mini\-Sat\-Api} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classMiniSatApi_ac8b49e6f14079c5705ae16e764d436d1}
+
+
+Assignment operator. 
+
+The assignment operator is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the assignment, i.\-e, $\ast$this. 
+\end{DoxyReturn}
+\hypertarget{classMiniSatApi_afe6f184e440ffe7f9b3a86045c15b450}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!start\-Incremental\-Session@{start\-Incremental\-Session}}
+\index{start\-Incremental\-Session@{start\-Incremental\-Session}!MiniSatApi@{Mini\-Sat\-Api}}
+\subsubsection[{start\-Incremental\-Session}]{\setlength{\rightskip}{0pt plus 5cm}void Mini\-Sat\-Api\-::start\-Incremental\-Session (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{vars\-\_\-to\-\_\-keep, }
+\item[{bool}]{use\-\_\-push = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classMiniSatApi_afe6f184e440ffe7f9b3a86045c15b450}
+
+
+Starts a new incremental session. 
+
+Every instance of this class can have at most one open incremental session. If there is an old open incremental session it will be closed before. An incremental session allows you to execute sequences of calls, where the information the solver learned in previous calls is retained and may speedup later calls. You can add new clauses between calls, but you cannot remove clauses.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vars\-\_\-to\-\_\-keep} & A set of variables the solver should not optimize away. Clauses added later in an incremental session can only talk about variables contained in this vector. The \hyperlink{classMiniSatApi}{Mini\-Sat\-Api} actually completely ignores these variables. However, other \hyperlink{classSatSolver}{Sat\-Solver} implementations require this information, so it must be provided in any case (otherwise we could not exchange one \hyperlink{classSatSolver}{Sat\-Solver} implementation by another one). \\
+\hline
+{\em use\-\_\-push} & A hint to the solver if you are ever going to use \hyperlink{classMiniSatApi_a27013ace25320f68252bef5ba9f2e9ad}{inc\-Push()} or \hyperlink{classMiniSatApi_af388f97db15f77baeb420a8fef74ca6a}{inc\-Pop()}. This information is particularly important for the \hyperlink{classMiniSatApi}{Mini\-Sat\-Api} (other implementations of the \hyperlink{classSatSolver}{Sat\-Solver} interface may ignore this information). The reason is that Mini\-Sat does not support push and pop natively. Also, one cannot easily copy the entire solver. Therefore, we do a workaround to support push and pop. However, this workaround is expensive and we can safe some computation time if we skip it when we will not need it. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classSatSolver_a74603f84c3f2383a5fc44d5a8093cbea}{Sat\-Solver}.
+
+
+
+Definition at line 206 of file Mini\-Sat\-Api.\-cpp.
+
+
+
+References clear\-Incremental\-Session(), incr\-\_\-stack\-\_\-, incr\-\_\-stack\-\_\-cnfs\-\_\-, and use\-\_\-push\-\_\-.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classMiniSatApi_ab9dcac91d11eef23cc40d7478464c414}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!incr\-\_\-stack\-\_\-@{incr\-\_\-stack\-\_\-}}
+\index{incr\-\_\-stack\-\_\-@{incr\-\_\-stack\-\_\-}!MiniSatApi@{Mini\-Sat\-Api}}
+\subsubsection[{incr\-\_\-stack\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}list$<$Minisat\-::\-Solver$\ast$$>$ Mini\-Sat\-Api\-::incr\-\_\-stack\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classMiniSatApi_ab9dcac91d11eef23cc40d7478464c414}
+
+
+A stack of incremental session contexts. 
+
+The incremental session is store on a stack to support \hyperlink{classMiniSatApi_a27013ace25320f68252bef5ba9f2e9ad}{inc\-Push()} and \hyperlink{classMiniSatApi_af388f97db15f77baeb420a8fef74ca6a}{inc\-Pop()}. The current session is always at the top of the stack (the end of the list). 
+
+Definition at line 398 of file Mini\-Sat\-Api.\-h.
+
+
+
+Referenced by clear\-Incremental\-Session(), inc\-Add2\-Lit\-Clause(), inc\-Add3\-Lit\-Clause(), inc\-Add\-Clause(), inc\-Add\-C\-N\-F(), inc\-Add\-Cube(), inc\-Add\-Neg\-Cube\-As\-Clause(), inc\-Add\-Unit\-Clause(), inc\-Is\-Sat(), inc\-Is\-Sat\-Model\-Or\-Core(), inc\-Pop(), inc\-Push(), and start\-Incremental\-Session().
+
+\hypertarget{classMiniSatApi_aca2da2d02879e4a05c09124ff84cc4cd}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!incr\-\_\-stack\-\_\-cnfs\-\_\-@{incr\-\_\-stack\-\_\-cnfs\-\_\-}}
+\index{incr\-\_\-stack\-\_\-cnfs\-\_\-@{incr\-\_\-stack\-\_\-cnfs\-\_\-}!MiniSatApi@{Mini\-Sat\-Api}}
+\subsubsection[{incr\-\_\-stack\-\_\-cnfs\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}list$<${\bf C\-N\-F}$\ast$$>$ Mini\-Sat\-Api\-::incr\-\_\-stack\-\_\-cnfs\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classMiniSatApi_aca2da2d02879e4a05c09124ff84cc4cd}
+
+
+A C\-N\-Fs that are stored in the incremental session contexts. 
+
+This is used for our workaround to support \hyperlink{classMiniSatApi_a27013ace25320f68252bef5ba9f2e9ad}{inc\-Push()} and \hyperlink{classMiniSatApi_af388f97db15f77baeb420a8fef74ca6a}{inc\-Pop()}. The current \hyperlink{classCNF}{C\-N\-F} is always at the top of the stack (the end of the list). 
+
+Definition at line 406 of file Mini\-Sat\-Api.\-h.
+
+
+
+Referenced by clear\-Incremental\-Session(), inc\-Add2\-Lit\-Clause(), inc\-Add3\-Lit\-Clause(), inc\-Add\-Clause(), inc\-Add\-C\-N\-F(), inc\-Add\-Cube(), inc\-Add\-Neg\-Cube\-As\-Clause(), inc\-Add\-Unit\-Clause(), inc\-Pop(), inc\-Push(), and start\-Incremental\-Session().
+
+\hypertarget{classSatSolver_adfeecebfd09606c82b5c57cfe5aad813}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!min\-\_\-cores\-\_\-@{min\-\_\-cores\-\_\-}}
+\index{min\-\_\-cores\-\_\-@{min\-\_\-cores\-\_\-}!MiniSatApi@{Mini\-Sat\-Api}}
+\subsubsection[{min\-\_\-cores\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}bool Sat\-Solver\-::min\-\_\-cores\-\_\-\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classSatSolver_adfeecebfd09606c82b5c57cfe5aad813}
+
+
+Indicates if the unsat cores returned by the solver should be minimized further. 
+
+
+
+Definition at line 428 of file Sat\-Solver.\-h.
+
+
+
+Referenced by Sat\-Solver\-::do\-Min\-Cores(), Lingeling\-Api\-::inc\-Is\-Sat\-Model\-Or\-Core(), Pico\-Sat\-Api\-::inc\-Is\-Sat\-Model\-Or\-Core(), inc\-Is\-Sat\-Model\-Or\-Core(), Lingeling\-Api\-::is\-Sat\-Model\-Or\-Core(), Pico\-Sat\-Api\-::is\-Sat\-Model\-Or\-Core(), and is\-Sat\-Model\-Or\-Core().
+
+\hypertarget{classSatSolver_a73fed24d8fb4da85ef82dc53ac5f28c7}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!rand\-\_\-models\-\_\-@{rand\-\_\-models\-\_\-}}
+\index{rand\-\_\-models\-\_\-@{rand\-\_\-models\-\_\-}!MiniSatApi@{Mini\-Sat\-Api}}
+\subsubsection[{rand\-\_\-models\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}bool Sat\-Solver\-::rand\-\_\-models\-\_\-\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classSatSolver_a73fed24d8fb4da85ef82dc53ac5f28c7}
+
+
+Indicates if satisfying assignments should be randomized. 
+
+
+
+Definition at line 433 of file Sat\-Solver.\-h.
+
+
+
+Referenced by Sat\-Solver\-::do\-Rand\-Models(), Lingeling\-Api\-::inc\-Is\-Sat\-Model\-Or\-Core(), Pico\-Sat\-Api\-::inc\-Is\-Sat\-Model\-Or\-Core(), inc\-Is\-Sat\-Model\-Or\-Core(), Lingeling\-Api\-::is\-Sat\-Model\-Or\-Core(), Pico\-Sat\-Api\-::is\-Sat\-Model\-Or\-Core(), and is\-Sat\-Model\-Or\-Core().
+
+\hypertarget{classMiniSatApi_a9d1530348f713264a41d6115e4cfb62e}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!use\-\_\-push\-\_\-@{use\-\_\-push\-\_\-}}
+\index{use\-\_\-push\-\_\-@{use\-\_\-push\-\_\-}!MiniSatApi@{Mini\-Sat\-Api}}
+\subsubsection[{use\-\_\-push\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}bool Mini\-Sat\-Api\-::use\-\_\-push\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classMiniSatApi_a9d1530348f713264a41d6115e4cfb62e}
+
+
+A flag indicating if \hyperlink{classMiniSatApi_a27013ace25320f68252bef5ba9f2e9ad}{inc\-Push()} and \hyperlink{classMiniSatApi_af388f97db15f77baeb420a8fef74ca6a}{inc\-Pop()} are ever going to be used. 
+
+If this flag is set to false, we do not track the C\-N\-Fs in the incremental solver instances in \hyperlink{classMiniSatApi_aca2da2d02879e4a05c09124ff84cc4cd}{incr\-\_\-stack\-\_\-cnfs\-\_\-}. 
+
+Definition at line 414 of file Mini\-Sat\-Api.\-h.
+
+
+
+Referenced by inc\-Add2\-Lit\-Clause(), inc\-Add3\-Lit\-Clause(), inc\-Add\-Clause(), inc\-Add\-C\-N\-F(), inc\-Add\-Cube(), inc\-Add\-Neg\-Cube\-As\-Clause(), inc\-Add\-Unit\-Clause(), inc\-Push(), and start\-Incremental\-Session().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{MiniSatApi_8h}{Mini\-Sat\-Api.\-h}\item 
+src/\hyperlink{MiniSatApi_8cpp}{Mini\-Sat\-Api.\-cpp}\end{DoxyCompactItemize}

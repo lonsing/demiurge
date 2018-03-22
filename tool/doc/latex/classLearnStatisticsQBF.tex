@@ -1,0 +1,685 @@
+\hypertarget{classLearnStatisticsQBF}{\section{Learn\-Statistics\-Q\-B\-F Class Reference}
+\label{classLearnStatisticsQBF}\index{Learn\-Statistics\-Q\-B\-F@{Learn\-Statistics\-Q\-B\-F}}
+}
+
+
+Collects statistics and performance data for \hyperlink{classLearnSynthQBF}{Learn\-Synth\-Q\-B\-F} (and all its variants).  
+
+
+
+
+{\ttfamily \#include $<$Learn\-Statistics\-Q\-B\-F.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLearnStatisticsQBF_a9e98cf8a5d7507e3d2a6026f1369e383}{Learn\-Statistics\-Q\-B\-F} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classLearnStatisticsQBF_a1827c8e599f8c3f74186fd3a5fa250c4}{$\sim$\-Learn\-Statistics\-Q\-B\-F} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classLearnStatisticsQBF_a89cb7bd50255ee97dc040c4a48439dea}{notify\-Win\-Reg\-Start} ()
+\begin{DoxyCompactList}\small\item\em Called before the computation of the winning region starts. \end{DoxyCompactList}\item 
+void \hyperlink{classLearnStatisticsQBF_afa94736042d6e23e3042517d8db00a50}{notify\-Win\-Reg\-End} ()
+\begin{DoxyCompactList}\small\item\em Called after the computation of the winning region is done. \end{DoxyCompactList}\item 
+void \hyperlink{classLearnStatisticsQBF_ae88030461fe06f198b596054bf31ce64}{notify\-Rel\-Det\-Start} ()
+\begin{DoxyCompactList}\small\item\em Called before the relation determinization (the computation of circuits) starts. \end{DoxyCompactList}\item 
+void \hyperlink{classLearnStatisticsQBF_ac00e3d7a0cc77573c2dca94460bbb354}{notify\-Rel\-Det\-End} ()
+\begin{DoxyCompactList}\small\item\em Called after the relation determinization (the computation of circuits) starts. \end{DoxyCompactList}\item 
+void \hyperlink{classLearnStatisticsQBF_a6aff1d90b24d33dccf27af13f9376ee1}{notify\-Before\-Compute\-Cube} ()
+\begin{DoxyCompactList}\small\item\em Called before the Q\-B\-F solver is called to compute a counterexample-\/state. \end{DoxyCompactList}\item 
+void \hyperlink{classLearnStatisticsQBF_acb35168104b3c8d3d529c93967c8ebbc}{notify\-After\-Compute\-Cube} ()
+\begin{DoxyCompactList}\small\item\em Called after the Q\-B\-F solver is done computing a counterexample-\/state. \end{DoxyCompactList}\item 
+void \hyperlink{classLearnStatisticsQBF_a423645758d7dc73103dc27c36544432e}{notify\-Before\-Cube\-Min} ()
+\begin{DoxyCompactList}\small\item\em Called before the generalization of the counterexample-\/state starts. \end{DoxyCompactList}\item 
+void \hyperlink{classLearnStatisticsQBF_a6fe040a580ab91a1ced5334028bb8cf7}{notify\-After\-Cube\-Min} (size\-\_\-t from\-\_\-size, size\-\_\-t to\-\_\-size)
+\begin{DoxyCompactList}\small\item\em Called after the generalization of the counterexample-\/state is done. \end{DoxyCompactList}\item 
+void \hyperlink{classLearnStatisticsQBF_ad6964e03b41d0e14834a06aa034c30e3}{notify\-After\-Cube\-Min} ()
+\begin{DoxyCompactList}\small\item\em Called after the generalization of the counterexample-\/state is done. \end{DoxyCompactList}\item 
+void \hyperlink{classLearnStatisticsQBF_a4c17af33270921d54e425cd6d14b1a78}{notify\-Cube\-Min} (size\-\_\-t from\-\_\-size, size\-\_\-t to\-\_\-size)
+\begin{DoxyCompactList}\small\item\em Stores the result of a counterexample-\/cube generalization. \end{DoxyCompactList}\item 
+void \hyperlink{classLearnStatisticsQBF_a6746f60721bd214d479a3e48e7246f3f}{log\-Statistics} () const 
+\begin{DoxyCompactList}\small\item\em Writes the statistics to stdout as messages of type \hyperlink{classLogger_ac9e601f90bf326ce2088de52018861dca07be7495a7931bee16f5d94b3671f5de}{Logger\-::\-L\-O\-G}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Stopwatch_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{Point\-In\-Time} \hyperlink{classLearnStatisticsQBF_a2c1d2ca27ab1a5edf496ffd603ba0878}{win\-\_\-reg\-\_\-start\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em The time when the computation of the winning region was started. \end{DoxyCompactList}\item 
+double \hyperlink{classLearnStatisticsQBF_a679a221c1cbf3330572f93d850976289}{win\-\_\-reg\-\_\-cpu\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em The winning region computation time in C\-P\-U-\/seconds. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classLearnStatisticsQBF_a58013212d789d3c025b521cd150dc12d}{win\-\_\-reg\-\_\-real\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em Like \hyperlink{classLearnStatisticsQBF_a679a221c1cbf3330572f93d850976289}{win\-\_\-reg\-\_\-cpu\-\_\-time\-\_\-} but real-\/time. \end{DoxyCompactList}\item 
+\hyperlink{Stopwatch_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{Point\-In\-Time} \hyperlink{classLearnStatisticsQBF_a11e1295e566e5456cdb2aca0034bf306}{rel\-\_\-det\-\_\-start\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em The time when the computation of the circuits was started. \end{DoxyCompactList}\item 
+double \hyperlink{classLearnStatisticsQBF_a38d959613268b6a6aa0decfcbe5d631c}{rel\-\_\-det\-\_\-cpu\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em circuit computation time in C\-P\-U-\/seconds. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classLearnStatisticsQBF_a2de1d6eb803d78fdf775b8d703adda69}{rel\-\_\-det\-\_\-real\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em Like \hyperlink{classLearnStatisticsQBF_a38d959613268b6a6aa0decfcbe5d631c}{rel\-\_\-det\-\_\-cpu\-\_\-time\-\_\-} but real-\/time. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classLearnStatisticsQBF_a857dac1670c551b3dcf935860651143b}{nr\-\_\-of\-\_\-cube\-\_\-computations\-\_\-}
+\begin{DoxyCompactList}\small\item\em The total number of counterexample-\/cube computations. \end{DoxyCompactList}\item 
+\hyperlink{Stopwatch_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{Point\-In\-Time} \hyperlink{classLearnStatisticsQBF_a820d051dbab21cb8df1ad673b04a0c92}{compute\-\_\-start\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em The time when the last computation of a counterexample-\/cube was started. \end{DoxyCompactList}\item 
+double \hyperlink{classLearnStatisticsQBF_a4caf75f422eed77570e5592ce35c9bd0}{sum\-\_\-compute\-\_\-cpu\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em The total counterexample computation time in C\-P\-U-\/seconds. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classLearnStatisticsQBF_aceb8e32bfd42839f2c19d3b12e7eb888}{sum\-\_\-compute\-\_\-real\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em Like \hyperlink{classLearnStatisticsQBF_a4caf75f422eed77570e5592ce35c9bd0}{sum\-\_\-compute\-\_\-cpu\-\_\-time\-\_\-} but real-\/time. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classLearnStatisticsQBF_aff417981063fbdf94164ce7b2d1e71a2}{nr\-\_\-of\-\_\-cube\-\_\-min\-\_\-}
+\begin{DoxyCompactList}\small\item\em The total number of counterexample-\/cube generalizations. \end{DoxyCompactList}\item 
+\hyperlink{Stopwatch_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{Point\-In\-Time} \hyperlink{classLearnStatisticsQBF_a929ae751d1bbb728f96132e5ee6d99fa}{min\-\_\-start\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em The time when the last generalization of a counterexample-\/cube was started. \end{DoxyCompactList}\item 
+double \hyperlink{classLearnStatisticsQBF_a8fcce1bc5593631429c86bd3a1376e86}{sum\-\_\-min\-\_\-cpu\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em The total counterexample generalization time in C\-P\-U-\/seconds. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classLearnStatisticsQBF_a6aded3992cd822a0ca45bc2d6658a5ab}{sum\-\_\-min\-\_\-real\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em Like \hyperlink{classLearnStatisticsQBF_a8fcce1bc5593631429c86bd3a1376e86}{sum\-\_\-min\-\_\-cpu\-\_\-time\-\_\-} but real-\/time. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classLearnStatisticsQBF_a46277893a5465fb97805624e1ac31f38}{sum\-\_\-cube\-\_\-size\-\_\-from\-\_\-}
+\begin{DoxyCompactList}\small\item\em The sum of the counterexample cube sizes (nr of literals) before generalization. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classLearnStatisticsQBF_a444ff1c70c90edfd87a56790060c0aae}{sum\-\_\-cube\-\_\-size\-\_\-to\-\_\-}
+\begin{DoxyCompactList}\small\item\em The sum of the counterexample cube sizes (nr of literals) after generalization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLearnStatisticsQBF_a52c8f98a5b32ce587b73f7b6f921298d}{Learn\-Statistics\-Q\-B\-F} (const \hyperlink{classLearnStatisticsQBF}{Learn\-Statistics\-Q\-B\-F} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classLearnStatisticsQBF}{Learn\-Statistics\-Q\-B\-F} \& \hyperlink{classLearnStatisticsQBF_ad381a6f0a78d73aaed2d87e00b5d9ea9}{operator=} (const \hyperlink{classLearnStatisticsQBF}{Learn\-Statistics\-Q\-B\-F} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Collects statistics and performance data for \hyperlink{classLearnSynthQBF}{Learn\-Synth\-Q\-B\-F} (and all its variants). 
+
+This class collects statistics and performance data for the learning-\/based synthesis method implemented with a Q\-B\-F-\/solver (implemented in the class \hyperlink{classLearnSynthQBF}{Learn\-Synth\-Q\-B\-F}). 
+
+Definition at line 43 of file Learn\-Statistics\-Q\-B\-F.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classLearnStatisticsQBF_a9e98cf8a5d7507e3d2a6026f1369e383}{\index{Learn\-Statistics\-Q\-B\-F@{Learn\-Statistics\-Q\-B\-F}!Learn\-Statistics\-Q\-B\-F@{Learn\-Statistics\-Q\-B\-F}}
+\index{Learn\-Statistics\-Q\-B\-F@{Learn\-Statistics\-Q\-B\-F}!LearnStatisticsQBF@{Learn\-Statistics\-Q\-B\-F}}
+\subsubsection[{Learn\-Statistics\-Q\-B\-F}]{\setlength{\rightskip}{0pt plus 5cm}Learn\-Statistics\-Q\-B\-F\-::\-Learn\-Statistics\-Q\-B\-F (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLearnStatisticsQBF_a9e98cf8a5d7507e3d2a6026f1369e383}
+
+
+Constructor. 
+
+
+
+Definition at line 34 of file Learn\-Statistics\-Q\-B\-F.\-cpp.
+
+\hypertarget{classLearnStatisticsQBF_a1827c8e599f8c3f74186fd3a5fa250c4}{\index{Learn\-Statistics\-Q\-B\-F@{Learn\-Statistics\-Q\-B\-F}!$\sim$\-Learn\-Statistics\-Q\-B\-F@{$\sim$\-Learn\-Statistics\-Q\-B\-F}}
+\index{$\sim$\-Learn\-Statistics\-Q\-B\-F@{$\sim$\-Learn\-Statistics\-Q\-B\-F}!LearnStatisticsQBF@{Learn\-Statistics\-Q\-B\-F}}
+\subsubsection[{$\sim$\-Learn\-Statistics\-Q\-B\-F}]{\setlength{\rightskip}{0pt plus 5cm}Learn\-Statistics\-Q\-B\-F\-::$\sim$\-Learn\-Statistics\-Q\-B\-F (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classLearnStatisticsQBF_a1827c8e599f8c3f74186fd3a5fa250c4}
+
+
+Destructor. 
+
+
+
+Definition at line 52 of file Learn\-Statistics\-Q\-B\-F.\-cpp.
+
+\hypertarget{classLearnStatisticsQBF_a52c8f98a5b32ce587b73f7b6f921298d}{\index{Learn\-Statistics\-Q\-B\-F@{Learn\-Statistics\-Q\-B\-F}!Learn\-Statistics\-Q\-B\-F@{Learn\-Statistics\-Q\-B\-F}}
+\index{Learn\-Statistics\-Q\-B\-F@{Learn\-Statistics\-Q\-B\-F}!LearnStatisticsQBF@{Learn\-Statistics\-Q\-B\-F}}
+\subsubsection[{Learn\-Statistics\-Q\-B\-F}]{\setlength{\rightskip}{0pt plus 5cm}Learn\-Statistics\-Q\-B\-F\-::\-Learn\-Statistics\-Q\-B\-F (
+\begin{DoxyParamCaption}
+\item[{const {\bf Learn\-Statistics\-Q\-B\-F} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classLearnStatisticsQBF_a52c8f98a5b32ce587b73f7b6f921298d}
+
+
+Copy constructor. 
+
+The copy constructor is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classLearnStatisticsQBF_a6746f60721bd214d479a3e48e7246f3f}{\index{Learn\-Statistics\-Q\-B\-F@{Learn\-Statistics\-Q\-B\-F}!log\-Statistics@{log\-Statistics}}
+\index{log\-Statistics@{log\-Statistics}!LearnStatisticsQBF@{Learn\-Statistics\-Q\-B\-F}}
+\subsubsection[{log\-Statistics}]{\setlength{\rightskip}{0pt plus 5cm}void Learn\-Statistics\-Q\-B\-F\-::log\-Statistics (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classLearnStatisticsQBF_a6746f60721bd214d479a3e48e7246f3f}
+
+
+Writes the statistics to stdout as messages of type \hyperlink{classLogger_ac9e601f90bf326ce2088de52018861dca07be7495a7931bee16f5d94b3671f5de}{Logger\-::\-L\-O\-G}. 
+
+If messages of type \hyperlink{classLogger_ac9e601f90bf326ce2088de52018861dca07be7495a7931bee16f5d94b3671f5de}{Logger\-::\-L\-O\-G} are disabled (see \hyperlink{classLogger}{Logger}), then nothing happens. 
+
+Definition at line 129 of file Learn\-Statistics\-Q\-B\-F.\-cpp.
+
+
+
+References L\-\_\-\-L\-O\-G, nr\-\_\-of\-\_\-cube\-\_\-computations\-\_\-, nr\-\_\-of\-\_\-cube\-\_\-min\-\_\-, rel\-\_\-det\-\_\-cpu\-\_\-time\-\_\-, rel\-\_\-det\-\_\-real\-\_\-time\-\_\-, sum\-\_\-compute\-\_\-cpu\-\_\-time\-\_\-, sum\-\_\-compute\-\_\-real\-\_\-time\-\_\-, sum\-\_\-cube\-\_\-size\-\_\-from\-\_\-, sum\-\_\-cube\-\_\-size\-\_\-to\-\_\-, sum\-\_\-min\-\_\-cpu\-\_\-time\-\_\-, sum\-\_\-min\-\_\-real\-\_\-time\-\_\-, win\-\_\-reg\-\_\-cpu\-\_\-time\-\_\-, and win\-\_\-reg\-\_\-real\-\_\-time\-\_\-.
+
+
+
+Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One\-S\-A\-T(), Learn\-Synth\-Q\-B\-F\-Inc\-::run(), Learn\-Synth\-Q\-B\-F\-::run(), and Learn\-Synth\-Q\-B\-F\-Ind\-::run().
+
+\hypertarget{classLearnStatisticsQBF_acb35168104b3c8d3d529c93967c8ebbc}{\index{Learn\-Statistics\-Q\-B\-F@{Learn\-Statistics\-Q\-B\-F}!notify\-After\-Compute\-Cube@{notify\-After\-Compute\-Cube}}
+\index{notify\-After\-Compute\-Cube@{notify\-After\-Compute\-Cube}!LearnStatisticsQBF@{Learn\-Statistics\-Q\-B\-F}}
+\subsubsection[{notify\-After\-Compute\-Cube}]{\setlength{\rightskip}{0pt plus 5cm}void Learn\-Statistics\-Q\-B\-F\-::notify\-After\-Compute\-Cube (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLearnStatisticsQBF_acb35168104b3c8d3d529c93967c8ebbc}
+
+
+Called after the Q\-B\-F solver is done computing a counterexample-\/state. 
+
+This method just reads out the \hyperlink{classStopwatch}{Stopwatch} and stores the execution time. 
+
+Definition at line 90 of file Learn\-Statistics\-Q\-B\-F.\-cpp.
+
+
+
+References compute\-\_\-start\-\_\-time\-\_\-, Stopwatch\-::get\-C\-P\-U\-Time\-Sec(), Stopwatch\-::get\-Real\-Time\-Sec(), nr\-\_\-of\-\_\-cube\-\_\-computations\-\_\-, sum\-\_\-compute\-\_\-cpu\-\_\-time\-\_\-, and sum\-\_\-compute\-\_\-real\-\_\-time\-\_\-.
+
+
+
+Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Counterexample\-Q\-B\-F(), Learn\-Synth\-Q\-B\-F\-::compute\-Counterexample\-Q\-B\-F(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Counterexample\-Q\-B\-F(), and Learn\-Synth\-Q\-B\-F\-::compute\-Counterexample\-S\-A\-T().
+
+\hypertarget{classLearnStatisticsQBF_a6fe040a580ab91a1ced5334028bb8cf7}{\index{Learn\-Statistics\-Q\-B\-F@{Learn\-Statistics\-Q\-B\-F}!notify\-After\-Cube\-Min@{notify\-After\-Cube\-Min}}
+\index{notify\-After\-Cube\-Min@{notify\-After\-Cube\-Min}!LearnStatisticsQBF@{Learn\-Statistics\-Q\-B\-F}}
+\subsubsection[{notify\-After\-Cube\-Min}]{\setlength{\rightskip}{0pt plus 5cm}void Learn\-Statistics\-Q\-B\-F\-::notify\-After\-Cube\-Min (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{from\-\_\-size, }
+\item[{size\-\_\-t}]{to\-\_\-size}
+\end{DoxyParamCaption}
+)}}\label{classLearnStatisticsQBF_a6fe040a580ab91a1ced5334028bb8cf7}
+
+
+Called after the generalization of the counterexample-\/state is done. 
+
+This method just reads out the \hyperlink{classStopwatch}{Stopwatch} and stores the execution time. Furthermore, it stores the results of generalizing the counterexample.
+
+
+\begin{DoxyParams}{Parameters}
+{\em from\-\_\-size} & The size of the counterexample (number of literals in the cube) before generalization (by dropping literals from the cube). \\
+\hline
+{\em to\-\_\-size} & The size of the counterexample (number of literals in the cube) after generalization (by dropping literals from the cube). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 104 of file Learn\-Statistics\-Q\-B\-F.\-cpp.
+
+
+
+References Stopwatch\-::get\-C\-P\-U\-Time\-Sec(), Stopwatch\-::get\-Real\-Time\-Sec(), min\-\_\-start\-\_\-time\-\_\-, nr\-\_\-of\-\_\-cube\-\_\-min\-\_\-, sum\-\_\-cube\-\_\-size\-\_\-from\-\_\-, sum\-\_\-cube\-\_\-size\-\_\-to\-\_\-, sum\-\_\-min\-\_\-cpu\-\_\-time\-\_\-, and sum\-\_\-min\-\_\-real\-\_\-time\-\_\-.
+
+
+
+Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-All\-Blocking\-Clauses(), Learn\-Synth\-Q\-B\-F\-::compute\-All\-Blocking\-Clauses(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-All\-Blocking\-Clauses(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Blocking\-Clause(), Learn\-Synth\-Q\-B\-F\-::compute\-Blocking\-Clause(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Blocking\-Clause(), Learn\-Synth\-Q\-B\-F\-Inc\-::reduce\-Existing\-Clauses(), Learn\-Synth\-Q\-B\-F\-::reduce\-Existing\-Clauses(), and Learn\-Synth\-Q\-B\-F\-Ind\-::reduce\-Existing\-Clauses().
+
+\hypertarget{classLearnStatisticsQBF_ad6964e03b41d0e14834a06aa034c30e3}{\index{Learn\-Statistics\-Q\-B\-F@{Learn\-Statistics\-Q\-B\-F}!notify\-After\-Cube\-Min@{notify\-After\-Cube\-Min}}
+\index{notify\-After\-Cube\-Min@{notify\-After\-Cube\-Min}!LearnStatisticsQBF@{Learn\-Statistics\-Q\-B\-F}}
+\subsubsection[{notify\-After\-Cube\-Min}]{\setlength{\rightskip}{0pt plus 5cm}void Learn\-Statistics\-Q\-B\-F\-::notify\-After\-Cube\-Min (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLearnStatisticsQBF_ad6964e03b41d0e14834a06aa034c30e3}
+
+
+Called after the generalization of the counterexample-\/state is done. 
+
+This method just reads out the \hyperlink{classStopwatch}{Stopwatch} and stores the execution time. It does not store the results of generalizing the counterexample. This can be done with a call to \hyperlink{classLearnStatisticsQBF_a4c17af33270921d54e425cd6d14b1a78}{notify\-Cube\-Min() }. 
+
+Definition at line 114 of file Learn\-Statistics\-Q\-B\-F.\-cpp.
+
+
+
+References Stopwatch\-::get\-C\-P\-U\-Time\-Sec(), Stopwatch\-::get\-Real\-Time\-Sec(), min\-\_\-start\-\_\-time\-\_\-, sum\-\_\-min\-\_\-cpu\-\_\-time\-\_\-, and sum\-\_\-min\-\_\-real\-\_\-time\-\_\-.
+
+\hypertarget{classLearnStatisticsQBF_a6aff1d90b24d33dccf27af13f9376ee1}{\index{Learn\-Statistics\-Q\-B\-F@{Learn\-Statistics\-Q\-B\-F}!notify\-Before\-Compute\-Cube@{notify\-Before\-Compute\-Cube}}
+\index{notify\-Before\-Compute\-Cube@{notify\-Before\-Compute\-Cube}!LearnStatisticsQBF@{Learn\-Statistics\-Q\-B\-F}}
+\subsubsection[{notify\-Before\-Compute\-Cube}]{\setlength{\rightskip}{0pt plus 5cm}void Learn\-Statistics\-Q\-B\-F\-::notify\-Before\-Compute\-Cube (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLearnStatisticsQBF_a6aff1d90b24d33dccf27af13f9376ee1}
+
+
+Called before the Q\-B\-F solver is called to compute a counterexample-\/state. 
+
+This method just starts a \hyperlink{classStopwatch}{Stopwatch}. 
+
+Definition at line 84 of file Learn\-Statistics\-Q\-B\-F.\-cpp.
+
+
+
+References compute\-\_\-start\-\_\-time\-\_\-, and Stopwatch\-::start().
+
+
+
+Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Counterexample\-Q\-B\-F(), Learn\-Synth\-Q\-B\-F\-::compute\-Counterexample\-Q\-B\-F(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Counterexample\-Q\-B\-F(), and Learn\-Synth\-Q\-B\-F\-::compute\-Counterexample\-S\-A\-T().
+
+\hypertarget{classLearnStatisticsQBF_a423645758d7dc73103dc27c36544432e}{\index{Learn\-Statistics\-Q\-B\-F@{Learn\-Statistics\-Q\-B\-F}!notify\-Before\-Cube\-Min@{notify\-Before\-Cube\-Min}}
+\index{notify\-Before\-Cube\-Min@{notify\-Before\-Cube\-Min}!LearnStatisticsQBF@{Learn\-Statistics\-Q\-B\-F}}
+\subsubsection[{notify\-Before\-Cube\-Min}]{\setlength{\rightskip}{0pt plus 5cm}void Learn\-Statistics\-Q\-B\-F\-::notify\-Before\-Cube\-Min (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLearnStatisticsQBF_a423645758d7dc73103dc27c36544432e}
+
+
+Called before the generalization of the counterexample-\/state starts. 
+
+This method just starts a \hyperlink{classStopwatch}{Stopwatch}. 
+
+Definition at line 98 of file Learn\-Statistics\-Q\-B\-F.\-cpp.
+
+
+
+References min\-\_\-start\-\_\-time\-\_\-, and Stopwatch\-::start().
+
+
+
+Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-All\-Blocking\-Clauses(), Learn\-Synth\-Q\-B\-F\-::compute\-All\-Blocking\-Clauses(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-All\-Blocking\-Clauses(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Blocking\-Clause(), Learn\-Synth\-Q\-B\-F\-::compute\-Blocking\-Clause(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Blocking\-Clause(), Learn\-Synth\-Q\-B\-F\-Inc\-::reduce\-Existing\-Clauses(), Learn\-Synth\-Q\-B\-F\-::reduce\-Existing\-Clauses(), and Learn\-Synth\-Q\-B\-F\-Ind\-::reduce\-Existing\-Clauses().
+
+\hypertarget{classLearnStatisticsQBF_a4c17af33270921d54e425cd6d14b1a78}{\index{Learn\-Statistics\-Q\-B\-F@{Learn\-Statistics\-Q\-B\-F}!notify\-Cube\-Min@{notify\-Cube\-Min}}
+\index{notify\-Cube\-Min@{notify\-Cube\-Min}!LearnStatisticsQBF@{Learn\-Statistics\-Q\-B\-F}}
+\subsubsection[{notify\-Cube\-Min}]{\setlength{\rightskip}{0pt plus 5cm}void Learn\-Statistics\-Q\-B\-F\-::notify\-Cube\-Min (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{from\-\_\-size, }
+\item[{size\-\_\-t}]{to\-\_\-size}
+\end{DoxyParamCaption}
+)}}\label{classLearnStatisticsQBF_a4c17af33270921d54e425cd6d14b1a78}
+
+
+Stores the result of a counterexample-\/cube generalization. 
+
+This method is useful if \hyperlink{classLearnStatisticsQBF_ad6964e03b41d0e14834a06aa034c30e3}{notify\-After\-Cube\-Min()} is called without parameters.
+
+
+\begin{DoxyParams}{Parameters}
+{\em from\-\_\-size} & The size of the counterexample (number of literals in the cube) before generalization (by dropping literals from the cube). \\
+\hline
+{\em to\-\_\-size} & The size of the counterexample (number of literals in the cube) after generalization (by dropping literals from the cube). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 121 of file Learn\-Statistics\-Q\-B\-F.\-cpp.
+
+
+
+References nr\-\_\-of\-\_\-cube\-\_\-min\-\_\-, sum\-\_\-cube\-\_\-size\-\_\-from\-\_\-, and sum\-\_\-cube\-\_\-size\-\_\-to\-\_\-.
+
+
+
+Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-All\-Blocking\-Clauses(), Learn\-Synth\-Q\-B\-F\-::compute\-All\-Blocking\-Clauses(), and Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-All\-Blocking\-Clauses().
+
+\hypertarget{classLearnStatisticsQBF_ac00e3d7a0cc77573c2dca94460bbb354}{\index{Learn\-Statistics\-Q\-B\-F@{Learn\-Statistics\-Q\-B\-F}!notify\-Rel\-Det\-End@{notify\-Rel\-Det\-End}}
+\index{notify\-Rel\-Det\-End@{notify\-Rel\-Det\-End}!LearnStatisticsQBF@{Learn\-Statistics\-Q\-B\-F}}
+\subsubsection[{notify\-Rel\-Det\-End}]{\setlength{\rightskip}{0pt plus 5cm}void Learn\-Statistics\-Q\-B\-F\-::notify\-Rel\-Det\-End (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLearnStatisticsQBF_ac00e3d7a0cc77573c2dca94460bbb354}
+
+
+Called after the relation determinization (the computation of circuits) starts. 
+
+This method just reads out the \hyperlink{classStopwatch}{Stopwatch} and stores the execution time. 
+
+Definition at line 77 of file Learn\-Statistics\-Q\-B\-F.\-cpp.
+
+
+
+References Stopwatch\-::get\-C\-P\-U\-Time\-Sec(), Stopwatch\-::get\-Real\-Time\-Sec(), rel\-\_\-det\-\_\-cpu\-\_\-time\-\_\-, rel\-\_\-det\-\_\-real\-\_\-time\-\_\-, and rel\-\_\-det\-\_\-start\-\_\-time\-\_\-.
+
+
+
+Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::run(), Learn\-Synth\-Q\-B\-F\-::run(), and Learn\-Synth\-Q\-B\-F\-Ind\-::run().
+
+\hypertarget{classLearnStatisticsQBF_ae88030461fe06f198b596054bf31ce64}{\index{Learn\-Statistics\-Q\-B\-F@{Learn\-Statistics\-Q\-B\-F}!notify\-Rel\-Det\-Start@{notify\-Rel\-Det\-Start}}
+\index{notify\-Rel\-Det\-Start@{notify\-Rel\-Det\-Start}!LearnStatisticsQBF@{Learn\-Statistics\-Q\-B\-F}}
+\subsubsection[{notify\-Rel\-Det\-Start}]{\setlength{\rightskip}{0pt plus 5cm}void Learn\-Statistics\-Q\-B\-F\-::notify\-Rel\-Det\-Start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLearnStatisticsQBF_ae88030461fe06f198b596054bf31ce64}
+
+
+Called before the relation determinization (the computation of circuits) starts. 
+
+This method just starts a \hyperlink{classStopwatch}{Stopwatch}. 
+
+Definition at line 71 of file Learn\-Statistics\-Q\-B\-F.\-cpp.
+
+
+
+References rel\-\_\-det\-\_\-start\-\_\-time\-\_\-, and Stopwatch\-::start().
+
+
+
+Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::run(), Learn\-Synth\-Q\-B\-F\-::run(), and Learn\-Synth\-Q\-B\-F\-Ind\-::run().
+
+\hypertarget{classLearnStatisticsQBF_afa94736042d6e23e3042517d8db00a50}{\index{Learn\-Statistics\-Q\-B\-F@{Learn\-Statistics\-Q\-B\-F}!notify\-Win\-Reg\-End@{notify\-Win\-Reg\-End}}
+\index{notify\-Win\-Reg\-End@{notify\-Win\-Reg\-End}!LearnStatisticsQBF@{Learn\-Statistics\-Q\-B\-F}}
+\subsubsection[{notify\-Win\-Reg\-End}]{\setlength{\rightskip}{0pt plus 5cm}void Learn\-Statistics\-Q\-B\-F\-::notify\-Win\-Reg\-End (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLearnStatisticsQBF_afa94736042d6e23e3042517d8db00a50}
+
+
+Called after the computation of the winning region is done. 
+
+This method just reads out the \hyperlink{classStopwatch}{Stopwatch} and stores the execution time. 
+
+Definition at line 64 of file Learn\-Statistics\-Q\-B\-F.\-cpp.
+
+
+
+References Stopwatch\-::get\-C\-P\-U\-Time\-Sec(), Stopwatch\-::get\-Real\-Time\-Sec(), win\-\_\-reg\-\_\-cpu\-\_\-time\-\_\-, win\-\_\-reg\-\_\-real\-\_\-time\-\_\-, and win\-\_\-reg\-\_\-start\-\_\-time\-\_\-.
+
+
+
+Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::run(), Learn\-Synth\-Q\-B\-F\-::run(), and Learn\-Synth\-Q\-B\-F\-Ind\-::run().
+
+\hypertarget{classLearnStatisticsQBF_a89cb7bd50255ee97dc040c4a48439dea}{\index{Learn\-Statistics\-Q\-B\-F@{Learn\-Statistics\-Q\-B\-F}!notify\-Win\-Reg\-Start@{notify\-Win\-Reg\-Start}}
+\index{notify\-Win\-Reg\-Start@{notify\-Win\-Reg\-Start}!LearnStatisticsQBF@{Learn\-Statistics\-Q\-B\-F}}
+\subsubsection[{notify\-Win\-Reg\-Start}]{\setlength{\rightskip}{0pt plus 5cm}void Learn\-Statistics\-Q\-B\-F\-::notify\-Win\-Reg\-Start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLearnStatisticsQBF_a89cb7bd50255ee97dc040c4a48439dea}
+
+
+Called before the computation of the winning region starts. 
+
+This method just starts a \hyperlink{classStopwatch}{Stopwatch}. 
+
+Definition at line 58 of file Learn\-Statistics\-Q\-B\-F.\-cpp.
+
+
+
+References Stopwatch\-::start(), and win\-\_\-reg\-\_\-start\-\_\-time\-\_\-.
+
+
+
+Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::run(), Learn\-Synth\-Q\-B\-F\-::run(), and Learn\-Synth\-Q\-B\-F\-Ind\-::run().
+
+\hypertarget{classLearnStatisticsQBF_ad381a6f0a78d73aaed2d87e00b5d9ea9}{\index{Learn\-Statistics\-Q\-B\-F@{Learn\-Statistics\-Q\-B\-F}!operator=@{operator=}}
+\index{operator=@{operator=}!LearnStatisticsQBF@{Learn\-Statistics\-Q\-B\-F}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Learn\-Statistics\-Q\-B\-F}\& Learn\-Statistics\-Q\-B\-F\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Learn\-Statistics\-Q\-B\-F} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classLearnStatisticsQBF_ad381a6f0a78d73aaed2d87e00b5d9ea9}
+
+
+Assignment operator. 
+
+The assignment operator is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the assignment, i.\-e, $\ast$this. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classLearnStatisticsQBF_a820d051dbab21cb8df1ad673b04a0c92}{\index{Learn\-Statistics\-Q\-B\-F@{Learn\-Statistics\-Q\-B\-F}!compute\-\_\-start\-\_\-time\-\_\-@{compute\-\_\-start\-\_\-time\-\_\-}}
+\index{compute\-\_\-start\-\_\-time\-\_\-@{compute\-\_\-start\-\_\-time\-\_\-}!LearnStatisticsQBF@{Learn\-Statistics\-Q\-B\-F}}
+\subsubsection[{compute\-\_\-start\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point\-In\-Time} Learn\-Statistics\-Q\-B\-F\-::compute\-\_\-start\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsQBF_a820d051dbab21cb8df1ad673b04a0c92}
+
+
+The time when the last computation of a counterexample-\/cube was started. 
+
+
+
+Definition at line 187 of file Learn\-Statistics\-Q\-B\-F.\-h.
+
+
+
+Referenced by notify\-After\-Compute\-Cube(), and notify\-Before\-Compute\-Cube().
+
+\hypertarget{classLearnStatisticsQBF_a929ae751d1bbb728f96132e5ee6d99fa}{\index{Learn\-Statistics\-Q\-B\-F@{Learn\-Statistics\-Q\-B\-F}!min\-\_\-start\-\_\-time\-\_\-@{min\-\_\-start\-\_\-time\-\_\-}}
+\index{min\-\_\-start\-\_\-time\-\_\-@{min\-\_\-start\-\_\-time\-\_\-}!LearnStatisticsQBF@{Learn\-Statistics\-Q\-B\-F}}
+\subsubsection[{min\-\_\-start\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point\-In\-Time} Learn\-Statistics\-Q\-B\-F\-::min\-\_\-start\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsQBF_a929ae751d1bbb728f96132e5ee6d99fa}
+
+
+The time when the last generalization of a counterexample-\/cube was started. 
+
+
+
+Definition at line 207 of file Learn\-Statistics\-Q\-B\-F.\-h.
+
+
+
+Referenced by notify\-After\-Cube\-Min(), and notify\-Before\-Cube\-Min().
+
+\hypertarget{classLearnStatisticsQBF_a857dac1670c551b3dcf935860651143b}{\index{Learn\-Statistics\-Q\-B\-F@{Learn\-Statistics\-Q\-B\-F}!nr\-\_\-of\-\_\-cube\-\_\-computations\-\_\-@{nr\-\_\-of\-\_\-cube\-\_\-computations\-\_\-}}
+\index{nr\-\_\-of\-\_\-cube\-\_\-computations\-\_\-@{nr\-\_\-of\-\_\-cube\-\_\-computations\-\_\-}!LearnStatisticsQBF@{Learn\-Statistics\-Q\-B\-F}}
+\subsubsection[{nr\-\_\-of\-\_\-cube\-\_\-computations\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Learn\-Statistics\-Q\-B\-F\-::nr\-\_\-of\-\_\-cube\-\_\-computations\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsQBF_a857dac1670c551b3dcf935860651143b}
+
+
+The total number of counterexample-\/cube computations. 
+
+
+
+Definition at line 182 of file Learn\-Statistics\-Q\-B\-F.\-h.
+
+
+
+Referenced by log\-Statistics(), and notify\-After\-Compute\-Cube().
+
+\hypertarget{classLearnStatisticsQBF_aff417981063fbdf94164ce7b2d1e71a2}{\index{Learn\-Statistics\-Q\-B\-F@{Learn\-Statistics\-Q\-B\-F}!nr\-\_\-of\-\_\-cube\-\_\-min\-\_\-@{nr\-\_\-of\-\_\-cube\-\_\-min\-\_\-}}
+\index{nr\-\_\-of\-\_\-cube\-\_\-min\-\_\-@{nr\-\_\-of\-\_\-cube\-\_\-min\-\_\-}!LearnStatisticsQBF@{Learn\-Statistics\-Q\-B\-F}}
+\subsubsection[{nr\-\_\-of\-\_\-cube\-\_\-min\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Learn\-Statistics\-Q\-B\-F\-::nr\-\_\-of\-\_\-cube\-\_\-min\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsQBF_aff417981063fbdf94164ce7b2d1e71a2}
+
+
+The total number of counterexample-\/cube generalizations. 
+
+
+
+Definition at line 202 of file Learn\-Statistics\-Q\-B\-F.\-h.
+
+
+
+Referenced by log\-Statistics(), notify\-After\-Cube\-Min(), and notify\-Cube\-Min().
+
+\hypertarget{classLearnStatisticsQBF_a38d959613268b6a6aa0decfcbe5d631c}{\index{Learn\-Statistics\-Q\-B\-F@{Learn\-Statistics\-Q\-B\-F}!rel\-\_\-det\-\_\-cpu\-\_\-time\-\_\-@{rel\-\_\-det\-\_\-cpu\-\_\-time\-\_\-}}
+\index{rel\-\_\-det\-\_\-cpu\-\_\-time\-\_\-@{rel\-\_\-det\-\_\-cpu\-\_\-time\-\_\-}!LearnStatisticsQBF@{Learn\-Statistics\-Q\-B\-F}}
+\subsubsection[{rel\-\_\-det\-\_\-cpu\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double Learn\-Statistics\-Q\-B\-F\-::rel\-\_\-det\-\_\-cpu\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsQBF_a38d959613268b6a6aa0decfcbe5d631c}
+
+
+circuit computation time in C\-P\-U-\/seconds. 
+
+
+
+Definition at line 172 of file Learn\-Statistics\-Q\-B\-F.\-h.
+
+
+
+Referenced by log\-Statistics(), and notify\-Rel\-Det\-End().
+
+\hypertarget{classLearnStatisticsQBF_a2de1d6eb803d78fdf775b8d703adda69}{\index{Learn\-Statistics\-Q\-B\-F@{Learn\-Statistics\-Q\-B\-F}!rel\-\_\-det\-\_\-real\-\_\-time\-\_\-@{rel\-\_\-det\-\_\-real\-\_\-time\-\_\-}}
+\index{rel\-\_\-det\-\_\-real\-\_\-time\-\_\-@{rel\-\_\-det\-\_\-real\-\_\-time\-\_\-}!LearnStatisticsQBF@{Learn\-Statistics\-Q\-B\-F}}
+\subsubsection[{rel\-\_\-det\-\_\-real\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Learn\-Statistics\-Q\-B\-F\-::rel\-\_\-det\-\_\-real\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsQBF_a2de1d6eb803d78fdf775b8d703adda69}
+
+
+Like \hyperlink{classLearnStatisticsQBF_a38d959613268b6a6aa0decfcbe5d631c}{rel\-\_\-det\-\_\-cpu\-\_\-time\-\_\-} but real-\/time. 
+
+
+
+Definition at line 177 of file Learn\-Statistics\-Q\-B\-F.\-h.
+
+
+
+Referenced by log\-Statistics(), and notify\-Rel\-Det\-End().
+
+\hypertarget{classLearnStatisticsQBF_a11e1295e566e5456cdb2aca0034bf306}{\index{Learn\-Statistics\-Q\-B\-F@{Learn\-Statistics\-Q\-B\-F}!rel\-\_\-det\-\_\-start\-\_\-time\-\_\-@{rel\-\_\-det\-\_\-start\-\_\-time\-\_\-}}
+\index{rel\-\_\-det\-\_\-start\-\_\-time\-\_\-@{rel\-\_\-det\-\_\-start\-\_\-time\-\_\-}!LearnStatisticsQBF@{Learn\-Statistics\-Q\-B\-F}}
+\subsubsection[{rel\-\_\-det\-\_\-start\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point\-In\-Time} Learn\-Statistics\-Q\-B\-F\-::rel\-\_\-det\-\_\-start\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsQBF_a11e1295e566e5456cdb2aca0034bf306}
+
+
+The time when the computation of the circuits was started. 
+
+
+
+Definition at line 167 of file Learn\-Statistics\-Q\-B\-F.\-h.
+
+
+
+Referenced by notify\-Rel\-Det\-End(), and notify\-Rel\-Det\-Start().
+
+\hypertarget{classLearnStatisticsQBF_a4caf75f422eed77570e5592ce35c9bd0}{\index{Learn\-Statistics\-Q\-B\-F@{Learn\-Statistics\-Q\-B\-F}!sum\-\_\-compute\-\_\-cpu\-\_\-time\-\_\-@{sum\-\_\-compute\-\_\-cpu\-\_\-time\-\_\-}}
+\index{sum\-\_\-compute\-\_\-cpu\-\_\-time\-\_\-@{sum\-\_\-compute\-\_\-cpu\-\_\-time\-\_\-}!LearnStatisticsQBF@{Learn\-Statistics\-Q\-B\-F}}
+\subsubsection[{sum\-\_\-compute\-\_\-cpu\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double Learn\-Statistics\-Q\-B\-F\-::sum\-\_\-compute\-\_\-cpu\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsQBF_a4caf75f422eed77570e5592ce35c9bd0}
+
+
+The total counterexample computation time in C\-P\-U-\/seconds. 
+
+
+
+Definition at line 192 of file Learn\-Statistics\-Q\-B\-F.\-h.
+
+
+
+Referenced by log\-Statistics(), and notify\-After\-Compute\-Cube().
+
+\hypertarget{classLearnStatisticsQBF_aceb8e32bfd42839f2c19d3b12e7eb888}{\index{Learn\-Statistics\-Q\-B\-F@{Learn\-Statistics\-Q\-B\-F}!sum\-\_\-compute\-\_\-real\-\_\-time\-\_\-@{sum\-\_\-compute\-\_\-real\-\_\-time\-\_\-}}
+\index{sum\-\_\-compute\-\_\-real\-\_\-time\-\_\-@{sum\-\_\-compute\-\_\-real\-\_\-time\-\_\-}!LearnStatisticsQBF@{Learn\-Statistics\-Q\-B\-F}}
+\subsubsection[{sum\-\_\-compute\-\_\-real\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Learn\-Statistics\-Q\-B\-F\-::sum\-\_\-compute\-\_\-real\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsQBF_aceb8e32bfd42839f2c19d3b12e7eb888}
+
+
+Like \hyperlink{classLearnStatisticsQBF_a4caf75f422eed77570e5592ce35c9bd0}{sum\-\_\-compute\-\_\-cpu\-\_\-time\-\_\-} but real-\/time. 
+
+
+
+Definition at line 197 of file Learn\-Statistics\-Q\-B\-F.\-h.
+
+
+
+Referenced by log\-Statistics(), and notify\-After\-Compute\-Cube().
+
+\hypertarget{classLearnStatisticsQBF_a46277893a5465fb97805624e1ac31f38}{\index{Learn\-Statistics\-Q\-B\-F@{Learn\-Statistics\-Q\-B\-F}!sum\-\_\-cube\-\_\-size\-\_\-from\-\_\-@{sum\-\_\-cube\-\_\-size\-\_\-from\-\_\-}}
+\index{sum\-\_\-cube\-\_\-size\-\_\-from\-\_\-@{sum\-\_\-cube\-\_\-size\-\_\-from\-\_\-}!LearnStatisticsQBF@{Learn\-Statistics\-Q\-B\-F}}
+\subsubsection[{sum\-\_\-cube\-\_\-size\-\_\-from\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Learn\-Statistics\-Q\-B\-F\-::sum\-\_\-cube\-\_\-size\-\_\-from\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsQBF_a46277893a5465fb97805624e1ac31f38}
+
+
+The sum of the counterexample cube sizes (nr of literals) before generalization. 
+
+This is tracked to assess the effectiveness of the generalization. 
+
+Definition at line 224 of file Learn\-Statistics\-Q\-B\-F.\-h.
+
+
+
+Referenced by log\-Statistics(), notify\-After\-Cube\-Min(), and notify\-Cube\-Min().
+
+\hypertarget{classLearnStatisticsQBF_a444ff1c70c90edfd87a56790060c0aae}{\index{Learn\-Statistics\-Q\-B\-F@{Learn\-Statistics\-Q\-B\-F}!sum\-\_\-cube\-\_\-size\-\_\-to\-\_\-@{sum\-\_\-cube\-\_\-size\-\_\-to\-\_\-}}
+\index{sum\-\_\-cube\-\_\-size\-\_\-to\-\_\-@{sum\-\_\-cube\-\_\-size\-\_\-to\-\_\-}!LearnStatisticsQBF@{Learn\-Statistics\-Q\-B\-F}}
+\subsubsection[{sum\-\_\-cube\-\_\-size\-\_\-to\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Learn\-Statistics\-Q\-B\-F\-::sum\-\_\-cube\-\_\-size\-\_\-to\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsQBF_a444ff1c70c90edfd87a56790060c0aae}
+
+
+The sum of the counterexample cube sizes (nr of literals) after generalization. 
+
+This is tracked to assess the effectiveness of the generalization. 
+
+Definition at line 231 of file Learn\-Statistics\-Q\-B\-F.\-h.
+
+
+
+Referenced by log\-Statistics(), notify\-After\-Cube\-Min(), and notify\-Cube\-Min().
+
+\hypertarget{classLearnStatisticsQBF_a8fcce1bc5593631429c86bd3a1376e86}{\index{Learn\-Statistics\-Q\-B\-F@{Learn\-Statistics\-Q\-B\-F}!sum\-\_\-min\-\_\-cpu\-\_\-time\-\_\-@{sum\-\_\-min\-\_\-cpu\-\_\-time\-\_\-}}
+\index{sum\-\_\-min\-\_\-cpu\-\_\-time\-\_\-@{sum\-\_\-min\-\_\-cpu\-\_\-time\-\_\-}!LearnStatisticsQBF@{Learn\-Statistics\-Q\-B\-F}}
+\subsubsection[{sum\-\_\-min\-\_\-cpu\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double Learn\-Statistics\-Q\-B\-F\-::sum\-\_\-min\-\_\-cpu\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsQBF_a8fcce1bc5593631429c86bd3a1376e86}
+
+
+The total counterexample generalization time in C\-P\-U-\/seconds. 
+
+
+
+Definition at line 212 of file Learn\-Statistics\-Q\-B\-F.\-h.
+
+
+
+Referenced by log\-Statistics(), and notify\-After\-Cube\-Min().
+
+\hypertarget{classLearnStatisticsQBF_a6aded3992cd822a0ca45bc2d6658a5ab}{\index{Learn\-Statistics\-Q\-B\-F@{Learn\-Statistics\-Q\-B\-F}!sum\-\_\-min\-\_\-real\-\_\-time\-\_\-@{sum\-\_\-min\-\_\-real\-\_\-time\-\_\-}}
+\index{sum\-\_\-min\-\_\-real\-\_\-time\-\_\-@{sum\-\_\-min\-\_\-real\-\_\-time\-\_\-}!LearnStatisticsQBF@{Learn\-Statistics\-Q\-B\-F}}
+\subsubsection[{sum\-\_\-min\-\_\-real\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Learn\-Statistics\-Q\-B\-F\-::sum\-\_\-min\-\_\-real\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsQBF_a6aded3992cd822a0ca45bc2d6658a5ab}
+
+
+Like \hyperlink{classLearnStatisticsQBF_a8fcce1bc5593631429c86bd3a1376e86}{sum\-\_\-min\-\_\-cpu\-\_\-time\-\_\-} but real-\/time. 
+
+
+
+Definition at line 217 of file Learn\-Statistics\-Q\-B\-F.\-h.
+
+
+
+Referenced by log\-Statistics(), and notify\-After\-Cube\-Min().
+
+\hypertarget{classLearnStatisticsQBF_a679a221c1cbf3330572f93d850976289}{\index{Learn\-Statistics\-Q\-B\-F@{Learn\-Statistics\-Q\-B\-F}!win\-\_\-reg\-\_\-cpu\-\_\-time\-\_\-@{win\-\_\-reg\-\_\-cpu\-\_\-time\-\_\-}}
+\index{win\-\_\-reg\-\_\-cpu\-\_\-time\-\_\-@{win\-\_\-reg\-\_\-cpu\-\_\-time\-\_\-}!LearnStatisticsQBF@{Learn\-Statistics\-Q\-B\-F}}
+\subsubsection[{win\-\_\-reg\-\_\-cpu\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double Learn\-Statistics\-Q\-B\-F\-::win\-\_\-reg\-\_\-cpu\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsQBF_a679a221c1cbf3330572f93d850976289}
+
+
+The winning region computation time in C\-P\-U-\/seconds. 
+
+
+
+Definition at line 157 of file Learn\-Statistics\-Q\-B\-F.\-h.
+
+
+
+Referenced by log\-Statistics(), and notify\-Win\-Reg\-End().
+
+\hypertarget{classLearnStatisticsQBF_a58013212d789d3c025b521cd150dc12d}{\index{Learn\-Statistics\-Q\-B\-F@{Learn\-Statistics\-Q\-B\-F}!win\-\_\-reg\-\_\-real\-\_\-time\-\_\-@{win\-\_\-reg\-\_\-real\-\_\-time\-\_\-}}
+\index{win\-\_\-reg\-\_\-real\-\_\-time\-\_\-@{win\-\_\-reg\-\_\-real\-\_\-time\-\_\-}!LearnStatisticsQBF@{Learn\-Statistics\-Q\-B\-F}}
+\subsubsection[{win\-\_\-reg\-\_\-real\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Learn\-Statistics\-Q\-B\-F\-::win\-\_\-reg\-\_\-real\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsQBF_a58013212d789d3c025b521cd150dc12d}
+
+
+Like \hyperlink{classLearnStatisticsQBF_a679a221c1cbf3330572f93d850976289}{win\-\_\-reg\-\_\-cpu\-\_\-time\-\_\-} but real-\/time. 
+
+
+
+Definition at line 162 of file Learn\-Statistics\-Q\-B\-F.\-h.
+
+
+
+Referenced by log\-Statistics(), and notify\-Win\-Reg\-End().
+
+\hypertarget{classLearnStatisticsQBF_a2c1d2ca27ab1a5edf496ffd603ba0878}{\index{Learn\-Statistics\-Q\-B\-F@{Learn\-Statistics\-Q\-B\-F}!win\-\_\-reg\-\_\-start\-\_\-time\-\_\-@{win\-\_\-reg\-\_\-start\-\_\-time\-\_\-}}
+\index{win\-\_\-reg\-\_\-start\-\_\-time\-\_\-@{win\-\_\-reg\-\_\-start\-\_\-time\-\_\-}!LearnStatisticsQBF@{Learn\-Statistics\-Q\-B\-F}}
+\subsubsection[{win\-\_\-reg\-\_\-start\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point\-In\-Time} Learn\-Statistics\-Q\-B\-F\-::win\-\_\-reg\-\_\-start\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsQBF_a2c1d2ca27ab1a5edf496ffd603ba0878}
+
+
+The time when the computation of the winning region was started. 
+
+
+
+Definition at line 152 of file Learn\-Statistics\-Q\-B\-F.\-h.
+
+
+
+Referenced by notify\-Win\-Reg\-End(), and notify\-Win\-Reg\-Start().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{LearnStatisticsQBF_8h}{Learn\-Statistics\-Q\-B\-F.\-h}\item 
+src/\hyperlink{LearnStatisticsQBF_8cpp}{Learn\-Statistics\-Q\-B\-F.\-cpp}\end{DoxyCompactItemize}

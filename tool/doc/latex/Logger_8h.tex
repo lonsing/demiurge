@@ -1,0 +1,267 @@
+\hypertarget{Logger_8h}{\section{src/\-Logger.h File Reference}
+\label{Logger_8h}\index{src/\-Logger.\-h@{src/\-Logger.\-h}}
+}
+
+
+Contains the declaration of the class \hyperlink{classLogger}{Logger} and some macros for logging.  
+
+
+{\ttfamily \#include \char`\"{}defines.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classLogger}{Logger}
+\begin{DoxyCompactList}\small\item\em Prints messages of different kind, which can all be enabled and disabled. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{Logger_8h_ab46d591f7a5eb63fee458a99279a2d00}{L\-\_\-\-E\-R\-R}(message)
+\begin{DoxyCompactList}\small\item\em Prints an error message if this message type is enabled. \end{DoxyCompactList}\item 
+\#define \hyperlink{Logger_8h_aafa8924b4aff539836a162a1cdf5e047}{L\-\_\-\-W\-R\-N}(message)
+\begin{DoxyCompactList}\small\item\em Prints a warning message if this message type is enabled. \end{DoxyCompactList}\item 
+\#define \hyperlink{Logger_8h_adf55585b6b559a75e33ee291410f9a9e}{L\-\_\-\-R\-E\-S}(message)
+\begin{DoxyCompactList}\small\item\em Prints a result message if this message type is enabled. \end{DoxyCompactList}\item 
+\#define \hyperlink{Logger_8h_a5442b95c710d1b2d4c306693fce02997}{L\-\_\-\-I\-N\-F}(message)
+\begin{DoxyCompactList}\small\item\em Prints an info message if this message type is enabled. \end{DoxyCompactList}\item 
+\#define \hyperlink{Logger_8h_a5ba9fef95c1aa2be83162fd9f0992c05}{L\-\_\-\-D\-B\-G}(message)
+\begin{DoxyCompactList}\small\item\em Prints a debug message if this message type is enabled. \end{DoxyCompactList}\item 
+\#define \hyperlink{Logger_8h_a081139c373685d15bfc9f0afebe00542}{L\-\_\-\-L\-O\-G}(message)
+\begin{DoxyCompactList}\small\item\em Prints a log message if this message type is enabled. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains the declaration of the class \hyperlink{classLogger}{Logger} and some macros for logging. 
+
+Definition in file \hyperlink{Logger_8h_source}{Logger.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{Logger_8h_a5ba9fef95c1aa2be83162fd9f0992c05}{\index{Logger.\-h@{Logger.\-h}!L\-\_\-\-D\-B\-G@{L\-\_\-\-D\-B\-G}}
+\index{L\-\_\-\-D\-B\-G@{L\-\_\-\-D\-B\-G}!Logger.h@{Logger.\-h}}
+\subsubsection[{L\-\_\-\-D\-B\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-\_\-\-D\-B\-G(
+\begin{DoxyParamCaption}
+\item[{}]{message}
+\end{DoxyParamCaption}
+)}}\label{Logger_8h_a5ba9fef95c1aa2be83162fd9f0992c05}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\{                                                                         \(\backslash\)
+  if (\hyperlink{classLogger_a4aa4d7c3b98f6e12e7ea8253da5ea0cd}{Logger::instance}().isEnabled(\hyperlink{classLogger_ac9e601f90bf326ce2088de52018861dcaecb59ecf12f943da56b6944a3053dc09}{Logger::DBG}))    
+                            \(\backslash\)
+  \{                                                                       \(\backslash\)
+    (\hyperlink{classLogger_a4aa4d7c3b98f6e12e7ea8253da5ea0cd}{Logger::instance}().\hyperlink{classLogger_ac1418f03089428bfb7f3805b7709f2cb}{getOstream}(\hyperlink{classLogger_ac9e601f90bf326ce2088de52018861dcaecb59ecf12f943da56b6944a3053dc09}{Logger::DBG}
+      )) <<                       \(\backslash\)
+    \textcolor{stringliteral}{"[DBG] "} << message << std::endl;                                     \(\backslash\)
+  \}                                                                       \(\backslash\)
+\}
+\end{DoxyCode}
+
+
+Prints a debug message if this message type is enabled. 
+
+The message to be printed is preceded by '\mbox{[}D\-B\-G\mbox{]} ' and terminated with a newline.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message to print. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 319 of file Logger.\-h.
+
+
+
+Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Blocking\-Clause(), Learn\-Synth\-Q\-B\-F\-::compute\-Blocking\-Clause(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Blocking\-Clause(), Learn\-Synth\-Q\-B\-F\-::compute\-Counterexample\-S\-A\-T(), I\-F\-M13\-Synth\-::compute\-Winning\-Region(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One\-S\-A\-T(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Learn\-Synth\-S\-A\-T\-::debug\-Check\-Win\-Reg(), Utils\-::debug\-Check\-Win\-Reg(), Learn\-Synth\-Q\-B\-F\-Ind\-::debug\-Check\-Win\-Reg\-Reach(), Utils\-::debug\-Print(), Utils\-::debug\-Print\-Current\-Mem\-Usage(), I\-F\-M13\-Synth\-::debug\-Print\-Rs(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), I\-F\-M13\-Explorer\-::explore\-Clauses(), Q\-B\-F\-Cert\-Impl\-Extractor\-::parse\-Q\-B\-F\-Cert\-Answer(), Learn\-Synth\-Q\-B\-F\-Inc\-::reduce\-Existing\-Clauses(), Learn\-Synth\-Q\-B\-F\-::reduce\-Existing\-Clauses(), Learn\-Synth\-Q\-B\-F\-Ind\-::reduce\-Existing\-Clauses(), and C\-N\-F\-::simplify().
+
+\hypertarget{Logger_8h_ab46d591f7a5eb63fee458a99279a2d00}{\index{Logger.\-h@{Logger.\-h}!L\-\_\-\-E\-R\-R@{L\-\_\-\-E\-R\-R}}
+\index{L\-\_\-\-E\-R\-R@{L\-\_\-\-E\-R\-R}!Logger.h@{Logger.\-h}}
+\subsubsection[{L\-\_\-\-E\-R\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-\_\-\-E\-R\-R(
+\begin{DoxyParamCaption}
+\item[{}]{message}
+\end{DoxyParamCaption}
+)}}\label{Logger_8h_ab46d591f7a5eb63fee458a99279a2d00}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\{                                                                         \(\backslash\)
+  if (\hyperlink{classLogger_a4aa4d7c3b98f6e12e7ea8253da5ea0cd}{Logger::instance}().isEnabled(\hyperlink{classLogger_ac9e601f90bf326ce2088de52018861dca482a49db2a0d40e2ae358619edb1633e}{Logger::ERR}))    
+                            \(\backslash\)
+  \{                                                                       \(\backslash\)
+    (\hyperlink{classLogger_a4aa4d7c3b98f6e12e7ea8253da5ea0cd}{Logger::instance}().\hyperlink{classLogger_ac1418f03089428bfb7f3805b7709f2cb}{getOstream}(\hyperlink{classLogger_ac9e601f90bf326ce2088de52018861dca482a49db2a0d40e2ae358619edb1633e}{Logger::ERR}
+      )) <<                       \(\backslash\)
+    \textcolor{stringliteral}{"[ERR] "} << message << std::endl;                                     \(\backslash\)
+  \}                                                                       \(\backslash\)
+\}
+\end{DoxyCode}
+
+
+Prints an error message if this message type is enabled. 
+
+The message to be printed is preceded by '\mbox{[}E\-R\-R\mbox{]} ' and terminated with a newline.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message to print. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 251 of file Logger.\-h.
+
+
+
+Referenced by Dep\-Q\-B\-F\-Api\-::debug\-Check\-Bloqqer\-Model(), Dep\-Q\-B\-F\-Api\-Inc\-::debug\-Check\-Bloqqer\-Model(), Dep\-Q\-B\-F\-Api\-::debug\-Check\-Bloqqer\-Verdict(), Dep\-Q\-B\-F\-Api\-Inc\-::debug\-Check\-Bloqqer\-Verdict(), Options\-::get\-Back\-End(), main(), and E\-P\-R\-Synthesizer\-::run().
+
+\hypertarget{Logger_8h_a5442b95c710d1b2d4c306693fce02997}{\index{Logger.\-h@{Logger.\-h}!L\-\_\-\-I\-N\-F@{L\-\_\-\-I\-N\-F}}
+\index{L\-\_\-\-I\-N\-F@{L\-\_\-\-I\-N\-F}!Logger.h@{Logger.\-h}}
+\subsubsection[{L\-\_\-\-I\-N\-F}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-\_\-\-I\-N\-F(
+\begin{DoxyParamCaption}
+\item[{}]{message}
+\end{DoxyParamCaption}
+)}}\label{Logger_8h_a5442b95c710d1b2d4c306693fce02997}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\{                                                                         \(\backslash\)
+  if (\hyperlink{classLogger_a4aa4d7c3b98f6e12e7ea8253da5ea0cd}{Logger::instance}().isEnabled(\hyperlink{classLogger_ac9e601f90bf326ce2088de52018861dca174739f9b95ebbf75fbb89001f72443b}{Logger::INF}))    
+                            \(\backslash\)
+  \{                                                                       \(\backslash\)
+    (\hyperlink{classLogger_a4aa4d7c3b98f6e12e7ea8253da5ea0cd}{Logger::instance}().\hyperlink{classLogger_ac1418f03089428bfb7f3805b7709f2cb}{getOstream}(\hyperlink{classLogger_ac9e601f90bf326ce2088de52018861dca174739f9b95ebbf75fbb89001f72443b}{Logger::INF}
+      )) <<                       \(\backslash\)
+    \textcolor{stringliteral}{"[INF] "} << message << std::endl;                                     \(\backslash\)
+  \}                                                                       \(\backslash\)
+\}
+\end{DoxyCode}
+
+
+Prints an info message if this message type is enabled. 
+
+The message to be printed is preceded by '\mbox{[}I\-N\-F\mbox{]} ' and terminated with a newline.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message to print. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 302 of file Logger.\-h.
+
+
+
+Referenced by Template\-Synth\-::compute\-Winning\-Region(), Q\-B\-F\-Cert\-Impl\-Extractor\-::extract\-Circuit(), main(), Learn\-Synth\-Q\-B\-F\-Inc\-::run(), I\-F\-M13\-Synth\-::run(), Template\-Synth\-::run(), Parallel\-Learner\-::run(), Learn\-Synth\-Q\-B\-F\-::run(), Learn\-Synth\-S\-A\-T\-::run(), and Learn\-Synth\-Q\-B\-F\-Ind\-::run().
+
+\hypertarget{Logger_8h_a081139c373685d15bfc9f0afebe00542}{\index{Logger.\-h@{Logger.\-h}!L\-\_\-\-L\-O\-G@{L\-\_\-\-L\-O\-G}}
+\index{L\-\_\-\-L\-O\-G@{L\-\_\-\-L\-O\-G}!Logger.h@{Logger.\-h}}
+\subsubsection[{L\-\_\-\-L\-O\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-\_\-\-L\-O\-G(
+\begin{DoxyParamCaption}
+\item[{}]{message}
+\end{DoxyParamCaption}
+)}}\label{Logger_8h_a081139c373685d15bfc9f0afebe00542}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\{                                                                         \(\backslash\)
+  if (\hyperlink{classLogger_a4aa4d7c3b98f6e12e7ea8253da5ea0cd}{Logger::instance}().isEnabled(\hyperlink{classLogger_ac9e601f90bf326ce2088de52018861dca07be7495a7931bee16f5d94b3671f5de}{Logger::LOG}))    
+                            \(\backslash\)
+  \{                                                                       \(\backslash\)
+    (\hyperlink{classLogger_a4aa4d7c3b98f6e12e7ea8253da5ea0cd}{Logger::instance}().\hyperlink{classLogger_ac1418f03089428bfb7f3805b7709f2cb}{getOstream}(\hyperlink{classLogger_ac9e601f90bf326ce2088de52018861dca07be7495a7931bee16f5d94b3671f5de}{Logger::LOG}
+      )) <<                       \(\backslash\)
+    \textcolor{stringliteral}{"[LOG] "} << message << std::endl;                                     \(\backslash\)
+  \}                                                                       \(\backslash\)
+\}
+\end{DoxyCode}
+
+
+Prints a log message if this message type is enabled. 
+
+The message to be printed is preceded by '\mbox{[}L\-O\-G\mbox{]} ' and terminated with a newline.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message to print. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 336 of file Logger.\-h.
+
+
+
+Referenced by I\-F\-M13\-Synth\-::compute\-Winning\-Region(), Template\-Synth\-::compute\-Winning\-Region(), I\-F\-M13\-Explorer\-::explore\-Clauses(), Learn\-Statistics\-Q\-B\-F\-::log\-Statistics(), Learn\-Statistics\-S\-A\-T\-::log\-Statistics(), and main().
+
+\hypertarget{Logger_8h_adf55585b6b559a75e33ee291410f9a9e}{\index{Logger.\-h@{Logger.\-h}!L\-\_\-\-R\-E\-S@{L\-\_\-\-R\-E\-S}}
+\index{L\-\_\-\-R\-E\-S@{L\-\_\-\-R\-E\-S}!Logger.h@{Logger.\-h}}
+\subsubsection[{L\-\_\-\-R\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-\_\-\-R\-E\-S(
+\begin{DoxyParamCaption}
+\item[{}]{message}
+\end{DoxyParamCaption}
+)}}\label{Logger_8h_adf55585b6b559a75e33ee291410f9a9e}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\{                                                                         \(\backslash\)
+  if (\hyperlink{classLogger_a4aa4d7c3b98f6e12e7ea8253da5ea0cd}{Logger::instance}().isEnabled(\hyperlink{classLogger_ac9e601f90bf326ce2088de52018861dca97ed8522dfcbb2cdf29c7f46e583f42f}{Logger::RES}))    
+                            \(\backslash\)
+  \{                                                                       \(\backslash\)
+    (\hyperlink{classLogger_a4aa4d7c3b98f6e12e7ea8253da5ea0cd}{Logger::instance}().\hyperlink{classLogger_ac1418f03089428bfb7f3805b7709f2cb}{getOstream}(\hyperlink{classLogger_ac9e601f90bf326ce2088de52018861dca97ed8522dfcbb2cdf29c7f46e583f42f}{Logger::RES}
+      )) <<                       \(\backslash\)
+    \textcolor{stringliteral}{"[RES] "} << message << std::endl;                                     \(\backslash\)
+  \}                                                                       \(\backslash\)
+\}
+\end{DoxyCode}
+
+
+Prints a result message if this message type is enabled. 
+
+The message to be printed is preceded by '\mbox{[}R\-E\-S\mbox{]} ' and terminated with a newline.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message to print. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 285 of file Logger.\-h.
+
+
+
+Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::run(), I\-F\-M13\-Synth\-::run(), Template\-Synth\-::run(), Parallel\-Learner\-::run(), Learn\-Synth\-Q\-B\-F\-::run(), E\-P\-R\-Synthesizer\-::run(), Learn\-Synth\-S\-A\-T\-::run(), and Learn\-Synth\-Q\-B\-F\-Ind\-::run().
+
+\hypertarget{Logger_8h_aafa8924b4aff539836a162a1cdf5e047}{\index{Logger.\-h@{Logger.\-h}!L\-\_\-\-W\-R\-N@{L\-\_\-\-W\-R\-N}}
+\index{L\-\_\-\-W\-R\-N@{L\-\_\-\-W\-R\-N}!Logger.h@{Logger.\-h}}
+\subsubsection[{L\-\_\-\-W\-R\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-\_\-\-W\-R\-N(
+\begin{DoxyParamCaption}
+\item[{}]{message}
+\end{DoxyParamCaption}
+)}}\label{Logger_8h_aafa8924b4aff539836a162a1cdf5e047}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\{                                                                         \(\backslash\)
+  if (\hyperlink{classLogger_a4aa4d7c3b98f6e12e7ea8253da5ea0cd}{Logger::instance}().isEnabled(\hyperlink{classLogger_ac9e601f90bf326ce2088de52018861dca90d291baa55088591aae64883cfc58bd}{Logger::WRN}))    
+                            \(\backslash\)
+  \{                                                                       \(\backslash\)
+    (\hyperlink{classLogger_a4aa4d7c3b98f6e12e7ea8253da5ea0cd}{Logger::instance}().\hyperlink{classLogger_ac1418f03089428bfb7f3805b7709f2cb}{getOstream}(\hyperlink{classLogger_ac9e601f90bf326ce2088de52018861dca90d291baa55088591aae64883cfc58bd}{Logger::WRN}
+      )) <<                       \(\backslash\)
+    \textcolor{stringliteral}{"[WRN] "} << message << std::endl;                                     \(\backslash\)
+  \}                                                                       \(\backslash\)
+\}
+\end{DoxyCode}
+
+
+Prints a warning message if this message type is enabled. 
+
+The message to be printed is preceded by '\mbox{[}W\-R\-N\mbox{]} ' and terminated with a newline.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message to print. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 268 of file Logger.\-h.
+
+
+
+Referenced by Options\-::parse().
+

@@ -1,0 +1,219 @@
+\hypertarget{ParallelLearner_8cpp}{\section{src/\-Parallel\-Learner.cpp File Reference}
+\label{ParallelLearner_8cpp}\index{src/\-Parallel\-Learner.\-cpp@{src/\-Parallel\-Learner.\-cpp}}
+}
+
+
+Contains the definition of many classes, all related to a parallelization.  
+
+
+{\ttfamily \#include \char`\"{}Parallel\-Learner.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}A\-I\-G2\-C\-N\-F.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Var\-Manager.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Logger.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Options.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Lingeling\-Api.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Mini\-Sat\-Api.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Pico\-Sat\-Api.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Q\-B\-F\-Cert\-Impl\-Extractor.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Q\-B\-F\-Solver.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}unistd.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}I\-F\-M\-Proof\-Obligation.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{ParallelLearner_8cpp_ac1ae4add974b9cfc6b5aaf8a578f01ab}{U\-N\-K\-N\-O\-W\-N}~0
+\begin{DoxyCompactList}\small\item\em A constant for the realizability verdict 'not yet known'. \end{DoxyCompactList}\item 
+\#define \hyperlink{ParallelLearner_8cpp_a559b05095d4222458ef70e407a3a8a01}{R\-E\-A\-L\-I\-Z\-A\-B\-L\-E}~1
+\begin{DoxyCompactList}\small\item\em A constant for the realizability verdict 'realizable'. \end{DoxyCompactList}\item 
+\#define \hyperlink{ParallelLearner_8cpp_afc23dc5ee08a8c5cacca5f12c80ae9ce}{U\-N\-R\-E\-A\-L\-I\-Z\-A\-B\-L\-E}~2
+\begin{DoxyCompactList}\small\item\em A constant for the realizability verdict 'unrealizable'. \end{DoxyCompactList}\item 
+\#define \hyperlink{ParallelLearner_8cpp_aa7427327f72d969747adde3ac7f42729}{I\-S\-\_\-\-L\-O\-S\-E}~false
+\begin{DoxyCompactList}\small\item\em A constant for the result\-: 'the state is losing'. \end{DoxyCompactList}\item 
+\#define \hyperlink{ParallelLearner_8cpp_ac41fa28e287ec0bc04bef6fbac5c16b4}{I\-S\-\_\-\-G\-R\-E\-A\-T\-E\-R}~true
+\begin{DoxyCompactList}\small\item\em A constant for the result\-: 'the rank of the state is greater'. \end{DoxyCompactList}\item 
+\#define \hyperlink{ParallelLearner_8cpp_a0499768a219eb7cb0379840b8dd3cb8e}{E\-X\-P\-L}~0
+\begin{DoxyCompactList}\small\item\em A constant for the source info\-: 'comes from a \hyperlink{classClauseExplorerSAT}{Clause\-Explorer\-S\-A\-T} instance'. \end{DoxyCompactList}\item 
+\#define \hyperlink{ParallelLearner_8cpp_a1ccc263e3498102b6fd88ad5c1b6c70e}{C\-E\-\_\-\-G\-E\-N}~1
+\begin{DoxyCompactList}\small\item\em A constant for the source info\-: 'comes from a \hyperlink{classCounterGenSAT}{Counter\-Gen\-S\-A\-T} instance'. \end{DoxyCompactList}\item 
+\#define \hyperlink{ParallelLearner_8cpp_adbd5cbe76e047a39e0a34f085cdae6fe}{M\-I\-N}~2
+\begin{DoxyCompactList}\small\item\em A constant for the source info\-: 'comes from a \hyperlink{classClauseMinimizerQBF}{Clause\-Minimizer\-Q\-B\-F} instance'. \end{DoxyCompactList}\item 
+\#define \hyperlink{ParallelLearner_8cpp_a88e30ab0b9bb98d1781904b2b1524ee7}{I\-F\-M}~3
+\begin{DoxyCompactList}\small\item\em A constant for the source info\-: 'comes from a \hyperlink{classIFM13Explorer}{I\-F\-M13\-Explorer} instance'. \end{DoxyCompactList}\item 
+\#define \hyperlink{ParallelLearner_8cpp_a2553d9f93348ddd821d62199c3f29ded}{P\-L\-O\-G}(message)
+\begin{DoxyCompactList}\small\item\em Prints a debug message (protected by a lock). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains the definition of many classes, all related to a parallelization. \begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000006}{Todo}]Split this file into several files, one per class, and combine them in a namespace. \end{DoxyRefDesc}
+
+
+Definition in file \hyperlink{ParallelLearner_8cpp_source}{Parallel\-Learner.\-cpp}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{ParallelLearner_8cpp_a1ccc263e3498102b6fd88ad5c1b6c70e}{\index{Parallel\-Learner.\-cpp@{Parallel\-Learner.\-cpp}!C\-E\-\_\-\-G\-E\-N@{C\-E\-\_\-\-G\-E\-N}}
+\index{C\-E\-\_\-\-G\-E\-N@{C\-E\-\_\-\-G\-E\-N}!ParallelLearner.cpp@{Parallel\-Learner.\-cpp}}
+\subsubsection[{C\-E\-\_\-\-G\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-E\-\_\-\-G\-E\-N~1}}\label{ParallelLearner_8cpp_a1ccc263e3498102b6fd88ad5c1b6c70e}
+
+
+A constant for the source info\-: 'comes from a \hyperlink{classCounterGenSAT}{Counter\-Gen\-S\-A\-T} instance'. 
+
+
+
+Definition at line 85 of file Parallel\-Learner.\-cpp.
+
+
+
+Referenced by Counter\-Gen\-S\-A\-T\-::bored(), and Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples().
+
+\hypertarget{ParallelLearner_8cpp_a0499768a219eb7cb0379840b8dd3cb8e}{\index{Parallel\-Learner.\-cpp@{Parallel\-Learner.\-cpp}!E\-X\-P\-L@{E\-X\-P\-L}}
+\index{E\-X\-P\-L@{E\-X\-P\-L}!ParallelLearner.cpp@{Parallel\-Learner.\-cpp}}
+\subsubsection[{E\-X\-P\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-X\-P\-L~0}}\label{ParallelLearner_8cpp_a0499768a219eb7cb0379840b8dd3cb8e}
+
+
+A constant for the source info\-: 'comes from a \hyperlink{classClauseExplorerSAT}{Clause\-Explorer\-S\-A\-T} instance'. 
+
+
+
+Definition at line 79 of file Parallel\-Learner.\-cpp.
+
+
+
+Referenced by Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), and Clause\-Explorer\-S\-A\-T\-::notify\-New\-Win\-Reg\-Clause().
+
+\hypertarget{ParallelLearner_8cpp_a88e30ab0b9bb98d1781904b2b1524ee7}{\index{Parallel\-Learner.\-cpp@{Parallel\-Learner.\-cpp}!I\-F\-M@{I\-F\-M}}
+\index{I\-F\-M@{I\-F\-M}!ParallelLearner.cpp@{Parallel\-Learner.\-cpp}}
+\subsubsection[{I\-F\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-F\-M~3}}\label{ParallelLearner_8cpp_a88e30ab0b9bb98d1781904b2b1524ee7}
+
+
+A constant for the source info\-: 'comes from a \hyperlink{classIFM13Explorer}{I\-F\-M13\-Explorer} instance'. 
+
+
+
+Definition at line 97 of file Parallel\-Learner.\-cpp.
+
+
+
+Referenced by I\-F\-M13\-Explorer\-::add\-Lose().
+
+\hypertarget{ParallelLearner_8cpp_ac41fa28e287ec0bc04bef6fbac5c16b4}{\index{Parallel\-Learner.\-cpp@{Parallel\-Learner.\-cpp}!I\-S\-\_\-\-G\-R\-E\-A\-T\-E\-R@{I\-S\-\_\-\-G\-R\-E\-A\-T\-E\-R}}
+\index{I\-S\-\_\-\-G\-R\-E\-A\-T\-E\-R@{I\-S\-\_\-\-G\-R\-E\-A\-T\-E\-R}!ParallelLearner.cpp@{Parallel\-Learner.\-cpp}}
+\subsubsection[{I\-S\-\_\-\-G\-R\-E\-A\-T\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-S\-\_\-\-G\-R\-E\-A\-T\-E\-R~true}}\label{ParallelLearner_8cpp_ac41fa28e287ec0bc04bef6fbac5c16b4}
+
+
+A constant for the result\-: 'the rank of the state is greater'. 
+
+
+
+Definition at line 73 of file Parallel\-Learner.\-cpp.
+
+
+
+Referenced by I\-F\-M13\-Explorer\-::rec\-Block\-Cube().
+
+\hypertarget{ParallelLearner_8cpp_aa7427327f72d969747adde3ac7f42729}{\index{Parallel\-Learner.\-cpp@{Parallel\-Learner.\-cpp}!I\-S\-\_\-\-L\-O\-S\-E@{I\-S\-\_\-\-L\-O\-S\-E}}
+\index{I\-S\-\_\-\-L\-O\-S\-E@{I\-S\-\_\-\-L\-O\-S\-E}!ParallelLearner.cpp@{Parallel\-Learner.\-cpp}}
+\subsubsection[{I\-S\-\_\-\-L\-O\-S\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-S\-\_\-\-L\-O\-S\-E~false}}\label{ParallelLearner_8cpp_aa7427327f72d969747adde3ac7f42729}
+
+
+A constant for the result\-: 'the state is losing'. 
+
+
+
+Definition at line 67 of file Parallel\-Learner.\-cpp.
+
+
+
+Referenced by I\-F\-M13\-Explorer\-::explore\-Clauses(), and I\-F\-M13\-Explorer\-::rec\-Block\-Cube().
+
+\hypertarget{ParallelLearner_8cpp_adbd5cbe76e047a39e0a34f085cdae6fe}{\index{Parallel\-Learner.\-cpp@{Parallel\-Learner.\-cpp}!M\-I\-N@{M\-I\-N}}
+\index{M\-I\-N@{M\-I\-N}!ParallelLearner.cpp@{Parallel\-Learner.\-cpp}}
+\subsubsection[{M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-I\-N~2}}\label{ParallelLearner_8cpp_adbd5cbe76e047a39e0a34f085cdae6fe}
+
+
+A constant for the source info\-: 'comes from a \hyperlink{classClauseMinimizerQBF}{Clause\-Minimizer\-Q\-B\-F} instance'. 
+
+
+
+Definition at line 91 of file Parallel\-Learner.\-cpp.
+
+
+
+Referenced by Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses(), and Parallel\-Learner\-::notify\-New\-Win\-Reg\-Clause().
+
+\hypertarget{ParallelLearner_8cpp_a2553d9f93348ddd821d62199c3f29ded}{\index{Parallel\-Learner.\-cpp@{Parallel\-Learner.\-cpp}!P\-L\-O\-G@{P\-L\-O\-G}}
+\index{P\-L\-O\-G@{P\-L\-O\-G}!ParallelLearner.cpp@{Parallel\-Learner.\-cpp}}
+\subsubsection[{P\-L\-O\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-L\-O\-G(
+\begin{DoxyParamCaption}
+\item[{}]{message}
+\end{DoxyParamCaption}
+)}}\label{ParallelLearner_8cpp_a2553d9f93348ddd821d62199c3f29ded}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\{                                                                         \(\backslash\)
+  ParallelLearner::print\_lock\_.lock();                                    \(\backslash\)
+  cout << \textcolor{stringliteral}{"[DBG] "} << message << endl;                                    \(\backslash\)
+  ParallelLearner::print\_lock\_.unlock();                                  \(\backslash\)
+\}
+\end{DoxyCode}
+
+
+Prints a debug message (protected by a lock). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message to print. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 108 of file Parallel\-Learner.\-cpp.
+
+\hypertarget{ParallelLearner_8cpp_a559b05095d4222458ef70e407a3a8a01}{\index{Parallel\-Learner.\-cpp@{Parallel\-Learner.\-cpp}!R\-E\-A\-L\-I\-Z\-A\-B\-L\-E@{R\-E\-A\-L\-I\-Z\-A\-B\-L\-E}}
+\index{R\-E\-A\-L\-I\-Z\-A\-B\-L\-E@{R\-E\-A\-L\-I\-Z\-A\-B\-L\-E}!ParallelLearner.cpp@{Parallel\-Learner.\-cpp}}
+\subsubsection[{R\-E\-A\-L\-I\-Z\-A\-B\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-E\-A\-L\-I\-Z\-A\-B\-L\-E~1}}\label{ParallelLearner_8cpp_a559b05095d4222458ef70e407a3a8a01}
+
+
+A constant for the realizability verdict 'realizable'. 
+
+
+
+Definition at line 55 of file Parallel\-Learner.\-cpp.
+
+
+
+Referenced by Clause\-Explorer\-S\-A\-T\-::explore\-Clauses().
+
+\hypertarget{ParallelLearner_8cpp_ac1ae4add974b9cfc6b5aaf8a578f01ab}{\index{Parallel\-Learner.\-cpp@{Parallel\-Learner.\-cpp}!U\-N\-K\-N\-O\-W\-N@{U\-N\-K\-N\-O\-W\-N}}
+\index{U\-N\-K\-N\-O\-W\-N@{U\-N\-K\-N\-O\-W\-N}!ParallelLearner.cpp@{Parallel\-Learner.\-cpp}}
+\subsubsection[{U\-N\-K\-N\-O\-W\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-N\-K\-N\-O\-W\-N~0}}\label{ParallelLearner_8cpp_ac1ae4add974b9cfc6b5aaf8a578f01ab}
+
+
+A constant for the realizability verdict 'not yet known'. 
+
+
+
+Definition at line 49 of file Parallel\-Learner.\-cpp.
+
+
+
+Referenced by Counter\-Gen\-S\-A\-T\-::bored(), Counter\-Gen\-S\-A\-T\-::compress\-Bored(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), I\-F\-M13\-Explorer\-::explore\-Clauses(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses(), I\-F\-M13\-Explorer\-::propagate\-Blocked\-States(), and I\-F\-M13\-Explorer\-::rec\-Block\-Cube().
+
+\hypertarget{ParallelLearner_8cpp_afc23dc5ee08a8c5cacca5f12c80ae9ce}{\index{Parallel\-Learner.\-cpp@{Parallel\-Learner.\-cpp}!U\-N\-R\-E\-A\-L\-I\-Z\-A\-B\-L\-E@{U\-N\-R\-E\-A\-L\-I\-Z\-A\-B\-L\-E}}
+\index{U\-N\-R\-E\-A\-L\-I\-Z\-A\-B\-L\-E@{U\-N\-R\-E\-A\-L\-I\-Z\-A\-B\-L\-E}!ParallelLearner.cpp@{Parallel\-Learner.\-cpp}}
+\subsubsection[{U\-N\-R\-E\-A\-L\-I\-Z\-A\-B\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-N\-R\-E\-A\-L\-I\-Z\-A\-B\-L\-E~2}}\label{ParallelLearner_8cpp_afc23dc5ee08a8c5cacca5f12c80ae9ce}
+
+
+A constant for the realizability verdict 'unrealizable'. 
+
+
+
+Definition at line 61 of file Parallel\-Learner.\-cpp.
+
+
+
+Referenced by Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), I\-F\-M13\-Explorer\-::explore\-Clauses(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses(), and Parallel\-Learner\-::run().
+

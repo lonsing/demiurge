@@ -1,0 +1,638 @@
+\hypertarget{classStringUtils}{\section{String\-Utils Class Reference}
+\label{classStringUtils}\index{String\-Utils@{String\-Utils}}
+}
+
+
+Contains utility functions on strings.  
+
+
+
+
+{\ttfamily \#include $<$String\-Utils.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classStringUtils_adcd5c42b8e47a0401a91ea822fff037f}{$\sim$\-String\-Utils} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static string \hyperlink{classStringUtils_af381aea34f18dc36fc69e94e7bfd129b}{to\-Upper\-Case} (const string \&in)
+\begin{DoxyCompactList}\small\item\em Returns a copy of a string where all lower-\/case letters are turned into upper-\/case. \end{DoxyCompactList}\item 
+static void \hyperlink{classStringUtils_a99ede460fbe4ffaa860018729006db6b}{to\-Upper\-Case\-In} (string \&in)
+\begin{DoxyCompactList}\small\item\em Turns all lower-\/case letters into upper-\/case letters. \end{DoxyCompactList}\item 
+static string \hyperlink{classStringUtils_ac41fe1449bd2750f9c59ae9ae4e52ffe}{to\-Lower\-Case} (const string \&in)
+\begin{DoxyCompactList}\small\item\em Returns a copy of a string where all upper-\/case letters are turned into lower-\/case. \end{DoxyCompactList}\item 
+static void \hyperlink{classStringUtils_a17462d8b525f9e6b14716649a8abfa22}{to\-Lower\-Case\-In} (string \&in)
+\begin{DoxyCompactList}\small\item\em Turns all upper-\/case letters into lower-\/case letters. \end{DoxyCompactList}\item 
+static string \hyperlink{classStringUtils_afea8320e4d8b1725634faf46e27e9453}{trim} (const string \&in, const string \&chars=\hyperlink{classStringUtils_a2abc03ce0e461cb7efca2166a12fd496}{W\-S})
+\begin{DoxyCompactList}\small\item\em Returns a copy of a string where all leading and trailing whitespaces are removed. \end{DoxyCompactList}\item 
+static string \hyperlink{classStringUtils_a54535024ab2df497c5aacd7b23e87c7d}{l\-Trim} (const string \&in, const string \&chars=\hyperlink{classStringUtils_a2abc03ce0e461cb7efca2166a12fd496}{W\-S})
+\begin{DoxyCompactList}\small\item\em Returns a copy of the passed string where all leading whitespaces are removed. \end{DoxyCompactList}\item 
+static string \hyperlink{classStringUtils_a3c695e5581188932e8e491178100f6e9}{r\-Trim} (const string \&in, const string \&chars=\hyperlink{classStringUtils_a2abc03ce0e461cb7efca2166a12fd496}{W\-S})
+\begin{DoxyCompactList}\small\item\em Returns a copy of the passed string where all trailing whitespaces are removed. \end{DoxyCompactList}\item 
+static void \hyperlink{classStringUtils_a04fe6c34d3425e8726712163ebb99fbf}{trim\-In} (string \&in, const string \&chars=\hyperlink{classStringUtils_a2abc03ce0e461cb7efca2166a12fd496}{W\-S})
+\begin{DoxyCompactList}\small\item\em Removes all leading and trailing whitespaces. \end{DoxyCompactList}\item 
+static void \hyperlink{classStringUtils_a50f65fbe8e513170b4d9f19d9ca7a760}{l\-Trim\-In} (string \&in, const string \&chars=\hyperlink{classStringUtils_a2abc03ce0e461cb7efca2166a12fd496}{W\-S})
+\begin{DoxyCompactList}\small\item\em Removes all leading whitespaces. \end{DoxyCompactList}\item 
+static void \hyperlink{classStringUtils_a5996e64ebc6d91ecf0fdaaf12bcbb51c}{r\-Trim\-In} (string \&in, const string \&chars=\hyperlink{classStringUtils_a2abc03ce0e461cb7efca2166a12fd496}{W\-S})
+\begin{DoxyCompactList}\small\item\em Removes all trailing whitespaces. \end{DoxyCompactList}\item 
+static size\-\_\-t \hyperlink{classStringUtils_af14cd8f802ac50d860961e17f0b5a690}{count} (const string \&in, const string \&what)
+\begin{DoxyCompactList}\small\item\em Counts the occurrences of a certain pattern in a string. \end{DoxyCompactList}\item 
+static string \hyperlink{classStringUtils_ad679eae97101f4683e992b54aa28ffb0}{replace\-All} (const string \&in, const string \&from, const string \&to)
+\begin{DoxyCompactList}\small\item\em Returns a copy of a string where all occurrences of a certain pattern are replaced. \end{DoxyCompactList}\item 
+static void \hyperlink{classStringUtils_aa271d595f98f7cd479358b30787aa1cf}{replace\-All\-In} (string \&in, const string \&from, const string \&to)
+\begin{DoxyCompactList}\small\item\em Replaces all occurrences of a substring in a string with another substring. \end{DoxyCompactList}\item 
+static void \hyperlink{classStringUtils_a5460a1950dad8272b36ba35a2435f0a1}{tokenize} (const string \&in, vector$<$ string $>$ \&tok, const string \&delim=\hyperlink{classStringUtils_a2abc03ce0e461cb7efca2166a12fd496}{W\-S})
+\begin{DoxyCompactList}\small\item\em Tokenizes a string with a given list of delimiters. \end{DoxyCompactList}\item 
+static void \hyperlink{classStringUtils_a42d256dd2f9c9a717c18c01c0e15a8a6}{split\-Lines} (const string \&in, vector$<$ string $>$ \&lines, bool keep\-\_\-newlines)
+\begin{DoxyCompactList}\small\item\em Splits a string into its lines (separated by \textbackslash{}n or \textbackslash{}r). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const string \hyperlink{classStringUtils_a2abc03ce0e461cb7efca2166a12fd496}{W\-S} = \char`\"{} \textbackslash{}t\textbackslash{}r\textbackslash{}n\char`\"{}
+\begin{DoxyCompactList}\small\item\em A string containing all whitespaces. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classStringUtils_a9b642ef0396405f4fa2401eeab6a5340}{String\-Utils} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classStringUtils_aff926e2ccc618371a222eaccf68ea259}{String\-Utils} (const \hyperlink{classStringUtils}{String\-Utils} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classStringUtils}{String\-Utils} \& \hyperlink{classStringUtils_a538ae019486670638c22d322dffcd49e}{operator=} (const \hyperlink{classStringUtils}{String\-Utils} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains utility functions on strings. 
+
+\begin{DoxyAuthor}{Author}
+Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0.\-0 
+\end{DoxyVersion}
+
+
+Definition at line 42 of file String\-Utils.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classStringUtils_adcd5c42b8e47a0401a91ea822fff037f}{\index{String\-Utils@{String\-Utils}!$\sim$\-String\-Utils@{$\sim$\-String\-Utils}}
+\index{$\sim$\-String\-Utils@{$\sim$\-String\-Utils}!StringUtils@{String\-Utils}}
+\subsubsection[{$\sim$\-String\-Utils}]{\setlength{\rightskip}{0pt plus 5cm}String\-Utils\-::$\sim$\-String\-Utils (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classStringUtils_adcd5c42b8e47a0401a91ea822fff037f}
+
+
+Destructor. 
+
+
+
+Definition at line 36 of file String\-Utils.\-cpp.
+
+\hypertarget{classStringUtils_a9b642ef0396405f4fa2401eeab6a5340}{\index{String\-Utils@{String\-Utils}!String\-Utils@{String\-Utils}}
+\index{String\-Utils@{String\-Utils}!StringUtils@{String\-Utils}}
+\subsubsection[{String\-Utils}]{\setlength{\rightskip}{0pt plus 5cm}String\-Utils\-::\-String\-Utils (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classStringUtils_a9b642ef0396405f4fa2401eeab6a5340}
+
+
+Constructor. 
+
+The constructor is private and not implemented. Use the static methods. \hypertarget{classStringUtils_aff926e2ccc618371a222eaccf68ea259}{\index{String\-Utils@{String\-Utils}!String\-Utils@{String\-Utils}}
+\index{String\-Utils@{String\-Utils}!StringUtils@{String\-Utils}}
+\subsubsection[{String\-Utils}]{\setlength{\rightskip}{0pt plus 5cm}String\-Utils\-::\-String\-Utils (
+\begin{DoxyParamCaption}
+\item[{const {\bf String\-Utils} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classStringUtils_aff926e2ccc618371a222eaccf68ea259}
+
+
+Copy constructor. 
+
+The copy constructor is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classStringUtils_af14cd8f802ac50d860961e17f0b5a690}{\index{String\-Utils@{String\-Utils}!count@{count}}
+\index{count@{count}!StringUtils@{String\-Utils}}
+\subsubsection[{count}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t String\-Utils\-::count (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{in, }
+\item[{const string \&}]{what}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classStringUtils_af14cd8f802ac50d860961e17f0b5a690}
+
+
+Counts the occurrences of a certain pattern in a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The string in which the occurrences of 'what' should be counted. \\
+\hline
+{\em what} & The string to count. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of times 'what' occurs in 'in'. If what is the empty string, 0 is returned. 
+\end{DoxyReturn}
+
+
+Definition at line 121 of file String\-Utils.\-cpp.
+
+
+
+Referenced by split\-Lines().
+
+\hypertarget{classStringUtils_a54535024ab2df497c5aacd7b23e87c7d}{\index{String\-Utils@{String\-Utils}!l\-Trim@{l\-Trim}}
+\index{l\-Trim@{l\-Trim}!StringUtils@{String\-Utils}}
+\subsubsection[{l\-Trim}]{\setlength{\rightskip}{0pt plus 5cm}string String\-Utils\-::l\-Trim (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{in, }
+\item[{const string \&}]{chars = {\ttfamily {\bf W\-S}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classStringUtils_a54535024ab2df497c5aacd7b23e87c7d}
+
+
+Returns a copy of the passed string where all leading whitespaces are removed. 
+
+The only difference to \hyperlink{classStringUtils_a50f65fbe8e513170b4d9f19d9ca7a760}{l\-Trim\-In } is that this method does not modify the passed string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The string in which all leading whitespaces should be removed. \\
+\hline
+{\em chars} & A string containing all characters to trim. The default is a string containing all whitespace characters. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The passed string where all leading whitespaces have been removed. 
+\end{DoxyReturn}
+
+
+Definition at line 78 of file String\-Utils.\-cpp.
+
+
+
+References l\-Trim\-In().
+
+\hypertarget{classStringUtils_a50f65fbe8e513170b4d9f19d9ca7a760}{\index{String\-Utils@{String\-Utils}!l\-Trim\-In@{l\-Trim\-In}}
+\index{l\-Trim\-In@{l\-Trim\-In}!StringUtils@{String\-Utils}}
+\subsubsection[{l\-Trim\-In}]{\setlength{\rightskip}{0pt plus 5cm}void String\-Utils\-::l\-Trim\-In (
+\begin{DoxyParamCaption}
+\item[{string \&}]{in, }
+\item[{const string \&}]{chars = {\ttfamily {\bf W\-S}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classStringUtils_a50f65fbe8e513170b4d9f19d9ca7a760}
+
+
+Removes all leading whitespaces. 
+
+The only difference to \hyperlink{classStringUtils_a54535024ab2df497c5aacd7b23e87c7d}{l\-Trim } is that this method modifies the passed string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The string in which all leading whitespaces should be removed. \\
+\hline
+{\em chars} & A string containing all characters to trim. The default is a string containing all whitespace characters. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 101 of file String\-Utils.\-cpp.
+
+
+
+Referenced by l\-Trim(), and trim\-In().
+
+\hypertarget{classStringUtils_a538ae019486670638c22d322dffcd49e}{\index{String\-Utils@{String\-Utils}!operator=@{operator=}}
+\index{operator=@{operator=}!StringUtils@{String\-Utils}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String\-Utils}\& String\-Utils\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf String\-Utils} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classStringUtils_a538ae019486670638c22d322dffcd49e}
+
+
+Assignment operator. 
+
+The assignment operator is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the assignment, i.\-e, $\ast$this. 
+\end{DoxyReturn}
+\hypertarget{classStringUtils_ad679eae97101f4683e992b54aa28ffb0}{\index{String\-Utils@{String\-Utils}!replace\-All@{replace\-All}}
+\index{replace\-All@{replace\-All}!StringUtils@{String\-Utils}}
+\subsubsection[{replace\-All}]{\setlength{\rightskip}{0pt plus 5cm}string String\-Utils\-::replace\-All (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{in, }
+\item[{const string \&}]{from, }
+\item[{const string \&}]{to}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classStringUtils_ad679eae97101f4683e992b54aa28ffb0}
+
+
+Returns a copy of a string where all occurrences of a certain pattern are replaced. 
+
+This method copies the passed string, replaces all occurrences of the string 'from' with the string 'to', and returns the resulting string. That is, \hyperlink{classStringUtils_ad679eae97101f4683e992b54aa28ffb0}{String\-Utils.\-replace\-All}(\char`\"{}\-Evil devil\char`\"{}, \char`\"{}vi\char`\"{}, \char`\"{}mai\char`\"{}) returns \char`\"{}\-Email demail\char`\"{}. If 'from' is the empty string, nothing is replaced.
+
+The only difference to \hyperlink{classStringUtils_aa271d595f98f7cd479358b30787aa1cf}{replace\-All\-In } is that this method does not modify the passed string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The string in which the replacement should be made. \\
+\hline
+{\em from} & The string from which all occurrences should be replaced in 'in'. \\
+\hline
+{\em to} & The string with which all occurrences of 'from' should be replaced. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The resulting string where the replacement has been performed. 
+\end{DoxyReturn}
+
+
+Definition at line 137 of file String\-Utils.\-cpp.
+
+
+
+References replace\-All\-In().
+
+\hypertarget{classStringUtils_aa271d595f98f7cd479358b30787aa1cf}{\index{String\-Utils@{String\-Utils}!replace\-All\-In@{replace\-All\-In}}
+\index{replace\-All\-In@{replace\-All\-In}!StringUtils@{String\-Utils}}
+\subsubsection[{replace\-All\-In}]{\setlength{\rightskip}{0pt plus 5cm}void String\-Utils\-::replace\-All\-In (
+\begin{DoxyParamCaption}
+\item[{string \&}]{in, }
+\item[{const string \&}]{from, }
+\item[{const string \&}]{to}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classStringUtils_aa271d595f98f7cd479358b30787aa1cf}
+
+
+Replaces all occurrences of a substring in a string with another substring. 
+
+This method replaces all occurrences of the string 'from' with the string 'to' in the string 'in'. If 'from' is the empty string, nothing is replaced.
+
+The only difference to \hyperlink{classStringUtils_ad679eae97101f4683e992b54aa28ffb0}{replace\-All } is that this method modifies the passed string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The string in which the replacement should be made. \\
+\hline
+{\em from} & The string from which all occurrences should be replaced in 'in'. \\
+\hline
+{\em to} & The string with which all occurrences of 'from' should be replaced. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 145 of file String\-Utils.\-cpp.
+
+
+
+Referenced by replace\-All().
+
+\hypertarget{classStringUtils_a3c695e5581188932e8e491178100f6e9}{\index{String\-Utils@{String\-Utils}!r\-Trim@{r\-Trim}}
+\index{r\-Trim@{r\-Trim}!StringUtils@{String\-Utils}}
+\subsubsection[{r\-Trim}]{\setlength{\rightskip}{0pt plus 5cm}string String\-Utils\-::r\-Trim (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{in, }
+\item[{const string \&}]{chars = {\ttfamily {\bf W\-S}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classStringUtils_a3c695e5581188932e8e491178100f6e9}
+
+
+Returns a copy of the passed string where all trailing whitespaces are removed. 
+
+The only difference to \hyperlink{classStringUtils_a5996e64ebc6d91ecf0fdaaf12bcbb51c}{r\-Trim\-In } is that this method does not modify the passed string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The string in which all trailing whitespaces should be removed. \\
+\hline
+{\em chars} & A string containing all characters to trim. The default is a string containing all whitespace characters. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The passed string where all trailing whitespaces have been removed. 
+\end{DoxyReturn}
+
+
+Definition at line 86 of file String\-Utils.\-cpp.
+
+
+
+References r\-Trim\-In().
+
+\hypertarget{classStringUtils_a5996e64ebc6d91ecf0fdaaf12bcbb51c}{\index{String\-Utils@{String\-Utils}!r\-Trim\-In@{r\-Trim\-In}}
+\index{r\-Trim\-In@{r\-Trim\-In}!StringUtils@{String\-Utils}}
+\subsubsection[{r\-Trim\-In}]{\setlength{\rightskip}{0pt plus 5cm}void String\-Utils\-::r\-Trim\-In (
+\begin{DoxyParamCaption}
+\item[{string \&}]{in, }
+\item[{const string \&}]{chars = {\ttfamily {\bf W\-S}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classStringUtils_a5996e64ebc6d91ecf0fdaaf12bcbb51c}
+
+
+Removes all trailing whitespaces. 
+
+The only difference to \hyperlink{classStringUtils_a3c695e5581188932e8e491178100f6e9}{r\-Trim } is that this method modifies the passed string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The string in which all trailing whitespaces should be removed. \\
+\hline
+{\em chars} & A string containing all characters to trim. The default is a string containing all whitespace characters. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 111 of file String\-Utils.\-cpp.
+
+
+
+Referenced by r\-Trim(), and trim\-In().
+
+\hypertarget{classStringUtils_a42d256dd2f9c9a717c18c01c0e15a8a6}{\index{String\-Utils@{String\-Utils}!split\-Lines@{split\-Lines}}
+\index{split\-Lines@{split\-Lines}!StringUtils@{String\-Utils}}
+\subsubsection[{split\-Lines}]{\setlength{\rightskip}{0pt plus 5cm}void String\-Utils\-::split\-Lines (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{in, }
+\item[{vector$<$ string $>$ \&}]{lines, }
+\item[{bool}]{keep\-\_\-newlines}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classStringUtils_a42d256dd2f9c9a717c18c01c0e15a8a6}
+
+
+Splits a string into its lines (separated by \textbackslash{}n or \textbackslash{}r). 
+
+Emtpy lines are ignored.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The string to split. \\
+\hline
+{\em lines} & The container to add the found lines to. Empty lines are not added. \\
+\hline
+{\em keep\-\_\-newlines} & True if the newline characters should be kept, false otherwise. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 173 of file String\-Utils.\-cpp.
+
+
+
+References count(), and tokenize().
+
+
+
+Referenced by Q\-B\-F\-Cert\-Impl\-Extractor\-::parse\-Q\-B\-F\-Cert\-Answer().
+
+\hypertarget{classStringUtils_a5460a1950dad8272b36ba35a2435f0a1}{\index{String\-Utils@{String\-Utils}!tokenize@{tokenize}}
+\index{tokenize@{tokenize}!StringUtils@{String\-Utils}}
+\subsubsection[{tokenize}]{\setlength{\rightskip}{0pt plus 5cm}void String\-Utils\-::tokenize (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{in, }
+\item[{vector$<$ string $>$ \&}]{tok, }
+\item[{const string \&}]{delim = {\ttfamily {\bf W\-S}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classStringUtils_a5460a1950dad8272b36ba35a2435f0a1}
+
+
+Tokenizes a string with a given list of delimiters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The string to tokenize. \\
+\hline
+{\em tok} & The container to add the found tokens to. \\
+\hline
+{\em delim} & A string where every character is seen as a delimiter. The default is to treat all whitespaces as delimiters. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 160 of file String\-Utils.\-cpp.
+
+
+
+Referenced by split\-Lines().
+
+\hypertarget{classStringUtils_ac41fe1449bd2750f9c59ae9ae4e52ffe}{\index{String\-Utils@{String\-Utils}!to\-Lower\-Case@{to\-Lower\-Case}}
+\index{to\-Lower\-Case@{to\-Lower\-Case}!StringUtils@{String\-Utils}}
+\subsubsection[{to\-Lower\-Case}]{\setlength{\rightskip}{0pt plus 5cm}string String\-Utils\-::to\-Lower\-Case (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{in}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classStringUtils_ac41fe1449bd2750f9c59ae9ae4e52ffe}
+
+
+Returns a copy of a string where all upper-\/case letters are turned into lower-\/case. 
+
+The only difference to \hyperlink{classStringUtils_a17462d8b525f9e6b14716649a8abfa22}{to\-Lower\-Case\-In } is that this method does not modify the passed string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The string in which all upper-\/case letters should be turned into lower-\/case letters. This string is N\-O\-T modified. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A copy of the passed string, where all upper-\/case letters are turned into lower case letters. 
+\end{DoxyReturn}
+
+
+Definition at line 56 of file String\-Utils.\-cpp.
+
+
+
+References to\-Lower\-Case\-In().
+
+
+
+Referenced by Var\-Manager\-::init\-From\-Aig(), and E\-P\-R\-Synthesizer\-::run().
+
+\hypertarget{classStringUtils_a17462d8b525f9e6b14716649a8abfa22}{\index{String\-Utils@{String\-Utils}!to\-Lower\-Case\-In@{to\-Lower\-Case\-In}}
+\index{to\-Lower\-Case\-In@{to\-Lower\-Case\-In}!StringUtils@{String\-Utils}}
+\subsubsection[{to\-Lower\-Case\-In}]{\setlength{\rightskip}{0pt plus 5cm}void String\-Utils\-::to\-Lower\-Case\-In (
+\begin{DoxyParamCaption}
+\item[{string \&}]{in}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classStringUtils_a17462d8b525f9e6b14716649a8abfa22}
+
+
+Turns all upper-\/case letters into lower-\/case letters. 
+
+The only difference to \hyperlink{classStringUtils_ac41fe1449bd2750f9c59ae9ae4e52ffe}{to\-Lower\-Case } is that this method modifies the passed string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The string to process. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 64 of file String\-Utils.\-cpp.
+
+
+
+Referenced by Q\-B\-F\-Cert\-Impl\-Extractor\-::dump\-Res\-Aiger\-Lib(), Options\-::parse(), and to\-Lower\-Case().
+
+\hypertarget{classStringUtils_af381aea34f18dc36fc69e94e7bfd129b}{\index{String\-Utils@{String\-Utils}!to\-Upper\-Case@{to\-Upper\-Case}}
+\index{to\-Upper\-Case@{to\-Upper\-Case}!StringUtils@{String\-Utils}}
+\subsubsection[{to\-Upper\-Case}]{\setlength{\rightskip}{0pt plus 5cm}string String\-Utils\-::to\-Upper\-Case (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{in}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classStringUtils_af381aea34f18dc36fc69e94e7bfd129b}
+
+
+Returns a copy of a string where all lower-\/case letters are turned into upper-\/case. 
+
+The only difference to \hyperlink{classStringUtils_a99ede460fbe4ffaa860018729006db6b}{to\-Uppper\-Case\-In } is that this method does not modify the passed string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The string in which all lower-\/case letters should be turned into upper-\/case letters. This string is N\-O\-T modified. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A copy of the passed string, where all lower-\/case letters are turned into upper case letters. 
+\end{DoxyReturn}
+
+
+Definition at line 42 of file String\-Utils.\-cpp.
+
+
+
+References to\-Upper\-Case\-In().
+
+\hypertarget{classStringUtils_a99ede460fbe4ffaa860018729006db6b}{\index{String\-Utils@{String\-Utils}!to\-Upper\-Case\-In@{to\-Upper\-Case\-In}}
+\index{to\-Upper\-Case\-In@{to\-Upper\-Case\-In}!StringUtils@{String\-Utils}}
+\subsubsection[{to\-Upper\-Case\-In}]{\setlength{\rightskip}{0pt plus 5cm}void String\-Utils\-::to\-Upper\-Case\-In (
+\begin{DoxyParamCaption}
+\item[{string \&}]{in}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classStringUtils_a99ede460fbe4ffaa860018729006db6b}
+
+
+Turns all lower-\/case letters into upper-\/case letters. 
+
+The only difference to \hyperlink{classStringUtils_af381aea34f18dc36fc69e94e7bfd129b}{to\-Uppper\-Case } is that this method modifies the passed string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The string to process. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 50 of file String\-Utils.\-cpp.
+
+
+
+Referenced by to\-Upper\-Case().
+
+\hypertarget{classStringUtils_afea8320e4d8b1725634faf46e27e9453}{\index{String\-Utils@{String\-Utils}!trim@{trim}}
+\index{trim@{trim}!StringUtils@{String\-Utils}}
+\subsubsection[{trim}]{\setlength{\rightskip}{0pt plus 5cm}string String\-Utils\-::trim (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{in, }
+\item[{const string \&}]{chars = {\ttfamily {\bf W\-S}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classStringUtils_afea8320e4d8b1725634faf46e27e9453}
+
+
+Returns a copy of a string where all leading and trailing whitespaces are removed. 
+
+The only difference to \hyperlink{classStringUtils_a04fe6c34d3425e8726712163ebb99fbf}{trim\-In } is that this method does not modify the passed string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The string in which all leading and trailing whitespaces should be removed. \\
+\hline
+{\em chars} & A string containing all characters to trim. The default is a string containing all whitespace characters. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The passed string where all leading and trailing whitespaces have been removed. 
+\end{DoxyReturn}
+
+
+Definition at line 70 of file String\-Utils.\-cpp.
+
+
+
+References trim\-In().
+
+\hypertarget{classStringUtils_a04fe6c34d3425e8726712163ebb99fbf}{\index{String\-Utils@{String\-Utils}!trim\-In@{trim\-In}}
+\index{trim\-In@{trim\-In}!StringUtils@{String\-Utils}}
+\subsubsection[{trim\-In}]{\setlength{\rightskip}{0pt plus 5cm}void String\-Utils\-::trim\-In (
+\begin{DoxyParamCaption}
+\item[{string \&}]{in, }
+\item[{const string \&}]{chars = {\ttfamily {\bf W\-S}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classStringUtils_a04fe6c34d3425e8726712163ebb99fbf}
+
+
+Removes all leading and trailing whitespaces. 
+
+The only difference to \hyperlink{classStringUtils_afea8320e4d8b1725634faf46e27e9453}{trim } is that this method modifies the passed string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The string in which all leading and trailing whitespaces should be removed. \\
+\hline
+{\em chars} & A string containing all characters to trim. The default is a string containing all whitespace characters. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 94 of file String\-Utils.\-cpp.
+
+
+
+References l\-Trim\-In(), and r\-Trim\-In().
+
+
+
+Referenced by trim().
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classStringUtils_a2abc03ce0e461cb7efca2166a12fd496}{\index{String\-Utils@{String\-Utils}!W\-S@{W\-S}}
+\index{W\-S@{W\-S}!StringUtils@{String\-Utils}}
+\subsubsection[{W\-S}]{\setlength{\rightskip}{0pt plus 5cm}const string String\-Utils\-::\-W\-S = \char`\"{} \textbackslash{}t\textbackslash{}r\textbackslash{}n\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}}\label{classStringUtils_a2abc03ce0e461cb7efca2166a12fd496}
+
+
+A string containing all whitespaces. 
+
+
+
+Definition at line 49 of file String\-Utils.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{StringUtils_8h}{String\-Utils.\-h}\item 
+src/\hyperlink{StringUtils_8cpp}{String\-Utils.\-cpp}\end{DoxyCompactItemize}

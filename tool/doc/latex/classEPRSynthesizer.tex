@@ -1,0 +1,328 @@
+\hypertarget{classEPRSynthesizer}{\section{E\-P\-R\-Synthesizer Class Reference}
+\label{classEPRSynthesizer}\index{E\-P\-R\-Synthesizer@{E\-P\-R\-Synthesizer}}
+}
+
+
+Implements a synthesis method based on reduction to E\-P\-R.  
+
+
+
+
+{\ttfamily \#include $<$E\-P\-R\-Synthesizer.\-h$>$}
+
+Inheritance diagram for E\-P\-R\-Synthesizer\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classEPRSynthesizer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classEPRSynthesizer_a9798c774af30ce7f82564386f6f32d33}{E\-P\-R\-Synthesizer} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classEPRSynthesizer_a0299d7f7b8dcc26c13ab0b6268e9f974}{$\sim$\-E\-P\-R\-Synthesizer} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classEPRSynthesizer_ab5eb613a7e5e4f8d408938531f745e4e}{run} ()
+\begin{DoxyCompactList}\small\item\em Executes the back-\/end (constructs an E\-P\-R formula an passes it to i\-Prover). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classEPRSynthesizer_ab2815225b4bf61a52b8104b19aae6bcf}{add\-Clause} (const string \&clause, string comment=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em A helper that adds a clause to the E\-P\-R formula in T\-P\-T\-P format. \end{DoxyCompactList}\item 
+unsigned \hyperlink{classEPRSynthesizer_afd429d29479abe7c3f78a232750a0e53}{neg} (unsigned aig\-\_\-lit)
+\begin{DoxyCompactList}\small\item\em A helper to negate an A\-I\-G\-E\-R literal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ostringstream \hyperlink{classEPRSynthesizer_a5b9074e1ca3d1a12150c6ae639f475fa}{tptp\-\_\-query\-\_\-}
+\begin{DoxyCompactList}\small\item\em The E\-P\-R formula in T\-P\-T\-P format. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classEPRSynthesizer_a14d30bb922f975a1f195965d876784cb}{next\-\_\-clause\-\_\-nr\-\_\-}
+\begin{DoxyCompactList}\small\item\em A monotonic counter to assign unique I\-Ds to clauses. \end{DoxyCompactList}\item 
+string \hyperlink{classEPRSynthesizer_ac7fc7beb51f9c27e42941e8e20882540}{path\-\_\-to\-\_\-iprover\-\_\-}
+\begin{DoxyCompactList}\small\item\em The path to the i\-Prover executable. \end{DoxyCompactList}\item 
+string \hyperlink{classEPRSynthesizer_a95c4d232fec2376be891c6ddc96610ce}{in\-\_\-file\-\_\-name\-\_\-}
+\begin{DoxyCompactList}\small\item\em The name of the input file (containing the E\-P\-R formula) that is solved by i\-Prover. \end{DoxyCompactList}\item 
+string \hyperlink{classEPRSynthesizer_a40ca45e5284a5c24964730beb17d76b8}{out\-\_\-file\-\_\-name\-\_\-}
+\begin{DoxyCompactList}\small\item\em The name of the file containing the response from i\-Prover. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classEPRSynthesizer_a50010185f31a7d17a2082d2fe81a0aa9}{E\-P\-R\-Synthesizer} (const \hyperlink{classEPRSynthesizer}{E\-P\-R\-Synthesizer} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classEPRSynthesizer}{E\-P\-R\-Synthesizer} \& \hyperlink{classEPRSynthesizer_a3edccf1e4b274eb7ac1f2bbefa2e4d0b}{operator=} (const \hyperlink{classEPRSynthesizer}{E\-P\-R\-Synthesizer} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implements a synthesis method based on reduction to E\-P\-R. 
+
+E\-P\-R (Effectively Propositional Logic) is a subset of first-\/order logic. E\-P\-R formulas are of the form exists A\-: forall B\-: F, where A and B are sets of domain variables, and F is a function-\/free formula in \hyperlink{classCNF}{C\-N\-F}. F can contain predicates over the variables of A and B. These predicates are implicitly existentially quantified.
+
+This class creates the following E\-P\-R formula\-: forall x,i,x'\-: (I(x) =$>$ W(x)) A\-N\-D (W(x) =$>$ P(x)) A\-N\-D (W(x) A\-N\-D T(x,i,C(x,i),x') =$>$ W(x')) Here, x,i, and x' are actually domain variables (and not Boolean variables), but there is a one-\/to-\/one mapping. W is a fresh predicate over the state variables. It represents the winning region. C(x,i) is a set of predicates, one for each control signal. These predicates represent the implementation of the control signals. The challenging part in constructing this E\-P\-R formula is actually an efficient encoding of the transition relation T in E\-P\-R. In the A\-I\-G\-E\-R representation (and also in the \hyperlink{classCNF}{C\-N\-F} representation) the transition relation T uses many temporary variables. The problem is that they are all quantified existentially, which means that they have to be skolemized with predicates to get a valid E\-P\-R formula. We analyze the structure of the A\-I\-G\-E\-R graph in order to find out the minimal dependencies for all these predicates. This is supposed to increase the performance. Then the class uses i\-Prover (\href{http://www.cs.man.ac.uk/~korovink/iprover/}{\tt http\-://www.\-cs.\-man.\-ac.\-uk/$\sim$korovink/iprover/}) to solve the formula. i\-Prover cannot only give a Y\-E\-S/\-No answer for the satisfiability question. It can also construct functions for the predicates. That is, i\-Prover gives us the winning region together with implementations for all control signals. It solves the synthesis problem completely (and does not only compute a winning region).
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000002}{Todo}]\-: At the moment we only construct the formula, and parse back the answer to the realizability question. Parsing back the implementation for the controllable signals remains to be done. (The i\-Prover page promises to release a new version with more output formats soon.) \end{DoxyRefDesc}
+\begin{DoxyAuthor}{Author}
+Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0.\-0 
+\end{DoxyVersion}
+
+
+Definition at line 73 of file E\-P\-R\-Synthesizer.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classEPRSynthesizer_a9798c774af30ce7f82564386f6f32d33}{\index{E\-P\-R\-Synthesizer@{E\-P\-R\-Synthesizer}!E\-P\-R\-Synthesizer@{E\-P\-R\-Synthesizer}}
+\index{E\-P\-R\-Synthesizer@{E\-P\-R\-Synthesizer}!EPRSynthesizer@{E\-P\-R\-Synthesizer}}
+\subsubsection[{E\-P\-R\-Synthesizer}]{\setlength{\rightskip}{0pt plus 5cm}E\-P\-R\-Synthesizer\-::\-E\-P\-R\-Synthesizer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classEPRSynthesizer_a9798c774af30ce7f82564386f6f32d33}
+
+
+Constructor. 
+
+
+
+Definition at line 41 of file E\-P\-R\-Synthesizer.\-cpp.
+
+
+
+References Options\-::get\-Tmp\-Dir\-Name(), in\-\_\-file\-\_\-name\-\_\-, Options\-::instance(), M\-A\-S\-S\-E\-R\-T, out\-\_\-file\-\_\-name\-\_\-, path\-\_\-to\-\_\-iprover\-\_\-, and Options\-::\-T\-P\-\_\-\-V\-A\-R.
+
+\hypertarget{classEPRSynthesizer_a0299d7f7b8dcc26c13ab0b6268e9f974}{\index{E\-P\-R\-Synthesizer@{E\-P\-R\-Synthesizer}!$\sim$\-E\-P\-R\-Synthesizer@{$\sim$\-E\-P\-R\-Synthesizer}}
+\index{$\sim$\-E\-P\-R\-Synthesizer@{$\sim$\-E\-P\-R\-Synthesizer}!EPRSynthesizer@{E\-P\-R\-Synthesizer}}
+\subsubsection[{$\sim$\-E\-P\-R\-Synthesizer}]{\setlength{\rightskip}{0pt plus 5cm}E\-P\-R\-Synthesizer\-::$\sim$\-E\-P\-R\-Synthesizer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classEPRSynthesizer_a0299d7f7b8dcc26c13ab0b6268e9f974}
+
+
+Destructor. 
+
+
+
+Definition at line 54 of file E\-P\-R\-Synthesizer.\-cpp.
+
+\hypertarget{classEPRSynthesizer_a50010185f31a7d17a2082d2fe81a0aa9}{\index{E\-P\-R\-Synthesizer@{E\-P\-R\-Synthesizer}!E\-P\-R\-Synthesizer@{E\-P\-R\-Synthesizer}}
+\index{E\-P\-R\-Synthesizer@{E\-P\-R\-Synthesizer}!EPRSynthesizer@{E\-P\-R\-Synthesizer}}
+\subsubsection[{E\-P\-R\-Synthesizer}]{\setlength{\rightskip}{0pt plus 5cm}E\-P\-R\-Synthesizer\-::\-E\-P\-R\-Synthesizer (
+\begin{DoxyParamCaption}
+\item[{const {\bf E\-P\-R\-Synthesizer} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classEPRSynthesizer_a50010185f31a7d17a2082d2fe81a0aa9}
+
+
+Copy constructor. 
+
+The copy constructor is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classEPRSynthesizer_ab2815225b4bf61a52b8104b19aae6bcf}{\index{E\-P\-R\-Synthesizer@{E\-P\-R\-Synthesizer}!add\-Clause@{add\-Clause}}
+\index{add\-Clause@{add\-Clause}!EPRSynthesizer@{E\-P\-R\-Synthesizer}}
+\subsubsection[{add\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}void E\-P\-R\-Synthesizer\-::add\-Clause (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{clause, }
+\item[{string}]{comment = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classEPRSynthesizer_ab2815225b4bf61a52b8104b19aae6bcf}
+
+
+A helper that adds a clause to the E\-P\-R formula in T\-P\-T\-P format. 
+
+The clause is assigned a unique I\-D, and is added to the tptp\-\_\-query\-\_\- in a nicely formatted form, together with an optional comment.
+
+
+\begin{DoxyParams}{Parameters}
+{\em clause} & A string representation of the clause to add. \\
+\hline
+{\em comment} & A comment (useful for debugging). This parameter is optional. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 337 of file E\-P\-R\-Synthesizer.\-cpp.
+
+
+
+References next\-\_\-clause\-\_\-nr\-\_\-, and tptp\-\_\-query\-\_\-.
+
+
+
+Referenced by run().
+
+\hypertarget{classEPRSynthesizer_afd429d29479abe7c3f78a232750a0e53}{\index{E\-P\-R\-Synthesizer@{E\-P\-R\-Synthesizer}!neg@{neg}}
+\index{neg@{neg}!EPRSynthesizer@{E\-P\-R\-Synthesizer}}
+\subsubsection[{neg}]{\setlength{\rightskip}{0pt plus 5cm}unsigned E\-P\-R\-Synthesizer\-::neg (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{aig\-\_\-lit}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classEPRSynthesizer_afd429d29479abe7c3f78a232750a0e53}
+
+
+A helper to negate an A\-I\-G\-E\-R literal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em aig\-\_\-lit} & An A\-I\-G\-E\-R literal. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The negation of the passed A\-I\-G\-E\-R literal. 
+\end{DoxyReturn}
+
+
+Definition at line 349 of file E\-P\-R\-Synthesizer.\-cpp.
+
+
+
+Referenced by run().
+
+\hypertarget{classEPRSynthesizer_a3edccf1e4b274eb7ac1f2bbefa2e4d0b}{\index{E\-P\-R\-Synthesizer@{E\-P\-R\-Synthesizer}!operator=@{operator=}}
+\index{operator=@{operator=}!EPRSynthesizer@{E\-P\-R\-Synthesizer}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\-P\-R\-Synthesizer}\& E\-P\-R\-Synthesizer\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf E\-P\-R\-Synthesizer} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classEPRSynthesizer_a3edccf1e4b274eb7ac1f2bbefa2e4d0b}
+
+
+Assignment operator. 
+
+The assignment operator is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the assignment, i.\-e, $\ast$this. 
+\end{DoxyReturn}
+\hypertarget{classEPRSynthesizer_ab5eb613a7e5e4f8d408938531f745e4e}{\index{E\-P\-R\-Synthesizer@{E\-P\-R\-Synthesizer}!run@{run}}
+\index{run@{run}!EPRSynthesizer@{E\-P\-R\-Synthesizer}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}bool E\-P\-R\-Synthesizer\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classEPRSynthesizer_ab5eb613a7e5e4f8d408938531f745e4e}
+
+
+Executes the back-\/end (constructs an E\-P\-R formula an passes it to i\-Prover). 
+
+This method is the workhorse of this class. It constructs the following E\-P\-R formula in T\-P\-T\-P format\-: forall x,i,x'\-: (I(x) =$>$ W(x)) A\-N\-D (W(x) =$>$ P(x)) A\-N\-D (W(x) A\-N\-D T(x,i,C(x,i),x') =$>$ W(x')) Here, x,i, and x' are actually domain variables (and not Boolean variables), but there is a one-\/to-\/one mapping. W is a fresh predicate over the state variables. It represents the winning region. C(x,i) is a set of predicates, one for each control signal. These predicates represent the implementation of the control signals. The challenging part in constructing this E\-P\-R formula is actually an efficient encoding of the transition relation T in E\-P\-R. In the A\-I\-G\-E\-R representation (and also in the \hyperlink{classCNF}{C\-N\-F} representation) the transition relation T uses many temporary variables. The problem is that they are all quantified existentially, which means that they have to be skolemized with predicates to get a valid E\-P\-R formula. We analyze the structure of the A\-I\-G\-E\-R graph in order to find out the minimal dependencies for all these predicates. This is supposed to increase the performance. After constructing the E\-P\-R formula this method then calls i\-Prover (\href{http://www.cs.man.ac.uk/~korovink/iprover/}{\tt http\-://www.\-cs.\-man.\-ac.\-uk/$\sim$korovink/iprover/}) to solve it. i\-Prover cannot only give a Y\-E\-S/\-No answer for the satisfiability question. It can also construct functions for the predicates. That is, i\-Prover gives us the winning region together with implementations for all control signals. It solves the synthesis problem completely (and does not only compute a winning region).
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000003}{Todo}]\-: At the moment we only construct the formula, and parse back the answer to the realizability question. Parsing back the implementation for the controllable signals remains to be done. (The i\-Prover page promises to release a new version with more output formats soon.) \end{DoxyRefDesc}
+\begin{DoxyReturn}{Returns}
+True if the specification was realizable, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classBackEnd_a099e717dc71e9cc2d838b1ca86340590}{Back\-End}.
+
+
+
+Definition at line 60 of file E\-P\-R\-Synthesizer.\-cpp.
+
+
+
+References add\-Clause(), Options\-::get\-Aig\-In\-File\-Name(), in\-\_\-file\-\_\-name\-\_\-, Options\-::instance(), L\-\_\-\-E\-R\-R, L\-\_\-\-R\-E\-S, M\-A\-S\-S\-E\-R\-T, neg(), out\-\_\-file\-\_\-name\-\_\-, path\-\_\-to\-\_\-iprover\-\_\-, File\-Utils\-::read\-File(), String\-Utils\-::to\-Lower\-Case(), tptp\-\_\-query\-\_\-, and File\-Utils\-::write\-File().
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classEPRSynthesizer_a95c4d232fec2376be891c6ddc96610ce}{\index{E\-P\-R\-Synthesizer@{E\-P\-R\-Synthesizer}!in\-\_\-file\-\_\-name\-\_\-@{in\-\_\-file\-\_\-name\-\_\-}}
+\index{in\-\_\-file\-\_\-name\-\_\-@{in\-\_\-file\-\_\-name\-\_\-}!EPRSynthesizer@{E\-P\-R\-Synthesizer}}
+\subsubsection[{in\-\_\-file\-\_\-name\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}string E\-P\-R\-Synthesizer\-::in\-\_\-file\-\_\-name\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classEPRSynthesizer_a95c4d232fec2376be891c6ddc96610ce}
+
+
+The name of the input file (containing the E\-P\-R formula) that is solved by i\-Prover. 
+
+
+
+Definition at line 160 of file E\-P\-R\-Synthesizer.\-h.
+
+
+
+Referenced by E\-P\-R\-Synthesizer(), and run().
+
+\hypertarget{classEPRSynthesizer_a14d30bb922f975a1f195965d876784cb}{\index{E\-P\-R\-Synthesizer@{E\-P\-R\-Synthesizer}!next\-\_\-clause\-\_\-nr\-\_\-@{next\-\_\-clause\-\_\-nr\-\_\-}}
+\index{next\-\_\-clause\-\_\-nr\-\_\-@{next\-\_\-clause\-\_\-nr\-\_\-}!EPRSynthesizer@{E\-P\-R\-Synthesizer}}
+\subsubsection[{next\-\_\-clause\-\_\-nr\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t E\-P\-R\-Synthesizer\-::next\-\_\-clause\-\_\-nr\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classEPRSynthesizer_a14d30bb922f975a1f195965d876784cb}
+
+
+A monotonic counter to assign unique I\-Ds to clauses. 
+
+
+
+Definition at line 150 of file E\-P\-R\-Synthesizer.\-h.
+
+
+
+Referenced by add\-Clause().
+
+\hypertarget{classEPRSynthesizer_a40ca45e5284a5c24964730beb17d76b8}{\index{E\-P\-R\-Synthesizer@{E\-P\-R\-Synthesizer}!out\-\_\-file\-\_\-name\-\_\-@{out\-\_\-file\-\_\-name\-\_\-}}
+\index{out\-\_\-file\-\_\-name\-\_\-@{out\-\_\-file\-\_\-name\-\_\-}!EPRSynthesizer@{E\-P\-R\-Synthesizer}}
+\subsubsection[{out\-\_\-file\-\_\-name\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}string E\-P\-R\-Synthesizer\-::out\-\_\-file\-\_\-name\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classEPRSynthesizer_a40ca45e5284a5c24964730beb17d76b8}
+
+
+The name of the file containing the response from i\-Prover. 
+
+
+
+Definition at line 165 of file E\-P\-R\-Synthesizer.\-h.
+
+
+
+Referenced by E\-P\-R\-Synthesizer(), and run().
+
+\hypertarget{classEPRSynthesizer_ac7fc7beb51f9c27e42941e8e20882540}{\index{E\-P\-R\-Synthesizer@{E\-P\-R\-Synthesizer}!path\-\_\-to\-\_\-iprover\-\_\-@{path\-\_\-to\-\_\-iprover\-\_\-}}
+\index{path\-\_\-to\-\_\-iprover\-\_\-@{path\-\_\-to\-\_\-iprover\-\_\-}!EPRSynthesizer@{E\-P\-R\-Synthesizer}}
+\subsubsection[{path\-\_\-to\-\_\-iprover\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}string E\-P\-R\-Synthesizer\-::path\-\_\-to\-\_\-iprover\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classEPRSynthesizer_ac7fc7beb51f9c27e42941e8e20882540}
+
+
+The path to the i\-Prover executable. 
+
+
+
+Definition at line 155 of file E\-P\-R\-Synthesizer.\-h.
+
+
+
+Referenced by E\-P\-R\-Synthesizer(), and run().
+
+\hypertarget{classEPRSynthesizer_a5b9074e1ca3d1a12150c6ae639f475fa}{\index{E\-P\-R\-Synthesizer@{E\-P\-R\-Synthesizer}!tptp\-\_\-query\-\_\-@{tptp\-\_\-query\-\_\-}}
+\index{tptp\-\_\-query\-\_\-@{tptp\-\_\-query\-\_\-}!EPRSynthesizer@{E\-P\-R\-Synthesizer}}
+\subsubsection[{tptp\-\_\-query\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}ostringstream E\-P\-R\-Synthesizer\-::tptp\-\_\-query\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classEPRSynthesizer_a5b9074e1ca3d1a12150c6ae639f475fa}
+
+
+The E\-P\-R formula in T\-P\-T\-P format. 
+
+
+
+Definition at line 145 of file E\-P\-R\-Synthesizer.\-h.
+
+
+
+Referenced by add\-Clause(), and run().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{EPRSynthesizer_8h}{E\-P\-R\-Synthesizer.\-h}\item 
+src/\hyperlink{EPRSynthesizer_8cpp}{E\-P\-R\-Synthesizer.\-cpp}\end{DoxyCompactItemize}

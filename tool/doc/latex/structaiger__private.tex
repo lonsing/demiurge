@@ -1,0 +1,82 @@
+\hypertarget{structaiger__private}{\section{aiger\-\_\-private Struct Reference}
+\label{structaiger__private}\index{aiger\-\_\-private@{aiger\-\_\-private}}
+}
+
+
+Redefinition of the \hyperlink{structaiger__private}{aiger\-\_\-private} struct to be able to modify it.  
+
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{structaiger__private_a62e0f340ce936099c0f3c2e8462eace6}{aiger {\bfseries publ}}\label{structaiger__private_a62e0f340ce936099c0f3c2e8462eace6}
+
+\item 
+\hypertarget{structaiger__private_aa5f1b5a8f1f56b66960e009c3a063765}{void $\ast$ {\bfseries types}}\label{structaiger__private_aa5f1b5a8f1f56b66960e009c3a063765}
+
+\item 
+\hypertarget{structaiger__private_ab28d3db4875f4253a8f4158a2e03d985}{unsigned {\bfseries size\-\_\-types}}\label{structaiger__private_ab28d3db4875f4253a8f4158a2e03d985}
+
+\item 
+\hypertarget{structaiger__private_af19494cd11aacd23960d494ece08b6a3}{unsigned char $\ast$ {\bfseries coi}}\label{structaiger__private_af19494cd11aacd23960d494ece08b6a3}
+
+\item 
+\hypertarget{structaiger__private_a174795cdd5c58e0cfcff8b54c0238dc3}{unsigned {\bfseries size\-\_\-coi}}\label{structaiger__private_a174795cdd5c58e0cfcff8b54c0238dc3}
+
+\item 
+\hypertarget{structaiger__private_a4c79579261f151eee561bacec9180f56}{unsigned {\bfseries size\-\_\-inputs}}\label{structaiger__private_a4c79579261f151eee561bacec9180f56}
+
+\item 
+\hypertarget{structaiger__private_aa269fc64c96f64d6c94ecfe1e8a1c30b}{unsigned {\bfseries size\-\_\-latches}}\label{structaiger__private_aa269fc64c96f64d6c94ecfe1e8a1c30b}
+
+\item 
+\hypertarget{structaiger__private_a88b69bd32c25c71cf36cd07bbf31407d}{unsigned {\bfseries size\-\_\-outputs}}\label{structaiger__private_a88b69bd32c25c71cf36cd07bbf31407d}
+
+\item 
+\hypertarget{structaiger__private_a1ccf3e554735ad0e25b36107fafd38fe}{unsigned {\bfseries size\-\_\-ands}}\label{structaiger__private_a1ccf3e554735ad0e25b36107fafd38fe}
+
+\item 
+\hypertarget{structaiger__private_abdd2fcfdd1f05bc0f76f4e91c31f9778}{unsigned {\bfseries size\-\_\-bad}}\label{structaiger__private_abdd2fcfdd1f05bc0f76f4e91c31f9778}
+
+\item 
+\hypertarget{structaiger__private_a851625e24d253f0ec481dbd93178032b}{unsigned {\bfseries size\-\_\-constraints}}\label{structaiger__private_a851625e24d253f0ec481dbd93178032b}
+
+\item 
+\hypertarget{structaiger__private_a249123d54df754a576fe5b0f662bb912}{unsigned {\bfseries size\-\_\-justice}}\label{structaiger__private_a249123d54df754a576fe5b0f662bb912}
+
+\item 
+\hypertarget{structaiger__private_ab84a581af49498750d842bdb2ff16e66}{unsigned {\bfseries size\-\_\-fairness}}\label{structaiger__private_ab84a581af49498750d842bdb2ff16e66}
+
+\item 
+\hypertarget{structaiger__private_a4141f314af9e1b54ed73fe9a172db4d8}{unsigned {\bfseries num\-\_\-comments}}\label{structaiger__private_a4141f314af9e1b54ed73fe9a172db4d8}
+
+\item 
+\hypertarget{structaiger__private_ade09fa48390f68c35e8bcd5a81718bb1}{unsigned {\bfseries size\-\_\-comments}}\label{structaiger__private_ade09fa48390f68c35e8bcd5a81718bb1}
+
+\item 
+\hypertarget{structaiger__private_a8d4f1a03b9d0cf88da060d2b48ac29ab}{void $\ast$ {\bfseries memory\-\_\-mgr}}\label{structaiger__private_a8d4f1a03b9d0cf88da060d2b48ac29ab}
+
+\item 
+\hypertarget{structaiger__private_a6cdd16ea921c42edbe8cf593191eef16}{void $\ast$ {\bfseries malloc\-\_\-callback}}\label{structaiger__private_a6cdd16ea921c42edbe8cf593191eef16}
+
+\item 
+\hypertarget{structaiger__private_a66db71f364a2b3bd3eda72a2bbda1065}{void $\ast$ {\bfseries free\-\_\-callback}}\label{structaiger__private_a66db71f364a2b3bd3eda72a2bbda1065}
+
+\item 
+\hypertarget{structaiger__private_a4137d50998616b432ed42786a47f90a0}{char $\ast$ {\bfseries error}}\label{structaiger__private_a4137d50998616b432ed42786a47f90a0}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Redefinition of the \hyperlink{structaiger__private}{aiger\-\_\-private} struct to be able to modify it. 
+
+Modifying the read A\-I\-G\-E\-R structure (removing inputs, adding A\-N\-D gates) requires modifying the private A\-I\-G\-E\-R structure in the back-\/ground in order not to corrupt the memory. In order not to modify the original A\-I\-G\-E\-R sources, we re-\/define the structure here. 
+
+Definition at line 52 of file Q\-B\-F\-Cert\-Impl\-Extractor.\-cpp.
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{QBFCertImplExtractor_8cpp}{Q\-B\-F\-Cert\-Impl\-Extractor.\-cpp}\end{DoxyCompactItemize}

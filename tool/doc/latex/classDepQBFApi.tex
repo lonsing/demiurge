@@ -1,0 +1,626 @@
+\hypertarget{classDepQBFApi}{\section{Dep\-Q\-B\-F\-Api Class Reference}
+\label{classDepQBFApi}\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}}
+}
+
+
+Interfaces the Dep\-Q\-B\-F Q\-B\-F-\/solver via its A\-P\-I.  
+
+
+
+
+{\ttfamily \#include $<$Dep\-Q\-B\-F\-Api.\-h$>$}
+
+Inheritance diagram for Dep\-Q\-B\-F\-Api\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDepQBFApi}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} \{ \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7a090ab4a5b262710ccd80e97d72f9a7b3}{E}, 
+\hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7afd6518d5d985aa8346ac071e4c0d8ee0}{A}
+ \}
+\begin{DoxyCompactList}\small\item\em A type for the different kinds of quantifiers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDepQBFApi_a07fe68fc15e26247526ed06377c0a207}{Dep\-Q\-B\-F\-Api} (bool use\-\_\-bloqqer=false)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classDepQBFApi_ab9ce72ab0d48d1e1b6c6ffaf31ec46d6}{$\sim$\-Dep\-Q\-B\-F\-Api} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classDepQBFApi_a1f755841365d67f4c704bf919cb4f8b5}{is\-Sat} (const vector$<$ pair$<$ \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cf}{Var\-Info\-::\-Var\-Kind}, \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} $>$ $>$ \&quantifier\-\_\-prefix, const \hyperlink{classCNF}{C\-N\-F} \&cnf)
+\begin{DoxyCompactList}\small\item\em Checks if a given Q\-B\-F is satisfiable (with quantification over variable kinds). \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classDepQBFApi_a8b220fef622b400b37d8298f29826938}{is\-Sat} (const vector$<$ pair$<$ vector$<$ int $>$, \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} $>$ $>$ \&quantifier\-\_\-prefix, const \hyperlink{classCNF}{C\-N\-F} \&cnf)
+\begin{DoxyCompactList}\small\item\em Checks if a given Q\-B\-F is satisfiable (with quantification over variable sets). \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classDepQBFApi_af70faa0b2136fe04e2a22743f2ca7c8e}{is\-Sat\-Model} (const vector$<$ pair$<$ \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cf}{Var\-Info\-::\-Var\-Kind}, \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} $>$ $>$ \&quantifier\-\_\-prefix, const \hyperlink{classCNF}{C\-N\-F} \&cnf, vector$<$ int $>$ \&model)
+\begin{DoxyCompactList}\small\item\em Checks satisfiability and extracts a model (quantifying over variable kinds). \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classDepQBFApi_a4278bfb0cf01f21e9aa6333e14e4f5af}{is\-Sat\-Model} (const vector$<$ pair$<$ vector$<$ int $>$, \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} $>$ $>$ \&quantifier\-\_\-prefix, const \hyperlink{classCNF}{C\-N\-F} \&cnf, vector$<$ int $>$ \&model)
+\begin{DoxyCompactList}\small\item\em Checks satisfiability and extracts a model (quantifying over variable sets). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classDepQBFApi_ac6a024dbf9355b9d7b17f8181642e469}{init\-Bloqqer} (const vector$<$ pair$<$ \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cf}{Var\-Info\-::\-Var\-Kind}, \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} $>$ $>$ \&quantifier\-\_\-prefix, const \hyperlink{classCNF}{C\-N\-F} \&cnf)
+\begin{DoxyCompactList}\small\item\em Initializes the pre-\/processor with a Q\-B\-F (quantifying over variable kinds). \end{DoxyCompactList}\item 
+void \hyperlink{classDepQBFApi_a5f7ea6239edb4d78bbda33091f51cdf5}{init\-Bloqqer} (const vector$<$ pair$<$ vector$<$ int $>$, \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} $>$ $>$ \&quantifier\-\_\-prefix, const \hyperlink{classCNF}{C\-N\-F} \&cnf)
+\begin{DoxyCompactList}\small\item\em Initializes the pre-\/processor with a Q\-B\-F (quantifying over variable sets). \end{DoxyCompactList}\item 
+void \hyperlink{classDepQBFApi_a2f99baf1fb6759458979e799ce706bc4}{init\-Dep\-Q\-B\-F} (Q\-D\-P\-L\-L $\ast$solver, const vector$<$ pair$<$ \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cf}{Var\-Info\-::\-Var\-Kind}, \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} $>$ $>$ \&quantifier\-\_\-prefix, const \hyperlink{classCNF}{C\-N\-F} \&cnf)
+\begin{DoxyCompactList}\small\item\em Initializes a Dep\-Q\-B\-F instance with a Q\-B\-F (quantifying over variable kinds). \end{DoxyCompactList}\item 
+void \hyperlink{classDepQBFApi_af1e78176cae55e6a76e193d216b5a3dc}{init\-Dep\-Q\-B\-F} (Q\-D\-P\-L\-L $\ast$solver, const vector$<$ pair$<$ vector$<$ int $>$, \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} $>$ $>$ \&quantifier\-\_\-prefix, const \hyperlink{classCNF}{C\-N\-F} \&cnf)
+\begin{DoxyCompactList}\small\item\em Initializes a Dep\-Q\-B\-F instance with a Q\-B\-F (quantifying over variable sets). \end{DoxyCompactList}\item 
+void \hyperlink{classDepQBFApi_a3a24cd04a3ddc626f2933429dda4e3b9}{debug\-Check\-Bloqqer\-Verdict} (int bloqqer\-\_\-verdict, const vector$<$ pair$<$ \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cf}{Var\-Info\-::\-Var\-Kind}, \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} $>$ $>$ \&quantifier\-\_\-prefix, const \hyperlink{classCNF}{C\-N\-F} \&cnf)
+\begin{DoxyCompactList}\small\item\em A debug function to cross-\/check bloqqer verdicts (S\-A\-T or U\-N\-S\-A\-T). \end{DoxyCompactList}\item 
+void \hyperlink{classDepQBFApi_afe717cb04d4bd6223bca3e52ba2c7e1f}{debug\-Check\-Bloqqer\-Verdict} (int bloqqer\-\_\-verdict, const vector$<$ pair$<$ vector$<$ int $>$, \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} $>$ $>$ \&quantifier\-\_\-prefix, const \hyperlink{classCNF}{C\-N\-F} \&cnf)
+\begin{DoxyCompactList}\small\item\em A debug function to cross-\/check bloqqer verdicts (S\-A\-T or U\-N\-S\-A\-T). \end{DoxyCompactList}\item 
+void \hyperlink{classDepQBFApi_a55a75bae106e42f6df73fb129a18b4bb}{debug\-Check\-Bloqqer\-Model} (const vector$<$ int $>$ \&model, const vector$<$ pair$<$ \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cf}{Var\-Info\-::\-Var\-Kind}, \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} $>$ $>$ \&quantifier\-\_\-prefix, const \hyperlink{classCNF}{C\-N\-F} \&cnf)
+\begin{DoxyCompactList}\small\item\em A debug function to cross-\/check models produced by bloqqer. \end{DoxyCompactList}\item 
+void \hyperlink{classDepQBFApi_ab8f1fa3fa93a7c6877b22579305f22f5}{debug\-Check\-Bloqqer\-Model} (const vector$<$ int $>$ \&model, const vector$<$ pair$<$ vector$<$ int $>$, \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} $>$ $>$ \&quantifier\-\_\-prefix, const \hyperlink{classCNF}{C\-N\-F} \&cnf)
+\begin{DoxyCompactList}\small\item\em A debug function to cross-\/check models produced by bloqqer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classDepQBFApi_a04798225c77a19a1d2f415e50b93cfb1}{use\-\_\-bloqqer\-\_\-}
+\begin{DoxyCompactList}\small\item\em A flag indicating whether or not the pre-\/processor bloqqer should be used. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDepQBFApi_ab7f7fe54d8ebfd6dc49296e10efada92}{Dep\-Q\-B\-F\-Api} (const \hyperlink{classDepQBFApi}{Dep\-Q\-B\-F\-Api} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classDepQBFApi}{Dep\-Q\-B\-F\-Api} \& \hyperlink{classDepQBFApi_ac92d8d42313774de6ce7f3bb2ca121c0}{operator=} (const \hyperlink{classDepQBFApi}{Dep\-Q\-B\-F\-Api} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interfaces the Dep\-Q\-B\-F Q\-B\-F-\/solver via its A\-P\-I. 
+
+This class represents an interface to the Q\-B\-F-\/solver Dep\-Q\-B\-F (see \href{https://github.com/lonsing/depqbf}{\tt https\-://github.\-com/lonsing/depqbf}). For a given Quantified Boolean formula (a \hyperlink{classCNF}{C\-N\-F} with a quantifier prefix), this class is able to determine satisfiability. Furthermore, in case of satisfiability, it can extract satisfying assignments for variables quantified existentially on the outermost level.
+
+This interface to Dep\-Q\-B\-F can operated in two modes\-: with and without Bloqqer as pre-\/processor.
+
+\begin{DoxyAuthor}{Author}
+Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0.\-0 
+\end{DoxyVersion}
+
+
+Definition at line 54 of file Dep\-Q\-B\-F\-Api.\-h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!Quant@{Quant}}
+\index{Quant@{Quant}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{Quant}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Q\-B\-F\-Solver\-::\-Quant}\hspace{0.3cm}{\ttfamily [inherited]}}}\label{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}
+
+
+A type for the different kinds of quantifiers. 
+
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{E@{E}!Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}}\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!E@{E}}\item[{\em 
+\hypertarget{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7a090ab4a5b262710ccd80e97d72f9a7b3}{E}\label{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7a090ab4a5b262710ccd80e97d72f9a7b3}
+}]The value for existential quantification. \index{A@{A}!Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}}\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!A@{A}}\item[{\em 
+\hypertarget{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7afd6518d5d985aa8346ac071e4c0d8ee0}{A}\label{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7afd6518d5d985aa8346ac071e4c0d8ee0}
+}]The value for universal quantification. \end{description}
+\end{Desc}
+
+
+
+Definition at line 56 of file Q\-B\-F\-Solver.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classDepQBFApi_a07fe68fc15e26247526ed06377c0a207}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}}
+\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{Dep\-Q\-B\-F\-Api}]{\setlength{\rightskip}{0pt plus 5cm}Dep\-Q\-B\-F\-Api\-::\-Dep\-Q\-B\-F\-Api (
+\begin{DoxyParamCaption}
+\item[{bool}]{use\-\_\-bloqqer = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{classDepQBFApi_a07fe68fc15e26247526ed06377c0a207}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em use\-\_\-bloqqer} & True if bloqqer should be used as pre-\/processor, false if no pre-\/processing should be used. If this parameter is omitted, no pre-\/processing is used. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 44 of file Dep\-Q\-B\-F\-Api.\-cpp.
+
+\hypertarget{classDepQBFApi_ab9ce72ab0d48d1e1b6c6ffaf31ec46d6}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!$\sim$\-Dep\-Q\-B\-F\-Api@{$\sim$\-Dep\-Q\-B\-F\-Api}}
+\index{$\sim$\-Dep\-Q\-B\-F\-Api@{$\sim$\-Dep\-Q\-B\-F\-Api}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{$\sim$\-Dep\-Q\-B\-F\-Api}]{\setlength{\rightskip}{0pt plus 5cm}Dep\-Q\-B\-F\-Api\-::$\sim$\-Dep\-Q\-B\-F\-Api (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDepQBFApi_ab9ce72ab0d48d1e1b6c6ffaf31ec46d6}
+
+
+Destructor. 
+
+
+
+Definition at line 50 of file Dep\-Q\-B\-F\-Api.\-cpp.
+
+\hypertarget{classDepQBFApi_ab7f7fe54d8ebfd6dc49296e10efada92}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}}
+\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{Dep\-Q\-B\-F\-Api}]{\setlength{\rightskip}{0pt plus 5cm}Dep\-Q\-B\-F\-Api\-::\-Dep\-Q\-B\-F\-Api (
+\begin{DoxyParamCaption}
+\item[{const {\bf Dep\-Q\-B\-F\-Api} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classDepQBFApi_ab7f7fe54d8ebfd6dc49296e10efada92}
+
+
+Copy constructor. 
+
+The copy constructor is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classDepQBFApi_a55a75bae106e42f6df73fb129a18b4bb}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!debug\-Check\-Bloqqer\-Model@{debug\-Check\-Bloqqer\-Model}}
+\index{debug\-Check\-Bloqqer\-Model@{debug\-Check\-Bloqqer\-Model}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{debug\-Check\-Bloqqer\-Model}]{\setlength{\rightskip}{0pt plus 5cm}void Dep\-Q\-B\-F\-Api\-::debug\-Check\-Bloqqer\-Model (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{model, }
+\item[{const vector$<$ pair$<$ {\bf Var\-Info\-::\-Var\-Kind}, {\bf Quant} $>$ $>$ \&}]{quantifier\-\_\-prefix, }
+\item[{const {\bf C\-N\-F} \&}]{cnf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classDepQBFApi_a55a75bae106e42f6df73fb129a18b4bb}
+
+
+A debug function to cross-\/check models produced by bloqqer. 
+
+Dep\-Q\-B\-F without preprocessing is used to check if the model found by bloqqer indeed satisfies the Q\-B\-F. This method is used to debug bloqqer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & The satisfying assignment found by bloqqer. Negated variables in the vector are F\-A\-L\-S\-E, unnegated ones are T\-R\-U\-E. \\
+\hline
+{\em quantifier\-\_\-prefix} & The quantifier prefix as a vector of pairs. vector\mbox{[}0\mbox{]} is the leftmost (i.\-e., outermost) quantifier block. The pairs in the quantifier\-\_\-prefix assign an existential or universal quantifier to every kind of variable that occurs in the cnf. \\
+\hline
+{\em cnf} & A Boolean formula in \hyperlink{classCNF}{C\-N\-F}. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 492 of file Dep\-Q\-B\-F\-Api.\-cpp.
+
+
+
+References C\-N\-F\-::add\-Cube(), Utils\-::debug\-Print(), Ext\-Q\-B\-F\-Solver\-::dump\-Q\-B\-F(), Var\-Manager\-::get\-Vars\-Of\-Type(), Var\-Manager\-::instance(), is\-Sat(), L\-\_\-\-E\-R\-R, and M\-A\-S\-S\-E\-R\-T.
+
+\hypertarget{classDepQBFApi_ab8f1fa3fa93a7c6877b22579305f22f5}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!debug\-Check\-Bloqqer\-Model@{debug\-Check\-Bloqqer\-Model}}
+\index{debug\-Check\-Bloqqer\-Model@{debug\-Check\-Bloqqer\-Model}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{debug\-Check\-Bloqqer\-Model}]{\setlength{\rightskip}{0pt plus 5cm}void Dep\-Q\-B\-F\-Api\-::debug\-Check\-Bloqqer\-Model (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{model, }
+\item[{const vector$<$ pair$<$ vector$<$ int $>$, {\bf Quant} $>$ $>$ \&}]{quantifier\-\_\-prefix, }
+\item[{const {\bf C\-N\-F} \&}]{cnf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classDepQBFApi_ab8f1fa3fa93a7c6877b22579305f22f5}
+
+
+A debug function to cross-\/check models produced by bloqqer. 
+
+Dep\-Q\-B\-F without preprocessing is used to check if the model found by bloqqer indeed satisfies the Q\-B\-F. This method is used to debug bloqqer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & The satisfying assignment found by bloqqer. Negated variables in the vector are F\-A\-L\-S\-E, unnegated ones are T\-R\-U\-E. \\
+\hline
+{\em quantifier\-\_\-prefix} & The quantifier prefix as a vector of pairs. vector\mbox{[}0\mbox{]} is the leftmost (i.\-e., outermost) quantifier block. The pairs in the quantifier\-\_\-prefix assign an existential or universal quantifier to different sets of variables occurring in the cnf. \\
+\hline
+{\em cnf} & A Boolean formula in \hyperlink{classCNF}{C\-N\-F}. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 539 of file Dep\-Q\-B\-F\-Api.\-cpp.
+
+
+
+References C\-N\-F\-::add\-Cube(), Utils\-::debug\-Print(), Ext\-Q\-B\-F\-Solver\-::dump\-Q\-B\-F(), is\-Sat(), L\-\_\-\-E\-R\-R, and M\-A\-S\-S\-E\-R\-T.
+
+\hypertarget{classDepQBFApi_a3a24cd04a3ddc626f2933429dda4e3b9}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!debug\-Check\-Bloqqer\-Verdict@{debug\-Check\-Bloqqer\-Verdict}}
+\index{debug\-Check\-Bloqqer\-Verdict@{debug\-Check\-Bloqqer\-Verdict}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{debug\-Check\-Bloqqer\-Verdict}]{\setlength{\rightskip}{0pt plus 5cm}void Dep\-Q\-B\-F\-Api\-::debug\-Check\-Bloqqer\-Verdict (
+\begin{DoxyParamCaption}
+\item[{int}]{bloqqer\-\_\-verdict, }
+\item[{const vector$<$ pair$<$ {\bf Var\-Info\-::\-Var\-Kind}, {\bf Quant} $>$ $>$ \&}]{quantifier\-\_\-prefix, }
+\item[{const {\bf C\-N\-F} \&}]{cnf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classDepQBFApi_a3a24cd04a3ddc626f2933429dda4e3b9}
+
+
+A debug function to cross-\/check bloqqer verdicts (S\-A\-T or U\-N\-S\-A\-T). 
+
+The Q\-B\-F is also solved with Dep\-Q\-B\-F without pre-\/processing and the two verdicts are compared. This method is used to debug bloqqer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bloqqer\-\_\-verdict} & The result returned by bloqqer. The value 10 means S\-A\-T, the value 20 means U\-N\-S\-A\-T. \\
+\hline
+{\em quantifier\-\_\-prefix} & The quantifier prefix as a vector of pairs. vector\mbox{[}0\mbox{]} is the leftmost (i.\-e., outermost) quantifier block. The pairs in the quantifier\-\_\-prefix assign an existential or universal quantifier to every kind of variable that occurs in the cnf. \\
+\hline
+{\em cnf} & A Boolean formula in \hyperlink{classCNF}{C\-N\-F}. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 434 of file Dep\-Q\-B\-F\-Api.\-cpp.
+
+
+
+References Ext\-Q\-B\-F\-Solver\-::dump\-Q\-B\-F(), is\-Sat(), L\-\_\-\-E\-R\-R, and M\-A\-S\-S\-E\-R\-T.
+
+
+
+Referenced by is\-Sat\-Model().
+
+\hypertarget{classDepQBFApi_afe717cb04d4bd6223bca3e52ba2c7e1f}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!debug\-Check\-Bloqqer\-Verdict@{debug\-Check\-Bloqqer\-Verdict}}
+\index{debug\-Check\-Bloqqer\-Verdict@{debug\-Check\-Bloqqer\-Verdict}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{debug\-Check\-Bloqqer\-Verdict}]{\setlength{\rightskip}{0pt plus 5cm}void Dep\-Q\-B\-F\-Api\-::debug\-Check\-Bloqqer\-Verdict (
+\begin{DoxyParamCaption}
+\item[{int}]{bloqqer\-\_\-verdict, }
+\item[{const vector$<$ pair$<$ vector$<$ int $>$, {\bf Quant} $>$ $>$ \&}]{quantifier\-\_\-prefix, }
+\item[{const {\bf C\-N\-F} \&}]{cnf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classDepQBFApi_afe717cb04d4bd6223bca3e52ba2c7e1f}
+
+
+A debug function to cross-\/check bloqqer verdicts (S\-A\-T or U\-N\-S\-A\-T). 
+
+The Q\-B\-F is also solved with Dep\-Q\-B\-F without pre-\/processing and the two verdicts are compared. This method is used to debug bloqqer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bloqqer\-\_\-verdict} & The result returned by bloqqer. The value 10 means S\-A\-T, the value 20 means U\-N\-S\-A\-T. \\
+\hline
+{\em quantifier\-\_\-prefix} & The quantifier prefix as a vector of pairs. vector\mbox{[}0\mbox{]} is the leftmost (i.\-e., outermost) quantifier block. The pairs in the quantifier\-\_\-prefix assign an existential or universal quantifier to different sets of variables occurring in the cnf. \\
+\hline
+{\em cnf} & A Boolean formula in \hyperlink{classCNF}{C\-N\-F}. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 463 of file Dep\-Q\-B\-F\-Api.\-cpp.
+
+
+
+References Ext\-Q\-B\-F\-Solver\-::dump\-Q\-B\-F(), is\-Sat(), L\-\_\-\-E\-R\-R, and M\-A\-S\-S\-E\-R\-T.
+
+\hypertarget{classDepQBFApi_ac6a024dbf9355b9d7b17f8181642e469}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!init\-Bloqqer@{init\-Bloqqer}}
+\index{init\-Bloqqer@{init\-Bloqqer}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{init\-Bloqqer}]{\setlength{\rightskip}{0pt plus 5cm}void Dep\-Q\-B\-F\-Api\-::init\-Bloqqer (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ pair$<$ {\bf Var\-Info\-::\-Var\-Kind}, {\bf Quant} $>$ $>$ \&}]{quantifier\-\_\-prefix, }
+\item[{const {\bf C\-N\-F} \&}]{cnf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classDepQBFApi_ac6a024dbf9355b9d7b17f8181642e469}
+
+
+Initializes the pre-\/processor with a Q\-B\-F (quantifying over variable kinds). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantifier\-\_\-prefix} & The quantifier prefix as a vector of pairs. vector\mbox{[}0\mbox{]} is the leftmost (i.\-e., outermost) quantifier block. The pairs in the quantifier\-\_\-prefix assign an existential or universal quantifier to every kind of variable that occurs in the cnf. \\
+\hline
+{\em cnf} & A Boolean formula in \hyperlink{classCNF}{C\-N\-F}. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 307 of file Dep\-Q\-B\-F\-Api.\-cpp.
+
+
+
+References Q\-B\-F\-Solver\-::\-E, C\-N\-F\-::get\-Clauses(), Var\-Manager\-::get\-Max\-C\-N\-F\-Var(), C\-N\-F\-::get\-Nr\-Of\-Clauses(), Var\-Manager\-::get\-Vars\-Of\-Type(), and Var\-Manager\-::instance().
+
+
+
+Referenced by is\-Sat(), and is\-Sat\-Model().
+
+\hypertarget{classDepQBFApi_a5f7ea6239edb4d78bbda33091f51cdf5}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!init\-Bloqqer@{init\-Bloqqer}}
+\index{init\-Bloqqer@{init\-Bloqqer}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{init\-Bloqqer}]{\setlength{\rightskip}{0pt plus 5cm}void Dep\-Q\-B\-F\-Api\-::init\-Bloqqer (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ pair$<$ vector$<$ int $>$, {\bf Quant} $>$ $>$ \&}]{quantifier\-\_\-prefix, }
+\item[{const {\bf C\-N\-F} \&}]{cnf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classDepQBFApi_a5f7ea6239edb4d78bbda33091f51cdf5}
+
+
+Initializes the pre-\/processor with a Q\-B\-F (quantifying over variable sets). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantifier\-\_\-prefix} & The quantifier prefix as a vector of pairs. vector\mbox{[}0\mbox{]} is the leftmost (i.\-e., outermost) quantifier block. The pairs in the quantifier\-\_\-prefix assign an existential or universal quantifier to different sets of variables occurring in the cnf. \\
+\hline
+{\em cnf} & A Boolean formula in \hyperlink{classCNF}{C\-N\-F}. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 335 of file Dep\-Q\-B\-F\-Api.\-cpp.
+
+
+
+References Q\-B\-F\-Solver\-::\-E, C\-N\-F\-::get\-Clauses(), and C\-N\-F\-::get\-Nr\-Of\-Clauses().
+
+\hypertarget{classDepQBFApi_a2f99baf1fb6759458979e799ce706bc4}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!init\-Dep\-Q\-B\-F@{init\-Dep\-Q\-B\-F}}
+\index{init\-Dep\-Q\-B\-F@{init\-Dep\-Q\-B\-F}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{init\-Dep\-Q\-B\-F}]{\setlength{\rightskip}{0pt plus 5cm}void Dep\-Q\-B\-F\-Api\-::init\-Dep\-Q\-B\-F (
+\begin{DoxyParamCaption}
+\item[{Q\-D\-P\-L\-L $\ast$}]{solver, }
+\item[{const vector$<$ pair$<$ {\bf Var\-Info\-::\-Var\-Kind}, {\bf Quant} $>$ $>$ \&}]{quantifier\-\_\-prefix, }
+\item[{const {\bf C\-N\-F} \&}]{cnf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classDepQBFApi_a2f99baf1fb6759458979e799ce706bc4}
+
+
+Initializes a Dep\-Q\-B\-F instance with a Q\-B\-F (quantifying over variable kinds). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em solver} & The Dep\-Q\-B\-F solver instance to initialize. \\
+\hline
+{\em quantifier\-\_\-prefix} & The quantifier prefix as a vector of pairs. vector\mbox{[}0\mbox{]} is the leftmost (i.\-e., outermost) quantifier block. The pairs in the quantifier\-\_\-prefix assign an existential or universal quantifier to every kind of variable that occurs in the cnf. \\
+\hline
+{\em cnf} & A Boolean formula in \hyperlink{classCNF}{C\-N\-F}. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 371 of file Dep\-Q\-B\-F\-Api.\-cpp.
+
+
+
+References Q\-B\-F\-Solver\-::\-E, C\-N\-F\-::get\-Clauses(), Var\-Manager\-::get\-Max\-C\-N\-F\-Var(), Var\-Manager\-::get\-Vars\-Of\-Type(), and Var\-Manager\-::instance().
+
+
+
+Referenced by is\-Sat(), and is\-Sat\-Model().
+
+\hypertarget{classDepQBFApi_af1e78176cae55e6a76e193d216b5a3dc}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!init\-Dep\-Q\-B\-F@{init\-Dep\-Q\-B\-F}}
+\index{init\-Dep\-Q\-B\-F@{init\-Dep\-Q\-B\-F}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{init\-Dep\-Q\-B\-F}]{\setlength{\rightskip}{0pt plus 5cm}void Dep\-Q\-B\-F\-Api\-::init\-Dep\-Q\-B\-F (
+\begin{DoxyParamCaption}
+\item[{Q\-D\-P\-L\-L $\ast$}]{solver, }
+\item[{const vector$<$ pair$<$ vector$<$ int $>$, {\bf Quant} $>$ $>$ \&}]{quantifier\-\_\-prefix, }
+\item[{const {\bf C\-N\-F} \&}]{cnf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classDepQBFApi_af1e78176cae55e6a76e193d216b5a3dc}
+
+
+Initializes a Dep\-Q\-B\-F instance with a Q\-B\-F (quantifying over variable sets). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em solver} & The Dep\-Q\-B\-F solver instance to initialize. \\
+\hline
+{\em quantifier\-\_\-prefix} & The quantifier prefix as a vector of pairs. vector\mbox{[}0\mbox{]} is the leftmost (i.\-e., outermost) quantifier block. The pairs in the quantifier\-\_\-prefix assign an existential or universal quantifier to different sets of variables occurring in the cnf. \\
+\hline
+{\em cnf} & A Boolean formula in \hyperlink{classCNF}{C\-N\-F}. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 398 of file Dep\-Q\-B\-F\-Api.\-cpp.
+
+
+
+References Q\-B\-F\-Solver\-::\-E, and C\-N\-F\-::get\-Clauses().
+
+\hypertarget{classDepQBFApi_a1f755841365d67f4c704bf919cb4f8b5}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!is\-Sat@{is\-Sat}}
+\index{is\-Sat@{is\-Sat}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{is\-Sat}]{\setlength{\rightskip}{0pt plus 5cm}bool Dep\-Q\-B\-F\-Api\-::is\-Sat (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ pair$<$ {\bf Var\-Info\-::\-Var\-Kind}, {\bf Quant} $>$ $>$ \&}]{quantifier\-\_\-prefix, }
+\item[{const {\bf C\-N\-F} \&}]{cnf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDepQBFApi_a1f755841365d67f4c704bf919cb4f8b5}
+
+
+Checks if a given Q\-B\-F is satisfiable (with quantification over variable kinds). 
+
+The Q\-B\-F consists of a quantifier prefix and a Boolean formula in \hyperlink{classCNF}{C\-N\-F}. The quantifier prefix assigns an existential or universal quantifier to every kind of variable.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantifier\-\_\-prefix} & The quantifier prefix as a vector of pairs. vector\mbox{[}0\mbox{]} is the leftmost (i.\-e., outermost) quantifier block. The pairs in the quantifier\-\_\-prefix assign an existential or universal quantifier to every kind of variable that occurs in the cnf. \\
+\hline
+{\em cnf} & A Boolean formula in \hyperlink{classCNF}{C\-N\-F}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the Q\-B\-F is satisfiable, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classQBFSolver_a53ef157391b176dfbd2a77a1e31befc3}{Q\-B\-F\-Solver}.
+
+
+
+Definition at line 56 of file Dep\-Q\-B\-F\-Api.\-cpp.
+
+
+
+References init\-Bloqqer(), init\-Dep\-Q\-B\-F(), M\-A\-S\-S\-E\-R\-T, and use\-\_\-bloqqer\-\_\-.
+
+
+
+Referenced by debug\-Check\-Bloqqer\-Model(), debug\-Check\-Bloqqer\-Verdict(), I\-F\-M13\-Synth\-::debug\-Check\-Invariants(), and Learn\-Synth\-S\-A\-T\-::debug\-Check\-Win\-Reg().
+
+\hypertarget{classDepQBFApi_a8b220fef622b400b37d8298f29826938}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!is\-Sat@{is\-Sat}}
+\index{is\-Sat@{is\-Sat}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{is\-Sat}]{\setlength{\rightskip}{0pt plus 5cm}bool Dep\-Q\-B\-F\-Api\-::is\-Sat (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ pair$<$ vector$<$ int $>$, {\bf Quant} $>$ $>$ \&}]{quantifier\-\_\-prefix, }
+\item[{const {\bf C\-N\-F} \&}]{cnf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDepQBFApi_a8b220fef622b400b37d8298f29826938}
+
+
+Checks if a given Q\-B\-F is satisfiable (with quantification over variable sets). 
+
+The Q\-B\-F consists of a quantifier prefix and a Boolean formula in \hyperlink{classCNF}{C\-N\-F}. The quantifier prefix assigns an existential or universal quantifier to different sets variable.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantifier\-\_\-prefix} & The quantifier prefix as a vector of pairs. vector\mbox{[}0\mbox{]} is the leftmost (i.\-e., outermost) quantifier block. The pairs in the quantifier\-\_\-prefix assign an existential or universal quantifier to different sets of variables occurring in the cnf. \\
+\hline
+{\em cnf} & A Boolean formula in \hyperlink{classCNF}{C\-N\-F}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the Q\-B\-F is satisfiable, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classQBFSolver_aca37de5801e36d4749b80b6c8c2023a9}{Q\-B\-F\-Solver}.
+
+
+
+Definition at line 88 of file Dep\-Q\-B\-F\-Api.\-cpp.
+
+
+
+References init\-Bloqqer(), init\-Dep\-Q\-B\-F(), M\-A\-S\-S\-E\-R\-T, and use\-\_\-bloqqer\-\_\-.
+
+\hypertarget{classDepQBFApi_af70faa0b2136fe04e2a22743f2ca7c8e}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!is\-Sat\-Model@{is\-Sat\-Model}}
+\index{is\-Sat\-Model@{is\-Sat\-Model}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{is\-Sat\-Model}]{\setlength{\rightskip}{0pt plus 5cm}bool Dep\-Q\-B\-F\-Api\-::is\-Sat\-Model (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ pair$<$ {\bf Var\-Info\-::\-Var\-Kind}, {\bf Quant} $>$ $>$ \&}]{quantifier\-\_\-prefix, }
+\item[{const {\bf C\-N\-F} \&}]{cnf, }
+\item[{vector$<$ int $>$ \&}]{model}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDepQBFApi_af70faa0b2136fe04e2a22743f2ca7c8e}
+
+
+Checks satisfiability and extracts a model (quantifying over variable kinds). 
+
+Just like \hyperlink{classDepQBFApi_a1f755841365d67f4c704bf919cb4f8b5}{is\-Sat() }, this method checks a quantified Boolean formula for satisfiability. If the Q\-B\-F is satisfiable, this method also extracts a model (a satisfying assignment) for all variables which are quantified existentially on the outermost level. The model is provided as cube\-: negated variables in the cube are F\-A\-L\-S\-E, unnegated ones are T\-R\-U\-E.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantifier\-\_\-prefix} & The quantifier prefix as a vector of pairs. vector\mbox{[}0\mbox{]} is the leftmost (i.\-e., outermost) quantifier block. The pairs in the quantifier\-\_\-prefix assign an existential or universal quantifier to every kind of variable that occurs in the cnf. \\
+\hline
+{\em cnf} & A Boolean formula in \hyperlink{classCNF}{C\-N\-F}. \\
+\hline
+{\em model} & The resulting model in form of a cube in case of satisfiability. Negated variables in the cube are F\-A\-L\-S\-E, unnegated ones are T\-R\-U\-E. If the formula is unsatisfiable (this method returns false) then this parameter is not modified. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the Q\-B\-F is satisfiable, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classQBFSolver_a76fc0c757a2c039816e3e06547f06d5c}{Q\-B\-F\-Solver}.
+
+
+
+Definition at line 120 of file Dep\-Q\-B\-F\-Api.\-cpp.
+
+
+
+References debug\-Check\-Bloqqer\-Verdict(), Var\-Manager\-::get\-Vars\-Of\-Type(), init\-Bloqqer(), init\-Dep\-Q\-B\-F(), Var\-Manager\-::instance(), M\-A\-S\-S\-E\-R\-T, and use\-\_\-bloqqer\-\_\-.
+
+\hypertarget{classDepQBFApi_a4278bfb0cf01f21e9aa6333e14e4f5af}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!is\-Sat\-Model@{is\-Sat\-Model}}
+\index{is\-Sat\-Model@{is\-Sat\-Model}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{is\-Sat\-Model}]{\setlength{\rightskip}{0pt plus 5cm}bool Dep\-Q\-B\-F\-Api\-::is\-Sat\-Model (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ pair$<$ vector$<$ int $>$, {\bf Quant} $>$ $>$ \&}]{quantifier\-\_\-prefix, }
+\item[{const {\bf C\-N\-F} \&}]{cnf, }
+\item[{vector$<$ int $>$ \&}]{model}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDepQBFApi_a4278bfb0cf01f21e9aa6333e14e4f5af}
+
+
+Checks satisfiability and extracts a model (quantifying over variable sets). 
+
+Just like \hyperlink{classDepQBFApi_a1f755841365d67f4c704bf919cb4f8b5}{is\-Sat() }, this method checks a quantified Boolean formula for satisfiability. If the Q\-B\-F is satisfiable, this method also extracts a model (a satisfying assignment) for all variables which are quantified existentially on the outermost level. The model is provided as cube\-: negated variables in the cube are F\-A\-L\-S\-E, unnegated ones are T\-R\-U\-E.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantifier\-\_\-prefix} & The quantifier prefix as a vector of pairs. vector\mbox{[}0\mbox{]} is the leftmost (i.\-e., outermost) quantifier block. The pairs in the quantifier\-\_\-prefix assign an existential or universal quantifier to different sets of variables occurring in the cnf. \\
+\hline
+{\em cnf} & A Boolean formula in \hyperlink{classCNF}{C\-N\-F}. \\
+\hline
+{\em model} & The resulting model in form of a cube in case of satisfiability. Negated variables in the cube are F\-A\-L\-S\-E, unnegated ones are T\-R\-U\-E. If the formula is unsatisfiable (this method returns false) then this parameter is not modified. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the Q\-B\-F is satisfiable, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classQBFSolver_a12f2ce57b778b9efe729d63bf881493d}{Q\-B\-F\-Solver}.
+
+
+
+Definition at line 210 of file Dep\-Q\-B\-F\-Api.\-cpp.
+
+
+
+References debug\-Check\-Bloqqer\-Verdict(), init\-Bloqqer(), init\-Dep\-Q\-B\-F(), M\-A\-S\-S\-E\-R\-T, and use\-\_\-bloqqer\-\_\-.
+
+\hypertarget{classDepQBFApi_ac92d8d42313774de6ce7f3bb2ca121c0}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!operator=@{operator=}}
+\index{operator=@{operator=}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dep\-Q\-B\-F\-Api}\& Dep\-Q\-B\-F\-Api\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Dep\-Q\-B\-F\-Api} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classDepQBFApi_ac92d8d42313774de6ce7f3bb2ca121c0}
+
+
+Assignment operator. 
+
+The assignment operator is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the assignment, i.\-e, $\ast$this. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classDepQBFApi_a04798225c77a19a1d2f415e50b93cfb1}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!use\-\_\-bloqqer\-\_\-@{use\-\_\-bloqqer\-\_\-}}
+\index{use\-\_\-bloqqer\-\_\-@{use\-\_\-bloqqer\-\_\-}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{use\-\_\-bloqqer\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}bool Dep\-Q\-B\-F\-Api\-::use\-\_\-bloqqer\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classDepQBFApi_a04798225c77a19a1d2f415e50b93cfb1}
+
+
+A flag indicating whether or not the pre-\/processor bloqqer should be used. 
+
+
+
+Definition at line 279 of file Dep\-Q\-B\-F\-Api.\-h.
+
+
+
+Referenced by is\-Sat(), and is\-Sat\-Model().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{DepQBFApi_8h}{Dep\-Q\-B\-F\-Api.\-h}\item 
+src/\hyperlink{DepQBFApi_8cpp}{Dep\-Q\-B\-F\-Api.\-cpp}\end{DoxyCompactItemize}

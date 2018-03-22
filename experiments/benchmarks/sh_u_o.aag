@@ -1,0 +1,48 @@
+aag 6 2 4 1 0
+2
+4
+6 1
+8 7
+10 8
+12 4
+10
+i0 stay
+i1 controllable_reset
+l0 n7
+l1 counter<1>_out
+l2 counter<2>_out
+l3 s_out
+o0 err
+c
+bench
+This file was written by ABC on Tue Jun 18 21:17:22 2013
+For information about AIGER format, refer to http://fmv.jku.at/aiger
+-------------------------------
+This AIGER file has been created by the following sequence of commands:
+> vl2mv sh_u.v   ---gives--> sh_u.mv
+> abc -c "read_blif_mv sh_u.mv; strash; refactor; rewrite; dfraig; rewrite; dfraig; write_aiger -s sh_u_o.aig"   ---gives--> sh_u_o.aig
+> aigtoaig sh_u_o.aig sh_u_o.aag   ---gives--> sh_u_o.aag (this file)
+Content of sh_u.v:
+// unrealizable
+module bench(clk, stay, controllable_reset, err);
+  input clk;
+  input stay;
+  input controllable_reset;
+  output err;
+  reg [3:0] counter;
+  reg s;
+
+  assign err = counter[3];
+  
+  initial
+  begin
+    counter = 4'b0001;
+    s = 0;
+  end
+  always @ (posedge clk)
+  begin
+    counter = {counter[2:0],1'b0};
+    s = controllable_reset;
+  end
+endmodule
+-------------------------------

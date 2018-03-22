@@ -1,0 +1,909 @@
+\hypertarget{classIFM13Explorer}{\section{I\-F\-M13\-Explorer Class Reference}
+\label{classIFM13Explorer}\index{I\-F\-M13\-Explorer@{I\-F\-M13\-Explorer}}
+}
+
+
+Implements the method of \hyperlink{classIFM13Synth}{I\-F\-M13\-Synth} in a parallelized way.  
+
+
+
+
+{\ttfamily \#include $<$Parallel\-Learner.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classIFM13Explorer_a8830825d1b7347fb02e7a74f7e558e2d}{I\-F\-M13\-Explorer} (\hyperlink{classParallelLearner}{Parallel\-Learner} \&coordinator)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classIFM13Explorer_a7334013d4c514c392e0c38ee89a85b76}{$\sim$\-I\-F\-M13\-Explorer} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classIFM13Explorer_a19efbbf6644d73d9d7d662b121e3d151}{explore\-Clauses} ()
+\begin{DoxyCompactList}\small\item\em The work-\/horse of this class. \end{DoxyCompactList}\item 
+void \hyperlink{classIFM13Explorer_a37e60ac394b868d5f375c5b684aeaebc}{notify\-New\-Win\-Reg\-Clause} (const vector$<$ int $>$ \&clause, int src)
+\begin{DoxyCompactList}\small\item\em Notifies this worker about a new winning region clause. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classIFM13Explorer_ae2e510e5b13e7166c5d6170a286a7295}{consider\-New\-Info\-From\-Others} ()
+\begin{DoxyCompactList}\small\item\em Considers new winning region clauses that have been found by other threads. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classIFM13Explorer_a52595f5290210c0a79b45c9a077abdb2}{propagate\-Blocked\-States} (size\-\_\-t max\-\_\-level)
+\begin{DoxyCompactList}\small\item\em Propagates clauses forward and searches for equivalent clause sets. \end{DoxyCompactList}\item 
+bool \hyperlink{classIFM13Explorer_a7ca0b39a9868d8d03b2cafa412dfb640}{rec\-Block\-Cube} (const vector$<$ int $>$ \&state\-\_\-cube, size\-\_\-t level)
+\begin{DoxyCompactList}\small\item\em Analyzes the rank of the passed state. \end{DoxyCompactList}\item 
+void \hyperlink{classIFM13Explorer_a32d465971c73d0eaaa452bbf9622711f}{add\-Blocked\-Transition} (const vector$<$ int $>$ \&state\-\_\-in\-\_\-cube, size\-\_\-t level)
+\begin{DoxyCompactList}\small\item\em Marks a state-\/input-\/pair as blocked. \end{DoxyCompactList}\item 
+void \hyperlink{classIFM13Explorer_a827db69cd48eb1b82a6e2bcdea69f06b}{add\-Blocked\-State} (const vector$<$ int $>$ \&state\-\_\-cube, size\-\_\-t level)
+\begin{DoxyCompactList}\small\item\em Removes a state(-\/cube) from the frame R\mbox{[}level\mbox{]}. \end{DoxyCompactList}\item 
+bool \hyperlink{classIFM13Explorer_a6f84ca906e3d15b9bf7b3df71f379fa1}{is\-Blocked} (const vector$<$ int $>$ \&state\-\_\-cube, size\-\_\-t level)
+\begin{DoxyCompactList}\small\item\em Checks if a state is contained in a certain frame. \end{DoxyCompactList}\item 
+void \hyperlink{classIFM13Explorer_a14c5ca206f19c7c741f63e43d1470387}{add\-Lose} (const vector$<$ int $>$ \&state\-\_\-cube)
+\begin{DoxyCompactList}\small\item\em Removes a state(-\/cube) from the current over-\/approximation of the winning region. \end{DoxyCompactList}\item 
+bool \hyperlink{classIFM13Explorer_af41ec86ed26940c59adc7d74c6ad5abc}{is\-Lose} (const vector$<$ int $>$ \&state\-\_\-cube)
+\begin{DoxyCompactList}\small\item\em Checks if a state satisfies the current over-\/approximation of the winning region. \end{DoxyCompactList}\item 
+void \hyperlink{classIFM13Explorer_a6607ae52fd8a14d5f3d54132f11406d3}{gen\-And\-Block\-Trans} (const vector$<$ int $>$ \&state\-\_\-in\-\_\-cube, const vector$<$ int $>$ \&ctrl\-\_\-cube, size\-\_\-t level)
+\begin{DoxyCompactList}\small\item\em Generalizes and excludes a blocked transition. \end{DoxyCompactList}\item 
+\hyperlink{classCNF}{C\-N\-F} \& \hyperlink{classIFM13Explorer_a75a0b20fe6d76b6d1fa52d447fa24d10}{get\-R} (size\-\_\-t index)
+\begin{DoxyCompactList}\small\item\em Returns the frame R\mbox{[}index\mbox{]} in \hyperlink{classCNF}{C\-N\-F}. \end{DoxyCompactList}\item 
+\hyperlink{classCNF}{C\-N\-F} \& \hyperlink{classIFM13Explorer_a2816b4c9f2cb02958e660a872f43fe4b}{get\-U} (size\-\_\-t index)
+\begin{DoxyCompactList}\small\item\em Returns the blocked transitions U\mbox{[}index\mbox{]} in \hyperlink{classCNF}{C\-N\-F}. \end{DoxyCompactList}\item 
+\hyperlink{classSatSolver}{Sat\-Solver} $\ast$ \hyperlink{classIFM13Explorer_abdf350f2df8a77579df3da7ecb3de8e4}{get\-Goto\-Next\-Lower\-Solver} (size\-\_\-t index)
+\begin{DoxyCompactList}\small\item\em Returns a solver with \hyperlink{classCNF}{C\-N\-F}\-: U\mbox{[}index\mbox{]} \& T \& R\mbox{[}index-\/1\mbox{]}'. \end{DoxyCompactList}\item 
+\hyperlink{classSatSolver}{Sat\-Solver} $\ast$ \hyperlink{classIFM13Explorer_a04ebb206acd0dcf2d02f2e705eaec358}{get\-Gen\-Block\-Trans\-Solver} (size\-\_\-t index)
+\begin{DoxyCompactList}\small\item\em Returns a solver with \hyperlink{classCNF}{C\-N\-F}\-: T \& R\mbox{[}index-\/1\mbox{]}'. \end{DoxyCompactList}\item 
+\hyperlink{classIFMProofObligation}{I\-F\-M\-Proof\-Obligation} \hyperlink{classIFM13Explorer_a629b19d6716974b5239dd296de915167}{pop\-Min} (list$<$ \hyperlink{classIFMProofObligation}{I\-F\-M\-Proof\-Obligation} $>$ \&queue)
+\begin{DoxyCompactList}\small\item\em Takes a list of proof obligations and removes the element with lowest rank. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classParallelLearner}{Parallel\-Learner} \& \hyperlink{classIFM13Explorer_aff7fd95615eb7508a22b6b4992061678}{coordinator\-\_\-}
+\begin{DoxyCompactList}\small\item\em A reference to the coordinator. \end{DoxyCompactList}\item 
+\hyperlink{classCNF}{C\-N\-F} \hyperlink{classIFM13Explorer_a712b3dc6c099b1e3697e7b8877e0cd90}{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-}
+\begin{DoxyCompactList}\small\item\em All new winning region clauses that have not been considered yet. \end{DoxyCompactList}\item 
+mutex \hyperlink{classIFM13Explorer_a2e2722cb76399e087f62445b959ff5ed}{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-lock\-\_\-}
+\begin{DoxyCompactList}\small\item\em A lock that protects the \hyperlink{classIFM13Explorer_a712b3dc6c099b1e3697e7b8877e0cd90}{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-} from race-\/conditions. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classCNF}{C\-N\-F} $>$ \hyperlink{classIFM13Explorer_a559dde7f5e4e528ea495c1f4a4d1d072}{r\-\_\-}
+\begin{DoxyCompactList}\small\item\em The frames R\mbox{[}\mbox{]} of the algorithm. Each frame represents a set of states in \hyperlink{classCNF}{C\-N\-F}. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classCNF}{C\-N\-F} $>$ \hyperlink{classIFM13Explorer_a1f8ea34a97c568894a23a7361339f9ec}{u\-\_\-}
+\begin{DoxyCompactList}\small\item\em The blocked transitions U\mbox{[}\mbox{]} of the algorithm. \end{DoxyCompactList}\item 
+\hyperlink{classCNF}{C\-N\-F} \hyperlink{classIFM13Explorer_ac18c17a8e34556f0ad500c471a74f6ce}{win\-\_\-}
+\begin{DoxyCompactList}\small\item\em The current over-\/approximation of the winning region W (for the protagonist). \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classSatSolver}{Sat\-Solver} $\ast$ $>$ \hyperlink{classIFM13Explorer_aaa5c23d99524b6a0190212bd7abae6dd}{goto\-\_\-next\-\_\-lower\-\_\-solvers\-\_\-}
+\begin{DoxyCompactList}\small\item\em The solvers storing the \hyperlink{classCNF}{C\-N\-F}\-: U\mbox{[}k\mbox{]} \& T \& R\mbox{[}k-\/1\mbox{]}'. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classSatSolver}{Sat\-Solver} $\ast$ $>$ \hyperlink{classIFM13Explorer_a7cec81136159600cb4b65bbb8db0c8a5}{gen\-\_\-block\-\_\-trans\-\_\-solvers\-\_\-}
+\begin{DoxyCompactList}\small\item\em The solvers storing the \hyperlink{classCNF}{C\-N\-F}\-: T \& R\mbox{[}k-\/1\mbox{]}'. \end{DoxyCompactList}\item 
+\hyperlink{classSatSolver}{Sat\-Solver} $\ast$ \hyperlink{classIFM13Explorer_acfe8f5c31b916cf5a6973069c522ef94}{goto\-\_\-win\-\_\-solver\-\_\-}
+\begin{DoxyCompactList}\small\item\em A solver that stores the \hyperlink{classCNF}{C\-N\-F}\-: T \& W'. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classIFM13Explorer_a972f36d23d8990dde764f4ee877620fa}{sin\-\_\-}
+\begin{DoxyCompactList}\small\item\em The vector of present-\/ and next-\/state variables, and uncontrollable inputs. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classIFM13Explorer_ad04fb2b668ee928c9c38c61ec1e168ef}{sicn\-\_\-}
+\begin{DoxyCompactList}\small\item\em The vector of present-\/ and next-\/state variables, and all inputs. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classIFM13Explorer_a8fed8ac3d0dc575f8803878f23df7815}{initial\-\_\-state\-\_\-cube\-\_\-}
+\begin{DoxyCompactList}\small\item\em The cube encoding the initial state. \end{DoxyCompactList}\item 
+int \hyperlink{classIFM13Explorer_a222a8be4c6ce2e54488aabb9b882f8c9}{error\-\_\-var\-\_\-}
+\begin{DoxyCompactList}\small\item\em The literal saying that we are in an unsafe state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classIFM13Explorer_a72ffbbb782c795bd0391cda8a6418de5}{I\-F\-M13\-Explorer} (const \hyperlink{classIFM13Explorer}{I\-F\-M13\-Explorer} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classIFM13Explorer}{I\-F\-M13\-Explorer} \& \hyperlink{classIFM13Explorer_ad8ae39cc2889577813138718f666aadf}{operator=} (const \hyperlink{classIFM13Explorer}{I\-F\-M13\-Explorer} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implements the method of \hyperlink{classIFM13Synth}{I\-F\-M13\-Synth} in a parallelized way. 
+
+This class basically implements the same method as \hyperlink{classIFM13Synth}{I\-F\-M13\-Synth}. It only has a few additional methods to communicate with other threads. Whenever it finds a new clause of the winning region (of the protagonist not the antagonist), it communicates this clause to all other worker-\/threads (via the \hyperlink{classParallelLearner}{Parallel\-Learner}, which acts as a coordinator). On the other hand, it also considers refinements of the winning region done by other threads.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classIFM13Synth}{I\-F\-M13\-Synth}
+\end{DoxySeeAlso}
+\begin{DoxyAuthor}{Author}
+Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0.\-0 
+\end{DoxyVersion}
+
+
+Definition at line 1266 of file Parallel\-Learner.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classIFM13Explorer_a8830825d1b7347fb02e7a74f7e558e2d}{\index{I\-F\-M13\-Explorer@{I\-F\-M13\-Explorer}!I\-F\-M13\-Explorer@{I\-F\-M13\-Explorer}}
+\index{I\-F\-M13\-Explorer@{I\-F\-M13\-Explorer}!IFM13Explorer@{I\-F\-M13\-Explorer}}
+\subsubsection[{I\-F\-M13\-Explorer}]{\setlength{\rightskip}{0pt plus 5cm}I\-F\-M13\-Explorer\-::\-I\-F\-M13\-Explorer (
+\begin{DoxyParamCaption}
+\item[{{\bf Parallel\-Learner} \&}]{coordinator}
+\end{DoxyParamCaption}
+)}}\label{classIFM13Explorer_a8830825d1b7347fb02e7a74f7e558e2d}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coordinator} & A reference to the coordinator. All communication to other worker-\/threads is done via the coordinator. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1354 of file Parallel\-Learner.\-cpp.
+
+
+
+References C\-N\-F\-::add\-C\-N\-F(), Var\-Info\-::\-C\-T\-R\-L, gen\-\_\-block\-\_\-trans\-\_\-solvers\-\_\-, Options\-::get\-S\-A\-T\-Solver(), Var\-Manager\-::get\-Vars\-Of\-Type(), goto\-\_\-next\-\_\-lower\-\_\-solvers\-\_\-, goto\-\_\-win\-\_\-solver\-\_\-, Sat\-Solver\-::inc\-Add\-C\-N\-F(), initial\-\_\-state\-\_\-cube\-\_\-, Var\-Info\-::\-I\-N\-P\-U\-T, Var\-Manager\-::instance(), Options\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), Var\-Info\-::\-N\-E\-X\-T\-\_\-\-S\-T\-A\-T\-E, Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, r\-\_\-, sicn\-\_\-, sin\-\_\-, Sat\-Solver\-::start\-Incremental\-Session(), u\-\_\-, and win\-\_\-.
+
+\hypertarget{classIFM13Explorer_a7334013d4c514c392e0c38ee89a85b76}{\index{I\-F\-M13\-Explorer@{I\-F\-M13\-Explorer}!$\sim$\-I\-F\-M13\-Explorer@{$\sim$\-I\-F\-M13\-Explorer}}
+\index{$\sim$\-I\-F\-M13\-Explorer@{$\sim$\-I\-F\-M13\-Explorer}!IFM13Explorer@{I\-F\-M13\-Explorer}}
+\subsubsection[{$\sim$\-I\-F\-M13\-Explorer}]{\setlength{\rightskip}{0pt plus 5cm}I\-F\-M13\-Explorer\-::$\sim$\-I\-F\-M13\-Explorer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classIFM13Explorer_a7334013d4c514c392e0c38ee89a85b76}
+
+
+Destructor. 
+
+
+
+Definition at line 1406 of file Parallel\-Learner.\-cpp.
+
+
+
+References gen\-\_\-block\-\_\-trans\-\_\-solvers\-\_\-, goto\-\_\-next\-\_\-lower\-\_\-solvers\-\_\-, and goto\-\_\-win\-\_\-solver\-\_\-.
+
+\hypertarget{classIFM13Explorer_a72ffbbb782c795bd0391cda8a6418de5}{\index{I\-F\-M13\-Explorer@{I\-F\-M13\-Explorer}!I\-F\-M13\-Explorer@{I\-F\-M13\-Explorer}}
+\index{I\-F\-M13\-Explorer@{I\-F\-M13\-Explorer}!IFM13Explorer@{I\-F\-M13\-Explorer}}
+\subsubsection[{I\-F\-M13\-Explorer}]{\setlength{\rightskip}{0pt plus 5cm}I\-F\-M13\-Explorer\-::\-I\-F\-M13\-Explorer (
+\begin{DoxyParamCaption}
+\item[{const {\bf I\-F\-M13\-Explorer} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classIFM13Explorer_a72ffbbb782c795bd0391cda8a6418de5}
+
+
+Copy constructor. 
+
+The copy constructor is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classIFM13Explorer_a827db69cd48eb1b82a6e2bcdea69f06b}{\index{I\-F\-M13\-Explorer@{I\-F\-M13\-Explorer}!add\-Blocked\-State@{add\-Blocked\-State}}
+\index{add\-Blocked\-State@{add\-Blocked\-State}!IFM13Explorer@{I\-F\-M13\-Explorer}}
+\subsubsection[{add\-Blocked\-State}]{\setlength{\rightskip}{0pt plus 5cm}void I\-F\-M13\-Explorer\-::add\-Blocked\-State (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{state\-\_\-cube, }
+\item[{size\-\_\-t}]{level}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Explorer_a827db69cd48eb1b82a6e2bcdea69f06b}
+
+
+Removes a state(-\/cube) from the frame R\mbox{[}level\mbox{]}. 
+
+This method updates R\mbox{[}level\mbox{]} \-:= R\mbox{[}level\mbox{]} \& !state\-\_\-cube. state\-\_\-cube is a potentially incomplete state-\/cube. We also update the R-\/sets of all smaller levels in the same way for syntactic containment reasons (as described in the paper).
+
+
+\begin{DoxyParams}{Parameters}
+{\em state\-\_\-cube} & The state-\/cube that should be removed from R\mbox{[}level\mbox{]}. The cube is potentially incomplete, i.\-e., can represent a larger set of states. \\
+\hline
+{\em level} & The level in which the state should be blocked (i.\-e., removed form the corresponding frame R\mbox{[}level\mbox{]}). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1668 of file Parallel\-Learner.\-cpp.
+
+
+
+References C\-N\-F\-::add\-Clause(), Utils\-::contains(), error\-\_\-var\-\_\-, get\-Gen\-Block\-Trans\-Solver(), get\-Goto\-Next\-Lower\-Solver(), get\-R(), Sat\-Solver\-::inc\-Add\-Clause(), Sat\-Solver\-::inc\-Is\-Sat(), r\-\_\-, and Utils\-::swap\-Present\-To\-Next().
+
+
+
+Referenced by rec\-Block\-Cube().
+
+\hypertarget{classIFM13Explorer_a32d465971c73d0eaaa452bbf9622711f}{\index{I\-F\-M13\-Explorer@{I\-F\-M13\-Explorer}!add\-Blocked\-Transition@{add\-Blocked\-Transition}}
+\index{add\-Blocked\-Transition@{add\-Blocked\-Transition}!IFM13Explorer@{I\-F\-M13\-Explorer}}
+\subsubsection[{add\-Blocked\-Transition}]{\setlength{\rightskip}{0pt plus 5cm}void I\-F\-M13\-Explorer\-::add\-Blocked\-Transition (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{state\-\_\-in\-\_\-cube, }
+\item[{size\-\_\-t}]{level}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Explorer_a32d465971c73d0eaaa452bbf9622711f}
+
+
+Marks a state-\/input-\/pair as blocked. 
+
+The meaning is\-: we want to store the fact that a certain state-\/input pair is not helpful for the antagonist (the party controlling the inputs i) in trying to move from R\mbox{[}level\mbox{]} to R\mbox{[}level-\/1\mbox{]}. Hence, we update U\mbox{[}level\mbox{]} \-:= U\mbox{[}level\mbox{]} \& !state\-\_\-in\-\_\-cube. We also update the U-\/sets of all smaller levels in the same way for syntactic containment reasons (as described in the paper).
+
+
+\begin{DoxyParams}{Parameters}
+{\em state\-\_\-in\-\_\-cube} & The state-\/input pair as a cube over present state variables and uncontrollable inputs. The cube is potentially incomplete, i.\-e., can represent a larger set of state-\/input pairs. \\
+\hline
+{\em level} & The level in which the transition should be blocked (i.\-e., the state-\/input pair should by marked as useless for the antagonist). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1653 of file Parallel\-Learner.\-cpp.
+
+
+
+References C\-N\-F\-::add\-Clause\-And\-Simplify(), get\-Goto\-Next\-Lower\-Solver(), get\-U(), and Sat\-Solver\-::inc\-Add\-Clause().
+
+
+
+Referenced by gen\-And\-Block\-Trans().
+
+\hypertarget{classIFM13Explorer_a14c5ca206f19c7c741f63e43d1470387}{\index{I\-F\-M13\-Explorer@{I\-F\-M13\-Explorer}!add\-Lose@{add\-Lose}}
+\index{add\-Lose@{add\-Lose}!IFM13Explorer@{I\-F\-M13\-Explorer}}
+\subsubsection[{add\-Lose}]{\setlength{\rightskip}{0pt plus 5cm}void I\-F\-M13\-Explorer\-::add\-Lose (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{state\-\_\-cube}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Explorer_a14c5ca206f19c7c741f63e43d1470387}
+
+
+Removes a state(-\/cube) from the current over-\/approximation of the winning region. 
+
+This method updates W \-:= W \& !state\-\_\-cube. state\-\_\-cube is a potentially incomplete state-\/cube.
+
+
+\begin{DoxyParams}{Parameters}
+{\em state\-\_\-cube} & The state-\/cube that should be removed from the current over-\/approximation of the winning region. The cube is potentially incomplete, i.\-e., \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1724 of file Parallel\-Learner.\-cpp.
+
+
+
+References coordinator\-\_\-, I\-F\-M, and Parallel\-Learner\-::notify\-New\-Win\-Reg\-Clause().
+
+
+
+Referenced by rec\-Block\-Cube().
+
+\hypertarget{classIFM13Explorer_ae2e510e5b13e7166c5d6170a286a7295}{\index{I\-F\-M13\-Explorer@{I\-F\-M13\-Explorer}!consider\-New\-Info\-From\-Others@{consider\-New\-Info\-From\-Others}}
+\index{consider\-New\-Info\-From\-Others@{consider\-New\-Info\-From\-Others}!IFM13Explorer@{I\-F\-M13\-Explorer}}
+\subsubsection[{consider\-New\-Info\-From\-Others}]{\setlength{\rightskip}{0pt plus 5cm}void I\-F\-M13\-Explorer\-::consider\-New\-Info\-From\-Others (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Explorer_ae2e510e5b13e7166c5d6170a286a7295}
+
+
+Considers new winning region clauses that have been found by other threads. 
+
+
+
+Definition at line 1461 of file Parallel\-Learner.\-cpp.
+
+
+
+References C\-N\-F\-::add\-C\-N\-F(), C\-N\-F\-::clear(), goto\-\_\-win\-\_\-solver\-\_\-, Sat\-Solver\-::inc\-Add\-C\-N\-F(), new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-, new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-lock\-\_\-, C\-N\-F\-::swap\-Present\-To\-Next(), and win\-\_\-.
+
+
+
+Referenced by is\-Lose(), and rec\-Block\-Cube().
+
+\hypertarget{classIFM13Explorer_a19efbbf6644d73d9d7d662b121e3d151}{\index{I\-F\-M13\-Explorer@{I\-F\-M13\-Explorer}!explore\-Clauses@{explore\-Clauses}}
+\index{explore\-Clauses@{explore\-Clauses}!IFM13Explorer@{I\-F\-M13\-Explorer}}
+\subsubsection[{explore\-Clauses}]{\setlength{\rightskip}{0pt plus 5cm}void I\-F\-M13\-Explorer\-::explore\-Clauses (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classIFM13Explorer_a19efbbf6644d73d9d7d662b121e3d151}
+
+
+The work-\/horse of this class. 
+
+It basically implements the same method as \hyperlink{classIFM13Synth}{I\-F\-M13\-Synth}. However, it also communicates with other threads\-: Whenever it finds a new clause of the winning region (of the protagonist not the antagonist), it communicates this clause to all other worker-\/threads (via the \hyperlink{classParallelLearner}{Parallel\-Learner}, which acts as a coordinator). On the other hand, it also considers refinements of the winning region done by other threads. If it finds out that the specification is realizable or unrealizable, it sets the flag \hyperlink{classParallelLearner_a757f8817809cce5c0408cdc41d6db1b8}{Parallel\-Learner\-::result\-\_\-} accordingly. It also polls this flag regularly. If it has been set by some other thread, it quits. 
+
+Definition at line 1421 of file Parallel\-Learner.\-cpp.
+
+
+
+References coordinator\-\_\-, initial\-\_\-state\-\_\-cube\-\_\-, I\-S\-\_\-\-L\-O\-S\-E, L\-\_\-\-D\-B\-G, L\-\_\-\-L\-O\-G, propagate\-Blocked\-States(), rec\-Block\-Cube(), Parallel\-Learner\-::result\-\_\-, U\-N\-K\-N\-O\-W\-N, and U\-N\-R\-E\-A\-L\-I\-Z\-A\-B\-L\-E.
+
+
+
+Referenced by Parallel\-Learner\-::run().
+
+\hypertarget{classIFM13Explorer_a6607ae52fd8a14d5f3d54132f11406d3}{\index{I\-F\-M13\-Explorer@{I\-F\-M13\-Explorer}!gen\-And\-Block\-Trans@{gen\-And\-Block\-Trans}}
+\index{gen\-And\-Block\-Trans@{gen\-And\-Block\-Trans}!IFM13Explorer@{I\-F\-M13\-Explorer}}
+\subsubsection[{gen\-And\-Block\-Trans}]{\setlength{\rightskip}{0pt plus 5cm}void I\-F\-M13\-Explorer\-::gen\-And\-Block\-Trans (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{state\-\_\-in\-\_\-cube, }
+\item[{const vector$<$ int $>$ \&}]{ctrl\-\_\-cube, }
+\item[{size\-\_\-t}]{level}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Explorer_a6607ae52fd8a14d5f3d54132f11406d3}
+
+
+Generalizes and excludes a blocked transition. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state\-\_\-in\-\_\-cube} & The state-\/input cube (the transition) that should be generalized and and blocked. \\
+\hline
+{\em ctrl\-\_\-cube} & The control signals that can be chosen by the protagonist in order to avoid ending up in R\mbox{[}level-\/1\mbox{]}. \\
+\hline
+{\em level} & The frame in which the transition should be blocked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+False if state\-\_\-cube satisfies W, true otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 1741 of file Parallel\-Learner.\-cpp.
+
+
+
+References add\-Blocked\-Transition(), get\-Gen\-Block\-Trans\-Solver(), Sat\-Solver\-::inc\-Is\-Sat\-Model\-Or\-Core(), and M\-A\-S\-S\-E\-R\-T.
+
+
+
+Referenced by rec\-Block\-Cube().
+
+\hypertarget{classIFM13Explorer_a04ebb206acd0dcf2d02f2e705eaec358}{\index{I\-F\-M13\-Explorer@{I\-F\-M13\-Explorer}!get\-Gen\-Block\-Trans\-Solver@{get\-Gen\-Block\-Trans\-Solver}}
+\index{get\-Gen\-Block\-Trans\-Solver@{get\-Gen\-Block\-Trans\-Solver}!IFM13Explorer@{I\-F\-M13\-Explorer}}
+\subsubsection[{get\-Gen\-Block\-Trans\-Solver}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sat\-Solver} $\ast$ I\-F\-M13\-Explorer\-::get\-Gen\-Block\-Trans\-Solver (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Explorer_a04ebb206acd0dcf2d02f2e705eaec358}
+
+
+Returns a solver with \hyperlink{classCNF}{C\-N\-F}\-: T \& R\mbox{[}index-\/1\mbox{]}'. 
+
+This solver is used to generalize blocked transitions. If the solver for this index does not yet exists, it is created.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the requested solver. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A solver with \hyperlink{classCNF}{C\-N\-F}\-: T \& R\mbox{[}index-\/1\mbox{]}'. get\-Gen\-Block\-Trans\-Solver(0) returns N\-U\-L\-L. 
+\end{DoxyReturn}
+
+
+Definition at line 1782 of file Parallel\-Learner.\-cpp.
+
+
+
+References gen\-\_\-block\-\_\-trans\-\_\-solvers\-\_\-, Options\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), and sicn\-\_\-.
+
+
+
+Referenced by add\-Blocked\-State(), gen\-And\-Block\-Trans(), and propagate\-Blocked\-States().
+
+\hypertarget{classIFM13Explorer_abdf350f2df8a77579df3da7ecb3de8e4}{\index{I\-F\-M13\-Explorer@{I\-F\-M13\-Explorer}!get\-Goto\-Next\-Lower\-Solver@{get\-Goto\-Next\-Lower\-Solver}}
+\index{get\-Goto\-Next\-Lower\-Solver@{get\-Goto\-Next\-Lower\-Solver}!IFM13Explorer@{I\-F\-M13\-Explorer}}
+\subsubsection[{get\-Goto\-Next\-Lower\-Solver}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sat\-Solver} $\ast$ I\-F\-M13\-Explorer\-::get\-Goto\-Next\-Lower\-Solver (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Explorer_abdf350f2df8a77579df3da7ecb3de8e4}
+
+
+Returns a solver with \hyperlink{classCNF}{C\-N\-F}\-: U\mbox{[}index\mbox{]} \& T \& R\mbox{[}index-\/1\mbox{]}'. 
+
+This solver is used to search for moves the antagonist can make in order to reach R\mbox{[}index-\/1\mbox{]}. If the solver for this index does not yet exists, it is created.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the requested solver. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A solver with \hyperlink{classCNF}{C\-N\-F}\-: U\mbox{[}index\mbox{]} \& T \& R\mbox{[}index-\/1\mbox{]}'. get\-Goto\-Next\-Lower\-Solver(0) returns N\-U\-L\-L. 
+\end{DoxyReturn}
+
+
+Definition at line 1770 of file Parallel\-Learner.\-cpp.
+
+
+
+References goto\-\_\-next\-\_\-lower\-\_\-solvers\-\_\-, Options\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), and sicn\-\_\-.
+
+
+
+Referenced by add\-Blocked\-State(), add\-Blocked\-Transition(), propagate\-Blocked\-States(), and rec\-Block\-Cube().
+
+\hypertarget{classIFM13Explorer_a75a0b20fe6d76b6d1fa52d447fa24d10}{\index{I\-F\-M13\-Explorer@{I\-F\-M13\-Explorer}!get\-R@{get\-R}}
+\index{get\-R@{get\-R}!IFM13Explorer@{I\-F\-M13\-Explorer}}
+\subsubsection[{get\-R}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} \& I\-F\-M13\-Explorer\-::get\-R (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Explorer_a75a0b20fe6d76b6d1fa52d447fa24d10}
+
+
+Returns the frame R\mbox{[}index\mbox{]} in \hyperlink{classCNF}{C\-N\-F}. 
+
+If the frame with this index does not yet exists, it is created.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the requested frame. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The frame R\mbox{[}index\mbox{]} in \hyperlink{classCNF}{C\-N\-F}. 
+\end{DoxyReturn}
+
+
+Definition at line 1754 of file Parallel\-Learner.\-cpp.
+
+
+
+References r\-\_\-.
+
+
+
+Referenced by add\-Blocked\-State(), is\-Blocked(), and propagate\-Blocked\-States().
+
+\hypertarget{classIFM13Explorer_a2816b4c9f2cb02958e660a872f43fe4b}{\index{I\-F\-M13\-Explorer@{I\-F\-M13\-Explorer}!get\-U@{get\-U}}
+\index{get\-U@{get\-U}!IFM13Explorer@{I\-F\-M13\-Explorer}}
+\subsubsection[{get\-U}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} \& I\-F\-M13\-Explorer\-::get\-U (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Explorer_a2816b4c9f2cb02958e660a872f43fe4b}
+
+
+Returns the blocked transitions U\mbox{[}index\mbox{]} in \hyperlink{classCNF}{C\-N\-F}. 
+
+If the set of blocked transitions with this index does not yet exists, it is created. This function is actually only needed for debugging purposes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the requested set of blocked transitions. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The set U\mbox{[}index\mbox{]} of blocked transitions in \hyperlink{classCNF}{C\-N\-F}. 
+\end{DoxyReturn}
+
+
+Definition at line 1762 of file Parallel\-Learner.\-cpp.
+
+
+
+References u\-\_\-.
+
+
+
+Referenced by add\-Blocked\-Transition().
+
+\hypertarget{classIFM13Explorer_a6f84ca906e3d15b9bf7b3df71f379fa1}{\index{I\-F\-M13\-Explorer@{I\-F\-M13\-Explorer}!is\-Blocked@{is\-Blocked}}
+\index{is\-Blocked@{is\-Blocked}!IFM13Explorer@{I\-F\-M13\-Explorer}}
+\subsubsection[{is\-Blocked}]{\setlength{\rightskip}{0pt plus 5cm}bool I\-F\-M13\-Explorer\-::is\-Blocked (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{state\-\_\-cube, }
+\item[{size\-\_\-t}]{level}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Explorer_a6f84ca906e3d15b9bf7b3df71f379fa1}
+
+
+Checks if a state is contained in a certain frame. 
+
+The passed state cube is complete, i.\-e., contains all state variables. Hence, containment can be (and is) checked syntactically. We simply check if state\-\_\-cube satisfies all clauses of R\mbox{[}level\mbox{]}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em state\-\_\-cube} & A full cube over the present state variables. \\
+\hline
+{\em level} & The index i of a certain frame R\mbox{[}i\mbox{]}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+False if state\-\_\-cube satisfies R\mbox{[}level\mbox{]}, true otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 1718 of file Parallel\-Learner.\-cpp.
+
+
+
+References get\-R(), and C\-N\-F\-::is\-Sat\-By().
+
+
+
+Referenced by rec\-Block\-Cube().
+
+\hypertarget{classIFM13Explorer_af41ec86ed26940c59adc7d74c6ad5abc}{\index{I\-F\-M13\-Explorer@{I\-F\-M13\-Explorer}!is\-Lose@{is\-Lose}}
+\index{is\-Lose@{is\-Lose}!IFM13Explorer@{I\-F\-M13\-Explorer}}
+\subsubsection[{is\-Lose}]{\setlength{\rightskip}{0pt plus 5cm}bool I\-F\-M13\-Explorer\-::is\-Lose (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{state\-\_\-cube}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Explorer_af41ec86ed26940c59adc7d74c6ad5abc}
+
+
+Checks if a state satisfies the current over-\/approximation of the winning region. 
+
+The passed state cube is complete, i.\-e., contains all state variables. Hence, containment can be (and is) checked syntactically. We simply check if state\-\_\-cube satisfies all clauses of W (stored in \hyperlink{classIFM13Explorer_ac18c17a8e34556f0ad500c471a74f6ce}{win\-\_\- }).
+
+
+\begin{DoxyParams}{Parameters}
+{\em state\-\_\-cube} & A full cube over the present state variables. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+False if state\-\_\-cube satisfies W, true otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 1734 of file Parallel\-Learner.\-cpp.
+
+
+
+References consider\-New\-Info\-From\-Others(), C\-N\-F\-::is\-Sat\-By(), and win\-\_\-.
+
+
+
+Referenced by rec\-Block\-Cube().
+
+\hypertarget{classIFM13Explorer_a37e60ac394b868d5f375c5b684aeaebc}{\index{I\-F\-M13\-Explorer@{I\-F\-M13\-Explorer}!notify\-New\-Win\-Reg\-Clause@{notify\-New\-Win\-Reg\-Clause}}
+\index{notify\-New\-Win\-Reg\-Clause@{notify\-New\-Win\-Reg\-Clause}!IFM13Explorer@{I\-F\-M13\-Explorer}}
+\subsubsection[{notify\-New\-Win\-Reg\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}void I\-F\-M13\-Explorer\-::notify\-New\-Win\-Reg\-Clause (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{clause, }
+\item[{int}]{src}
+\end{DoxyParamCaption}
+)}}\label{classIFM13Explorer_a37e60ac394b868d5f375c5b684aeaebc}
+
+
+Notifies this worker about a new winning region clause. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clause} & The new clause that has been discovered. \\
+\hline
+{\em src} & An integer number defining which kind of worker-\/thread discovered the clause. At the moment, this information is ignored. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1453 of file Parallel\-Learner.\-cpp.
+
+
+
+References C\-N\-F\-::add\-Clause(), new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-, and new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-lock\-\_\-.
+
+\hypertarget{classIFM13Explorer_ad8ae39cc2889577813138718f666aadf}{\index{I\-F\-M13\-Explorer@{I\-F\-M13\-Explorer}!operator=@{operator=}}
+\index{operator=@{operator=}!IFM13Explorer@{I\-F\-M13\-Explorer}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-F\-M13\-Explorer}\& I\-F\-M13\-Explorer\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf I\-F\-M13\-Explorer} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classIFM13Explorer_ad8ae39cc2889577813138718f666aadf}
+
+
+Assignment operator. 
+
+The assignment operator is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the assignment, i.\-e, $\ast$this. 
+\end{DoxyReturn}
+\hypertarget{classIFM13Explorer_a629b19d6716974b5239dd296de915167}{\index{I\-F\-M13\-Explorer@{I\-F\-M13\-Explorer}!pop\-Min@{pop\-Min}}
+\index{pop\-Min@{pop\-Min}!IFM13Explorer@{I\-F\-M13\-Explorer}}
+\subsubsection[{pop\-Min}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-F\-M\-Proof\-Obligation} I\-F\-M13\-Explorer\-::pop\-Min (
+\begin{DoxyParamCaption}
+\item[{list$<$ {\bf I\-F\-M\-Proof\-Obligation} $>$ \&}]{queue}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Explorer_a629b19d6716974b5239dd296de915167}
+
+
+Takes a list of proof obligations and removes the element with lowest rank. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em queue} & A list of proof obligations. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The element that has been removed from the list. It is always the element (among the elements) with minimal rank. 
+\end{DoxyReturn}
+
+
+Definition at line 1794 of file Parallel\-Learner.\-cpp.
+
+
+
+References M\-A\-S\-S\-E\-R\-T.
+
+
+
+Referenced by rec\-Block\-Cube().
+
+\hypertarget{classIFM13Explorer_a52595f5290210c0a79b45c9a077abdb2}{\index{I\-F\-M13\-Explorer@{I\-F\-M13\-Explorer}!propagate\-Blocked\-States@{propagate\-Blocked\-States}}
+\index{propagate\-Blocked\-States@{propagate\-Blocked\-States}!IFM13Explorer@{I\-F\-M13\-Explorer}}
+\subsubsection[{propagate\-Blocked\-States}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t I\-F\-M13\-Explorer\-::propagate\-Blocked\-States (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{max\-\_\-level}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Explorer_a52595f5290210c0a79b45c9a077abdb2}
+
+
+Propagates clauses forward and searches for equivalent clause sets. 
+
+Similar to I\-C3, this method propagates clauses of frames forward. It also checks if two adjacent clauses sets become syntactically equal.
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\-\_\-level} & The maximum frame level until which propagation should be performed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number N returned by this method has the following meaning\-: N=0 means that no equal clause sets have been found. N $>$ 0 means that R\mbox{[}N\mbox{]} = R\mbox{[}N-\/1\mbox{]}. 
+\end{DoxyReturn}
+
+
+Definition at line 1472 of file Parallel\-Learner.\-cpp.
+
+
+
+References coordinator\-\_\-, C\-N\-F\-::get\-Clauses(), get\-Gen\-Block\-Trans\-Solver(), get\-Goto\-Next\-Lower\-Solver(), get\-R(), Sat\-Solver\-::inc\-Add\-Clause(), Sat\-Solver\-::inc\-Is\-Sat(), C\-N\-F\-::remove\-Duplicates(), Parallel\-Learner\-::result\-\_\-, Utils\-::swap\-Present\-To\-Next(), C\-N\-F\-::swap\-With(), and U\-N\-K\-N\-O\-W\-N.
+
+
+
+Referenced by explore\-Clauses().
+
+\hypertarget{classIFM13Explorer_a7ca0b39a9868d8d03b2cafa412dfb640}{\index{I\-F\-M13\-Explorer@{I\-F\-M13\-Explorer}!rec\-Block\-Cube@{rec\-Block\-Cube}}
+\index{rec\-Block\-Cube@{rec\-Block\-Cube}!IFM13Explorer@{I\-F\-M13\-Explorer}}
+\subsubsection[{rec\-Block\-Cube}]{\setlength{\rightskip}{0pt plus 5cm}bool I\-F\-M13\-Explorer\-::rec\-Block\-Cube (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{state\-\_\-cube, }
+\item[{size\-\_\-t}]{level}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Explorer_a7ca0b39a9868d8d03b2cafa412dfb640}
+
+
+Analyzes the rank of the passed state. 
+
+There are two possible conclusions\-: (a) the rank of the state is $>$ level, (b) the rank of the state is $<$= level. In order to analyze a certain state, this method may analyze some of its successor states first (using a queue of proof obligations internally). This method is always called for the initial state only.
+
+
+\begin{DoxyParams}{Parameters}
+{\em state\-\_\-cube} & A full cube over the state variables, describing the state that should be analyzed. \\
+\hline
+{\em level} & The level for the analysis (this method checks if the rank of the state is $>$ level or $<$= level). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\-S\-\_\-\-G\-R\-E\-A\-T\-E\-R (an alias for true) if the rank of the state is $>$ level. I\-S\-\_\-\-L\-O\-S\-E (an alias for false) otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 1529 of file Parallel\-Learner.\-cpp.
+
+
+
+References add\-Blocked\-State(), add\-Lose(), consider\-New\-Info\-From\-Others(), Utils\-::contains\-Init(), coordinator\-\_\-, Var\-Info\-::\-C\-T\-R\-L, Utils\-::extract(), Utils\-::extract\-Next\-As\-Present(), Utils\-::extract\-Pres\-In(), gen\-And\-Block\-Trans(), get\-Goto\-Next\-Lower\-Solver(), I\-F\-M\-Proof\-Obligation\-::get\-Level(), I\-F\-M\-Proof\-Obligation\-::get\-Pre\-Ctrl\-Cube(), I\-F\-M\-Proof\-Obligation\-::get\-Pre\-State\-In\-Cube(), I\-F\-M\-Proof\-Obligation\-::get\-State(), goto\-\_\-win\-\_\-solver\-\_\-, I\-F\-M\-Proof\-Obligation\-::has\-Pre(), Sat\-Solver\-::inc\-Is\-Sat\-Model\-Or\-Core(), Var\-Info\-::\-I\-N\-P\-U\-T, I\-S\-\_\-\-G\-R\-E\-A\-T\-E\-R, I\-S\-\_\-\-L\-O\-S\-E, is\-Blocked(), is\-Lose(), pop\-Min(), Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, Parallel\-Learner\-::result\-\_\-, sicn\-\_\-, sin\-\_\-, and U\-N\-K\-N\-O\-W\-N.
+
+
+
+Referenced by explore\-Clauses().
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classIFM13Explorer_aff7fd95615eb7508a22b6b4992061678}{\index{I\-F\-M13\-Explorer@{I\-F\-M13\-Explorer}!coordinator\-\_\-@{coordinator\-\_\-}}
+\index{coordinator\-\_\-@{coordinator\-\_\-}!IFM13Explorer@{I\-F\-M13\-Explorer}}
+\subsubsection[{coordinator\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Parallel\-Learner}\& I\-F\-M13\-Explorer\-::coordinator\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Explorer_aff7fd95615eb7508a22b6b4992061678}
+
+
+A reference to the coordinator. 
+
+All communication to other worker-\/threads is done via the coordinator. 
+
+Definition at line 1482 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by add\-Lose(), explore\-Clauses(), propagate\-Blocked\-States(), and rec\-Block\-Cube().
+
+\hypertarget{classIFM13Explorer_a222a8be4c6ce2e54488aabb9b882f8c9}{\index{I\-F\-M13\-Explorer@{I\-F\-M13\-Explorer}!error\-\_\-var\-\_\-@{error\-\_\-var\-\_\-}}
+\index{error\-\_\-var\-\_\-@{error\-\_\-var\-\_\-}!IFM13Explorer@{I\-F\-M13\-Explorer}}
+\subsubsection[{error\-\_\-var\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int I\-F\-M13\-Explorer\-::error\-\_\-var\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Explorer_a222a8be4c6ce2e54488aabb9b882f8c9}
+
+
+The literal saying that we are in an unsafe state. 
+
+We cache it so that we do not have to get it from the \hyperlink{classVarManager}{Var\-Manager} every time. We may of lock the \hyperlink{classVarManager}{Var\-Manager} otherwise. 
+
+Definition at line 1566 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by add\-Blocked\-State().
+
+\hypertarget{classIFM13Explorer_a7cec81136159600cb4b65bbb8db0c8a5}{\index{I\-F\-M13\-Explorer@{I\-F\-M13\-Explorer}!gen\-\_\-block\-\_\-trans\-\_\-solvers\-\_\-@{gen\-\_\-block\-\_\-trans\-\_\-solvers\-\_\-}}
+\index{gen\-\_\-block\-\_\-trans\-\_\-solvers\-\_\-@{gen\-\_\-block\-\_\-trans\-\_\-solvers\-\_\-}!IFM13Explorer@{I\-F\-M13\-Explorer}}
+\subsubsection[{gen\-\_\-block\-\_\-trans\-\_\-solvers\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf Sat\-Solver}$\ast$$>$ I\-F\-M13\-Explorer\-::gen\-\_\-block\-\_\-trans\-\_\-solvers\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Explorer_a7cec81136159600cb4b65bbb8db0c8a5}
+
+
+The solvers storing the \hyperlink{classCNF}{C\-N\-F}\-: T \& R\mbox{[}k-\/1\mbox{]}'. 
+
+You should use \hyperlink{classIFM13Explorer_a04ebb206acd0dcf2d02f2e705eaec358}{get\-Gen\-Block\-Trans\-Solver() } to access these solvers. The reason is that this method initializes the solvers if they do not yet exist. gen\-\_\-block\-\_\-trans\-\_\-solvers\-\_\-\mbox{[}0\mbox{]} is always N\-U\-L\-L. 
+
+Definition at line 1538 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by get\-Gen\-Block\-Trans\-Solver(), I\-F\-M13\-Explorer(), and $\sim$\-I\-F\-M13\-Explorer().
+
+\hypertarget{classIFM13Explorer_aaa5c23d99524b6a0190212bd7abae6dd}{\index{I\-F\-M13\-Explorer@{I\-F\-M13\-Explorer}!goto\-\_\-next\-\_\-lower\-\_\-solvers\-\_\-@{goto\-\_\-next\-\_\-lower\-\_\-solvers\-\_\-}}
+\index{goto\-\_\-next\-\_\-lower\-\_\-solvers\-\_\-@{goto\-\_\-next\-\_\-lower\-\_\-solvers\-\_\-}!IFM13Explorer@{I\-F\-M13\-Explorer}}
+\subsubsection[{goto\-\_\-next\-\_\-lower\-\_\-solvers\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf Sat\-Solver}$\ast$$>$ I\-F\-M13\-Explorer\-::goto\-\_\-next\-\_\-lower\-\_\-solvers\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Explorer_aaa5c23d99524b6a0190212bd7abae6dd}
+
+
+The solvers storing the \hyperlink{classCNF}{C\-N\-F}\-: U\mbox{[}k\mbox{]} \& T \& R\mbox{[}k-\/1\mbox{]}'. 
+
+These solvers are used to search for moves the antagonist can make in order to reach R\mbox{[}k-\/1\mbox{]}. You should use \hyperlink{classIFM13Explorer_abdf350f2df8a77579df3da7ecb3de8e4}{get\-Goto\-Next\-Lower\-Solver() } to access these solvers. The reason is that this method initializes the solvers if they do not yet exist. goto\-\_\-next\-\_\-lower\-\_\-solvers\-\_\-\mbox{[}0\mbox{]} is always N\-U\-L\-L. 
+
+Definition at line 1529 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by get\-Goto\-Next\-Lower\-Solver(), I\-F\-M13\-Explorer(), and $\sim$\-I\-F\-M13\-Explorer().
+
+\hypertarget{classIFM13Explorer_acfe8f5c31b916cf5a6973069c522ef94}{\index{I\-F\-M13\-Explorer@{I\-F\-M13\-Explorer}!goto\-\_\-win\-\_\-solver\-\_\-@{goto\-\_\-win\-\_\-solver\-\_\-}}
+\index{goto\-\_\-win\-\_\-solver\-\_\-@{goto\-\_\-win\-\_\-solver\-\_\-}!IFM13Explorer@{I\-F\-M13\-Explorer}}
+\subsubsection[{goto\-\_\-win\-\_\-solver\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sat\-Solver}$\ast$ I\-F\-M13\-Explorer\-::goto\-\_\-win\-\_\-solver\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Explorer_acfe8f5c31b916cf5a6973069c522ef94}
+
+
+A solver that stores the \hyperlink{classCNF}{C\-N\-F}\-: T \& W'. 
+
+
+
+Definition at line 1543 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by consider\-New\-Info\-From\-Others(), I\-F\-M13\-Explorer(), rec\-Block\-Cube(), and $\sim$\-I\-F\-M13\-Explorer().
+
+\hypertarget{classIFM13Explorer_a8fed8ac3d0dc575f8803878f23df7815}{\index{I\-F\-M13\-Explorer@{I\-F\-M13\-Explorer}!initial\-\_\-state\-\_\-cube\-\_\-@{initial\-\_\-state\-\_\-cube\-\_\-}}
+\index{initial\-\_\-state\-\_\-cube\-\_\-@{initial\-\_\-state\-\_\-cube\-\_\-}!IFM13Explorer@{I\-F\-M13\-Explorer}}
+\subsubsection[{initial\-\_\-state\-\_\-cube\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ I\-F\-M13\-Explorer\-::initial\-\_\-state\-\_\-cube\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Explorer_a8fed8ac3d0dc575f8803878f23df7815}
+
+
+The cube encoding the initial state. 
+
+
+
+Definition at line 1558 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by explore\-Clauses(), and I\-F\-M13\-Explorer().
+
+\hypertarget{classIFM13Explorer_a712b3dc6c099b1e3697e7b8877e0cd90}{\index{I\-F\-M13\-Explorer@{I\-F\-M13\-Explorer}!new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-@{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-}}
+\index{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-@{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-}!IFM13Explorer@{I\-F\-M13\-Explorer}}
+\subsubsection[{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} I\-F\-M13\-Explorer\-::new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Explorer_a712b3dc6c099b1e3697e7b8877e0cd90}
+
+
+All new winning region clauses that have not been considered yet. 
+
+
+
+Definition at line 1487 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by consider\-New\-Info\-From\-Others(), and notify\-New\-Win\-Reg\-Clause().
+
+\hypertarget{classIFM13Explorer_a2e2722cb76399e087f62445b959ff5ed}{\index{I\-F\-M13\-Explorer@{I\-F\-M13\-Explorer}!new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-lock\-\_\-@{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-lock\-\_\-}}
+\index{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-lock\-\_\-@{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-lock\-\_\-}!IFM13Explorer@{I\-F\-M13\-Explorer}}
+\subsubsection[{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-lock\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}mutex I\-F\-M13\-Explorer\-::new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-lock\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Explorer_a2e2722cb76399e087f62445b959ff5ed}
+
+
+A lock that protects the \hyperlink{classIFM13Explorer_a712b3dc6c099b1e3697e7b8877e0cd90}{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-} from race-\/conditions. 
+
+Many worker-\/threads modify the \hyperlink{classIFM13Explorer_a712b3dc6c099b1e3697e7b8877e0cd90}{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-} (add new ones). This lock ensures that only one thread is modifying or reading the \hyperlink{classIFM13Explorer_a712b3dc6c099b1e3697e7b8877e0cd90}{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-} at one time. 
+
+Definition at line 1495 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by consider\-New\-Info\-From\-Others(), and notify\-New\-Win\-Reg\-Clause().
+
+\hypertarget{classIFM13Explorer_a559dde7f5e4e528ea495c1f4a4d1d072}{\index{I\-F\-M13\-Explorer@{I\-F\-M13\-Explorer}!r\-\_\-@{r\-\_\-}}
+\index{r\-\_\-@{r\-\_\-}!IFM13Explorer@{I\-F\-M13\-Explorer}}
+\subsubsection[{r\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf C\-N\-F}$>$ I\-F\-M13\-Explorer\-::r\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Explorer_a559dde7f5e4e528ea495c1f4a4d1d072}
+
+
+The frames R\mbox{[}\mbox{]} of the algorithm. Each frame represents a set of states in \hyperlink{classCNF}{C\-N\-F}. 
+
+You should use \hyperlink{classIFM13Explorer_a75a0b20fe6d76b6d1fa52d447fa24d10}{get\-R() } to access the frames. The reason is that this method initializes frames if they do not yet exist. 
+
+Definition at line 1503 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by add\-Blocked\-State(), get\-R(), and I\-F\-M13\-Explorer().
+
+\hypertarget{classIFM13Explorer_ad04fb2b668ee928c9c38c61ec1e168ef}{\index{I\-F\-M13\-Explorer@{I\-F\-M13\-Explorer}!sicn\-\_\-@{sicn\-\_\-}}
+\index{sicn\-\_\-@{sicn\-\_\-}!IFM13Explorer@{I\-F\-M13\-Explorer}}
+\subsubsection[{sicn\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ I\-F\-M13\-Explorer\-::sicn\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Explorer_ad04fb2b668ee928c9c38c61ec1e168ef}
+
+
+The vector of present-\/ and next-\/state variables, and all inputs. 
+
+
+
+Definition at line 1553 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by get\-Gen\-Block\-Trans\-Solver(), get\-Goto\-Next\-Lower\-Solver(), I\-F\-M13\-Explorer(), and rec\-Block\-Cube().
+
+\hypertarget{classIFM13Explorer_a972f36d23d8990dde764f4ee877620fa}{\index{I\-F\-M13\-Explorer@{I\-F\-M13\-Explorer}!sin\-\_\-@{sin\-\_\-}}
+\index{sin\-\_\-@{sin\-\_\-}!IFM13Explorer@{I\-F\-M13\-Explorer}}
+\subsubsection[{sin\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ I\-F\-M13\-Explorer\-::sin\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Explorer_a972f36d23d8990dde764f4ee877620fa}
+
+
+The vector of present-\/ and next-\/state variables, and uncontrollable inputs. 
+
+
+
+Definition at line 1548 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by I\-F\-M13\-Explorer(), and rec\-Block\-Cube().
+
+\hypertarget{classIFM13Explorer_a1f8ea34a97c568894a23a7361339f9ec}{\index{I\-F\-M13\-Explorer@{I\-F\-M13\-Explorer}!u\-\_\-@{u\-\_\-}}
+\index{u\-\_\-@{u\-\_\-}!IFM13Explorer@{I\-F\-M13\-Explorer}}
+\subsubsection[{u\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf C\-N\-F}$>$ I\-F\-M13\-Explorer\-::u\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Explorer_a1f8ea34a97c568894a23a7361339f9ec}
+
+
+The blocked transitions U\mbox{[}\mbox{]} of the algorithm. 
+
+These sets are maintained only in debug mode. In release-\/mode they are only present inside the goto\-\_\-next\-\_\-lower\-\_\-solvers\-\_\-. You should use \hyperlink{classIFM13Explorer_a2816b4c9f2cb02958e660a872f43fe4b}{get\-U() } to access the frames. The reason is that this method initializes elements if they do not yet exist. 
+
+Definition at line 1513 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by get\-U(), and I\-F\-M13\-Explorer().
+
+\hypertarget{classIFM13Explorer_ac18c17a8e34556f0ad500c471a74f6ce}{\index{I\-F\-M13\-Explorer@{I\-F\-M13\-Explorer}!win\-\_\-@{win\-\_\-}}
+\index{win\-\_\-@{win\-\_\-}!IFM13Explorer@{I\-F\-M13\-Explorer}}
+\subsubsection[{win\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} I\-F\-M13\-Explorer\-::win\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Explorer_ac18c17a8e34556f0ad500c471a74f6ce}
+
+
+The current over-\/approximation of the winning region W (for the protagonist). 
+
+
+
+Definition at line 1518 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by consider\-New\-Info\-From\-Others(), I\-F\-M13\-Explorer(), and is\-Lose().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{ParallelLearner_8h}{Parallel\-Learner.\-h}\item 
+src/\hyperlink{ParallelLearner_8cpp}{Parallel\-Learner.\-cpp}\end{DoxyCompactItemize}

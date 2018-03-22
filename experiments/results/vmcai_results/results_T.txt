@@ -1,0 +1,785 @@
+=====================  unr.aag =====================
+[LOG] No winning region with 1 clauses.
+[LOG] No winning region with 4 clauses.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (unrealizable)
+=====================  eq1.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  ex1.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  ex2.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add2n.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add2y.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add4n.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0.02 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.04 sec (Real time) / 0.02 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add4y.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0.02 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add6n.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0.53 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.54 sec (Real time) / 0.53 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add6y.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0.46 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.48 sec (Real time) / 0.46 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add8n.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 13.77 sec CPU time.
+[LOG] Overall execution time: 14 sec real time.
+Synthesis time: 13.79 sec (Real time) / 13.77 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add8y.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 12.36 sec CPU time.
+[LOG] Overall execution time: 13 sec real time.
+Synthesis time: 12.38 sec (Real time) / 12.35 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add10n.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 468.39 sec CPU time.
+[LOG] Overall execution time: 468 sec real time.
+Synthesis time: 468.38 sec (Real time) / 468.37 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add10y.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 446.19 sec CPU time.
+[LOG] Overall execution time: 446 sec real time.
+Synthesis time: 446.19 sec (Real time) / 446.17 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  add12n.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.00 sec (Real time) / 10000.34 sec (User CPU time)
+Timeout: 1
+=====================  add12y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.00 sec (Real time) / 10000.30 sec (User CPU time)
+Timeout: 1
+=====================  add14n.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.02 sec (Real time) / 10000.28 sec (User CPU time)
+Timeout: 1
+=====================  add14y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.04 sec (Real time) / 10000.29 sec (User CPU time)
+Timeout: 1
+=====================  add16n.aag =====================
+=====================  add16y.aag =====================
+=====================  add18n.aag =====================
+=====================  add18y.aag =====================
+=====================  add20n.aag =====================
+=====================  add20y.aag =====================
+=====================  cnt2n.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt2y.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt3n.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt3y.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt4n.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt4y.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt5n.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt5y.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt6n.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt6y.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt7n.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0.01 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt7y.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0.01 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt8n.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0.03 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.03 sec (Real time) / 0.03 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt8y.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0.02 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.03 sec (Real time) / 0.03 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt9n.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0.07 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.08 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt9y.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0.05 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.06 sec (Real time) / 0.06 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt10n.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0.16 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.16 sec (Real time) / 0.16 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt10y.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0.12 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.12 sec (Real time) / 0.12 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt11n.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0.34 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.36 sec (Real time) / 0.35 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt11y.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0.28 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.29 sec (Real time) / 0.28 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt15n.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 8.1 sec CPU time.
+[LOG] Overall execution time: 8 sec real time.
+Synthesis time: 8.12 sec (Real time) / 8.10 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt15y.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 6.42 sec CPU time.
+[LOG] Overall execution time: 6 sec real time.
+Synthesis time: 6.42 sec (Real time) / 6.42 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt20n.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 529.33 sec CPU time.
+[LOG] Overall execution time: 530 sec real time.
+Synthesis time: 529.32 sec (Real time) / 529.31 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt20y.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 583.47 sec CPU time.
+[LOG] Overall execution time: 583 sec real time.
+Synthesis time: 583.45 sec (Real time) / 583.44 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  cnt25n.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.00 sec (Real time) / 10000.24 sec (User CPU time)
+Timeout: 1
+=====================  cnt25y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.00 sec (Real time) / 10000.30 sec (User CPU time)
+Timeout: 1
+=====================  cnt30n.aag =====================
+=====================  cnt30y.aag =====================
+=====================  mv2n.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv2y.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs2n.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs2y.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv4n.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0.06 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.06 sec (Real time) / 0.06 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv4y.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0.06 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.06 sec (Real time) / 0.06 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs4n.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0.05 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.05 sec (Real time) / 0.05 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs4y.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0.03 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.03 sec (Real time) / 0.03 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv8n.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 68.32 sec CPU time.
+[LOG] Overall execution time: 68 sec real time.
+Synthesis time: 68.33 sec (Real time) / 68.31 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv8y.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 136.71 sec CPU time.
+[LOG] Overall execution time: 137 sec real time.
+Synthesis time: 136.73 sec (Real time) / 136.71 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs8n.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 304.07 sec CPU time.
+[LOG] Overall execution time: 304 sec real time.
+Synthesis time: 304.08 sec (Real time) / 304.04 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mvs8y.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 79.9 sec CPU time.
+[LOG] Overall execution time: 80 sec real time.
+Synthesis time: 79.92 sec (Real time) / 79.90 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mv12n.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.00 sec (Real time) / 10000.28 sec (User CPU time)
+Timeout: 1
+=====================  mv12y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.00 sec (Real time) / 10000.32 sec (User CPU time)
+Timeout: 1
+=====================  mvs12n.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.00 sec (Real time) / 10000.28 sec (User CPU time)
+Timeout: 1
+=====================  mvs12y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 10000.23 sec (User CPU time)
+Timeout: 1
+=====================  mv16n.aag =====================
+=====================  mv16y.aag =====================
+=====================  mvs16n.aag =====================
+=====================  mvs16y.aag =====================
+=====================  mvs18n.aag =====================
+=====================  mvs18y.aag =====================
+=====================  mv20n.aag =====================
+=====================  mv20y.aag =====================
+=====================  mvs20n.aag =====================
+=====================  mvs20y.aag =====================
+=====================  mvs22n.aag =====================
+=====================  mvs22y.aag =====================
+=====================  mvs24n.aag =====================
+=====================  mvs24y.aag =====================
+=====================  mvs28n.aag =====================
+=====================  mvs28y.aag =====================
+=====================  mult2.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mult4.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0.01 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mult5.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0.08 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.08 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mult6.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0.47 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.49 sec (Real time) / 0.47 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mult7.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 2.54 sec CPU time.
+[LOG] Overall execution time: 2 sec real time.
+Synthesis time: 2.55 sec (Real time) / 2.54 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mult8.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 13.45 sec CPU time.
+[LOG] Overall execution time: 14 sec real time.
+Synthesis time: 13.46 sec (Real time) / 13.45 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mult9.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 81.22 sec CPU time.
+[LOG] Overall execution time: 81 sec real time.
+Synthesis time: 81.23 sec (Real time) / 81.22 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mult10.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 404.94 sec CPU time.
+[LOG] Overall execution time: 405 sec real time.
+Synthesis time: 404.94 sec (Real time) / 404.93 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mult11.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 2569.67 sec CPU time.
+[LOG] Overall execution time: 2570 sec real time.
+Synthesis time: 2569.57 sec (Real time) / 2569.59 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  mult12.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.05 sec (Real time) / 10000.35 sec (User CPU time)
+Timeout: 1
+=====================  mult13.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.04 sec (Real time) / 10000.30 sec (User CPU time)
+Timeout: 1
+=====================  mult14.aag =====================
+=====================  mult15.aag =====================
+=====================  mult16.aag =====================
+=====================  bs8n.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0.13 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.14 sec (Real time) / 0.13 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  bs8y.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0.12 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.13 sec (Real time) / 0.13 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  bs16n.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 370.72 sec CPU time.
+[LOG] Overall execution time: 371 sec real time.
+Synthesis time: 370.73 sec (Real time) / 370.70 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  bs16y.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 374.63 sec CPU time.
+[LOG] Overall execution time: 374 sec real time.
+Synthesis time: 374.63 sec (Real time) / 374.59 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  bs32n.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.00 sec (Real time) / 10000.26 sec (User CPU time)
+Timeout: 1
+=====================  bs32y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.00 sec (Real time) / 10000.19 sec (User CPU time)
+Timeout: 1
+=====================  bs64n.aag =====================
+=====================  bs64y.aag =====================
+=====================  bs128n.aag =====================
+=====================  bs128y.aag =====================
+=====================  stay2n.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay2y.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay4n.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0.09 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.09 sec (Real time) / 0.09 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay4y.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 0.08 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.08 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay6n.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 3.56 sec CPU time.
+[LOG] Overall execution time: 3 sec real time.
+Synthesis time: 3.58 sec (Real time) / 3.56 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay6y.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 5.05 sec CPU time.
+[LOG] Overall execution time: 5 sec real time.
+Synthesis time: 5.07 sec (Real time) / 5.05 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay8n.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 233.72 sec CPU time.
+[LOG] Overall execution time: 234 sec real time.
+Synthesis time: 233.72 sec (Real time) / 233.69 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay8y.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 183.75 sec CPU time.
+[LOG] Overall execution time: 184 sec real time.
+Synthesis time: 183.76 sec (Real time) / 183.74 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay10n.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 5643.02 sec CPU time.
+[LOG] Overall execution time: 5643 sec real time.
+Synthesis time: 5642.75 sec (Real time) / 5642.87 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay10y.aag =====================
+[LOG] Found winning region with 1 clauses.
+[LOG] Overall execution time: 3008.35 sec CPU time.
+[LOG] Overall execution time: 3008 sec real time.
+Synthesis time: 3008.21 sec (Real time) / 3008.26 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+=====================  stay12n.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.00 sec (Real time) / 10000.31 sec (User CPU time)
+Timeout: 1
+=====================  stay12y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.00 sec (Real time) / 10000.32 sec (User CPU time)
+Timeout: 1
+=====================  stay14n.aag =====================
+=====================  stay14y.aag =====================
+=====================  stay16n.aag =====================
+=====================  stay16y.aag =====================
+=====================  stay18n.aag =====================
+=====================  stay18y.aag =====================
+=====================  stay20n.aag =====================
+=====================  stay20y.aag =====================
+=====================  stay22n.aag =====================
+=====================  stay22y.aag =====================
+=====================  stay24n.aag =====================
+=====================  stay24y.aag =====================
+=====================  genbuf1c3y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.00 sec (Real time) / 10000.30 sec (User CPU time)
+Timeout: 1
+=====================  genbuf2c3y.aag =====================
+=====================  genbuf3c3y.aag =====================
+=====================  genbuf4c3y.aag =====================
+=====================  genbuf5c3y.aag =====================
+=====================  genbuf6c3y.aag =====================
+=====================  genbuf7c3y.aag =====================
+=====================  genbuf8c3y.aag =====================
+=====================  genbuf9c3y.aag =====================
+=====================  genbuf10c3y.aag =====================
+=====================  genbuf11c3y.aag =====================
+=====================  genbuf12c3y.aag =====================
+=====================  genbuf13c3y.aag =====================
+=====================  genbuf14c3y.aag =====================
+=====================  genbuf15c3y.aag =====================
+=====================  genbuf16c3y.aag =====================
+=====================  genbuf1b4y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.00 sec (Real time) / 10000.29 sec (User CPU time)
+Timeout: 1
+=====================  genbuf2b4y.aag =====================
+=====================  genbuf3b4y.aag =====================
+=====================  genbuf4b4y.aag =====================
+=====================  genbuf5b4y.aag =====================
+=====================  genbuf6b4y.aag =====================
+=====================  genbuf7b4y.aag =====================
+=====================  genbuf8b4y.aag =====================
+=====================  genbuf9b4y.aag =====================
+=====================  genbuf10b4y.aag =====================
+=====================  genbuf11b4y.aag =====================
+=====================  genbuf12b4y.aag =====================
+=====================  genbuf13b4y.aag =====================
+=====================  genbuf14b4y.aag =====================
+=====================  genbuf15b4y.aag =====================
+=====================  genbuf16b4y.aag =====================
+=====================  genbuf1f4y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.00 sec (Real time) / 10000.29 sec (User CPU time)
+Timeout: 1
+=====================  genbuf2f4y.aag =====================
+=====================  genbuf3f4y.aag =====================
+=====================  genbuf4f4y.aag =====================
+=====================  genbuf5f5y.aag =====================
+=====================  genbuf6f6y.aag =====================
+=====================  genbuf7f7y.aag =====================
+=====================  genbuf8f8y.aag =====================
+=====================  genbuf9f9y.aag =====================
+=====================  genbuf10f10y.aag =====================
+=====================  genbuf11f11y.aag =====================
+=====================  genbuf12f12y.aag =====================
+=====================  genbuf13f13y.aag =====================
+=====================  genbuf14f14y.aag =====================
+=====================  genbuf15f15y.aag =====================
+=====================  genbuf16f16y.aag =====================
+=====================  amba2c7y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.00 sec (Real time) / 10000.31 sec (User CPU time)
+Timeout: 1
+=====================  amba3c5y.aag =====================
+=====================  amba4c7y.aag =====================
+=====================  amba5c5y.aag =====================
+=====================  amba6c5y.aag =====================
+=====================  amba7c5y.aag =====================
+=====================  amba8c7y.aag =====================
+=====================  amba9c5y.aag =====================
+=====================  amba10c5y.aag =====================
+=====================  amba2b9y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.03 sec (Real time) / 10000.30 sec (User CPU time)
+Timeout: 1
+=====================  amba3b5y.aag =====================
+=====================  amba4b9y.aag =====================
+=====================  amba5b5y.aag =====================
+=====================  amba6b5y.aag =====================
+=====================  amba7b5y.aag =====================
+=====================  amba8b6y.aag =====================
+=====================  amba9b5y.aag =====================
+=====================  amba10b5y.aag =====================
+=====================  amba2f9y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.02 sec (Real time) / 10000.26 sec (User CPU time)
+Timeout: 1
+=====================  amba3f9y.aag =====================
+=====================  amba4f25y.aag =====================
+=====================  amba5f17y.aag =====================
+=====================  amba6f21y.aag =====================
+=====================  amba7f25y.aag =====================
+=====================  amba8f57y.aag =====================
+=====================  amba9f33y.aag =====================
+=====================  amba10f37y.aag =====================
