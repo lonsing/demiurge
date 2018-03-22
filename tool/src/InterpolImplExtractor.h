@@ -42,7 +42,7 @@
 /// It is not part of the release. Contact us if you would like to get the source code.
 ///
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.1.0
+/// @version 1.2.0
 class InterpolImplExtractor : public CNFImplExtractor
 {
 public:

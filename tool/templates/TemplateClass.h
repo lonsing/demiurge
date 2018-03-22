@@ -38,7 +38,7 @@
 /// @brief TODO
 ///
 /// @author TODO
-/// @version 1.1.0
+/// @version 1.2.0
 class @ClassName@
 {
 public:

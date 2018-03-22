@@ -13,10 +13,8 @@ Takes counterexamples found by other threads and computes all generalizations.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classCounterGenSAT_ac88b310b706ed86488ca7142b4dc2748}{Counter\-Gen\-S\-A\-T} (\hyperlink{classParallelLearner}{Parallel\-Learner} \&coordinator)
-\begin{DoxyCompactList}\small\item\em Constructor if optimization R\-G is disabled. \end{DoxyCompactList}\item 
-\hyperlink{classCounterGenSAT_a670e3f81bd0fbb28bf5fa043561f7651}{Counter\-Gen\-S\-A\-T} (\hyperlink{classParallelLearner}{Parallel\-Learner} \&coordinator, const \hyperlink{classCNF}{C\-N\-F} \&prev\-\_\-trans\-\_\-or\-\_\-initial, const vector$<$ int $>$ \&current\-\_\-to\-\_\-previous\-\_\-map, int current\-\_\-state\-\_\-is\-\_\-initial)
-\begin{DoxyCompactList}\small\item\em Constructor if optimization R\-G is enabled. \end{DoxyCompactList}\item 
+\hyperlink{classCounterGenSAT_a9ec36aa9bd2df6f00495524868c565d9}{Counter\-Gen\-S\-A\-T} (\hyperlink{classParallelLearner}{Parallel\-Learner} \&coordinator, \hyperlink{classPrevStateInfo}{Prev\-State\-Info} \&psi)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 virtual \hyperlink{classCounterGenSAT_abcdbdc95c437f8a66c7fe3e803cc4722}{$\sim$\-Counter\-Gen\-S\-A\-T} ()
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
 void \hyperlink{classCounterGenSAT_af8e756f76eaa958f461a760926a46875}{generalize\-Counterexamples} ()
@@ -37,18 +35,10 @@ void \hyperlink{classCounterGenSAT_ad081c192451d0f9004eaa9cf8a482626}{bored} ()
 void \hyperlink{classCounterGenSAT_ae696c35988d55e29d5a54b3c71547c12}{compress\-Bored} ()
 \begin{DoxyCompactList}\small\item\em Reduces the counterexample that are considered for further generalization. \end{DoxyCompactList}\item 
 void \hyperlink{classCounterGenSAT_a53ed27c0ed65807b1ef6b5180354a0b9}{consider\-New\-Info\-From\-Others} ()
-\begin{DoxyCompactList}\small\item\em Considers new winning region clauses that have been found by other threads. \end{DoxyCompactList}\item 
-int \hyperlink{classCounterGenSAT_a8fcbe30bb64946f9e7dc92763a392d3c}{present\-To\-Previous} (int literal) const 
-\begin{DoxyCompactList}\small\item\em Returns the previous-\/state copy of a literal. \end{DoxyCompactList}\item 
-void \hyperlink{classCounterGenSAT_ae002e52e6b64edabf24158fdb4b736a5}{present\-To\-Previous} (vector$<$ int $>$ \&cube\-\_\-or\-\_\-clause) const 
-\begin{DoxyCompactList}\small\item\em Computes the previous-\/state copy of a cube or clause. \end{DoxyCompactList}\item 
-void \hyperlink{classCounterGenSAT_aea04c198d4cd8c8b61c92f6ee2d5d2fc}{present\-To\-Previous} (\hyperlink{classCNF}{C\-N\-F} \&cnf) const 
-\begin{DoxyCompactList}\small\item\em Computes the previous-\/state copy of a \hyperlink{classCNF}{C\-N\-F}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Considers new winning region clauses that have been found by other threads. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-bool \hyperlink{classCounterGenSAT_a4f76493e0c49329ae7f628af99a450f4}{use\-\_\-ind\-\_\-}
-\begin{DoxyCompactList}\small\item\em A flag indicating if optimization R\-G should be used. \end{DoxyCompactList}\item 
 \hyperlink{classParallelLearner}{Parallel\-Learner} \& \hyperlink{classCounterGenSAT_a90c79c0fa427fcd2dacd760421f5afe4}{coordinator\-\_\-}
 \begin{DoxyCompactList}\small\item\em A reference to the coordinator. \end{DoxyCompactList}\item 
 \hyperlink{classCNF}{C\-N\-F} \hyperlink{classCounterGenSAT_a5a379bda175a32e3d4ccc0771fde024d}{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-}
@@ -61,16 +51,8 @@ vector$<$ int $>$ \hyperlink{classCounterGenSAT_a0c568c2e441491d24a5a98623fa6ce6
 \begin{DoxyCompactList}\small\item\em The solver for checking counterexample-\/candidates. \end{DoxyCompactList}\item 
 \hyperlink{classSatSolver}{Sat\-Solver} $\ast$ \hyperlink{classCounterGenSAT_a4c209741406375df9ba19b830ca4d6f9}{solver\-\_\-win\-\_\-}
 \begin{DoxyCompactList}\small\item\em An incremental \hyperlink{classSatSolver}{Sat\-Solver} containing the winning region. \end{DoxyCompactList}\item 
-\hyperlink{classCNF}{C\-N\-F} \hyperlink{classCounterGenSAT_a526507443918740c5ac2ae24886d1017}{prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-}
-\begin{DoxyCompactList}\small\item\em Says\-: the current state is initial or the previous transition relation holds. \end{DoxyCompactList}\item 
-vector$<$ int $>$ \hyperlink{classCounterGenSAT_acdb06a8e09c3c017dbda36d37fab5998}{current\-\_\-to\-\_\-previous\-\_\-map\-\_\-}
-\begin{DoxyCompactList}\small\item\em A map from present-\/state variables to their previous-\/state copy. \end{DoxyCompactList}\item 
-int \hyperlink{classCounterGenSAT_a578a95e6b9eb1b1b19419c0acb3248fa}{current\-\_\-state\-\_\-is\-\_\-initial\-\_\-}
-\begin{DoxyCompactList}\small\item\em Says\-: the current state is initial or the previous transition relation holds. \end{DoxyCompactList}\item 
 \hyperlink{classSatSolver}{Sat\-Solver} $\ast$ \hyperlink{classCounterGenSAT_a33c1b5637bdd766a7d2b8ff2e3147eca}{solver\-\_\-ctrl\-\_\-ind\-\_\-}
 \begin{DoxyCompactList}\small\item\em The solver for generalizing counterexamples if optimization R\-G is enabled. \end{DoxyCompactList}\item 
-int \hyperlink{classCounterGenSAT_a6b1ebfdef38c7463a2594ace7bd72a8d}{prev\-\_\-safe\-\_\-}
-\begin{DoxyCompactList}\small\item\em A literal saying that the previous-\/state is safe. \end{DoxyCompactList}\item 
 \hyperlink{classLearnStatisticsSAT}{Learn\-Statistics\-S\-A\-T} \hyperlink{classCounterGenSAT_a0e7c47014a35bac7a6de0a61ee8d2c22}{statistics\-\_\-}
 \begin{DoxyCompactList}\small\item\em Stores and maintains statistics and performance measures. \end{DoxyCompactList}\item 
 vector$<$ pair$<$ vector$<$ int $>$\\*
@@ -79,7 +61,11 @@ vector$<$ pair$<$ vector$<$ int $>$\\*
 size\-\_\-t \hyperlink{classCounterGenSAT_a404764a6142a0cd55e1b3e40d2e0483b}{next\-\_\-bored\-\_\-index\-\_\-}
 \begin{DoxyCompactList}\small\item\em The index (in \hyperlink{classCounterGenSAT_ae4f7bf80b40a44580fde913f300ac4c1}{do\-\_\-if\-\_\-bored\-\_\-}) of the next item to process if bored. \end{DoxyCompactList}\item 
 size\-\_\-t \hyperlink{classCounterGenSAT_ae3befc2cd3c74b65e055f7d29dcc9c05}{last\-\_\-bored\-\_\-compress\-\_\-size\-\_\-}
-\begin{DoxyCompactList}\small\item\em The size of do\-\_\-if\-\_\-bored\-\_\- when we compressed it the last time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The size of do\-\_\-if\-\_\-bored\-\_\- when we compressed it the last time. \end{DoxyCompactList}\item 
+const \hyperlink{classPrevStateInfo}{Prev\-State\-Info} \& \hyperlink{classCounterGenSAT_a68c5a01f380979af79bf45061a9a1e37}{psi\-\_\-}
+\begin{DoxyCompactList}\small\item\em Information about the previous states if optimization R\-G is enabled. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classCounterGenSAT_a5fe0494a5158f8614cdf358f1776dc25}{s\-\_\-}
+\begin{DoxyCompactList}\small\item\em The vector of current-\/state variables. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -98,67 +84,37 @@ A counterexample is a state-\/input combination with which the antagonist can en
 Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\-1.\-0 
+1.\-2.\-0 
 \end{DoxyVersion}
 
 
-Definition at line 852 of file Parallel\-Learner.\-h.
+Definition at line 901 of file Parallel\-Learner.\-h.
 
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classCounterGenSAT_ac88b310b706ed86488ca7142b4dc2748}{\index{Counter\-Gen\-S\-A\-T@{Counter\-Gen\-S\-A\-T}!Counter\-Gen\-S\-A\-T@{Counter\-Gen\-S\-A\-T}}
-\index{Counter\-Gen\-S\-A\-T@{Counter\-Gen\-S\-A\-T}!CounterGenSAT@{Counter\-Gen\-S\-A\-T}}
-\subsubsection[{Counter\-Gen\-S\-A\-T}]{\setlength{\rightskip}{0pt plus 5cm}Counter\-Gen\-S\-A\-T\-::\-Counter\-Gen\-S\-A\-T (
-\begin{DoxyParamCaption}
-\item[{{\bf Parallel\-Learner} \&}]{coordinator}
-\end{DoxyParamCaption}
-)}}\label{classCounterGenSAT_ac88b310b706ed86488ca7142b4dc2748}
-
-
-Constructor if optimization R\-G is disabled. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em coordinator} & A reference to the coordinator. All communication to other worker-\/threads is done via the coordinator. \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 873 of file Parallel\-Learner.\-cpp.
-
-
-
-References do\-\_\-if\-\_\-bored\-\_\-.
-
-\hypertarget{classCounterGenSAT_a670e3f81bd0fbb28bf5fa043561f7651}{\index{Counter\-Gen\-S\-A\-T@{Counter\-Gen\-S\-A\-T}!Counter\-Gen\-S\-A\-T@{Counter\-Gen\-S\-A\-T}}
+\hypertarget{classCounterGenSAT_a9ec36aa9bd2df6f00495524868c565d9}{\index{Counter\-Gen\-S\-A\-T@{Counter\-Gen\-S\-A\-T}!Counter\-Gen\-S\-A\-T@{Counter\-Gen\-S\-A\-T}}
 \index{Counter\-Gen\-S\-A\-T@{Counter\-Gen\-S\-A\-T}!CounterGenSAT@{Counter\-Gen\-S\-A\-T}}
 \subsubsection[{Counter\-Gen\-S\-A\-T}]{\setlength{\rightskip}{0pt plus 5cm}Counter\-Gen\-S\-A\-T\-::\-Counter\-Gen\-S\-A\-T (
 \begin{DoxyParamCaption}
 \item[{{\bf Parallel\-Learner} \&}]{coordinator, }
-\item[{const {\bf C\-N\-F} \&}]{prev\-\_\-trans\-\_\-or\-\_\-initial, }
-\item[{const vector$<$ int $>$ \&}]{current\-\_\-to\-\_\-previous\-\_\-map, }
-\item[{int}]{current\-\_\-state\-\_\-is\-\_\-initial}
+\item[{{\bf Prev\-State\-Info} \&}]{psi}
 \end{DoxyParamCaption}
-)}}\label{classCounterGenSAT_a670e3f81bd0fbb28bf5fa043561f7651}
+)}}\label{classCounterGenSAT_a9ec36aa9bd2df6f00495524868c565d9}
 
 
-Constructor if optimization R\-G is enabled. 
+Constructor. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em coordinator} & A reference to the coordinator. All communication to other worker-\/threads is done via the coordinator. \\
 \hline
-{\em prev\-\_\-trans\-\_\-or\-\_\-initial} & A \hyperlink{classCNF}{C\-N\-F} that says\-: the current state is initial or the previous transition relation holds. This is an important building block for the \hyperlink{classCNF}{C\-N\-F} to generalize counterexamples if optimization R\-G is enabled. This \hyperlink{classCNF}{C\-N\-F} is computed only once by the \hyperlink{classParallelLearner}{Parallel\-Learner} and passed to all \hyperlink{classCounterGenSAT}{Counter\-Gen\-S\-A\-T} instances. \\
-\hline
-{\em current\-\_\-to\-\_\-previous\-\_\-map} & A map from present-\/state variables to their previous-\/state copy. This map is computed only once by the \hyperlink{classParallelLearner}{Parallel\-Learner} and passed to all \hyperlink{classCounterGenSAT}{Counter\-Gen\-S\-A\-T} instances. \\
-\hline
-{\em current\-\_\-state\-\_\-is\-\_\-initial} & A literal that is true if the current state is initial and false otherwise. The clauses assigning the literal are part of prev\-\_\-trans\-\_\-or\-\_\-initial. \\
+{\em psi} & A container for previous-\/state information (needed when optimization R\-G is enabled). \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 889 of file Parallel\-Learner.\-cpp.
+Definition at line 1147 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -177,7 +133,7 @@ Destructor.
 
 
 
-Definition at line 910 of file Parallel\-Learner.\-cpp.
+Definition at line 1162 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -217,7 +173,7 @@ Called if there are no more counterexamples to generalize.
 
 We want to do something useful with the computation time nevertheless. And what this function does is the following\-: it takes counterexamples that have been generalized before and tries to generalize them further. This could be possible because the winning region has been refined in the meantime. 
 
-Definition at line 1123 of file Parallel\-Learner.\-cpp.
+Definition at line 1390 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -240,7 +196,7 @@ Reduces the counterexample that are considered for further generalization.
 
 The counterexamples considered for further generalization are stored in \hyperlink{classCounterGenSAT_ae4f7bf80b40a44580fde913f300ac4c1}{do\-\_\-if\-\_\-bored\-\_\-}. Similar to \hyperlink{classUtils_ac4e713aa386834b587e2695855fbc27a}{Utils\-::compress\-State\-C\-N\-F()} we remove all counterexamples that are implied by others anyway. 
 
-Definition at line 1152 of file Parallel\-Learner.\-cpp.
+Definition at line 1419 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -263,11 +219,11 @@ Considers new winning region clauses that have been found by other threads.
 
 
 
-Definition at line 1210 of file Parallel\-Learner.\-cpp.
+Definition at line 1477 of file Parallel\-Learner.\-cpp.
 
 
 
-References C\-N\-F\-::clear(), C\-N\-F\-::get\-Nr\-Of\-Clauses(), Sat\-Solver\-::inc\-Add\-C\-N\-F(), new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-, new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-lock\-\_\-, present\-To\-Previous(), solver\-\_\-ctrl\-\_\-, solver\-\_\-ctrl\-\_\-ind\-\_\-, solver\-\_\-win\-\_\-, C\-N\-F\-::swap\-Present\-To\-Next(), and use\-\_\-ind\-\_\-.
+References C\-N\-F\-::clear(), C\-N\-F\-::get\-Nr\-Of\-Clauses(), Sat\-Solver\-::inc\-Add\-C\-N\-F(), new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-, new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-lock\-\_\-, Prev\-State\-Info\-::present\-To\-Previous(), psi\-\_\-, solver\-\_\-ctrl\-\_\-, solver\-\_\-ctrl\-\_\-ind\-\_\-, solver\-\_\-win\-\_\-, C\-N\-F\-::swap\-Present\-To\-Next(), and Prev\-State\-Info\-::use\-\_\-ind\-\_\-.
 
 
 
@@ -294,11 +250,11 @@ Optimization R\-G is explained in \hyperlink{classLearnSynthQBFInd}{Learn\-Synth
 \end{DoxyParams}
 
 
-Definition at line 1080 of file Parallel\-Learner.\-cpp.
+Definition at line 1332 of file Parallel\-Learner.\-cpp.
 
 
 
-References consider\-New\-Info\-From\-Others(), current\-\_\-state\-\_\-is\-\_\-initial\-\_\-, Sat\-Solver\-::inc\-Add\-Cube(), Sat\-Solver\-::inc\-Add\-Neg\-Cube\-As\-Clause(), Sat\-Solver\-::inc\-Is\-Sat(), Sat\-Solver\-::inc\-Is\-Sat\-Model\-Or\-Core(), Sat\-Solver\-::inc\-Pop(), Sat\-Solver\-::inc\-Push(), M\-A\-S\-S\-E\-R\-T, present\-To\-Previous(), Utils\-::remove(), solver\-\_\-ctrl\-\_\-, solver\-\_\-ctrl\-\_\-ind\-\_\-, Utils\-::swap\-Present\-To\-Next(), and use\-\_\-ind\-\_\-.
+References consider\-New\-Info\-From\-Others(), Utils\-::contains(), Sat\-Solver\-::inc\-Add\-Clause(), Sat\-Solver\-::inc\-Is\-Sat(), Sat\-Solver\-::inc\-Is\-Sat\-Model\-Or\-Core(), M\-A\-S\-S\-E\-R\-T, Utils\-::negate\-Literals(), psi\-\_\-, Prev\-State\-Info\-::px\-\_\-neg\-\_\-, Prev\-State\-Info\-::px\-\_\-unused\-\_\-, Utils\-::remove(), s\-\_\-, solver\-\_\-ctrl\-\_\-, solver\-\_\-ctrl\-\_\-ind\-\_\-, Utils\-::swap\-Present\-To\-Next(), and Prev\-State\-Info\-::use\-\_\-ind\-\_\-.
 
 
 
@@ -330,11 +286,11 @@ True if in\-\_\-cube ensures that the winning region is left from all states of 
 \end{DoxyReturn}
 
 
-Definition at line 1065 of file Parallel\-Learner.\-cpp.
+Definition at line 1317 of file Parallel\-Learner.\-cpp.
 
 
 
-References consider\-New\-Info\-From\-Others(), generalize\-Ce\-Futher(), Sat\-Solver\-::inc\-Is\-Sat\-Model\-Or\-Core(), solver\-\_\-ctrl\-\_\-, and use\-\_\-ind\-\_\-.
+References consider\-New\-Info\-From\-Others(), generalize\-Ce\-Futher(), Sat\-Solver\-::inc\-Is\-Sat\-Model\-Or\-Core(), psi\-\_\-, solver\-\_\-ctrl\-\_\-, and Prev\-State\-Info\-::use\-\_\-ind\-\_\-.
 
 
 
@@ -351,13 +307,13 @@ Referenced by generalize\-Counterexamples().
 
 The work-\/horse of this class. 
 
-It Takes counterexamples found by other threads and computes all generalizations. A counterexample is a state-\/input combination with which the antagonist can enforce to leave the winning region. A generalization is a state-\/cube from which the antagonist can enforce to leave the winning region with this input. This class takes counterexamples found by other threads and computes all minimal generalizations. The negation of a generalization is a clause over the state-\/variables, which is added to the winning region. The counterexamples to generalize are read out of the \hyperlink{classParallelLearner}{Parallel\-Learner}'s database. If there are no more counterexamples left in this database (this class removes counterexamples after processing them), then this class is bored. When this class is bored, it takes counterexample generalizations that have been computed earlier and tries to generalize them further by dropping even more literals. In every iteration, this method also considers all new incoming clauses found by others. If it finds out that the specification is realizable or unrealizable, it sets the flag \hyperlink{classParallelLearner_a757f8817809cce5c0408cdc41d6db1b8}{Parallel\-Learner\-::result\-\_\-} accordingly. It also polls this flag regularly. If it has been set by some other thread, it quits. 
+It Takes counterexamples found by other threads and computes all generalizations. A counterexample is a state-\/input combination with which the antagonist can enforce to leave the winning region. A generalization is a state-\/cube from which the antagonist can enforce to leave the winning region with this input. This class takes counterexamples found by other threads and computes all minimal generalizations. The negation of a generalization is a clause over the state-\/variables, which is added to the winning region. The counterexamples to generalize are read out of the \hyperlink{classParallelLearner}{Parallel\-Learner}'s database. If there are no more counterexamples left in this database (this class removes counterexamples after processing them), then this class is bored. When this class is bored, it takes counterexample generalizations that have been computed earlier and tries to generalize them further by dropping even more literals. In every iteration, this method also considers all new incoming clauses found by others. If it finds out that the specification is realizable or unrealizable, it sets the flag \hyperlink{classParallelLearner_aa44682a4999526a304b5118047df7a44}{Parallel\-Learner\-::result\-\_\-} accordingly. It also polls this flag regularly. If it has been set by some other thread, it quits. 
 
-Definition at line 921 of file Parallel\-Learner.\-cpp.
+Definition at line 1173 of file Parallel\-Learner.\-cpp.
 
 
 
-References bored(), C\-E\-\_\-\-G\-E\-N, Utils\-::contains\-Init(), coordinator\-\_\-, Parallel\-Learner\-::counterexamples\-\_\-, Parallel\-Learner\-::counterexamples\-\_\-lock\-\_\-, do\-\_\-if\-\_\-bored\-\_\-, Utils\-::extract(), generalize\-Ce\-Futher(), generalize\-Counterexample(), A\-I\-G2\-C\-N\-F\-::get\-Next\-Safe\-States(), A\-I\-G2\-C\-N\-F\-::get\-Safe\-States(), A\-I\-G2\-C\-N\-F\-::get\-Trans(), Var\-Manager\-::get\-Vars\-Of\-Type(), Sat\-Solver\-::inc\-Add\-C\-N\-F(), Sat\-Solver\-::inc\-Add\-Unit\-Clause(), Sat\-Solver\-::inc\-Is\-Sat(), Var\-Info\-::\-I\-N\-P\-U\-T, Var\-Manager\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), Utils\-::intersection\-Empty(), Utils\-::negate\-Literals(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Check\-Candidate\-Failed(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Check\-Candidate\-Found(), Learn\-Statistics\-S\-A\-T\-::notify\-Before\-Check\-Candidate(), Parallel\-Learner\-::notify\-New\-Win\-Reg\-Clause(), Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, prev\-\_\-safe\-\_\-, prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-, Utils\-::remove(), Parallel\-Learner\-::result\-\_\-, solver\-\_\-ctrl\-\_\-, solver\-\_\-ctrl\-\_\-ind\-\_\-, solver\-\_\-win\-\_\-, Sat\-Solver\-::start\-Incremental\-Session(), statistics\-\_\-, U\-N\-K\-N\-O\-W\-N, U\-N\-R\-E\-A\-L\-I\-Z\-A\-B\-L\-E, use\-\_\-ind\-\_\-, and vars\-\_\-to\-\_\-keep\-\_\-.
+References bored(), C\-E\-\_\-\-G\-E\-N, Utils\-::contains\-Init(), coordinator\-\_\-, Parallel\-Learner\-::counterexamples\-\_\-, Parallel\-Learner\-::counterexamples\-\_\-lock\-\_\-, do\-\_\-if\-\_\-bored\-\_\-, Utils\-::extract(), generalize\-Ce\-Futher(), generalize\-Counterexample(), A\-I\-G2\-C\-N\-F\-::get\-Next\-Safe\-States(), A\-I\-G2\-C\-N\-F\-::get\-Safe\-States(), A\-I\-G2\-C\-N\-F\-::get\-Trans(), Var\-Manager\-::get\-Vars\-Of\-Type(), Sat\-Solver\-::inc\-Add\-C\-N\-F(), Sat\-Solver\-::inc\-Add\-Unit\-Clause(), Sat\-Solver\-::inc\-Is\-Sat(), Var\-Info\-::\-I\-N\-P\-U\-T, Var\-Manager\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), Utils\-::intersection\-Empty(), Utils\-::negate\-Literals(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Check\-Candidate\-Failed(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Check\-Candidate\-Found(), Learn\-Statistics\-S\-A\-T\-::notify\-Before\-Check\-Candidate(), Parallel\-Learner\-::notify\-New\-Win\-Reg\-Clause(), Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, Prev\-State\-Info\-::prev\-\_\-safe\-\_\-, Prev\-State\-Info\-::prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-, psi\-\_\-, Utils\-::remove(), Parallel\-Learner\-::result\-\_\-, solver\-\_\-ctrl\-\_\-, solver\-\_\-ctrl\-\_\-ind\-\_\-, solver\-\_\-win\-\_\-, Sat\-Solver\-::start\-Incremental\-Session(), statistics\-\_\-, U\-N\-K\-N\-O\-W\-N, U\-N\-R\-E\-A\-L\-I\-Z\-A\-B\-L\-E, Prev\-State\-Info\-::use\-\_\-ind\-\_\-, and vars\-\_\-to\-\_\-keep\-\_\-.
 
 
 
@@ -381,7 +337,7 @@ The statistics and performance measures computed by this object.
 \end{DoxyReturn}
 
 
-Definition at line 1059 of file Parallel\-Learner.\-cpp.
+Definition at line 1311 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -408,7 +364,7 @@ Notifies this worker about a new winning region clause.
 \end{DoxyParams}
 
 
-Definition at line 1051 of file Parallel\-Learner.\-cpp.
+Definition at line 1303 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -435,85 +391,6 @@ The assignment operator is disabled (set private) and not implemented.
 \begin{DoxyReturn}{Returns}
 The result of the assignment, i.\-e, $\ast$this. 
 \end{DoxyReturn}
-\hypertarget{classCounterGenSAT_a8fcbe30bb64946f9e7dc92763a392d3c}{\index{Counter\-Gen\-S\-A\-T@{Counter\-Gen\-S\-A\-T}!present\-To\-Previous@{present\-To\-Previous}}
-\index{present\-To\-Previous@{present\-To\-Previous}!CounterGenSAT@{Counter\-Gen\-S\-A\-T}}
-\subsubsection[{present\-To\-Previous}]{\setlength{\rightskip}{0pt plus 5cm}int Counter\-Gen\-S\-A\-T\-::present\-To\-Previous (
-\begin{DoxyParamCaption}
-\item[{int}]{literal}
-\end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCounterGenSAT_a8fcbe30bb64946f9e7dc92763a392d3c}
-
-
-Returns the previous-\/state copy of a literal. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em literal} & The literal to transform. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-The previous-\/state copy of a literal. 
-\end{DoxyReturn}
-
-
-Definition at line 1235 of file Parallel\-Learner.\-cpp.
-
-
-
-References current\-\_\-to\-\_\-previous\-\_\-map\-\_\-.
-
-
-
-Referenced by consider\-New\-Info\-From\-Others(), generalize\-Ce\-Futher(), and present\-To\-Previous().
-
-\hypertarget{classCounterGenSAT_ae002e52e6b64edabf24158fdb4b736a5}{\index{Counter\-Gen\-S\-A\-T@{Counter\-Gen\-S\-A\-T}!present\-To\-Previous@{present\-To\-Previous}}
-\index{present\-To\-Previous@{present\-To\-Previous}!CounterGenSAT@{Counter\-Gen\-S\-A\-T}}
-\subsubsection[{present\-To\-Previous}]{\setlength{\rightskip}{0pt plus 5cm}void Counter\-Gen\-S\-A\-T\-::present\-To\-Previous (
-\begin{DoxyParamCaption}
-\item[{vector$<$ int $>$ \&}]{cube\-\_\-or\-\_\-clause}
-\end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCounterGenSAT_ae002e52e6b64edabf24158fdb4b736a5}
-
-
-Computes the previous-\/state copy of a cube or clause. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em cube\-\_\-or\-\_\-clause} & A cube or clause (in form of a vector of literals) over the present state variables. This vector is overwritten by the corresponding cube of clause over the previous-\/state literals (i.\-e., all literals are replaced by their previous-\/state copy). \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 1245 of file Parallel\-Learner.\-cpp.
-
-
-
-References present\-To\-Previous().
-
-\hypertarget{classCounterGenSAT_aea04c198d4cd8c8b61c92f6ee2d5d2fc}{\index{Counter\-Gen\-S\-A\-T@{Counter\-Gen\-S\-A\-T}!present\-To\-Previous@{present\-To\-Previous}}
-\index{present\-To\-Previous@{present\-To\-Previous}!CounterGenSAT@{Counter\-Gen\-S\-A\-T}}
-\subsubsection[{present\-To\-Previous}]{\setlength{\rightskip}{0pt plus 5cm}void Counter\-Gen\-S\-A\-T\-::present\-To\-Previous (
-\begin{DoxyParamCaption}
-\item[{{\bf C\-N\-F} \&}]{cnf}
-\end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCounterGenSAT_aea04c198d4cd8c8b61c92f6ee2d5d2fc}
-
-
-Computes the previous-\/state copy of a \hyperlink{classCNF}{C\-N\-F}. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em cnf} & A \hyperlink{classCNF}{C\-N\-F} formula over the present state variables. This \hyperlink{classCNF}{C\-N\-F} is overwritten by the corresponding \hyperlink{classCNF}{C\-N\-F} over the previous-\/state literals (i.\-e., all literals are replaced by their previous-\/state copy). \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 1252 of file Parallel\-Learner.\-cpp.
-
-
-
-References C\-N\-F\-::add\-Clause(), C\-N\-F\-::clear(), C\-N\-F\-::get\-Clauses(), and present\-To\-Previous().
-
 
 
 \subsection{Member Data Documentation}
@@ -526,41 +403,11 @@ A reference to the coordinator.
 
 All communication to other worker-\/threads is done via the coordinator. 
 
-Definition at line 1030 of file Parallel\-Learner.\-h.
+Definition at line 1025 of file Parallel\-Learner.\-h.
 
 
 
 Referenced by bored(), compress\-Bored(), and generalize\-Counterexamples().
-
-\hypertarget{classCounterGenSAT_a578a95e6b9eb1b1b19419c0acb3248fa}{\index{Counter\-Gen\-S\-A\-T@{Counter\-Gen\-S\-A\-T}!current\-\_\-state\-\_\-is\-\_\-initial\-\_\-@{current\-\_\-state\-\_\-is\-\_\-initial\-\_\-}}
-\index{current\-\_\-state\-\_\-is\-\_\-initial\-\_\-@{current\-\_\-state\-\_\-is\-\_\-initial\-\_\-}!CounterGenSAT@{Counter\-Gen\-S\-A\-T}}
-\subsubsection[{current\-\_\-state\-\_\-is\-\_\-initial\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int Counter\-Gen\-S\-A\-T\-::current\-\_\-state\-\_\-is\-\_\-initial\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCounterGenSAT_a578a95e6b9eb1b1b19419c0acb3248fa}
-
-
-Says\-: the current state is initial or the previous transition relation holds. 
-
-This \hyperlink{classCNF}{C\-N\-F} expresses that the current state is initial or the previous-\/state copy of the transition relation holds. This is an important building block for the \hyperlink{classCNF}{C\-N\-F} to generalize counterexamples if optimization R\-G is enabled. If optimization R\-G is disabled, then this field is meaningless. 
-
-Definition at line 1092 of file Parallel\-Learner.\-h.
-
-
-
-Referenced by generalize\-Ce\-Futher().
-
-\hypertarget{classCounterGenSAT_acdb06a8e09c3c017dbda36d37fab5998}{\index{Counter\-Gen\-S\-A\-T@{Counter\-Gen\-S\-A\-T}!current\-\_\-to\-\_\-previous\-\_\-map\-\_\-@{current\-\_\-to\-\_\-previous\-\_\-map\-\_\-}}
-\index{current\-\_\-to\-\_\-previous\-\_\-map\-\_\-@{current\-\_\-to\-\_\-previous\-\_\-map\-\_\-}!CounterGenSAT@{Counter\-Gen\-S\-A\-T}}
-\subsubsection[{current\-\_\-to\-\_\-previous\-\_\-map\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ Counter\-Gen\-S\-A\-T\-::current\-\_\-to\-\_\-previous\-\_\-map\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCounterGenSAT_acdb06a8e09c3c017dbda36d37fab5998}
-
-
-A map from present-\/state variables to their previous-\/state copy. 
-
-If optimization R\-G is disabled, then this \hyperlink{classCNF}{C\-N\-F} is empty. 
-
-Definition at line 1082 of file Parallel\-Learner.\-h.
-
-
-
-Referenced by present\-To\-Previous().
 
 \hypertarget{classCounterGenSAT_ae4f7bf80b40a44580fde913f300ac4c1}{\index{Counter\-Gen\-S\-A\-T@{Counter\-Gen\-S\-A\-T}!do\-\_\-if\-\_\-bored\-\_\-@{do\-\_\-if\-\_\-bored\-\_\-}}
 \index{do\-\_\-if\-\_\-bored\-\_\-@{do\-\_\-if\-\_\-bored\-\_\-}!CounterGenSAT@{Counter\-Gen\-S\-A\-T}}
@@ -573,7 +420,7 @@ We are bored whenever the counterexample-\/database of the \hyperlink{classParal
 
 The first item of the pairs stored in this vectors is always the state-\/cube of the counterexample. The second item of the pair is the corresponding input-\/cube witnessing the fact that the successor state will be outside of the winning region. 
 
-Definition at line 1130 of file Parallel\-Learner.\-h.
+Definition at line 1086 of file Parallel\-Learner.\-h.
 
 
 
@@ -588,7 +435,7 @@ The size of do\-\_\-if\-\_\-bored\-\_\- when we compressed it the last time.
 
 This is just tracked for a heuristic that decides when to call \hyperlink{classCounterGenSAT_ae696c35988d55e29d5a54b3c71547c12}{compress\-Bored()} the next time. 
 
-Definition at line 1143 of file Parallel\-Learner.\-h.
+Definition at line 1099 of file Parallel\-Learner.\-h.
 
 
 
@@ -603,7 +450,7 @@ All new winning region clauses that have not been considered yet.
 
 
 
-Definition at line 1035 of file Parallel\-Learner.\-h.
+Definition at line 1030 of file Parallel\-Learner.\-h.
 
 
 
@@ -618,7 +465,7 @@ A lock that protects the \hyperlink{classCounterGenSAT_a5a379bda175a32e3d4ccc077
 
 Many worker-\/threads modify the \hyperlink{classCounterGenSAT_a5a379bda175a32e3d4ccc0771fde024d}{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-} (add new ones). This lock ensures that only one thread is modifying or reading the \hyperlink{classCounterGenSAT_a5a379bda175a32e3d4ccc0771fde024d}{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-} at one time. 
 
-Definition at line 1043 of file Parallel\-Learner.\-h.
+Definition at line 1038 of file Parallel\-Learner.\-h.
 
 
 
@@ -633,41 +480,41 @@ The index (in \hyperlink{classCounterGenSAT_ae4f7bf80b40a44580fde913f300ac4c1}{d
 
 
 
-Definition at line 1135 of file Parallel\-Learner.\-h.
+Definition at line 1091 of file Parallel\-Learner.\-h.
 
 
 
 Referenced by bored(), and compress\-Bored().
 
-\hypertarget{classCounterGenSAT_a6b1ebfdef38c7463a2594ace7bd72a8d}{\index{Counter\-Gen\-S\-A\-T@{Counter\-Gen\-S\-A\-T}!prev\-\_\-safe\-\_\-@{prev\-\_\-safe\-\_\-}}
-\index{prev\-\_\-safe\-\_\-@{prev\-\_\-safe\-\_\-}!CounterGenSAT@{Counter\-Gen\-S\-A\-T}}
-\subsubsection[{prev\-\_\-safe\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int Counter\-Gen\-S\-A\-T\-::prev\-\_\-safe\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCounterGenSAT_a6b1ebfdef38c7463a2594ace7bd72a8d}
+\hypertarget{classCounterGenSAT_a68c5a01f380979af79bf45061a9a1e37}{\index{Counter\-Gen\-S\-A\-T@{Counter\-Gen\-S\-A\-T}!psi\-\_\-@{psi\-\_\-}}
+\index{psi\-\_\-@{psi\-\_\-}!CounterGenSAT@{Counter\-Gen\-S\-A\-T}}
+\subsubsection[{psi\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Prev\-State\-Info}\& Counter\-Gen\-S\-A\-T\-::psi\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCounterGenSAT_a68c5a01f380979af79bf45061a9a1e37}
 
 
-A literal saying that the previous-\/state is safe. 
+Information about the previous states if optimization R\-G is enabled. 
 
-We store this literal here and do not read it out of the \hyperlink{classVarManager}{Var\-Manager} again and again to avoid a concurrency issue. The \hyperlink{classVarManager}{Var\-Manager} is sometimes modified (new temporary variables are created). This does not affect the literal defining safe states. However, we do not want to lock reading-\/accesses to the variable manager and we do not want to read out the variable manager in an inconsistent state. Hence, we read it out once and store it. If optimization R\-G is disabled, then this field is meaningless. 
+
+
+Definition at line 1104 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by consider\-New\-Info\-From\-Others(), generalize\-Ce\-Futher(), generalize\-Counterexample(), and generalize\-Counterexamples().
+
+\hypertarget{classCounterGenSAT_a5fe0494a5158f8614cdf358f1776dc25}{\index{Counter\-Gen\-S\-A\-T@{Counter\-Gen\-S\-A\-T}!s\-\_\-@{s\-\_\-}}
+\index{s\-\_\-@{s\-\_\-}!CounterGenSAT@{Counter\-Gen\-S\-A\-T}}
+\subsubsection[{s\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ Counter\-Gen\-S\-A\-T\-::s\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCounterGenSAT_a5fe0494a5158f8614cdf358f1776dc25}
+
+
+The vector of current-\/state variables. 
+
+
 
 Definition at line 1109 of file Parallel\-Learner.\-h.
 
 
 
-Referenced by generalize\-Counterexamples().
-
-\hypertarget{classCounterGenSAT_a526507443918740c5ac2ae24886d1017}{\index{Counter\-Gen\-S\-A\-T@{Counter\-Gen\-S\-A\-T}!prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-@{prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-}}
-\index{prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-@{prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-}!CounterGenSAT@{Counter\-Gen\-S\-A\-T}}
-\subsubsection[{prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} Counter\-Gen\-S\-A\-T\-::prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCounterGenSAT_a526507443918740c5ac2ae24886d1017}
-
-
-Says\-: the current state is initial or the previous transition relation holds. 
-
-This \hyperlink{classCNF}{C\-N\-F} expresses that the current state is initial or the previous-\/state copy of the transition relation holds. This is an important building block for the \hyperlink{classCNF}{C\-N\-F} to generalize counterexamples if optimization R\-G is enabled. If optimization R\-G is disabled, then this \hyperlink{classCNF}{C\-N\-F} is empty. 
-
-Definition at line 1075 of file Parallel\-Learner.\-h.
-
-
-
-Referenced by generalize\-Counterexamples().
+Referenced by generalize\-Ce\-Futher().
 
 \hypertarget{classCounterGenSAT_a8ed22d7411e62b13c50824664e58807a}{\index{Counter\-Gen\-S\-A\-T@{Counter\-Gen\-S\-A\-T}!solver\-\_\-ctrl\-\_\-@{solver\-\_\-ctrl\-\_\-}}
 \index{solver\-\_\-ctrl\-\_\-@{solver\-\_\-ctrl\-\_\-}!CounterGenSAT@{Counter\-Gen\-S\-A\-T}}
@@ -678,7 +525,7 @@ The solver for checking counterexample-\/candidates.
 
 It is also used to generalize counterexamples if optimization R\-G is disabled. 
 
-Definition at line 1057 of file Parallel\-Learner.\-h.
+Definition at line 1052 of file Parallel\-Learner.\-h.
 
 
 
@@ -693,7 +540,7 @@ The solver for generalizing counterexamples if optimization R\-G is enabled.
 
 
 
-Definition at line 1097 of file Parallel\-Learner.\-h.
+Definition at line 1065 of file Parallel\-Learner.\-h.
 
 
 
@@ -708,7 +555,7 @@ An incremental \hyperlink{classSatSolver}{Sat\-Solver} containing the winning re
 
 It is mainly used to check if new clauses found by this class are already implied by other clauses in the winning region. If so, then the new clauses are not added. 
 
-Definition at line 1065 of file Parallel\-Learner.\-h.
+Definition at line 1060 of file Parallel\-Learner.\-h.
 
 
 
@@ -723,26 +570,11 @@ Stores and maintains statistics and performance measures.
 
 Basically, this is a merge of the statistics from all worker-\/threads. 
 
-Definition at line 1116 of file Parallel\-Learner.\-h.
+Definition at line 1072 of file Parallel\-Learner.\-h.
 
 
 
 Referenced by generalize\-Counterexamples(), and get\-Statistics().
-
-\hypertarget{classCounterGenSAT_a4f76493e0c49329ae7f628af99a450f4}{\index{Counter\-Gen\-S\-A\-T@{Counter\-Gen\-S\-A\-T}!use\-\_\-ind\-\_\-@{use\-\_\-ind\-\_\-}}
-\index{use\-\_\-ind\-\_\-@{use\-\_\-ind\-\_\-}!CounterGenSAT@{Counter\-Gen\-S\-A\-T}}
-\subsubsection[{use\-\_\-ind\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}bool Counter\-Gen\-S\-A\-T\-::use\-\_\-ind\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCounterGenSAT_a4f76493e0c49329ae7f628af99a450f4}
-
-
-A flag indicating if optimization R\-G should be used. 
-
-See \hyperlink{classLearnSynthQBFInd}{Learn\-Synth\-Q\-B\-F\-Ind} for an explanation. 
-
-Definition at line 1023 of file Parallel\-Learner.\-h.
-
-
-
-Referenced by consider\-New\-Info\-From\-Others(), generalize\-Ce\-Futher(), generalize\-Counterexample(), and generalize\-Counterexamples().
 
 \hypertarget{classCounterGenSAT_a0c568c2e441491d24a5a98623fa6ce6a}{\index{Counter\-Gen\-S\-A\-T@{Counter\-Gen\-S\-A\-T}!vars\-\_\-to\-\_\-keep\-\_\-@{vars\-\_\-to\-\_\-keep\-\_\-}}
 \index{vars\-\_\-to\-\_\-keep\-\_\-@{vars\-\_\-to\-\_\-keep\-\_\-}!CounterGenSAT@{Counter\-Gen\-S\-A\-T}}
@@ -753,7 +585,7 @@ A set of variables the solver should not optimize by the S\-A\-T-\/solver.
 
 These are all variables except for temporary ones (type \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cfa84a2d8d86f004930fe564dc5b395b29f}{Var\-Info\-::\-T\-M\-P}). 
 
-Definition at line 1050 of file Parallel\-Learner.\-h.
+Definition at line 1045 of file Parallel\-Learner.\-h.
 
 
 

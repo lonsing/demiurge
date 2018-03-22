@@ -82,7 +82,8 @@ bool ExtQBFSolver::isSatModel(const vector<pair<VarInfo::VarKind, Quant> > &quan
   dumpQBF(quantifier_prefix, cnf, in_file_name_);
   int ret = system(getSolverCommandModel().c_str());
   ret = WEXITSTATUS(ret);
-  bool sat = parseModel(ret, model);
+  const vector<int> &get = VarManager::instance().getVarsOfType(quantifier_prefix[0].first);
+  bool sat = parseModel(ret, get, model);
   cleanup();
   return sat;
 }
@@ -95,7 +96,7 @@ bool ExtQBFSolver::isSatModel(const vector<pair<vector<int>, Quant> > &quantifie
   dumpQBF(quantifier_prefix, cnf, in_file_name_);
   int ret = system(getSolverCommandModel().c_str());
   ret = WEXITSTATUS(ret);
-  bool sat = parseModel(ret, model);
+  bool sat = parseModel(ret, quantifier_prefix[0].first, model);
   cleanup();
   return sat;
 }
@@ -178,16 +179,18 @@ void ExtQBFSolver::dumpQBF(const vector<pair<vector<int>, Quant> > &quantifier_p
 // -------------------------------------------------------------------------------------------
 bool ExtQBFSolver::parseAnswer(int ret) const
 {
-  MASSERT(ret == 20 || ret == 10, "Solver terminated with strange exit code.");
+  if(ret != 10 && ret != 20)
+    throw DemiurgeException("Timeout or crash");
   if(ret == 10)
     return true;
   return false;
 }
 
 // -------------------------------------------------------------------------------------------
-bool ExtQBFSolver::parseModel(int ret, vector<int> &model) const
+bool ExtQBFSolver::parseModel(int ret, const vector<int> &get, vector<int> &model) const
 {
-  MASSERT(ret == 20 || ret == 10, "Solver terminated with strange exit code.");
+  if(ret != 10 && ret != 20)
+    throw DemiurgeException("Timeout or crash");
 
   string answer;
   bool success = FileUtils::readFile(out_file_name_, answer);

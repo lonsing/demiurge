@@ -96,7 +96,7 @@ class CNFImplExtractor;
 ///       not work out well.
 /// @note This class is experimental.
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.1.0
+/// @version 1.2.0
 class LearnSynthQBFInd : public BackEnd
 {
 public:

@@ -40,15 +40,27 @@
 /// 'Ruediger Ehlers: Symbolic bounded synthesis, Formal Methods in System Design 40(2):
 /// 232-262 (2012)').
 ///
-/// Demiurge implements different synthesis methods in different back-ends. Most of these
-/// synthesis methods are based on SAT- or QBF-solving. A description of some of the
-/// implemented algorithms can be found in the paper: 'Roderick Bloem, Robert Koenighofer,
-/// Martina Seidl: SAT-Based Synthesis Methods for Safety Specs' to appear in VMCAI'14.
+/// Demiurge implements different synthesis methods in different back-ends. Most of
+/// these synthesis methods are based on SAT- or QBF-solving. A description of some
+/// of the implemented algorithms can be found in the paper: 
+///   Roderick Bloem, Robert Koenighofer, Martina Seidl: "SAT-Based Synthesis 
+///   Methods for Safety Specs" in VMCAI'14.  
+/// Different methods for synthesizing circuits from already computed strategies are
+/// discussed in the paper:
+///   Roderick Bloem, Uwe Egly, Patrick Klampfl, Robert Koenighofer, Florian 
+///   Lonsing: "SAT-based methods for circuit synthesis" in FMCAD'14.
+/// Demiurge is not only a tool, but also a framework for implementing new synthesis
+/// algorithms. A lot of infrastructure can be re-used. This includes not only the
+/// parsing of input files but also classes to conveniently manipulate Boolean
+/// formulas in conjunctive normal form, interfaces to SAT- and QBF solvers
+/// (different solvers can be used via a unified interface), and so on. Most of the
+/// infrastructure currently available targets SAT- and QBF-based synthesis methods.
+/// But there is no reason not include BDD-based methods in new back-ends.
 ///
 /// Demiurge is not only a tool, but also a framework for implementing new synthesis
 /// algorithms. A lot of infrastructure can be re-used. This includes not only the parsing
 /// of input files but also classes to conveniently manipulate Boolean formulas in
-/// conjunctive normal form, interfaces to SAT- and QBF-solver (different solvers can be used
+/// conjunctive normal form, interfaces to SAT- and QBF solvers (different solvers can be used
 /// via a unified interface), and so on. Most of the infrastructure currently available
 /// targets SAT- and QBF-based synthesis methods. But there is no reason not include
 /// BDD-based methods in new back-ends.
@@ -65,7 +77,7 @@
 /// distinguished by their name. Control signals have a name that starts with 'controllable_'.
 /// The question answered by demiurge is: 'can the control signals be implemented in such a
 /// way that the error output never becomes true?' If yes, then we compute such an
-/// implementation. This is compatible with the input format suggested for the upcoming
+/// implementation. This is compatible with the input format for the
 /// <a href="http://www.syntcomp.org/">synthesis competition</a>.
 ///
 /// @subsection output_sec Output of the Tool
@@ -150,6 +162,9 @@ extern "C" {
  #include "aiger.h"
 }
 
+#include <stdio.h>
+#include <sys/resource.h>
+
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -202,6 +217,11 @@ int main (int argc, char **argv)
   }
   else if(! realizable) // if realizable, then only the circuit should be printed to stdout
     cout << "UNREALIZABLE" << endl;
+
+  Utils::debugPrintCurrentMemUsage();
+  struct rusage rusage;
+  getrusage( RUSAGE_SELF, &rusage );
+  L_DBG("Max memory usage: "<< rusage.ru_maxrss << " kB.");
 
   return realizable ? 10 : 20;
 }

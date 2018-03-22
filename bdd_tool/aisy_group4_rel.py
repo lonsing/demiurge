@@ -491,7 +491,7 @@ def main(aiger_file_name, out_file_name):
 
     :returns: boolean value 'is realizable?'
     """
-    global rel_det_start_wall, rel_det_start_cpu
+    global rel_det_start_wall, rel_det_start_cpu, bdd_to_lit
     init_cudd()
 
     parse_into_spec(aiger_file_name)
@@ -499,6 +499,12 @@ def main(aiger_file_name, out_file_name):
     func_by_var = synthesize()
 
     if func_by_var:
+        #BEGIN added by RK
+        # The rules for the synthesis competition do not allow to reuse
+        # nodes of the transition relation. Hence, we must clear the cache
+        # that has been used for parsing the input file.
+        bdd_to_lit = dict()
+        #END added by RK
         cudd.ReduceHeap(5,0)  # SIFT_CONV
         
         for (c_bdd, func_bdd) in func_by_var.items():

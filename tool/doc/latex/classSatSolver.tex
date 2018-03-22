@@ -45,6 +45,8 @@ virtual void \hyperlink{classSatSolver_a791be541b59ef58a29a1c517fca943e7}{inc\-A
 \begin{DoxyCompactList}\small\item\em Adds a new clause consisting of 2 literals to the current incremental session. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classSatSolver_abca288874a1b8ab1a90cb274eb885ace}{inc\-Add3\-Lit\-Clause} (int lit1, int lit2, int lit3)=0
 \begin{DoxyCompactList}\small\item\em Adds a new clause consisting of 3 literals to the current incremental session. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classSatSolver_af01bfc3b8fa15e7b69136b1808c59023}{inc\-Add4\-Lit\-Clause} (int lit1, int lit2, int lit3, int lit4)=0
+\begin{DoxyCompactList}\small\item\em Adds a new clause consisting of 4 literals to the current incremental session. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classSatSolver_a1f04f34bb04174489ed18d0b62241004}{inc\-Add\-Cube} (const vector$<$ int $>$ \&cube)=0
 \begin{DoxyCompactList}\small\item\em Adds a new cube to the current incremental session. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classSatSolver_a6be2c564289a59057c4c6728a3aa9c2b}{inc\-Add\-Neg\-Cube\-As\-Clause} (const vector$<$ int $>$ \&cube)=0
@@ -88,7 +90,7 @@ For a given \hyperlink{classCNF}{C\-N\-F}, a \hyperlink{classSatSolver}{Sat\-Sol
 Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\-1.\-0 
+1.\-2.\-0 
 \end{DoxyVersion}
 
 
@@ -197,7 +199,7 @@ References min\-\_\-cores\-\_\-.
 
 
 
-Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), and Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2().
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Recy(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), Par\-Extractor\-Worker\-::run\-S\-A\-T(), and Par\-Extractor\-Worker\-::run\-S\-A\-T\-Dep().
 
 \hypertarget{classSatSolver_ae229c5e277350710412fce0e867dc566}{\index{Sat\-Solver@{Sat\-Solver}!do\-Rand\-Models@{do\-Rand\-Models}}
 \index{do\-Rand\-Models@{do\-Rand\-Models}!SatSolver@{Sat\-Solver}}
@@ -225,7 +227,7 @@ References rand\-\_\-models\-\_\-.
 
 
 
-Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), and Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C().
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C\-Exp(), and Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Recy().
 
 \hypertarget{classSatSolver_a791be541b59ef58a29a1c517fca943e7}{\index{Sat\-Solver@{Sat\-Solver}!inc\-Add2\-Lit\-Clause@{inc\-Add2\-Lit\-Clause}}
 \index{inc\-Add2\-Lit\-Clause@{inc\-Add2\-Lit\-Clause}!SatSolver@{Sat\-Solver}}
@@ -254,6 +256,10 @@ This is an abstract method which must be implemented in all derived classes (all
 
 
 Implemented in \hyperlink{classMiniSatApi_a56c4758ee7466cd7fa48a682fee76fd3}{Mini\-Sat\-Api}, \hyperlink{classPicoSatApi_a5c31301a2b0dfc70251f285e737a6fc2}{Pico\-Sat\-Api}, and \hyperlink{classLingelingApi_a54bf3198e6bb2dd3ebda768272337955}{Lingeling\-Api}.
+
+
+
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Exp(), Univ\-Expander\-::extr\-Exp(), Univ\-Expander\-::init\-Solver\-C\-Exp(), Orig\-Univ\-Expander\-::reset\-Solver\-C\-Exp(), and Orig\-Univ\-Expander\-::reset\-Solver\-I\-Exp().
 
 \hypertarget{classSatSolver_abca288874a1b8ab1a90cb274eb885ace}{\index{Sat\-Solver@{Sat\-Solver}!inc\-Add3\-Lit\-Clause@{inc\-Add3\-Lit\-Clause}}
 \index{inc\-Add3\-Lit\-Clause@{inc\-Add3\-Lit\-Clause}!SatSolver@{Sat\-Solver}}
@@ -286,6 +292,48 @@ This is an abstract method which must be implemented in all derived classes (all
 
 Implemented in \hyperlink{classMiniSatApi_aee9556c8c5de695fa5d7aa7cfde57877}{Mini\-Sat\-Api}, \hyperlink{classPicoSatApi_a1daeb6e2b3bfa3eee44a7bf1b278dd86}{Pico\-Sat\-Api}, and \hyperlink{classLingelingApi_ad05f795bbf472fe5386164a74a8ecd86}{Lingeling\-Api}.
 
+
+
+Referenced by Univ\-Expander\-::extr\-Exp(), Univ\-Expander\-::init\-Solver\-C\-Exp(), and Orig\-Univ\-Expander\-::reset\-Solver\-C\-Exp().
+
+\hypertarget{classSatSolver_af01bfc3b8fa15e7b69136b1808c59023}{\index{Sat\-Solver@{Sat\-Solver}!inc\-Add4\-Lit\-Clause@{inc\-Add4\-Lit\-Clause}}
+\index{inc\-Add4\-Lit\-Clause@{inc\-Add4\-Lit\-Clause}!SatSolver@{Sat\-Solver}}
+\subsubsection[{inc\-Add4\-Lit\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Sat\-Solver\-::inc\-Add4\-Lit\-Clause (
+\begin{DoxyParamCaption}
+\item[{int}]{lit1, }
+\item[{int}]{lit2, }
+\item[{int}]{lit3, }
+\item[{int}]{lit4}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classSatSolver_af01bfc3b8fa15e7b69136b1808c59023}
+
+
+Adds a new clause consisting of 4 literals to the current incremental session. 
+
+This is an abstract method which must be implemented in all derived classes (all classes implementing this interface).
+
+\begin{DoxyPrecond}{Precondition}
+\hyperlink{classSatSolver_a74603f84c3f2383a5fc44d5a8093cbea}{start\-Incremental\-Session()} must have been called before. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em lit1} & The first literal of the clause to add to the currently open incremental session. If this method is called after solving for the first time, be sure that the passed literal talks about a variables that have been mentioned in vars\-\_\-to\-\_\-keep when calling \hyperlink{classSatSolver_a74603f84c3f2383a5fc44d5a8093cbea}{start\-Incremental\-Session()}. \\
+\hline
+{\em lit2} & The second literal of the clause to add to the currently open incremental session (must be contained in vars\-\_\-to\-\_\-keep as well). \\
+\hline
+{\em lit3} & The third literal of the clause to add to the currently open incremental session (must be contained in vars\-\_\-to\-\_\-keep as well). \\
+\hline
+{\em lit4} & The third literal of the clause to add to the currently open incremental session (must be contained in vars\-\_\-to\-\_\-keep as well). \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classMiniSatApi_ad78c29a67b210ac6f07ed3074b511bc1}{Mini\-Sat\-Api}, \hyperlink{classPicoSatApi_a45f1182c46055eb6e88f5abf6e6af043}{Pico\-Sat\-Api}, and \hyperlink{classLingelingApi_a464ae182ba0c0fd7255db821f92d127d}{Lingeling\-Api}.
+
+
+
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Exp().
+
 \hypertarget{classSatSolver_a9f91c104238b6e091513e0aa46970840}{\index{Sat\-Solver@{Sat\-Solver}!inc\-Add\-Clause@{inc\-Add\-Clause}}
 \index{inc\-Add\-Clause@{inc\-Add\-Clause}!SatSolver@{Sat\-Solver}}
 \subsubsection[{inc\-Add\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Sat\-Solver\-::inc\-Add\-Clause (
@@ -313,7 +361,7 @@ Implemented in \hyperlink{classMiniSatApi_af2115a84419b7480ff55b747f7ddd60a}{Min
 
 
 
-Referenced by I\-F\-M13\-Synth\-::add\-Blocked\-State(), I\-F\-M13\-Explorer\-::add\-Blocked\-State(), I\-F\-M13\-Synth\-::add\-Blocked\-Transition(), I\-F\-M13\-Explorer\-::add\-Blocked\-Transition(), I\-F\-M13\-Synth\-::add\-Lose(), Utils\-::compress\-State\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::compute\-Counterexample\-S\-A\-T(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One\-S\-A\-T(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), I\-F\-M13\-Synth\-::propagate\-Blocked\-States(), and I\-F\-M13\-Explorer\-::propagate\-Blocked\-States().
+Referenced by I\-F\-M13\-Synth\-::add\-Blocked\-State(), I\-F\-M13\-Explorer\-::add\-Blocked\-State(), I\-F\-M13\-Synth\-::add\-Blocked\-Transition(), I\-F\-M13\-Explorer\-::add\-Blocked\-Transition(), Orig\-Univ\-Expander\-::add\-Exp\-Nxt\-Clause\-To\-C(), Univ\-Expander\-::add\-Exp\-Nxt\-Clause\-To\-C(), I\-F\-M13\-Synth\-::add\-Lose(), I\-F\-M13\-Explorer\-::add\-Lose(), Utils\-::compress\-Next\-State\-C\-N\-F(), Utils\-::compress\-State\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::compute\-Counterexample\-S\-A\-T(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One\-S\-A\-T(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Recy(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), Univ\-Expander\-::extr\-Exp(), Counter\-Gen\-S\-A\-T\-::generalize\-Ce\-Futher(), I\-F\-M13\-Synth\-::propagate\-Blocked\-States(), I\-F\-M13\-Explorer\-::propagate\-Blocked\-States(), and Orig\-Univ\-Expander\-::reset\-Solver\-I\-Exp().
 
 \hypertarget{classSatSolver_ab2581b192cb2c39a81a416a9f7416c9e}{\index{Sat\-Solver@{Sat\-Solver}!inc\-Add\-C\-N\-F@{inc\-Add\-C\-N\-F}}
 \index{inc\-Add\-C\-N\-F@{inc\-Add\-C\-N\-F}!SatSolver@{Sat\-Solver}}
@@ -342,7 +390,7 @@ Implemented in \hyperlink{classMiniSatApi_ae5ffe2811e01051c5206c9e4865a7102}{Min
 
 
 
-Referenced by Counter\-Gen\-S\-A\-T\-::compress\-Bored(), Utils\-::compress\-State\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::compute\-Counterexample\-S\-A\-T(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::consider\-New\-Info\-From\-Others(), Counter\-Gen\-S\-A\-T\-::consider\-New\-Info\-From\-Others(), I\-F\-M13\-Explorer\-::consider\-New\-Info\-From\-Others(), Utils\-::debug\-Check\-Win\-Reg(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), I\-F\-M13\-Explorer\-::\-I\-F\-M13\-Explorer(), I\-F\-M13\-Synth\-::\-I\-F\-M13\-Synth(), Learn\-Synth\-Q\-B\-F\-::\-Learn\-Synth\-Q\-B\-F(), Utils\-::negate\-State\-C\-N\-F(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), and Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2().
+Referenced by Template\-Synth\-::check(), Templ\-Explorer\-::check(), Counter\-Gen\-S\-A\-T\-::compress\-Bored(), Utils\-::compress\-Next\-State\-C\-N\-F(), Utils\-::compress\-State\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::compute\-Counterexample\-S\-A\-T(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Recy(), Clause\-Explorer\-S\-A\-T\-::consider\-New\-Info\-From\-Others(), Counter\-Gen\-S\-A\-T\-::consider\-New\-Info\-From\-Others(), I\-F\-M13\-Explorer\-::consider\-New\-Info\-From\-Others(), Utils\-::debug\-Check\-Win\-Reg(), Template\-Synth\-::exclude(), Templ\-Explorer\-::exclude(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), I\-F\-M13\-Explorer\-::\-I\-F\-M13\-Explorer(), I\-F\-M13\-Synth\-::\-I\-F\-M13\-Synth(), Learn\-Synth\-Q\-B\-F\-::\-Learn\-Synth\-Q\-B\-F(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses\-Inc(), Utils\-::negate\-State\-C\-N\-F(), Univ\-Expander\-::reset\-Solver\-C\-Exp(), Orig\-Univ\-Expander\-::reset\-Solver\-I\-Exp(), Learning\-Impl\-Extractor\-::run\-Learning\-Exp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), Par\-Extractor\-Worker\-::run\-S\-A\-T(), Par\-Extractor\-Worker\-::run\-S\-A\-T\-Dep(), and Parallel\-Learner\-::trigger\-Explorer\-Restart().
 
 \hypertarget{classSatSolver_a1f04f34bb04174489ed18d0b62241004}{\index{Sat\-Solver@{Sat\-Solver}!inc\-Add\-Cube@{inc\-Add\-Cube}}
 \index{inc\-Add\-Cube@{inc\-Add\-Cube}!SatSolver@{Sat\-Solver}}
@@ -373,7 +421,7 @@ Implemented in \hyperlink{classMiniSatApi_a41e16a2e8757846fa17e010c5cc1ff16}{Min
 
 
 
-Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), and Counter\-Gen\-S\-A\-T\-::generalize\-Ce\-Futher().
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), and Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Recy().
 
 \hypertarget{classSatSolver_a6be2c564289a59057c4c6728a3aa9c2b}{\index{Sat\-Solver@{Sat\-Solver}!inc\-Add\-Neg\-Cube\-As\-Clause@{inc\-Add\-Neg\-Cube\-As\-Clause}}
 \index{inc\-Add\-Neg\-Cube\-As\-Clause@{inc\-Add\-Neg\-Cube\-As\-Clause}!SatSolver@{Sat\-Solver}}
@@ -404,7 +452,7 @@ Implemented in \hyperlink{classMiniSatApi_a49afe5c41bb036a31f65f98621e82846}{Min
 
 
 
-Referenced by Counter\-Gen\-S\-A\-T\-::compress\-Bored(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Utils\-::debug\-Check\-Win\-Reg(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), Counter\-Gen\-S\-A\-T\-::generalize\-Ce\-Futher(), Utils\-::negate\-State\-C\-N\-F(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), and Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2().
+Referenced by Template\-Synth\-::check(), Templ\-Explorer\-::check(), Counter\-Gen\-S\-A\-T\-::compress\-Bored(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Recy(), Utils\-::debug\-Check\-Win\-Reg(), Utils\-::negate\-State\-C\-N\-F(), Learning\-Impl\-Extractor\-::run\-Learning\-Exp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), Par\-Extractor\-Worker\-::run\-S\-A\-T(), and Par\-Extractor\-Worker\-::run\-S\-A\-T\-Dep().
 
 \hypertarget{classSatSolver_a5b39c45cd2a1abfe96c681515dfddb77}{\index{Sat\-Solver@{Sat\-Solver}!inc\-Add\-Unit\-Clause@{inc\-Add\-Unit\-Clause}}
 \index{inc\-Add\-Unit\-Clause@{inc\-Add\-Unit\-Clause}!SatSolver@{Sat\-Solver}}
@@ -433,7 +481,7 @@ Implemented in \hyperlink{classMiniSatApi_ade09bb38667bb23f2ac993e2d6c66408}{Min
 
 
 
-Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), and Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl().
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Recy(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), Univ\-Expander\-::extr\-Exp(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), Univ\-Expander\-::init\-Solver\-C\-Exp(), Orig\-Univ\-Expander\-::reset\-Solver\-C\-Exp(), Orig\-Univ\-Expander\-::reset\-Solver\-I\-Exp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), and Par\-Extractor\-Worker\-::run\-S\-A\-T\-Dep().
 
 \hypertarget{classSatSolver_ab1aab4b96a36b2003450067a3799ae23}{\index{Sat\-Solver@{Sat\-Solver}!inc\-Is\-Sat@{inc\-Is\-Sat}}
 \index{inc\-Is\-Sat@{inc\-Is\-Sat}!SatSolver@{Sat\-Solver}}
@@ -460,7 +508,7 @@ Implemented in \hyperlink{classMiniSatApi_a4c6ba65381002eb3f90e8e0df1606759}{Min
 
 
 
-Referenced by I\-F\-M13\-Synth\-::add\-Blocked\-State(), I\-F\-M13\-Explorer\-::add\-Blocked\-State(), Counter\-Gen\-S\-A\-T\-::bored(), Counter\-Gen\-S\-A\-T\-::compress\-Bored(), Utils\-::compress\-State\-C\-N\-F(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), Counter\-Gen\-S\-A\-T\-::generalize\-Ce\-Futher(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), I\-F\-M13\-Synth\-::propagate\-Blocked\-States(), I\-F\-M13\-Explorer\-::propagate\-Blocked\-States(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), and Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2().
+Referenced by I\-F\-M13\-Synth\-::add\-Blocked\-State(), I\-F\-M13\-Explorer\-::add\-Blocked\-State(), Counter\-Gen\-S\-A\-T\-::bored(), Counter\-Gen\-S\-A\-T\-::compress\-Bored(), Utils\-::compress\-Next\-State\-C\-N\-F(), Utils\-::compress\-State\-C\-N\-F(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Recy(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), Counter\-Gen\-S\-A\-T\-::generalize\-Ce\-Futher(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses\-Inc(), I\-F\-M13\-Synth\-::propagate\-Blocked\-States(), I\-F\-M13\-Explorer\-::propagate\-Blocked\-States(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), Par\-Extractor\-Worker\-::run\-S\-A\-T(), and Par\-Extractor\-Worker\-::run\-S\-A\-T\-Dep().
 
 \hypertarget{classSatSolver_a1864787a33621efac7fc75fb6b25f080}{\index{Sat\-Solver@{Sat\-Solver}!inc\-Is\-Sat@{inc\-Is\-Sat}}
 \index{inc\-Is\-Sat@{inc\-Is\-Sat}!SatSolver@{Sat\-Solver}}
@@ -527,7 +575,7 @@ Implemented in \hyperlink{classMiniSatApi_afb886d40bb45b5cf2fadb7aee1a06b3e}{Min
 
 
 
-Referenced by Utils\-::compress\-State\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::compute\-Counterexample\-S\-A\-T(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Utils\-::debug\-Check\-Win\-Reg(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), I\-F\-M13\-Synth\-::gen\-And\-Block\-Trans(), I\-F\-M13\-Explorer\-::gen\-And\-Block\-Trans(), Counter\-Gen\-S\-A\-T\-::generalize\-Ce\-Futher(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexample(), Utils\-::negate\-State\-C\-N\-F(), I\-F\-M13\-Synth\-::rec\-Block\-Cube(), I\-F\-M13\-Explorer\-::rec\-Block\-Cube(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), and Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2().
+Referenced by Template\-Synth\-::check(), Templ\-Explorer\-::check(), Utils\-::compress\-Next\-State\-C\-N\-F(), Utils\-::compress\-State\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::compute\-Counterexample\-S\-A\-T(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Recy(), Utils\-::debug\-Check\-Win\-Reg(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), I\-F\-M13\-Synth\-::gen\-And\-Block\-Trans(), I\-F\-M13\-Explorer\-::gen\-And\-Block\-Trans(), Counter\-Gen\-S\-A\-T\-::generalize\-Ce\-Futher(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexample(), Utils\-::negate\-State\-C\-N\-F(), I\-F\-M13\-Synth\-::rec\-Block\-Cube(), I\-F\-M13\-Explorer\-::rec\-Block\-Cube(), Learning\-Impl\-Extractor\-::run\-Learning\-Exp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), Par\-Extractor\-Worker\-::run\-S\-A\-T(), Par\-Extractor\-Worker\-::run\-S\-A\-T\-Dep(), Template\-Synth\-::synt\-S\-A\-T(), and Templ\-Explorer\-::synt\-S\-A\-T().
 
 \hypertarget{classSatSolver_a29225bfab1f352cae27c68e9bda4d409}{\index{Sat\-Solver@{Sat\-Solver}!inc\-Is\-Sat\-Model\-Or\-Core@{inc\-Is\-Sat\-Model\-Or\-Core}}
 \index{inc\-Is\-Sat\-Model\-Or\-Core@{inc\-Is\-Sat\-Model\-Or\-Core}!SatSolver@{Sat\-Solver}}
@@ -582,7 +630,7 @@ Implemented in \hyperlink{classMiniSatApi_af388f97db15f77baeb420a8fef74ca6a}{Min
 
 
 
-Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), and Counter\-Gen\-S\-A\-T\-::generalize\-Ce\-Futher().
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), and Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Recy().
 
 \hypertarget{classSatSolver_a4da0dff7082a91429e3311d279605be4}{\index{Sat\-Solver@{Sat\-Solver}!inc\-Push@{inc\-Push}}
 \index{inc\-Push@{inc\-Push}!SatSolver@{Sat\-Solver}}
@@ -603,7 +651,7 @@ Implemented in \hyperlink{classMiniSatApi_a27013ace25320f68252bef5ba9f2e9ad}{Min
 
 
 
-Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), and Counter\-Gen\-S\-A\-T\-::generalize\-Ce\-Futher().
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), and Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Recy().
 
 \hypertarget{classSatSolver_a82f60f60db464fbe5c66a20ad673a573}{\index{Sat\-Solver@{Sat\-Solver}!is\-Sat@{is\-Sat}}
 \index{is\-Sat@{is\-Sat}!SatSolver@{Sat\-Solver}}
@@ -634,7 +682,7 @@ Implemented in \hyperlink{classMiniSatApi_a73b93ecb947723a96ef6fbd436640e12}{Min
 
 
 
-Referenced by I\-F\-M13\-Synth\-::debug\-Check\-Invariants(), Utils\-::debug\-Check\-Win\-Reg(), and Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses().
+Referenced by I\-F\-M13\-Synth\-::debug\-Check\-Invariants(), Utils\-::debug\-Check\-Win\-Reg(), and Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses\-No\-Inc().
 
 \hypertarget{classSatSolver_ad5cfce08969be5aaf5cd705c12c68818}{\index{Sat\-Solver@{Sat\-Solver}!is\-Sat\-Model\-Or\-Core@{is\-Sat\-Model\-Or\-Core}}
 \index{is\-Sat\-Model\-Or\-Core@{is\-Sat\-Model\-Or\-Core}!SatSolver@{Sat\-Solver}}
@@ -722,7 +770,7 @@ Implemented in \hyperlink{classMiniSatApi_afe6f184e440ffe7f9b3a86045c15b450}{Min
 
 
 
-Referenced by Counter\-Gen\-S\-A\-T\-::compress\-Bored(), Utils\-::compress\-State\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::compute\-Counterexample\-S\-A\-T(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::consider\-New\-Info\-From\-Others(), Utils\-::debug\-Check\-Win\-Reg(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), I\-F\-M13\-Explorer\-::\-I\-F\-M13\-Explorer(), I\-F\-M13\-Synth\-::\-I\-F\-M13\-Synth(), Learn\-Synth\-Q\-B\-F\-::\-Learn\-Synth\-Q\-B\-F(), Utils\-::negate\-State\-C\-N\-F(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), and Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2().
+Referenced by Template\-Synth\-::check(), Templ\-Explorer\-::check(), Clause\-Minimizer\-Q\-B\-F\-::\-Clause\-Minimizer\-Q\-B\-F(), Counter\-Gen\-S\-A\-T\-::compress\-Bored(), Utils\-::compress\-Next\-State\-C\-N\-F(), Utils\-::compress\-State\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::compute\-Counterexample\-S\-A\-T(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Recy(), Clause\-Explorer\-S\-A\-T\-::consider\-New\-Info\-From\-Others(), Utils\-::debug\-Check\-Win\-Reg(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), Univ\-Expander\-::extr\-Exp(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), I\-F\-M13\-Explorer\-::\-I\-F\-M13\-Explorer(), I\-F\-M13\-Synth\-::\-I\-F\-M13\-Synth(), Univ\-Expander\-::init\-Solver\-C\-Exp(), Learn\-Synth\-Q\-B\-F\-::\-Learn\-Synth\-Q\-B\-F(), Utils\-::negate\-State\-C\-N\-F(), Orig\-Univ\-Expander\-::reset\-Solver\-C\-Exp(), Univ\-Expander\-::reset\-Solver\-C\-Exp(), Orig\-Univ\-Expander\-::reset\-Solver\-I\-Exp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), Par\-Extractor\-Worker\-::run\-S\-A\-T(), Par\-Extractor\-Worker\-::run\-S\-A\-T\-Dep(), Template\-Synth\-::synt\-S\-A\-T(), Templ\-Explorer\-::synt\-S\-A\-T(), and Parallel\-Learner\-::trigger\-Explorer\-Restart().
 
 
 
@@ -736,7 +784,7 @@ Indicates if the unsat cores returned by the solver should be minimized further.
 
 
 
-Definition at line 428 of file Sat\-Solver.\-h.
+Definition at line 448 of file Sat\-Solver.\-h.
 
 
 
@@ -751,7 +799,7 @@ Indicates if satisfying assignments should be randomized.
 
 
 
-Definition at line 433 of file Sat\-Solver.\-h.
+Definition at line 453 of file Sat\-Solver.\-h.
 
 
 

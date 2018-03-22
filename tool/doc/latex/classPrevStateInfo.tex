@@ -1,0 +1,363 @@
+\hypertarget{classPrevStateInfo}{\section{Prev\-State\-Info Class Reference}
+\label{classPrevStateInfo}\index{Prev\-State\-Info@{Prev\-State\-Info}}
+}
+
+
+Just a container for previous-\/state information.  
+
+
+
+
+{\ttfamily \#include $<$Parallel\-Learner.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPrevStateInfo_a50137c40c6da236bb072857311d12e45}{Prev\-State\-Info} (bool use\-\_\-ind)
+\begin{DoxyCompactList}\small\item\em Standard constructor. \end{DoxyCompactList}\item 
+\hyperlink{classPrevStateInfo_a61bea1f6ca20ed686b3128792bc909b8}{Prev\-State\-Info} (const \hyperlink{classPrevStateInfo}{Prev\-State\-Info} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classPrevStateInfo}{Prev\-State\-Info} \& \hyperlink{classPrevStateInfo_a8b4c55c373cd749ee7d1273a5e69cc67}{operator=} (const \hyperlink{classPrevStateInfo}{Prev\-State\-Info} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+int \hyperlink{classPrevStateInfo_a3992998d924f45a6d7bebfc94cc72e4e}{present\-To\-Previous} (int literal) const 
+\begin{DoxyCompactList}\small\item\em Returns the previous-\/state copy of a literal. \end{DoxyCompactList}\item 
+void \hyperlink{classPrevStateInfo_a937a49373cd9a6ceeb04afb6ad821c34}{present\-To\-Previous} (vector$<$ int $>$ \&cube\-\_\-or\-\_\-clause) const 
+\begin{DoxyCompactList}\small\item\em Computes the previous-\/state copy of a cube or clause. \end{DoxyCompactList}\item 
+void \hyperlink{classPrevStateInfo_aac4253e0605a8afd293e327a45c7b6fe}{present\-To\-Previous} (\hyperlink{classCNF}{C\-N\-F} \&cnf) const 
+\begin{DoxyCompactList}\small\item\em Computes the previous-\/state copy of a \hyperlink{classCNF}{C\-N\-F}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classPrevStateInfo_a87e1dd01468199a18b39ddc108bf4a70}{use\-\_\-ind\-\_\-}
+\begin{DoxyCompactList}\small\item\em A flag indicating if optimization R\-G should be used. \end{DoxyCompactList}\item 
+\hyperlink{classCNF}{C\-N\-F} \hyperlink{classPrevStateInfo_a3301f7d909263e78ef990173d69f7036}{prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-}
+\begin{DoxyCompactList}\small\item\em Says\-: the current state is initial or the previous transition relation holds. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classPrevStateInfo_a98e6e65c17d5d1e535d509816b466257}{current\-\_\-to\-\_\-previous\-\_\-map\-\_\-}
+\begin{DoxyCompactList}\small\item\em A map from present-\/state variables to their previous-\/state copy. \end{DoxyCompactList}\item 
+int \hyperlink{classPrevStateInfo_a720892a8c0030208df1e81dfc1cc962e}{current\-\_\-state\-\_\-is\-\_\-initial\-\_\-}
+\begin{DoxyCompactList}\small\item\em A literal that is true if the current state is initial and false otherwise. \end{DoxyCompactList}\item 
+int \hyperlink{classPrevStateInfo_a4c8813c99307790e87b994639cade0ed}{prev\-\_\-safe\-\_\-}
+\begin{DoxyCompactList}\small\item\em The previous-\/state copy of the literal that characterizes all safe states. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classPrevStateInfo_a4e8557c4f0b12df62279daca0999b7bb}{px\-\_\-unused\-\_\-}
+\begin{DoxyCompactList}\small\item\em Activation variables for a previous state clause. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classPrevStateInfo_aa7fadcf925ef0176d122b9d7146ccebe}{px\-\_\-neg\-\_\-}
+\begin{DoxyCompactList}\small\item\em Activation variables for a previous state clause. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classPrevStateInfo_aa135bba641811d2adfc5b2166e3d3772}{px\-\_\-act\-\_\-}
+\begin{DoxyCompactList}\small\item\em Activation literals for a previous state clause. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classPrevStateInfo_a90663cf8da8ffe0b834dbde6f8176423}{prev\-\_\-vars\-\_\-}
+\begin{DoxyCompactList}\small\item\em The vector of all variables of type \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cfa055ef2ea16e83d02bc2b9f2f7f7666df}{Var\-Info\-::\-P\-R\-E\-V}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Just a container for previous-\/state information. 
+
+\begin{DoxyAuthor}{Author}
+Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-2.\-0 
+\end{DoxyVersion}
+
+
+Definition at line 61 of file Parallel\-Learner.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPrevStateInfo_a50137c40c6da236bb072857311d12e45}{\index{Prev\-State\-Info@{Prev\-State\-Info}!Prev\-State\-Info@{Prev\-State\-Info}}
+\index{Prev\-State\-Info@{Prev\-State\-Info}!PrevStateInfo@{Prev\-State\-Info}}
+\subsubsection[{Prev\-State\-Info}]{\setlength{\rightskip}{0pt plus 5cm}Prev\-State\-Info\-::\-Prev\-State\-Info (
+\begin{DoxyParamCaption}
+\item[{bool}]{use\-\_\-ind}
+\end{DoxyParamCaption}
+)}}\label{classPrevStateInfo_a50137c40c6da236bb072857311d12e45}
+
+
+Standard constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em use\-\_\-ind} & True if previous state info (optimization R\-G) should be used during the generalization of clauses, and False otherwise. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 119 of file Parallel\-Learner.\-cpp.
+
+
+
+References C\-N\-F\-::add2\-Lit\-Clause(), C\-N\-F\-::add4\-Lit\-Clause(), C\-N\-F\-::add\-Clause(), Var\-Manager\-::create\-Fresh\-Prev\-Var(), Var\-Manager\-::create\-Fresh\-Tmp\-Var(), Var\-Info\-::\-C\-T\-R\-L, current\-\_\-state\-\_\-is\-\_\-initial\-\_\-, current\-\_\-to\-\_\-previous\-\_\-map\-\_\-, C\-N\-F\-::get\-Clauses(), Var\-Manager\-::get\-Max\-C\-N\-F\-Var(), Var\-Manager\-::get\-Pres\-Error\-State\-Var(), A\-I\-G2\-C\-N\-F\-::get\-Trans(), Var\-Manager\-::get\-Vars\-Of\-Type(), Var\-Info\-::\-I\-N\-P\-U\-T, Var\-Manager\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), Var\-Info\-::\-N\-E\-X\-T\-\_\-\-S\-T\-A\-T\-E, Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, present\-To\-Previous(), Var\-Info\-::\-P\-R\-E\-V, prev\-\_\-safe\-\_\-, prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-, prev\-\_\-vars\-\_\-, px\-\_\-act\-\_\-, px\-\_\-neg\-\_\-, px\-\_\-unused\-\_\-, C\-N\-F\-::swap\-With(), Var\-Info\-::\-T\-M\-P, and use\-\_\-ind\-\_\-.
+
+\hypertarget{classPrevStateInfo_a61bea1f6ca20ed686b3128792bc909b8}{\index{Prev\-State\-Info@{Prev\-State\-Info}!Prev\-State\-Info@{Prev\-State\-Info}}
+\index{Prev\-State\-Info@{Prev\-State\-Info}!PrevStateInfo@{Prev\-State\-Info}}
+\subsubsection[{Prev\-State\-Info}]{\setlength{\rightskip}{0pt plus 5cm}Prev\-State\-Info\-::\-Prev\-State\-Info (
+\begin{DoxyParamCaption}
+\item[{const {\bf Prev\-State\-Info} \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{classPrevStateInfo_a61bea1f6ca20ed686b3128792bc909b8}
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 187 of file Parallel\-Learner.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classPrevStateInfo_a8b4c55c373cd749ee7d1273a5e69cc67}{\index{Prev\-State\-Info@{Prev\-State\-Info}!operator=@{operator=}}
+\index{operator=@{operator=}!PrevStateInfo@{Prev\-State\-Info}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Prev\-State\-Info} \& Prev\-State\-Info\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Prev\-State\-Info} \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{classPrevStateInfo_a8b4c55c373cd749ee7d1273a5e69cc67}
+
+
+Assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the assignment, i.\-e, $\ast$this. 
+\end{DoxyReturn}
+
+
+Definition at line 202 of file Parallel\-Learner.\-cpp.
+
+
+
+References current\-\_\-state\-\_\-is\-\_\-initial\-\_\-, current\-\_\-to\-\_\-previous\-\_\-map\-\_\-, prev\-\_\-safe\-\_\-, prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-, prev\-\_\-vars\-\_\-, px\-\_\-act\-\_\-, px\-\_\-neg\-\_\-, px\-\_\-unused\-\_\-, and use\-\_\-ind\-\_\-.
+
+\hypertarget{classPrevStateInfo_a3992998d924f45a6d7bebfc94cc72e4e}{\index{Prev\-State\-Info@{Prev\-State\-Info}!present\-To\-Previous@{present\-To\-Previous}}
+\index{present\-To\-Previous@{present\-To\-Previous}!PrevStateInfo@{Prev\-State\-Info}}
+\subsubsection[{present\-To\-Previous}]{\setlength{\rightskip}{0pt plus 5cm}int Prev\-State\-Info\-::present\-To\-Previous (
+\begin{DoxyParamCaption}
+\item[{int}]{literal}
+\end{DoxyParamCaption}
+) const}}\label{classPrevStateInfo_a3992998d924f45a6d7bebfc94cc72e4e}
+
+
+Returns the previous-\/state copy of a literal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em literal} & The literal to transform. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The previous-\/state copy of a literal. 
+\end{DoxyReturn}
+
+
+Definition at line 217 of file Parallel\-Learner.\-cpp.
+
+
+
+References current\-\_\-to\-\_\-previous\-\_\-map\-\_\-.
+
+
+
+Referenced by Clause\-Explorer\-S\-A\-T\-::consider\-New\-Info\-From\-Others(), Counter\-Gen\-S\-A\-T\-::consider\-New\-Info\-From\-Others(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses\-Inc(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses\-No\-Inc(), present\-To\-Previous(), and Prev\-State\-Info().
+
+\hypertarget{classPrevStateInfo_a937a49373cd9a6ceeb04afb6ad821c34}{\index{Prev\-State\-Info@{Prev\-State\-Info}!present\-To\-Previous@{present\-To\-Previous}}
+\index{present\-To\-Previous@{present\-To\-Previous}!PrevStateInfo@{Prev\-State\-Info}}
+\subsubsection[{present\-To\-Previous}]{\setlength{\rightskip}{0pt plus 5cm}void Prev\-State\-Info\-::present\-To\-Previous (
+\begin{DoxyParamCaption}
+\item[{vector$<$ int $>$ \&}]{cube\-\_\-or\-\_\-clause}
+\end{DoxyParamCaption}
+) const}}\label{classPrevStateInfo_a937a49373cd9a6ceeb04afb6ad821c34}
+
+
+Computes the previous-\/state copy of a cube or clause. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cube\-\_\-or\-\_\-clause} & A cube or clause (in form of a vector of literals) over the present state variables. This vector is overwritten by the corresponding cube of clause over the previous-\/state literals (i.\-e., all literals are replaced by their previous-\/state copy). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 227 of file Parallel\-Learner.\-cpp.
+
+
+
+References present\-To\-Previous().
+
+\hypertarget{classPrevStateInfo_aac4253e0605a8afd293e327a45c7b6fe}{\index{Prev\-State\-Info@{Prev\-State\-Info}!present\-To\-Previous@{present\-To\-Previous}}
+\index{present\-To\-Previous@{present\-To\-Previous}!PrevStateInfo@{Prev\-State\-Info}}
+\subsubsection[{present\-To\-Previous}]{\setlength{\rightskip}{0pt plus 5cm}void Prev\-State\-Info\-::present\-To\-Previous (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-N\-F} \&}]{cnf}
+\end{DoxyParamCaption}
+) const}}\label{classPrevStateInfo_aac4253e0605a8afd293e327a45c7b6fe}
+
+
+Computes the previous-\/state copy of a \hyperlink{classCNF}{C\-N\-F}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cnf} & A \hyperlink{classCNF}{C\-N\-F} formula over the present state variables. This \hyperlink{classCNF}{C\-N\-F} is overwritten by the corresponding \hyperlink{classCNF}{C\-N\-F} over the previous-\/state literals (i.\-e., all literals are replaced by their previous-\/state copy). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 234 of file Parallel\-Learner.\-cpp.
+
+
+
+References C\-N\-F\-::add\-Clause(), C\-N\-F\-::clear(), C\-N\-F\-::get\-Clauses(), and present\-To\-Previous().
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classPrevStateInfo_a720892a8c0030208df1e81dfc1cc962e}{\index{Prev\-State\-Info@{Prev\-State\-Info}!current\-\_\-state\-\_\-is\-\_\-initial\-\_\-@{current\-\_\-state\-\_\-is\-\_\-initial\-\_\-}}
+\index{current\-\_\-state\-\_\-is\-\_\-initial\-\_\-@{current\-\_\-state\-\_\-is\-\_\-initial\-\_\-}!PrevStateInfo@{Prev\-State\-Info}}
+\subsubsection[{current\-\_\-state\-\_\-is\-\_\-initial\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int Prev\-State\-Info\-::current\-\_\-state\-\_\-is\-\_\-initial\-\_\-}}\label{classPrevStateInfo_a720892a8c0030208df1e81dfc1cc962e}
+
+
+A literal that is true if the current state is initial and false otherwise. 
+
+The clauses assigning the literal are part of \hyperlink{classPrevStateInfo_a3301f7d909263e78ef990173d69f7036}{prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-}. 
+
+Definition at line 141 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses\-No\-Inc(), operator=(), and Prev\-State\-Info().
+
+\hypertarget{classPrevStateInfo_a98e6e65c17d5d1e535d509816b466257}{\index{Prev\-State\-Info@{Prev\-State\-Info}!current\-\_\-to\-\_\-previous\-\_\-map\-\_\-@{current\-\_\-to\-\_\-previous\-\_\-map\-\_\-}}
+\index{current\-\_\-to\-\_\-previous\-\_\-map\-\_\-@{current\-\_\-to\-\_\-previous\-\_\-map\-\_\-}!PrevStateInfo@{Prev\-State\-Info}}
+\subsubsection[{current\-\_\-to\-\_\-previous\-\_\-map\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ Prev\-State\-Info\-::current\-\_\-to\-\_\-previous\-\_\-map\-\_\-}}\label{classPrevStateInfo_a98e6e65c17d5d1e535d509816b466257}
+
+
+A map from present-\/state variables to their previous-\/state copy. 
+
+
+
+Definition at line 134 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by operator=(), present\-To\-Previous(), and Prev\-State\-Info().
+
+\hypertarget{classPrevStateInfo_a4c8813c99307790e87b994639cade0ed}{\index{Prev\-State\-Info@{Prev\-State\-Info}!prev\-\_\-safe\-\_\-@{prev\-\_\-safe\-\_\-}}
+\index{prev\-\_\-safe\-\_\-@{prev\-\_\-safe\-\_\-}!PrevStateInfo@{Prev\-State\-Info}}
+\subsubsection[{prev\-\_\-safe\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int Prev\-State\-Info\-::prev\-\_\-safe\-\_\-}}\label{classPrevStateInfo_a4c8813c99307790e87b994639cade0ed}
+
+
+The previous-\/state copy of the literal that characterizes all safe states. 
+
+
+
+Definition at line 146 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses\-Inc(), operator=(), and Prev\-State\-Info().
+
+\hypertarget{classPrevStateInfo_a3301f7d909263e78ef990173d69f7036}{\index{Prev\-State\-Info@{Prev\-State\-Info}!prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-@{prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-}}
+\index{prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-@{prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-}!PrevStateInfo@{Prev\-State\-Info}}
+\subsubsection[{prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} Prev\-State\-Info\-::prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-}}\label{classPrevStateInfo_a3301f7d909263e78ef990173d69f7036}
+
+
+Says\-: the current state is initial or the previous transition relation holds. 
+
+This \hyperlink{classCNF}{C\-N\-F} expresses that the current state is initial or the previous-\/state copy of the transition relation holds. This is an important building block for the \hyperlink{classCNF}{C\-N\-F} to generalize counterexamples if optimization R\-G is enabled. 
+
+Definition at line 129 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by Clause\-Explorer\-S\-A\-T\-::consider\-New\-Info\-From\-Others(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses\-Inc(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses\-No\-Inc(), operator=(), and Prev\-State\-Info().
+
+\hypertarget{classPrevStateInfo_a90663cf8da8ffe0b834dbde6f8176423}{\index{Prev\-State\-Info@{Prev\-State\-Info}!prev\-\_\-vars\-\_\-@{prev\-\_\-vars\-\_\-}}
+\index{prev\-\_\-vars\-\_\-@{prev\-\_\-vars\-\_\-}!PrevStateInfo@{Prev\-State\-Info}}
+\subsubsection[{prev\-\_\-vars\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ Prev\-State\-Info\-::prev\-\_\-vars\-\_\-}}\label{classPrevStateInfo_a90663cf8da8ffe0b834dbde6f8176423}
+
+
+The vector of all variables of type \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cfa055ef2ea16e83d02bc2b9f2f7f7666df}{Var\-Info\-::\-P\-R\-E\-V}. 
+
+
+
+Definition at line 176 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), operator=(), and Prev\-State\-Info().
+
+\hypertarget{classPrevStateInfo_aa135bba641811d2adfc5b2166e3d3772}{\index{Prev\-State\-Info@{Prev\-State\-Info}!px\-\_\-act\-\_\-@{px\-\_\-act\-\_\-}}
+\index{px\-\_\-act\-\_\-@{px\-\_\-act\-\_\-}!PrevStateInfo@{Prev\-State\-Info}}
+\subsubsection[{px\-\_\-act\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ Prev\-State\-Info\-::px\-\_\-act\-\_\-}}\label{classPrevStateInfo_aa135bba641811d2adfc5b2166e3d3772}
+
+
+Activation literals for a previous state clause. 
+
+Their value is defined by px\-\_\-unused\-\_\- and px\-\_\-neg\-\_\-. 
+
+Definition at line 171 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by operator=(), and Prev\-State\-Info().
+
+\hypertarget{classPrevStateInfo_aa7fadcf925ef0176d122b9d7146ccebe}{\index{Prev\-State\-Info@{Prev\-State\-Info}!px\-\_\-neg\-\_\-@{px\-\_\-neg\-\_\-}}
+\index{px\-\_\-neg\-\_\-@{px\-\_\-neg\-\_\-}!PrevStateInfo@{Prev\-State\-Info}}
+\subsubsection[{px\-\_\-neg\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ Prev\-State\-Info\-::px\-\_\-neg\-\_\-}}\label{classPrevStateInfo_aa7fadcf925ef0176d122b9d7146ccebe}
+
+
+Activation variables for a previous state clause. 
+
+If px\-\_\-neg\-\_\-\mbox{[}i\mbox{]} is true, then this means that the previous state variable nr i occurs negated in the previous-\/state clause controlled by these variables. If set to false, then it occurs unnegated. 
+
+Definition at line 164 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), Counter\-Gen\-S\-A\-T\-::generalize\-Ce\-Futher(), operator=(), and Prev\-State\-Info().
+
+\hypertarget{classPrevStateInfo_a4e8557c4f0b12df62279daca0999b7bb}{\index{Prev\-State\-Info@{Prev\-State\-Info}!px\-\_\-unused\-\_\-@{px\-\_\-unused\-\_\-}}
+\index{px\-\_\-unused\-\_\-@{px\-\_\-unused\-\_\-}!PrevStateInfo@{Prev\-State\-Info}}
+\subsubsection[{px\-\_\-unused\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ Prev\-State\-Info\-::px\-\_\-unused\-\_\-}}\label{classPrevStateInfo_a4e8557c4f0b12df62279daca0999b7bb}
+
+
+Activation variables for a previous state clause. 
+
+If px\-\_\-unused\-\_\-\mbox{[}i\mbox{]} is true, then this means that the previous state variable nr i does not occur in the previous-\/state clause controlled by these variables. If set to false then it occurs. 
+
+Definition at line 155 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), Counter\-Gen\-S\-A\-T\-::generalize\-Ce\-Futher(), operator=(), and Prev\-State\-Info().
+
+\hypertarget{classPrevStateInfo_a87e1dd01468199a18b39ddc108bf4a70}{\index{Prev\-State\-Info@{Prev\-State\-Info}!use\-\_\-ind\-\_\-@{use\-\_\-ind\-\_\-}}
+\index{use\-\_\-ind\-\_\-@{use\-\_\-ind\-\_\-}!PrevStateInfo@{Prev\-State\-Info}}
+\subsubsection[{use\-\_\-ind\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}bool Prev\-State\-Info\-::use\-\_\-ind\-\_\-}}\label{classPrevStateInfo_a87e1dd01468199a18b39ddc108bf4a70}
+
+
+A flag indicating if optimization R\-G should be used. 
+
+See \hyperlink{classLearnSynthQBFInd}{Learn\-Synth\-Q\-B\-F\-Ind} for an explanation. 
+
+Definition at line 120 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by Clause\-Minimizer\-Q\-B\-F\-::\-Clause\-Minimizer\-Q\-B\-F(), Clause\-Explorer\-S\-A\-T\-::consider\-New\-Info\-From\-Others(), Counter\-Gen\-S\-A\-T\-::consider\-New\-Info\-From\-Others(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), Counter\-Gen\-S\-A\-T\-::generalize\-Ce\-Futher(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexample(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses\-Inc(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses\-No\-Inc(), operator=(), and Prev\-State\-Info().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{ParallelLearner_8h}{Parallel\-Learner.\-h}\item 
+src/\hyperlink{ParallelLearner_8cpp}{Parallel\-Learner.\-cpp}\end{DoxyCompactItemize}

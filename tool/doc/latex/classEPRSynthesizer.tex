@@ -24,7 +24,11 @@ Inheritance diagram for E\-P\-R\-Synthesizer\-:\begin{figure}[H]
 virtual \hyperlink{classEPRSynthesizer_a0299d7f7b8dcc26c13ab0b6268e9f974}{$\sim$\-E\-P\-R\-Synthesizer} ()
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
 virtual bool \hyperlink{classEPRSynthesizer_ab5eb613a7e5e4f8d408938531f745e4e}{run} ()
-\begin{DoxyCompactList}\small\item\em Executes the back-\/end (constructs an E\-P\-R formula an passes it to i\-Prover). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Executes the back-\/end (constructs an E\-P\-R formula an passes it to i\-Prover). \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classEPRSynthesizer_ad976438a4577ffaa60f696e1c1c03860}{run\-With\-Skolem} ()
+\begin{DoxyCompactList}\small\item\em Executes the back-\/end with an E\-P\-R encoding that uses many skolem functions. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classEPRSynthesizer_ad6e1a2eb75383201277345df5ad566a6}{run\-With\-Less\-Skolem} ()
+\begin{DoxyCompactList}\small\item\em Executes the back-\/end with an E\-P\-R encoding that uses less skolem functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -62,13 +66,13 @@ E\-P\-R (Effectively Propositional Logic) is a subset of first-\/order logic. E\
 This class creates the following E\-P\-R formula\-: forall x,i,x'\-: (I(x) =$>$ W(x)) A\-N\-D (W(x) =$>$ P(x)) A\-N\-D (W(x) A\-N\-D T(x,i,C(x,i),x') =$>$ W(x')) Here, x,i, and x' are actually domain variables (and not Boolean variables), but there is a one-\/to-\/one mapping. W is a fresh predicate over the state variables. It represents the winning region. C(x,i) is a set of predicates, one for each control signal. These predicates represent the implementation of the control signals. The challenging part in constructing this E\-P\-R formula is actually an efficient encoding of the transition relation T in E\-P\-R. In the A\-I\-G\-E\-R representation (and also in the \hyperlink{classCNF}{C\-N\-F} representation) the transition relation T uses many temporary variables. The problem is that they are all quantified existentially, which means that they have to be skolemized with predicates to get a valid E\-P\-R formula. We analyze the structure of the A\-I\-G\-E\-R graph in order to find out the minimal dependencies for all these predicates. This is supposed to increase the performance. Then the class uses i\-Prover (\href{http://www.cs.man.ac.uk/~korovink/iprover/}{\tt http\-://www.\-cs.\-man.\-ac.\-uk/$\sim$korovink/iprover/}) to solve the formula. i\-Prover cannot only give a Y\-E\-S/\-No answer for the satisfiability question. It can also construct functions for the predicates. That is, i\-Prover gives us the winning region together with implementations for all control signals. It solves the synthesis problem completely (and does not only compute a winning region).
 
 \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000001}{Todo}]\-: At the moment we only construct the formula, and parse back the answer to the realizability question. Parsing back the implementation for the controllable signals remains to be done. (The i\-Prover page promises to release a new version with more output formats soon.) \end{DoxyRefDesc}
-\begin{DoxyAuthor}{Author}
+\item[\hyperlink{todo__todo000004}{Todo}]\-: At the moment we only construct the formula, and parse back the answer to the realizability question. Parsing back the implementation for the controllable signals remains to be done. (The i\-Prover page promises to release a new version with more output formats soon.) \begin{DoxyAuthor}{Author}
 Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\-1.\-0 
+1.\-2.\-0 
 \end{DoxyVersion}
+\end{DoxyRefDesc}
 
 
 Definition at line 73 of file E\-P\-R\-Synthesizer.\-h.
@@ -154,7 +158,7 @@ The clause is assigned a unique I\-D, and is added to the tptp\-\_\-query\-\_\- 
 \end{DoxyParams}
 
 
-Definition at line 332 of file E\-P\-R\-Synthesizer.\-cpp.
+Definition at line 548 of file E\-P\-R\-Synthesizer.\-cpp.
 
 
 
@@ -162,7 +166,7 @@ References next\-\_\-clause\-\_\-nr\-\_\-, and tptp\-\_\-query\-\_\-.
 
 
 
-Referenced by run().
+Referenced by run\-With\-Less\-Skolem(), and run\-With\-Skolem().
 
 \hypertarget{classEPRSynthesizer_afd429d29479abe7c3f78a232750a0e53}{\index{E\-P\-R\-Synthesizer@{E\-P\-R\-Synthesizer}!neg@{neg}}
 \index{neg@{neg}!EPRSynthesizer@{E\-P\-R\-Synthesizer}}
@@ -185,11 +189,11 @@ The negation of the passed A\-I\-G\-E\-R literal.
 \end{DoxyReturn}
 
 
-Definition at line 344 of file E\-P\-R\-Synthesizer.\-cpp.
+Definition at line 560 of file E\-P\-R\-Synthesizer.\-cpp.
 
 
 
-Referenced by run().
+Referenced by run\-With\-Less\-Skolem(), and run\-With\-Skolem().
 
 \hypertarget{classEPRSynthesizer_a3edccf1e4b274eb7ac1f2bbefa2e4d0b}{\index{E\-P\-R\-Synthesizer@{E\-P\-R\-Synthesizer}!operator=@{operator=}}
 \index{operator=@{operator=}!EPRSynthesizer@{E\-P\-R\-Synthesizer}}
@@ -223,10 +227,12 @@ The result of the assignment, i.\-e, $\ast$this.
 
 Executes the back-\/end (constructs an E\-P\-R formula an passes it to i\-Prover). 
 
-This method is the workhorse of this class. It constructs the following E\-P\-R formula in T\-P\-T\-P format\-: forall x,i,x'\-: (I(x) =$>$ W(x)) A\-N\-D (W(x) =$>$ P(x)) A\-N\-D (W(x) A\-N\-D T(x,i,C(x,i),x') =$>$ W(x')) Here, x,i, and x' are actually domain variables (and not Boolean variables), but there is a one-\/to-\/one mapping. W is a fresh predicate over the state variables. It represents the winning region. C(x,i) is a set of predicates, one for each control signal. These predicates represent the implementation of the control signals. The challenging part in constructing this E\-P\-R formula is actually an efficient encoding of the transition relation T in E\-P\-R. In the A\-I\-G\-E\-R representation (and also in the \hyperlink{classCNF}{C\-N\-F} representation) the transition relation T uses many temporary variables. The problem is that they are all quantified existentially, which means that they have to be skolemized with predicates to get a valid E\-P\-R formula. We analyze the structure of the A\-I\-G\-E\-R graph in order to find out the minimal dependencies for all these predicates. This is supposed to increase the performance. After constructing the E\-P\-R formula this method then calls i\-Prover (\href{http://www.cs.man.ac.uk/~korovink/iprover/}{\tt http\-://www.\-cs.\-man.\-ac.\-uk/$\sim$korovink/iprover/}) to solve it. i\-Prover cannot only give a Y\-E\-S/\-No answer for the satisfiability question. It can also construct functions for the predicates. That is, i\-Prover gives us the winning region together with implementations for all control signals. It solves the synthesis problem completely (and does not only compute a winning region).
+This method just forwards the work to one of the following methods (run\-With...()). Each of these methods uses a different encoding of the problem into E\-P\-R.
 
 \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000002}{Todo}]\-: At the moment we only construct the formula, and parse back the answer to the realizability question. Parsing back the implementation for the controllable signals remains to be done. (The i\-Prover page promises to release a new version with more output formats soon.) \end{DoxyRefDesc}
+\item[\hyperlink{todo__todo000005}{Todo}]\-: At the moment we only construct the formula, and parse back the answer to the realizability question. Parsing back the implementation for the controllable signals remains to be done. (The i\-Prover page promises to release a new version with more output formats soon.)\end{DoxyRefDesc}
+
+
 \begin{DoxyReturn}{Returns}
 True if the specification was realizable, false otherwise. 
 \end{DoxyReturn}
@@ -240,7 +246,69 @@ Definition at line 55 of file E\-P\-R\-Synthesizer.\-cpp.
 
 
 
+References run\-With\-Skolem().
+
+\hypertarget{classEPRSynthesizer_ad6e1a2eb75383201277345df5ad566a6}{\index{E\-P\-R\-Synthesizer@{E\-P\-R\-Synthesizer}!run\-With\-Less\-Skolem@{run\-With\-Less\-Skolem}}
+\index{run\-With\-Less\-Skolem@{run\-With\-Less\-Skolem}!EPRSynthesizer@{E\-P\-R\-Synthesizer}}
+\subsubsection[{run\-With\-Less\-Skolem}]{\setlength{\rightskip}{0pt plus 5cm}bool E\-P\-R\-Synthesizer\-::run\-With\-Less\-Skolem (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classEPRSynthesizer_ad6e1a2eb75383201277345df5ad566a6}
+
+
+Executes the back-\/end with an E\-P\-R encoding that uses less skolem functions. 
+
+This method is almost identical to \hyperlink{classEPRSynthesizer_ad976438a4577ffaa60f696e1c1c03860}{run\-With\-Skolem()}. The main difference is the encoding of the transition relation. In the A\-I\-G\-E\-R representation (and also in the \hyperlink{classCNF}{C\-N\-F} representation) the transition relation T uses many temporary variables. They are implicitly quantified existentially on the innermost level. While \hyperlink{classEPRSynthesizer_ad976438a4577ffaa60f696e1c1c03860}{run\-With\-Skolem()} introduces skolem functions for each temporary variables, this method follows a different approach\-: it uses universally quantified variables for the temporary variables, and assumes that these universally quantified variables follow the rules of an A\-N\-D gate as an assumption (the left-\/hand side of an implication).
+
+Unfortunately, this encoding seems to be slower.
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000007}{Todo}]\-: At the moment we only construct the formula, and parse back the answer to the realizability question. Parsing back the implementation for the controllable signals remains to be done. (The i\-Prover page promises to release a new version with more output formats soon.)\end{DoxyRefDesc}
+
+
+\begin{DoxyReturn}{Returns}
+True if the specification was realizable, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 340 of file E\-P\-R\-Synthesizer.\-cpp.
+
+
+
 References add\-Clause(), Options\-::get\-Aig\-In\-File\-Name(), in\-\_\-file\-\_\-name\-\_\-, Options\-::instance(), L\-\_\-\-E\-R\-R, L\-\_\-\-R\-E\-S, M\-A\-S\-S\-E\-R\-T, neg(), out\-\_\-file\-\_\-name\-\_\-, path\-\_\-to\-\_\-iprover\-\_\-, File\-Utils\-::read\-File(), String\-Utils\-::to\-Lower\-Case(), tptp\-\_\-query\-\_\-, and File\-Utils\-::write\-File().
+
+\hypertarget{classEPRSynthesizer_ad976438a4577ffaa60f696e1c1c03860}{\index{E\-P\-R\-Synthesizer@{E\-P\-R\-Synthesizer}!run\-With\-Skolem@{run\-With\-Skolem}}
+\index{run\-With\-Skolem@{run\-With\-Skolem}!EPRSynthesizer@{E\-P\-R\-Synthesizer}}
+\subsubsection[{run\-With\-Skolem}]{\setlength{\rightskip}{0pt plus 5cm}bool E\-P\-R\-Synthesizer\-::run\-With\-Skolem (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classEPRSynthesizer_ad976438a4577ffaa60f696e1c1c03860}
+
+
+Executes the back-\/end with an E\-P\-R encoding that uses many skolem functions. 
+
+This method is the workhorse of this class. It constructs the following E\-P\-R formula in T\-P\-T\-P format\-: forall x,i,x'\-: (I(x) =$>$ W(x)) A\-N\-D (W(x) =$>$ P(x)) A\-N\-D (W(x) A\-N\-D T(x,i,C(x,i),x') =$>$ W(x')) Here, x,i, and x' are actually domain variables (and not Boolean variables), but there is a one-\/to-\/one mapping. W is a fresh predicate over the state variables. It represents the winning region. C(x,i) is a set of predicates, one for each control signal. These predicates represent the implementation of the control signals. The challenging part in constructing this E\-P\-R formula is actually an efficient encoding of the transition relation T in E\-P\-R. In the A\-I\-G\-E\-R representation (and also in the \hyperlink{classCNF}{C\-N\-F} representation) the transition relation T uses many temporary variables. The problem is that they are all quantified existentially, which means that they have to be skolemized with predicates to get a valid E\-P\-R formula. We analyze the structure of the A\-I\-G\-E\-R graph in order to find out the minimal dependencies for all these predicates. This is supposed to increase the performance. After constructing the E\-P\-R formula this method then calls i\-Prover (\href{http://www.cs.man.ac.uk/~korovink/iprover/}{\tt http\-://www.\-cs.\-man.\-ac.\-uk/$\sim$korovink/iprover/}) to solve it. i\-Prover cannot only give a Y\-E\-S/\-No answer for the satisfiability question. It can also construct functions for the predicates. That is, i\-Prover gives us the winning region together with implementations for all control signals. It solves the synthesis problem completely (and does not only compute a winning region).
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000006}{Todo}]\-: At the moment we only construct the formula, and parse back the answer to the realizability question. Parsing back the implementation for the controllable signals remains to be done. (The i\-Prover page promises to release a new version with more output formats soon.)\end{DoxyRefDesc}
+
+
+\begin{DoxyReturn}{Returns}
+True if the specification was realizable, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 62 of file E\-P\-R\-Synthesizer.\-cpp.
+
+
+
+References add\-Clause(), Options\-::get\-Aig\-In\-File\-Name(), in\-\_\-file\-\_\-name\-\_\-, Options\-::instance(), L\-\_\-\-E\-R\-R, L\-\_\-\-R\-E\-S, M\-A\-S\-S\-E\-R\-T, neg(), out\-\_\-file\-\_\-name\-\_\-, path\-\_\-to\-\_\-iprover\-\_\-, File\-Utils\-::read\-File(), String\-Utils\-::to\-Lower\-Case(), tptp\-\_\-query\-\_\-, and File\-Utils\-::write\-File().
+
+
+
+Referenced by run().
 
 
 
@@ -254,11 +322,11 @@ The name of the input file (containing the E\-P\-R formula) that is solved by i\
 
 
 
-Definition at line 160 of file E\-P\-R\-Synthesizer.\-h.
+Definition at line 200 of file E\-P\-R\-Synthesizer.\-h.
 
 
 
-Referenced by E\-P\-R\-Synthesizer(), and run().
+Referenced by E\-P\-R\-Synthesizer(), run\-With\-Less\-Skolem(), and run\-With\-Skolem().
 
 \hypertarget{classEPRSynthesizer_a14d30bb922f975a1f195965d876784cb}{\index{E\-P\-R\-Synthesizer@{E\-P\-R\-Synthesizer}!next\-\_\-clause\-\_\-nr\-\_\-@{next\-\_\-clause\-\_\-nr\-\_\-}}
 \index{next\-\_\-clause\-\_\-nr\-\_\-@{next\-\_\-clause\-\_\-nr\-\_\-}!EPRSynthesizer@{E\-P\-R\-Synthesizer}}
@@ -269,7 +337,7 @@ A monotonic counter to assign unique I\-Ds to clauses.
 
 
 
-Definition at line 150 of file E\-P\-R\-Synthesizer.\-h.
+Definition at line 190 of file E\-P\-R\-Synthesizer.\-h.
 
 
 
@@ -284,11 +352,11 @@ The name of the file containing the response from i\-Prover.
 
 
 
-Definition at line 165 of file E\-P\-R\-Synthesizer.\-h.
+Definition at line 205 of file E\-P\-R\-Synthesizer.\-h.
 
 
 
-Referenced by E\-P\-R\-Synthesizer(), and run().
+Referenced by E\-P\-R\-Synthesizer(), run\-With\-Less\-Skolem(), and run\-With\-Skolem().
 
 \hypertarget{classEPRSynthesizer_ac7fc7beb51f9c27e42941e8e20882540}{\index{E\-P\-R\-Synthesizer@{E\-P\-R\-Synthesizer}!path\-\_\-to\-\_\-iprover\-\_\-@{path\-\_\-to\-\_\-iprover\-\_\-}}
 \index{path\-\_\-to\-\_\-iprover\-\_\-@{path\-\_\-to\-\_\-iprover\-\_\-}!EPRSynthesizer@{E\-P\-R\-Synthesizer}}
@@ -299,11 +367,11 @@ The path to the i\-Prover executable.
 
 
 
-Definition at line 155 of file E\-P\-R\-Synthesizer.\-h.
+Definition at line 195 of file E\-P\-R\-Synthesizer.\-h.
 
 
 
-Referenced by E\-P\-R\-Synthesizer(), and run().
+Referenced by E\-P\-R\-Synthesizer(), run\-With\-Less\-Skolem(), and run\-With\-Skolem().
 
 \hypertarget{classEPRSynthesizer_a5b9074e1ca3d1a12150c6ae639f475fa}{\index{E\-P\-R\-Synthesizer@{E\-P\-R\-Synthesizer}!tptp\-\_\-query\-\_\-@{tptp\-\_\-query\-\_\-}}
 \index{tptp\-\_\-query\-\_\-@{tptp\-\_\-query\-\_\-}!EPRSynthesizer@{E\-P\-R\-Synthesizer}}
@@ -314,11 +382,11 @@ The E\-P\-R formula in T\-P\-T\-P format.
 
 
 
-Definition at line 145 of file E\-P\-R\-Synthesizer.\-h.
+Definition at line 185 of file E\-P\-R\-Synthesizer.\-h.
 
 
 
-Referenced by add\-Clause(), and run().
+Referenced by add\-Clause(), run\-With\-Less\-Skolem(), and run\-With\-Skolem().
 
 
 

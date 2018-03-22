@@ -13,12 +13,21 @@ Uses a Q\-B\-F solver to minimize existing winning region clauses further.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classClauseMinimizerQBF_a546fc0244b0e271cc79f86e8f45e7631}{Clause\-Minimizer\-Q\-B\-F} (\hyperlink{classParallelLearner}{Parallel\-Learner} \&coordinator)
+\hyperlink{classClauseMinimizerQBF_ac64ce9b8fa79e723b6c537ad81c06a61}{Clause\-Minimizer\-Q\-B\-F} (size\-\_\-t instance\-\_\-nr, \hyperlink{classParallelLearner}{Parallel\-Learner} \&coordinator, \hyperlink{classPrevStateInfo}{Prev\-State\-Info} \&psi)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 virtual \hyperlink{classClauseMinimizerQBF_af3d84d76f410d1c0184e29990262d4d3}{$\sim$\-Clause\-Minimizer\-Q\-B\-F} ()
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
 void \hyperlink{classClauseMinimizerQBF_a5f6aca824bfe92db2355483d40db140f}{minimize\-Clauses} ()
-\begin{DoxyCompactList}\small\item\em The work-\/horse of this class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The work-\/horse of this class. \end{DoxyCompactList}\item 
+void \hyperlink{classClauseMinimizerQBF_a99f5d840ff111a19ef2eca20b9017106}{notify\-New\-Win\-Reg\-Clause} (const vector$<$ int $>$ \&clause, int src)
+\begin{DoxyCompactList}\small\item\em Notifies this worker about a new winning region clause. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classClauseMinimizerQBF_ad4fc52f7889e0ee84a11da70f300ed8f}{minimize\-Clauses\-Inc} ()
+\begin{DoxyCompactList}\small\item\em Implements \hyperlink{classClauseMinimizerQBF_a5f6aca824bfe92db2355483d40db140f}{minimize\-Clauses()} with incremental Q\-B\-F solving. \end{DoxyCompactList}\item 
+void \hyperlink{classClauseMinimizerQBF_aa93debdabc9ed6a9808e3e19ea5c16b8}{minimize\-Clauses\-No\-Inc} ()
+\begin{DoxyCompactList}\small\item\em Implements \hyperlink{classClauseMinimizerQBF_a5f6aca824bfe92db2355483d40db140f}{minimize\-Clauses()} with non-\/incremental Q\-B\-F solving. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -29,8 +38,16 @@ vector$<$ pair$<$ vector$<$ int $>$\\*
 \begin{DoxyCompactList}\small\item\em The quantifier prefix of the Q\-B\-F for generalizing clauses. \end{DoxyCompactList}\item 
 \hyperlink{classQBFSolver}{Q\-B\-F\-Solver} $\ast$ \hyperlink{classClauseMinimizerQBF_abca59a55100d8667effffdd26da5c7f7}{qbf\-\_\-solver\-\_\-}
 \begin{DoxyCompactList}\small\item\em The Q\-B\-F-\/solver used for the generalization queries. \end{DoxyCompactList}\item 
+\hyperlink{classDepQBFApi}{Dep\-Q\-B\-F\-Api} $\ast$ \hyperlink{classClauseMinimizerQBF_aacc48a267e9a25a81b2a851f297a7ec1}{inc\-\_\-qbf\-\_\-solver\-\_\-}
+\begin{DoxyCompactList}\small\item\em An interface to Dep\-Q\-B\-F for incremental Q\-B\-F solving. \end{DoxyCompactList}\item 
 \hyperlink{classSatSolver}{Sat\-Solver} $\ast$ \hyperlink{classClauseMinimizerQBF_af0b9ee5117475b01e377f730fba6d4fb}{sat\-\_\-solver\-\_\-}
-\begin{DoxyCompactList}\small\item\em A \hyperlink{classSatSolver}{Sat\-Solver} to check if minimized clauses are already implied by others. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A \hyperlink{classSatSolver}{Sat\-Solver} to check if minimized clauses are already implied by others. \end{DoxyCompactList}\item 
+\hyperlink{classCNF}{C\-N\-F} \hyperlink{classClauseMinimizerQBF_abe2ed21eb5d92ef978ad6aa83ed8af7e}{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-}
+\begin{DoxyCompactList}\small\item\em All new winning region clauses that have not been considered yet. \end{DoxyCompactList}\item 
+mutex \hyperlink{classClauseMinimizerQBF_aa59e412c42a4f160c6ed1d85d7c4612d}{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-lock\-\_\-}
+\begin{DoxyCompactList}\small\item\em A lock that protects the \hyperlink{classClauseMinimizerQBF_abe2ed21eb5d92ef978ad6aa83ed8af7e}{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-} from race-\/conditions. \end{DoxyCompactList}\item 
+const \hyperlink{classPrevStateInfo}{Prev\-State\-Info} \& \hyperlink{classClauseMinimizerQBF_a3423321ecad44cf8b1c9b5f5afb17d27}{psi\-\_\-}
+\begin{DoxyCompactList}\small\item\em Information about the previous states if optimization R\-G is enabled. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -49,38 +66,44 @@ This class is very simple\-: it just takes clauses from the winning region and t
 Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\-1.\-0 
+1.\-2.\-0 
 \end{DoxyVersion}
 
 
-Definition at line 1180 of file Parallel\-Learner.\-h.
+Definition at line 1146 of file Parallel\-Learner.\-h.
 
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classClauseMinimizerQBF_a546fc0244b0e271cc79f86e8f45e7631}{\index{Clause\-Minimizer\-Q\-B\-F@{Clause\-Minimizer\-Q\-B\-F}!Clause\-Minimizer\-Q\-B\-F@{Clause\-Minimizer\-Q\-B\-F}}
+\hypertarget{classClauseMinimizerQBF_ac64ce9b8fa79e723b6c537ad81c06a61}{\index{Clause\-Minimizer\-Q\-B\-F@{Clause\-Minimizer\-Q\-B\-F}!Clause\-Minimizer\-Q\-B\-F@{Clause\-Minimizer\-Q\-B\-F}}
 \index{Clause\-Minimizer\-Q\-B\-F@{Clause\-Minimizer\-Q\-B\-F}!ClauseMinimizerQBF@{Clause\-Minimizer\-Q\-B\-F}}
 \subsubsection[{Clause\-Minimizer\-Q\-B\-F}]{\setlength{\rightskip}{0pt plus 5cm}Clause\-Minimizer\-Q\-B\-F\-::\-Clause\-Minimizer\-Q\-B\-F (
 \begin{DoxyParamCaption}
-\item[{{\bf Parallel\-Learner} \&}]{coordinator}
+\item[{size\-\_\-t}]{instance\-\_\-nr, }
+\item[{{\bf Parallel\-Learner} \&}]{coordinator, }
+\item[{{\bf Prev\-State\-Info} \&}]{psi}
 \end{DoxyParamCaption}
-)}}\label{classClauseMinimizerQBF_a546fc0244b0e271cc79f86e8f45e7631}
+)}}\label{classClauseMinimizerQBF_ac64ce9b8fa79e723b6c537ad81c06a61}
 
 
 Constructor. 
 
 
 \begin{DoxyParams}{Parameters}
+{\em instance\-\_\-nr} & A unique instance number. It is used to bring in some asymmetry between the different Clause\-Minimizer\-Q\-B\-F-\/instances\-: depending on the instance number, the instance selects a different Solver to use. \\
+\hline
 {\em coordinator} & A reference to the coordinator. All communication to other worker-\/threads is done via the coordinator. \\
+\hline
+{\em psi} & A container for previous-\/state information (needed when optimization R\-G is enabled). \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 1265 of file Parallel\-Learner.\-cpp.
+Definition at line 1502 of file Parallel\-Learner.\-cpp.
 
 
 
-References Q\-B\-F\-Solver\-::\-A, Var\-Info\-::\-C\-T\-R\-L, Q\-B\-F\-Solver\-::\-E, gen\-\_\-quant\-\_\-, Var\-Manager\-::get\-Vars\-Of\-Type(), Var\-Info\-::\-I\-N\-P\-U\-T, Var\-Manager\-::instance(), Var\-Info\-::\-N\-E\-X\-T\-\_\-\-S\-T\-A\-T\-E, Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, and Var\-Info\-::\-T\-M\-P.
+References Q\-B\-F\-Solver\-::\-A, Var\-Info\-::\-C\-T\-R\-L, Q\-B\-F\-Solver\-::\-E, gen\-\_\-quant\-\_\-, Var\-Manager\-::get\-Vars\-Of\-Type(), inc\-\_\-qbf\-\_\-solver\-\_\-, Var\-Info\-::\-I\-N\-P\-U\-T, Var\-Manager\-::instance(), Var\-Info\-::\-N\-E\-X\-T\-\_\-\-S\-T\-A\-T\-E, Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, Var\-Info\-::\-P\-R\-E\-V, psi\-\_\-, sat\-\_\-solver\-\_\-, Sat\-Solver\-::start\-Incremental\-Session(), Var\-Info\-::\-T\-M\-P, and Prev\-State\-Info\-::use\-\_\-ind\-\_\-.
 
 \hypertarget{classClauseMinimizerQBF_af3d84d76f410d1c0184e29990262d4d3}{\index{Clause\-Minimizer\-Q\-B\-F@{Clause\-Minimizer\-Q\-B\-F}!$\sim$\-Clause\-Minimizer\-Q\-B\-F@{$\sim$\-Clause\-Minimizer\-Q\-B\-F}}
 \index{$\sim$\-Clause\-Minimizer\-Q\-B\-F@{$\sim$\-Clause\-Minimizer\-Q\-B\-F}!ClauseMinimizerQBF@{Clause\-Minimizer\-Q\-B\-F}}
@@ -95,11 +118,11 @@ Destructor.
 
 
 
-Definition at line 1285 of file Parallel\-Learner.\-cpp.
+Definition at line 1534 of file Parallel\-Learner.\-cpp.
 
 
 
-References qbf\-\_\-solver\-\_\-, and sat\-\_\-solver\-\_\-.
+References inc\-\_\-qbf\-\_\-solver\-\_\-, qbf\-\_\-solver\-\_\-, and sat\-\_\-solver\-\_\-.
 
 \hypertarget{classClauseMinimizerQBF_ac6392b5d3f312013b93d60d3a6f47283}{\index{Clause\-Minimizer\-Q\-B\-F@{Clause\-Minimizer\-Q\-B\-F}!Clause\-Minimizer\-Q\-B\-F@{Clause\-Minimizer\-Q\-B\-F}}
 \index{Clause\-Minimizer\-Q\-B\-F@{Clause\-Minimizer\-Q\-B\-F}!ClauseMinimizerQBF@{Clause\-Minimizer\-Q\-B\-F}}
@@ -133,17 +156,90 @@ The copy constructor is disabled (set private) and not implemented.
 
 The work-\/horse of this class. 
 
-It takes clauses from the winning region and tries to minimize them further using a Q\-B\-F-\/solver. The minimization is done in the very same way in \hyperlink{classLearnSynthQBF}{Learn\-Synth\-Q\-B\-F}. In every iteration, this method also considers all new incoming clauses found by others. If it finds out that the specification is realizable or unrealizable, it sets the flag \hyperlink{classParallelLearner_a757f8817809cce5c0408cdc41d6db1b8}{Parallel\-Learner\-::result\-\_\-} accordingly. It also polls this flag regularly. If it has been set by some other thread, it quits. 
+It takes clauses from the winning region and tries to minimize them further using a Q\-B\-F-\/solver. The minimization is done in the very same way in \hyperlink{classLearnSynthQBF}{Learn\-Synth\-Q\-B\-F}. In every iteration, this method also considers all new incoming clauses found by others. If it finds out that the specification is realizable or unrealizable, it sets the flag \hyperlink{classParallelLearner_aa44682a4999526a304b5118047df7a44}{Parallel\-Learner\-::result\-\_\-} accordingly. It also polls this flag regularly. If it has been set by some other thread, it quits. 
 
-Definition at line 1295 of file Parallel\-Learner.\-cpp.
+Definition at line 1547 of file Parallel\-Learner.\-cpp.
 
 
 
-References C\-N\-F\-::add\-C\-N\-F(), C\-N\-F\-::add\-Neg\-Clause\-As\-Cube(), Utils\-::contains\-Init(), coordinator\-\_\-, gen\-\_\-quant\-\_\-, C\-N\-F\-::get\-Nr\-Of\-Clauses(), A\-I\-G2\-C\-N\-F\-::instance(), Q\-B\-F\-Solver\-::is\-Sat(), Sat\-Solver\-::is\-Sat(), M\-I\-N, Utils\-::negate\-Literals(), Parallel\-Learner\-::notify\-New\-Win\-Reg\-Clause(), qbf\-\_\-solver\-\_\-, Utils\-::randomize(), Utils\-::remove(), C\-N\-F\-::remove\-Smallest(), Parallel\-Learner\-::result\-\_\-, sat\-\_\-solver\-\_\-, C\-N\-F\-::swap\-Present\-To\-Next(), U\-N\-K\-N\-O\-W\-N, Parallel\-Learner\-::unminimized\-\_\-clauses\-\_\-, Parallel\-Learner\-::unminimized\-\_\-clauses\-\_\-lock\-\_\-, U\-N\-R\-E\-A\-L\-I\-Z\-A\-B\-L\-E, Parallel\-Learner\-::winning\-\_\-region\-\_\-, and Parallel\-Learner\-::winning\-\_\-region\-\_\-lock\-\_\-.
+References inc\-\_\-qbf\-\_\-solver\-\_\-, minimize\-Clauses\-Inc(), and minimize\-Clauses\-No\-Inc().
 
 
 
 Referenced by Parallel\-Learner\-::run().
+
+\hypertarget{classClauseMinimizerQBF_ad4fc52f7889e0ee84a11da70f300ed8f}{\index{Clause\-Minimizer\-Q\-B\-F@{Clause\-Minimizer\-Q\-B\-F}!minimize\-Clauses\-Inc@{minimize\-Clauses\-Inc}}
+\index{minimize\-Clauses\-Inc@{minimize\-Clauses\-Inc}!ClauseMinimizerQBF@{Clause\-Minimizer\-Q\-B\-F}}
+\subsubsection[{minimize\-Clauses\-Inc}]{\setlength{\rightskip}{0pt plus 5cm}void Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses\-Inc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classClauseMinimizerQBF_ad4fc52f7889e0ee84a11da70f300ed8f}
+
+
+Implements \hyperlink{classClauseMinimizerQBF_a5f6aca824bfe92db2355483d40db140f}{minimize\-Clauses()} with incremental Q\-B\-F solving. 
+
+
+
+Definition at line 1564 of file Parallel\-Learner.\-cpp.
+
+
+
+References C\-N\-F\-::clear(), Utils\-::contains\-Init(), coordinator\-\_\-, Dep\-Q\-B\-F\-Api\-::do\-Min\-Cores(), gen\-\_\-quant\-\_\-, C\-N\-F\-::get\-Nr\-Of\-Clauses(), inc\-\_\-qbf\-\_\-solver\-\_\-, Sat\-Solver\-::inc\-Add\-C\-N\-F(), Dep\-Q\-B\-F\-Api\-::inc\-Add\-C\-N\-F(), Dep\-Q\-B\-F\-Api\-::inc\-Add\-Unit\-Clause(), Dep\-Q\-B\-F\-Api\-::inc\-Is\-Sat(), Sat\-Solver\-::inc\-Is\-Sat(), Dep\-Q\-B\-F\-Api\-::inc\-Is\-Sat\-Core(), A\-I\-G2\-C\-N\-F\-::instance(), M\-A\-S\-S\-E\-R\-T, M\-I\-N, Utils\-::negate\-Literals(), new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-, new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-lock\-\_\-, Parallel\-Learner\-::notify\-New\-Win\-Reg\-Clause(), Prev\-State\-Info\-::present\-To\-Previous(), Prev\-State\-Info\-::prev\-\_\-safe\-\_\-, Prev\-State\-Info\-::prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-, psi\-\_\-, Utils\-::randomize(), Utils\-::remove(), C\-N\-F\-::remove\-Some\-Clause(), Parallel\-Learner\-::result\-\_\-, sat\-\_\-solver\-\_\-, Dep\-Q\-B\-F\-Api\-::start\-Incremental\-Session(), C\-N\-F\-::swap\-Present\-To\-Next(), U\-N\-K\-N\-O\-W\-N, Parallel\-Learner\-::unminimized\-\_\-clauses\-\_\-, Parallel\-Learner\-::unminimized\-\_\-clauses\-\_\-lock\-\_\-, U\-N\-R\-E\-A\-L\-I\-Z\-A\-B\-L\-E, and Prev\-State\-Info\-::use\-\_\-ind\-\_\-.
+
+
+
+Referenced by minimize\-Clauses().
+
+\hypertarget{classClauseMinimizerQBF_aa93debdabc9ed6a9808e3e19ea5c16b8}{\index{Clause\-Minimizer\-Q\-B\-F@{Clause\-Minimizer\-Q\-B\-F}!minimize\-Clauses\-No\-Inc@{minimize\-Clauses\-No\-Inc}}
+\index{minimize\-Clauses\-No\-Inc@{minimize\-Clauses\-No\-Inc}!ClauseMinimizerQBF@{Clause\-Minimizer\-Q\-B\-F}}
+\subsubsection[{minimize\-Clauses\-No\-Inc}]{\setlength{\rightskip}{0pt plus 5cm}void Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses\-No\-Inc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classClauseMinimizerQBF_aa93debdabc9ed6a9808e3e19ea5c16b8}
+
+
+Implements \hyperlink{classClauseMinimizerQBF_a5f6aca824bfe92db2355483d40db140f}{minimize\-Clauses()} with non-\/incremental Q\-B\-F solving. 
+
+
+
+Definition at line 1674 of file Parallel\-Learner.\-cpp.
+
+
+
+References C\-N\-F\-::add\-Clause(), C\-N\-F\-::add\-C\-N\-F(), C\-N\-F\-::add\-Neg\-Clause\-As\-Cube(), Utils\-::contains\-Init(), coordinator\-\_\-, Prev\-State\-Info\-::current\-\_\-state\-\_\-is\-\_\-initial\-\_\-, gen\-\_\-quant\-\_\-, C\-N\-F\-::get\-Nr\-Of\-Clauses(), A\-I\-G2\-C\-N\-F\-::instance(), Q\-B\-F\-Solver\-::is\-Sat(), Sat\-Solver\-::is\-Sat(), M\-I\-N, Utils\-::negate\-Literals(), Parallel\-Learner\-::notify\-New\-Win\-Reg\-Clause(), Prev\-State\-Info\-::present\-To\-Previous(), Prev\-State\-Info\-::prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-, psi\-\_\-, qbf\-\_\-solver\-\_\-, Utils\-::randomize(), Utils\-::remove(), C\-N\-F\-::remove\-Smallest(), Parallel\-Learner\-::result\-\_\-, sat\-\_\-solver\-\_\-, Utils\-::swap\-Present\-To\-Next(), C\-N\-F\-::swap\-Present\-To\-Next(), U\-N\-K\-N\-O\-W\-N, Parallel\-Learner\-::unminimized\-\_\-clauses\-\_\-, Parallel\-Learner\-::unminimized\-\_\-clauses\-\_\-lock\-\_\-, U\-N\-R\-E\-A\-L\-I\-Z\-A\-B\-L\-E, Prev\-State\-Info\-::use\-\_\-ind\-\_\-, Parallel\-Learner\-::winning\-\_\-region\-\_\-, and Parallel\-Learner\-::winning\-\_\-region\-\_\-lock\-\_\-.
+
+
+
+Referenced by minimize\-Clauses().
+
+\hypertarget{classClauseMinimizerQBF_a99f5d840ff111a19ef2eca20b9017106}{\index{Clause\-Minimizer\-Q\-B\-F@{Clause\-Minimizer\-Q\-B\-F}!notify\-New\-Win\-Reg\-Clause@{notify\-New\-Win\-Reg\-Clause}}
+\index{notify\-New\-Win\-Reg\-Clause@{notify\-New\-Win\-Reg\-Clause}!ClauseMinimizerQBF@{Clause\-Minimizer\-Q\-B\-F}}
+\subsubsection[{notify\-New\-Win\-Reg\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}void Clause\-Minimizer\-Q\-B\-F\-::notify\-New\-Win\-Reg\-Clause (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{clause, }
+\item[{int}]{src}
+\end{DoxyParamCaption}
+)}}\label{classClauseMinimizerQBF_a99f5d840ff111a19ef2eca20b9017106}
+
+
+Notifies this worker about a new winning region clause. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clause} & The new clause that has been discovered. \\
+\hline
+{\em src} & An integer number defining which kind of worker-\/thread discovered the clause. At the moment, this information is ignored. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1556 of file Parallel\-Learner.\-cpp.
+
+
+
+References C\-N\-F\-::add\-Clause(), new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-, and new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-lock\-\_\-.
 
 \hypertarget{classClauseMinimizerQBF_a42489977ed8a763f6ea8912c6d45218f}{\index{Clause\-Minimizer\-Q\-B\-F@{Clause\-Minimizer\-Q\-B\-F}!operator=@{operator=}}
 \index{operator=@{operator=}!ClauseMinimizerQBF@{Clause\-Minimizer\-Q\-B\-F}}
@@ -178,11 +274,11 @@ A reference to the coordinator.
 
 All communication to other worker-\/threads is done via the coordinator. 
 
-Definition at line 1216 of file Parallel\-Learner.\-h.
+Definition at line 1208 of file Parallel\-Learner.\-h.
 
 
 
-Referenced by minimize\-Clauses().
+Referenced by minimize\-Clauses\-Inc(), and minimize\-Clauses\-No\-Inc().
 
 \hypertarget{classClauseMinimizerQBF_a4bd08f4de32c9a738e48cae22b93fa22}{\index{Clause\-Minimizer\-Q\-B\-F@{Clause\-Minimizer\-Q\-B\-F}!gen\-\_\-quant\-\_\-@{gen\-\_\-quant\-\_\-}}
 \index{gen\-\_\-quant\-\_\-@{gen\-\_\-quant\-\_\-}!ClauseMinimizerQBF@{Clause\-Minimizer\-Q\-B\-F}}
@@ -193,11 +289,71 @@ The quantifier prefix of the Q\-B\-F for generalizing clauses.
 
 This quantifier prefix is always exists x\-: forall i\-: exists c,x',tmp\-: 
 
-Definition at line 1224 of file Parallel\-Learner.\-h.
+Definition at line 1216 of file Parallel\-Learner.\-h.
 
 
 
-Referenced by Clause\-Minimizer\-Q\-B\-F(), and minimize\-Clauses().
+Referenced by Clause\-Minimizer\-Q\-B\-F(), minimize\-Clauses\-Inc(), and minimize\-Clauses\-No\-Inc().
+
+\hypertarget{classClauseMinimizerQBF_aacc48a267e9a25a81b2a851f297a7ec1}{\index{Clause\-Minimizer\-Q\-B\-F@{Clause\-Minimizer\-Q\-B\-F}!inc\-\_\-qbf\-\_\-solver\-\_\-@{inc\-\_\-qbf\-\_\-solver\-\_\-}}
+\index{inc\-\_\-qbf\-\_\-solver\-\_\-@{inc\-\_\-qbf\-\_\-solver\-\_\-}!ClauseMinimizerQBF@{Clause\-Minimizer\-Q\-B\-F}}
+\subsubsection[{inc\-\_\-qbf\-\_\-solver\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dep\-Q\-B\-F\-Api}$\ast$ Clause\-Minimizer\-Q\-B\-F\-::inc\-\_\-qbf\-\_\-solver\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classClauseMinimizerQBF_aacc48a267e9a25a81b2a851f297a7ec1}
+
+
+An interface to Dep\-Q\-B\-F for incremental Q\-B\-F solving. 
+
+
+
+Definition at line 1228 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by Clause\-Minimizer\-Q\-B\-F(), minimize\-Clauses(), minimize\-Clauses\-Inc(), and $\sim$\-Clause\-Minimizer\-Q\-B\-F().
+
+\hypertarget{classClauseMinimizerQBF_abe2ed21eb5d92ef978ad6aa83ed8af7e}{\index{Clause\-Minimizer\-Q\-B\-F@{Clause\-Minimizer\-Q\-B\-F}!new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-@{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-}}
+\index{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-@{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-}!ClauseMinimizerQBF@{Clause\-Minimizer\-Q\-B\-F}}
+\subsubsection[{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} Clause\-Minimizer\-Q\-B\-F\-::new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classClauseMinimizerQBF_abe2ed21eb5d92ef978ad6aa83ed8af7e}
+
+
+All new winning region clauses that have not been considered yet. 
+
+
+
+Definition at line 1238 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by minimize\-Clauses\-Inc(), and notify\-New\-Win\-Reg\-Clause().
+
+\hypertarget{classClauseMinimizerQBF_aa59e412c42a4f160c6ed1d85d7c4612d}{\index{Clause\-Minimizer\-Q\-B\-F@{Clause\-Minimizer\-Q\-B\-F}!new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-lock\-\_\-@{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-lock\-\_\-}}
+\index{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-lock\-\_\-@{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-lock\-\_\-}!ClauseMinimizerQBF@{Clause\-Minimizer\-Q\-B\-F}}
+\subsubsection[{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-lock\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}mutex Clause\-Minimizer\-Q\-B\-F\-::new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-lock\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classClauseMinimizerQBF_aa59e412c42a4f160c6ed1d85d7c4612d}
+
+
+A lock that protects the \hyperlink{classClauseMinimizerQBF_abe2ed21eb5d92ef978ad6aa83ed8af7e}{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-} from race-\/conditions. 
+
+Many worker-\/threads modify the \hyperlink{classClauseMinimizerQBF_abe2ed21eb5d92ef978ad6aa83ed8af7e}{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-} (add new ones). This lock ensures that only one thread is modifying or reading the \hyperlink{classClauseMinimizerQBF_abe2ed21eb5d92ef978ad6aa83ed8af7e}{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-} at one time. 
+
+Definition at line 1246 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by minimize\-Clauses\-Inc(), and notify\-New\-Win\-Reg\-Clause().
+
+\hypertarget{classClauseMinimizerQBF_a3423321ecad44cf8b1c9b5f5afb17d27}{\index{Clause\-Minimizer\-Q\-B\-F@{Clause\-Minimizer\-Q\-B\-F}!psi\-\_\-@{psi\-\_\-}}
+\index{psi\-\_\-@{psi\-\_\-}!ClauseMinimizerQBF@{Clause\-Minimizer\-Q\-B\-F}}
+\subsubsection[{psi\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Prev\-State\-Info}\& Clause\-Minimizer\-Q\-B\-F\-::psi\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classClauseMinimizerQBF_a3423321ecad44cf8b1c9b5f5afb17d27}
+
+
+Information about the previous states if optimization R\-G is enabled. 
+
+
+
+Definition at line 1251 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by Clause\-Minimizer\-Q\-B\-F(), minimize\-Clauses\-Inc(), and minimize\-Clauses\-No\-Inc().
 
 \hypertarget{classClauseMinimizerQBF_abca59a55100d8667effffdd26da5c7f7}{\index{Clause\-Minimizer\-Q\-B\-F@{Clause\-Minimizer\-Q\-B\-F}!qbf\-\_\-solver\-\_\-@{qbf\-\_\-solver\-\_\-}}
 \index{qbf\-\_\-solver\-\_\-@{qbf\-\_\-solver\-\_\-}!ClauseMinimizerQBF@{Clause\-Minimizer\-Q\-B\-F}}
@@ -208,11 +364,11 @@ The Q\-B\-F-\/solver used for the generalization queries.
 
 The type of solver is selected with command-\/line arguments. 
 
-Definition at line 1231 of file Parallel\-Learner.\-h.
+Definition at line 1223 of file Parallel\-Learner.\-h.
 
 
 
-Referenced by minimize\-Clauses(), and $\sim$\-Clause\-Minimizer\-Q\-B\-F().
+Referenced by minimize\-Clauses\-No\-Inc(), and $\sim$\-Clause\-Minimizer\-Q\-B\-F().
 
 \hypertarget{classClauseMinimizerQBF_af0b9ee5117475b01e377f730fba6d4fb}{\index{Clause\-Minimizer\-Q\-B\-F@{Clause\-Minimizer\-Q\-B\-F}!sat\-\_\-solver\-\_\-@{sat\-\_\-solver\-\_\-}}
 \index{sat\-\_\-solver\-\_\-@{sat\-\_\-solver\-\_\-}!ClauseMinimizerQBF@{Clause\-Minimizer\-Q\-B\-F}}
@@ -223,11 +379,11 @@ A \hyperlink{classSatSolver}{Sat\-Solver} to check if minimized clauses are alre
 
 
 
-Definition at line 1236 of file Parallel\-Learner.\-h.
+Definition at line 1233 of file Parallel\-Learner.\-h.
 
 
 
-Referenced by minimize\-Clauses(), and $\sim$\-Clause\-Minimizer\-Q\-B\-F().
+Referenced by Clause\-Minimizer\-Q\-B\-F(), minimize\-Clauses\-Inc(), minimize\-Clauses\-No\-Inc(), and $\sim$\-Clause\-Minimizer\-Q\-B\-F().
 
 
 

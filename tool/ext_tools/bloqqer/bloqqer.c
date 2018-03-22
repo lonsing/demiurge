@@ -4465,10 +4465,10 @@ int main (int argc, char ** argv) {
     res = solve(!propositional());
     if (partial_assignment) {
       print_part_assignment(assigned_scope);
-      res2 = solve_with_assignments(qdpll_check,res);
-      fprintf(stderr, "res %d res2 %d\n",res, res2);
-      assert (res == res2);
-      if (res != res2) msg("invalid result with partial assignment");
+      //res2 = solve_with_assignments(qdpll_check,res);
+      fprintf(stderr, "res %d\n",res);
+      //assert (res == res2);
+      //if (res != res2) msg("invalid result with partial assignment");
     }  
   } 
 #endif

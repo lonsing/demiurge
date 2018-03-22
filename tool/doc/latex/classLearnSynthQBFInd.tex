@@ -108,24 +108,24 @@ This class is almost an exact copy of \hyperlink{classLearnSynthQBF}{Learn\-Synt
  repeatedly, where s is the counterexample and F is the current over-\/approximation of the winning region.
 
 We know that F(x) is never left by the final implementation. Hence, F is an over-\/approximation of the reachable states. Now if a state s is not initial and !s \& F \& T =$>$ !s', then we know by induction that the state s is unreachable. We can disregard unreachable states both in the computation of counterexamples as well as during the generalization. This is done by gluing the constraints !s \& F \& T =$>$ !s' and !\-I(s) to the generalization and check queries as following. The check query becomes\-: \par
- ~ exists x$\ast$,i$\ast$,c$\ast$,x,i\-: forall c\-: exists x',tmp\-: (I(x) $|$ (x$\ast$ != x) \& F(x$\ast$) \& T(x$\ast$, i$\ast$, c$\ast$, x)) \& F(x) \& T(x,i,c,x') \& !\-F(x') \par
+ ~ exists x$\ast$,i$\ast$,c$\ast$,x,i\-: forall c\-: exists x',tmp\-: (I(x) $\vert$ (x$\ast$ != x) \& F(x$\ast$) \& T(x$\ast$, i$\ast$, c$\ast$, x)) \& F(x) \& T(x,i,c,x') \& !\-F(x') \par
  where x$\ast$, i$\ast$ and c$\ast$ are the previous-\/state copy of x,i,c. The query now says\-: find a counterexample-\/state x that is either initial or has a predecessor x$\ast$ in F such that x$\ast$ is different from x. (Otherwise the counterexample-\/state is unreachable.) The generalization query becomes\-: \par
- ~ exists x$\ast$,i$\ast$,c$\ast$,x\-: forall i\-: exists c,x',tmp\-: (I(x) $|$ F(x$\ast$) \& !s$\ast$ \& T(x$\ast$, i$\ast$, c$\ast$, x)) \& s \& F(x) \& T(x,i,c,x') \& F(x') \par
+ ~ exists x$\ast$,i$\ast$,c$\ast$,x\-: forall i\-: exists c,x',tmp\-: (I(x) $\vert$ F(x$\ast$) \& !s$\ast$ \& T(x$\ast$, i$\ast$, c$\ast$, x)) \& s \& F(x) \& T(x,i,c,x') \& F(x') \par
  where x$\ast$, i$\ast$ and c$\ast$ are the previous-\/state copy of x,i,c. The query now says\-: a state that prevents generalization must be either initial or have a predecessor in F \& !s. Otherwise it is unreachable and we do not care. This means that we can remove states that are winning for the protagonist from the winning region of they are unreachalbe in the final implementation.
 
 The modification of the generalization is called optimization R\-G in the V\-M\-C\-A\-I paper. The modification of the counterexample-\/computation is called optimization R\-C. Depending on the command-\/line parameters (--mode) this class performs either just one or both optimizations. Experiments suggest that optimization R\-G is often beneficial, while optimization R\-C is usually not. Optimization R\-C leads to a winning region which cannot be turned into a circuit with the standard method.
 
 \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000003}{Todo}]Turning a winning region that was computed with optimization R\-C into a circuit is not yet implemented. However, since optimization R\-C does not increase the performance in our experiments (in contrast to optimization R\-G), this is not a severe issue at the moment. We can consider optimization R\-C as experiment that did not work out well. \end{DoxyRefDesc}
-\begin{DoxyNote}{Note}
+\item[\hyperlink{todo__todo000008}{Todo}]Turning a winning region that was computed with optimization R\-C into a circuit is not yet implemented. However, since optimization R\-C does not increase the performance in our experiments (in contrast to optimization R\-G), this is not a severe issue at the moment. We can consider optimization R\-C as experiment that did not work out well. \begin{DoxyNote}{Note}
 This class is experimental. 
 \end{DoxyNote}
 \begin{DoxyAuthor}{Author}
 Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\-1.\-0 
+1.\-2.\-0 
 \end{DoxyVersion}
+\end{DoxyRefDesc}
 
 
 Definition at line 100 of file Learn\-Synth\-Q\-B\-F\-Ind.\-h.
@@ -212,7 +212,7 @@ Computes all minimal blocking clauses for a counterexample.
 This method works like \hyperlink{classLearnSynthQBF_affa7b4583cc17d01f4c82fd57e763e1f}{Learn\-Synth\-Q\-B\-F\-::compute\-All\-Blocking\-Clauses()} but using inductive reasoning regarding reachable states as an optimization. That is, instead of solving \par
  ~ exists x\-: forall i\-: exists c,x',tmp\-: s \& F(x) \& T(x,i,c,x') \& F(x') \par
  where s is the counterexample-\/state to generalize, we solve \par
- ~ exists x$\ast$,i$\ast$,c$\ast$,x\-: forall i\-: exists c,x',tmp\-: (I(x) $|$ F(x$\ast$) \& !s$\ast$ \& T(x$\ast$, i$\ast$, c$\ast$, x)) \& s \& F(x) \& T(x,i,c,x') \& F(x') \par
+ ~ exists x$\ast$,i$\ast$,c$\ast$,x\-: forall i\-: exists c,x',tmp\-: (I(x) $\vert$ F(x$\ast$) \& !s$\ast$ \& T(x$\ast$, i$\ast$, c$\ast$, x)) \& s \& F(x) \& T(x,i,c,x') \& F(x') \par
  The query now says\-: a state that prevents generalization must be either initial or have a predecessor in F \& !s. Otherwise it is unreachable and we do not care. This means that we can remove states that are winning for the protagonist from the winning region of they are unreachable in the final implementation.
 
 
@@ -252,7 +252,7 @@ Computes a blocking clause for a counterexample.
 This method works like \hyperlink{classLearnSynthQBF_a73856a79be3fb7e260485bcda7c31f80}{Learn\-Synth\-Q\-B\-F\-::compute\-Blocking\-Clause()} but using inductive reasoning regarding reachable states as an optimization. That is, instead of solving \par
  ~ exists x\-: forall i\-: exists c,x',tmp\-: s \& F(x) \& T(x,i,c,x') \& F(x') \par
  where s is the counterexample-\/state to generalize, we solve \par
- ~ exists x$\ast$,i$\ast$,c$\ast$,x\-: forall i\-: exists c,x',tmp\-: (I(x) $|$ F(x$\ast$) \& !s$\ast$ \& T(x$\ast$, i$\ast$, c$\ast$, x)) \& s \& F(x) \& T(x,i,c,x') \& F(x') \par
+ ~ exists x$\ast$,i$\ast$,c$\ast$,x\-: forall i\-: exists c,x',tmp\-: (I(x) $\vert$ F(x$\ast$) \& !s$\ast$ \& T(x$\ast$, i$\ast$, c$\ast$, x)) \& s \& F(x) \& T(x,i,c,x') \& F(x') \par
  The query now says\-: a state that prevents generalization must be either initial or have a predecessor in F \& !s. Otherwise it is unreachable and we do not care. This means that we can remove states that are winning for the protagonist from the winning region of they are unreachable in the final implementation.
 
 
@@ -291,7 +291,7 @@ Computes a counterexample-\/state using a Q\-B\-F-\/solver with inductive reason
 This method works like \hyperlink{classLearnSynthQBF_a04b8dd6e26d646a6f197afb362168408}{Learn\-Synth\-Q\-B\-F\-::compute\-Counterexample\-Q\-B\-F()} but using inductive reasoning regarding reachable states as an optimization. That is, instead of solving \par
  ~ exists x,i\-: forall c\-: exists x',tmp\-: F(x) \& T(x,i,c,x') \& !\-F(x') \par
  we solve \par
- ~ exists x$\ast$,i$\ast$,c$\ast$,x,i\-: forall c\-: exists x',tmp\-: (I(x) $|$ (x$\ast$ != x) \& F(x$\ast$) \& T(x$\ast$, i$\ast$, c$\ast$, x)) \& F(x) \& T(x,i,c,x') \& !\-F(x') \par
+ ~ exists x$\ast$,i$\ast$,c$\ast$,x,i\-: forall c\-: exists x',tmp\-: (I(x) $\vert$ (x$\ast$ != x) \& F(x$\ast$) \& T(x$\ast$, i$\ast$, c$\ast$, x)) \& F(x) \& T(x,i,c,x') \& !\-F(x') \par
  to obtain a counterexample. The query now says\-: find a counterexample-\/state x that is either initial or has a predecessor x$\ast$ in F such that x$\ast$ is different from x. (Otherwise the counterexample-\/state is unreachable.)
 
 If optimization R\-C is disabled (\hyperlink{classLearnSynthQBFInd_af87e4a2c1d17c4c5bc398082d6d3e365}{do\-\_\-reach\-\_\-check\-\_\-} is false), then counterexamples are computed in the standard way.
@@ -442,7 +442,7 @@ Generalizes a counterexample-\/state by dropping literals.
 This method works like \hyperlink{classLearnSynthQBF_a9eed607741968f74e31976e8ca40a62f}{Learn\-Synth\-Q\-B\-F\-::generalize\-Counterexample()} but using inductive reasoning regarding reachable states as an optimization. That is, instead of solving \par
  ~ exists x\-: forall i\-: exists c,x',tmp\-: s \& F(x) \& T(x,i,c,x') \& F(x') \par
  where s is the counterexample-\/state to generalize, we solve \par
- ~ exists x$\ast$,i$\ast$,c$\ast$,x\-: forall i\-: exists c,x',tmp\-: (I(x) $|$ F(x$\ast$) \& !s$\ast$ \& T(x$\ast$, i$\ast$, c$\ast$, x)) \& s \& F(x) \& T(x,i,c,x') \& F(x') \par
+ ~ exists x$\ast$,i$\ast$,c$\ast$,x\-: forall i\-: exists c,x',tmp\-: (I(x) $\vert$ F(x$\ast$) \& !s$\ast$ \& T(x$\ast$, i$\ast$, c$\ast$, x)) \& s \& F(x) \& T(x,i,c,x') \& F(x') \par
  The query now says\-: a state that prevents generalization must be either initial or have a predecessor in F \& !s. Otherwise it is unreachable and we do not care. This means that we can remove states that are winning for the protagonist from the winning region of they are unreachable in the final implementation.
 
 
@@ -578,7 +578,7 @@ References C\-N\-F\-::add\-Clause(), C\-N\-F\-::clear(), C\-N\-F\-::get\-Clauses
 
 Recomputes the \hyperlink{classCNF}{C\-N\-F} (of the Q\-B\-F) that is used for computing counterexamples. 
 
-The \hyperlink{classCNF}{C\-N\-F} used for computing counterexamples is F \& T \& !\-F' if optimization R\-C is disabled (\hyperlink{classLearnSynthQBFInd_a6854254065f912e3d5fe07a1b895f1c6}{check\-\_\-reach\-\_\-} = false) , or (I $|$ (x$\ast$ != x) \& F$\ast$ \& T$\ast$) \& F \& T \& !\-F' if optimization R\-C in enabled (\hyperlink{classLearnSynthQBFInd_a6854254065f912e3d5fe07a1b895f1c6}{check\-\_\-reach\-\_\-} = true). Here F is the current over-\/approximation of the winning region (in \hyperlink{classLearnSynthQBFInd_ab8ce6031137413e90e0626bbdc734be0}{winning\-\_\-region\-\_\-}). This formula is put into \hyperlink{classLearnSynthQBFInd_ac90a4574da82c96888db219291368554}{check\-\_\-cnf\-\_\-} by this method.
+The \hyperlink{classCNF}{C\-N\-F} used for computing counterexamples is F \& T \& !\-F' if optimization R\-C is disabled (\hyperlink{classLearnSynthQBFInd_a6854254065f912e3d5fe07a1b895f1c6}{check\-\_\-reach\-\_\-} = false) , or (I $\vert$ (x$\ast$ != x) \& F$\ast$ \& T$\ast$) \& F \& T \& !\-F' if optimization R\-C in enabled (\hyperlink{classLearnSynthQBFInd_a6854254065f912e3d5fe07a1b895f1c6}{check\-\_\-reach\-\_\-} = true). Here F is the current over-\/approximation of the winning region (in \hyperlink{classLearnSynthQBFInd_ab8ce6031137413e90e0626bbdc734be0}{winning\-\_\-region\-\_\-}). This formula is put into \hyperlink{classLearnSynthQBFInd_ac90a4574da82c96888db219291368554}{check\-\_\-cnf\-\_\-} by this method.
 
 
 \begin{DoxyParams}{Parameters}
@@ -608,7 +608,7 @@ Referenced by compute\-Winning\-Region\-All(), and compute\-Winning\-Region\-One
 
 Recomputes the \hyperlink{classCNF}{C\-N\-F} (of the Q\-B\-F) that is used for generalizing counterexamples. 
 
-The \hyperlink{classCNF}{C\-N\-F} used for generalizing counterexamples is (I $|$ F$\ast$ \& T$\ast$) \& F \& T \& F' where F is the current over-\/approximation of the winning region (in \hyperlink{classLearnSynthQBFInd_ab8ce6031137413e90e0626bbdc734be0}{winning\-\_\-region\-\_\-}).
+The \hyperlink{classCNF}{C\-N\-F} used for generalizing counterexamples is (I $\vert$ F$\ast$ \& T$\ast$) \& F \& T \& F' where F is the current over-\/approximation of the winning region (in \hyperlink{classLearnSynthQBFInd_ab8ce6031137413e90e0626bbdc734be0}{winning\-\_\-region\-\_\-}).
 
 
 \begin{DoxyParams}{Parameters}
@@ -701,9 +701,9 @@ In contrast to the corresponding method of \hyperlink{classLearnSynthQBF}{Learn\
  repeatedly, where s is the counterexample and F is the current over-\/approximation of the winning region.
 
 We know that F(x) is never left by the final implementation. Hence, F is an over-\/approximation of the reachable states. Now if a state s is not initial and !s \& F \& T =$>$ !s', then we know by induction that the state s is unreachable. We can disregard unreachable states both in the computation of counterexamples as well as during the generalization. This is done by gluing the constraints !s \& F \& T =$>$ !s' and !\-I(s) to the generalization and check queries as following. The check query becomes\-: \par
- ~ exists x$\ast$,i$\ast$,c$\ast$,x,i\-: forall c\-: exists x',tmp\-: (I(x) $|$ (x$\ast$ != x) \& F(x$\ast$) \& T(x$\ast$, i$\ast$, c$\ast$, x)) \& F(x) \& T(x,i,c,x') \& !\-F(x') \par
+ ~ exists x$\ast$,i$\ast$,c$\ast$,x,i\-: forall c\-: exists x',tmp\-: (I(x) $\vert$ (x$\ast$ != x) \& F(x$\ast$) \& T(x$\ast$, i$\ast$, c$\ast$, x)) \& F(x) \& T(x,i,c,x') \& !\-F(x') \par
  where x$\ast$, i$\ast$ and c$\ast$ are the previous-\/state copy of x,i,c. The query now says\-: find a counterexample-\/state x that is either initial or has a predecessor x$\ast$ in F such that x$\ast$ is different from x. (Otherwise the counterexample-\/state is unreachable.) The generalization query becomes\-: \par
- ~ exists x$\ast$,i$\ast$,c$\ast$,x\-: forall i\-: exists c,x',tmp\-: (I(x) $|$ F(x$\ast$) \& !s$\ast$ \& T(x$\ast$, i$\ast$, c$\ast$, x)) \& s \& F(x) \& T(x,i,c,x') \& F(x') \par
+ ~ exists x$\ast$,i$\ast$,c$\ast$,x\-: forall i\-: exists c,x',tmp\-: (I(x) $\vert$ F(x$\ast$) \& !s$\ast$ \& T(x$\ast$, i$\ast$, c$\ast$, x)) \& s \& F(x) \& T(x,i,c,x') \& F(x') \par
  where x$\ast$, i$\ast$ and c$\ast$ are the previous-\/state copy of x,i,c. The query now says\-: a state that prevents generalization must be either initial or have a predecessor in F \& !s. Otherwise it is unreachable and we do not care. This means that we can remove states that are winning for the protagonist from the winning region of they are unreachable in the final implementation.
 
 The modification of the generalization is called optimization R\-G in the V\-M\-C\-A\-I paper. The modification of the counterexample-\/computation is called optimization R\-C. Depending on the command-\/line parameters (--mode) this class performs either just one or both optimizations. Experiments suggest that optimization R\-G is often beneficial, while optimization R\-C is usually not.
@@ -737,7 +737,7 @@ References compute\-Winning\-Region(), do\-\_\-reach\-\_\-check\-\_\-, C\-N\-F\-
 The \hyperlink{classCNF}{C\-N\-F} matrix of the Q\-B\-F for computing counterexamples. 
 
 If optimization R\-C in enabled (\hyperlink{classLearnSynthQBFInd_af87e4a2c1d17c4c5bc398082d6d3e365}{do\-\_\-reach\-\_\-check\-\_\-} is true), then this \hyperlink{classCNF}{C\-N\-F} is \par
- ~ (I $|$ (x$\ast$ != x) \& F$\ast$ \& T$\ast$) \& F \& T \& !\-F' \par
+ ~ (I $\vert$ (x$\ast$ != x) \& F$\ast$ \& T$\ast$) \& F \& T \& !\-F' \par
  otherwise (if \hyperlink{classLearnSynthQBFInd_af87e4a2c1d17c4c5bc398082d6d3e365}{do\-\_\-reach\-\_\-check\-\_\-} is false) it is \par
  ~ F \& T \& !\-F' \par
  where F is the current over-\/approximation of the winning region (store in \hyperlink{classLearnSynthQBFInd_ab8ce6031137413e90e0626bbdc734be0}{winning\-\_\-region\-\_\-}). 
@@ -849,7 +849,7 @@ Referenced by generalize\-Counterexample(), Learn\-Synth\-Q\-B\-F\-Ind(), and re
 
 The \hyperlink{classCNF}{C\-N\-F} matrix of the Q\-B\-F for generalizing counterexamples. 
 
-This \hyperlink{classCNF}{C\-N\-F} is always (I $|$ F$\ast$ \& T$\ast$) \& F \& T \& F', where F is the \hyperlink{classLearnSynthQBFInd_ab8ce6031137413e90e0626bbdc734be0}{winning\-\_\-region\-\_\-}. 
+This \hyperlink{classCNF}{C\-N\-F} is always (I $\vert$ F$\ast$ \& T$\ast$) \& F \& T \& F', where F is the \hyperlink{classLearnSynthQBFInd_ab8ce6031137413e90e0626bbdc734be0}{winning\-\_\-region\-\_\-}. 
 
 Definition at line 470 of file Learn\-Synth\-Q\-B\-F\-Ind.\-h.
 

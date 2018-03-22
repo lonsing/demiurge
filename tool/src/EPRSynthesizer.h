@@ -69,7 +69,7 @@
 ///        signals remains to be done. (The iProver page promises to release a new version
 ///        with more output formats soon.)
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.1.0
+/// @version 1.2.0
 class EPRSynthesizer : public BackEnd
 {
 public:
@@ -87,6 +87,21 @@ public:
 // -------------------------------------------------------------------------------------------
 ///
 /// @brief Executes the back-end (constructs an EPR formula an passes it to iProver).
+///
+/// This method just forwards the work to one of the following methods (runWith...()).
+/// Each of these methods uses a different encoding of the problem into EPR.
+///
+/// @todo: At the moment we only construct the formula, and parse back the answer to the
+///        realizability question. Parsing back the implementation for the controllable
+///        signals remains to be done. (The iProver page promises to release a new version
+///        with more output formats soon.)
+///
+/// @return True if the specification was realizable, false otherwise.
+  virtual bool run();
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Executes the back-end with an EPR encoding that uses many skolem functions.
 ///
 /// This method is the workhorse of this class.  It constructs the following EPR formula
 /// in TPTP format:
@@ -115,8 +130,33 @@ public:
 ///        realizability question. Parsing back the implementation for the controllable
 ///        signals remains to be done. (The iProver page promises to release a new version
 ///        with more output formats soon.)
+///
 /// @return True if the specification was realizable, false otherwise.
-  virtual bool run();
+  virtual bool runWithSkolem();
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Executes the back-end with an EPR encoding that uses less skolem functions.
+///
+/// This method is almost identical to runWithSkolem(). The main difference is the encoding
+/// of the transition relation. In the AIGER representation (and also in the CNF
+/// representation) the transition relation T uses many temporary variables. They are
+/// implicitly quantified existentially on the innermost level. While #runWithSkolem()
+/// introduces skolem functions for each temporary variables, this method follows a different
+/// approach: it uses universally quantified variables for the temporary variables, and
+/// assumes that these universally quantified variables follow the rules of an AND gate
+/// as an assumption (the left-hand side of an implication).
+///
+/// Unfortunately, this encoding seems to be slower.
+///
+/// @todo: At the moment we only construct the formula, and parse back the answer to the
+///        realizability question. Parsing back the implementation for the controllable
+///        signals remains to be done. (The iProver page promises to release a new version
+///        with more output formats soon.)
+///
+/// @return True if the specification was realizable, false otherwise.
+  virtual bool runWithLessSkolem();
+
 
 protected:
 

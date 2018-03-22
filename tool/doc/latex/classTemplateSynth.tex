@@ -30,15 +30,33 @@ virtual bool \hyperlink{classTemplateSynth_a5ad9855736c7d4dfdec08280d2424f80}{ru
 \item 
 bool \hyperlink{classTemplateSynth_ae334e4a6c30a324cfd4d0c05a32b191c}{compute\-Winning\-Region} ()
 \begin{DoxyCompactList}\small\item\em Computes the winning region as instantiation of a generic template. \end{DoxyCompactList}\item 
+bool \hyperlink{classTemplateSynth_affe9f11a75e689fd631692feac4031a1}{compute\-Winning\-Region\-C\-N\-F} ()
+\begin{DoxyCompactList}\small\item\em Computes the winning region as instantiation of a \hyperlink{classCNF}{C\-N\-F} template. \end{DoxyCompactList}\item 
+bool \hyperlink{classTemplateSynth_a9197dff7678cd88a7fea3c6b4358f85d}{compute\-Winning\-Region\-And\-Net} ()
+\begin{DoxyCompactList}\small\item\em Computes the winning region as instantiation of a network of A\-N\-D-\/\-Gates. \end{DoxyCompactList}\item 
 bool \hyperlink{classTemplateSynth_a499d1c0069b41ce11a6c7e7679fd4ece}{find\-Win\-Reg\-C\-N\-F\-Templ} (size\-\_\-t nr\-\_\-of\-\_\-clauses)
-\begin{DoxyCompactList}\small\item\em Computes the winning region as instantiation of a generic \hyperlink{classCNF}{C\-N\-F} template. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Computes the winning region as instantiation of a generic \hyperlink{classCNF}{C\-N\-F} template. \end{DoxyCompactList}\item 
+bool \hyperlink{classTemplateSynth_a1084d7b10de86dfbbe1368c68d4c0501}{find\-Win\-Reg\-A\-N\-D\-Network} (size\-\_\-t nr\-\_\-of\-\_\-gates)
+\begin{DoxyCompactList}\small\item\em Computes the winning region as instantiation of a generic A\-I\-G\-E\-R template. \end{DoxyCompactList}\item 
+bool \hyperlink{classTemplateSynth_ae01c9c2463c59f14f109e9379219535b}{synt\-Q\-B\-F} (const \hyperlink{classCNF}{C\-N\-F} \&win\-\_\-constr, int w1, int w2, vector$<$ int $>$ \&solution)
+\begin{DoxyCompactList}\small\item\em Resolves the template by calling a Q\-B\-F solver. \end{DoxyCompactList}\item 
+bool \hyperlink{classTemplateSynth_aa0f140f63502de21ab260b5cae9335cb}{synt\-S\-A\-T} (const \hyperlink{classCNF}{C\-N\-F} \&win\-\_\-constr, int w1, int w2, vector$<$ int $>$ \&solution)
+\begin{DoxyCompactList}\small\item\em Resolves the template by calling a S\-A\-T solver in a C\-E\-G\-I\-S loop. \end{DoxyCompactList}\item 
+void \hyperlink{classTemplateSynth_af55609e303daffb4d51b27380d32ddb3}{exclude} (const vector$<$ int $>$ \&ce, const \hyperlink{classCNF}{C\-N\-F} \&gen)
+\begin{DoxyCompactList}\small\item\em A helper for the C\-E\-G\-I\-S loop of \hyperlink{classTemplateSynth_aa0f140f63502de21ab260b5cae9335cb}{synt\-S\-A\-T()}, eliminating a counterexample. \end{DoxyCompactList}\item 
+bool \hyperlink{classTemplateSynth_a3e841e4eb71a5286057afbeac42c7a47}{check} (const vector$<$ int $>$ \&cand, const \hyperlink{classCNF}{C\-N\-F} \&win\-\_\-constr, int w1, int w2, vector$<$ int $>$ \&ce)
+\begin{DoxyCompactList}\small\item\em A helper for the C\-E\-G\-I\-S loop of \hyperlink{classTemplateSynth_aa0f140f63502de21ab260b5cae9335cb}{synt\-S\-A\-T()}, checking if a candidate solution works. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classCNF}{C\-N\-F} \hyperlink{classTemplateSynth_a4e147629eae6a542dd87d72902df68c8}{winning\-\_\-region\-\_\-}
 \begin{DoxyCompactList}\small\item\em The resulting winning region. \end{DoxyCompactList}\item 
+\hyperlink{classCNF}{C\-N\-F} \hyperlink{classTemplateSynth_a49665461c82781b823b3da04057fdab2}{neg\-\_\-winning\-\_\-region\-\_\-}
+\begin{DoxyCompactList}\small\item\em The negation of the resulting winning region. \end{DoxyCompactList}\item 
 \hyperlink{classQBFSolver}{Q\-B\-F\-Solver} $\ast$ \hyperlink{classTemplateSynth_a08ec20197bf16a10546a7e6cf3719727}{qbf\-\_\-solver\-\_\-}
 \begin{DoxyCompactList}\small\item\em The Q\-B\-F-\/solver to use for solving the queries. \end{DoxyCompactList}\item 
+\hyperlink{classSatSolver}{Sat\-Solver} $\ast$ \hyperlink{classTemplateSynth_a7844e9296d63b10e3fa96d66b932660f}{sat\-\_\-solver\-\_\-}
+\begin{DoxyCompactList}\small\item\em The S\-A\-T-\/solver to use if we resolve the template using the C\-E\-G\-I\-S loop. \end{DoxyCompactList}\item 
 \hyperlink{classCNFImplExtractor}{C\-N\-F\-Impl\-Extractor} $\ast$ \hyperlink{classTemplateSynth_acfa25deb001fb3b6d49c0261bba98347}{impl\-\_\-extractor\-\_\-}
 \begin{DoxyCompactList}\small\item\em The engine to use for circuit extraction. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -53,24 +71,21 @@ We are searching for a winning region W(x) such that\-:
 \item forall x,i\-: exists c,x'\-: W(x) =$>$ (T(x,i,c,x') \& W(x'))\-: from every state in the winning region we can enforce to stay in the winning region by setting the c-\/signals appropriately. 
 \end{DoxyEnumerate}In this class, we encode the search for such a winning region symbolically. We define a template W(x,k) for the winning region. The variables k are template parameters. Their values define a concrete function W(x). Then we simply solve the query \par
  ~ exists k\-: forall x,i\-: exists c,x'\-: I(x) =$>$ W(x,k) \& W(x,k) =$>$ P(x) \& W(x,k) =$>$ (T(x,i,c,x') \& W(x',k)) \par
- with a single Q\-B\-F-\/solver call. The ask the solver for a satisfying assignment to the variables k. These values define a concrete function W(x), which is our winning region. The difficult question is how to define a generic template W(x,k) for the winning region. At the moment, only one possibility is implemented, namely defining W(x,k) as a parameterized \hyperlink{classCNF}{C\-N\-F} over the state variables x with parameters k. But there are many other options like parameterized And-\/\-Inverter-\/\-Graphs with parameters defining the interconnects, etc. The \hyperlink{classCNF}{C\-N\-F} template fixes a maximum number N of clauses. It has three groups of parameters. 
+ with a single Q\-B\-F-\/solver call. We ask the solver for a satisfying assignment to the variables k. These values define a concrete function W(x), which is our winning region. The difficult question is how to define a generic template W(x,k) for the winning region. At the moment, only two possibility is implemented\-: 
 \begin{DoxyItemize}
-\item The parameters kc\mbox{[}i\mbox{]} (with 1 $<$= i $<$= N) define if clause i occurs in the \hyperlink{classCNF}{C\-N\-F} or not. 
-\item The parameters kv\mbox{[}i\mbox{]}\mbox{[}j\mbox{]} (with 1 $<$= i $<$= N, 1 $<$= j $<$= $|$x$|$) define if state variable xj occurs in clause i or not. 
-\item The parameters kn\mbox{[}i\mbox{]}\mbox{[}j\mbox{]} (with 1 $<$= i $<$= N, 1 $<$= j $<$= $|$x$|$) define if state variable xj occurs in clause i only negated or unnegated. If kv\mbox{[}i\mbox{]}\mbox{[}j\mbox{]}=false, then kn\mbox{[}i\mbox{]}\mbox{[}j\mbox{]} is irrelevant. 
-\end{DoxyItemize}The union of all these parameters forms k. Concrete values for all k define a concrete \hyperlink{classCNF}{C\-N\-F} formula over the state variables x (i.\-e., a concrete winning region). We chose N in the following way\-: we start with N=1. On failure, we increase N (multiply by 4).
-
-Finally the \hyperlink{classQBFCertImplExtractor}{Q\-B\-F\-Cert\-Impl\-Extractor} is used to extract a circuit from the winning region.
+\item defining W(x,k) as a parameterized \hyperlink{classCNF}{C\-N\-F} over the state variables x with parameters k. 
+\item defining W(x,k) as a parameterized A\-I\-G\-E\-R graph over the state variables x with parameters k 
+\end{DoxyItemize}
 
 \begin{DoxyAuthor}{Author}
 Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\-1.\-0 
+1.\-2.\-0 
 \end{DoxyVersion}
 
 
-Definition at line 84 of file Template\-Synth.\-h.
+Definition at line 73 of file Template\-Synth.\-h.
 
 
 
@@ -93,7 +108,7 @@ Constructor.
 \end{DoxyParams}
 
 
-Definition at line 42 of file Template\-Synth.\-cpp.
+Definition at line 44 of file Template\-Synth.\-cpp.
 
 \hypertarget{classTemplateSynth_a5d540c9d4dc6696b53768a27ac74c569}{\index{Template\-Synth@{Template\-Synth}!$\sim$\-Template\-Synth@{$\sim$\-Template\-Synth}}
 \index{$\sim$\-Template\-Synth@{$\sim$\-Template\-Synth}!TemplateSynth@{Template\-Synth}}
@@ -108,15 +123,63 @@ Destructor.
 
 
 
-Definition at line 51 of file Template\-Synth.\-cpp.
+Definition at line 54 of file Template\-Synth.\-cpp.
 
 
 
-References impl\-\_\-extractor\-\_\-, and qbf\-\_\-solver\-\_\-.
+References impl\-\_\-extractor\-\_\-, qbf\-\_\-solver\-\_\-, and sat\-\_\-solver\-\_\-.
 
 
 
 \subsection{Member Function Documentation}
+\hypertarget{classTemplateSynth_a3e841e4eb71a5286057afbeac42c7a47}{\index{Template\-Synth@{Template\-Synth}!check@{check}}
+\index{check@{check}!TemplateSynth@{Template\-Synth}}
+\subsubsection[{check}]{\setlength{\rightskip}{0pt plus 5cm}bool Template\-Synth\-::check (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{cand, }
+\item[{const {\bf C\-N\-F} \&}]{win\-\_\-constr, }
+\item[{int}]{w1, }
+\item[{int}]{w2, }
+\item[{vector$<$ int $>$ \&}]{ce}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTemplateSynth_a3e841e4eb71a5286057afbeac42c7a47}
+
+
+A helper for the C\-E\-G\-I\-S loop of \hyperlink{classTemplateSynth_aa0f140f63502de21ab260b5cae9335cb}{synt\-S\-A\-T()}, checking if a candidate solution works. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cand} & A canidate solution in the form of concrete values for the template parameters. \\
+\hline
+{\em win\-\_\-constr} & \hyperlink{classCNF}{C\-N\-F} constraints that constitute a correct solution for the winning region using the generic template. Essentially, three constraints are encoded in this \hyperlink{classCNF}{C\-N\-F}\-: 
+\begin{DoxyEnumerate}
+\item I(x) =$>$ W(x)\-: every initial state is contained in the winning region 
+\item W(x) =$>$ P(x)\-: every state of the winning region is safe 
+\item forall x,i\-: exists c,x'\-: W(x) =$>$ (T(x,i,c,x') \& W(x'))\-: from every state in the winning region we can enforce to stay in the winning region by setting the c-\/signals appropriately. 
+\end{DoxyEnumerate}\\
+\hline
+{\em w1} & The literal that represents the present-\/state copy of the winning region in win\-\_\-constr. \\
+\hline
+{\em w2} & The literal that represents the next-\/state copy of the winning region in win\-\_\-constr. \\
+\hline
+{\em ce} & An empty vector. If the candidate solution is incorrect, a counterexample in the form of concrete values for state and input variables for which we fall out of the winning region is stored in this vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the candidate solution is correct, False otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 659 of file Template\-Synth.\-cpp.
+
+
+
+References C\-N\-F\-::add1\-Lit\-Clause(), C\-N\-F\-::add\-C\-N\-F(), Var\-Info\-::\-C\-T\-R\-L, Options\-::get\-S\-A\-T\-Solver(), A\-I\-G2\-C\-N\-F\-::get\-Trans(), Var\-Manager\-::get\-Vars\-Of\-Type(), Sat\-Solver\-::inc\-Add\-C\-N\-F(), Sat\-Solver\-::inc\-Add\-Neg\-Cube\-As\-Clause(), Sat\-Solver\-::inc\-Is\-Sat\-Model\-Or\-Core(), Var\-Info\-::\-I\-N\-P\-U\-T, Var\-Manager\-::instance(), Options\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), M\-A\-S\-S\-E\-R\-T, Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, C\-N\-F\-::set\-Var\-Value(), and Sat\-Solver\-::start\-Incremental\-Session().
+
+
+
+Referenced by synt\-S\-A\-T().
+
 \hypertarget{classTemplateSynth_ae334e4a6c30a324cfd4d0c05a32b191c}{\index{Template\-Synth@{Template\-Synth}!compute\-Winning\-Region@{compute\-Winning\-Region}}
 \index{compute\-Winning\-Region@{compute\-Winning\-Region}!TemplateSynth@{Template\-Synth}}
 \subsubsection[{compute\-Winning\-Region}]{\setlength{\rightskip}{0pt plus 5cm}bool Template\-Synth\-::compute\-Winning\-Region (
@@ -135,15 +198,140 @@ True if the specification was realizable, false otherwise.
 \end{DoxyReturn}
 
 
-Definition at line 86 of file Template\-Synth.\-cpp.
+Definition at line 93 of file Template\-Synth.\-cpp.
 
 
 
-References find\-Win\-Reg\-C\-N\-F\-Templ(), Var\-Manager\-::get\-Vars\-Of\-Type(), Var\-Manager\-::instance(), L\-\_\-\-I\-N\-F, L\-\_\-\-L\-O\-G, Var\-Manager\-::pop(), Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, and Var\-Manager\-::push().
+References compute\-Winning\-Region\-And\-Net(), compute\-Winning\-Region\-C\-N\-F(), and Options\-::instance().
 
 
 
 Referenced by run().
+
+\hypertarget{classTemplateSynth_a9197dff7678cd88a7fea3c6b4358f85d}{\index{Template\-Synth@{Template\-Synth}!compute\-Winning\-Region\-And\-Net@{compute\-Winning\-Region\-And\-Net}}
+\index{compute\-Winning\-Region\-And\-Net@{compute\-Winning\-Region\-And\-Net}!TemplateSynth@{Template\-Synth}}
+\subsubsection[{compute\-Winning\-Region\-And\-Net}]{\setlength{\rightskip}{0pt plus 5cm}bool Template\-Synth\-::compute\-Winning\-Region\-And\-Net (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTemplateSynth_a9197dff7678cd88a7fea3c6b4358f85d}
+
+
+Computes the winning region as instantiation of a network of A\-N\-D-\/\-Gates. 
+
+This works as explained in the description of the class using a A\-I\-G\-E\-R graph template W(x,k) for the winning region W(x), where k are template parameters defining how the winning region really looks like. The A\-I\-G\-E\-R template fixes a maximum number N of A\-N\-D-\/gates. For the first A\-N\-D-\/gate we have template parameters saying (a) which state variables x are an input for the A\-N\-D gate, and (b) which state variables are connected in negated and unnegated form. The second A\-N\-D gate is similar but has the output of the first A\-N\-D gate as additional input. The third A\-N\-D gate has the outputs of the previous two as inputs, and so on. One final template parameter defines whether or not the output of the last A\-N\-D gate forms W(x) or the negation of W(x).
+
+\begin{DoxyReturn}{Returns}
+True if the specification was realizable, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 132 of file Template\-Synth.\-cpp.
+
+
+
+References find\-Win\-Reg\-A\-N\-D\-Network(), Var\-Manager\-::get\-Vars\-Of\-Type(), Var\-Manager\-::instance(), L\-\_\-\-I\-N\-F, L\-\_\-\-L\-O\-G, Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, and Var\-Manager\-::reset\-To\-Last\-Push().
+
+
+
+Referenced by compute\-Winning\-Region().
+
+\hypertarget{classTemplateSynth_affe9f11a75e689fd631692feac4031a1}{\index{Template\-Synth@{Template\-Synth}!compute\-Winning\-Region\-C\-N\-F@{compute\-Winning\-Region\-C\-N\-F}}
+\index{compute\-Winning\-Region\-C\-N\-F@{compute\-Winning\-Region\-C\-N\-F}!TemplateSynth@{Template\-Synth}}
+\subsubsection[{compute\-Winning\-Region\-C\-N\-F}]{\setlength{\rightskip}{0pt plus 5cm}bool Template\-Synth\-::compute\-Winning\-Region\-C\-N\-F (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTemplateSynth_affe9f11a75e689fd631692feac4031a1}
+
+
+Computes the winning region as instantiation of a \hyperlink{classCNF}{C\-N\-F} template. 
+
+This works as explained in the description of the class using a \hyperlink{classCNF}{C\-N\-F} template W(x,k) for the winning region W(x), where k are template parameters defining how the winning region really looks like. The \hyperlink{classCNF}{C\-N\-F} template fixes a maximum number N of clauses. It has three groups of parameters. 
+\begin{DoxyItemize}
+\item The parameters kc\mbox{[}i\mbox{]} (with 1 $<$= i $<$= N) define if clause i occurs in the \hyperlink{classCNF}{C\-N\-F} or not. 
+\item The parameters kv\mbox{[}i\mbox{]}\mbox{[}j\mbox{]} (with 1 $<$= i $<$= N, 1 $<$= j $<$= $\vert$x$\vert$) define if state variable xj occurs in clause i or not. 
+\item The parameters kn\mbox{[}i\mbox{]}\mbox{[}j\mbox{]} (with 1 $<$= i $<$= N, 1 $<$= j $<$= $\vert$x$\vert$) define if state variable xj occurs in clause i only negated or unnegated. If kv\mbox{[}i\mbox{]}\mbox{[}j\mbox{]}=false, then kn\mbox{[}i\mbox{]}\mbox{[}j\mbox{]} is irrelevant. 
+\end{DoxyItemize}The union of all these parameters forms k. Concrete values for all k define a concrete \hyperlink{classCNF}{C\-N\-F} formula over the state variables x (i.\-e., a concrete winning region). We chose N in the following way\-: we start with N=1. On failure, we increase N (multiply by 4).
+
+\begin{DoxyReturn}{Returns}
+True if the specification was realizable, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 102 of file Template\-Synth.\-cpp.
+
+
+
+References find\-Win\-Reg\-C\-N\-F\-Templ(), Var\-Manager\-::get\-Vars\-Of\-Type(), Var\-Manager\-::instance(), L\-\_\-\-I\-N\-F, L\-\_\-\-L\-O\-G, Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, and Var\-Manager\-::reset\-To\-Last\-Push().
+
+
+
+Referenced by compute\-Winning\-Region().
+
+\hypertarget{classTemplateSynth_af55609e303daffb4d51b27380d32ddb3}{\index{Template\-Synth@{Template\-Synth}!exclude@{exclude}}
+\index{exclude@{exclude}!TemplateSynth@{Template\-Synth}}
+\subsubsection[{exclude}]{\setlength{\rightskip}{0pt plus 5cm}void Template\-Synth\-::exclude (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{ce, }
+\item[{const {\bf C\-N\-F} \&}]{gen}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTemplateSynth_af55609e303daffb4d51b27380d32ddb3}
+
+
+A helper for the C\-E\-G\-I\-S loop of \hyperlink{classTemplateSynth_aa0f140f63502de21ab260b5cae9335cb}{synt\-S\-A\-T()}, eliminating a counterexample. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ce} & A counterexample that has been computed previously by calling \hyperlink{classTemplateSynth_a3e841e4eb71a5286057afbeac42c7a47}{check()}. A counterexample is simply a set of values for state variables and input variables for which we fall out of the winning region. \\
+\hline
+{\em gen} & The \hyperlink{classCNF}{C\-N\-F} containing the constraints for a correct winning region. We simply add constraints here saying that the winning region must now also work for the counterexample. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 734 of file Template\-Synth.\-cpp.
+
+
+
+References C\-N\-F\-::append\-Vars\-To(), Var\-Manager\-::create\-Fresh\-Tmp\-Var(), Var\-Manager\-::get\-Info(), Var\-Info\-::get\-Kind(), Sat\-Solver\-::inc\-Add\-C\-N\-F(), Var\-Manager\-::instance(), C\-N\-F\-::rename\-Vars(), sat\-\_\-solver\-\_\-, C\-N\-F\-::set\-Var\-Value(), and Var\-Info\-::\-T\-E\-M\-P\-L\-\_\-\-P\-A\-R\-A\-M\-S.
+
+
+
+Referenced by synt\-S\-A\-T().
+
+\hypertarget{classTemplateSynth_a1084d7b10de86dfbbe1368c68d4c0501}{\index{Template\-Synth@{Template\-Synth}!find\-Win\-Reg\-A\-N\-D\-Network@{find\-Win\-Reg\-A\-N\-D\-Network}}
+\index{find\-Win\-Reg\-A\-N\-D\-Network@{find\-Win\-Reg\-A\-N\-D\-Network}!TemplateSynth@{Template\-Synth}}
+\subsubsection[{find\-Win\-Reg\-A\-N\-D\-Network}]{\setlength{\rightskip}{0pt plus 5cm}bool Template\-Synth\-::find\-Win\-Reg\-A\-N\-D\-Network (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{nr\-\_\-of\-\_\-gates}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTemplateSynth_a1084d7b10de86dfbbe1368c68d4c0501}
+
+
+Computes the winning region as instantiation of a generic A\-I\-G\-E\-R template. 
+
+This works as explained in the description of \hyperlink{classTemplateSynth_a9197dff7678cd88a7fea3c6b4358f85d}{compute\-Winning\-Region\-And\-Net()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nr\-\_\-of\-\_\-gates} & The number N of gates to use in the template. Choosing a good value for this parameter is difficult. If it is chosen to low, then we may not find a solution even if one exists. If it is chosen to high, then we waste computational resources. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a solution is found with the given number of clauses, false otherwise. If this method returns false, then this does not mean that the specification is unrealizable. It may be that nr\-\_\-of\-\_\-gates has been chosen too low. 
+\end{DoxyReturn}
+
+
+Definition at line 335 of file Template\-Synth.\-cpp.
+
+
+
+References C\-N\-F\-::add1\-Lit\-Clause(), C\-N\-F\-::add2\-Lit\-Clause(), C\-N\-F\-::add4\-Lit\-Clause(), C\-N\-F\-::add\-Clause(), Var\-Manager\-::create\-Fresh\-Templ\-Param(), Var\-Manager\-::create\-Fresh\-Tmp\-Var(), Var\-Manager\-::get\-Next\-Error\-State\-Var(), Var\-Manager\-::get\-Pres\-Error\-State\-Var(), Var\-Manager\-::get\-Vars\-Of\-Type(), Var\-Manager\-::instance(), Options\-::instance(), neg\-\_\-winning\-\_\-region\-\_\-, Utils\-::negate\-Literals(), Var\-Info\-::\-N\-E\-X\-T\-\_\-\-S\-T\-A\-T\-E, Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, Var\-Manager\-::reset\-To\-Last\-Push(), synt\-Q\-B\-F(), synt\-S\-A\-T(), Var\-Info\-::\-T\-E\-M\-P\-L\-\_\-\-P\-A\-R\-A\-M\-S, and winning\-\_\-region\-\_\-.
+
+
+
+Referenced by compute\-Winning\-Region\-And\-Net().
 
 \hypertarget{classTemplateSynth_a499d1c0069b41ce11a6c7e7679fd4ece}{\index{Template\-Synth@{Template\-Synth}!find\-Win\-Reg\-C\-N\-F\-Templ@{find\-Win\-Reg\-C\-N\-F\-Templ}}
 \index{find\-Win\-Reg\-C\-N\-F\-Templ@{find\-Win\-Reg\-C\-N\-F\-Templ}!TemplateSynth@{Template\-Synth}}
@@ -156,7 +344,7 @@ Referenced by run().
 
 Computes the winning region as instantiation of a generic \hyperlink{classCNF}{C\-N\-F} template. 
 
-This works as explained in the description of the class.
+This works as explained in the description of \hyperlink{classTemplateSynth_affe9f11a75e689fd631692feac4031a1}{compute\-Winning\-Region\-C\-N\-F()}.
 
 
 \begin{DoxyParams}{Parameters}
@@ -168,15 +356,15 @@ True if a solution is found with the given number of clauses, false otherwise. I
 \end{DoxyReturn}
 
 
-Definition at line 119 of file Template\-Synth.\-cpp.
+Definition at line 162 of file Template\-Synth.\-cpp.
 
 
 
-References Q\-B\-F\-Solver\-::\-A, C\-N\-F\-::add1\-Lit\-Clause(), C\-N\-F\-::add2\-Lit\-Clause(), C\-N\-F\-::add4\-Lit\-Clause(), C\-N\-F\-::add\-Clause(), C\-N\-F\-::add\-C\-N\-F(), Var\-Manager\-::create\-Fresh\-Templ\-Param(), Var\-Manager\-::create\-Fresh\-Tmp\-Var(), Var\-Info\-::\-C\-T\-R\-L, Q\-B\-F\-Solver\-::\-E, Var\-Manager\-::get\-Max\-C\-N\-F\-Var(), Var\-Manager\-::get\-Next\-Error\-State\-Var(), Var\-Manager\-::get\-Pres\-Error\-State\-Var(), A\-I\-G2\-C\-N\-F\-::get\-T(), A\-I\-G2\-C\-N\-F\-::get\-Trans\-Eq\-T(), Var\-Manager\-::get\-Vars\-Of\-Type(), Var\-Info\-::\-I\-N\-P\-U\-T, Var\-Manager\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), Q\-B\-F\-Solver\-::is\-Sat\-Model(), Var\-Info\-::\-N\-E\-X\-T\-\_\-\-S\-T\-A\-T\-E, Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, qbf\-\_\-solver\-\_\-, Var\-Info\-::\-T\-E\-M\-P\-L\-\_\-\-P\-A\-R\-A\-M\-S, Var\-Info\-::\-T\-M\-P, and winning\-\_\-region\-\_\-.
+References C\-N\-F\-::add1\-Lit\-Clause(), C\-N\-F\-::add2\-Lit\-Clause(), C\-N\-F\-::add4\-Lit\-Clause(), C\-N\-F\-::add\-Clause(), Var\-Manager\-::create\-Fresh\-Templ\-Param(), Var\-Manager\-::create\-Fresh\-Tmp\-Var(), Var\-Manager\-::get\-Max\-C\-N\-F\-Var(), Var\-Manager\-::get\-Next\-Error\-State\-Var(), Var\-Manager\-::get\-Pres\-Error\-State\-Var(), Var\-Manager\-::get\-Vars\-Of\-Type(), Var\-Manager\-::instance(), Options\-::instance(), neg\-\_\-winning\-\_\-region\-\_\-, C\-N\-F\-::negate(), Var\-Info\-::\-N\-E\-X\-T\-\_\-\-S\-T\-A\-T\-E, Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, Var\-Manager\-::reset\-To\-Last\-Push(), synt\-Q\-B\-F(), synt\-S\-A\-T(), and winning\-\_\-region\-\_\-.
 
 
 
-Referenced by compute\-Winning\-Region().
+Referenced by compute\-Winning\-Region\-C\-N\-F().
 
 \hypertarget{classTemplateSynth_a5ad9855736c7d4dfdec08280d2424f80}{\index{Template\-Synth@{Template\-Synth}!run@{run}}
 \index{run@{run}!TemplateSynth@{Template\-Synth}}
@@ -200,11 +388,101 @@ Implements \hyperlink{classBackEnd_a099e717dc71e9cc2d838b1ca86340590}{Back\-End}
 
 
 
-Definition at line 61 of file Template\-Synth.\-cpp.
+Definition at line 67 of file Template\-Synth.\-cpp.
 
 
 
-References compute\-Winning\-Region(), Utils\-::debug\-Check\-Win\-Reg(), C\-N\-F\-Impl\-Extractor\-::extract\-Circuit(), impl\-\_\-extractor\-\_\-, Options\-::instance(), L\-\_\-\-I\-N\-F, L\-\_\-\-R\-E\-S, C\-N\-F\-Impl\-Extractor\-::log\-Statistics(), and winning\-\_\-region\-\_\-.
+References compute\-Winning\-Region(), Utils\-::debug\-Check\-Win\-Reg(), C\-N\-F\-Impl\-Extractor\-::extract\-Circuit(), impl\-\_\-extractor\-\_\-, Var\-Manager\-::instance(), Options\-::instance(), L\-\_\-\-I\-N\-F, L\-\_\-\-R\-E\-S, C\-N\-F\-Impl\-Extractor\-::log\-Statistics(), neg\-\_\-winning\-\_\-region\-\_\-, Var\-Manager\-::push(), and winning\-\_\-region\-\_\-.
+
+\hypertarget{classTemplateSynth_ae01c9c2463c59f14f109e9379219535b}{\index{Template\-Synth@{Template\-Synth}!synt\-Q\-B\-F@{synt\-Q\-B\-F}}
+\index{synt\-Q\-B\-F@{synt\-Q\-B\-F}!TemplateSynth@{Template\-Synth}}
+\subsubsection[{synt\-Q\-B\-F}]{\setlength{\rightskip}{0pt plus 5cm}bool Template\-Synth\-::synt\-Q\-B\-F (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{win\-\_\-constr, }
+\item[{int}]{w1, }
+\item[{int}]{w2, }
+\item[{vector$<$ int $>$ \&}]{solution}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTemplateSynth_ae01c9c2463c59f14f109e9379219535b}
+
+
+Resolves the template by calling a Q\-B\-F solver. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em win\-\_\-constr} & \hyperlink{classCNF}{C\-N\-F} constraints that constitute a correct solution for the winning region using the generic template. Essentially, three constraints are encoded in this \hyperlink{classCNF}{C\-N\-F}\-: 
+\begin{DoxyEnumerate}
+\item I(x) =$>$ W(x)\-: every initial state is contained in the winning region 
+\item W(x) =$>$ P(x)\-: every state of the winning region is safe 
+\item forall x,i\-: exists c,x'\-: W(x) =$>$ (T(x,i,c,x') \& W(x'))\-: from every state in the winning region we can enforce to stay in the winning region by setting the c-\/signals appropriately. 
+\end{DoxyEnumerate}\\
+\hline
+{\em w1} & The literal that represents the present-\/state copy of the winning region in win\-\_\-constr. \\
+\hline
+{\em w2} & The literal that represents the next-\/state copy of the winning region in win\-\_\-constr. \\
+\hline
+{\em solution} & An empty vector. If a solution exists, then the corresponding template parameter values are written into this vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a solution exists, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 575 of file Template\-Synth.\-cpp.
+
+
+
+References Q\-B\-F\-Solver\-::\-A, C\-N\-F\-::add\-C\-N\-F(), Var\-Info\-::\-C\-T\-R\-L, Q\-B\-F\-Solver\-::\-E, A\-I\-G2\-C\-N\-F\-::get\-T(), A\-I\-G2\-C\-N\-F\-::get\-Trans\-Eq\-T(), Var\-Manager\-::get\-Vars\-Of\-Type(), Var\-Info\-::\-I\-N\-P\-U\-T, Var\-Manager\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), Q\-B\-F\-Solver\-::is\-Sat\-Model(), Var\-Info\-::\-N\-E\-X\-T\-\_\-\-S\-T\-A\-T\-E, Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, qbf\-\_\-solver\-\_\-, Var\-Info\-::\-T\-E\-M\-P\-L\-\_\-\-P\-A\-R\-A\-M\-S, and Var\-Info\-::\-T\-M\-P.
+
+
+
+Referenced by find\-Win\-Reg\-A\-N\-D\-Network(), and find\-Win\-Reg\-C\-N\-F\-Templ().
+
+\hypertarget{classTemplateSynth_aa0f140f63502de21ab260b5cae9335cb}{\index{Template\-Synth@{Template\-Synth}!synt\-S\-A\-T@{synt\-S\-A\-T}}
+\index{synt\-S\-A\-T@{synt\-S\-A\-T}!TemplateSynth@{Template\-Synth}}
+\subsubsection[{synt\-S\-A\-T}]{\setlength{\rightskip}{0pt plus 5cm}bool Template\-Synth\-::synt\-S\-A\-T (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{win\-\_\-constr, }
+\item[{int}]{w1, }
+\item[{int}]{w2, }
+\item[{vector$<$ int $>$ \&}]{solution}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTemplateSynth_aa0f140f63502de21ab260b5cae9335cb}
+
+
+Resolves the template by calling a S\-A\-T solver in a C\-E\-G\-I\-S loop. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em win\-\_\-constr} & \hyperlink{classCNF}{C\-N\-F} constraints that constitute a correct solution for the winning region using the generic template. Essentially, three constraints are encoded in this \hyperlink{classCNF}{C\-N\-F}\-: 
+\begin{DoxyEnumerate}
+\item I(x) =$>$ W(x)\-: every initial state is contained in the winning region 
+\item W(x) =$>$ P(x)\-: every state of the winning region is safe 
+\item forall x,i\-: exists c,x'\-: W(x) =$>$ (T(x,i,c,x') \& W(x'))\-: from every state in the winning region we can enforce to stay in the winning region by setting the c-\/signals appropriately. 
+\end{DoxyEnumerate}\\
+\hline
+{\em w1} & The literal that represents the present-\/state copy of the winning region in win\-\_\-constr. \\
+\hline
+{\em w2} & The literal that represents the next-\/state copy of the winning region in win\-\_\-constr. \\
+\hline
+{\em solution} & An empty vector. If a solution exists, then the corresponding template parameter values are written into this vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a solution exists, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 607 of file Template\-Synth.\-cpp.
+
+
+
+References C\-N\-F\-::add\-C\-N\-F(), check(), exclude(), A\-I\-G2\-C\-N\-F\-::get\-Trans(), Var\-Manager\-::get\-Vars\-Of\-Type(), Sat\-Solver\-::inc\-Is\-Sat\-Model\-Or\-Core(), Var\-Info\-::\-I\-N\-P\-U\-T, Var\-Manager\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), Utils\-::negate\-Literals(), Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, sat\-\_\-solver\-\_\-, Sat\-Solver\-::start\-Incremental\-Session(), and Var\-Info\-::\-T\-E\-M\-P\-L\-\_\-\-P\-A\-R\-A\-M\-S.
+
+
+
+Referenced by find\-Win\-Reg\-A\-N\-D\-Network(), and find\-Win\-Reg\-C\-N\-F\-Templ().
 
 
 
@@ -218,11 +496,26 @@ The engine to use for circuit extraction.
 
 It will be deleted by this class (in the destructor). 
 
-Definition at line 151 of file Template\-Synth.\-h.
+Definition at line 290 of file Template\-Synth.\-h.
 
 
 
 Referenced by run(), and $\sim$\-Template\-Synth().
+
+\hypertarget{classTemplateSynth_a49665461c82781b823b3da04057fdab2}{\index{Template\-Synth@{Template\-Synth}!neg\-\_\-winning\-\_\-region\-\_\-@{neg\-\_\-winning\-\_\-region\-\_\-}}
+\index{neg\-\_\-winning\-\_\-region\-\_\-@{neg\-\_\-winning\-\_\-region\-\_\-}!TemplateSynth@{Template\-Synth}}
+\subsubsection[{neg\-\_\-winning\-\_\-region\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} Template\-Synth\-::neg\-\_\-winning\-\_\-region\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTemplateSynth_a49665461c82781b823b3da04057fdab2}
+
+
+The negation of the resulting winning region. 
+
+
+
+Definition at line 273 of file Template\-Synth.\-h.
+
+
+
+Referenced by find\-Win\-Reg\-A\-N\-D\-Network(), find\-Win\-Reg\-C\-N\-F\-Templ(), and run().
 
 \hypertarget{classTemplateSynth_a08ec20197bf16a10546a7e6cf3719727}{\index{Template\-Synth@{Template\-Synth}!qbf\-\_\-solver\-\_\-@{qbf\-\_\-solver\-\_\-}}
 \index{qbf\-\_\-solver\-\_\-@{qbf\-\_\-solver\-\_\-}!TemplateSynth@{Template\-Synth}}
@@ -233,11 +526,26 @@ The Q\-B\-F-\/solver to use for solving the queries.
 
 
 
-Definition at line 144 of file Template\-Synth.\-h.
+Definition at line 278 of file Template\-Synth.\-h.
 
 
 
-Referenced by find\-Win\-Reg\-C\-N\-F\-Templ(), and $\sim$\-Template\-Synth().
+Referenced by synt\-Q\-B\-F(), and $\sim$\-Template\-Synth().
+
+\hypertarget{classTemplateSynth_a7844e9296d63b10e3fa96d66b932660f}{\index{Template\-Synth@{Template\-Synth}!sat\-\_\-solver\-\_\-@{sat\-\_\-solver\-\_\-}}
+\index{sat\-\_\-solver\-\_\-@{sat\-\_\-solver\-\_\-}!TemplateSynth@{Template\-Synth}}
+\subsubsection[{sat\-\_\-solver\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sat\-Solver}$\ast$ Template\-Synth\-::sat\-\_\-solver\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTemplateSynth_a7844e9296d63b10e3fa96d66b932660f}
+
+
+The S\-A\-T-\/solver to use if we resolve the template using the C\-E\-G\-I\-S loop. 
+
+
+
+Definition at line 283 of file Template\-Synth.\-h.
+
+
+
+Referenced by exclude(), synt\-S\-A\-T(), and $\sim$\-Template\-Synth().
 
 \hypertarget{classTemplateSynth_a4e147629eae6a542dd87d72902df68c8}{\index{Template\-Synth@{Template\-Synth}!winning\-\_\-region\-\_\-@{winning\-\_\-region\-\_\-}}
 \index{winning\-\_\-region\-\_\-@{winning\-\_\-region\-\_\-}!TemplateSynth@{Template\-Synth}}
@@ -248,11 +556,11 @@ The resulting winning region.
 
 
 
-Definition at line 139 of file Template\-Synth.\-h.
+Definition at line 268 of file Template\-Synth.\-h.
 
 
 
-Referenced by find\-Win\-Reg\-C\-N\-F\-Templ(), and run().
+Referenced by find\-Win\-Reg\-A\-N\-D\-Network(), find\-Win\-Reg\-C\-N\-F\-Templ(), and run().
 
 
 

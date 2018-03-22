@@ -37,6 +37,8 @@ class SatSolver;
 class BackEnd;
 class CNFImplExtractor;
 
+typedef pair<clock_t, time_t> PointInTime;
+
 // -------------------------------------------------------------------------------------------
 ///
 /// @class Options
@@ -52,7 +54,7 @@ class CNFImplExtractor;
 /// back-end can easily access this object without passing it around.
 ///
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.1.0
+/// @version 1.2.0
 class Options
 {
 public:
@@ -257,6 +259,49 @@ public:
 /// @return true if the back-ends should only compute a winning region but no circuits.
   bool doRealizabilityOnly() const;
 
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Returns the maximum memory (in kB) to use in SAT-based learning with expansion.
+///
+/// LearnSynthSAT can be run in a mode where it expands the CNF for computing counterexamples
+/// in order to save iterations. For certain benchmarks, this expansion works well. For other
+/// benchmarks, the CNFs that are computed during expansion get so extremely big that we may
+/// run into memory problems. This method returns a memory limit in kB. If this limit is
+/// exceeded, we stop doing the expansion in order to prevent running out of memory.
+///
+/// @note The limit returned by this method is not enforced strictly. The memory consumption
+/// is only estimated at certain points.
+///
+/// @return The maximum memory (in kB) to use in SAT-based learning with expansion.
+  size_t getSizeLimitForExpansion() const;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Sets the maximum memory (in kB) to use in SAT-based learning with expansion.
+///
+/// LearnSynthSAT can be run in a mode where it expands the CNF for computing counterexamples
+/// in order to save iterations. For certain benchmarks, this expansion works well. For other
+/// benchmarks, the CNFs that are computed during expansion get so extremely big that we may
+/// run into memory problems. This method sets a memory limit in kB. If this limit is
+/// exceeded, we stop doing the expansion in order to prevent running out of memory.
+///
+/// @note The limit set by this method is not enforced strictly. The memory consumption
+/// is only estimated at certain points.
+///
+/// @param limit_in_kb The maximum memory (in kB) to use in SAT-based learning with expansion.
+  void setSizeLimitForExpansion(size_t limit_in_kb);
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief If a hint for a timeout is given, this method returns the remaining time.
+///
+/// If this method returns 0, this intuitively means: "be done as quickly as possible".
+/// The hint_to_in_sec_ field stores a hint about the timeout. By default it is 0, meaning
+/// that we want to be done as quickly as possible.
+///
+/// @return The remaining time until the timeout.
+  size_t getEstimatedTimeRemaining() const;
+
 protected:
 
 // -------------------------------------------------------------------------------------------
@@ -349,6 +394,39 @@ protected:
 ///
 /// @brief True if the back-ends should only compute a winning region but no circuits.
   bool real_only_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The maximum memory (in kB) to use in SAT-based learning with expansion.
+///
+/// LearnSynthSAT can be run in a mode where it expands the CNF for computing counterexamples
+/// in order to save iterations. For certain benchmarks, this expansion works well. For other
+/// benchmarks, the CNFs that are computed during expansion get so extremely big that we may
+/// run into memory problems. This field stores a memory limit in kB. If this limit is
+/// exceeded, we stop doing the expansion in order to prevent running out of memory.
+///
+/// @note The limit stored in this field is not enforced strictly. The memory consumption
+/// is only estimated at certain points.
+  size_t exp_limit_in_kb_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief A hint about a timeout.
+///
+/// This timeout is not enforced. This is just a hint for the tool to enable or disable
+/// certain optimizations. If there is still enough time available until the expected timeout,
+/// we can run additional optimizations to get small circuits. If we are already close to the
+/// timeout, then we can tune our heuristics to finish quickly rather than obtaining small
+/// circuits.
+  size_t hint_to_in_sec_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The point in time when the tool has been started.
+///
+/// It will be used to estimate how close the timeout is. It may also be used for logging
+/// statistics.
+  PointInTime tool_started_;
 
 private:
 

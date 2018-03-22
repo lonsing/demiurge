@@ -38,6 +38,7 @@
 #include "StringUtils.h"
 #include "Logger.h"
 #include "SatSolver.h"
+#include "UnivExpander.h"
 
 extern "C" {
   #include "aiger.h"
@@ -103,9 +104,10 @@ LearningImplExtractor::LearningImplExtractor() :
     next_free_aig_lit_ += 2;
   }
 
+
   for(AIG2CNF::DepConstIter it = trans_deps.begin(); it != trans_deps.end(); ++it)
   {
-    if(it->first == 1) // the CNF variable 1 is always the constant TRUE, so we map it to 1
+    if(AIG2CNF::instance().isTrueInTrans() && it->first == 1) // CNF var 1 is constant TRUE
       cnf_var_to_standalone_aig_var_[1] = 1;
     else
     {
@@ -180,6 +182,12 @@ void LearningImplExtractor::run(const CNF &winning_region,
     runLearningJiangSATTmpCtrlInc2(winning_region, neg_winning_region, true, false);
   else if(Options::instance().getCircuitExtractionMode() == 25)
     runLearningJiangSATTmpCtrlInc2(winning_region, neg_winning_region, true, true);
+  else if(Options::instance().getCircuitExtractionMode() == 26)
+    runLearningExp(winning_region, neg_winning_region);
+  else
+  {
+    MASSERT(false, "Unknown circuit extraction mode.");
+  }
 
   statistics.notifyBeforeABC(standalone_circuit_->num_ands);
   aiger *opt = optimizeWithABC(standalone_circuit_);
@@ -351,6 +359,75 @@ void LearningImplExtractor::runLearningQBFInc(const CNF &win_region,
 
     // re-substitution:
     neg_rel.addCNF(makeEq(current_ctrl, solution));
+    statistics.notifyAfterCtrlSignal();
+  }
+}
+
+// -------------------------------------------------------------------------------------------
+void LearningImplExtractor::runLearningExp(const CNF &win_region, const CNF &neg_win_region)
+{
+  const vector<int> &ctrl = VarManager::instance().getVarsOfType(VarInfo::CTRL);
+  UnivExpander exp;
+
+  CNF win(win_region);
+  CNF nxt_win;
+  Utils::compressNextStateCNF(win, nxt_win, false);
+  // win_region will have a clause that sets the error state variable to false. However, we
+  // also replace it by false so that this variable is gone from the CNF. This makes one state
+  // variable less to consider, and ensures that the final result cannot depend on the
+  // artificially introduced fake-error-state-variable.
+  win.setVarValue(VarManager::instance().getPresErrorStateVar(), false);
+
+  vector<int> ctrl_univ(ctrl);
+  vector<int> ctrl_exist;
+  ctrl_exist.reserve(ctrl.size());
+  CNF existing_solutions;
+  SatSolver *solver = Options::instance().getSATSolverExtr(false, true);
+  for(size_t ctrl_cnt = 0; ctrl_cnt < ctrl.size(); ++ctrl_cnt)
+  {
+    statistics.notifyBeforeCtrlSignal();
+    int current_ctrl = ctrl[ctrl_cnt];
+    Utils::remove(ctrl_univ, current_ctrl);
+    ctrl_exist.push_back(current_ctrl);
+    exp.extrExp(nxt_win, solver, ctrl_univ);
+    solver->incAddCNF(existing_solutions);
+    solver->incAddCNF(win);
+    vector<int> check_ass;
+    check_ass.push_back(current_ctrl);
+    vector<int> gen_ass;
+    gen_ass.push_back(-current_ctrl);
+    vector<int> none;
+
+    // do the learning loop:
+    CNF solution;
+    while(true)
+    {
+      // compute a false-positives (ctrl-signal is 1 but must not be):
+      vector<int> false_pos;
+      statistics.notifyBeforeClauseComp();
+      bool false_pos_exists = solver->incIsSatModelOrCore(none, check_ass, ip_, false_pos);
+      statistics.notifyAfterClauseComp();
+      if(!false_pos_exists)
+        break;
+
+      // generalize the false-positives:
+      // (compute a larger set of situations (including the false-positive) for which
+      // setting the control signal to 0 is allowed:
+      vector<int> gen_false_pos;
+      statistics.notifyBeforeClauseMin();
+      bool sat = solver->incIsSatModelOrCore(false_pos, gen_ass, none, gen_false_pos);
+      statistics.notifyAfterClauseMin(false_pos.size(), gen_false_pos.size());
+      MASSERT(!sat, "Impossible");
+      solution.addNegCubeAsClause(gen_false_pos);
+      gen_false_pos.push_back(check_ass[0]);
+      solver->incAddNegCubeAsClause(gen_false_pos);
+    }
+
+    // dump solution in AIGER format:
+    addToStandAloneAiger(current_ctrl, solution);
+
+    // re-substitution:
+    existing_solutions.addCNF(makeEq(current_ctrl, solution));
     statistics.notifyAfterCtrlSignal();
   }
 }

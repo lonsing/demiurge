@@ -245,19 +245,27 @@ void CNF::swapPresentToNext()
     olt_to_new_var_map[cnt] = cnt;
   for(size_t cnt = 0; cnt < ps_vars.size(); ++cnt)
     olt_to_new_var_map[ps_vars[cnt]] = ns_vars[cnt];
+  renameVars(olt_to_new_var_map);
+}
 
-  for(ClauseIter it = clauses_.begin(); it != clauses_.end(); ++it)
+// -------------------------------------------------------------------------------------------
+void CNF::renameTmps()
+{
+  set<int> var_set;
+  appendVarsTo(var_set);
+  if(var_set.empty())
+    return;
+  int max_idx = *var_set.rbegin();
+  vector<int> rename_map;
+  rename_map.reserve(max_idx + 1);
+  for(int cnt = 0; cnt < max_idx + 1; ++cnt)
+    rename_map.push_back(cnt);
+  for(set<int>::const_iterator it = var_set.begin(); it != var_set.end(); ++it)
   {
-    for(size_t lit_cnt = 0; lit_cnt < it->size(); ++lit_cnt)
-    {
-      int old_lit = (*it)[lit_cnt];
-      int old_var = (old_lit < 0) ? -old_lit : old_lit;
-      if(old_lit < 0)
-        (*it)[lit_cnt] = -olt_to_new_var_map[old_var];
-      else
-        (*it)[lit_cnt] = olt_to_new_var_map[old_var];
-    }
+    if(VarManager::instance().getInfo(*it).getKind() == VarInfo::TMP)
+      rename_map[*it] = VarManager::instance().createFreshTmpVar();
   }
+  renameVars(rename_map);
 }
 
 // -------------------------------------------------------------------------------------------
@@ -286,6 +294,12 @@ void CNF::negate()
 void CNF::swapWith(list<vector<int> > &clauses)
 {
   clauses_.swap(clauses);
+}
+
+// -------------------------------------------------------------------------------------------
+void CNF::swapWith(CNF &other)
+{
+  clauses_.swap(other.clauses_);
 }
 
 // -------------------------------------------------------------------------------------------
@@ -418,11 +432,10 @@ bool CNF::isSatBy(const vector<int> &cube) const
 // -------------------------------------------------------------------------------------------
 void CNF::setVarValue(int var, bool value)
 {
-  // The following code assumes that every variable appears at most once in a clause:
   for(ClauseIter it = clauses_.begin(); it != clauses_.end();)
   {
     bool clause_removed = false;
-    for(size_t lit_cnt = 0; lit_cnt < it->size(); ++lit_cnt)
+    for(size_t lit_cnt = 0; lit_cnt < it->size(); )
     {
       int lit = (*it)[lit_cnt];
       if((lit == var && value == false) || (-lit == var && value == true))
@@ -436,7 +449,6 @@ void CNF::setVarValue(int var, bool value)
           clauses_.push_back(vector<int>());
           return;
         }
-        break;
       }
       else if ((lit == var && value == true) || (-lit == var && value == false))
       {
@@ -445,6 +457,8 @@ void CNF::setVarValue(int var, bool value)
         clause_removed = true;
         break;
       }
+      else
+        lit_cnt++;
     }
     if(!clause_removed)
       ++it;
@@ -452,7 +466,66 @@ void CNF::setVarValue(int var, bool value)
 }
 
 // -------------------------------------------------------------------------------------------
-void CNF::renameVars(const vector<int> rename_map)
+void CNF::doPureAndUnit(const vector<int> &keep)
+{
+  set<int> unit;
+  bool unit_changed = true;
+  while(unit_changed)
+  {
+    unit_changed = false;
+    for(ClauseIter it = clauses_.begin(); it != clauses_.end();)
+    {
+      bool erase = false;
+      if(it->size() == 1)
+      {
+        unit.insert(it->front());
+        erase = true;
+        unit_changed = true;
+      }
+      else if(!unit.empty())
+      {
+        for(size_t c = 0; c < it->size(); )
+        {
+          int lit = (*it)[c];
+          if(unit.count(lit)) // this clause is true, remove it:
+          {
+            erase = true;
+            break;
+          }
+          else if(unit.count(-lit)) // this literal is false, remove it:
+          {
+            (*it)[c] = it->back();
+            it->pop_back();
+            if(it->size() == 1)
+            {
+              unit.insert(it->front());
+              erase = true;
+              unit_changed = true;
+              break;
+            }
+          }
+          else
+            ++c;
+        }
+      }
+      if(erase)
+        it = clauses_.erase(it);
+      else
+        ++it;
+    }
+  }
+
+  for(size_t cnt = 0; cnt < keep.size(); ++cnt)
+  {
+    if(unit.count(keep[cnt]) != 0)
+      add1LitClause(keep[cnt]);
+    else if(unit.count(-keep[cnt]) != 0)
+      add1LitClause(-keep[cnt]);
+  }
+}
+
+// -------------------------------------------------------------------------------------------
+void CNF::renameVars(const vector<int> &rename_map)
 {
   for(ClauseIter it = clauses_.begin(); it != clauses_.end(); ++it)
   {

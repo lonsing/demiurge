@@ -41,7 +41,7 @@ class CNF;
 /// @brief Contains utility functions that can be usful in various back-ends.
 ///
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.1.0
+/// @version 1.2.0
 class Utils
 {
 public:
@@ -164,6 +164,16 @@ public:
 
 // -------------------------------------------------------------------------------------------
 ///
+/// @brief Checks if two vectors contain the same set of elements.
+///
+/// @param v1 The first vector for the comparison.
+/// @param v2 The first vector for the comparison.
+/// @param start_idx The start index for the comparison.
+/// @return True if the two vectors contain the same set of elements.
+  static bool eq(const vector<int> &v1, const vector<int> &v2, int start_idx = 0);
+
+// -------------------------------------------------------------------------------------------
+///
 /// @brief Negates all literals in a cube or clause.
 ///
 /// @param cube_or_clause The cube or clause in which all literals should be negated.
@@ -230,6 +240,47 @@ public:
 ///
 /// @param cnf The CNF formula to negate.
   static void negateStateCNF(CNF &cnf);
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Negates a CNF by transforming into AIGER and back.
+///
+/// This method performs the following 3 steps to negate a CNF: (1) the CNF is transformed
+/// into AIGER format, (2) optimized with ABC, and (3) transformed back into CNF. The new
+/// CNF has one (fresh) temporary variable per AIGER gate.
+///
+/// @param cnf The CNF formula to negate.
+  static void negateViaAig(CNF &cnf);
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Compresses a state-CNF by removing implied clauses and computes the next-state CNF.
+///
+/// This method is similar to #compressStateCNF(). The difference is that this method also
+/// computes a compact representation of the next-state copy of passed state-CNF. When
+/// compressing the next-state copy, clauses are removed if they are already implied by
+/// existing clauses or the present-state copy of the CNF. That is, the compression of the
+/// next-state copy is only valid if the current-state copy is going to be asserted in the
+/// solver.
+//
+///
+/// @param ps_cnf The CNF formula to compress. We assume that this CNF only talks about the
+///        present-state variables. This CNF is compressed, similar as done by
+///        #compressStateCNF().
+/// @param ns_cnf An empty CNF. This CNF is filled with the compression of the next-state
+///        copy of ps_cnf. The resulting ns_cnf is only valid under the assumption that
+///        ps_cnf is asserted.
+/// @param hardcore Set this parameter to true if you do not only want to remove clauses but
+///        also literals from clauses. This is more expensive, but can produce smaller CNF
+///        representations.
+  static void compressNextStateCNF(CNF &ps_cnf, CNF &ns_cnf, bool hardcore = false);
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Returns the current memory usage as debug message in kB.
+///
+/// @return The current memory usage as debug message in kB.
+  static size_t getCurrentMemUsage();
 
 // -------------------------------------------------------------------------------------------
 ///

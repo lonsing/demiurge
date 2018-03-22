@@ -1,4 +1,4 @@
-README for Demiurge Version 1.1.0
+README for Demiurge Version 1.2.0
 =================================
 
 This file contains important information about this distribution of the tool
@@ -30,14 +30,17 @@ Formal Methods in System Design 40(2): 232-262 (2012)').
 
 Demiurge implements different synthesis methods in different back-ends. Most of
 these synthesis methods are based on SAT- or QBF-solving. A description of some
-of the implemented algorithms can be found in the paper: 'Roderick Bloem, Robert
-Koenighofer, Martina Seidl: SAT-Based Synthesis Methods for Safety Specs' to
-appear in VMCAI'14.
-
+of the implemented algorithms can be found in the paper: 
+  Roderick Bloem, Robert Koenighofer, Martina Seidl: "SAT-Based Synthesis 
+  Methods for Safety Specs" in VMCAI'14.  
+Different methods for synthesizing circuits from already computed strategies are
+discussed in the paper:
+  Roderick Bloem, Uwe Egly, Patrick Klampfl, Robert Koenighofer, Florian 
+  Lonsing: "SAT-based methods for circuit synthesis" in FMCAD'14.
 Demiurge is not only a tool, but also a framework for implementing new synthesis
 algorithms. A lot of infrastructure can be re-used. This includes not only the
 parsing of input files but also classes to conveniently manipulate Boolean
-formulas in conjunctive normal form, interfaces to SAT- and QBF-solver
+formulas in conjunctive normal form, interfaces to SAT- and QBF solvers
 (different solvers can be used via a unified interface), and so on. Most of the
 infrastructure currently available targets SAT- and QBF-based synthesis methods.
 But there is no reason not include BDD-based methods in new back-ends.
@@ -55,12 +58,12 @@ control signals. They are distinguished by their name. Control signals have a
 name that starts with 'controllable_'. The question answered by demiurge is:
 'can the control signals be implemented in such a way that the error output
 never becomes true?' If yes, then we compute such an implementation. This is
-compatible with the input format suggested for the upcoming synthesis
-competition (see http://www.syntcomp.org/).
+compatible with the input format for the synthesis competition 
+(see http://www.syntcomp.org/).
 
 Output format:
 The output of the synthesis tool is a circuit in AIGER format as well. It is a
-copy of the the input file with one important change: the control signals are no
+copy of the input file with one important change: the control signals are no
 inputs to the circuit any more. Instead, they are computed inside the circuit
 based on the current state and the uncontrollable inputs. Hence, for a sanity
 check, the output of our tool can be passed on to a verification tool compatible
@@ -79,9 +82,7 @@ tool/doc/        Contains the source code documentation created by Doxygen.
                  command 'make doc' from a shell in tool/. The entry point for
                  the HTML documentation is tool/doc/doxygen.html.
 experiments/     contains scripts and benchmarks to run experiments with the
-                 tool. The scripts performance_test_XYZ.sh are exactly the
-                 scripts that were used to obtain the results for the VMCAI'14
-                 paper.
+                 tool. 
 experiments/benchmarks/: contains example input files for the tool. Most of them
                  are parameterized by some means. A rule of thumb is: the higher
                  the number in the benchmark, the more complex the benchmark.
@@ -94,15 +95,30 @@ experiments/benchmarks/: contains example input files for the tool. Most of them
                  where the name ends with 'n', this optimization step was
                  skipped.
 experiments/results/: This is the directory where the performance testing
-                 scripts put their results. The subdirectory vmcai_results/
-                 contains the output of the scripts when run on a Intel Xeon
-                 E5430 CPU with 4 cores running at 2.66 GHz, and a 64 bit
-                 Linux. These are exactly the results as published at VMCAI'14.
-                 The file experiments/results/vmcai_results/vmcai_results.xls
+                 scripts put their results. All results were obtained using a
+                 Intel Xeon E5430 CPU with 4 cores running at 2.66 GHz, and a 
+                 64 bit Linux.
+experiments/results/vmcai_results/: This subdirectory contains the results for 
+                 our VMCAI'14 paper, which were obtained using an older version 
+                 (namely 1.0.0) of this tool.  The file vmcai_results.xls
                  summarizes all results with spreadsheet tables. The scripts
                  XYZ_log_to_table.py are able to transform log-files as produced
-                 by the scripts performance_test_XYZ.sh into CSV files (which
-                 can be easily imported into spreadsheets).
+                 by the scripts into CSV files (which can be easily imported 
+                 into spreadsheets).      
+experiments/results/fmcad_results/: This subdirectory contains the results for 
+                 our FMCAD'14 paper, which were obtained using an older version 
+                 (namely 1.1.0) of this tool.  The file fmcad_results.xls
+                 summarizes all results with spreadsheet tables. The scripts
+                 XYZ_log_to_table.py are able to transform log-files as produced
+                 by the scripts into CSV files (which can be easily imported 
+                 into spreadsheets).  
+experiments/results/diss_results/: This subdirectory contains the results for 
+                 the PhD Thesis of Robert Koenighofer. They were obtained with
+                 this version (1.2.0) of the tool.  The subdirectory "win" 
+                 contains the results for computing the winning region, the
+                 subdirectory "extr" contains the result for computing circuits.
+                 Both directories contain spreadsheets that summarize the 
+                 results.                 
 bdd_tool/        Contains a BDD-based implementation written in Python. It is
                  used as a baseline for comparison in our VMCAI'14 paper. It has
                  been created by students in the course of an internal synthesis
@@ -112,8 +128,14 @@ Installation Instructions
 -------------------------
 Pre-compiled Linux binaries of the tool can be found in
 tool/build/src/demiurge-bin and tool/build/src/demiurge-debug. At the moment, we
-support Unix-based operating systems only. In order to compile these binaries
-yourself you need to:
+support Unix-based operating systems only. The pre-compiled binaries expect to
+find an executable of the tool ABC [1] at $DEMIURGETP/abc/abc/abc. Depending on
+the command-line options (e.g., if you want to use a QBF solver as an external 
+process) other third-party tools may also be necessary. Execute the script
+tool/ext_tools/install_all.sh to install them all. You can also execute specific
+scripts for specific tools if you do not need them all.
+
+In order to compile the binaries yourself you need to:
  - Make sure that GNU make, the GNU C compiler gcc, and the GNU C++ compiler
    g++ is installed on your system. On Debian-based Linux systems (such as
    Ubuntu), you can do this by typing
@@ -151,6 +173,15 @@ yourself you need to:
 
 Changes
 -------
+1.2.0: New methods for computing a winning region using heuristics for partial
+       quantifier elimination, included these new methods also in the 
+       parallelized strategy computation, created a parallelized realization
+       of circuit extraction, updated third-party libraries and tools to newer 
+       versions, new experimental results.
+       This is the version that has been sent to the SYNTComp 2015 competition
+       (see http://www.syntcomp.org/). This is also the version that has been
+       used for obtaining all the results in the PhD Thesis of Robert
+       Koenighofer.
 1.1.0: New methods for computing the winning region using incremental QBF,
        several new methods for extracting circuits from the winning region,
        updated third-party libraries and tools to newer versions.
@@ -164,4 +195,6 @@ Changes
 
 In case of any questions, do not hesitate to contact the authors (E.g.
 robert.koenighofer@iaik.tugraz.at).
+
+[1] http://www.eecs.berkeley.edu/~alanmi/abc/
  

@@ -19,6 +19,8 @@ Contains the definition of many classes, all related to a parallelization.
 {\ttfamily \#include \char`\"{}Q\-B\-F\-Solver.\-h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}unistd.\-h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}I\-F\-M\-Proof\-Obligation.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Dep\-Q\-B\-F\-Api.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Dep\-Q\-B\-F\-Ext.\-h\char`\"{}}\\*
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
@@ -46,7 +48,7 @@ Contains the definition of many classes, all related to a parallelization.
 
 \subsection{Detailed Description}
 Contains the definition of many classes, all related to a parallelization. \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000005}{Todo}]Split this file into several files, one per class, and combine them in a namespace. \end{DoxyRefDesc}
+\item[\hyperlink{todo__todo000010}{Todo}]Split this file into several files, one per class, and combine them in a namespace. \end{DoxyRefDesc}
 
 
 Definition in file \hyperlink{ParallelLearner_8cpp_source}{Parallel\-Learner.\-cpp}.
@@ -63,7 +65,7 @@ A constant for the source info\-: 'comes from a \hyperlink{classCounterGenSAT}{C
 
 
 
-Definition at line 85 of file Parallel\-Learner.\-cpp.
+Definition at line 87 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -78,7 +80,7 @@ A constant for the source info\-: 'comes from a \hyperlink{classClauseExplorerSA
 
 
 
-Definition at line 79 of file Parallel\-Learner.\-cpp.
+Definition at line 81 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -93,11 +95,7 @@ A constant for the source info\-: 'comes from a \hyperlink{classIFM13Explorer}{I
 
 
 
-Definition at line 97 of file Parallel\-Learner.\-cpp.
-
-
-
-Referenced by I\-F\-M13\-Explorer\-::add\-Lose().
+Definition at line 99 of file Parallel\-Learner.\-cpp.
 
 \hypertarget{ParallelLearner_8cpp_ac41fa28e287ec0bc04bef6fbac5c16b4}{\index{Parallel\-Learner.\-cpp@{Parallel\-Learner.\-cpp}!I\-S\-\_\-\-G\-R\-E\-A\-T\-E\-R@{I\-S\-\_\-\-G\-R\-E\-A\-T\-E\-R}}
 \index{I\-S\-\_\-\-G\-R\-E\-A\-T\-E\-R@{I\-S\-\_\-\-G\-R\-E\-A\-T\-E\-R}!ParallelLearner.cpp@{Parallel\-Learner.\-cpp}}
@@ -108,7 +106,7 @@ A constant for the result\-: 'the rank of the state is greater'.
 
 
 
-Definition at line 73 of file Parallel\-Learner.\-cpp.
+Definition at line 75 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -123,7 +121,7 @@ A constant for the result\-: 'the state is losing'.
 
 
 
-Definition at line 67 of file Parallel\-Learner.\-cpp.
+Definition at line 69 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -138,11 +136,11 @@ A constant for the source info\-: 'comes from a \hyperlink{classClauseMinimizerQ
 
 
 
-Definition at line 91 of file Parallel\-Learner.\-cpp.
+Definition at line 93 of file Parallel\-Learner.\-cpp.
 
 
 
-Referenced by Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses(), and Parallel\-Learner\-::notify\-New\-Win\-Reg\-Clause().
+Referenced by Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses\-Inc(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses\-No\-Inc(), and Parallel\-Learner\-::notify\-New\-Win\-Reg\-Clause().
 
 \hypertarget{ParallelLearner_8cpp_a2553d9f93348ddd821d62199c3f29ded}{\index{Parallel\-Learner.\-cpp@{Parallel\-Learner.\-cpp}!P\-L\-O\-G@{P\-L\-O\-G}}
 \index{P\-L\-O\-G@{P\-L\-O\-G}!ParallelLearner.cpp@{Parallel\-Learner.\-cpp}}
@@ -153,10 +151,10 @@ Referenced by Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses(), and Parallel\-L
 )}}\label{ParallelLearner_8cpp_a2553d9f93348ddd821d62199c3f29ded}
 {\bfseries Value\-:}
 \begin{DoxyCode}
-\{                                                                         \(\backslash\)
-  ParallelLearner::print\_lock\_.lock();                                    \(\backslash\)
-  cout << \textcolor{stringliteral}{"[DBG] "} << message << endl;                                    \(\backslash\)
-  ParallelLearner::print\_lock\_.unlock();                                  \(\backslash\)
+\{                                                                         \hyperlink{classParallelLearner_a5bc71a2c35fa976d792bf0e80de31a39}{\(\backslash\)}
+\hyperlink{classParallelLearner_a5bc71a2c35fa976d792bf0e80de31a39}{  ParallelLearner::print\_lock\_}.lock();                                    \(\backslash\)
+  cout << \textcolor{stringliteral}{"[DBG] "} << message << endl;                                    \hyperlink{classParallelLearner_a5bc71a2c35fa976d792bf0e80de31a39}{\(\backslash\)}
+\hyperlink{classParallelLearner_a5bc71a2c35fa976d792bf0e80de31a39}{  ParallelLearner::print\_lock\_}.unlock();                                  \(\backslash\)
 \}
 \end{DoxyCode}
 
@@ -170,7 +168,7 @@ Prints a debug message (protected by a lock).
 \end{DoxyParams}
 
 
-Definition at line 108 of file Parallel\-Learner.\-cpp.
+Definition at line 110 of file Parallel\-Learner.\-cpp.
 
 \hypertarget{ParallelLearner_8cpp_a559b05095d4222458ef70e407a3a8a01}{\index{Parallel\-Learner.\-cpp@{Parallel\-Learner.\-cpp}!R\-E\-A\-L\-I\-Z\-A\-B\-L\-E@{R\-E\-A\-L\-I\-Z\-A\-B\-L\-E}}
 \index{R\-E\-A\-L\-I\-Z\-A\-B\-L\-E@{R\-E\-A\-L\-I\-Z\-A\-B\-L\-E}!ParallelLearner.cpp@{Parallel\-Learner.\-cpp}}
@@ -181,11 +179,11 @@ A constant for the realizability verdict 'realizable'.
 
 
 
-Definition at line 55 of file Parallel\-Learner.\-cpp.
+Definition at line 57 of file Parallel\-Learner.\-cpp.
 
 
 
-Referenced by Clause\-Explorer\-S\-A\-T\-::explore\-Clauses().
+Referenced by Templ\-Explorer\-::compute\-Winning\-Region(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), and I\-F\-M13\-Explorer\-::explore\-Clauses().
 
 \hypertarget{ParallelLearner_8cpp_ac1ae4add974b9cfc6b5aaf8a578f01ab}{\index{Parallel\-Learner.\-cpp@{Parallel\-Learner.\-cpp}!U\-N\-K\-N\-O\-W\-N@{U\-N\-K\-N\-O\-W\-N}}
 \index{U\-N\-K\-N\-O\-W\-N@{U\-N\-K\-N\-O\-W\-N}!ParallelLearner.cpp@{Parallel\-Learner.\-cpp}}
@@ -196,11 +194,11 @@ A constant for the realizability verdict 'not yet known'.
 
 
 
-Definition at line 49 of file Parallel\-Learner.\-cpp.
+Definition at line 51 of file Parallel\-Learner.\-cpp.
 
 
 
-Referenced by Counter\-Gen\-S\-A\-T\-::bored(), Counter\-Gen\-S\-A\-T\-::compress\-Bored(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), I\-F\-M13\-Explorer\-::explore\-Clauses(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses(), I\-F\-M13\-Explorer\-::propagate\-Blocked\-States(), and I\-F\-M13\-Explorer\-::rec\-Block\-Cube().
+Referenced by Counter\-Gen\-S\-A\-T\-::bored(), Templ\-Explorer\-::check(), Counter\-Gen\-S\-A\-T\-::compress\-Bored(), Templ\-Explorer\-::compute\-Winning\-Region(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), I\-F\-M13\-Explorer\-::explore\-Clauses(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses\-Inc(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses\-No\-Inc(), I\-F\-M13\-Explorer\-::propagate\-Blocked\-States(), I\-F\-M13\-Explorer\-::rec\-Block\-Cube(), and Templ\-Explorer\-::synt\-S\-A\-T().
 
 \hypertarget{ParallelLearner_8cpp_afc23dc5ee08a8c5cacca5f12c80ae9ce}{\index{Parallel\-Learner.\-cpp@{Parallel\-Learner.\-cpp}!U\-N\-R\-E\-A\-L\-I\-Z\-A\-B\-L\-E@{U\-N\-R\-E\-A\-L\-I\-Z\-A\-B\-L\-E}}
 \index{U\-N\-R\-E\-A\-L\-I\-Z\-A\-B\-L\-E@{U\-N\-R\-E\-A\-L\-I\-Z\-A\-B\-L\-E}!ParallelLearner.cpp@{Parallel\-Learner.\-cpp}}
@@ -211,9 +209,9 @@ A constant for the realizability verdict 'unrealizable'.
 
 
 
-Definition at line 61 of file Parallel\-Learner.\-cpp.
+Definition at line 63 of file Parallel\-Learner.\-cpp.
 
 
 
-Referenced by Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), I\-F\-M13\-Explorer\-::explore\-Clauses(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses(), and Parallel\-Learner\-::run().
+Referenced by Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), I\-F\-M13\-Explorer\-::explore\-Clauses(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses\-Inc(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses\-No\-Inc(), and Parallel\-Learner\-::run().
 

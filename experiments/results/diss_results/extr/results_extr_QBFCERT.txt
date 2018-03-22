@@ -1,0 +1,3740 @@
+=====================  add2n.aag =====================
+[LOG] Relation determinization time: 0.001352 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 13 new AND gates.
+[LOG] Size before ABC: 67 AND gates.
+[LOG] Size after ABC: 11 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.001922 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.10 sec (Real time) / 0.07 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 31 6 2 1 23
+Raw AIGER output size: aag 42 4 2 1 36
+=====================  add2y.aag =====================
+[LOG] Relation determinization time: 0.001535 sec CPU time.
+[LOG] Relation determinization time: 1 sec real time.
+[LOG] Final circuit size: 13 new AND gates.
+[LOG] Size before ABC: 63 AND gates.
+[LOG] Size after ABC: 11 AND gates.
+[LOG] Time for QBFCert: 1 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.001989 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.10 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 25 6 2 1 17
+Raw AIGER output size: aag 36 4 2 1 30
+=====================  add4n.aag =====================
+[LOG] Relation determinization time: 0.003743 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 901 new AND gates.
+[LOG] Size before ABC: 2009 AND gates.
+[LOG] Size after ABC: 899 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.004674 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.27 sec (Real time) / 0.24 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.54 sec (Real time) / 0.54 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.03 sec (Real time) / 0.02 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 75 12 2 1 61
+Raw AIGER output size: aag 974 8 2 1 962
+=====================  add4y.aag =====================
+[LOG] Relation determinization time: 0.004336 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 919 new AND gates.
+[LOG] Size before ABC: 1964 AND gates.
+[LOG] Size after ABC: 916 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.004699 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.24 sec (Real time) / 0.20 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.53 sec (Real time) / 0.52 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.03 sec (Real time) / 0.03 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 59 12 2 1 45
+Raw AIGER output size: aag 975 8 2 1 964
+=====================  add6n.aag =====================
+[LOG] Relation determinization time: 0.038201 sec CPU time.
+[LOG] Relation determinization time: 11 sec real time.
+[LOG] Final circuit size: 19572 new AND gates.
+[LOG] Size before ABC: 51003 AND gates.
+[LOG] Size after ABC: 19571 AND gates.
+[LOG] Time for QBFCert: 2 seconds.
+[LOG] Time for optimizing with ABC: 9 seconds.
+[LOG] Overall execution time: 0.039041 sec CPU time.
+[LOG] Overall execution time: 11 sec real time.
+Synthesis time: 10.55 sec (Real time) / 10.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 13.91 sec (Real time) / 13.87 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 6.39 sec (Real time) / 6.38 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 119 18 2 1 99
+Raw AIGER output size: aag 19690 12 2 1 19671
+=====================  add6y.aag =====================
+[LOG] Relation determinization time: 0.056526 sec CPU time.
+[LOG] Relation determinization time: 11 sec real time.
+[LOG] Final circuit size: 20370 new AND gates.
+[LOG] Size before ABC: 51916 AND gates.
+[LOG] Size after ABC: 20365 AND gates.
+[LOG] Time for QBFCert: 2 seconds.
+[LOG] Time for optimizing with ABC: 9 seconds.
+[LOG] Overall execution time: 0.0574 sec CPU time.
+[LOG] Overall execution time: 11 sec real time.
+Synthesis time: 10.33 sec (Real time) / 9.84 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 9.43 sec (Real time) / 9.41 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 5.42 sec (Real time) / 5.40 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 93 18 2 1 73
+Raw AIGER output size: aag 20458 12 2 1 20443
+=====================  add8n.aag =====================
+Command terminated by signal 6
+Synthesis time: 178.92 sec (Real time) / 171.48 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  add8y.aag =====================
+Command terminated by signal 6
+Synthesis time: 170.08 sec (Real time) / 165.26 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  add10n.aag =====================
+Command terminated by signal 6
+Synthesis time: 10040.82 sec (Real time) / 9899.01 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  add10y.aag =====================
+Command terminated by signal 6
+Synthesis time: 10047.75 sec (Real time) / 9933.84 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  cnt2n.aag =====================
+[LOG] Relation determinization time: 0.001177 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.001702 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.09 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 35 2 3 1 30
+Raw AIGER output size: aag 35 1 3 1 31
+=====================  cnt2y.aag =====================
+[LOG] Relation determinization time: 0.001245 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.001698 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.09 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 16 2 3 1 11
+Raw AIGER output size: aag 16 1 3 1 12
+=====================  cnt3n.aag =====================
+[LOG] Relation determinization time: 0.001599 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.002304 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.09 sec (Real time) / 0.07 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 51 2 4 1 45
+Raw AIGER output size: aag 51 1 4 1 46
+=====================  cnt3y.aag =====================
+[LOG] Relation determinization time: 0.001383 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.001911 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.09 sec (Real time) / 0.07 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 23 2 4 1 17
+Raw AIGER output size: aag 23 1 4 1 18
+=====================  cnt4n.aag =====================
+[LOG] Relation determinization time: 0.001547 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.001986 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.09 sec (Real time) / 0.07 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 67 2 5 1 60
+Raw AIGER output size: aag 67 1 5 1 61
+=====================  cnt4y.aag =====================
+[LOG] Relation determinization time: 0.001508 sec CPU time.
+[LOG] Relation determinization time: 1 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 1 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.002232 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.09 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 30 2 5 1 23
+Raw AIGER output size: aag 30 1 5 1 24
+=====================  cnt5n.aag =====================
+[LOG] Relation determinization time: 0.001834 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.002781 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.09 sec (Real time) / 0.07 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 83 2 6 1 75
+Raw AIGER output size: aag 83 1 6 1 76
+=====================  cnt5y.aag =====================
+[LOG] Relation determinization time: 0.001339 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.001811 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.10 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 37 2 6 1 29
+Raw AIGER output size: aag 37 1 6 1 30
+=====================  cnt6n.aag =====================
+[LOG] Relation determinization time: 0.001272 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.001798 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.10 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 99 2 7 1 90
+Raw AIGER output size: aag 99 1 7 1 91
+=====================  cnt6y.aag =====================
+[LOG] Relation determinization time: 0.001476 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.001906 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.09 sec (Real time) / 0.07 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 44 2 7 1 35
+Raw AIGER output size: aag 44 1 7 1 36
+=====================  cnt7n.aag =====================
+[LOG] Relation determinization time: 0.002005 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 1 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.002899 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.10 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.04 sec (Real time) / 0.04 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 115 2 8 1 105
+Raw AIGER output size: aag 116 1 8 1 106
+=====================  cnt7y.aag =====================
+[LOG] Relation determinization time: 0.000843 sec CPU time.
+[LOG] Relation determinization time: 1 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Overall execution time: 0.001623 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.09 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 51 2 8 1 41
+Raw AIGER output size: aag 51 1 8 1 42
+=====================  cnt8n.aag =====================
+[LOG] Relation determinization time: 0.001623 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.00217 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.10 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.13 sec (Real time) / 0.11 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 131 2 9 1 120
+Raw AIGER output size: aag 131 1 9 1 121
+=====================  cnt8y.aag =====================
+[LOG] Relation determinization time: 0.0015 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.001935 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.09 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.08 sec (Real time) / 0.08 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 58 2 9 1 47
+Raw AIGER output size: aag 58 1 9 1 48
+=====================  cnt9n.aag =====================
+[LOG] Relation determinization time: 0.002309 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.003465 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.10 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.33 sec (Real time) / 0.32 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 147 2 10 1 135
+Raw AIGER output size: aag 147 1 10 1 136
+=====================  cnt9y.aag =====================
+[LOG] Relation determinization time: 0.00163 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.002509 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.10 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.23 sec (Real time) / 0.22 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 65 2 10 1 53
+Raw AIGER output size: aag 65 1 10 1 54
+=====================  cnt10n.aag =====================
+[LOG] Relation determinization time: 0.001667 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.002244 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.09 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 1.28 sec (Real time) / 1.23 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 163 2 11 1 150
+Raw AIGER output size: aag 163 1 11 1 151
+=====================  cnt10y.aag =====================
+[LOG] Relation determinization time: 0.001703 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.002644 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.10 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.73 sec (Real time) / 0.70 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 72 2 11 1 59
+Raw AIGER output size: aag 72 1 11 1 60
+=====================  cnt11n.aag =====================
+[LOG] Relation determinization time: 0.001693 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.002647 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.10 sec (Real time) / 0.07 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 3.68 sec (Real time) / 3.61 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 179 2 12 1 165
+Raw AIGER output size: aag 179 1 12 1 166
+=====================  cnt11y.aag =====================
+[LOG] Relation determinization time: 0.001872 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.002835 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.09 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 2.95 sec (Real time) / 2.86 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 79 2 12 1 65
+Raw AIGER output size: aag 79 1 12 1 66
+=====================  cnt15n.aag =====================
+[LOG] Relation determinization time: 0.002735 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.004416 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.10 sec (Real time) / 0.07 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 384.33 sec (Real time) / 378.47 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 243 2 16 1 225
+Raw AIGER output size: aag 243 1 16 1 226
+=====================  cnt15y.aag =====================
+[LOG] Relation determinization time: 0.001487 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.002422 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.13 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 223.55 sec (Real time) / 218.92 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 107 2 16 1 89
+Raw AIGER output size: aag 107 1 16 1 90
+=====================  cnt20n.aag =====================
+[LOG] Relation determinization time: 0.002401 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.003694 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.41 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.03 sec (Real time) / 0.03 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 4.53 sec (Real time) / 4.43 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 323 2 21 1 300
+Raw AIGER output size: aag 323 1 21 1 301
+=====================  cnt20y.aag =====================
+[LOG] Relation determinization time: 0.001734 sec CPU time.
+[LOG] Relation determinization time: 1 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Overall execution time: 0.002888 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.12 sec (Real time) / 0.07 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+Command terminated by signal 6
+IC3 Model-checking time: 2472.13 sec (Real time) / 2440.96 sec (User CPU time)
+IC3-Model-checking: 0 (exit code: 130)
+Raw AIGER input size: aag 142 2 21 1 119
+Raw AIGER output size: aag 142 1 21 1 120
+=====================  cnt25n.aag =====================
+[LOG] Relation determinization time: 0.003729 sec CPU time.
+[LOG] Relation determinization time: 1 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 1 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Overall execution time: 0.006261 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.12 sec (Real time) / 0.09 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.03 sec (Real time) / 0.03 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 18.82 sec (Real time) / 18.60 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 403 2 26 1 375
+Raw AIGER output size: aag 404 1 26 1 376
+=====================  cnt25y.aag =====================
+[LOG] Relation determinization time: 0.001289 sec CPU time.
+[LOG] Relation determinization time: 1 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Overall execution time: 0.002352 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.13 sec (Real time) / 0.07 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+Command terminated by signal 6
+IC3 Model-checking time: 1821.52 sec (Real time) / 1796.11 sec (User CPU time)
+IC3-Model-checking: 0 (exit code: 130)
+Raw AIGER input size: aag 177 2 26 1 149
+Raw AIGER output size: aag 177 1 26 1 150
+=====================  cnt30n.aag =====================
+[LOG] Relation determinization time: 0.004053 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.007122 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.13 sec (Real time) / 0.09 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.04 sec (Real time) / 0.04 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 166.10 sec (Real time) / 164.24 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 483 2 31 1 450
+Raw AIGER output size: aag 483 1 31 1 451
+=====================  cnt30y.aag =====================
+[LOG] Relation determinization time: 0.002169 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.003293 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.11 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.04 sec (Real time) / 0.04 sec (User CPU time)
+BLIMC-Model-checking: 1
+Command terminated by signal 6
+IC3 Model-checking time: 5977.01 sec (Real time) / 5931.49 sec (User CPU time)
+IC3-Model-checking: 0 (exit code: 130)
+Raw AIGER input size: aag 212 2 31 1 179
+Raw AIGER output size: aag 212 1 31 1 180
+=====================  mv2n.aag =====================
+[LOG] Relation determinization time: 0.001314 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 1 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.002044 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.13 sec (Real time) / 0.07 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 24 2 3 1 19
+Raw AIGER output size: aag 25 1 3 1 20
+=====================  mv2y.aag =====================
+[LOG] Relation determinization time: 0.001596 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.002463 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.11 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 18 2 3 1 13
+Raw AIGER output size: aag 18 1 3 1 14
+=====================  mvs2n.aag =====================
+[LOG] Relation determinization time: 0.001536 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 1 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.002532 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.11 sec (Real time) / 0.07 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 31 2 3 1 26
+Raw AIGER output size: aag 32 1 3 1 27
+=====================  mvs2y.aag =====================
+[LOG] Relation determinization time: 0.001544 sec CPU time.
+[LOG] Relation determinization time: 1 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Overall execution time: 0.002488 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.10 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 15 2 3 1 10
+Raw AIGER output size: aag 15 1 3 1 11
+=====================  mv4n.aag =====================
+[LOG] Relation determinization time: 0.002211 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 3 new AND gates.
+[LOG] Size before ABC: 7 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.003381 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.10 sec (Real time) / 0.07 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 80 6 5 1 69
+Raw AIGER output size: aag 80 3 5 1 72
+=====================  mv4y.aag =====================
+[LOG] Relation determinization time: 0.001097 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 16 new AND gates.
+[LOG] Size before ABC: 22 AND gates.
+[LOG] Size after ABC: 15 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.002094 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.13 sec (Real time) / 0.09 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 52 6 5 1 41
+Raw AIGER output size: aag 67 3 5 1 57
+=====================  mvs4n.aag =====================
+[LOG] Relation determinization time: 0.001865 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 4 new AND gates.
+[LOG] Size before ABC: 5 AND gates.
+[LOG] Size after ABC: 2 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.003053 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.12 sec (Real time) / 0.09 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 69 6 5 1 58
+Raw AIGER output size: aag 71 3 5 1 62
+=====================  mvs4y.aag =====================
+[LOG] Relation determinization time: 0.001221 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 5 new AND gates.
+[LOG] Size before ABC: 7 AND gates.
+[LOG] Size after ABC: 3 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.001978 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.09 sec (Real time) / 0.07 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 37 6 5 1 26
+Raw AIGER output size: aag 40 3 5 1 31
+=====================  mv8n.aag =====================
+[LOG] Relation determinization time: 0.003145 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 7 new AND gates.
+[LOG] Size before ABC: 7 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.004945 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.11 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 192 14 9 1 169
+Raw AIGER output size: aag 192 7 9 1 176
+=====================  mv8y.aag =====================
+[LOG] Relation determinization time: 0.002013 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 8 new AND gates.
+[LOG] Size before ABC: 14 AND gates.
+[LOG] Size after ABC: 2 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.002797 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.10 sec (Real time) / 0.09 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 120 14 9 1 97
+Raw AIGER output size: aag 122 7 9 1 105
+=====================  mvs8n.aag =====================
+[LOG] Relation determinization time: 0.002604 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 11 new AND gates.
+[LOG] Size before ABC: 19 AND gates.
+[LOG] Size after ABC: 5 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.004057 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.10 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 145 14 9 1 122
+Raw AIGER output size: aag 150 7 9 1 133
+=====================  mvs8y.aag =====================
+[LOG] Relation determinization time: 0.002074 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 11 new AND gates.
+[LOG] Size before ABC: 15 AND gates.
+[LOG] Size after ABC: 5 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.003293 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.10 sec (Real time) / 0.07 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 81 14 9 1 58
+Raw AIGER output size: aag 86 7 9 1 69
+=====================  mv12n.aag =====================
+[LOG] Relation determinization time: 0.003557 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 11 new AND gates.
+[LOG] Size before ABC: 13 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.005518 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.13 sec (Real time) / 0.11 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 304 22 13 1 269
+Raw AIGER output size: aag 304 11 13 1 280
+=====================  mv12y.aag =====================
+[LOG] Relation determinization time: 0.002747 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 11 new AND gates.
+[LOG] Size before ABC: 41 AND gates.
+[LOG] Size after ABC: 1 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.004287 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.11 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 188 22 13 1 153
+Raw AIGER output size: aag 189 11 13 1 164
+=====================  mvs12n.aag =====================
+[LOG] Relation determinization time: 0.002007 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 14 new AND gates.
+[LOG] Size before ABC: 20 AND gates.
+[LOG] Size after ABC: 4 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.002896 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.10 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 221 22 13 1 186
+Raw AIGER output size: aag 225 11 13 1 200
+=====================  mvs12y.aag =====================
+[LOG] Relation determinization time: 0.001815 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 14 new AND gates.
+[LOG] Size before ABC: 17 AND gates.
+[LOG] Size after ABC: 4 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.002989 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.10 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 125 22 13 1 90
+Raw AIGER output size: aag 129 11 13 1 104
+=====================  mv16n.aag =====================
+[LOG] Relation determinization time: 0.004394 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 15 new AND gates.
+[LOG] Size before ABC: 15 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.006772 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.12 sec (Real time) / 0.10 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.04 sec (Real time) / 0.04 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 416 30 17 1 369
+Raw AIGER output size: aag 416 15 17 1 384
+=====================  mv16y.aag =====================
+[LOG] Relation determinization time: 0.002152 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 24 new AND gates.
+[LOG] Size before ABC: 62 AND gates.
+[LOG] Size after ABC: 10 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.003471 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.12 sec (Real time) / 0.11 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.03 sec (Real time) / 0.03 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 256 30 17 1 209
+Raw AIGER output size: aag 266 15 17 1 233
+=====================  mvs16n.aag =====================
+[LOG] Relation determinization time: 0.003616 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 18 new AND gates.
+[LOG] Size before ABC: 21 AND gates.
+[LOG] Size after ABC: 4 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.005117 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.10 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 297 30 17 1 250
+Raw AIGER output size: aag 301 15 17 1 268
+=====================  mvs16y.aag =====================
+[LOG] Relation determinization time: 0.002447 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 17 new AND gates.
+[LOG] Size before ABC: 17 AND gates.
+[LOG] Size after ABC: 3 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.004181 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.09 sec (Real time) / 0.07 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 169 30 17 1 122
+Raw AIGER output size: aag 172 15 17 1 139
+=====================  mvs18n.aag =====================
+[LOG] Relation determinization time: 0.003862 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 19 new AND gates.
+[LOG] Size before ABC: 21 AND gates.
+[LOG] Size after ABC: 3 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.006037 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.11 sec (Real time) / 0.09 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 335 34 19 1 282
+Raw AIGER output size: aag 338 17 19 1 301
+=====================  mvs18y.aag =====================
+[LOG] Relation determinization time: 0.003111 sec CPU time.
+[LOG] Relation determinization time: 1 sec real time.
+[LOG] Final circuit size: 18 new AND gates.
+[LOG] Size before ABC: 18 AND gates.
+[LOG] Size after ABC: 2 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Overall execution time: 0.004726 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.10 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 191 34 19 1 138
+Raw AIGER output size: aag 193 17 19 1 156
+=====================  mv20n.aag =====================
+[LOG] Relation determinization time: 0.005691 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 19 new AND gates.
+[LOG] Size before ABC: 19 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.008707 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.11 sec (Real time) / 0.09 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.04 sec (Real time) / 0.04 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 528 38 21 1 469
+Raw AIGER output size: aag 528 19 21 1 488
+=====================  mv20y.aag =====================
+[LOG] Relation determinization time: 0.003977 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 25 new AND gates.
+[LOG] Size before ABC: 67 AND gates.
+[LOG] Size after ABC: 7 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.006122 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.13 sec (Real time) / 0.10 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.03 sec (Real time) / 0.03 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 324 38 21 1 265
+Raw AIGER output size: aag 331 19 21 1 290
+=====================  mvs20n.aag =====================
+[LOG] Relation determinization time: 0.004081 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 23 new AND gates.
+[LOG] Size before ABC: 31 AND gates.
+[LOG] Size after ABC: 5 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.006355 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.10 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 373 38 21 1 314
+Raw AIGER output size: aag 378 19 21 1 337
+=====================  mvs20y.aag =====================
+[LOG] Relation determinization time: 0.002768 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 23 new AND gates.
+[LOG] Size before ABC: 27 AND gates.
+[LOG] Size after ABC: 5 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.004112 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.10 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 213 38 21 1 154
+Raw AIGER output size: aag 218 19 21 1 177
+=====================  mvs22n.aag =====================
+[LOG] Relation determinization time: 0.004656 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 30 new AND gates.
+[LOG] Size before ABC: 48 AND gates.
+[LOG] Size after ABC: 10 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.007006 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.10 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 411 42 23 1 346
+Raw AIGER output size: aag 421 21 23 1 376
+=====================  mvs22y.aag =====================
+[LOG] Relation determinization time: 0.003507 sec CPU time.
+[LOG] Relation determinization time: 1 sec real time.
+[LOG] Final circuit size: 30 new AND gates.
+[LOG] Size before ABC: 39 AND gates.
+[LOG] Size after ABC: 10 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Overall execution time: 0.005408 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.11 sec (Real time) / 0.09 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 235 42 23 1 170
+Raw AIGER output size: aag 245 21 23 1 200
+=====================  mvs24n.aag =====================
+[LOG] Relation determinization time: 0.005833 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 28 new AND gates.
+[LOG] Size before ABC: 33 AND gates.
+[LOG] Size after ABC: 6 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.008043 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.11 sec (Real time) / 0.09 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 449 46 25 1 378
+Raw AIGER output size: aag 455 23 25 1 406
+=====================  mvs24y.aag =====================
+[LOG] Relation determinization time: 0.003132 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 27 new AND gates.
+[LOG] Size before ABC: 27 AND gates.
+[LOG] Size after ABC: 5 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.004865 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.10 sec (Real time) / 0.07 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 257 46 25 1 186
+Raw AIGER output size: aag 262 23 25 1 213
+=====================  mvs28n.aag =====================
+[LOG] Relation determinization time: 0.00504 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 30 new AND gates.
+[LOG] Size before ABC: 33 AND gates.
+[LOG] Size after ABC: 4 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.007927 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.10 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.04 sec (Real time) / 0.04 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 525 54 29 1 442
+Raw AIGER output size: aag 529 27 29 1 472
+=====================  mvs28y.aag =====================
+[LOG] Relation determinization time: 0.003456 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 29 new AND gates.
+[LOG] Size before ABC: 29 AND gates.
+[LOG] Size after ABC: 3 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.005295 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.10 sec (Real time) / 0.07 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 301 54 29 1 218
+Raw AIGER output size: aag 304 27 29 1 247
+=====================  mult2.aag =====================
+[LOG] Relation determinization time: 0.001359 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 8 new AND gates.
+[LOG] Size before ABC: 57 AND gates.
+[LOG] Size after ABC: 8 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.002086 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.12 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 32 8 0 1 24
+Raw AIGER output size: aag 40 4 0 1 32
+=====================  mult4.aag =====================
+[LOG] Relation determinization time: 0.005056 sec CPU time.
+[LOG] Relation determinization time: 1 sec real time.
+[LOG] Final circuit size: 1032 new AND gates.
+[LOG] Size before ABC: 2497 AND gates.
+[LOG] Size after ABC: 1030 AND gates.
+[LOG] Time for QBFCert: 1 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.005758 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.71 sec (Real time) / 0.65 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 1.16 sec (Real time) / 1.15 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.06 sec (Real time) / 0.06 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 144 16 0 1 128
+Raw AIGER output size: aag 1174 8 0 1 1160
+=====================  mult5.aag =====================
+[LOG] Relation determinization time: 0.017687 sec CPU time.
+[LOG] Relation determinization time: 12 sec real time.
+[LOG] Final circuit size: 4882 new AND gates.
+[LOG] Size before ABC: 12681 AND gates.
+[LOG] Size after ABC: 4876 AND gates.
+[LOG] Time for QBFCert: 11 seconds.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Overall execution time: 0.01896 sec CPU time.
+[LOG] Overall execution time: 12 sec real time.
+Synthesis time: 11.70 sec (Real time) / 11.25 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 4.93 sec (Real time) / 4.92 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.65 sec (Real time) / 0.65 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 237 20 0 1 217
+Raw AIGER output size: aag 5113 10 0 1 5099
+=====================  mult6.aag =====================
+[LOG] Relation determinization time: 0.051341 sec CPU time.
+[LOG] Relation determinization time: 371 sec real time.
+[LOG] Final circuit size: 23130 new AND gates.
+[LOG] Size before ABC: 64136 AND gates.
+[LOG] Size after ABC: 23123 AND gates.
+[LOG] Time for QBFCert: 360 seconds.
+[LOG] Time for optimizing with ABC: 11 seconds.
+[LOG] Overall execution time: 0.053605 sec CPU time.
+[LOG] Overall execution time: 371 sec real time.
+Synthesis time: 371.06 sec (Real time) / 356.88 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 27.87 sec (Real time) / 27.82 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 14.31 sec (Real time) / 14.26 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 346 24 0 1 322
+Raw AIGER output size: aag 23469 12 0 1 23452
+=====================  mult7.aag =====================
+Command terminated by signal 6
+Synthesis time: 25945.17 sec (Real time) / 6481.77 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  bs8n.aag =====================
+[LOG] Relation determinization time: 0.001939 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 2 AND gates.
+[LOG] Size after ABC: 1 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.003262 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.11 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 95 4 9 1 82
+Raw AIGER output size: aag 96 3 9 1 83
+=====================  bs8y.aag =====================
+[LOG] Relation determinization time: 0.001659 sec CPU time.
+[LOG] Relation determinization time: 1 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 1 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Overall execution time: 0.002799 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.10 sec (Real time) / 0.07 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 93 4 9 1 80
+Raw AIGER output size: aag 94 3 9 1 81
+=====================  bs16n.aag =====================
+[LOG] Relation determinization time: 0.00189 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 2 AND gates.
+[LOG] Size after ABC: 1 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.00317 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.11 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 280 5 17 1 258
+Raw AIGER output size: aag 281 4 17 1 259
+=====================  bs16y.aag =====================
+[LOG] Relation determinization time: 0.003074 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 1 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.00473 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.10 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 278 5 17 1 256
+Raw AIGER output size: aag 279 4 17 1 257
+=====================  bs32n.aag =====================
+[LOG] Relation determinization time: 0.003666 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 2 AND gates.
+[LOG] Size after ABC: 1 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.007199 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.10 sec (Real time) / 0.07 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.06 sec (Real time) / 0.06 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 649 6 33 1 610
+Raw AIGER output size: aag 650 5 33 1 611
+=====================  bs32y.aag =====================
+[LOG] Relation determinization time: 0.004824 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 1 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.00807 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.11 sec (Real time) / 0.09 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.07 sec (Real time) / 0.06 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 647 6 33 1 608
+Raw AIGER output size: aag 648 5 33 1 609
+=====================  bs64n.aag =====================
+[LOG] Relation determinization time: 0.006335 sec CPU time.
+[LOG] Relation determinization time: 1 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 2 AND gates.
+[LOG] Size after ABC: 1 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Overall execution time: 0.013541 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.13 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.15 sec (Real time) / 0.15 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 1482 7 65 1 1410
+Raw AIGER output size: aag 1483 6 65 1 1411
+=====================  bs64y.aag =====================
+[LOG] Relation determinization time: 0.009347 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 1 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.014365 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.13 sec (Real time) / 0.10 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.15 sec (Real time) / 0.15 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 1480 7 65 1 1408
+Raw AIGER output size: aag 1481 6 65 1 1409
+=====================  bs128n.aag =====================
+[LOG] Relation determinization time: 0.011917 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 2 AND gates.
+[LOG] Size after ABC: 1 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.019289 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.15 sec (Real time) / 0.12 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.35 sec (Real time) / 0.35 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 3339 8 129 1 3202
+Raw AIGER output size: aag 3340 7 129 1 3203
+=====================  bs128y.aag =====================
+[LOG] Relation determinization time: 0.00982 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 1 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.022508 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.15 sec (Real time) / 0.12 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.28 sec (Real time) / 0.28 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 3337 8 129 1 3200
+Raw AIGER output size: aag 3338 7 129 1 3201
+=====================  stay2n.aag =====================
+[LOG] Relation determinization time: 0.001373 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 3 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.002428 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.11 sec (Real time) / 0.07 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 40 5 4 1 31
+Raw AIGER output size: aag 40 2 4 1 34
+=====================  stay2y.aag =====================
+[LOG] Relation determinization time: 0.001604 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 3 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.002449 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.09 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 26 5 4 1 17
+Raw AIGER output size: aag 26 2 4 1 20
+=====================  stay4n.aag =====================
+[LOG] Relation determinization time: 0.002253 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 5 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.003481 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.12 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 99 9 6 1 84
+Raw AIGER output size: aag 99 4 6 1 89
+=====================  stay4y.aag =====================
+[LOG] Relation determinization time: 0.001759 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 5 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.002969 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.12 sec (Real time) / 0.09 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 72 9 6 1 57
+Raw AIGER output size: aag 72 4 6 1 62
+=====================  stay6n.aag =====================
+[LOG] Relation determinization time: 0.002686 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 7 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.004352 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.10 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 219 13 8 1 198
+Raw AIGER output size: aag 219 6 8 1 205
+=====================  stay6y.aag =====================
+[LOG] Relation determinization time: 0.002316 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 7 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.003802 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.10 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 149 13 8 1 128
+Raw AIGER output size: aag 149 6 8 1 135
+=====================  stay8n.aag =====================
+[LOG] Relation determinization time: 0.003477 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 9 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.005935 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.11 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 403 17 10 1 376
+Raw AIGER output size: aag 403 8 10 1 385
+=====================  stay8y.aag =====================
+[LOG] Relation determinization time: 0.002798 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 9 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.004592 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.10 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 264 17 10 1 237
+Raw AIGER output size: aag 264 8 10 1 246
+=====================  stay10n.aag =====================
+[LOG] Relation determinization time: 0.004735 sec CPU time.
+[LOG] Relation determinization time: 1 sec real time.
+[LOG] Final circuit size: 11 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Overall execution time: 0.007955 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.11 sec (Real time) / 0.09 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 651 21 12 1 618
+Raw AIGER output size: aag 651 10 12 1 629
+=====================  stay10y.aag =====================
+[LOG] Relation determinization time: 0.003576 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 11 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.006221 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.10 sec (Real time) / 0.09 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 415 21 12 1 382
+Raw AIGER output size: aag 415 10 12 1 393
+=====================  stay12n.aag =====================
+[LOG] Relation determinization time: 0.006577 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 13 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.011039 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.11 sec (Real time) / 0.10 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 963 25 14 1 924
+Raw AIGER output size: aag 963 12 14 1 937
+=====================  stay12y.aag =====================
+[LOG] Relation determinization time: 0.004524 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 13 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.007649 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.11 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 602 25 14 1 563
+Raw AIGER output size: aag 602 12 14 1 576
+=====================  stay14n.aag =====================
+[LOG] Relation determinization time: 0.007111 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 15 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.010783 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.12 sec (Real time) / 0.09 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 1339 29 16 1 1294
+Raw AIGER output size: aag 1339 14 16 1 1309
+=====================  stay14y.aag =====================
+[LOG] Relation determinization time: 0.003677 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 15 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.006936 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.11 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 825 29 16 1 780
+Raw AIGER output size: aag 825 14 16 1 795
+=====================  stay16n.aag =====================
+[LOG] Relation determinization time: 0.010563 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 17 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.018105 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.12 sec (Real time) / 0.10 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 1779 33 18 1 1728
+Raw AIGER output size: aag 1779 16 18 1 1745
+=====================  stay16y.aag =====================
+[LOG] Relation determinization time: 0.007204 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 17 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.01224 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.12 sec (Real time) / 0.10 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 1084 33 18 1 1033
+Raw AIGER output size: aag 1084 16 18 1 1050
+=====================  stay18n.aag =====================
+[LOG] Relation determinization time: 0.013243 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 19 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.022662 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.13 sec (Real time) / 0.11 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.03 sec (Real time) / 0.03 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 2283 37 20 1 2226
+Raw AIGER output size: aag 2283 18 20 1 2245
+=====================  stay18y.aag =====================
+[LOG] Relation determinization time: 0.005681 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 19 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.011358 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.12 sec (Real time) / 0.09 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 1379 37 20 1 1322
+Raw AIGER output size: aag 1379 18 20 1 1341
+=====================  stay20n.aag =====================
+[LOG] Relation determinization time: 0.011393 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 21 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.020947 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.15 sec (Real time) / 0.11 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.03 sec (Real time) / 0.03 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 2851 41 22 1 2788
+Raw AIGER output size: aag 2851 20 22 1 2809
+=====================  stay20y.aag =====================
+[LOG] Relation determinization time: 0.010067 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 21 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 1 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.017633 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.12 sec (Real time) / 0.10 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 1710 41 22 1 1647
+Raw AIGER output size: aag 1711 20 22 1 1668
+=====================  stay22n.aag =====================
+[LOG] Relation determinization time: 0.014657 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 23 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.027588 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.15 sec (Real time) / 0.12 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.04 sec (Real time) / 0.04 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 3483 45 24 1 3414
+Raw AIGER output size: aag 3483 22 24 1 3437
+=====================  stay22y.aag =====================
+[LOG] Relation determinization time: 0.010624 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 23 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.015172 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.12 sec (Real time) / 0.09 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.03 sec (Real time) / 0.03 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 2077 45 24 1 2008
+Raw AIGER output size: aag 2077 22 24 1 2031
+=====================  stay24n.aag =====================
+[LOG] Relation determinization time: 0.008603 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 25 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.016199 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.14 sec (Real time) / 0.09 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.06 sec (Real time) / 0.06 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 4179 49 26 1 4104
+Raw AIGER output size: aag 4179 24 26 1 4129
+=====================  stay24y.aag =====================
+[LOG] Relation determinization time: 0.012322 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 25 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.021471 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.12 sec (Real time) / 0.10 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.03 sec (Real time) / 0.03 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 2480 49 26 1 2405
+Raw AIGER output size: aag 2480 24 26 1 2430
+=====================  genbuf1c3y.aag =====================
+[LOG] Relation determinization time: 0.033313 sec CPU time.
+[LOG] Relation determinization time: 2 sec real time.
+[LOG] Final circuit size: 5615 new AND gates.
+[LOG] Size before ABC: 10539 AND gates.
+[LOG] Size after ABC: 5615 AND gates.
+[LOG] Time for QBFCert: 1 seconds.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Overall execution time: 0.035037 sec CPU time.
+[LOG] Overall execution time: 2 sec real time.
+Synthesis time: 2.47 sec (Real time) / 2.26 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 3.86 sec (Real time) / 3.86 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 12.69 sec (Real time) / 12.66 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 166 11 21 1 134
+Raw AIGER output size: aag 5781 5 21 1 5749
+=====================  genbuf2c3y.aag =====================
+[LOG] Relation determinization time: 0.076773 sec CPU time.
+[LOG] Relation determinization time: 35 sec real time.
+[LOG] Final circuit size: 25134 new AND gates.
+[LOG] Size before ABC: 55399 AND gates.
+[LOG] Size after ABC: 25133 AND gates.
+[LOG] Time for QBFCert: 23 seconds.
+[LOG] Time for optimizing with ABC: 12 seconds.
+[LOG] Overall execution time: 0.078273 sec CPU time.
+[LOG] Overall execution time: 35 sec real time.
+Synthesis time: 35.31 sec (Real time) / 32.28 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 16.23 sec (Real time) / 16.21 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 186.27 sec (Real time) / 186.14 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 206 13 24 1 169
+Raw AIGER output size: aag 25339 6 24 1 25303
+=====================  genbuf3c3y.aag =====================
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  genbuf4c3y.aag =====================
+Command terminated by signal 6
+Synthesis time: 705.97 sec (Real time) / 645.62 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  genbuf5c3y.aag =====================
+Command terminated by signal 6
+Synthesis time: 3.15 sec (Real time) / 2.79 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  genbuf6c3y.aag =====================
+Command terminated by signal 6
+Synthesis time: 1.42 sec (Real time) / 1.20 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  genbuf1b4y.aag =====================
+[LOG] Relation determinization time: 0.025302 sec CPU time.
+[LOG] Relation determinization time: 2 sec real time.
+[LOG] Final circuit size: 4880 new AND gates.
+[LOG] Size before ABC: 8619 AND gates.
+[LOG] Size after ABC: 4879 AND gates.
+[LOG] Time for QBFCert: 1 seconds.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Overall execution time: 0.027454 sec CPU time.
+[LOG] Overall execution time: 2 sec real time.
+Synthesis time: 2.33 sec (Real time) / 1.75 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 4.01 sec (Real time) / 4.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 5.01 sec (Real time) / 4.97 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 175 11 23 1 141
+Raw AIGER output size: aag 5054 5 23 1 5021
+=====================  genbuf2b4y.aag =====================
+[LOG] Relation determinization time: 0.068953 sec CPU time.
+[LOG] Relation determinization time: 34 sec real time.
+[LOG] Final circuit size: 32470 new AND gates.
+[LOG] Size before ABC: 66444 AND gates.
+[LOG] Size after ABC: 32469 AND gates.
+[LOG] Time for QBFCert: 15 seconds.
+[LOG] Time for optimizing with ABC: 19 seconds.
+[LOG] Overall execution time: 0.070365 sec CPU time.
+[LOG] Overall execution time: 34 sec real time.
+Synthesis time: 33.79 sec (Real time) / 31.20 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 25.59 sec (Real time) / 25.54 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 329.23 sec (Real time) / 329.02 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 213 13 26 1 174
+Raw AIGER output size: aag 32682 6 26 1 32644
+=====================  genbuf3b4y.aag =====================
+Command terminated by signal 6
+Synthesis time: 213.15 sec (Real time) / 189.18 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  genbuf4b4y.aag =====================
+Command terminated by signal 6
+Synthesis time: 1858.07 sec (Real time) / 1746.96 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  genbuf5b4y.aag =====================
+Command terminated by signal 6
+Synthesis time: 1.31 sec (Real time) / 0.97 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  genbuf1f4y.aag =====================
+[LOG] Relation determinization time: 0.014429 sec CPU time.
+[LOG] Relation determinization time: 3 sec real time.
+[LOG] Final circuit size: 5595 new AND gates.
+[LOG] Size before ABC: 9858 AND gates.
+[LOG] Size after ABC: 5595 AND gates.
+[LOG] Time for QBFCert: 1 seconds.
+[LOG] Time for optimizing with ABC: 2 seconds.
+[LOG] Overall execution time: 0.017189 sec CPU time.
+[LOG] Overall execution time: 3 sec real time.
+Synthesis time: 2.58 sec (Real time) / 1.85 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 4.30 sec (Real time) / 4.27 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 11.85 sec (Real time) / 11.77 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 172 11 23 1 138
+Raw AIGER output size: aag 5767 5 23 1 5733
+=====================  genbuf2f4y.aag =====================
+[LOG] Relation determinization time: 0.118562 sec CPU time.
+[LOG] Relation determinization time: 109 sec real time.
+[LOG] Final circuit size: 71410 new AND gates.
+[LOG] Size before ABC: 145951 AND gates.
+[LOG] Size after ABC: 71409 AND gates.
+[LOG] Time for QBFCert: 28 seconds.
+[LOG] Time for optimizing with ABC: 81 seconds.
+[LOG] Overall execution time: 0.121872 sec CPU time.
+[LOG] Overall execution time: 109 sec real time.
+Synthesis time: 108.35 sec (Real time) / 105.06 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 74.14 sec (Real time) / 74.09 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 1033.12 sec (Real time) / 1032.38 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 207 13 26 1 168
+Raw AIGER output size: aag 71616 6 26 1 71578
+=====================  genbuf3f4y.aag =====================
+Command terminated by signal 6
+Synthesis time: 245.09 sec (Real time) / 220.05 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  genbuf4f4y.aag =====================
+Command terminated by signal 6
+Synthesis time: 677.40 sec (Real time) / 599.01 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  genbuf5f5y.aag =====================
+Command terminated by signal 6
+Synthesis time: 2.27 sec (Real time) / 1.84 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  amba2c7y.aag =====================
+Command terminated by signal 6
+Synthesis time: 540.08 sec (Real time) / 508.50 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  amba3c5y.aag =====================
+Command terminated by signal 6
+Synthesis time: 881.71 sec (Real time) / 816.44 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  amba4c7y.aag =====================
+Command terminated by signal 6
+Synthesis time: 1.46 sec (Real time) / 1.15 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  amba2b9y.aag =====================
+Command terminated by signal 6
+Synthesis time: 1039.46 sec (Real time) / 970.82 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  amba3b5y.aag =====================
+Command terminated by signal 6
+Synthesis time: 389.96 sec (Real time) / 368.11 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  amba4b9y.aag =====================
+Command terminated by signal 6
+Synthesis time: 1.89 sec (Real time) / 1.58 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  amba2f9y.aag =====================
+Command terminated by signal 6
+Synthesis time: 1033.97 sec (Real time) / 971.04 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  amba3f9y.aag =====================
+Command terminated by signal 6
+Synthesis time: 1.94 sec (Real time) / 0.97 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  amba4f25y.aag =====================
+Command terminated by signal 6
+Synthesis time: 1.74 sec (Real time) / 0.71 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  demo-v3_2_REAL.aag =====================
+[LOG] Relation determinization time: 0.00455 sec CPU time.
+[LOG] Relation determinization time: 1 sec real time.
+[LOG] Final circuit size: 215 new AND gates.
+[LOG] Size before ABC: 353 AND gates.
+[LOG] Size after ABC: 215 AND gates.
+[LOG] Time for QBFCert: 1 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.006217 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.60 sec (Real time) / 0.13 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.09 sec (Real time) / 0.06 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.03 sec (Real time) / 0.01 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 331 4 48 1 279
+Raw AIGER output size: aag 546 3 48 1 494
+=====================  demo-v3_5_REAL.aag =====================
+[LOG] Relation determinization time: 0.056553 sec CPU time.
+[LOG] Relation determinization time: 28 sec real time.
+[LOG] Final circuit size: 20879 new AND gates.
+[LOG] Size before ABC: 61837 AND gates.
+[LOG] Size after ABC: 20879 AND gates.
+[LOG] Time for QBFCert: 23 seconds.
+[LOG] Time for optimizing with ABC: 5 seconds.
+[LOG] Overall execution time: 0.059471 sec CPU time.
+[LOG] Overall execution time: 28 sec real time.
+Synthesis time: 28.20 sec (Real time) / 26.24 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 6.06 sec (Real time) / 6.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.76 sec (Real time) / 0.74 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 556 4 84 1 468
+Raw AIGER output size: aag 21435 3 84 1 21347
+=====================  demo-v4_5_REAL.aag =====================
+[LOG] Relation determinization time: 0.060858 sec CPU time.
+[LOG] Relation determinization time: 13 sec real time.
+[LOG] Final circuit size: 7547 new AND gates.
+[LOG] Size before ABC: 18788 AND gates.
+[LOG] Size after ABC: 7547 AND gates.
+[LOG] Time for QBFCert: 12 seconds.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Overall execution time: 0.066099 sec CPU time.
+[LOG] Overall execution time: 13 sec real time.
+Synthesis time: 13.71 sec (Real time) / 13.04 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 4.60 sec (Real time) / 4.59 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.46 sec (Real time) / 0.45 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 871 4 133 1 734
+Raw AIGER output size: aag 8418 3 133 1 8281
+=====================  demo-v5_2_REAL.aag =====================
+[LOG] Relation determinization time: 0.009858 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 584 new AND gates.
+[LOG] Size before ABC: 908 AND gates.
+[LOG] Size after ABC: 583 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.01283 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.31 sec (Real time) / 0.25 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.16 sec (Real time) / 0.16 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 427 4 64 1 359
+Raw AIGER output size: aag 1010 3 64 1 943
+=====================  demo-v5_5_REAL.aag =====================
+[LOG] Relation determinization time: 0.067166 sec CPU time.
+[LOG] Relation determinization time: 13 sec real time.
+[LOG] Final circuit size: 9989 new AND gates.
+[LOG] Size before ABC: 24569 AND gates.
+[LOG] Size after ABC: 9989 AND gates.
+[LOG] Time for QBFCert: 12 seconds.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Overall execution time: 0.071 sec CPU time.
+[LOG] Overall execution time: 13 sec real time.
+Synthesis time: 13.11 sec (Real time) / 12.47 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 5.09 sec (Real time) / 5.07 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.59 sec (Real time) / 0.58 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 718 4 112 1 602
+Raw AIGER output size: aag 10707 3 112 1 10591
+=====================  demo-v6_5_REAL.aag =====================
+Command terminated by signal 6
+Synthesis time: 99.17 sec (Real time) / 80.33 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  demo-v7_2_REAL.aag =====================
+[LOG] Relation determinization time: 0.00709 sec CPU time.
+[LOG] Relation determinization time: 1 sec real time.
+[LOG] Final circuit size: 719 new AND gates.
+[LOG] Size before ABC: 1281 AND gates.
+[LOG] Size after ABC: 719 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Overall execution time: 0.0084 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.58 sec (Real time) / 0.34 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.26 sec (Real time) / 0.24 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.04 sec (Real time) / 0.03 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 382 4 56 1 322
+Raw AIGER output size: aag 1101 3 56 1 1041
+=====================  demo-v7_5_REAL.aag =====================
+[LOG] Relation determinization time: 0.083355 sec CPU time.
+[LOG] Relation determinization time: 59 sec real time.
+[LOG] Final circuit size: 23274 new AND gates.
+[LOG] Size before ABC: 62379 AND gates.
+[LOG] Size after ABC: 23273 AND gates.
+[LOG] Time for QBFCert: 52 seconds.
+[LOG] Time for optimizing with ABC: 7 seconds.
+[LOG] Overall execution time: 0.087384 sec CPU time.
+[LOG] Overall execution time: 59 sec real time.
+Synthesis time: 59.10 sec (Real time) / 54.61 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 7.01 sec (Real time) / 6.99 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.91 sec (Real time) / 0.90 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 640 4 98 1 538
+Raw AIGER output size: aag 23913 3 98 1 23812
+=====================  demo-v8_2_REAL.aag =====================
+[LOG] Relation determinization time: 0.001841 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 2 new AND gates.
+[LOG] Size before ABC: 2 AND gates.
+[LOG] Size after ABC: 2 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.003043 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.13 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 64 2 12 1 50
+Raw AIGER output size: aag 66 1 12 1 52
+=====================  demo-v8_5_REAL.aag =====================
+[LOG] Relation determinization time: 0.002381 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 2 new AND gates.
+[LOG] Size before ABC: 2 AND gates.
+[LOG] Size after ABC: 2 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.00403 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.13 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 106 2 21 1 83
+Raw AIGER output size: aag 108 1 21 1 85
+=====================  demo-v9_2_REAL.aag =====================
+[LOG] Relation determinization time: 0.00411 sec CPU time.
+[LOG] Relation determinization time: 1 sec real time.
+[LOG] Final circuit size: 17 new AND gates.
+[LOG] Size before ABC: 19 AND gates.
+[LOG] Size after ABC: 17 AND gates.
+[LOG] Time for QBFCert: 1 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.005901 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.12 sec (Real time) / 0.09 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 183 2 32 1 149
+Raw AIGER output size: aag 200 1 32 1 166
+=====================  demo-v9_5_REAL.aag =====================
+[LOG] Relation determinization time: 0.010603 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 101 new AND gates.
+[LOG] Size before ABC: 114 AND gates.
+[LOG] Size after ABC: 101 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.013052 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.20 sec (Real time) / 0.16 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.03 sec (Real time) / 0.03 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 309 2 56 1 251
+Raw AIGER output size: aag 410 1 56 1 352
+=====================  demo-v10_2_REAL.aag =====================
+[LOG] Relation determinization time: 0.005731 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 2 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.008323 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.14 sec (Real time) / 0.11 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 450 4 56 1 390
+Raw AIGER output size: aag 450 2 56 1 392
+=====================  demo-v10_5_REAL.aag =====================
+[LOG] Relation determinization time: 0.01393 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 2 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.017231 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.14 sec (Real time) / 0.11 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 768 4 98 1 666
+Raw AIGER output size: aag 768 2 98 1 668
+=====================  demo-v12_2_REAL.aag =====================
+[LOG] Relation determinization time: 0.001546 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 2 new AND gates.
+[LOG] Size before ABC: 2 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.002769 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.13 sec (Real time) / 0.07 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 216 4 32 1 180
+Raw AIGER output size: aag 216 2 32 1 182
+=====================  demo-v12_5_REAL.aag =====================
+[LOG] Relation determinization time: 0.001853 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 2 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.003055 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.12 sec (Real time) / 0.07 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 360 4 56 1 300
+Raw AIGER output size: aag 360 2 56 1 302
+=====================  demo-v13_2_REAL.aag =====================
+[LOG] Relation determinization time: 0.000886 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 12 new AND gates.
+[LOG] Size before ABC: 49 AND gates.
+[LOG] Size after ABC: 11 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.001532 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.09 sec (Real time) / 0.07 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 57 2 12 1 43
+Raw AIGER output size: aag 68 1 12 1 55
+=====================  demo-v13_5_REAL.aag =====================
+[LOG] Relation determinization time: 0.002458 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 18 new AND gates.
+[LOG] Size before ABC: 38 AND gates.
+[LOG] Size after ABC: 17 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.003724 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.11 sec (Real time) / 0.09 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 93 2 21 1 70
+Raw AIGER output size: aag 110 1 21 1 88
+=====================  demo-v14_2_REAL.aag =====================
+[LOG] Relation determinization time: 0.007401 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 471 new AND gates.
+[LOG] Size before ABC: 889 AND gates.
+[LOG] Size after ABC: 470 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.009219 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.25 sec (Real time) / 0.23 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.13 sec (Real time) / 0.13 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 200 4 36 1 160
+Raw AIGER output size: aag 670 2 36 1 631
+=====================  demo-v14_5_REAL.aag =====================
+[LOG] Relation determinization time: 0.065794 sec CPU time.
+[LOG] Relation determinization time: 16 sec real time.
+[LOG] Final circuit size: 24746 new AND gates.
+[LOG] Size before ABC: 60683 AND gates.
+[LOG] Size after ABC: 24745 AND gates.
+[LOG] Time for QBFCert: 8 seconds.
+[LOG] Time for optimizing with ABC: 8 seconds.
+[LOG] Overall execution time: 0.06826 sec CPU time.
+[LOG] Overall execution time: 16 sec real time.
+Synthesis time: 15.84 sec (Real time) / 15.15 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 5.82 sec (Real time) / 5.81 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.82 sec (Real time) / 0.82 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 335 4 63 1 268
+Raw AIGER output size: aag 25080 2 63 1 25014
+=====================  demo-v15_2_REAL.aag =====================
+[LOG] Relation determinization time: 0.002748 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 226 new AND gates.
+[LOG] Size before ABC: 359 AND gates.
+[LOG] Size after ABC: 226 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.003921 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.18 sec (Real time) / 0.13 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.06 sec (Real time) / 0.06 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 180 4 28 1 148
+Raw AIGER output size: aag 406 2 28 1 374
+=====================  demo-v15_5_REAL.aag =====================
+[LOG] Relation determinization time: 0.012027 sec CPU time.
+[LOG] Relation determinization time: 1 sec real time.
+[LOG] Final circuit size: 980 new AND gates.
+[LOG] Size before ABC: 1771 AND gates.
+[LOG] Size after ABC: 979 AND gates.
+[LOG] Time for QBFCert: 1 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.014784 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.60 sec (Real time) / 0.55 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.38 sec (Real time) / 0.38 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.06 sec (Real time) / 0.05 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 297 4 49 1 244
+Raw AIGER output size: aag 1276 2 49 1 1224
+=====================  demo-v16_2_REAL.aag =====================
+[LOG] Relation determinization time: 0.011062 sec CPU time.
+[LOG] Relation determinization time: 1 sec real time.
+[LOG] Final circuit size: 1204 new AND gates.
+[LOG] Size before ABC: 2257 AND gates.
+[LOG] Size after ABC: 1202 AND gates.
+[LOG] Time for QBFCert: 1 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.013005 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.48 sec (Real time) / 0.44 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.56 sec (Real time) / 0.55 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.05 sec (Real time) / 0.05 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 252 6 36 1 210
+Raw AIGER output size: aag 1454 3 36 1 1414
+=====================  demo-v16_5_REAL.aag =====================
+[LOG] Relation determinization time: 0.036325 sec CPU time.
+[LOG] Relation determinization time: 5 sec real time.
+[LOG] Final circuit size: 6829 new AND gates.
+[LOG] Size before ABC: 14011 AND gates.
+[LOG] Size after ABC: 6826 AND gates.
+[LOG] Time for QBFCert: 4 seconds.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Overall execution time: 0.038984 sec CPU time.
+[LOG] Overall execution time: 5 sec real time.
+Synthesis time: 5.81 sec (Real time) / 5.56 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 4.16 sec (Real time) / 4.16 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.71 sec (Real time) / 0.70 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 411 6 63 1 342
+Raw AIGER output size: aag 7237 3 63 1 7171
+=====================  demo-v17_2_REAL.aag =====================
+Command terminated by signal 6
+Synthesis time: 425.22 sec (Real time) / 355.48 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  demo-v17_5_REAL.aag =====================
+Command terminated by signal 6
+Synthesis time: 35.24 sec (Real time) / 33.56 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  demo-v18_5_REAL.aag =====================
+Command terminated by signal 6
+Synthesis time: 158.46 sec (Real time) / 126.89 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  demo-v19_2_REAL.aag =====================
+[LOG] Relation determinization time: 0.007212 sec CPU time.
+[LOG] Relation determinization time: 2 sec real time.
+[LOG] Final circuit size: 2356 new AND gates.
+[LOG] Size before ABC: 4483 AND gates.
+[LOG] Size after ABC: 2355 AND gates.
+[LOG] Time for QBFCert: 1 seconds.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Overall execution time: 0.009766 sec CPU time.
+[LOG] Overall execution time: 2 sec real time.
+Synthesis time: 1.45 sec (Real time) / 0.71 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 1.66 sec (Real time) / 1.64 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.11 sec (Real time) / 0.07 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 233 4 36 1 193
+Raw AIGER output size: aag 2588 2 36 1 2549
+=====================  demo-v19_5_REAL.aag =====================
+[LOG] Relation determinization time: 0.097924 sec CPU time.
+[LOG] Relation determinization time: 82 sec real time.
+[LOG] Final circuit size: 47405 new AND gates.
+[LOG] Size before ABC: 138047 AND gates.
+[LOG] Size after ABC: 47404 AND gates.
+[LOG] Time for QBFCert: 59 seconds.
+[LOG] Time for optimizing with ABC: 23 seconds.
+[LOG] Overall execution time: 0.101064 sec CPU time.
+[LOG] Overall execution time: 82 sec real time.
+Synthesis time: 82.46 sec (Real time) / 73.36 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 38.43 sec (Real time) / 38.39 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 4.15 sec (Real time) / 4.10 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 389 4 63 1 322
+Raw AIGER output size: aag 47793 2 63 1 47727
+=====================  demo-v20_2_REAL.aag =====================
+[LOG] Relation determinization time: 0.02906 sec CPU time.
+[LOG] Relation determinization time: 1 sec real time.
+[LOG] Final circuit size: 237 new AND gates.
+[LOG] Size before ABC: 354 AND gates.
+[LOG] Size after ABC: 234 AND gates.
+[LOG] Time for QBFCert: 1 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.033312 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.74 sec (Real time) / 0.57 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.09 sec (Real time) / 0.09 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 1106 5 96 1 1005
+Raw AIGER output size: aag 1340 2 96 1 1242
+=====================  demo-v20_5_REAL.aag =====================
+[LOG] Relation determinization time: 0.121681 sec CPU time.
+[LOG] Relation determinization time: 14 sec real time.
+[LOG] Final circuit size: 3063 new AND gates.
+[LOG] Size before ABC: 6306 AND gates.
+[LOG] Size after ABC: 3062 AND gates.
+[LOG] Time for QBFCert: 13 seconds.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Overall execution time: 0.130971 sec CPU time.
+[LOG] Overall execution time: 14 sec real time.
+Synthesis time: 13.69 sec (Real time) / 11.96 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 1.90 sec (Real time) / 1.90 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.05 sec (Real time) / 0.05 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 1865 5 168 1 1692
+Raw AIGER output size: aag 4927 2 168 1 4755
+=====================  demo-v21_2_REAL.aag =====================
+[LOG] Relation determinization time: 0.013381 sec CPU time.
+[LOG] Relation determinization time: 1 sec real time.
+[LOG] Final circuit size: 2170 new AND gates.
+[LOG] Size before ABC: 4289 AND gates.
+[LOG] Size after ABC: 2169 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Overall execution time: 0.014803 sec CPU time.
+[LOG] Overall execution time: 2 sec real time.
+Synthesis time: 1.76 sec (Real time) / 0.70 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 1.23 sec (Real time) / 1.22 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.05 sec (Real time) / 0.05 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 394 8 56 1 330
+Raw AIGER output size: aag 2563 4 56 1 2500
+=====================  demo-v21_5_REAL.aag =====================
+Command terminated by signal 6
+Synthesis time: 123.43 sec (Real time) / 97.18 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  demo-v22_2_REAL.aag =====================
+Command terminated by signal 6
+Synthesis time: 198.53 sec (Real time) / 145.18 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  demo-v22_5_REAL.aag =====================
+Command terminated by signal 6
+Synthesis time: 531.77 sec (Real time) / 420.73 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  demo-v23_2_REAL.aag =====================
+[LOG] Relation determinization time: 0.003633 sec CPU time.
+[LOG] Relation determinization time: 1 sec real time.
+[LOG] Final circuit size: 22 new AND gates.
+[LOG] Size before ABC: 24 AND gates.
+[LOG] Size after ABC: 22 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Overall execution time: 0.005505 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.90 sec (Real time) / 0.10 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.04 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.04 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 257 2 36 1 219
+Raw AIGER output size: aag 279 1 36 1 241
+=====================  demo-v23_5_REAL.aag =====================
+[LOG] Relation determinization time: 0.015386 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 193 new AND gates.
+[LOG] Size before ABC: 258 AND gates.
+[LOG] Size after ABC: 193 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.017409 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.34 sec (Real time) / 0.22 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.07 sec (Real time) / 0.07 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.05 sec (Real time) / 0.04 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 434 2 63 1 369
+Raw AIGER output size: aag 627 1 63 1 562
+=====================  demo-v24_2_REAL.aag =====================
+Command terminated by signal 6
+Synthesis time: 418.40 sec (Real time) / 346.04 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  demo-v24_5_REAL.aag =====================
+Command terminated by signal 6
+Synthesis time: 505.79 sec (Real time) / 423.88 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  factory_assembly_4x3_1_1errors.aag =====================
+[LOG] Relation determinization time: 0.028454 sec CPU time.
+[LOG] Relation determinization time: 5 sec real time.
+[LOG] Final circuit size: 5755 new AND gates.
+[LOG] Size before ABC: 13137 AND gates.
+[LOG] Size after ABC: 5751 AND gates.
+[LOG] Time for QBFCert: 2 seconds.
+[LOG] Time for optimizing with ABC: 3 seconds.
+[LOG] Overall execution time: 0.029975 sec CPU time.
+[LOG] Overall execution time: 5 sec real time.
+Synthesis time: 4.98 sec (Real time) / 2.71 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 6.46 sec (Real time) / 6.44 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 12.29 sec (Real time) / 12.25 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 188 21 23 1 144
+Raw AIGER output size: aag 5939 13 23 1 5899
+=====================  factory_assembly_5x3_1_0errors.aag =====================
+[LOG] Relation determinization time: 0.097189 sec CPU time.
+[LOG] Relation determinization time: 43 sec real time.
+[LOG] Final circuit size: 21391 new AND gates.
+[LOG] Size before ABC: 60365 AND gates.
+[LOG] Size after ABC: 21386 AND gates.
+[LOG] Time for QBFCert: 34 seconds.
+[LOG] Time for optimizing with ABC: 9 seconds.
+[LOG] Overall execution time: 0.101075 sec CPU time.
+[LOG] Overall execution time: 43 sec real time.
+Synthesis time: 43.14 sec (Real time) / 40.68 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 46.67 sec (Real time) / 46.64 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 112.50 sec (Real time) / 112.41 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 287 25 27 1 235
+Raw AIGER output size: aag 21673 15 27 1 21626
+=====================  factory_assembly_5x3_1_4errors.aag =====================
+Command terminated by signal 6
+Synthesis time: 616.72 sec (Real time) / 556.42 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  load_2c_comp_2_REAL.aag =====================
+[LOG] Relation determinization time: 0.024973 sec CPU time.
+[LOG] Relation determinization time: 1 sec real time.
+[LOG] Final circuit size: 548 new AND gates.
+[LOG] Size before ABC: 897 AND gates.
+[LOG] Size after ABC: 547 AND gates.
+[LOG] Time for QBFCert: 1 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.02986 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 1.25 sec (Real time) / 0.93 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.27 sec (Real time) / 0.25 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.06 sec (Real time) / 0.04 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 1193 5 96 1 1092
+Raw AIGER output size: aag 1740 3 96 1 1640
+=====================  load_3c_comp_2_REAL.aag =====================
+Command terminated by signal 6
+Synthesis time: 115.10 sec (Real time) / 88.97 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  load_full_2_2_REAL.aag =====================
+[LOG] Relation determinization time: 0.101148 sec CPU time.
+[LOG] Relation determinization time: 37 sec real time.
+[LOG] Final circuit size: 13885 new AND gates.
+[LOG] Size before ABC: 34672 AND gates.
+[LOG] Size after ABC: 13884 AND gates.
+[LOG] Time for QBFCert: 35 seconds.
+[LOG] Time for optimizing with ABC: 2 seconds.
+[LOG] Overall execution time: 0.106485 sec CPU time.
+[LOG] Overall execution time: 37 sec real time.
+Synthesis time: 37.44 sec (Real time) / 35.10 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 5.58 sec (Real time) / 5.55 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 1.42 sec (Real time) / 1.40 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 1658 5 152 1 1501
+Raw AIGER output size: aag 15542 3 152 1 15386
+=====================  load_full_3_2_REAL.aag =====================
+Command terminated by signal 6
+Synthesis time: 170.06 sec (Real time) / 126.82 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  ltl2dba_01_1_REAL.aag =====================
+[LOG] Relation determinization time: 0.011409 sec CPU time.
+[LOG] Relation determinization time: 2 sec real time.
+[LOG] Final circuit size: 1552 new AND gates.
+[LOG] Size before ABC: 2769 AND gates.
+[LOG] Size after ABC: 1551 AND gates.
+[LOG] Time for QBFCert: 1 seconds.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Overall execution time: 0.014817 sec CPU time.
+[LOG] Overall execution time: 2 sec real time.
+Synthesis time: 1.60 sec (Real time) / 0.90 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.77 sec (Real time) / 0.75 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.13 sec (Real time) / 0.06 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 400 4 51 1 345
+Raw AIGER output size: aag 1951 3 51 1 1897
+=====================  ltl2dba_01_2_REAL.aag =====================
+Command terminated by signal 6
+Synthesis time: 400.57 sec (Real time) / 327.99 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  ltl2dba_02_1_REAL.aag =====================
+Command terminated by signal 6
+Synthesis time: 423.64 sec (Real time) / 335.20 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  ltl2dba_02_2_REAL.aag =====================
+Command terminated by signal 6
+Synthesis time: 415.31 sec (Real time) / 367.44 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  ltl2dba_03_1_REAL.aag =====================
+[LOG] Relation determinization time: 0.148829 sec CPU time.
+[LOG] Relation determinization time: 82 sec real time.
+[LOG] Final circuit size: 74735 new AND gates.
+[LOG] Size before ABC: 222331 AND gates.
+[LOG] Size after ABC: 74735 AND gates.
+[LOG] Time for QBFCert: 76 seconds.
+[LOG] Time for optimizing with ABC: 6 seconds.
+[LOG] Overall execution time: 0.151109 sec CPU time.
+[LOG] Overall execution time: 82 sec real time.
+Synthesis time: 82.60 sec (Real time) / 70.27 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 13.04 sec (Real time) / 12.96 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 7.71 sec (Real time) / 7.63 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 567 4 87 1 476
+Raw AIGER output size: aag 75302 3 87 1 75211
+=====================  ltl2dba_03_2_REAL.aag =====================
+Command terminated by signal 6
+Synthesis time: 444.81 sec (Real time) / 380.96 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  ltl2dba_04_2_REAL.aag =====================
+[LOG] Relation determinization time: 0.039555 sec CPU time.
+[LOG] Relation determinization time: 18 sec real time.
+[LOG] Final circuit size: 15330 new AND gates.
+[LOG] Size before ABC: 37109 AND gates.
+[LOG] Size after ABC: 15329 AND gates.
+[LOG] Time for QBFCert: 13 seconds.
+[LOG] Time for optimizing with ABC: 3 seconds.
+[LOG] Overall execution time: 0.041192 sec CPU time.
+[LOG] Overall execution time: 18 sec real time.
+Synthesis time: 18.70 sec (Real time) / 14.45 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 5.46 sec (Real time) / 5.42 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 1.45 sec (Real time) / 1.41 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 446 4 60 1 382
+Raw AIGER output size: aag 15775 3 60 1 15712
+=====================  ltl2dba_05_2_REAL.aag =====================
+Command terminated by signal 6
+Synthesis time: 478.15 sec (Real time) / 417.06 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  ltl2dba_06_2_REAL.aag =====================
+Command terminated by signal 6
+Synthesis time: 411.95 sec (Real time) / 342.29 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  ltl2dba_07_2_REAL.aag =====================
+Command terminated by signal 6
+Synthesis time: 411.00 sec (Real time) / 352.48 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  ltl2dba_08_2_REAL.aag =====================
+Command terminated by signal 6
+Synthesis time: 470.40 sec (Real time) / 416.34 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  ltl2dba_09_2_REAL.aag =====================
+[LOG] Relation determinization time: 0.003117 sec CPU time.
+[LOG] Relation determinization time: 2 sec real time.
+[LOG] Final circuit size: 125 new AND gates.
+[LOG] Size before ABC: 203 AND gates.
+[LOG] Size after ABC: 124 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 2 seconds.
+[LOG] Overall execution time: 0.004377 sec CPU time.
+[LOG] Overall execution time: 2 sec real time.
+Synthesis time: 2.21 sec (Real time) / 0.12 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.06 sec (Real time) / 0.03 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.04 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 242 4 44 1 194
+Raw AIGER output size: aag 366 3 44 1 319
+=====================  ltl2dba_10_2_REAL.aag =====================
+[LOG] Relation determinization time: 0.008969 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 287 new AND gates.
+[LOG] Size before ABC: 489 AND gates.
+[LOG] Size after ABC: 287 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.011536 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.40 sec (Real time) / 0.34 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.08 sec (Real time) / 0.08 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 341 3 52 1 286
+Raw AIGER output size: aag 628 2 52 1 573
+=====================  ltl2dba_11_2_REAL.aag =====================
+Command terminated by signal 6
+Synthesis time: 496.00 sec (Real time) / 419.22 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  ltl2dba_12_2_REAL.aag =====================
+[LOG] Relation determinization time: 0.059779 sec CPU time.
+[LOG] Relation determinization time: 92 sec real time.
+[LOG] Final circuit size: 19639 new AND gates.
+[LOG] Size before ABC: 47894 AND gates.
+[LOG] Size after ABC: 19639 AND gates.
+[LOG] Time for QBFCert: 86 seconds.
+[LOG] Time for optimizing with ABC: 6 seconds.
+[LOG] Overall execution time: 0.062294 sec CPU time.
+[LOG] Overall execution time: 92 sec real time.
+Synthesis time: 92.18 sec (Real time) / 83.40 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 5.91 sec (Real time) / 5.87 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 1.38 sec (Real time) / 1.35 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 523 3 68 1 452
+Raw AIGER output size: aag 20162 2 68 1 20091
+=====================  ltl2dba_13_2_REAL.aag =====================
+Command terminated by signal 6
+Synthesis time: 123.27 sec (Real time) / 111.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  ltl2dba_14_2_REAL.aag =====================
+[LOG] Relation determinization time: 0.033893 sec CPU time.
+[LOG] Relation determinization time: 12 sec real time.
+[LOG] Final circuit size: 11949 new AND gates.
+[LOG] Size before ABC: 27567 AND gates.
+[LOG] Size after ABC: 11949 AND gates.
+[LOG] Time for QBFCert: 10 seconds.
+[LOG] Time for optimizing with ABC: 2 seconds.
+[LOG] Overall execution time: 0.036218 sec CPU time.
+[LOG] Overall execution time: 12 sec real time.
+Synthesis time: 12.18 sec (Real time) / 11.19 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 4.96 sec (Real time) / 4.94 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.65 sec (Real time) / 0.62 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 428 4 60 1 364
+Raw AIGER output size: aag 12377 3 60 1 12313
+=====================  ltl2dba_16_2_REAL.aag =====================
+Command terminated by signal 6
+Synthesis time: 103.10 sec (Real time) / 86.14 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  ltl2dba_17_2_REAL.aag =====================
+Command terminated by signal 6
+Synthesis time: 458.66 sec (Real time) / 361.51 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  ltl2dba_18_2_REAL.aag =====================
+Command terminated by signal 6
+Synthesis time: 434.69 sec (Real time) / 357.82 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  ltl2dba_19_2_REAL.aag =====================
+Command terminated by signal 6
+Synthesis time: 483.88 sec (Real time) / 419.97 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  ltl2dba_20_2_REAL.aag =====================
+Command terminated by signal 6
+Synthesis time: 442.12 sec (Real time) / 376.81 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  ltl2dpa_01_2_REAL.aag =====================
+Command terminated by signal 6
+Synthesis time: 503.30 sec (Real time) / 437.30 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  ltl2dpa_02_2_REAL.aag =====================
+[LOG] Relation determinization time: 0.020613 sec CPU time.
+[LOG] Relation determinization time: 5 sec real time.
+[LOG] Final circuit size: 4626 new AND gates.
+[LOG] Size before ABC: 10012 AND gates.
+[LOG] Size after ABC: 4625 AND gates.
+[LOG] Time for QBFCert: 4 seconds.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Overall execution time: 0.02264 sec CPU time.
+[LOG] Overall execution time: 5 sec real time.
+Synthesis time: 5.27 sec (Real time) / 2.98 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 3.33 sec (Real time) / 3.29 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.39 sec (Real time) / 0.35 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 385 4 60 1 321
+Raw AIGER output size: aag 5010 2 60 1 4947
+=====================  ltl2dpa_03_2_REAL.aag =====================
+Command terminated by signal 6
+Synthesis time: 456.52 sec (Real time) / 393.60 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  ltl2dpa_04_2_REAL.aag =====================
+[LOG] Relation determinization time: 0.005746 sec CPU time.
+[LOG] Relation determinization time: 1 sec real time.
+[LOG] Final circuit size: 410 new AND gates.
+[LOG] Size before ABC: 669 AND gates.
+[LOG] Size after ABC: 409 AND gates.
+[LOG] Time for QBFCert: 1 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.007921 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.87 sec (Real time) / 0.23 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.15 sec (Real time) / 0.10 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.05 sec (Real time) / 0.01 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 289 4 48 1 237
+Raw AIGER output size: aag 698 2 48 1 647
+=====================  ltl2dpa_05_2_REAL.aag =====================
+[LOG] Relation determinization time: 0.005105 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 197 new AND gates.
+[LOG] Size before ABC: 335 AND gates.
+[LOG] Size after ABC: 196 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.007454 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.19 sec (Real time) / 0.12 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.05 sec (Real time) / 0.05 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 281 4 52 1 225
+Raw AIGER output size: aag 477 2 52 1 422
+=====================  ltl2dpa_06_2_REAL.aag =====================
+[LOG] Relation determinization time: 0.007067 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 486 new AND gates.
+[LOG] Size before ABC: 753 AND gates.
+[LOG] Size after ABC: 485 AND gates.
+[LOG] Time for QBFCert: 0 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.009491 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.29 sec (Real time) / 0.23 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.12 sec (Real time) / 0.11 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 240 5 44 1 191
+Raw AIGER output size: aag 725 3 44 1 677
+=====================  ltl2dpa_07_2_REAL.aag =====================
+[LOG] Relation determinization time: 0.010833 sec CPU time.
+[LOG] Relation determinization time: 2 sec real time.
+[LOG] Final circuit size: 3268 new AND gates.
+[LOG] Size before ABC: 6604 AND gates.
+[LOG] Size after ABC: 3267 AND gates.
+[LOG] Time for QBFCert: 2 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.013872 sec CPU time.
+[LOG] Overall execution time: 2 sec real time.
+Synthesis time: 1.89 sec (Real time) / 1.75 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 2.39 sec (Real time) / 2.39 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.15 sec (Real time) / 0.14 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 391 5 60 1 326
+Raw AIGER output size: aag 3658 3 60 1 3594
+=====================  ltl2dpa_08_2_REAL.aag =====================
+[LOG] Relation determinization time: 0.019232 sec CPU time.
+[LOG] Relation determinization time: 2 sec real time.
+[LOG] Final circuit size: 2579 new AND gates.
+[LOG] Size before ABC: 4798 AND gates.
+[LOG] Size after ABC: 2578 AND gates.
+[LOG] Time for QBFCert: 2 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.020581 sec CPU time.
+[LOG] Overall execution time: 2 sec real time.
+Synthesis time: 1.98 sec (Real time) / 1.83 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 1.53 sec (Real time) / 1.53 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.08 sec (Real time) / 0.08 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 406 4 68 1 334
+Raw AIGER output size: aag 2984 2 68 1 2913
+=====================  ltl2dpa_09_2_REAL.aag =====================
+[LOG] Relation determinization time: 0.029763 sec CPU time.
+[LOG] Relation determinization time: 4 sec real time.
+[LOG] Final circuit size: 7774 new AND gates.
+[LOG] Size before ABC: 19265 AND gates.
+[LOG] Size after ABC: 7773 AND gates.
+[LOG] Time for QBFCert: 3 seconds.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Overall execution time: 0.032541 sec CPU time.
+[LOG] Overall execution time: 5 sec real time.
+Synthesis time: 4.86 sec (Real time) / 4.55 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 4.57 sec (Real time) / 4.56 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.30 sec (Real time) / 0.29 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 393 5 60 1 328
+Raw AIGER output size: aag 8166 3 60 1 8102
+=====================  ltl2dpa_10_2_REAL.aag =====================
+Command terminated by signal 6
+Synthesis time: 422.71 sec (Real time) / 362.11 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  ltl2dpa_11_2_REAL.aag =====================
+[LOG] Relation determinization time: 0.100595 sec CPU time.
+[LOG] Relation determinization time: 73 sec real time.
+[LOG] Final circuit size: 49040 new AND gates.
+[LOG] Size before ABC: 148564 AND gates.
+[LOG] Size after ABC: 49039 AND gates.
+[LOG] Time for QBFCert: 38 seconds.
+[LOG] Time for optimizing with ABC: 35 seconds.
+[LOG] Overall execution time: 0.102187 sec CPU time.
+[LOG] Overall execution time: 73 sec real time.
+Synthesis time: 72.68 sec (Real time) / 68.85 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 9.35 sec (Real time) / 9.31 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 4.43 sec (Real time) / 4.38 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 410 5 68 1 337
+Raw AIGER output size: aag 49449 3 68 1 49377
+=====================  ltl2dpa_12_2_REAL.aag =====================
+Command terminated by signal 6
+Synthesis time: 431.86 sec (Real time) / 362.26 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  ltl2dpa_13_2_REAL.aag =====================
+Command terminated by signal 6
+Synthesis time: 139.53 sec (Real time) / 117.66 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  ltl2dpa_14_2_REAL.aag =====================
+Command terminated by signal 6
+Synthesis time: 524.61 sec (Real time) / 462.14 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  ltl2dpa_15_2_REAL.aag =====================
+[LOG] Relation determinization time: 0.221977 sec CPU time.
+[LOG] Relation determinization time: 84 sec real time.
+[LOG] Final circuit size: 113432 new AND gates.
+[LOG] Size before ABC: 357185 AND gates.
+[LOG] Size after ABC: 113431 AND gates.
+[LOG] Time for QBFCert: 73 seconds.
+[LOG] Time for optimizing with ABC: 11 seconds.
+[LOG] Overall execution time: 0.223485 sec CPU time.
+[LOG] Overall execution time: 84 sec real time.
+Synthesis time: 84.67 sec (Real time) / 76.19 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 17.16 sec (Real time) / 17.08 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 6.92 sec (Real time) / 6.77 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 404 4 68 1 332
+Raw AIGER output size: aag 113835 2 68 1 113764
+=====================  ltl2dpa_16_2_REAL.aag =====================
+[LOG] Relation determinization time: 0.077866 sec CPU time.
+[LOG] Relation determinization time: 50 sec real time.
+[LOG] Final circuit size: 23512 new AND gates.
+[LOG] Size before ABC: 61239 AND gates.
+[LOG] Size after ABC: 23511 AND gates.
+[LOG] Time for QBFCert: 43 seconds.
+[LOG] Time for optimizing with ABC: 7 seconds.
+[LOG] Overall execution time: 0.081805 sec CPU time.
+[LOG] Overall execution time: 50 sec real time.
+Synthesis time: 50.57 sec (Real time) / 46.52 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 6.64 sec (Real time) / 6.63 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 1.84 sec (Real time) / 1.83 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 615 5 84 1 526
+Raw AIGER output size: aag 24126 3 84 1 24038
+=====================  ltl2dpa_17_2_REAL.aag =====================
+Command terminated by signal 6
+Synthesis time: 641.03 sec (Real time) / 546.57 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  ltl2dpa_18_2_REAL.aag =====================
+Command terminated by signal 6
+Synthesis time: 235.93 sec (Real time) / 200.80 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  moving_obstacle_8x8_0glitches.aag =====================
+Command terminated by signal 6
+Synthesis time: 464.71 sec (Real time) / 372.96 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  moving_obstacle_16x16_3glitches.aag =====================
+Command terminated by signal 6
+Synthesis time: 89.22 sec (Real time) / 87.43 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  driver_a8y.aag =====================
+Command terminated by signal 6
+Synthesis time: 760.58 sec (Real time) / 667.80 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  driver_b8y.aag =====================
+Command terminated by signal 6
+Synthesis time: 764.29 sec (Real time) / 701.47 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  driver_c8y.aag =====================
+[LOG] Relation determinization time: 0.007056 sec CPU time.
+[LOG] Relation determinization time: 8 sec real time.
+[LOG] Final circuit size: 49 new AND gates.
+[LOG] Size before ABC: 69 AND gates.
+[LOG] Size after ABC: 29 AND gates.
+[LOG] Time for QBFCert: 8 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.009344 sec CPU time.
+[LOG] Overall execution time: 8 sec real time.
+Synthesis time: 7.98 sec (Real time) / 7.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.06 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.04 sec (Real time) / 0.01 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 720 52 80 1 588
+Raw AIGER output size: aag 749 28 80 1 637
+=====================  driver_d8y.aag =====================
+[LOG] Relation determinization time: 0.006354 sec CPU time.
+[LOG] Relation determinization time: 5 sec real time.
+[LOG] Final circuit size: 69 new AND gates.
+[LOG] Size before ABC: 106 AND gates.
+[LOG] Size after ABC: 49 AND gates.
+[LOG] Time for QBFCert: 5 seconds.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Overall execution time: 0.008418 sec CPU time.
+[LOG] Overall execution time: 5 sec real time.
+Synthesis time: 5.15 sec (Real time) / 4.88 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 536 40 56 1 440
+Raw AIGER output size: aag 585 16 56 1 509
+

@@ -44,7 +44,7 @@ class QBFSolver;
 /// This class implements different learning-based methods for circuit extraction. All
 /// methods are based on the CNF learning algorithm from the paper
 ///   Ruediger Ehlers, Robert Koenighofer, Georg Hofferek: Symbolically synthesizing small
-///   circuits. FMCAD 2012: 91-100
+///   circuits. FMCAD 2012: 91.2.0
 /// Some methods use QBF-solving, some incremental QBF solving, and some incremental SAT
 /// solving with various optimizations. The method that should be used is defined by the
 /// command-line option --circuit-mode or -n.
@@ -60,7 +60,7 @@ class QBFSolver;
 /// </ol>
 ///
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.1.0
+/// @version 1.2.0
 class LearningImplExtractor : public CNFImplExtractor
 {
 public:
@@ -97,7 +97,7 @@ protected:
 /// This is a more or less straightforward implementation of the CNF learning method from the
 /// paper
 ///   Ruediger Ehlers, Robert Koenighofer, Georg Hofferek: Symbolically synthesizing small
-///   circuits. FMCAD 2012: 91-100
+///   circuits. FMCAD 2012: 91.2.0
 /// using a QBF solver.
 ///
 /// @param win_region The winning region from which the circuit should be extracted.
@@ -115,6 +115,17 @@ protected:
 /// @param win_region The winning region from which the circuit should be extracted.
 /// @param neg_win_region The negation of the winning region.
   void runLearningQBFInc(const CNF &win_region, const CNF &neg_win_region);
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Same as runLearningQBFInc, but using universal expansion and a SAT solver.
+///
+/// Although using SAT solvers instead of QBF appears to pay off when computing the winning
+/// region, this does not seem to hold true here: this method is relatively slow.
+///
+/// @param win_region The winning region from which the circuit should be extracted.
+/// @param neg_win_region The negation of the winning region.
+  void runLearningExp(const CNF &win_region, const CNF &neg_win_region);
 
 // -------------------------------------------------------------------------------------------
 ///

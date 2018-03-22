@@ -55,7 +55,7 @@
 /// SAT- or QBF-solving time.
 ///
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.1.0
+/// @version 1.2.0
 class CNF
 {
 public:
@@ -217,7 +217,15 @@ public:
 // -------------------------------------------------------------------------------------------
 ///
 /// @brief Replaces all current-state variables in the CNF with their next-state copy.
+///
+/// All other variables are kept as they are. In particular, auxiliary variables (e.g.,
+/// introduced in Tseitin transformations) will NOT be renamed.
   void swapPresentToNext();
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Renames all temporary variables that occur in this CNF with fresh ones.
+  void renameTmps();
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -239,6 +247,15 @@ public:
 ///
 /// @param clauses The clause set to swap content with.
   void swapWith(list<vector<int> > &clauses);
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Swaps the content of this CNF with the passed CNF.
+///
+/// This is cheaper than copying or assigning.
+///
+/// @param other The cnf to swap content with.
+  void swapWith(CNF &other);
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -332,13 +349,24 @@ public:
 
 // -------------------------------------------------------------------------------------------
 ///
+/// @brief Simplifies the CNF by propagating unit clauses and pure literals until fixpoint.
+///
+/// @todo So far, only unit clause propagation has been implemented. Pure literals still
+///       need to be done.
+///
+/// @param keep A list of CNF variables. All CNF variables contained in the list will be
+///        kept assigned by the CNF (in a unit clause).
+  void doPureAndUnit(const vector<int> &keep);
+
+// -------------------------------------------------------------------------------------------
+///
 /// @brief Renames all variables in a CNF.
 ///
 /// @param rename_map A map containing the new names of the variables. Every occurrence of
 ///        variable i is replaced by rename_map[i]. If a certain variable i should not be
 ///        renamed, then set rename_map[i]=i. This rename_map must contain a new name for
 ///        EVERY variable that may appear in the CNF.
-  void renameVars(const vector<int> rename_map);
+  void renameVars(const vector<int> &rename_map);
 
 // -------------------------------------------------------------------------------------------
 ///

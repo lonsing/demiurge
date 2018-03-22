@@ -45,7 +45,7 @@
 /// circuit from the winning region once the winning region has been computed.
 ///
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.1.0
+/// @version 1.2.0
 class BackEnd
 {
 public:

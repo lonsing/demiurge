@@ -41,6 +41,8 @@
 #include "QBFSolver.h"
 #include "unistd.h"
 #include "IFMProofObligation.h"
+#include "DepQBFApi.h"
+#include "DepQBFExt.h"
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -112,18 +114,152 @@ mutex ParallelLearner::print_lock_;
   ParallelLearner::print_lock_.unlock();                                  \
 }
 
+
+// -------------------------------------------------------------------------------------------
+PrevStateInfo::PrevStateInfo(bool use_ind):
+    use_ind_(use_ind),
+    current_state_is_initial_(0),
+    prev_safe_(0)
+{
+  if(use_ind_)
+  {
+    // build previous-state copy of the transition relation:
+    AIG2CNF& A2C = AIG2CNF::instance();
+    VarManager &VM = VarManager::instance();
+    current_to_previous_map_.resize(VM.getMaxCNFVar()+1, 0);
+    const vector<int> &s = VM.getVarsOfType(VarInfo::PRES_STATE);
+    const vector<int> &s_next = VM.getVarsOfType(VarInfo::NEXT_STATE);
+    const vector<int> &c = VM.getVarsOfType(VarInfo::CTRL);
+    const vector<int> &i = VM.getVarsOfType(VarInfo::INPUT);
+    vector<int> t = VM.getVarsOfType(VarInfo::TMP);
+
+    for(size_t v_cnt = 0; v_cnt < s.size(); ++v_cnt)
+      current_to_previous_map_[s[v_cnt]] = VM.createFreshPrevVar();
+    for(size_t v_cnt = 0; v_cnt < c.size(); ++v_cnt)
+      current_to_previous_map_[c[v_cnt]] = VM.createFreshTmpVar();
+    for(size_t v_cnt = 0; v_cnt < i.size(); ++v_cnt)
+      current_to_previous_map_[i[v_cnt]] = VM.createFreshTmpVar();
+    for(size_t v_cnt = 0; v_cnt < t.size(); ++v_cnt)
+      current_to_previous_map_[t[v_cnt]] = VM.createFreshTmpVar();
+    for(size_t v_cnt = 0; v_cnt < s_next.size(); ++v_cnt)
+      current_to_previous_map_[s_next[v_cnt]] = s[v_cnt];
+
+    current_state_is_initial_ = VM.createFreshTmpVar();
+    list<vector<int> > prev_trans_clauses = A2C.getTrans().getClauses();
+    for(CNF::ClauseIter it = prev_trans_clauses.begin(); it != prev_trans_clauses.end(); ++it)
+    {
+      presentToPrevious(*it);
+      it->push_back(current_state_is_initial_);
+    }
+    prev_trans_or_initial_.swapWith(prev_trans_clauses);
+    // if one of the state variables is true, then current_state_is_initial must be false:
+    for(size_t cnt = 0; cnt < s.size(); ++cnt)
+      prev_trans_or_initial_.add2LitClause(-s[cnt], -current_state_is_initial_);
+    prev_safe_ = -current_to_previous_map_[VM.getPresErrorStateVar()];
+
+    // begin activation variables for a previous state clause:
+    px_unused_.reserve(s.size());
+    px_neg_.reserve(s.size());
+    px_act_.reserve(s.size() + 1);
+    for(size_t cnt = 0; cnt < s.size(); ++cnt)
+    {
+      px_unused_.push_back(VM.createFreshPrevVar());
+      px_neg_.push_back(VM.createFreshPrevVar());
+      px_act_.push_back(VM.createFreshPrevVar());
+    }
+    px_act_.push_back(current_state_is_initial_);
+    prev_trans_or_initial_.addClause(px_act_);
+    for(size_t cnt = 0; cnt < s.size(); ++cnt)
+    {
+      int prev = current_to_previous_map_[s[cnt]];
+      prev_trans_or_initial_.add2LitClause(-px_unused_[cnt], -px_act_[cnt]);
+      prev_trans_or_initial_.add4LitClause(px_unused_[cnt], px_neg_[cnt], prev, -px_act_[cnt]);
+      prev_trans_or_initial_.add4LitClause(px_unused_[cnt], px_neg_[cnt], -prev, px_act_[cnt]);
+      prev_trans_or_initial_.add4LitClause(px_unused_[cnt], -px_neg_[cnt], prev, px_act_[cnt]);
+      prev_trans_or_initial_.add4LitClause(px_unused_[cnt], -px_neg_[cnt], -prev, -px_act_[cnt]);
+    }
+    // end activation variables for a previous state clause
+    prev_vars_ = VM.getVarsOfType(VarInfo::PREV);
+  }
+}
+
+// -------------------------------------------------------------------------------------------
+PrevStateInfo::PrevStateInfo(const PrevStateInfo &other):
+    use_ind_(other.use_ind_),
+    prev_trans_or_initial_(other.prev_trans_or_initial_),
+    current_to_previous_map_(other.current_to_previous_map_),
+    current_state_is_initial_(other.current_state_is_initial_),
+    prev_safe_(other.prev_safe_),
+    px_unused_(other.px_unused_),
+    px_neg_(other.px_neg_),
+    px_act_(other.px_act_),
+    prev_vars_(other.prev_vars_)
+{
+  // nothing else to do
+}
+
+// -------------------------------------------------------------------------------------------
+PrevStateInfo& PrevStateInfo::operator=(const PrevStateInfo &other)
+{
+  use_ind_ = other.use_ind_;
+  prev_trans_or_initial_ = other.prev_trans_or_initial_;
+  current_to_previous_map_ = other.current_to_previous_map_;
+  current_state_is_initial_ = other.current_state_is_initial_;
+  prev_safe_ = other.prev_safe_;
+  px_unused_ = other.px_unused_;
+  px_neg_ = other.px_neg_;
+  px_act_ = other.px_act_;
+  prev_vars_ = other.prev_vars_;
+  return *this;
+}
+
+// -------------------------------------------------------------------------------------------
+int PrevStateInfo::presentToPrevious(int literal) const
+{
+  int var = (literal < 0) ? -literal : literal;
+  if(literal < 0)
+    return -current_to_previous_map_[var];
+  else
+    return current_to_previous_map_[var];
+}
+
+// -------------------------------------------------------------------------------------------
+void PrevStateInfo::presentToPrevious(vector<int> &cube_or_clause) const
+{
+  for(size_t cnt = 0; cnt < cube_or_clause.size(); ++cnt)
+    cube_or_clause[cnt] = presentToPrevious(cube_or_clause[cnt]);
+}
+
+// -------------------------------------------------------------------------------------------
+void PrevStateInfo::presentToPrevious(CNF &cnf) const
+{
+  list<vector<int> > orig_clauses = cnf.getClauses();
+  cnf.clear();
+  for(CNF::ClauseConstIter it = orig_clauses.begin(); it != orig_clauses.end(); ++it)
+  {
+    vector<int> clause(*it);
+    presentToPrevious(clause);
+    cnf.addClause(clause);
+  }
+}
+
+
+
+
+
 // -------------------------------------------------------------------------------------------
 ParallelLearner::ParallelLearner(size_t nr_of_threads, CNFImplExtractor *impl_extractor) :
                  BackEnd(),
+                 psi_(Options::instance().getBackEndMode() == 0),
                  result_(0),
                  nr_of_threads_(nr_of_threads),
                  impl_extractor_(impl_extractor)
 {
-  use_ind_ = (Options::instance().getBackEndMode() == 1);
 
   MASSERT(nr_of_threads != 0, "Must have at least one thread");
   size_t nr_of_clause_explorers = nr_of_threads;
   size_t nr_of_ifm_explorers = 0;
+  size_t nr_of_templ_explorers = 0;
   size_t nr_of_clause_minimizers = 0;
   size_t nr_of_ce_generalizers = 0;
 
@@ -131,41 +267,47 @@ ParallelLearner::ParallelLearner(size_t nr_of_threads, CNFImplExtractor *impl_ex
   {
     nr_of_clause_explorers = 1;
     nr_of_ifm_explorers = 0;
+    nr_of_templ_explorers = 0;
     nr_of_clause_minimizers = 0;
     nr_of_ce_generalizers = 0;
   }
   if(nr_of_threads == 2)
   {
-    nr_of_clause_explorers = 2;
+    nr_of_clause_explorers = 1;
     nr_of_ifm_explorers = 0;
+    nr_of_templ_explorers = 1;
     nr_of_clause_minimizers = 0;
     nr_of_ce_generalizers = 0;
   }
   if(nr_of_threads == 3)
   {
-    nr_of_clause_explorers = 2;
-    nr_of_ifm_explorers = 0;
+    nr_of_clause_explorers = 1;
+    nr_of_ifm_explorers = 1;
+    nr_of_templ_explorers = 1;
     nr_of_clause_minimizers = 0;
-    nr_of_ce_generalizers = 1;
+    nr_of_ce_generalizers = 0;
   }
   if(nr_of_threads == 4)
   {
     nr_of_clause_explorers = 2;
-    nr_of_ifm_explorers = 0;
-    nr_of_clause_minimizers = 1;
-    nr_of_ce_generalizers = 1;
+    nr_of_ifm_explorers = 1;
+    nr_of_templ_explorers = 1;
+    nr_of_clause_minimizers = 0;
+    nr_of_ce_generalizers = 0;
   }
   if(nr_of_threads == 5)
   {
-    nr_of_clause_explorers = 3;
-    nr_of_ifm_explorers = 0;
-    nr_of_clause_minimizers = 1;
+    nr_of_clause_explorers = 2;
+    nr_of_ifm_explorers = 1;
+    nr_of_templ_explorers = 1;
+    nr_of_clause_minimizers = 0;
     nr_of_ce_generalizers = 1;
   }
   if(nr_of_threads == 6)
   {
-    nr_of_clause_explorers = 3;
+    nr_of_clause_explorers = 2;
     nr_of_ifm_explorers = 1;
+    nr_of_templ_explorers = 1;
     nr_of_clause_minimizers = 1;
     nr_of_ce_generalizers = 1;
   }
@@ -173,44 +315,30 @@ ParallelLearner::ParallelLearner(size_t nr_of_threads, CNFImplExtractor *impl_ex
   {
     nr_of_clause_explorers = 3;
     nr_of_ifm_explorers = 1;
+    nr_of_templ_explorers = 1;
     nr_of_clause_minimizers = 1;
-    nr_of_ce_generalizers = 2;
+    nr_of_ce_generalizers = 1;
   }
   if(nr_of_threads == 8)
   {
-    nr_of_clause_explorers = 4;
+    nr_of_clause_explorers = 3;
     nr_of_ifm_explorers = 1;
-    nr_of_clause_minimizers = 1;
-    nr_of_ce_generalizers = 2;
+    nr_of_templ_explorers = 1;
+    nr_of_clause_minimizers = 2;
+    nr_of_ce_generalizers = 1;
   }
 
-  if(use_ind_)
-    computePreviousTrans();
+  templ_explorers_.reserve(nr_of_templ_explorers);
+  for(size_t cnt = 0; cnt < nr_of_templ_explorers; ++cnt)
+    templ_explorers_.push_back(new TemplExplorer(*this));
 
   clause_explorers_.reserve(nr_of_clause_explorers);
   for(size_t cnt = 0; cnt < nr_of_clause_explorers; ++cnt)
-  {
-    if(use_ind_)
-      clause_explorers_.push_back(new ClauseExplorerSAT(cnt,
-                                                        *this,
-                                                        prev_trans_or_initial_,
-                                                        current_to_previous_map_,
-                                                        current_state_is_initial_));
-    else
-      clause_explorers_.push_back(new ClauseExplorerSAT(cnt, *this));
-  }
+    clause_explorers_.push_back(new ClauseExplorerSAT(cnt, *this, psi_));
 
   ce_generalizers_.reserve(nr_of_ce_generalizers);
   for(size_t cnt = 0; cnt < nr_of_ce_generalizers; ++cnt)
-  {
-    if(use_ind_)
-      ce_generalizers_.push_back(new CounterGenSAT(*this,
-                                                   prev_trans_or_initial_,
-                                                   current_to_previous_map_,
-                                                   current_state_is_initial_));
-    else
-      ce_generalizers_.push_back(new CounterGenSAT(*this));
-  }
+    ce_generalizers_.push_back(new CounterGenSAT(*this, psi_));
 
   ifm_explorers_.reserve(nr_of_ifm_explorers);
   for(size_t cnt = 0; cnt < nr_of_ifm_explorers; ++cnt)
@@ -218,13 +346,27 @@ ParallelLearner::ParallelLearner(size_t nr_of_threads, CNFImplExtractor *impl_ex
 
   clause_minimizers_.reserve(nr_of_clause_minimizers);
   for(size_t cnt = 0; cnt < nr_of_clause_minimizers; ++cnt)
-    clause_minimizers_.push_back(new ClauseMinimizerQBF(*this));
+    clause_minimizers_.push_back(new ClauseMinimizerQBF(cnt, *this, psi_));
 
+
+  const vector<int> &s = VarManager::instance().getVarsOfType(VarInfo::PRES_STATE);
+  const vector<int> &i = VarManager::instance().getVarsOfType(VarInfo::INPUT);
+  const vector<int> &c = VarManager::instance().getVarsOfType(VarInfo::CTRL);
+  vars_to_keep_i_.reserve(s.size() + i.size() + c.size());
+  vars_to_keep_i_.insert(vars_to_keep_i_.end(), s.begin(), s.end());
+  vars_to_keep_i_.insert(vars_to_keep_i_.end(), i.begin(), i.end());
+  vars_to_keep_i_.insert(vars_to_keep_i_.end(), c.begin(), c.end());
+
+  expander_.setAbortCondition(&result_);
 }
 
 // -------------------------------------------------------------------------------------------
 ParallelLearner::~ParallelLearner()
 {
+  for(size_t cnt = 0; cnt < templ_explorers_.size(); ++cnt)
+    delete templ_explorers_[cnt];
+  templ_explorers_.clear();
+
   for(size_t cnt = 0; cnt < clause_explorers_.size(); ++cnt)
     delete clause_explorers_[cnt];
   clause_explorers_.clear();
@@ -279,6 +421,12 @@ bool ParallelLearner::run()
     ifm_threads.push_back(thread(&IFM13Explorer::exploreClauses,
                                  ifm_explorers_[cnt]));
 
+  vector<thread> templ_threads;
+  templ_threads.reserve(templ_explorers_.size());
+  for(size_t cnt = 0; cnt < templ_explorers_.size(); ++cnt)
+    templ_threads.push_back(thread(&TemplExplorer::computeWinningRegion,
+                                    templ_explorers_[cnt]));
+
   //The main thread executes the first explorer:
   MASSERT(clause_explorers_.size() > 0, "There must be at least one explorer thread");
   clause_explorers_[0]->exploreClauses();
@@ -292,6 +440,8 @@ bool ParallelLearner::run()
     minimizer_threads[cnt].join();
   for(size_t cnt = 0; cnt < ifm_threads.size(); ++cnt)
     ifm_threads[cnt].join();
+  for(size_t cnt = 0; cnt < templ_threads.size(); ++cnt)
+    templ_threads[cnt].join();
 
   // Merge statistics:
   statistics_.notifyWinRegEnd();
@@ -314,6 +464,26 @@ bool ParallelLearner::run()
     statistics_.logStatistics();
     return true;
   }
+
+  // cleaning up the winning region explorers to save memory:
+  for(size_t cnt = 0; cnt < templ_explorers_.size(); ++cnt)
+    delete templ_explorers_[cnt];
+  templ_explorers_.clear();
+  for(size_t cnt = 0; cnt < clause_explorers_.size(); ++cnt)
+    delete clause_explorers_[cnt];
+  clause_explorers_.clear();
+  for(size_t cnt = 0; cnt < ce_generalizers_.size(); ++cnt)
+    delete ce_generalizers_[cnt];
+  ce_generalizers_.clear();
+  for(size_t cnt = 0; cnt < ifm_explorers_.size(); ++cnt)
+    delete ifm_explorers_[cnt];
+  ifm_explorers_.clear();
+  for(size_t cnt = 0; cnt < clause_minimizers_.size(); ++cnt)
+    delete clause_minimizers_[cnt];
+  clause_minimizers_.clear();
+  unminimized_clauses_.clear();
+  counterexamples_.clear();
+  expander_.cleanup();
 
   L_INF("Starting to extract a circuit ...");
   impl_extractor_->extractCircuit(winning_region_);
@@ -343,8 +513,14 @@ void ParallelLearner::notifyNewWinRegClause(const vector<int> &clause, int src)
   for(size_t cnt = 0; cnt < ce_generalizers_.size(); ++cnt)
     ce_generalizers_[cnt]->notifyNewWinRegClause(clause, src);
 
+  for(size_t cnt = 0; cnt < clause_minimizers_.size(); ++cnt)
+    clause_minimizers_[cnt]->notifyNewWinRegClause(clause, src);
+
   for(size_t cnt = 0; cnt < ifm_explorers_.size(); ++cnt)
     ifm_explorers_[cnt]->notifyNewWinRegClause(clause, src);
+
+  for(size_t cnt = 0; cnt < templ_explorers_.size(); ++cnt)
+    templ_explorers_[cnt]->notifyNewWinRegClause(clause, src);
 
   if(clause_minimizers_.size() > 0 && src != MIN)
   {
@@ -359,11 +535,14 @@ void ParallelLearner::notifyNewUselessInputClause(const vector<int> &clause, int
 {
   // we notify the clause_explorers_ synchronously:
   for(size_t cnt = 0; cnt < clause_explorers_.size(); ++cnt)
-    clause_explorers_[cnt]->notifyBeforeNewInfo();
+    if(clause_explorers_[cnt]->mode_ == 0)
+      clause_explorers_[cnt]->notifyBeforeNewInfo();
   for(size_t cnt = 0; cnt < clause_explorers_.size(); ++cnt)
-    clause_explorers_[cnt]->notifyNewUselessInputClause(clause, level);
+    if(clause_explorers_[cnt]->mode_ == 0)
+      clause_explorers_[cnt]->notifyNewUselessInputClause(clause, level);
   for(size_t cnt = 0; cnt < clause_explorers_.size(); ++cnt)
-    clause_explorers_[cnt]->notifyAfterNewInfo();
+    if(clause_explorers_[cnt]->mode_ == 0)
+      clause_explorers_[cnt]->notifyAfterNewInfo();
 }
 
 // -------------------------------------------------------------------------------------------
@@ -383,186 +562,207 @@ void ParallelLearner::triggerExplorerRestart()
   var_man_lock_.lock();
   winning_region_lock_.lock();
 
-  VarManager::instance().resetToLastPush();
+  bool some_in_mode0 = false;
+  bool some_in_mode1 = false;
+  for(size_t cnt = 0; cnt < clause_explorers_.size(); ++cnt)
+    if(clause_explorers_[cnt]->mode_ == 0)
+      some_in_mode0 = true;
+    else
+      some_in_mode1 = true;
+
   Utils::compressStateCNF(winning_region_);
-  CNF leave_win(winning_region_);
-  leave_win.swapPresentToNext();
-  leave_win.negate();
-  leave_win.addCNF(AIG2CNF::instance().getTrans());
-  leave_win.addCNF(winning_region_);
-
-  // we notify the clause_explorers_ synchronously:
-  for(size_t cnt = 0; cnt < clause_explorers_.size(); ++cnt)
-    clause_explorers_[cnt]->notifyBeforeNewInfo();
-  for(size_t cnt = 0; cnt < clause_explorers_.size(); ++cnt)
-    clause_explorers_[cnt]->notifyRestart(leave_win);
-  for(size_t cnt = 0; cnt < clause_explorers_.size(); ++cnt)
-    clause_explorers_[cnt]->notifyAfterNewInfo();
-
+  CNF win(winning_region_);
   winning_region_lock_.unlock();
+
+  CNF leave_win;
+  if(some_in_mode0)
+  {
+    VarManager::instance().resetToLastPush();
+    leave_win = win;
+    leave_win.swapPresentToNext();
+    leave_win.negate();
+  }
+
+  for(size_t cnt = 0; cnt < clause_explorers_.size(); ++cnt)
+  {
+    if(clause_explorers_[cnt]->mode_ == 0)
+    {
+      SatSolver *next_solver = clause_explorers_[cnt]->getFreshISolver();
+      next_solver->startIncrementalSession(vars_to_keep_i_, false);
+      next_solver->incAddCNF(win);
+      next_solver->incAddCNF(leave_win);
+      next_solver->incAddCNF(AIG2CNF::instance().getTrans());
+      clause_explorers_[cnt]->notifyRestart(next_solver);
+    }
+  }
+  for(size_t cnt = 0; cnt < clause_explorers_.size(); ++cnt)
+    if(clause_explorers_[cnt]->mode_ == 0)
+      clause_explorers_[cnt]->notifyAfterNewInfo();
+
+  if(some_in_mode1 == false)
+  {
+    var_man_lock_.unlock();
+    return;
+  }
+
+  // now we compute the mode1 restarts, which is more expensive:
+  // the mode0 explorers can already work in the meantime
+  vector<SatSolver*> solvers;
+  for(size_t cnt = 0; cnt < clause_explorers_.size(); ++cnt)
+    if(clause_explorers_[cnt]->mode_ != 0)
+      solvers.push_back(clause_explorers_[cnt]->getFreshISolver());
+  bool limit_exceeded = expander_.resetSolverIExp(win, solvers, true);
+  if(limit_exceeded)
+  {
+    L_LOG("Memory exceeded: Falling back from mode 1 to 0");
+    for(size_t scnt = 0; scnt < solvers.size(); ++scnt)
+      delete solvers[scnt];
+    if(some_in_mode0 == false)
+    {
+      VarManager::instance().resetToLastPush();
+      leave_win = win;
+      leave_win.swapPresentToNext();
+      leave_win.negate();
+    }
+    for(size_t cnt = 0; cnt < clause_explorers_.size(); ++cnt)
+    {
+      if(clause_explorers_[cnt]->mode_ != 0)
+      {
+        SatSolver *next_solver = clause_explorers_[cnt]->getFreshISolver();
+        next_solver->startIncrementalSession(vars_to_keep_i_, false);
+        next_solver->incAddCNF(win);
+        next_solver->incAddCNF(leave_win);
+        next_solver->incAddCNF(AIG2CNF::instance().getTrans());
+        clause_explorers_[cnt]->notifyRestart(next_solver);
+        clause_explorers_[cnt]->mode_ = 0;
+        clause_explorers_[cnt]->notifyAfterNewInfo();
+      }
+    }
+  }
+  else
+  {
+    size_t next_solver_idx = 0;
+    for(size_t cnt = 0; cnt < clause_explorers_.size(); ++cnt)
+    {
+      if(clause_explorers_[cnt]->mode_ != 0)
+      {
+        clause_explorers_[cnt]->notifyRestart(solvers[next_solver_idx++]);
+        clause_explorers_[cnt]->notifyAfterNewInfo();
+      }
+    }
+  }
   var_man_lock_.unlock();
 }
 
 // -------------------------------------------------------------------------------------------
-void ParallelLearner::computePreviousTrans()
+void ParallelLearner::triggerInitialMode1Restart()
 {
-  // build previous-state copy of the transition relation:
-  AIG2CNF& A2C = AIG2CNF::instance();
-  VarManager &VM = VarManager::instance();
-  current_to_previous_map_.resize(VM.getMaxCNFVar()+1, 0);
-  const vector<int> &s = VM.getVarsOfType(VarInfo::PRES_STATE);
-  const vector<int> &s_next = VM.getVarsOfType(VarInfo::NEXT_STATE);
-  const vector<int> &c = VM.getVarsOfType(VarInfo::CTRL);
-  const vector<int> &i = VM.getVarsOfType(VarInfo::INPUT);
-  vector<int> t = VM.getVarsOfType(VarInfo::TMP);
-
-  for(size_t v_cnt = 0; v_cnt < s.size(); ++v_cnt)
-    current_to_previous_map_[s[v_cnt]] = VM.createFreshPrevVar();
-  for(size_t v_cnt = 0; v_cnt < c.size(); ++v_cnt)
-    current_to_previous_map_[c[v_cnt]] = VM.createFreshPrevVar();
-  for(size_t v_cnt = 0; v_cnt < i.size(); ++v_cnt)
-    current_to_previous_map_[i[v_cnt]] = VM.createFreshPrevVar();
-  for(size_t v_cnt = 0; v_cnt < t.size(); ++v_cnt)
-    current_to_previous_map_[t[v_cnt]] = VM.createFreshTmpVar();
-  for(size_t v_cnt = 0; v_cnt < s_next.size(); ++v_cnt)
-    current_to_previous_map_[s_next[v_cnt]] = s[v_cnt];
-
-  current_state_is_initial_ = VM.createFreshTmpVar();
-  list<vector<int> > prev_trans_clauses = A2C.getTrans().getClauses();
-  for(CNF::ClauseIter it = prev_trans_clauses.begin(); it != prev_trans_clauses.end(); ++it)
+  var_man_lock_.lock();
+  for(size_t cnt = 0; cnt < clause_explorers_.size(); ++cnt)
+    if(clause_explorers_[cnt]->mode_ != 0)
+      clause_explorers_[cnt]->notifyBeforeNewInfo();
+  vector<SatSolver*> solvers;
+  for(size_t cnt = 0; cnt < clause_explorers_.size(); ++cnt)
+    if(clause_explorers_[cnt]->mode_ != 0)
+      solvers.push_back(clause_explorers_[cnt]->getFreshISolver());
+  CNF win(AIG2CNF::instance().getSafeStates());
+  bool limit_exceeded = expander_.resetSolverIExp(win, solvers, true);
+  if(limit_exceeded)
   {
-    presentToPrevious(*it);
-    it->push_back(current_state_is_initial_);
-  }
-  prev_trans_or_initial_.swapWith(prev_trans_clauses);
-  // if one of the state variables is true, then current_state_is_initial must be false:
-  for(size_t cnt = 0; cnt < s.size(); ++cnt)
-    prev_trans_or_initial_.add2LitClause(-s[cnt], -current_state_is_initial_);
-}
-
-// -------------------------------------------------------------------------------------------
-int ParallelLearner::presentToPrevious(int literal) const
-{
-  int var = (literal < 0) ? -literal : literal;
-  if(literal < 0)
-    return -current_to_previous_map_[var];
-  else
-    return current_to_previous_map_[var];
-}
-
-// -------------------------------------------------------------------------------------------
-void ParallelLearner::presentToPrevious(vector<int> &cube_or_clause) const
-{
-  for(size_t cnt = 0; cnt < cube_or_clause.size(); ++cnt)
-    cube_or_clause[cnt] = presentToPrevious(cube_or_clause[cnt]);
-}
-
-// -------------------------------------------------------------------------------------------
-void ParallelLearner::presentToPrevious(CNF &cnf) const
-{
-  list<vector<int> > orig_clauses = cnf.getClauses();
-  cnf.clear();
-  for(CNF::ClauseConstIter it = orig_clauses.begin(); it != orig_clauses.end(); ++it)
-  {
-    vector<int> clause(*it);
-    presentToPrevious(clause);
-    cnf.addClause(clause);
-  }
-}
-
-// -------------------------------------------------------------------------------------------
-ClauseExplorerSAT::ClauseExplorerSAT(size_t instance_nr, ParallelLearner &coordinator):
-                   instance_nr_(instance_nr),
-                   use_ind_(false),
-                   coordinator_(coordinator),
-                   precise_(true),
-                   solver_i_(NULL),
-                   solver_ctrl_(NULL),
-                   vars_to_keep_(VarManager::instance().getAllNonTempVars()),
-                   new_useless_input_clauses_level_(0),
-                   restart_level_(0),
-                   new_restart_level_(0),
-                   solver_ctrl_ind_(NULL),
-                   prev_safe_(0)
-
-{
-  // introduce some asymmetry to prevent the explorers from doing exactly the same thing:
-  if(instance_nr == 0)
-  {
-    solver_i_ = new LingelingApi(false, true);
-    solver_ctrl_ = new LingelingApi(false, true);
-  }
-  else if(instance_nr == 1)
-  {
-    solver_i_ = new MiniSatApi(false, true);
-    solver_ctrl_ = new MiniSatApi(false, true);
-  }
-  else if((instance_nr & 1) == 0)
-  {
-    solver_i_ = new LingelingApi(false, true);
-    solver_ctrl_ = new LingelingApi(false, true);
+    L_LOG("Memory exceeded during initialization: Falling back from mode 1 to 0");
+    for(size_t scnt = 0; scnt < solvers.size(); ++scnt)
+      delete solvers[scnt];
+    for(size_t cnt = 0; cnt < clause_explorers_.size(); ++cnt)
+    {
+      if(clause_explorers_[cnt]->mode_ != 0)
+      {
+        clause_explorers_[cnt]->mode_ = 0;
+        clause_explorers_[cnt]->notifyAfterNewInfo();
+      }
+    }
   }
   else
   {
-    solver_i_ = new MiniSatApi(false, true);
-    solver_ctrl_ = new MiniSatApi(false, true);
+    size_t next_solver_idx = 0;
+    for(size_t cnt = 0; cnt < clause_explorers_.size(); ++cnt)
+    {
+      if(clause_explorers_[cnt]->mode_ != 0)
+      {
+        clause_explorers_[cnt]->notifyRestart(solvers[next_solver_idx++]);
+        clause_explorers_[cnt]->notifyAfterNewInfo();
+      }
+    }
   }
+  var_man_lock_.unlock();
 }
+
 
 // -------------------------------------------------------------------------------------------
 ClauseExplorerSAT::ClauseExplorerSAT(size_t instance_nr,
                                      ParallelLearner &coordinator,
-                                     const CNF &prev_trans_or_initial,
-                                     const vector<int> &current_to_previous_map,
-                                     int current_state_is_initial):
+                                     PrevStateInfo &psi):
+                   mode_(0),
                    instance_nr_(instance_nr),
-                   use_ind_(true),
                    coordinator_(coordinator),
                    precise_(true),
                    solver_i_(NULL),
+                   next_solver_i_(NULL),
                    solver_ctrl_(NULL),
                    vars_to_keep_(VarManager::instance().getAllNonTempVars()),
                    new_useless_input_clauses_level_(0),
                    restart_level_(0),
                    new_restart_level_(0),
                    solver_ctrl_ind_(NULL),
-                   prev_trans_or_initial_(prev_trans_or_initial),
-                   current_to_previous_map_(current_to_previous_map),
-                   current_state_is_initial_(current_state_is_initial),
-                   prev_safe_(-current_to_previous_map[VarManager::instance().getPresErrorStateVar()])
+                   psi_(psi),
+                   reset_c_cnt_(0),
+                   clauses_added_(0)
+
 
 {
   // introduce some asymmetry to prevent the explorers from doing exactly the same thing:
   if(instance_nr == 0)
   {
-    solver_i_ = new LingelingApi(false, true);
-    solver_ctrl_ = new LingelingApi(false, false);
-    solver_ctrl_ind_ = new LingelingApi(false, true);
+    solver_i_name_ = "min_api";
+    solver_ctrl_ = new MiniSatApi(false, false);
+    solver_ctrl_ind_ = new MiniSatApi(false, false);
+    mode_ = 1;
   }
   else if(instance_nr == 1)
   {
-    solver_i_ = new MiniSatApi(false, true);
+    solver_i_name_ = "min_api";
     solver_ctrl_ = new MiniSatApi(false, false);
-    solver_ctrl_ind_ = new LingelingApi(false, true);
+    solver_ctrl_ind_ = new MiniSatApi(false, false);
+    mode_ = 0;
   }
   else if(instance_nr == 2)
   {
-    solver_i_ = new PicoSatApi(false, true);
+    solver_i_name_ = "lin_api";
     solver_ctrl_ = new MiniSatApi(false, false);
-    solver_ctrl_ind_ = new LingelingApi(false, true);
+    solver_ctrl_ind_ = new MiniSatApi(false, false);
+    mode_ = 1;
+  }
+  else if(instance_nr == 3)
+  {
+    solver_i_name_ = "pic_api";
+    solver_ctrl_ = new MiniSatApi(false, false);
+    solver_ctrl_ind_ = new LingelingApi(false, false);
+    mode_ = 1;
   }
   else if((instance_nr & 1) == 0)
   {
-    solver_i_ = new LingelingApi(false, true);
+    solver_i_name_ = "lin_api";
     solver_ctrl_ = new LingelingApi(false, false);
-    solver_ctrl_ind_ = new LingelingApi(false, true);
+    solver_ctrl_ind_ = new LingelingApi(false, false);
+    mode_ = 1;
   }
   else
   {
-    solver_i_ = new MiniSatApi(false, true);
+    solver_i_name_ = "lin_api";
     solver_ctrl_ = new MiniSatApi(false, true);
-    solver_ctrl_ind_ = new LingelingApi(false, true);
+    solver_ctrl_ind_ = new LingelingApi(false, false);
+    mode_ = 1;
   }
+  win_ = AIG2CNF::instance().getSafeStates();
 }
 
 // -------------------------------------------------------------------------------------------
@@ -574,35 +774,14 @@ ClauseExplorerSAT::~ClauseExplorerSAT()
   solver_ctrl_ = NULL;
   delete solver_ctrl_ind_;
   solver_ctrl_ind_ = NULL;
+  delete next_solver_i_;
+  next_solver_i_ = NULL;
 }
 
 // -------------------------------------------------------------------------------------------
 void ClauseExplorerSAT::exploreClauses()
 {
   const AIG2CNF& A2C = AIG2CNF::instance();
-
-  solver_i_->startIncrementalSession(vars_to_keep_, false);
-  solver_i_->incAddCNF(A2C.getNextUnsafeStates());
-  solver_i_->incAddCNF(A2C.getTrans());
-  solver_i_->incAddCNF(A2C.getSafeStates());
-
-  solver_ctrl_->startIncrementalSession(vars_to_keep_, false);
-  solver_ctrl_->incAddCNF(A2C.getNextSafeStates());
-  solver_ctrl_->incAddCNF(A2C.getTrans());
-  solver_ctrl_->incAddCNF(A2C.getSafeStates());
-
-  if(use_ind_)
-  {
-    solver_ctrl_ind_->startIncrementalSession(vars_to_keep_, true);
-    solver_ctrl_ind_->incAddCNF(A2C.getNextSafeStates());
-    solver_ctrl_ind_->incAddCNF(A2C.getTrans());
-    solver_ctrl_ind_->incAddCNF(A2C.getSafeStates());
-    solver_ctrl_ind_->incAddCNF(prev_trans_or_initial_);
-    solver_ctrl_ind_->incAddUnitClause(prev_safe_);
-  }
-
-  precise_ = true;
-
   const vector<int> &s = VarManager::instance().getVarsOfType(VarInfo::PRES_STATE);
   const vector<int> &c = VarManager::instance().getVarsOfType(VarInfo::CTRL);
   const vector<int> &i = VarManager::instance().getVarsOfType(VarInfo::INPUT);
@@ -610,25 +789,67 @@ void ClauseExplorerSAT::exploreClauses()
   si.reserve(s.size() + i.size());
   si.insert(si.end(), s.begin(), s.end());
   si.insert(si.end(), i.begin(), i.end());
+  vector<int> sic;
+  sic.reserve(si.size() + c.size());
+  sic.insert(sic.end(), si.begin(), si.end());
+  sic.insert(sic.end(), c.begin(), c.end());
+
+  solver_ctrl_->startIncrementalSession(vars_to_keep_, false);
+  solver_ctrl_->incAddCNF(A2C.getNextSafeStates());
+  solver_ctrl_->incAddCNF(A2C.getTrans());
+  solver_ctrl_->incAddCNF(A2C.getSafeStates());
+
+  if(psi_.use_ind_)
+  {
+    exp_.initSolverCExp(solver_ctrl_ind_, psi_.prev_vars_);
+    solver_ctrl_ind_->incAddCNF(A2C.getSafeStates());
+    vector<int> safe;
+    safe.push_back(-VarManager::instance().getPresErrorStateVar());
+    exp_.addExpNxtClauseToC(safe, solver_ctrl_ind_);
+    solver_ctrl_ind_->incAddCNF(psi_.prev_trans_or_initial_);
+    solver_ctrl_ind_->incAddUnitClause(psi_.prev_safe_);
+  }
+
+  // mode 0 can start without waiting for the initialization of the mode1 explorers
+  solver_i_ = getFreshISolver();
+  solver_i_->startIncrementalSession(sic, false);
+  solver_i_->incAddCNF(A2C.getNextUnsafeStates());
+  solver_i_->incAddCNF(A2C.getTrans());
+  solver_i_->incAddCNF(A2C.getSafeStates());
+
+  if(mode_ == 1)
+  {
+    // in order to initialize solver_i_, we perform a restart
+    bool first_restart_available = waitUntilOngoingRestartDone();
+    if(coordinator_.result_ != UNKNOWN)
+      return;
+    if(first_restart_available == false)
+      coordinator_.triggerInitialMode1Restart(); //does not block mode 0 explorers
+  }
+
+  precise_ = true;
+
   size_t it_cnt = 0;
   vector<int> model_or_core;
   while(true)
   {
     ++it_cnt;
-    if(coordinator_.result_ != UNKNOWN) // should be atomic
+    if(coordinator_.result_ != UNKNOWN)
       return;
     considerNewInfoFromOthers();
     statistics_.notifyBeforeComputeCandidate();
+    if(it_cnt == 1)
+      L_DBG("Explorer " << instance_nr_ << " starts to work.");
     bool sat = solver_i_->incIsSatModelOrCore(vector<int>(), si, model_or_core);
     statistics_.notifyAfterComputeCandidate();
     if(!sat)
     {
       if(precise_)
       {
-        coordinator_.result_ = REALIZABLE;  // should be atomic
+        coordinator_.result_ = REALIZABLE;
         return;
       }
-      if(coordinator_.result_ != UNKNOWN) // should be atomic
+      if(coordinator_.result_ != UNKNOWN)
         return;
       L_DBG("Explorer " << instance_nr_ << " restarts (iteration " << it_cnt << ").");
 
@@ -637,69 +858,104 @@ void ClauseExplorerSAT::exploreClauses()
       // done. This is not a correctness issue: doing multiple restarts triggered by
       // several threads is also safe (but a waste of resources).
       bool restart_available = waitUntilOngoingRestartDone();
+      if(coordinator_.result_ != UNKNOWN)
+        return;
       if(restart_available == false)
         coordinator_.triggerExplorerRestart();
       continue;
     }
 
+    if(instance_nr_ != 0)
+      Utils::randomize(model_or_core);
+
     vector<int> state_input = model_or_core;
     vector<int> state = Utils::extract(state_input, VarInfo::PRES_STATE);
     vector<int> input = Utils::extract(state_input, VarInfo::INPUT);
 
-    if(coordinator_.result_ != UNKNOWN) // should be atomic
+    if(coordinator_.result_ != UNKNOWN)
       return;
+
     statistics_.notifyBeforeCheckCandidate();
-    Utils::randomize(state);
-    sat = solver_ctrl_->incIsSatModelOrCore(state, input, c, model_or_core);
+    if(psi_.use_ind_ && mode_ == 1) // race condition does not harm here. Just a performance thing.
+      sat = solver_ctrl_ind_->incIsSatModelOrCore(state, input, c, model_or_core);
+    else
+      sat = solver_ctrl_->incIsSatModelOrCore(state, input, c, model_or_core);
+
     if(!sat)
     {
-      if(use_ind_)
+      // we now try to minimize the core further:
+      bool changed = true;
+      while(changed)
       {
-        // we now try to minimize the core further using reachability information:
-        vector<int> orig_core(model_or_core);
+        changed = false;
+        vector<int> blocking_clause(model_or_core);
+        Utils::negateLiterals(blocking_clause);
+        if(psi_.use_ind_)
+        {
+          solver_ctrl_ind_->incAddClause(blocking_clause);
+          exp_.addExpNxtClauseToC(blocking_clause, solver_ctrl_ind_);
+        }
+        else
+        {
+          vector<int> next_blocking_clause(blocking_clause);
+          Utils::swapPresentToNext(next_blocking_clause);
+          solver_ctrl_->incAddClause(blocking_clause);
+          solver_ctrl_->incAddClause(next_blocking_clause);
+        }
+
+        vector<int> orig_core = model_or_core;
+        if(instance_nr_ != 0)
+          Utils::randomize(orig_core);
         for(size_t lit_cnt = 0; lit_cnt < orig_core.size(); ++lit_cnt)
         {
           vector<int> tmp(model_or_core);
           Utils::remove(tmp, orig_core[lit_cnt]);
-          solver_ctrl_ind_->incPush();
 
-          // use what we already know immediately:
-          vector<int> prev_core(model_or_core);
-          presentToPrevious(prev_core);
-          vector<int> next_core(model_or_core);
-          Utils::swapPresentToNext(next_core);
-          solver_ctrl_ind_->incAddNegCubeAsClause(model_or_core);
-          solver_ctrl_ind_->incAddNegCubeAsClause(prev_core);
-          solver_ctrl_ind_->incAddNegCubeAsClause(next_core);
-
-          solver_ctrl_ind_->incAddCube(input);
-          solver_ctrl_ind_->incAddCube(tmp);
-          vector<int> prev_tmp(tmp);
-          presentToPrevious(prev_tmp);
-          prev_tmp.push_back(-current_state_is_initial_);
-          solver_ctrl_ind_->incAddNegCubeAsClause(prev_tmp);
-          sat = solver_ctrl_ind_->incIsSat();
-          solver_ctrl_ind_->incPop();
+          vector<int> assumptions;
+          assumptions.reserve(input.size() + tmp.size() + s.size());
+          assumptions.insert(assumptions.end(), input.begin(), input.end());
+          assumptions.insert(assumptions.end(), tmp.begin(), tmp.end());
+          if(psi_.use_ind_)
+          {
+            // build the previous state-copy of tmp using the activation variables:
+            for(size_t s_cnt = 0; s_cnt < s.size(); ++s_cnt)
+            {
+              if(Utils::contains(tmp, s[s_cnt]))
+                assumptions.push_back(psi_.px_neg_[s_cnt]);
+              else if(Utils::contains(tmp, -s[s_cnt]))
+                assumptions.push_back(-psi_.px_neg_[s_cnt]);
+              else
+                assumptions.push_back(psi_.px_unused_[s_cnt]);
+            }
+            sat = solver_ctrl_ind_->incIsSat(assumptions);
+          }
+          else
+            sat = solver_ctrl_->incIsSat(assumptions);
           if(!sat)
+          {
             model_or_core = tmp;
+            changed = true;
+          }
         }
       }
 
       if(Utils::containsInit(model_or_core))
       {
-        coordinator_.result_ = UNREALIZABLE;  // should be atomic
+        coordinator_.result_ = UNREALIZABLE;
         return;
       }
 
+      // We compute the corresponding blocking clause, and update the winning region and the
+      // solvers:
       vector<int> blocking_clause(model_or_core);
-      for(size_t cnt = 0; cnt < blocking_clause.size(); ++cnt)
-        blocking_clause[cnt] = -blocking_clause[cnt];
+      Utils::negateLiterals(blocking_clause);
       statistics_.notifyAfterCheckCandidateFound(s.size(), blocking_clause.size());
       coordinator_.notifyNewWinRegClause(blocking_clause, EXPL);
       coordinator_.notifyNewCounterexample(state_input, model_or_core);
       precise_ = false;
+
     }
-    else
+    else // sat == true, i.e., this is not a real counterexample
     {
       statistics_.notifyAfterCheckCandidateFailed();
       vector<int> ctrl_cube = model_or_core;
@@ -708,8 +964,7 @@ void ClauseExplorerSAT::exploreClauses()
       statistics_.notifyBeforeRefine();
       sat = solver_i_->incIsSatModelOrCore(state_input, ctrl_cube, vector<int>(), model_or_core);
       MASSERT(sat == false, "Impossible " << instance_nr_);
-      for(size_t cnt = 0; cnt < model_or_core.size(); ++cnt)
-        model_or_core[cnt] = -model_or_core[cnt];
+      Utils::negateLiterals(model_or_core);
       coordinator_.notifyNewUselessInputClause(model_or_core, restart_level_);
       statistics_.notifyAfterRefine(si.size(), model_or_core.size());
     }
@@ -731,6 +986,7 @@ void ClauseExplorerSAT::notifyAfterNewInfo()
 // -------------------------------------------------------------------------------------------
 void ClauseExplorerSAT::notifyNewWinRegClause(const vector<int> &clause, int src)
 {
+  win_.addClauseAndSimplify(clause);
   if(src == EXPL)
   {
     new_win_reg_clauses_for_solver_i_.addClause(clause);
@@ -756,13 +1012,27 @@ void ClauseExplorerSAT::notifyNewUselessInputClause(const vector<int> &clause, i
 }
 
 // -------------------------------------------------------------------------------------------
-void ClauseExplorerSAT::notifyRestart(const CNF &restart_with_cnf)
+void ClauseExplorerSAT::notifyRestart(SatSolver *solver_i)
 {
   // if there have been several restarts in the meantime, we only care about the last one:
-  restart_with_cnf_ = restart_with_cnf;
+  delete next_solver_i_;
+  next_solver_i_ = solver_i;
   new_win_reg_clauses_for_solver_i_.clear();
   new_foreign_win_reg_clauses_for_solver_i_.clear();
   ++new_restart_level_;
+}
+
+// -------------------------------------------------------------------------------------------
+SatSolver *ClauseExplorerSAT::getFreshISolver() const
+{
+  if(solver_i_name_ == "lin_api")
+    return new LingelingApi(false, false);
+  if(solver_i_name_ == "min_api")
+    return new MiniSatApi(false, false);
+  if(solver_i_name_ == "pic_api")
+    return new PicoSatApi(false, false);
+  MASSERT(false, "Unknown SAT solver name.");
+  return NULL;
 }
 
 // -------------------------------------------------------------------------------------------
@@ -775,31 +1045,65 @@ const LearnStatisticsSAT& ClauseExplorerSAT::getStatistics() const
 void ClauseExplorerSAT::considerNewInfoFromOthers()
 {
   new_info_lock_.lock();
-  if(restart_with_cnf_.getNrOfClauses() != 0)
+  if(next_solver_i_ != NULL)
   {
     statistics_.notifyRestart();
-    solver_i_->startIncrementalSession(vars_to_keep_, false);
-    solver_i_->incAddCNF(restart_with_cnf_);
-    restart_with_cnf_.clear();
+    delete solver_i_;
+    solver_i_ = next_solver_i_;
+    next_solver_i_ = NULL;
     restart_level_ = new_restart_level_;
     precise_ = true;
   }
   if(new_win_reg_clauses_for_solver_ctrl_.getNrOfClauses() > 0)
   {
-    CNF next_win_reg_clauses(new_win_reg_clauses_for_solver_ctrl_);
-    next_win_reg_clauses.swapPresentToNext();
-
-    solver_ctrl_->incAddCNF(new_win_reg_clauses_for_solver_ctrl_);
-    solver_ctrl_->incAddCNF(next_win_reg_clauses);
-    if(use_ind_)
+    if(clauses_added_ > win_.getNrOfClauses() + 100)
     {
-      CNF prev_win_reg_clauses(new_win_reg_clauses_for_solver_ctrl_);
-      presentToPrevious(prev_win_reg_clauses);
-      solver_ctrl_ind_->incAddCNF(new_win_reg_clauses_for_solver_ctrl_);
-      solver_ctrl_ind_->incAddCNF(next_win_reg_clauses);
-      solver_ctrl_ind_->incAddCNF(prev_win_reg_clauses);
+      // reset solver_ctrl_ and solver_ctrl_ind_:
+      if(reset_c_cnt_ % 1000 == 999)
+        Utils::compressStateCNF(win_, true);
+      else if(reset_c_cnt_ % 100 == 99)
+        Utils::compressStateCNF(win_, false);
+      CNF next_win(win_);
+      next_win.swapPresentToNext();
+      solver_ctrl_->startIncrementalSession(vars_to_keep_, false);
+      solver_ctrl_->incAddCNF(win_);
+      solver_ctrl_->incAddCNF(AIG2CNF::instance().getTrans());
+      solver_ctrl_->incAddCNF(next_win);
+      if(psi_.use_ind_)
+      {
+        CNF prev_win(win_);
+        psi_.presentToPrevious(prev_win);
+        exp_.resetSolverCExp(solver_ctrl_ind_);
+        solver_ctrl_ind_->incAddCNF(win_);
+        const list<vector<int> > &cl = win_.getClauses();
+        for(CNF::ClauseConstIter it = cl.begin(); it != cl.end(); ++it)
+          exp_.addExpNxtClauseToC(*it, solver_ctrl_ind_);
+        solver_ctrl_ind_->incAddCNF(psi_.prev_trans_or_initial_);
+        solver_ctrl_ind_->incAddCNF(prev_win);
+        clauses_added_ = win_.getNrOfClauses();
+      }
+      new_win_reg_clauses_for_solver_ctrl_.clear();
+      reset_c_cnt_++;
     }
-    new_win_reg_clauses_for_solver_ctrl_.clear();
+    else
+    {
+      CNF next_win_reg_clauses(new_win_reg_clauses_for_solver_ctrl_);
+      next_win_reg_clauses.swapPresentToNext();
+      solver_ctrl_->incAddCNF(new_win_reg_clauses_for_solver_ctrl_);
+      solver_ctrl_->incAddCNF(next_win_reg_clauses);
+      if(psi_.use_ind_)
+      {
+        CNF prev_win_reg_clauses(new_win_reg_clauses_for_solver_ctrl_);
+        psi_.presentToPrevious(prev_win_reg_clauses);
+        solver_ctrl_ind_->incAddCNF(new_win_reg_clauses_for_solver_ctrl_);
+        const list<vector<int> > &cl = new_win_reg_clauses_for_solver_ctrl_.getClauses();
+        for(CNF::ClauseConstIter it = cl.begin(); it != cl.end(); ++it)
+          exp_.addExpNxtClauseToC(*it, solver_ctrl_ind_);
+        solver_ctrl_ind_->incAddCNF(prev_win_reg_clauses);
+      }
+      clauses_added_ += new_win_reg_clauses_for_solver_ctrl_.getNrOfClauses();
+      new_win_reg_clauses_for_solver_ctrl_.clear();
+    }
   }
   if(new_win_reg_clauses_for_solver_i_.getNrOfClauses() > 0)
   {
@@ -817,7 +1121,7 @@ void ClauseExplorerSAT::considerNewInfoFromOthers()
     new_foreign_win_reg_clauses_for_solver_i_.clear();
   }
 
-  if(restart_level_ == new_useless_input_clauses_level_)
+  if(mode_ == 0 && restart_level_ == new_useless_input_clauses_level_)
   {
     solver_i_->incAddCNF(new_useless_input_clauses_);
     new_useless_input_clauses_.clear();
@@ -834,74 +1138,22 @@ bool ClauseExplorerSAT::waitUntilOngoingRestartDone()
   coordinator_.var_man_lock_.unlock();
 
   new_info_lock_.lock();
-  bool restart_available = restart_with_cnf_.getNrOfClauses() != 0;
+  bool restart_available = next_solver_i_ != 0;
   new_info_lock_.unlock();
   return restart_available;
 }
 
 // -------------------------------------------------------------------------------------------
-int ClauseExplorerSAT::presentToPrevious(int literal) const
-{
-  int var = (literal < 0) ? -literal : literal;
-  if(literal < 0)
-    return -current_to_previous_map_[var];
-  else
-    return current_to_previous_map_[var];
-}
-
-// -------------------------------------------------------------------------------------------
-void ClauseExplorerSAT::presentToPrevious(vector<int> &cube_or_clause) const
-{
-  for(size_t cnt = 0; cnt < cube_or_clause.size(); ++cnt)
-    cube_or_clause[cnt] = presentToPrevious(cube_or_clause[cnt]);
-}
-
-// -------------------------------------------------------------------------------------------
-void ClauseExplorerSAT::presentToPrevious(CNF &cnf) const
-{
-  list<vector<int> > orig_clauses = cnf.getClauses();
-  cnf.clear();
-  for(CNF::ClauseConstIter it = orig_clauses.begin(); it != orig_clauses.end(); ++it)
-  {
-    vector<int> clause(*it);
-    presentToPrevious(clause);
-    cnf.addClause(clause);
-  }
-}
-
-// -------------------------------------------------------------------------------------------
-CounterGenSAT::CounterGenSAT(ParallelLearner &coordinator):
-                             use_ind_(false),
-                             coordinator_(coordinator),
-                             vars_to_keep_(VarManager::instance().getAllNonTempVars()),
-                             solver_ctrl_(Options::instance().getSATSolver(false, true)),
-                             solver_win_(Options::instance().getSATSolver(false, true)),
-                             current_state_is_initial_(0),
-                             solver_ctrl_ind_(NULL),
-                             prev_safe_(0),
-                             next_bored_index_(0),
-                             last_bored_compress_size_(1)
-{
-  do_if_bored_.reserve(1000000);
-}
-
-// -------------------------------------------------------------------------------------------
-CounterGenSAT::CounterGenSAT(ParallelLearner &coordinator,
-         const CNF &prev_trans_or_initial,
-         const vector<int> &current_to_previous_map,
-         int current_state_is_initial):
-         use_ind_(true),
+CounterGenSAT::CounterGenSAT(ParallelLearner &coordinator, PrevStateInfo &psi):
          coordinator_(coordinator),
          vars_to_keep_(VarManager::instance().getAllNonTempVars()),
          solver_ctrl_(Options::instance().getSATSolver(false, false)),
          solver_win_(Options::instance().getSATSolver(false, true)),
-         prev_trans_or_initial_(prev_trans_or_initial),
-         current_to_previous_map_(current_to_previous_map),
-         current_state_is_initial_(current_state_is_initial),
          solver_ctrl_ind_(Options::instance().getSATSolver(false, true)),
-         prev_safe_(-current_to_previous_map[VarManager::instance().getPresErrorStateVar()]),
          next_bored_index_(0),
-         last_bored_compress_size_(1)
+         last_bored_compress_size_(1),
+         psi_(psi),
+         s_(VarManager::instance().getVarsOfType(VarInfo::PRES_STATE))
 {
   do_if_bored_.reserve(30000);
 }
@@ -931,14 +1183,14 @@ void CounterGenSAT::generalizeCounterexamples()
   solver_win_->startIncrementalSession(ps_vars, false);
   solver_win_->incAddCNF(A2C.getSafeStates());
 
-  if(use_ind_)
+  if(psi_.use_ind_)
   {
     solver_ctrl_ind_->startIncrementalSession(vars_to_keep_, true);
     solver_ctrl_ind_->incAddCNF(A2C.getNextSafeStates());
     solver_ctrl_ind_->incAddCNF(A2C.getTrans());
     solver_ctrl_ind_->incAddCNF(A2C.getSafeStates());
-    solver_ctrl_ind_->incAddCNF(prev_trans_or_initial_);
-    solver_ctrl_ind_->incAddUnitClause(prev_safe_);
+    solver_ctrl_ind_->incAddCNF(psi_.prev_trans_or_initial_);
+    solver_ctrl_ind_->incAddUnitClause(psi_.prev_safe_);
   }
 
   pair<vector<int>, vector<int> > task;
@@ -1070,7 +1322,7 @@ bool CounterGenSAT::generalizeCounterexample(vector<int> &state_cube,
   bool sat = solver_ctrl_->incIsSatModelOrCore(state_cube, in_cube, vector<int>(), core);
   if(sat)
     return false;
-  if(use_ind_)
+  if(psi_.use_ind_)
     generalizeCeFuther(core, in_cube);
   state_cube = core;
   return true;
@@ -1083,34 +1335,49 @@ void CounterGenSAT::generalizeCeFuther(vector<int> &core, const vector<int> &in_
   // we now try to minimize the core further using reachability information:
   considerNewInfoFromOthers();
   vector<int> orig_core(core);
-  if(use_ind_)
+  if(psi_.use_ind_)
   {
+
+    vector<int> blocking_clause(core);
+    Utils::negateLiterals(blocking_clause);
+    if(psi_.use_ind_)
+    {
+      solver_ctrl_ind_->incAddClause(blocking_clause);
+      vector<int> next_blocking_clause(blocking_clause);
+      Utils::swapPresentToNext(next_blocking_clause);
+      solver_ctrl_ind_->incAddClause(next_blocking_clause);
+    }
+    else
+    {
+      vector<int> next_blocking_clause(blocking_clause);
+      Utils::swapPresentToNext(next_blocking_clause);
+      solver_ctrl_->incAddClause(blocking_clause);
+      solver_ctrl_->incAddClause(next_blocking_clause);
+    }
     for(size_t lit_cnt = 0; lit_cnt < orig_core.size(); ++lit_cnt)
     {
       vector<int> tmp(core);
       Utils::remove(tmp, orig_core[lit_cnt]);
-      solver_ctrl_ind_->incPush();
 
-      // use what we already know immediately:
-      vector<int> prev_core(core);
-      presentToPrevious(prev_core);
-      vector<int> next_core(core);
-      Utils::swapPresentToNext(next_core);
-      solver_ctrl_ind_->incAddNegCubeAsClause(core);
-      solver_ctrl_ind_->incAddNegCubeAsClause(prev_core);
-      solver_ctrl_ind_->incAddNegCubeAsClause(next_core);
+      vector<int> assumptions;
+      assumptions.reserve(in_cube.size() + tmp.size() + s_.size());
+      assumptions.insert(assumptions.end(), in_cube.begin(), in_cube.end());
+      assumptions.insert(assumptions.end(), tmp.begin(), tmp.end());
 
-      solver_ctrl_ind_->incAddCube(in_cube);
-      solver_ctrl_ind_->incAddCube(tmp);
-      vector<int> prev_tmp(tmp);
-      presentToPrevious(prev_tmp);
-      prev_tmp.push_back(-current_state_is_initial_);
-      solver_ctrl_ind_->incAddNegCubeAsClause(prev_tmp);
-      bool sat = solver_ctrl_ind_->incIsSat();
-      solver_ctrl_ind_->incPop();
-      if(!sat)
+      // build the previous state-copy of tmp using the activation variables:
+      for(size_t s_cnt = 0; s_cnt < s_.size(); ++s_cnt)
+      {
+        if(Utils::contains(tmp, s_[s_cnt]))
+          assumptions.push_back(psi_.px_neg_[s_cnt]);
+        else if(Utils::contains(tmp, -s_[s_cnt]))
+          assumptions.push_back(-psi_.px_neg_[s_cnt]);
+        else
+          assumptions.push_back(psi_.px_unused_[s_cnt]);
+      }
+      if(!solver_ctrl_ind_->incIsSat(assumptions))
         core = tmp;
     }
+
   }
   else
   {
@@ -1218,10 +1485,10 @@ void CounterGenSAT::considerNewInfoFromOthers()
     solver_ctrl_->incAddCNF(new_win_reg_clauses_);
     solver_ctrl_->incAddCNF(next_win_reg_clauses);
     solver_win_->incAddCNF(new_win_reg_clauses_);
-    if(use_ind_)
+    if(psi_.use_ind_)
     {
       CNF prev_win_reg_clauses(new_win_reg_clauses_);
-      presentToPrevious(prev_win_reg_clauses);
+      psi_.presentToPrevious(prev_win_reg_clauses);
       solver_ctrl_ind_->incAddCNF(new_win_reg_clauses_);
       solver_ctrl_ind_->incAddCNF(next_win_reg_clauses);
       solver_ctrl_ind_->incAddCNF(prev_win_reg_clauses);
@@ -1232,54 +1499,36 @@ void CounterGenSAT::considerNewInfoFromOthers()
 }
 
 // -------------------------------------------------------------------------------------------
-int CounterGenSAT::presentToPrevious(int literal) const
-{
-  int var = (literal < 0) ? -literal : literal;
-  if(literal < 0)
-    return -current_to_previous_map_[var];
-  else
-    return current_to_previous_map_[var];
-}
-
-// -------------------------------------------------------------------------------------------
-void CounterGenSAT::presentToPrevious(vector<int> &cube_or_clause) const
-{
-  for(size_t cnt = 0; cnt < cube_or_clause.size(); ++cnt)
-    cube_or_clause[cnt] = presentToPrevious(cube_or_clause[cnt]);
-}
-
-// -------------------------------------------------------------------------------------------
-void CounterGenSAT::presentToPrevious(CNF &cnf) const
-{
-  list<vector<int> > orig_clauses = cnf.getClauses();
-  cnf.clear();
-  for(CNF::ClauseConstIter it = orig_clauses.begin(); it != orig_clauses.end(); ++it)
-  {
-    vector<int> clause(*it);
-    presentToPrevious(clause);
-    cnf.addClause(clause);
-  }
-}
-
-// -------------------------------------------------------------------------------------------
-ClauseMinimizerQBF::ClauseMinimizerQBF(ParallelLearner &coordinator):
+ClauseMinimizerQBF::ClauseMinimizerQBF(size_t instance_nr, ParallelLearner &coordinator,
+                                       PrevStateInfo &psi):
                    coordinator_(coordinator),
                    qbf_solver_(Options::instance().getQBFSolver()),
-                   sat_solver_(Options::instance().getSATSolver(false, false))
+                   inc_qbf_solver_(NULL),
+                   sat_solver_(Options::instance().getSATSolver(false, false)),
+                   psi_(psi)
 
 {
+  const vector<int> &prev = VarManager::instance().getVarsOfType(VarInfo::PREV);
   const vector<int> &ps = VarManager::instance().getVarsOfType(VarInfo::PRES_STATE);
   const vector<int> &i = VarManager::instance().getVarsOfType(VarInfo::INPUT);
   const vector<int> &c = VarManager::instance().getVarsOfType(VarInfo::CTRL);
   const vector<int> &ns = VarManager::instance().getVarsOfType(VarInfo::NEXT_STATE);
   const vector<int> &t = VarManager::instance().getVarsOfType(VarInfo::TMP);
 
+  sat_solver_->startIncrementalSession(ps, false);
+
+  if(psi_.use_ind_)
+    gen_quant_.push_back(make_pair(prev, QBFSolver::E));
   gen_quant_.push_back(make_pair(ps, QBFSolver::E));
   gen_quant_.push_back(make_pair(i, QBFSolver::A));
   gen_quant_.push_back(make_pair(c, QBFSolver::E));
   gen_quant_.push_back(make_pair(ns, QBFSolver::E));
   gen_quant_.push_back(make_pair(t, QBFSolver::E));
+
+  if(instance_nr != 0)
+    inc_qbf_solver_ = new DepQBFApi(false);
 }
+
 
 // -------------------------------------------------------------------------------------------
 ClauseMinimizerQBF::~ClauseMinimizerQBF()
@@ -1287,12 +1536,142 @@ ClauseMinimizerQBF::~ClauseMinimizerQBF()
   delete qbf_solver_;
   qbf_solver_ = NULL;
 
+  delete inc_qbf_solver_;
+  inc_qbf_solver_ = NULL;
+
   delete sat_solver_;
   sat_solver_ = NULL;
 }
 
 // -------------------------------------------------------------------------------------------
 void ClauseMinimizerQBF::minimizeClauses()
+{
+  if(inc_qbf_solver_ == NULL)
+    minimizeClausesNoInc();
+  else
+    minimizeClausesInc();
+}
+
+// -------------------------------------------------------------------------------------------
+void ClauseMinimizerQBF::notifyNewWinRegClause(const vector<int> &clause, int src)
+{
+  new_win_reg_clauses_lock_.lock();
+  new_win_reg_clauses_.addClause(clause);
+  new_win_reg_clauses_lock_.unlock();
+}
+
+// -------------------------------------------------------------------------------------------
+void ClauseMinimizerQBF::minimizeClausesInc()
+{
+  // initialize the solver:
+  inc_qbf_solver_->startIncrementalSession(gen_quant_);
+  inc_qbf_solver_->doMinCores(true);
+  inc_qbf_solver_->incAddCNF(AIG2CNF::instance().getSafeStates());
+  inc_qbf_solver_->incAddCNF(AIG2CNF::instance().getTrans());
+  inc_qbf_solver_->incAddCNF(AIG2CNF::instance().getNextSafeStates());
+  if(psi_.use_ind_)
+  {
+    inc_qbf_solver_->incAddCNF(psi_.prev_trans_or_initial_);
+    inc_qbf_solver_->incAddUnitClause(psi_.prev_safe_);
+  }
+  sat_solver_->incAddCNF(AIG2CNF::instance().getSafeStates());
+
+  vector<int> orig;
+
+  while(true)
+  {
+    if(coordinator_.result_ != UNKNOWN) // should be atomic
+      return;
+
+    // fetch a new clause to minimize further:
+    coordinator_.unminimized_clauses_lock_.lock();
+    bool empty = coordinator_.unminimized_clauses_.getNrOfClauses() == 0;
+    if(!empty)
+      orig = coordinator_.unminimized_clauses_.removeSomeClause();
+    coordinator_.unminimized_clauses_lock_.unlock();
+    if(empty)
+    {
+      usleep(100000); // microseconds
+      continue;
+    }
+
+    // consider new winning region clauses:
+    new_win_reg_clauses_lock_.lock();
+    sat_solver_->incAddCNF(new_win_reg_clauses_);
+    inc_qbf_solver_->incAddCNF(new_win_reg_clauses_);
+    if(psi_.use_ind_)
+    {
+      CNF prev_win_reg_clauses(new_win_reg_clauses_);
+      psi_.presentToPrevious(prev_win_reg_clauses);
+      inc_qbf_solver_->incAddCNF(prev_win_reg_clauses);
+    }
+    new_win_reg_clauses_.swapPresentToNext();
+    inc_qbf_solver_->incAddCNF(new_win_reg_clauses_);
+    new_win_reg_clauses_.clear();
+    new_win_reg_clauses_lock_.unlock();
+
+    // do the minimization:
+    Utils::randomize(orig);
+    vector<int> ce_cube(orig);
+    Utils::negateLiterals(ce_cube);
+    vector<int> min_ce_cube(ce_cube);
+    if(psi_.use_ind_)
+    {
+      for(size_t lit_cnt = 0; lit_cnt < ce_cube.size(); ++lit_cnt)
+      {
+        vector<int> tmp(min_ce_cube);
+        Utils::remove(tmp, ce_cube[lit_cnt]);
+
+        // use what we already know immediately?
+        //inc_qbf_solver_->incPush();
+        //vector<int> prev_cube(min_ce_cube);
+        //presentToPrevious(prev_cube);
+        //vector<int> next_cube(min_ce_cube);
+        //Utils::swapPresentToNext(next_cube);
+        //inc_qbf_solver_->incAddNegCubeAsClause(min_ce_cube);
+        //inc_qbf_solver_->incAddNegCubeAsClause(prev_cube);
+        //inc_qbf_solver_->incAddNegCubeAsClause(next_cube);
+
+        // now the interesting part:
+        //vector<int> prev_tmp(tmp);
+        //presentToPrevious(prev_tmp);
+        //prev_tmp.push_back(-current_state_is_initial_);
+        //inc_qbf_solver_->incAddNegCubeAsClause(prev_tmp);
+        bool sat = inc_qbf_solver_->incIsSat(tmp);
+        //inc_qbf_solver_->incPop();
+        if(!sat)
+          min_ce_cube = tmp;
+      }
+    }
+    else
+    {
+      // TODO: make a loop here also. This way we waste one check because it
+      // with all assumptions, it must be unsat.
+      bool sat = inc_qbf_solver_->incIsSatCore(ce_cube, min_ce_cube);
+      MASSERT(!sat, "Impossible.");
+    }
+
+    // communicate back the result:
+    if(orig.size() > min_ce_cube.size())
+    {
+      if(Utils::containsInit(min_ce_cube))
+      {
+        coordinator_.result_ = UNREALIZABLE;  // should be atomic
+        return;
+      }
+      // check if the smaller clause is already implied by what we have:
+      if(sat_solver_->incIsSat(min_ce_cube))
+      {
+        vector<int> min_clause(min_ce_cube);
+        Utils::negateLiterals(min_clause);
+        coordinator_.notifyNewWinRegClause(min_clause, MIN);
+      }
+    }
+  }
+}
+
+// -------------------------------------------------------------------------------------------
+void ClauseMinimizerQBF::minimizeClausesNoInc()
 {
   vector<int> orig;
 
@@ -1319,6 +1698,13 @@ void ClauseMinimizerQBF::minimizeClauses()
     generalize_clause_cnf.swapPresentToNext();
     generalize_clause_cnf.addCNF(win_reg);
     generalize_clause_cnf.addCNF(AIG2CNF::instance().getTrans());
+    if(psi_.use_ind_)
+    {
+      generalize_clause_cnf.addCNF(psi_.prev_trans_or_initial_);
+      CNF prev_win(win_reg);
+      psi_.presentToPrevious(prev_win);
+      generalize_clause_cnf.addCNF(prev_win);
+    }
 
     vector<int> smallest_so_far(orig);
     for(size_t cnt = 0; cnt < orig.size(); ++cnt)
@@ -1327,6 +1713,19 @@ void ClauseMinimizerQBF::minimizeClauses()
       Utils::remove(tmp, orig[cnt]);
       CNF check_cnf(generalize_clause_cnf);
       check_cnf.addNegClauseAsCube(tmp);
+      if(psi_.use_ind_)
+      {
+        vector<int> prev_tmp(tmp);
+        psi_.presentToPrevious(prev_tmp);
+        prev_tmp.push_back(psi_.current_state_is_initial_);
+        check_cnf.addClause(prev_tmp);
+      }
+      // begin use what we already have:
+      check_cnf.addClause(smallest_so_far);
+      vector<int> next_smallest_so_far(smallest_so_far);
+      Utils::swapPresentToNext(next_smallest_so_far);
+      check_cnf.addClause(next_smallest_so_far);
+      // end use what we already have:
       if(coordinator_.result_ != UNKNOWN) // should be atomic
         return;
       if(!qbf_solver_->isSat(gen_quant_, check_cnf))
@@ -1345,9 +1744,7 @@ void ClauseMinimizerQBF::minimizeClauses()
       CNF check(win_reg);
       check.addNegClauseAsCube(smallest_so_far);
       if(sat_solver_->isSat(check))
-      {
         coordinator_.notifyNewWinRegClause(smallest_so_far, MIN);
-      }
     }
   }
 }
@@ -1443,11 +1840,24 @@ void IFM13Explorer::exploreClauses()
     //debugCheckInvariants(k);
     if(equal != 0)
     {
-      L_LOG("Found two equal clause sets: R" << (equal-1) << " and R" << equal);
+
+      if(coordinator_.result_ == UNKNOWN)
+      {
+        L_LOG("IFM: Found two equal clause sets: R" << (equal-1) << " and R" << equal);
+        coordinator_.result_ = REALIZABLE;
+        CNF winreg = getR(equal);
+        Utils::negateStateCNF(winreg);
+        coordinator_.winning_region_lock_.lock();
+        coordinator_.winning_region_ = winreg;
+        coordinator_.winning_region_lock_.unlock();
+      }
+
       //L_LOG("Nr of iterations: " << k);
       return;
     }
     ++k;
+    if(k > 1024)
+      return; // with too many solver instances we risk running out of memory
   }
 }
 
@@ -1728,8 +2138,11 @@ void IFM13Explorer::addLose(const vector<int> &state_cube)
   vector<int> blocking_clause(state_cube);
   for(size_t cnt = 0; cnt < blocking_clause.size(); ++cnt)
     blocking_clause[cnt] = -blocking_clause[cnt];
-  coordinator_.notifyNewWinRegClause(blocking_clause, IFM);
+  // coordinator_.notifyNewWinRegClause(blocking_clause, IFM);
   // this thread will get and consider the new clause via the notification mechanism also.
+  win_.addClauseAndSimplify(blocking_clause);
+  Utils::swapPresentToNext(blocking_clause);
+  goto_win_solver_->incAddClause(blocking_clause);
 }
 
 // -------------------------------------------------------------------------------------------
@@ -1809,4 +2222,530 @@ IFMProofObligation IFM13Explorer::popMin(list<IFMProofObligation> &queue)
   return res;
 }
 
+// -------------------------------------------------------------------------------------------
+TemplExplorer::TemplExplorer(ParallelLearner &coordinator) :
+    coordinator_(coordinator),
+    s_(VarManager::instance().getVarsOfType(VarInfo::PRES_STATE)),
+    i_(VarManager::instance().getVarsOfType(VarInfo::INPUT)),
+    c_(VarManager::instance().getVarsOfType(VarInfo::CTRL)),
+    n_(VarManager::instance().getVarsOfType(VarInfo::NEXT_STATE)),
+    orig_tmp_(VarManager::instance().getVarsOfType(VarInfo::TMP)),
+    orig_next_free_var_(VarManager::instance().getMaxCNFVar() + 1),
+    next_free_var_(VarManager::instance().getMaxCNFVar() + 1),
+    p_err_(VarManager::instance().getPresErrorStateVar()),
+    n_err_(VarManager::instance().getNextErrorStateVar())
+{
+  int max_s = 0;
+  for(size_t cnt = 0; cnt < s_.size(); ++cnt)
+    if(s_[cnt] > max_s)
+      max_s = s_[cnt];
+  pres_to_nxt_.reserve(max_s + 1);
+  for(int cnt = 0; cnt < max_s + 1; ++cnt)
+    pres_to_nxt_.push_back(cnt);
+  for(size_t cnt = 0; cnt < s_.size(); ++cnt)
+    pres_to_nxt_[s_[cnt]] = n_[cnt];
+}
 
+// -------------------------------------------------------------------------------------------
+TemplExplorer::~TemplExplorer()
+{
+  // nothing to be done
+}
+
+// -------------------------------------------------------------------------------------------
+void TemplExplorer::computeWinningRegion()
+{
+  size_t nr_of_clauses = 1;
+  size_t to = 20;
+  int found = 0;
+  while(found != 1)
+  {
+    if(coordinator_.result_ != UNKNOWN)
+      return;
+    found = findWinRegCNFTempl(nr_of_clauses, to, true);
+    if(found == 0)
+      nr_of_clauses++;
+    else if (found == 2) // time-out
+    {
+      nr_of_clauses = 1;
+      if(coordinator_.result_ != UNKNOWN)
+        return;
+      found = findWinRegCNFTempl(nr_of_clauses, to, false);
+      if(found == 0)
+        nr_of_clauses++;
+      else if(found == 2) // time-out
+        nr_of_clauses = 1;
+    }
+  }
+  if(coordinator_.result_ == UNKNOWN)
+  {
+    L_LOG("Template-engine found the solution.");
+    coordinator_.result_ = REALIZABLE;
+    coordinator_.winning_region_lock_.lock();
+    coordinator_.winning_region_ = final_winning_region_;
+    coordinator_.winning_region_lock_.unlock();
+  }
+}
+
+// -------------------------------------------------------------------------------------------
+void TemplExplorer::notifyNewWinRegClause(const vector<int> &clause, int src)
+{
+  known_clauses_lock_.lock();
+  known_clauses_.addClause(clause);
+  known_clauses_lock_.unlock();
+}
+
+// -------------------------------------------------------------------------------------------
+int TemplExplorer::findWinRegCNFTempl(size_t nr_of_clauses, size_t timeout, bool use_sat)
+{
+  // Note: a lot of loops and code could be merged, but readability
+  // beats performance in this case.
+
+  known_clauses_lock_.lock();
+  CNF known_clauses(known_clauses_);
+  known_clauses_lock_.unlock();
+  // eliminate all temporary variables that have been introduced previously:
+  current_tmp_ = orig_tmp_;
+  next_free_var_ = orig_next_free_var_;
+  templ_.clear();
+
+  vector<int> ps_vars = s_;
+  vector<int> ns_vars = n_;
+
+  // ps_vars[0] and ns_vars[0] are the error bits, which must be FALSE always.
+  // Hence, we do not include these signals in our template
+  ps_vars[0] = ps_vars[ps_vars.size() - 1];
+  ps_vars.pop_back();
+  ns_vars[0] = ns_vars[ns_vars.size() - 1];
+  ns_vars.pop_back();
+  size_t nr_of_vars = ps_vars.size();
+
+  // Step 1: build the parameterized CNF:
+  CNF win_constr;
+  int w1 = newTmp();
+  int w2 = newTmp();
+
+  // Step 1a: create template parameters:
+  vector<int> clause_active_vars;
+  vector<vector<int> > contains_vars;
+  vector<vector<int> > negated_vars;
+  clause_active_vars.reserve(nr_of_clauses);
+  contains_vars.reserve(nr_of_clauses);
+  negated_vars.reserve(nr_of_clauses);
+  for(size_t c_cnt = 0; c_cnt < nr_of_clauses; ++c_cnt)
+  {
+    clause_active_vars.push_back(newParam());
+    contains_vars.push_back(vector<int>());
+    negated_vars.push_back(vector<int>());
+    for(size_t v_cnt = 0; v_cnt < nr_of_vars; ++v_cnt)
+    {
+      contains_vars[c_cnt].push_back(newParam());
+      negated_vars[c_cnt].push_back(newParam());
+    }
+  }
+
+
+
+  // Step 1b: constructing the constraints:
+  // We do this for next_win_eq_w2 and win_eq_w1 in parallel
+  vector<int> all_clause_lits1;
+  vector<int> all_clause_lits2;
+  all_clause_lits1.reserve(known_clauses.getNrOfClauses() + nr_of_clauses + 1);
+  all_clause_lits2.reserve(known_clauses.getNrOfClauses() + nr_of_clauses + 1);
+  // We add one fixed clause, namely that we are inside the safe states:
+  all_clause_lits1.push_back(-p_err_);
+  all_clause_lits2.push_back(-n_err_);
+
+
+  // begin: constraints for existing clauses
+  Utils::compressStateCNF(known_clauses, true);
+  const list<vector<int> > &known_list = known_clauses.getClauses();
+  for(CNF::ClauseConstIter it = known_list.begin(); it != known_list.end(); ++it)
+  {
+    vector<int> cl1 = *it;
+    vector<int> cl2 = *it;
+    swapPresentToNext(cl2);
+    int cl1_true = newTmp();
+    int cl2_true = newTmp();
+    for(size_t lcnt = 0; lcnt < cl1.size(); ++lcnt)
+    {
+      // literal is true --> clause is true
+      win_constr.add2LitClause(-cl1[lcnt], cl1_true);
+      win_constr.add2LitClause(-cl2[lcnt], cl2_true);
+    }
+    // all literals false --> clause is false
+    cl1.push_back(-cl1_true);
+    win_constr.addClause(cl1);
+    cl2.push_back(-cl2_true);
+    win_constr.addClause(cl2);
+    all_clause_lits1.push_back(cl1_true);
+    all_clause_lits2.push_back(cl2_true);
+  }
+  // end: constraints for existing clauses
+
+
+  for(size_t c = 0; c < nr_of_clauses; ++c)
+  {
+    int clause_lit1 = newTmp();  // TRUE iff clause c is TRUE
+    int clause_lit2 = newTmp();  // TRUE iff clause c is TRUE
+    all_clause_lits1.push_back(clause_lit1);
+    all_clause_lits2.push_back(clause_lit2);
+    vector<int> literals_in_clause1;
+    vector<int> literals_in_clause2;
+    literals_in_clause1.reserve(nr_of_vars + 2);
+    literals_in_clause2.reserve(nr_of_vars + 2);
+    // if clause_active_var[c]=FALSE, then the clause should be TRUE
+    // so we add -clause_active_vars[c] as if it was a literal of this clause
+    literals_in_clause1.push_back(-clause_active_vars[c]);
+    literals_in_clause2.push_back(-clause_active_vars[c]);
+    for(size_t v = 0; v < nr_of_vars; ++v)
+    {
+      int activated_var1 = newTmp();
+      int activated_var2 = newTmp();
+      literals_in_clause1.push_back(activated_var1);
+      literals_in_clause2.push_back(activated_var2);
+      // Part A: activated_var should be equal to
+      // - FALSE        if (contains_var[c][v]==FALSE)
+      // - not(var[v])  if (contains_var[c][v]==TRUE and negated_var[c][v]==TRUE)
+      // - var[v]       if (contains_var[c][v]==TRUE and negated_var[c][v]==FALSE)
+      // Part A1: not(contains_vars[c][v]) implies not(activated_var)
+      win_constr.add2LitClause(contains_vars[c][v], -activated_var1);
+      win_constr.add2LitClause(contains_vars[c][v], -activated_var2);
+      // Part A2: (contains_var[c][v] and negated_var[c][v]) implies (activated_var <=> not(var[v]))
+      win_constr.add4LitClause(-contains_vars[c][v], -negated_vars[c][v], ps_vars[v], activated_var1);
+      win_constr.add4LitClause(-contains_vars[c][v], -negated_vars[c][v], -ps_vars[v], -activated_var1);
+      win_constr.add4LitClause(-contains_vars[c][v], -negated_vars[c][v], ns_vars[v], activated_var2);
+      win_constr.add4LitClause(-contains_vars[c][v], -negated_vars[c][v], -ns_vars[v], -activated_var2);
+      // Part A3: (contains_var[c][v] and not(negated_var[c][v])) implies (activated_var <=> var[v])
+      win_constr.add4LitClause(-contains_vars[c][v], negated_vars[c][v], -ps_vars[v], activated_var1);
+      win_constr.add4LitClause(-contains_vars[c][v], negated_vars[c][v], ps_vars[v], -activated_var1);
+      win_constr.add4LitClause(-contains_vars[c][v], negated_vars[c][v], -ns_vars[v], activated_var2);
+      win_constr.add4LitClause(-contains_vars[c][v], negated_vars[c][v], ns_vars[v], -activated_var2);
+    }
+    // Part B: clause_lit should be equal to OR(literals_in_clause):
+    // Part B1: if one literal in literals_in_clause is TRUE then clause_lit should be TRUE
+    for(size_t cnt = 0; cnt < literals_in_clause1.size(); ++cnt)
+    {
+      win_constr.add2LitClause(-literals_in_clause1[cnt], clause_lit1);
+      win_constr.add2LitClause(-literals_in_clause2[cnt], clause_lit2);
+    }
+    // Part B2: if all literals in literals_in_clause are FALSE, then the clause_lit should be FALSE
+    // That is, we add the clause [l1, l2, l3, l4, -clause_lit]
+    literals_in_clause1.push_back(-clause_lit1);
+    win_constr.addClause(literals_in_clause1);
+    literals_in_clause2.push_back(-clause_lit2);
+    win_constr.addClause(literals_in_clause2);
+  }
+  // Part C: w should be equal to AND(all_clause_lits)
+  // Part C1: if one literal in all_clause_lits is FALSE then w should be FALSE:
+  for(size_t cnt = 0; cnt < all_clause_lits1.size(); ++cnt)
+  {
+    win_constr.add2LitClause(all_clause_lits1[cnt], -w1);
+    win_constr.add2LitClause(all_clause_lits2[cnt], -w2);
+  }
+  // Part C2: if all literals in all_clause_lits are TRUE, the w should be TRUE:
+  // That is, we create a clause [-l1, -l2, -l3, -l4, w]
+  for(size_t cnt = 0; cnt < all_clause_lits1.size(); ++cnt)
+  {
+    all_clause_lits1[cnt] = -all_clause_lits1[cnt];
+    all_clause_lits2[cnt] = -all_clause_lits2[cnt];
+  }
+  all_clause_lits1.push_back(w1);
+  all_clause_lits2.push_back(w2);
+  win_constr.addClause(all_clause_lits1);
+  win_constr.addClause(all_clause_lits2);
+
+
+  // Step 2: solve
+  vector<int> model;
+  int sat = 0;
+  if(use_sat)
+    sat = syntSAT(win_constr, w1, w2, model, timeout);
+  else
+    sat = syntQBF(win_constr, w1, w2, model, timeout);
+  if(sat == 0 || sat == 2)
+    return sat;
+
+  // Step 3: Build a CNF for the winning region:
+  final_winning_region_.addCNF(known_clauses);
+  final_winning_region_.add1LitClause(-p_err_);
+  vector<bool> can_be_0(next_free_var_, true);
+  vector<bool> can_be_1(next_free_var_, true);
+  for(size_t v_cnt = 0; v_cnt < model.size(); ++v_cnt)
+  {
+    if(model[v_cnt] < 0)
+      can_be_1[-model[v_cnt]] = false;
+    else
+      can_be_0[model[v_cnt]] = false;
+  }
+  for(size_t c_cnt = 0; c_cnt < nr_of_clauses; ++c_cnt)
+  {
+    if(can_be_0[clause_active_vars[c_cnt]])
+      continue;
+    vector<int> clause;
+    clause.reserve(nr_of_vars);
+    for(size_t v_cnt = 0; v_cnt < nr_of_vars; ++v_cnt)
+    {
+      if(can_be_0[contains_vars[c_cnt][v_cnt]])
+        continue;
+      if(can_be_0[negated_vars[c_cnt][v_cnt]])
+        clause.push_back(ps_vars[v_cnt]);
+      else
+        clause.push_back(-ps_vars[v_cnt]);
+    }
+    final_winning_region_.addClause(clause);
+  }
+  return 1;
+}
+
+// -------------------------------------------------------------------------------------------
+int TemplExplorer::syntQBF(const CNF& win_constr, int w1, int w2, vector<int> &solution,
+                            size_t timeout)
+{
+  AIG2CNF& A2C = AIG2CNF::instance();
+  CNF query(A2C.getTransEqT());
+  query.addCNF(win_constr);
+  vector<int> init_implies_win;
+  init_implies_win.reserve(s_.size() + 1);
+  for(size_t cnt = 0; cnt < s_.size(); ++cnt)
+    init_implies_win.push_back(s_[cnt]);
+  init_implies_win.push_back(w1);
+  query.addClause(init_implies_win);
+  // from win, the system can enforce to stay in win
+  query.add2LitClause(-w1, A2C.getT());
+  query.add2LitClause(-w1, w2);
+
+  // build the quantifier prefix:
+  vector<pair<vector<int>, QBFSolver::Quant> > quant;
+  quant.push_back(make_pair(templ_, QBFSolver::E));
+  quant.push_back(make_pair(s_, QBFSolver::A));
+  quant.push_back(make_pair(i_, QBFSolver::A));
+  quant.push_back(make_pair(c_, QBFSolver::E));
+  quant.push_back(make_pair(n_, QBFSolver::E));
+  quant.push_back(make_pair(current_tmp_, QBFSolver::E));
+
+  DepQBFExt solver(true, timeout);
+  //DepQBFApi solver(true);
+  bool sat = false;
+  try
+  {
+    sat = solver.isSatModel(quant, query, solution);
+  }
+  catch(DemiurgeException e) // time-out
+  {
+    return 2;
+  }
+  if(sat)
+    return 1;
+  return 0;
+}
+
+// -------------------------------------------------------------------------------------------
+int TemplExplorer::syntSAT(const CNF& win_constr, int w1, int w2, vector<int> &solution,
+                           size_t timeout)
+{
+  AIG2CNF& A2C = AIG2CNF::instance();
+  CNF gen(A2C.getTrans());
+  gen.addCNF(win_constr);
+  vector<int> init_implies_win;
+  init_implies_win.reserve(s_.size() + 1);
+  for(size_t cnt = 0; cnt < s_.size(); ++cnt)
+    init_implies_win.push_back(s_[cnt]);
+  init_implies_win.push_back(w1);
+  gen.addClause(init_implies_win);
+  // from win, the system can enforce to stay in win
+  gen.add2LitClause(-w1, w2);
+
+
+  vector<int> none;
+  SatSolver *compute_solver = Options::instance().getSATSolver(false, false);
+  compute_solver->startIncrementalSession(templ_, false);
+
+  // let's fix correctness for the initial state right away:
+  vector<int> initial_state;
+  initial_state.reserve(s_.size() + i_.size());
+  initial_state.insert(initial_state.end(), s_.begin(), s_.end());
+  initial_state.insert(initial_state.end(), i_.begin(), i_.end());
+  Utils::negateLiterals(initial_state);
+  exclude(initial_state, gen, compute_solver);
+
+  start_ = Stopwatch::start();
+
+  size_t cnt = 0;
+  while(true)
+  {
+
+    if(Stopwatch::getRealTimeSec(start_) > timeout || coordinator_.result_ != UNKNOWN)
+    {
+      delete compute_solver;
+      return 2;
+    }
+
+    vector<int> candidate;
+    ++cnt;
+    bool sat = compute_solver->incIsSatModelOrCore(none, templ_, candidate);
+    if(!sat)
+    {
+      delete compute_solver;
+      return 0;
+    }
+    if(Stopwatch::getRealTimeSec(start_) > timeout || coordinator_.result_ != UNKNOWN)
+    {
+      delete compute_solver;
+      return 2;
+    }
+
+    vector<int> counterexample;
+    int correct = check(candidate, win_constr, w1, w2, timeout, counterexample);
+    if(correct == 1)
+    {
+      delete compute_solver;
+      solution = candidate;
+      return 1;
+    }
+    exclude(counterexample, gen, compute_solver);
+  }
+}
+
+// -------------------------------------------------------------------------------------------
+int TemplExplorer::check(const vector<int> &cand, const CNF& win_constr, int w1, int w2,
+                         size_t timeout, vector<int> &ce)
+{
+  AIG2CNF& A2C = AIG2CNF::instance();
+  vector<int> sic;
+  sic.reserve(s_.size() + i_.size() + c_.size());
+  sic.insert(sic.end(), s_.begin(), s_.end());
+  sic.insert(sic.end(), i_.begin(), i_.end());
+  sic.insert(sic.end(), c_.begin(), c_.end());
+  vector<int> si;
+  si.reserve(s_.size() + i_.size());
+  si.insert(si.end(), s_.begin(), s_.end());
+  si.insert(si.end(), i_.begin(), i_.end());
+
+  CNF check_cnf(win_constr);
+  for(size_t cnt = 0; cnt < cand.size(); ++cnt)
+    check_cnf.setVarValue(cand[cnt], true);
+  check_cnf.addCNF(A2C.getTrans());
+  check_cnf.add1LitClause(w1);
+  CNF gen_cnf(check_cnf);
+  gen_cnf.add1LitClause(w2);
+  check_cnf.add1LitClause(-w2);
+
+
+  SatSolver *check_solver = Options::instance().getSATSolver(false, true);
+  check_solver->startIncrementalSession(sic, false);
+  check_solver->incAddCNF(check_cnf);
+  SatSolver *gen_solver = Options::instance().getSATSolver(false, true);
+  gen_solver->startIncrementalSession(sic, false);
+  gen_solver->incAddCNF(gen_cnf);
+
+  vector<int> model_or_core;
+  while(true)
+  {
+    if(Stopwatch::getRealTimeSec(start_) > timeout || coordinator_.result_ != UNKNOWN)
+    {
+      delete check_solver;
+      delete gen_solver;
+      return 2;
+    }
+    bool sat = check_solver->incIsSatModelOrCore(vector<int>(), si, model_or_core);
+    if(!sat)
+    {
+      delete check_solver;
+      delete gen_solver;
+      return 1;
+    }
+    if(Stopwatch::getRealTimeSec(start_) > timeout || coordinator_.result_ != UNKNOWN)
+    {
+      delete check_solver;
+      delete gen_solver;
+      return 2;
+    }
+    vector<int> state_input = model_or_core;
+    sat = gen_solver->incIsSatModelOrCore(vector<int>(), state_input, c_, model_or_core);
+    if(!sat)
+    {
+      // randomization does not help:
+      //for(size_t cnt = 0; cnt < state_input.size(); ++cnt)
+      //{
+      //  if(rand() & 1)
+      //  {
+      //    vector<int> ran(state_input);
+      //    ran[cnt] = -ran[cnt];
+      //    if(!gen_solver->incIsSatModelOrCore(vector<int>(), ran, vector<int>(), model_or_core))
+      //      state_input = ran;
+      //  }
+      //}
+
+      delete check_solver;
+      delete gen_solver;
+      ce = state_input;
+      return 0;
+    }
+
+    if(Stopwatch::getRealTimeSec(start_) > timeout || coordinator_.result_ != UNKNOWN)
+    {
+      delete check_solver;
+      delete gen_solver;
+      return 2;
+    }
+    vector<int> resp(model_or_core);
+    sat = check_solver->incIsSatModelOrCore(state_input, resp, vector<int>(), model_or_core);
+    MASSERT(sat == false, "Impossible.");
+    check_solver->incAddNegCubeAsClause(model_or_core);
+  }
+}
+
+// -------------------------------------------------------------------------------------------
+void TemplExplorer::exclude(const vector<int> &ce, const CNF &gen, SatSolver* solver)
+{
+  CNF to_add(gen);
+  for(size_t cnt = 0; cnt < ce.size(); ++cnt)
+    to_add.setVarValue(ce[cnt], true);
+
+  // now we need to rename everything except for the template parameters:
+  set<int> var_set;
+  to_add.appendVarsTo(var_set);
+  int max_idx = 0;
+  if(!var_set.empty())
+    max_idx = *var_set.rbegin();
+  vector<int> rename_map;
+  rename_map.reserve(max_idx + 1);
+  for(int cnt = 0; cnt < max_idx+1; ++cnt)
+    rename_map.push_back(cnt);
+  for(set<int>::const_iterator it = var_set.begin(); it != var_set.end(); ++it)
+  {
+    if(!Utils::contains(templ_, *it))
+      rename_map[*it] = newTmp();
+  }
+  to_add.renameVars(rename_map);
+  solver->incAddCNF(to_add);
+}
+
+// -------------------------------------------------------------------------------------------
+int TemplExplorer::newTmp()
+{
+  int new_var = next_free_var_;
+  next_free_var_++;
+  current_tmp_.push_back(new_var);
+  return new_var;
+}
+
+// -------------------------------------------------------------------------------------------
+int TemplExplorer::newParam()
+{
+  int new_var = next_free_var_;
+  next_free_var_++;
+  templ_.push_back(new_var);
+  return new_var;
+}
+
+// -------------------------------------------------------------------------------------------
+void TemplExplorer::swapPresentToNext(vector<int> &vec) const
+{
+  for(size_t lit_cnt = 0; lit_cnt < vec.size(); ++lit_cnt)
+  {
+    int old_lit = vec[lit_cnt];
+    vec[lit_cnt] = old_lit < 0 ? -pres_to_nxt_[-old_lit] : pres_to_nxt_[old_lit];
+  }
+}

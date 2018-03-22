@@ -1,0 +1,493 @@
+\hypertarget{classOrigUnivExpander}{\section{Orig\-Univ\-Expander Class Reference}
+\label{classOrigUnivExpander}\index{Orig\-Univ\-Expander@{Orig\-Univ\-Expander}}
+}
+
+
+A utility class that can do universal expansion of given C\-N\-Fs.  
+
+
+
+
+{\ttfamily \#include $<$Orig\-Univ\-Expander.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOrigUnivExpander_a61521e0c80376b67f7859531f86b69cb}{Orig\-Univ\-Expander} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classOrigUnivExpander_a0cd23ac105ad8c0674df2a97943d12af}{$\sim$\-Orig\-Univ\-Expander} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+bool \hyperlink{classOrigUnivExpander_abcd12e41626b01f53ac7b8c654fa9218}{reset\-Solver\-I\-Exp} (const \hyperlink{classCNF}{C\-N\-F} \&win\-\_\-reg, \hyperlink{classSatSolver}{Sat\-Solver} $\ast$solver\-\_\-i, bool limit\-\_\-size=false)
+\begin{DoxyCompactList}\small\item\em Performs the reset of solver\-\_\-i in \hyperlink{classLearnSynthSAT_a8727927b4e0432acb6bcea883fd2f1f9}{Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Exp()}. \end{DoxyCompactList}\item 
+void \hyperlink{classOrigUnivExpander_a0752883a0f7a9bb17d5eda38a7dda2a1}{reset\-Solver\-C\-Exp} (\hyperlink{classSatSolver}{Sat\-Solver} $\ast$solver\-\_\-c, const vector$<$ int $>$ \&keep, size\-\_\-t max\-\_\-nr\-\_\-of\-\_\-signals\-\_\-to\-\_\-expand=1)
+\begin{DoxyCompactList}\small\item\em Performs the reset of solver\-\_\-c in \hyperlink{classLearnSynthSAT_a8727927b4e0432acb6bcea883fd2f1f9}{Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Exp()}. \end{DoxyCompactList}\item 
+void \hyperlink{classOrigUnivExpander_a6ebdb1dd5210ad13ee8cdb2adfe1ec48}{add\-Exp\-Nxt\-Clause\-To\-C} (const vector$<$ int $>$ \&clause, \hyperlink{classSatSolver}{Sat\-Solver} $\ast$solver\-\_\-c)
+\begin{DoxyCompactList}\small\item\em Adds next-\/state clauses to solver\-\_\-c after initialization with \hyperlink{classOrigUnivExpander_a0752883a0f7a9bb17d5eda38a7dda2a1}{reset\-Solver\-C\-Exp()}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classOrigUnivExpander_a5e28c3075de86dcc7228fa547b284590}{univ\-Expand} (const \hyperlink{classCNF}{C\-N\-F} \&orig, \hyperlink{classCNF}{C\-N\-F} \&res, const vector$<$ int $>$ \&vars\-\_\-to\-\_\-exp, const vector$<$ int $>$ \&keep, float rate=1.\-1, const map$<$ int, set$<$ int $>$ $>$ $\ast$more\-\_\-deps=N\-U\-L\-L)
+\begin{DoxyCompactList}\small\item\em The standard method for universal expansion of certain variables. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classOrigUnivExpander_a1ca430c08a9927733951149db492916e}{init\-Solver\-I\-Data} (bool limit\-\_\-size=false)
+\begin{DoxyCompactList}\small\item\em A helper function for \hyperlink{classOrigUnivExpander_abcd12e41626b01f53ac7b8c654fa9218}{reset\-Solver\-I\-Exp()}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const vector$<$ int $>$ \& \hyperlink{classOrigUnivExpander_a3e52a15c675f3f9dfedfb0b083ed12c4}{s\-\_\-}
+\begin{DoxyCompactList}\small\item\em The list of present-\/state variables. \end{DoxyCompactList}\item 
+const vector$<$ int $>$ \& \hyperlink{classOrigUnivExpander_a1e2e61937364c1f6ae1113c3bee359ab}{i\-\_\-}
+\begin{DoxyCompactList}\small\item\em The list of (uncontrollable) input variables. \end{DoxyCompactList}\item 
+const vector$<$ int $>$ \& \hyperlink{classOrigUnivExpander_a55f9918f16eb03c75dc2a97182f75bdc}{c\-\_\-}
+\begin{DoxyCompactList}\small\item\em The list of control signals (controllable input variables). \end{DoxyCompactList}\item 
+const vector$<$ int $>$ \& \hyperlink{classOrigUnivExpander_aee21f9c6dab80e323bf9d17172fa9dc2}{n\-\_\-}
+\begin{DoxyCompactList}\small\item\em The list of next-\/state variables. \end{DoxyCompactList}\item 
+\hyperlink{classCNF}{C\-N\-F} \hyperlink{classOrigUnivExpander_a2b2a151446c62688478b7d548fca860c}{i\-\_\-exp\-\_\-trans\-\_\-}
+\begin{DoxyCompactList}\small\item\em The expansion of the transition relation for \hyperlink{classOrigUnivExpander_abcd12e41626b01f53ac7b8c654fa9218}{reset\-Solver\-I\-Exp()}. \end{DoxyCompactList}\item 
+int \hyperlink{classOrigUnivExpander_a150c22a734df707f76190a66b6eb2a44}{i\-\_\-max\-\_\-trans\-\_\-var\-\_\-}
+\begin{DoxyCompactList}\small\item\em The maximum variable index occurring in i\-\_\-exp\-\_\-trans\-\_\-. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classOrigUnivExpander_a03a45566b24c00386d7530f4b212b42d}{i\-\_\-s\-\_\-to\-\_\-ren\-\_\-n\-\_\-}
+\begin{DoxyCompactList}\small\item\em A map, renaming present-\/state vars to a renamed version of the next-\/state copy. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ int $>$ $>$ \hyperlink{classOrigUnivExpander_ab9e2c9ca2129fed67662f36834198b08}{i\-\_\-rename\-\_\-maps\-\_\-}
+\begin{DoxyCompactList}\small\item\em The rename maps resulting from the expansion of the transition relation. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ int $>$ $>$ \hyperlink{classOrigUnivExpander_a49a13d81ac5119a0a31aa0bbb8964e25}{i\-\_\-orig\-\_\-prop\-\_\-maps\-\_\-}
+\begin{DoxyCompactList}\small\item\em The rename maps for constant propagation in the original during expansion. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ int $>$ $>$ \hyperlink{classOrigUnivExpander_a88ffdcc269b3e72eae24c6744b412b4e}{c\-\_\-rename\-\_\-maps\-\_\-}
+\begin{DoxyCompactList}\small\item\em The rename maps for the next-\/state variables for adding clauses to solver\-\_\-c. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOrigUnivExpander_afd2271d8565fdd4280eb9952e06f1179}{Orig\-Univ\-Expander} (const \hyperlink{classOrigUnivExpander}{Orig\-Univ\-Expander} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classOrigUnivExpander}{Orig\-Univ\-Expander} \& \hyperlink{classOrigUnivExpander_a7a9bdf0d9f02ce1a84a471386fb521f8}{operator=} (const \hyperlink{classOrigUnivExpander}{Orig\-Univ\-Expander} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A utility class that can do universal expansion of given C\-N\-Fs. 
+
+Universal expansion of a \hyperlink{classCNF}{C\-N\-F} with respect to certain variables is an expensive operation, especially if there are a lot of variables to expand. Hence, this operation must be implemented cleverly. For this reason, this class provides several implementations, each one tailored towards a specific application (expanding C\-T\-R\-L-\/signals in a conjuction of the transition relation with some \hyperlink{classCNF}{C\-N\-F} over the next-\/state variables, etc.)
+
+\begin{DoxyAuthor}{Author}
+Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-2.\-0 
+\end{DoxyVersion}
+
+
+Definition at line 51 of file Orig\-Univ\-Expander.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOrigUnivExpander_a61521e0c80376b67f7859531f86b69cb}{\index{Orig\-Univ\-Expander@{Orig\-Univ\-Expander}!Orig\-Univ\-Expander@{Orig\-Univ\-Expander}}
+\index{Orig\-Univ\-Expander@{Orig\-Univ\-Expander}!OrigUnivExpander@{Orig\-Univ\-Expander}}
+\subsubsection[{Orig\-Univ\-Expander}]{\setlength{\rightskip}{0pt plus 5cm}Orig\-Univ\-Expander\-::\-Orig\-Univ\-Expander (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classOrigUnivExpander_a61521e0c80376b67f7859531f86b69cb}
+
+
+Constructor. 
+
+
+
+Definition at line 38 of file Orig\-Univ\-Expander.\-cpp.
+
+\hypertarget{classOrigUnivExpander_a0cd23ac105ad8c0674df2a97943d12af}{\index{Orig\-Univ\-Expander@{Orig\-Univ\-Expander}!$\sim$\-Orig\-Univ\-Expander@{$\sim$\-Orig\-Univ\-Expander}}
+\index{$\sim$\-Orig\-Univ\-Expander@{$\sim$\-Orig\-Univ\-Expander}!OrigUnivExpander@{Orig\-Univ\-Expander}}
+\subsubsection[{$\sim$\-Orig\-Univ\-Expander}]{\setlength{\rightskip}{0pt plus 5cm}Orig\-Univ\-Expander\-::$\sim$\-Orig\-Univ\-Expander (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classOrigUnivExpander_a0cd23ac105ad8c0674df2a97943d12af}
+
+
+Destructor. 
+
+
+
+Definition at line 49 of file Orig\-Univ\-Expander.\-cpp.
+
+\hypertarget{classOrigUnivExpander_afd2271d8565fdd4280eb9952e06f1179}{\index{Orig\-Univ\-Expander@{Orig\-Univ\-Expander}!Orig\-Univ\-Expander@{Orig\-Univ\-Expander}}
+\index{Orig\-Univ\-Expander@{Orig\-Univ\-Expander}!OrigUnivExpander@{Orig\-Univ\-Expander}}
+\subsubsection[{Orig\-Univ\-Expander}]{\setlength{\rightskip}{0pt plus 5cm}Orig\-Univ\-Expander\-::\-Orig\-Univ\-Expander (
+\begin{DoxyParamCaption}
+\item[{const {\bf Orig\-Univ\-Expander} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classOrigUnivExpander_afd2271d8565fdd4280eb9952e06f1179}
+
+
+Copy constructor. 
+
+The copy constructor is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOrigUnivExpander_a6ebdb1dd5210ad13ee8cdb2adfe1ec48}{\index{Orig\-Univ\-Expander@{Orig\-Univ\-Expander}!add\-Exp\-Nxt\-Clause\-To\-C@{add\-Exp\-Nxt\-Clause\-To\-C}}
+\index{add\-Exp\-Nxt\-Clause\-To\-C@{add\-Exp\-Nxt\-Clause\-To\-C}!OrigUnivExpander@{Orig\-Univ\-Expander}}
+\subsubsection[{add\-Exp\-Nxt\-Clause\-To\-C}]{\setlength{\rightskip}{0pt plus 5cm}void Orig\-Univ\-Expander\-::add\-Exp\-Nxt\-Clause\-To\-C (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{clause, }
+\item[{{\bf Sat\-Solver} $\ast$}]{solver\-\_\-c}
+\end{DoxyParamCaption}
+)}}\label{classOrigUnivExpander_a6ebdb1dd5210ad13ee8cdb2adfe1ec48}
+
+
+Adds next-\/state clauses to solver\-\_\-c after initialization with \hyperlink{classOrigUnivExpander_a0752883a0f7a9bb17d5eda38a7dda2a1}{reset\-Solver\-C\-Exp()}. 
+
+After \hyperlink{classOrigUnivExpander_a0752883a0f7a9bb17d5eda38a7dda2a1}{reset\-Solver\-C\-Exp()} has been called to initialize solver\-\_\-c, this method can be used to add next-\/state clauses to all expansions of the next-\/state variables.
+
+
+\begin{DoxyParams}{Parameters}
+{\em clause} & A clause over the current-\/state variables. It is added as clause over (all expansions of) the next state variables in solver\-\_\-c. \\
+\hline
+{\em solver\-\_\-c} & The solver to which the next-\/state copies of this clause should be added. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 830 of file Orig\-Univ\-Expander.\-cpp.
+
+
+
+References c\-\_\-rename\-\_\-maps\-\_\-, and Sat\-Solver\-::inc\-Add\-Clause().
+
+\hypertarget{classOrigUnivExpander_a1ca430c08a9927733951149db492916e}{\index{Orig\-Univ\-Expander@{Orig\-Univ\-Expander}!init\-Solver\-I\-Data@{init\-Solver\-I\-Data}}
+\index{init\-Solver\-I\-Data@{init\-Solver\-I\-Data}!OrigUnivExpander@{Orig\-Univ\-Expander}}
+\subsubsection[{init\-Solver\-I\-Data}]{\setlength{\rightskip}{0pt plus 5cm}bool Orig\-Univ\-Expander\-::init\-Solver\-I\-Data (
+\begin{DoxyParamCaption}
+\item[{bool}]{limit\-\_\-size = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classOrigUnivExpander_a1ca430c08a9927733951149db492916e}
+
+
+A helper function for \hyperlink{classOrigUnivExpander_abcd12e41626b01f53ac7b8c654fa9218}{reset\-Solver\-I\-Exp()}. 
+
+Some work in \hyperlink{classOrigUnivExpander_abcd12e41626b01f53ac7b8c654fa9218}{reset\-Solver\-I\-Exp()} needs to be done again and again when this method is called repeatedly. For instance, the expansion of the transition relation is always the same. This method performs these repeated tasks only once, and stores the resulting information in fields of this class. This way, they can then be reused by \hyperlink{classOrigUnivExpander_abcd12e41626b01f53ac7b8c654fa9218}{reset\-Solver\-I\-Exp()} whenever needed. All fields defined by this method start with 'i\-\_\-'.
+
+
+\begin{DoxyParams}{Parameters}
+{\em limit\-\_\-size} & If set to true, then this method aborts if the \hyperlink{classCNF}{C\-N\-F} size limit defined by \hyperlink{classOptions_aa59992b1b4c698ade25627bb19a7d055}{Options\-::get\-Size\-Limit\-For\-Expansion()} is exceeded. This is supposed to prevent running out of memory during the expansion. If this flag is set to false, or omitted, then the size limit does not apply. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the size limit for the expansion has been exceeded during the initialization already. False if everything went O\-K. 
+\end{DoxyReturn}
+
+
+Definition at line 846 of file Orig\-Univ\-Expander.\-cpp.
+
+
+
+References C\-N\-F\-::add2\-Lit\-Clause(), C\-N\-F\-::add3\-Lit\-Clause(), c\-\_\-, C\-N\-F\-::get\-Clauses(), Options\-::get\-Size\-Limit\-For\-Expansion(), A\-I\-G2\-C\-N\-F\-::get\-Tmp\-Deps\-Trans(), A\-I\-G2\-C\-N\-F\-::get\-Trans(), i\-\_\-exp\-\_\-trans\-\_\-, i\-\_\-max\-\_\-trans\-\_\-var\-\_\-, i\-\_\-orig\-\_\-prop\-\_\-maps\-\_\-, i\-\_\-rename\-\_\-maps\-\_\-, i\-\_\-s\-\_\-to\-\_\-ren\-\_\-n\-\_\-, Options\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), M\-A\-S\-S\-E\-R\-T, n\-\_\-, and s\-\_\-.
+
+
+
+Referenced by reset\-Solver\-I\-Exp().
+
+\hypertarget{classOrigUnivExpander_a7a9bdf0d9f02ce1a84a471386fb521f8}{\index{Orig\-Univ\-Expander@{Orig\-Univ\-Expander}!operator=@{operator=}}
+\index{operator=@{operator=}!OrigUnivExpander@{Orig\-Univ\-Expander}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Orig\-Univ\-Expander}\& Orig\-Univ\-Expander\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Orig\-Univ\-Expander} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classOrigUnivExpander_a7a9bdf0d9f02ce1a84a471386fb521f8}
+
+
+Assignment operator. 
+
+The assignment operator is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the assignment, i.\-e, $\ast$this. 
+\end{DoxyReturn}
+\hypertarget{classOrigUnivExpander_a0752883a0f7a9bb17d5eda38a7dda2a1}{\index{Orig\-Univ\-Expander@{Orig\-Univ\-Expander}!reset\-Solver\-C\-Exp@{reset\-Solver\-C\-Exp}}
+\index{reset\-Solver\-C\-Exp@{reset\-Solver\-C\-Exp}!OrigUnivExpander@{Orig\-Univ\-Expander}}
+\subsubsection[{reset\-Solver\-C\-Exp}]{\setlength{\rightskip}{0pt plus 5cm}void Orig\-Univ\-Expander\-::reset\-Solver\-C\-Exp (
+\begin{DoxyParamCaption}
+\item[{{\bf Sat\-Solver} $\ast$}]{solver\-\_\-c, }
+\item[{const vector$<$ int $>$ \&}]{keep, }
+\item[{size\-\_\-t}]{max\-\_\-nr\-\_\-of\-\_\-signals\-\_\-to\-\_\-expand = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)}}\label{classOrigUnivExpander_a0752883a0f7a9bb17d5eda38a7dda2a1}
+
+
+Performs the reset of solver\-\_\-c in \hyperlink{classLearnSynthSAT_a8727927b4e0432acb6bcea883fd2f1f9}{Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Exp()}. 
+
+In \hyperlink{classLearnSynthSAT_a8727927b4e0432acb6bcea883fd2f1f9}{Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Exp()}, solver\-\_\-c needs to check exists x\-: forall i\-: exists x',t\-: W(x) \& T(x,i,c,x',t) \& W(x') where W is the winning region (a \hyperlink{classCNF}{C\-N\-F} over the state variables x) and T is the transition relation with t being auxiliary variables. This method expands some of the input signals i in the transition relation T, and puts the resulting formula into solver\-\_\-c. At the same time, this method also constructs a renaming map so clauses of W(x') can be added later on (using the method \hyperlink{classOrigUnivExpander_a6ebdb1dd5210ad13ee8cdb2adfe1ec48}{add\-Exp\-Nxt\-Clause\-To\-C()}). This method is highly optimized for exactly this purpose. \hyperlink{classOrigUnivExpander_a5e28c3075de86dcc7228fa547b284590}{univ\-Expand()} could also be used in principle, but this method has more optimizations exploiting the structure of the transition relation.
+
+\begin{DoxyNote}{Note}
+The newly created auxiliary variables are not registered in the \hyperlink{classVarManager}{Var\-Manager} for performance reasons (there may be zillions of new variables introduced during the expansion).
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em solver\-\_\-c} & The solver into which the expanded transition relation should be stored. \\
+\hline
+{\em keep} & This method declares the current-\/state variables, the uncontrollable inputs, and the next-\/state variables (in their various copys) as reusable. If you also want other variables to be reusable (e.\-g. previous-\/state variables), then they can be enumerated in this vector. \\
+\hline
+{\em max\-\_\-nr\-\_\-of\-\_\-signals\-\_\-to\-\_\-expand} & For solver\-\_\-c, expansion is very costly (more than for solver\-\_\-i). Hence, we usually only expand a few input variables. This parameter defines the maximum number of input signals to expand. Low values are recommended. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 576 of file Orig\-Univ\-Expander.\-cpp.
+
+
+
+References c\-\_\-, c\-\_\-rename\-\_\-maps\-\_\-, Var\-Info\-::\-C\-T\-R\-L, C\-N\-F\-::get\-Clauses(), Var\-Manager\-::get\-Max\-C\-N\-F\-Var(), A\-I\-G2\-C\-N\-F\-::get\-Tmp\-Deps\-Trans(), A\-I\-G2\-C\-N\-F\-::get\-Trans(), Var\-Manager\-::get\-Vars\-Of\-Type(), i\-\_\-, i\-\_\-s\-\_\-to\-\_\-ren\-\_\-n\-\_\-, Sat\-Solver\-::inc\-Add2\-Lit\-Clause(), Sat\-Solver\-::inc\-Add3\-Lit\-Clause(), Sat\-Solver\-::inc\-Add\-Unit\-Clause(), Var\-Manager\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), M\-A\-S\-S\-E\-R\-T, n\-\_\-, Var\-Info\-::\-P\-R\-E\-V, s\-\_\-, and Sat\-Solver\-::start\-Incremental\-Session().
+
+\hypertarget{classOrigUnivExpander_abcd12e41626b01f53ac7b8c654fa9218}{\index{Orig\-Univ\-Expander@{Orig\-Univ\-Expander}!reset\-Solver\-I\-Exp@{reset\-Solver\-I\-Exp}}
+\index{reset\-Solver\-I\-Exp@{reset\-Solver\-I\-Exp}!OrigUnivExpander@{Orig\-Univ\-Expander}}
+\subsubsection[{reset\-Solver\-I\-Exp}]{\setlength{\rightskip}{0pt plus 5cm}bool Orig\-Univ\-Expander\-::reset\-Solver\-I\-Exp (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{win\-\_\-reg, }
+\item[{{\bf Sat\-Solver} $\ast$}]{solver\-\_\-i, }
+\item[{bool}]{limit\-\_\-size = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{classOrigUnivExpander_abcd12e41626b01f53ac7b8c654fa9218}
+
+
+Performs the reset of solver\-\_\-i in \hyperlink{classLearnSynthSAT_a8727927b4e0432acb6bcea883fd2f1f9}{Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Exp()}. 
+
+In \hyperlink{classLearnSynthSAT_a8727927b4e0432acb6bcea883fd2f1f9}{Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Exp()}, solver\-\_\-i needs to check exists x,i\-: forall c\-: exists x',t\-: W(x) \& T(x,i,c,x',t) \& !\-W(x') where W is the winning region (a \hyperlink{classCNF}{C\-N\-F} over the state variables x) and T is the transition relation with t being auxiliary variables. This method expands the control signals c of the above formula and puts the resulting formula into the S\-A\-T solver solver\-\_\-i. This method is highly optimized for this purpose. For instance, the expansion of the transition relation is done only once and reused for different winning regions. \hyperlink{classOrigUnivExpander_a5e28c3075de86dcc7228fa547b284590}{univ\-Expand()} could also be used in principle, but this method has more optimizations exploiting the structure of the formula that needs to be expanded.
+
+\begin{DoxyNote}{Note}
+The newly created auxiliary variables are not registered in the \hyperlink{classVarManager}{Var\-Manager} for performance reasons (there may be zillions of new variables introduced during the expansion).
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em win\-\_\-reg} & The winning region with which the solver should be initialized. \\
+\hline
+{\em solver\-\_\-i} & The solver into which the expanded \hyperlink{classCNF}{C\-N\-F} should be store. \\
+\hline
+{\em limit\-\_\-size} & If set to true, then this method aborts if the \hyperlink{classCNF}{C\-N\-F} size limit defined by \hyperlink{classOptions_aa59992b1b4c698ade25627bb19a7d055}{Options\-::get\-Size\-Limit\-For\-Expansion()} is exceeded. This is supposed to prevent running out of memory during the expansion. If this flag is set to false, or omitted, then the size limit does not apply. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the size limit for the expansion has been exceeded. False if everything went O\-K (or nothing was checked because limit\-\_\-size was set to false). 
+\end{DoxyReturn}
+
+
+Definition at line 245 of file Orig\-Univ\-Expander.\-cpp.
+
+
+
+References c\-\_\-, C\-N\-F\-::get\-Clauses(), C\-N\-F\-::get\-Nr\-Of\-Clauses(), i\-\_\-, i\-\_\-exp\-\_\-trans\-\_\-, i\-\_\-max\-\_\-trans\-\_\-var\-\_\-, i\-\_\-orig\-\_\-prop\-\_\-maps\-\_\-, i\-\_\-rename\-\_\-maps\-\_\-, i\-\_\-s\-\_\-to\-\_\-ren\-\_\-n\-\_\-, Sat\-Solver\-::inc\-Add2\-Lit\-Clause(), Sat\-Solver\-::inc\-Add\-Clause(), Sat\-Solver\-::inc\-Add\-C\-N\-F(), Sat\-Solver\-::inc\-Add\-Unit\-Clause(), init\-Solver\-I\-Data(), Options\-::instance(), s\-\_\-, and Sat\-Solver\-::start\-Incremental\-Session().
+
+\hypertarget{classOrigUnivExpander_a5e28c3075de86dcc7228fa547b284590}{\index{Orig\-Univ\-Expander@{Orig\-Univ\-Expander}!univ\-Expand@{univ\-Expand}}
+\index{univ\-Expand@{univ\-Expand}!OrigUnivExpander@{Orig\-Univ\-Expander}}
+\subsubsection[{univ\-Expand}]{\setlength{\rightskip}{0pt plus 5cm}void Orig\-Univ\-Expander\-::univ\-Expand (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{orig, }
+\item[{{\bf C\-N\-F} \&}]{res, }
+\item[{const vector$<$ int $>$ \&}]{vars\-\_\-to\-\_\-exp, }
+\item[{const vector$<$ int $>$ \&}]{keep, }
+\item[{float}]{rate = {\ttfamily 1.1}, }
+\item[{const map$<$ int, set$<$ int $>$ $>$ $\ast$}]{more\-\_\-deps = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classOrigUnivExpander_a5e28c3075de86dcc7228fa547b284590}
+
+
+The standard method for universal expansion of certain variables. 
+
+\begin{DoxyNote}{Note}
+The newly created auxiliary variables are not registered in the \hyperlink{classVarManager}{Var\-Manager} for performance reasons (there may be zillions of new variables introduced during the expansion).
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em orig} & The original \hyperlink{classCNF}{C\-N\-F} in which we perform universal expansion. \\
+\hline
+{\em res} & An empty \hyperlink{classCNF}{C\-N\-F}. This is where the result will be stored. \\
+\hline
+{\em vars\-\_\-to\-\_\-exp} & The list of variables to expand. \\
+\hline
+{\em keep} & The list of variables that are quantified outside of the vars\-\_\-to\-\_\-exp and should hence not be renamed during the expansion. \\
+\hline
+{\em rate} & A number between 0 and 1. It defines which fraction of the vars\-\_\-to\-\_\-exp should be expanded. Value 0.\-4 means that 40\% of the vars\-\_\-to\-\_\-exp should be expanded. Use a value larger than 1 (or omit this parameter) if you want to be sure that every signal is expanded. \\
+\hline
+{\em more\-\_\-deps} & Additional dependencies that can be exploited during expansion. This map must map user-\/defined (temporary) variables to a set of other variables that define these variables. Don't include the dependencies of the temporary variables used to encode the transition relation, and don't include the dependencies of the next-\/state variables because they are automatically read from \hyperlink{classAIG2CNF}{A\-I\-G2\-C\-N\-F}. But if you have additional temporary variables, e.\-g., from Tseitin encoding some formula part then the expansion can benefit from dependency information (it needs to copy less). In any case\-: more\-\_\-deps\mbox{[}i\mbox{]} must only contain variables in keep or vars\-\_\-to\-\_\-exp. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 55 of file Orig\-Univ\-Expander.\-cpp.
+
+
+
+References C\-N\-F\-::append\-Vars\-To(), D\-A\-S\-S\-E\-R\-T, C\-N\-F\-::get\-Clauses(), Var\-Manager\-::get\-Max\-C\-N\-F\-Var(), A\-I\-G2\-C\-N\-F\-::get\-Tmp\-Deps\-Trans(), Var\-Manager\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), and C\-N\-F\-::swap\-With().
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classOrigUnivExpander_a55f9918f16eb03c75dc2a97182f75bdc}{\index{Orig\-Univ\-Expander@{Orig\-Univ\-Expander}!c\-\_\-@{c\-\_\-}}
+\index{c\-\_\-@{c\-\_\-}!OrigUnivExpander@{Orig\-Univ\-Expander}}
+\subsubsection[{c\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}const vector$<$int$>$\& Orig\-Univ\-Expander\-::c\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classOrigUnivExpander_a55f9918f16eb03c75dc2a97182f75bdc}
+
+
+The list of control signals (controllable input variables). 
+
+This list is often used, so we keep it as a field to increase readability of the code. 
+
+Definition at line 206 of file Orig\-Univ\-Expander.\-h.
+
+
+
+Referenced by init\-Solver\-I\-Data(), reset\-Solver\-C\-Exp(), and reset\-Solver\-I\-Exp().
+
+\hypertarget{classOrigUnivExpander_a88ffdcc269b3e72eae24c6744b412b4e}{\index{Orig\-Univ\-Expander@{Orig\-Univ\-Expander}!c\-\_\-rename\-\_\-maps\-\_\-@{c\-\_\-rename\-\_\-maps\-\_\-}}
+\index{c\-\_\-rename\-\_\-maps\-\_\-@{c\-\_\-rename\-\_\-maps\-\_\-}!OrigUnivExpander@{Orig\-Univ\-Expander}}
+\subsubsection[{c\-\_\-rename\-\_\-maps\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$vector$<$int$>$ $>$ Orig\-Univ\-Expander\-::c\-\_\-rename\-\_\-maps\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classOrigUnivExpander_a88ffdcc269b3e72eae24c6744b412b4e}
+
+
+The rename maps for the next-\/state variables for adding clauses to solver\-\_\-c. 
+
+c\-\_\-rename\-\_\-maps\-\_\-\mbox{[}i\mbox{]} is the rename map for present-\/state variables to the i-\/th copy of the next state variables. 
+
+Definition at line 277 of file Orig\-Univ\-Expander.\-h.
+
+
+
+Referenced by add\-Exp\-Nxt\-Clause\-To\-C(), and reset\-Solver\-C\-Exp().
+
+\hypertarget{classOrigUnivExpander_a1e2e61937364c1f6ae1113c3bee359ab}{\index{Orig\-Univ\-Expander@{Orig\-Univ\-Expander}!i\-\_\-@{i\-\_\-}}
+\index{i\-\_\-@{i\-\_\-}!OrigUnivExpander@{Orig\-Univ\-Expander}}
+\subsubsection[{i\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}const vector$<$int$>$\& Orig\-Univ\-Expander\-::i\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classOrigUnivExpander_a1e2e61937364c1f6ae1113c3bee359ab}
+
+
+The list of (uncontrollable) input variables. 
+
+This list is often used, so we keep it as a field to increase readability of the code. 
+
+Definition at line 199 of file Orig\-Univ\-Expander.\-h.
+
+
+
+Referenced by reset\-Solver\-C\-Exp(), and reset\-Solver\-I\-Exp().
+
+\hypertarget{classOrigUnivExpander_a2b2a151446c62688478b7d548fca860c}{\index{Orig\-Univ\-Expander@{Orig\-Univ\-Expander}!i\-\_\-exp\-\_\-trans\-\_\-@{i\-\_\-exp\-\_\-trans\-\_\-}}
+\index{i\-\_\-exp\-\_\-trans\-\_\-@{i\-\_\-exp\-\_\-trans\-\_\-}!OrigUnivExpander@{Orig\-Univ\-Expander}}
+\subsubsection[{i\-\_\-exp\-\_\-trans\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} Orig\-Univ\-Expander\-::i\-\_\-exp\-\_\-trans\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classOrigUnivExpander_a2b2a151446c62688478b7d548fca860c}
+
+
+The expansion of the transition relation for \hyperlink{classOrigUnivExpander_abcd12e41626b01f53ac7b8c654fa9218}{reset\-Solver\-I\-Exp()}. 
+
+We do not expand the transition relation again and again, but we do this only once and reuse it. The only thing we expand freshly each time is the next state copy of the (negation of the) winning region. All fields starting with 'i\-\_\-' (like this one) are initialized by \hyperlink{classOrigUnivExpander_a1ca430c08a9927733951149db492916e}{init\-Solver\-I\-Data()} and used by \hyperlink{classOrigUnivExpander_abcd12e41626b01f53ac7b8c654fa9218}{reset\-Solver\-I\-Exp()}. 
+
+Definition at line 224 of file Orig\-Univ\-Expander.\-h.
+
+
+
+Referenced by init\-Solver\-I\-Data(), and reset\-Solver\-I\-Exp().
+
+\hypertarget{classOrigUnivExpander_a150c22a734df707f76190a66b6eb2a44}{\index{Orig\-Univ\-Expander@{Orig\-Univ\-Expander}!i\-\_\-max\-\_\-trans\-\_\-var\-\_\-@{i\-\_\-max\-\_\-trans\-\_\-var\-\_\-}}
+\index{i\-\_\-max\-\_\-trans\-\_\-var\-\_\-@{i\-\_\-max\-\_\-trans\-\_\-var\-\_\-}!OrigUnivExpander@{Orig\-Univ\-Expander}}
+\subsubsection[{i\-\_\-max\-\_\-trans\-\_\-var\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int Orig\-Univ\-Expander\-::i\-\_\-max\-\_\-trans\-\_\-var\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classOrigUnivExpander_a150c22a734df707f76190a66b6eb2a44}
+
+
+The maximum variable index occurring in i\-\_\-exp\-\_\-trans\-\_\-. 
+
+That is, for \hyperlink{classOrigUnivExpander_abcd12e41626b01f53ac7b8c654fa9218}{reset\-Solver\-I\-Exp()}, i\-\_\-max\-\_\-trans\-\_\-var\-\_\- + 1 is the next fresh \hyperlink{classCNF}{C\-N\-F} variable. All fields starting with 'i\-\_\-' (like this one) are initialized by \hyperlink{classOrigUnivExpander_a1ca430c08a9927733951149db492916e}{init\-Solver\-I\-Data()} and used by \hyperlink{classOrigUnivExpander_abcd12e41626b01f53ac7b8c654fa9218}{reset\-Solver\-I\-Exp()}. 
+
+Definition at line 233 of file Orig\-Univ\-Expander.\-h.
+
+
+
+Referenced by init\-Solver\-I\-Data(), and reset\-Solver\-I\-Exp().
+
+\hypertarget{classOrigUnivExpander_a49a13d81ac5119a0a31aa0bbb8964e25}{\index{Orig\-Univ\-Expander@{Orig\-Univ\-Expander}!i\-\_\-orig\-\_\-prop\-\_\-maps\-\_\-@{i\-\_\-orig\-\_\-prop\-\_\-maps\-\_\-}}
+\index{i\-\_\-orig\-\_\-prop\-\_\-maps\-\_\-@{i\-\_\-orig\-\_\-prop\-\_\-maps\-\_\-}!OrigUnivExpander@{Orig\-Univ\-Expander}}
+\subsubsection[{i\-\_\-orig\-\_\-prop\-\_\-maps\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$vector$<$int$>$ $>$ Orig\-Univ\-Expander\-::i\-\_\-orig\-\_\-prop\-\_\-maps\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classOrigUnivExpander_a49a13d81ac5119a0a31aa0bbb8964e25}
+
+
+The rename maps for constant propagation in the original during expansion. 
+
+i\-\_\-orig\-\_\-prop\-\_\-maps\-\_\-\mbox{[}c\-\_\-idx\mbox{]} defines how to rename variables in the original when creating the copy due to expansion of the control signal c\-\_\-\mbox{[}c\-\_\-idx\mbox{]}. A variable can only be renamed to itself, to 1 (T\-R\-U\-E) and to -\/1 (F\-A\-L\-S\-E). That is, this is no real renaming but essentially only constant propagation. 
+
+Definition at line 269 of file Orig\-Univ\-Expander.\-h.
+
+
+
+Referenced by init\-Solver\-I\-Data(), and reset\-Solver\-I\-Exp().
+
+\hypertarget{classOrigUnivExpander_ab9e2c9ca2129fed67662f36834198b08}{\index{Orig\-Univ\-Expander@{Orig\-Univ\-Expander}!i\-\_\-rename\-\_\-maps\-\_\-@{i\-\_\-rename\-\_\-maps\-\_\-}}
+\index{i\-\_\-rename\-\_\-maps\-\_\-@{i\-\_\-rename\-\_\-maps\-\_\-}!OrigUnivExpander@{Orig\-Univ\-Expander}}
+\subsubsection[{i\-\_\-rename\-\_\-maps\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$vector$<$int$>$ $>$ Orig\-Univ\-Expander\-::i\-\_\-rename\-\_\-maps\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classOrigUnivExpander_ab9e2c9ca2129fed67662f36834198b08}
+
+
+The rename maps resulting from the expansion of the transition relation. 
+
+i\-\_\-rename\-\_\-maps\-\_\-\mbox{[}c\-\_\-idx\mbox{]} defines how to rename variables when expanding the control signal c\-\_\-\mbox{[}c\-\_\-idx\mbox{]}. This rename map does not only do renaming, but also constant propagation. If a certain variable is renamed to 1, then it is set to T\-R\-U\-E. If it is renamed to -\/1, then it is set to F\-A\-L\-S\-E. 
+
+Definition at line 259 of file Orig\-Univ\-Expander.\-h.
+
+
+
+Referenced by init\-Solver\-I\-Data(), and reset\-Solver\-I\-Exp().
+
+\hypertarget{classOrigUnivExpander_a03a45566b24c00386d7530f4b212b42d}{\index{Orig\-Univ\-Expander@{Orig\-Univ\-Expander}!i\-\_\-s\-\_\-to\-\_\-ren\-\_\-n\-\_\-@{i\-\_\-s\-\_\-to\-\_\-ren\-\_\-n\-\_\-}}
+\index{i\-\_\-s\-\_\-to\-\_\-ren\-\_\-n\-\_\-@{i\-\_\-s\-\_\-to\-\_\-ren\-\_\-n\-\_\-}!OrigUnivExpander@{Orig\-Univ\-Expander}}
+\subsubsection[{i\-\_\-s\-\_\-to\-\_\-ren\-\_\-n\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ Orig\-Univ\-Expander\-::i\-\_\-s\-\_\-to\-\_\-ren\-\_\-n\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classOrigUnivExpander_a03a45566b24c00386d7530f4b212b42d}
+
+
+A map, renaming present-\/state vars to a renamed version of the next-\/state copy. 
+
+\hyperlink{classOrigUnivExpander_abcd12e41626b01f53ac7b8c654fa9218}{reset\-Solver\-I\-Exp()} gets the winning region, and needs to expand and negate the next-\/state copy of the winning region. This map does two renamings in one go\-: (1) it renames present state variables to their corresponding next-\/state copy, and (2) it further renames the next-\/state copy of state variables to the auxiliary variables defining them in the transition relation. Originally, the transition relation \hyperlink{classCNF}{C\-N\-F} has special clauses that do this renaming. We remove these clauses and do the renaming with a map. This is more efficient. Otherwise, the renaming-\/clauses of the transition relation would get copied many many many times, which increases the size of the expanded C\-N\-Fs unnecessarily. All fields starting with 'i\-\_\-' (like this one) are initialized by \hyperlink{classOrigUnivExpander_a1ca430c08a9927733951149db492916e}{init\-Solver\-I\-Data()} and used by \hyperlink{classOrigUnivExpander_abcd12e41626b01f53ac7b8c654fa9218}{reset\-Solver\-I\-Exp()}. 
+
+Definition at line 249 of file Orig\-Univ\-Expander.\-h.
+
+
+
+Referenced by init\-Solver\-I\-Data(), reset\-Solver\-C\-Exp(), and reset\-Solver\-I\-Exp().
+
+\hypertarget{classOrigUnivExpander_aee21f9c6dab80e323bf9d17172fa9dc2}{\index{Orig\-Univ\-Expander@{Orig\-Univ\-Expander}!n\-\_\-@{n\-\_\-}}
+\index{n\-\_\-@{n\-\_\-}!OrigUnivExpander@{Orig\-Univ\-Expander}}
+\subsubsection[{n\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}const vector$<$int$>$\& Orig\-Univ\-Expander\-::n\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classOrigUnivExpander_aee21f9c6dab80e323bf9d17172fa9dc2}
+
+
+The list of next-\/state variables. 
+
+This list is often used, so we keep it as a field to increase readability of the code. 
+
+Definition at line 213 of file Orig\-Univ\-Expander.\-h.
+
+
+
+Referenced by init\-Solver\-I\-Data(), and reset\-Solver\-C\-Exp().
+
+\hypertarget{classOrigUnivExpander_a3e52a15c675f3f9dfedfb0b083ed12c4}{\index{Orig\-Univ\-Expander@{Orig\-Univ\-Expander}!s\-\_\-@{s\-\_\-}}
+\index{s\-\_\-@{s\-\_\-}!OrigUnivExpander@{Orig\-Univ\-Expander}}
+\subsubsection[{s\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}const vector$<$int$>$\& Orig\-Univ\-Expander\-::s\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classOrigUnivExpander_a3e52a15c675f3f9dfedfb0b083ed12c4}
+
+
+The list of present-\/state variables. 
+
+This list is often used, so we keep it as a field to increase readability of the code. 
+
+Definition at line 192 of file Orig\-Univ\-Expander.\-h.
+
+
+
+Referenced by init\-Solver\-I\-Data(), reset\-Solver\-C\-Exp(), and reset\-Solver\-I\-Exp().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{OrigUnivExpander_8h}{Orig\-Univ\-Expander.\-h}\item 
+src/\hyperlink{OrigUnivExpander_8cpp}{Orig\-Univ\-Expander.\-cpp}\end{DoxyCompactItemize}

@@ -54,6 +54,13 @@ EPRSynthesizer::~EPRSynthesizer()
 // -------------------------------------------------------------------------------------------
 bool EPRSynthesizer::run()
 {
+  // return runWithLessSkolem();
+  return runWithSkolem();
+}
+
+// -------------------------------------------------------------------------------------------
+bool EPRSynthesizer::runWithSkolem()
+{
   tptp_query_.clear();
   const char *error = NULL;
   aiger *aig = aiger_init();
@@ -328,6 +335,215 @@ bool EPRSynthesizer::run()
   L_ERR("Strange response from iprover.");
   return false;
 }
+
+// -------------------------------------------------------------------------------------------
+bool EPRSynthesizer::runWithLessSkolem()
+{
+  tptp_query_.clear();
+  const char *error = NULL;
+  aiger *aig = aiger_init();
+  const string &file = Options::instance().getAigInFileName();
+  error = aiger_open_and_read_from_file (aig, file.c_str());
+  MASSERT(error == NULL, "Could not open AIGER file " << file << " (" << error << ").");
+  MASSERT(aig->num_outputs == 1, "Strange number of outputs in AIGER file.");
+
+  // 'pr' maps AIGER literals to corresponding EPR formulas.
+  vector<string> pr(2*(aig->maxvar+1), "");
+  vector<string> nm(2*(aig->maxvar+1), "");
+  pr[0] = "p(0)";
+  nm[0] = "0";
+  pr[1] = "p(1)";
+  nm[1] = "1";
+  // The prefix 'X_' means current state, 'Y_' means next state,
+  // 'I_' means uncontrollable input, T_ means temporary variable
+  string all_inputs_and_states = "X_err";
+  string all_states = "X_err";
+  string all_next_states = "Y_err";
+
+  // Analyze the inputs and fill the data structures (pr, nm, ...)
+  for(unsigned cnt = 0; cnt < aig->num_inputs; ++cnt)
+  {
+    string aig_name;
+    if(aig->inputs[cnt].name != NULL)
+      aig_name = aig->inputs[cnt].name;
+    string aig_name_lower = StringUtils::toLowerCase(aig_name);
+    unsigned lit = aig->inputs[cnt].lit;
+    ostringstream oss;
+    oss << lit;
+    if(aig_name_lower.find("controllable_") != 0)
+    {
+      pr[lit] = "p(I_" + oss.str() + ")";
+      nm[lit] = "I_" + oss.str();
+      pr[lit + 1] = "~p(I_" + oss.str() + ")";
+      nm[lit + 1] = "I_" + oss.str();
+      all_inputs_and_states += ",I_" + oss.str();
+    }
+    else
+    {
+      pr[lit] = "p(C_" + oss.str() + ")";
+      nm[lit] = "C_" + oss.str();
+      pr[lit + 1] = "~p(C_" + oss.str() + ")";
+      nm[lit + 1] = "C_" + oss.str();
+    }
+  }
+  // Analyze the state variables and fill the data structures (pr, deps, ...)
+  for(unsigned cnt = 0; cnt < aig->num_latches; ++cnt)
+  {
+    unsigned lit = aig->latches[cnt].lit;
+    ostringstream oss;
+    oss << lit;
+    pr[lit] = "p(X_" + oss.str() + ")";
+    nm[lit] = "X_" + oss.str();
+    pr[lit + 1] = "~p(X_" + oss.str() + ")";
+    nm[lit + 1] = "X_" + oss.str();
+    all_inputs_and_states += ",X_" + oss.str();
+    all_states += ",X_" + oss.str();
+    all_next_states += ",Y_" + oss.str();
+  }
+
+  // output of AND-gates:
+  for (unsigned cnt = 0; cnt < aig->num_ands; cnt++)
+  {
+    unsigned lit = aig->ands[cnt].lhs;
+    ostringstream oss;
+    oss << lit;
+    pr[lit] = "p(T_" + oss.str() + ")";
+    nm[lit] = "T_" + oss.str();
+    pr[lit + 1] = "~p(T_" + oss.str() + ")";
+    nm[lit + 1] = "T_" + oss.str();
+  }
+
+  string pres_win = "win(" + all_states + ")";
+  if(all_states.size() == 0)
+    pres_win = "win";
+  string next_win = "win(" + all_next_states + ")";
+  if(all_next_states.size() == 0)
+    next_win = "win";
+
+  // 1. initial implies winning I(x) -> P(x):
+  string initial_implies_winning = "p(X_err)";
+  for(unsigned cnt = 0; cnt < aig->num_latches; ++cnt)
+    initial_implies_winning += " | " + pr[aig->latches[cnt].lit];
+  initial_implies_winning += " | " + pres_win;
+  addClause(initial_implies_winning, "The initial state is winning: I(X) -> W(X)");
+
+  // 2. winning implies safe W(x) -> P(x):
+  addClause("~" + pres_win + " | ~p(X_err)", "All winning states are safe: W(X) -> P(X)");
+
+
+  string ass_violated;
+  // 3. Construct Skolem functions for the control inputs:
+  for(unsigned cnt = 0; cnt < aig->num_inputs; ++cnt)
+  {
+    unsigned lit = aig->inputs[cnt].lit;
+    if(nm[lit].find("C_") == 0)
+    {
+      ostringstream oss_sk;
+      oss_sk << "csk_" << lit  << "("  << all_inputs_and_states << ")";
+      // build ceq_X(a,b,c,...,C_X) <-> (csk_X(a,b,c,...) <-> C_X)
+      ostringstream oss_eq;
+      oss_eq << "ceq_" << lit  << "("  << all_inputs_and_states << ", C_" << lit << ")";
+      if(!ass_violated.empty())
+        ass_violated += " | ";
+      ass_violated += "~" + oss_eq.str();
+      addClause(pr[lit] + " | ~" + oss_sk.str() + " | ~" + oss_eq.str());
+      addClause(pr[neg(lit)] + " | " + oss_sk.str() + " | ~" + oss_eq.str());
+      addClause(pr[neg(lit)] + " | ~" + oss_sk.str() + " | " + oss_eq.str());
+      addClause(pr[lit] + " | " + oss_sk.str() + " | " + oss_eq.str());
+    }
+  }
+
+  // 4. Encode the transition relation
+  for (unsigned cnt = 0; cnt < aig->num_ands; cnt++)
+  {
+    unsigned l = aig->ands[cnt].lhs;
+    unsigned r0 = aig->ands[cnt].rhs0;
+    unsigned r1 = aig->ands[cnt].rhs1;
+    ostringstream and_holds;
+    and_holds << "and_" << l << "(" << nm[r0] << "," << nm[r1] << "," << nm[l] << ")";
+    ass_violated += " | ~" + and_holds.str();
+
+    addClause(pr[r0] + " | " + pr[neg(l)] + " | ~" + and_holds.str());
+    addClause(pr[r1] + " | " + pr[neg(l)] + " | ~" + and_holds.str());
+    addClause(pr[neg(r1)] + " | " + pr[neg(r0)] + " | " + pr[l] + " | ~" + and_holds.str());
+
+    addClause(pr[r0] + " | " + pr[l] + " | " + and_holds.str());
+    addClause(pr[r1] + " | " + pr[l] + " | " + and_holds.str());
+    addClause(pr[neg(r1)] + " | " + pr[neg(r0)] + " | " + pr[neg(l)] + " | " + and_holds.str());
+  }
+
+  // 4.1 next state variables are set correctly:
+
+  // 4.1.1 fake error latch:
+  unsigned err_aig = aig->outputs[0].lit;
+  string err_eq = "yeq_err(Y_err," + nm[err_aig] + ")";
+  ass_violated += " | ~" + err_eq;
+  addClause(pr[err_aig] + " | ~p(Y_err) | ~" + err_eq);
+  addClause(pr[neg(err_aig)] + " | p(Y_err) | ~" + err_eq);
+  addClause(pr[neg(err_aig)] + " | ~p(Y_err) | " + err_eq);
+  addClause(pr[err_aig] + " | p(Y_err) | " + err_eq);
+
+  // 4.1.1 real latches:
+  for(unsigned cnt = 0; cnt < aig->num_latches; ++cnt)
+  {
+    unsigned n_aig = aig->latches[cnt].next;
+    unsigned p_aig = aig->latches[cnt].lit;
+    ostringstream oss_eq;
+    oss_eq << "yeq_" << p_aig << "(Y_" << p_aig << "," << nm[n_aig] << ")";
+    ass_violated += " | ~" + oss_eq.str();
+    ostringstream this_y;
+    this_y << "Y_" << p_aig;
+    addClause(pr[n_aig] + " | ~p(" + this_y.str() + ") | ~" + oss_eq.str());
+    addClause(pr[neg(n_aig)] + " | p(" + this_y.str() + ") | ~" + oss_eq.str());
+    addClause(pr[neg(n_aig)] + " | ~p(" + this_y.str() + ") | " + oss_eq.str());
+    addClause(pr[n_aig] + " | p(" + this_y.str() + ") | " + oss_eq.str());
+  }
+
+  // 5. W(x) && T(x,i,c,x') --> W(x')
+  addClause(ass_violated + " | ~" + pres_win + " | " + next_win);
+
+  tptp_query_ << "cnf(rule_true,axiom, p(1))." << endl;
+  tptp_query_ << "cnf(rule_false,axiom, ~p(0))." << endl;
+
+  // Now we are done creating the EPR formula. Let's start the solver:
+
+  FileUtils::writeFile(in_file_name_, tptp_query_.str());
+  string solver_command = path_to_iprover_;
+  solver_command += " --out_options none";
+  solver_command += " --fof false"; // assumes cnf
+  // a schedule which works well for verification problems encoded in the EPR fragment:
+  solver_command += " --schedule verification_epr";
+  solver_command += " --sat_epr_types true"; // using EPR types in sat mode
+  // solver_command += " --sat_mode true";
+  // solver_command += " --sat_finite_models true";
+  solver_command += " --sat_out_model small"; // <small|pos|neg|implied|debug|intel|none>
+  solver_command += " " + in_file_name_ + " > " + out_file_name_;
+  int ret = system(solver_command.c_str());
+  ret = WEXITSTATUS(ret);
+  MASSERT(ret == 0, "Strange exit code from iprover.");
+
+  string result_file_content;
+  FileUtils::readFile(out_file_name_, result_file_content);
+  remove(in_file_name_.c_str());
+  remove(out_file_name_.c_str());
+  if(result_file_content.find("SZS status Unsatisfiable") != string::npos)
+  {
+    L_RES("The specification is unrealizable.");
+    return false;
+  }
+  if(result_file_content.find("SZS status Satisfiable") != string::npos)
+  {
+    L_RES("The specification is realizable.");
+    if(!Options::instance().doRealizabilityOnly())
+    {
+      MASSERT(false, "TODO: circuit extraction not yet implemented.");
+    }
+    return true;
+  }
+  L_ERR("Strange response from iprover.");
+  return false;
+}
+
 // -------------------------------------------------------------------------------------------
 void EPRSynthesizer::addClause(const string &clause, string comment)
 {

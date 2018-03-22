@@ -76,7 +76,7 @@ struct aiger;
 /// obtain the one and only instance of this class.
 ///
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.1.0
+/// @version 1.2.0
 class AIG2CNF
 {
 public:
@@ -274,6 +274,16 @@ public:
 
 // -------------------------------------------------------------------------------------------
 ///
+/// @brief Returns true if variable "1" should be defined as TRUE in the transition relation.
+///
+/// @todo This is a hack. This should always be done. But this would require re-computation of
+///       the pre-computed winning regions for the experiments, so it is delayed.
+///
+/// @return True if variable "1" should be defined as TRUE in the transition relation.
+  bool isTrueInTrans();
+
+// -------------------------------------------------------------------------------------------
+///
 /// @typedef map<int, set<VarInfo> >::const_iterator DepConstIter
 /// @brief A type for a const-iterator over the dependencies of temporary variables.
   typedef map<int, set<VarInfo> >::const_iterator DepConstIter;
@@ -380,6 +390,14 @@ protected:
 /// controllable) inputs. Dependencies on other temporary variables are represented by taking
 /// their dependencies on state variables and (uncontrollable and controllable) inputs.
   map<int, set<VarInfo> > trans_tmp_deps_trans_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief A flag indicating if the transition relation should define the var "1" as true.
+///
+/// @todo This is a hack. This should always be done. But this would require re-computation of
+///       the pre-computed winning regions for the experiments, so it is delayed.
+  bool true_in_trans_;
 
 private:
 

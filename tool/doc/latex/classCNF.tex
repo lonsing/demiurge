@@ -60,10 +60,14 @@ void \hyperlink{classCNF_a037291a95be5b4ec0c14755fd0e18826}{add\-C\-N\-F} (const
 \begin{DoxyCompactList}\small\item\em Conjuncts the \hyperlink{classCNF}{C\-N\-F} with another \hyperlink{classCNF}{C\-N\-F}. \end{DoxyCompactList}\item 
 void \hyperlink{classCNF_aff6cbbe38a345089b278061f9d0195be}{swap\-Present\-To\-Next} ()
 \begin{DoxyCompactList}\small\item\em Replaces all current-\/state variables in the \hyperlink{classCNF}{C\-N\-F} with their next-\/state copy. \end{DoxyCompactList}\item 
+void \hyperlink{classCNF_ab8fa6b10b2a85ff8f055d6bc926f2c44}{rename\-Tmps} ()
+\begin{DoxyCompactList}\small\item\em Renames all temporary variables that occur in this \hyperlink{classCNF}{C\-N\-F} with fresh ones. \end{DoxyCompactList}\item 
 void \hyperlink{classCNF_a1d4371fd3b970bde2e8542ab5ad0f881}{negate} ()
 \begin{DoxyCompactList}\small\item\em Negates this \hyperlink{classCNF}{C\-N\-F}. \end{DoxyCompactList}\item 
 void \hyperlink{classCNF_a39c340549f7acdc1393a5572f3e007cf}{swap\-With} (list$<$ vector$<$ int $>$ $>$ \&clauses)
 \begin{DoxyCompactList}\small\item\em Swaps the content of this \hyperlink{classCNF}{C\-N\-F} with the passed set of clauses. \end{DoxyCompactList}\item 
+void \hyperlink{classCNF_a52d1a7c0b807125871f9ac72655fb1d2}{swap\-With} (\hyperlink{classCNF}{C\-N\-F} \&other)
+\begin{DoxyCompactList}\small\item\em Swaps the content of this \hyperlink{classCNF}{C\-N\-F} with the passed \hyperlink{classCNF}{C\-N\-F}. \end{DoxyCompactList}\item 
 size\-\_\-t \hyperlink{classCNF_ad0bf994acbde601aa482f3d94ef1cb71}{get\-Nr\-Of\-Clauses} () const 
 \begin{DoxyCompactList}\small\item\em Returns the number of clauses in this \hyperlink{classCNF}{C\-N\-F}. \end{DoxyCompactList}\item 
 size\-\_\-t \hyperlink{classCNF_a4fafd0324a1c4c7f345b8df7f931aafa}{get\-Nr\-Of\-Lits} () const 
@@ -82,7 +86,9 @@ bool \hyperlink{classCNF_ac0fc121fe92bc190aeeaf351703fe111}{is\-Sat\-By} (const 
 \begin{DoxyCompactList}\small\item\em Checks if the \hyperlink{classCNF}{C\-N\-F} is satisfied by a certain variable assignment. \end{DoxyCompactList}\item 
 void \hyperlink{classCNF_a6fe7640aa2a65579cf8364092f26c126}{set\-Var\-Value} (int var, bool value)
 \begin{DoxyCompactList}\small\item\em Replaces a variable in the \hyperlink{classCNF}{C\-N\-F} by true or false. \end{DoxyCompactList}\item 
-void \hyperlink{classCNF_ac34e02c39a762ad696449a8c75d4e115}{rename\-Vars} (const vector$<$ int $>$ rename\-\_\-map)
+void \hyperlink{classCNF_ad7b181b3dbe40f751326c4722d0af84a}{do\-Pure\-And\-Unit} (const vector$<$ int $>$ \&keep)
+\begin{DoxyCompactList}\small\item\em Simplifies the \hyperlink{classCNF}{C\-N\-F} by propagating unit clauses and pure literals until fixpoint. \end{DoxyCompactList}\item 
+void \hyperlink{classCNF_a8c06c6e3d06a590c3d3e02d87221d431}{rename\-Vars} (const vector$<$ int $>$ \&rename\-\_\-map)
 \begin{DoxyCompactList}\small\item\em Renames all variables in a \hyperlink{classCNF}{C\-N\-F}. \end{DoxyCompactList}\item 
 bool \hyperlink{classCNF_aa450a94a6161936d1a3cdffd083a0e42}{contains} (int var) const 
 \begin{DoxyCompactList}\small\item\em Returns true if this \hyperlink{classCNF}{C\-N\-F} contains a certain variable, and false otherwise. \end{DoxyCompactList}\item 
@@ -112,7 +118,7 @@ Other options would be (a) to sort the literals in the clauses, (b) represent cl
 Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\-1.\-0 
+1.\-2.\-0 
 \end{DoxyVersion}
 
 
@@ -130,7 +136,7 @@ A type for a const-\/iterator over the clauses.
 
 
 
-Definition at line 382 of file C\-N\-F.\-h.
+Definition at line 410 of file C\-N\-F.\-h.
 
 \hypertarget{classCNF_a6bb7b9142923d0af71a49e4b29c258d1}{\index{C\-N\-F@{C\-N\-F}!Clause\-Iter@{Clause\-Iter}}
 \index{Clause\-Iter@{Clause\-Iter}!CNF@{C\-N\-F}}
@@ -141,7 +147,7 @@ A type for an iterator over the clauses.
 
 
 
-Definition at line 388 of file C\-N\-F.\-h.
+Definition at line 416 of file C\-N\-F.\-h.
 
 
 
@@ -251,7 +257,7 @@ References clauses\-\_\-.
 
 
 
-Referenced by add\-Cube(), add\-Neg\-Clause\-As\-Cube(), Template\-Synth\-::find\-Win\-Reg\-C\-N\-F\-Templ(), A\-I\-G2\-C\-N\-F\-::init\-From\-Aig(), Lingeling\-Api\-::is\-Sat\-Model\-Or\-Core(), Pico\-Sat\-Api\-::is\-Sat\-Model\-Or\-Core(), and Mini\-Sat\-Api\-::is\-Sat\-Model\-Or\-Core().
+Referenced by add\-Cube(), add\-Neg\-Clause\-As\-Cube(), Template\-Synth\-::check(), Templ\-Explorer\-::check(), do\-Pure\-And\-Unit(), Template\-Synth\-::find\-Win\-Reg\-A\-N\-D\-Network(), Template\-Synth\-::find\-Win\-Reg\-C\-N\-F\-Templ(), Templ\-Explorer\-::find\-Win\-Reg\-C\-N\-F\-Templ(), A\-I\-G2\-C\-N\-F\-::init\-From\-Aig(), Univ\-Expander\-::init\-Solver\-C\-Exp(), Lingeling\-Api\-::is\-Sat\-Model\-Or\-Core(), Pico\-Sat\-Api\-::is\-Sat\-Model\-Or\-Core(), Mini\-Sat\-Api\-::is\-Sat\-Model\-Or\-Core(), and Utils\-::negate\-Via\-Aig().
 
 \hypertarget{classCNF_adf7334d8029d4882cfb5ee21b01ac668}{\index{C\-N\-F@{C\-N\-F}!add2\-Lit\-Clause@{add2\-Lit\-Clause}}
 \index{add2\-Lit\-Clause@{add2\-Lit\-Clause}!CNF@{C\-N\-F}}
@@ -282,7 +288,7 @@ References clauses\-\_\-.
 
 
 
-Referenced by Parallel\-Learner\-::compute\-Previous\-Trans(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Pool(), Template\-Synth\-::find\-Win\-Reg\-C\-N\-F\-Templ(), A\-I\-G2\-C\-N\-F\-::init\-From\-Aig(), Learn\-Synth\-Q\-B\-F\-Ind\-::\-Learn\-Synth\-Q\-B\-F\-Ind(), Learn\-Synth\-S\-A\-T\-::\-Learn\-Synth\-S\-A\-T(), Learning\-Impl\-Extractor\-::make\-Eq2(), negate(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), and Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2().
+Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Pool(), Template\-Synth\-::find\-Win\-Reg\-A\-N\-D\-Network(), Template\-Synth\-::find\-Win\-Reg\-C\-N\-F\-Templ(), Templ\-Explorer\-::find\-Win\-Reg\-C\-N\-F\-Templ(), A\-I\-G2\-C\-N\-F\-::init\-From\-Aig(), Univ\-Expander\-::init\-Solver\-C\-Exp(), Orig\-Univ\-Expander\-::init\-Solver\-I\-Data(), Learn\-Synth\-Q\-B\-F\-Ind\-::\-Learn\-Synth\-Q\-B\-F\-Ind(), Learn\-Synth\-S\-A\-T\-::\-Learn\-Synth\-S\-A\-T(), Learning\-Impl\-Extractor\-::make\-Eq2(), negate(), Utils\-::negate\-Via\-Aig(), Prev\-State\-Info\-::\-Prev\-State\-Info(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), and Par\-Extractor\-Worker\-::run\-S\-A\-T().
 
 \hypertarget{classCNF_a14154cae28b27dffc53239af7b39c4b4}{\index{C\-N\-F@{C\-N\-F}!add3\-Lit\-Clause@{add3\-Lit\-Clause}}
 \index{add3\-Lit\-Clause@{add3\-Lit\-Clause}!CNF@{C\-N\-F}}
@@ -316,7 +322,7 @@ References clauses\-\_\-.
 
 
 
-Referenced by A\-I\-G2\-C\-N\-F\-::init\-From\-Aig(), Learn\-Synth\-Q\-B\-F\-Ind\-::\-Learn\-Synth\-Q\-B\-F\-Ind(), Learn\-Synth\-S\-A\-T\-::\-Learn\-Synth\-S\-A\-T(), Learning\-Impl\-Extractor\-::make\-Eq2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), and Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2().
+Referenced by A\-I\-G2\-C\-N\-F\-::init\-From\-Aig(), Univ\-Expander\-::init\-Solver\-C\-Exp(), Orig\-Univ\-Expander\-::init\-Solver\-I\-Data(), Learn\-Synth\-Q\-B\-F\-Ind\-::\-Learn\-Synth\-Q\-B\-F\-Ind(), Learn\-Synth\-S\-A\-T\-::\-Learn\-Synth\-S\-A\-T(), Learning\-Impl\-Extractor\-::make\-Eq2(), Utils\-::negate\-Via\-Aig(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), and Par\-Extractor\-Worker\-::run\-S\-A\-T().
 
 \hypertarget{classCNF_adc908d03185c0baad55c5b240ed667b3}{\index{C\-N\-F@{C\-N\-F}!add4\-Lit\-Clause@{add4\-Lit\-Clause}}
 \index{add4\-Lit\-Clause@{add4\-Lit\-Clause}!CNF@{C\-N\-F}}
@@ -353,7 +359,7 @@ References clauses\-\_\-.
 
 
 
-Referenced by Template\-Synth\-::find\-Win\-Reg\-C\-N\-F\-Templ().
+Referenced by Template\-Synth\-::find\-Win\-Reg\-A\-N\-D\-Network(), Template\-Synth\-::find\-Win\-Reg\-C\-N\-F\-Templ(), Templ\-Explorer\-::find\-Win\-Reg\-C\-N\-F\-Templ(), and Prev\-State\-Info\-::\-Prev\-State\-Info().
 
 \hypertarget{classCNF_af3d87d407464eeda15426bdd75f15a7f}{\index{C\-N\-F@{C\-N\-F}!add\-Clause@{add\-Clause}}
 \index{add\-Clause@{add\-Clause}!CNF@{C\-N\-F}}
@@ -381,7 +387,7 @@ References clauses\-\_\-.
 
 
 
-Referenced by I\-F\-M13\-Synth\-::add\-Blocked\-State(), I\-F\-M13\-Explorer\-::add\-Blocked\-State(), Utils\-::compress\-State\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::compute\-All\-Blocking\-Clauses(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-All\-Blocking\-Clauses(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Push(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Push(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Template\-Synth\-::find\-Win\-Reg\-C\-N\-F\-Templ(), A\-I\-G2\-C\-N\-F\-::init\-From\-Aig(), Learn\-Synth\-Q\-B\-F\-Ind\-::\-Learn\-Synth\-Q\-B\-F\-Ind(), Learn\-Synth\-S\-A\-T\-::\-Learn\-Synth\-S\-A\-T(), Learning\-Impl\-Extractor\-::make\-Eq(), Learning\-Impl\-Extractor\-::make\-Eq2(), Clause\-Explorer\-S\-A\-T\-::notify\-New\-Useless\-Input\-Clause(), Parallel\-Learner\-::notify\-New\-Win\-Reg\-Clause(), Clause\-Explorer\-S\-A\-T\-::notify\-New\-Win\-Reg\-Clause(), Counter\-Gen\-S\-A\-T\-::notify\-New\-Win\-Reg\-Clause(), I\-F\-M13\-Explorer\-::notify\-New\-Win\-Reg\-Clause(), Learn\-Synth\-S\-A\-T\-::present\-To\-Previous(), Parallel\-Learner\-::present\-To\-Previous(), Learn\-Synth\-Q\-B\-F\-Ind\-::present\-To\-Previous(), Clause\-Explorer\-S\-A\-T\-::present\-To\-Previous(), Counter\-Gen\-S\-A\-T\-::present\-To\-Previous(), Learn\-Synth\-Q\-B\-F\-Ind\-::reduce\-Existing\-Clauses(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), and Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2().
+Referenced by I\-F\-M13\-Synth\-::add\-Blocked\-State(), I\-F\-M13\-Explorer\-::add\-Blocked\-State(), Utils\-::compress\-Next\-State\-C\-N\-F(), Utils\-::compress\-State\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::compute\-All\-Blocking\-Clauses(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-All\-Blocking\-Clauses(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Push(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Push(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Template\-Synth\-::find\-Win\-Reg\-A\-N\-D\-Network(), Template\-Synth\-::find\-Win\-Reg\-C\-N\-F\-Templ(), Templ\-Explorer\-::find\-Win\-Reg\-C\-N\-F\-Templ(), A\-I\-G2\-C\-N\-F\-::init\-From\-Aig(), Learn\-Synth\-Q\-B\-F\-Ind\-::\-Learn\-Synth\-Q\-B\-F\-Ind(), Learn\-Synth\-S\-A\-T\-::\-Learn\-Synth\-S\-A\-T(), Par\-Extractor\-Worker\-::make\-Eq(), Learning\-Impl\-Extractor\-::make\-Eq(), Learning\-Impl\-Extractor\-::make\-Eq2(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses\-No\-Inc(), Clause\-Explorer\-S\-A\-T\-::notify\-New\-Useless\-Input\-Clause(), Parallel\-Learner\-::notify\-New\-Win\-Reg\-Clause(), Clause\-Explorer\-S\-A\-T\-::notify\-New\-Win\-Reg\-Clause(), Counter\-Gen\-S\-A\-T\-::notify\-New\-Win\-Reg\-Clause(), Clause\-Minimizer\-Q\-B\-F\-::notify\-New\-Win\-Reg\-Clause(), I\-F\-M13\-Explorer\-::notify\-New\-Win\-Reg\-Clause(), Templ\-Explorer\-::notify\-New\-Win\-Reg\-Clause(), Prev\-State\-Info\-::present\-To\-Previous(), Learn\-Synth\-S\-A\-T\-::present\-To\-Previous(), Learn\-Synth\-Q\-B\-F\-Ind\-::present\-To\-Previous(), Prev\-State\-Info\-::\-Prev\-State\-Info(), Learn\-Synth\-Q\-B\-F\-Ind\-::reduce\-Existing\-Clauses(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), and Par\-Extractor\-Worker\-::run\-S\-A\-T().
 
 \hypertarget{classCNF_a05caebe9e73a96d5f1050b3950434700}{\index{C\-N\-F@{C\-N\-F}!add\-Clause\-And\-Simplify@{add\-Clause\-And\-Simplify}}
 \index{add\-Clause\-And\-Simplify@{add\-Clause\-And\-Simplify}!CNF@{C\-N\-F}}
@@ -414,7 +420,7 @@ References clauses\-\_\-, and Utils\-::is\-Subset().
 
 
 
-Referenced by I\-F\-M13\-Synth\-::add\-Blocked\-Transition(), I\-F\-M13\-Explorer\-::add\-Blocked\-Transition(), I\-F\-M13\-Synth\-::add\-Lose(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Pool(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One\-S\-A\-T(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Parallel\-Learner\-::notify\-New\-Win\-Reg\-Clause(), Learn\-Synth\-Q\-B\-F\-Inc\-::reduce\-Existing\-Clauses(), Learn\-Synth\-Q\-B\-F\-::reduce\-Existing\-Clauses(), and Learn\-Synth\-Q\-B\-F\-Ind\-::reduce\-Existing\-Clauses().
+Referenced by I\-F\-M13\-Synth\-::add\-Blocked\-Transition(), I\-F\-M13\-Explorer\-::add\-Blocked\-Transition(), I\-F\-M13\-Synth\-::add\-Lose(), I\-F\-M13\-Explorer\-::add\-Lose(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Pool(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One\-S\-A\-T(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Recy(), Parallel\-Learner\-::notify\-New\-Win\-Reg\-Clause(), Clause\-Explorer\-S\-A\-T\-::notify\-New\-Win\-Reg\-Clause(), Learn\-Synth\-Q\-B\-F\-Inc\-::reduce\-Existing\-Clauses(), Learn\-Synth\-Q\-B\-F\-::reduce\-Existing\-Clauses(), and Learn\-Synth\-Q\-B\-F\-Ind\-::reduce\-Existing\-Clauses().
 
 \hypertarget{classCNF_a037291a95be5b4ec0c14755fd0e18826}{\index{C\-N\-F@{C\-N\-F}!add\-C\-N\-F@{add\-C\-N\-F}}
 \index{add\-C\-N\-F@{add\-C\-N\-F}!CNF@{C\-N\-F}}
@@ -444,7 +450,7 @@ References clauses\-\_\-.
 
 
 
-Referenced by Learn\-Synth\-Q\-B\-F\-::compute\-Counterexample\-S\-A\-T(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Pool(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), I\-F\-M13\-Explorer\-::consider\-New\-Info\-From\-Others(), I\-F\-M13\-Synth\-::debug\-Check\-Invariants(), Learn\-Synth\-S\-A\-T\-::debug\-Check\-Win\-Reg(), Utils\-::debug\-Check\-Win\-Reg(), Learn\-Synth\-Q\-B\-F\-Ind\-::debug\-Check\-Win\-Reg\-Reach(), Template\-Synth\-::find\-Win\-Reg\-C\-N\-F\-Templ(), I\-F\-M13\-Explorer\-::\-I\-F\-M13\-Explorer(), I\-F\-M13\-Synth\-::\-I\-F\-M13\-Synth(), Learn\-Synth\-Q\-B\-F\-Ind\-::\-Learn\-Synth\-Q\-B\-F\-Ind(), Learning\-Impl\-Extractor\-::make\-Eq(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses(), Learn\-Synth\-Q\-B\-F\-Inc\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Ind\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Inc\-::recompute\-Gen\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::recompute\-Gen\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Ind\-::recompute\-Gen\-C\-N\-F(), Q\-B\-F\-Cert\-Impl\-Extractor\-::run(), Parallel\-Learner\-::run(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F\-Inc(), and Parallel\-Learner\-::trigger\-Explorer\-Restart().
+Referenced by Template\-Synth\-::check(), Templ\-Explorer\-::check(), Learn\-Synth\-Q\-B\-F\-::compute\-Counterexample\-S\-A\-T(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Pool(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Recy(), I\-F\-M13\-Explorer\-::consider\-New\-Info\-From\-Others(), I\-F\-M13\-Synth\-::debug\-Check\-Invariants(), Learn\-Synth\-S\-A\-T\-::debug\-Check\-Win\-Reg(), Utils\-::debug\-Check\-Win\-Reg(), Learn\-Synth\-Q\-B\-F\-Ind\-::debug\-Check\-Win\-Reg\-Reach(), Templ\-Explorer\-::find\-Win\-Reg\-C\-N\-F\-Templ(), I\-F\-M13\-Explorer\-::\-I\-F\-M13\-Explorer(), I\-F\-M13\-Synth\-::\-I\-F\-M13\-Synth(), Learn\-Synth\-Q\-B\-F\-Ind\-::\-Learn\-Synth\-Q\-B\-F\-Ind(), Par\-Extractor\-Worker\-::make\-Eq(), Learning\-Impl\-Extractor\-::make\-Eq(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses\-No\-Inc(), Learn\-Synth\-Q\-B\-F\-Inc\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Ind\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Inc\-::recompute\-Gen\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::recompute\-Gen\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Ind\-::recompute\-Gen\-C\-N\-F(), Q\-B\-F\-Cert\-Impl\-Extractor\-::run(), Parallel\-Learner\-::run(), Learning\-Impl\-Extractor\-::run\-Learning\-Exp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F\-Inc(), Par\-Extractor\-Q\-B\-F\-Worker\-::run\-Q\-B\-F(), Par\-Extractor\-Worker\-::run\-S\-A\-T(), Par\-Extractor\-Worker\-::run\-S\-A\-T\-Dep(), Template\-Synth\-::synt\-Q\-B\-F(), Templ\-Explorer\-::synt\-Q\-B\-F(), Template\-Synth\-::synt\-S\-A\-T(), and Templ\-Explorer\-::synt\-S\-A\-T().
 
 \hypertarget{classCNF_aa8621fad1a9a7b3022a79f5f735f5da2}{\index{C\-N\-F@{C\-N\-F}!add\-Cube@{add\-Cube}}
 \index{add\-Cube@{add\-Cube}!CNF@{C\-N\-F}}
@@ -504,7 +510,7 @@ References add1\-Lit\-Clause().
 
 
 
-Referenced by Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses(), Learn\-Synth\-Q\-B\-F\-::reduce\-Existing\-Clauses(), and Learn\-Synth\-Q\-B\-F\-Ind\-::reduce\-Existing\-Clauses().
+Referenced by Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses\-No\-Inc(), Learn\-Synth\-Q\-B\-F\-::reduce\-Existing\-Clauses(), and Learn\-Synth\-Q\-B\-F\-Ind\-::reduce\-Existing\-Clauses().
 
 \hypertarget{classCNF_a84d01cd19e3032fb8d3bc7eaaaa40e34}{\index{C\-N\-F@{C\-N\-F}!add\-Neg\-Cube\-As\-Clause@{add\-Neg\-Cube\-As\-Clause}}
 \index{add\-Neg\-Cube\-As\-Clause@{add\-Neg\-Cube\-As\-Clause}!CNF@{C\-N\-F}}
@@ -534,7 +540,7 @@ References clauses\-\_\-.
 
 
 
-Referenced by Utils\-::compress\-State\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::generalize\-Counterexample(), Learn\-Synth\-Q\-B\-F\-Ind\-::generalize\-Counterexample(), Utils\-::negate\-State\-C\-N\-F(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F(), and Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F\-Inc().
+Referenced by Utils\-::compress\-Next\-State\-C\-N\-F(), Utils\-::compress\-State\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::generalize\-Counterexample(), Learn\-Synth\-Q\-B\-F\-Ind\-::generalize\-Counterexample(), Utils\-::negate\-State\-C\-N\-F(), Learning\-Impl\-Extractor\-::run\-Learning\-Exp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F\-Inc(), Par\-Extractor\-Q\-B\-F\-Worker\-::run\-Q\-B\-F(), Par\-Extractor\-Worker\-::run\-S\-A\-T(), and Par\-Extractor\-Worker\-::run\-S\-A\-T\-Dep().
 
 \hypertarget{classCNF_a8a54b640d4fbb1da74979fc07536d4e9}{\index{C\-N\-F@{C\-N\-F}!append\-Vars\-To@{append\-Vars\-To}}
 \index{append\-Vars\-To@{append\-Vars\-To}!CNF@{C\-N\-F}}
@@ -554,7 +560,7 @@ Adds all variables that occur in the \hyperlink{classCNF}{C\-N\-F} to the given 
 \end{DoxyParams}
 
 
-Definition at line 498 of file C\-N\-F.\-cpp.
+Definition at line 571 of file C\-N\-F.\-cpp.
 
 
 
@@ -562,7 +568,7 @@ References clauses\-\_\-.
 
 
 
-Referenced by get\-Vars().
+Referenced by Template\-Synth\-::exclude(), Templ\-Explorer\-::exclude(), get\-Vars(), Utils\-::negate\-Via\-Aig(), rename\-Tmps(), Orig\-Univ\-Expander\-::univ\-Expand(), and Univ\-Expander\-::univ\-Expand().
 
 \hypertarget{classCNF_aa6b76fdc15481f7899d71f7cc8fa5f45}{\index{C\-N\-F@{C\-N\-F}!clear@{clear}}
 \index{clear@{clear}!CNF@{C\-N\-F}}
@@ -585,7 +591,7 @@ References clauses\-\_\-.
 
 
 
-Referenced by A\-I\-G2\-C\-N\-F\-::clear(), Utils\-::compress\-State\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Push(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Push(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One\-S\-A\-T(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::consider\-New\-Info\-From\-Others(), Counter\-Gen\-S\-A\-T\-::consider\-New\-Info\-From\-Others(), I\-F\-M13\-Explorer\-::consider\-New\-Info\-From\-Others(), I\-F\-M13\-Synth\-::debug\-Check\-Invariants(), Learn\-Synth\-S\-A\-T\-::debug\-Check\-Win\-Reg(), Utils\-::debug\-Check\-Win\-Reg(), Learn\-Synth\-Q\-B\-F\-Ind\-::debug\-Check\-Win\-Reg\-Reach(), Utils\-::negate\-State\-C\-N\-F(), Clause\-Explorer\-S\-A\-T\-::notify\-New\-Useless\-Input\-Clause(), Clause\-Explorer\-S\-A\-T\-::notify\-Restart(), Learn\-Synth\-S\-A\-T\-::present\-To\-Previous(), Parallel\-Learner\-::present\-To\-Previous(), Learn\-Synth\-Q\-B\-F\-Ind\-::present\-To\-Previous(), Clause\-Explorer\-S\-A\-T\-::present\-To\-Previous(), Counter\-Gen\-S\-A\-T\-::present\-To\-Previous(), Learn\-Synth\-Q\-B\-F\-Inc\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Ind\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Inc\-::recompute\-Gen\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::recompute\-Gen\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Ind\-::recompute\-Gen\-C\-N\-F(), and Parallel\-Learner\-::run().
+Referenced by Univ\-Expander\-::cleanup(), A\-I\-G2\-C\-N\-F\-::clear(), Utils\-::compress\-Next\-State\-C\-N\-F(), Utils\-::compress\-State\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Push(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Push(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One\-S\-A\-T(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Recy(), Clause\-Explorer\-S\-A\-T\-::consider\-New\-Info\-From\-Others(), Counter\-Gen\-S\-A\-T\-::consider\-New\-Info\-From\-Others(), I\-F\-M13\-Explorer\-::consider\-New\-Info\-From\-Others(), I\-F\-M13\-Synth\-::debug\-Check\-Invariants(), Learn\-Synth\-S\-A\-T\-::debug\-Check\-Win\-Reg(), Utils\-::debug\-Check\-Win\-Reg(), Learn\-Synth\-Q\-B\-F\-Ind\-::debug\-Check\-Win\-Reg\-Reach(), Univ\-Expander\-::init\-Solver\-C\-Exp(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses\-Inc(), Utils\-::negate\-State\-C\-N\-F(), Utils\-::negate\-Via\-Aig(), Clause\-Explorer\-S\-A\-T\-::notify\-New\-Useless\-Input\-Clause(), Clause\-Explorer\-S\-A\-T\-::notify\-Restart(), Prev\-State\-Info\-::present\-To\-Previous(), Learn\-Synth\-S\-A\-T\-::present\-To\-Previous(), Learn\-Synth\-Q\-B\-F\-Ind\-::present\-To\-Previous(), Learn\-Synth\-Q\-B\-F\-Inc\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Ind\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Inc\-::recompute\-Gen\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::recompute\-Gen\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Ind\-::recompute\-Gen\-C\-N\-F(), Parallel\-Learner\-::run(), and Par\-Extractor\-Q\-B\-F\-Worker\-::run\-Q\-B\-F().
 
 \hypertarget{classCNF_aa450a94a6161936d1a3cdffd083a0e42}{\index{C\-N\-F@{C\-N\-F}!contains@{contains}}
 \index{contains@{contains}!CNF@{C\-N\-F}}
@@ -608,7 +614,7 @@ True if this \hyperlink{classCNF}{C\-N\-F} contains var, and false otherwise.
 \end{DoxyReturn}
 
 
-Definition at line 471 of file C\-N\-F.\-cpp.
+Definition at line 544 of file C\-N\-F.\-cpp.
 
 
 
@@ -616,7 +622,35 @@ References clauses\-\_\-.
 
 
 
-Referenced by Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), and Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2().
+Referenced by Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), and Par\-Extractor\-Worker\-::run\-S\-A\-T\-Dep().
+
+\hypertarget{classCNF_ad7b181b3dbe40f751326c4722d0af84a}{\index{C\-N\-F@{C\-N\-F}!do\-Pure\-And\-Unit@{do\-Pure\-And\-Unit}}
+\index{do\-Pure\-And\-Unit@{do\-Pure\-And\-Unit}!CNF@{C\-N\-F}}
+\subsubsection[{do\-Pure\-And\-Unit}]{\setlength{\rightskip}{0pt plus 5cm}void C\-N\-F\-::do\-Pure\-And\-Unit (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{keep}
+\end{DoxyParamCaption}
+)}}\label{classCNF_ad7b181b3dbe40f751326c4722d0af84a}
+
+
+Simplifies the \hyperlink{classCNF}{C\-N\-F} by propagating unit clauses and pure literals until fixpoint. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000003}{Todo}]So far, only unit clause propagation has been implemented. Pure literals still need to be done.\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em keep} & A list of \hyperlink{classCNF}{C\-N\-F} variables. All \hyperlink{classCNF}{C\-N\-F} variables contained in the list will be kept assigned by the \hyperlink{classCNF}{C\-N\-F} (in a unit clause). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 469 of file C\-N\-F.\-cpp.
+
+
+
+References add1\-Lit\-Clause(), and clauses\-\_\-.
 
 \hypertarget{classCNF_a9532acac619c098668460a4c97cbbc0f}{\index{C\-N\-F@{C\-N\-F}!get\-Clauses@{get\-Clauses}}
 \index{get\-Clauses@{get\-Clauses}!CNF@{C\-N\-F}}
@@ -634,7 +668,7 @@ The clauses of the \hyperlink{classCNF}{C\-N\-F} as list of vectors.
 \end{DoxyReturn}
 
 
-Definition at line 346 of file C\-N\-F.\-cpp.
+Definition at line 360 of file C\-N\-F.\-cpp.
 
 
 
@@ -642,7 +676,7 @@ References clauses\-\_\-.
 
 
 
-Referenced by Learning\-Impl\-Extractor\-::add\-To\-Stand\-Alone\-Aiger(), Utils\-::compress\-State\-C\-N\-F(), Parallel\-Learner\-::compute\-Previous\-Trans(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Pool(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Lingeling\-Api\-::inc\-Add\-C\-N\-F(), Pico\-Sat\-Api\-::inc\-Add\-C\-N\-F(), Mini\-Sat\-Api\-::inc\-Add\-C\-N\-F(), Dep\-Q\-B\-F\-Api\-::inc\-Add\-C\-N\-F(), Dep\-Q\-B\-F\-Api\-::init\-Bloqqer(), Dep\-Q\-B\-F\-Api\-::init\-Dep\-Q\-B\-F(), Lingeling\-Api\-::is\-Sat(), Pico\-Sat\-Api\-::is\-Sat(), Mini\-Sat\-Api\-::is\-Sat(), Lingeling\-Api\-::is\-Sat\-Model\-Or\-Core(), Pico\-Sat\-Api\-::is\-Sat\-Model\-Or\-Core(), Mini\-Sat\-Api\-::is\-Sat\-Model\-Or\-Core(), Learn\-Synth\-Q\-B\-F\-Ind\-::\-Learn\-Synth\-Q\-B\-F\-Ind(), Learn\-Synth\-S\-A\-T\-::\-Learn\-Synth\-S\-A\-T(), Learning\-Impl\-Extractor\-::make\-Eq(), Learning\-Impl\-Extractor\-::make\-Eq2(), Learn\-Synth\-S\-A\-T\-::present\-To\-Previous(), Parallel\-Learner\-::present\-To\-Previous(), Learn\-Synth\-Q\-B\-F\-Ind\-::present\-To\-Previous(), Clause\-Explorer\-S\-A\-T\-::present\-To\-Previous(), Counter\-Gen\-S\-A\-T\-::present\-To\-Previous(), I\-F\-M13\-Synth\-::propagate\-Blocked\-States(), I\-F\-M13\-Explorer\-::propagate\-Blocked\-States(), Learn\-Synth\-Q\-B\-F\-Inc\-::reduce\-Existing\-Clauses(), Learn\-Synth\-Q\-B\-F\-::reduce\-Existing\-Clauses(), and Learn\-Synth\-Q\-B\-F\-Ind\-::reduce\-Existing\-Clauses().
+Referenced by Par\-Extractor\-Worker\-::add\-To\-Stand\-Alone\-Aiger(), Learning\-Impl\-Extractor\-::add\-To\-Stand\-Alone\-Aiger(), Par\-Extractor\-Worker\-::add\-To\-Stand\-Alone\-Aiger2(), Utils\-::compress\-State\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Pool(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C\-Exp(), Clause\-Explorer\-S\-A\-T\-::consider\-New\-Info\-From\-Others(), Univ\-Expander\-::extr\-Exp(), Templ\-Explorer\-::find\-Win\-Reg\-C\-N\-F\-Templ(), Lingeling\-Api\-::inc\-Add\-C\-N\-F(), Pico\-Sat\-Api\-::inc\-Add\-C\-N\-F(), Mini\-Sat\-Api\-::inc\-Add\-C\-N\-F(), Dep\-Q\-B\-F\-Api\-::inc\-Add\-C\-N\-F(), Dep\-Q\-B\-F\-Api\-::init\-Bloqqer(), Dep\-Q\-B\-F\-Api\-::init\-Dep\-Q\-B\-F(), Univ\-Expander\-::init\-Solver\-C\-Exp(), Orig\-Univ\-Expander\-::init\-Solver\-I\-Data(), Univ\-Expander\-::init\-Solver\-I\-Data(), Rareqs\-Api\-::is\-Sat(), Pico\-Sat\-Api\-::is\-Sat(), Lingeling\-Api\-::is\-Sat(), Mini\-Sat\-Api\-::is\-Sat(), Rareqs\-Api\-::is\-Sat\-Model(), Lingeling\-Api\-::is\-Sat\-Model\-Or\-Core(), Pico\-Sat\-Api\-::is\-Sat\-Model\-Or\-Core(), Mini\-Sat\-Api\-::is\-Sat\-Model\-Or\-Core(), Learn\-Synth\-Q\-B\-F\-Ind\-::\-Learn\-Synth\-Q\-B\-F\-Ind(), Learn\-Synth\-S\-A\-T\-::\-Learn\-Synth\-S\-A\-T(), Par\-Extractor\-Worker\-::make\-Eq(), Learning\-Impl\-Extractor\-::make\-Eq(), Learning\-Impl\-Extractor\-::make\-Eq2(), Utils\-::negate\-Via\-Aig(), Prev\-State\-Info\-::present\-To\-Previous(), Learn\-Synth\-S\-A\-T\-::present\-To\-Previous(), Learn\-Synth\-Q\-B\-F\-Ind\-::present\-To\-Previous(), Prev\-State\-Info\-::\-Prev\-State\-Info(), I\-F\-M13\-Synth\-::propagate\-Blocked\-States(), I\-F\-M13\-Explorer\-::propagate\-Blocked\-States(), Learn\-Synth\-Q\-B\-F\-Inc\-::reduce\-Existing\-Clauses(), Learn\-Synth\-Q\-B\-F\-::reduce\-Existing\-Clauses(), Learn\-Synth\-Q\-B\-F\-Ind\-::reduce\-Existing\-Clauses(), Orig\-Univ\-Expander\-::reset\-Solver\-C\-Exp(), Orig\-Univ\-Expander\-::reset\-Solver\-I\-Exp(), Univ\-Expander\-::reset\-Solver\-I\-Exp(), Orig\-Univ\-Expander\-::univ\-Expand(), and Univ\-Expander\-::univ\-Expand().
 
 \hypertarget{classCNF_ad0bf994acbde601aa482f3d94ef1cb71}{\index{C\-N\-F@{C\-N\-F}!get\-Nr\-Of\-Clauses@{get\-Nr\-Of\-Clauses}}
 \index{get\-Nr\-Of\-Clauses@{get\-Nr\-Of\-Clauses}!CNF@{C\-N\-F}}
@@ -660,7 +694,7 @@ The number of clauses in this \hyperlink{classCNF}{C\-N\-F}.
 \end{DoxyReturn}
 
 
-Definition at line 292 of file C\-N\-F.\-cpp.
+Definition at line 306 of file C\-N\-F.\-cpp.
 
 
 
@@ -668,7 +702,7 @@ References clauses\-\_\-.
 
 
 
-Referenced by Utils\-::compress\-State\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Push(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Push(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One\-S\-A\-T(), Clause\-Explorer\-S\-A\-T\-::consider\-New\-Info\-From\-Others(), Counter\-Gen\-S\-A\-T\-::consider\-New\-Info\-From\-Others(), Ext\-Q\-B\-F\-Solver\-::dump\-Q\-B\-F(), Dep\-Q\-B\-F\-Api\-::init\-Bloqqer(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses(), Learn\-Synth\-Q\-B\-F\-Inc\-::reduce\-Existing\-Clauses(), Learn\-Synth\-Q\-B\-F\-::reduce\-Existing\-Clauses(), Learn\-Synth\-Q\-B\-F\-Ind\-::reduce\-Existing\-Clauses(), and Clause\-Explorer\-S\-A\-T\-::wait\-Until\-Ongoing\-Restart\-Done().
+Referenced by Utils\-::compress\-Next\-State\-C\-N\-F(), Utils\-::compress\-State\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Push(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Push(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One\-S\-A\-T(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C\-Exp(), Clause\-Explorer\-S\-A\-T\-::consider\-New\-Info\-From\-Others(), Counter\-Gen\-S\-A\-T\-::consider\-New\-Info\-From\-Others(), Ext\-Q\-B\-F\-Solver\-::dump\-Q\-B\-F(), Templ\-Explorer\-::find\-Win\-Reg\-C\-N\-F\-Templ(), Dep\-Q\-B\-F\-Api\-::init\-Bloqqer(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses\-Inc(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses\-No\-Inc(), Learn\-Synth\-Q\-B\-F\-Inc\-::reduce\-Existing\-Clauses(), Learn\-Synth\-Q\-B\-F\-::reduce\-Existing\-Clauses(), Learn\-Synth\-Q\-B\-F\-Ind\-::reduce\-Existing\-Clauses(), and Orig\-Univ\-Expander\-::reset\-Solver\-I\-Exp().
 
 \hypertarget{classCNF_a4fafd0324a1c4c7f345b8df7f931aafa}{\index{C\-N\-F@{C\-N\-F}!get\-Nr\-Of\-Lits@{get\-Nr\-Of\-Lits}}
 \index{get\-Nr\-Of\-Lits@{get\-Nr\-Of\-Lits}!CNF@{C\-N\-F}}
@@ -688,7 +722,7 @@ The sum of the sizes of all clauses in the \hyperlink{classCNF}{C\-N\-F}.
 \end{DoxyReturn}
 
 
-Definition at line 298 of file C\-N\-F.\-cpp.
+Definition at line 312 of file C\-N\-F.\-cpp.
 
 
 
@@ -696,7 +730,7 @@ References clauses\-\_\-.
 
 
 
-Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Push(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Push(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One\-S\-A\-T(), Learn\-Synth\-Q\-B\-F\-Inc\-::reduce\-Existing\-Clauses(), Learn\-Synth\-Q\-B\-F\-::reduce\-Existing\-Clauses(), and Learn\-Synth\-Q\-B\-F\-Ind\-::reduce\-Existing\-Clauses().
+Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Push(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Push(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One\-S\-A\-T(), Learn\-Synth\-Q\-B\-F\-Inc\-::reduce\-Existing\-Clauses(), Learn\-Synth\-Q\-B\-F\-::reduce\-Existing\-Clauses(), Learn\-Synth\-Q\-B\-F\-Ind\-::reduce\-Existing\-Clauses(), and Par\-Extractor\-Q\-B\-F\-Worker\-::run\-Q\-B\-F().
 
 \hypertarget{classCNF_a4847969cea924a74642e3d914135d8da}{\index{C\-N\-F@{C\-N\-F}!get\-Vars@{get\-Vars}}
 \index{get\-Vars@{get\-Vars}!CNF@{C\-N\-F}}
@@ -714,7 +748,7 @@ The set of all variables that occur in the \hyperlink{classCNF}{C\-N\-F}.
 \end{DoxyReturn}
 
 
-Definition at line 487 of file C\-N\-F.\-cpp.
+Definition at line 560 of file C\-N\-F.\-cpp.
 
 
 
@@ -743,7 +777,7 @@ True if the \hyperlink{classCNF}{C\-N\-F} is satisfied by the passed variable as
 \end{DoxyReturn}
 
 
-Definition at line 395 of file C\-N\-F.\-cpp.
+Definition at line 409 of file C\-N\-F.\-cpp.
 
 
 
@@ -751,7 +785,7 @@ References clauses\-\_\-.
 
 
 
-Referenced by I\-F\-M13\-Synth\-::is\-Blocked(), I\-F\-M13\-Explorer\-::is\-Blocked(), I\-F\-M13\-Synth\-::is\-Lose(), and I\-F\-M13\-Explorer\-::is\-Lose().
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Recy(), I\-F\-M13\-Synth\-::is\-Blocked(), I\-F\-M13\-Explorer\-::is\-Blocked(), I\-F\-M13\-Synth\-::is\-Lose(), and I\-F\-M13\-Explorer\-::is\-Lose().
 
 \hypertarget{classCNF_a1d4371fd3b970bde2e8542ab5ad0f881}{\index{C\-N\-F@{C\-N\-F}!negate@{negate}}
 \index{negate@{negate}!CNF@{C\-N\-F}}
@@ -766,7 +800,7 @@ Negates this \hyperlink{classCNF}{C\-N\-F}.
 
 Be careful\-: this is an 'expensive' operation in the sense that the resulting \hyperlink{classCNF}{C\-N\-F} can be significantly larger. This method introduces fresh temporary variables (Tseitin variables) The freshly introduced variables are of type Var\-Kind\-::\-T\-M\-P. Hence, this method also modifies the state of the \hyperlink{classVarManager}{Var\-Manager}. If you call \hyperlink{classCNF_a1d4371fd3b970bde2e8542ab5ad0f881}{negate()} twice you will end up with a formula that is equisatisfiable to the original formula, but potentially much much larger. 
 
-Definition at line 264 of file C\-N\-F.\-cpp.
+Definition at line 272 of file C\-N\-F.\-cpp.
 
 
 
@@ -774,7 +808,7 @@ References add2\-Lit\-Clause(), clauses\-\_\-, Var\-Manager\-::create\-Fresh\-Tm
 
 
 
-Referenced by Learn\-Synth\-Q\-B\-F\-::compute\-Counterexample\-S\-A\-T(), I\-F\-M13\-Synth\-::compute\-Winning\-Region(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), I\-F\-M13\-Synth\-::debug\-Check\-Invariants(), Learn\-Synth\-S\-A\-T\-::debug\-Check\-Win\-Reg(), Utils\-::debug\-Check\-Win\-Reg(), Learn\-Synth\-Q\-B\-F\-Ind\-::debug\-Check\-Win\-Reg\-Reach(), C\-N\-F\-Impl\-Extractor\-::extract\-Circuit(), Learning\-Impl\-Extractor\-::make\-Eq(), Utils\-::negate\-State\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Inc\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Ind\-::recompute\-Check\-C\-N\-F(), and Parallel\-Learner\-::trigger\-Explorer\-Restart().
+Referenced by Learn\-Synth\-Q\-B\-F\-::compute\-Counterexample\-S\-A\-T(), I\-F\-M13\-Synth\-::compute\-Winning\-Region(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Recy(), I\-F\-M13\-Synth\-::debug\-Check\-Invariants(), Learn\-Synth\-S\-A\-T\-::debug\-Check\-Win\-Reg(), Utils\-::debug\-Check\-Win\-Reg(), Learn\-Synth\-Q\-B\-F\-Ind\-::debug\-Check\-Win\-Reg\-Reach(), C\-N\-F\-Impl\-Extractor\-::extract\-Circuit(), Template\-Synth\-::find\-Win\-Reg\-C\-N\-F\-Templ(), Learning\-Impl\-Extractor\-::make\-Eq(), Utils\-::negate\-State\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Inc\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Ind\-::recompute\-Check\-C\-N\-F(), and Parallel\-Learner\-::trigger\-Explorer\-Restart().
 
 \hypertarget{classCNF_aa61ef2c2b49d4182993ccbd0e7877322}{\index{C\-N\-F@{C\-N\-F}!operator=@{operator=}}
 \index{operator=@{operator=}!CNF@{C\-N\-F}}
@@ -828,7 +862,7 @@ True if the two C\-N\-Fs are syntactically equivalent, False otherwise. If false
 \end{DoxyReturn}
 
 
-Definition at line 512 of file C\-N\-F.\-cpp.
+Definition at line 585 of file C\-N\-F.\-cpp.
 
 
 
@@ -847,7 +881,7 @@ Removes all duplicates from the \hyperlink{classCNF}{C\-N\-F}.
 
 This method does even more\-: it transforms the \hyperlink{classCNF}{C\-N\-F} into a set of sets, and back. This means that all clauses and literals in clauses will be sorted according to a certain criterion after executing this method. The reason for this method is\-: sometimes we would actually prefer a representation of clauses as sets of sets. 
 
-Definition at line 384 of file C\-N\-F.\-cpp.
+Definition at line 398 of file C\-N\-F.\-cpp.
 
 
 
@@ -883,7 +917,7 @@ References clauses\-\_\-, and M\-A\-S\-S\-E\-R\-T.
 
 
 
-Referenced by Utils\-::compress\-State\-C\-N\-F(), and Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses().
+Referenced by Utils\-::compress\-Next\-State\-C\-N\-F(), Utils\-::compress\-State\-C\-N\-F(), and Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses\-No\-Inc().
 
 \hypertarget{classCNF_ac7fef61f8d052bfca0f5cd8f80ca8e1d}{\index{C\-N\-F@{C\-N\-F}!remove\-Some\-Clause@{remove\-Some\-Clause}}
 \index{remove\-Some\-Clause@{remove\-Some\-Clause}!CNF@{C\-N\-F}}
@@ -907,13 +941,40 @@ Definition at line 222 of file C\-N\-F.\-cpp.
 
 References clauses\-\_\-.
 
-\hypertarget{classCNF_ac34e02c39a762ad696449a8c75d4e115}{\index{C\-N\-F@{C\-N\-F}!rename\-Vars@{rename\-Vars}}
+
+
+Referenced by Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses\-Inc().
+
+\hypertarget{classCNF_ab8fa6b10b2a85ff8f055d6bc926f2c44}{\index{C\-N\-F@{C\-N\-F}!rename\-Tmps@{rename\-Tmps}}
+\index{rename\-Tmps@{rename\-Tmps}!CNF@{C\-N\-F}}
+\subsubsection[{rename\-Tmps}]{\setlength{\rightskip}{0pt plus 5cm}void C\-N\-F\-::rename\-Tmps (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCNF_ab8fa6b10b2a85ff8f055d6bc926f2c44}
+
+
+Renames all temporary variables that occur in this \hyperlink{classCNF}{C\-N\-F} with fresh ones. 
+
+
+
+Definition at line 252 of file C\-N\-F.\-cpp.
+
+
+
+References append\-Vars\-To(), Var\-Manager\-::create\-Fresh\-Tmp\-Var(), Var\-Manager\-::get\-Info(), Var\-Info\-::get\-Kind(), Var\-Manager\-::instance(), rename\-Vars(), and Var\-Info\-::\-T\-M\-P.
+
+
+
+Referenced by Utils\-::debug\-Check\-Win\-Reg().
+
+\hypertarget{classCNF_a8c06c6e3d06a590c3d3e02d87221d431}{\index{C\-N\-F@{C\-N\-F}!rename\-Vars@{rename\-Vars}}
 \index{rename\-Vars@{rename\-Vars}!CNF@{C\-N\-F}}
 \subsubsection[{rename\-Vars}]{\setlength{\rightskip}{0pt plus 5cm}void C\-N\-F\-::rename\-Vars (
 \begin{DoxyParamCaption}
-\item[{const vector$<$ int $>$}]{rename\-\_\-map}
+\item[{const vector$<$ int $>$ \&}]{rename\-\_\-map}
 \end{DoxyParamCaption}
-)}}\label{classCNF_ac34e02c39a762ad696449a8c75d4e115}
+)}}\label{classCNF_a8c06c6e3d06a590c3d3e02d87221d431}
 
 
 Renames all variables in a \hyperlink{classCNF}{C\-N\-F}. 
@@ -925,7 +986,7 @@ Renames all variables in a \hyperlink{classCNF}{C\-N\-F}.
 \end{DoxyParams}
 
 
-Definition at line 455 of file C\-N\-F.\-cpp.
+Definition at line 528 of file C\-N\-F.\-cpp.
 
 
 
@@ -933,7 +994,7 @@ References clauses\-\_\-.
 
 
 
-Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), and Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2().
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Template\-Synth\-::exclude(), Templ\-Explorer\-::exclude(), rename\-Tmps(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), Par\-Extractor\-Worker\-::run\-S\-A\-T(), Par\-Extractor\-Worker\-::run\-S\-A\-T\-Dep(), and swap\-Present\-To\-Next().
 
 \hypertarget{classCNF_aefe201cf4139e1ed2f4dfdcb2f8efdae}{\index{C\-N\-F@{C\-N\-F}!save\-To\-File@{save\-To\-File}}
 \index{save\-To\-File@{save\-To\-File}!CNF@{C\-N\-F}}
@@ -955,7 +1016,7 @@ The \hyperlink{classCNF}{C\-N\-F} is stored in D\-I\-M\-A\-C\-S format, i.\-e., 
 \end{DoxyParams}
 
 
-Definition at line 320 of file C\-N\-F.\-cpp.
+Definition at line 334 of file C\-N\-F.\-cpp.
 
 
 
@@ -986,7 +1047,7 @@ Replaces a variable in the \hyperlink{classCNF}{C\-N\-F} by true or false.
 \end{DoxyParams}
 
 
-Definition at line 419 of file C\-N\-F.\-cpp.
+Definition at line 433 of file C\-N\-F.\-cpp.
 
 
 
@@ -994,7 +1055,7 @@ References clauses\-\_\-.
 
 
 
-Referenced by Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F(), and Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F\-Inc().
+Referenced by Template\-Synth\-::check(), Templ\-Explorer\-::check(), Template\-Synth\-::exclude(), Templ\-Explorer\-::exclude(), Learning\-Impl\-Extractor\-::run\-Learning\-Exp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F\-Inc(), Par\-Extractor\-Q\-B\-F\-Worker\-::run\-Q\-B\-F(), Par\-Extractor\-Worker\-::run\-S\-A\-T(), and Par\-Extractor\-Worker\-::run\-S\-A\-T\-Dep().
 
 \hypertarget{classCNF_a7a3345272f6c5332aa5118e80284f61f}{\index{C\-N\-F@{C\-N\-F}!simplify@{simplify}}
 \index{simplify@{simplify}!CNF@{C\-N\-F}}
@@ -1009,7 +1070,7 @@ Simplifies the \hyperlink{classCNF}{C\-N\-F} syntactically.
 
 The only simplification we do is to remove all clauses which form a superset of other clauses. 
 
-Definition at line 352 of file C\-N\-F.\-cpp.
+Definition at line 366 of file C\-N\-F.\-cpp.
 
 
 
@@ -1026,17 +1087,17 @@ References clauses\-\_\-, Utils\-::is\-Subset(), and L\-\_\-\-D\-B\-G.
 
 Replaces all current-\/state variables in the \hyperlink{classCNF}{C\-N\-F} with their next-\/state copy. 
 
-
+All other variables are kept as they are. In particular, auxiliary variables (e.\-g., introduced in Tseitin transformations) will N\-O\-T be renamed. 
 
 Definition at line 236 of file C\-N\-F.\-cpp.
 
 
 
-References clauses\-\_\-, Var\-Manager\-::get\-Max\-C\-N\-F\-Var(), Var\-Manager\-::get\-Vars\-Of\-Type(), Var\-Manager\-::instance(), M\-A\-S\-S\-E\-R\-T, Var\-Info\-::\-N\-E\-X\-T\-\_\-\-S\-T\-A\-T\-E, and Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E.
+References Var\-Manager\-::get\-Max\-C\-N\-F\-Var(), Var\-Manager\-::get\-Vars\-Of\-Type(), Var\-Manager\-::instance(), M\-A\-S\-S\-E\-R\-T, Var\-Info\-::\-N\-E\-X\-T\-\_\-\-S\-T\-A\-T\-E, Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, and rename\-Vars().
 
 
 
-Referenced by Learn\-Synth\-Q\-B\-F\-::compute\-Counterexample\-S\-A\-T(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Pool(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::consider\-New\-Info\-From\-Others(), Counter\-Gen\-S\-A\-T\-::consider\-New\-Info\-From\-Others(), I\-F\-M13\-Explorer\-::consider\-New\-Info\-From\-Others(), I\-F\-M13\-Synth\-::debug\-Check\-Invariants(), Learn\-Synth\-S\-A\-T\-::debug\-Check\-Win\-Reg(), Utils\-::debug\-Check\-Win\-Reg(), Learn\-Synth\-Q\-B\-F\-Ind\-::debug\-Check\-Win\-Reg\-Reach(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses(), Learn\-Synth\-Q\-B\-F\-Inc\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Ind\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Inc\-::recompute\-Gen\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::recompute\-Gen\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Ind\-::recompute\-Gen\-C\-N\-F(), Q\-B\-F\-Cert\-Impl\-Extractor\-::run(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F\-Inc(), and Parallel\-Learner\-::trigger\-Explorer\-Restart().
+Referenced by Utils\-::compress\-Next\-State\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::compute\-Counterexample\-S\-A\-T(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Pool(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Recy(), Clause\-Explorer\-S\-A\-T\-::consider\-New\-Info\-From\-Others(), Counter\-Gen\-S\-A\-T\-::consider\-New\-Info\-From\-Others(), I\-F\-M13\-Explorer\-::consider\-New\-Info\-From\-Others(), I\-F\-M13\-Synth\-::debug\-Check\-Invariants(), Learn\-Synth\-S\-A\-T\-::debug\-Check\-Win\-Reg(), Utils\-::debug\-Check\-Win\-Reg(), Learn\-Synth\-Q\-B\-F\-Ind\-::debug\-Check\-Win\-Reg\-Reach(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses\-Inc(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses\-No\-Inc(), Learn\-Synth\-Q\-B\-F\-Inc\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Ind\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Inc\-::recompute\-Gen\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::recompute\-Gen\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Ind\-::recompute\-Gen\-C\-N\-F(), Q\-B\-F\-Cert\-Impl\-Extractor\-::run(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F\-Inc(), Par\-Extractor\-Q\-B\-F\-Worker\-::run\-Q\-B\-F(), Par\-Extractor\-Worker\-::run\-S\-A\-T(), Par\-Extractor\-Worker\-::run\-S\-A\-T\-Dep(), and Parallel\-Learner\-::trigger\-Explorer\-Restart().
 
 \hypertarget{classCNF_a39c340549f7acdc1393a5572f3e007cf}{\index{C\-N\-F@{C\-N\-F}!swap\-With@{swap\-With}}
 \index{swap\-With@{swap\-With}!CNF@{C\-N\-F}}
@@ -1058,7 +1119,7 @@ This is cheaper than copying or assigning.
 \end{DoxyParams}
 
 
-Definition at line 286 of file C\-N\-F.\-cpp.
+Definition at line 294 of file C\-N\-F.\-cpp.
 
 
 
@@ -1066,7 +1127,33 @@ References clauses\-\_\-.
 
 
 
-Referenced by Parallel\-Learner\-::compute\-Previous\-Trans(), Learn\-Synth\-Q\-B\-F\-Ind\-::\-Learn\-Synth\-Q\-B\-F\-Ind(), Learn\-Synth\-S\-A\-T\-::\-Learn\-Synth\-S\-A\-T(), Learning\-Impl\-Extractor\-::make\-Eq(), I\-F\-M13\-Synth\-::propagate\-Blocked\-States(), and I\-F\-M13\-Explorer\-::propagate\-Blocked\-States().
+Referenced by Utils\-::compress\-Next\-State\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Ind\-::\-Learn\-Synth\-Q\-B\-F\-Ind(), Learn\-Synth\-S\-A\-T\-::\-Learn\-Synth\-S\-A\-T(), Par\-Extractor\-Worker\-::make\-Eq(), Learning\-Impl\-Extractor\-::make\-Eq(), Prev\-State\-Info\-::\-Prev\-State\-Info(), I\-F\-M13\-Synth\-::propagate\-Blocked\-States(), I\-F\-M13\-Explorer\-::propagate\-Blocked\-States(), Orig\-Univ\-Expander\-::univ\-Expand(), and Univ\-Expander\-::univ\-Expand().
+
+\hypertarget{classCNF_a52d1a7c0b807125871f9ac72655fb1d2}{\index{C\-N\-F@{C\-N\-F}!swap\-With@{swap\-With}}
+\index{swap\-With@{swap\-With}!CNF@{C\-N\-F}}
+\subsubsection[{swap\-With}]{\setlength{\rightskip}{0pt plus 5cm}void C\-N\-F\-::swap\-With (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-N\-F} \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{classCNF_a52d1a7c0b807125871f9ac72655fb1d2}
+
+
+Swaps the content of this \hyperlink{classCNF}{C\-N\-F} with the passed \hyperlink{classCNF}{C\-N\-F}. 
+
+This is cheaper than copying or assigning.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The cnf to swap content with. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 300 of file C\-N\-F.\-cpp.
+
+
+
+References clauses\-\_\-.
 
 \hypertarget{classCNF_ae15ec06cc22d6cda868febd1708d331b}{\index{C\-N\-F@{C\-N\-F}!to\-String@{to\-String}}
 \index{to\-String@{to\-String}!CNF@{C\-N\-F}}
@@ -1086,7 +1173,7 @@ A string representation of the \hyperlink{classCNF}{C\-N\-F} in D\-I\-M\-A\-C\-S
 \end{DoxyReturn}
 
 
-Definition at line 307 of file C\-N\-F.\-cpp.
+Definition at line 321 of file C\-N\-F.\-cpp.
 
 
 
@@ -1108,11 +1195,11 @@ The \hyperlink{classCNF}{C\-N\-F} represented as list of clauses (in turn being 
 
 
 
-Definition at line 395 of file C\-N\-F.\-h.
+Definition at line 423 of file C\-N\-F.\-h.
 
 
 
-Referenced by add1\-Lit\-Clause(), add2\-Lit\-Clause(), add3\-Lit\-Clause(), add4\-Lit\-Clause(), add\-Clause(), add\-Clause\-And\-Simplify(), add\-C\-N\-F(), add\-Neg\-Cube\-As\-Clause(), append\-Vars\-To(), clear(), C\-N\-F(), contains(), get\-Clauses(), get\-Nr\-Of\-Clauses(), get\-Nr\-Of\-Lits(), is\-Sat\-By(), negate(), operator=(), operator==(), remove\-Duplicates(), remove\-Smallest(), remove\-Some\-Clause(), rename\-Vars(), save\-To\-File(), set\-Var\-Value(), simplify(), swap\-Present\-To\-Next(), swap\-With(), and to\-String().
+Referenced by add1\-Lit\-Clause(), add2\-Lit\-Clause(), add3\-Lit\-Clause(), add4\-Lit\-Clause(), add\-Clause(), add\-Clause\-And\-Simplify(), add\-C\-N\-F(), add\-Neg\-Cube\-As\-Clause(), append\-Vars\-To(), clear(), C\-N\-F(), contains(), do\-Pure\-And\-Unit(), get\-Clauses(), get\-Nr\-Of\-Clauses(), get\-Nr\-Of\-Lits(), is\-Sat\-By(), negate(), operator=(), operator==(), remove\-Duplicates(), remove\-Smallest(), remove\-Some\-Clause(), rename\-Vars(), save\-To\-File(), set\-Var\-Value(), simplify(), swap\-With(), and to\-String().
 
 
 

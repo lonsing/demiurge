@@ -13,9 +13,12 @@ Contains many class declarations, all related to a parallelized implementation.
 {\ttfamily \#include $<$thread$>$}\\*
 {\ttfamily \#include $<$mutex$>$}\\*
 {\ttfamily \#include \char`\"{}Q\-B\-F\-Solver.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Univ\-Expander.\-h\char`\"{}}\\*
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
+class \hyperlink{classPrevStateInfo}{Prev\-State\-Info}
+\begin{DoxyCompactList}\small\item\em Just a container for previous-\/state information. \end{DoxyCompactList}\item 
 class \hyperlink{classParallelLearner}{Parallel\-Learner}
 \begin{DoxyCompactList}\small\item\em The coordinator of the parallelized implementation. \end{DoxyCompactList}\item 
 class \hyperlink{classClauseExplorerSAT}{Clause\-Explorer\-S\-A\-T}
@@ -25,12 +28,14 @@ class \hyperlink{classCounterGenSAT}{Counter\-Gen\-S\-A\-T}
 class \hyperlink{classClauseMinimizerQBF}{Clause\-Minimizer\-Q\-B\-F}
 \begin{DoxyCompactList}\small\item\em Uses a Q\-B\-F solver to minimize existing winning region clauses further. \end{DoxyCompactList}\item 
 class \hyperlink{classIFM13Explorer}{I\-F\-M13\-Explorer}
-\begin{DoxyCompactList}\small\item\em Implements the method of \hyperlink{classIFM13Synth}{I\-F\-M13\-Synth} in a parallelized way. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Implements the method of \hyperlink{classIFM13Synth}{I\-F\-M13\-Synth} in a parallelized way. \end{DoxyCompactList}\item 
+class \hyperlink{classTemplExplorer}{Templ\-Explorer}
+\begin{DoxyCompactList}\small\item\em Implements the method of \hyperlink{classTemplateSynth}{Template\-Synth} in a parallelized way. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Contains many class declarations, all related to a parallelized implementation. \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000006}{Todo}]Split this file into several files, one per class, and combine them in a namespace. \end{DoxyRefDesc}
+\item[\hyperlink{todo__todo000011}{Todo}]Split this file into several files, one per class, and combine them in a namespace. \end{DoxyRefDesc}
 
 
 Definition in file \hyperlink{ParallelLearner_8h_source}{Parallel\-Learner.\-h}.

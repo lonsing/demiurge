@@ -1,0 +1,756 @@
+\hypertarget{classTemplExplorer}{\section{Templ\-Explorer Class Reference}
+\label{classTemplExplorer}\index{Templ\-Explorer@{Templ\-Explorer}}
+}
+
+
+Implements the method of \hyperlink{classTemplateSynth}{Template\-Synth} in a parallelized way.  
+
+
+
+
+{\ttfamily \#include $<$Parallel\-Learner.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTemplExplorer_acce721366cf3d699777e02986745a3db}{Templ\-Explorer} (\hyperlink{classParallelLearner}{Parallel\-Learner} \&coordinator)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classTemplExplorer_a7ec547163f5b091983abd4f2e7cd4e6b}{$\sim$\-Templ\-Explorer} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classTemplExplorer_a3ed4eef95c846a368f58b0920f381287}{compute\-Winning\-Region} ()
+\begin{DoxyCompactList}\small\item\em Computes the winning region as instantiation of a generic template. \end{DoxyCompactList}\item 
+void \hyperlink{classTemplExplorer_ad41f5b786618075224aa12db204736fa}{notify\-New\-Win\-Reg\-Clause} (const vector$<$ int $>$ \&clause, int src)
+\begin{DoxyCompactList}\small\item\em Notifies this worker about a new winning region clause. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classTemplExplorer_a7b6fbb17618742f322184ce37002a7f0}{find\-Win\-Reg\-C\-N\-F\-Templ} (size\-\_\-t nr\-\_\-of\-\_\-clauses, size\-\_\-t timeout, bool use\-\_\-sat)
+\begin{DoxyCompactList}\small\item\em Computes the winning region as instantiation of a generic \hyperlink{classCNF}{C\-N\-F} template. \end{DoxyCompactList}\item 
+int \hyperlink{classTemplExplorer_a41d428d7ce65dbecb5d996b4957cc8c5}{synt\-Q\-B\-F} (const \hyperlink{classCNF}{C\-N\-F} \&win\-\_\-constr, int w1, int w2, vector$<$ int $>$ \&solution, size\-\_\-t timeout)
+\begin{DoxyCompactList}\small\item\em Resolves the template by calling a Q\-B\-F solver. \end{DoxyCompactList}\item 
+int \hyperlink{classTemplExplorer_adfba86d1d4bb40be2027c0cba3d447b3}{synt\-S\-A\-T} (const \hyperlink{classCNF}{C\-N\-F} \&win\-\_\-constr, int w1, int w2, vector$<$ int $>$ \&solution, size\-\_\-t timeout)
+\begin{DoxyCompactList}\small\item\em Resolves the template by calling a S\-A\-T solver in a C\-E\-G\-I\-S loop. \end{DoxyCompactList}\item 
+void \hyperlink{classTemplExplorer_ab6b8b0ac9960d113c9d326e633353d55}{exclude} (const vector$<$ int $>$ \&ce, const \hyperlink{classCNF}{C\-N\-F} \&gen, \hyperlink{classSatSolver}{Sat\-Solver} $\ast$solver)
+\begin{DoxyCompactList}\small\item\em A helper for the C\-E\-G\-I\-S loop of \hyperlink{classTemplExplorer_adfba86d1d4bb40be2027c0cba3d447b3}{synt\-S\-A\-T()}, eliminating a counterexample. \end{DoxyCompactList}\item 
+int \hyperlink{classTemplExplorer_a816e971f521911d1d6bba8059c5f89ec}{check} (const vector$<$ int $>$ \&cand, const \hyperlink{classCNF}{C\-N\-F} \&win\-\_\-constr, int w1, int w2, size\-\_\-t timeout, vector$<$ int $>$ \&ce)
+\begin{DoxyCompactList}\small\item\em A helper for the C\-E\-G\-I\-S loop of \hyperlink{classTemplExplorer_adfba86d1d4bb40be2027c0cba3d447b3}{synt\-S\-A\-T()}, checking if a candidate solution works. \end{DoxyCompactList}\item 
+int \hyperlink{classTemplExplorer_ae8e00b47f0819a24c4b419cd06d48377}{new\-Tmp} ()
+\begin{DoxyCompactList}\small\item\em Returns a fresh temporary variable. \end{DoxyCompactList}\item 
+int \hyperlink{classTemplExplorer_a9f5252557f8e464fbf60ac359f940a92}{new\-Param} ()
+\begin{DoxyCompactList}\small\item\em Returns a fresh template parameter. \end{DoxyCompactList}\item 
+void \hyperlink{classTemplExplorer_aca2e98c4fcbb3e86aea6b8692964e16c}{swap\-Present\-To\-Next} (vector$<$ int $>$ \&vec) const 
+\begin{DoxyCompactList}\small\item\em A helper that transforms all current state variables into next state variables. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classParallelLearner}{Parallel\-Learner} \& \hyperlink{classTemplExplorer_af660959dc5cc8c3ceb02389ee8f97753}{coordinator\-\_\-}
+\begin{DoxyCompactList}\small\item\em A reference to the coordinator. \end{DoxyCompactList}\item 
+\hyperlink{classCNF}{C\-N\-F} \hyperlink{classTemplExplorer_a0fc3d028e5dea077be40f039e559d3d8}{final\-\_\-winning\-\_\-region\-\_\-}
+\begin{DoxyCompactList}\small\item\em The resulting winning region. \end{DoxyCompactList}\item 
+mutex \hyperlink{classTemplExplorer_ae6051a12b617509a013318f60e51864b}{known\-\_\-clauses\-\_\-lock\-\_\-}
+\begin{DoxyCompactList}\small\item\em A lock that protects the \hyperlink{classTemplExplorer_af6b1ce533bff7ad2f4273e2cfc1ddc91}{known\-\_\-clauses\-\_\-} from race-\/conditions. \end{DoxyCompactList}\item 
+\hyperlink{classCNF}{C\-N\-F} \hyperlink{classTemplExplorer_af6b1ce533bff7ad2f4273e2cfc1ddc91}{known\-\_\-clauses\-\_\-}
+\begin{DoxyCompactList}\small\item\em The resulting winning region. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classTemplExplorer_afcddd3d7d156b0a8e8bc5d077245bd21}{s\-\_\-}
+\begin{DoxyCompactList}\small\item\em The list of present-\/state variables. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classTemplExplorer_ad04d957e4f909749c6aba0b31b877431}{i\-\_\-}
+\begin{DoxyCompactList}\small\item\em The list of (uncontrollable) input variables. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classTemplExplorer_a84a186d44f9ac9234dfeb9d5960951cf}{c\-\_\-}
+\begin{DoxyCompactList}\small\item\em The list of control signals (controllable input variables). \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classTemplExplorer_a58af33d991f5670d856dec1358e2faea}{n\-\_\-}
+\begin{DoxyCompactList}\small\item\em The list of next-\/state variables. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classTemplExplorer_ae3dcf416014ff2ec4120abbd9fba5149}{templ\-\_\-}
+\begin{DoxyCompactList}\small\item\em The list of template parameters. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classTemplExplorer_a78b116eb73648638c926f22f6a7a74fc}{orig\-\_\-tmp\-\_\-}
+\begin{DoxyCompactList}\small\item\em The original list of temporary variables. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classTemplExplorer_a2fdba5ec13386e390ca5bb2023afee9c}{current\-\_\-tmp\-\_\-}
+\begin{DoxyCompactList}\small\item\em The current list of temporary variables. \end{DoxyCompactList}\item 
+int \hyperlink{classTemplExplorer_a3561a52c7e33d2b49d09fab789824464}{orig\-\_\-next\-\_\-free\-\_\-var\-\_\-}
+\begin{DoxyCompactList}\small\item\em The initial next free \hyperlink{classCNF}{C\-N\-F} variable. \end{DoxyCompactList}\item 
+int \hyperlink{classTemplExplorer_ab0f61981e91a348778822f69ea1b58ee}{next\-\_\-free\-\_\-var\-\_\-}
+\begin{DoxyCompactList}\small\item\em The current next free \hyperlink{classCNF}{C\-N\-F} variable. \end{DoxyCompactList}\item 
+int \hyperlink{classTemplExplorer_ad538a0e66b7c0a52de76eea33da7db94}{p\-\_\-err\-\_\-}
+\begin{DoxyCompactList}\small\item\em The present-\/state error variable. \end{DoxyCompactList}\item 
+int \hyperlink{classTemplExplorer_af4e2d68befa5a10d76614da4cbd5f4f3}{n\-\_\-err\-\_\-}
+\begin{DoxyCompactList}\small\item\em The next-\/state error variable. \end{DoxyCompactList}\item 
+\hyperlink{Options_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{Point\-In\-Time} \hyperlink{classTemplExplorer_aa22a33001341d2557a0cc66dea2ac890}{start\-\_\-}
+\begin{DoxyCompactList}\small\item\em The point in time where the S\-A\-T-\/based method has been started. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classTemplExplorer_a5293c24738857c9af8228336dd675833}{pres\-\_\-to\-\_\-nxt\-\_\-}
+\begin{DoxyCompactList}\small\item\em A map from present-\/state variables to corresponding next state variables. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implements the method of \hyperlink{classTemplateSynth}{Template\-Synth} in a parallelized way. 
+
+This class basically implements the same method as \hyperlink{classTemplateSynth}{Template\-Synth}. It only has a few additional methods to communicate with other threads. It considers all clauses of the winning region found by other threads already. However, it does not produce any information for the other threads. It is an information sink.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classTemplateSynth}{Template\-Synth}
+\end{DoxySeeAlso}
+\begin{DoxyAuthor}{Author}
+Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-2.\-0 
+\end{DoxyVersion}
+
+
+Definition at line 1630 of file Parallel\-Learner.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classTemplExplorer_acce721366cf3d699777e02986745a3db}{\index{Templ\-Explorer@{Templ\-Explorer}!Templ\-Explorer@{Templ\-Explorer}}
+\index{Templ\-Explorer@{Templ\-Explorer}!TemplExplorer@{Templ\-Explorer}}
+\subsubsection[{Templ\-Explorer}]{\setlength{\rightskip}{0pt plus 5cm}Templ\-Explorer\-::\-Templ\-Explorer (
+\begin{DoxyParamCaption}
+\item[{{\bf Parallel\-Learner} \&}]{coordinator}
+\end{DoxyParamCaption}
+)}}\label{classTemplExplorer_acce721366cf3d699777e02986745a3db}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coordinator} & A reference to the coordinator. All communication to other worker-\/threads is done via the coordinator. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2226 of file Parallel\-Learner.\-cpp.
+
+
+
+References n\-\_\-, pres\-\_\-to\-\_\-nxt\-\_\-, and s\-\_\-.
+
+\hypertarget{classTemplExplorer_a7ec547163f5b091983abd4f2e7cd4e6b}{\index{Templ\-Explorer@{Templ\-Explorer}!$\sim$\-Templ\-Explorer@{$\sim$\-Templ\-Explorer}}
+\index{$\sim$\-Templ\-Explorer@{$\sim$\-Templ\-Explorer}!TemplExplorer@{Templ\-Explorer}}
+\subsubsection[{$\sim$\-Templ\-Explorer}]{\setlength{\rightskip}{0pt plus 5cm}Templ\-Explorer\-::$\sim$\-Templ\-Explorer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classTemplExplorer_a7ec547163f5b091983abd4f2e7cd4e6b}
+
+
+Destructor. 
+
+
+
+Definition at line 2250 of file Parallel\-Learner.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classTemplExplorer_a816e971f521911d1d6bba8059c5f89ec}{\index{Templ\-Explorer@{Templ\-Explorer}!check@{check}}
+\index{check@{check}!TemplExplorer@{Templ\-Explorer}}
+\subsubsection[{check}]{\setlength{\rightskip}{0pt plus 5cm}int Templ\-Explorer\-::check (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{cand, }
+\item[{const {\bf C\-N\-F} \&}]{win\-\_\-constr, }
+\item[{int}]{w1, }
+\item[{int}]{w2, }
+\item[{size\-\_\-t}]{timeout, }
+\item[{vector$<$ int $>$ \&}]{ce}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTemplExplorer_a816e971f521911d1d6bba8059c5f89ec}
+
+
+A helper for the C\-E\-G\-I\-S loop of \hyperlink{classTemplExplorer_adfba86d1d4bb40be2027c0cba3d447b3}{synt\-S\-A\-T()}, checking if a candidate solution works. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cand} & A canidate solution in the form of concrete values for the template parameters. \\
+\hline
+{\em win\-\_\-constr} & \hyperlink{classCNF}{C\-N\-F} constraints that constitute a correct solution for the winning region using the generic template. Essentially, three constraints are encoded in this \hyperlink{classCNF}{C\-N\-F}\-: 
+\begin{DoxyEnumerate}
+\item I(x) =$>$ W(x)\-: every initial state is contained in the winning region 
+\item W(x) =$>$ P(x)\-: every state of the winning region is safe 
+\item forall x,i\-: exists c,x'\-: W(x) =$>$ (T(x,i,c,x') \& W(x'))\-: from every state in the winning region we can enforce to stay in the winning region by setting the c-\/signals appropriately. 
+\end{DoxyEnumerate}\\
+\hline
+{\em w1} & The literal that represents the present-\/state copy of the winning region in win\-\_\-constr. \\
+\hline
+{\em w2} & The literal that represents the next-\/state copy of the winning region in win\-\_\-constr. \\
+\hline
+{\em timeout} & A time-\/out is seconds. \\
+\hline
+{\em ce} & An empty vector. If the candidate solution is incorrect, a counterexample in the form of concrete values for state and input variables for which we fall out of the winning region is stored in this vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value 1 the candidate solution is correct, the value 0 if the candicate solution is incorrect, 2 if a time-\/out was reached. 
+\end{DoxyReturn}
+
+
+Definition at line 2611 of file Parallel\-Learner.\-cpp.
+
+
+
+References C\-N\-F\-::add1\-Lit\-Clause(), C\-N\-F\-::add\-C\-N\-F(), c\-\_\-, coordinator\-\_\-, Stopwatch\-::get\-Real\-Time\-Sec(), Options\-::get\-S\-A\-T\-Solver(), A\-I\-G2\-C\-N\-F\-::get\-Trans(), i\-\_\-, Sat\-Solver\-::inc\-Add\-C\-N\-F(), Sat\-Solver\-::inc\-Add\-Neg\-Cube\-As\-Clause(), Sat\-Solver\-::inc\-Is\-Sat\-Model\-Or\-Core(), Options\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), M\-A\-S\-S\-E\-R\-T, Parallel\-Learner\-::result\-\_\-, s\-\_\-, C\-N\-F\-::set\-Var\-Value(), start\-\_\-, Sat\-Solver\-::start\-Incremental\-Session(), and U\-N\-K\-N\-O\-W\-N.
+
+
+
+Referenced by synt\-S\-A\-T().
+
+\hypertarget{classTemplExplorer_a3ed4eef95c846a368f58b0920f381287}{\index{Templ\-Explorer@{Templ\-Explorer}!compute\-Winning\-Region@{compute\-Winning\-Region}}
+\index{compute\-Winning\-Region@{compute\-Winning\-Region}!TemplExplorer@{Templ\-Explorer}}
+\subsubsection[{compute\-Winning\-Region}]{\setlength{\rightskip}{0pt plus 5cm}void Templ\-Explorer\-::compute\-Winning\-Region (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTemplExplorer_a3ed4eef95c846a368f58b0920f381287}
+
+
+Computes the winning region as instantiation of a generic template. 
+
+
+
+Definition at line 2256 of file Parallel\-Learner.\-cpp.
+
+
+
+References coordinator\-\_\-, final\-\_\-winning\-\_\-region\-\_\-, find\-Win\-Reg\-C\-N\-F\-Templ(), L\-\_\-\-L\-O\-G, R\-E\-A\-L\-I\-Z\-A\-B\-L\-E, Parallel\-Learner\-::result\-\_\-, U\-N\-K\-N\-O\-W\-N, Parallel\-Learner\-::winning\-\_\-region\-\_\-, and Parallel\-Learner\-::winning\-\_\-region\-\_\-lock\-\_\-.
+
+
+
+Referenced by Parallel\-Learner\-::run().
+
+\hypertarget{classTemplExplorer_ab6b8b0ac9960d113c9d326e633353d55}{\index{Templ\-Explorer@{Templ\-Explorer}!exclude@{exclude}}
+\index{exclude@{exclude}!TemplExplorer@{Templ\-Explorer}}
+\subsubsection[{exclude}]{\setlength{\rightskip}{0pt plus 5cm}void Templ\-Explorer\-::exclude (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{ce, }
+\item[{const {\bf C\-N\-F} \&}]{gen, }
+\item[{{\bf Sat\-Solver} $\ast$}]{solver}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTemplExplorer_ab6b8b0ac9960d113c9d326e633353d55}
+
+
+A helper for the C\-E\-G\-I\-S loop of \hyperlink{classTemplExplorer_adfba86d1d4bb40be2027c0cba3d447b3}{synt\-S\-A\-T()}, eliminating a counterexample. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ce} & A counterexample that has been computed previously by calling \hyperlink{classTemplExplorer_a816e971f521911d1d6bba8059c5f89ec}{check()}. A counterexample is simply a set of values for state variables and input variables for which we fall out of the winning region. \\
+\hline
+{\em gen} & The \hyperlink{classCNF}{C\-N\-F} containing the constraints for a correct winning region. We simply add constraints here saying that the winning region must now also work for the counterexample. \\
+\hline
+{\em solver} & The solver to which the constraints eliminating the counterexample shall be added. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2700 of file Parallel\-Learner.\-cpp.
+
+
+
+References C\-N\-F\-::append\-Vars\-To(), Utils\-::contains(), Sat\-Solver\-::inc\-Add\-C\-N\-F(), new\-Tmp(), C\-N\-F\-::rename\-Vars(), C\-N\-F\-::set\-Var\-Value(), and templ\-\_\-.
+
+
+
+Referenced by synt\-S\-A\-T().
+
+\hypertarget{classTemplExplorer_a7b6fbb17618742f322184ce37002a7f0}{\index{Templ\-Explorer@{Templ\-Explorer}!find\-Win\-Reg\-C\-N\-F\-Templ@{find\-Win\-Reg\-C\-N\-F\-Templ}}
+\index{find\-Win\-Reg\-C\-N\-F\-Templ@{find\-Win\-Reg\-C\-N\-F\-Templ}!TemplExplorer@{Templ\-Explorer}}
+\subsubsection[{find\-Win\-Reg\-C\-N\-F\-Templ}]{\setlength{\rightskip}{0pt plus 5cm}int Templ\-Explorer\-::find\-Win\-Reg\-C\-N\-F\-Templ (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{nr\-\_\-of\-\_\-clauses, }
+\item[{size\-\_\-t}]{timeout, }
+\item[{bool}]{use\-\_\-sat}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTemplExplorer_a7b6fbb17618742f322184ce37002a7f0}
+
+
+Computes the winning region as instantiation of a generic \hyperlink{classCNF}{C\-N\-F} template. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nr\-\_\-of\-\_\-clauses} & The number N of clauses to use in the template. \\
+\hline
+{\em timeout} & A time-\/out is seconds. \\
+\hline
+{\em use\-\_\-sat} & True if a S\-A\-T solver shall be used, false if a Q\-B\-F solver shall be used. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value 0 if no winning region exists, the value 1 if a winning region was successfully computed, the value 2 if we had a time-\/out. 
+\end{DoxyReturn}
+
+
+Definition at line 2299 of file Parallel\-Learner.\-cpp.
+
+
+
+References C\-N\-F\-::add1\-Lit\-Clause(), C\-N\-F\-::add2\-Lit\-Clause(), C\-N\-F\-::add4\-Lit\-Clause(), C\-N\-F\-::add\-Clause(), C\-N\-F\-::add\-C\-N\-F(), Utils\-::compress\-State\-C\-N\-F(), current\-\_\-tmp\-\_\-, final\-\_\-winning\-\_\-region\-\_\-, C\-N\-F\-::get\-Clauses(), C\-N\-F\-::get\-Nr\-Of\-Clauses(), known\-\_\-clauses\-\_\-, known\-\_\-clauses\-\_\-lock\-\_\-, n\-\_\-, n\-\_\-err\-\_\-, new\-Param(), new\-Tmp(), next\-\_\-free\-\_\-var\-\_\-, orig\-\_\-next\-\_\-free\-\_\-var\-\_\-, orig\-\_\-tmp\-\_\-, p\-\_\-err\-\_\-, s\-\_\-, swap\-Present\-To\-Next(), synt\-Q\-B\-F(), synt\-S\-A\-T(), and templ\-\_\-.
+
+
+
+Referenced by compute\-Winning\-Region().
+
+\hypertarget{classTemplExplorer_a9f5252557f8e464fbf60ac359f940a92}{\index{Templ\-Explorer@{Templ\-Explorer}!new\-Param@{new\-Param}}
+\index{new\-Param@{new\-Param}!TemplExplorer@{Templ\-Explorer}}
+\subsubsection[{new\-Param}]{\setlength{\rightskip}{0pt plus 5cm}int Templ\-Explorer\-::new\-Param (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTemplExplorer_a9f5252557f8e464fbf60ac359f940a92}
+
+
+Returns a fresh template parameter. 
+
+\begin{DoxyReturn}{Returns}
+A fresh template parameter. 
+\end{DoxyReturn}
+
+
+Definition at line 2735 of file Parallel\-Learner.\-cpp.
+
+
+
+References next\-\_\-free\-\_\-var\-\_\-, and templ\-\_\-.
+
+
+
+Referenced by find\-Win\-Reg\-C\-N\-F\-Templ().
+
+\hypertarget{classTemplExplorer_ae8e00b47f0819a24c4b419cd06d48377}{\index{Templ\-Explorer@{Templ\-Explorer}!new\-Tmp@{new\-Tmp}}
+\index{new\-Tmp@{new\-Tmp}!TemplExplorer@{Templ\-Explorer}}
+\subsubsection[{new\-Tmp}]{\setlength{\rightskip}{0pt plus 5cm}int Templ\-Explorer\-::new\-Tmp (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTemplExplorer_ae8e00b47f0819a24c4b419cd06d48377}
+
+
+Returns a fresh temporary variable. 
+
+\begin{DoxyReturn}{Returns}
+A fresh temporary variable. 
+\end{DoxyReturn}
+
+
+Definition at line 2726 of file Parallel\-Learner.\-cpp.
+
+
+
+References current\-\_\-tmp\-\_\-, and next\-\_\-free\-\_\-var\-\_\-.
+
+
+
+Referenced by exclude(), and find\-Win\-Reg\-C\-N\-F\-Templ().
+
+\hypertarget{classTemplExplorer_ad41f5b786618075224aa12db204736fa}{\index{Templ\-Explorer@{Templ\-Explorer}!notify\-New\-Win\-Reg\-Clause@{notify\-New\-Win\-Reg\-Clause}}
+\index{notify\-New\-Win\-Reg\-Clause@{notify\-New\-Win\-Reg\-Clause}!TemplExplorer@{Templ\-Explorer}}
+\subsubsection[{notify\-New\-Win\-Reg\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}void Templ\-Explorer\-::notify\-New\-Win\-Reg\-Clause (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{clause, }
+\item[{int}]{src}
+\end{DoxyParamCaption}
+)}}\label{classTemplExplorer_ad41f5b786618075224aa12db204736fa}
+
+
+Notifies this worker about a new winning region clause. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clause} & The new clause that has been discovered. \\
+\hline
+{\em src} & An integer number defining which kind of worker-\/thread discovered the clause. At the moment, this information is ignored. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2291 of file Parallel\-Learner.\-cpp.
+
+
+
+References C\-N\-F\-::add\-Clause(), known\-\_\-clauses\-\_\-, and known\-\_\-clauses\-\_\-lock\-\_\-.
+
+\hypertarget{classTemplExplorer_aca2e98c4fcbb3e86aea6b8692964e16c}{\index{Templ\-Explorer@{Templ\-Explorer}!swap\-Present\-To\-Next@{swap\-Present\-To\-Next}}
+\index{swap\-Present\-To\-Next@{swap\-Present\-To\-Next}!TemplExplorer@{Templ\-Explorer}}
+\subsubsection[{swap\-Present\-To\-Next}]{\setlength{\rightskip}{0pt plus 5cm}void Templ\-Explorer\-::swap\-Present\-To\-Next (
+\begin{DoxyParamCaption}
+\item[{vector$<$ int $>$ \&}]{vec}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTemplExplorer_aca2e98c4fcbb3e86aea6b8692964e16c}
+
+
+A helper that transforms all current state variables into next state variables. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & A vector of state variables or their negation. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2744 of file Parallel\-Learner.\-cpp.
+
+
+
+References pres\-\_\-to\-\_\-nxt\-\_\-.
+
+
+
+Referenced by find\-Win\-Reg\-C\-N\-F\-Templ().
+
+\hypertarget{classTemplExplorer_a41d428d7ce65dbecb5d996b4957cc8c5}{\index{Templ\-Explorer@{Templ\-Explorer}!synt\-Q\-B\-F@{synt\-Q\-B\-F}}
+\index{synt\-Q\-B\-F@{synt\-Q\-B\-F}!TemplExplorer@{Templ\-Explorer}}
+\subsubsection[{synt\-Q\-B\-F}]{\setlength{\rightskip}{0pt plus 5cm}int Templ\-Explorer\-::synt\-Q\-B\-F (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{win\-\_\-constr, }
+\item[{int}]{w1, }
+\item[{int}]{w2, }
+\item[{vector$<$ int $>$ \&}]{solution, }
+\item[{size\-\_\-t}]{timeout}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTemplExplorer_a41d428d7ce65dbecb5d996b4957cc8c5}
+
+
+Resolves the template by calling a Q\-B\-F solver. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em win\-\_\-constr} & \hyperlink{classCNF}{C\-N\-F} constraints that constitute a correct solution for the winning region using the generic template. Essentially, three constraints are encoded in this \hyperlink{classCNF}{C\-N\-F}\-: 
+\begin{DoxyEnumerate}
+\item I(x) =$>$ W(x)\-: every initial state is contained in the winning region 
+\item W(x) =$>$ P(x)\-: every state of the winning region is safe 
+\item forall x,i\-: exists c,x'\-: W(x) =$>$ (T(x,i,c,x') \& W(x'))\-: from every state in the winning region we can enforce to stay in the winning region by setting the c-\/signals appropriately. 
+\end{DoxyEnumerate}\\
+\hline
+{\em w1} & The literal that represents the present-\/state copy of the winning region in win\-\_\-constr. \\
+\hline
+{\em w2} & The literal that represents the next-\/state copy of the winning region in win\-\_\-constr. \\
+\hline
+{\em solution} & An empty vector. If a solution exists, then the corresponding template parameter values are written into this vector. \\
+\hline
+{\em timeout} & A time-\/out is seconds. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value 0 if no winning region exists, the value 1 if a winning region was successfully computed, the value 2 if we had a time-\/out. 
+\end{DoxyReturn}
+
+
+Definition at line 2502 of file Parallel\-Learner.\-cpp.
+
+
+
+References Q\-B\-F\-Solver\-::\-A, C\-N\-F\-::add\-C\-N\-F(), c\-\_\-, current\-\_\-tmp\-\_\-, Q\-B\-F\-Solver\-::\-E, A\-I\-G2\-C\-N\-F\-::get\-T(), A\-I\-G2\-C\-N\-F\-::get\-Trans\-Eq\-T(), i\-\_\-, A\-I\-G2\-C\-N\-F\-::instance(), Ext\-Q\-B\-F\-Solver\-::is\-Sat\-Model(), n\-\_\-, s\-\_\-, and templ\-\_\-.
+
+
+
+Referenced by find\-Win\-Reg\-C\-N\-F\-Templ().
+
+\hypertarget{classTemplExplorer_adfba86d1d4bb40be2027c0cba3d447b3}{\index{Templ\-Explorer@{Templ\-Explorer}!synt\-S\-A\-T@{synt\-S\-A\-T}}
+\index{synt\-S\-A\-T@{synt\-S\-A\-T}!TemplExplorer@{Templ\-Explorer}}
+\subsubsection[{synt\-S\-A\-T}]{\setlength{\rightskip}{0pt plus 5cm}int Templ\-Explorer\-::synt\-S\-A\-T (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{win\-\_\-constr, }
+\item[{int}]{w1, }
+\item[{int}]{w2, }
+\item[{vector$<$ int $>$ \&}]{solution, }
+\item[{size\-\_\-t}]{timeout}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTemplExplorer_adfba86d1d4bb40be2027c0cba3d447b3}
+
+
+Resolves the template by calling a S\-A\-T solver in a C\-E\-G\-I\-S loop. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em win\-\_\-constr} & \hyperlink{classCNF}{C\-N\-F} constraints that constitute a correct solution for the winning region using the generic template. Essentially, three constraints are encoded in this \hyperlink{classCNF}{C\-N\-F}\-: 
+\begin{DoxyEnumerate}
+\item I(x) =$>$ W(x)\-: every initial state is contained in the winning region 
+\item W(x) =$>$ P(x)\-: every state of the winning region is safe 
+\item forall x,i\-: exists c,x'\-: W(x) =$>$ (T(x,i,c,x') \& W(x'))\-: from every state in the winning region we can enforce to stay in the winning region by setting the c-\/signals appropriately. 
+\end{DoxyEnumerate}\\
+\hline
+{\em w1} & The literal that represents the present-\/state copy of the winning region in win\-\_\-constr. \\
+\hline
+{\em w2} & The literal that represents the next-\/state copy of the winning region in win\-\_\-constr. \\
+\hline
+{\em solution} & An empty vector. If a solution exists, then the corresponding template parameter values are written into this vector. \\
+\hline
+{\em timeout} & A time-\/out is seconds. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value 0 if no winning region exists, the value 1 if a winning region was successfully computed, the value 2 if we had a time-\/out. 
+\end{DoxyReturn}
+
+
+Definition at line 2544 of file Parallel\-Learner.\-cpp.
+
+
+
+References C\-N\-F\-::add\-C\-N\-F(), check(), coordinator\-\_\-, exclude(), Stopwatch\-::get\-Real\-Time\-Sec(), Options\-::get\-S\-A\-T\-Solver(), A\-I\-G2\-C\-N\-F\-::get\-Trans(), i\-\_\-, Sat\-Solver\-::inc\-Is\-Sat\-Model\-Or\-Core(), Options\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), Utils\-::negate\-Literals(), Parallel\-Learner\-::result\-\_\-, s\-\_\-, Stopwatch\-::start(), start\-\_\-, Sat\-Solver\-::start\-Incremental\-Session(), templ\-\_\-, and U\-N\-K\-N\-O\-W\-N.
+
+
+
+Referenced by find\-Win\-Reg\-C\-N\-F\-Templ().
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classTemplExplorer_a84a186d44f9ac9234dfeb9d5960951cf}{\index{Templ\-Explorer@{Templ\-Explorer}!c\-\_\-@{c\-\_\-}}
+\index{c\-\_\-@{c\-\_\-}!TemplExplorer@{Templ\-Explorer}}
+\subsubsection[{c\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ Templ\-Explorer\-::c\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTemplExplorer_a84a186d44f9ac9234dfeb9d5960951cf}
+
+
+The list of control signals (controllable input variables). 
+
+This list is often used, so we keep it as a field to increase readability of the code. 
+
+Definition at line 1832 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by check(), and synt\-Q\-B\-F().
+
+\hypertarget{classTemplExplorer_af660959dc5cc8c3ceb02389ee8f97753}{\index{Templ\-Explorer@{Templ\-Explorer}!coordinator\-\_\-@{coordinator\-\_\-}}
+\index{coordinator\-\_\-@{coordinator\-\_\-}!TemplExplorer@{Templ\-Explorer}}
+\subsubsection[{coordinator\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Parallel\-Learner}\& Templ\-Explorer\-::coordinator\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTemplExplorer_af660959dc5cc8c3ceb02389ee8f97753}
+
+
+A reference to the coordinator. 
+
+All communication to other worker-\/threads is done via the coordinator. 
+
+Definition at line 1793 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by check(), compute\-Winning\-Region(), and synt\-S\-A\-T().
+
+\hypertarget{classTemplExplorer_a2fdba5ec13386e390ca5bb2023afee9c}{\index{Templ\-Explorer@{Templ\-Explorer}!current\-\_\-tmp\-\_\-@{current\-\_\-tmp\-\_\-}}
+\index{current\-\_\-tmp\-\_\-@{current\-\_\-tmp\-\_\-}!TemplExplorer@{Templ\-Explorer}}
+\subsubsection[{current\-\_\-tmp\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ Templ\-Explorer\-::current\-\_\-tmp\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTemplExplorer_a2fdba5ec13386e390ca5bb2023afee9c}
+
+
+The current list of temporary variables. 
+
+We do not want to access the global \hyperlink{classVarManager}{Var\-Manager} (to avoid too much locking), so we keep everything local. 
+
+Definition at line 1863 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by find\-Win\-Reg\-C\-N\-F\-Templ(), new\-Tmp(), and synt\-Q\-B\-F().
+
+\hypertarget{classTemplExplorer_a0fc3d028e5dea077be40f039e559d3d8}{\index{Templ\-Explorer@{Templ\-Explorer}!final\-\_\-winning\-\_\-region\-\_\-@{final\-\_\-winning\-\_\-region\-\_\-}}
+\index{final\-\_\-winning\-\_\-region\-\_\-@{final\-\_\-winning\-\_\-region\-\_\-}!TemplExplorer@{Templ\-Explorer}}
+\subsubsection[{final\-\_\-winning\-\_\-region\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} Templ\-Explorer\-::final\-\_\-winning\-\_\-region\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTemplExplorer_a0fc3d028e5dea077be40f039e559d3d8}
+
+
+The resulting winning region. 
+
+
+
+Definition at line 1798 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by compute\-Winning\-Region(), and find\-Win\-Reg\-C\-N\-F\-Templ().
+
+\hypertarget{classTemplExplorer_ad04d957e4f909749c6aba0b31b877431}{\index{Templ\-Explorer@{Templ\-Explorer}!i\-\_\-@{i\-\_\-}}
+\index{i\-\_\-@{i\-\_\-}!TemplExplorer@{Templ\-Explorer}}
+\subsubsection[{i\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ Templ\-Explorer\-::i\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTemplExplorer_ad04d957e4f909749c6aba0b31b877431}
+
+
+The list of (uncontrollable) input variables. 
+
+This list is often used, so we keep it as a field to increase readability of the code. 
+
+Definition at line 1825 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by check(), synt\-Q\-B\-F(), and synt\-S\-A\-T().
+
+\hypertarget{classTemplExplorer_af6b1ce533bff7ad2f4273e2cfc1ddc91}{\index{Templ\-Explorer@{Templ\-Explorer}!known\-\_\-clauses\-\_\-@{known\-\_\-clauses\-\_\-}}
+\index{known\-\_\-clauses\-\_\-@{known\-\_\-clauses\-\_\-}!TemplExplorer@{Templ\-Explorer}}
+\subsubsection[{known\-\_\-clauses\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} Templ\-Explorer\-::known\-\_\-clauses\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTemplExplorer_af6b1ce533bff7ad2f4273e2cfc1ddc91}
+
+
+The resulting winning region. 
+
+
+
+Definition at line 1811 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by find\-Win\-Reg\-C\-N\-F\-Templ(), and notify\-New\-Win\-Reg\-Clause().
+
+\hypertarget{classTemplExplorer_ae6051a12b617509a013318f60e51864b}{\index{Templ\-Explorer@{Templ\-Explorer}!known\-\_\-clauses\-\_\-lock\-\_\-@{known\-\_\-clauses\-\_\-lock\-\_\-}}
+\index{known\-\_\-clauses\-\_\-lock\-\_\-@{known\-\_\-clauses\-\_\-lock\-\_\-}!TemplExplorer@{Templ\-Explorer}}
+\subsubsection[{known\-\_\-clauses\-\_\-lock\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}mutex Templ\-Explorer\-::known\-\_\-clauses\-\_\-lock\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTemplExplorer_ae6051a12b617509a013318f60e51864b}
+
+
+A lock that protects the \hyperlink{classTemplExplorer_af6b1ce533bff7ad2f4273e2cfc1ddc91}{known\-\_\-clauses\-\_\-} from race-\/conditions. 
+
+Many worker-\/threads modify the \hyperlink{classTemplExplorer_af6b1ce533bff7ad2f4273e2cfc1ddc91}{known\-\_\-clauses\-\_\-} (add new ones). This lock ensures that only one thread is modifying or reading the \hyperlink{classTemplExplorer_af6b1ce533bff7ad2f4273e2cfc1ddc91}{known\-\_\-clauses\-\_\-} at one time. 
+
+Definition at line 1806 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by find\-Win\-Reg\-C\-N\-F\-Templ(), and notify\-New\-Win\-Reg\-Clause().
+
+\hypertarget{classTemplExplorer_a58af33d991f5670d856dec1358e2faea}{\index{Templ\-Explorer@{Templ\-Explorer}!n\-\_\-@{n\-\_\-}}
+\index{n\-\_\-@{n\-\_\-}!TemplExplorer@{Templ\-Explorer}}
+\subsubsection[{n\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ Templ\-Explorer\-::n\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTemplExplorer_a58af33d991f5670d856dec1358e2faea}
+
+
+The list of next-\/state variables. 
+
+This list is often used, so we keep it as a field to increase readability of the code. 
+
+Definition at line 1839 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by find\-Win\-Reg\-C\-N\-F\-Templ(), synt\-Q\-B\-F(), and Templ\-Explorer().
+
+\hypertarget{classTemplExplorer_af4e2d68befa5a10d76614da4cbd5f4f3}{\index{Templ\-Explorer@{Templ\-Explorer}!n\-\_\-err\-\_\-@{n\-\_\-err\-\_\-}}
+\index{n\-\_\-err\-\_\-@{n\-\_\-err\-\_\-}!TemplExplorer@{Templ\-Explorer}}
+\subsubsection[{n\-\_\-err\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int Templ\-Explorer\-::n\-\_\-err\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTemplExplorer_af4e2d68befa5a10d76614da4cbd5f4f3}
+
+
+The next-\/state error variable. 
+
+It is stored here locally so that we do not always have to access the global variable manager (which may cause a concurrency issue). 
+
+Definition at line 1895 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by find\-Win\-Reg\-C\-N\-F\-Templ().
+
+\hypertarget{classTemplExplorer_ab0f61981e91a348778822f69ea1b58ee}{\index{Templ\-Explorer@{Templ\-Explorer}!next\-\_\-free\-\_\-var\-\_\-@{next\-\_\-free\-\_\-var\-\_\-}}
+\index{next\-\_\-free\-\_\-var\-\_\-@{next\-\_\-free\-\_\-var\-\_\-}!TemplExplorer@{Templ\-Explorer}}
+\subsubsection[{next\-\_\-free\-\_\-var\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int Templ\-Explorer\-::next\-\_\-free\-\_\-var\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTemplExplorer_ab0f61981e91a348778822f69ea1b58ee}
+
+
+The current next free \hyperlink{classCNF}{C\-N\-F} variable. 
+
+We do not want to access the global \hyperlink{classVarManager}{Var\-Manager} (to avoid too much locking), so we keep everything local. 
+
+Definition at line 1879 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by find\-Win\-Reg\-C\-N\-F\-Templ(), new\-Param(), and new\-Tmp().
+
+\hypertarget{classTemplExplorer_a3561a52c7e33d2b49d09fab789824464}{\index{Templ\-Explorer@{Templ\-Explorer}!orig\-\_\-next\-\_\-free\-\_\-var\-\_\-@{orig\-\_\-next\-\_\-free\-\_\-var\-\_\-}}
+\index{orig\-\_\-next\-\_\-free\-\_\-var\-\_\-@{orig\-\_\-next\-\_\-free\-\_\-var\-\_\-}!TemplExplorer@{Templ\-Explorer}}
+\subsubsection[{orig\-\_\-next\-\_\-free\-\_\-var\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int Templ\-Explorer\-::orig\-\_\-next\-\_\-free\-\_\-var\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTemplExplorer_a3561a52c7e33d2b49d09fab789824464}
+
+
+The initial next free \hyperlink{classCNF}{C\-N\-F} variable. 
+
+We do not want to access the global \hyperlink{classVarManager}{Var\-Manager} (to avoid too much locking), so we keep everything local. 
+
+Definition at line 1871 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by find\-Win\-Reg\-C\-N\-F\-Templ().
+
+\hypertarget{classTemplExplorer_a78b116eb73648638c926f22f6a7a74fc}{\index{Templ\-Explorer@{Templ\-Explorer}!orig\-\_\-tmp\-\_\-@{orig\-\_\-tmp\-\_\-}}
+\index{orig\-\_\-tmp\-\_\-@{orig\-\_\-tmp\-\_\-}!TemplExplorer@{Templ\-Explorer}}
+\subsubsection[{orig\-\_\-tmp\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ Templ\-Explorer\-::orig\-\_\-tmp\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTemplExplorer_a78b116eb73648638c926f22f6a7a74fc}
+
+
+The original list of temporary variables. 
+
+We do not want to access the global \hyperlink{classVarManager}{Var\-Manager} (to avoid too much locking), so we keep everything local. 
+
+Definition at line 1855 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by find\-Win\-Reg\-C\-N\-F\-Templ().
+
+\hypertarget{classTemplExplorer_ad538a0e66b7c0a52de76eea33da7db94}{\index{Templ\-Explorer@{Templ\-Explorer}!p\-\_\-err\-\_\-@{p\-\_\-err\-\_\-}}
+\index{p\-\_\-err\-\_\-@{p\-\_\-err\-\_\-}!TemplExplorer@{Templ\-Explorer}}
+\subsubsection[{p\-\_\-err\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int Templ\-Explorer\-::p\-\_\-err\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTemplExplorer_ad538a0e66b7c0a52de76eea33da7db94}
+
+
+The present-\/state error variable. 
+
+It is stored here locally so that we do not always have to access the global variable manager (which may cause a concurrency issue). 
+
+Definition at line 1887 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by find\-Win\-Reg\-C\-N\-F\-Templ().
+
+\hypertarget{classTemplExplorer_a5293c24738857c9af8228336dd675833}{\index{Templ\-Explorer@{Templ\-Explorer}!pres\-\_\-to\-\_\-nxt\-\_\-@{pres\-\_\-to\-\_\-nxt\-\_\-}}
+\index{pres\-\_\-to\-\_\-nxt\-\_\-@{pres\-\_\-to\-\_\-nxt\-\_\-}!TemplExplorer@{Templ\-Explorer}}
+\subsubsection[{pres\-\_\-to\-\_\-nxt\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ Templ\-Explorer\-::pres\-\_\-to\-\_\-nxt\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTemplExplorer_a5293c24738857c9af8228336dd675833}
+
+
+A map from present-\/state variables to corresponding next state variables. 
+
+
+
+Definition at line 1908 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by swap\-Present\-To\-Next(), and Templ\-Explorer().
+
+\hypertarget{classTemplExplorer_afcddd3d7d156b0a8e8bc5d077245bd21}{\index{Templ\-Explorer@{Templ\-Explorer}!s\-\_\-@{s\-\_\-}}
+\index{s\-\_\-@{s\-\_\-}!TemplExplorer@{Templ\-Explorer}}
+\subsubsection[{s\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ Templ\-Explorer\-::s\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTemplExplorer_afcddd3d7d156b0a8e8bc5d077245bd21}
+
+
+The list of present-\/state variables. 
+
+This list is often used, so we keep it as a field to increase readability of the code. 
+
+Definition at line 1818 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by check(), find\-Win\-Reg\-C\-N\-F\-Templ(), synt\-Q\-B\-F(), synt\-S\-A\-T(), and Templ\-Explorer().
+
+\hypertarget{classTemplExplorer_aa22a33001341d2557a0cc66dea2ac890}{\index{Templ\-Explorer@{Templ\-Explorer}!start\-\_\-@{start\-\_\-}}
+\index{start\-\_\-@{start\-\_\-}!TemplExplorer@{Templ\-Explorer}}
+\subsubsection[{start\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point\-In\-Time} Templ\-Explorer\-::start\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTemplExplorer_aa22a33001341d2557a0cc66dea2ac890}
+
+
+The point in time where the S\-A\-T-\/based method has been started. 
+
+This is used for a heuristic that defines when to abort the S\-A\-T-\/based exploration. 
+
+Definition at line 1902 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by check(), and synt\-S\-A\-T().
+
+\hypertarget{classTemplExplorer_ae3dcf416014ff2ec4120abbd9fba5149}{\index{Templ\-Explorer@{Templ\-Explorer}!templ\-\_\-@{templ\-\_\-}}
+\index{templ\-\_\-@{templ\-\_\-}!TemplExplorer@{Templ\-Explorer}}
+\subsubsection[{templ\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ Templ\-Explorer\-::templ\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTemplExplorer_ae3dcf416014ff2ec4120abbd9fba5149}
+
+
+The list of template parameters. 
+
+We do not want to access the global \hyperlink{classVarManager}{Var\-Manager} (to avoid too much locking), so we keep everything local. 
+
+Definition at line 1847 of file Parallel\-Learner.\-h.
+
+
+
+Referenced by exclude(), find\-Win\-Reg\-C\-N\-F\-Templ(), new\-Param(), synt\-Q\-B\-F(), and synt\-S\-A\-T().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{ParallelLearner_8h}{Parallel\-Learner.\-h}\item 
+src/\hyperlink{ParallelLearner_8cpp}{Parallel\-Learner.\-cpp}\end{DoxyCompactItemize}

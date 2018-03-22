@@ -81,7 +81,7 @@ class CNFImplExtractor;
 /// Finally the QBFCertImplExtractor is used to extract a circuit.
 ///
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.1.0
+/// @version 1.2.0
 class LearnSynthSAT : public BackEnd
 {
 public:
@@ -136,6 +136,10 @@ public:
 ///       counterexamples, just like LearnSynthQBFInd (optimization 'RG')
 ///  <li> a variant which uses inductive reachability reasoning also in the computation of
 ///       counterexamples, just like LearnSynthQBFInd (optimization 'RG' and 'RC')
+///  <li> the standard method, but performing universal expansion on certain variables
+///       in order to reduce the number of iterations
+///  <li> the standard method with optimization RG and a universal expansion on certain
+///       variables in order to reduce the number of iterations
 /// </ul>
 ///
 /// @return True if the specification was realizable, false otherwise.
@@ -152,6 +156,8 @@ protected:
 ///  <li> #computeWinningRegionPlain()
 ///  <li> #computeWinningRegionRG()
 ///  <li> #computeWinningRegionRGRC()
+///  <li> #computeWinningRegionPlainExp()
+///  <li> #computeWinningRegionRGExp()
 /// </ul>
 ///
 /// @return True if the specification was realizable, false otherwise.
@@ -168,17 +174,24 @@ protected:
 
 // -------------------------------------------------------------------------------------------
 ///
-/// @brief Computes the winning region, exploiting temporary varibles of the tran. rel.
+/// @brief Like #computeWinningRegionPlain() but using universal expansion.
 ///
-/// @note This method is experimalal.
 /// @return True if the specification was realizable, false otherwise.
-  bool computeWinningRegionPlainDep();
-  
+  bool computeWinningRegionPlainExp();
+
 // -------------------------------------------------------------------------------------------
 ///
-/// @brief Exploits temporary varibles of the tran. rel. even more.
+/// @brief Computes the winning region, exploiting temporary variables of the tran. rel.
 ///
-/// @note This method is experimalal.
+/// @note This method is experimental.
+/// @return True if the specification was realizable, false otherwise.
+  bool computeWinningRegionPlainDep();
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Exploits temporary variables of the tran. rel. even more.
+///
+/// @note This method is experimental.
 /// @return True if the specification was realizable, false otherwise.
   bool computeWinningRegionPlainDep2();
 
@@ -190,10 +203,24 @@ protected:
 /// generalization query is modified so a state that prevents generalization must be either
 /// initial or have a predecessor in F. Otherwise it is unreachable and we do not care.
 /// This means that we can remove states that are winning for the protagonist from the
-/// winning region of they are unreachalbe in the final implementation.
+/// winning region of they are unreachable in the final implementation.
 ///
 /// @return True if the specification was realizable, false otherwise.
   bool computeWinningRegionRG();
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Like #computeWinningRegionRG() but using universal expansion.
+///
+/// @return True if the specification was realizable, false otherwise.
+  bool computeWinningRegionRGExp();
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Compute a winning region with optimization RG and U-clause recycling.
+///
+/// @return True if the specification was realizable, false otherwise.
+  bool computeWinningRegionRGRecy();
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -207,6 +234,14 @@ protected:
 ///
 /// @return True if the specification was realizable, false otherwise.
   bool computeWinningRegionRGRC();
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Like #computeWinningRegionRGRC() but using universal expansion.
+///
+/// @note This method is experimental.
+/// @return True if the specification was realizable, false otherwise.
+  bool computeWinningRegionRGRCExp();
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -327,6 +362,60 @@ protected:
 ///
 /// It will be deleted by this class (in the destructor).
   CNFImplExtractor *impl_extractor_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The list of present-state variables.
+///
+/// This list is often used, so we keep it as a field to increase readability of the code.
+  const vector<int> &s_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The list of (uncontrollable) input variables.
+///
+/// This list is often used, so we keep it as a field to increase readability of the code.
+  const vector<int> &i_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The list of control signals (controllable input variables).
+///
+/// This list is often used, so we keep it as a field to increase readability of the code.
+  const vector<int> &c_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The list of next-state variables.
+///
+/// This list is often used, so we keep it as a field to increase readability of the code.
+  const vector<int> &n_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The list of state-variables and input-variables.
+///
+/// This vector contains the CNF version of the state variables and the uncontrollable input
+/// variables. This vector of variables is used often, and thus stored here as a field.
+  vector<int> si_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The list of state-, input-, and control variables.
+///
+/// This vector contains the CNF version of the state variables, the uncontrollable input
+/// variables, and the controllable input variables. This vector of variables is used often,
+/// and thus stored here as a field.
+  vector<int> sic_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The list of state-, input-, control-, and next-state-variables.
+///
+/// This vector contains the CNF version of the state variables, the uncontrollable input
+/// variables, the controllable input variables, and the next-state variables. This vector of
+/// variables is used often, and thus stored here as a field.
+  vector<int> sicn_;
 
 
 private:

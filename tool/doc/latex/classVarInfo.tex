@@ -43,7 +43,7 @@ int \hyperlink{classVarInfo_aefe8fc94158fe9e4d05c091176f14232}{get\-Lit\-In\-C\-
 \begin{DoxyCompactList}\small\item\em Returns the index with which this variable occurs in the C\-N\-Fs. \end{DoxyCompactList}\item 
 int \hyperlink{classVarInfo_ae3d28b77b1310b015c82774a08af4d94}{get\-Lit\-In\-A\-I\-G} () const 
 \begin{DoxyCompactList}\small\item\em Returns the index with which this variable occurs in the A\-I\-G\-E\-R input file. \end{DoxyCompactList}\item 
-const string \& \hyperlink{classVarInfo_a98fdcef8b931d3973365047c245085e3}{get\-Name} () const 
+const string \hyperlink{classVarInfo_a71df037bdccad6ab1c49236bd86ced44}{get\-Name} () const 
 \begin{DoxyCompactList}\small\item\em Returns the name of the variable. \end{DoxyCompactList}\item 
 void \hyperlink{classVarInfo_abe5617dbfaf5778b4f4d24c58177f950}{set\-Kind} (\hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cf}{Var\-Kind} kind)
 \begin{DoxyCompactList}\small\item\em Sets the kind of the variable. \end{DoxyCompactList}\item 
@@ -52,14 +52,14 @@ void \hyperlink{classVarInfo_a8c34d435c8364a03a2002a01fa5424e6}{set\-Name} (cons
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
+string \hyperlink{classVarInfo_a82a85d0c811c2e5501401bd42463371b}{name\-\_\-}
+\begin{DoxyCompactList}\small\item\em The name of the variable. \end{DoxyCompactList}\item 
 \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cf}{Var\-Kind} \hyperlink{classVarInfo_aabed2d542c10abb83514e4592913b431}{var\-\_\-kind\-\_\-}
 \begin{DoxyCompactList}\small\item\em The kind of the variable. \end{DoxyCompactList}\item 
 int \hyperlink{classVarInfo_aa9937f8bae554d520b194c4d97df4b64}{lit\-\_\-in\-\_\-cnf\-\_\-}
 \begin{DoxyCompactList}\small\item\em The index with which this variable occurs in the C\-N\-Fs. \end{DoxyCompactList}\item 
 int \hyperlink{classVarInfo_ae0bf3d35787614131a642bea83d30555}{lit\-\_\-in\-\_\-aig\-\_\-}
-\begin{DoxyCompactList}\small\item\em The index with which this variable occurs in the A\-I\-G\-E\-R input file. \end{DoxyCompactList}\item 
-string \hyperlink{classVarInfo_a82a85d0c811c2e5501401bd42463371b}{name\-\_\-}
-\begin{DoxyCompactList}\small\item\em The name of the variable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The index with which this variable occurs in the A\-I\-G\-E\-R input file. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -71,7 +71,7 @@ At the moment, a variable has a kind, a name (optional), an index with which id 
 Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\-1.\-0 
+1.\-2.\-0 
 \end{DoxyVersion}
 
 
@@ -88,7 +88,7 @@ Definition at line 46 of file Var\-Info.\-h.
 A type for the kind of variable. 
 
 \begin{Desc}
-\item[Enumerator\-: ]\par
+\item[Enumerator]\par
 \begin{description}
 \index{P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E@{P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E}!Var\-Info@{Var\-Info}}\index{Var\-Info@{Var\-Info}!P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E@{P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E}}\item[{\em 
 \hypertarget{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cfad06079e472b753ace9a0656b033586de}{P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E}\label{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cfad06079e472b753ace9a0656b033586de}
@@ -106,7 +106,6 @@ A type for the kind of variable.
 \hypertarget{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cfa055ef2ea16e83d02bc2b9f2f7f7666df}{P\-R\-E\-V}\label{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cfa055ef2ea16e83d02bc2b9f2f7f7666df}
 }]The value for previous-\/time-\/step variables. This kind is used for the previous-\/state copy of state variables but also inputs and control signals. At the moment, it is mainly used for optimization R\-G and R\-C in \hyperlink{classLearnSynthSAT}{Learn\-Synth\-S\-A\-T} and \hyperlink{classLearnSynthQBFInd}{Learn\-Synth\-Q\-B\-F\-Ind}. \end{description}
 \end{Desc}
-
 
 
 Definition at line 53 of file Var\-Info.\-h.
@@ -167,7 +166,7 @@ Constructor without name.
 \end{DoxyParams}
 
 
-Definition at line 43 of file Var\-Info.\-cpp.
+Definition at line 45 of file Var\-Info.\-cpp.
 
 \hypertarget{classVarInfo_ad3ef7901d6edf26f384c49112278f941}{\index{Var\-Info@{Var\-Info}!Var\-Info@{Var\-Info}}
 \index{Var\-Info@{Var\-Info}!VarInfo@{Var\-Info}}
@@ -189,7 +188,7 @@ Makes a copy of the \hyperlink{classVarInfo}{Var\-Info}.
 \end{DoxyParams}
 
 
-Definition at line 53 of file Var\-Info.\-cpp.
+Definition at line 57 of file Var\-Info.\-cpp.
 
 \hypertarget{classVarInfo_a9d079886fcf428cfcf20edee1d98230f}{\index{Var\-Info@{Var\-Info}!$\sim$\-Var\-Info@{$\sim$\-Var\-Info}}
 \index{$\sim$\-Var\-Info@{$\sim$\-Var\-Info}!VarInfo@{Var\-Info}}
@@ -204,7 +203,7 @@ Destructor.
 
 
 
-Definition at line 73 of file Var\-Info.\-cpp.
+Definition at line 81 of file Var\-Info.\-cpp.
 
 
 
@@ -225,7 +224,7 @@ The kind of this variable.
 \end{DoxyReturn}
 
 
-Definition at line 79 of file Var\-Info.\-cpp.
+Definition at line 87 of file Var\-Info.\-cpp.
 
 
 
@@ -233,7 +232,7 @@ References var\-\_\-kind\-\_\-.
 
 
 
-Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::restrict\-To\-States(), Learn\-Synth\-Q\-B\-F\-::restrict\-To\-States(), Learn\-Synth\-Q\-B\-F\-Ind\-::restrict\-To\-States(), and Var\-Manager\-::to\-String().
+Referenced by Template\-Synth\-::exclude(), C\-N\-F\-::rename\-Tmps(), Learn\-Synth\-Q\-B\-F\-Inc\-::restrict\-To\-States(), Learn\-Synth\-Q\-B\-F\-::restrict\-To\-States(), Learn\-Synth\-Q\-B\-F\-Ind\-::restrict\-To\-States(), and Var\-Manager\-::to\-String().
 
 \hypertarget{classVarInfo_ae3d28b77b1310b015c82774a08af4d94}{\index{Var\-Info@{Var\-Info}!get\-Lit\-In\-A\-I\-G@{get\-Lit\-In\-A\-I\-G}}
 \index{get\-Lit\-In\-A\-I\-G@{get\-Lit\-In\-A\-I\-G}!VarInfo@{Var\-Info}}
@@ -251,7 +250,7 @@ The index with which this variable occurs in the A\-I\-G\-E\-R input file.
 \end{DoxyReturn}
 
 
-Definition at line 91 of file Var\-Info.\-cpp.
+Definition at line 99 of file Var\-Info.\-cpp.
 
 
 
@@ -259,7 +258,7 @@ References lit\-\_\-in\-\_\-aig\-\_\-.
 
 
 
-Referenced by C\-N\-F\-Impl\-Extractor\-::insert\-Into\-Spec(), Learning\-Impl\-Extractor\-::\-Learning\-Impl\-Extractor(), and Var\-Manager\-::to\-String().
+Referenced by C\-N\-F\-Impl\-Extractor\-::insert\-Into\-Spec(), Learning\-Impl\-Extractor\-::\-Learning\-Impl\-Extractor(), Par\-Extractor\-Worker\-::\-Par\-Extractor\-Worker(), and Var\-Manager\-::to\-String().
 
 \hypertarget{classVarInfo_aefe8fc94158fe9e4d05c091176f14232}{\index{Var\-Info@{Var\-Info}!get\-Lit\-In\-C\-N\-F@{get\-Lit\-In\-C\-N\-F}}
 \index{get\-Lit\-In\-C\-N\-F@{get\-Lit\-In\-C\-N\-F}!VarInfo@{Var\-Info}}
@@ -277,7 +276,7 @@ The index with which this variable occurs in the C\-N\-Fs.
 \end{DoxyReturn}
 
 
-Definition at line 85 of file Var\-Info.\-cpp.
+Definition at line 93 of file Var\-Info.\-cpp.
 
 
 
@@ -287,13 +286,13 @@ References lit\-\_\-in\-\_\-cnf\-\_\-.
 
 Referenced by operator$<$(), and Var\-Manager\-::to\-String().
 
-\hypertarget{classVarInfo_a98fdcef8b931d3973365047c245085e3}{\index{Var\-Info@{Var\-Info}!get\-Name@{get\-Name}}
+\hypertarget{classVarInfo_a71df037bdccad6ab1c49236bd86ced44}{\index{Var\-Info@{Var\-Info}!get\-Name@{get\-Name}}
 \index{get\-Name@{get\-Name}!VarInfo@{Var\-Info}}
-\subsubsection[{get\-Name}]{\setlength{\rightskip}{0pt plus 5cm}const string \& Var\-Info\-::get\-Name (
+\subsubsection[{get\-Name}]{\setlength{\rightskip}{0pt plus 5cm}const string Var\-Info\-::get\-Name (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const}}\label{classVarInfo_a98fdcef8b931d3973365047c245085e3}
+) const}}\label{classVarInfo_a71df037bdccad6ab1c49236bd86ced44}
 
 
 Returns the name of the variable. 
@@ -303,7 +302,7 @@ The name of the variable. If no name was set, the returned string is empty.
 \end{DoxyReturn}
 
 
-Definition at line 97 of file Var\-Info.\-cpp.
+Definition at line 105 of file Var\-Info.\-cpp.
 
 
 
@@ -311,7 +310,7 @@ References name\-\_\-.
 
 
 
-Referenced by Learning\-Impl\-Extractor\-::\-Learning\-Impl\-Extractor(), and Var\-Manager\-::to\-String().
+Referenced by Learning\-Impl\-Extractor\-::\-Learning\-Impl\-Extractor(), Par\-Extractor\-Worker\-::\-Par\-Extractor\-Worker(), and Var\-Manager\-::to\-String().
 
 \hypertarget{classVarInfo_a63ac268804444dc9579fb5c39af6ce5b}{\index{Var\-Info@{Var\-Info}!operator=@{operator=}}
 \index{operator=@{operator=}!VarInfo@{Var\-Info}}
@@ -336,7 +335,7 @@ The result of the assignment, i.\-e, $\ast$this.
 \end{DoxyReturn}
 
 
-Definition at line 63 of file Var\-Info.\-cpp.
+Definition at line 69 of file Var\-Info.\-cpp.
 
 
 
@@ -360,7 +359,7 @@ Sets the kind of the variable.
 \end{DoxyParams}
 
 
-Definition at line 103 of file Var\-Info.\-cpp.
+Definition at line 115 of file Var\-Info.\-cpp.
 
 
 
@@ -384,7 +383,7 @@ Sets the name of the variable.
 \end{DoxyParams}
 
 
-Definition at line 109 of file Var\-Info.\-cpp.
+Definition at line 121 of file Var\-Info.\-cpp.
 
 
 
@@ -402,7 +401,7 @@ The index with which this variable occurs in the A\-I\-G\-E\-R input file.
 
 
 
-Definition at line 200 of file Var\-Info.\-h.
+Definition at line 211 of file Var\-Info.\-h.
 
 
 
@@ -417,7 +416,7 @@ The index with which this variable occurs in the C\-N\-Fs.
 
 
 
-Definition at line 195 of file Var\-Info.\-h.
+Definition at line 206 of file Var\-Info.\-h.
 
 
 
@@ -430,9 +429,9 @@ Referenced by get\-Lit\-In\-C\-N\-F(), and operator=().
 
 The name of the variable. 
 
-This can be an empty string if the variable has no name. 
+This can be an empty string if the variable has no name. The name is only available in debug mode to save memory (we may have millions of variables). 
 
-Definition at line 207 of file Var\-Info.\-h.
+Definition at line 195 of file Var\-Info.\-h.
 
 
 
@@ -447,7 +446,7 @@ The kind of the variable.
 
 
 
-Definition at line 190 of file Var\-Info.\-h.
+Definition at line 201 of file Var\-Info.\-h.
 
 
 

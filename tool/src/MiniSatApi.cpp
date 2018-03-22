@@ -228,7 +228,7 @@ void MiniSatApi::clearIncrementalSession()
 // -------------------------------------------------------------------------------------------
 void MiniSatApi::incAddCNF(const CNF &cnf)
 {
-  MASSERT(!incr_stack_.empty() && incr_stack_.back() != NULL, "No open session.");
+  DASSERT(!incr_stack_.empty() && incr_stack_.back() != NULL, "No open session.");
   if(use_push_)
     incr_stack_cnfs_.back()->addCNF(cnf);
   Solver *solver = incr_stack_.back();
@@ -245,7 +245,7 @@ void MiniSatApi::incAddCNF(const CNF &cnf)
 // -------------------------------------------------------------------------------------------
 void MiniSatApi::incAddClause(const vector<int> &clause)
 {
-  MASSERT(!incr_stack_.empty() && incr_stack_.back() != NULL, "No open session.");
+  DASSERT(!incr_stack_.empty() && incr_stack_.back() != NULL, "No open session.");
   if(use_push_)
     incr_stack_cnfs_.back()->addClause(clause);
   Solver *solver = incr_stack_.back();
@@ -258,7 +258,7 @@ void MiniSatApi::incAddClause(const vector<int> &clause)
 // -------------------------------------------------------------------------------------------
 void MiniSatApi::incAddUnitClause(int lit)
 {
-  MASSERT(!incr_stack_.empty() && incr_stack_.back() != NULL, "No open session.");
+  DASSERT(!incr_stack_.empty() && incr_stack_.back() != NULL, "No open session.");
   if(use_push_)
     incr_stack_cnfs_.back()->add1LitClause(lit);
   Solver *solver = incr_stack_.back();
@@ -268,7 +268,7 @@ void MiniSatApi::incAddUnitClause(int lit)
 // -------------------------------------------------------------------------------------------
 void MiniSatApi::incAdd2LitClause(int lit1, int lit2)
 {
-  MASSERT(!incr_stack_.empty() && incr_stack_.back() != NULL, "No open session.");
+  DASSERT(!incr_stack_.empty() && incr_stack_.back() != NULL, "No open session.");
   if(use_push_)
     incr_stack_cnfs_.back()->add2LitClause(lit1, lit2);
   Solver *solver = incr_stack_.back();
@@ -278,7 +278,7 @@ void MiniSatApi::incAdd2LitClause(int lit1, int lit2)
 // -------------------------------------------------------------------------------------------
 void MiniSatApi::incAdd3LitClause(int lit1, int lit2, int lit3)
 {
-  MASSERT(!incr_stack_.empty() && incr_stack_.back() != NULL, "No open session.");
+  DASSERT(!incr_stack_.empty() && incr_stack_.back() != NULL, "No open session.");
   if(use_push_)
     incr_stack_cnfs_.back()->add3LitClause(lit1, lit2, lit3);
   Solver *solver = incr_stack_.back();
@@ -286,9 +286,24 @@ void MiniSatApi::incAdd3LitClause(int lit1, int lit2, int lit3)
 }
 
 // -------------------------------------------------------------------------------------------
+void MiniSatApi::incAdd4LitClause(int lit1, int lit2, int lit3, int lit4)
+{
+  DASSERT(!incr_stack_.empty() && incr_stack_.back() != NULL, "No open session.");
+  if(use_push_)
+    incr_stack_cnfs_.back()->add4LitClause(lit1, lit2, lit3, lit4);
+  Solver *solver = incr_stack_.back();
+  vec<Lit> m_clause(4);
+  m_clause[0] = c2m(*solver, lit1);
+  m_clause[1] = c2m(*solver, lit2);
+  m_clause[2] = c2m(*solver, lit3);
+  m_clause[3] = c2m(*solver, lit4);
+  solver->addClause(m_clause);
+}
+
+// -------------------------------------------------------------------------------------------
 void MiniSatApi::incAddCube(const vector<int> &cube)
 {
-  MASSERT(!incr_stack_.empty() && incr_stack_.back() != NULL, "No open session.");
+  DASSERT(!incr_stack_.empty() && incr_stack_.back() != NULL, "No open session.");
   if(use_push_)
     incr_stack_cnfs_.back()->addCube(cube);
   Solver *solver = incr_stack_.back();
@@ -299,7 +314,7 @@ void MiniSatApi::incAddCube(const vector<int> &cube)
 // -------------------------------------------------------------------------------------------
 void MiniSatApi::incAddNegCubeAsClause(const vector<int> &cube)
 {
-  MASSERT(!incr_stack_.empty() && incr_stack_.back() != NULL, "No open session.");
+  DASSERT(!incr_stack_.empty() && incr_stack_.back() != NULL, "No open session.");
   if(use_push_)
     incr_stack_cnfs_.back()->addNegCubeAsClause(cube);
   Solver *solver = incr_stack_.back();
@@ -312,14 +327,14 @@ void MiniSatApi::incAddNegCubeAsClause(const vector<int> &cube)
 // -------------------------------------------------------------------------------------------
 bool MiniSatApi::incIsSat()
 {
-  MASSERT(!incr_stack_.empty() && incr_stack_.back() != NULL, "No open session.");
+  DASSERT(!incr_stack_.empty() && incr_stack_.back() != NULL, "No open session.");
   return incr_stack_.back()->solve();
 }
 
 // -------------------------------------------------------------------------------------------
 bool MiniSatApi::incIsSat(const vector<int> &assumptions)
 {
-  MASSERT(!incr_stack_.empty() && incr_stack_.back() != NULL, "No open session.");
+  DASSERT(!incr_stack_.empty() && incr_stack_.back() != NULL, "No open session.");
   Solver *solver = incr_stack_.back();
   vec<Lit> ass(assumptions.size());
   for(size_t ass_cnt = 0; ass_cnt < assumptions.size(); ++ass_cnt)
@@ -332,7 +347,7 @@ bool MiniSatApi::incIsSatModelOrCore(const vector<int> &assumptions,
                                      const vector<int> &vars_of_interest,
                                      vector<int> &model_or_core)
 {
-  MASSERT(!incr_stack_.empty() && incr_stack_.back() != NULL, "No open session.");
+  DASSERT(!incr_stack_.empty() && incr_stack_.back() != NULL, "No open session.");
   Solver *solver = incr_stack_.back();
   vec<Lit> ass(assumptions.size());
   for(size_t ass_cnt = 0; ass_cnt < assumptions.size(); ++ass_cnt)
@@ -391,7 +406,7 @@ bool MiniSatApi::incIsSatModelOrCore(const vector<int> &core_assumptions,
                                      const vector<int> &vars_of_interest,
                                      vector<int> &model_or_core)
 {
-  MASSERT(!incr_stack_.empty() && incr_stack_.back() != NULL, "No open session.");
+  DASSERT(!incr_stack_.empty() && incr_stack_.back() != NULL, "No open session.");
   Solver *solver = incr_stack_.back();
   vec<Lit> ass(core_assumptions.size() + more_assumptions.size());
   for(size_t ass_cnt = 0; ass_cnt < more_assumptions.size(); ++ass_cnt)
@@ -462,8 +477,8 @@ bool MiniSatApi::incIsSatModelOrCore(const vector<int> &core_assumptions,
 // -------------------------------------------------------------------------------------------
 void MiniSatApi::incPush()
 {
-  MASSERT(!incr_stack_.empty() && incr_stack_.back() != NULL, "No open session.");
-  MASSERT(use_push_, "Using Push and Pop must be declared in startIncrementalSession.")
+  DASSERT(!incr_stack_.empty() && incr_stack_.back() != NULL, "No open session.");
+  DASSERT(use_push_, "Using Push and Pop must be declared in startIncrementalSession.")
 
   // TODO: not very efficient:
   Solver *copy = new Solver();
@@ -482,7 +497,7 @@ void MiniSatApi::incPush()
 // -------------------------------------------------------------------------------------------
 void MiniSatApi::incPop()
 {
-  MASSERT(!incr_stack_.empty() && incr_stack_.back() != NULL, "No open session.");
+  DASSERT(!incr_stack_.empty() && incr_stack_.back() != NULL, "No open session.");
   delete incr_stack_.back();
   incr_stack_.pop_back();
   delete incr_stack_cnfs_.back();

@@ -1,0 +1,318 @@
+\hypertarget{classRareqsApi}{\section{Rareqs\-Api Class Reference}
+\label{classRareqsApi}\index{Rareqs\-Api@{Rareqs\-Api}}
+}
+
+
+Interfaces the R\-A\-Re\-Q\-S Q\-B\-F-\/solver via its A\-P\-I.  
+
+
+
+
+{\ttfamily \#include $<$Rareqs\-Api.\-h$>$}
+
+Inheritance diagram for Rareqs\-Api\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classRareqsApi}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} \{ \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7a090ab4a5b262710ccd80e97d72f9a7b3}{E}, 
+\hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7afd6518d5d985aa8346ac071e4c0d8ee0}{A}
+ \}
+\begin{DoxyCompactList}\small\item\em A type for the different kinds of quantifiers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classRareqsApi_a3f268111001fef7865ca04d2741e827d}{Rareqs\-Api} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classRareqsApi_a8bd8702c81463bff36b4b9db8cd055bf}{$\sim$\-Rareqs\-Api} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classRareqsApi_a90fa7a7affc2a12a287cea15d7f651c7}{is\-Sat} (const vector$<$ pair$<$ \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cf}{Var\-Info\-::\-Var\-Kind}, \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} $>$ $>$ \&quantifier\-\_\-prefix, const \hyperlink{classCNF}{C\-N\-F} \&cnf)
+\begin{DoxyCompactList}\small\item\em Checks if a given Q\-B\-F is satisfiable (with quantification over variable kinds). \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classRareqsApi_a090cdbd8cfe16e475c29240a50f690fe}{is\-Sat} (const vector$<$ pair$<$ vector$<$ int $>$, \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} $>$ $>$ \&quantifier\-\_\-prefix, const \hyperlink{classCNF}{C\-N\-F} \&cnf)
+\begin{DoxyCompactList}\small\item\em Checks if a given Q\-B\-F is satisfiable (with quantification over variable sets). \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classRareqsApi_a243411cd4a5cc417f9fc12089b8381b8}{is\-Sat\-Model} (const vector$<$ pair$<$ \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cf}{Var\-Info\-::\-Var\-Kind}, \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} $>$ $>$ \&quantifier\-\_\-prefix, const \hyperlink{classCNF}{C\-N\-F} \&cnf, vector$<$ int $>$ \&model)
+\begin{DoxyCompactList}\small\item\em Checks satisfiability and extracts a model (quantifying over variable kinds). \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classRareqsApi_a70eb2a4b5b5e5493482c6c54ea00b295}{is\-Sat\-Model} (const vector$<$ pair$<$ vector$<$ int $>$, \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} $>$ $>$ \&quantifier\-\_\-prefix, const \hyperlink{classCNF}{C\-N\-F} \&cnf, vector$<$ int $>$ \&model)
+\begin{DoxyCompactList}\small\item\em Checks satisfiability and extracts a model (quantifying over variable sets). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classRareqsApi_a7abf07d0ea8969b079883ac26e79ebce}{Rareqs\-Api} (const \hyperlink{classRareqsApi}{Rareqs\-Api} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classRareqsApi}{Rareqs\-Api} \& \hyperlink{classRareqsApi_ad2f293116e022201865c297735b43071}{operator=} (const \hyperlink{classRareqsApi}{Rareqs\-Api} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interfaces the R\-A\-Re\-Q\-S Q\-B\-F-\/solver via its A\-P\-I. 
+
+This class represents an interface to the Q\-B\-F-\/solver R\-A\-Re\-Q\-S (see \href{http://sat.inesc-id.pt/~mikolas/sw/areqs/}{\tt http\-://sat.\-inesc-\/id.\-pt/$\sim$mikolas/sw/areqs/}). For a given Quantified Boolean formula (a \hyperlink{classCNF}{C\-N\-F} with a quantifier prefix), this class is able to determine satisfiability. Furthermore, in case of satisfiability, it can extract satisfying assignments for variables quantified existentially on the outermost level.
+
+\begin{DoxyAuthor}{Author}
+Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-2.\-0 
+\end{DoxyVersion}
+
+
+Definition at line 49 of file Rareqs\-Api.\-h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{\index{Rareqs\-Api@{Rareqs\-Api}!Quant@{Quant}}
+\index{Quant@{Quant}!RareqsApi@{Rareqs\-Api}}
+\subsubsection[{Quant}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Q\-B\-F\-Solver\-::\-Quant}\hspace{0.3cm}{\ttfamily [inherited]}}}\label{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}
+
+
+A type for the different kinds of quantifiers. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{E@{E}!Rareqs\-Api@{Rareqs\-Api}}\index{Rareqs\-Api@{Rareqs\-Api}!E@{E}}\item[{\em 
+\hypertarget{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7a090ab4a5b262710ccd80e97d72f9a7b3}{E}\label{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7a090ab4a5b262710ccd80e97d72f9a7b3}
+}]The value for existential quantification. \index{A@{A}!Rareqs\-Api@{Rareqs\-Api}}\index{Rareqs\-Api@{Rareqs\-Api}!A@{A}}\item[{\em 
+\hypertarget{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7afd6518d5d985aa8346ac071e4c0d8ee0}{A}\label{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7afd6518d5d985aa8346ac071e4c0d8ee0}
+}]The value for universal quantification. \end{description}
+\end{Desc}
+
+
+Definition at line 56 of file Q\-B\-F\-Solver.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classRareqsApi_a3f268111001fef7865ca04d2741e827d}{\index{Rareqs\-Api@{Rareqs\-Api}!Rareqs\-Api@{Rareqs\-Api}}
+\index{Rareqs\-Api@{Rareqs\-Api}!RareqsApi@{Rareqs\-Api}}
+\subsubsection[{Rareqs\-Api}]{\setlength{\rightskip}{0pt plus 5cm}Rareqs\-Api\-::\-Rareqs\-Api (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRareqsApi_a3f268111001fef7865ca04d2741e827d}
+
+
+Constructor. 
+
+
+
+Definition at line 57 of file Rareqs\-Api.\-cpp.
+
+\hypertarget{classRareqsApi_a8bd8702c81463bff36b4b9db8cd055bf}{\index{Rareqs\-Api@{Rareqs\-Api}!$\sim$\-Rareqs\-Api@{$\sim$\-Rareqs\-Api}}
+\index{$\sim$\-Rareqs\-Api@{$\sim$\-Rareqs\-Api}!RareqsApi@{Rareqs\-Api}}
+\subsubsection[{$\sim$\-Rareqs\-Api}]{\setlength{\rightskip}{0pt plus 5cm}Rareqs\-Api\-::$\sim$\-Rareqs\-Api (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classRareqsApi_a8bd8702c81463bff36b4b9db8cd055bf}
+
+
+Destructor. 
+
+
+
+Definition at line 63 of file Rareqs\-Api.\-cpp.
+
+\hypertarget{classRareqsApi_a7abf07d0ea8969b079883ac26e79ebce}{\index{Rareqs\-Api@{Rareqs\-Api}!Rareqs\-Api@{Rareqs\-Api}}
+\index{Rareqs\-Api@{Rareqs\-Api}!RareqsApi@{Rareqs\-Api}}
+\subsubsection[{Rareqs\-Api}]{\setlength{\rightskip}{0pt plus 5cm}Rareqs\-Api\-::\-Rareqs\-Api (
+\begin{DoxyParamCaption}
+\item[{const {\bf Rareqs\-Api} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classRareqsApi_a7abf07d0ea8969b079883ac26e79ebce}
+
+
+Copy constructor. 
+
+The copy constructor is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classRareqsApi_a90fa7a7affc2a12a287cea15d7f651c7}{\index{Rareqs\-Api@{Rareqs\-Api}!is\-Sat@{is\-Sat}}
+\index{is\-Sat@{is\-Sat}!RareqsApi@{Rareqs\-Api}}
+\subsubsection[{is\-Sat}]{\setlength{\rightskip}{0pt plus 5cm}bool Rareqs\-Api\-::is\-Sat (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ pair$<$ {\bf Var\-Info\-::\-Var\-Kind}, {\bf Quant} $>$ $>$ \&}]{quantifier\-\_\-prefix, }
+\item[{const {\bf C\-N\-F} \&}]{cnf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classRareqsApi_a90fa7a7affc2a12a287cea15d7f651c7}
+
+
+Checks if a given Q\-B\-F is satisfiable (with quantification over variable kinds). 
+
+The Q\-B\-F consists of a quantifier prefix and a Boolean formula in \hyperlink{classCNF}{C\-N\-F}. The quantifier prefix assigns an existential or universal quantifier to every kind of variable.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantifier\-\_\-prefix} & The quantifier prefix as a vector of pairs. vector\mbox{[}0\mbox{]} is the leftmost (i.\-e., outermost) quantifier block. The pairs in the quantifier\-\_\-prefix assign an existential or universal quantifier to every kind of variable that occurs in the cnf. \\
+\hline
+{\em cnf} & A Boolean formula in \hyperlink{classCNF}{C\-N\-F}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the Q\-B\-F is satisfiable, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classQBFSolver_a53ef157391b176dfbd2a77a1e31befc3}{Q\-B\-F\-Solver}.
+
+
+
+Definition at line 69 of file Rareqs\-Api.\-cpp.
+
+
+
+References Q\-B\-F\-Solver\-::\-E, C\-N\-F\-::get\-Clauses(), Var\-Manager\-::get\-Vars\-Of\-Type(), and Var\-Manager\-::instance().
+
+\hypertarget{classRareqsApi_a090cdbd8cfe16e475c29240a50f690fe}{\index{Rareqs\-Api@{Rareqs\-Api}!is\-Sat@{is\-Sat}}
+\index{is\-Sat@{is\-Sat}!RareqsApi@{Rareqs\-Api}}
+\subsubsection[{is\-Sat}]{\setlength{\rightskip}{0pt plus 5cm}bool Rareqs\-Api\-::is\-Sat (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ pair$<$ vector$<$ int $>$, {\bf Quant} $>$ $>$ \&}]{quantifier\-\_\-prefix, }
+\item[{const {\bf C\-N\-F} \&}]{cnf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classRareqsApi_a090cdbd8cfe16e475c29240a50f690fe}
+
+
+Checks if a given Q\-B\-F is satisfiable (with quantification over variable sets). 
+
+The Q\-B\-F consists of a quantifier prefix and a Boolean formula in \hyperlink{classCNF}{C\-N\-F}. The quantifier prefix assigns an existential or universal quantifier to different sets variable.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantifier\-\_\-prefix} & The quantifier prefix as a vector of pairs. vector\mbox{[}0\mbox{]} is the leftmost (i.\-e., outermost) quantifier block. The pairs in the quantifier\-\_\-prefix assign an existential or universal quantifier to different sets of variables occurring in the cnf. \\
+\hline
+{\em cnf} & A Boolean formula in \hyperlink{classCNF}{C\-N\-F}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the Q\-B\-F is satisfiable, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classQBFSolver_aca37de5801e36d4749b80b6c8c2023a9}{Q\-B\-F\-Solver}.
+
+
+
+Definition at line 98 of file Rareqs\-Api.\-cpp.
+
+
+
+References Q\-B\-F\-Solver\-::\-E, and C\-N\-F\-::get\-Clauses().
+
+\hypertarget{classRareqsApi_a243411cd4a5cc417f9fc12089b8381b8}{\index{Rareqs\-Api@{Rareqs\-Api}!is\-Sat\-Model@{is\-Sat\-Model}}
+\index{is\-Sat\-Model@{is\-Sat\-Model}!RareqsApi@{Rareqs\-Api}}
+\subsubsection[{is\-Sat\-Model}]{\setlength{\rightskip}{0pt plus 5cm}bool Rareqs\-Api\-::is\-Sat\-Model (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ pair$<$ {\bf Var\-Info\-::\-Var\-Kind}, {\bf Quant} $>$ $>$ \&}]{quantifier\-\_\-prefix, }
+\item[{const {\bf C\-N\-F} \&}]{cnf, }
+\item[{vector$<$ int $>$ \&}]{model}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classRareqsApi_a243411cd4a5cc417f9fc12089b8381b8}
+
+
+Checks satisfiability and extracts a model (quantifying over variable kinds). 
+
+Just like \hyperlink{classRareqsApi_a90fa7a7affc2a12a287cea15d7f651c7}{is\-Sat() }, this method checks a quantified Boolean formula for satisfiability. If the Q\-B\-F is satisfiable, this method also extracts a model (a satisfying assignment) for all variables which are quantified existentially on the outermost level. The model is provided as cube\-: negated variables in the cube are F\-A\-L\-S\-E, unnegated ones are T\-R\-U\-E.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantifier\-\_\-prefix} & The quantifier prefix as a vector of pairs. vector\mbox{[}0\mbox{]} is the leftmost (i.\-e., outermost) quantifier block. The pairs in the quantifier\-\_\-prefix assign an existential or universal quantifier to every kind of variable that occurs in the cnf. \\
+\hline
+{\em cnf} & A Boolean formula in \hyperlink{classCNF}{C\-N\-F}. \\
+\hline
+{\em model} & The resulting model in form of a cube in case of satisfiability. Negated variables in the cube are F\-A\-L\-S\-E, unnegated ones are T\-R\-U\-E. If the formula is unsatisfiable (this method returns false) then this parameter is not modified. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the Q\-B\-F is satisfiable, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classQBFSolver_a76fc0c757a2c039816e3e06547f06d5c}{Q\-B\-F\-Solver}.
+
+
+
+Definition at line 125 of file Rareqs\-Api.\-cpp.
+
+
+
+References Q\-B\-F\-Solver\-::\-E, C\-N\-F\-::get\-Clauses(), Var\-Manager\-::get\-Vars\-Of\-Type(), and Var\-Manager\-::instance().
+
+\hypertarget{classRareqsApi_a70eb2a4b5b5e5493482c6c54ea00b295}{\index{Rareqs\-Api@{Rareqs\-Api}!is\-Sat\-Model@{is\-Sat\-Model}}
+\index{is\-Sat\-Model@{is\-Sat\-Model}!RareqsApi@{Rareqs\-Api}}
+\subsubsection[{is\-Sat\-Model}]{\setlength{\rightskip}{0pt plus 5cm}bool Rareqs\-Api\-::is\-Sat\-Model (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ pair$<$ vector$<$ int $>$, {\bf Quant} $>$ $>$ \&}]{quantifier\-\_\-prefix, }
+\item[{const {\bf C\-N\-F} \&}]{cnf, }
+\item[{vector$<$ int $>$ \&}]{model}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classRareqsApi_a70eb2a4b5b5e5493482c6c54ea00b295}
+
+
+Checks satisfiability and extracts a model (quantifying over variable sets). 
+
+Just like \hyperlink{classRareqsApi_a90fa7a7affc2a12a287cea15d7f651c7}{is\-Sat() }, this method checks a quantified Boolean formula for satisfiability. If the Q\-B\-F is satisfiable, this method also extracts a model (a satisfying assignment) for all variables which are quantified existentially on the outermost level. The model is provided as cube\-: negated variables in the cube are F\-A\-L\-S\-E, unnegated ones are T\-R\-U\-E.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantifier\-\_\-prefix} & The quantifier prefix as a vector of pairs. vector\mbox{[}0\mbox{]} is the leftmost (i.\-e., outermost) quantifier block. The pairs in the quantifier\-\_\-prefix assign an existential or universal quantifier to different sets of variables occurring in the cnf. \\
+\hline
+{\em cnf} & A Boolean formula in \hyperlink{classCNF}{C\-N\-F}. \\
+\hline
+{\em model} & The resulting model in form of a cube in case of satisfiability. Negated variables in the cube are F\-A\-L\-S\-E, unnegated ones are T\-R\-U\-E. If the formula is unsatisfiable (this method returns false) then this parameter is not modified. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the Q\-B\-F is satisfiable, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classQBFSolver_a12f2ce57b778b9efe729d63bf881493d}{Q\-B\-F\-Solver}.
+
+
+
+Definition at line 153 of file Rareqs\-Api.\-cpp.
+
+
+
+References Q\-B\-F\-Solver\-::\-E, and C\-N\-F\-::get\-Clauses().
+
+\hypertarget{classRareqsApi_ad2f293116e022201865c297735b43071}{\index{Rareqs\-Api@{Rareqs\-Api}!operator=@{operator=}}
+\index{operator=@{operator=}!RareqsApi@{Rareqs\-Api}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rareqs\-Api}\& Rareqs\-Api\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Rareqs\-Api} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classRareqsApi_ad2f293116e022201865c297735b43071}
+
+
+Assignment operator. 
+
+The assignment operator is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the assignment, i.\-e, $\ast$this. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{RareqsApi_8h}{Rareqs\-Api.\-h}\item 
+src/\hyperlink{RareqsApi_8cpp}{Rareqs\-Api.\-cpp}\end{DoxyCompactItemize}

@@ -31,30 +31,36 @@
 
 // -------------------------------------------------------------------------------------------
 VarInfo::VarInfo(VarKind var_kind, int lit_in_cnf, int lit_in_aig) :
+#ifndef NDEBUG
+  name_(""),
+#endif
   var_kind_(var_kind),
   lit_in_cnf_(lit_in_cnf),
-  lit_in_aig_(lit_in_aig),
-  name_("")
+  lit_in_aig_(lit_in_aig)
 {
   // nothing to be done
 }
 
 // -------------------------------------------------------------------------------------------
 VarInfo::VarInfo(VarKind var_kind, int lit_in_cnf, int lit_in_aig, const string &name) :
+#ifndef NDEBUG
+  name_(name),
+#endif
   var_kind_(var_kind),
   lit_in_cnf_(lit_in_cnf),
-  lit_in_aig_(lit_in_aig),
-  name_(name)
+  lit_in_aig_(lit_in_aig)
 {
   // nothing to be done
 }
 
 // -------------------------------------------------------------------------------------------
 VarInfo::VarInfo(const VarInfo &other):
+#ifndef NDEBUG
+  name_(other.name_),
+#endif
   var_kind_(other.var_kind_),
   lit_in_cnf_(other.lit_in_cnf_),
-  lit_in_aig_(other.lit_in_aig_),
-  name_(other.name_)
+  lit_in_aig_(other.lit_in_aig_)
 {
   // nothing to be done
 }
@@ -62,10 +68,12 @@ VarInfo::VarInfo(const VarInfo &other):
 // -------------------------------------------------------------------------------------------
 VarInfo& VarInfo::operator=(const VarInfo &other)
 {
+#ifndef NDEBUG
+  name_ = other.name_;
+#endif
   var_kind_ = other.var_kind_;
   lit_in_cnf_ = other.lit_in_cnf_;
   lit_in_aig_ = other.lit_in_aig_;
-  name_ = other.name_;
   return *this;
 }
 
@@ -94,9 +102,13 @@ int VarInfo::getLitInAIG() const
 }
 
 // -------------------------------------------------------------------------------------------
-const string& VarInfo::getName() const
+const string VarInfo::getName() const
 {
+#ifndef NDEBUG
   return name_;
+#else
+  return "";
+#endif
 }
 
 // -------------------------------------------------------------------------------------------
@@ -108,7 +120,9 @@ void VarInfo::setKind(VarKind kind)
 // -------------------------------------------------------------------------------------------
 void VarInfo::setName(const string &name)
 {
+#ifndef NDEBUG
   name_ = name;
+#endif
 }
 
 // -------------------------------------------------------------------------------------------

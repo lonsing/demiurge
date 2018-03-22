@@ -46,7 +46,13 @@ string \hyperlink{classOptions_a6dbe6ad8669ffb3ae3e9ab5201646210}{get\-Unique\-T
 \hyperlink{classSatSolver}{Sat\-Solver} $\ast$ \hyperlink{classOptions_a5661af502922536b611a136d3f4c7281}{get\-S\-A\-T\-Solver\-Extr} (bool rand\-\_\-models=false, bool min\-\_\-cores=true) const 
 \begin{DoxyCompactList}\small\item\em Returns an instance of the S\-A\-T-\/solver selected by the user for circuit extraction. \end{DoxyCompactList}\item 
 bool \hyperlink{classOptions_a7607b95cda9586b95a6f648d64fa5a71}{do\-Realizability\-Only} () const 
-\begin{DoxyCompactList}\small\item\em Returns true if the back-\/ends should only compute a winning region but no circuits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns true if the back-\/ends should only compute a winning region but no circuits. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classOptions_aa59992b1b4c698ade25627bb19a7d055}{get\-Size\-Limit\-For\-Expansion} () const 
+\begin{DoxyCompactList}\small\item\em Returns the maximum memory (in k\-B) to use in S\-A\-T-\/based learning with expansion. \end{DoxyCompactList}\item 
+void \hyperlink{classOptions_a868b7bdc9dba80f7dd205d4514cb28a5}{set\-Size\-Limit\-For\-Expansion} (size\-\_\-t limit\-\_\-in\-\_\-kb)
+\begin{DoxyCompactList}\small\item\em Sets the maximum memory (in k\-B) to use in S\-A\-T-\/based learning with expansion. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classOptions_a6c8af68dd937162e84a27da3c43c131b}{get\-Estimated\-Time\-Remaining} () const 
+\begin{DoxyCompactList}\small\item\em If a hint for a timeout is given, this method returns the remaining time. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -55,7 +61,7 @@ static \hyperlink{classOptions}{Options} \& \hyperlink{classOptions_a3ee81ffdab9
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static const string \hyperlink{classOptions_ab8a901c1ad7d3ab672db099fb4c0b197}{V\-E\-R\-S\-I\-O\-N} = string(\char`\"{}1.\-1.\-0\char`\"{})
+static const string \hyperlink{classOptions_ab8a901c1ad7d3ab672db099fb4c0b197}{V\-E\-R\-S\-I\-O\-N} = string(\char`\"{}1.\-2.\-0\char`\"{})
 \begin{DoxyCompactList}\small\item\em The version of the tool as string. \end{DoxyCompactList}\item 
 static const string \hyperlink{classOptions_ad3285bfd4c5984cd79988ddce49ee507}{T\-P\-\_\-\-V\-A\-R} = string(\char`\"{}D\-E\-M\-I\-U\-R\-G\-E\-T\-P\char`\"{})
 \begin{DoxyCompactList}\small\item\em The environment variable with the directory containing all third-\/party software. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -92,7 +98,13 @@ string \hyperlink{classOptions_af68f26928f23fda3bdc75c4b43ae17bc}{sat\-\_\-solve
 string \hyperlink{classOptions_a1dc174bd99373a624a4643fd44225129}{circuit\-\_\-sat\-\_\-solver\-\_\-}
 \begin{DoxyCompactList}\small\item\em The name of the S\-A\-T-\/solver to be used for circuit extraction. \end{DoxyCompactList}\item 
 bool \hyperlink{classOptions_a2e3668079f6c62e087edd486d19bf84a}{real\-\_\-only\-\_\-}
-\begin{DoxyCompactList}\small\item\em True if the back-\/ends should only compute a winning region but no circuits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em True if the back-\/ends should only compute a winning region but no circuits. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classOptions_a725d5329592e1dba55eb6a446807b3ce}{exp\-\_\-limit\-\_\-in\-\_\-kb\-\_\-}
+\begin{DoxyCompactList}\small\item\em The maximum memory (in k\-B) to use in S\-A\-T-\/based learning with expansion. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classOptions_a830786e3337b2fca8d15d02496b25bde}{hint\-\_\-to\-\_\-in\-\_\-sec\-\_\-}
+\begin{DoxyCompactList}\small\item\em A hint about a timeout. \end{DoxyCompactList}\item 
+\hyperlink{Options_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{Point\-In\-Time} \hyperlink{classOptions_a64ba8ff8e25368f44764cfe68fcb7610}{tool\-\_\-started\-\_\-}
+\begin{DoxyCompactList}\small\item\em The point in time when the tool has been started. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -122,11 +134,11 @@ This class is implemented as a Singleton. That is, you cannot instantiate object
 Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\-1.\-0 
+1.\-2.\-0 
 \end{DoxyVersion}
 
 
-Definition at line 56 of file Options.\-h.
+Definition at line 58 of file Options.\-h.
 
 
 
@@ -144,7 +156,7 @@ Constructor.
 
 The constructor is disabled (set private) as this method is implemented as a Singleton. Use the method \hyperlink{classOptions_a3ee81ffdab9838ceb8f6f43fac679869}{instance } to obtain the one and only instance of this class. 
 
-Definition at line 786 of file Options.\-cpp.
+Definition at line 886 of file Options.\-cpp.
 
 
 
@@ -163,7 +175,7 @@ Destructor.
 
 The destructor is disabled (set private) as this method is implemented as a Singleton. One cannot instantiate objects of this class, so there is no need to be able to delete them. 
 
-Definition at line 803 of file Options.\-cpp.
+Definition at line 907 of file Options.\-cpp.
 
 \hypertarget{classOptions_a746ca91be29587927e0249be6e75817a}{\index{Options@{Options}!Options@{Options}}
 \index{Options@{Options}!Options@{Options}}
@@ -202,7 +214,7 @@ true if the back-\/ends should only compute a winning region but no circuits.
 \end{DoxyReturn}
 
 
-Definition at line 498 of file Options.\-cpp.
+Definition at line 538 of file Options.\-cpp.
 
 
 
@@ -224,7 +236,7 @@ The name (including the path) of the A\-I\-G\-E\-R input file.
 \end{DoxyReturn}
 
 
-Definition at line 321 of file Options.\-cpp.
+Definition at line 344 of file Options.\-cpp.
 
 
 
@@ -232,7 +244,7 @@ References aig\-\_\-in\-\_\-file\-\_\-name\-\_\-.
 
 
 
-Referenced by C\-N\-F\-Impl\-Extractor\-::insert\-Into\-Spec(), Learning\-Impl\-Extractor\-::insert\-Missing\-And\-From\-Trans(), main(), and E\-P\-R\-Synthesizer\-::run().
+Referenced by C\-N\-F\-Impl\-Extractor\-::insert\-Into\-Spec(), Par\-Extractor\-Worker\-::insert\-Missing\-And\-From\-Trans(), Learning\-Impl\-Extractor\-::insert\-Missing\-And\-From\-Trans(), main(), E\-P\-R\-Synthesizer\-::run\-With\-Less\-Skolem(), and E\-P\-R\-Synthesizer\-::run\-With\-Skolem().
 
 \hypertarget{classOptions_a12a5530c59af8733b977434126ec36c6}{\index{Options@{Options}!get\-Aig\-In\-File\-Name\-Only@{get\-Aig\-In\-File\-Name\-Only}}
 \index{get\-Aig\-In\-File\-Name\-Only@{get\-Aig\-In\-File\-Name\-Only}!Options@{Options}}
@@ -250,7 +262,7 @@ The name of the input file without path and extension.
 \end{DoxyReturn}
 
 
-Definition at line 327 of file Options.\-cpp.
+Definition at line 350 of file Options.\-cpp.
 
 
 
@@ -276,7 +288,7 @@ The name (including the path) of the A\-I\-G\-E\-R output file.
 \end{DoxyReturn}
 
 
-Definition at line 340 of file Options.\-cpp.
+Definition at line 363 of file Options.\-cpp.
 
 
 
@@ -307,7 +319,7 @@ The back-\/end selected by the user with commend-\/line options.
 \end{DoxyReturn}
 
 
-Definition at line 352 of file Options.\-cpp.
+Definition at line 375 of file Options.\-cpp.
 
 
 
@@ -335,7 +347,7 @@ The mode of the back-\/end selected by the user.
 \end{DoxyReturn}
 
 
-Definition at line 390 of file Options.\-cpp.
+Definition at line 413 of file Options.\-cpp.
 
 
 
@@ -343,7 +355,7 @@ References mode\-\_\-.
 
 
 
-Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region(), and Parallel\-Learner\-::\-Parallel\-Learner().
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region(), and Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region().
 
 \hypertarget{classOptions_a2b7a4169cf0f3366e5035ec5b497e585}{\index{Options@{Options}!get\-Back\-End\-Name@{get\-Back\-End\-Name}}
 \index{get\-Back\-End\-Name@{get\-Back\-End\-Name}!Options@{Options}}
@@ -361,7 +373,7 @@ The name of the back-\/end selected by the user.
 \end{DoxyReturn}
 
 
-Definition at line 346 of file Options.\-cpp.
+Definition at line 369 of file Options.\-cpp.
 
 
 
@@ -385,7 +397,7 @@ The mode of the circuit extraction method selected by the user.
 \end{DoxyReturn}
 
 
-Definition at line 402 of file Options.\-cpp.
+Definition at line 425 of file Options.\-cpp.
 
 
 
@@ -407,7 +419,7 @@ The name of the circuit extraction method that should be used.
 \end{DoxyReturn}
 
 
-Definition at line 396 of file Options.\-cpp.
+Definition at line 419 of file Options.\-cpp.
 
 
 
@@ -434,15 +446,43 @@ The circuit extractor selected by the user with commend-\/line options.
 \end{DoxyReturn}
 
 
-Definition at line 408 of file Options.\-cpp.
+Definition at line 431 of file Options.\-cpp.
 
 
 
-References circuit\-\_\-extraction\-\_\-name\-\_\-, and L\-\_\-\-E\-R\-R.
+References circuit\-\_\-extraction\-\_\-name\-\_\-, L\-\_\-\-E\-R\-R, and real\-\_\-only\-\_\-.
 
 
 
 Referenced by get\-Back\-End().
+
+\hypertarget{classOptions_a6c8af68dd937162e84a27da3c43c131b}{\index{Options@{Options}!get\-Estimated\-Time\-Remaining@{get\-Estimated\-Time\-Remaining}}
+\index{get\-Estimated\-Time\-Remaining@{get\-Estimated\-Time\-Remaining}!Options@{Options}}
+\subsubsection[{get\-Estimated\-Time\-Remaining}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Options\-::get\-Estimated\-Time\-Remaining (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOptions_a6c8af68dd937162e84a27da3c43c131b}
+
+
+If a hint for a timeout is given, this method returns the remaining time. 
+
+If this method returns 0, this intuitively means\-: \char`\"{}be done as quickly as possible\char`\"{}. The hint\-\_\-to\-\_\-in\-\_\-sec\-\_\- field stores a hint about the timeout. By default it is 0, meaning that we want to be done as quickly as possible.
+
+\begin{DoxyReturn}{Returns}
+The remaining time until the timeout. 
+\end{DoxyReturn}
+
+
+Definition at line 556 of file Options.\-cpp.
+
+
+
+References Stopwatch\-::get\-Real\-Time\-Sec(), hint\-\_\-to\-\_\-in\-\_\-sec\-\_\-, and tool\-\_\-started\-\_\-.
+
+
+
+Referenced by Par\-Extractor\-Worker\-::run\-S\-A\-T(), Par\-Extractor\-Worker\-::run\-S\-A\-T\-Dep(), and Par\-Extractor\-Worker\-::wait\-For\-Others\-To\-Finish().
 
 \hypertarget{classOptions_af46f1ca66fde685e029391bda1452a9f}{\index{Options@{Options}!get\-Q\-B\-F\-Solver@{get\-Q\-B\-F\-Solver}}
 \index{get\-Q\-B\-F\-Solver@{get\-Q\-B\-F\-Solver}!Options@{Options}}
@@ -465,7 +505,7 @@ A fresh instance of the Q\-B\-F-\/solver selected by the user.
 \end{DoxyReturn}
 
 
-Definition at line 455 of file Options.\-cpp.
+Definition at line 491 of file Options.\-cpp.
 
 
 
@@ -504,7 +544,7 @@ A fresh instance of the S\-A\-T-\/solver selected by the user.
 \end{DoxyReturn}
 
 
-Definition at line 470 of file Options.\-cpp.
+Definition at line 510 of file Options.\-cpp.
 
 
 
@@ -512,7 +552,7 @@ References M\-A\-S\-S\-E\-R\-T, and sat\-\_\-solver\-\_\-.
 
 
 
-Referenced by Counter\-Gen\-S\-A\-T\-::compress\-Bored(), Utils\-::compress\-State\-C\-N\-F(), I\-F\-M13\-Synth\-::debug\-Check\-Invariants(), Utils\-::debug\-Check\-Win\-Reg(), get\-S\-A\-T\-Solver\-Extr(), I\-F\-M13\-Explorer\-::\-I\-F\-M13\-Explorer(), I\-F\-M13\-Synth\-::\-I\-F\-M13\-Synth(), and Utils\-::negate\-State\-C\-N\-F().
+Referenced by Template\-Synth\-::check(), Templ\-Explorer\-::check(), Counter\-Gen\-S\-A\-T\-::compress\-Bored(), Utils\-::compress\-Next\-State\-C\-N\-F(), Utils\-::compress\-State\-C\-N\-F(), I\-F\-M13\-Synth\-::debug\-Check\-Invariants(), Utils\-::debug\-Check\-Win\-Reg(), get\-S\-A\-T\-Solver\-Extr(), I\-F\-M13\-Explorer\-::\-I\-F\-M13\-Explorer(), I\-F\-M13\-Synth\-::\-I\-F\-M13\-Synth(), Utils\-::negate\-State\-C\-N\-F(), and Templ\-Explorer\-::synt\-S\-A\-T().
 
 \hypertarget{classOptions_a5661af502922536b611a136d3f4c7281}{\index{Options@{Options}!get\-S\-A\-T\-Solver\-Extr@{get\-S\-A\-T\-Solver\-Extr}}
 \index{get\-S\-A\-T\-Solver\-Extr@{get\-S\-A\-T\-Solver\-Extr}!Options@{Options}}
@@ -545,7 +585,7 @@ A fresh instance of the S\-A\-T-\/solver selected by the user.
 \end{DoxyReturn}
 
 
-Definition at line 483 of file Options.\-cpp.
+Definition at line 523 of file Options.\-cpp.
 
 
 
@@ -553,7 +593,38 @@ References circuit\-\_\-sat\-\_\-solver\-\_\-, get\-S\-A\-T\-Solver(), and M\-A\
 
 
 
-Referenced by Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), and Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2().
+Referenced by Learning\-Impl\-Extractor\-::run\-Learning\-Exp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), and Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2().
+
+\hypertarget{classOptions_aa59992b1b4c698ade25627bb19a7d055}{\index{Options@{Options}!get\-Size\-Limit\-For\-Expansion@{get\-Size\-Limit\-For\-Expansion}}
+\index{get\-Size\-Limit\-For\-Expansion@{get\-Size\-Limit\-For\-Expansion}!Options@{Options}}
+\subsubsection[{get\-Size\-Limit\-For\-Expansion}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Options\-::get\-Size\-Limit\-For\-Expansion (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classOptions_aa59992b1b4c698ade25627bb19a7d055}
+
+
+Returns the maximum memory (in k\-B) to use in S\-A\-T-\/based learning with expansion. 
+
+\hyperlink{classLearnSynthSAT}{Learn\-Synth\-S\-A\-T} can be run in a mode where it expands the \hyperlink{classCNF}{C\-N\-F} for computing counterexamples in order to save iterations. For certain benchmarks, this expansion works well. For other benchmarks, the C\-N\-Fs that are computed during expansion get so extremely big that we may run into memory problems. This method returns a memory limit in k\-B. If this limit is exceeded, we stop doing the expansion in order to prevent running out of memory.
+
+\begin{DoxyNote}{Note}
+The limit returned by this method is not enforced strictly. The memory consumption is only estimated at certain points.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The maximum memory (in k\-B) to use in S\-A\-T-\/based learning with expansion. 
+\end{DoxyReturn}
+
+
+Definition at line 544 of file Options.\-cpp.
+
+
+
+References exp\-\_\-limit\-\_\-in\-\_\-kb\-\_\-.
+
+
+
+Referenced by Orig\-Univ\-Expander\-::init\-Solver\-I\-Data(), Univ\-Expander\-::init\-Solver\-I\-Data(), and Univ\-Expander\-::reset\-Solver\-I\-Exp().
 
 \hypertarget{classOptions_a98edf8c11ffb864a98905ff47ed99652}{\index{Options@{Options}!get\-Tmp\-Dir\-Name@{get\-Tmp\-Dir\-Name}}
 \index{get\-Tmp\-Dir\-Name@{get\-Tmp\-Dir\-Name}!Options@{Options}}
@@ -575,7 +646,7 @@ The mode of the back-\/end selected by the user.
 \end{DoxyReturn}
 
 
-Definition at line 423 of file Options.\-cpp.
+Definition at line 459 of file Options.\-cpp.
 
 
 
@@ -603,7 +674,7 @@ The name (and path) of the directory containing the thirdparty tools.
 \end{DoxyReturn}
 
 
-Definition at line 445 of file Options.\-cpp.
+Definition at line 481 of file Options.\-cpp.
 
 
 
@@ -611,7 +682,7 @@ References M\-A\-S\-S\-E\-R\-T, and T\-P\-\_\-\-V\-A\-R.
 
 
 
-Referenced by Dep\-Q\-B\-F\-Ext\-::\-Dep\-Q\-B\-F\-Ext(), E\-P\-R\-Synthesizer\-::\-E\-P\-R\-Synthesizer(), C\-N\-F\-Impl\-Extractor\-::optimize\-With\-A\-B\-C(), and Qu\-B\-E\-Ext\-::\-Qu\-B\-E\-Ext().
+Referenced by Dep\-Q\-B\-F\-Ext\-::\-Dep\-Q\-B\-F\-Ext(), E\-P\-R\-Synthesizer\-::\-E\-P\-R\-Synthesizer(), Utils\-::negate\-Via\-Aig(), C\-N\-F\-Impl\-Extractor\-::optimize\-With\-A\-B\-C(), Qu\-B\-E\-Ext\-::\-Qu\-B\-E\-Ext(), Rareqs\-Ext\-::\-Rareqs\-Ext(), and Univ\-Expander\-::simplify\-Trans\-Ands\-With\-Abc().
 
 \hypertarget{classOptions_a6dbe6ad8669ffb3ae3e9ab5201646210}{\index{Options@{Options}!get\-Unique\-Tmp\-File\-Name@{get\-Unique\-Tmp\-File\-Name}}
 \index{get\-Unique\-Tmp\-File\-Name@{get\-Unique\-Tmp\-File\-Name}!Options@{Options}}
@@ -634,7 +705,7 @@ A unique name of a temporary file in the directory of temporary files.
 \end{DoxyReturn}
 
 
-Definition at line 435 of file Options.\-cpp.
+Definition at line 471 of file Options.\-cpp.
 
 
 
@@ -642,7 +713,7 @@ References get\-Aig\-In\-File\-Name\-Only(), and get\-Tmp\-Dir\-Name().
 
 
 
-Referenced by E\-P\-R\-Synthesizer\-::\-E\-P\-R\-Synthesizer(), Ext\-Q\-B\-F\-Solver\-::\-Ext\-Q\-B\-F\-Solver(), and C\-N\-F\-Impl\-Extractor\-::optimize\-With\-A\-B\-C().
+Referenced by E\-P\-R\-Synthesizer\-::\-E\-P\-R\-Synthesizer(), Ext\-Q\-B\-F\-Solver\-::\-Ext\-Q\-B\-F\-Solver(), Utils\-::negate\-Via\-Aig(), C\-N\-F\-Impl\-Extractor\-::optimize\-With\-A\-B\-C(), and Univ\-Expander\-::simplify\-Trans\-Ands\-With\-Abc().
 
 \hypertarget{classOptions_a4747e24243c28fcff14f23a9c4f8eecf}{\index{Options@{Options}!init\-Logger@{init\-Logger}}
 \index{init\-Logger@{init\-Logger}!Options@{Options}}
@@ -657,11 +728,11 @@ Initializes the \hyperlink{classLogger}{Logger} by enabling the selected message
 
 
 
-Definition at line 756 of file Options.\-cpp.
+Definition at line 856 of file Options.\-cpp.
 
 
 
-References Logger\-::\-D\-B\-G, Logger\-::disable(), Logger\-::enable(), Logger\-::\-E\-R\-R, Logger\-::\-I\-N\-F, instance(), Logger\-::\-L\-O\-G, print\-\_\-string\-\_\-, Logger\-::\-R\-E\-S, and Logger\-::\-W\-R\-N.
+References Logger\-::\-D\-B\-G, Logger\-::disable(), Logger\-::enable(), Logger\-::\-E\-R\-R, Logger\-::\-I\-N\-F, Logger\-::instance(), Logger\-::\-L\-O\-G, print\-\_\-string\-\_\-, Logger\-::\-R\-E\-S, and Logger\-::\-W\-R\-N.
 
 
 
@@ -685,7 +756,7 @@ The one and only instance of this class.
 \end{DoxyReturn}
 
 
-Definition at line 65 of file Options.\-cpp.
+Definition at line 68 of file Options.\-cpp.
 
 
 
@@ -693,7 +764,7 @@ References instance\-\_\-, M\-A\-S\-S\-E\-R\-T, and Options().
 
 
 
-Referenced by Counter\-Gen\-S\-A\-T\-::compress\-Bored(), Utils\-::compress\-State\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region(), I\-F\-M13\-Synth\-::debug\-Check\-Invariants(), Utils\-::debug\-Check\-Win\-Reg(), Dep\-Q\-B\-F\-Ext\-::\-Dep\-Q\-B\-F\-Ext(), E\-P\-R\-Synthesizer\-::\-E\-P\-R\-Synthesizer(), Ext\-Q\-B\-F\-Solver\-::\-Ext\-Q\-B\-F\-Solver(), Store\-Impl\-Extractor\-::extract\-Circuit(), I\-F\-M13\-Synth\-::get\-Gen\-Block\-Trans\-Solver(), I\-F\-M13\-Explorer\-::get\-Gen\-Block\-Trans\-Solver(), I\-F\-M13\-Synth\-::get\-Goto\-Next\-Lower\-Solver(), I\-F\-M13\-Explorer\-::get\-Goto\-Next\-Lower\-Solver(), I\-F\-M13\-Explorer\-::\-I\-F\-M13\-Explorer(), I\-F\-M13\-Synth\-::\-I\-F\-M13\-Synth(), init\-Logger(), C\-N\-F\-Impl\-Extractor\-::insert\-Into\-Spec(), Learning\-Impl\-Extractor\-::insert\-Missing\-And\-From\-Trans(), Learn\-Synth\-Q\-B\-F\-Ind\-::\-Learn\-Synth\-Q\-B\-F\-Ind(), main(), Utils\-::negate\-State\-C\-N\-F(), C\-N\-F\-Impl\-Extractor\-::optimize\-With\-A\-B\-C(), Parallel\-Learner\-::\-Parallel\-Learner(), Qu\-B\-E\-Ext\-::\-Qu\-B\-E\-Ext(), Load\-Synth\-::run(), Learn\-Synth\-Q\-B\-F\-Inc\-::run(), Learning\-Impl\-Extractor\-::run(), I\-F\-M13\-Synth\-::run(), Parallel\-Learner\-::run(), Template\-Synth\-::run(), Learn\-Synth\-Q\-B\-F\-::run(), E\-P\-R\-Synthesizer\-::run(), Learn\-Synth\-S\-A\-T\-::run(), Learn\-Synth\-Q\-B\-F\-Ind\-::run(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), and Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2().
+Referenced by Template\-Synth\-::check(), Templ\-Explorer\-::check(), Counter\-Gen\-S\-A\-T\-::compress\-Bored(), Utils\-::compress\-Next\-State\-C\-N\-F(), Utils\-::compress\-State\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region(), Template\-Synth\-::compute\-Winning\-Region(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region(), I\-F\-M13\-Synth\-::debug\-Check\-Invariants(), Utils\-::debug\-Check\-Win\-Reg(), Dep\-Q\-B\-F\-Ext\-::\-Dep\-Q\-B\-F\-Ext(), E\-P\-R\-Synthesizer\-::\-E\-P\-R\-Synthesizer(), Ext\-Q\-B\-F\-Solver\-::\-Ext\-Q\-B\-F\-Solver(), Store\-Impl\-Extractor\-::extract\-Circuit(), Template\-Synth\-::find\-Win\-Reg\-A\-N\-D\-Network(), Template\-Synth\-::find\-Win\-Reg\-C\-N\-F\-Templ(), I\-F\-M13\-Synth\-::get\-Gen\-Block\-Trans\-Solver(), I\-F\-M13\-Explorer\-::get\-Gen\-Block\-Trans\-Solver(), I\-F\-M13\-Synth\-::get\-Goto\-Next\-Lower\-Solver(), I\-F\-M13\-Explorer\-::get\-Goto\-Next\-Lower\-Solver(), I\-F\-M13\-Explorer\-::\-I\-F\-M13\-Explorer(), I\-F\-M13\-Synth\-::\-I\-F\-M13\-Synth(), Orig\-Univ\-Expander\-::init\-Solver\-I\-Data(), Univ\-Expander\-::init\-Solver\-I\-Data(), C\-N\-F\-Impl\-Extractor\-::insert\-Into\-Spec(), Par\-Extractor\-Worker\-::insert\-Missing\-And\-From\-Trans(), Learning\-Impl\-Extractor\-::insert\-Missing\-And\-From\-Trans(), Learn\-Synth\-Q\-B\-F\-Ind\-::\-Learn\-Synth\-Q\-B\-F\-Ind(), main(), Utils\-::negate\-State\-C\-N\-F(), Utils\-::negate\-Via\-Aig(), C\-N\-F\-Impl\-Extractor\-::optimize\-With\-A\-B\-C(), Qu\-B\-E\-Ext\-::\-Qu\-B\-E\-Ext(), Rareqs\-Ext\-::\-Rareqs\-Ext(), Orig\-Univ\-Expander\-::reset\-Solver\-I\-Exp(), Univ\-Expander\-::reset\-Solver\-I\-Exp(), Load\-Synth\-::run(), Learn\-Synth\-Q\-B\-F\-Inc\-::run(), Learning\-Impl\-Extractor\-::run(), Template\-Synth\-::run(), I\-F\-M13\-Synth\-::run(), Learn\-Synth\-Q\-B\-F\-::run(), Learn\-Synth\-S\-A\-T\-::run(), Learn\-Synth\-Q\-B\-F\-Ind\-::run(), Parallel\-Learner\-::run(), Learning\-Impl\-Extractor\-::run\-Learning\-Exp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), Par\-Extractor\-Worker\-::run\-S\-A\-T(), Par\-Extractor\-Worker\-::run\-S\-A\-T\-Dep(), E\-P\-R\-Synthesizer\-::run\-With\-Less\-Skolem(), E\-P\-R\-Synthesizer\-::run\-With\-Skolem(), Univ\-Expander\-::simplify\-Trans\-Ands\-With\-Abc(), Templ\-Explorer\-::synt\-S\-A\-T(), and Par\-Extractor\-Worker\-::wait\-For\-Others\-To\-Finish().
 
 \hypertarget{classOptions_aa668cd73b61005074c44ea99f0b9b831}{\index{Options@{Options}!operator=@{operator=}}
 \index{operator=@{operator=}!Options@{Options}}
@@ -740,11 +811,11 @@ True if the tool should quit, false otherwise.
 \end{DoxyReturn}
 
 
-Definition at line 74 of file Options.\-cpp.
+Definition at line 77 of file Options.\-cpp.
 
 
 
-References aig\-\_\-in\-\_\-file\-\_\-name\-\_\-, aig\-\_\-out\-\_\-file\-\_\-name\-\_\-, back\-\_\-end\-\_\-, circuit\-\_\-extraction\-\_\-mode\-\_\-, circuit\-\_\-extraction\-\_\-name\-\_\-, circuit\-\_\-sat\-\_\-solver\-\_\-, init\-Logger(), L\-\_\-\-W\-R\-N, mode\-\_\-, print\-\_\-string\-\_\-, print\-Help(), qbf\-\_\-solver\-\_\-, real\-\_\-only\-\_\-, sat\-\_\-solver\-\_\-, tmp\-\_\-dir\-\_\-, String\-Utils\-::to\-Lower\-Case\-In(), and V\-E\-R\-S\-I\-O\-N.
+References aig\-\_\-in\-\_\-file\-\_\-name\-\_\-, aig\-\_\-out\-\_\-file\-\_\-name\-\_\-, back\-\_\-end\-\_\-, circuit\-\_\-extraction\-\_\-mode\-\_\-, circuit\-\_\-extraction\-\_\-name\-\_\-, circuit\-\_\-sat\-\_\-solver\-\_\-, hint\-\_\-to\-\_\-in\-\_\-sec\-\_\-, init\-Logger(), L\-\_\-\-W\-R\-N, mode\-\_\-, print\-\_\-string\-\_\-, print\-Help(), qbf\-\_\-solver\-\_\-, real\-\_\-only\-\_\-, sat\-\_\-solver\-\_\-, tmp\-\_\-dir\-\_\-, String\-Utils\-::to\-Lower\-Case\-In(), and V\-E\-R\-S\-I\-O\-N.
 
 
 
@@ -763,11 +834,40 @@ Prints a help text to stdout.
 
 
 
-Definition at line 504 of file Options.\-cpp.
+Definition at line 565 of file Options.\-cpp.
 
 
 
 Referenced by parse().
+
+\hypertarget{classOptions_a868b7bdc9dba80f7dd205d4514cb28a5}{\index{Options@{Options}!set\-Size\-Limit\-For\-Expansion@{set\-Size\-Limit\-For\-Expansion}}
+\index{set\-Size\-Limit\-For\-Expansion@{set\-Size\-Limit\-For\-Expansion}!Options@{Options}}
+\subsubsection[{set\-Size\-Limit\-For\-Expansion}]{\setlength{\rightskip}{0pt plus 5cm}void Options\-::set\-Size\-Limit\-For\-Expansion (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{limit\-\_\-in\-\_\-kb}
+\end{DoxyParamCaption}
+)}}\label{classOptions_a868b7bdc9dba80f7dd205d4514cb28a5}
+
+
+Sets the maximum memory (in k\-B) to use in S\-A\-T-\/based learning with expansion. 
+
+\hyperlink{classLearnSynthSAT}{Learn\-Synth\-S\-A\-T} can be run in a mode where it expands the \hyperlink{classCNF}{C\-N\-F} for computing counterexamples in order to save iterations. For certain benchmarks, this expansion works well. For other benchmarks, the C\-N\-Fs that are computed during expansion get so extremely big that we may run into memory problems. This method sets a memory limit in k\-B. If this limit is exceeded, we stop doing the expansion in order to prevent running out of memory.
+
+\begin{DoxyNote}{Note}
+The limit set by this method is not enforced strictly. The memory consumption is only estimated at certain points.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em limit\-\_\-in\-\_\-kb} & The maximum memory (in k\-B) to use in S\-A\-T-\/based learning with expansion. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 550 of file Options.\-cpp.
+
+
+
+References exp\-\_\-limit\-\_\-in\-\_\-kb\-\_\-.
 
 
 
@@ -781,7 +881,7 @@ The name (including the path) of the A\-I\-G\-E\-R input file.
 
 
 
-Definition at line 275 of file Options.\-h.
+Definition at line 320 of file Options.\-h.
 
 
 
@@ -796,7 +896,7 @@ The name (including the path) of the A\-I\-G\-E\-R output file.
 
 
 
-Definition at line 280 of file Options.\-h.
+Definition at line 325 of file Options.\-h.
 
 
 
@@ -811,7 +911,7 @@ The name of the selected back-\/end.
 
 
 
-Definition at line 307 of file Options.\-h.
+Definition at line 352 of file Options.\-h.
 
 
 
@@ -826,7 +926,7 @@ The mode of the selected circuit extraction method.
 
 Some circuit extraction methods can be used in several modes (certain optimizations or heuristics enabled or disabled, etc.). This integer number selects a mode. 
 
-Definition at line 328 of file Options.\-h.
+Definition at line 373 of file Options.\-h.
 
 
 
@@ -841,7 +941,7 @@ The name of the circuit extraction method that should be used.
 
 
 
-Definition at line 320 of file Options.\-h.
+Definition at line 365 of file Options.\-h.
 
 
 
@@ -856,11 +956,46 @@ The name of the S\-A\-T-\/solver to be used for circuit extraction.
 
 This is different from sat\-\_\-solver\-\_\- because the user may select a different solver for circuit extraction than for computing the winning region. 
 
-Definition at line 346 of file Options.\-h.
+Definition at line 391 of file Options.\-h.
 
 
 
 Referenced by get\-S\-A\-T\-Solver\-Extr(), and parse().
+
+\hypertarget{classOptions_a725d5329592e1dba55eb6a446807b3ce}{\index{Options@{Options}!exp\-\_\-limit\-\_\-in\-\_\-kb\-\_\-@{exp\-\_\-limit\-\_\-in\-\_\-kb\-\_\-}}
+\index{exp\-\_\-limit\-\_\-in\-\_\-kb\-\_\-@{exp\-\_\-limit\-\_\-in\-\_\-kb\-\_\-}!Options@{Options}}
+\subsubsection[{exp\-\_\-limit\-\_\-in\-\_\-kb\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Options\-::exp\-\_\-limit\-\_\-in\-\_\-kb\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classOptions_a725d5329592e1dba55eb6a446807b3ce}
+
+
+The maximum memory (in k\-B) to use in S\-A\-T-\/based learning with expansion. 
+
+\hyperlink{classLearnSynthSAT}{Learn\-Synth\-S\-A\-T} can be run in a mode where it expands the \hyperlink{classCNF}{C\-N\-F} for computing counterexamples in order to save iterations. For certain benchmarks, this expansion works well. For other benchmarks, the C\-N\-Fs that are computed during expansion get so extremely big that we may run into memory problems. This field stores a memory limit in k\-B. If this limit is exceeded, we stop doing the expansion in order to prevent running out of memory.
+
+\begin{DoxyNote}{Note}
+The limit stored in this field is not enforced strictly. The memory consumption is only estimated at certain points. 
+\end{DoxyNote}
+
+
+Definition at line 410 of file Options.\-h.
+
+
+
+Referenced by get\-Size\-Limit\-For\-Expansion(), and set\-Size\-Limit\-For\-Expansion().
+
+\hypertarget{classOptions_a830786e3337b2fca8d15d02496b25bde}{\index{Options@{Options}!hint\-\_\-to\-\_\-in\-\_\-sec\-\_\-@{hint\-\_\-to\-\_\-in\-\_\-sec\-\_\-}}
+\index{hint\-\_\-to\-\_\-in\-\_\-sec\-\_\-@{hint\-\_\-to\-\_\-in\-\_\-sec\-\_\-}!Options@{Options}}
+\subsubsection[{hint\-\_\-to\-\_\-in\-\_\-sec\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Options\-::hint\-\_\-to\-\_\-in\-\_\-sec\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classOptions_a830786e3337b2fca8d15d02496b25bde}
+
+
+A hint about a timeout. 
+
+This timeout is not enforced. This is just a hint for the tool to enable or disable certain optimizations. If there is still enough time available until the expected timeout, we can run additional optimizations to get small circuits. If we are already close to the timeout, then we can tune our heuristics to finish quickly rather than obtaining small circuits. 
+
+Definition at line 421 of file Options.\-h.
+
+
+
+Referenced by get\-Estimated\-Time\-Remaining(), and parse().
 
 \hypertarget{classOptions_a9097fb97d94616d9166bc7e8df97a58a}{\index{Options@{Options}!instance\-\_\-@{instance\-\_\-}}
 \index{instance\-\_\-@{instance\-\_\-}!Options@{Options}}
@@ -871,7 +1006,7 @@ The one and only instance of this class.
 
 
 
-Definition at line 395 of file Options.\-h.
+Definition at line 473 of file Options.\-h.
 
 
 
@@ -886,7 +1021,7 @@ The mode of the back-\/end selected by the user.
 
 Some back-\/ends can be used in several modes (certain optimizations or heuristics enabled or disabled, etc.). This integer number selects a mode. 
 
-Definition at line 315 of file Options.\-h.
+Definition at line 360 of file Options.\-h.
 
 
 
@@ -909,7 +1044,7 @@ The string can be composed of the letters D,E,R,W,I,L in any order. If a letter 
 \item D enables debug messages. 
 \end{DoxyItemize}
 
-Definition at line 297 of file Options.\-h.
+Definition at line 342 of file Options.\-h.
 
 
 
@@ -924,7 +1059,7 @@ The name of the selected Q\-B\-F-\/solver.
 
 
 
-Definition at line 333 of file Options.\-h.
+Definition at line 378 of file Options.\-h.
 
 
 
@@ -939,11 +1074,11 @@ True if the back-\/ends should only compute a winning region but no circuits.
 
 
 
-Definition at line 351 of file Options.\-h.
+Definition at line 396 of file Options.\-h.
 
 
 
-Referenced by do\-Realizability\-Only(), and parse().
+Referenced by do\-Realizability\-Only(), get\-Circuit\-Extractor(), and parse().
 
 \hypertarget{classOptions_af68f26928f23fda3bdc75c4b43ae17bc}{\index{Options@{Options}!sat\-\_\-solver\-\_\-@{sat\-\_\-solver\-\_\-}}
 \index{sat\-\_\-solver\-\_\-@{sat\-\_\-solver\-\_\-}!Options@{Options}}
@@ -954,7 +1089,7 @@ The name of the selected S\-A\-T-\/solver.
 
 
 
-Definition at line 338 of file Options.\-h.
+Definition at line 383 of file Options.\-h.
 
 
 
@@ -969,11 +1104,26 @@ The name of a directory for temporary files.
 
 
 
-Definition at line 302 of file Options.\-h.
+Definition at line 347 of file Options.\-h.
 
 
 
 Referenced by get\-Tmp\-Dir\-Name(), and parse().
+
+\hypertarget{classOptions_a64ba8ff8e25368f44764cfe68fcb7610}{\index{Options@{Options}!tool\-\_\-started\-\_\-@{tool\-\_\-started\-\_\-}}
+\index{tool\-\_\-started\-\_\-@{tool\-\_\-started\-\_\-}!Options@{Options}}
+\subsubsection[{tool\-\_\-started\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point\-In\-Time} Options\-::tool\-\_\-started\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classOptions_a64ba8ff8e25368f44764cfe68fcb7610}
+
+
+The point in time when the tool has been started. 
+
+It will be used to estimate how close the timeout is. It may also be used for logging statistics. 
+
+Definition at line 429 of file Options.\-h.
+
+
+
+Referenced by get\-Estimated\-Time\-Remaining().
 
 \hypertarget{classOptions_ad3285bfd4c5984cd79988ddce49ee507}{\index{Options@{Options}!T\-P\-\_\-\-V\-A\-R@{T\-P\-\_\-\-V\-A\-R}}
 \index{T\-P\-\_\-\-V\-A\-R@{T\-P\-\_\-\-V\-A\-R}!Options@{Options}}
@@ -984,7 +1134,7 @@ The environment variable with the directory containing all third-\/party softwar
 
 The third-\/party software includes S\-A\-T-\/solvers, Q\-B\-F-\/solvers, etc. 
 
-Definition at line 70 of file Options.\-h.
+Definition at line 72 of file Options.\-h.
 
 
 
@@ -992,14 +1142,14 @@ Referenced by get\-T\-P\-Dir\-Name().
 
 \hypertarget{classOptions_ab8a901c1ad7d3ab672db099fb4c0b197}{\index{Options@{Options}!V\-E\-R\-S\-I\-O\-N@{V\-E\-R\-S\-I\-O\-N}}
 \index{V\-E\-R\-S\-I\-O\-N@{V\-E\-R\-S\-I\-O\-N}!Options@{Options}}
-\subsubsection[{V\-E\-R\-S\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}const string Options\-::\-V\-E\-R\-S\-I\-O\-N = string(\char`\"{}1.\-1.\-0\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}}\label{classOptions_ab8a901c1ad7d3ab672db099fb4c0b197}
+\subsubsection[{V\-E\-R\-S\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}const string Options\-::\-V\-E\-R\-S\-I\-O\-N = string(\char`\"{}1.\-2.\-0\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}}\label{classOptions_ab8a901c1ad7d3ab672db099fb4c0b197}
 
 
 The version of the tool as string. 
 
 
 
-Definition at line 63 of file Options.\-h.
+Definition at line 65 of file Options.\-h.
 
 
 

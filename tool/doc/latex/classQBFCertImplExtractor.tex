@@ -31,13 +31,16 @@ virtual void \hyperlink{classCNFImplExtractor_a5e9694425af3f1a76d8b21ace3c435d9}
 \begin{DoxyCompactList}\small\item\em Extracts a circuit from the winning region and its negation. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classCNFImplExtractor_aae098749e201b22294a70f6e0a4a58f0}{log\-Statistics} ()
 \begin{DoxyCompactList}\small\item\em Logs statistical information about circuit extraction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static aiger $\ast$ \hyperlink{classCNFImplExtractor_ad21828d816dfdbf672f6e595589ef6e7}{optimize\-With\-A\-B\-C} (aiger $\ast$circuit)
+\begin{DoxyCompactList}\small\item\em Optimizes a combinatorial A\-I\-G\-E\-R circuit with A\-B\-C. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{classQBFCertImplExtractor_aa6a292ba4108e707f458c04d621a6d9e}{log\-Detailed\-Statistics} ()
 \begin{DoxyCompactList}\small\item\em Logs some detailed statistics (time for Q\-B\-F\-Cert, A\-B\-C, circuit sizes, etc.). \end{DoxyCompactList}\item 
-aiger $\ast$ \hyperlink{classCNFImplExtractor_a58a4e5021d0ef9c4190a5be74fb5a83e}{optimize\-With\-A\-B\-C} (aiger $\ast$circuit) const 
-\begin{DoxyCompactList}\small\item\em Optimizes a combinatorial A\-I\-G\-E\-R circuit with A\-B\-C. \end{DoxyCompactList}\item 
 size\-\_\-t \hyperlink{classCNFImplExtractor_a0970602635f3356712d57ebb28d12c0d}{insert\-Into\-Spec} (aiger $\ast$standalone\-\_\-circuit) const 
 \begin{DoxyCompactList}\small\item\em Takes a circuit defining the control signals and inserts it into the spec. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
@@ -63,7 +66,7 @@ size\-\_\-t \hyperlink{classCNFImplExtractor_ae06413cf08f868357d64545b3041aa18}{
 Given a winning region in \hyperlink{classCNF}{C\-N\-F}, this method extracts a circuit using Q\-B\-F\-Cert. 
 
 Q\-B\-F\-Cert (see \href{http://fmv.jku.at/qbfcert/}{\tt http\-://fmv.\-jku.\-at/qbfcert/}) is a framework for computing Skolem or Herbrand functions as witnesses for quantified Boolean formulas. We use it to compute circuits from a winning region. Let W be the winning region. Then we can compute a circuit as a skolem function for the c-\/signals in\-: \par
- ~ forall x,i\-: exists c,x'\-: (!\-W) $|$ (T \& W') \par
+ ~ forall x,i\-: exists c,x'\-: (!\-W) $\vert$ (T \& W') \par
  However, for performance reasons, we actually compute Herbrand functions for the c-\/signals in the formula\-: \par
  ~ exists x,i\-: forall c\-: exists x'\-: W \& T \& !\-W' \par
  Q\-B\-F\-Cert outputs the result in A\-I\-G\-E\-R format. Hence, all we have to do in order to obtain the final output of our tool is to embed this A\-I\-G\-E\-R-\/circuits for the c-\/signals in the input A\-I\-G\-E\-R file.
@@ -72,7 +75,7 @@ Q\-B\-F\-Cert (see \href{http://fmv.jku.at/qbfcert/}{\tt http\-://fmv.\-jku.\-at
 Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\-1.\-0 
+1.\-2.\-0 
 \end{DoxyVersion}
 
 
@@ -146,7 +149,7 @@ References Utils\-::compress\-State\-C\-N\-F(), C\-N\-F\-Impl\-Extractor\-::extr
 
 
 
-Referenced by Load\-Synth\-::run(), Learn\-Synth\-Q\-B\-F\-Inc\-::run(), I\-F\-M13\-Synth\-::run(), Template\-Synth\-::run(), Parallel\-Learner\-::run(), Learn\-Synth\-Q\-B\-F\-::run(), Learn\-Synth\-S\-A\-T\-::run(), and Learn\-Synth\-Q\-B\-F\-Ind\-::run().
+Referenced by Load\-Synth\-::run(), Learn\-Synth\-Q\-B\-F\-Inc\-::run(), Template\-Synth\-::run(), I\-F\-M13\-Synth\-::run(), Learn\-Synth\-Q\-B\-F\-::run(), Learn\-Synth\-S\-A\-T\-::run(), Learn\-Synth\-Q\-B\-F\-Ind\-::run(), and Parallel\-Learner\-::run().
 
 \hypertarget{classCNFImplExtractor_a5e9694425af3f1a76d8b21ace3c435d9}{\index{Q\-B\-F\-Cert\-Impl\-Extractor@{Q\-B\-F\-Cert\-Impl\-Extractor}!extract\-Circuit@{extract\-Circuit}}
 \index{extract\-Circuit@{extract\-Circuit}!QBFCertImplExtractor@{Q\-B\-F\-Cert\-Impl\-Extractor}}
@@ -211,7 +214,7 @@ References Var\-Info\-::\-C\-T\-R\-L, Options\-::get\-Aig\-In\-File\-Name(), Opt
 
 
 
-Referenced by Learning\-Impl\-Extractor\-::run(), and run().
+Referenced by Par\-Extractor\-::run(), Learning\-Impl\-Extractor\-::run(), and run().
 
 \hypertarget{classQBFCertImplExtractor_aa6a292ba4108e707f458c04d621a6d9e}{\index{Q\-B\-F\-Cert\-Impl\-Extractor@{Q\-B\-F\-Cert\-Impl\-Extractor}!log\-Detailed\-Statistics@{log\-Detailed\-Statistics}}
 \index{log\-Detailed\-Statistics@{log\-Detailed\-Statistics}!QBFCertImplExtractor@{Q\-B\-F\-Cert\-Impl\-Extractor}}
@@ -257,15 +260,15 @@ References C\-N\-F\-Impl\-Extractor\-::extraction\-\_\-cpu\-\_\-time\-\_\-, C\-N
 
 
 
-Referenced by Load\-Synth\-::run(), Learn\-Synth\-Q\-B\-F\-Inc\-::run(), I\-F\-M13\-Synth\-::run(), Template\-Synth\-::run(), Parallel\-Learner\-::run(), Learn\-Synth\-Q\-B\-F\-::run(), Learn\-Synth\-S\-A\-T\-::run(), and Learn\-Synth\-Q\-B\-F\-Ind\-::run().
+Referenced by Load\-Synth\-::run(), Learn\-Synth\-Q\-B\-F\-Inc\-::run(), Template\-Synth\-::run(), I\-F\-M13\-Synth\-::run(), Learn\-Synth\-Q\-B\-F\-::run(), Learn\-Synth\-S\-A\-T\-::run(), Learn\-Synth\-Q\-B\-F\-Ind\-::run(), and Parallel\-Learner\-::run().
 
-\hypertarget{classCNFImplExtractor_a58a4e5021d0ef9c4190a5be74fb5a83e}{\index{Q\-B\-F\-Cert\-Impl\-Extractor@{Q\-B\-F\-Cert\-Impl\-Extractor}!optimize\-With\-A\-B\-C@{optimize\-With\-A\-B\-C}}
+\hypertarget{classCNFImplExtractor_ad21828d816dfdbf672f6e595589ef6e7}{\index{Q\-B\-F\-Cert\-Impl\-Extractor@{Q\-B\-F\-Cert\-Impl\-Extractor}!optimize\-With\-A\-B\-C@{optimize\-With\-A\-B\-C}}
 \index{optimize\-With\-A\-B\-C@{optimize\-With\-A\-B\-C}!QBFCertImplExtractor@{Q\-B\-F\-Cert\-Impl\-Extractor}}
 \subsubsection[{optimize\-With\-A\-B\-C}]{\setlength{\rightskip}{0pt plus 5cm}aiger $\ast$ C\-N\-F\-Impl\-Extractor\-::optimize\-With\-A\-B\-C (
 \begin{DoxyParamCaption}
 \item[{aiger $\ast$}]{circuit}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classCNFImplExtractor_a58a4e5021d0ef9c4190a5be74fb5a83e}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}}\label{classCNFImplExtractor_ad21828d816dfdbf672f6e595589ef6e7}
 
 
 Optimizes a combinatorial A\-I\-G\-E\-R circuit with A\-B\-C. 
@@ -291,7 +294,7 @@ References Options\-::get\-T\-P\-Dir\-Name(), Options\-::get\-Unique\-Tmp\-File\
 
 
 
-Referenced by Learning\-Impl\-Extractor\-::run(), and run().
+Referenced by Learning\-Impl\-Extractor\-::run(), run(), Par\-Extractor\-Q\-B\-F\-Worker\-::run\-Q\-B\-F(), Par\-Extractor\-Worker\-::run\-S\-A\-T(), and Par\-Extractor\-Worker\-::run\-S\-A\-T\-Dep().
 
 \hypertarget{classQBFCertImplExtractor_a97cf27d520ea0057385e35bb762a3069}{\index{Q\-B\-F\-Cert\-Impl\-Extractor@{Q\-B\-F\-Cert\-Impl\-Extractor}!run@{run}}
 \index{run@{run}!QBFCertImplExtractor@{Q\-B\-F\-Cert\-Impl\-Extractor}}
@@ -308,7 +311,7 @@ Extracts a circuit from the winning region and its negation.
 The result is written into the output file specified by the user. This method should be preferred if you have the winning region and its negation available. The other method computes the negation by itself and may introduce quite a lot of temporary variables.
 
 This method uses Q\-B\-F\-Cert to compute a solution. Q\-B\-F\-Cert (see \href{http://fmv.jku.at/qbfcert/}{\tt http\-://fmv.\-jku.\-at/qbfcert/}) is a framework for computing Skolem or Herbrand functions as witnesses for quantified Boolean formulas. We use it to compute circuits from a winning region. Let W be the winning region. Then we can compute a circuit as a skolem function for the c-\/signals in\-: \par
- ~ forall x,i\-: exists c,x'\-: (!\-W) $|$ (T \& W') \par
+ ~ forall x,i\-: exists c,x'\-: (!\-W) $\vert$ (T \& W') \par
  However, for performance reasons, we actually compute Herbrand functions for the c-\/signals in the formula\-: \par
  ~ exists x,i\-: forall c\-: exists x'\-: W \& T \& !\-W' \par
  Q\-B\-F\-Cert outputs the result in A\-I\-G\-E\-R format. Hence, all we have to do in order to obtain the final output of our tool is to embed this A\-I\-G\-E\-R-\/circuits for the c-\/signals in the input A\-I\-G\-E\-R file.

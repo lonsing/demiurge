@@ -41,6 +41,8 @@ virtual void \hyperlink{classMiniSatApi_a56c4758ee7466cd7fa48a682fee76fd3}{inc\-
 \begin{DoxyCompactList}\small\item\em Adds a new clause consisting of 2 literals to the current incremental session. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classMiniSatApi_aee9556c8c5de695fa5d7aa7cfde57877}{inc\-Add3\-Lit\-Clause} (int lit1, int lit2, int lit3)
 \begin{DoxyCompactList}\small\item\em Adds a new clause consisting of 3 literals to the current incremental session. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classMiniSatApi_ad78c29a67b210ac6f07ed3074b511bc1}{inc\-Add4\-Lit\-Clause} (int lit1, int lit2, int lit3, int lit4)
+\begin{DoxyCompactList}\small\item\em Adds a new clause consisting of 4 literals to the current incremental session. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classMiniSatApi_a41e16a2e8757846fa17e010c5cc1ff16}{inc\-Add\-Cube} (const vector$<$ int $>$ \&cube)
 \begin{DoxyCompactList}\small\item\em Adds a new cube to the current incremental session. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classMiniSatApi_a49afe5c41bb036a31f65f98621e82846}{inc\-Add\-Neg\-Cube\-As\-Clause} (const vector$<$ int $>$ \&cube)
@@ -106,7 +108,7 @@ This class represents an interface to the S\-A\-T-\/solver Minisat (see \href{ht
 Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\-1.\-0 
+1.\-2.\-0 
 \end{DoxyVersion}
 
 
@@ -124,7 +126,7 @@ A type for a const-\/iterator over the C\-N\-Fs of the incremental sessions.
 
 
 
-Definition at line 432 of file Mini\-Sat\-Api.\-h.
+Definition at line 452 of file Mini\-Sat\-Api.\-h.
 
 \hypertarget{classMiniSatApi_a12ef23c063731cbdb7405de0e670f6a7}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!Stack\-C\-N\-F\-Iter@{Stack\-C\-N\-F\-Iter}}
 \index{Stack\-C\-N\-F\-Iter@{Stack\-C\-N\-F\-Iter}!MiniSatApi@{Mini\-Sat\-Api}}
@@ -135,7 +137,7 @@ A type for an iterator over the C\-N\-Fs of the incremental sessions.
 
 
 
-Definition at line 438 of file Mini\-Sat\-Api.\-h.
+Definition at line 458 of file Mini\-Sat\-Api.\-h.
 
 \hypertarget{classMiniSatApi_aa4c233a841e489de9a59622e18df4678}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!Stack\-Const\-Iter@{Stack\-Const\-Iter}}
 \index{Stack\-Const\-Iter@{Stack\-Const\-Iter}!MiniSatApi@{Mini\-Sat\-Api}}
@@ -146,7 +148,7 @@ A type for a const-\/iterator over the incremental session stack.
 
 
 
-Definition at line 420 of file Mini\-Sat\-Api.\-h.
+Definition at line 440 of file Mini\-Sat\-Api.\-h.
 
 \hypertarget{classMiniSatApi_a46469116348b199bae1b92d209b969c0}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!Stack\-Iter@{Stack\-Iter}}
 \index{Stack\-Iter@{Stack\-Iter}!MiniSatApi@{Mini\-Sat\-Api}}
@@ -157,7 +159,7 @@ A type for an iterator over the incremental session stack.
 
 
 
-Definition at line 426 of file Mini\-Sat\-Api.\-h.
+Definition at line 446 of file Mini\-Sat\-Api.\-h.
 
 
 
@@ -278,7 +280,7 @@ References Sat\-Solver\-::min\-\_\-cores\-\_\-.
 
 
 
-Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), and Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2().
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Recy(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), Par\-Extractor\-Worker\-::run\-S\-A\-T(), and Par\-Extractor\-Worker\-::run\-S\-A\-T\-Dep().
 
 \hypertarget{classSatSolver_ae229c5e277350710412fce0e867dc566}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!do\-Rand\-Models@{do\-Rand\-Models}}
 \index{do\-Rand\-Models@{do\-Rand\-Models}!MiniSatApi@{Mini\-Sat\-Api}}
@@ -306,7 +308,7 @@ References Sat\-Solver\-::rand\-\_\-models\-\_\-.
 
 
 
-Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), and Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C().
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C\-Exp(), and Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Recy().
 
 \hypertarget{classMiniSatApi_a56c4758ee7466cd7fa48a682fee76fd3}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!inc\-Add2\-Lit\-Clause@{inc\-Add2\-Lit\-Clause}}
 \index{inc\-Add2\-Lit\-Clause@{inc\-Add2\-Lit\-Clause}!MiniSatApi@{Mini\-Sat\-Api}}
@@ -340,7 +342,7 @@ Definition at line 269 of file Mini\-Sat\-Api.\-cpp.
 
 
 
-References c2m(), incr\-\_\-stack\-\_\-, incr\-\_\-stack\-\_\-cnfs\-\_\-, M\-A\-S\-S\-E\-R\-T, and use\-\_\-push\-\_\-.
+References c2m(), D\-A\-S\-S\-E\-R\-T, incr\-\_\-stack\-\_\-, incr\-\_\-stack\-\_\-cnfs\-\_\-, and use\-\_\-push\-\_\-.
 
 \hypertarget{classMiniSatApi_aee9556c8c5de695fa5d7aa7cfde57877}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!inc\-Add3\-Lit\-Clause@{inc\-Add3\-Lit\-Clause}}
 \index{inc\-Add3\-Lit\-Clause@{inc\-Add3\-Lit\-Clause}!MiniSatApi@{Mini\-Sat\-Api}}
@@ -377,7 +379,47 @@ Definition at line 279 of file Mini\-Sat\-Api.\-cpp.
 
 
 
-References c2m(), incr\-\_\-stack\-\_\-, incr\-\_\-stack\-\_\-cnfs\-\_\-, M\-A\-S\-S\-E\-R\-T, and use\-\_\-push\-\_\-.
+References c2m(), D\-A\-S\-S\-E\-R\-T, incr\-\_\-stack\-\_\-, incr\-\_\-stack\-\_\-cnfs\-\_\-, and use\-\_\-push\-\_\-.
+
+\hypertarget{classMiniSatApi_ad78c29a67b210ac6f07ed3074b511bc1}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!inc\-Add4\-Lit\-Clause@{inc\-Add4\-Lit\-Clause}}
+\index{inc\-Add4\-Lit\-Clause@{inc\-Add4\-Lit\-Clause}!MiniSatApi@{Mini\-Sat\-Api}}
+\subsubsection[{inc\-Add4\-Lit\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}void Mini\-Sat\-Api\-::inc\-Add4\-Lit\-Clause (
+\begin{DoxyParamCaption}
+\item[{int}]{lit1, }
+\item[{int}]{lit2, }
+\item[{int}]{lit3, }
+\item[{int}]{lit4}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classMiniSatApi_ad78c29a67b210ac6f07ed3074b511bc1}
+
+
+Adds a new clause consisting of 4 literals to the current incremental session. 
+
+\begin{DoxyPrecond}{Precondition}
+\hyperlink{classMiniSatApi_afe6f184e440ffe7f9b3a86045c15b450}{start\-Incremental\-Session()} must have been called before. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em lit1} & The first literal of the clause to add to the currently open incremental session. If this method is called after solving for the first time, be sure that the passed literal talks about a variables that have been mentioned in vars\-\_\-to\-\_\-keep when calling \hyperlink{classMiniSatApi_afe6f184e440ffe7f9b3a86045c15b450}{start\-Incremental\-Session()}. Actually, the implementation in T\-H\-I\-S class does not care, but other implementations of the \hyperlink{classSatSolver}{Sat\-Solver} interface do. Hence, you should not violate this property to have the solver instances exchangeable. \\
+\hline
+{\em lit2} & The second literal of the clause to add to the currently open incremental session (must be contained in vars\-\_\-to\-\_\-keep as well). \\
+\hline
+{\em lit3} & The third literal of the clause to add to the currently open incremental session (must be contained in vars\-\_\-to\-\_\-keep as well). \\
+\hline
+{\em lit4} & The fourth literal of the clause to add to the currently open incremental session (must be contained in vars\-\_\-to\-\_\-keep as well). \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classSatSolver_af01bfc3b8fa15e7b69136b1808c59023}{Sat\-Solver}.
+
+
+
+Definition at line 289 of file Mini\-Sat\-Api.\-cpp.
+
+
+
+References c2m(), D\-A\-S\-S\-E\-R\-T, incr\-\_\-stack\-\_\-, incr\-\_\-stack\-\_\-cnfs\-\_\-, and use\-\_\-push\-\_\-.
 
 \hypertarget{classMiniSatApi_af2115a84419b7480ff55b747f7ddd60a}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!inc\-Add\-Clause@{inc\-Add\-Clause}}
 \index{inc\-Add\-Clause@{inc\-Add\-Clause}!MiniSatApi@{Mini\-Sat\-Api}}
@@ -408,7 +450,7 @@ Definition at line 246 of file Mini\-Sat\-Api.\-cpp.
 
 
 
-References c2m(), incr\-\_\-stack\-\_\-, incr\-\_\-stack\-\_\-cnfs\-\_\-, M\-A\-S\-S\-E\-R\-T, and use\-\_\-push\-\_\-.
+References c2m(), D\-A\-S\-S\-E\-R\-T, incr\-\_\-stack\-\_\-, incr\-\_\-stack\-\_\-cnfs\-\_\-, and use\-\_\-push\-\_\-.
 
 \hypertarget{classMiniSatApi_ae5ffe2811e01051c5206c9e4865a7102}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!inc\-Add\-C\-N\-F@{inc\-Add\-C\-N\-F}}
 \index{inc\-Add\-C\-N\-F@{inc\-Add\-C\-N\-F}!MiniSatApi@{Mini\-Sat\-Api}}
@@ -439,7 +481,7 @@ Definition at line 229 of file Mini\-Sat\-Api.\-cpp.
 
 
 
-References c2m(), C\-N\-F\-::get\-Clauses(), incr\-\_\-stack\-\_\-, incr\-\_\-stack\-\_\-cnfs\-\_\-, M\-A\-S\-S\-E\-R\-T, and use\-\_\-push\-\_\-.
+References c2m(), D\-A\-S\-S\-E\-R\-T, C\-N\-F\-::get\-Clauses(), incr\-\_\-stack\-\_\-, incr\-\_\-stack\-\_\-cnfs\-\_\-, and use\-\_\-push\-\_\-.
 
 \hypertarget{classMiniSatApi_a41e16a2e8757846fa17e010c5cc1ff16}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!inc\-Add\-Cube@{inc\-Add\-Cube}}
 \index{inc\-Add\-Cube@{inc\-Add\-Cube}!MiniSatApi@{Mini\-Sat\-Api}}
@@ -468,11 +510,11 @@ Implements \hyperlink{classSatSolver_a1f04f34bb04174489ed18d0b62241004}{Sat\-Sol
 
 
 
-Definition at line 289 of file Mini\-Sat\-Api.\-cpp.
+Definition at line 304 of file Mini\-Sat\-Api.\-cpp.
 
 
 
-References c2m(), incr\-\_\-stack\-\_\-, incr\-\_\-stack\-\_\-cnfs\-\_\-, M\-A\-S\-S\-E\-R\-T, and use\-\_\-push\-\_\-.
+References c2m(), D\-A\-S\-S\-E\-R\-T, incr\-\_\-stack\-\_\-, incr\-\_\-stack\-\_\-cnfs\-\_\-, and use\-\_\-push\-\_\-.
 
 \hypertarget{classMiniSatApi_a49afe5c41bb036a31f65f98621e82846}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!inc\-Add\-Neg\-Cube\-As\-Clause@{inc\-Add\-Neg\-Cube\-As\-Clause}}
 \index{inc\-Add\-Neg\-Cube\-As\-Clause@{inc\-Add\-Neg\-Cube\-As\-Clause}!MiniSatApi@{Mini\-Sat\-Api}}
@@ -501,11 +543,11 @@ Implements \hyperlink{classSatSolver_a6be2c564289a59057c4c6728a3aa9c2b}{Sat\-Sol
 
 
 
-Definition at line 300 of file Mini\-Sat\-Api.\-cpp.
+Definition at line 315 of file Mini\-Sat\-Api.\-cpp.
 
 
 
-References c2m(), incr\-\_\-stack\-\_\-, incr\-\_\-stack\-\_\-cnfs\-\_\-, M\-A\-S\-S\-E\-R\-T, and use\-\_\-push\-\_\-.
+References c2m(), D\-A\-S\-S\-E\-R\-T, incr\-\_\-stack\-\_\-, incr\-\_\-stack\-\_\-cnfs\-\_\-, and use\-\_\-push\-\_\-.
 
 \hypertarget{classMiniSatApi_ade09bb38667bb23f2ac993e2d6c66408}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!inc\-Add\-Unit\-Clause@{inc\-Add\-Unit\-Clause}}
 \index{inc\-Add\-Unit\-Clause@{inc\-Add\-Unit\-Clause}!MiniSatApi@{Mini\-Sat\-Api}}
@@ -536,7 +578,7 @@ Definition at line 259 of file Mini\-Sat\-Api.\-cpp.
 
 
 
-References c2m(), incr\-\_\-stack\-\_\-, incr\-\_\-stack\-\_\-cnfs\-\_\-, M\-A\-S\-S\-E\-R\-T, and use\-\_\-push\-\_\-.
+References c2m(), D\-A\-S\-S\-E\-R\-T, incr\-\_\-stack\-\_\-, incr\-\_\-stack\-\_\-cnfs\-\_\-, and use\-\_\-push\-\_\-.
 
 \hypertarget{classMiniSatApi_a4c6ba65381002eb3f90e8e0df1606759}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!inc\-Is\-Sat@{inc\-Is\-Sat}}
 \index{inc\-Is\-Sat@{inc\-Is\-Sat}!MiniSatApi@{Mini\-Sat\-Api}}
@@ -561,11 +603,11 @@ Implements \hyperlink{classSatSolver_ab1aab4b96a36b2003450067a3799ae23}{Sat\-Sol
 
 
 
-Definition at line 313 of file Mini\-Sat\-Api.\-cpp.
+Definition at line 328 of file Mini\-Sat\-Api.\-cpp.
 
 
 
-References incr\-\_\-stack\-\_\-, and M\-A\-S\-S\-E\-R\-T.
+References D\-A\-S\-S\-E\-R\-T, and incr\-\_\-stack\-\_\-.
 
 \hypertarget{classMiniSatApi_a40421bac2739bacb68f3c7083810694b}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!inc\-Is\-Sat@{inc\-Is\-Sat}}
 \index{inc\-Is\-Sat@{inc\-Is\-Sat}!MiniSatApi@{Mini\-Sat\-Api}}
@@ -597,11 +639,11 @@ Implements \hyperlink{classSatSolver_a1864787a33621efac7fc75fb6b25f080}{Sat\-Sol
 
 
 
-Definition at line 320 of file Mini\-Sat\-Api.\-cpp.
+Definition at line 335 of file Mini\-Sat\-Api.\-cpp.
 
 
 
-References c2m(), incr\-\_\-stack\-\_\-, and M\-A\-S\-S\-E\-R\-T.
+References c2m(), D\-A\-S\-S\-E\-R\-T, and incr\-\_\-stack\-\_\-.
 
 \hypertarget{classMiniSatApi_afb886d40bb45b5cf2fadb7aee1a06b3e}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!inc\-Is\-Sat\-Model\-Or\-Core@{inc\-Is\-Sat\-Model\-Or\-Core}}
 \index{inc\-Is\-Sat\-Model\-Or\-Core@{inc\-Is\-Sat\-Model\-Or\-Core}!MiniSatApi@{Mini\-Sat\-Api}}
@@ -636,11 +678,11 @@ Implements \hyperlink{classSatSolver_ad387fc06bacf2d48847f779c9db8461a}{Sat\-Sol
 
 
 
-Definition at line 331 of file Mini\-Sat\-Api.\-cpp.
+Definition at line 346 of file Mini\-Sat\-Api.\-cpp.
 
 
 
-References c2m(), incr\-\_\-stack\-\_\-, m2c(), M\-A\-S\-S\-E\-R\-T, Sat\-Solver\-::min\-\_\-cores\-\_\-, Sat\-Solver\-::rand\-\_\-models\-\_\-, rand\-Model(), and Utils\-::remove().
+References c2m(), D\-A\-S\-S\-E\-R\-T, incr\-\_\-stack\-\_\-, m2c(), Sat\-Solver\-::min\-\_\-cores\-\_\-, Sat\-Solver\-::rand\-\_\-models\-\_\-, rand\-Model(), and Utils\-::remove().
 
 \hypertarget{classMiniSatApi_a776b2b0563b52f52152dcec931b7f557}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!inc\-Is\-Sat\-Model\-Or\-Core@{inc\-Is\-Sat\-Model\-Or\-Core}}
 \index{inc\-Is\-Sat\-Model\-Or\-Core@{inc\-Is\-Sat\-Model\-Or\-Core}!MiniSatApi@{Mini\-Sat\-Api}}
@@ -678,11 +720,11 @@ Implements \hyperlink{classSatSolver_a29225bfab1f352cae27c68e9bda4d409}{Sat\-Sol
 
 
 
-Definition at line 389 of file Mini\-Sat\-Api.\-cpp.
+Definition at line 404 of file Mini\-Sat\-Api.\-cpp.
 
 
 
-References c2m(), incr\-\_\-stack\-\_\-, m2c(), M\-A\-S\-S\-E\-R\-T, Sat\-Solver\-::min\-\_\-cores\-\_\-, Sat\-Solver\-::rand\-\_\-models\-\_\-, rand\-Model(), and Utils\-::remove().
+References c2m(), D\-A\-S\-S\-E\-R\-T, incr\-\_\-stack\-\_\-, m2c(), Sat\-Solver\-::min\-\_\-cores\-\_\-, Sat\-Solver\-::rand\-\_\-models\-\_\-, rand\-Model(), and Utils\-::remove().
 
 \hypertarget{classMiniSatApi_af388f97db15f77baeb420a8fef74ca6a}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!inc\-Pop@{inc\-Pop}}
 \index{inc\-Pop@{inc\-Pop}!MiniSatApi@{Mini\-Sat\-Api}}
@@ -701,11 +743,11 @@ Implements \hyperlink{classSatSolver_a436aae045eb04141c834df0b55947ee5}{Sat\-Sol
 
 
 
-Definition at line 483 of file Mini\-Sat\-Api.\-cpp.
+Definition at line 498 of file Mini\-Sat\-Api.\-cpp.
 
 
 
-References incr\-\_\-stack\-\_\-, incr\-\_\-stack\-\_\-cnfs\-\_\-, and M\-A\-S\-S\-E\-R\-T.
+References D\-A\-S\-S\-E\-R\-T, incr\-\_\-stack\-\_\-, and incr\-\_\-stack\-\_\-cnfs\-\_\-.
 
 \hypertarget{classMiniSatApi_a27013ace25320f68252bef5ba9f2e9ad}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!inc\-Push@{inc\-Push}}
 \index{inc\-Push@{inc\-Push}!MiniSatApi@{Mini\-Sat\-Api}}
@@ -721,18 +763,18 @@ Stores the current state of the incremental session on a stack.
 The state can be restored later by calling \hyperlink{classMiniSatApi_af388f97db15f77baeb420a8fef74ca6a}{inc\-Pop()}. Mini\-Sat does not support push and pop natively. Also, Mini\-Sat does not allow to copy a a solver instance. Hence, we do a workaround\-: we create a new solver instance and feed it with the \hyperlink{classCNF}{C\-N\-F} that has been fed into the original solver instance. Clauses learned by the original solver are not transferred. For this to work, we track all clauses that are added to the original solver. This means some computational overhead. We can save this overhead if we tell \hyperlink{classMiniSatApi_afe6f184e440ffe7f9b3a86045c15b450}{start\-Incremental\-Session()} that \hyperlink{classMiniSatApi_a27013ace25320f68252bef5ba9f2e9ad}{inc\-Push()} will never be called.
 
 \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000004}{Todo}]Try to improve this workaround with activation variables or by extracting the learned clauses from the original solver instance or by implementing a copy-\/function for Mini\-Sat solver instances. \end{DoxyRefDesc}
+\item[\hyperlink{todo__todo000009}{Todo}]Try to improve this workaround with activation variables or by extracting the learned clauses from the original solver instance or by implementing a copy-\/function for Mini\-Sat solver instances. \end{DoxyRefDesc}
 
 
 Implements \hyperlink{classSatSolver_a4da0dff7082a91429e3311d279605be4}{Sat\-Solver}.
 
 
 
-Definition at line 463 of file Mini\-Sat\-Api.\-cpp.
+Definition at line 478 of file Mini\-Sat\-Api.\-cpp.
 
 
 
-References c2m(), incr\-\_\-stack\-\_\-, incr\-\_\-stack\-\_\-cnfs\-\_\-, M\-A\-S\-S\-E\-R\-T, and use\-\_\-push\-\_\-.
+References c2m(), D\-A\-S\-S\-E\-R\-T, incr\-\_\-stack\-\_\-, incr\-\_\-stack\-\_\-cnfs\-\_\-, and use\-\_\-push\-\_\-.
 
 \hypertarget{classMiniSatApi_a73b93ecb947723a96ef6fbd436640e12}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!is\-Sat@{is\-Sat}}
 \index{is\-Sat@{is\-Sat}!MiniSatApi@{Mini\-Sat\-Api}}
@@ -879,11 +921,11 @@ A stack of incremental session contexts.
 
 The incremental session is store on a stack to support \hyperlink{classMiniSatApi_a27013ace25320f68252bef5ba9f2e9ad}{inc\-Push()} and \hyperlink{classMiniSatApi_af388f97db15f77baeb420a8fef74ca6a}{inc\-Pop()}. The current session is always at the top of the stack (the end of the list). 
 
-Definition at line 398 of file Mini\-Sat\-Api.\-h.
+Definition at line 418 of file Mini\-Sat\-Api.\-h.
 
 
 
-Referenced by clear\-Incremental\-Session(), inc\-Add2\-Lit\-Clause(), inc\-Add3\-Lit\-Clause(), inc\-Add\-Clause(), inc\-Add\-C\-N\-F(), inc\-Add\-Cube(), inc\-Add\-Neg\-Cube\-As\-Clause(), inc\-Add\-Unit\-Clause(), inc\-Is\-Sat(), inc\-Is\-Sat\-Model\-Or\-Core(), inc\-Pop(), inc\-Push(), and start\-Incremental\-Session().
+Referenced by clear\-Incremental\-Session(), inc\-Add2\-Lit\-Clause(), inc\-Add3\-Lit\-Clause(), inc\-Add4\-Lit\-Clause(), inc\-Add\-Clause(), inc\-Add\-C\-N\-F(), inc\-Add\-Cube(), inc\-Add\-Neg\-Cube\-As\-Clause(), inc\-Add\-Unit\-Clause(), inc\-Is\-Sat(), inc\-Is\-Sat\-Model\-Or\-Core(), inc\-Pop(), inc\-Push(), and start\-Incremental\-Session().
 
 \hypertarget{classMiniSatApi_aca2da2d02879e4a05c09124ff84cc4cd}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!incr\-\_\-stack\-\_\-cnfs\-\_\-@{incr\-\_\-stack\-\_\-cnfs\-\_\-}}
 \index{incr\-\_\-stack\-\_\-cnfs\-\_\-@{incr\-\_\-stack\-\_\-cnfs\-\_\-}!MiniSatApi@{Mini\-Sat\-Api}}
@@ -894,11 +936,11 @@ A C\-N\-Fs that are stored in the incremental session contexts.
 
 This is used for our workaround to support \hyperlink{classMiniSatApi_a27013ace25320f68252bef5ba9f2e9ad}{inc\-Push()} and \hyperlink{classMiniSatApi_af388f97db15f77baeb420a8fef74ca6a}{inc\-Pop()}. The current \hyperlink{classCNF}{C\-N\-F} is always at the top of the stack (the end of the list). 
 
-Definition at line 406 of file Mini\-Sat\-Api.\-h.
+Definition at line 426 of file Mini\-Sat\-Api.\-h.
 
 
 
-Referenced by clear\-Incremental\-Session(), inc\-Add2\-Lit\-Clause(), inc\-Add3\-Lit\-Clause(), inc\-Add\-Clause(), inc\-Add\-C\-N\-F(), inc\-Add\-Cube(), inc\-Add\-Neg\-Cube\-As\-Clause(), inc\-Add\-Unit\-Clause(), inc\-Pop(), inc\-Push(), and start\-Incremental\-Session().
+Referenced by clear\-Incremental\-Session(), inc\-Add2\-Lit\-Clause(), inc\-Add3\-Lit\-Clause(), inc\-Add4\-Lit\-Clause(), inc\-Add\-Clause(), inc\-Add\-C\-N\-F(), inc\-Add\-Cube(), inc\-Add\-Neg\-Cube\-As\-Clause(), inc\-Add\-Unit\-Clause(), inc\-Pop(), inc\-Push(), and start\-Incremental\-Session().
 
 \hypertarget{classSatSolver_adfeecebfd09606c82b5c57cfe5aad813}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!min\-\_\-cores\-\_\-@{min\-\_\-cores\-\_\-}}
 \index{min\-\_\-cores\-\_\-@{min\-\_\-cores\-\_\-}!MiniSatApi@{Mini\-Sat\-Api}}
@@ -909,7 +951,7 @@ Indicates if the unsat cores returned by the solver should be minimized further.
 
 
 
-Definition at line 428 of file Sat\-Solver.\-h.
+Definition at line 448 of file Sat\-Solver.\-h.
 
 
 
@@ -924,7 +966,7 @@ Indicates if satisfying assignments should be randomized.
 
 
 
-Definition at line 433 of file Sat\-Solver.\-h.
+Definition at line 453 of file Sat\-Solver.\-h.
 
 
 
@@ -939,11 +981,11 @@ A flag indicating if \hyperlink{classMiniSatApi_a27013ace25320f68252bef5ba9f2e9a
 
 If this flag is set to false, we do not track the C\-N\-Fs in the incremental solver instances in \hyperlink{classMiniSatApi_aca2da2d02879e4a05c09124ff84cc4cd}{incr\-\_\-stack\-\_\-cnfs\-\_\-}. 
 
-Definition at line 414 of file Mini\-Sat\-Api.\-h.
+Definition at line 434 of file Mini\-Sat\-Api.\-h.
 
 
 
-Referenced by inc\-Add2\-Lit\-Clause(), inc\-Add3\-Lit\-Clause(), inc\-Add\-Clause(), inc\-Add\-C\-N\-F(), inc\-Add\-Cube(), inc\-Add\-Neg\-Cube\-As\-Clause(), inc\-Add\-Unit\-Clause(), inc\-Push(), and start\-Incremental\-Session().
+Referenced by inc\-Add2\-Lit\-Clause(), inc\-Add3\-Lit\-Clause(), inc\-Add4\-Lit\-Clause(), inc\-Add\-Clause(), inc\-Add\-C\-N\-F(), inc\-Add\-Cube(), inc\-Add\-Neg\-Cube\-As\-Clause(), inc\-Add\-Unit\-Clause(), inc\-Push(), and start\-Incremental\-Session().
 
 
 

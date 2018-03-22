@@ -36,7 +36,7 @@
 /// @brief TODO
 ///
 /// @author TODO
-/// @version 1.1.0
+/// @version 1.2.0
 class TestInterpolation : public CPPUNIT_NS::TestFixture
 {
   CPPUNIT_TEST_SUITE(TestInterpolation);

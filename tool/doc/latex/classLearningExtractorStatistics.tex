@@ -40,17 +40,17 @@ void \hyperlink{classLearningExtractorStatistics_a1938df334b6ec4b80f2d7240a6a6fa
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{Stopwatch_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{Point\-In\-Time} \hyperlink{classLearningExtractorStatistics_ac16b676d2eb3fe71af340233a37a9ca9}{abc\-\_\-start\-\_\-time\-\_\-}
+\hyperlink{Options_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{Point\-In\-Time} \hyperlink{classLearningExtractorStatistics_ac16b676d2eb3fe71af340233a37a9ca9}{abc\-\_\-start\-\_\-time\-\_\-}
 \begin{DoxyCompactList}\small\item\em The time when the circuit optimization with A\-B\-C was started. \end{DoxyCompactList}\item 
 double \hyperlink{classLearningExtractorStatistics_a58056982bf57dbe69cff268d9a9d4a32}{abc\-\_\-cpu\-\_\-time\-\_\-}
 \begin{DoxyCompactList}\small\item\em The time for optimizing the circuit with A\-B\-C in C\-P\-U-\/seconds. \end{DoxyCompactList}\item 
 size\-\_\-t \hyperlink{classLearningExtractorStatistics_a4bdc0c5fba7ef60dbf974f212b4b1f17}{abc\-\_\-real\-\_\-time\-\_\-}
 \begin{DoxyCompactList}\small\item\em Like \hyperlink{classLearningExtractorStatistics_a58056982bf57dbe69cff268d9a9d4a32}{abc\-\_\-cpu\-\_\-time\-\_\-} but real-\/time. \end{DoxyCompactList}\item 
-\hyperlink{Stopwatch_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{Point\-In\-Time} \hyperlink{classLearningExtractorStatistics_a476eba034e9e2004d0fe0b2bdeafbd1e}{clause\-\_\-comp\-\_\-start\-\_\-time\-\_\-}
+\hyperlink{Options_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{Point\-In\-Time} \hyperlink{classLearningExtractorStatistics_a476eba034e9e2004d0fe0b2bdeafbd1e}{clause\-\_\-comp\-\_\-start\-\_\-time\-\_\-}
 \begin{DoxyCompactList}\small\item\em The time when the computation of a counterexample-\/situation was started. \end{DoxyCompactList}\item 
-\hyperlink{Stopwatch_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{Point\-In\-Time} \hyperlink{classLearningExtractorStatistics_aad8e031085a746b5fc30b8185bf5dabf}{clause\-\_\-min\-\_\-start\-\_\-time\-\_\-}
+\hyperlink{Options_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{Point\-In\-Time} \hyperlink{classLearningExtractorStatistics_aad8e031085a746b5fc30b8185bf5dabf}{clause\-\_\-min\-\_\-start\-\_\-time\-\_\-}
 \begin{DoxyCompactList}\small\item\em The time when the generalization of a counterexample-\/situation was started. \end{DoxyCompactList}\item 
-\hyperlink{Stopwatch_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{Point\-In\-Time} \hyperlink{classLearningExtractorStatistics_aaf7283a491c91200e03e0ca29f7bcd93}{ctrl\-\_\-signal\-\_\-start\-\_\-time\-\_\-}
+\hyperlink{Options_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{Point\-In\-Time} \hyperlink{classLearningExtractorStatistics_aaf7283a491c91200e03e0ca29f7bcd93}{ctrl\-\_\-signal\-\_\-start\-\_\-time\-\_\-}
 \begin{DoxyCompactList}\small\item\em The time when the computation of the next control signal was started. \end{DoxyCompactList}\item 
 vector$<$ size\-\_\-t $>$ \hyperlink{classLearningExtractorStatistics_a20b2771dd74bd0e2e08d7568149bef14}{nr\-\_\-of\-\_\-clause\-\_\-computations\-\_\-}
 \begin{DoxyCompactList}\small\item\em The number of counterexample-\/situations that had to be computed per control signal. \end{DoxyCompactList}\item 
@@ -92,7 +92,7 @@ A class to collect performance measures for the \hyperlink{classLearningImplExtr
 Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\-1.\-0
+1.\-2.\-0
 \end{DoxyVersion}
 This class collects statistics and performance data for the learning-\/based synthesis circuit extraction method implemented using Q\-B\-F or S\-A\-T solving (implemented in the class \hyperlink{classLearningImplExtractor}{Learning\-Impl\-Extractor}). 
 
@@ -133,7 +133,7 @@ Destructor.
 
 
 
-Definition at line 53 of file Learning\-Extractor\-Statistics.\-cpp.
+Definition at line 55 of file Learning\-Extractor\-Statistics.\-cpp.
 
 \hypertarget{classLearningExtractorStatistics_a08a5699815cf32793642c241ffccc766}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}}
 \index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
@@ -176,7 +176,7 @@ If messages of type \hyperlink{classLogger_ac9e601f90bf326ce2088de52018861dca07b
 \end{DoxyParams}
 
 
-Definition at line 129 of file Learning\-Extractor\-Statistics.\-cpp.
+Definition at line 131 of file Learning\-Extractor\-Statistics.\-cpp.
 
 
 
@@ -206,7 +206,7 @@ This method just reads out the \hyperlink{classStopwatch}{Stopwatch} and stores 
 \end{DoxyParams}
 
 
-Definition at line 115 of file Learning\-Extractor\-Statistics.\-cpp.
+Definition at line 117 of file Learning\-Extractor\-Statistics.\-cpp.
 
 
 
@@ -214,7 +214,7 @@ References abc\-\_\-cpu\-\_\-time\-\_\-, abc\-\_\-real\-\_\-time\-\_\-, abc\-\_\
 
 
 
-Referenced by Learning\-Impl\-Extractor\-::run().
+Referenced by Learning\-Impl\-Extractor\-::run(), Par\-Extractor\-Q\-B\-F\-Worker\-::run\-Q\-B\-F(), Par\-Extractor\-Worker\-::run\-S\-A\-T(), and Par\-Extractor\-Worker\-::run\-S\-A\-T\-Dep().
 
 \hypertarget{classLearningExtractorStatistics_aa353eb06b4a228d4558d181479a146b1}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!notify\-After\-Clause\-Comp@{notify\-After\-Clause\-Comp}}
 \index{notify\-After\-Clause\-Comp@{notify\-After\-Clause\-Comp}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
@@ -229,7 +229,7 @@ Called after the computation of the next counterexample situation is done.
 
 This method just reads out the \hyperlink{classStopwatch}{Stopwatch} and stores the execution time. 
 
-Definition at line 85 of file Learning\-Extractor\-Statistics.\-cpp.
+Definition at line 87 of file Learning\-Extractor\-Statistics.\-cpp.
 
 
 
@@ -237,7 +237,7 @@ References clause\-\_\-comp\-\_\-start\-\_\-time\-\_\-, Stopwatch\-::get\-C\-P\-
 
 
 
-Referenced by Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F(), and Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F\-Inc().
+Referenced by Learning\-Impl\-Extractor\-::run\-Learning\-Exp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F\-Inc(), Par\-Extractor\-Q\-B\-F\-Worker\-::run\-Q\-B\-F(), Par\-Extractor\-Worker\-::run\-S\-A\-T(), and Par\-Extractor\-Worker\-::run\-S\-A\-T\-Dep().
 
 \hypertarget{classLearningExtractorStatistics_afb94f9819de27d6110eebae020461c13}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!notify\-After\-Clause\-Min@{notify\-After\-Clause\-Min}}
 \index{notify\-After\-Clause\-Min@{notify\-After\-Clause\-Min}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
@@ -262,7 +262,7 @@ This method just reads out the \hyperlink{classStopwatch}{Stopwatch} and stores 
 \end{DoxyParams}
 
 
-Definition at line 99 of file Learning\-Extractor\-Statistics.\-cpp.
+Definition at line 101 of file Learning\-Extractor\-Statistics.\-cpp.
 
 
 
@@ -270,7 +270,7 @@ References clause\-\_\-min\-\_\-start\-\_\-time\-\_\-, Stopwatch\-::get\-C\-P\-U
 
 
 
-Referenced by Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F(), and Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F\-Inc().
+Referenced by Learning\-Impl\-Extractor\-::run\-Learning\-Exp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F\-Inc(), Par\-Extractor\-Q\-B\-F\-Worker\-::run\-Q\-B\-F(), Par\-Extractor\-Worker\-::run\-S\-A\-T(), and Par\-Extractor\-Worker\-::run\-S\-A\-T\-Dep().
 
 \hypertarget{classLearningExtractorStatistics_aad5a2bfb3925bf3645c663a76616ffef}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!notify\-After\-Ctrl\-Signal@{notify\-After\-Ctrl\-Signal}}
 \index{notify\-After\-Ctrl\-Signal@{notify\-After\-Ctrl\-Signal}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
@@ -285,7 +285,7 @@ Called after the computation of the next control signal is done.
 
 This method just reads out the \hyperlink{classStopwatch}{Stopwatch} and stores the execution time. 
 
-Definition at line 72 of file Learning\-Extractor\-Statistics.\-cpp.
+Definition at line 74 of file Learning\-Extractor\-Statistics.\-cpp.
 
 
 
@@ -293,7 +293,7 @@ References ctrl\-\_\-signal\-\_\-cpu\-\_\-time\-\_\-, ctrl\-\_\-signal\-\_\-real
 
 
 
-Referenced by Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F(), and Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F\-Inc().
+Referenced by Learning\-Impl\-Extractor\-::run\-Learning\-Exp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F\-Inc(), Par\-Extractor\-Q\-B\-F\-Worker\-::run\-Q\-B\-F(), Par\-Extractor\-Worker\-::run\-S\-A\-T(), and Par\-Extractor\-Worker\-::run\-S\-A\-T\-Dep().
 
 \hypertarget{classLearningExtractorStatistics_ab8c8b1c3832a79f055d45dca58e71725}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!notify\-Before\-A\-B\-C@{notify\-Before\-A\-B\-C}}
 \index{notify\-Before\-A\-B\-C@{notify\-Before\-A\-B\-C}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
@@ -315,7 +315,7 @@ This method just starts a \hyperlink{classStopwatch}{Stopwatch} and logs the cir
 \end{DoxyParams}
 
 
-Definition at line 108 of file Learning\-Extractor\-Statistics.\-cpp.
+Definition at line 110 of file Learning\-Extractor\-Statistics.\-cpp.
 
 
 
@@ -323,7 +323,7 @@ References abc\-\_\-start\-\_\-time\-\_\-, size\-\_\-before\-\_\-abc\-\_\-, and 
 
 
 
-Referenced by Learning\-Impl\-Extractor\-::run().
+Referenced by Learning\-Impl\-Extractor\-::run(), Par\-Extractor\-Q\-B\-F\-Worker\-::run\-Q\-B\-F(), Par\-Extractor\-Worker\-::run\-S\-A\-T(), and Par\-Extractor\-Worker\-::run\-S\-A\-T\-Dep().
 
 \hypertarget{classLearningExtractorStatistics_a277b5df115b10544ad922347b777b836}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!notify\-Before\-Clause\-Comp@{notify\-Before\-Clause\-Comp}}
 \index{notify\-Before\-Clause\-Comp@{notify\-Before\-Clause\-Comp}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
@@ -338,7 +338,7 @@ Called before the computation of the next counterexample situation.
 
 This method just starts a \hyperlink{classStopwatch}{Stopwatch}. 
 
-Definition at line 79 of file Learning\-Extractor\-Statistics.\-cpp.
+Definition at line 81 of file Learning\-Extractor\-Statistics.\-cpp.
 
 
 
@@ -346,7 +346,7 @@ References clause\-\_\-comp\-\_\-start\-\_\-time\-\_\-, and Stopwatch\-::start()
 
 
 
-Referenced by Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F(), and Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F\-Inc().
+Referenced by Learning\-Impl\-Extractor\-::run\-Learning\-Exp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F\-Inc(), Par\-Extractor\-Q\-B\-F\-Worker\-::run\-Q\-B\-F(), Par\-Extractor\-Worker\-::run\-S\-A\-T(), and Par\-Extractor\-Worker\-::run\-S\-A\-T\-Dep().
 
 \hypertarget{classLearningExtractorStatistics_a93d1b6c361f8e0a4b33e3660691790e4}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!notify\-Before\-Clause\-Min@{notify\-Before\-Clause\-Min}}
 \index{notify\-Before\-Clause\-Min@{notify\-Before\-Clause\-Min}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
@@ -361,7 +361,7 @@ Called before the generalization of the next counterexample situation.
 
 This method just starts a \hyperlink{classStopwatch}{Stopwatch}. 
 
-Definition at line 93 of file Learning\-Extractor\-Statistics.\-cpp.
+Definition at line 95 of file Learning\-Extractor\-Statistics.\-cpp.
 
 
 
@@ -369,7 +369,7 @@ References clause\-\_\-min\-\_\-start\-\_\-time\-\_\-, and Stopwatch\-::start().
 
 
 
-Referenced by Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F(), and Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F\-Inc().
+Referenced by Learning\-Impl\-Extractor\-::run\-Learning\-Exp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F\-Inc(), Par\-Extractor\-Q\-B\-F\-Worker\-::run\-Q\-B\-F(), Par\-Extractor\-Worker\-::run\-S\-A\-T(), and Par\-Extractor\-Worker\-::run\-S\-A\-T\-Dep().
 
 \hypertarget{classLearningExtractorStatistics_a9b82a38db644813eb1d648b026010d6d}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!notify\-Before\-Ctrl\-Signal@{notify\-Before\-Ctrl\-Signal}}
 \index{notify\-Before\-Ctrl\-Signal@{notify\-Before\-Ctrl\-Signal}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
@@ -384,7 +384,7 @@ Called before the computation of the next control signal.
 
 This method just starts a \hyperlink{classStopwatch}{Stopwatch}. 
 
-Definition at line 59 of file Learning\-Extractor\-Statistics.\-cpp.
+Definition at line 61 of file Learning\-Extractor\-Statistics.\-cpp.
 
 
 
@@ -392,7 +392,7 @@ References ctrl\-\_\-signal\-\_\-start\-\_\-time\-\_\-, nr\-\_\-of\-\_\-clause\-
 
 
 
-Referenced by Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F(), and Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F\-Inc().
+Referenced by Learning\-Impl\-Extractor\-::run\-Learning\-Exp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F\-Inc(), Par\-Extractor\-Q\-B\-F\-Worker\-::run\-Q\-B\-F(), Par\-Extractor\-Worker\-::run\-S\-A\-T(), and Par\-Extractor\-Worker\-::run\-S\-A\-T\-Dep().
 
 \hypertarget{classLearningExtractorStatistics_af537e9d8d93bec157dddda73cd05a891}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!notify\-Final\-Size@{notify\-Final\-Size}}
 \index{notify\-Final\-Size@{notify\-Final\-Size}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
@@ -412,7 +412,7 @@ Logs the number of new A\-N\-D gates that have been added to the specification.
 \end{DoxyParams}
 
 
-Definition at line 123 of file Learning\-Extractor\-Statistics.\-cpp.
+Definition at line 125 of file Learning\-Extractor\-Statistics.\-cpp.
 
 
 

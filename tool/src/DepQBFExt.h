@@ -53,7 +53,7 @@ class aiger;
 /// functions for QBFs.
 ///
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.1.0
+/// @version 1.2.0
 class DepQBFExt : public ExtQBFSolver
 {
 public:
@@ -61,7 +61,12 @@ public:
 // -------------------------------------------------------------------------------------------
 ///
 /// @brief Constructor.
-  DepQBFExt();
+///
+/// @param use_bloqqer True if bloqqer should be used as a preprocessor. False otherwise.
+/// @param timeout An optional time-out in seconds. If set to 0, then no time-out will be
+///        set. At the moment, a time-out can only be used with bloqqer. Setting a time-out
+///        but not using bloqqer, the time-out will be ignored.
+  DepQBFExt(bool use_bloqqer = false, size_t timeout = 0);
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -103,8 +108,35 @@ protected:
 
 // -------------------------------------------------------------------------------------------
 ///
+/// @brief Parses the answer of the QBF solver to get the satisfiability verdict and a model.
+///
+/// @exception DemiurgeException if the solver crashed or a timeout occurred.
+/// @param ret The exit code of the process running the QBF solver.
+/// @param get The variables of interest for which we want to have a satisfying assignment.
+/// @param model An empty vector. In case of satisfiability, this method will write a
+///        satisfying assignment in form of a cube into this vector.
+/// @return True in case of satisfiability, false for unsatisfiability.
+  virtual bool parseModel(int ret, const vector<int> &get, vector<int> &model) const;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief True if bloqqer should be used as a preprocessor. False otherwise.
+  bool use_bloqqer_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief An optional time-out in seconds. If set to 0, then no time-out will be set.
+  size_t timeout_;
+
+// -------------------------------------------------------------------------------------------
+///
 /// @brief The path to the DepQBF executable.
   string path_to_deqqbf_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The path to the DepQBF executable.
+  string path_to_bloqqer_;
 
 // -------------------------------------------------------------------------------------------
 ///

@@ -8,8 +8,8 @@ fi
 
 echo "Installing the Lingeling SAT-solver ..."
 
-LINGELING="lingeling-ats-57807c8-131016"
-LINGELING_ACHRIVE="$LINGELING.tar.gz"
+LINGELING="lingeling-ayv-86bf266-140429"
+LINGELING_ACHRIVE="$LINGELING.zip"
 
 if [ ! -e "$LINGELING_ACHRIVE" ];
 then
@@ -19,13 +19,10 @@ fi
 
 echo " Unpacking Lingeling ..."
 rm -rf $DEMIURGETP/lingeling
-tar -xzf $LINGELING_ACHRIVE -C $DEMIURGETP
-mv $DEMIURGETP/$LINGELING $DEMIURGETP/lingeling
+unzip $LINGELING_ACHRIVE -d $DEMIURGETP/lingeling
 
 echo " Compiling Lingeling ..."
-cd $DEMIURGETP/lingeling
-./configure.sh
-cp $DEMIURGETP/lingeling/makefile $DEMIURGETP/lingeling/makefile_orig
-sed 's/AIGER=/AIGER=$(DEMIURGETP)\/aiger-1.9.4/' $DEMIURGETP/lingeling/makefile_orig > $DEMIURGETP/lingeling/makefile
+cd $DEMIURGETP/lingeling/code
+./configure.sh --aiger=$DEMIURGETP/aiger-1.9.4/
 make
-make blimc
+

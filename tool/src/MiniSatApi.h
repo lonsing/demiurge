@@ -54,7 +54,7 @@ namespace Minisat
 /// every call.
 ///
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.1.0
+/// @version 1.2.0
 class MiniSatApi : public SatSolver
 {
 public:
@@ -228,6 +228,26 @@ public:
 /// @param lit3 The third literal of the clause to add to the currently open incremental
 ///        session (must be contained in vars_to_keep as well).
   virtual void incAdd3LitClause(int lit1, int lit2, int lit3);
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Adds a new clause consisting of 4 literals to the current incremental session.
+///
+/// @pre #startIncrementalSession() must have been called before.
+/// @param lit1 The first literal of the clause to add to the currently
+///        open incremental session. If this method is called after solving for the first
+///        time, be sure that the passed literal talks about a variables that have been
+///        mentioned in vars_to_keep when calling #startIncrementalSession().
+///        Actually, the implementation in THIS class does not
+///        care, but other implementations of the SatSolver interface do. Hence, you should
+///        not violate this property to have the solver instances exchangeable.
+/// @param lit2 The second literal of the clause to add to the currently open incremental
+///        session (must be contained in vars_to_keep as well).
+/// @param lit3 The third literal of the clause to add to the currently open incremental
+///        session (must be contained in vars_to_keep as well).
+/// @param lit4 The fourth literal of the clause to add to the currently open incremental
+///        session (must be contained in vars_to_keep as well).
+  virtual void incAdd4LitClause(int lit1, int lit2, int lit3, int lit4);
 
 // -------------------------------------------------------------------------------------------
 ///

@@ -1,0 +1,63 @@
+\hypertarget{ParExtractor_8cpp}{\section{src/\-Par\-Extractor.cpp File Reference}
+\label{ParExtractor_8cpp}\index{src/\-Par\-Extractor.\-cpp@{src/\-Par\-Extractor.\-cpp}}
+}
+
+
+Contains the definition of the class \hyperlink{classParExtractor}{Par\-Extractor}.  
+
+
+{\ttfamily \#include \char`\"{}Par\-Extractor.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Options.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}A\-I\-G2\-C\-N\-F.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Var\-Manager.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Sat\-Solver.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Dep\-Q\-B\-F\-Api.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Logger.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$thread$>$}\\*
+{\ttfamily \#include $<$mutex$>$}\\*
+{\ttfamily \#include \char`\"{}unistd.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$pthread.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}aiger.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{ParExtractor_8cpp_aaddc7c0231a5a3c54e2747d80d926213}{E\-X\-T\-R\-\_\-\-G\-O}~0
+\begin{DoxyCompactList}\small\item\em A constant for the circuit extractor command 'G\-O'. \end{DoxyCompactList}\item 
+\#define \hyperlink{ParExtractor_8cpp_a11958a1fa126f9eacf7306c5617a1961}{E\-X\-T\-R\-\_\-\-S\-T\-O\-P}~1
+\begin{DoxyCompactList}\small\item\em A constant for the circuit extractor command 'S\-T\-O\-P'. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains the definition of the class \hyperlink{classParExtractor}{Par\-Extractor}. 
+
+Definition in file \hyperlink{ParExtractor_8cpp_source}{Par\-Extractor.\-cpp}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{ParExtractor_8cpp_aaddc7c0231a5a3c54e2747d80d926213}{\index{Par\-Extractor.\-cpp@{Par\-Extractor.\-cpp}!E\-X\-T\-R\-\_\-\-G\-O@{E\-X\-T\-R\-\_\-\-G\-O}}
+\index{E\-X\-T\-R\-\_\-\-G\-O@{E\-X\-T\-R\-\_\-\-G\-O}!ParExtractor.cpp@{Par\-Extractor.\-cpp}}
+\subsubsection[{E\-X\-T\-R\-\_\-\-G\-O}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-X\-T\-R\-\_\-\-G\-O~0}}\label{ParExtractor_8cpp_aaddc7c0231a5a3c54e2747d80d926213}
+
+
+A constant for the circuit extractor command 'G\-O'. 
+
+
+
+Definition at line 52 of file Par\-Extractor.\-cpp.
+
+\hypertarget{ParExtractor_8cpp_a11958a1fa126f9eacf7306c5617a1961}{\index{Par\-Extractor.\-cpp@{Par\-Extractor.\-cpp}!E\-X\-T\-R\-\_\-\-S\-T\-O\-P@{E\-X\-T\-R\-\_\-\-S\-T\-O\-P}}
+\index{E\-X\-T\-R\-\_\-\-S\-T\-O\-P@{E\-X\-T\-R\-\_\-\-S\-T\-O\-P}!ParExtractor.cpp@{Par\-Extractor.\-cpp}}
+\subsubsection[{E\-X\-T\-R\-\_\-\-S\-T\-O\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-X\-T\-R\-\_\-\-S\-T\-O\-P~1}}\label{ParExtractor_8cpp_a11958a1fa126f9eacf7306c5617a1961}
+
+
+A constant for the circuit extractor command 'S\-T\-O\-P'. 
+
+
+
+Definition at line 58 of file Par\-Extractor.\-cpp.
+
+
+
+Referenced by Par\-Extractor\-::kill\-Them\-All(), Par\-Extractor\-Q\-B\-F\-Worker\-::run\-Q\-B\-F(), Par\-Extractor\-Worker\-::run\-S\-A\-T(), Par\-Extractor\-Worker\-::run\-S\-A\-T\-Dep(), and Par\-Extractor\-Worker\-::wait\-For\-Others\-To\-Finish().
+

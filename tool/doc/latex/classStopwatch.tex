@@ -18,15 +18,15 @@ virtual \hyperlink{classStopwatch_a534c433482f8fe8144c91c0fe37aac20}{$\sim$\-Sto
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static \hyperlink{Stopwatch_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{Point\-In\-Time} \hyperlink{classStopwatch_ae4e530c454d40a88256a76744d3d8a12}{start} ()
+static \hyperlink{Options_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{Point\-In\-Time} \hyperlink{classStopwatch_ae4e530c454d40a88256a76744d3d8a12}{start} ()
 \begin{DoxyCompactList}\small\item\em Starts the stopwatch. \end{DoxyCompactList}\item 
-static double \hyperlink{classStopwatch_a27dda7191760c2822e3aad879805e013}{get\-C\-P\-U\-Time\-Sec} (const \hyperlink{Stopwatch_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{Point\-In\-Time} \&start\-\_\-time)
+static double \hyperlink{classStopwatch_a27dda7191760c2822e3aad879805e013}{get\-C\-P\-U\-Time\-Sec} (const \hyperlink{Options_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{Point\-In\-Time} \&start\-\_\-time)
 \begin{DoxyCompactList}\small\item\em Returns the elapsed C\-P\-U time in seconds. \end{DoxyCompactList}\item 
-static double \hyperlink{classStopwatch_a7ba33aa62a14801f379e05e8d4f98d2a}{get\-C\-P\-U\-Time\-Milli\-Sec} (const \hyperlink{Stopwatch_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{Point\-In\-Time} \&start\-\_\-time)
+static double \hyperlink{classStopwatch_a7ba33aa62a14801f379e05e8d4f98d2a}{get\-C\-P\-U\-Time\-Milli\-Sec} (const \hyperlink{Options_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{Point\-In\-Time} \&start\-\_\-time)
 \begin{DoxyCompactList}\small\item\em Returns the elapsed C\-P\-U time in milliseconds. \end{DoxyCompactList}\item 
-static size\-\_\-t \hyperlink{classStopwatch_a700dbdfb01479ece147c15d149eba157}{get\-Real\-Time\-Sec} (const \hyperlink{Stopwatch_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{Point\-In\-Time} \&start\-\_\-time)
+static size\-\_\-t \hyperlink{classStopwatch_a700dbdfb01479ece147c15d149eba157}{get\-Real\-Time\-Sec} (const \hyperlink{Options_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{Point\-In\-Time} \&start\-\_\-time)
 \begin{DoxyCompactList}\small\item\em Returns the elapsed real-\/time in seconds. \end{DoxyCompactList}\item 
-static string \hyperlink{classStopwatch_a4b6869082a043c822dc22944e4c1a5e2}{get\-Time\-As\-String} (const \hyperlink{Stopwatch_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{Point\-In\-Time} \&start\-\_\-time)
+static string \hyperlink{classStopwatch_a4b6869082a043c822dc22944e4c1a5e2}{get\-Time\-As\-String} (const \hyperlink{Options_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{Point\-In\-Time} \&start\-\_\-time)
 \begin{DoxyCompactList}\small\item\em Returns both the C\-P\-U time and the elapsed time as string. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
@@ -46,16 +46,13 @@ The stopwatch is able to find out both elapsed C\-P\-U time and elapsed realtime
 
 Usage example\-: 
 \begin{DoxyCode}
-\hyperlink{Stopwatch_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{PointInTime} start\_time = \hyperlink{classStopwatch_ae4e530c454d40a88256a76744d3d8a12}{Stopwatch::start}();
+\hyperlink{Options_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{PointInTime} start\_time = \hyperlink{classStopwatch_ae4e530c454d40a88256a76744d3d8a12}{Stopwatch::start}();
 doFirstPart();
-\textcolor{keywordtype}{double} first\_part\_cpu = \hyperlink{classStopwatch_a27dda7191760c2822e3aad879805e013}{Stopwatch::getCPUTimeSec}(
-      start\_time);
+\textcolor{keywordtype}{double} first\_part\_cpu = \hyperlink{classStopwatch_a27dda7191760c2822e3aad879805e013}{Stopwatch::getCPUTimeSec}(start\_time);
 \hyperlink{Logger_8h_a081139c373685d15bfc9f0afebe00542}{L\_LOG}(\textcolor{stringliteral}{"doFirstPart() took "} << first\_part\_cpu << \textcolor{stringliteral}{" seconds of CPU time."});
 doSecondPart();
-\textcolor{keywordtype}{double} all\_real\_time = \hyperlink{classStopwatch_a700dbdfb01479ece147c15d149eba157}{Stopwatch::getRealTimeSec}(
-      start\_time);
-\hyperlink{Logger_8h_a081139c373685d15bfc9f0afebe00542}{L\_LOG}(\textcolor{stringliteral}{"The whole computation took "} << all\_real\_time << \textcolor{stringliteral}{" seconds
-       (real-time)."});
+\textcolor{keywordtype}{double} all\_real\_time = \hyperlink{classStopwatch_a700dbdfb01479ece147c15d149eba157}{Stopwatch::getRealTimeSec}(start\_time);
+\hyperlink{Logger_8h_a081139c373685d15bfc9f0afebe00542}{L\_LOG}(\textcolor{stringliteral}{"The whole computation took "} << all\_real\_time << \textcolor{stringliteral}{" seconds (real-time)."});
 \end{DoxyCode}
 
 
@@ -63,7 +60,7 @@ doSecondPart();
 Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\-1.\-0 
+1.\-2.\-0 
 \end{DoxyVersion}
 
 
@@ -200,7 +197,7 @@ Definition at line 55 of file Stopwatch.\-cpp.
 
 
 
-Referenced by C\-N\-F\-Impl\-Extractor\-::extract\-Circuit(), get\-Time\-As\-String(), main(), Learning\-Extractor\-Statistics\-::notify\-After\-A\-B\-C(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Check\-Candidate\-Failed(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Check\-Candidate\-Found(), Learning\-Extractor\-Statistics\-::notify\-After\-Clause\-Comp(), Learning\-Extractor\-Statistics\-::notify\-After\-Clause\-Min(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Compute\-Candidate(), Learn\-Statistics\-Q\-B\-F\-::notify\-After\-Compute\-Cube(), Learning\-Extractor\-Statistics\-::notify\-After\-Ctrl\-Signal(), Learn\-Statistics\-Q\-B\-F\-::notify\-After\-Cube\-Min(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Refine(), Learn\-Statistics\-S\-A\-T\-::notify\-Win\-Reg\-End(), Learn\-Statistics\-Q\-B\-F\-::notify\-Win\-Reg\-End(), and Q\-B\-F\-Cert\-Impl\-Extractor\-::run().
+Referenced by Templ\-Explorer\-::check(), C\-N\-F\-Impl\-Extractor\-::extract\-Circuit(), Options\-::get\-Estimated\-Time\-Remaining(), get\-Time\-As\-String(), main(), Learning\-Extractor\-Statistics\-::notify\-After\-A\-B\-C(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Check\-Candidate\-Failed(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Check\-Candidate\-Found(), Learning\-Extractor\-Statistics\-::notify\-After\-Clause\-Comp(), Learning\-Extractor\-Statistics\-::notify\-After\-Clause\-Min(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Compute\-Candidate(), Learn\-Statistics\-Q\-B\-F\-::notify\-After\-Compute\-Cube(), Learning\-Extractor\-Statistics\-::notify\-After\-Ctrl\-Signal(), Learn\-Statistics\-Q\-B\-F\-::notify\-After\-Cube\-Min(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Refine(), Learn\-Statistics\-S\-A\-T\-::notify\-Win\-Reg\-End(), Learn\-Statistics\-Q\-B\-F\-::notify\-Win\-Reg\-End(), Q\-B\-F\-Cert\-Impl\-Extractor\-::run(), Par\-Extractor\-Q\-B\-F\-Worker\-::run\-Q\-B\-F(), Par\-Extractor\-Worker\-::run\-S\-A\-T(), Par\-Extractor\-Worker\-::run\-S\-A\-T\-Dep(), Templ\-Explorer\-::synt\-S\-A\-T(), and Par\-Extractor\-Worker\-::wait\-For\-Others\-To\-Finish().
 
 \hypertarget{classStopwatch_a4b6869082a043c822dc22944e4c1a5e2}{\index{Stopwatch@{Stopwatch}!get\-Time\-As\-String@{get\-Time\-As\-String}}
 \index{get\-Time\-As\-String@{get\-Time\-As\-String}!Stopwatch@{Stopwatch}}
@@ -272,7 +269,7 @@ Definition at line 33 of file Stopwatch.\-cpp.
 
 
 
-Referenced by C\-N\-F\-Impl\-Extractor\-::extract\-Circuit(), main(), Learning\-Extractor\-Statistics\-::notify\-Before\-A\-B\-C(), Learn\-Statistics\-S\-A\-T\-::notify\-Before\-Check\-Candidate(), Learning\-Extractor\-Statistics\-::notify\-Before\-Clause\-Comp(), Learning\-Extractor\-Statistics\-::notify\-Before\-Clause\-Min(), Learn\-Statistics\-S\-A\-T\-::notify\-Before\-Compute\-Candidate(), Learn\-Statistics\-Q\-B\-F\-::notify\-Before\-Compute\-Cube(), Learning\-Extractor\-Statistics\-::notify\-Before\-Ctrl\-Signal(), Learn\-Statistics\-Q\-B\-F\-::notify\-Before\-Cube\-Min(), Learn\-Statistics\-S\-A\-T\-::notify\-Before\-Refine(), Learn\-Statistics\-S\-A\-T\-::notify\-Win\-Reg\-Start(), Learn\-Statistics\-Q\-B\-F\-::notify\-Win\-Reg\-Start(), and Q\-B\-F\-Cert\-Impl\-Extractor\-::run().
+Referenced by C\-N\-F\-Impl\-Extractor\-::extract\-Circuit(), main(), Learning\-Extractor\-Statistics\-::notify\-Before\-A\-B\-C(), Learn\-Statistics\-S\-A\-T\-::notify\-Before\-Check\-Candidate(), Learning\-Extractor\-Statistics\-::notify\-Before\-Clause\-Comp(), Learning\-Extractor\-Statistics\-::notify\-Before\-Clause\-Min(), Learn\-Statistics\-S\-A\-T\-::notify\-Before\-Compute\-Candidate(), Learn\-Statistics\-Q\-B\-F\-::notify\-Before\-Compute\-Cube(), Learning\-Extractor\-Statistics\-::notify\-Before\-Ctrl\-Signal(), Learn\-Statistics\-Q\-B\-F\-::notify\-Before\-Cube\-Min(), Learn\-Statistics\-S\-A\-T\-::notify\-Before\-Refine(), Learn\-Statistics\-S\-A\-T\-::notify\-Win\-Reg\-Start(), Learn\-Statistics\-Q\-B\-F\-::notify\-Win\-Reg\-Start(), Q\-B\-F\-Cert\-Impl\-Extractor\-::run(), Par\-Extractor\-Q\-B\-F\-Worker\-::run\-Q\-B\-F(), Par\-Extractor\-Worker\-::run\-S\-A\-T(), Par\-Extractor\-Worker\-::run\-S\-A\-T\-Dep(), Templ\-Explorer\-::synt\-S\-A\-T(), and Par\-Extractor\-Worker\-::wait\-For\-Others\-To\-Finish().
 
 
 

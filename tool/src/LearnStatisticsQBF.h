@@ -42,7 +42,7 @@
 /// method implemented with a QBF-solver (implemented in the class LearnSynthQBF).
 ///
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.1.0
+/// @version 1.2.0
 class LearnStatisticsQBF
 {
 public:

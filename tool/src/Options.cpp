@@ -32,6 +32,8 @@
 #include "DepQBFExt.h"
 #include "DepQBFApi.h"
 #include "QuBEExt.h"
+#include "RareqsExt.h"
+#include "RareqsApi.h"
 #include "LingelingApi.h"
 #include "MiniSatApi.h"
 #include "PicoSatApi.h"
@@ -49,12 +51,13 @@
 #include "LearningImplExtractor.h"
 #include "InterpolImplExtractor.h"
 #include "StoreImplExtractor.h"
+#include "ParExtractor.h"
 
 #include <sys/stat.h>
 #include <unistd.h>
 
 // -------------------------------------------------------------------------------------------
-const string Options::VERSION = string("1.1.0");
+const string Options::VERSION = string("1.2.0");
 
 const string Options::TP_VAR = string("DEMIURGETP");
 
@@ -215,7 +218,9 @@ bool Options::parse(int argc, char **argv)
       qbf_solver_ = arg.substr(9, string::npos);
       StringUtils::toLowerCaseIn(qbf_solver_);
       if(qbf_solver_ != "depqbf_ext" &&
+         qbf_solver_ != "rareqs_ext" &&
          qbf_solver_ != "depqbf_api" &&
+         qbf_solver_ != "rareqs_api" &&
          qbf_solver_ != "blo_dep_api" &&
          qbf_solver_ != "qube_ext")
       {
@@ -234,7 +239,9 @@ bool Options::parse(int argc, char **argv)
       qbf_solver_ = string(argv[arg_count]);
       StringUtils::toLowerCaseIn(qbf_solver_);
       if(qbf_solver_ != "depqbf_ext" &&
+         qbf_solver_ != "rareqs_ext" &&
          qbf_solver_ != "depqbf_api" &&
+         qbf_solver_ != "rareqs_api" &&
          qbf_solver_ != "blo_dep_api" &&
          qbf_solver_ != "qube_ext")
       {
@@ -301,6 +308,22 @@ bool Options::parse(int argc, char **argv)
         cerr << "Unknown SAT solver '" << circuit_sat_solver_ <<"'." << endl;
         return true;
       }
+    }
+    else if(arg.find("--timeout_hint=") == 0)
+    {
+      istringstream iss(arg.substr(14, string::npos));
+      iss >> hint_to_in_sec_;
+    }
+    else if(arg == "-k")
+    {
+      ++arg_count;
+      if(arg_count >= argc)
+      {
+        cerr << "Option -k must be followed by an integer number." << endl;
+        return true;
+      }
+      istringstream iss(argv[arg_count]);
+      iss >> hint_to_in_sec_;
     }
   }
   if(aig_in_file_name_ == "")
@@ -407,10 +430,23 @@ int Options::getCircuitExtractionMode() const
 // -------------------------------------------------------------------------------------------
 CNFImplExtractor* Options::getCircuitExtractor() const
 {
+  if(real_only_)
+    return NULL;
   if(circuit_extraction_name_ == "qbfcert")
     return new QBFCertImplExtractor();
   if(circuit_extraction_name_ == "learn")
     return new LearningImplExtractor();
+  if(circuit_extraction_name_.find("lp") == 0)
+  {
+    string rest = circuit_extraction_name_.substr(2);
+    size_t nr_of_threads = thread::hardware_concurrency();
+    if(rest != "")
+    {
+      istringstream iss(rest);
+      iss >> nr_of_threads;
+    }
+    return new ParExtractor(nr_of_threads);
+  }
   if(circuit_extraction_name_ == "interpol")
     return new InterpolImplExtractor();
   if(circuit_extraction_name_ == "store")
@@ -436,7 +472,7 @@ string Options::getUniqueTmpFileName(string start) const
 {
   static int unique_counter = 0;
   ostringstream res;
-  res << getTmpDirName() << start << "_" << getAigInFileNameOnly();
+  res << getTmpDirName() << "/" << start << "_" << getAigInFileNameOnly();
   res << "_" << getpid() << "_" << unique_counter++;
   return res.str();
 }
@@ -456,8 +492,12 @@ QBFSolver* Options::getQBFSolver() const
 {
   if(qbf_solver_ == "depqbf_ext")
     return new DepQBFExt;
+  else if(qbf_solver_ == "rareqs_ext")
+    return new RareqsExt;
   else if(qbf_solver_ == "depqbf_api")
     return new DepQBFApi(false);
+  else if(qbf_solver_ == "rareqs_api")
+    return new RareqsApi;
   else if(qbf_solver_ == "blo_dep_api")
     return new DepQBFApi(true);
   else if(qbf_solver_ == "qube_ext")
@@ -498,6 +538,27 @@ SatSolver* Options::getSATSolverExtr(bool rand_models, bool min_cores) const
 bool Options::doRealizabilityOnly() const
 {
   return real_only_;
+}
+
+// -------------------------------------------------------------------------------------------
+size_t Options::getSizeLimitForExpansion() const
+{
+  return exp_limit_in_kb_;
+}
+
+// -------------------------------------------------------------------------------------------
+void Options::setSizeLimitForExpansion(size_t limit_in_kb)
+{
+  exp_limit_in_kb_ = limit_in_kb;
+}
+
+// -------------------------------------------------------------------------------------------
+size_t Options::getEstimatedTimeRemaining() const
+{
+  size_t elapsed = Stopwatch::getRealTimeSec(tool_started_);
+  if(elapsed >= hint_to_in_sec_)
+    return 0;
+  return hint_to_in_sec_ - elapsed;
 }
 
 // -------------------------------------------------------------------------------------------
@@ -565,8 +626,7 @@ void Options::printHelp() const
   cout << "                        Circuit extraction is done as specified by the " << endl;
   cout << "                        option '-c' (or --circuit)."                     << endl;
   cout << "                 templ: Computes the winning region as an instantiation" << endl;
-  cout << "                        of a template using a QBF solver. QBFCert is "   << endl;
-  cout << "                        then used to extract the circuit."               << endl;
+  cout << "                        of a template using a QBF or SAT solver. "       << endl;
   cout << "                        Circuit extraction is done as specified by the " << endl;
   cout << "                        option '-c' (or --circuit)."                     << endl;
   cout << "                 epr:   Reduces the problem to EPR (experimental). "     << endl;
@@ -584,7 +644,7 @@ void Options::printHelp() const
   cout << "                        benchmarking circuit extraction methods. Run "   << endl;
   cout << "                        the tool with '-c save' to save the winning"     << endl;
   cout << "                        region of a run in DIMACS format first. "        << endl;
-  cout << "                 The default is 'learn'."                                << endl;
+  cout << "                 The default is 'lp1'."                                  << endl;
   cout << "  -m MODE , --mode=MODE"                                                 << endl;
   cout << "                 Some back-ends can be used in several modes (certain"   << endl;
   cout << "                 optimizations or heuristics enabled or disabled, etc.)."<< endl;
@@ -627,10 +687,27 @@ void Options::printHelp() const
   cout << "                      during generalization)"                            << endl;
   cout << "                   2: use optimization RG and RC (also ignore"           << endl;
   cout << "                      unreachable counterexample-states)"                << endl;
+  cout << "                   3: like mode 0 but performs universal expansion on"   << endl;
+  cout << "                      certain variables (less SAT solver calls, but"     << endl;
+  cout << "                      more expensive ones)"                              << endl;
+  cout << "                   4: like mode 1 but performs universal expansion on"   << endl;
+  cout << "                      certain variables (less SAT solver calls, but"     << endl;
+  cout << "                      more expensive ones)"                              << endl;
+  cout << "                 Back-end 'templ': "                                     << endl;
+  cout << "                   0: uses a CNF template with increasing number of"     << endl;
+  cout << "                      clauses, and a QBF solver to resolve the template."<< endl;
+  cout << "                   1: uses a CNF template with increasing number of"     << endl;
+  cout << "                      clauses, and a SAT solver in a CEGIS loop to "     << endl;
+  cout << "                      resolve the template."                             << endl;
+  cout << "                   2: uses an AIGER template with increasing number of"  << endl;
+  cout << "                      gates, and a QBF solver to resolve the template."  << endl;
+  cout << "                   3: uses an AIGER template with increasing number of"  << endl;
+  cout << "                      gates, and a SAT solver in a CEGIS loop to "       << endl;
+  cout << "                      resolve the template."                             << endl;
   cout << "                 Back-end 'lp<nr>': "                                    << endl;
-  cout << "                   0: standard mode"                                     << endl;
-  cout << "                   1: use optimization RG (ignore unreachable states "   << endl;
+  cout << "                   0: use optimization RG (ignore unreachable states "   << endl;
   cout << "                      during generalization)"                            << endl;
+  cout << "                   1: do not use optimization RG"                        << endl;
   cout << "                 The default is 0."                                      << endl;
   cout << "  -c METHOD, --circuit=METHOD"                                           << endl;
   cout << "                 Most of the back-ends can be used with various circuit" << endl;
@@ -645,6 +722,12 @@ void Options::printHelp() const
   cout << "                        control signal after the other. A QBF-solver is" << endl;
   cout << "                        used to compute the clauses of the output "      << endl;
   cout << "                        functions."                                      << endl;
+  cout << "                 lp<nr>:Uses several learning-based methods running "    << endl;
+  cout << "                        in parallel in muliple threads. "                << endl;
+  cout << "                        <nr> defines the desired number of"              << endl;
+  cout << "                        threads. If <nr> is omitted, then the number of" << endl;
+  cout << "                        threads is set equal to the number of cores of"  << endl;
+  cout << "                        the CPU. "                                       << endl;
   cout << "                 interpol: Computes a circuit with interpolation using " << endl;
   cout << "                        a SAT solver. (Under development, only"          << endl;
   cout << "                        available in a different branch of code)."       << endl;
@@ -655,7 +738,7 @@ void Options::printHelp() const
   cout << "                        do not have to re-compute the winning region"    << endl;
   cout << "                        again and again. Saved winning regions can be"   << endl;
   cout << "                        loaded later with the option '-b load' later."   << endl;
-  cout << "                 The default is 'learn'."                                << endl;
+  cout << "                 The default is 'lp1'."                                  << endl;
   cout << "  -n MODE , --circuit-mode=MODE"                                         << endl;
   cout << "                 Some circuit extraction methods can be used in several" << endl;
   cout << "                 modes (certain optimizations or heuristics enabled or"  << endl;
@@ -718,6 +801,9 @@ void Options::printHelp() const
   cout << "                   23:like mode 19 but with more incremental solving."   << endl;
   cout << "                   24:like mode 20 but with more incremental solving."   << endl;
   cout << "                   25:like mode 21 but with more incremental solving."   << endl;
+  cout << "                   26:like mode 0 but performing universal expansion "   << endl;
+  cout << "                      over the control signals so that we can use a  "   << endl;
+  cout << "                      SAT solver instead of a QBF solver."               << endl;
   cout << "                 The default is 0."                                      << endl;
   cout << "  -r, --real_only"                                                       << endl;
   cout << "                 Only check realizability (compute the winning region)"  << endl;
@@ -727,7 +813,10 @@ void Options::printHelp() const
   cout << "                 The following QBF solvers are available:"               << endl;
   cout << "                 depqbf_ext: Uses the DepQBF solver in an external"      << endl;
   cout << "                        process, communicating via files."               << endl;
+  cout << "                 rareqs_ext: Uses the RAReQS solver in an external"      << endl;
+  cout << "                        process, communicating via files."               << endl;
   cout << "                 depqbf_api: Uses the DepQBF solver via its API. "       << endl;
+  cout << "                 rareqs_api: Uses the DepQBF solver via its API. "       << endl;
   cout << "                 blo_dep_api: Uses Bloqqer and DepQBF via an API. "      << endl;
   cout << "                 qube_ext: Uses the QuBE solver in an external process," << endl;
   cout << "                        communicating via files, and DepQBF if a model"  << endl;
@@ -739,7 +828,7 @@ void Options::printHelp() const
   cout << "                 lin_api: Uses the Lingeling solver via its API."        << endl;
   cout << "                 min_api: Uses the MiniSat solver via its API."          << endl;
   cout << "                 pic_api: Uses the PicoSat solver via its API."          << endl;
-  cout << "                 The default is 'lin_api'."                              << endl;
+  cout << "                 The default is 'min_api'."                              << endl;
   cout << "  -e SAT_SOLVER, --extr_sat_sv=SAT_SOLVER"                               << endl;
   cout << "                 The SAT solver to use for circuit extraction."          << endl;
   cout << "                 (if you want it to be different from the solver used"   << endl;
@@ -749,6 +838,17 @@ void Options::printHelp() const
   cout << "                 min_api: Uses the MiniSat solver via its API."          << endl;
   cout << "                 pic_api: Uses the PicoSat solver via its API."          << endl;
   cout << "                 The default is: same as with -s."                       << endl;
+  cout << "  -k TIMEOUT_HINT, --timeout_hint=TIMEOUT_HINT"                          << endl;
+  cout << "                 A hint about the timeout in seconds. This hint is used" << endl;
+  cout << "                 to tune heuristics in circuit extraction: If there is"  << endl;
+  cout << "                 is still plenty of time left, the tool can perform"     << endl;
+  cout << "                 more expensive methods to obtain small circuits."       << endl;
+  cout << "                 Currently, this hint is only used in the parallelized"  << endl;
+  cout << "                 circuit extractor (-c lp<nr>) and only in a very"       << endl;
+  cout << "                 rudimentary way. More clever uses may follow."          << endl;
+  cout << "                 If you want the tool to finish as fast as possible, "   << endl;
+  cout << "                 then set this parameter to 0."                          << endl;
+  cout << "                 The default is: 0."                                     << endl;
   cout << "Have fun!"                                                               << endl;
 }
 
@@ -788,13 +888,17 @@ Options::Options():
     aig_out_file_name_("stdout"),
     print_string_("ERWI"),
     tmp_dir_("./tmp"),
-    back_end_("learn"),
+    back_end_("lp1"),
     mode_(0),
-    circuit_extraction_name_("learn"),
+    circuit_extraction_name_("lp1"),
+    circuit_extraction_mode_(0),
     qbf_solver_("depqbf_api"),
-    sat_solver_("lin_api"),
+    sat_solver_("min_api"),
     circuit_sat_solver_(""),
-    real_only_(false)
+    real_only_(false),
+    exp_limit_in_kb_(3*1024*1024),
+    hint_to_in_sec_(0),
+    tool_started_(Stopwatch::start())
 {
   // nothing to be done
 }

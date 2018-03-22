@@ -34,6 +34,7 @@
 #include "BackEnd.h"
 
 class QBFSolver;
+class SatSolver;
 class CNFImplExtractor;
 
 // -------------------------------------------------------------------------------------------
@@ -57,30 +58,18 @@ class CNFImplExtractor;
 ///                                    W(x,k) => P(x) &
 ///                                    W(x,k) => (T(x,i,c,x') & W(x',k))
 /// <br/>
-/// with a single QBF-solver call. The ask the solver for a satisfying assignment to the
+/// with a single QBF-solver call. We ask the solver for a satisfying assignment to the
 /// variables k. These values define a concrete function W(x), which is our winning region.
 /// The difficult question is how to define a generic template W(x,k) for the winning region.
-/// At the moment, only one possibility is implemented, namely defining W(x,k) as a
-/// parameterized CNF over the state variables x with parameters k. But there are many other
-/// options like parameterized And-Inverter-Graphs with parameters defining the
-/// interconnects, etc.
-/// The CNF template fixes a maximum number N of clauses. It has three groups of parameters.
+/// At the moment, only two possibility is implemented:
 /// <ul>
-///  <li> The parameters kc[i] (with 1 <= i <= N) define if clause i occurs in the CNF or not.
-///  <li> The parameters kv[i][j] (with 1 <= i <= N, 1 <= j <= |x|) define if state variable
-///       xj occurs in clause i or not.
-///  <li> The parameters kn[i][j] (with 1 <= i <= N, 1 <= j <= |x|) define if state variable
-///       xj occurs in clause i only negated or unnegated. If kv[i][j]=false, then kn[i][j]
-///       is irrelevant.
+///  <li> defining W(x,k) as a parameterized CNF over the state variables x with parameters k.
+///  <li> defining W(x,k) as a parameterized AIGER graph over the state variables x with
+///       parameters k
 /// </ul>
-/// The union of all these parameters forms k. Concrete values for all k define a concrete
-/// CNF formula over the state variables x (i.e., a concrete winning region). We chose N in
-/// the following way: we start with N=1. On failure, we increase N (multiply by 4).
-///
-/// Finally the QBFCertImplExtractor is used to extract a circuit from the winning region.
 ///
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.1.0
+/// @version 1.2.0
 class TemplateSynth : public BackEnd
 {
 public:
@@ -120,9 +109,50 @@ protected:
 
 // -------------------------------------------------------------------------------------------
 ///
+/// @brief Computes the winning region as instantiation of a CNF template.
+///
+/// This works as explained in the description of the class using a CNF template W(x,k) for
+/// the winning region W(x), where k are template parameters defining how the winning region
+/// really looks like.
+/// The CNF template fixes a maximum number N of clauses. It has three groups of parameters.
+/// <ul>
+///  <li> The parameters kc[i] (with 1 <= i <= N) define if clause i occurs in the CNF or not.
+///  <li> The parameters kv[i][j] (with 1 <= i <= N, 1 <= j <= |x|) define if state variable
+///       xj occurs in clause i or not.
+///  <li> The parameters kn[i][j] (with 1 <= i <= N, 1 <= j <= |x|) define if state variable
+///       xj occurs in clause i only negated or unnegated. If kv[i][j]=false, then kn[i][j]
+///       is irrelevant.
+/// </ul>
+/// The union of all these parameters forms k. Concrete values for all k define a concrete
+/// CNF formula over the state variables x (i.e., a concrete winning region). We chose N in
+/// the following way: we start with N=1. On failure, we increase N (multiply by 4).
+///
+/// @return True if the specification was realizable, false otherwise.
+  bool computeWinningRegionCNF();
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Computes the winning region as instantiation of a network of AND-Gates.
+///
+/// This works as explained in the description of the class using a AIGER graph template
+/// W(x,k) for the winning region W(x), where k are template parameters defining how the
+/// winning region really looks like.
+/// The AIGER template fixes a maximum number N of AND-gates. For the first AND-gate we have
+/// template parameters saying (a) which state variables x are an input for the AND gate, and
+/// (b) which state variables are connected in negated and unnegated form. The second AND gate
+/// is similar but has the output of the first AND gate as additional input. The third AND
+/// gate has the outputs of the previous two as inputs, and so on. One final template
+/// parameter defines whether or not the output of the last AND gate forms W(x) or the
+/// negation of W(x).
+///
+/// @return True if the specification was realizable, false otherwise.
+  bool computeWinningRegionAndNet();
+
+// -------------------------------------------------------------------------------------------
+///
 /// @brief Computes the winning region as instantiation of a generic CNF template.
 ///
-/// This works as explained in the description of the class.
+/// This works as explained in the description of #computeWinningRegionCNF().
 ///
 /// @param nr_of_clauses The number N of clauses to use in the template. Choosing a good value
 ///        for this parameter is difficult. If it is chosen to low, then we may not find a
@@ -135,13 +165,122 @@ protected:
 
 // -------------------------------------------------------------------------------------------
 ///
+/// @brief Computes the winning region as instantiation of a generic AIGER template.
+///
+/// This works as explained in the description of computeWinningRegionAndNet().
+///
+/// @param nr_of_gates The number N of gates to use in the template. Choosing a good value
+///        for this parameter is difficult. If it is chosen to low, then we may not find a
+///        solution even if one exists. If it is chosen to high, then we waste computational
+///        resources.
+/// @return True if a solution is found with the given number of clauses, false otherwise.
+///         If this method returns false, then this does not mean that the specification is
+///         unrealizable. It may be that nr_of_gates has been chosen too low.
+  bool findWinRegANDNetwork(size_t nr_of_gates);
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Resolves the template by calling a QBF solver.
+///
+/// @param win_constr CNF constraints that constitute a correct solution for the winning
+///        region using the generic template. Essentially, three constraints are encoded in
+///        this CNF:
+///        <ol>
+///          <li> I(x) => W(x): every initial state is contained in the winning region
+///          <li> W(x) => P(x): every state of the winning region is safe
+///          <li> forall x,i: exists c,x': W(x) => (T(x,i,c,x') & W(x')): from every state in
+///               the winning region we can enforce to stay in the winning region by setting
+///               the c-signals appropriately.
+///        </ol>
+/// @param w1 The literal that represents the present-state copy of the winning region in
+///        win_constr.
+/// @param w2 The literal that represents the next-state copy of the winning region in
+///        win_constr.
+/// @param solution An empty vector. If a solution exists, then the corresponding template
+///        parameter values are written into this vector.
+/// @return True if a solution exists, false otherwise.
+  bool syntQBF(const CNF& win_constr, int w1, int w2, vector<int> &solution);
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Resolves the template by calling a SAT solver in a CEGIS loop.
+///
+/// @param win_constr CNF constraints that constitute a correct solution for the winning
+///        region using the generic template. Essentially, three constraints are encoded in
+///        this CNF:
+///        <ol>
+///          <li> I(x) => W(x): every initial state is contained in the winning region
+///          <li> W(x) => P(x): every state of the winning region is safe
+///          <li> forall x,i: exists c,x': W(x) => (T(x,i,c,x') & W(x')): from every state in
+///               the winning region we can enforce to stay in the winning region by setting
+///               the c-signals appropriately.
+///        </ol>
+/// @param w1 The literal that represents the present-state copy of the winning region in
+///        win_constr.
+/// @param w2 The literal that represents the next-state copy of the winning region in
+///        win_constr.
+/// @param solution An empty vector. If a solution exists, then the corresponding template
+///        parameter values are written into this vector.
+/// @return True if a solution exists, false otherwise.
+  bool syntSAT(const CNF& win_constr, int w1, int w2, vector<int> &solution);
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief A helper for the CEGIS loop of #syntSAT(), eliminating a counterexample.
+///
+/// @param ce A counterexample that has been computed previously by calling #check(). A
+///        counterexample is simply a set of values for state variables and input variables
+///        for which we fall out of the winning region.
+/// @param gen The CNF containing the constraints for a correct winning region. We simply
+///        add constraints here saying that the winning region must now also work for the
+///        counterexample.
+  void exclude(const vector<int> &ce, const CNF &gen);
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief A helper for the CEGIS loop of #syntSAT(), checking if a candidate solution works.
+///
+/// @param cand A canidate solution in the form of concrete values for the template
+///        parameters.
+/// @param win_constr CNF constraints that constitute a correct solution for the winning
+///        region using the generic template. Essentially, three constraints are encoded in
+///        this CNF:
+///        <ol>
+///          <li> I(x) => W(x): every initial state is contained in the winning region
+///          <li> W(x) => P(x): every state of the winning region is safe
+///          <li> forall x,i: exists c,x': W(x) => (T(x,i,c,x') & W(x')): from every state in
+///               the winning region we can enforce to stay in the winning region by setting
+///               the c-signals appropriately.
+///        </ol>
+/// @param w1 The literal that represents the present-state copy of the winning region in
+///        win_constr.
+/// @param w2 The literal that represents the next-state copy of the winning region in
+///        win_constr.
+/// @param ce An empty vector. If the candidate solution is incorrect, a counterexample in
+///        the form of concrete values for state and input variables for which we fall out
+///        of the winning region is stored in this vector.
+/// @return True if the candidate solution is correct, False otherwise.
+  bool check(const vector<int> &cand, const CNF& win_constr, int w1, int w2, vector<int> &ce);
+
+// -------------------------------------------------------------------------------------------
+///
 /// @brief The resulting winning region.
   CNF winning_region_;
 
 // -------------------------------------------------------------------------------------------
 ///
+/// @brief The negation of the resulting winning region.
+  CNF neg_winning_region_;
+
+// -------------------------------------------------------------------------------------------
+///
 /// @brief The QBF-solver to use for solving the queries.
   QBFSolver *qbf_solver_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The SAT-solver to use if we resolve the template using the CEGIS loop.
+  SatSolver *sat_solver_;
 
 // -------------------------------------------------------------------------------------------
 ///

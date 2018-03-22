@@ -44,7 +44,7 @@ class CNF;
 /// one of the derived classes instead. Derived classes have to implement the run() method.
 ///
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.1.0
+/// @version 1.2.0
 class CNFImplExtractor
 {
 public:
@@ -91,6 +91,16 @@ public:
 /// collected by the concrete implementation of this class.
   virtual void logStatistics();
 
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Optimizes a combinatorial AIGER circuit with ABC.
+///
+/// @note The returned structure must be deleted by the caller.
+/// @param circuit The circuit to optimize.
+/// @return The optimized version of the circuit. The returned aiger structure must be
+///         deleted by the caller.
+  static aiger* optimizeWithABC(aiger *circuit);
+
 protected:
 
 // -------------------------------------------------------------------------------------------
@@ -111,16 +121,6 @@ protected:
 /// Override this method to provide more detailed statistical information. Per default, the
 /// the method #logStatistics logs the overall execution time, and then calls this method.
   virtual void logDetailedStatistics();
-
-// -------------------------------------------------------------------------------------------
-///
-/// @brief Optimizes a combinatorial AIGER circuit with ABC.
-///
-/// @note The returned structure must be deleted by the caller.
-/// @param circuit The circuit to optimize.
-/// @return The optimized version of the circuit. The returned aiger structure must be
-///         deleted by the caller.
-  aiger* optimizeWithABC(aiger *circuit) const;
 
 // -------------------------------------------------------------------------------------------
 ///

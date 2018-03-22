@@ -8,7 +8,7 @@ fi
 
 echo "Installing DepQBF ..."
 
-DEPQBF_ACHRIVE="version-3.02.tar.gz"
+DEPQBF_ACHRIVE="version-3.04.tar.gz"
 
 if [ ! -e "$DEPQBF_ACHRIVE" ];
 then
@@ -20,7 +20,7 @@ echo " Unpacking DepQBF ..."
 rm -rf $DEMIURGETP/depqbf
 tar -xzf $DEPQBF_ACHRIVE -C $DEMIURGETP
 
-mv $DEMIURGETP/depqbf-version-3.02 $DEMIURGETP/depqbf
+mv $DEMIURGETP/depqbf-version-3.04 $DEMIURGETP/depqbf
  
 echo " Compiling DepQBF ..."
 (cd $DEMIURGETP/depqbf; make)

@@ -1,0 +1,870 @@
+\hypertarget{classParExtractorWorker}{\section{Par\-Extractor\-Worker Class Reference}
+\label{classParExtractorWorker}\index{Par\-Extractor\-Worker@{Par\-Extractor\-Worker}}
+}
+
+
+A worker thread for the \hyperlink{classParExtractor}{Par\-Extractor}.  
+
+
+
+
+{\ttfamily \#include $<$Par\-Extractor.\-h$>$}
+
+Inheritance diagram for Par\-Extractor\-Worker\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classParExtractorWorker}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classParExtractorWorker_aec32f8b52073c6985778ad5797d7da7f}{Par\-Extractor\-Worker} (\hyperlink{classParExtractor}{Par\-Extractor} \&coordinator, const \hyperlink{classCNF}{C\-N\-F} \&win\-\_\-region, const \hyperlink{classCNF}{C\-N\-F} \&neg\-\_\-win\-\_\-region)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classParExtractorWorker_a4cc66c5ca37732c18e8fcc65974f4e7d}{$\sim$\-Par\-Extractor\-Worker} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classParExtractorWorker_a58a6a251869b24e00b8b3dec0990feab}{run\-S\-A\-T} ()
+\begin{DoxyCompactList}\small\item\em Runs S\-A\-T-\/based learning without dependency optimization. \end{DoxyCompactList}\item 
+void \hyperlink{classParExtractorWorker_ae1d9c00159b3f4586f27f8493f558a5b}{run\-S\-A\-T\-Dep} ()
+\begin{DoxyCompactList}\small\item\em Runs S\-A\-T-\/based learning with dependency optimization. \end{DoxyCompactList}\item 
+void \hyperlink{classParExtractorWorker_aeea72a7e0c9562187c46223ddce4b65f}{log\-Stats} ()
+\begin{DoxyCompactList}\small\item\em Logs the detailed statistics collected by the fastest worker. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classParExtractorWorker_a460487c299f8c86e745a940278d38ee0}{done\-\_\-}
+\begin{DoxyCompactList}\small\item\em Indicates if standalone\-\_\-circuit\-\_\- is ready. \end{DoxyCompactList}\item 
+bool \hyperlink{classParExtractorWorker_aad63a07af4e70719e53a4c41d67b6dd1}{waiting\-\_\-}
+\begin{DoxyCompactList}\small\item\em Indicates if this thread is waiting for others to finish. \end{DoxyCompactList}\item 
+bool \hyperlink{classParExtractorWorker_a99552e89edf3a3925430399207a1b13e}{did\-\_\-second\-\_\-run\-\_\-}
+\begin{DoxyCompactList}\small\item\em True if this thread did a second minimization run (just for printing statistics). \end{DoxyCompactList}\item 
+aiger $\ast$ \hyperlink{classParExtractorWorker_a233a7f99946695b0640e76ead6932fbb}{standalone\-\_\-circuit\-\_\-}
+\begin{DoxyCompactList}\small\item\em The synthesis result as stand-\/alone circuit. \end{DoxyCompactList}\item 
+\hyperlink{classLearningExtractorStatistics}{Learning\-Extractor\-Statistics} \hyperlink{classParExtractorWorker_a5e23f373a7959b56eb6f93036f98a1b1}{statistics}
+\begin{DoxyCompactList}\small\item\em A helper for collecting performance data and statistics. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classParExtractorWorker_a1c935793adbc70d77bbb8f7f065d0897}{wait\-For\-Others\-To\-Finish} (size\-\_\-t elapsed\-\_\-until\-\_\-done)
+\begin{DoxyCompactList}\small\item\em Waits for other worker threads to finish. \end{DoxyCompactList}\item 
+\hyperlink{classCNF}{C\-N\-F} \hyperlink{classParExtractorWorker_a11c63bb36f33129cbc437f10c4dca34e}{make\-Eq} (int var, \hyperlink{classCNF}{C\-N\-F} impl, vector$<$ int $>$ $\ast$new\-\_\-temps=N\-U\-L\-L)
+\begin{DoxyCompactList}\small\item\em Creates a \hyperlink{classCNF}{C\-N\-F} that assigns a variable to the result of some other \hyperlink{classCNF}{C\-N\-F}. \end{DoxyCompactList}\item 
+void \hyperlink{classParExtractorWorker_a3f9735c71053a92c4fe80281a7efe167}{add\-To\-Stand\-Alone\-Aiger} (int ctrl\-\_\-var, const \hyperlink{classCNF}{C\-N\-F} \&solution)
+\begin{DoxyCompactList}\small\item\em Adds the solution for one output function to the A\-I\-G\-E\-R circuit we have so far. \end{DoxyCompactList}\item 
+void \hyperlink{classParExtractorWorker_adbd795aa4646b093d90c29d253adfc79}{add\-To\-Stand\-Alone\-Aiger2} (int ctrl\-\_\-var, const \hyperlink{classCNF}{C\-N\-F} \&solution)
+\begin{DoxyCompactList}\small\item\em Same as \hyperlink{classParExtractorWorker_a3f9735c71053a92c4fe80281a7efe167}{add\-To\-Stand\-Alone\-Aiger} but operating on the copy \hyperlink{classParExtractorWorker_a304c66039a45652e273876f7c6da8bcf}{standalone\-\_\-circuit2\-\_\-}. \end{DoxyCompactList}\item 
+int \hyperlink{classParExtractorWorker_af32545578987bf8d7e2d6c09fb24e716}{cnf\-To\-Aig} (int cnf\-\_\-lit)
+\begin{DoxyCompactList}\small\item\em Transforms a \hyperlink{classCNF}{C\-N\-F} literal into an A\-I\-G\-E\-R literal as used in \hyperlink{classParExtractorWorker_a233a7f99946695b0640e76ead6932fbb}{standalone\-\_\-circuit\-\_\-}. \end{DoxyCompactList}\item 
+int \hyperlink{classParExtractorWorker_ab8384fdb5e6e4ff238097a4fc0a1fb48}{make\-And} (int in1, int in2)
+\begin{DoxyCompactList}\small\item\em Creates the A\-N\-D between two A\-I\-G\-E\-R literals and returns the resulting literal. \end{DoxyCompactList}\item 
+int \hyperlink{classParExtractorWorker_a4421da7c9d21ab0b944a69e211ebb966}{make\-And2} (int in1, int in2)
+\begin{DoxyCompactList}\small\item\em Same as \hyperlink{classParExtractorWorker_ab8384fdb5e6e4ff238097a4fc0a1fb48}{make\-And} but operating on the copy \hyperlink{classParExtractorWorker_a304c66039a45652e273876f7c6da8bcf}{standalone\-\_\-circuit2\-\_\-}. \end{DoxyCompactList}\item 
+int \hyperlink{classParExtractorWorker_a1cbe2dcdb25b164cb12a2ce1b61e6761}{make\-Or} (int in1, int in2)
+\begin{DoxyCompactList}\small\item\em Creates the O\-R between two A\-I\-G\-E\-R literals and returns the resulting literal. \end{DoxyCompactList}\item 
+int \hyperlink{classParExtractorWorker_a5554579e9532cf39953d2db97c9f0525}{make\-Or2} (int in1, int in2)
+\begin{DoxyCompactList}\small\item\em Same as \hyperlink{classParExtractorWorker_ab8384fdb5e6e4ff238097a4fc0a1fb48}{make\-And} but operating on the copy \hyperlink{classParExtractorWorker_a304c66039a45652e273876f7c6da8bcf}{standalone\-\_\-circuit2\-\_\-}. \end{DoxyCompactList}\item 
+void \hyperlink{classParExtractorWorker_a1482b15ba516ab6ba57f4281ef85b1fb}{insert\-Missing\-And\-From\-Trans} (aiger $\ast$standalone\-\_\-circuit)
+\begin{DoxyCompactList}\small\item\em Copies missing A\-N\-D gates from the spec. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classParExtractor}{Par\-Extractor} \& \hyperlink{classParExtractorWorker_a749b01fd5ad1a57ae5793db2bb3b4e47}{coordinator\-\_\-}
+\begin{DoxyCompactList}\small\item\em A reference to the coordinator. \end{DoxyCompactList}\item 
+\hyperlink{classSatSolver}{Sat\-Solver} $\ast$ \hyperlink{classParExtractorWorker_aa501458322a206e0ab66a4005cac963c}{check\-\_\-}
+\begin{DoxyCompactList}\small\item\em A S\-A\-T solver to check for counterexamples. \end{DoxyCompactList}\item 
+\hyperlink{classSatSolver}{Sat\-Solver} $\ast$ \hyperlink{classParExtractorWorker_aa60776c90a94164e2cfbfd81f77ccb21}{gen\-\_\-}
+\begin{DoxyCompactList}\small\item\em A S\-A\-T solver to generalize counterexamples. \end{DoxyCompactList}\item 
+const \hyperlink{classCNF}{C\-N\-F} \& \hyperlink{classParExtractorWorker_abccf0d629d4dca3a94cc572130e6d0e9}{win\-\_\-region\-\_\-}
+\begin{DoxyCompactList}\small\item\em The winning region from which the circuit should be extracted. \end{DoxyCompactList}\item 
+const \hyperlink{classCNF}{C\-N\-F} \& \hyperlink{classParExtractorWorker_a423caaf7f20528eb06b176acc09ae8ee}{neg\-\_\-win\-\_\-region\-\_\-}
+\begin{DoxyCompactList}\small\item\em The negation of the winning region. \end{DoxyCompactList}\item 
+int \hyperlink{classParExtractorWorker_a07219034862a2f4dabe22ecdc0d04ae0}{next\-\_\-free\-\_\-aig\-\_\-lit\-\_\-}
+\begin{DoxyCompactList}\small\item\em The next unused A\-I\-G\-E\-R literal in \hyperlink{classParExtractorWorker_a233a7f99946695b0640e76ead6932fbb}{standalone\-\_\-circuit\-\_\-}. \end{DoxyCompactList}\item 
+int \hyperlink{classParExtractorWorker_a71f5c8e875908f12f60964ec17e2b203}{next\-\_\-free\-\_\-cnf\-\_\-lit\-\_\-}
+\begin{DoxyCompactList}\small\item\em We need to create fresh variables locally. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classParExtractorWorker_a90ef43d28785c5c5607159ddc7b54ce3}{cnf\-\_\-var\-\_\-to\-\_\-standalone\-\_\-aig\-\_\-var\-\_\-}
+\begin{DoxyCompactList}\small\item\em A map from variables as they occur in C\-N\-Fs to the corresponding A\-I\-G\-E\-R literals. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classParExtractorWorker_ab1385a3c5d2f203f6a1dbaf1ed6b5fcd}{ip\-\_\-}
+\begin{DoxyCompactList}\small\item\em The list of uncontrollable input variables followed by the present state variables. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classParExtractorWorker_ae9deb9eac6b36f87f299d1eca77351d5}{ipc\-\_\-}
+\begin{DoxyCompactList}\small\item\em The list of uncontrollable inputs, state variables, and control signals. \end{DoxyCompactList}\item 
+aiger $\ast$ \hyperlink{classParExtractorWorker_a304c66039a45652e273876f7c6da8bcf}{standalone\-\_\-circuit2\-\_\-}
+\begin{DoxyCompactList}\small\item\em A second (optimized) version of the standalone\-\_\-circuit. \end{DoxyCompactList}\item 
+int \hyperlink{classParExtractorWorker_a334b3096ea7cdb2b3305ac3960aa065a}{next\-\_\-free\-\_\-aig\-\_\-lit2\-\_\-}
+\begin{DoxyCompactList}\small\item\em The next unused A\-I\-G\-E\-R literal in \hyperlink{classParExtractorWorker_a304c66039a45652e273876f7c6da8bcf}{standalone\-\_\-circuit2\-\_\-}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classParExtractorWorker_af0d2424f3f3c99b31eafd6bfe326ec3f}{Par\-Extractor\-Worker} (const \hyperlink{classParExtractorWorker}{Par\-Extractor\-Worker} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classParExtractorWorker}{Par\-Extractor\-Worker} \& \hyperlink{classParExtractorWorker_a71f88975a5069d748c0af0cc13cea6bd}{operator=} (const \hyperlink{classParExtractorWorker}{Par\-Extractor\-Worker} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A worker thread for the \hyperlink{classParExtractor}{Par\-Extractor}. 
+
+This class implements selected circuit extraction methods from the \hyperlink{classLearningImplExtractor}{Learning\-Impl\-Extractor} in a parallelized way.
+
+\begin{DoxyAuthor}{Author}
+Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-2.\-0 
+\end{DoxyVersion}
+
+
+Definition at line 171 of file Par\-Extractor.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classParExtractorWorker_aec32f8b52073c6985778ad5797d7da7f}{\index{Par\-Extractor\-Worker@{Par\-Extractor\-Worker}!Par\-Extractor\-Worker@{Par\-Extractor\-Worker}}
+\index{Par\-Extractor\-Worker@{Par\-Extractor\-Worker}!ParExtractorWorker@{Par\-Extractor\-Worker}}
+\subsubsection[{Par\-Extractor\-Worker}]{\setlength{\rightskip}{0pt plus 5cm}Par\-Extractor\-Worker\-::\-Par\-Extractor\-Worker (
+\begin{DoxyParamCaption}
+\item[{{\bf Par\-Extractor} \&}]{coordinator, }
+\item[{const {\bf C\-N\-F} \&}]{win\-\_\-region, }
+\item[{const {\bf C\-N\-F} \&}]{neg\-\_\-win\-\_\-region}
+\end{DoxyParamCaption}
+)}}\label{classParExtractorWorker_aec32f8b52073c6985778ad5797d7da7f}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coordinator} & A reference to the coordinator. All communication to other worker-\/threads is done via the coordinator. \\
+\hline
+{\em win\-\_\-region} & The winning region from which the circuit should be extracted. \\
+\hline
+{\em neg\-\_\-win\-\_\-region} & The negation of the winning region. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 193 of file Par\-Extractor.\-cpp.
+
+
+
+References cnf\-\_\-var\-\_\-to\-\_\-standalone\-\_\-aig\-\_\-var\-\_\-, Var\-Info\-::\-C\-T\-R\-L, Var\-Manager\-::get\-Info(), Var\-Info\-::get\-Lit\-In\-A\-I\-G(), Var\-Info\-::get\-Name(), Var\-Manager\-::get\-Pres\-Error\-State\-Var(), A\-I\-G2\-C\-N\-F\-::get\-Tmp\-Deps\-Trans(), Var\-Manager\-::get\-Vars\-Of\-Type(), Var\-Info\-::\-I\-N\-P\-U\-T, Var\-Manager\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), ip\-\_\-, ipc\-\_\-, A\-I\-G2\-C\-N\-F\-::is\-True\-In\-Trans(), next\-\_\-free\-\_\-aig\-\_\-lit2\-\_\-, next\-\_\-free\-\_\-aig\-\_\-lit\-\_\-, Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, standalone\-\_\-circuit2\-\_\-, and standalone\-\_\-circuit\-\_\-.
+
+\hypertarget{classParExtractorWorker_a4cc66c5ca37732c18e8fcc65974f4e7d}{\index{Par\-Extractor\-Worker@{Par\-Extractor\-Worker}!$\sim$\-Par\-Extractor\-Worker@{$\sim$\-Par\-Extractor\-Worker}}
+\index{$\sim$\-Par\-Extractor\-Worker@{$\sim$\-Par\-Extractor\-Worker}!ParExtractorWorker@{Par\-Extractor\-Worker}}
+\subsubsection[{$\sim$\-Par\-Extractor\-Worker}]{\setlength{\rightskip}{0pt plus 5cm}Par\-Extractor\-Worker\-::$\sim$\-Par\-Extractor\-Worker (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classParExtractorWorker_a4cc66c5ca37732c18e8fcc65974f4e7d}
+
+
+Destructor. 
+
+
+
+Definition at line 281 of file Par\-Extractor.\-cpp.
+
+
+
+References check\-\_\-, gen\-\_\-, standalone\-\_\-circuit2\-\_\-, and standalone\-\_\-circuit\-\_\-.
+
+\hypertarget{classParExtractorWorker_af0d2424f3f3c99b31eafd6bfe326ec3f}{\index{Par\-Extractor\-Worker@{Par\-Extractor\-Worker}!Par\-Extractor\-Worker@{Par\-Extractor\-Worker}}
+\index{Par\-Extractor\-Worker@{Par\-Extractor\-Worker}!ParExtractorWorker@{Par\-Extractor\-Worker}}
+\subsubsection[{Par\-Extractor\-Worker}]{\setlength{\rightskip}{0pt plus 5cm}Par\-Extractor\-Worker\-::\-Par\-Extractor\-Worker (
+\begin{DoxyParamCaption}
+\item[{const {\bf Par\-Extractor\-Worker} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classParExtractorWorker_af0d2424f3f3c99b31eafd6bfe326ec3f}
+
+
+Copy constructor. 
+
+The copy constructor is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classParExtractorWorker_a3f9735c71053a92c4fe80281a7efe167}{\index{Par\-Extractor\-Worker@{Par\-Extractor\-Worker}!add\-To\-Stand\-Alone\-Aiger@{add\-To\-Stand\-Alone\-Aiger}}
+\index{add\-To\-Stand\-Alone\-Aiger@{add\-To\-Stand\-Alone\-Aiger}!ParExtractorWorker@{Par\-Extractor\-Worker}}
+\subsubsection[{add\-To\-Stand\-Alone\-Aiger}]{\setlength{\rightskip}{0pt plus 5cm}void Par\-Extractor\-Worker\-::add\-To\-Stand\-Alone\-Aiger (
+\begin{DoxyParamCaption}
+\item[{int}]{ctrl\-\_\-var, }
+\item[{const {\bf C\-N\-F} \&}]{solution}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParExtractorWorker_a3f9735c71053a92c4fe80281a7efe167}
+
+
+Adds the solution for one output function to the A\-I\-G\-E\-R circuit we have so far. 
+
+The A\-I\-G\-E\-R circuit we have so far is built up in \hyperlink{classParExtractorWorker_a233a7f99946695b0640e76ead6932fbb}{standalone\-\_\-circuit\-\_\-}. This method adds an output function (in \hyperlink{classCNF}{C\-N\-F}) for one control signal.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctrl\-\_\-var} & The control signal for which we would like to add an output function. \\
+\hline
+{\em solution} & The output function (in \hyperlink{classCNF}{C\-N\-F}) defining the control signal. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 921 of file Par\-Extractor.\-cpp.
+
+
+
+References cnf\-To\-Aig(), C\-N\-F\-::get\-Clauses(), make\-And(), make\-Or(), and standalone\-\_\-circuit\-\_\-.
+
+
+
+Referenced by Par\-Extractor\-Q\-B\-F\-Worker\-::run\-Q\-B\-F(), run\-S\-A\-T(), and run\-S\-A\-T\-Dep().
+
+\hypertarget{classParExtractorWorker_adbd795aa4646b093d90c29d253adfc79}{\index{Par\-Extractor\-Worker@{Par\-Extractor\-Worker}!add\-To\-Stand\-Alone\-Aiger2@{add\-To\-Stand\-Alone\-Aiger2}}
+\index{add\-To\-Stand\-Alone\-Aiger2@{add\-To\-Stand\-Alone\-Aiger2}!ParExtractorWorker@{Par\-Extractor\-Worker}}
+\subsubsection[{add\-To\-Stand\-Alone\-Aiger2}]{\setlength{\rightskip}{0pt plus 5cm}void Par\-Extractor\-Worker\-::add\-To\-Stand\-Alone\-Aiger2 (
+\begin{DoxyParamCaption}
+\item[{int}]{ctrl\-\_\-var, }
+\item[{const {\bf C\-N\-F} \&}]{solution}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParExtractorWorker_adbd795aa4646b093d90c29d253adfc79}
+
+
+Same as \hyperlink{classParExtractorWorker_a3f9735c71053a92c4fe80281a7efe167}{add\-To\-Stand\-Alone\-Aiger} but operating on the copy \hyperlink{classParExtractorWorker_a304c66039a45652e273876f7c6da8bcf}{standalone\-\_\-circuit2\-\_\-}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctrl\-\_\-var} & The control signal for which we would like to add an output function. \\
+\hline
+{\em solution} & The output function (in \hyperlink{classCNF}{C\-N\-F}) defining the control signal. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 957 of file Par\-Extractor.\-cpp.
+
+
+
+References cnf\-To\-Aig(), C\-N\-F\-::get\-Clauses(), make\-And2(), make\-Or2(), and standalone\-\_\-circuit2\-\_\-.
+
+
+
+Referenced by run\-S\-A\-T(), and run\-S\-A\-T\-Dep().
+
+\hypertarget{classParExtractorWorker_af32545578987bf8d7e2d6c09fb24e716}{\index{Par\-Extractor\-Worker@{Par\-Extractor\-Worker}!cnf\-To\-Aig@{cnf\-To\-Aig}}
+\index{cnf\-To\-Aig@{cnf\-To\-Aig}!ParExtractorWorker@{Par\-Extractor\-Worker}}
+\subsubsection[{cnf\-To\-Aig}]{\setlength{\rightskip}{0pt plus 5cm}int Par\-Extractor\-Worker\-::cnf\-To\-Aig (
+\begin{DoxyParamCaption}
+\item[{int}]{cnf\-\_\-lit}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParExtractorWorker_af32545578987bf8d7e2d6c09fb24e716}
+
+
+Transforms a \hyperlink{classCNF}{C\-N\-F} literal into an A\-I\-G\-E\-R literal as used in \hyperlink{classParExtractorWorker_a233a7f99946695b0640e76ead6932fbb}{standalone\-\_\-circuit\-\_\-}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cnf\-\_\-lit} & The literal as it occurs in \hyperlink{classCNF}{C\-N\-F} formulas. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The corresponding A\-I\-G\-E\-R index of the literal as it is used in the \hyperlink{classParExtractorWorker_a233a7f99946695b0640e76ead6932fbb}{standalone\-\_\-circuit\-\_\-}. 
+\end{DoxyReturn}
+
+
+Definition at line 993 of file Par\-Extractor.\-cpp.
+
+
+
+References cnf\-\_\-var\-\_\-to\-\_\-standalone\-\_\-aig\-\_\-var\-\_\-.
+
+
+
+Referenced by add\-To\-Stand\-Alone\-Aiger(), add\-To\-Stand\-Alone\-Aiger2(), and insert\-Missing\-And\-From\-Trans().
+
+\hypertarget{classParExtractorWorker_a1482b15ba516ab6ba57f4281ef85b1fb}{\index{Par\-Extractor\-Worker@{Par\-Extractor\-Worker}!insert\-Missing\-And\-From\-Trans@{insert\-Missing\-And\-From\-Trans}}
+\index{insert\-Missing\-And\-From\-Trans@{insert\-Missing\-And\-From\-Trans}!ParExtractorWorker@{Par\-Extractor\-Worker}}
+\subsubsection[{insert\-Missing\-And\-From\-Trans}]{\setlength{\rightskip}{0pt plus 5cm}void Par\-Extractor\-Worker\-::insert\-Missing\-And\-From\-Trans (
+\begin{DoxyParamCaption}
+\item[{aiger $\ast$}]{standalone\-\_\-circuit}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParExtractorWorker_a1482b15ba516ab6ba57f4281ef85b1fb}
+
+
+Copies missing A\-N\-D gates from the spec. 
+
+This method is only used for an optimization in the method \hyperlink{classParExtractorWorker_ae1d9c00159b3f4586f27f8493f558a5b}{run\-S\-A\-T\-Dep}. This method allows solutions to depend on temporary variables that appear in the original specification. The rules for S\-Y\-N\-T\-Comp do not allow to refer to such temporary variables from the specification in the final solution. Hence, this method simply copies the A\-N\-D gates from the specification into the standalone\-\_\-circuit passed as argument.
+
+
+\begin{DoxyParams}{Parameters}
+{\em standalone\-\_\-circuit} & The circuit to complete with missing A\-N\-D gates. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1039 of file Par\-Extractor.\-cpp.
+
+
+
+References Var\-Manager\-::aig\-Lit\-To\-Cnf\-Lit(), cnf\-\_\-var\-\_\-to\-\_\-standalone\-\_\-aig\-\_\-var\-\_\-, cnf\-To\-Aig(), Options\-::get\-Aig\-In\-File\-Name(), A\-I\-G2\-C\-N\-F\-::get\-Tmp\-Deps(), Var\-Manager\-::instance(), Options\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), M\-A\-S\-S\-E\-R\-T, and Var\-Info\-::\-T\-M\-P.
+
+
+
+Referenced by run\-S\-A\-T\-Dep().
+
+\hypertarget{classParExtractorWorker_aeea72a7e0c9562187c46223ddce4b65f}{\index{Par\-Extractor\-Worker@{Par\-Extractor\-Worker}!log\-Stats@{log\-Stats}}
+\index{log\-Stats@{log\-Stats}!ParExtractorWorker@{Par\-Extractor\-Worker}}
+\subsubsection[{log\-Stats}]{\setlength{\rightskip}{0pt plus 5cm}void Par\-Extractor\-Worker\-::log\-Stats (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classParExtractorWorker_aeea72a7e0c9562187c46223ddce4b65f}
+
+
+Logs the detailed statistics collected by the fastest worker. 
+
+\hypertarget{classParExtractorWorker_ab8384fdb5e6e4ff238097a4fc0a1fb48}{\index{Par\-Extractor\-Worker@{Par\-Extractor\-Worker}!make\-And@{make\-And}}
+\index{make\-And@{make\-And}!ParExtractorWorker@{Par\-Extractor\-Worker}}
+\subsubsection[{make\-And}]{\setlength{\rightskip}{0pt plus 5cm}int Par\-Extractor\-Worker\-::make\-And (
+\begin{DoxyParamCaption}
+\item[{int}]{in1, }
+\item[{int}]{in2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParExtractorWorker_ab8384fdb5e6e4ff238097a4fc0a1fb48}
+
+
+Creates the A\-N\-D between two A\-I\-G\-E\-R literals and returns the resulting literal. 
+
+This method extends the \hyperlink{classParExtractorWorker_a233a7f99946695b0640e76ead6932fbb}{standalone\-\_\-circuit\-\_\-} with logic to compute the A\-N\-D between two A\-I\-G\-E\-R literals. The literal that represents the result of the A\-N\-D is returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in1} & The first operand of the A\-N\-D\-: an A\-I\-G\-E\-R literal from \hyperlink{classParExtractorWorker_a233a7f99946695b0640e76ead6932fbb}{standalone\-\_\-circuit\-\_\-}. \\
+\hline
+{\em in2} & The second operand of the A\-N\-D\-: an A\-I\-G\-E\-R literal from \hyperlink{classParExtractorWorker_a233a7f99946695b0640e76ead6932fbb}{standalone\-\_\-circuit\-\_\-}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The literal that represents the result of the A\-N\-D. 
+\end{DoxyReturn}
+
+
+Definition at line 1003 of file Par\-Extractor.\-cpp.
+
+
+
+References next\-\_\-free\-\_\-aig\-\_\-lit\-\_\-, and standalone\-\_\-circuit\-\_\-.
+
+
+
+Referenced by add\-To\-Stand\-Alone\-Aiger().
+
+\hypertarget{classParExtractorWorker_a4421da7c9d21ab0b944a69e211ebb966}{\index{Par\-Extractor\-Worker@{Par\-Extractor\-Worker}!make\-And2@{make\-And2}}
+\index{make\-And2@{make\-And2}!ParExtractorWorker@{Par\-Extractor\-Worker}}
+\subsubsection[{make\-And2}]{\setlength{\rightskip}{0pt plus 5cm}int Par\-Extractor\-Worker\-::make\-And2 (
+\begin{DoxyParamCaption}
+\item[{int}]{in1, }
+\item[{int}]{in2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParExtractorWorker_a4421da7c9d21ab0b944a69e211ebb966}
+
+
+Same as \hyperlink{classParExtractorWorker_ab8384fdb5e6e4ff238097a4fc0a1fb48}{make\-And} but operating on the copy \hyperlink{classParExtractorWorker_a304c66039a45652e273876f7c6da8bcf}{standalone\-\_\-circuit2\-\_\-}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in1} & The first operand of the A\-N\-D\-: an A\-I\-G\-E\-R literal from \hyperlink{classParExtractorWorker_a304c66039a45652e273876f7c6da8bcf}{standalone\-\_\-circuit2\-\_\-}. \\
+\hline
+{\em in2} & The second operand of the A\-N\-D\-: an A\-I\-G\-E\-R literal from \hyperlink{classParExtractorWorker_a304c66039a45652e273876f7c6da8bcf}{standalone\-\_\-circuit2\-\_\-}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The literal that represents the result of the A\-N\-D. 
+\end{DoxyReturn}
+
+
+Definition at line 1012 of file Par\-Extractor.\-cpp.
+
+
+
+References next\-\_\-free\-\_\-aig\-\_\-lit2\-\_\-, and standalone\-\_\-circuit2\-\_\-.
+
+
+
+Referenced by add\-To\-Stand\-Alone\-Aiger2().
+
+\hypertarget{classParExtractorWorker_a11c63bb36f33129cbc437f10c4dca34e}{\index{Par\-Extractor\-Worker@{Par\-Extractor\-Worker}!make\-Eq@{make\-Eq}}
+\index{make\-Eq@{make\-Eq}!ParExtractorWorker@{Par\-Extractor\-Worker}}
+\subsubsection[{make\-Eq}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} Par\-Extractor\-Worker\-::make\-Eq (
+\begin{DoxyParamCaption}
+\item[{int}]{var, }
+\item[{{\bf C\-N\-F}}]{impl, }
+\item[{vector$<$ int $>$ $\ast$}]{new\-\_\-temps = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParExtractorWorker_a11c63bb36f33129cbc437f10c4dca34e}
+
+
+Creates a \hyperlink{classCNF}{C\-N\-F} that assigns a variable to the result of some other \hyperlink{classCNF}{C\-N\-F}. 
+
+This method creates a \hyperlink{classCNF}{C\-N\-F} that for (var $<$-\/$>$ impl), where var is a variable and impl is a \hyperlink{classCNF}{C\-N\-F}. It is used to say that a certain control signal is now defined by a function that has been computed in \hyperlink{classCNF}{C\-N\-F} form.
+
+
+\begin{DoxyParams}{Parameters}
+{\em var} & The variable to set equal to the result of the \hyperlink{classCNF}{C\-N\-F} impl. \\
+\hline
+{\em impl} & The \hyperlink{classCNF}{C\-N\-F} that should define the value of var. \\
+\hline
+{\em new\-\_\-temps} & A vector of variables. New auxiliary variables introduced by this method will be appended to this vector. The vector can also be omitted if not needed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classCNF}{C\-N\-F} representation of (var $<$-\/$>$ impl). 
+\end{DoxyReturn}
+
+
+Definition at line 871 of file Par\-Extractor.\-cpp.
+
+
+
+References C\-N\-F\-::add\-Clause(), C\-N\-F\-::add\-C\-N\-F(), C\-N\-F\-::get\-Clauses(), next\-\_\-free\-\_\-cnf\-\_\-lit\-\_\-, and C\-N\-F\-::swap\-With().
+
+
+
+Referenced by Par\-Extractor\-Q\-B\-F\-Worker\-::run\-Q\-B\-F(), run\-S\-A\-T(), and run\-S\-A\-T\-Dep().
+
+\hypertarget{classParExtractorWorker_a1cbe2dcdb25b164cb12a2ce1b61e6761}{\index{Par\-Extractor\-Worker@{Par\-Extractor\-Worker}!make\-Or@{make\-Or}}
+\index{make\-Or@{make\-Or}!ParExtractorWorker@{Par\-Extractor\-Worker}}
+\subsubsection[{make\-Or}]{\setlength{\rightskip}{0pt plus 5cm}int Par\-Extractor\-Worker\-::make\-Or (
+\begin{DoxyParamCaption}
+\item[{int}]{in1, }
+\item[{int}]{in2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParExtractorWorker_a1cbe2dcdb25b164cb12a2ce1b61e6761}
+
+
+Creates the O\-R between two A\-I\-G\-E\-R literals and returns the resulting literal. 
+
+This method extends the \hyperlink{classParExtractorWorker_a233a7f99946695b0640e76ead6932fbb}{standalone\-\_\-circuit\-\_\-} with logic to compute the O\-R between two A\-I\-G\-E\-R literals. The literal that represents the result of the O\-R is returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in1} & The first operand of the O\-R\-: an A\-I\-G\-E\-R literal from \hyperlink{classParExtractorWorker_a233a7f99946695b0640e76ead6932fbb}{standalone\-\_\-circuit\-\_\-}. \\
+\hline
+{\em in2} & The second operand of the O\-R\-: an A\-I\-G\-E\-R literal from \hyperlink{classParExtractorWorker_a233a7f99946695b0640e76ead6932fbb}{standalone\-\_\-circuit\-\_\-}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The literal that represents the result of the O\-R. 
+\end{DoxyReturn}
+
+
+Definition at line 1021 of file Par\-Extractor.\-cpp.
+
+
+
+References next\-\_\-free\-\_\-aig\-\_\-lit\-\_\-, and standalone\-\_\-circuit\-\_\-.
+
+
+
+Referenced by add\-To\-Stand\-Alone\-Aiger().
+
+\hypertarget{classParExtractorWorker_a5554579e9532cf39953d2db97c9f0525}{\index{Par\-Extractor\-Worker@{Par\-Extractor\-Worker}!make\-Or2@{make\-Or2}}
+\index{make\-Or2@{make\-Or2}!ParExtractorWorker@{Par\-Extractor\-Worker}}
+\subsubsection[{make\-Or2}]{\setlength{\rightskip}{0pt plus 5cm}int Par\-Extractor\-Worker\-::make\-Or2 (
+\begin{DoxyParamCaption}
+\item[{int}]{in1, }
+\item[{int}]{in2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParExtractorWorker_a5554579e9532cf39953d2db97c9f0525}
+
+
+Same as \hyperlink{classParExtractorWorker_ab8384fdb5e6e4ff238097a4fc0a1fb48}{make\-And} but operating on the copy \hyperlink{classParExtractorWorker_a304c66039a45652e273876f7c6da8bcf}{standalone\-\_\-circuit2\-\_\-}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in1} & The first operand of the O\-R\-: an A\-I\-G\-E\-R literal from \hyperlink{classParExtractorWorker_a304c66039a45652e273876f7c6da8bcf}{standalone\-\_\-circuit2\-\_\-}. \\
+\hline
+{\em in2} & The second operand of the O\-R\-: an A\-I\-G\-E\-R literal from \hyperlink{classParExtractorWorker_a304c66039a45652e273876f7c6da8bcf}{standalone\-\_\-circuit2\-\_\-}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The literal that represents the result of the O\-R. 
+\end{DoxyReturn}
+
+
+Definition at line 1030 of file Par\-Extractor.\-cpp.
+
+
+
+References next\-\_\-free\-\_\-aig\-\_\-lit2\-\_\-, and standalone\-\_\-circuit2\-\_\-.
+
+
+
+Referenced by add\-To\-Stand\-Alone\-Aiger2().
+
+\hypertarget{classParExtractorWorker_a71f88975a5069d748c0af0cc13cea6bd}{\index{Par\-Extractor\-Worker@{Par\-Extractor\-Worker}!operator=@{operator=}}
+\index{operator=@{operator=}!ParExtractorWorker@{Par\-Extractor\-Worker}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Par\-Extractor\-Worker}\& Par\-Extractor\-Worker\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Par\-Extractor\-Worker} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classParExtractorWorker_a71f88975a5069d748c0af0cc13cea6bd}
+
+
+Assignment operator. 
+
+The assignment operator is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the assignment, i.\-e, $\ast$this. 
+\end{DoxyReturn}
+\hypertarget{classParExtractorWorker_a58a6a251869b24e00b8b3dec0990feab}{\index{Par\-Extractor\-Worker@{Par\-Extractor\-Worker}!run\-S\-A\-T@{run\-S\-A\-T}}
+\index{run\-S\-A\-T@{run\-S\-A\-T}!ParExtractorWorker@{Par\-Extractor\-Worker}}
+\subsubsection[{run\-S\-A\-T}]{\setlength{\rightskip}{0pt plus 5cm}void Par\-Extractor\-Worker\-::run\-S\-A\-T (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classParExtractorWorker_a58a6a251869b24e00b8b3dec0990feab}
+
+
+Runs S\-A\-T-\/based learning without dependency optimization. 
+
+Roughly implements \hyperlink{classLearningImplExtractor_a036ab2a3921696d31fb55139427d2114}{Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1()}. 
+
+Definition at line 294 of file Par\-Extractor.\-cpp.
+
+
+
+References C\-N\-F\-::add2\-Lit\-Clause(), C\-N\-F\-::add3\-Lit\-Clause(), C\-N\-F\-::add\-Clause(), C\-N\-F\-::add\-C\-N\-F(), C\-N\-F\-::add\-Neg\-Cube\-As\-Clause(), add\-To\-Stand\-Alone\-Aiger(), add\-To\-Stand\-Alone\-Aiger2(), check\-\_\-, coordinator\-\_\-, Var\-Info\-::\-C\-T\-R\-L, did\-\_\-second\-\_\-run\-\_\-, Sat\-Solver\-::do\-Min\-Cores(), done\-\_\-, Par\-Extractor\-::extr\-\_\-command\-\_\-, E\-X\-T\-R\-\_\-\-S\-T\-O\-P, gen\-\_\-, Options\-::get\-Estimated\-Time\-Remaining(), Stopwatch\-::get\-Real\-Time\-Sec(), Var\-Manager\-::get\-Vars\-Of\-Type(), Sat\-Solver\-::inc\-Add\-C\-N\-F(), Sat\-Solver\-::inc\-Add\-Neg\-Cube\-As\-Clause(), Sat\-Solver\-::inc\-Is\-Sat(), Sat\-Solver\-::inc\-Is\-Sat\-Model\-Or\-Core(), Var\-Manager\-::instance(), Options\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), ip\-\_\-, ipc\-\_\-, make\-Eq(), M\-A\-S\-S\-E\-R\-T, neg\-\_\-win\-\_\-region\-\_\-, Utils\-::negate\-Literals(), next\-\_\-free\-\_\-cnf\-\_\-lit\-\_\-, Learning\-Extractor\-Statistics\-::notify\-After\-A\-B\-C(), Learning\-Extractor\-Statistics\-::notify\-After\-Clause\-Comp(), Learning\-Extractor\-Statistics\-::notify\-After\-Clause\-Min(), Learning\-Extractor\-Statistics\-::notify\-After\-Ctrl\-Signal(), Learning\-Extractor\-Statistics\-::notify\-Before\-A\-B\-C(), Learning\-Extractor\-Statistics\-::notify\-Before\-Clause\-Comp(), Learning\-Extractor\-Statistics\-::notify\-Before\-Clause\-Min(), Learning\-Extractor\-Statistics\-::notify\-Before\-Ctrl\-Signal(), C\-N\-F\-Impl\-Extractor\-::optimize\-With\-A\-B\-C(), Utils\-::remove(), C\-N\-F\-::rename\-Vars(), C\-N\-F\-::set\-Var\-Value(), standalone\-\_\-circuit2\-\_\-, standalone\-\_\-circuit\-\_\-, Stopwatch\-::start(), Sat\-Solver\-::start\-Incremental\-Session(), statistics, C\-N\-F\-::swap\-Present\-To\-Next(), wait\-For\-Others\-To\-Finish(), and win\-\_\-region\-\_\-.
+
+
+
+Referenced by Par\-Extractor\-::run().
+
+\hypertarget{classParExtractorWorker_ae1d9c00159b3f4586f27f8493f558a5b}{\index{Par\-Extractor\-Worker@{Par\-Extractor\-Worker}!run\-S\-A\-T\-Dep@{run\-S\-A\-T\-Dep}}
+\index{run\-S\-A\-T\-Dep@{run\-S\-A\-T\-Dep}!ParExtractorWorker@{Par\-Extractor\-Worker}}
+\subsubsection[{run\-S\-A\-T\-Dep}]{\setlength{\rightskip}{0pt plus 5cm}void Par\-Extractor\-Worker\-::run\-S\-A\-T\-Dep (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classParExtractorWorker_ae1d9c00159b3f4586f27f8493f558a5b}
+
+
+Runs S\-A\-T-\/based learning with dependency optimization. 
+
+Roughly implements \hyperlink{classLearningImplExtractor_ad41484b6bb6da18e50d31830a18e63e9}{Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl()}. 
+
+Definition at line 553 of file Par\-Extractor.\-cpp.
+
+
+
+References C\-N\-F\-::add\-C\-N\-F(), C\-N\-F\-::add\-Neg\-Cube\-As\-Clause(), add\-To\-Stand\-Alone\-Aiger(), add\-To\-Stand\-Alone\-Aiger2(), check\-\_\-, Utils\-::contains(), C\-N\-F\-::contains(), coordinator\-\_\-, Var\-Info\-::\-C\-T\-R\-L, D\-A\-S\-S\-E\-R\-T, did\-\_\-second\-\_\-run\-\_\-, Sat\-Solver\-::do\-Min\-Cores(), done\-\_\-, Par\-Extractor\-::extr\-\_\-command\-\_\-, E\-X\-T\-R\-\_\-\-S\-T\-O\-P, gen\-\_\-, Options\-::get\-Estimated\-Time\-Remaining(), Stopwatch\-::get\-Real\-Time\-Sec(), A\-I\-G2\-C\-N\-F\-::get\-Tmp\-Deps\-Trans(), A\-I\-G2\-C\-N\-F\-::get\-Trans(), Var\-Manager\-::get\-Vars\-Of\-Type(), Sat\-Solver\-::inc\-Add\-C\-N\-F(), Sat\-Solver\-::inc\-Add\-Neg\-Cube\-As\-Clause(), Sat\-Solver\-::inc\-Add\-Unit\-Clause(), Sat\-Solver\-::inc\-Is\-Sat(), Sat\-Solver\-::inc\-Is\-Sat\-Model\-Or\-Core(), insert\-Missing\-And\-From\-Trans(), Var\-Manager\-::instance(), Options\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), ipc\-\_\-, make\-Eq(), M\-A\-S\-S\-E\-R\-T, neg\-\_\-win\-\_\-region\-\_\-, Utils\-::negate\-Literals(), next\-\_\-free\-\_\-cnf\-\_\-lit\-\_\-, Learning\-Extractor\-Statistics\-::notify\-After\-A\-B\-C(), Learning\-Extractor\-Statistics\-::notify\-After\-Clause\-Comp(), Learning\-Extractor\-Statistics\-::notify\-After\-Clause\-Min(), Learning\-Extractor\-Statistics\-::notify\-After\-Ctrl\-Signal(), Learning\-Extractor\-Statistics\-::notify\-Before\-A\-B\-C(), Learning\-Extractor\-Statistics\-::notify\-Before\-Clause\-Comp(), Learning\-Extractor\-Statistics\-::notify\-Before\-Clause\-Min(), Learning\-Extractor\-Statistics\-::notify\-Before\-Ctrl\-Signal(), C\-N\-F\-Impl\-Extractor\-::optimize\-With\-A\-B\-C(), Utils\-::randomize(), Utils\-::remove(), C\-N\-F\-::rename\-Vars(), C\-N\-F\-::set\-Var\-Value(), standalone\-\_\-circuit2\-\_\-, standalone\-\_\-circuit\-\_\-, Stopwatch\-::start(), Sat\-Solver\-::start\-Incremental\-Session(), statistics, C\-N\-F\-::swap\-Present\-To\-Next(), wait\-For\-Others\-To\-Finish(), and win\-\_\-region\-\_\-.
+
+\hypertarget{classParExtractorWorker_a1c935793adbc70d77bbb8f7f065d0897}{\index{Par\-Extractor\-Worker@{Par\-Extractor\-Worker}!wait\-For\-Others\-To\-Finish@{wait\-For\-Others\-To\-Finish}}
+\index{wait\-For\-Others\-To\-Finish@{wait\-For\-Others\-To\-Finish}!ParExtractorWorker@{Par\-Extractor\-Worker}}
+\subsubsection[{wait\-For\-Others\-To\-Finish}]{\setlength{\rightskip}{0pt plus 5cm}void Par\-Extractor\-Worker\-::wait\-For\-Others\-To\-Finish (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{elapsed\-\_\-until\-\_\-done}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParExtractorWorker_a1c935793adbc70d77bbb8f7f065d0897}
+
+
+Waits for other worker threads to finish. 
+
+If a worker thread is finished it does not terminate and kill other worker threads immediately. Instead, it waits for some time hoping that other worker threads will finish as well. This way, we can choose among the different circuits created by the different threads. However, if some thread loses her patience while waiting, it can kill other worker threads.
+
+
+\begin{DoxyParams}{Parameters}
+{\em elapsed\-\_\-until\-\_\-done} & The time in seconds this worker thread needed until it found a solution. This number is used for heuristics that decide when to kill the other workers. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 834 of file Par\-Extractor.\-cpp.
+
+
+
+References Par\-Extractor\-::all\-Waiting(), coordinator\-\_\-, Par\-Extractor\-::extr\-\_\-command\-\_\-, E\-X\-T\-R\-\_\-\-S\-T\-O\-P, Options\-::get\-Estimated\-Time\-Remaining(), Stopwatch\-::get\-Real\-Time\-Sec(), Options\-::instance(), Par\-Extractor\-::kill\-Them\-All(), standalone\-\_\-circuit\-\_\-, Stopwatch\-::start(), and waiting\-\_\-.
+
+
+
+Referenced by Par\-Extractor\-Q\-B\-F\-Worker\-::run\-Q\-B\-F(), run\-S\-A\-T(), and run\-S\-A\-T\-Dep().
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classParExtractorWorker_aa501458322a206e0ab66a4005cac963c}{\index{Par\-Extractor\-Worker@{Par\-Extractor\-Worker}!check\-\_\-@{check\-\_\-}}
+\index{check\-\_\-@{check\-\_\-}!ParExtractorWorker@{Par\-Extractor\-Worker}}
+\subsubsection[{check\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sat\-Solver}$\ast$ Par\-Extractor\-Worker\-::check\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParExtractorWorker_aa501458322a206e0ab66a4005cac963c}
+
+
+A S\-A\-T solver to check for counterexamples. 
+
+
+
+Definition at line 374 of file Par\-Extractor.\-h.
+
+
+
+Referenced by run\-S\-A\-T(), run\-S\-A\-T\-Dep(), and $\sim$\-Par\-Extractor\-Worker().
+
+\hypertarget{classParExtractorWorker_a90ef43d28785c5c5607159ddc7b54ce3}{\index{Par\-Extractor\-Worker@{Par\-Extractor\-Worker}!cnf\-\_\-var\-\_\-to\-\_\-standalone\-\_\-aig\-\_\-var\-\_\-@{cnf\-\_\-var\-\_\-to\-\_\-standalone\-\_\-aig\-\_\-var\-\_\-}}
+\index{cnf\-\_\-var\-\_\-to\-\_\-standalone\-\_\-aig\-\_\-var\-\_\-@{cnf\-\_\-var\-\_\-to\-\_\-standalone\-\_\-aig\-\_\-var\-\_\-}!ParExtractorWorker@{Par\-Extractor\-Worker}}
+\subsubsection[{cnf\-\_\-var\-\_\-to\-\_\-standalone\-\_\-aig\-\_\-var\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ Par\-Extractor\-Worker\-::cnf\-\_\-var\-\_\-to\-\_\-standalone\-\_\-aig\-\_\-var\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParExtractorWorker_a90ef43d28785c5c5607159ddc7b54ce3}
+
+
+A map from variables as they occur in C\-N\-Fs to the corresponding A\-I\-G\-E\-R literals. 
+
+This vector maps variables as they occur in C\-N\-Fs to the corresponding A\-I\-G\-E\-R literals as they occur in the \hyperlink{classParExtractorWorker_a233a7f99946695b0640e76ead6932fbb}{standalone\-\_\-circuit\-\_\-}. Use \hyperlink{classParExtractorWorker_af32545578987bf8d7e2d6c09fb24e716}{cnf\-To\-Aig} to transform literals.
+
+\begin{DoxyNote}{Note}
+The A\-I\-G\-E\-R literal numbering scheme in the \hyperlink{classParExtractorWorker_a233a7f99946695b0640e76ead6932fbb}{standalone\-\_\-circuit\-\_\-} is different from the numbering scheme in the original specification. The reason is that we want to avoid big 'holes' of unused A\-I\-G\-E\-R literals right from the beginning. 
+\end{DoxyNote}
+
+
+Definition at line 411 of file Par\-Extractor.\-h.
+
+
+
+Referenced by cnf\-To\-Aig(), insert\-Missing\-And\-From\-Trans(), and Par\-Extractor\-Worker().
+
+\hypertarget{classParExtractorWorker_a749b01fd5ad1a57ae5793db2bb3b4e47}{\index{Par\-Extractor\-Worker@{Par\-Extractor\-Worker}!coordinator\-\_\-@{coordinator\-\_\-}}
+\index{coordinator\-\_\-@{coordinator\-\_\-}!ParExtractorWorker@{Par\-Extractor\-Worker}}
+\subsubsection[{coordinator\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Par\-Extractor}\& Par\-Extractor\-Worker\-::coordinator\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParExtractorWorker_a749b01fd5ad1a57ae5793db2bb3b4e47}
+
+
+A reference to the coordinator. 
+
+All communication to other worker-\/threads is done via the coordinator. 
+
+Definition at line 369 of file Par\-Extractor.\-h.
+
+
+
+Referenced by Par\-Extractor\-Q\-B\-F\-Worker\-::run\-Q\-B\-F(), run\-S\-A\-T(), run\-S\-A\-T\-Dep(), and wait\-For\-Others\-To\-Finish().
+
+\hypertarget{classParExtractorWorker_a99552e89edf3a3925430399207a1b13e}{\index{Par\-Extractor\-Worker@{Par\-Extractor\-Worker}!did\-\_\-second\-\_\-run\-\_\-@{did\-\_\-second\-\_\-run\-\_\-}}
+\index{did\-\_\-second\-\_\-run\-\_\-@{did\-\_\-second\-\_\-run\-\_\-}!ParExtractorWorker@{Par\-Extractor\-Worker}}
+\subsubsection[{did\-\_\-second\-\_\-run\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}bool Par\-Extractor\-Worker\-::did\-\_\-second\-\_\-run\-\_\-}}\label{classParExtractorWorker_a99552e89edf3a3925430399207a1b13e}
+
+
+True if this thread did a second minimization run (just for printing statistics). 
+
+
+
+Definition at line 224 of file Par\-Extractor.\-h.
+
+
+
+Referenced by run\-S\-A\-T(), and run\-S\-A\-T\-Dep().
+
+\hypertarget{classParExtractorWorker_a460487c299f8c86e745a940278d38ee0}{\index{Par\-Extractor\-Worker@{Par\-Extractor\-Worker}!done\-\_\-@{done\-\_\-}}
+\index{done\-\_\-@{done\-\_\-}!ParExtractorWorker@{Par\-Extractor\-Worker}}
+\subsubsection[{done\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}bool Par\-Extractor\-Worker\-::done\-\_\-}}\label{classParExtractorWorker_a460487c299f8c86e745a940278d38ee0}
+
+
+Indicates if standalone\-\_\-circuit\-\_\- is ready. 
+
+
+
+Definition at line 214 of file Par\-Extractor.\-h.
+
+
+
+Referenced by Par\-Extractor\-Q\-B\-F\-Worker\-::run\-Q\-B\-F(), run\-S\-A\-T(), and run\-S\-A\-T\-Dep().
+
+\hypertarget{classParExtractorWorker_aa60776c90a94164e2cfbfd81f77ccb21}{\index{Par\-Extractor\-Worker@{Par\-Extractor\-Worker}!gen\-\_\-@{gen\-\_\-}}
+\index{gen\-\_\-@{gen\-\_\-}!ParExtractorWorker@{Par\-Extractor\-Worker}}
+\subsubsection[{gen\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sat\-Solver}$\ast$ Par\-Extractor\-Worker\-::gen\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParExtractorWorker_aa60776c90a94164e2cfbfd81f77ccb21}
+
+
+A S\-A\-T solver to generalize counterexamples. 
+
+
+
+Definition at line 379 of file Par\-Extractor.\-h.
+
+
+
+Referenced by run\-S\-A\-T(), run\-S\-A\-T\-Dep(), and $\sim$\-Par\-Extractor\-Worker().
+
+\hypertarget{classParExtractorWorker_ab1385a3c5d2f203f6a1dbaf1ed6b5fcd}{\index{Par\-Extractor\-Worker@{Par\-Extractor\-Worker}!ip\-\_\-@{ip\-\_\-}}
+\index{ip\-\_\-@{ip\-\_\-}!ParExtractorWorker@{Par\-Extractor\-Worker}}
+\subsubsection[{ip\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ Par\-Extractor\-Worker\-::ip\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParExtractorWorker_ab1385a3c5d2f203f6a1dbaf1ed6b5fcd}
+
+
+The list of uncontrollable input variables followed by the present state variables. 
+
+This vector contains the \hyperlink{classCNF}{C\-N\-F} version of the uncontrollable input variables followed by the present state variables. This vector of variables is used often, and thus stored here as a field. 
+
+Definition at line 420 of file Par\-Extractor.\-h.
+
+
+
+Referenced by Par\-Extractor\-Worker(), Par\-Extractor\-Q\-B\-F\-Worker\-::run\-Q\-B\-F(), and run\-S\-A\-T().
+
+\hypertarget{classParExtractorWorker_ae9deb9eac6b36f87f299d1eca77351d5}{\index{Par\-Extractor\-Worker@{Par\-Extractor\-Worker}!ipc\-\_\-@{ipc\-\_\-}}
+\index{ipc\-\_\-@{ipc\-\_\-}!ParExtractorWorker@{Par\-Extractor\-Worker}}
+\subsubsection[{ipc\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ Par\-Extractor\-Worker\-::ipc\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParExtractorWorker_ae9deb9eac6b36f87f299d1eca77351d5}
+
+
+The list of uncontrollable inputs, state variables, and control signals. 
+
+This vector contains the \hyperlink{classCNF}{C\-N\-F} version of the uncontrollable input variables followed by the present state variables, followed by the control signals. This vector of variables is used often, and thus stored here as a field. 
+
+Definition at line 429 of file Par\-Extractor.\-h.
+
+
+
+Referenced by Par\-Extractor\-Worker(), run\-S\-A\-T(), and run\-S\-A\-T\-Dep().
+
+\hypertarget{classParExtractorWorker_a423caaf7f20528eb06b176acc09ae8ee}{\index{Par\-Extractor\-Worker@{Par\-Extractor\-Worker}!neg\-\_\-win\-\_\-region\-\_\-@{neg\-\_\-win\-\_\-region\-\_\-}}
+\index{neg\-\_\-win\-\_\-region\-\_\-@{neg\-\_\-win\-\_\-region\-\_\-}!ParExtractorWorker@{Par\-Extractor\-Worker}}
+\subsubsection[{neg\-\_\-win\-\_\-region\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-N\-F}\& Par\-Extractor\-Worker\-::neg\-\_\-win\-\_\-region\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParExtractorWorker_a423caaf7f20528eb06b176acc09ae8ee}
+
+
+The negation of the winning region. 
+
+
+
+Definition at line 389 of file Par\-Extractor.\-h.
+
+
+
+Referenced by Par\-Extractor\-Q\-B\-F\-Worker\-::run\-Q\-B\-F(), run\-S\-A\-T(), and run\-S\-A\-T\-Dep().
+
+\hypertarget{classParExtractorWorker_a334b3096ea7cdb2b3305ac3960aa065a}{\index{Par\-Extractor\-Worker@{Par\-Extractor\-Worker}!next\-\_\-free\-\_\-aig\-\_\-lit2\-\_\-@{next\-\_\-free\-\_\-aig\-\_\-lit2\-\_\-}}
+\index{next\-\_\-free\-\_\-aig\-\_\-lit2\-\_\-@{next\-\_\-free\-\_\-aig\-\_\-lit2\-\_\-}!ParExtractorWorker@{Par\-Extractor\-Worker}}
+\subsubsection[{next\-\_\-free\-\_\-aig\-\_\-lit2\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int Par\-Extractor\-Worker\-::next\-\_\-free\-\_\-aig\-\_\-lit2\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParExtractorWorker_a334b3096ea7cdb2b3305ac3960aa065a}
+
+
+The next unused A\-I\-G\-E\-R literal in \hyperlink{classParExtractorWorker_a304c66039a45652e273876f7c6da8bcf}{standalone\-\_\-circuit2\-\_\-}. 
+
+
+
+Definition at line 442 of file Par\-Extractor.\-h.
+
+
+
+Referenced by make\-And2(), make\-Or2(), and Par\-Extractor\-Worker().
+
+\hypertarget{classParExtractorWorker_a07219034862a2f4dabe22ecdc0d04ae0}{\index{Par\-Extractor\-Worker@{Par\-Extractor\-Worker}!next\-\_\-free\-\_\-aig\-\_\-lit\-\_\-@{next\-\_\-free\-\_\-aig\-\_\-lit\-\_\-}}
+\index{next\-\_\-free\-\_\-aig\-\_\-lit\-\_\-@{next\-\_\-free\-\_\-aig\-\_\-lit\-\_\-}!ParExtractorWorker@{Par\-Extractor\-Worker}}
+\subsubsection[{next\-\_\-free\-\_\-aig\-\_\-lit\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int Par\-Extractor\-Worker\-::next\-\_\-free\-\_\-aig\-\_\-lit\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParExtractorWorker_a07219034862a2f4dabe22ecdc0d04ae0}
+
+
+The next unused A\-I\-G\-E\-R literal in \hyperlink{classParExtractorWorker_a233a7f99946695b0640e76ead6932fbb}{standalone\-\_\-circuit\-\_\-}. 
+
+
+
+Definition at line 394 of file Par\-Extractor.\-h.
+
+
+
+Referenced by make\-And(), make\-Or(), and Par\-Extractor\-Worker().
+
+\hypertarget{classParExtractorWorker_a71f5c8e875908f12f60964ec17e2b203}{\index{Par\-Extractor\-Worker@{Par\-Extractor\-Worker}!next\-\_\-free\-\_\-cnf\-\_\-lit\-\_\-@{next\-\_\-free\-\_\-cnf\-\_\-lit\-\_\-}}
+\index{next\-\_\-free\-\_\-cnf\-\_\-lit\-\_\-@{next\-\_\-free\-\_\-cnf\-\_\-lit\-\_\-}!ParExtractorWorker@{Par\-Extractor\-Worker}}
+\subsubsection[{next\-\_\-free\-\_\-cnf\-\_\-lit\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int Par\-Extractor\-Worker\-::next\-\_\-free\-\_\-cnf\-\_\-lit\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParExtractorWorker_a71f5c8e875908f12f60964ec17e2b203}
+
+
+We need to create fresh variables locally. 
+
+
+
+Definition at line 399 of file Par\-Extractor.\-h.
+
+
+
+Referenced by make\-Eq(), run\-S\-A\-T(), and run\-S\-A\-T\-Dep().
+
+\hypertarget{classParExtractorWorker_a304c66039a45652e273876f7c6da8bcf}{\index{Par\-Extractor\-Worker@{Par\-Extractor\-Worker}!standalone\-\_\-circuit2\-\_\-@{standalone\-\_\-circuit2\-\_\-}}
+\index{standalone\-\_\-circuit2\-\_\-@{standalone\-\_\-circuit2\-\_\-}!ParExtractorWorker@{Par\-Extractor\-Worker}}
+\subsubsection[{standalone\-\_\-circuit2\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}aiger$\ast$ Par\-Extractor\-Worker\-::standalone\-\_\-circuit2\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParExtractorWorker_a304c66039a45652e273876f7c6da8bcf}
+
+
+A second (optimized) version of the standalone\-\_\-circuit. 
+
+We will always finish standalone\-\_\-circuit\-\_\-, and then work on standalone\-\_\-circuit2\-\_\- if there is still time. 
+
+Definition at line 437 of file Par\-Extractor.\-h.
+
+
+
+Referenced by add\-To\-Stand\-Alone\-Aiger2(), make\-And2(), make\-Or2(), Par\-Extractor\-Worker(), run\-S\-A\-T(), run\-S\-A\-T\-Dep(), and $\sim$\-Par\-Extractor\-Worker().
+
+\hypertarget{classParExtractorWorker_a233a7f99946695b0640e76ead6932fbb}{\index{Par\-Extractor\-Worker@{Par\-Extractor\-Worker}!standalone\-\_\-circuit\-\_\-@{standalone\-\_\-circuit\-\_\-}}
+\index{standalone\-\_\-circuit\-\_\-@{standalone\-\_\-circuit\-\_\-}!ParExtractorWorker@{Par\-Extractor\-Worker}}
+\subsubsection[{standalone\-\_\-circuit\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}aiger$\ast$ Par\-Extractor\-Worker\-::standalone\-\_\-circuit\-\_\-}}\label{classParExtractorWorker_a233a7f99946695b0640e76ead6932fbb}
+
+
+The synthesis result as stand-\/alone circuit. 
+
+This A\-I\-G\-E\-R circuit is combinatorial, i.\-e., has no latches. The inputs of the circuit are\-: the uncontrollable inputs from the spec (in the order in which they appear in the spec) followed by the state-\/signals (the output of the latches in the spec, in the order in which they appear in the spec). The outputs of the circuit are the controllable inputs in the order in which they are defined in the spec.
+
+This circuit will be built up by one of the methods run\-Learning\-X. Then, it will be optimized using A\-B\-C. Finally, it will be inserted into the original specification, as required by the rules for S\-Y\-N\-T\-Comp. 
+
+Definition at line 240 of file Par\-Extractor.\-h.
+
+
+
+Referenced by add\-To\-Stand\-Alone\-Aiger(), make\-And(), make\-Or(), Par\-Extractor\-Worker(), Par\-Extractor\-Q\-B\-F\-Worker\-::run\-Q\-B\-F(), run\-S\-A\-T(), run\-S\-A\-T\-Dep(), wait\-For\-Others\-To\-Finish(), and $\sim$\-Par\-Extractor\-Worker().
+
+\hypertarget{classParExtractorWorker_a5e23f373a7959b56eb6f93036f98a1b1}{\index{Par\-Extractor\-Worker@{Par\-Extractor\-Worker}!statistics@{statistics}}
+\index{statistics@{statistics}!ParExtractorWorker@{Par\-Extractor\-Worker}}
+\subsubsection[{statistics}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Learning\-Extractor\-Statistics} Par\-Extractor\-Worker\-::statistics}}\label{classParExtractorWorker_a5e23f373a7959b56eb6f93036f98a1b1}
+
+
+A helper for collecting performance data and statistics. 
+
+
+
+Definition at line 245 of file Par\-Extractor.\-h.
+
+
+
+Referenced by Par\-Extractor\-Q\-B\-F\-Worker\-::run\-Q\-B\-F(), run\-S\-A\-T(), and run\-S\-A\-T\-Dep().
+
+\hypertarget{classParExtractorWorker_aad63a07af4e70719e53a4c41d67b6dd1}{\index{Par\-Extractor\-Worker@{Par\-Extractor\-Worker}!waiting\-\_\-@{waiting\-\_\-}}
+\index{waiting\-\_\-@{waiting\-\_\-}!ParExtractorWorker@{Par\-Extractor\-Worker}}
+\subsubsection[{waiting\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}bool Par\-Extractor\-Worker\-::waiting\-\_\-}}\label{classParExtractorWorker_aad63a07af4e70719e53a4c41d67b6dd1}
+
+
+Indicates if this thread is waiting for others to finish. 
+
+
+
+Definition at line 219 of file Par\-Extractor.\-h.
+
+
+
+Referenced by Par\-Extractor\-Q\-B\-F\-Worker\-::run\-Q\-B\-F(), and wait\-For\-Others\-To\-Finish().
+
+\hypertarget{classParExtractorWorker_abccf0d629d4dca3a94cc572130e6d0e9}{\index{Par\-Extractor\-Worker@{Par\-Extractor\-Worker}!win\-\_\-region\-\_\-@{win\-\_\-region\-\_\-}}
+\index{win\-\_\-region\-\_\-@{win\-\_\-region\-\_\-}!ParExtractorWorker@{Par\-Extractor\-Worker}}
+\subsubsection[{win\-\_\-region\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-N\-F}\& Par\-Extractor\-Worker\-::win\-\_\-region\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParExtractorWorker_abccf0d629d4dca3a94cc572130e6d0e9}
+
+
+The winning region from which the circuit should be extracted. 
+
+
+
+Definition at line 384 of file Par\-Extractor.\-h.
+
+
+
+Referenced by Par\-Extractor\-Q\-B\-F\-Worker\-::run\-Q\-B\-F(), run\-S\-A\-T(), and run\-S\-A\-T\-Dep().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{ParExtractor_8h}{Par\-Extractor.\-h}\item 
+src/\hyperlink{ParExtractor_8cpp}{Par\-Extractor.\-cpp}\end{DoxyCompactItemize}

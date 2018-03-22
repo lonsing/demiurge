@@ -204,6 +204,17 @@ void PicoSatApi::incAdd3LitClause(int lit1, int lit2, int lit3)
 }
 
 // -------------------------------------------------------------------------------------------
+void PicoSatApi::incAdd4LitClause(int lit1, int lit2, int lit3, int lit4)
+{
+  MASSERT(incr_ != NULL, "No open session.");
+  picosat_add(incr_, lit1);
+  picosat_add(incr_, lit2);
+  picosat_add(incr_, lit3);
+  picosat_add(incr_, lit4);
+  picosat_add(incr_, 0);
+}
+
+// -------------------------------------------------------------------------------------------
 void PicoSatApi::incAddCube(const vector<int> &cube)
 {
   MASSERT(incr_ != NULL, "No open session.");

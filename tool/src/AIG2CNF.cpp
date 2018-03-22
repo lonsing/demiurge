@@ -29,6 +29,7 @@
 
 #include "AIG2CNF.h"
 #include "VarManager.h"
+#include "StringUtils.h"
 
 extern "C" {
  #include "aiger.h"
@@ -64,6 +65,18 @@ void AIG2CNF::initFromAig(aiger *aig)
     refs[aig->latches[cnt].lit] = true;
     refs[aiger_not(aig->latches[cnt].lit)] = true;
   }
+  for(unsigned cnt = 0; cnt < aig->num_inputs; ++cnt)
+  {
+    string aig_name;
+    if(aig->inputs[cnt].name != NULL)
+      aig_name = aig->inputs[cnt].name;
+    string aig_name_lower = StringUtils::toLowerCase(aig_name);
+    if(aig_name_lower.find("controllable_") == 0)
+    {
+      refs[aig->inputs[cnt].lit] = true;
+      refs[aiger_not(aig->inputs[cnt].lit)] = true;
+    }
+  }
 
   bool changed = true;
   while(changed)
@@ -98,6 +111,7 @@ void AIG2CNF::initFromAig(aiger *aig)
   // now we create the CNF for the transition relation:
   if (refs[0] || refs[1])
   {
+    true_in_trans_ = true;
     trans_.add1LitClause(VM.aigLitToCnfLit(1));
     trans_tmp_deps_[VM.aigLitToCnfLit(1)] = set<VarInfo>();
   }
@@ -106,25 +120,23 @@ void AIG2CNF::initFromAig(aiger *aig)
   for (unsigned i = 0; i < aig->num_ands; i++)
   {
     unsigned out_aig_lit = aig->ands[i].lhs;
-    int out_cnf_lit = VarManager::instance().aigLitToCnfLit(out_aig_lit);
-    int rhs1_cnf_lit = VarManager::instance().aigLitToCnfLit(aig->ands[i].rhs1);
-    int rhs0_cnf_lit = VarManager::instance().aigLitToCnfLit(aig->ands[i].rhs0);
-    if (refs[out_aig_lit])
+    if (refs[out_aig_lit] || refs[out_aig_lit+1])
     {
+      int out_cnf_lit = VarManager::instance().aigLitToCnfLit(out_aig_lit);
+      int rhs1_cnf_lit = VarManager::instance().aigLitToCnfLit(aig->ands[i].rhs1);
+      int rhs0_cnf_lit = VarManager::instance().aigLitToCnfLit(aig->ands[i].rhs0);
+
       // (lhs --> rhs1) AND (lhs --> rhs0)
       trans_.add2LitClause(-out_cnf_lit, rhs1_cnf_lit);
       trans_.add2LitClause(-out_cnf_lit, rhs0_cnf_lit);
-    }
-    if (refs[out_aig_lit+1])
-    {
       // (!lhs --> (!rhs1 OR !rhs0)
       trans_.add3LitClause(out_cnf_lit, -rhs1_cnf_lit, -rhs0_cnf_lit);
-    }
-    set<VarInfo> deps;
-    deps.insert(VM.getInfo((rhs1_cnf_lit < 0) ? -rhs1_cnf_lit : rhs1_cnf_lit));
-    deps.insert(VM.getInfo((rhs0_cnf_lit < 0) ? -rhs0_cnf_lit : rhs0_cnf_lit));
-    trans_tmp_deps_[out_cnf_lit] = deps;
 
+      set<VarInfo> deps;
+      deps.insert(VM.getInfo((rhs1_cnf_lit < 0) ? -rhs1_cnf_lit : rhs1_cnf_lit));
+      deps.insert(VM.getInfo((rhs0_cnf_lit < 0) ? -rhs0_cnf_lit : rhs0_cnf_lit));
+      trans_tmp_deps_[out_cnf_lit] = deps;
+    }
   }
   trans_eq_t_ = trans_;
 
@@ -135,16 +147,17 @@ void AIG2CNF::initFromAig(aiger *aig)
   // state variable 0 contains the error bit, so we set
   // next_state_vars[0] <-> error_lit:
   int error_lit = VM.aigLitToCnfLit(aig->outputs[0].lit);
-  trans_.add2LitClause(next_state_vars[0], -error_lit);
-  trans_.add2LitClause(-next_state_vars[0], error_lit);
+  trans_.add2LitClause(-error_lit, next_state_vars[0]);
+  trans_.add2LitClause(error_lit, -next_state_vars[0]);
+
 
   // we also create equality constraints for the other state bits:
   for(unsigned cnt = 0; cnt < aig->num_latches; ++cnt)
   {
     int next_state_lit = VM.aigLitToCnfLit(aig->latches[cnt].next);
     int x_prime_lit = next_state_vars[cnt+1];
-    trans_.add2LitClause(next_state_lit, -x_prime_lit);
     trans_.add2LitClause(-next_state_lit, x_prime_lit);
+    trans_.add2LitClause(next_state_lit, -x_prime_lit);
   }
 
   // Step 3c
@@ -300,7 +313,13 @@ const map<int, set<VarInfo> >& AIG2CNF::getTmpDepsTrans()
 }
 
 // -------------------------------------------------------------------------------------------
-AIG2CNF::AIG2CNF()
+bool AIG2CNF::isTrueInTrans()
+{
+  return true_in_trans_;
+}
+
+// -------------------------------------------------------------------------------------------
+AIG2CNF::AIG2CNF() : t_(0), true_in_trans_(false)
 {
   // nothing to be done
 }

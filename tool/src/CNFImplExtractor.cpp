@@ -109,7 +109,7 @@ void CNFImplExtractor::extractCircuit(const CNF &winning_region,
 }
 
 // -------------------------------------------------------------------------------------------
-aiger* CNFImplExtractor::optimizeWithABC(aiger *circuit) const
+aiger* CNFImplExtractor::optimizeWithABC(aiger *circuit)
 {
   //string dbg_in_file = Options::instance().getUniqueTmpFileName("optimize_me") + ".aag";
   //int succ = aiger_open_and_write_to_file(circuit, dbg_in_file.c_str());

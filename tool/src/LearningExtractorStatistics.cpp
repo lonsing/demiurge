@@ -33,6 +33,8 @@
 
 // -------------------------------------------------------------------------------------------
 LearningExtractorStatistics::LearningExtractorStatistics() :
+    abc_cpu_time_(0.0),
+    abc_real_time_(0),
     size_before_abc_(0),
     size_after_abc_(0),
     size_final_(0)

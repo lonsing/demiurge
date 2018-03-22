@@ -41,7 +41,7 @@ extern "C" {
 
 
 // -------------------------------------------------------------------------------------------
-DepQBFApi::DepQBFApi(bool use_bloqqer) :
+DepQBFApi::DepQBFApi(bool use_bloqqer) : QBFSolver(),
     use_bloqqer_(use_bloqqer),
     min_cores_(true),
     inc_solver_(NULL)
@@ -153,11 +153,13 @@ bool DepQBFApi::isSatModel(const vector<pair<VarInfo::VarKind, Quant> > &quantif
       for(size_t v_cnt = 0; v_cnt < vars.size(); ++v_cnt)
       {
         VarValue val = bloqqer_getvalue(vars[v_cnt]);
-        MASSERT(val != UNKN, "Bloqqer return an UNKN as value");
+        DASSERT(val != UNKN, "Bloqqer return an UNKN as value");
         if(val == NEG)
           model.push_back(-vars[v_cnt]);
         else if(val == POS)
           model.push_back(vars[v_cnt]);
+        else
+          model.push_back(-vars[v_cnt]);
       }
       if(q_cnt + 1 < quantifier_prefix.size())
         if(quantifier_prefix[q_cnt].second != quantifier_prefix[q_cnt+1].second)
@@ -245,11 +247,13 @@ bool DepQBFApi::isSatModel(const vector<pair<vector<int>, Quant> > &quantifier_p
       for(size_t v_cnt = 0; v_cnt < vars.size(); ++v_cnt)
       {
         VarValue val = bloqqer_getvalue(vars[v_cnt]);
-        MASSERT(val != UNKN, "Bloqqer return an UNKN as value");
+        DASSERT(val != UNKN, "Bloqqer return an UNKN as value");
         if(val == NEG)
           model.push_back(-vars[v_cnt]);
         else if(val == POS)
           model.push_back(vars[v_cnt]);
+        else
+          model.push_back(-vars[v_cnt]);
       }
       if(q_cnt + 1 < quantifier_prefix.size())
         if(quantifier_prefix[q_cnt].second != quantifier_prefix[q_cnt+1].second)

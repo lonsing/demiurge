@@ -37,6 +37,10 @@
 #include "Options.h"
 #include <unistd.h>
 
+extern "C" {
+  #include "aiger.h"
+}
+
 // -------------------------------------------------------------------------------------------
 bool Utils::containsInit(const vector<int> &cube)
 {
@@ -196,6 +200,20 @@ bool Utils::contains(const vector<int> &vec, int elem)
       return true;
   }
   return false;
+}
+
+// -------------------------------------------------------------------------------------------
+bool Utils::eq(const vector<int> &v1, const vector<int> &v2, int start_idx)
+{
+  if(v1.size() != v2.size())
+    return false;
+  set<int> s1, s2;
+  for(size_t cnt = start_idx; cnt < v1.size(); ++cnt)
+  {
+    s1.insert(v1[cnt]);
+    s2.insert(v2[cnt]);
+  }
+  return (s1 == s2);
 }
 
 // -------------------------------------------------------------------------------------------
@@ -389,6 +407,226 @@ void Utils::negateStateCNF(CNF &cnf)
 }
 
 // -------------------------------------------------------------------------------------------
+void Utils::negateViaAig(CNF &cnf)
+{
+  set<int> vars;
+  cnf.appendVarsTo(vars);
+  int max_cnf_var = vars.empty() ? 1 : *(vars.rbegin());
+  vector<int> cnf_to_aig(max_cnf_var + 1, 0);
+  vector<int> aig_to_cnf(vars.size() * 2 + 2, 0);
+  int next_free_aig_lit = 2;
+  aiger *raw = aiger_init();
+  for(set<int>::const_iterator it = vars.begin(); it != vars.end(); ++it)
+  {
+    aiger_add_input(raw, next_free_aig_lit, NULL);
+    cnf_to_aig[*it] = next_free_aig_lit;
+    aig_to_cnf[next_free_aig_lit] = *it;
+    aig_to_cnf[next_free_aig_lit+1] = -(*it);
+    next_free_aig_lit += 2;
+  }
+  int last_and = 1;
+  const list<vector<int> > &cl = cnf.getClauses();
+  for(CNF::ClauseConstIter it = cl.begin(); it != cl.end(); ++it)
+  {
+    const vector<int> &c = *it;
+    int last_or = 1;
+    if(c.size() >= 1)
+      last_or = c[0] < 0 ? cnf_to_aig[-c[0]] : cnf_to_aig[c[0]] + 1;
+    for(size_t cnt = 1; cnt < c.size(); ++cnt)
+    {
+      int next_cnf_to_aig = c[cnt] < 0 ? cnf_to_aig[-c[cnt]] : cnf_to_aig[c[cnt]] + 1;
+      aiger_add_and(raw, next_free_aig_lit, last_or, next_cnf_to_aig);
+      last_or = next_free_aig_lit;
+      next_free_aig_lit += 2;
+    }
+    if(last_and == 1)
+      last_and = aiger_not(last_or);
+    else
+    {
+      aiger_add_and(raw, next_free_aig_lit, last_and, aiger_not(last_or));
+      last_and = next_free_aig_lit;
+      next_free_aig_lit += 2;
+    }
+  }
+  aiger_add_output(raw, last_and, NULL);
+
+  // done constructing AIGER version of cnf, now we optimize with ABC:
+  string tmp_in_file = Options::instance().getUniqueTmpFileName("optimize_win") + ".aig";
+  int succ = aiger_open_and_write_to_file(raw, tmp_in_file.c_str());
+  MASSERT(succ != 0, "Could not write out AIGER file for optimization with ABC.");
+
+  // optimize circuit:
+  string path_to_abc = Options::instance().getTPDirName() + "/abc/abc/abc";
+  string tmp_out_file = Options::instance().getUniqueTmpFileName("optimized_win") + ".aig";
+  string abc_command = path_to_abc + " -c \"";
+  abc_command += "read_aiger " + tmp_in_file + ";";
+  abc_command += " strash; refactor -zl; rewrite -zl;";
+  abc_command += " strash; refactor -zl; rewrite -zl;";
+  abc_command += " strash; refactor -zl; rewrite -zl;";
+  abc_command += " strash; refactor -zl; rewrite -zl;";
+  abc_command += " strash; refactor -zl; rewrite -zl;";
+  abc_command += " strash; refactor -zl; rewrite -zl;";
+  abc_command += " rewrite -zl; dfraig;";
+  abc_command += " write_aiger -s " + tmp_out_file + "\"";
+  abc_command += " > /dev/null 2>&1";
+  int ret = system(abc_command.c_str());
+  ret = WEXITSTATUS(ret);
+  MASSERT(ret == 0, "ABC terminated with strange return code.");
+
+  // read back the result:
+  aiger *res = aiger_init();
+  const char *err = aiger_open_and_read_from_file (res, tmp_out_file.c_str());
+  MASSERT(err == NULL, "Could not open optimized AIGER file "
+          << tmp_out_file << " (" << err << ").");
+  std::remove(tmp_in_file.c_str());
+  std::remove(tmp_out_file.c_str());
+
+  // done optimizing the aiger circuit. Now encode it back onto a CNF:
+  cnf.clear();
+  aig_to_cnf.resize(aig_to_cnf.size() + (res->num_ands * 2), 0);
+  for(unsigned cnt = 0; cnt < res->num_ands; ++cnt)
+  {
+    int nw = VarManager::instance().createFreshTmpVar();
+    aig_to_cnf[res->ands[cnt].lhs] = nw;
+    aig_to_cnf[res->ands[cnt].lhs + 1] = -nw;
+    cnf.add2LitClause(aig_to_cnf[res->ands[cnt].rhs0], -nw);
+    cnf.add2LitClause(aig_to_cnf[res->ands[cnt].rhs1], -nw);
+    cnf.add3LitClause(-aig_to_cnf[res->ands[cnt].rhs0], -aig_to_cnf[res->ands[cnt].rhs1], nw);
+  }
+  cnf.add1LitClause(-aig_to_cnf[res->outputs[0].lit]);
+  aiger_reset(raw);
+  aiger_reset(res);
+}
+
+// -------------------------------------------------------------------------------------------
+void Utils::compressNextStateCNF(CNF &ps_cnf, CNF &ns_cnf, bool hardcore)
+{
+  //size_t orig_cl = ps_cnf.getNrOfClauses();
+  //size_t orig_lits = ps_cnf.getNrOfLits();
+
+  VarManager &VM = VarManager::instance();
+  vector<int> none;
+  SatSolver *solver_cl = Options::instance().getSATSolver(false, true);
+  solver_cl->startIncrementalSession(VM.getAllNonTempVars(), false);
+  SatSolver *solver_lit = NULL;
+
+  // Step 1: remove literals from present-state clauses if enabled:
+  if(false) // does not pay off
+  {
+    solver_lit = Options::instance().getSATSolver(false, true);
+    solver_lit->startIncrementalSession(VM.getAllNonTempVars(), false);
+    solver_lit->incAddCNF(ps_cnf);
+    list<vector<int> > clauses;
+    ps_cnf.swapWith(clauses);
+    for(CNF::ClauseIter it = clauses.begin(); it != clauses.end(); ++it)
+    {
+      vector<int> neg_clause(*it);
+      negateLiterals(neg_clause);
+      vector<int> smaller_neg_clause;
+      bool sat = solver_lit->incIsSatModelOrCore(neg_clause, none, smaller_neg_clause);
+      MASSERT(!sat, "Impossible.");
+      ps_cnf.addNegCubeAsClause(smaller_neg_clause);
+    }
+  }
+
+  // Step 2: remove present-state clauses:
+  CNF still_to_process;
+  still_to_process.swapWith(ps_cnf);
+  while(still_to_process.getNrOfClauses() != 0)
+  {
+    vector<int> check_clause = still_to_process.removeSmallest();
+    vector<int> check_cube(check_clause);
+    negateLiterals(check_cube);
+    if(solver_cl->incIsSat(check_cube))
+    {
+      solver_cl->incAddClause(check_clause);
+      ps_cnf.addClause(check_clause);
+    }
+  }
+
+  ns_cnf = ps_cnf;
+  ns_cnf.swapPresentToNext();
+
+  // Step 3: remove literals from next-state clauses if enabled:
+  if(hardcore)
+  {
+    solver_lit = Options::instance().getSATSolver(false, true);
+    solver_lit->startIncrementalSession(VM.getAllNonTempVars(), false);
+    solver_lit->incAddCNF(ps_cnf);
+    solver_lit->incAddCNF(AIG2CNF::instance().getTrans());
+    solver_lit->incAddCNF(ns_cnf);
+    list<vector<int> > clauses;
+    ns_cnf.swapWith(clauses);
+    for(CNF::ClauseIter it = clauses.begin(); it != clauses.end(); ++it)
+    {
+      vector<int> neg_clause(*it);
+      negateLiterals(neg_clause);
+      vector<int> smaller_neg_clause;
+      bool sat = solver_lit->incIsSatModelOrCore(neg_clause, none, smaller_neg_clause);
+      MASSERT(!sat, "Impossible.");
+      ns_cnf.addNegCubeAsClause(smaller_neg_clause);
+    }
+  }
+
+  // The solver_cl still contains the present-state cnf
+  // Step 4: remove next-state clauses:
+  solver_cl->incAddCNF(AIG2CNF::instance().getTrans());
+  still_to_process = ns_cnf;
+  ns_cnf.clear();
+  while(still_to_process.getNrOfClauses() != 0)
+  {
+    vector<int> check_clause = still_to_process.removeSmallest();
+    vector<int> check_cube(check_clause);
+    negateLiterals(check_cube);
+    if(solver_cl->incIsSat(check_cube))
+    {
+      solver_cl->incAddClause(check_clause);
+      ns_cnf.addClause(check_clause);
+    }
+  }
+
+  delete solver_cl;
+  delete solver_lit;
+  //L_DBG("compr-present: " << orig_cl << " --> " << ps_cnf.getNrOfClauses() << " clauses.");
+  //L_DBG("compr-present: " << orig_lits << " --> " << ps_cnf.getNrOfLits() << " literals.");
+  //L_DBG("compr-next: " << orig_cl << " --> " << ns_cnf.getNrOfClauses() << " clauses.");
+  //L_DBG("compr-next: " << orig_lits << " --> " << ns_cnf.getNrOfLits() << " literals.");
+}
+
+// -------------------------------------------------------------------------------------------
+size_t Utils::getCurrentMemUsage()
+{
+  using std::ios_base;
+  using std::ifstream;
+  using std::string;
+
+  // 'file' stat seems to give the most reliable results
+  //
+  ifstream stat_stream("/proc/self/stat",ios_base::in);
+
+  // dummy vars for leading entries in stat that we don't care about
+  //
+  string pid, comm, state, ppid, pgrp, session, tty_nr;
+  string tpgid, flags, minflt, cminflt, majflt, cmajflt;
+  string utime, stime, cutime, cstime, priority, nice;
+  string O, itrealvalue, starttime;
+
+  // the two fields we want
+  //
+  unsigned long vsize;
+  long rss;
+
+  stat_stream >> pid >> comm >> state >> ppid >> pgrp >> session >> tty_nr
+              >> tpgid >> flags >> minflt >> cminflt >> majflt >> cmajflt
+              >> utime >> stime >> cutime >> cstime >> priority >> nice
+              >> O >> itrealvalue >> starttime >> vsize >> rss;
+
+  stat_stream.close();
+
+  return vsize / 1024;
+}
+
+// -------------------------------------------------------------------------------------------
 void Utils::debugPrint(const vector<int> &vec, string prefix)
 {
   ostringstream oss;
@@ -476,6 +714,7 @@ void Utils::debugCheckWinReg(const CNF &winning_region, const CNF &neg_winning_r
     check_solver->incAddCNF(check_cnf);
     CNF gen_cnf(winning_region);
     gen_cnf.swapPresentToNext();
+    gen_cnf.renameTmps();
     gen_cnf.addCNF(winning_region);
     gen_cnf.addCNF(AIG2CNF::instance().getTrans());
     SatSolver *gen_solver = Options::instance().getSATSolver(false, true);

@@ -1,24 +1,54 @@
 
 \begin{DoxyRefList}
-\item[\label{todo__todo000007}%
-\hypertarget{todo__todo000007}{}%
-Member \hyperlink{classClauseExplorerSAT_a674651f8fbf9ed93264ce3369bd5332b}{Clause\-Explorer\-S\-A\-T\-:\-:new\-\_\-info\-\_\-lock\-\_\-} ]A more fine-\/grained locking could improve the performance.  
 \item[\label{todo__todo000001}%
 \hypertarget{todo__todo000001}{}%
-Class \hyperlink{classEPRSynthesizer}{E\-P\-R\-Synthesizer} ]\-: At the moment we only construct the formula, and parse back the answer to the realizability question. Parsing back the implementation for the controllable signals remains to be done. (The i\-Prover page promises to release a new version with more output formats soon.)  
+Member \hyperlink{classAIG2CNF_a3f4358961404803c1be6b73f5aada4ce}{A\-I\-G2\-C\-N\-F\-:\-:is\-True\-In\-Trans} ()]This is a hack. This should always be done. But this would require re-\/computation of the pre-\/computed winning regions for the experiments, so it is delayed. 
 \item[\label{todo__todo000002}%
 \hypertarget{todo__todo000002}{}%
-Member \hyperlink{classEPRSynthesizer_ab5eb613a7e5e4f8d408938531f745e4e}{E\-P\-R\-Synthesizer\-:\-:run} ()]\-: At the moment we only construct the formula, and parse back the answer to the realizability question. Parsing back the implementation for the controllable signals remains to be done. (The i\-Prover page promises to release a new version with more output formats soon.)  
+Member \hyperlink{classAIG2CNF_a0a46853e81b9c2be9dc9dab2d080355d}{A\-I\-G2\-C\-N\-F\-:\-:true\-\_\-in\-\_\-trans\-\_\-} ]This is a hack. This should always be done. But this would require re-\/computation of the pre-\/computed winning regions for the experiments, so it is delayed.  
+\item[\label{todo__todo000012}%
+\hypertarget{todo__todo000012}{}%
+Member \hyperlink{classClauseExplorerSAT_a674651f8fbf9ed93264ce3369bd5332b}{Clause\-Explorer\-S\-A\-T\-:\-:new\-\_\-info\-\_\-lock\-\_\-} ]A more fine-\/grained locking could improve the performance.  
 \item[\label{todo__todo000003}%
 \hypertarget{todo__todo000003}{}%
-Class \hyperlink{classLearnSynthQBFInd}{Learn\-Synth\-Q\-B\-F\-Ind} ]Turning a winning region that was computed with optimization R\-C into a circuit is not yet implemented. However, since optimization R\-C does not increase the performance in our experiments (in contrast to optimization R\-G), this is not a severe issue at the moment. We can consider optimization R\-C as experiment that did not work out well.  
+Member \hyperlink{classCNF_ad7b181b3dbe40f751326c4722d0af84a}{C\-N\-F\-:\-:do\-Pure\-And\-Unit} (const vector$<$ int $>$ \&keep)]So far, only unit clause propagation has been implemented. Pure literals still need to be done. 
 \item[\label{todo__todo000004}%
 \hypertarget{todo__todo000004}{}%
-Member \hyperlink{classMiniSatApi_a27013ace25320f68252bef5ba9f2e9ad}{Mini\-Sat\-Api\-:\-:inc\-Push} ()]Try to improve this workaround with activation variables or by extracting the learned clauses from the original solver instance or by implementing a copy-\/function for Mini\-Sat solver instances.  
+Class \hyperlink{classEPRSynthesizer}{E\-P\-R\-Synthesizer} ]\-: At the moment we only construct the formula, and parse back the answer to the realizability question. Parsing back the implementation for the controllable signals remains to be done. (The i\-Prover page promises to release a new version with more output formats soon.) \begin{DoxyAuthor}{Author}
+Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-2.\-0  
+\end{DoxyVersion}
+
 \item[\label{todo__todo000005}%
 \hypertarget{todo__todo000005}{}%
-File \hyperlink{ParallelLearner_8cpp}{Parallel\-Learner.cpp} ]Split this file into several files, one per class, and combine them in a namespace.  
+Member \hyperlink{classEPRSynthesizer_ab5eb613a7e5e4f8d408938531f745e4e}{E\-P\-R\-Synthesizer\-:\-:run} ()]\-: At the moment we only construct the formula, and parse back the answer to the realizability question. Parsing back the implementation for the controllable signals remains to be done. (The i\-Prover page promises to release a new version with more output formats soon.) 
+\item[\label{todo__todo000007}%
+\hypertarget{todo__todo000007}{}%
+Member \hyperlink{classEPRSynthesizer_ad6e1a2eb75383201277345df5ad566a6}{E\-P\-R\-Synthesizer\-:\-:run\-With\-Less\-Skolem} ()]\-: At the moment we only construct the formula, and parse back the answer to the realizability question. Parsing back the implementation for the controllable signals remains to be done. (The i\-Prover page promises to release a new version with more output formats soon.) 
 \item[\label{todo__todo000006}%
 \hypertarget{todo__todo000006}{}%
+Member \hyperlink{classEPRSynthesizer_ad976438a4577ffaa60f696e1c1c03860}{E\-P\-R\-Synthesizer\-:\-:run\-With\-Skolem} ()]\-: At the moment we only construct the formula, and parse back the answer to the realizability question. Parsing back the implementation for the controllable signals remains to be done. (The i\-Prover page promises to release a new version with more output formats soon.) 
+\item[\label{todo__todo000008}%
+\hypertarget{todo__todo000008}{}%
+Class \hyperlink{classLearnSynthQBFInd}{Learn\-Synth\-Q\-B\-F\-Ind} ]Turning a winning region that was computed with optimization R\-C into a circuit is not yet implemented. However, since optimization R\-C does not increase the performance in our experiments (in contrast to optimization R\-G), this is not a severe issue at the moment. We can consider optimization R\-C as experiment that did not work out well. \begin{DoxyNote}{Note}
+This class is experimental. 
+\end{DoxyNote}
+\begin{DoxyAuthor}{Author}
+Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-2.\-0  
+\end{DoxyVersion}
+
+\item[\label{todo__todo000009}%
+\hypertarget{todo__todo000009}{}%
+Member \hyperlink{classMiniSatApi_a27013ace25320f68252bef5ba9f2e9ad}{Mini\-Sat\-Api\-:\-:inc\-Push} ()]Try to improve this workaround with activation variables or by extracting the learned clauses from the original solver instance or by implementing a copy-\/function for Mini\-Sat solver instances.  
+\item[\label{todo__todo000010}%
+\hypertarget{todo__todo000010}{}%
+File \hyperlink{ParallelLearner_8cpp}{Parallel\-Learner.cpp} ]Split this file into several files, one per class, and combine them in a namespace.  
+\item[\label{todo__todo000011}%
+\hypertarget{todo__todo000011}{}%
 File \hyperlink{ParallelLearner_8h}{Parallel\-Learner.h} ]Split this file into several files, one per class, and combine them in a namespace. 
 \end{DoxyRefList}

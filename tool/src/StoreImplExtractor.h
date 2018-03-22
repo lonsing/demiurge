@@ -44,7 +44,7 @@
 /// region into a file. It does not really extract a circuit.
 ///
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.1.0
+/// @version 1.2.0
 class StoreImplExtractor : public CNFImplExtractor
 {
 public:

@@ -51,7 +51,7 @@ class CNFImplExtractor;
 /// DepQBF. We also use the ability of DepQBF to compute unsatisfiable cores.
 ///
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.1.0
+/// @version 1.2.0
 class LearnSynthQBFInc : public BackEnd
 {
 public:

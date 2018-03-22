@@ -41,6 +41,8 @@ virtual void \hyperlink{classLingelingApi_a54bf3198e6bb2dd3ebda768272337955}{inc
 \begin{DoxyCompactList}\small\item\em Adds a new clause consisting of 2 literals to the current incremental session. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classLingelingApi_ad05f795bbf472fe5386164a74a8ecd86}{inc\-Add3\-Lit\-Clause} (int lit1, int lit2, int lit3)
 \begin{DoxyCompactList}\small\item\em Adds a new clause consisting of 3 literals to the current incremental session. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classLingelingApi_a464ae182ba0c0fd7255db821f92d127d}{inc\-Add4\-Lit\-Clause} (int lit1, int lit2, int lit3, int lit4)
+\begin{DoxyCompactList}\small\item\em Adds a new clause consisting of 4 literals to the current incremental session. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classLingelingApi_a6dc0eb0582d6afda381fc05a5820433c}{inc\-Add\-Cube} (const vector$<$ int $>$ \&cube)
 \begin{DoxyCompactList}\small\item\em Adds a new cube to the current incremental session. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classLingelingApi_afefd24f97e49aed7cbaf25140a6b7741}{inc\-Add\-Neg\-Cube\-As\-Clause} (const vector$<$ int $>$ \&cube)
@@ -101,7 +103,7 @@ This class represents an interface to the S\-A\-T-\/solver Lingeling (see \href{
 Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\-1.\-0 
+1.\-2.\-0 
 \end{DoxyVersion}
 
 
@@ -119,7 +121,7 @@ A type for a const-\/iterator over the incremental session stack.
 
 
 
-Definition at line 390 of file Lingeling\-Api.\-h.
+Definition at line 408 of file Lingeling\-Api.\-h.
 
 \hypertarget{classLingelingApi_aa4ab290e2a0f65677b6e58b675741535}{\index{Lingeling\-Api@{Lingeling\-Api}!Stack\-Iter@{Stack\-Iter}}
 \index{Stack\-Iter@{Stack\-Iter}!LingelingApi@{Lingeling\-Api}}
@@ -130,7 +132,7 @@ A type for an iterator over the incremental session stack.
 
 
 
-Definition at line 396 of file Lingeling\-Api.\-h.
+Definition at line 414 of file Lingeling\-Api.\-h.
 
 
 
@@ -251,7 +253,7 @@ References Sat\-Solver\-::min\-\_\-cores\-\_\-.
 
 
 
-Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), and Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2().
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Recy(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), Par\-Extractor\-Worker\-::run\-S\-A\-T(), and Par\-Extractor\-Worker\-::run\-S\-A\-T\-Dep().
 
 \hypertarget{classSatSolver_ae229c5e277350710412fce0e867dc566}{\index{Lingeling\-Api@{Lingeling\-Api}!do\-Rand\-Models@{do\-Rand\-Models}}
 \index{do\-Rand\-Models@{do\-Rand\-Models}!LingelingApi@{Lingeling\-Api}}
@@ -279,7 +281,7 @@ References Sat\-Solver\-::rand\-\_\-models\-\_\-.
 
 
 
-Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), and Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C().
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C\-Exp(), and Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Recy().
 
 \hypertarget{classLingelingApi_a54bf3198e6bb2dd3ebda768272337955}{\index{Lingeling\-Api@{Lingeling\-Api}!inc\-Add2\-Lit\-Clause@{inc\-Add2\-Lit\-Clause}}
 \index{inc\-Add2\-Lit\-Clause@{inc\-Add2\-Lit\-Clause}!LingelingApi@{Lingeling\-Api}}
@@ -347,6 +349,46 @@ Implements \hyperlink{classSatSolver_abca288874a1b8ab1a90cb274eb885ace}{Sat\-Sol
 
 
 Definition at line 202 of file Lingeling\-Api.\-cpp.
+
+
+
+References incr\-\_\-stack\-\_\-, and M\-A\-S\-S\-E\-R\-T.
+
+\hypertarget{classLingelingApi_a464ae182ba0c0fd7255db821f92d127d}{\index{Lingeling\-Api@{Lingeling\-Api}!inc\-Add4\-Lit\-Clause@{inc\-Add4\-Lit\-Clause}}
+\index{inc\-Add4\-Lit\-Clause@{inc\-Add4\-Lit\-Clause}!LingelingApi@{Lingeling\-Api}}
+\subsubsection[{inc\-Add4\-Lit\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}void Lingeling\-Api\-::inc\-Add4\-Lit\-Clause (
+\begin{DoxyParamCaption}
+\item[{int}]{lit1, }
+\item[{int}]{lit2, }
+\item[{int}]{lit3, }
+\item[{int}]{lit4}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classLingelingApi_a464ae182ba0c0fd7255db821f92d127d}
+
+
+Adds a new clause consisting of 4 literals to the current incremental session. 
+
+\begin{DoxyPrecond}{Precondition}
+\hyperlink{classLingelingApi_a844da6cbdf38b7cc8abd0b1710350be2}{start\-Incremental\-Session()} must have been called before. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em lit1} & The first literal of the clause to add to the currently open incremental session. If this method is called after solving for the first time, be sure that the passed literal talks about a variables that have been mentioned in vars\-\_\-to\-\_\-keep when calling \hyperlink{classLingelingApi_a844da6cbdf38b7cc8abd0b1710350be2}{start\-Incremental\-Session()}. Otherwise, strange things can happen. \\
+\hline
+{\em lit2} & The second literal of the clause to add to the currently open incremental session (must be contained in vars\-\_\-to\-\_\-keep as well). \\
+\hline
+{\em lit3} & The third literal of the clause to add to the currently open incremental session (must be contained in vars\-\_\-to\-\_\-keep as well). \\
+\hline
+{\em lit4} & The fourth literal of the clause to add to the currently open incremental session (must be contained in vars\-\_\-to\-\_\-keep as well). \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classSatSolver_af01bfc3b8fa15e7b69136b1808c59023}{Sat\-Solver}.
+
+
+
+Definition at line 213 of file Lingeling\-Api.\-cpp.
 
 
 
@@ -441,7 +483,7 @@ Implements \hyperlink{classSatSolver_a1f04f34bb04174489ed18d0b62241004}{Sat\-Sol
 
 
 
-Definition at line 213 of file Lingeling\-Api.\-cpp.
+Definition at line 225 of file Lingeling\-Api.\-cpp.
 
 
 
@@ -474,7 +516,7 @@ Implements \hyperlink{classSatSolver_a6be2c564289a59057c4c6728a3aa9c2b}{Sat\-Sol
 
 
 
-Definition at line 225 of file Lingeling\-Api.\-cpp.
+Definition at line 237 of file Lingeling\-Api.\-cpp.
 
 
 
@@ -534,7 +576,7 @@ Implements \hyperlink{classSatSolver_ab1aab4b96a36b2003450067a3799ae23}{Sat\-Sol
 
 
 
-Definition at line 235 of file Lingeling\-Api.\-cpp.
+Definition at line 247 of file Lingeling\-Api.\-cpp.
 
 
 
@@ -570,7 +612,7 @@ Implements \hyperlink{classSatSolver_a1864787a33621efac7fc75fb6b25f080}{Sat\-Sol
 
 
 
-Definition at line 248 of file Lingeling\-Api.\-cpp.
+Definition at line 260 of file Lingeling\-Api.\-cpp.
 
 
 
@@ -609,7 +651,7 @@ Implements \hyperlink{classSatSolver_ad387fc06bacf2d48847f779c9db8461a}{Sat\-Sol
 
 
 
-Definition at line 264 of file Lingeling\-Api.\-cpp.
+Definition at line 276 of file Lingeling\-Api.\-cpp.
 
 
 
@@ -651,7 +693,7 @@ Implements \hyperlink{classSatSolver_a29225bfab1f352cae27c68e9bda4d409}{Sat\-Sol
 
 
 
-Definition at line 329 of file Lingeling\-Api.\-cpp.
+Definition at line 341 of file Lingeling\-Api.\-cpp.
 
 
 
@@ -674,7 +716,7 @@ Implements \hyperlink{classSatSolver_a436aae045eb04141c834df0b55947ee5}{Sat\-Sol
 
 
 
-Definition at line 423 of file Lingeling\-Api.\-cpp.
+Definition at line 435 of file Lingeling\-Api.\-cpp.
 
 
 
@@ -697,7 +739,7 @@ Implements \hyperlink{classSatSolver_a4da0dff7082a91429e3311d279605be4}{Sat\-Sol
 
 
 
-Definition at line 413 of file Lingeling\-Api.\-cpp.
+Definition at line 425 of file Lingeling\-Api.\-cpp.
 
 
 
@@ -832,7 +874,7 @@ solver != N\-U\-L\-L
 \end{DoxyParams}
 
 
-Definition at line 432 of file Lingeling\-Api.\-cpp.
+Definition at line 444 of file Lingeling\-Api.\-cpp.
 
 
 
@@ -887,11 +929,11 @@ A stack of incremental session contexts.
 
 The incremental session is store on a stack to support \hyperlink{classLingelingApi_a91c858d2a36a4fbe580909a793802a76}{inc\-Push()} and \hyperlink{classLingelingApi_afe43e1243338a332803fff470eedbf7a}{inc\-Pop()}. The current session is always at the top of the stack (the end of the list). 
 
-Definition at line 384 of file Lingeling\-Api.\-h.
+Definition at line 402 of file Lingeling\-Api.\-h.
 
 
 
-Referenced by clear\-Incremental\-Session(), inc\-Add2\-Lit\-Clause(), inc\-Add3\-Lit\-Clause(), inc\-Add\-Clause(), inc\-Add\-C\-N\-F(), inc\-Add\-Cube(), inc\-Add\-Neg\-Cube\-As\-Clause(), inc\-Add\-Unit\-Clause(), inc\-Is\-Sat(), inc\-Is\-Sat\-Model\-Or\-Core(), inc\-Pop(), inc\-Push(), and start\-Incremental\-Session().
+Referenced by clear\-Incremental\-Session(), inc\-Add2\-Lit\-Clause(), inc\-Add3\-Lit\-Clause(), inc\-Add4\-Lit\-Clause(), inc\-Add\-Clause(), inc\-Add\-C\-N\-F(), inc\-Add\-Cube(), inc\-Add\-Neg\-Cube\-As\-Clause(), inc\-Add\-Unit\-Clause(), inc\-Is\-Sat(), inc\-Is\-Sat\-Model\-Or\-Core(), inc\-Pop(), inc\-Push(), and start\-Incremental\-Session().
 
 \hypertarget{classSatSolver_adfeecebfd09606c82b5c57cfe5aad813}{\index{Lingeling\-Api@{Lingeling\-Api}!min\-\_\-cores\-\_\-@{min\-\_\-cores\-\_\-}}
 \index{min\-\_\-cores\-\_\-@{min\-\_\-cores\-\_\-}!LingelingApi@{Lingeling\-Api}}
@@ -902,7 +944,7 @@ Indicates if the unsat cores returned by the solver should be minimized further.
 
 
 
-Definition at line 428 of file Sat\-Solver.\-h.
+Definition at line 448 of file Sat\-Solver.\-h.
 
 
 
@@ -917,7 +959,7 @@ Indicates if satisfying assignments should be randomized.
 
 
 
-Definition at line 433 of file Sat\-Solver.\-h.
+Definition at line 453 of file Sat\-Solver.\-h.
 
 
 

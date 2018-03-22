@@ -49,7 +49,7 @@
 /// QuBEExt.
 ///
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.1.0
+/// @version 1.2.0
 class ExtQBFSolver : public QBFSolver
 {
 public:
@@ -73,6 +73,7 @@ public:
 /// The QBF is dumped into a file, a QBF-solver is called, and the exit code is used to
 /// infer the satisfiability result.
 ///
+/// @exception DemiurgeException if the solver crashed or a timeout occurred.
 /// @param quantifier_prefix The quantifier prefix as a vector of pairs. vector[0] is the
 ///        leftmost (i.e., outermost) quantifier block. The pairs in the quantifier_prefix
 ///        assign an existential or universal quantifier to every kind of variable that
@@ -91,6 +92,7 @@ public:
 /// The QBF is dumped into a file, a QBF-solver is called, and the exit code is used to
 /// infer the satisfiability result.
 ///
+/// @exception DemiurgeException if the solver crashed or a timeout occurred.
 /// @param quantifier_prefix The quantifier prefix as a vector of pairs. vector[0] is the
 ///        leftmost (i.e., outermost) quantifier block. The pairs in the quantifier_prefix
 ///        assign an existential or universal quantifier to different sets of variables
@@ -110,6 +112,7 @@ public:
 /// outermost level. The model is provided as cube: negated variables in the cube are FALSE,
 /// unnegated ones are TRUE.
 ///
+/// @exception DemiurgeException if the solver crashed or a timeout occurred.
 /// @param quantifier_prefix The quantifier prefix as a vector of pairs. vector[0] is the
 ///        leftmost (i.e., outermost) quantifier block. The pairs in the quantifier_prefix
 ///        assign an existential or universal quantifier to every kind of variable that
@@ -133,6 +136,7 @@ public:
 /// outermost level. The model is provided as cube: negated variables in the cube are FALSE,
 /// unnegated ones are TRUE.
 ///
+/// @exception DemiurgeException if the solver crashed or a timeout occurred.
 /// @param quantifier_prefix The quantifier prefix as a vector of pairs. vector[0] is the
 ///        leftmost (i.e., outermost) quantifier block. The pairs in the quantifier_prefix
 ///        assign an existential or universal quantifier to different sets of variables
@@ -180,6 +184,7 @@ protected:
 ///
 /// @brief Parses the answer of the QBF solver to get the satisfiability verdict.
 ///
+/// @exception DemiurgeException if the solver crashed or a timeout occurred.
 /// @param ret The exit code of the process running the QBF solver.
 /// @return True in case of satisfiability, false for unsatisfiability.
   virtual bool parseAnswer(int ret) const;
@@ -188,11 +193,13 @@ protected:
 ///
 /// @brief Parses the answer of the QBF solver to get the satisfiability verdict and a model.
 ///
+/// @exception DemiurgeException if the solver crashed or a timeout occurred.
 /// @param ret The exit code of the process running the QBF solver.
+/// @param get The variables of interest for which we want to have a satisfying assignment.
 /// @param model An empty vector. In case of satisfiability, this method will write a
 ///        satisfying assignment in form of a cube into this vector.
 /// @return True in case of satisfiability, false for unsatisfiability.
-  virtual bool parseModel(int ret, vector<int> &model) const;
+  virtual bool parseModel(int ret, const vector<int> &get, vector<int> &model) const;
 
 // -------------------------------------------------------------------------------------------
 ///

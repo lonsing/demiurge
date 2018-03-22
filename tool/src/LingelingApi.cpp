@@ -210,6 +210,18 @@ void LingelingApi::incAdd3LitClause(int lit1, int lit2, int lit3)
 }
 
 // -------------------------------------------------------------------------------------------
+void LingelingApi::incAdd4LitClause(int lit1, int lit2, int lit3, int lit4)
+{
+  MASSERT(!incr_stack_.empty() && incr_stack_.back() != NULL, "No open session.");
+  LGL *lgl = incr_stack_.back();
+  lgladd(lgl, lit1);
+  lgladd(lgl, lit2);
+  lgladd(lgl, lit3);
+  lgladd(lgl, lit4);
+  lgladd(lgl, 0);
+}
+
+// -------------------------------------------------------------------------------------------
 void LingelingApi::incAddCube(const vector<int> &cube)
 {
   MASSERT(!incr_stack_.empty() && incr_stack_.back() != NULL, "No open session.");

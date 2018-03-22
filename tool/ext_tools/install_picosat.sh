@@ -8,7 +8,7 @@ fi
 
 echo "Installing PicoSAT ..."
 
-PICOSAT="picosat-957"
+PICOSAT="picosat-960"
 PICOSAT_ACHRIVE="$PICOSAT.tar.gz"
 
 if [ ! -e "$PICOSAT_ACHRIVE" ];

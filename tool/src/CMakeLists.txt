@@ -18,13 +18,19 @@ endforeach(fil)
 
 include_directories("${AIGER_INCLUDE_DIR}")
 include_directories("${DEPQBF_INCLUDE_DIR}")
+include_directories("${RAREQS_INCLUDE_DIR}")
 include_directories("${BLOQQER_INCLUDE_DIR}")
 include_directories("${LINGELING_INCLUDE_DIR}")
 include_directories("${MINISAT_INCLUDE_DIR}")
 include_directories("${PICOSAT_INCLUDE_DIR}")
 
+# set the default build type to 'debug'.
+SET(CMAKE_BUILD_TYPE Debug CACHE STRING "default to debug" FORCE)
+
 SET_SOURCE_FILES_PROPERTIES(ParallelLearner.cpp PROPERTIES COMPILE_FLAGS "${COMPILE_FLAGS} -std=c++0x")
+SET_SOURCE_FILES_PROPERTIES(ParExtractor.cpp PROPERTIES COMPILE_FLAGS "${COMPILE_FLAGS} -std=c++0x")
 SET_SOURCE_FILES_PROPERTIES(Options.cpp PROPERTIES COMPILE_FLAGS "${COMPILE_FLAGS} -std=c++0x")
+SET_SOURCE_FILES_PROPERTIES(UnivExpander.cpp PROPERTIES COMPILE_FLAGS "${COMPILE_FLAGS} -std=c++0x")
 SET_SOURCE_FILES_PROPERTIES(MiniSatApi.cpp PROPERTIES COMPILE_FLAGS "${COMPILE_FLAGS} -Wno-parentheses -D __STDC_LIMIT_MACROS -D __STDC_FORMAT_MACROS")
 
 add_library(${PROJECT}
@@ -32,15 +38,17 @@ add_library(${PROJECT}
        STATIC
         ${project_SRC})
 target_link_libraries(${PROJECT} ${DEPQBF_LIBRARIES})
+target_link_libraries(${PROJECT} ${RAREQS_LIBRARIES})
 target_link_libraries(${PROJECT} ${BLOQQER_LIBRARIES})
 target_link_libraries(${PROJECT} ${LINGELING_LIBRARIES})
 target_link_libraries(${PROJECT} ${MINISAT_LIBRARIES})
 target_link_libraries(${PROJECT} ${PICOSAT_LIBRARIES})
-set_target_properties(${PROJECT} PROPERTIES COMPILE_FLAGS "${COMPILE_FLAGS} -fPIC -DNDEBUG")
+set_target_properties(${PROJECT} PROPERTIES COMPILE_FLAGS "${COMPILE_FLAGS} -fPIC -DNDEBUG -O3")
 
 add_executable(${PROJECT}-bin main)
 target_link_libraries(${PROJECT}-bin ${AIGER_LIBRARIES})
 target_link_libraries(${PROJECT}-bin ${DEPQBF_LIBRARIES})
+target_link_libraries(${PROJECT}-bin ${RAREQS_LIBRARIES})
 target_link_libraries(${PROJECT}-bin ${BLOQQER_LIBRARIES})
 target_link_libraries(${PROJECT}-bin ${LINGELING_LIBRARIES})
 target_link_libraries(${PROJECT}-bin ${MINISAT_LIBRARIES})
@@ -52,6 +60,7 @@ set_target_properties(${PROJECT}-bin PROPERTIES COMPILE_FLAGS "${COMPILE_FLAGS} 
 add_executable(${PROJECT}-debug ${project_SRC} main)
 target_link_libraries(${PROJECT}-debug ${AIGER_LIBRARIES})
 target_link_libraries(${PROJECT}-debug ${DEPQBF_LIBRARIES})
+target_link_libraries(${PROJECT}-debug ${RAREQS_LIBRARIES})
 target_link_libraries(${PROJECT}-debug ${BLOQQER_LIBRARIES})
 target_link_libraries(${PROJECT}-debug ${LINGELING_LIBRARIES})
 target_link_libraries(${PROJECT}-debug ${MINISAT_LIBRARIES})

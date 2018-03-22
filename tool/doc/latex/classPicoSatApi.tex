@@ -41,6 +41,8 @@ virtual void \hyperlink{classPicoSatApi_a5c31301a2b0dfc70251f285e737a6fc2}{inc\-
 \begin{DoxyCompactList}\small\item\em Adds a new clause consisting of 2 literals to the current incremental session. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classPicoSatApi_a1daeb6e2b3bfa3eee44a7bf1b278dd86}{inc\-Add3\-Lit\-Clause} (int lit1, int lit2, int lit3)
 \begin{DoxyCompactList}\small\item\em Adds a new clause consisting of 3 literals to the current incremental session. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPicoSatApi_a45f1182c46055eb6e88f5abf6e6af043}{inc\-Add4\-Lit\-Clause} (int lit1, int lit2, int lit3, int lit4)
+\begin{DoxyCompactList}\small\item\em Adds a new clause consisting of 4 literals to the current incremental session. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classPicoSatApi_ae0a7dd7da9ead164560f454e29457453}{inc\-Add\-Cube} (const vector$<$ int $>$ \&cube)
 \begin{DoxyCompactList}\small\item\em Adds a new cube to the current incremental session. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classPicoSatApi_ace9bfbd0c8cbd62c3e92d2b208bb7b66}{inc\-Add\-Neg\-Cube\-As\-Clause} (const vector$<$ int $>$ \&cube)
@@ -93,7 +95,7 @@ This class represents an interface to the S\-A\-T-\/solver Pico\-Sat (see \href{
 Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\-1.\-0 
+1.\-2.\-0 
 \end{DoxyVersion}
 
 
@@ -218,7 +220,7 @@ References Sat\-Solver\-::min\-\_\-cores\-\_\-.
 
 
 
-Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), and Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2().
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Recy(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), Par\-Extractor\-Worker\-::run\-S\-A\-T(), and Par\-Extractor\-Worker\-::run\-S\-A\-T\-Dep().
 
 \hypertarget{classSatSolver_ae229c5e277350710412fce0e867dc566}{\index{Pico\-Sat\-Api@{Pico\-Sat\-Api}!do\-Rand\-Models@{do\-Rand\-Models}}
 \index{do\-Rand\-Models@{do\-Rand\-Models}!PicoSatApi@{Pico\-Sat\-Api}}
@@ -246,7 +248,7 @@ References Sat\-Solver\-::rand\-\_\-models\-\_\-.
 
 
 
-Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), and Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C().
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Exp(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C\-Exp(), and Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-Recy().
 
 \hypertarget{classPicoSatApi_a5c31301a2b0dfc70251f285e737a6fc2}{\index{Pico\-Sat\-Api@{Pico\-Sat\-Api}!inc\-Add2\-Lit\-Clause@{inc\-Add2\-Lit\-Clause}}
 \index{inc\-Add2\-Lit\-Clause@{inc\-Add2\-Lit\-Clause}!PicoSatApi@{Pico\-Sat\-Api}}
@@ -314,6 +316,46 @@ Implements \hyperlink{classSatSolver_abca288874a1b8ab1a90cb274eb885ace}{Sat\-Sol
 
 
 Definition at line 197 of file Pico\-Sat\-Api.\-cpp.
+
+
+
+References incr\-\_\-, and M\-A\-S\-S\-E\-R\-T.
+
+\hypertarget{classPicoSatApi_a45f1182c46055eb6e88f5abf6e6af043}{\index{Pico\-Sat\-Api@{Pico\-Sat\-Api}!inc\-Add4\-Lit\-Clause@{inc\-Add4\-Lit\-Clause}}
+\index{inc\-Add4\-Lit\-Clause@{inc\-Add4\-Lit\-Clause}!PicoSatApi@{Pico\-Sat\-Api}}
+\subsubsection[{inc\-Add4\-Lit\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}void Pico\-Sat\-Api\-::inc\-Add4\-Lit\-Clause (
+\begin{DoxyParamCaption}
+\item[{int}]{lit1, }
+\item[{int}]{lit2, }
+\item[{int}]{lit3, }
+\item[{int}]{lit4}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPicoSatApi_a45f1182c46055eb6e88f5abf6e6af043}
+
+
+Adds a new clause consisting of 4 literals to the current incremental session. 
+
+\begin{DoxyPrecond}{Precondition}
+\hyperlink{classPicoSatApi_a5e32634944d14142ab0e2c4fdeb12d85}{start\-Incremental\-Session()} must have been called before. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em lit1} & The first literal of the clause to add to the currently open incremental session. If this method is called after solving for the first time, be sure that the passed literal talks about a variables that have been mentioned in vars\-\_\-to\-\_\-keep when calling \hyperlink{classPicoSatApi_a5e32634944d14142ab0e2c4fdeb12d85}{start\-Incremental\-Session()}. Actually, the implementation in T\-H\-I\-S class does not care, but other implementations of the \hyperlink{classSatSolver}{Sat\-Solver} interface do. Hence, you should not violate this property to have the solver instances exchangeable. \\
+\hline
+{\em lit2} & The second literal of the clause to add to the currently open incremental session (must be contained in vars\-\_\-to\-\_\-keep as well). \\
+\hline
+{\em lit3} & The third literal of the clause to add to the currently open incremental session (must be contained in vars\-\_\-to\-\_\-keep as well). \\
+\hline
+{\em lit4} & The fourth literal of the clause to add to the currently open incremental session (must be contained in vars\-\_\-to\-\_\-keep as well). \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classSatSolver_af01bfc3b8fa15e7b69136b1808c59023}{Sat\-Solver}.
+
+
+
+Definition at line 207 of file Pico\-Sat\-Api.\-cpp.
 
 
 
@@ -408,7 +450,7 @@ Implements \hyperlink{classSatSolver_a1f04f34bb04174489ed18d0b62241004}{Sat\-Sol
 
 
 
-Definition at line 207 of file Pico\-Sat\-Api.\-cpp.
+Definition at line 218 of file Pico\-Sat\-Api.\-cpp.
 
 
 
@@ -441,7 +483,7 @@ Implements \hyperlink{classSatSolver_a6be2c564289a59057c4c6728a3aa9c2b}{Sat\-Sol
 
 
 
-Definition at line 218 of file Pico\-Sat\-Api.\-cpp.
+Definition at line 229 of file Pico\-Sat\-Api.\-cpp.
 
 
 
@@ -501,7 +543,7 @@ Implements \hyperlink{classSatSolver_ab1aab4b96a36b2003450067a3799ae23}{Sat\-Sol
 
 
 
-Definition at line 227 of file Pico\-Sat\-Api.\-cpp.
+Definition at line 238 of file Pico\-Sat\-Api.\-cpp.
 
 
 
@@ -537,7 +579,7 @@ Implements \hyperlink{classSatSolver_a1864787a33621efac7fc75fb6b25f080}{Sat\-Sol
 
 
 
-Definition at line 240 of file Pico\-Sat\-Api.\-cpp.
+Definition at line 251 of file Pico\-Sat\-Api.\-cpp.
 
 
 
@@ -576,7 +618,7 @@ Implements \hyperlink{classSatSolver_ad387fc06bacf2d48847f779c9db8461a}{Sat\-Sol
 
 
 
-Definition at line 255 of file Pico\-Sat\-Api.\-cpp.
+Definition at line 266 of file Pico\-Sat\-Api.\-cpp.
 
 
 
@@ -618,7 +660,7 @@ Implements \hyperlink{classSatSolver_a29225bfab1f352cae27c68e9bda4d409}{Sat\-Sol
 
 
 
-Definition at line 319 of file Pico\-Sat\-Api.\-cpp.
+Definition at line 330 of file Pico\-Sat\-Api.\-cpp.
 
 
 
@@ -641,7 +683,7 @@ Implements \hyperlink{classSatSolver_a436aae045eb04141c834df0b55947ee5}{Sat\-Sol
 
 
 
-Definition at line 401 of file Pico\-Sat\-Api.\-cpp.
+Definition at line 412 of file Pico\-Sat\-Api.\-cpp.
 
 
 
@@ -664,7 +706,7 @@ Implements \hyperlink{classSatSolver_a4da0dff7082a91429e3311d279605be4}{Sat\-Sol
 
 
 
-Definition at line 394 of file Pico\-Sat\-Api.\-cpp.
+Definition at line 405 of file Pico\-Sat\-Api.\-cpp.
 
 
 
@@ -799,7 +841,7 @@ solver != N\-U\-L\-L
 \end{DoxyParams}
 
 
-Definition at line 408 of file Pico\-Sat\-Api.\-cpp.
+Definition at line 419 of file Pico\-Sat\-Api.\-cpp.
 
 
 
@@ -854,11 +896,11 @@ The incremental solver instance.
 
 We do not need a stack but only one instance here, because Pico\-S\-A\-T supports push and and pop natively. 
 
-Definition at line 401 of file Pico\-Sat\-Api.\-h.
+Definition at line 421 of file Pico\-Sat\-Api.\-h.
 
 
 
-Referenced by clear\-Incremental\-Session(), inc\-Add2\-Lit\-Clause(), inc\-Add3\-Lit\-Clause(), inc\-Add\-Clause(), inc\-Add\-C\-N\-F(), inc\-Add\-Cube(), inc\-Add\-Neg\-Cube\-As\-Clause(), inc\-Add\-Unit\-Clause(), inc\-Is\-Sat(), inc\-Is\-Sat\-Model\-Or\-Core(), inc\-Pop(), inc\-Push(), and start\-Incremental\-Session().
+Referenced by clear\-Incremental\-Session(), inc\-Add2\-Lit\-Clause(), inc\-Add3\-Lit\-Clause(), inc\-Add4\-Lit\-Clause(), inc\-Add\-Clause(), inc\-Add\-C\-N\-F(), inc\-Add\-Cube(), inc\-Add\-Neg\-Cube\-As\-Clause(), inc\-Add\-Unit\-Clause(), inc\-Is\-Sat(), inc\-Is\-Sat\-Model\-Or\-Core(), inc\-Pop(), inc\-Push(), and start\-Incremental\-Session().
 
 \hypertarget{classSatSolver_adfeecebfd09606c82b5c57cfe5aad813}{\index{Pico\-Sat\-Api@{Pico\-Sat\-Api}!min\-\_\-cores\-\_\-@{min\-\_\-cores\-\_\-}}
 \index{min\-\_\-cores\-\_\-@{min\-\_\-cores\-\_\-}!PicoSatApi@{Pico\-Sat\-Api}}
@@ -869,7 +911,7 @@ Indicates if the unsat cores returned by the solver should be minimized further.
 
 
 
-Definition at line 428 of file Sat\-Solver.\-h.
+Definition at line 448 of file Sat\-Solver.\-h.
 
 
 
@@ -884,7 +926,7 @@ Indicates if satisfying assignments should be randomized.
 
 
 
-Definition at line 433 of file Sat\-Solver.\-h.
+Definition at line 453 of file Sat\-Solver.\-h.
 
 
 

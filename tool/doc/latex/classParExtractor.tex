@@ -1,0 +1,554 @@
+\hypertarget{classParExtractor}{\section{Par\-Extractor Class Reference}
+\label{classParExtractor}\index{Par\-Extractor@{Par\-Extractor}}
+}
+
+
+A parallelized version of the \hyperlink{classLearningImplExtractor}{Learning\-Impl\-Extractor}.  
+
+
+
+
+{\ttfamily \#include $<$Par\-Extractor.\-h$>$}
+
+Inheritance diagram for Par\-Extractor\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classParExtractor}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classParExtractor_a5282e22c4a21a13ff869a9ddae497fbf}{Par\-Extractor} (size\-\_\-t nr\-\_\-of\-\_\-threads)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classParExtractor_abe14da2012110b7646c0770482f97371}{$\sim$\-Par\-Extractor} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classParExtractor_a4fd5c02ddc2eb9d50ed6bb15656d1ee4}{run} (const \hyperlink{classCNF}{C\-N\-F} \&winning\-\_\-region, const \hyperlink{classCNF}{C\-N\-F} \&neg\-\_\-winning\-\_\-region)
+\begin{DoxyCompactList}\small\item\em Runs this circuit extractor. \end{DoxyCompactList}\item 
+bool \hyperlink{classParExtractor_a2732e5ec223519a6b6ebe4a2ff7a186f}{all\-Waiting} ()
+\begin{DoxyCompactList}\small\item\em Returns true if all worker threads are done and waiting for others to finish. \end{DoxyCompactList}\item 
+void \hyperlink{classParExtractor_af495000f06a4c909fc1219d8c530e22b}{kill\-Them\-All} ()
+\begin{DoxyCompactList}\small\item\em Gives all worker threads the command to terminate. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCNFImplExtractor_ad329eedd50e443f44edc99db8c2e2613}{extract\-Circuit} (const \hyperlink{classCNF}{C\-N\-F} \&winning\-\_\-region)
+\begin{DoxyCompactList}\small\item\em Extracts a circuit from the winning region. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCNFImplExtractor_a5e9694425af3f1a76d8b21ace3c435d9}{extract\-Circuit} (const \hyperlink{classCNF}{C\-N\-F} \&winning\-\_\-region, const \hyperlink{classCNF}{C\-N\-F} \&neg\-\_\-winning\-\_\-region)
+\begin{DoxyCompactList}\small\item\em Extracts a circuit from the winning region and its negation. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCNFImplExtractor_aae098749e201b22294a70f6e0a4a58f0}{log\-Statistics} ()
+\begin{DoxyCompactList}\small\item\em Logs statistical information about circuit extraction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static aiger $\ast$ \hyperlink{classCNFImplExtractor_ad21828d816dfdbf672f6e595589ef6e7}{optimize\-With\-A\-B\-C} (aiger $\ast$circuit)
+\begin{DoxyCompactList}\small\item\em Optimizes a combinatorial A\-I\-G\-E\-R circuit with A\-B\-C. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+volatile int \hyperlink{classParExtractor_a57f6e0069d495f2b001fbf282278ed61}{extr\-\_\-command\-\_\-}
+\begin{DoxyCompactList}\small\item\em An integer number encoding the current command to the circuit extractor workers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classParExtractor_ab3bcd735169d2a8b3960d7305275b72c}{log\-Detailed\-Statistics} ()
+\begin{DoxyCompactList}\small\item\em Logs the detailed statistics collected by the fastest worker. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classCNFImplExtractor_a0970602635f3356712d57ebb28d12c0d}{insert\-Into\-Spec} (aiger $\ast$standalone\-\_\-circuit) const 
+\begin{DoxyCompactList}\small\item\em Takes a circuit defining the control signals and inserts it into the spec. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\-\_\-t \hyperlink{classParExtractor_af95f31bb7e0c7c6f8063dfb23736c8e9}{nr\-\_\-of\-\_\-threads\-\_\-}
+\begin{DoxyCompactList}\small\item\em The number of threads to instantiate and execute. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classParExtractor_acc46c480f31bd444d15c3f68b2392868}{nr\-\_\-of\-\_\-new\-\_\-ands\-\_\-}
+\begin{DoxyCompactList}\small\item\em The final number of new A\-N\-D gates (just for the statistics). \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classParExtractorWorker}{Par\-Extractor\-Worker} $\ast$ $>$ \hyperlink{classParExtractor_a16fc72f87a16e8dfbda55fcde4c7483e}{extractors\-\_\-}
+\begin{DoxyCompactList}\small\item\em The worker threads. \end{DoxyCompactList}\item 
+vector$<$ pthread\-\_\-t $>$ \hyperlink{classParExtractor_ad6e211ed74c4f35ff4dd1813779e77d3}{extractor\-\_\-pthreads\-\_\-}
+\begin{DoxyCompactList}\small\item\em A set of pthread objects we may have to kill if they do not terminate. \end{DoxyCompactList}\item 
+double \hyperlink{classCNFImplExtractor_ab8be06d42fd3c4b569ec22cfcf2f508e}{extraction\-\_\-cpu\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em The circuit extraction time in C\-P\-U-\/seconds. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classCNFImplExtractor_ae06413cf08f868357d64545b3041aa18}{extraction\-\_\-real\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em Like \hyperlink{classCNFImplExtractor_ab8be06d42fd3c4b569ec22cfcf2f508e}{extraction\-\_\-cpu\-\_\-time\-\_\-} but real-\/time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classParExtractor_ab25b8eb8fdc7809ec1da8fdef0d63ff2}{Par\-Extractor} (const \hyperlink{classParExtractor}{Par\-Extractor} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classParExtractor}{Par\-Extractor} \& \hyperlink{classParExtractor_a20e656cfc9fa6541e91b11846032a5f5}{operator=} (const \hyperlink{classParExtractor}{Par\-Extractor} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A parallelized version of the \hyperlink{classLearningImplExtractor}{Learning\-Impl\-Extractor}. 
+
+This class implements a parallelized version of the \hyperlink{classLearningImplExtractor}{Learning\-Impl\-Extractor}. Take a look at the comments in the \hyperlink{classLearningImplExtractor}{Learning\-Impl\-Extractor} to see what it does. The parallelization is very simple at this point. It is merely a portfolio parallelization where different methods run in different threads. Closer interaction is left for future work.
+
+\begin{DoxyAuthor}{Author}
+Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-2.\-0 
+\end{DoxyVersion}
+
+
+Definition at line 55 of file Par\-Extractor.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classParExtractor_a5282e22c4a21a13ff869a9ddae497fbf}{\index{Par\-Extractor@{Par\-Extractor}!Par\-Extractor@{Par\-Extractor}}
+\index{Par\-Extractor@{Par\-Extractor}!ParExtractor@{Par\-Extractor}}
+\subsubsection[{Par\-Extractor}]{\setlength{\rightskip}{0pt plus 5cm}Par\-Extractor\-::\-Par\-Extractor (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{nr\-\_\-of\-\_\-threads}
+\end{DoxyParamCaption}
+)}}\label{classParExtractor_a5282e22c4a21a13ff869a9ddae497fbf}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nr\-\_\-of\-\_\-threads} & The number of threads to create. This does not have to be the number of cores in your C\-P\-U. It can also make sense to combine several methods running in several threads on one single core. The methods can complement each other and achieve a speedup compared to one single method in isolation. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 61 of file Par\-Extractor.\-cpp.
+
+\hypertarget{classParExtractor_abe14da2012110b7646c0770482f97371}{\index{Par\-Extractor@{Par\-Extractor}!$\sim$\-Par\-Extractor@{$\sim$\-Par\-Extractor}}
+\index{$\sim$\-Par\-Extractor@{$\sim$\-Par\-Extractor}!ParExtractor@{Par\-Extractor}}
+\subsubsection[{$\sim$\-Par\-Extractor}]{\setlength{\rightskip}{0pt plus 5cm}Par\-Extractor\-::$\sim$\-Par\-Extractor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classParExtractor_abe14da2012110b7646c0770482f97371}
+
+
+Destructor. 
+
+
+
+Definition at line 70 of file Par\-Extractor.\-cpp.
+
+
+
+References extractors\-\_\-.
+
+\hypertarget{classParExtractor_ab25b8eb8fdc7809ec1da8fdef0d63ff2}{\index{Par\-Extractor@{Par\-Extractor}!Par\-Extractor@{Par\-Extractor}}
+\index{Par\-Extractor@{Par\-Extractor}!ParExtractor@{Par\-Extractor}}
+\subsubsection[{Par\-Extractor}]{\setlength{\rightskip}{0pt plus 5cm}Par\-Extractor\-::\-Par\-Extractor (
+\begin{DoxyParamCaption}
+\item[{const {\bf Par\-Extractor} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classParExtractor_ab25b8eb8fdc7809ec1da8fdef0d63ff2}
+
+
+Copy constructor. 
+
+The copy constructor is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classParExtractor_a2732e5ec223519a6b6ebe4a2ff7a186f}{\index{Par\-Extractor@{Par\-Extractor}!all\-Waiting@{all\-Waiting}}
+\index{all\-Waiting@{all\-Waiting}!ParExtractor@{Par\-Extractor}}
+\subsubsection[{all\-Waiting}]{\setlength{\rightskip}{0pt plus 5cm}bool Par\-Extractor\-::all\-Waiting (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classParExtractor_a2732e5ec223519a6b6ebe4a2ff7a186f}
+
+
+Returns true if all worker threads are done and waiting for others to finish. 
+
+\begin{DoxyReturn}{Returns}
+True if all worker threads are done and waiting for others to finish. 
+\end{DoxyReturn}
+
+
+Definition at line 153 of file Par\-Extractor.\-cpp.
+
+
+
+References extractors\-\_\-.
+
+
+
+Referenced by Par\-Extractor\-Worker\-::wait\-For\-Others\-To\-Finish().
+
+\hypertarget{classCNFImplExtractor_ad329eedd50e443f44edc99db8c2e2613}{\index{Par\-Extractor@{Par\-Extractor}!extract\-Circuit@{extract\-Circuit}}
+\index{extract\-Circuit@{extract\-Circuit}!ParExtractor@{Par\-Extractor}}
+\subsubsection[{extract\-Circuit}]{\setlength{\rightskip}{0pt plus 5cm}void C\-N\-F\-Impl\-Extractor\-::extract\-Circuit (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{winning\-\_\-region}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}}\label{classCNFImplExtractor_ad329eedd50e443f44edc99db8c2e2613}
+
+
+Extracts a circuit from the winning region. 
+
+How this is done (interpolation, learning, etc.) depends on the concrete implementation of this abstract class. The result is written into the output file specified by the user.
+
+
+\begin{DoxyParams}{Parameters}
+{\em winning\-\_\-region} & The winning region from which the circuit should be extracted. For circuit extraction we need both the winning region and its negation. The negation is computed inside this function. If you already have a negation, use the other circuit extraction method of this class. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classStoreImplExtractor_a08437db801013d0b3208bbf099239fac}{Store\-Impl\-Extractor}.
+
+
+
+Definition at line 85 of file C\-N\-F\-Impl\-Extractor.\-cpp.
+
+
+
+References Utils\-::compress\-State\-C\-N\-F(), C\-N\-F\-Impl\-Extractor\-::extraction\-\_\-cpu\-\_\-time\-\_\-, C\-N\-F\-Impl\-Extractor\-::extraction\-\_\-real\-\_\-time\-\_\-, Stopwatch\-::get\-C\-P\-U\-Time\-Sec(), Stopwatch\-::get\-Real\-Time\-Sec(), C\-N\-F\-::negate(), C\-N\-F\-Impl\-Extractor\-::run(), and Stopwatch\-::start().
+
+
+
+Referenced by Load\-Synth\-::run(), Learn\-Synth\-Q\-B\-F\-Inc\-::run(), Template\-Synth\-::run(), I\-F\-M13\-Synth\-::run(), Learn\-Synth\-Q\-B\-F\-::run(), Learn\-Synth\-S\-A\-T\-::run(), Learn\-Synth\-Q\-B\-F\-Ind\-::run(), and Parallel\-Learner\-::run().
+
+\hypertarget{classCNFImplExtractor_a5e9694425af3f1a76d8b21ace3c435d9}{\index{Par\-Extractor@{Par\-Extractor}!extract\-Circuit@{extract\-Circuit}}
+\index{extract\-Circuit@{extract\-Circuit}!ParExtractor@{Par\-Extractor}}
+\subsubsection[{extract\-Circuit}]{\setlength{\rightskip}{0pt plus 5cm}void C\-N\-F\-Impl\-Extractor\-::extract\-Circuit (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{winning\-\_\-region, }
+\item[{const {\bf C\-N\-F} \&}]{neg\-\_\-winning\-\_\-region}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}}\label{classCNFImplExtractor_a5e9694425af3f1a76d8b21ace3c435d9}
+
+
+Extracts a circuit from the winning region and its negation. 
+
+How this is done (interpolation, learning, etc.) depends on the concrete implementation of this abstract class. The result is written into the output file specified by the user.
+
+
+\begin{DoxyParams}{Parameters}
+{\em winning\-\_\-region} & The winning region from which the circuit should be extracted. \\
+\hline
+{\em neg\-\_\-winning\-\_\-region} & The negation of the winning region. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 102 of file C\-N\-F\-Impl\-Extractor.\-cpp.
+
+
+
+References C\-N\-F\-Impl\-Extractor\-::extraction\-\_\-cpu\-\_\-time\-\_\-, C\-N\-F\-Impl\-Extractor\-::extraction\-\_\-real\-\_\-time\-\_\-, Stopwatch\-::get\-C\-P\-U\-Time\-Sec(), Stopwatch\-::get\-Real\-Time\-Sec(), C\-N\-F\-Impl\-Extractor\-::run(), and Stopwatch\-::start().
+
+\hypertarget{classCNFImplExtractor_a0970602635f3356712d57ebb28d12c0d}{\index{Par\-Extractor@{Par\-Extractor}!insert\-Into\-Spec@{insert\-Into\-Spec}}
+\index{insert\-Into\-Spec@{insert\-Into\-Spec}!ParExtractor@{Par\-Extractor}}
+\subsubsection[{insert\-Into\-Spec}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t C\-N\-F\-Impl\-Extractor\-::insert\-Into\-Spec (
+\begin{DoxyParamCaption}
+\item[{aiger $\ast$}]{standalone\-\_\-circuit}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classCNFImplExtractor_a0970602635f3356712d57ebb28d12c0d}
+
+
+Takes a circuit defining the control signals and inserts it into the spec. 
+
+This method takes as argument an aiger circuit of the following form\-: 
+\begin{DoxyItemize}
+\item The circuit is combinational, i.\-e., has no latches. 
+\item The inputs of the circuit are\-: the uncontrollable inputs from the spec (in the order in which they appear in the spec) followed by the state-\/signals (the output of the latches in the spec, in the order in which they appear in the spec). 
+\item The outputs of the circuit are the controllable inputs in the order in which they are defined in the spec. 
+\end{DoxyItemize}
+\begin{DoxyParams}{Parameters}
+{\em standalone\-\_\-circuit} & A circuit defining the control signals. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of additional A\-N\-D gates introduced into the spec. 
+\end{DoxyReturn}
+
+
+Definition at line 149 of file C\-N\-F\-Impl\-Extractor.\-cpp.
+
+
+
+References Var\-Info\-::\-C\-T\-R\-L, Options\-::get\-Aig\-In\-File\-Name(), Options\-::get\-Aig\-Out\-File\-Name(), Var\-Manager\-::get\-Info(), Var\-Info\-::get\-Lit\-In\-A\-I\-G(), Var\-Manager\-::get\-Max\-A\-I\-G\-Var(), Var\-Manager\-::get\-Pres\-Error\-State\-Var(), Var\-Manager\-::get\-Vars\-Of\-Type(), Var\-Info\-::\-I\-N\-P\-U\-T, Var\-Manager\-::instance(), Options\-::instance(), M\-A\-S\-S\-E\-R\-T, Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, and String\-Utils\-::to\-Lower\-Case\-In().
+
+
+
+Referenced by run(), Learning\-Impl\-Extractor\-::run(), and Q\-B\-F\-Cert\-Impl\-Extractor\-::run().
+
+\hypertarget{classParExtractor_af495000f06a4c909fc1219d8c530e22b}{\index{Par\-Extractor@{Par\-Extractor}!kill\-Them\-All@{kill\-Them\-All}}
+\index{kill\-Them\-All@{kill\-Them\-All}!ParExtractor@{Par\-Extractor}}
+\subsubsection[{kill\-Them\-All}]{\setlength{\rightskip}{0pt plus 5cm}void Par\-Extractor\-::kill\-Them\-All (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classParExtractor_af495000f06a4c909fc1219d8c530e22b}
+
+
+Gives all worker threads the command to terminate. 
+
+
+
+Definition at line 138 of file Par\-Extractor.\-cpp.
+
+
+
+References extr\-\_\-command\-\_\-, E\-X\-T\-R\-\_\-\-S\-T\-O\-P, and extractor\-\_\-pthreads\-\_\-.
+
+
+
+Referenced by Par\-Extractor\-Worker\-::wait\-For\-Others\-To\-Finish().
+
+\hypertarget{classParExtractor_ab3bcd735169d2a8b3960d7305275b72c}{\index{Par\-Extractor@{Par\-Extractor}!log\-Detailed\-Statistics@{log\-Detailed\-Statistics}}
+\index{log\-Detailed\-Statistics@{log\-Detailed\-Statistics}!ParExtractor@{Par\-Extractor}}
+\subsubsection[{log\-Detailed\-Statistics}]{\setlength{\rightskip}{0pt plus 5cm}void Par\-Extractor\-::log\-Detailed\-Statistics (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classParExtractor_ab3bcd735169d2a8b3960d7305275b72c}
+
+
+Logs the detailed statistics collected by the fastest worker. 
+
+
+
+Reimplemented from \hyperlink{classCNFImplExtractor_abe790c767f6c71a52ef8b0a61ab39eaa}{C\-N\-F\-Impl\-Extractor}.
+
+
+
+Definition at line 165 of file Par\-Extractor.\-cpp.
+
+
+
+References extractors\-\_\-, L\-\_\-\-L\-O\-G, and nr\-\_\-of\-\_\-new\-\_\-ands\-\_\-.
+
+\hypertarget{classCNFImplExtractor_aae098749e201b22294a70f6e0a4a58f0}{\index{Par\-Extractor@{Par\-Extractor}!log\-Statistics@{log\-Statistics}}
+\index{log\-Statistics@{log\-Statistics}!ParExtractor@{Par\-Extractor}}
+\subsubsection[{log\-Statistics}]{\setlength{\rightskip}{0pt plus 5cm}void C\-N\-F\-Impl\-Extractor\-::log\-Statistics (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}}\label{classCNFImplExtractor_aae098749e201b22294a70f6e0a4a58f0}
+
+
+Logs statistical information about circuit extraction. 
+
+This method logs the overall execution time plus whatever detailed information is collected by the concrete implementation of this class. 
+
+Definition at line 290 of file C\-N\-F\-Impl\-Extractor.\-cpp.
+
+
+
+References C\-N\-F\-Impl\-Extractor\-::extraction\-\_\-cpu\-\_\-time\-\_\-, C\-N\-F\-Impl\-Extractor\-::extraction\-\_\-real\-\_\-time\-\_\-, L\-\_\-\-L\-O\-G, and C\-N\-F\-Impl\-Extractor\-::log\-Detailed\-Statistics().
+
+
+
+Referenced by Load\-Synth\-::run(), Learn\-Synth\-Q\-B\-F\-Inc\-::run(), Template\-Synth\-::run(), I\-F\-M13\-Synth\-::run(), Learn\-Synth\-Q\-B\-F\-::run(), Learn\-Synth\-S\-A\-T\-::run(), Learn\-Synth\-Q\-B\-F\-Ind\-::run(), and Parallel\-Learner\-::run().
+
+\hypertarget{classParExtractor_a20e656cfc9fa6541e91b11846032a5f5}{\index{Par\-Extractor@{Par\-Extractor}!operator=@{operator=}}
+\index{operator=@{operator=}!ParExtractor@{Par\-Extractor}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Par\-Extractor}\& Par\-Extractor\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Par\-Extractor} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classParExtractor_a20e656cfc9fa6541e91b11846032a5f5}
+
+
+Assignment operator. 
+
+The assignment operator is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the assignment, i.\-e, $\ast$this. 
+\end{DoxyReturn}
+\hypertarget{classCNFImplExtractor_ad21828d816dfdbf672f6e595589ef6e7}{\index{Par\-Extractor@{Par\-Extractor}!optimize\-With\-A\-B\-C@{optimize\-With\-A\-B\-C}}
+\index{optimize\-With\-A\-B\-C@{optimize\-With\-A\-B\-C}!ParExtractor@{Par\-Extractor}}
+\subsubsection[{optimize\-With\-A\-B\-C}]{\setlength{\rightskip}{0pt plus 5cm}aiger $\ast$ C\-N\-F\-Impl\-Extractor\-::optimize\-With\-A\-B\-C (
+\begin{DoxyParamCaption}
+\item[{aiger $\ast$}]{circuit}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}}\label{classCNFImplExtractor_ad21828d816dfdbf672f6e595589ef6e7}
+
+
+Optimizes a combinatorial A\-I\-G\-E\-R circuit with A\-B\-C. 
+
+\begin{DoxyNote}{Note}
+The returned structure must be deleted by the caller. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em circuit} & The circuit to optimize. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The optimized version of the circuit. The returned aiger structure must be deleted by the caller. 
+\end{DoxyReturn}
+
+
+Definition at line 112 of file C\-N\-F\-Impl\-Extractor.\-cpp.
+
+
+
+References Options\-::get\-T\-P\-Dir\-Name(), Options\-::get\-Unique\-Tmp\-File\-Name(), Options\-::instance(), and M\-A\-S\-S\-E\-R\-T.
+
+
+
+Referenced by Learning\-Impl\-Extractor\-::run(), Q\-B\-F\-Cert\-Impl\-Extractor\-::run(), Par\-Extractor\-Q\-B\-F\-Worker\-::run\-Q\-B\-F(), Par\-Extractor\-Worker\-::run\-S\-A\-T(), and Par\-Extractor\-Worker\-::run\-S\-A\-T\-Dep().
+
+\hypertarget{classParExtractor_a4fd5c02ddc2eb9d50ed6bb15656d1ee4}{\index{Par\-Extractor@{Par\-Extractor}!run@{run}}
+\index{run@{run}!ParExtractor@{Par\-Extractor}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void Par\-Extractor\-::run (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{winning\-\_\-region, }
+\item[{const {\bf C\-N\-F} \&}]{neg\-\_\-winning\-\_\-region}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classParExtractor_a4fd5c02ddc2eb9d50ed6bb15656d1ee4}
+
+
+Runs this circuit extractor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em winning\-\_\-region} & The winning region from which the circuit should be extracted. \\
+\hline
+{\em neg\-\_\-winning\-\_\-region} & The negation of the winning region. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classCNFImplExtractor_a8251ce58869f9f8ded159f1fa07ab334}{C\-N\-F\-Impl\-Extractor}.
+
+
+
+Definition at line 84 of file Par\-Extractor.\-cpp.
+
+
+
+References extractor\-\_\-pthreads\-\_\-, extractors\-\_\-, C\-N\-F\-Impl\-Extractor\-::insert\-Into\-Spec(), M\-A\-S\-S\-E\-R\-T, nr\-\_\-of\-\_\-new\-\_\-ands\-\_\-, nr\-\_\-of\-\_\-threads\-\_\-, Par\-Extractor\-Worker\-::run\-S\-A\-T(), and Par\-Extractor\-Q\-B\-F\-Worker\-::start\-Q\-B\-F().
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classParExtractor_a57f6e0069d495f2b001fbf282278ed61}{\index{Par\-Extractor@{Par\-Extractor}!extr\-\_\-command\-\_\-@{extr\-\_\-command\-\_\-}}
+\index{extr\-\_\-command\-\_\-@{extr\-\_\-command\-\_\-}!ParExtractor@{Par\-Extractor}}
+\subsubsection[{extr\-\_\-command\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}volatile int Par\-Extractor\-::extr\-\_\-command\-\_\-}}\label{classParExtractor_a57f6e0069d495f2b001fbf282278ed61}
+
+
+An integer number encoding the current command to the circuit extractor workers. 
+
+There are two possible value. 
+\begin{DoxyItemize}
+\item E\-X\-T\-R\-\_\-\-G\-O = 0\-: means that the circuit extractor threads should continue. 
+\item E\-X\-T\-R\-\_\-\-S\-T\-O\-P = 1\-: means that the circuit extractor threads should stop. 
+\end{DoxyItemize}All worker-\/threads poll this flag from time to time. If the value is still E\-X\-T\-R\-\_\-\-G\-O they continue to work. If they see that the values is E\-X\-T\-R\-\_\-\-S\-T\-O\-P they stop, assuming that some other thread has already found the solution. If one thread finds a solution, it sets this flag to E\-X\-T\-R\-\_\-\-S\-T\-O\-P. 
+
+Definition at line 108 of file Par\-Extractor.\-h.
+
+
+
+Referenced by kill\-Them\-All(), Par\-Extractor\-Q\-B\-F\-Worker\-::run\-Q\-B\-F(), Par\-Extractor\-Worker\-::run\-S\-A\-T(), Par\-Extractor\-Worker\-::run\-S\-A\-T\-Dep(), and Par\-Extractor\-Worker\-::wait\-For\-Others\-To\-Finish().
+
+\hypertarget{classCNFImplExtractor_ab8be06d42fd3c4b569ec22cfcf2f508e}{\index{Par\-Extractor@{Par\-Extractor}!extraction\-\_\-cpu\-\_\-time\-\_\-@{extraction\-\_\-cpu\-\_\-time\-\_\-}}
+\index{extraction\-\_\-cpu\-\_\-time\-\_\-@{extraction\-\_\-cpu\-\_\-time\-\_\-}!ParExtractor@{Par\-Extractor}}
+\subsubsection[{extraction\-\_\-cpu\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double C\-N\-F\-Impl\-Extractor\-::extraction\-\_\-cpu\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classCNFImplExtractor_ab8be06d42fd3c4b569ec22cfcf2f508e}
+
+
+The circuit extraction time in C\-P\-U-\/seconds. 
+
+
+
+Definition at line 145 of file C\-N\-F\-Impl\-Extractor.\-h.
+
+
+
+Referenced by C\-N\-F\-Impl\-Extractor\-::extract\-Circuit(), and C\-N\-F\-Impl\-Extractor\-::log\-Statistics().
+
+\hypertarget{classCNFImplExtractor_ae06413cf08f868357d64545b3041aa18}{\index{Par\-Extractor@{Par\-Extractor}!extraction\-\_\-real\-\_\-time\-\_\-@{extraction\-\_\-real\-\_\-time\-\_\-}}
+\index{extraction\-\_\-real\-\_\-time\-\_\-@{extraction\-\_\-real\-\_\-time\-\_\-}!ParExtractor@{Par\-Extractor}}
+\subsubsection[{extraction\-\_\-real\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t C\-N\-F\-Impl\-Extractor\-::extraction\-\_\-real\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classCNFImplExtractor_ae06413cf08f868357d64545b3041aa18}
+
+
+Like \hyperlink{classCNFImplExtractor_ab8be06d42fd3c4b569ec22cfcf2f508e}{extraction\-\_\-cpu\-\_\-time\-\_\-} but real-\/time. 
+
+
+
+Definition at line 150 of file C\-N\-F\-Impl\-Extractor.\-h.
+
+
+
+Referenced by C\-N\-F\-Impl\-Extractor\-::extract\-Circuit(), and C\-N\-F\-Impl\-Extractor\-::log\-Statistics().
+
+\hypertarget{classParExtractor_ad6e211ed74c4f35ff4dd1813779e77d3}{\index{Par\-Extractor@{Par\-Extractor}!extractor\-\_\-pthreads\-\_\-@{extractor\-\_\-pthreads\-\_\-}}
+\index{extractor\-\_\-pthreads\-\_\-@{extractor\-\_\-pthreads\-\_\-}!ParExtractor@{Par\-Extractor}}
+\subsubsection[{extractor\-\_\-pthreads\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$pthread\-\_\-t$>$ Par\-Extractor\-::extractor\-\_\-pthreads\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParExtractor_ad6e211ed74c4f35ff4dd1813779e77d3}
+
+
+A set of pthread objects we may have to kill if they do not terminate. 
+
+
+
+Definition at line 135 of file Par\-Extractor.\-h.
+
+
+
+Referenced by kill\-Them\-All(), and run().
+
+\hypertarget{classParExtractor_a16fc72f87a16e8dfbda55fcde4c7483e}{\index{Par\-Extractor@{Par\-Extractor}!extractors\-\_\-@{extractors\-\_\-}}
+\index{extractors\-\_\-@{extractors\-\_\-}!ParExtractor@{Par\-Extractor}}
+\subsubsection[{extractors\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf Par\-Extractor\-Worker}$\ast$$>$ Par\-Extractor\-::extractors\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParExtractor_a16fc72f87a16e8dfbda55fcde4c7483e}
+
+
+The worker threads. 
+
+
+
+Definition at line 130 of file Par\-Extractor.\-h.
+
+
+
+Referenced by all\-Waiting(), log\-Detailed\-Statistics(), run(), and $\sim$\-Par\-Extractor().
+
+\hypertarget{classParExtractor_acc46c480f31bd444d15c3f68b2392868}{\index{Par\-Extractor@{Par\-Extractor}!nr\-\_\-of\-\_\-new\-\_\-ands\-\_\-@{nr\-\_\-of\-\_\-new\-\_\-ands\-\_\-}}
+\index{nr\-\_\-of\-\_\-new\-\_\-ands\-\_\-@{nr\-\_\-of\-\_\-new\-\_\-ands\-\_\-}!ParExtractor@{Par\-Extractor}}
+\subsubsection[{nr\-\_\-of\-\_\-new\-\_\-ands\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Par\-Extractor\-::nr\-\_\-of\-\_\-new\-\_\-ands\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParExtractor_acc46c480f31bd444d15c3f68b2392868}
+
+
+The final number of new A\-N\-D gates (just for the statistics). 
+
+
+
+Definition at line 125 of file Par\-Extractor.\-h.
+
+
+
+Referenced by log\-Detailed\-Statistics(), and run().
+
+\hypertarget{classParExtractor_af95f31bb7e0c7c6f8063dfb23736c8e9}{\index{Par\-Extractor@{Par\-Extractor}!nr\-\_\-of\-\_\-threads\-\_\-@{nr\-\_\-of\-\_\-threads\-\_\-}}
+\index{nr\-\_\-of\-\_\-threads\-\_\-@{nr\-\_\-of\-\_\-threads\-\_\-}!ParExtractor@{Par\-Extractor}}
+\subsubsection[{nr\-\_\-of\-\_\-threads\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Par\-Extractor\-::nr\-\_\-of\-\_\-threads\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParExtractor_af95f31bb7e0c7c6f8063dfb23736c8e9}
+
+
+The number of threads to instantiate and execute. 
+
+
+
+Definition at line 120 of file Par\-Extractor.\-h.
+
+
+
+Referenced by run().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{ParExtractor_8h}{Par\-Extractor.\-h}\item 
+src/\hyperlink{ParExtractor_8cpp}{Par\-Extractor.\-cpp}\end{DoxyCompactItemize}

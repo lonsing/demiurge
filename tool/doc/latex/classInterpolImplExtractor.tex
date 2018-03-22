@@ -31,13 +31,16 @@ virtual void \hyperlink{classCNFImplExtractor_a5e9694425af3f1a76d8b21ace3c435d9}
 \begin{DoxyCompactList}\small\item\em Extracts a circuit from the winning region and its negation. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classCNFImplExtractor_aae098749e201b22294a70f6e0a4a58f0}{log\-Statistics} ()
 \begin{DoxyCompactList}\small\item\em Logs statistical information about circuit extraction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static aiger $\ast$ \hyperlink{classCNFImplExtractor_ad21828d816dfdbf672f6e595589ef6e7}{optimize\-With\-A\-B\-C} (aiger $\ast$circuit)
+\begin{DoxyCompactList}\small\item\em Optimizes a combinatorial A\-I\-G\-E\-R circuit with A\-B\-C. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 virtual void \hyperlink{classCNFImplExtractor_abe790c767f6c71a52ef8b0a61ab39eaa}{log\-Detailed\-Statistics} ()
 \begin{DoxyCompactList}\small\item\em Logs statistical information about circuit extraction. \end{DoxyCompactList}\item 
-aiger $\ast$ \hyperlink{classCNFImplExtractor_a58a4e5021d0ef9c4190a5be74fb5a83e}{optimize\-With\-A\-B\-C} (aiger $\ast$circuit) const 
-\begin{DoxyCompactList}\small\item\em Optimizes a combinatorial A\-I\-G\-E\-R circuit with A\-B\-C. \end{DoxyCompactList}\item 
 size\-\_\-t \hyperlink{classCNFImplExtractor_a0970602635f3356712d57ebb28d12c0d}{insert\-Into\-Spec} (aiger $\ast$standalone\-\_\-circuit) const 
 \begin{DoxyCompactList}\small\item\em Takes a circuit defining the control signals and inserts it into the spec. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
@@ -65,7 +68,7 @@ This class has been implemented in a separate branch by a student (Patrick Klapf
 Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\-1.\-0 
+1.\-2.\-0 
 \end{DoxyVersion}
 
 
@@ -165,7 +168,7 @@ References Utils\-::compress\-State\-C\-N\-F(), C\-N\-F\-Impl\-Extractor\-::extr
 
 
 
-Referenced by Load\-Synth\-::run(), Learn\-Synth\-Q\-B\-F\-Inc\-::run(), I\-F\-M13\-Synth\-::run(), Template\-Synth\-::run(), Parallel\-Learner\-::run(), Learn\-Synth\-Q\-B\-F\-::run(), Learn\-Synth\-S\-A\-T\-::run(), and Learn\-Synth\-Q\-B\-F\-Ind\-::run().
+Referenced by Load\-Synth\-::run(), Learn\-Synth\-Q\-B\-F\-Inc\-::run(), Template\-Synth\-::run(), I\-F\-M13\-Synth\-::run(), Learn\-Synth\-Q\-B\-F\-::run(), Learn\-Synth\-S\-A\-T\-::run(), Learn\-Synth\-Q\-B\-F\-Ind\-::run(), and Parallel\-Learner\-::run().
 
 \hypertarget{classCNFImplExtractor_a5e9694425af3f1a76d8b21ace3c435d9}{\index{Interpol\-Impl\-Extractor@{Interpol\-Impl\-Extractor}!extract\-Circuit@{extract\-Circuit}}
 \index{extract\-Circuit@{extract\-Circuit}!InterpolImplExtractor@{Interpol\-Impl\-Extractor}}
@@ -230,7 +233,7 @@ References Var\-Info\-::\-C\-T\-R\-L, Options\-::get\-Aig\-In\-File\-Name(), Opt
 
 
 
-Referenced by Learning\-Impl\-Extractor\-::run(), and Q\-B\-F\-Cert\-Impl\-Extractor\-::run().
+Referenced by Par\-Extractor\-::run(), Learning\-Impl\-Extractor\-::run(), and Q\-B\-F\-Cert\-Impl\-Extractor\-::run().
 
 \hypertarget{classCNFImplExtractor_abe790c767f6c71a52ef8b0a61ab39eaa}{\index{Interpol\-Impl\-Extractor@{Interpol\-Impl\-Extractor}!log\-Detailed\-Statistics@{log\-Detailed\-Statistics}}
 \index{log\-Detailed\-Statistics@{log\-Detailed\-Statistics}!InterpolImplExtractor@{Interpol\-Impl\-Extractor}}
@@ -245,7 +248,7 @@ Logs statistical information about circuit extraction.
 
 Override this method to provide more detailed statistical information. Per default, the the method \hyperlink{classCNFImplExtractor_aae098749e201b22294a70f6e0a4a58f0}{log\-Statistics} logs the overall execution time, and then calls this method. 
 
-Reimplemented in \hyperlink{classLearningImplExtractor_aa14318d81871fc52f0d17fd5d82708e3}{Learning\-Impl\-Extractor}, and \hyperlink{classQBFCertImplExtractor_aa6a292ba4108e707f458c04d621a6d9e}{Q\-B\-F\-Cert\-Impl\-Extractor}.
+Reimplemented in \hyperlink{classLearningImplExtractor_aa14318d81871fc52f0d17fd5d82708e3}{Learning\-Impl\-Extractor}, \hyperlink{classParExtractor_ab3bcd735169d2a8b3960d7305275b72c}{Par\-Extractor}, and \hyperlink{classQBFCertImplExtractor_aa6a292ba4108e707f458c04d621a6d9e}{Q\-B\-F\-Cert\-Impl\-Extractor}.
 
 
 
@@ -276,7 +279,7 @@ References C\-N\-F\-Impl\-Extractor\-::extraction\-\_\-cpu\-\_\-time\-\_\-, C\-N
 
 
 
-Referenced by Load\-Synth\-::run(), Learn\-Synth\-Q\-B\-F\-Inc\-::run(), I\-F\-M13\-Synth\-::run(), Template\-Synth\-::run(), Parallel\-Learner\-::run(), Learn\-Synth\-Q\-B\-F\-::run(), Learn\-Synth\-S\-A\-T\-::run(), and Learn\-Synth\-Q\-B\-F\-Ind\-::run().
+Referenced by Load\-Synth\-::run(), Learn\-Synth\-Q\-B\-F\-Inc\-::run(), Template\-Synth\-::run(), I\-F\-M13\-Synth\-::run(), Learn\-Synth\-Q\-B\-F\-::run(), Learn\-Synth\-S\-A\-T\-::run(), Learn\-Synth\-Q\-B\-F\-Ind\-::run(), and Parallel\-Learner\-::run().
 
 \hypertarget{classInterpolImplExtractor_af2fa16841a300e4868487eed0b556f8c}{\index{Interpol\-Impl\-Extractor@{Interpol\-Impl\-Extractor}!operator=@{operator=}}
 \index{operator=@{operator=}!InterpolImplExtractor@{Interpol\-Impl\-Extractor}}
@@ -299,13 +302,13 @@ The assignment operator is disabled (set private) and not implemented.
 \begin{DoxyReturn}{Returns}
 The result of the assignment, i.\-e, $\ast$this. 
 \end{DoxyReturn}
-\hypertarget{classCNFImplExtractor_a58a4e5021d0ef9c4190a5be74fb5a83e}{\index{Interpol\-Impl\-Extractor@{Interpol\-Impl\-Extractor}!optimize\-With\-A\-B\-C@{optimize\-With\-A\-B\-C}}
+\hypertarget{classCNFImplExtractor_ad21828d816dfdbf672f6e595589ef6e7}{\index{Interpol\-Impl\-Extractor@{Interpol\-Impl\-Extractor}!optimize\-With\-A\-B\-C@{optimize\-With\-A\-B\-C}}
 \index{optimize\-With\-A\-B\-C@{optimize\-With\-A\-B\-C}!InterpolImplExtractor@{Interpol\-Impl\-Extractor}}
 \subsubsection[{optimize\-With\-A\-B\-C}]{\setlength{\rightskip}{0pt plus 5cm}aiger $\ast$ C\-N\-F\-Impl\-Extractor\-::optimize\-With\-A\-B\-C (
 \begin{DoxyParamCaption}
 \item[{aiger $\ast$}]{circuit}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classCNFImplExtractor_a58a4e5021d0ef9c4190a5be74fb5a83e}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}}\label{classCNFImplExtractor_ad21828d816dfdbf672f6e595589ef6e7}
 
 
 Optimizes a combinatorial A\-I\-G\-E\-R circuit with A\-B\-C. 
@@ -331,7 +334,7 @@ References Options\-::get\-T\-P\-Dir\-Name(), Options\-::get\-Unique\-Tmp\-File\
 
 
 
-Referenced by Learning\-Impl\-Extractor\-::run(), and Q\-B\-F\-Cert\-Impl\-Extractor\-::run().
+Referenced by Learning\-Impl\-Extractor\-::run(), Q\-B\-F\-Cert\-Impl\-Extractor\-::run(), Par\-Extractor\-Q\-B\-F\-Worker\-::run\-Q\-B\-F(), Par\-Extractor\-Worker\-::run\-S\-A\-T(), and Par\-Extractor\-Worker\-::run\-S\-A\-T\-Dep().
 
 \hypertarget{classInterpolImplExtractor_af4eb9c158e982276edf403d86bc339e2}{\index{Interpol\-Impl\-Extractor@{Interpol\-Impl\-Extractor}!run@{run}}
 \index{run@{run}!InterpolImplExtractor@{Interpol\-Impl\-Extractor}}

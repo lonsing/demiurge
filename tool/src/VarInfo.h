@@ -42,7 +42,7 @@
 /// This class is mainly a container for all this information without any intelligence.
 ///
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.1.0
+/// @version 1.2.0
 class VarInfo
 {
 public:
@@ -166,7 +166,7 @@ public:
 /// @brief Returns the name of the variable.
 ///
 /// @return The name of the variable. If no name was set, the returned string is empty.
-  const string& getName() const;
+  const string getName() const;
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -184,6 +184,17 @@ public:
 
 protected:
 
+#ifndef NDEBUG
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The name of the variable.
+///
+/// This can be an empty string if the variable has no name.
+/// The name is only available in debug mode to save memory (we may have millions of
+/// variables).
+  string name_;
+#endif
+
 // -------------------------------------------------------------------------------------------
 ///
 /// @brief The kind of the variable.
@@ -199,12 +210,6 @@ protected:
 /// @brief The index with which this variable occurs in the AIGER input file.
   int lit_in_aig_;
 
-// -------------------------------------------------------------------------------------------
-///
-/// @brief The name of the variable.
-///
-/// This can be an empty string if the variable has no name.
-  string name_;
 };
 
 // -------------------------------------------------------------------------------------------

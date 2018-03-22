@@ -31,6 +31,7 @@
 #include "CNF.h"
 #include "Options.h"
 #include "FileUtils.h"
+#include "StringUtils.h"
 
 #include <sys/stat.h>
 
@@ -39,9 +40,13 @@ extern "C" {
 }
 
 // -------------------------------------------------------------------------------------------
-DepQBFExt::DepQBFExt() : ExtQBFSolver()
+DepQBFExt::DepQBFExt(bool use_bloqqer, size_t timeout) :
+    ExtQBFSolver(),
+    use_bloqqer_(use_bloqqer),
+    timeout_(timeout)
 {
   path_to_deqqbf_ = Options::instance().getTPDirName() + "/depqbf/depqbf";
+  path_to_bloqqer_ = Options::instance().getTPDirName() + "/bloqqer/bloqqer";
   path_to_qbfcert_ = Options::instance().getTPDirName() + "/qbfcert/qbfcert_min.sh";
   struct stat st;
   MASSERT(stat(path_to_deqqbf_.c_str(), &st) == 0, "DepQBF executable not found.");
@@ -76,11 +81,77 @@ aiger* DepQBFExt::qbfCert(const vector<pair<VarInfo::VarKind, Quant> > &quantifi
 // -------------------------------------------------------------------------------------------
 string DepQBFExt::getSolverCommand() const
 {
+  ostringstream oss;
+  oss << timeout_;
+  if(use_bloqqer_ == true && timeout_ == 0)
+    return path_to_bloqqer_ + " " + in_file_name_ + " 1000000 > " + out_file_name_ + " 2>&1";;
+  if(use_bloqqer_ == true && timeout_ != 0)
+    return path_to_bloqqer_ + " " + in_file_name_ + " " + oss.str() + " > " + out_file_name_ + " 2>&1";;
   return path_to_deqqbf_ + " " + in_file_name_ + " > " + out_file_name_;
 }
 
 // -------------------------------------------------------------------------------------------
 string DepQBFExt::getSolverCommandModel() const
 {
+  ostringstream oss;
+  oss << timeout_;
+  if(use_bloqqer_ == true && timeout_ == 0)
+    return path_to_bloqqer_ + " " + in_file_name_ + " 1000000 > " + out_file_name_ + " 2>&1";
+  if(use_bloqqer_ == true && timeout_ != 0)
+    return path_to_bloqqer_ + " " + in_file_name_ + " " + oss.str() + " > " + out_file_name_  + " 2>&1";
   return path_to_deqqbf_ + " --qdo " + in_file_name_ + " > " + out_file_name_;
+}
+
+// -------------------------------------------------------------------------------------------
+bool DepQBFExt::parseModel(int ret, const vector<int> &get, vector<int> &model) const
+{
+  if(ret != 10 && ret != 20)
+    throw DemiurgeException("Timeout or crash");
+
+  if(use_bloqqer_)
+  {
+    if(ret == 20)
+      return false;
+    string answer;
+    bool success = FileUtils::readFile(out_file_name_, answer);
+    MASSERT(success, "Could not read result file.");
+    vector<string> lines;
+    StringUtils::splitLines(answer, lines, false);
+    for(size_t l_cnt = 0; l_cnt < lines.size(); ++l_cnt)
+    {
+      int lit = 0, val = 0;
+      istringstream iss(lines[l_cnt]);
+      iss >> lit;
+      if(!iss.good())
+        continue;
+      iss >> val;
+      if(!iss.good())
+        continue;
+      if(Utils::contains(get, lit))
+        model.push_back(val);
+    }
+    return true;
+  }
+  else
+  {
+    string answer;
+    bool success = FileUtils::readFile(out_file_name_, answer);
+    MASSERT(success, "Could not read result file.");
+    if(answer.find("s cnf 0") == 0)
+      return false;
+    MASSERT(answer.find("s cnf 1") == 0, "Strange response from Solver.");
+    size_t start = answer.find("V ", 0);
+    while(start != string::npos)
+    {
+      start = start + 2;
+      size_t end = answer.find(" 0", start);
+      MASSERT(end != string::npos, "Strange response from Solver.")
+      istringstream iss(answer.substr(start, end-start));
+      int value;
+      iss >> value;
+      model.push_back(value);
+      start = answer.find("V ", end);
+    }
+    return true;
+  }
 }

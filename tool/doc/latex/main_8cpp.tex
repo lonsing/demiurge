@@ -14,6 +14,8 @@ Contains the entry point to this application.
 {\ttfamily \#include \char`\"{}Var\-Manager.\-h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}Back\-End.\-h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}aiger.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$sys/resource.\-h$>$}\\*
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -53,9 +55,9 @@ The entry point of the program.
 \end{DoxyReturn}
 
 
-Definition at line 163 of file main.\-cpp.
+Definition at line 178 of file main.\-cpp.
 
 
 
-References Var\-Info\-::\-C\-T\-R\-L, Options\-::get\-Aig\-In\-File\-Name(), Options\-::get\-Back\-End(), Stopwatch\-::get\-C\-P\-U\-Time\-Sec(), Stopwatch\-::get\-Real\-Time\-Sec(), A\-I\-G2\-C\-N\-F\-::init\-From\-Aig(), Var\-Manager\-::instance(), Options\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), L\-\_\-\-E\-R\-R, L\-\_\-\-I\-N\-F, L\-\_\-\-L\-O\-G, M\-A\-S\-S\-E\-R\-T, Options\-::parse(), Back\-End\-::run(), and Stopwatch\-::start().
+References Var\-Info\-::\-C\-T\-R\-L, Utils\-::debug\-Print\-Current\-Mem\-Usage(), Options\-::get\-Aig\-In\-File\-Name(), Options\-::get\-Back\-End(), Stopwatch\-::get\-C\-P\-U\-Time\-Sec(), Stopwatch\-::get\-Real\-Time\-Sec(), A\-I\-G2\-C\-N\-F\-::init\-From\-Aig(), Var\-Manager\-::instance(), Options\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), L\-\_\-\-D\-B\-G, L\-\_\-\-E\-R\-R, L\-\_\-\-I\-N\-F, L\-\_\-\-L\-O\-G, M\-A\-S\-S\-E\-R\-T, Options\-::parse(), Back\-End\-::run(), and Stopwatch\-::start().
 

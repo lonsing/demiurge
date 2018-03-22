@@ -1,0 +1,156 @@
+\hypertarget{classDemiurgeException}{\section{Demiurge\-Exception Class Reference}
+\label{classDemiurgeException}\index{Demiurge\-Exception@{Demiurge\-Exception}}
+}
+
+
+Generic exception in Demiurge.  
+
+
+
+
+{\ttfamily \#include $<$defines.\-h$>$}
+
+Inheritance diagram for Demiurge\-Exception\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDemiurgeException}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDemiurgeException_af4239735e6a4e3209056891db9690042}{Demiurge\-Exception} (const string \&\hyperlink{classDemiurgeException_a054ca589bdea4f3108be0f96ae3aa1ca}{what}=\char`\"{}Demiurge Exception.\char`\"{})  throw ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classDemiurgeException_a299ea8dda58f965373f6377e7dd0ca57}{Demiurge\-Exception} (const \hyperlink{classDemiurgeException}{Demiurge\-Exception} \&original)  throw ()
+\begin{DoxyCompactList}\small\item\em Copy Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classDemiurgeException_af1af32c87e6075441fe790fc7a1d9d71}{$\sim$\-Demiurge\-Exception} ()  throw ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual const char $\ast$ \hyperlink{classDemiurgeException_a054ca589bdea4f3108be0f96ae3aa1ca}{what} () const   throw ()
+\begin{DoxyCompactList}\small\item\em Returns the description of the error. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const string \hyperlink{classDemiurgeException_a067ba92f472049125a063c32a9c36984}{what\-\_\-}
+\begin{DoxyCompactList}\small\item\em Error description. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Generic exception in Demiurge. 
+
+\begin{DoxySeeAlso}{See Also}
+std\-::exception 
+\end{DoxySeeAlso}
+\begin{DoxyAuthor}{Author}
+Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-2.\-0 
+\end{DoxyVersion}
+
+
+Definition at line 56 of file defines.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classDemiurgeException_af4239735e6a4e3209056891db9690042}{\index{Demiurge\-Exception@{Demiurge\-Exception}!Demiurge\-Exception@{Demiurge\-Exception}}
+\index{Demiurge\-Exception@{Demiurge\-Exception}!DemiurgeException@{Demiurge\-Exception}}
+\subsubsection[{Demiurge\-Exception}]{\setlength{\rightskip}{0pt plus 5cm}Demiurge\-Exception\-::\-Demiurge\-Exception (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{what = {\ttfamily \char`\"{}Demiurge~Exception.\char`\"{}}}
+\end{DoxyParamCaption}
+) throw  ) \hspace{0.3cm}{\ttfamily [inline]}}}\label{classDemiurgeException_af4239735e6a4e3209056891db9690042}
+
+
+Constructor. 
+
+Constructs a \hyperlink{classDemiurgeException}{Demiurge\-Exception} object with a message describing the general cause of the error. The default message is \char`\"{}\-Demiurge Exception.\char`\"{}. This constructor must not throw an exception.
+
+
+\begin{DoxyParams}{Parameters}
+{\em what} & A description of the error. It can also be omitted. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 69 of file defines.\-h.
+
+\hypertarget{classDemiurgeException_a299ea8dda58f965373f6377e7dd0ca57}{\index{Demiurge\-Exception@{Demiurge\-Exception}!Demiurge\-Exception@{Demiurge\-Exception}}
+\index{Demiurge\-Exception@{Demiurge\-Exception}!DemiurgeException@{Demiurge\-Exception}}
+\subsubsection[{Demiurge\-Exception}]{\setlength{\rightskip}{0pt plus 5cm}Demiurge\-Exception\-::\-Demiurge\-Exception (
+\begin{DoxyParamCaption}
+\item[{const {\bf Demiurge\-Exception} \&}]{original}
+\end{DoxyParamCaption}
+) throw  ) \hspace{0.3cm}{\ttfamily [inline]}}}\label{classDemiurgeException_a299ea8dda58f965373f6377e7dd0ca57}
+
+
+Copy Constructor. 
+
+Makes a copy of the \hyperlink{classDemiurgeException}{Demiurge\-Exception}. This constructor must not throw an exception.
+
+
+\begin{DoxyParams}{Parameters}
+{\em original} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 78 of file defines.\-h.
+
+\hypertarget{classDemiurgeException_af1af32c87e6075441fe790fc7a1d9d71}{\index{Demiurge\-Exception@{Demiurge\-Exception}!$\sim$\-Demiurge\-Exception@{$\sim$\-Demiurge\-Exception}}
+\index{$\sim$\-Demiurge\-Exception@{$\sim$\-Demiurge\-Exception}!DemiurgeException@{Demiurge\-Exception}}
+\subsubsection[{$\sim$\-Demiurge\-Exception}]{\setlength{\rightskip}{0pt plus 5cm}virtual Demiurge\-Exception\-::$\sim$\-Demiurge\-Exception (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) throw  ) \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classDemiurgeException_af1af32c87e6075441fe790fc7a1d9d71}
+
+
+Destructor. 
+
+Must not throw an exception. 
+
+Definition at line 84 of file defines.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classDemiurgeException_a054ca589bdea4f3108be0f96ae3aa1ca}{\index{Demiurge\-Exception@{Demiurge\-Exception}!what@{what}}
+\index{what@{what}!DemiurgeException@{Demiurge\-Exception}}
+\subsubsection[{what}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ Demiurge\-Exception\-::what (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const throw  ) \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classDemiurgeException_a054ca589bdea4f3108be0f96ae3aa1ca}
+
+
+Returns the description of the error. 
+
+Returns a C-\/style character string describing the cause of the error. This method must not throw an exception.
+
+\begin{DoxyReturn}{Returns}
+A description of the error as C-\/stype character string. 
+\end{DoxyReturn}
+
+
+Definition at line 93 of file defines.\-h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classDemiurgeException_a067ba92f472049125a063c32a9c36984}{\index{Demiurge\-Exception@{Demiurge\-Exception}!what\-\_\-@{what\-\_\-}}
+\index{what\-\_\-@{what\-\_\-}!DemiurgeException@{Demiurge\-Exception}}
+\subsubsection[{what\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}const string Demiurge\-Exception\-::what\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classDemiurgeException_a067ba92f472049125a063c32a9c36984}
+
+
+Error description. 
+
+A string describing the cause of the error. 
+
+Definition at line 101 of file defines.\-h.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{defines_8h}{defines.\-h}\end{DoxyCompactItemize}

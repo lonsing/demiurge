@@ -38,6 +38,7 @@
 #include <thread>
 #include <mutex>
 #include "QBFSolver.h"
+#include "UnivExpander.h"
 
 class SatSolver;
 class ClauseExplorerSAT;
@@ -45,7 +46,137 @@ class IFM13Explorer;
 class IFMProofObligation;
 class ClauseMinimizerQBF;
 class CounterGenSAT;
+class TemplExplorer;
 class CNFImplExtractor;
+class DepQBFApi;
+
+
+// -------------------------------------------------------------------------------------------
+///
+/// @class PrevStateInfo
+/// @brief Just a container for previous-state information.
+///
+/// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
+/// @version 1.2.0
+class PrevStateInfo
+{
+public:
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Standard constructor.
+///
+/// @param use_ind True if previous state info (optimization RG) should be used during the
+///        generalization of clauses, and False otherwise.
+  PrevStateInfo(bool use_ind);
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Copy constructor.
+///
+/// @param other The source for creating the copy.
+  PrevStateInfo(const PrevStateInfo &other);
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Assignment operator.
+///
+/// @param other The source for creating the copy.
+/// @return The result of the assignment, i.e, *this.
+  PrevStateInfo& operator=(const PrevStateInfo &other);
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Returns the previous-state copy of a literal.
+///
+/// @param literal The literal to transform.
+/// @return The previous-state copy of a literal.
+  int presentToPrevious(int literal) const;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Computes the previous-state copy of a cube or clause.
+///
+/// @param cube_or_clause A cube or clause (in form of a vector of literals) over the
+///        present state variables. This vector is overwritten by the corresponding cube of
+///        clause over the previous-state literals (i.e., all literals are replaced by their
+///        previous-state copy).
+  void presentToPrevious(vector<int> &cube_or_clause) const;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Computes the previous-state copy of a CNF.
+///
+/// @param cnf A CNF formula over the present state variables. This CNF is overwritten by the
+///        corresponding CNF over the previous-state literals (i.e., all literals are
+///        replaced by their previous-state copy).
+  void presentToPrevious(CNF &cnf) const;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief A flag indicating if optimization RG should be used.
+///
+/// See LearnSynthQBFInd for an explanation.
+  bool use_ind_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Says: the current state is initial or the previous transition relation holds.
+///
+/// This CNF expresses that the current state is initial or the previous-state copy of the
+/// transition relation holds. This is an important building block for the CNF to
+/// generalize counterexamples if optimization RG is enabled.
+  CNF prev_trans_or_initial_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief A map from present-state variables to their previous-state copy.
+  vector<int> current_to_previous_map_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief A literal that is true if the current state is initial and false otherwise.
+///
+/// The clauses assigning the literal are part of #prev_trans_or_initial_.
+  int current_state_is_initial_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The previous-state copy of the literal that characterizes all safe states.
+  int prev_safe_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Activation variables for a previous state clause.
+///
+/// If px_unused_[i] is true, then this means that the previous state variable nr i does
+/// not occur in the previous-state clause controlled by these variables. If set to
+/// false then it occurs.
+  vector<int> px_unused_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Activation variables for a previous state clause.
+///
+/// If px_neg_[i] is true, then this means that the previous state variable nr i occurs
+/// negated in the previous-state clause controlled by these variables. If set to false,
+/// then it occurs unnegated.
+  vector<int> px_neg_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Activation literals for a previous state clause.
+///
+/// Their value is defined by px_unused_ and px_neg_.
+  vector<int> px_act_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The vector of all variables of type VarInfo::PREV.
+  vector<int> prev_vars_;
+
+};
+
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -74,7 +205,7 @@ class CNFImplExtractor;
 /// combining different methods.
 ///
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.1.0
+/// @version 1.2.0
 class ParallelLearner : public BackEnd
 {
 public:
@@ -176,6 +307,18 @@ public:
 
 // -------------------------------------------------------------------------------------------
 ///
+/// @brief The first restart is special because mode 0 threads are already allowed to work.
+  void triggerInitialMode1Restart();
+
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief A container with information about previous-state variables.
+  PrevStateInfo psi_;
+
+
+// -------------------------------------------------------------------------------------------
+///
 /// @brief An integer number containing the realizability verdict.
 ///
 /// There are three possible value.
@@ -189,7 +332,7 @@ public:
 /// that some other thread has already found the solution. If one thread finds an answer to
 /// the realizability question it sets the flag (the #winning_region_ must be precise enough
 /// then already).
-  int result_;
+  volatile int result_;
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -268,49 +411,13 @@ protected:
 
 // -------------------------------------------------------------------------------------------
 ///
-/// @brief A helper function to compute the previous-state copy of the transition relation.
-///
-/// This is needed if optimization RG is enabled (see LearnSynthQBFInd).
-  void computePreviousTrans();
-
-// -------------------------------------------------------------------------------------------
-///
-/// @brief Returns the previous-state copy of a literal.
-///
-/// @param literal The literal to transform.
-/// @return The previous-state copy of a literal.
-  int presentToPrevious(int literal) const;
-
-// -------------------------------------------------------------------------------------------
-///
-/// @brief Computes the previous-state copy of a cube or clause.
-///
-/// @param cube_or_clause A cube or clause (in form of a vector of literals) over the
-///        present state variables. This vector is overwritten by the corresponding cube of
-///        clause over the previous-state literals (i.e., all literals are replaced by their
-///        previous-state copy).
-  void presentToPrevious(vector<int> &cube_or_clause) const;
-
-// -------------------------------------------------------------------------------------------
-///
-/// @brief Computes the previous-state copy of a CNF.
-///
-/// @param cnf A CNF formula over the present state variables. This CNF is overwritten by the
-///        corresponding CNF over the previous-state literals (i.e., all literals are
-///        replaced by their previous-state copy).
-  void presentToPrevious(CNF &cnf) const;
-
-// -------------------------------------------------------------------------------------------
-///
-/// @brief A flag indicating if optimization RG should be used.
-///
-/// See LearnSynthQBFInd for an explanation.
-  bool use_ind_;
-
-// -------------------------------------------------------------------------------------------
-///
 /// @brief The number of threads to instantiate and execute.
   size_t nr_of_threads_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The TemplExplorer-instances to execute in a separate thread.
+  vector<TemplExplorer*> templ_explorers_;
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -341,31 +448,20 @@ protected:
 
 // -------------------------------------------------------------------------------------------
 ///
-/// @brief Says: the current state is initial or the previous transition relation holds.
-///
-/// This CNF expresses that the current state is initial or the previous-state copy of the
-/// transition relation holds. This is an important building block for the CNF to
-/// generalize counterexamples if optimization RG is enabled.
-  CNF prev_trans_or_initial_;
-
-// -------------------------------------------------------------------------------------------
-///
-/// @brief A map from present-state variables to their previous-state copy.
-  vector<int> current_to_previous_map_;
-
-// -------------------------------------------------------------------------------------------
-///
-/// @brief A literal that is true if the current state is initial and false otherwise.
-///
-/// The clauses assigning the literal are part of #prev_trans_or_initial_.
-  int current_state_is_initial_;
-
-// -------------------------------------------------------------------------------------------
-///
 /// @brief The engine to use for circuit extraction.
 ///
 /// It will be deleted by this class (in the destructor).
   CNFImplExtractor *impl_extractor_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The list of variables to keep in solver_i within the ClauseExplorerSAT.
+  vector<int> vars_to_keep_i_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The expander for eliminating universal quantifiers in our heuristic.
+  UnivExpander expander_;
 
 private:
 
@@ -390,6 +486,7 @@ private:
 
 };
 
+
 // -------------------------------------------------------------------------------------------
 ///
 /// @class ClauseExplorerSAT
@@ -407,47 +504,23 @@ private:
 /// coordinating and communicating solver restarts via the ParallelLearner.
 ///
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.1.0
+/// @version 1.2.0
 class ClauseExplorerSAT
 {
 public:
 
 // -------------------------------------------------------------------------------------------
 ///
-/// @brief Constructor if optimization RG is disabled.
+/// @brief Constructor.
 ///
 /// @param instance_nr A unique instance number. It is used to bring in some asymmetry between
 ///        the different ClauseExplorerSAT-instances: depending on the instance number, the
 ///        instance selects a different SatSolver to use.
 /// @param coordinator A reference to the coordinator. All communication to other
 ///        worker-threads is done via the coordinator.
-  ClauseExplorerSAT(size_t instance_nr, ParallelLearner &coordinator);
-
-// -------------------------------------------------------------------------------------------
-///
-/// @brief Constructor if optimization RG is enabled.
-///
-/// @param instance_nr A unique instance number. It is used to bring in some asymmetry between
-///        the different ClauseExplorerSAT-instances: depending on the instance number, the
-///        instance selects a different SatSolver to use.
-/// @param coordinator A reference to the coordinator. All communication to other
-///        worker-threads is done via the coordinator.
-/// @param prev_trans_or_initial A CNF that says: the current state is initial or the
-///        previous transition relation holds. This is an important building block for the
-///        CNF to generalize counterexamples if optimization RG is enabled. This CNF is
-///        computed only once by the ParallelLearner and passed to all ClauseExplorerSAT
-///        instances.
-/// @param current_to_previous_map A map from present-state variables to their previous-state
-///        copy. This map is computed only once by the ParallelLearner and passed to all
-///        ClauseExplorerSAT instances.
-/// @param current_state_is_initial A literal that is true if the current state is initial
-///        and false otherwise. The clauses assigning the literal are part of
-///        prev_trans_or_initial.
-  ClauseExplorerSAT(size_t instance_nr,
-                    ParallelLearner &coordinator,
-                    const CNF &prev_trans_or_initial,
-                    const vector<int> &current_to_previous_map,
-                    int current_state_is_initial);
+/// @param psi A container for previous-state information (needed when optimization RG is
+///        enabled).
+  ClauseExplorerSAT(size_t instance_nr, ParallelLearner &coordinator, PrevStateInfo &psi);
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -543,9 +616,17 @@ public:
 ///
 /// @see #notifyNewUselessInputClause()
 /// @see ParallelLearner::triggerExplorerRestart()
-/// @param restart_with_cnf The CNF for W & T & !W', where W is the current over-approximation
-///        of the winning region.
-  void notifyRestart(const CNF &restart_with_cnf);
+/// @param solver_i The new solver to continue with.
+  void notifyRestart(SatSolver *solver_i);
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Instantiates a fresh solver for computing counterexample-states.
+///
+/// We create a fresh solver upon every restart.
+///
+/// @return A fresh solver for computing counterexample-states.
+  SatSolver *getFreshISolver() const;
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -555,6 +636,16 @@ public:
 ///
 /// @return The statistics and performance measures computed by this object.
   const LearnStatisticsSAT& getStatistics() const;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The current mode of operation.
+///
+/// If set to 1, this instance will compute new clauses by performing universal expansion on
+/// the CNF formula to compute counterexample-states. If expansion makes the formula too big,
+/// we automatically fall back to mode 0, which is the default mode implemented also in
+/// LearnSynthSAT.
+  volatile int mode_;
 
 protected:
 
@@ -587,33 +678,6 @@ protected:
 
 // -------------------------------------------------------------------------------------------
 ///
-/// @brief Returns the previous-state copy of a literal.
-///
-/// @param literal The literal to transform.
-/// @return The previous-state copy of a literal.
-  int presentToPrevious(int literal) const;
-
-// -------------------------------------------------------------------------------------------
-///
-/// @brief Computes the previous-state copy of a cube or clause.
-///
-/// @param cube_or_clause A cube or clause (in form of a vector of literals) over the
-///        present state variables. This vector is overwritten by the corresponding cube of
-///        clause over the previous-state literals (i.e., all literals are replaced by their
-///        previous-state copy).
-  void presentToPrevious(vector<int> &cube_or_clause) const;
-
-// -------------------------------------------------------------------------------------------
-///
-/// @brief Computes the previous-state copy of a CNF.
-///
-/// @param cnf A CNF formula over the present state variables. This CNF is overwritten by the
-///        corresponding CNF over the previous-state literals (i.e., all literals are
-///        replaced by their previous-state copy).
-  void presentToPrevious(CNF &cnf) const;
-
-// -------------------------------------------------------------------------------------------
-///
 /// @brief A unique instance number.
 ///
 /// It is used to bring in some asymmetry between the different ClauseExplorerSAT-instances:
@@ -621,13 +685,6 @@ protected:
 /// Furthermore, it is used for debugging to print more meaningful messages (WHO is printing
 /// a message).
   size_t instance_nr_;
-
-// -------------------------------------------------------------------------------------------
-///
-/// @brief A flag indicating if optimization RG should be used.
-///
-/// See LearnSynthQBFInd for an explanation.
-  bool use_ind_;
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -657,6 +714,16 @@ protected:
 
 // -------------------------------------------------------------------------------------------
 ///
+/// @brief The next solver_i_ to use. It contains the CNFs after the next restart.
+  SatSolver *next_solver_i_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The name of solver_i_. It is used for creating a fresh solver instance in restarts.
+  string solver_i_name_;
+
+// -------------------------------------------------------------------------------------------
+///
 /// @brief The solver for checking counterexample-candidates.
 ///
 /// It is also used to generalize counterexamples if optimization RG is disabled.
@@ -675,7 +742,7 @@ protected:
 ///
 /// This lock protects the fields
 /// <ul>
-///  <li> #restart_with_cnf_
+///  <li> #next_solver_i_
 ///  <li> #new_win_reg_clauses_for_solver_i_
 ///  <li> #new_win_reg_clauses_for_solver_ctrl_
 ///  <li> #new_foreign_win_reg_clauses_for_solver_i_
@@ -687,15 +754,6 @@ protected:
 ///
 /// @todo A more fine-grained locking could improve the performance.
   mutex new_info_lock_;
-
-// -------------------------------------------------------------------------------------------
-///
-/// @brief A CNF to restart solver_i_ with.
-///
-/// This CNF contains F & T & !F', where F is the current over-approximation of the winning
-/// region if a restart of solver_i_ needs to be done. If no restart needs to be done, then
-/// this CNF is empty (i.e., true).
-  CNF restart_with_cnf_;
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -755,58 +813,49 @@ protected:
 
 // -------------------------------------------------------------------------------------------
 ///
-/// @brief The restart level we have after we consider #restart_with_cnf_.
+/// @brief The restart level we have after we consider #next_solver_i_.
 ///
 /// The thing is: this thread can skip a restart level completely if it does not get
 /// scheduled often. In this case, we have to increase our restart level by more than one
-/// when we actually do the restart (consider #restart_with_cnf_). The new restart level is
+/// when we actually do the restart (take #next_solver_i_). The new restart level is
 /// tracked by this field.
   int new_restart_level_;
 
 // -------------------------------------------------------------------------------------------
 ///
-/// @brief The solver for generalizing counterexamples if optimization RG is endabled.
+/// @brief The solver for generalizing counterexamples if optimization RG is enabled.
   SatSolver *solver_ctrl_ind_;
 
 // -------------------------------------------------------------------------------------------
 ///
-/// @brief Says: the current state is initial or the previous transition relation holds.
-///
-/// This CNF expresses that the current state is initial or the previous-state copy of the
-/// transition relation holds. This is an important building block for the CNF to
-/// generalize counterexamples if optimization RG is enabled.
-/// If optimization RG is disabled, then this CNF is empty.
-  CNF prev_trans_or_initial_;
+/// @brief Information about the previous states if optimization RG is enabled.
+  const PrevStateInfo &psi_;
 
 // -------------------------------------------------------------------------------------------
 ///
-/// @brief A map from present-state variables to their previous-state copy.
+/// @brief The current local knowledge about the winning region.
 ///
-/// If optimization RG is disabled, then this CNF is empty.
-  vector<int> current_to_previous_map_;
-
-
-// -------------------------------------------------------------------------------------------
-///
-/// @brief Says: the current state is initial or the previous transition relation holds.
-///
-/// This CNF expresses that the current state is initial or the previous-state copy of the
-/// transition relation holds. This is an important building block for the CNF to
-/// generalize counterexamples if optimization RG is enabled.
-/// If optimization RG is disabled, then this field is meaningless.
-  int current_state_is_initial_;
+/// It is used in a heuristic to restart solver_ctrl_ind_ from time to time.
+  CNF win_;
 
 // -------------------------------------------------------------------------------------------
 ///
-/// @brief A literal saying that the previous-state is safe.
+/// @brief A counter saying how often solver_ctrl_ind_ has already been restarted.
 ///
-/// We store this literal here and do not read it out of the VarManager again and again to
-/// avoid a concurrency issue. The VarManager is sometimes modified (new temporary variables
-/// are created). This does not affect the literal defining safe states. However, we do not
-/// want to lock reading-accesses to the variable manager and we do not want to read out
-/// the variable manager in an inconsistent state. Hence, we read it out once and store it.
-/// If optimization RG is disabled, then this field is meaningless.
-  int prev_safe_;
+/// It is used for our heuristic that defines when to restart this solver.
+  size_t reset_c_cnt_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief An estimate of the number of clauses added to solver_ctrl_ind_ so far.
+///
+/// It is used for our heuristic that defines when to restart this solver.
+  size_t clauses_added_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief An expander for solver_ctrl_ind_.
+  UnivExpander exp_;
 
 private:
 
@@ -848,40 +897,20 @@ private:
 /// to generalize them further by dropping even more literals.
 ///
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.1.0
+/// @version 1.2.0
 class CounterGenSAT
 {
 public:
 
 // -------------------------------------------------------------------------------------------
 ///
-/// @brief Constructor if optimization RG is disabled.
+/// @brief Constructor.
 ///
 /// @param coordinator A reference to the coordinator. All communication to other
 ///        worker-threads is done via the coordinator.
-  CounterGenSAT(ParallelLearner &coordinator);
-
-// -------------------------------------------------------------------------------------------
-///
-/// @brief Constructor if optimization RG is enabled.
-///
-/// @param coordinator A reference to the coordinator. All communication to other
-///        worker-threads is done via the coordinator.
-/// @param prev_trans_or_initial A CNF that says: the current state is initial or the
-///        previous transition relation holds. This is an important building block for the
-///        CNF to generalize counterexamples if optimization RG is enabled. This CNF is
-///        computed only once by the ParallelLearner and passed to all CounterGenSAT
-///        instances.
-/// @param current_to_previous_map A map from present-state variables to their previous-state
-///        copy. This map is computed only once by the ParallelLearner and passed to all
-///        CounterGenSAT instances.
-/// @param current_state_is_initial A literal that is true if the current state is initial
-///        and false otherwise. The clauses assigning the literal are part of
-///        prev_trans_or_initial.
-  CounterGenSAT(ParallelLearner &coordinator,
-                const CNF &prev_trans_or_initial,
-                const vector<int> &current_to_previous_map,
-                int current_state_is_initial);
+/// @param psi A container for previous-state information (needed when optimization RG is
+///        enabled).
+  CounterGenSAT(ParallelLearner &coordinator, PrevStateInfo &psi);
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -990,40 +1019,6 @@ protected:
 
 // -------------------------------------------------------------------------------------------
 ///
-/// @brief Returns the previous-state copy of a literal.
-///
-/// @param literal The literal to transform.
-/// @return The previous-state copy of a literal.
-  int presentToPrevious(int literal) const;
-
-// -------------------------------------------------------------------------------------------
-///
-/// @brief Computes the previous-state copy of a cube or clause.
-///
-/// @param cube_or_clause A cube or clause (in form of a vector of literals) over the
-///        present state variables. This vector is overwritten by the corresponding cube of
-///        clause over the previous-state literals (i.e., all literals are replaced by their
-///        previous-state copy).
-  void presentToPrevious(vector<int> &cube_or_clause) const;
-
-// -------------------------------------------------------------------------------------------
-///
-/// @brief Computes the previous-state copy of a CNF.
-///
-/// @param cnf A CNF formula over the present state variables. This CNF is overwritten by the
-///        corresponding CNF over the previous-state literals (i.e., all literals are
-///        replaced by their previous-state copy).
-  void presentToPrevious(CNF &cnf) const;
-
-// -------------------------------------------------------------------------------------------
-///
-/// @brief A flag indicating if optimization RG should be used.
-///
-/// See LearnSynthQBFInd for an explanation.
-  bool use_ind_;
-
-// -------------------------------------------------------------------------------------------
-///
 /// @brief A reference to the coordinator.
 ///
 /// All communication to other worker-threads is done via the coordinator.
@@ -1066,47 +1061,8 @@ protected:
 
 // -------------------------------------------------------------------------------------------
 ///
-/// @brief Says: the current state is initial or the previous transition relation holds.
-///
-/// This CNF expresses that the current state is initial or the previous-state copy of the
-/// transition relation holds. This is an important building block for the CNF to
-/// generalize counterexamples if optimization RG is enabled.
-/// If optimization RG is disabled, then this CNF is empty.
-  CNF prev_trans_or_initial_;
-
-// -------------------------------------------------------------------------------------------
-///
-/// @brief A map from present-state variables to their previous-state copy.
-///
-/// If optimization RG is disabled, then this CNF is empty.
-  vector<int> current_to_previous_map_;
-
-// -------------------------------------------------------------------------------------------
-///
-/// @brief Says: the current state is initial or the previous transition relation holds.
-///
-/// This CNF expresses that the current state is initial or the previous-state copy of the
-/// transition relation holds. This is an important building block for the CNF to
-/// generalize counterexamples if optimization RG is enabled.
-/// If optimization RG is disabled, then this field is meaningless.
-  int current_state_is_initial_;
-
-// -------------------------------------------------------------------------------------------
-///
 /// @brief The solver for generalizing counterexamples if optimization RG is enabled.
   SatSolver *solver_ctrl_ind_;
-
-// -------------------------------------------------------------------------------------------
-///
-/// @brief A literal saying that the previous-state is safe.
-///
-/// We store this literal here and do not read it out of the VarManager again and again to
-/// avoid a concurrency issue. The VarManager is sometimes modified (new temporary variables
-/// are created). This does not affect the literal defining safe states. However, we do not
-/// want to lock reading-accesses to the variable manager and we do not want to read out
-/// the variable manager in an inconsistent state. Hence, we read it out once and store it.
-/// If optimization RG is disabled, then this field is meaningless.
-  int prev_safe_;
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -1142,6 +1098,16 @@ protected:
 /// time.
   size_t last_bored_compress_size_;
 
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Information about the previous states if optimization RG is enabled.
+  const PrevStateInfo &psi_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The vector of current-state variables.
+  vector<int> s_;
+
 private:
 
 // -------------------------------------------------------------------------------------------
@@ -1176,7 +1142,7 @@ private:
 /// in LearnSynthQBF.
 ///
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.1.0
+/// @version 1.2.0
 class ClauseMinimizerQBF
 {
 public:
@@ -1185,9 +1151,16 @@ public:
 ///
 /// @brief Constructor.
 ///
+/// @param instance_nr A unique instance number. It is used to bring in some asymmetry between
+///        the different ClauseMinimizerQBF-instances: depending on the instance number, the
+///        instance selects a different Solver to use.
 /// @param coordinator A reference to the coordinator. All communication to other
 ///        worker-threads is done via the coordinator.
-  ClauseMinimizerQBF(ParallelLearner &coordinator);
+/// @param psi A container for previous-state information (needed when optimization RG is
+///        enabled).
+  ClauseMinimizerQBF(size_t instance_nr,
+                     ParallelLearner &coordinator,
+                     PrevStateInfo &psi);
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -1206,7 +1179,26 @@ public:
 /// been set by some other thread, it quits.
   void minimizeClauses();
 
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Notifies this worker about a new winning region clause.
+///
+/// @param clause The new clause that has been discovered.
+/// @param src An integer number defining which kind of worker-thread discovered the clause.
+///        At the moment, this information is ignored.
+  void notifyNewWinRegClause(const vector<int> &clause, int src);
+
 protected:
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Implements #minimizeClauses() with incremental QBF solving.
+  void minimizeClausesInc();
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Implements #minimizeClauses() with non-incremental QBF solving.
+  void minimizeClausesNoInc();
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -1232,8 +1224,31 @@ protected:
 
 // -------------------------------------------------------------------------------------------
 ///
+/// @brief An interface to DepQBF for incremental QBF solving.
+  DepQBFApi *inc_qbf_solver_;
+
+// -------------------------------------------------------------------------------------------
+///
 /// @brief A SatSolver to check if minimized clauses are already implied by others.
   SatSolver *sat_solver_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief All new winning region clauses that have not been considered yet.
+  CNF new_win_reg_clauses_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief A lock that protects the #new_win_reg_clauses_ from race-conditions.
+///
+/// Many worker-threads modify the #new_win_reg_clauses_ (add new ones). This lock ensures
+/// that only one thread is modifying or reading the #new_win_reg_clauses_ at one time.
+  mutex new_win_reg_clauses_lock_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Information about the previous states if optimization RG is enabled.
+  const PrevStateInfo &psi_;
 
 private:
 
@@ -1272,7 +1287,7 @@ private:
 /// @see IFM13Synth
 ///
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.1.0
+/// @version 1.2.0
 class IFM13Explorer
 {
 public:
@@ -1595,6 +1610,303 @@ private:
 /// @param other The source for creating the copy.
 /// @return The result of the assignment, i.e, *this.
   IFM13Explorer& operator=(const IFM13Explorer &other);
+
+};
+
+// -------------------------------------------------------------------------------------------
+///
+/// @class TemplExplorer
+/// @brief Implements the method of TemplateSynth in a parallelized way.
+///
+/// This class basically implements the same method as TemplateSynth. It only has a few
+/// additional methods to communicate with other threads.  It considers all clauses of the
+/// winning region found by other threads already. However, it does not produce any
+/// information for the other threads. It is an information sink.
+///
+/// @see TemplateSynth
+///
+/// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
+/// @version 1.2.0
+class TemplExplorer
+{
+public:
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Constructor.
+///
+/// @param coordinator A reference to the coordinator. All communication to other
+///        worker-threads is done via the coordinator.
+  TemplExplorer(ParallelLearner &coordinator);
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Destructor.
+  virtual ~TemplExplorer();
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Computes the winning region as instantiation of a generic template.
+  void computeWinningRegion();
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Notifies this worker about a new winning region clause.
+///
+/// @param clause The new clause that has been discovered.
+/// @param src An integer number defining which kind of worker-thread discovered the clause.
+///        At the moment, this information is ignored.
+  void notifyNewWinRegClause(const vector<int> &clause, int src);
+
+protected:
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Computes the winning region as instantiation of a generic CNF template.
+///
+/// @param nr_of_clauses The number N of clauses to use in the template.
+/// @param timeout A time-out is seconds.
+/// @param use_sat True if a SAT solver shall be used, false if a QBF solver shall be used.
+/// @return The value 0 if no winning region exists, the value 1 if a winning region was
+///         successfully computed, the value 2 if we had a time-out.
+  int findWinRegCNFTempl(size_t nr_of_clauses, size_t timeout, bool use_sat);
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Resolves the template by calling a QBF solver.
+///
+/// @param win_constr CNF constraints that constitute a correct solution for the winning
+///        region using the generic template. Essentially, three constraints are encoded in
+///        this CNF:
+///        <ol>
+///          <li> I(x) => W(x): every initial state is contained in the winning region
+///          <li> W(x) => P(x): every state of the winning region is safe
+///          <li> forall x,i: exists c,x': W(x) => (T(x,i,c,x') & W(x')): from every state in
+///               the winning region we can enforce to stay in the winning region by setting
+///               the c-signals appropriately.
+///        </ol>
+/// @param w1 The literal that represents the present-state copy of the winning region in
+///        win_constr.
+/// @param w2 The literal that represents the next-state copy of the winning region in
+///        win_constr.
+/// @param solution An empty vector. If a solution exists, then the corresponding template
+///        parameter values are written into this vector.
+/// @param timeout A time-out is seconds.
+/// @return The value 0 if no winning region exists, the value 1 if a winning region was
+///         successfully computed, the value 2 if we had a time-out.
+  int syntQBF(const CNF& win_constr, int w1, int w2, vector<int> &solution, size_t timeout);
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Resolves the template by calling a SAT solver in a CEGIS loop.
+///
+/// @param win_constr CNF constraints that constitute a correct solution for the winning
+///        region using the generic template. Essentially, three constraints are encoded in
+///        this CNF:
+///        <ol>
+///          <li> I(x) => W(x): every initial state is contained in the winning region
+///          <li> W(x) => P(x): every state of the winning region is safe
+///          <li> forall x,i: exists c,x': W(x) => (T(x,i,c,x') & W(x')): from every state in
+///               the winning region we can enforce to stay in the winning region by setting
+///               the c-signals appropriately.
+///        </ol>
+/// @param w1 The literal that represents the present-state copy of the winning region in
+///        win_constr.
+/// @param w2 The literal that represents the next-state copy of the winning region in
+///        win_constr.
+/// @param solution An empty vector. If a solution exists, then the corresponding template
+///        parameter values are written into this vector.
+/// @param timeout A time-out is seconds.
+/// @return The value 0 if no winning region exists, the value 1 if a winning region was
+///         successfully computed, the value 2 if we had a time-out.
+  int syntSAT(const CNF& win_constr, int w1, int w2, vector<int> &solution, size_t timeout);
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief A helper for the CEGIS loop of #syntSAT(), eliminating a counterexample.
+///
+/// @param ce A counterexample that has been computed previously by calling #check(). A
+///        counterexample is simply a set of values for state variables and input variables
+///        for which we fall out of the winning region.
+/// @param gen The CNF containing the constraints for a correct winning region. We simply
+///        add constraints here saying that the winning region must now also work for the
+///        counterexample.
+/// @param solver The solver to which the constraints eliminating the counterexample shall
+///        be added.
+  void exclude(const vector<int> &ce, const CNF &gen, SatSolver* solver);
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief A helper for the CEGIS loop of #syntSAT(), checking if a candidate solution works.
+///
+/// @param cand A canidate solution in the form of concrete values for the template
+///        parameters.
+/// @param win_constr CNF constraints that constitute a correct solution for the winning
+///        region using the generic template. Essentially, three constraints are encoded in
+///        this CNF:
+///        <ol>
+///          <li> I(x) => W(x): every initial state is contained in the winning region
+///          <li> W(x) => P(x): every state of the winning region is safe
+///          <li> forall x,i: exists c,x': W(x) => (T(x,i,c,x') & W(x')): from every state in
+///               the winning region we can enforce to stay in the winning region by setting
+///               the c-signals appropriately.
+///        </ol>
+/// @param w1 The literal that represents the present-state copy of the winning region in
+///        win_constr.
+/// @param w2 The literal that represents the next-state copy of the winning region in
+///        win_constr.
+/// @param timeout A time-out is seconds.
+/// @param ce An empty vector. If the candidate solution is incorrect, a counterexample in
+///        the form of concrete values for state and input variables for which we fall out
+///        of the winning region is stored in this vector.
+/// @return The value 1 the candidate solution is correct, the value 0 if the candicate
+///         solution is incorrect, 2 if a time-out was reached.
+  int check(const vector<int> &cand, const CNF& win_constr, int w1, int w2, size_t timeout,
+            vector<int> &ce);
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Returns a fresh temporary variable.
+///
+/// @return A fresh temporary variable.
+  int newTmp();
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Returns a fresh template parameter.
+///
+/// @return A fresh template parameter.
+  int newParam();
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief A helper that transforms all current state variables into next state variables.
+///
+/// @param vec A vector of state variables or their negation.
+  void swapPresentToNext(vector<int> &vec) const;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief A reference to the coordinator.
+///
+/// All communication to other worker-threads is done via the coordinator.
+  ParallelLearner &coordinator_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The resulting winning region.
+  CNF final_winning_region_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief A lock that protects the #known_clauses_ from race-conditions.
+///
+/// Many worker-threads modify the #known_clauses_ (add new ones). This lock ensures
+/// that only one thread is modifying or reading the #known_clauses_ at one time.
+  mutex known_clauses_lock_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The resulting winning region.
+  CNF known_clauses_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The list of present-state variables.
+///
+/// This list is often used, so we keep it as a field to increase readability of the code.
+  vector<int> s_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The list of (uncontrollable) input variables.
+///
+/// This list is often used, so we keep it as a field to increase readability of the code.
+  vector<int> i_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The list of control signals (controllable input variables).
+///
+/// This list is often used, so we keep it as a field to increase readability of the code.
+  vector<int> c_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The list of next-state variables.
+///
+/// This list is often used, so we keep it as a field to increase readability of the code.
+  vector<int> n_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The list of template parameters.
+///
+/// We do not want to access the global VarManager (to avoid too much locking), so we keep
+/// everything local.
+  vector<int> templ_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The original list of temporary variables.
+///
+/// We do not want to access the global VarManager (to avoid too much locking), so we keep
+/// everything local.
+  vector<int> orig_tmp_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The current list of temporary variables.
+///
+/// We do not want to access the global VarManager (to avoid too much locking), so we keep
+/// everything local.
+  vector<int> current_tmp_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The initial next free CNF variable.
+///
+/// We do not want to access the global VarManager (to avoid too much locking), so we keep
+/// everything local.
+  int orig_next_free_var_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The current next free CNF variable.
+///
+/// We do not want to access the global VarManager (to avoid too much locking), so we keep
+/// everything local.
+  int next_free_var_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The present-state error variable.
+///
+/// It is stored here locally so that we do not always have to access the global variable
+/// manager (which may cause a concurrency issue).
+  int p_err_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The next-state error variable.
+///
+/// It is stored here locally so that we do not always have to access the global variable
+/// manager (which may cause a concurrency issue).
+  int n_err_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The point in time where the SAT-based method has been started.
+///
+/// This is used for a heuristic that defines when to abort the SAT-based exploration.
+  PointInTime start_;
+
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief A map from present-state variables to corresponding next state variables.
+  vector<int> pres_to_nxt_;
+
 
 };
 
