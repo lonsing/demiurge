@@ -35,13 +35,14 @@
 #include "Logger.h"
 #include "Utils.h"
 #include "QBFSolver.h"
-#include "QBFCertImplExtractor.h"
+#include "CNFImplExtractor.h"
 #include "Options.h"
 
 // -------------------------------------------------------------------------------------------
-TemplateSynth::TemplateSynth() :
+TemplateSynth::TemplateSynth(CNFImplExtractor *impl_extractor) :
                BackEnd(),
-               qbf_solver_(Options::instance().getQBFSolver())
+               qbf_solver_(Options::instance().getQBFSolver()),
+               impl_extractor_(impl_extractor)
 {
   // nothing to do
 }
@@ -51,6 +52,9 @@ TemplateSynth::~TemplateSynth()
 {
   delete qbf_solver_;
   qbf_solver_ = NULL;
+
+  delete impl_extractor_;
+  impl_extractor_ = NULL;
 }
 
 // -------------------------------------------------------------------------------------------
@@ -72,9 +76,9 @@ bool TemplateSynth::run()
      return true;
 
   L_INF("Starting to extract a circuit ...");
-  QBFCertImplExtractor extractor;
-  extractor.extractCircuit(winning_region_);
+  impl_extractor_->extractCircuit(winning_region_);
   L_INF("Synthesis done.");
+  impl_extractor_->logStatistics();
   return true;
 }
 

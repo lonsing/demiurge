@@ -1,4 +1,4 @@
-README for Demiurge Version 1.0.0
+README for Demiurge Version 1.1.0
 =================================
 
 This file contains important information about this distribution of the tool
@@ -148,6 +148,19 @@ yourself you need to:
  - If you want to create a new class, type 'make class'. This will create a
    skeleton of a .h and .cpp file and adds it to tool/src/extrasources.make
    (so that the makefile will compile it).
+
+Changes
+-------
+1.1.0: New methods for computing the winning region using incremental QBF,
+       several new methods for extracting circuits from the winning region,
+       updated third-party libraries and tools to newer versions.
+       Except for cleaning up the code and a small bug-fix in circuit
+       extraction method nr 19 (using an optimization to exploit auxiliary
+       variables in the transition relation) this is the version that has
+       been sent to the SYNTComp 2014 competition
+       (see http://www.syntcomp.org/).
+1.0.0: Basic version: several methods for computing the winning region, circuit
+       extraction can only be done using QBFCert
 
 In case of any questions, do not hesitate to contact the authors (E.g.
 robert.koenighofer@iaik.tugraz.at).

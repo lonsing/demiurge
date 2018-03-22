@@ -1,0 +1,1095 @@
+\hypertarget{classLearningImplExtractor}{\section{Learning\-Impl\-Extractor Class Reference}
+\label{classLearningImplExtractor}\index{Learning\-Impl\-Extractor@{Learning\-Impl\-Extractor}}
+}
+
+
+Implements different learning-\/based methods for circuit extraction.  
+
+
+
+
+{\ttfamily \#include $<$Learning\-Impl\-Extractor.\-h$>$}
+
+Inheritance diagram for Learning\-Impl\-Extractor\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classLearningImplExtractor}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLearningImplExtractor_a453451da144f6fef1f8769bc9522f3aa}{Learning\-Impl\-Extractor} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classLearningImplExtractor_ae5c70a32f0f4268be784e8081681e65d}{$\sim$\-Learning\-Impl\-Extractor} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classLearningImplExtractor_ad13a1fc00465f95812df4673743e16eb}{run} (const \hyperlink{classCNF}{C\-N\-F} \&winning\-\_\-region, const \hyperlink{classCNF}{C\-N\-F} \&neg\-\_\-winning\-\_\-region)
+\begin{DoxyCompactList}\small\item\em Runs this circuit extractor. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCNFImplExtractor_ad329eedd50e443f44edc99db8c2e2613}{extract\-Circuit} (const \hyperlink{classCNF}{C\-N\-F} \&winning\-\_\-region)
+\begin{DoxyCompactList}\small\item\em Extracts a circuit from the winning region. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCNFImplExtractor_a5e9694425af3f1a76d8b21ace3c435d9}{extract\-Circuit} (const \hyperlink{classCNF}{C\-N\-F} \&winning\-\_\-region, const \hyperlink{classCNF}{C\-N\-F} \&neg\-\_\-winning\-\_\-region)
+\begin{DoxyCompactList}\small\item\em Extracts a circuit from the winning region and its negation. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCNFImplExtractor_aae098749e201b22294a70f6e0a4a58f0}{log\-Statistics} ()
+\begin{DoxyCompactList}\small\item\em Logs statistical information about circuit extraction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classLearningImplExtractor_a009b5382cc9a65cd7c7dfbbc73815bac}{run\-Learning\-Q\-B\-F} (const \hyperlink{classCNF}{C\-N\-F} \&win\-\_\-region, const \hyperlink{classCNF}{C\-N\-F} \&neg\-\_\-win\-\_\-region)
+\begin{DoxyCompactList}\small\item\em Implements circuit extraction with non-\/incremental Q\-B\-F-\/based \hyperlink{classCNF}{C\-N\-F} learning. \end{DoxyCompactList}\item 
+void \hyperlink{classLearningImplExtractor_a3edc5671d6f56dea4145512385063681}{run\-Learning\-Q\-B\-F\-Inc} (const \hyperlink{classCNF}{C\-N\-F} \&win\-\_\-region, const \hyperlink{classCNF}{C\-N\-F} \&neg\-\_\-win\-\_\-region)
+\begin{DoxyCompactList}\small\item\em Implements circuit extraction with incremental Q\-B\-F-\/based \hyperlink{classCNF}{C\-N\-F} learning. \end{DoxyCompactList}\item 
+void \hyperlink{classLearningImplExtractor_a39668b94568dde5459d979684d99253f}{run\-Learning\-Jiang\-S\-A\-T} (const \hyperlink{classCNF}{C\-N\-F} \&win\-\_\-region, const \hyperlink{classCNF}{C\-N\-F} \&neg\-\_\-win\-\_\-region, bool second\-\_\-run=false, bool min\-\_\-cores=true)
+\begin{DoxyCompactList}\small\item\em Uses S\-A\-T-\/based \hyperlink{classCNF}{C\-N\-F} learning with Jiang-\/resubstitution. \end{DoxyCompactList}\item 
+void \hyperlink{classLearningImplExtractor_a036ab2a3921696d31fb55139427d2114}{run\-Learning\-Jiang\-S\-A\-T\-Inc1} (const \hyperlink{classCNF}{C\-N\-F} \&win\-\_\-region, const \hyperlink{classCNF}{C\-N\-F} \&neg\-\_\-win\-\_\-region, bool second\-\_\-run=false, bool min\-\_\-cores=true)
+\begin{DoxyCompactList}\small\item\em Like \hyperlink{classLearningImplExtractor_a39668b94568dde5459d979684d99253f}{run\-Learning\-Jiang\-S\-A\-T} but with more aggressive incremental solving. \end{DoxyCompactList}\item 
+void \hyperlink{classLearningImplExtractor_a2ee6e07a5c9907195c1af8cba613dbd1}{run\-Learning\-Jiang\-S\-A\-T\-Inc2} (const \hyperlink{classCNF}{C\-N\-F} \&win\-\_\-region, const \hyperlink{classCNF}{C\-N\-F} \&neg\-\_\-win\-\_\-region, bool second\-\_\-run=false, bool min\-\_\-cores=true)
+\begin{DoxyCompactList}\small\item\em Like \hyperlink{classLearningImplExtractor_a036ab2a3921696d31fb55139427d2114}{run\-Learning\-Jiang\-S\-A\-T\-Inc1} but with even more aggressive incremental solving. \end{DoxyCompactList}\item 
+void \hyperlink{classLearningImplExtractor_ad214c79ae2c0e56a47ad97ad2e5c3765}{run\-Learning\-Jiang\-S\-A\-T\-Tmp} (const \hyperlink{classCNF}{C\-N\-F} \&win\-\_\-region, const \hyperlink{classCNF}{C\-N\-F} \&neg\-\_\-win\-\_\-region, bool second\-\_\-run=false, bool min\-\_\-cores=true)
+\begin{DoxyCompactList}\small\item\em Uses S\-A\-T-\/based \hyperlink{classCNF}{C\-N\-F} learning with Jiang-\/resubstitution and temporary variables. \end{DoxyCompactList}\item 
+void \hyperlink{classLearningImplExtractor_ad41484b6bb6da18e50d31830a18e63e9}{run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl} (const \hyperlink{classCNF}{C\-N\-F} \&win\-\_\-region, const \hyperlink{classCNF}{C\-N\-F} \&neg\-\_\-win\-\_\-region, bool second\-\_\-run=false, bool min\-\_\-cores=true)
+\begin{DoxyCompactList}\small\item\em Like \hyperlink{classLearningImplExtractor_ad214c79ae2c0e56a47ad97ad2e5c3765}{run\-Learning\-Jiang\-S\-A\-T\-Tmp}, but also allows dependencies on control signals. \end{DoxyCompactList}\item 
+void \hyperlink{classLearningImplExtractor_a5ce27f574afbb4504b7acd82196314d7}{run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2} (const \hyperlink{classCNF}{C\-N\-F} \&win\-\_\-region, const \hyperlink{classCNF}{C\-N\-F} \&neg\-\_\-win\-\_\-region, bool second\-\_\-run=false, bool min\-\_\-cores=true)
+\begin{DoxyCompactList}\small\item\em Combines \hyperlink{classLearningImplExtractor_ad41484b6bb6da18e50d31830a18e63e9}{run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl} and run\-Learning\-Jiang\-S\-A\-T\-Inc2. \end{DoxyCompactList}\item 
+\hyperlink{classCNF}{C\-N\-F} \hyperlink{classLearningImplExtractor_af747a4869a3ca8a8e77e39c435b94ce8}{make\-Eq} (int var, \hyperlink{classCNF}{C\-N\-F} impl)
+\begin{DoxyCompactList}\small\item\em Creates a \hyperlink{classCNF}{C\-N\-F} that assigns a variable to the result of some other \hyperlink{classCNF}{C\-N\-F}. \end{DoxyCompactList}\item 
+\hyperlink{classCNF}{C\-N\-F} \hyperlink{classLearningImplExtractor_ae491299fffa2b1dcb6ccce010b0fc5f7}{make\-Eq2} (int var, \hyperlink{classCNF}{C\-N\-F} impl)
+\begin{DoxyCompactList}\small\item\em An alternative implementation of \hyperlink{classLearningImplExtractor_af747a4869a3ca8a8e77e39c435b94ce8}{make\-Eq}, which seems to be slower. \end{DoxyCompactList}\item 
+void \hyperlink{classLearningImplExtractor_a70515dea9636bbcd9fe3e31bdf47e110}{add\-To\-Stand\-Alone\-Aiger} (int ctrl\-\_\-var, const \hyperlink{classCNF}{C\-N\-F} \&solution)
+\begin{DoxyCompactList}\small\item\em Adds the solution for one output function to the A\-I\-G\-E\-R circuit we have so far. \end{DoxyCompactList}\item 
+int \hyperlink{classLearningImplExtractor_a88143aa67de5be8848f643cfb2947834}{cnf\-To\-Aig} (int cnf\-\_\-lit)
+\begin{DoxyCompactList}\small\item\em Transforms a \hyperlink{classCNF}{C\-N\-F} literal into an A\-I\-G\-E\-R literal as used in \hyperlink{classLearningImplExtractor_a17f7c47bf3e84fa5a70930e01a18deb2}{standalone\-\_\-circuit\-\_\-}. \end{DoxyCompactList}\item 
+int \hyperlink{classLearningImplExtractor_a8f9d325813c0f792321a932f358cfe78}{make\-And} (int in1, int in2)
+\begin{DoxyCompactList}\small\item\em Creates the A\-N\-D between two A\-I\-G\-E\-R literals and returns the resulting literal. \end{DoxyCompactList}\item 
+int \hyperlink{classLearningImplExtractor_a25260410178b107783cbc10fdf69c52d}{make\-Or} (int in1, int in2)
+\begin{DoxyCompactList}\small\item\em Creates the O\-R between two A\-I\-G\-E\-R literals and returns the resulting literal. \end{DoxyCompactList}\item 
+void \hyperlink{classLearningImplExtractor_a8b95b5433b25e475efaaba9c553c4e63}{insert\-Missing\-And\-From\-Trans} ()
+\begin{DoxyCompactList}\small\item\em Copies missing A\-N\-D gates from the spec. \end{DoxyCompactList}\item 
+void \hyperlink{classLearningImplExtractor_aa14318d81871fc52f0d17fd5d82708e3}{log\-Detailed\-Statistics} ()
+\begin{DoxyCompactList}\small\item\em Logs the detailed statistics collected in the \hyperlink{classLearningExtractorStatistics}{Learning\-Extractor\-Statistics}. \end{DoxyCompactList}\item 
+aiger $\ast$ \hyperlink{classCNFImplExtractor_a58a4e5021d0ef9c4190a5be74fb5a83e}{optimize\-With\-A\-B\-C} (aiger $\ast$circuit) const 
+\begin{DoxyCompactList}\small\item\em Optimizes a combinatorial A\-I\-G\-E\-R circuit with A\-B\-C. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classCNFImplExtractor_a0970602635f3356712d57ebb28d12c0d}{insert\-Into\-Spec} (aiger $\ast$standalone\-\_\-circuit) const 
+\begin{DoxyCompactList}\small\item\em Takes a circuit defining the control signals and inserts it into the spec. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classQBFSolver}{Q\-B\-F\-Solver} $\ast$ \hyperlink{classLearningImplExtractor_a4147358129fcfb9e72a0ee27d7c16f51}{qbf\-\_\-solver\-\_\-}
+\begin{DoxyCompactList}\small\item\em The Q\-B\-F solver to use (as selected by the user with command-\/line arguments). \end{DoxyCompactList}\item 
+int \hyperlink{classLearningImplExtractor_a987219dd3114957f2bd0d9df77a9d7fc}{next\-\_\-free\-\_\-aig\-\_\-lit\-\_\-}
+\begin{DoxyCompactList}\small\item\em The next unused A\-I\-G\-E\-R literal in \hyperlink{classLearningImplExtractor_a17f7c47bf3e84fa5a70930e01a18deb2}{standalone\-\_\-circuit\-\_\-}. \end{DoxyCompactList}\item 
+aiger $\ast$ \hyperlink{classLearningImplExtractor_a17f7c47bf3e84fa5a70930e01a18deb2}{standalone\-\_\-circuit\-\_\-}
+\begin{DoxyCompactList}\small\item\em The synthesis result as stand-\/alone circuit. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classLearningImplExtractor_a2d096ab7181fd608d6ee033f8c9ab8d3}{cnf\-\_\-var\-\_\-to\-\_\-standalone\-\_\-aig\-\_\-var\-\_\-}
+\begin{DoxyCompactList}\small\item\em A map from variables as they occur in C\-N\-Fs to the corresponding A\-I\-G\-E\-R literals. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classLearningImplExtractor_a5a4835eb5fc2df396272af43380ecc82}{ip\-\_\-}
+\begin{DoxyCompactList}\small\item\em The list of uncontrollable input variables followed by the present state variables. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classLearningImplExtractor_ab94459731d569bdd6bb0f3895fb9c184}{ipc\-\_\-}
+\begin{DoxyCompactList}\small\item\em The list of uncontrollable inputs, state variables, and control signals. \end{DoxyCompactList}\item 
+\hyperlink{classLearningExtractorStatistics}{Learning\-Extractor\-Statistics} \hyperlink{classLearningImplExtractor_a018564c4a67dfb228357008a8a50aef4}{statistics}
+\begin{DoxyCompactList}\small\item\em A helper for collecting performance data and statistics. \end{DoxyCompactList}\item 
+double \hyperlink{classCNFImplExtractor_ab8be06d42fd3c4b569ec22cfcf2f508e}{extraction\-\_\-cpu\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em The circuit extraction time in C\-P\-U-\/seconds. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classCNFImplExtractor_ae06413cf08f868357d64545b3041aa18}{extraction\-\_\-real\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em Like \hyperlink{classCNFImplExtractor_ab8be06d42fd3c4b569ec22cfcf2f508e}{extraction\-\_\-cpu\-\_\-time\-\_\-} but real-\/time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLearningImplExtractor_a12fcc34f855b823c407235b64673c4c2}{Learning\-Impl\-Extractor} (const \hyperlink{classLearningImplExtractor}{Learning\-Impl\-Extractor} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classLearningImplExtractor}{Learning\-Impl\-Extractor} \& \hyperlink{classLearningImplExtractor_adfa15ed8fb085576deb3d15a55fe32e0}{operator=} (const \hyperlink{classLearningImplExtractor}{Learning\-Impl\-Extractor} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implements different learning-\/based methods for circuit extraction. 
+
+This class implements different learning-\/based methods for circuit extraction. All methods are based on the \hyperlink{classCNF}{C\-N\-F} learning algorithm from the paper Ruediger Ehlers, Robert Koenighofer, Georg Hofferek\-: Symbolically synthesizing small circuits. F\-M\-C\-A\-D 2012\-: 91-\/100 Some methods use Q\-B\-F-\/solving, some incremental Q\-B\-F solving, and some incremental S\-A\-T solving with various optimizations. The method that should be used is defined by the command-\/line option --circuit-\/mode or -\/n.
+
+The general flow is as follows. 
+\begin{DoxyEnumerate}
+\item We compute a combinational (no latches) stand-\/alone circuit that computes the control signals based on the uncontrollable inputs and state variables in A\-I\-G\-E\-R format. 
+\item We optimize this stand-\/alone circuit using A\-B\-C. 
+\item The optimized circuit is inserted into the original specification as requited by the rules of the S\-Y\-N\-T\-Comp competition. 
+\end{DoxyEnumerate}
+
+\begin{DoxyAuthor}{Author}
+Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-1.\-0 
+\end{DoxyVersion}
+
+
+Definition at line 64 of file Learning\-Impl\-Extractor.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classLearningImplExtractor_a453451da144f6fef1f8769bc9522f3aa}{\index{Learning\-Impl\-Extractor@{Learning\-Impl\-Extractor}!Learning\-Impl\-Extractor@{Learning\-Impl\-Extractor}}
+\index{Learning\-Impl\-Extractor@{Learning\-Impl\-Extractor}!LearningImplExtractor@{Learning\-Impl\-Extractor}}
+\subsubsection[{Learning\-Impl\-Extractor}]{\setlength{\rightskip}{0pt plus 5cm}Learning\-Impl\-Extractor\-::\-Learning\-Impl\-Extractor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLearningImplExtractor_a453451da144f6fef1f8769bc9522f3aa}
+
+
+Constructor. 
+
+
+
+Definition at line 47 of file Learning\-Impl\-Extractor.\-cpp.
+
+
+
+References cnf\-\_\-var\-\_\-to\-\_\-standalone\-\_\-aig\-\_\-var\-\_\-, Var\-Info\-::\-C\-T\-R\-L, Var\-Manager\-::get\-Info(), Var\-Info\-::get\-Lit\-In\-A\-I\-G(), Var\-Info\-::get\-Name(), Var\-Manager\-::get\-Pres\-Error\-State\-Var(), A\-I\-G2\-C\-N\-F\-::get\-Tmp\-Deps\-Trans(), Var\-Manager\-::get\-Vars\-Of\-Type(), Var\-Info\-::\-I\-N\-P\-U\-T, Var\-Manager\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), ip\-\_\-, ipc\-\_\-, next\-\_\-free\-\_\-aig\-\_\-lit\-\_\-, Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, and standalone\-\_\-circuit\-\_\-.
+
+\hypertarget{classLearningImplExtractor_ae5c70a32f0f4268be784e8081681e65d}{\index{Learning\-Impl\-Extractor@{Learning\-Impl\-Extractor}!$\sim$\-Learning\-Impl\-Extractor@{$\sim$\-Learning\-Impl\-Extractor}}
+\index{$\sim$\-Learning\-Impl\-Extractor@{$\sim$\-Learning\-Impl\-Extractor}!LearningImplExtractor@{Learning\-Impl\-Extractor}}
+\subsubsection[{$\sim$\-Learning\-Impl\-Extractor}]{\setlength{\rightskip}{0pt plus 5cm}Learning\-Impl\-Extractor\-::$\sim$\-Learning\-Impl\-Extractor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classLearningImplExtractor_ae5c70a32f0f4268be784e8081681e65d}
+
+
+Destructor. 
+
+
+
+Definition at line 119 of file Learning\-Impl\-Extractor.\-cpp.
+
+
+
+References qbf\-\_\-solver\-\_\-, and standalone\-\_\-circuit\-\_\-.
+
+\hypertarget{classLearningImplExtractor_a12fcc34f855b823c407235b64673c4c2}{\index{Learning\-Impl\-Extractor@{Learning\-Impl\-Extractor}!Learning\-Impl\-Extractor@{Learning\-Impl\-Extractor}}
+\index{Learning\-Impl\-Extractor@{Learning\-Impl\-Extractor}!LearningImplExtractor@{Learning\-Impl\-Extractor}}
+\subsubsection[{Learning\-Impl\-Extractor}]{\setlength{\rightskip}{0pt plus 5cm}Learning\-Impl\-Extractor\-::\-Learning\-Impl\-Extractor (
+\begin{DoxyParamCaption}
+\item[{const {\bf Learning\-Impl\-Extractor} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classLearningImplExtractor_a12fcc34f855b823c407235b64673c4c2}
+
+
+Copy constructor. 
+
+The copy constructor is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classLearningImplExtractor_a70515dea9636bbcd9fe3e31bdf47e110}{\index{Learning\-Impl\-Extractor@{Learning\-Impl\-Extractor}!add\-To\-Stand\-Alone\-Aiger@{add\-To\-Stand\-Alone\-Aiger}}
+\index{add\-To\-Stand\-Alone\-Aiger@{add\-To\-Stand\-Alone\-Aiger}!LearningImplExtractor@{Learning\-Impl\-Extractor}}
+\subsubsection[{add\-To\-Stand\-Alone\-Aiger}]{\setlength{\rightskip}{0pt plus 5cm}void Learning\-Impl\-Extractor\-::add\-To\-Stand\-Alone\-Aiger (
+\begin{DoxyParamCaption}
+\item[{int}]{ctrl\-\_\-var, }
+\item[{const {\bf C\-N\-F} \&}]{solution}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearningImplExtractor_a70515dea9636bbcd9fe3e31bdf47e110}
+
+
+Adds the solution for one output function to the A\-I\-G\-E\-R circuit we have so far. 
+
+The A\-I\-G\-E\-R circuit we have so far is built up in \hyperlink{classLearningImplExtractor_a17f7c47bf3e84fa5a70930e01a18deb2}{standalone\-\_\-circuit\-\_\-}. This method adds an output function (in \hyperlink{classCNF}{C\-N\-F}) for one control signal.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctrl\-\_\-var} & The control signal for which we would like to add an output function. \\
+\hline
+{\em solution} & The output function (in \hyperlink{classCNF}{C\-N\-F}) defining the control signal. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1665 of file Learning\-Impl\-Extractor.\-cpp.
+
+
+
+References cnf\-To\-Aig(), C\-N\-F\-::get\-Clauses(), make\-And(), make\-Or(), and standalone\-\_\-circuit\-\_\-.
+
+
+
+Referenced by run\-Learning\-Jiang\-S\-A\-T(), run\-Learning\-Jiang\-S\-A\-T\-Inc1(), run\-Learning\-Jiang\-S\-A\-T\-Inc2(), run\-Learning\-Jiang\-S\-A\-T\-Tmp(), run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), run\-Learning\-Q\-B\-F(), and run\-Learning\-Q\-B\-F\-Inc().
+
+\hypertarget{classLearningImplExtractor_a88143aa67de5be8848f643cfb2947834}{\index{Learning\-Impl\-Extractor@{Learning\-Impl\-Extractor}!cnf\-To\-Aig@{cnf\-To\-Aig}}
+\index{cnf\-To\-Aig@{cnf\-To\-Aig}!LearningImplExtractor@{Learning\-Impl\-Extractor}}
+\subsubsection[{cnf\-To\-Aig}]{\setlength{\rightskip}{0pt plus 5cm}int Learning\-Impl\-Extractor\-::cnf\-To\-Aig (
+\begin{DoxyParamCaption}
+\item[{int}]{cnf\-\_\-lit}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearningImplExtractor_a88143aa67de5be8848f643cfb2947834}
+
+
+Transforms a \hyperlink{classCNF}{C\-N\-F} literal into an A\-I\-G\-E\-R literal as used in \hyperlink{classLearningImplExtractor_a17f7c47bf3e84fa5a70930e01a18deb2}{standalone\-\_\-circuit\-\_\-}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cnf\-\_\-lit} & The literal as it occurs in \hyperlink{classCNF}{C\-N\-F} formulas. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The corresponding A\-I\-G\-E\-R index of the literal as it is used in the \hyperlink{classLearningImplExtractor_a17f7c47bf3e84fa5a70930e01a18deb2}{standalone\-\_\-circuit\-\_\-}. 
+\end{DoxyReturn}
+
+
+Definition at line 1701 of file Learning\-Impl\-Extractor.\-cpp.
+
+
+
+References cnf\-\_\-var\-\_\-to\-\_\-standalone\-\_\-aig\-\_\-var\-\_\-.
+
+
+
+Referenced by add\-To\-Stand\-Alone\-Aiger(), and insert\-Missing\-And\-From\-Trans().
+
+\hypertarget{classCNFImplExtractor_ad329eedd50e443f44edc99db8c2e2613}{\index{Learning\-Impl\-Extractor@{Learning\-Impl\-Extractor}!extract\-Circuit@{extract\-Circuit}}
+\index{extract\-Circuit@{extract\-Circuit}!LearningImplExtractor@{Learning\-Impl\-Extractor}}
+\subsubsection[{extract\-Circuit}]{\setlength{\rightskip}{0pt plus 5cm}void C\-N\-F\-Impl\-Extractor\-::extract\-Circuit (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{winning\-\_\-region}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}}\label{classCNFImplExtractor_ad329eedd50e443f44edc99db8c2e2613}
+
+
+Extracts a circuit from the winning region. 
+
+How this is done (interpolation, learning, etc.) depends on the concrete implementation of this abstract class. The result is written into the output file specified by the user.
+
+
+\begin{DoxyParams}{Parameters}
+{\em winning\-\_\-region} & The winning region from which the circuit should be extracted. For circuit extraction we need both the winning region and its negation. The negation is computed inside this function. If you already have a negation, use the other circuit extraction method of this class. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classStoreImplExtractor_a08437db801013d0b3208bbf099239fac}{Store\-Impl\-Extractor}.
+
+
+
+Definition at line 85 of file C\-N\-F\-Impl\-Extractor.\-cpp.
+
+
+
+References Utils\-::compress\-State\-C\-N\-F(), C\-N\-F\-Impl\-Extractor\-::extraction\-\_\-cpu\-\_\-time\-\_\-, C\-N\-F\-Impl\-Extractor\-::extraction\-\_\-real\-\_\-time\-\_\-, Stopwatch\-::get\-C\-P\-U\-Time\-Sec(), Stopwatch\-::get\-Real\-Time\-Sec(), C\-N\-F\-::negate(), C\-N\-F\-Impl\-Extractor\-::run(), and Stopwatch\-::start().
+
+
+
+Referenced by Load\-Synth\-::run(), Learn\-Synth\-Q\-B\-F\-Inc\-::run(), I\-F\-M13\-Synth\-::run(), Template\-Synth\-::run(), Parallel\-Learner\-::run(), Learn\-Synth\-Q\-B\-F\-::run(), Learn\-Synth\-S\-A\-T\-::run(), and Learn\-Synth\-Q\-B\-F\-Ind\-::run().
+
+\hypertarget{classCNFImplExtractor_a5e9694425af3f1a76d8b21ace3c435d9}{\index{Learning\-Impl\-Extractor@{Learning\-Impl\-Extractor}!extract\-Circuit@{extract\-Circuit}}
+\index{extract\-Circuit@{extract\-Circuit}!LearningImplExtractor@{Learning\-Impl\-Extractor}}
+\subsubsection[{extract\-Circuit}]{\setlength{\rightskip}{0pt plus 5cm}void C\-N\-F\-Impl\-Extractor\-::extract\-Circuit (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{winning\-\_\-region, }
+\item[{const {\bf C\-N\-F} \&}]{neg\-\_\-winning\-\_\-region}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}}\label{classCNFImplExtractor_a5e9694425af3f1a76d8b21ace3c435d9}
+
+
+Extracts a circuit from the winning region and its negation. 
+
+How this is done (interpolation, learning, etc.) depends on the concrete implementation of this abstract class. The result is written into the output file specified by the user.
+
+
+\begin{DoxyParams}{Parameters}
+{\em winning\-\_\-region} & The winning region from which the circuit should be extracted. \\
+\hline
+{\em neg\-\_\-winning\-\_\-region} & The negation of the winning region. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 102 of file C\-N\-F\-Impl\-Extractor.\-cpp.
+
+
+
+References C\-N\-F\-Impl\-Extractor\-::extraction\-\_\-cpu\-\_\-time\-\_\-, C\-N\-F\-Impl\-Extractor\-::extraction\-\_\-real\-\_\-time\-\_\-, Stopwatch\-::get\-C\-P\-U\-Time\-Sec(), Stopwatch\-::get\-Real\-Time\-Sec(), C\-N\-F\-Impl\-Extractor\-::run(), and Stopwatch\-::start().
+
+\hypertarget{classCNFImplExtractor_a0970602635f3356712d57ebb28d12c0d}{\index{Learning\-Impl\-Extractor@{Learning\-Impl\-Extractor}!insert\-Into\-Spec@{insert\-Into\-Spec}}
+\index{insert\-Into\-Spec@{insert\-Into\-Spec}!LearningImplExtractor@{Learning\-Impl\-Extractor}}
+\subsubsection[{insert\-Into\-Spec}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t C\-N\-F\-Impl\-Extractor\-::insert\-Into\-Spec (
+\begin{DoxyParamCaption}
+\item[{aiger $\ast$}]{standalone\-\_\-circuit}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classCNFImplExtractor_a0970602635f3356712d57ebb28d12c0d}
+
+
+Takes a circuit defining the control signals and inserts it into the spec. 
+
+This method takes as argument an aiger circuit of the following form\-: 
+\begin{DoxyItemize}
+\item The circuit is combinational, i.\-e., has no latches. 
+\item The inputs of the circuit are\-: the uncontrollable inputs from the spec (in the order in which they appear in the spec) followed by the state-\/signals (the output of the latches in the spec, in the order in which they appear in the spec). 
+\item The outputs of the circuit are the controllable inputs in the order in which they are defined in the spec. 
+\end{DoxyItemize}
+\begin{DoxyParams}{Parameters}
+{\em standalone\-\_\-circuit} & A circuit defining the control signals. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of additional A\-N\-D gates introduced into the spec. 
+\end{DoxyReturn}
+
+
+Definition at line 149 of file C\-N\-F\-Impl\-Extractor.\-cpp.
+
+
+
+References Var\-Info\-::\-C\-T\-R\-L, Options\-::get\-Aig\-In\-File\-Name(), Options\-::get\-Aig\-Out\-File\-Name(), Var\-Manager\-::get\-Info(), Var\-Info\-::get\-Lit\-In\-A\-I\-G(), Var\-Manager\-::get\-Max\-A\-I\-G\-Var(), Var\-Manager\-::get\-Pres\-Error\-State\-Var(), Var\-Manager\-::get\-Vars\-Of\-Type(), Var\-Info\-::\-I\-N\-P\-U\-T, Var\-Manager\-::instance(), Options\-::instance(), M\-A\-S\-S\-E\-R\-T, Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, and String\-Utils\-::to\-Lower\-Case\-In().
+
+
+
+Referenced by run(), and Q\-B\-F\-Cert\-Impl\-Extractor\-::run().
+
+\hypertarget{classLearningImplExtractor_a8b95b5433b25e475efaaba9c553c4e63}{\index{Learning\-Impl\-Extractor@{Learning\-Impl\-Extractor}!insert\-Missing\-And\-From\-Trans@{insert\-Missing\-And\-From\-Trans}}
+\index{insert\-Missing\-And\-From\-Trans@{insert\-Missing\-And\-From\-Trans}!LearningImplExtractor@{Learning\-Impl\-Extractor}}
+\subsubsection[{insert\-Missing\-And\-From\-Trans}]{\setlength{\rightskip}{0pt plus 5cm}void Learning\-Impl\-Extractor\-::insert\-Missing\-And\-From\-Trans (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearningImplExtractor_a8b95b5433b25e475efaaba9c553c4e63}
+
+
+Copies missing A\-N\-D gates from the spec. 
+
+This method is only used for an optimization in the methods \hyperlink{classLearningImplExtractor_ad214c79ae2c0e56a47ad97ad2e5c3765}{run\-Learning\-Jiang\-S\-A\-T\-Tmp}, \hyperlink{classLearningImplExtractor_ad41484b6bb6da18e50d31830a18e63e9}{run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl}, and \hyperlink{classLearningImplExtractor_a5ce27f574afbb4504b7acd82196314d7}{run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2}. These methods allow solutions to depend on temporary variables that appear in the original specification. The rules for S\-Y\-N\-T\-Comp do not allow to refer to such temporary variables from the specification in the final solution. Hence, this method simply copies the A\-N\-D gates from the specification into the \hyperlink{classLearningImplExtractor_a17f7c47bf3e84fa5a70930e01a18deb2}{standalone\-\_\-circuit\-\_\-}. 
+
+Definition at line 1729 of file Learning\-Impl\-Extractor.\-cpp.
+
+
+
+References Var\-Manager\-::aig\-Lit\-To\-Cnf\-Lit(), cnf\-\_\-var\-\_\-to\-\_\-standalone\-\_\-aig\-\_\-var\-\_\-, cnf\-To\-Aig(), Options\-::get\-Aig\-In\-File\-Name(), A\-I\-G2\-C\-N\-F\-::get\-Tmp\-Deps(), Var\-Manager\-::instance(), Options\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), M\-A\-S\-S\-E\-R\-T, standalone\-\_\-circuit\-\_\-, and Var\-Info\-::\-T\-M\-P.
+
+
+
+Referenced by run\-Learning\-Jiang\-S\-A\-T\-Tmp(), run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), and run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2().
+
+\hypertarget{classLearningImplExtractor_aa14318d81871fc52f0d17fd5d82708e3}{\index{Learning\-Impl\-Extractor@{Learning\-Impl\-Extractor}!log\-Detailed\-Statistics@{log\-Detailed\-Statistics}}
+\index{log\-Detailed\-Statistics@{log\-Detailed\-Statistics}!LearningImplExtractor@{Learning\-Impl\-Extractor}}
+\subsubsection[{log\-Detailed\-Statistics}]{\setlength{\rightskip}{0pt plus 5cm}void Learning\-Impl\-Extractor\-::log\-Detailed\-Statistics (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classLearningImplExtractor_aa14318d81871fc52f0d17fd5d82708e3}
+
+
+Logs the detailed statistics collected in the \hyperlink{classLearningExtractorStatistics}{Learning\-Extractor\-Statistics}. 
+
+
+
+Reimplemented from \hyperlink{classCNFImplExtractor_abe790c767f6c71a52ef8b0a61ab39eaa}{C\-N\-F\-Impl\-Extractor}.
+
+
+
+Definition at line 1788 of file Learning\-Impl\-Extractor.\-cpp.
+
+
+
+References Learning\-Extractor\-Statistics\-::log\-Statistics(), and statistics.
+
+\hypertarget{classCNFImplExtractor_aae098749e201b22294a70f6e0a4a58f0}{\index{Learning\-Impl\-Extractor@{Learning\-Impl\-Extractor}!log\-Statistics@{log\-Statistics}}
+\index{log\-Statistics@{log\-Statistics}!LearningImplExtractor@{Learning\-Impl\-Extractor}}
+\subsubsection[{log\-Statistics}]{\setlength{\rightskip}{0pt plus 5cm}void C\-N\-F\-Impl\-Extractor\-::log\-Statistics (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}}\label{classCNFImplExtractor_aae098749e201b22294a70f6e0a4a58f0}
+
+
+Logs statistical information about circuit extraction. 
+
+This method logs the overall execution time plus whatever detailed information is collected by the concrete implementation of this class. 
+
+Definition at line 290 of file C\-N\-F\-Impl\-Extractor.\-cpp.
+
+
+
+References C\-N\-F\-Impl\-Extractor\-::extraction\-\_\-cpu\-\_\-time\-\_\-, C\-N\-F\-Impl\-Extractor\-::extraction\-\_\-real\-\_\-time\-\_\-, L\-\_\-\-L\-O\-G, and C\-N\-F\-Impl\-Extractor\-::log\-Detailed\-Statistics().
+
+
+
+Referenced by Load\-Synth\-::run(), Learn\-Synth\-Q\-B\-F\-Inc\-::run(), I\-F\-M13\-Synth\-::run(), Template\-Synth\-::run(), Parallel\-Learner\-::run(), Learn\-Synth\-Q\-B\-F\-::run(), Learn\-Synth\-S\-A\-T\-::run(), and Learn\-Synth\-Q\-B\-F\-Ind\-::run().
+
+\hypertarget{classLearningImplExtractor_a8f9d325813c0f792321a932f358cfe78}{\index{Learning\-Impl\-Extractor@{Learning\-Impl\-Extractor}!make\-And@{make\-And}}
+\index{make\-And@{make\-And}!LearningImplExtractor@{Learning\-Impl\-Extractor}}
+\subsubsection[{make\-And}]{\setlength{\rightskip}{0pt plus 5cm}int Learning\-Impl\-Extractor\-::make\-And (
+\begin{DoxyParamCaption}
+\item[{int}]{in1, }
+\item[{int}]{in2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearningImplExtractor_a8f9d325813c0f792321a932f358cfe78}
+
+
+Creates the A\-N\-D between two A\-I\-G\-E\-R literals and returns the resulting literal. 
+
+This method extends the \hyperlink{classLearningImplExtractor_a17f7c47bf3e84fa5a70930e01a18deb2}{standalone\-\_\-circuit\-\_\-} with logic to compute the A\-N\-D between two A\-I\-G\-E\-R literals. The literal that represents the result of the A\-N\-D is returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in1} & The first operand of the A\-N\-D\-: an A\-I\-G\-E\-R literal from \hyperlink{classLearningImplExtractor_a17f7c47bf3e84fa5a70930e01a18deb2}{standalone\-\_\-circuit\-\_\-}. \\
+\hline
+{\em in2} & The second operand of the A\-N\-D\-: an A\-I\-G\-E\-R literal from \hyperlink{classLearningImplExtractor_a17f7c47bf3e84fa5a70930e01a18deb2}{standalone\-\_\-circuit\-\_\-}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The literal that represents the result of the A\-N\-D. 
+\end{DoxyReturn}
+
+
+Definition at line 1711 of file Learning\-Impl\-Extractor.\-cpp.
+
+
+
+References next\-\_\-free\-\_\-aig\-\_\-lit\-\_\-, and standalone\-\_\-circuit\-\_\-.
+
+
+
+Referenced by add\-To\-Stand\-Alone\-Aiger().
+
+\hypertarget{classLearningImplExtractor_af747a4869a3ca8a8e77e39c435b94ce8}{\index{Learning\-Impl\-Extractor@{Learning\-Impl\-Extractor}!make\-Eq@{make\-Eq}}
+\index{make\-Eq@{make\-Eq}!LearningImplExtractor@{Learning\-Impl\-Extractor}}
+\subsubsection[{make\-Eq}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} Learning\-Impl\-Extractor\-::make\-Eq (
+\begin{DoxyParamCaption}
+\item[{int}]{var, }
+\item[{{\bf C\-N\-F}}]{impl}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearningImplExtractor_af747a4869a3ca8a8e77e39c435b94ce8}
+
+
+Creates a \hyperlink{classCNF}{C\-N\-F} that assigns a variable to the result of some other \hyperlink{classCNF}{C\-N\-F}. 
+
+This method creates a \hyperlink{classCNF}{C\-N\-F} that for (var $<$-\/$>$ impl), where var is a variable and impl is a \hyperlink{classCNF}{C\-N\-F}. It is used to say that a certain control signal is now defined by a function that has been computed in \hyperlink{classCNF}{C\-N\-F} form.
+
+
+\begin{DoxyParams}{Parameters}
+{\em var} & The variable to set equal to the result of the \hyperlink{classCNF}{C\-N\-F} impl. \\
+\hline
+{\em impl} & The \hyperlink{classCNF}{C\-N\-F} that should define the value of var. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classCNF}{C\-N\-F} representation of (var $<$-\/$>$ impl). 
+\end{DoxyReturn}
+
+
+Definition at line 1577 of file Learning\-Impl\-Extractor.\-cpp.
+
+
+
+References C\-N\-F\-::add\-Clause(), C\-N\-F\-::add\-C\-N\-F(), C\-N\-F\-::get\-Clauses(), C\-N\-F\-::negate(), and C\-N\-F\-::swap\-With().
+
+
+
+Referenced by run\-Learning\-Jiang\-S\-A\-T(), run\-Learning\-Jiang\-S\-A\-T\-Inc1(), run\-Learning\-Jiang\-S\-A\-T\-Inc2(), run\-Learning\-Jiang\-S\-A\-T\-Tmp(), run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), run\-Learning\-Q\-B\-F(), and run\-Learning\-Q\-B\-F\-Inc().
+
+\hypertarget{classLearningImplExtractor_ae491299fffa2b1dcb6ccce010b0fc5f7}{\index{Learning\-Impl\-Extractor@{Learning\-Impl\-Extractor}!make\-Eq2@{make\-Eq2}}
+\index{make\-Eq2@{make\-Eq2}!LearningImplExtractor@{Learning\-Impl\-Extractor}}
+\subsubsection[{make\-Eq2}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F} Learning\-Impl\-Extractor\-::make\-Eq2 (
+\begin{DoxyParamCaption}
+\item[{int}]{var, }
+\item[{{\bf C\-N\-F}}]{impl}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearningImplExtractor_ae491299fffa2b1dcb6ccce010b0fc5f7}
+
+
+An alternative implementation of \hyperlink{classLearningImplExtractor_af747a4869a3ca8a8e77e39c435b94ce8}{make\-Eq}, which seems to be slower. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var} & The variable to set equal to the result of the \hyperlink{classCNF}{C\-N\-F} impl. \\
+\hline
+{\em impl} & The \hyperlink{classCNF}{C\-N\-F} that should define the value of var. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classCNF}{C\-N\-F} representation of (var $<$-\/$>$ impl). 
+\end{DoxyReturn}
+
+
+Definition at line 1614 of file Learning\-Impl\-Extractor.\-cpp.
+
+
+
+References C\-N\-F\-::add2\-Lit\-Clause(), C\-N\-F\-::add3\-Lit\-Clause(), C\-N\-F\-::add\-Clause(), Var\-Manager\-::create\-Fresh\-Tmp\-Var(), C\-N\-F\-::get\-Clauses(), and Var\-Manager\-::instance().
+
+\hypertarget{classLearningImplExtractor_a25260410178b107783cbc10fdf69c52d}{\index{Learning\-Impl\-Extractor@{Learning\-Impl\-Extractor}!make\-Or@{make\-Or}}
+\index{make\-Or@{make\-Or}!LearningImplExtractor@{Learning\-Impl\-Extractor}}
+\subsubsection[{make\-Or}]{\setlength{\rightskip}{0pt plus 5cm}int Learning\-Impl\-Extractor\-::make\-Or (
+\begin{DoxyParamCaption}
+\item[{int}]{in1, }
+\item[{int}]{in2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearningImplExtractor_a25260410178b107783cbc10fdf69c52d}
+
+
+Creates the O\-R between two A\-I\-G\-E\-R literals and returns the resulting literal. 
+
+This method extends the \hyperlink{classLearningImplExtractor_a17f7c47bf3e84fa5a70930e01a18deb2}{standalone\-\_\-circuit\-\_\-} with logic to compute the O\-R between two A\-I\-G\-E\-R literals. The literal that represents the result of the O\-R is returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in1} & The first operand of the O\-R\-: an A\-I\-G\-E\-R literal from \hyperlink{classLearningImplExtractor_a17f7c47bf3e84fa5a70930e01a18deb2}{standalone\-\_\-circuit\-\_\-}. \\
+\hline
+{\em in2} & The second operand of the O\-R\-: an A\-I\-G\-E\-R literal from \hyperlink{classLearningImplExtractor_a17f7c47bf3e84fa5a70930e01a18deb2}{standalone\-\_\-circuit\-\_\-}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The literal that represents the result of the O\-R. 
+\end{DoxyReturn}
+
+
+Definition at line 1720 of file Learning\-Impl\-Extractor.\-cpp.
+
+
+
+References next\-\_\-free\-\_\-aig\-\_\-lit\-\_\-, and standalone\-\_\-circuit\-\_\-.
+
+
+
+Referenced by add\-To\-Stand\-Alone\-Aiger().
+
+\hypertarget{classLearningImplExtractor_adfa15ed8fb085576deb3d15a55fe32e0}{\index{Learning\-Impl\-Extractor@{Learning\-Impl\-Extractor}!operator=@{operator=}}
+\index{operator=@{operator=}!LearningImplExtractor@{Learning\-Impl\-Extractor}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Learning\-Impl\-Extractor}\& Learning\-Impl\-Extractor\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Learning\-Impl\-Extractor} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classLearningImplExtractor_adfa15ed8fb085576deb3d15a55fe32e0}
+
+
+Assignment operator. 
+
+The assignment operator is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the assignment, i.\-e, $\ast$this. 
+\end{DoxyReturn}
+\hypertarget{classCNFImplExtractor_a58a4e5021d0ef9c4190a5be74fb5a83e}{\index{Learning\-Impl\-Extractor@{Learning\-Impl\-Extractor}!optimize\-With\-A\-B\-C@{optimize\-With\-A\-B\-C}}
+\index{optimize\-With\-A\-B\-C@{optimize\-With\-A\-B\-C}!LearningImplExtractor@{Learning\-Impl\-Extractor}}
+\subsubsection[{optimize\-With\-A\-B\-C}]{\setlength{\rightskip}{0pt plus 5cm}aiger $\ast$ C\-N\-F\-Impl\-Extractor\-::optimize\-With\-A\-B\-C (
+\begin{DoxyParamCaption}
+\item[{aiger $\ast$}]{circuit}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classCNFImplExtractor_a58a4e5021d0ef9c4190a5be74fb5a83e}
+
+
+Optimizes a combinatorial A\-I\-G\-E\-R circuit with A\-B\-C. 
+
+\begin{DoxyNote}{Note}
+The returned structure must be deleted by the caller. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em circuit} & The circuit to optimize. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The optimized version of the circuit. The returned aiger structure must be deleted by the caller. 
+\end{DoxyReturn}
+
+
+Definition at line 112 of file C\-N\-F\-Impl\-Extractor.\-cpp.
+
+
+
+References Options\-::get\-T\-P\-Dir\-Name(), Options\-::get\-Unique\-Tmp\-File\-Name(), Options\-::instance(), and M\-A\-S\-S\-E\-R\-T.
+
+
+
+Referenced by run(), and Q\-B\-F\-Cert\-Impl\-Extractor\-::run().
+
+\hypertarget{classLearningImplExtractor_ad13a1fc00465f95812df4673743e16eb}{\index{Learning\-Impl\-Extractor@{Learning\-Impl\-Extractor}!run@{run}}
+\index{run@{run}!LearningImplExtractor@{Learning\-Impl\-Extractor}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void Learning\-Impl\-Extractor\-::run (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{winning\-\_\-region, }
+\item[{const {\bf C\-N\-F} \&}]{neg\-\_\-winning\-\_\-region}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classLearningImplExtractor_ad13a1fc00465f95812df4673743e16eb}
+
+
+Runs this circuit extractor. 
+
+Depending on the selected method (using the command --circuit-\/mode or -\/n), one of the methods run\-Learning\-X is called with appropriate parameters. Finally, A\-B\-C is used to optimize the resulting circuit, and the implementation is inserted into the specification (as required by the S\-Y\-N\-T\-Comp rules).
+
+
+\begin{DoxyParams}{Parameters}
+{\em winning\-\_\-region} & The winning region from which the circuit should be extracted. \\
+\hline
+{\em neg\-\_\-winning\-\_\-region} & The negation of the winning region. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classCNFImplExtractor_a8251ce58869f9f8ded159f1fa07ab334}{C\-N\-F\-Impl\-Extractor}.
+
+
+
+Definition at line 128 of file Learning\-Impl\-Extractor.\-cpp.
+
+
+
+References C\-N\-F\-Impl\-Extractor\-::insert\-Into\-Spec(), Options\-::instance(), Learning\-Extractor\-Statistics\-::notify\-After\-A\-B\-C(), Learning\-Extractor\-Statistics\-::notify\-Before\-A\-B\-C(), Learning\-Extractor\-Statistics\-::notify\-Final\-Size(), C\-N\-F\-Impl\-Extractor\-::optimize\-With\-A\-B\-C(), run\-Learning\-Jiang\-S\-A\-T(), run\-Learning\-Jiang\-S\-A\-T\-Inc1(), run\-Learning\-Jiang\-S\-A\-T\-Inc2(), run\-Learning\-Jiang\-S\-A\-T\-Tmp(), run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), run\-Learning\-Q\-B\-F(), run\-Learning\-Q\-B\-F\-Inc(), standalone\-\_\-circuit\-\_\-, and statistics.
+
+\hypertarget{classLearningImplExtractor_a39668b94568dde5459d979684d99253f}{\index{Learning\-Impl\-Extractor@{Learning\-Impl\-Extractor}!run\-Learning\-Jiang\-S\-A\-T@{run\-Learning\-Jiang\-S\-A\-T}}
+\index{run\-Learning\-Jiang\-S\-A\-T@{run\-Learning\-Jiang\-S\-A\-T}!LearningImplExtractor@{Learning\-Impl\-Extractor}}
+\subsubsection[{run\-Learning\-Jiang\-S\-A\-T}]{\setlength{\rightskip}{0pt plus 5cm}void Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{win\-\_\-region, }
+\item[{const {\bf C\-N\-F} \&}]{neg\-\_\-win\-\_\-region, }
+\item[{bool}]{second\-\_\-run = {\ttfamily false}, }
+\item[{bool}]{min\-\_\-cores = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearningImplExtractor_a39668b94568dde5459d979684d99253f}
+
+
+Uses S\-A\-T-\/based \hyperlink{classCNF}{C\-N\-F} learning with Jiang-\/resubstitution. 
+
+This method also implements the same \hyperlink{classCNF}{C\-N\-F} learning algorithm as \hyperlink{classLearningImplExtractor_a009b5382cc9a65cd7c7dfbbc73815bac}{run\-Learning\-Q\-B\-F}. The difference is that this method uses a S\-A\-T solver instead of a Q\-B\-F solver. In order to avoid solving a quantifier alternation, the method handles output signals just like inputs (temporarily) as explained in the paper\-: Jie-\/\-Hong Roland Jiang, Hsuan-\/\-Po Lin, Wei-\/\-Lun Hung\-: Interpolating functions from large Boolean relations. I\-C\-C\-A\-D 2009\-: 779-\/784. Once a working solution has been computed, this method can also run a second minimization round, where it tries to simplify the solution further. This second optimization round can be enabled or disabled.
+
+
+\begin{DoxyParams}{Parameters}
+{\em win\-\_\-region} & The winning region from which the circuit should be extracted. \\
+\hline
+{\em neg\-\_\-win\-\_\-region} & The negation of the winning region. \\
+\hline
+{\em second\-\_\-run} & A flag to control whether a second optimization round should be performed after a working solution is already available. This costs time, but can lead to smaller circuits. If the parameter is omitted, then this step will N\-O\-T be performed. Personal feeling\-: it usually does not pay off. \\
+\hline
+{\em min\-\_\-cores} & A flag that controls whether the S\-A\-T solver should compute minimal unsatisfiable cores, or just regular ones. Especially if the second\-\_\-run flag is true, it may make sense to set this flag to false to be faster in the first round. However, often having min\-\_\-cores=false makes things slower (and leads to larger circuits). That's why true is the default value. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 359 of file Learning\-Impl\-Extractor.\-cpp.
+
+
+
+References C\-N\-F\-::add\-C\-N\-F(), C\-N\-F\-::add\-Neg\-Cube\-As\-Clause(), add\-To\-Stand\-Alone\-Aiger(), Var\-Info\-::\-C\-T\-R\-L, Sat\-Solver\-::do\-Min\-Cores(), Var\-Manager\-::get\-Max\-C\-N\-F\-Var(), Options\-::get\-S\-A\-T\-Solver\-Extr(), A\-I\-G2\-C\-N\-F\-::get\-Trans(), Var\-Manager\-::get\-Vars\-Of\-Type(), Sat\-Solver\-::inc\-Add\-C\-N\-F(), Sat\-Solver\-::inc\-Add\-Neg\-Cube\-As\-Clause(), Sat\-Solver\-::inc\-Add\-Unit\-Clause(), Sat\-Solver\-::inc\-Is\-Sat(), Sat\-Solver\-::inc\-Is\-Sat\-Model\-Or\-Core(), Var\-Manager\-::instance(), Options\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), ipc\-\_\-, make\-Eq(), M\-A\-S\-S\-E\-R\-T, Utils\-::negate\-Literals(), Learning\-Extractor\-Statistics\-::notify\-After\-Clause\-Comp(), Learning\-Extractor\-Statistics\-::notify\-After\-Clause\-Min(), Learning\-Extractor\-Statistics\-::notify\-After\-Ctrl\-Signal(), Learning\-Extractor\-Statistics\-::notify\-Before\-Clause\-Comp(), Learning\-Extractor\-Statistics\-::notify\-Before\-Clause\-Min(), Learning\-Extractor\-Statistics\-::notify\-Before\-Ctrl\-Signal(), Utils\-::remove(), C\-N\-F\-::rename\-Vars(), C\-N\-F\-::set\-Var\-Value(), Sat\-Solver\-::start\-Incremental\-Session(), statistics, and C\-N\-F\-::swap\-Present\-To\-Next().
+
+
+
+Referenced by run().
+
+\hypertarget{classLearningImplExtractor_a036ab2a3921696d31fb55139427d2114}{\index{Learning\-Impl\-Extractor@{Learning\-Impl\-Extractor}!run\-Learning\-Jiang\-S\-A\-T\-Inc1@{run\-Learning\-Jiang\-S\-A\-T\-Inc1}}
+\index{run\-Learning\-Jiang\-S\-A\-T\-Inc1@{run\-Learning\-Jiang\-S\-A\-T\-Inc1}!LearningImplExtractor@{Learning\-Impl\-Extractor}}
+\subsubsection[{run\-Learning\-Jiang\-S\-A\-T\-Inc1}]{\setlength{\rightskip}{0pt plus 5cm}void Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1 (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{win\-\_\-region, }
+\item[{const {\bf C\-N\-F} \&}]{neg\-\_\-win\-\_\-region, }
+\item[{bool}]{second\-\_\-run = {\ttfamily false}, }
+\item[{bool}]{min\-\_\-cores = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearningImplExtractor_a036ab2a3921696d31fb55139427d2114}
+
+
+Like \hyperlink{classLearningImplExtractor_a39668b94568dde5459d979684d99253f}{run\-Learning\-Jiang\-S\-A\-T} but with more aggressive incremental solving. 
+
+The method \hyperlink{classLearningImplExtractor_a39668b94568dde5459d979684d99253f}{run\-Learning\-Jiang\-S\-A\-T} uses incremental solving, but only it has two different solver instances per control signal\-: one for computing problematic situations, and one for generalizing them using an unsatisfiable core computation. This method uses incremental soling in a more aggressive way. It uses only two solver instances, one for computing problematic situations across all control signals, and one for generalizing them across all iterations. This is achieved by introducing activation variables that activate or deactivate different parts of the formula, depending on the control signal we are currently synthesizing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em win\-\_\-region} & The winning region from which the circuit should be extracted. \\
+\hline
+{\em neg\-\_\-win\-\_\-region} & The negation of the winning region. \\
+\hline
+{\em second\-\_\-run} & A flag to control whether a second optimization round should be performed after a working solution is already available. This costs time, but can lead to smaller circuits. If the parameter is omitted, then this step will N\-O\-T be performed. Personal feeling\-: it usually does not pay off. \\
+\hline
+{\em min\-\_\-cores} & A flag that controls whether the S\-A\-T solver should compute minimal unsatisfiable cores, or just regular ones. Especially if the second\-\_\-run flag is true, it may make sense to set this flag to false to be faster in the first round. However, often having min\-\_\-cores=false makes things slower (and leads to larger circuits). That's why true is the default value. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1172 of file Learning\-Impl\-Extractor.\-cpp.
+
+
+
+References C\-N\-F\-::add2\-Lit\-Clause(), C\-N\-F\-::add3\-Lit\-Clause(), C\-N\-F\-::add\-Clause(), C\-N\-F\-::add\-C\-N\-F(), C\-N\-F\-::add\-Neg\-Cube\-As\-Clause(), add\-To\-Stand\-Alone\-Aiger(), Var\-Manager\-::create\-Fresh\-Tmp\-Var(), Var\-Info\-::\-C\-T\-R\-L, Sat\-Solver\-::do\-Min\-Cores(), Var\-Manager\-::get\-Max\-C\-N\-F\-Var(), Options\-::get\-S\-A\-T\-Solver\-Extr(), Var\-Manager\-::get\-Vars\-Of\-Type(), Sat\-Solver\-::inc\-Add\-C\-N\-F(), Sat\-Solver\-::inc\-Add\-Neg\-Cube\-As\-Clause(), Sat\-Solver\-::inc\-Is\-Sat(), Sat\-Solver\-::inc\-Is\-Sat\-Model\-Or\-Core(), Var\-Manager\-::instance(), Options\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), ip\-\_\-, ipc\-\_\-, make\-Eq(), M\-A\-S\-S\-E\-R\-T, Utils\-::negate\-Literals(), Learning\-Extractor\-Statistics\-::notify\-After\-Clause\-Comp(), Learning\-Extractor\-Statistics\-::notify\-After\-Clause\-Min(), Learning\-Extractor\-Statistics\-::notify\-After\-Ctrl\-Signal(), Learning\-Extractor\-Statistics\-::notify\-Before\-Clause\-Comp(), Learning\-Extractor\-Statistics\-::notify\-Before\-Clause\-Min(), Learning\-Extractor\-Statistics\-::notify\-Before\-Ctrl\-Signal(), Utils\-::remove(), C\-N\-F\-::rename\-Vars(), C\-N\-F\-::set\-Var\-Value(), Sat\-Solver\-::start\-Incremental\-Session(), statistics, and C\-N\-F\-::swap\-Present\-To\-Next().
+
+
+
+Referenced by run().
+
+\hypertarget{classLearningImplExtractor_a2ee6e07a5c9907195c1af8cba613dbd1}{\index{Learning\-Impl\-Extractor@{Learning\-Impl\-Extractor}!run\-Learning\-Jiang\-S\-A\-T\-Inc2@{run\-Learning\-Jiang\-S\-A\-T\-Inc2}}
+\index{run\-Learning\-Jiang\-S\-A\-T\-Inc2@{run\-Learning\-Jiang\-S\-A\-T\-Inc2}!LearningImplExtractor@{Learning\-Impl\-Extractor}}
+\subsubsection[{run\-Learning\-Jiang\-S\-A\-T\-Inc2}]{\setlength{\rightskip}{0pt plus 5cm}void Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2 (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{win\-\_\-region, }
+\item[{const {\bf C\-N\-F} \&}]{neg\-\_\-win\-\_\-region, }
+\item[{bool}]{second\-\_\-run = {\ttfamily false}, }
+\item[{bool}]{min\-\_\-cores = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearningImplExtractor_a2ee6e07a5c9907195c1af8cba613dbd1}
+
+
+Like \hyperlink{classLearningImplExtractor_a036ab2a3921696d31fb55139427d2114}{run\-Learning\-Jiang\-S\-A\-T\-Inc1} but with even more aggressive incremental solving. 
+
+While the method \hyperlink{classLearningImplExtractor_a036ab2a3921696d31fb55139427d2114}{run\-Learning\-Jiang\-S\-A\-T\-Inc1} uses two solver instances to compute all control signals, this method uses only one instance. This is achieved by introducing even more activation variables.
+
+
+\begin{DoxyParams}{Parameters}
+{\em win\-\_\-region} & The winning region from which the circuit should be extracted. \\
+\hline
+{\em neg\-\_\-win\-\_\-region} & The negation of the winning region. \\
+\hline
+{\em second\-\_\-run} & A flag to control whether a second optimization round should be performed after a working solution is already available. This costs time, but can lead to smaller circuits. If the parameter is omitted, then this step will N\-O\-T be performed. Personal feeling\-: it usually does not pay off. \\
+\hline
+{\em min\-\_\-cores} & A flag that controls whether the S\-A\-T solver should compute minimal unsatisfiable cores, or just regular ones. Especially if the second\-\_\-run flag is true, it may make sense to set this flag to false to be faster in the first round. However, often having min\-\_\-cores=false makes things slower (and leads to larger circuits). That's why true is the default value. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1379 of file Learning\-Impl\-Extractor.\-cpp.
+
+
+
+References C\-N\-F\-::add2\-Lit\-Clause(), C\-N\-F\-::add3\-Lit\-Clause(), C\-N\-F\-::add\-Clause(), C\-N\-F\-::add\-C\-N\-F(), C\-N\-F\-::add\-Neg\-Cube\-As\-Clause(), add\-To\-Stand\-Alone\-Aiger(), Var\-Manager\-::create\-Fresh\-Tmp\-Var(), Var\-Info\-::\-C\-T\-R\-L, Sat\-Solver\-::do\-Min\-Cores(), Var\-Manager\-::get\-Max\-C\-N\-F\-Var(), Options\-::get\-S\-A\-T\-Solver\-Extr(), Var\-Manager\-::get\-Vars\-Of\-Type(), Sat\-Solver\-::inc\-Add\-C\-N\-F(), Sat\-Solver\-::inc\-Add\-Neg\-Cube\-As\-Clause(), Sat\-Solver\-::inc\-Is\-Sat(), Sat\-Solver\-::inc\-Is\-Sat\-Model\-Or\-Core(), Var\-Manager\-::instance(), Options\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), ip\-\_\-, ipc\-\_\-, make\-Eq(), M\-A\-S\-S\-E\-R\-T, Utils\-::negate\-Literals(), Learning\-Extractor\-Statistics\-::notify\-After\-Clause\-Comp(), Learning\-Extractor\-Statistics\-::notify\-After\-Clause\-Min(), Learning\-Extractor\-Statistics\-::notify\-After\-Ctrl\-Signal(), Learning\-Extractor\-Statistics\-::notify\-Before\-Clause\-Comp(), Learning\-Extractor\-Statistics\-::notify\-Before\-Clause\-Min(), Learning\-Extractor\-Statistics\-::notify\-Before\-Ctrl\-Signal(), Utils\-::remove(), C\-N\-F\-::rename\-Vars(), C\-N\-F\-::set\-Var\-Value(), Sat\-Solver\-::start\-Incremental\-Session(), statistics, and C\-N\-F\-::swap\-Present\-To\-Next().
+
+
+
+Referenced by run().
+
+\hypertarget{classLearningImplExtractor_ad214c79ae2c0e56a47ad97ad2e5c3765}{\index{Learning\-Impl\-Extractor@{Learning\-Impl\-Extractor}!run\-Learning\-Jiang\-S\-A\-T\-Tmp@{run\-Learning\-Jiang\-S\-A\-T\-Tmp}}
+\index{run\-Learning\-Jiang\-S\-A\-T\-Tmp@{run\-Learning\-Jiang\-S\-A\-T\-Tmp}!LearningImplExtractor@{Learning\-Impl\-Extractor}}
+\subsubsection[{run\-Learning\-Jiang\-S\-A\-T\-Tmp}]{\setlength{\rightskip}{0pt plus 5cm}void Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{win\-\_\-region, }
+\item[{const {\bf C\-N\-F} \&}]{neg\-\_\-win\-\_\-region, }
+\item[{bool}]{second\-\_\-run = {\ttfamily false}, }
+\item[{bool}]{min\-\_\-cores = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearningImplExtractor_ad214c79ae2c0e56a47ad97ad2e5c3765}
+
+
+Uses S\-A\-T-\/based \hyperlink{classCNF}{C\-N\-F} learning with Jiang-\/resubstitution and temporary variables. 
+
+This method is very similar to \hyperlink{classLearningImplExtractor_a39668b94568dde5459d979684d99253f}{run\-Learning\-Jiang\-S\-A\-T}. The only difference is that this method also allows control signals to depend on temporary variables from the original input file (the specification), as long as these temporary variables do not depend on the respective control signal. Since the rules for S\-Y\-N\-T\-Comp do not allow such dependencies in the final output, they are removed again simply by copying the respective parts of the original input file before producing the output file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em win\-\_\-region} & The winning region from which the circuit should be extracted. \\
+\hline
+{\em neg\-\_\-win\-\_\-region} & The negation of the winning region. \\
+\hline
+{\em second\-\_\-run} & A flag to control whether a second optimization round should be performed after a working solution is already available. This costs time, but can lead to smaller circuits. If the parameter is omitted, then this step will N\-O\-T be performed. Personal feeling\-: it usually does not pay off. \\
+\hline
+{\em min\-\_\-cores} & A flag that controls whether the S\-A\-T solver should compute minimal unsatisfiable cores, or just regular ones. Especially if the second\-\_\-run flag is true, it may make sense to set this flag to false to be faster in the first round. However, often having min\-\_\-cores=false makes things slower (and leads to larger circuits). That's why true is the default value. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 527 of file Learning\-Impl\-Extractor.\-cpp.
+
+
+
+References C\-N\-F\-::add\-C\-N\-F(), C\-N\-F\-::add\-Neg\-Cube\-As\-Clause(), add\-To\-Stand\-Alone\-Aiger(), Utils\-::contains(), Var\-Info\-::\-C\-T\-R\-L, Sat\-Solver\-::do\-Min\-Cores(), Var\-Manager\-::get\-Max\-C\-N\-F\-Var(), Options\-::get\-S\-A\-T\-Solver\-Extr(), A\-I\-G2\-C\-N\-F\-::get\-Tmp\-Deps\-Trans(), A\-I\-G2\-C\-N\-F\-::get\-Trans(), Var\-Manager\-::get\-Vars\-Of\-Type(), Sat\-Solver\-::inc\-Add\-C\-N\-F(), Sat\-Solver\-::inc\-Add\-Neg\-Cube\-As\-Clause(), Sat\-Solver\-::inc\-Add\-Unit\-Clause(), Sat\-Solver\-::inc\-Is\-Sat(), Sat\-Solver\-::inc\-Is\-Sat\-Model\-Or\-Core(), insert\-Missing\-And\-From\-Trans(), Var\-Manager\-::instance(), Options\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), ipc\-\_\-, make\-Eq(), M\-A\-S\-S\-E\-R\-T, Utils\-::negate\-Literals(), Learning\-Extractor\-Statistics\-::notify\-After\-Clause\-Comp(), Learning\-Extractor\-Statistics\-::notify\-After\-Clause\-Min(), Learning\-Extractor\-Statistics\-::notify\-After\-Ctrl\-Signal(), Learning\-Extractor\-Statistics\-::notify\-Before\-Clause\-Comp(), Learning\-Extractor\-Statistics\-::notify\-Before\-Clause\-Min(), Learning\-Extractor\-Statistics\-::notify\-Before\-Ctrl\-Signal(), Utils\-::randomize(), Utils\-::remove(), C\-N\-F\-::rename\-Vars(), C\-N\-F\-::set\-Var\-Value(), Sat\-Solver\-::start\-Incremental\-Session(), statistics, and C\-N\-F\-::swap\-Present\-To\-Next().
+
+
+
+Referenced by run().
+
+\hypertarget{classLearningImplExtractor_ad41484b6bb6da18e50d31830a18e63e9}{\index{Learning\-Impl\-Extractor@{Learning\-Impl\-Extractor}!run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl@{run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl}}
+\index{run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl@{run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl}!LearningImplExtractor@{Learning\-Impl\-Extractor}}
+\subsubsection[{run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl}]{\setlength{\rightskip}{0pt plus 5cm}void Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{win\-\_\-region, }
+\item[{const {\bf C\-N\-F} \&}]{neg\-\_\-win\-\_\-region, }
+\item[{bool}]{second\-\_\-run = {\ttfamily false}, }
+\item[{bool}]{min\-\_\-cores = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearningImplExtractor_ad41484b6bb6da18e50d31830a18e63e9}
+
+
+Like \hyperlink{classLearningImplExtractor_ad214c79ae2c0e56a47ad97ad2e5c3765}{run\-Learning\-Jiang\-S\-A\-T\-Tmp}, but also allows dependencies on control signals. 
+
+This method is very similar to \hyperlink{classLearningImplExtractor_ad214c79ae2c0e56a47ad97ad2e5c3765}{run\-Learning\-Jiang\-S\-A\-T\-Tmp}. The only difference is that this method also even more dependencies between control signals. If a certain already computed control signal A does not depend on a yet to compute control signal B, then B is allowed to depend on A.
+
+
+\begin{DoxyParams}{Parameters}
+{\em win\-\_\-region} & The winning region from which the circuit should be extracted. \\
+\hline
+{\em neg\-\_\-win\-\_\-region} & The negation of the winning region. \\
+\hline
+{\em second\-\_\-run} & A flag to control whether a second optimization round should be performed after a working solution is already available. This costs time, but can lead to smaller circuits. If the parameter is omitted, then this step will N\-O\-T be performed. Personal feeling\-: it usually does not pay off. \\
+\hline
+{\em min\-\_\-cores} & A flag that controls whether the S\-A\-T solver should compute minimal unsatisfiable cores, or just regular ones. Especially if the second\-\_\-run flag is true, it may make sense to set this flag to false to be faster in the first round. However, often having min\-\_\-cores=false makes things slower (and leads to larger circuits). That's why true is the default value. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 715 of file Learning\-Impl\-Extractor.\-cpp.
+
+
+
+References C\-N\-F\-::add\-C\-N\-F(), C\-N\-F\-::add\-Neg\-Cube\-As\-Clause(), add\-To\-Stand\-Alone\-Aiger(), Utils\-::contains(), C\-N\-F\-::contains(), Var\-Info\-::\-C\-T\-R\-L, D\-A\-S\-S\-E\-R\-T, Sat\-Solver\-::do\-Min\-Cores(), Var\-Manager\-::get\-Max\-C\-N\-F\-Var(), Options\-::get\-S\-A\-T\-Solver\-Extr(), A\-I\-G2\-C\-N\-F\-::get\-Tmp\-Deps\-Trans(), A\-I\-G2\-C\-N\-F\-::get\-Trans(), Var\-Manager\-::get\-Vars\-Of\-Type(), Sat\-Solver\-::inc\-Add\-C\-N\-F(), Sat\-Solver\-::inc\-Add\-Neg\-Cube\-As\-Clause(), Sat\-Solver\-::inc\-Add\-Unit\-Clause(), Sat\-Solver\-::inc\-Is\-Sat(), Sat\-Solver\-::inc\-Is\-Sat\-Model\-Or\-Core(), insert\-Missing\-And\-From\-Trans(), Var\-Manager\-::instance(), Options\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), ipc\-\_\-, make\-Eq(), M\-A\-S\-S\-E\-R\-T, Utils\-::negate\-Literals(), Learning\-Extractor\-Statistics\-::notify\-After\-Clause\-Comp(), Learning\-Extractor\-Statistics\-::notify\-After\-Clause\-Min(), Learning\-Extractor\-Statistics\-::notify\-After\-Ctrl\-Signal(), Learning\-Extractor\-Statistics\-::notify\-Before\-Clause\-Comp(), Learning\-Extractor\-Statistics\-::notify\-Before\-Clause\-Min(), Learning\-Extractor\-Statistics\-::notify\-Before\-Ctrl\-Signal(), Utils\-::randomize(), Utils\-::remove(), C\-N\-F\-::rename\-Vars(), C\-N\-F\-::set\-Var\-Value(), Sat\-Solver\-::start\-Incremental\-Session(), statistics, and C\-N\-F\-::swap\-Present\-To\-Next().
+
+
+
+Referenced by run().
+
+\hypertarget{classLearningImplExtractor_a5ce27f574afbb4504b7acd82196314d7}{\index{Learning\-Impl\-Extractor@{Learning\-Impl\-Extractor}!run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2@{run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2}}
+\index{run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2@{run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2}!LearningImplExtractor@{Learning\-Impl\-Extractor}}
+\subsubsection[{run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2}]{\setlength{\rightskip}{0pt plus 5cm}void Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2 (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{win\-\_\-region, }
+\item[{const {\bf C\-N\-F} \&}]{neg\-\_\-win\-\_\-region, }
+\item[{bool}]{second\-\_\-run = {\ttfamily false}, }
+\item[{bool}]{min\-\_\-cores = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearningImplExtractor_a5ce27f574afbb4504b7acd82196314d7}
+
+
+Combines \hyperlink{classLearningImplExtractor_ad41484b6bb6da18e50d31830a18e63e9}{run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl} and run\-Learning\-Jiang\-S\-A\-T\-Inc2. 
+
+This method is like \hyperlink{classLearningImplExtractor_ad41484b6bb6da18e50d31830a18e63e9}{run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl}, but uses incremental solving more aggressively, just like \hyperlink{classLearningImplExtractor_a2ee6e07a5c9907195c1af8cba613dbd1}{run\-Learning\-Jiang\-S\-A\-T\-Inc2}. This is achieved by introducing acitvation variables that enable or disable different parts of the formula.
+
+
+\begin{DoxyParams}{Parameters}
+{\em win\-\_\-region} & The winning region from which the circuit should be extracted. \\
+\hline
+{\em neg\-\_\-win\-\_\-region} & The negation of the winning region. \\
+\hline
+{\em second\-\_\-run} & A flag to control whether a second optimization round should be performed after a working solution is already available. This costs time, but can lead to smaller circuits. If the parameter is omitted, then this step will N\-O\-T be performed. Personal feeling\-: it usually does not pay off. \\
+\hline
+{\em min\-\_\-cores} & A flag that controls whether the S\-A\-T solver should compute minimal unsatisfiable cores, or just regular ones. Especially if the second\-\_\-run flag is true, it may make sense to set this flag to false to be faster in the first round. However, often having min\-\_\-cores=false makes things slower (and leads to larger circuits). That's why true is the default value. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 947 of file Learning\-Impl\-Extractor.\-cpp.
+
+
+
+References C\-N\-F\-::add2\-Lit\-Clause(), C\-N\-F\-::add\-C\-N\-F(), C\-N\-F\-::add\-Neg\-Cube\-As\-Clause(), add\-To\-Stand\-Alone\-Aiger(), Utils\-::contains(), C\-N\-F\-::contains(), Var\-Info\-::\-C\-T\-R\-L, D\-A\-S\-S\-E\-R\-T, Sat\-Solver\-::do\-Min\-Cores(), Var\-Manager\-::get\-Max\-C\-N\-F\-Var(), Options\-::get\-S\-A\-T\-Solver\-Extr(), A\-I\-G2\-C\-N\-F\-::get\-Tmp\-Deps\-Trans(), A\-I\-G2\-C\-N\-F\-::get\-Trans(), Var\-Manager\-::get\-Vars\-Of\-Type(), Sat\-Solver\-::inc\-Add\-C\-N\-F(), Sat\-Solver\-::inc\-Add\-Neg\-Cube\-As\-Clause(), Sat\-Solver\-::inc\-Is\-Sat(), Sat\-Solver\-::inc\-Is\-Sat\-Model\-Or\-Core(), insert\-Missing\-And\-From\-Trans(), Var\-Manager\-::instance(), Options\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), ipc\-\_\-, make\-Eq(), M\-A\-S\-S\-E\-R\-T, Utils\-::negate\-Literals(), Learning\-Extractor\-Statistics\-::notify\-After\-Clause\-Comp(), Learning\-Extractor\-Statistics\-::notify\-After\-Clause\-Min(), Learning\-Extractor\-Statistics\-::notify\-After\-Ctrl\-Signal(), Learning\-Extractor\-Statistics\-::notify\-Before\-Clause\-Comp(), Learning\-Extractor\-Statistics\-::notify\-Before\-Clause\-Min(), Learning\-Extractor\-Statistics\-::notify\-Before\-Ctrl\-Signal(), Utils\-::randomize(), Utils\-::remove(), C\-N\-F\-::rename\-Vars(), C\-N\-F\-::set\-Var\-Value(), Sat\-Solver\-::start\-Incremental\-Session(), statistics, and C\-N\-F\-::swap\-Present\-To\-Next().
+
+
+
+Referenced by run().
+
+\hypertarget{classLearningImplExtractor_a009b5382cc9a65cd7c7dfbbc73815bac}{\index{Learning\-Impl\-Extractor@{Learning\-Impl\-Extractor}!run\-Learning\-Q\-B\-F@{run\-Learning\-Q\-B\-F}}
+\index{run\-Learning\-Q\-B\-F@{run\-Learning\-Q\-B\-F}!LearningImplExtractor@{Learning\-Impl\-Extractor}}
+\subsubsection[{run\-Learning\-Q\-B\-F}]{\setlength{\rightskip}{0pt plus 5cm}void Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{win\-\_\-region, }
+\item[{const {\bf C\-N\-F} \&}]{neg\-\_\-win\-\_\-region}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearningImplExtractor_a009b5382cc9a65cd7c7dfbbc73815bac}
+
+
+Implements circuit extraction with non-\/incremental Q\-B\-F-\/based \hyperlink{classCNF}{C\-N\-F} learning. 
+
+This is a more or less straightforward implementation of the \hyperlink{classCNF}{C\-N\-F} learning method from the paper Ruediger Ehlers, Robert Koenighofer, Georg Hofferek\-: Symbolically synthesizing small circuits. F\-M\-C\-A\-D 2012\-: 91-\/100 using a Q\-B\-F solver.
+
+
+\begin{DoxyParams}{Parameters}
+{\em win\-\_\-region} & The winning region from which the circuit should be extracted. \\
+\hline
+{\em neg\-\_\-win\-\_\-region} & The negation of the winning region. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 194 of file Learning\-Impl\-Extractor.\-cpp.
+
+
+
+References Q\-B\-F\-Solver\-::\-A, C\-N\-F\-::add\-C\-N\-F(), C\-N\-F\-::add\-Cube(), C\-N\-F\-::add\-Neg\-Cube\-As\-Clause(), add\-To\-Stand\-Alone\-Aiger(), Var\-Info\-::\-C\-T\-R\-L, Q\-B\-F\-Solver\-::\-E, Var\-Manager\-::get\-Vars\-Of\-Type(), Var\-Manager\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), ip\-\_\-, Q\-B\-F\-Solver\-::is\-Sat(), Q\-B\-F\-Solver\-::is\-Sat\-Model(), make\-Eq(), Var\-Info\-::\-N\-E\-X\-T\-\_\-\-S\-T\-A\-T\-E, Learning\-Extractor\-Statistics\-::notify\-After\-Clause\-Comp(), Learning\-Extractor\-Statistics\-::notify\-After\-Clause\-Min(), Learning\-Extractor\-Statistics\-::notify\-After\-Ctrl\-Signal(), Learning\-Extractor\-Statistics\-::notify\-Before\-Clause\-Comp(), Learning\-Extractor\-Statistics\-::notify\-Before\-Clause\-Min(), Learning\-Extractor\-Statistics\-::notify\-Before\-Ctrl\-Signal(), qbf\-\_\-solver\-\_\-, Utils\-::remove(), C\-N\-F\-::set\-Var\-Value(), statistics, C\-N\-F\-::swap\-Present\-To\-Next(), and Var\-Info\-::\-T\-M\-P.
+
+
+
+Referenced by run().
+
+\hypertarget{classLearningImplExtractor_a3edc5671d6f56dea4145512385063681}{\index{Learning\-Impl\-Extractor@{Learning\-Impl\-Extractor}!run\-Learning\-Q\-B\-F\-Inc@{run\-Learning\-Q\-B\-F\-Inc}}
+\index{run\-Learning\-Q\-B\-F\-Inc@{run\-Learning\-Q\-B\-F\-Inc}!LearningImplExtractor@{Learning\-Impl\-Extractor}}
+\subsubsection[{run\-Learning\-Q\-B\-F\-Inc}]{\setlength{\rightskip}{0pt plus 5cm}void Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F\-Inc (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{win\-\_\-region, }
+\item[{const {\bf C\-N\-F} \&}]{neg\-\_\-win\-\_\-region}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearningImplExtractor_a3edc5671d6f56dea4145512385063681}
+
+
+Implements circuit extraction with incremental Q\-B\-F-\/based \hyperlink{classCNF}{C\-N\-F} learning. 
+
+This method is very similar to \hyperlink{classLearningImplExtractor_a009b5382cc9a65cd7c7dfbbc73815bac}{run\-Learning\-Q\-B\-F}. The difference is that this one uses incremental Q\-B\-F solving using Dep\-Q\-B\-F via its A\-P\-I. This method will always use Dep\-Q\-B\-F, no matter which solver the user selects via command-\/line arguments.
+
+
+\begin{DoxyParams}{Parameters}
+{\em win\-\_\-region} & The winning region from which the circuit should be extracted. \\
+\hline
+{\em neg\-\_\-win\-\_\-region} & The negation of the winning region. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 276 of file Learning\-Impl\-Extractor.\-cpp.
+
+
+
+References Q\-B\-F\-Solver\-::\-A, C\-N\-F\-::add\-C\-N\-F(), C\-N\-F\-::add\-Neg\-Cube\-As\-Clause(), add\-To\-Stand\-Alone\-Aiger(), Var\-Info\-::\-C\-T\-R\-L, Q\-B\-F\-Solver\-::\-E, Var\-Manager\-::get\-Vars\-Of\-Type(), Dep\-Q\-B\-F\-Api\-::inc\-Add\-C\-N\-F(), Dep\-Q\-B\-F\-Api\-::inc\-Add\-Neg\-Cube\-As\-Clause(), Dep\-Q\-B\-F\-Api\-::inc\-Is\-Sat\-Core(), Dep\-Q\-B\-F\-Api\-::inc\-Is\-Sat\-Model(), Var\-Manager\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), ip\-\_\-, make\-Eq(), M\-A\-S\-S\-E\-R\-T, Var\-Info\-::\-N\-E\-X\-T\-\_\-\-S\-T\-A\-T\-E, Learning\-Extractor\-Statistics\-::notify\-After\-Clause\-Comp(), Learning\-Extractor\-Statistics\-::notify\-After\-Clause\-Min(), Learning\-Extractor\-Statistics\-::notify\-After\-Ctrl\-Signal(), Learning\-Extractor\-Statistics\-::notify\-Before\-Clause\-Comp(), Learning\-Extractor\-Statistics\-::notify\-Before\-Clause\-Min(), Learning\-Extractor\-Statistics\-::notify\-Before\-Ctrl\-Signal(), Utils\-::remove(), C\-N\-F\-::set\-Var\-Value(), Dep\-Q\-B\-F\-Api\-::start\-Incremental\-Session(), statistics, C\-N\-F\-::swap\-Present\-To\-Next(), and Var\-Info\-::\-T\-M\-P.
+
+
+
+Referenced by run().
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classLearningImplExtractor_a2d096ab7181fd608d6ee033f8c9ab8d3}{\index{Learning\-Impl\-Extractor@{Learning\-Impl\-Extractor}!cnf\-\_\-var\-\_\-to\-\_\-standalone\-\_\-aig\-\_\-var\-\_\-@{cnf\-\_\-var\-\_\-to\-\_\-standalone\-\_\-aig\-\_\-var\-\_\-}}
+\index{cnf\-\_\-var\-\_\-to\-\_\-standalone\-\_\-aig\-\_\-var\-\_\-@{cnf\-\_\-var\-\_\-to\-\_\-standalone\-\_\-aig\-\_\-var\-\_\-}!LearningImplExtractor@{Learning\-Impl\-Extractor}}
+\subsubsection[{cnf\-\_\-var\-\_\-to\-\_\-standalone\-\_\-aig\-\_\-var\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ Learning\-Impl\-Extractor\-::cnf\-\_\-var\-\_\-to\-\_\-standalone\-\_\-aig\-\_\-var\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearningImplExtractor_a2d096ab7181fd608d6ee033f8c9ab8d3}
+
+
+A map from variables as they occur in C\-N\-Fs to the corresponding A\-I\-G\-E\-R literals. 
+
+This vector maps variables as they occur in C\-N\-Fs to the corresponding A\-I\-G\-E\-R literals as they occur in the \hyperlink{classLearningImplExtractor_a17f7c47bf3e84fa5a70930e01a18deb2}{standalone\-\_\-circuit\-\_\-}. Use \hyperlink{classLearningImplExtractor_a88143aa67de5be8848f643cfb2947834}{cnf\-To\-Aig} to transform literals.
+
+\begin{DoxyNote}{Note}
+The A\-I\-G\-E\-R literal numbering scheme in the \hyperlink{classLearningImplExtractor_a17f7c47bf3e84fa5a70930e01a18deb2}{standalone\-\_\-circuit\-\_\-} is different from the numbering scheme in the original specification. The reason is that we want to avoid big 'holes' of unused A\-I\-G\-E\-R literals right from the beginning. 
+\end{DoxyNote}
+
+
+Definition at line 397 of file Learning\-Impl\-Extractor.\-h.
+
+
+
+Referenced by cnf\-To\-Aig(), insert\-Missing\-And\-From\-Trans(), and Learning\-Impl\-Extractor().
+
+\hypertarget{classCNFImplExtractor_ab8be06d42fd3c4b569ec22cfcf2f508e}{\index{Learning\-Impl\-Extractor@{Learning\-Impl\-Extractor}!extraction\-\_\-cpu\-\_\-time\-\_\-@{extraction\-\_\-cpu\-\_\-time\-\_\-}}
+\index{extraction\-\_\-cpu\-\_\-time\-\_\-@{extraction\-\_\-cpu\-\_\-time\-\_\-}!LearningImplExtractor@{Learning\-Impl\-Extractor}}
+\subsubsection[{extraction\-\_\-cpu\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double C\-N\-F\-Impl\-Extractor\-::extraction\-\_\-cpu\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classCNFImplExtractor_ab8be06d42fd3c4b569ec22cfcf2f508e}
+
+
+The circuit extraction time in C\-P\-U-\/seconds. 
+
+
+
+Definition at line 145 of file C\-N\-F\-Impl\-Extractor.\-h.
+
+
+
+Referenced by C\-N\-F\-Impl\-Extractor\-::extract\-Circuit(), and C\-N\-F\-Impl\-Extractor\-::log\-Statistics().
+
+\hypertarget{classCNFImplExtractor_ae06413cf08f868357d64545b3041aa18}{\index{Learning\-Impl\-Extractor@{Learning\-Impl\-Extractor}!extraction\-\_\-real\-\_\-time\-\_\-@{extraction\-\_\-real\-\_\-time\-\_\-}}
+\index{extraction\-\_\-real\-\_\-time\-\_\-@{extraction\-\_\-real\-\_\-time\-\_\-}!LearningImplExtractor@{Learning\-Impl\-Extractor}}
+\subsubsection[{extraction\-\_\-real\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t C\-N\-F\-Impl\-Extractor\-::extraction\-\_\-real\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classCNFImplExtractor_ae06413cf08f868357d64545b3041aa18}
+
+
+Like \hyperlink{classCNFImplExtractor_ab8be06d42fd3c4b569ec22cfcf2f508e}{extraction\-\_\-cpu\-\_\-time\-\_\-} but real-\/time. 
+
+
+
+Definition at line 150 of file C\-N\-F\-Impl\-Extractor.\-h.
+
+
+
+Referenced by C\-N\-F\-Impl\-Extractor\-::extract\-Circuit(), and C\-N\-F\-Impl\-Extractor\-::log\-Statistics().
+
+\hypertarget{classLearningImplExtractor_a5a4835eb5fc2df396272af43380ecc82}{\index{Learning\-Impl\-Extractor@{Learning\-Impl\-Extractor}!ip\-\_\-@{ip\-\_\-}}
+\index{ip\-\_\-@{ip\-\_\-}!LearningImplExtractor@{Learning\-Impl\-Extractor}}
+\subsubsection[{ip\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ Learning\-Impl\-Extractor\-::ip\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearningImplExtractor_a5a4835eb5fc2df396272af43380ecc82}
+
+
+The list of uncontrollable input variables followed by the present state variables. 
+
+This vector contains the \hyperlink{classCNF}{C\-N\-F} version of the uncontrollable input variables followed by the present state variables. This vector of variables is used often, and thus stored here as a field. 
+
+Definition at line 406 of file Learning\-Impl\-Extractor.\-h.
+
+
+
+Referenced by Learning\-Impl\-Extractor(), run\-Learning\-Jiang\-S\-A\-T\-Inc1(), run\-Learning\-Jiang\-S\-A\-T\-Inc2(), run\-Learning\-Q\-B\-F(), and run\-Learning\-Q\-B\-F\-Inc().
+
+\hypertarget{classLearningImplExtractor_ab94459731d569bdd6bb0f3895fb9c184}{\index{Learning\-Impl\-Extractor@{Learning\-Impl\-Extractor}!ipc\-\_\-@{ipc\-\_\-}}
+\index{ipc\-\_\-@{ipc\-\_\-}!LearningImplExtractor@{Learning\-Impl\-Extractor}}
+\subsubsection[{ipc\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ Learning\-Impl\-Extractor\-::ipc\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearningImplExtractor_ab94459731d569bdd6bb0f3895fb9c184}
+
+
+The list of uncontrollable inputs, state variables, and control signals. 
+
+This vector contains the \hyperlink{classCNF}{C\-N\-F} version of the uncontrollable input variables followed by the present state variables, followed by the control signals. This vector of variables is used often, and thus stored here as a field. 
+
+Definition at line 415 of file Learning\-Impl\-Extractor.\-h.
+
+
+
+Referenced by Learning\-Impl\-Extractor(), run\-Learning\-Jiang\-S\-A\-T(), run\-Learning\-Jiang\-S\-A\-T\-Inc1(), run\-Learning\-Jiang\-S\-A\-T\-Inc2(), run\-Learning\-Jiang\-S\-A\-T\-Tmp(), run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), and run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2().
+
+\hypertarget{classLearningImplExtractor_a987219dd3114957f2bd0d9df77a9d7fc}{\index{Learning\-Impl\-Extractor@{Learning\-Impl\-Extractor}!next\-\_\-free\-\_\-aig\-\_\-lit\-\_\-@{next\-\_\-free\-\_\-aig\-\_\-lit\-\_\-}}
+\index{next\-\_\-free\-\_\-aig\-\_\-lit\-\_\-@{next\-\_\-free\-\_\-aig\-\_\-lit\-\_\-}!LearningImplExtractor@{Learning\-Impl\-Extractor}}
+\subsubsection[{next\-\_\-free\-\_\-aig\-\_\-lit\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}int Learning\-Impl\-Extractor\-::next\-\_\-free\-\_\-aig\-\_\-lit\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearningImplExtractor_a987219dd3114957f2bd0d9df77a9d7fc}
+
+
+The next unused A\-I\-G\-E\-R literal in \hyperlink{classLearningImplExtractor_a17f7c47bf3e84fa5a70930e01a18deb2}{standalone\-\_\-circuit\-\_\-}. 
+
+
+
+Definition at line 370 of file Learning\-Impl\-Extractor.\-h.
+
+
+
+Referenced by Learning\-Impl\-Extractor(), make\-And(), and make\-Or().
+
+\hypertarget{classLearningImplExtractor_a4147358129fcfb9e72a0ee27d7c16f51}{\index{Learning\-Impl\-Extractor@{Learning\-Impl\-Extractor}!qbf\-\_\-solver\-\_\-@{qbf\-\_\-solver\-\_\-}}
+\index{qbf\-\_\-solver\-\_\-@{qbf\-\_\-solver\-\_\-}!LearningImplExtractor@{Learning\-Impl\-Extractor}}
+\subsubsection[{qbf\-\_\-solver\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\-B\-F\-Solver}$\ast$ Learning\-Impl\-Extractor\-::qbf\-\_\-solver\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearningImplExtractor_a4147358129fcfb9e72a0ee27d7c16f51}
+
+
+The Q\-B\-F solver to use (as selected by the user with command-\/line arguments). 
+
+
+
+Definition at line 365 of file Learning\-Impl\-Extractor.\-h.
+
+
+
+Referenced by run\-Learning\-Q\-B\-F(), and $\sim$\-Learning\-Impl\-Extractor().
+
+\hypertarget{classLearningImplExtractor_a17f7c47bf3e84fa5a70930e01a18deb2}{\index{Learning\-Impl\-Extractor@{Learning\-Impl\-Extractor}!standalone\-\_\-circuit\-\_\-@{standalone\-\_\-circuit\-\_\-}}
+\index{standalone\-\_\-circuit\-\_\-@{standalone\-\_\-circuit\-\_\-}!LearningImplExtractor@{Learning\-Impl\-Extractor}}
+\subsubsection[{standalone\-\_\-circuit\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}aiger$\ast$ Learning\-Impl\-Extractor\-::standalone\-\_\-circuit\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearningImplExtractor_a17f7c47bf3e84fa5a70930e01a18deb2}
+
+
+The synthesis result as stand-\/alone circuit. 
+
+This A\-I\-G\-E\-R circuit is combinatorial, i.\-e., has no latches. The inputs of the circuit are\-: the uncontrollable inputs from the spec (in the order in which they appear in the spec) followed by the state-\/signals (the output of the latches in the spec, in the order in which they appear in the spec). The outputs of the circuit are the controllable inputs in the order in which they are defined in the spec.
+
+This circuit will be built up by one of the methods run\-Learning\-X. Then, it will be optimized using A\-B\-C. Finally, it will be inserted into the original specification, as required by the rules for S\-Y\-N\-T\-Comp. 
+
+Definition at line 385 of file Learning\-Impl\-Extractor.\-h.
+
+
+
+Referenced by add\-To\-Stand\-Alone\-Aiger(), insert\-Missing\-And\-From\-Trans(), Learning\-Impl\-Extractor(), make\-And(), make\-Or(), run(), and $\sim$\-Learning\-Impl\-Extractor().
+
+\hypertarget{classLearningImplExtractor_a018564c4a67dfb228357008a8a50aef4}{\index{Learning\-Impl\-Extractor@{Learning\-Impl\-Extractor}!statistics@{statistics}}
+\index{statistics@{statistics}!LearningImplExtractor@{Learning\-Impl\-Extractor}}
+\subsubsection[{statistics}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Learning\-Extractor\-Statistics} Learning\-Impl\-Extractor\-::statistics\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearningImplExtractor_a018564c4a67dfb228357008a8a50aef4}
+
+
+A helper for collecting performance data and statistics. 
+
+
+
+Definition at line 420 of file Learning\-Impl\-Extractor.\-h.
+
+
+
+Referenced by log\-Detailed\-Statistics(), run(), run\-Learning\-Jiang\-S\-A\-T(), run\-Learning\-Jiang\-S\-A\-T\-Inc1(), run\-Learning\-Jiang\-S\-A\-T\-Inc2(), run\-Learning\-Jiang\-S\-A\-T\-Tmp(), run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), run\-Learning\-Q\-B\-F(), and run\-Learning\-Q\-B\-F\-Inc().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{LearningImplExtractor_8h}{Learning\-Impl\-Extractor.\-h}\item 
+src/\hyperlink{LearningImplExtractor_8cpp}{Learning\-Impl\-Extractor.\-cpp}\end{DoxyCompactItemize}

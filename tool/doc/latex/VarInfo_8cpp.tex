@@ -7,10 +7,48 @@ Contains the definition of the class \hyperlink{classVarInfo}{Var\-Info}.
 
 
 {\ttfamily \#include \char`\"{}Var\-Info.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{VarInfo_8cpp_a5e593b6ad8dc90291c9214cbbf246204}{operator$<$} (const \hyperlink{classVarInfo}{Var\-Info} \&o1, const \hyperlink{classVarInfo}{Var\-Info} \&o2)
+\begin{DoxyCompactList}\small\item\em Comparison operator such that \hyperlink{classVarInfo}{Var\-Info} objects can be stored in sets. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Contains the definition of the class \hyperlink{classVarInfo}{Var\-Info}. 
 
 Definition in file \hyperlink{VarInfo_8cpp_source}{Var\-Info.\-cpp}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{VarInfo_8cpp_a5e593b6ad8dc90291c9214cbbf246204}{\index{Var\-Info.\-cpp@{Var\-Info.\-cpp}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!VarInfo.cpp@{Var\-Info.\-cpp}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Var\-Info} \&}]{o1, }
+\item[{const {\bf Var\-Info} \&}]{o2}
+\end{DoxyParamCaption}
+)}}\label{VarInfo_8cpp_a5e593b6ad8dc90291c9214cbbf246204}
+
+
+Comparison operator such that \hyperlink{classVarInfo}{Var\-Info} objects can be stored in sets. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em o1} & The first object for the comparison. \\
+\hline
+{\em o2} & The second object for the comparison. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the former object stores a strictly smaller \hyperlink{classCNF}{C\-N\-F} variable, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 115 of file Var\-Info.\-cpp.
+
+
+
+References Var\-Info\-::get\-Lit\-In\-C\-N\-F().
 

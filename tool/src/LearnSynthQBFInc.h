@@ -34,10 +34,11 @@
 #include "CNF.h"
 #include "LearnStatisticsQBF.h"
 #include "VarInfo.h"
-#include "DepQBFApiInc.h"
+#include "DepQBFApi.h"
 #include "BackEnd.h"
 
 class SatSolver;
+class CNFImplExtractor;
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -46,17 +47,11 @@ class SatSolver;
 ///
 /// This class is almost an exact copy of LearnSynthQBF. Hence, we refer to the documentation
 /// of LearnSynthQBF for an explanation of the basic working principle.
-/// The main difference is that this class utilizes features which are only available in
-/// an experimental version of the DepQBF QBF-solver (see DepQBFApiInc). The additional
-/// features of DepQBFApiInc are the computation of unsatisfiable cores and a restricted way
-/// of incremental solving. 'Restricted' means: we can (only) add new clauses that talk only
-/// about variables that are quantified existentially on the outermost level to the solver
-/// without restarting it completely. This way the solver can keep all the clauses it learned
-/// so far.
+/// The main difference is that this class utilizes incremental QBF solving features of
+/// DepQBF. We also use the ability of DepQBF to compute unsatisfiable cores.
 ///
-/// @note This class is experimental.
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.0.0
+/// @version 1.1.0
 class LearnSynthQBFInc : public BackEnd
 {
 public:
@@ -64,7 +59,10 @@ public:
 // -------------------------------------------------------------------------------------------
 ///
 /// @brief Constructor.
-  LearnSynthQBFInc();
+///
+/// @param impl_extractor The engine to use for circuit extraction. It will be deleted by
+///        this class.
+  LearnSynthQBFInc(CNFImplExtractor *impl_extractor);
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -75,13 +73,10 @@ public:
 ///
 /// @brief Executes this back-end.
 ///
-/// In contrast to the corresponding method of LearnSynthQBF, this method utilizes features
-/// which are only available in an experimental version of the DepQBF QBF-solver
-/// (see DepQBFApiInc). The additional features of DepQBFApiInc are the computation of
-/// unsatisfiable cores and a restricted way of incremental solving. 'Restricted' means: we
-/// can (only) add new clauses that talk only about variables that are quantified
-/// existentially on the outermost level to the solver without restarting it completely. This
-/// way the solver can keep all the clauses it learned so far.
+/// This class is almost an exact copy of LearnSynthQBF. Hence, we refer to the documentation
+/// of LearnSynthQBF for an explanation of the basic working principle.
+/// The main difference is that this class utilizes incremental QBF solving features of
+/// DepQBF. We also use the ability of DepQBF to compute unsatisfiable cores.
 ///
 /// @return True if the specification was realizable, false otherwise.
   virtual bool run();
@@ -113,6 +108,27 @@ protected:
 
 // -------------------------------------------------------------------------------------------
 ///
+/// @brief Uses incremental solving and push/pop to handle negation incrementally.
+///
+/// This method works like #computeWinningRegionOne() but uses push/pop, instead of
+/// updating the next-state copy of the winning region only lazily.
+///
+/// @return True if the specification was realizable, false otherwise.
+  bool computeWinningRegionOnePush();
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Uses incremental solving and a pool of variables to handle negation incrementally.
+///
+/// This method works like #computeWinningRegionOne() but uses a pool
+/// of variables to handle the computation of counterexamples incrementally, instead of
+/// updating the next-state copy of the winning region only lazily.
+///
+/// @return True if the specification was realizable, false otherwise.
+  bool computeWinningRegionOnePool();
+
+// -------------------------------------------------------------------------------------------
+///
 /// @brief Computes the winning region, always computing all counterexample generalizations.
 ///
 /// This method works like LearnSynthQBF#computeWinningRegionAll() but using incremental
@@ -120,6 +136,28 @@ protected:
 ///
 /// @return True if the specification was realizable, false otherwise.
   bool computeWinningRegionAll();
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Uses push/pop and always computes all counterexample generalizations.
+///
+/// This method works like #computeWinningRegionAll() but uses a push/pop to handle the
+/// computation of counterexamples incrementally, instead of updating the next-state copy of
+/// the winning region only lazily.
+///
+/// @return True if the specification was realizable, false otherwise.
+  bool computeWinningRegionAllPush();
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Uses a pool of variables and always computes all counterexample generalizations .
+///
+/// This method works like #computeWinningRegionAll() but uses a pool
+/// of variables to handle the computation of counterexamples incrementally, instead of
+/// updating the next-state copy of the winning region only lazily.
+///
+/// @return True if the specification was realizable, false otherwise.
+  bool computeWinningRegionAllPool();
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -140,6 +178,21 @@ protected:
 ///        state variables. If some state variables are irrelevant, then they may be omitted.
 /// @return True if a counterexample was found, false if no counterexample exists.
   bool computeCounterexampleQBF(vector<int> &ce);
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Computes a counterexample-state using a QBF-solver with incremental solving.
+///
+/// This method works like #computeCounterexampleQBF() but without the lazy update of the
+/// next-state copy of the winning region. Instead, we use a pool of variables to express the
+/// negated next-state copy of the winning region. Variables of this pool which are not yet
+/// used are set to false until they are used.
+///
+/// @param ce An empty vector. The computed counterexample is stored in this vector in form
+///        of a cube over the state variables. The cube does not necessarily contain all
+///        state variables. If some state variables are irrelevant, then they may be omitted.
+/// @return True if a counterexample was found, false if no counterexample exists.
+  bool computeCounterexampleQBFPool(vector<int> &ce);
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -252,6 +305,18 @@ protected:
 
 // -------------------------------------------------------------------------------------------
 ///
+/// @brief Generalizes a counterexample-state further by dropping literals.
+///
+/// This method works like #generalizeCounterexample() but does not use the unsatisfiable
+/// core feature of the QBF solver, but iterates over all the literals instead.
+///
+/// @param ce The counterexample to generalize further (it will be overwritten by its own
+///           generalization). This is a complete or partial cube over the present state
+///           variables.
+  void generalizeCounterexampleFurther(vector<int> &ce);
+
+// -------------------------------------------------------------------------------------------
+///
 /// @brief The current over-approximation of the winning region.
 ///
 /// Only when #computeWinningRegion() is done, this field will store the correct winning
@@ -301,7 +366,28 @@ protected:
 /// to use the solver incrementally until it returns UNSAT. If it returns UNSAT, we recompute
 /// the check_cnf_ (with correct next-state copy of the winning region) and restart the
 /// solver with this CNF.
-  DepQBFApiInc solver_check_;
+  DepQBFApi solver_check_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief A pool of variables, which are used to express that a certain clause in negated.
+///
+/// This set of variables is supposed to support incremental solving within solver_check_.
+/// The solver_check_ needs to solve
+///  exists x,i: forall c: exists x',tmp: F & T & !F'
+/// In each iteration, we add a clause (or several clauses) to F. In order to handle the
+/// update to !F' incrementally, we add one big clause consisting of all the literals of the
+/// vector neg_clause_var_pool_. Initially, none of the literals is 'used', so we add
+/// assumptions that they are all false. Whenever we add a new clause to F, we simply pick
+/// a new variable v from the pool, and say that v implies the negated new clause. Then this
+/// variable v is no longer set to zero, but used to encode the negated clause. When we run
+/// out of variables, we start a new incremental session, with a new pool of variables.
+  vector<int> negcl_var_pool_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The activation variables to express that a var in negcl_var_pool_ is not yet used.
+  vector<int> negcl_var_pool_act_;
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -327,7 +413,14 @@ protected:
 /// power in favor of incrementality and appears to be a bad deal). We only use its
 /// capabilities of computing unsatisfiable cores (during one core computation, we use it
 /// incrementally).
-  DepQBFApiInc solver_gen_;
+  DepQBFApi solver_gen_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The engine to use for circuit extraction.
+///
+/// It will be deleted by this class (in the destructor).
+  CNFImplExtractor *impl_extractor_;
 
 private:
 

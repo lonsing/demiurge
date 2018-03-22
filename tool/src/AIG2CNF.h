@@ -76,7 +76,7 @@ struct aiger;
 /// obtain the one and only instance of this class.
 ///
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.0.0
+/// @version 1.1.0
 class AIG2CNF
 {
 public:
@@ -237,6 +237,47 @@ public:
 /// @return A CNF representing the initial state.
   const CNF& getInitial() const;
 
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Returns dependencies of temporary variables in the transition relation.
+///
+/// For each temporary variable that has been introduced when encoding the transition relation
+/// into CNF, the returned map stores on which other variables (state variables, inputs, or
+/// other temporary variables) a certain temporary CNF-variable depends on. This information
+/// can be useful in optimizations: For instance, if a certain temporary variable only depends
+/// on state-variables and uncontrollable inputs, the control signals can be allowed to
+/// depend on such a temporary variable during circuit extraction.
+///
+/// @return The dependencies of temporary variables in the transition relation as a map from
+///         temporary CNF variables to the set of other variables on which the respective
+///         variables depend.
+  const map<int, set<VarInfo> >& getTmpDeps() const;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Returns transitive dependencies of temporary variables in the transition relation.
+///
+/// For each temporary variable that has been introduced when encoding the transition relation
+/// into CNF, the returned map stores on which other non-temporary variables (state variables,
+/// or controllable or uncontrollable inputs) a certain temporary CNF-variable depends on.
+/// That is, in contrast to #getTmpDeps, dependencies on other temporary variables are
+/// represented by taking their dependencies on state variables and (uncontrollable and
+/// controllable) inputs. This information can be useful in optimizations: For instance, if a
+/// certain temporary variable only depends on state-variables and uncontrollable inputs, the
+/// control signals can be allowed to depend on such a temporary variable during circuit
+/// extraction.
+///
+/// @return The transitive dependencies of temporary variables in the transition relation as a
+//          map from temporary CNF variables to the set of other non-temporary variables on
+///         which the respective variables depend.
+  const map<int, set<VarInfo> >& getTmpDepsTrans();
+
+// -------------------------------------------------------------------------------------------
+///
+/// @typedef map<int, set<VarInfo> >::const_iterator DepConstIter
+/// @brief A type for a const-iterator over the dependencies of temporary variables.
+  typedef map<int, set<VarInfo> >::const_iterator DepConstIter;
+
 protected:
 
 // -------------------------------------------------------------------------------------------
@@ -317,6 +358,28 @@ protected:
 /// characterized by having all state bits set to FALSE. However, this may change with
 /// future AIGER versions.
   CNF initial_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The variables on which a temporary variable of the transition relation depends.
+///
+/// For each temporary variable that has been introduced when encoding the transition relation
+/// into CNF, this map stores on which other variables (state variables, inputs, or other
+/// temporary variables) a certain temporary CNF-variable depends. This information can be
+/// useful in optimizations: For instance, if a certain temporary variable only depends on
+/// state-variables and uncontrollable inputs, the the control signals can be allowed to
+/// depend on such a temporary variable during circuit extraction.
+  map<int, set<VarInfo> > trans_tmp_deps_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Like trans_tmp_deps_, but stores (transitive) dependencies non non-temporary vars.
+///
+/// This map stores essentially the same information as trans_tmp_deps_. However, it only
+/// contains (transitive) dependencies on state variables and (uncontrollable and
+/// controllable) inputs. Dependencies on other temporary variables are represented by taking
+/// their dependencies on state variables and (uncontrollable and controllable) inputs.
+  map<int, set<VarInfo> > trans_tmp_deps_trans_;
 
 private:
 

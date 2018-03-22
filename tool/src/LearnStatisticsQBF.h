@@ -40,6 +40,9 @@
 ///
 /// This class collects statistics and performance data for the learning-based synthesis
 /// method implemented with a QBF-solver (implemented in the class LearnSynthQBF).
+///
+/// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
+/// @version 1.1.0
 class LearnStatisticsQBF
 {
 public:
@@ -67,20 +70,6 @@ public:
 ///
 /// This method just reads out the Stopwatch and stores the execution time.
   void notifyWinRegEnd();
-
-// -------------------------------------------------------------------------------------------
-///
-/// @brief Called before the relation determinization (the computation of circuits) starts.
-///
-/// This method just starts a Stopwatch.
-  void notifyRelDetStart();
-
-// -------------------------------------------------------------------------------------------
-///
-/// @brief Called after the relation determinization (the computation of circuits) starts.
-///
-/// This method just reads out the Stopwatch and stores the execution time.
-  void notifyRelDetEnd();
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -160,21 +149,6 @@ protected:
 ///
 /// @brief Like #win_reg_cpu_time_ but real-time.
   size_t win_reg_real_time_;
-
-// -------------------------------------------------------------------------------------------
-///
-/// @brief The time when the computation of the circuits was started.
-  PointInTime rel_det_start_time_;
-
-// -------------------------------------------------------------------------------------------
-///
-/// @brief circuit computation time in CPU-seconds.
-  double rel_det_cpu_time_;
-
-// -------------------------------------------------------------------------------------------
-///
-/// @brief Like #rel_det_cpu_time_ but real-time.
-  size_t rel_det_real_time_;
 
 // -------------------------------------------------------------------------------------------
 ///

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">demiurge
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A synthesis tool for safety specifications.</div>
   </td>
@@ -153,7 +153,7 @@ Protected Attributes</h2></td></tr>
 <div class="textblock"><p>Stores additional information to a variable. </p>
 <p>At the moment, a variable has a kind, a name (optional), an index with which id appears in the AIGER input file, and an index with which is appears in <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> formulas. This class is mainly a container for all this information without any intelligence.</p>
 <dl class="section author"><dt>Author</dt><dd>Robert Koenighofer (<a href="#" onclick="location.href='mai'+'lto:'+'rob'+'er'+'t.k'+'oe'+'nig'+'ho'+'fer'+'@i'+'aik'+'.t'+'ugr'+'az'+'.at'; return false;">rober<span style="display: none;">.nosp@m.</span>t.ko<span style="display: none;">.nosp@m.</span>enigh<span style="display: none;">.nosp@m.</span>ofer<span style="display: none;">.nosp@m.</span>@iaik<span style="display: none;">.nosp@m.</span>.tug<span style="display: none;">.nosp@m.</span>raz.a<span style="display: none;">.nosp@m.</span>t</a>) </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>1.0.0 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.1.0 </dd></dl>
 
 <p>Definition at line <a class="el" href="VarInfo_8h_source.html#l00046">46</a> of file <a class="el" href="VarInfo_8h_source.html">VarInfo.h</a>.</p>
 </div><h2>Member Enumeration Documentation</h2>
@@ -372,7 +372,7 @@ Protected Attributes</h2></td></tr>
 
 <p>References <a class="el" href="VarInfo_8h_source.html#l00190">var_kind_</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00502">LearnSynthQBFInc::restrictToStates()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00607">LearnSynthQBF::restrictToStates()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00548">LearnSynthQBFInd::restrictToStates()</a>, and <a class="el" href="VarManager_8cpp_source.html#l00344">VarManager::toString()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00941">LearnSynthQBFInc::restrictToStates()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00608">LearnSynthQBF::restrictToStates()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00550">LearnSynthQBFInd::restrictToStates()</a>, and <a class="el" href="VarManager_8cpp_source.html#l00344">VarManager::toString()</a>.</p>
 
 </div>
 </div>
@@ -396,7 +396,7 @@ Protected Attributes</h2></td></tr>
 
 <p>References <a class="el" href="VarInfo_8h_source.html#l00200">lit_in_aig_</a>.</p>
 
-<p>Referenced by <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00146">QBFCertImplExtractor::parseQBFCertAnswer()</a>, and <a class="el" href="VarManager_8cpp_source.html#l00344">VarManager::toString()</a>.</p>
+<p>Referenced by <a class="el" href="CNFImplExtractor_8cpp_source.html#l00149">CNFImplExtractor::insertIntoSpec()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00047">LearningImplExtractor::LearningImplExtractor()</a>, and <a class="el" href="VarManager_8cpp_source.html#l00344">VarManager::toString()</a>.</p>
 
 </div>
 </div>
@@ -420,7 +420,7 @@ Protected Attributes</h2></td></tr>
 
 <p>References <a class="el" href="VarInfo_8h_source.html#l00195">lit_in_cnf_</a>.</p>
 
-<p>Referenced by <a class="el" href="VarManager_8cpp_source.html#l00344">VarManager::toString()</a>.</p>
+<p>Referenced by <a class="el" href="VarInfo_8cpp_source.html#l00115">operator&lt;()</a>, and <a class="el" href="VarManager_8cpp_source.html#l00344">VarManager::toString()</a>.</p>
 
 </div>
 </div>
@@ -444,7 +444,7 @@ Protected Attributes</h2></td></tr>
 
 <p>References <a class="el" href="VarInfo_8h_source.html#l00207">name_</a>.</p>
 
-<p>Referenced by <a class="el" href="VarManager_8cpp_source.html#l00344">VarManager::toString()</a>.</p>
+<p>Referenced by <a class="el" href="LearningImplExtractor_8cpp_source.html#l00047">LearningImplExtractor::LearningImplExtractor()</a>, and <a class="el" href="VarManager_8cpp_source.html#l00344">VarManager::toString()</a>.</p>
 
 </div>
 </div>
@@ -655,7 +655,7 @@ Protected Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 14 2013 15:15:46 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jul 15 2014 12:30:23 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

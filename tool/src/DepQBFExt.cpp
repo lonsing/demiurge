@@ -34,13 +34,15 @@
 
 #include <sys/stat.h>
 
+extern "C" {
+  #include "aiger.h"
+}
+
 // -------------------------------------------------------------------------------------------
 DepQBFExt::DepQBFExt() : ExtQBFSolver()
 {
-  const char *tp_env = getenv(Options::TP_VAR.c_str());
-  MASSERT(tp_env != NULL, "You have not set the variable " << Options::TP_VAR);
-  path_to_deqqbf_ = string(tp_env) + "/depqbf/depqbf";
-  path_to_qbfcert_ = string(tp_env) + "/qbfcert/qbfcert_min.sh";
+  path_to_deqqbf_ = Options::instance().getTPDirName() + "/depqbf/depqbf";
+  path_to_qbfcert_ = Options::instance().getTPDirName() + "/qbfcert/qbfcert_min.sh";
   struct stat st;
   MASSERT(stat(path_to_deqqbf_.c_str(), &st) == 0, "DepQBF executable not found.");
   MASSERT(stat(path_to_qbfcert_.c_str(), &st) == 0, "QBFCert script not found.");
@@ -53,7 +55,7 @@ DepQBFExt::~DepQBFExt()
 }
 
 // -------------------------------------------------------------------------------------------
-string DepQBFExt::qbfCert(const vector<pair<VarInfo::VarKind, Quant> > &quantifier_prefix,
+aiger* DepQBFExt::qbfCert(const vector<pair<VarInfo::VarKind, Quant> > &quantifier_prefix,
                         const CNF& cnf)
 {
   dumpQBF(quantifier_prefix, cnf, in_file_name_);
@@ -62,13 +64,13 @@ string DepQBFExt::qbfCert(const vector<pair<VarInfo::VarKind, Quant> > &quantifi
   ret = WEXITSTATUS(ret);
   MASSERT(ret == 0, "QBFCert terminated with strange exit code.");
 
-  string answer;
   string qbfcert_out = in_file_name_ + ".aiger";
-  bool success = FileUtils::readFile(qbfcert_out, answer);
-  MASSERT(success, "Could not read result file.");
+  aiger *res = aiger_init();
+  const char *err = aiger_open_and_read_from_file (res, qbfcert_out.c_str());
+  MASSERT(err == NULL, "Could not open AIGER file " << qbfcert_out << " (" << err << ").");
   cleanup();
   remove(qbfcert_out.c_str());
-  return answer;
+  return res;
 }
 
 // -------------------------------------------------------------------------------------------

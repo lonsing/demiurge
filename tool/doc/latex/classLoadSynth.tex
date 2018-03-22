@@ -1,0 +1,192 @@
+\hypertarget{classLoadSynth}{\section{Load\-Synth Class Reference}
+\label{classLoadSynth}\index{Load\-Synth@{Load\-Synth}}
+}
+
+
+A dummy back-\/end which loads the winning region from a file.  
+
+
+
+
+{\ttfamily \#include $<$Load\-Synth.\-h$>$}
+
+Inheritance diagram for Load\-Synth\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classLoadSynth}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLoadSynth_a5eb6d14f9a84c77be3b73d43cf76c42a}{Load\-Synth} (\hyperlink{classCNFImplExtractor}{C\-N\-F\-Impl\-Extractor} $\ast$impl\-\_\-extractor)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classLoadSynth_a92cd166ef07407f54857e15dc33daada}{$\sim$\-Load\-Synth} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classLoadSynth_a555ce9c74ad3143254f7a1d1cce094b0}{run} ()
+\begin{DoxyCompactList}\small\item\em Loads the winning region from a file and runs the circuit extractor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCNFImplExtractor}{C\-N\-F\-Impl\-Extractor} $\ast$ \hyperlink{classLoadSynth_aadb78c2e1fec1038d1a2f850a2c984f2}{impl\-\_\-extractor\-\_\-}
+\begin{DoxyCompactList}\small\item\em The engine to use for circuit extraction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLoadSynth_a77640a8f69187b3b33ba6d702647c66d}{Load\-Synth} (const \hyperlink{classLoadSynth}{Load\-Synth} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classLoadSynth}{Load\-Synth} \& \hyperlink{classLoadSynth_a9b0ca14ba31b6200f25b0f343c1f7e71}{operator=} (const \hyperlink{classLoadSynth}{Load\-Synth} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A dummy back-\/end which loads the winning region from a file. 
+
+This back-\/end is used to reduce the computation time when benchmarking relation determinization approaches. It loads the winning region from a file instead of computing it. The \hyperlink{classStoreImplExtractor}{Store\-Impl\-Extractor} can save the winning region into a file. We assume that this has been done before.
+
+\begin{DoxyAuthor}{Author}
+Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-1.\-0 
+\end{DoxyVersion}
+
+
+Definition at line 50 of file Load\-Synth.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classLoadSynth_a5eb6d14f9a84c77be3b73d43cf76c42a}{\index{Load\-Synth@{Load\-Synth}!Load\-Synth@{Load\-Synth}}
+\index{Load\-Synth@{Load\-Synth}!LoadSynth@{Load\-Synth}}
+\subsubsection[{Load\-Synth}]{\setlength{\rightskip}{0pt plus 5cm}Load\-Synth\-::\-Load\-Synth (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-N\-F\-Impl\-Extractor} $\ast$}]{impl\-\_\-extractor}
+\end{DoxyParamCaption}
+)}}\label{classLoadSynth_a5eb6d14f9a84c77be3b73d43cf76c42a}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em impl\-\_\-extractor} & The engine to use for circuit extraction. It will be deleted by this class. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 36 of file Load\-Synth.\-cpp.
+
+\hypertarget{classLoadSynth_a92cd166ef07407f54857e15dc33daada}{\index{Load\-Synth@{Load\-Synth}!$\sim$\-Load\-Synth@{$\sim$\-Load\-Synth}}
+\index{$\sim$\-Load\-Synth@{$\sim$\-Load\-Synth}!LoadSynth@{Load\-Synth}}
+\subsubsection[{$\sim$\-Load\-Synth}]{\setlength{\rightskip}{0pt plus 5cm}Load\-Synth\-::$\sim$\-Load\-Synth (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classLoadSynth_a92cd166ef07407f54857e15dc33daada}
+
+
+Destructor. 
+
+
+
+Definition at line 44 of file Load\-Synth.\-cpp.
+
+
+
+References impl\-\_\-extractor\-\_\-.
+
+\hypertarget{classLoadSynth_a77640a8f69187b3b33ba6d702647c66d}{\index{Load\-Synth@{Load\-Synth}!Load\-Synth@{Load\-Synth}}
+\index{Load\-Synth@{Load\-Synth}!LoadSynth@{Load\-Synth}}
+\subsubsection[{Load\-Synth}]{\setlength{\rightskip}{0pt plus 5cm}Load\-Synth\-::\-Load\-Synth (
+\begin{DoxyParamCaption}
+\item[{const {\bf Load\-Synth} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classLoadSynth_a77640a8f69187b3b33ba6d702647c66d}
+
+
+Copy constructor. 
+
+The copy constructor is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classLoadSynth_a9b0ca14ba31b6200f25b0f343c1f7e71}{\index{Load\-Synth@{Load\-Synth}!operator=@{operator=}}
+\index{operator=@{operator=}!LoadSynth@{Load\-Synth}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Load\-Synth}\& Load\-Synth\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Load\-Synth} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classLoadSynth_a9b0ca14ba31b6200f25b0f343c1f7e71}
+
+
+Assignment operator. 
+
+The assignment operator is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the assignment, i.\-e, $\ast$this. 
+\end{DoxyReturn}
+\hypertarget{classLoadSynth_a555ce9c74ad3143254f7a1d1cce094b0}{\index{Load\-Synth@{Load\-Synth}!run@{run}}
+\index{run@{run}!LoadSynth@{Load\-Synth}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}bool Load\-Synth\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classLoadSynth_a555ce9c74ad3143254f7a1d1cce094b0}
+
+
+Loads the winning region from a file and runs the circuit extractor. 
+
+This method is used to reduce the computation time when benchmarking relation determinization approaches. It loads the winning region from a file instead of computing it. Then it runs the circuit extraction. The \hyperlink{classStoreImplExtractor}{Store\-Impl\-Extractor} can save the winning region into a file. We assume that this has been done before.
+
+\begin{DoxyReturn}{Returns}
+Always true. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classBackEnd_a099e717dc71e9cc2d838b1ca86340590}{Back\-End}.
+
+
+
+Definition at line 51 of file Load\-Synth.\-cpp.
+
+
+
+References C\-N\-F\-Impl\-Extractor\-::extract\-Circuit(), Options\-::get\-Aig\-In\-File\-Name\-Only(), impl\-\_\-extractor\-\_\-, Options\-::instance(), and C\-N\-F\-Impl\-Extractor\-::log\-Statistics().
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classLoadSynth_aadb78c2e1fec1038d1a2f850a2c984f2}{\index{Load\-Synth@{Load\-Synth}!impl\-\_\-extractor\-\_\-@{impl\-\_\-extractor\-\_\-}}
+\index{impl\-\_\-extractor\-\_\-@{impl\-\_\-extractor\-\_\-}!LoadSynth@{Load\-Synth}}
+\subsubsection[{impl\-\_\-extractor\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F\-Impl\-Extractor}$\ast$ Load\-Synth\-::impl\-\_\-extractor\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLoadSynth_aadb78c2e1fec1038d1a2f850a2c984f2}
+
+
+The engine to use for circuit extraction. 
+
+It will be deleted by this class (in the destructor). 
+
+Definition at line 86 of file Load\-Synth.\-h.
+
+
+
+Referenced by run(), and $\sim$\-Load\-Synth().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{LoadSynth_8h}{Load\-Synth.\-h}\item 
+src/\hyperlink{LoadSynth_8cpp}{Load\-Synth.\-cpp}\end{DoxyCompactItemize}

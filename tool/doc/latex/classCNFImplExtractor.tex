@@ -1,0 +1,395 @@
+\hypertarget{classCNFImplExtractor}{\section{C\-N\-F\-Impl\-Extractor Class Reference}
+\label{classCNFImplExtractor}\index{C\-N\-F\-Impl\-Extractor@{C\-N\-F\-Impl\-Extractor}}
+}
+
+
+An interface for all classes that can construct circuits from a \hyperlink{classCNF}{C\-N\-F} winning region.  
+
+
+
+
+{\ttfamily \#include $<$C\-N\-F\-Impl\-Extractor.\-h$>$}
+
+Inheritance diagram for C\-N\-F\-Impl\-Extractor\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.958042cm]{classCNFImplExtractor}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCNFImplExtractor_a85fadc5cccc76524d9317041c1be1744}{C\-N\-F\-Impl\-Extractor} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classCNFImplExtractor_a5c2daeeda948fce2f2d9b361d8b06416}{$\sim$\-C\-N\-F\-Impl\-Extractor} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCNFImplExtractor_ad329eedd50e443f44edc99db8c2e2613}{extract\-Circuit} (const \hyperlink{classCNF}{C\-N\-F} \&winning\-\_\-region)
+\begin{DoxyCompactList}\small\item\em Extracts a circuit from the winning region. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCNFImplExtractor_a5e9694425af3f1a76d8b21ace3c435d9}{extract\-Circuit} (const \hyperlink{classCNF}{C\-N\-F} \&winning\-\_\-region, const \hyperlink{classCNF}{C\-N\-F} \&neg\-\_\-winning\-\_\-region)
+\begin{DoxyCompactList}\small\item\em Extracts a circuit from the winning region and its negation. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCNFImplExtractor_aae098749e201b22294a70f6e0a4a58f0}{log\-Statistics} ()
+\begin{DoxyCompactList}\small\item\em Logs statistical information about circuit extraction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classCNFImplExtractor_a8251ce58869f9f8ded159f1fa07ab334}{run} (const \hyperlink{classCNF}{C\-N\-F} \&winning\-\_\-region, const \hyperlink{classCNF}{C\-N\-F} \&neg\-\_\-winning\-\_\-region)=0
+\begin{DoxyCompactList}\small\item\em Runs the circuit extractor. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCNFImplExtractor_abe790c767f6c71a52ef8b0a61ab39eaa}{log\-Detailed\-Statistics} ()
+\begin{DoxyCompactList}\small\item\em Logs statistical information about circuit extraction. \end{DoxyCompactList}\item 
+aiger $\ast$ \hyperlink{classCNFImplExtractor_a58a4e5021d0ef9c4190a5be74fb5a83e}{optimize\-With\-A\-B\-C} (aiger $\ast$circuit) const 
+\begin{DoxyCompactList}\small\item\em Optimizes a combinatorial A\-I\-G\-E\-R circuit with A\-B\-C. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classCNFImplExtractor_a0970602635f3356712d57ebb28d12c0d}{insert\-Into\-Spec} (aiger $\ast$standalone\-\_\-circuit) const 
+\begin{DoxyCompactList}\small\item\em Takes a circuit defining the control signals and inserts it into the spec. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classCNFImplExtractor_ab8be06d42fd3c4b569ec22cfcf2f508e}{extraction\-\_\-cpu\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em The circuit extraction time in C\-P\-U-\/seconds. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classCNFImplExtractor_ae06413cf08f868357d64545b3041aa18}{extraction\-\_\-real\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em Like \hyperlink{classCNFImplExtractor_ab8be06d42fd3c4b569ec22cfcf2f508e}{extraction\-\_\-cpu\-\_\-time\-\_\-} but real-\/time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCNFImplExtractor_a35f00109eac31d5343afb0ceda402e1e}{C\-N\-F\-Impl\-Extractor} (const \hyperlink{classCNFImplExtractor}{C\-N\-F\-Impl\-Extractor} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classCNFImplExtractor}{C\-N\-F\-Impl\-Extractor} \& \hyperlink{classCNFImplExtractor_ac67f96743ec6f24fe6c3f1d9f4f85964}{operator=} (const \hyperlink{classCNFImplExtractor}{C\-N\-F\-Impl\-Extractor} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An interface for all classes that can construct circuits from a \hyperlink{classCNF}{C\-N\-F} winning region. 
+
+This class is abstract, i.\-e., objects of this class cannot be instantiated. Instantiate one of the derived classes instead. Derived classes have to implement the \hyperlink{classCNFImplExtractor_a8251ce58869f9f8ded159f1fa07ab334}{run()} method.
+
+\begin{DoxyAuthor}{Author}
+Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-1.\-0 
+\end{DoxyVersion}
+
+
+Definition at line 48 of file C\-N\-F\-Impl\-Extractor.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCNFImplExtractor_a85fadc5cccc76524d9317041c1be1744}{\index{C\-N\-F\-Impl\-Extractor@{C\-N\-F\-Impl\-Extractor}!C\-N\-F\-Impl\-Extractor@{C\-N\-F\-Impl\-Extractor}}
+\index{C\-N\-F\-Impl\-Extractor@{C\-N\-F\-Impl\-Extractor}!CNFImplExtractor@{C\-N\-F\-Impl\-Extractor}}
+\subsubsection[{C\-N\-F\-Impl\-Extractor}]{\setlength{\rightskip}{0pt plus 5cm}C\-N\-F\-Impl\-Extractor\-::\-C\-N\-F\-Impl\-Extractor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCNFImplExtractor_a85fadc5cccc76524d9317041c1be1744}
+
+
+Constructor. 
+
+
+
+Definition at line 71 of file C\-N\-F\-Impl\-Extractor.\-cpp.
+
+\hypertarget{classCNFImplExtractor_a5c2daeeda948fce2f2d9b361d8b06416}{\index{C\-N\-F\-Impl\-Extractor@{C\-N\-F\-Impl\-Extractor}!$\sim$\-C\-N\-F\-Impl\-Extractor@{$\sim$\-C\-N\-F\-Impl\-Extractor}}
+\index{$\sim$\-C\-N\-F\-Impl\-Extractor@{$\sim$\-C\-N\-F\-Impl\-Extractor}!CNFImplExtractor@{C\-N\-F\-Impl\-Extractor}}
+\subsubsection[{$\sim$\-C\-N\-F\-Impl\-Extractor}]{\setlength{\rightskip}{0pt plus 5cm}C\-N\-F\-Impl\-Extractor\-::$\sim$\-C\-N\-F\-Impl\-Extractor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCNFImplExtractor_a5c2daeeda948fce2f2d9b361d8b06416}
+
+
+Destructor. 
+
+
+
+Definition at line 79 of file C\-N\-F\-Impl\-Extractor.\-cpp.
+
+\hypertarget{classCNFImplExtractor_a35f00109eac31d5343afb0ceda402e1e}{\index{C\-N\-F\-Impl\-Extractor@{C\-N\-F\-Impl\-Extractor}!C\-N\-F\-Impl\-Extractor@{C\-N\-F\-Impl\-Extractor}}
+\index{C\-N\-F\-Impl\-Extractor@{C\-N\-F\-Impl\-Extractor}!CNFImplExtractor@{C\-N\-F\-Impl\-Extractor}}
+\subsubsection[{C\-N\-F\-Impl\-Extractor}]{\setlength{\rightskip}{0pt plus 5cm}C\-N\-F\-Impl\-Extractor\-::\-C\-N\-F\-Impl\-Extractor (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F\-Impl\-Extractor} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCNFImplExtractor_a35f00109eac31d5343afb0ceda402e1e}
+
+
+Copy constructor. 
+
+The copy constructor is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCNFImplExtractor_ad329eedd50e443f44edc99db8c2e2613}{\index{C\-N\-F\-Impl\-Extractor@{C\-N\-F\-Impl\-Extractor}!extract\-Circuit@{extract\-Circuit}}
+\index{extract\-Circuit@{extract\-Circuit}!CNFImplExtractor@{C\-N\-F\-Impl\-Extractor}}
+\subsubsection[{extract\-Circuit}]{\setlength{\rightskip}{0pt plus 5cm}void C\-N\-F\-Impl\-Extractor\-::extract\-Circuit (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{winning\-\_\-region}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCNFImplExtractor_ad329eedd50e443f44edc99db8c2e2613}
+
+
+Extracts a circuit from the winning region. 
+
+How this is done (interpolation, learning, etc.) depends on the concrete implementation of this abstract class. The result is written into the output file specified by the user.
+
+
+\begin{DoxyParams}{Parameters}
+{\em winning\-\_\-region} & The winning region from which the circuit should be extracted. For circuit extraction we need both the winning region and its negation. The negation is computed inside this function. If you already have a negation, use the other circuit extraction method of this class. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classStoreImplExtractor_a08437db801013d0b3208bbf099239fac}{Store\-Impl\-Extractor}.
+
+
+
+Definition at line 85 of file C\-N\-F\-Impl\-Extractor.\-cpp.
+
+
+
+References Utils\-::compress\-State\-C\-N\-F(), extraction\-\_\-cpu\-\_\-time\-\_\-, extraction\-\_\-real\-\_\-time\-\_\-, Stopwatch\-::get\-C\-P\-U\-Time\-Sec(), Stopwatch\-::get\-Real\-Time\-Sec(), C\-N\-F\-::negate(), run(), and Stopwatch\-::start().
+
+
+
+Referenced by Load\-Synth\-::run(), Learn\-Synth\-Q\-B\-F\-Inc\-::run(), I\-F\-M13\-Synth\-::run(), Template\-Synth\-::run(), Parallel\-Learner\-::run(), Learn\-Synth\-Q\-B\-F\-::run(), Learn\-Synth\-S\-A\-T\-::run(), and Learn\-Synth\-Q\-B\-F\-Ind\-::run().
+
+\hypertarget{classCNFImplExtractor_a5e9694425af3f1a76d8b21ace3c435d9}{\index{C\-N\-F\-Impl\-Extractor@{C\-N\-F\-Impl\-Extractor}!extract\-Circuit@{extract\-Circuit}}
+\index{extract\-Circuit@{extract\-Circuit}!CNFImplExtractor@{C\-N\-F\-Impl\-Extractor}}
+\subsubsection[{extract\-Circuit}]{\setlength{\rightskip}{0pt plus 5cm}void C\-N\-F\-Impl\-Extractor\-::extract\-Circuit (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{winning\-\_\-region, }
+\item[{const {\bf C\-N\-F} \&}]{neg\-\_\-winning\-\_\-region}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCNFImplExtractor_a5e9694425af3f1a76d8b21ace3c435d9}
+
+
+Extracts a circuit from the winning region and its negation. 
+
+How this is done (interpolation, learning, etc.) depends on the concrete implementation of this abstract class. The result is written into the output file specified by the user.
+
+
+\begin{DoxyParams}{Parameters}
+{\em winning\-\_\-region} & The winning region from which the circuit should be extracted. \\
+\hline
+{\em neg\-\_\-winning\-\_\-region} & The negation of the winning region. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 102 of file C\-N\-F\-Impl\-Extractor.\-cpp.
+
+
+
+References extraction\-\_\-cpu\-\_\-time\-\_\-, extraction\-\_\-real\-\_\-time\-\_\-, Stopwatch\-::get\-C\-P\-U\-Time\-Sec(), Stopwatch\-::get\-Real\-Time\-Sec(), run(), and Stopwatch\-::start().
+
+\hypertarget{classCNFImplExtractor_a0970602635f3356712d57ebb28d12c0d}{\index{C\-N\-F\-Impl\-Extractor@{C\-N\-F\-Impl\-Extractor}!insert\-Into\-Spec@{insert\-Into\-Spec}}
+\index{insert\-Into\-Spec@{insert\-Into\-Spec}!CNFImplExtractor@{C\-N\-F\-Impl\-Extractor}}
+\subsubsection[{insert\-Into\-Spec}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t C\-N\-F\-Impl\-Extractor\-::insert\-Into\-Spec (
+\begin{DoxyParamCaption}
+\item[{aiger $\ast$}]{standalone\-\_\-circuit}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCNFImplExtractor_a0970602635f3356712d57ebb28d12c0d}
+
+
+Takes a circuit defining the control signals and inserts it into the spec. 
+
+This method takes as argument an aiger circuit of the following form\-: 
+\begin{DoxyItemize}
+\item The circuit is combinational, i.\-e., has no latches. 
+\item The inputs of the circuit are\-: the uncontrollable inputs from the spec (in the order in which they appear in the spec) followed by the state-\/signals (the output of the latches in the spec, in the order in which they appear in the spec). 
+\item The outputs of the circuit are the controllable inputs in the order in which they are defined in the spec. 
+\end{DoxyItemize}
+\begin{DoxyParams}{Parameters}
+{\em standalone\-\_\-circuit} & A circuit defining the control signals. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of additional A\-N\-D gates introduced into the spec. 
+\end{DoxyReturn}
+
+
+Definition at line 149 of file C\-N\-F\-Impl\-Extractor.\-cpp.
+
+
+
+References Var\-Info\-::\-C\-T\-R\-L, Options\-::get\-Aig\-In\-File\-Name(), Options\-::get\-Aig\-Out\-File\-Name(), Var\-Manager\-::get\-Info(), Var\-Info\-::get\-Lit\-In\-A\-I\-G(), Var\-Manager\-::get\-Max\-A\-I\-G\-Var(), Var\-Manager\-::get\-Pres\-Error\-State\-Var(), Var\-Manager\-::get\-Vars\-Of\-Type(), Var\-Info\-::\-I\-N\-P\-U\-T, Var\-Manager\-::instance(), Options\-::instance(), M\-A\-S\-S\-E\-R\-T, Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, and String\-Utils\-::to\-Lower\-Case\-In().
+
+
+
+Referenced by Learning\-Impl\-Extractor\-::run(), and Q\-B\-F\-Cert\-Impl\-Extractor\-::run().
+
+\hypertarget{classCNFImplExtractor_abe790c767f6c71a52ef8b0a61ab39eaa}{\index{C\-N\-F\-Impl\-Extractor@{C\-N\-F\-Impl\-Extractor}!log\-Detailed\-Statistics@{log\-Detailed\-Statistics}}
+\index{log\-Detailed\-Statistics@{log\-Detailed\-Statistics}!CNFImplExtractor@{C\-N\-F\-Impl\-Extractor}}
+\subsubsection[{log\-Detailed\-Statistics}]{\setlength{\rightskip}{0pt plus 5cm}void C\-N\-F\-Impl\-Extractor\-::log\-Detailed\-Statistics (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classCNFImplExtractor_abe790c767f6c71a52ef8b0a61ab39eaa}
+
+
+Logs statistical information about circuit extraction. 
+
+Override this method to provide more detailed statistical information. Per default, the the method \hyperlink{classCNFImplExtractor_aae098749e201b22294a70f6e0a4a58f0}{log\-Statistics} logs the overall execution time, and then calls this method. 
+
+Reimplemented in \hyperlink{classLearningImplExtractor_aa14318d81871fc52f0d17fd5d82708e3}{Learning\-Impl\-Extractor}, and \hyperlink{classQBFCertImplExtractor_aa6a292ba4108e707f458c04d621a6d9e}{Q\-B\-F\-Cert\-Impl\-Extractor}.
+
+
+
+Definition at line 298 of file C\-N\-F\-Impl\-Extractor.\-cpp.
+
+
+
+Referenced by log\-Statistics().
+
+\hypertarget{classCNFImplExtractor_aae098749e201b22294a70f6e0a4a58f0}{\index{C\-N\-F\-Impl\-Extractor@{C\-N\-F\-Impl\-Extractor}!log\-Statistics@{log\-Statistics}}
+\index{log\-Statistics@{log\-Statistics}!CNFImplExtractor@{C\-N\-F\-Impl\-Extractor}}
+\subsubsection[{log\-Statistics}]{\setlength{\rightskip}{0pt plus 5cm}void C\-N\-F\-Impl\-Extractor\-::log\-Statistics (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCNFImplExtractor_aae098749e201b22294a70f6e0a4a58f0}
+
+
+Logs statistical information about circuit extraction. 
+
+This method logs the overall execution time plus whatever detailed information is collected by the concrete implementation of this class. 
+
+Definition at line 290 of file C\-N\-F\-Impl\-Extractor.\-cpp.
+
+
+
+References extraction\-\_\-cpu\-\_\-time\-\_\-, extraction\-\_\-real\-\_\-time\-\_\-, L\-\_\-\-L\-O\-G, and log\-Detailed\-Statistics().
+
+
+
+Referenced by Load\-Synth\-::run(), Learn\-Synth\-Q\-B\-F\-Inc\-::run(), I\-F\-M13\-Synth\-::run(), Template\-Synth\-::run(), Parallel\-Learner\-::run(), Learn\-Synth\-Q\-B\-F\-::run(), Learn\-Synth\-S\-A\-T\-::run(), and Learn\-Synth\-Q\-B\-F\-Ind\-::run().
+
+\hypertarget{classCNFImplExtractor_ac67f96743ec6f24fe6c3f1d9f4f85964}{\index{C\-N\-F\-Impl\-Extractor@{C\-N\-F\-Impl\-Extractor}!operator=@{operator=}}
+\index{operator=@{operator=}!CNFImplExtractor@{C\-N\-F\-Impl\-Extractor}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F\-Impl\-Extractor}\& C\-N\-F\-Impl\-Extractor\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F\-Impl\-Extractor} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCNFImplExtractor_ac67f96743ec6f24fe6c3f1d9f4f85964}
+
+
+Assignment operator. 
+
+The assignment operator is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the assignment, i.\-e, $\ast$this. 
+\end{DoxyReturn}
+\hypertarget{classCNFImplExtractor_a58a4e5021d0ef9c4190a5be74fb5a83e}{\index{C\-N\-F\-Impl\-Extractor@{C\-N\-F\-Impl\-Extractor}!optimize\-With\-A\-B\-C@{optimize\-With\-A\-B\-C}}
+\index{optimize\-With\-A\-B\-C@{optimize\-With\-A\-B\-C}!CNFImplExtractor@{C\-N\-F\-Impl\-Extractor}}
+\subsubsection[{optimize\-With\-A\-B\-C}]{\setlength{\rightskip}{0pt plus 5cm}aiger $\ast$ C\-N\-F\-Impl\-Extractor\-::optimize\-With\-A\-B\-C (
+\begin{DoxyParamCaption}
+\item[{aiger $\ast$}]{circuit}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCNFImplExtractor_a58a4e5021d0ef9c4190a5be74fb5a83e}
+
+
+Optimizes a combinatorial A\-I\-G\-E\-R circuit with A\-B\-C. 
+
+\begin{DoxyNote}{Note}
+The returned structure must be deleted by the caller. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em circuit} & The circuit to optimize. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The optimized version of the circuit. The returned aiger structure must be deleted by the caller. 
+\end{DoxyReturn}
+
+
+Definition at line 112 of file C\-N\-F\-Impl\-Extractor.\-cpp.
+
+
+
+References Options\-::get\-T\-P\-Dir\-Name(), Options\-::get\-Unique\-Tmp\-File\-Name(), Options\-::instance(), and M\-A\-S\-S\-E\-R\-T.
+
+
+
+Referenced by Learning\-Impl\-Extractor\-::run(), and Q\-B\-F\-Cert\-Impl\-Extractor\-::run().
+
+\hypertarget{classCNFImplExtractor_a8251ce58869f9f8ded159f1fa07ab334}{\index{C\-N\-F\-Impl\-Extractor@{C\-N\-F\-Impl\-Extractor}!run@{run}}
+\index{run@{run}!CNFImplExtractor@{C\-N\-F\-Impl\-Extractor}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\-N\-F\-Impl\-Extractor\-::run (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{winning\-\_\-region, }
+\item[{const {\bf C\-N\-F} \&}]{neg\-\_\-winning\-\_\-region}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{classCNFImplExtractor_a8251ce58869f9f8ded159f1fa07ab334}
+
+
+Runs the circuit extractor. 
+
+This is the workhorse of the circuit extractor. The methods \hyperlink{classCNFImplExtractor_ad329eedd50e443f44edc99db8c2e2613}{extract\-Circuit} mainly forward the call to this method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em winning\-\_\-region} & The winning region from which the circuit should be extracted. \\
+\hline
+{\em neg\-\_\-winning\-\_\-region} & The negation of the winning region. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classQBFCertImplExtractor_a97cf27d520ea0057385e35bb762a3069}{Q\-B\-F\-Cert\-Impl\-Extractor}, \hyperlink{classLearningImplExtractor_ad13a1fc00465f95812df4673743e16eb}{Learning\-Impl\-Extractor}, \hyperlink{classStoreImplExtractor_a69c775e70973cbd4b6a69775f25367cd}{Store\-Impl\-Extractor}, and \hyperlink{classInterpolImplExtractor_af4eb9c158e982276edf403d86bc339e2}{Interpol\-Impl\-Extractor}.
+
+
+
+Referenced by extract\-Circuit().
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCNFImplExtractor_ab8be06d42fd3c4b569ec22cfcf2f508e}{\index{C\-N\-F\-Impl\-Extractor@{C\-N\-F\-Impl\-Extractor}!extraction\-\_\-cpu\-\_\-time\-\_\-@{extraction\-\_\-cpu\-\_\-time\-\_\-}}
+\index{extraction\-\_\-cpu\-\_\-time\-\_\-@{extraction\-\_\-cpu\-\_\-time\-\_\-}!CNFImplExtractor@{C\-N\-F\-Impl\-Extractor}}
+\subsubsection[{extraction\-\_\-cpu\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double C\-N\-F\-Impl\-Extractor\-::extraction\-\_\-cpu\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCNFImplExtractor_ab8be06d42fd3c4b569ec22cfcf2f508e}
+
+
+The circuit extraction time in C\-P\-U-\/seconds. 
+
+
+
+Definition at line 145 of file C\-N\-F\-Impl\-Extractor.\-h.
+
+
+
+Referenced by extract\-Circuit(), and log\-Statistics().
+
+\hypertarget{classCNFImplExtractor_ae06413cf08f868357d64545b3041aa18}{\index{C\-N\-F\-Impl\-Extractor@{C\-N\-F\-Impl\-Extractor}!extraction\-\_\-real\-\_\-time\-\_\-@{extraction\-\_\-real\-\_\-time\-\_\-}}
+\index{extraction\-\_\-real\-\_\-time\-\_\-@{extraction\-\_\-real\-\_\-time\-\_\-}!CNFImplExtractor@{C\-N\-F\-Impl\-Extractor}}
+\subsubsection[{extraction\-\_\-real\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t C\-N\-F\-Impl\-Extractor\-::extraction\-\_\-real\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCNFImplExtractor_ae06413cf08f868357d64545b3041aa18}
+
+
+Like \hyperlink{classCNFImplExtractor_ab8be06d42fd3c4b569ec22cfcf2f508e}{extraction\-\_\-cpu\-\_\-time\-\_\-} but real-\/time. 
+
+
+
+Definition at line 150 of file C\-N\-F\-Impl\-Extractor.\-h.
+
+
+
+Referenced by extract\-Circuit(), and log\-Statistics().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{CNFImplExtractor_8h}{C\-N\-F\-Impl\-Extractor.\-h}\item 
+src/\hyperlink{CNFImplExtractor_8cpp}{C\-N\-F\-Impl\-Extractor.\-cpp}\end{DoxyCompactItemize}

@@ -36,6 +36,7 @@
 #include "IFMProofObligation.h"
 
 class SatSolver;
+class CNFImplExtractor;
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -60,7 +61,7 @@ class SatSolver;
 ///       re-implementation. The re-implementation is based on the paper only. The original
 ///       implementation may contain more optimizations.
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.0.0
+/// @version 1.1.0
 class IFM13Synth : public BackEnd
 {
 public:
@@ -68,7 +69,10 @@ public:
 // -------------------------------------------------------------------------------------------
 ///
 /// @brief Constructor.
-  IFM13Synth();
+///
+/// @param impl_extractor The engine to use for circuit extraction. It will be deleted by
+///        this class.
+  IFM13Synth(CNFImplExtractor *impl_extractor);
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -352,6 +356,13 @@ protected:
 ///
 /// @brief The vector of present- and next-state variables, and all inputs.
   vector<int> sicn_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The engine to use for circuit extraction.
+///
+/// It will be deleted by this class (in the destructor).
+  CNFImplExtractor *impl_extractor_;
 
 private:
 

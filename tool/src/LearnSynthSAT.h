@@ -36,6 +36,7 @@
 #include "LearnStatisticsSAT.h"
 
 class SatSolver;
+class CNFImplExtractor;
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -80,7 +81,7 @@ class SatSolver;
 /// Finally the QBFCertImplExtractor is used to extract a circuit.
 ///
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.0.0
+/// @version 1.1.0
 class LearnSynthSAT : public BackEnd
 {
 public:
@@ -88,7 +89,10 @@ public:
 // -------------------------------------------------------------------------------------------
 ///
 /// @brief Constructor.
-  LearnSynthSAT();
+///
+/// @param impl_extractor The engine to use for circuit extraction. It will be deleted by
+///        this class.
+  LearnSynthSAT(CNFImplExtractor *impl_extractor);
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -161,6 +165,22 @@ protected:
 ///
 /// @return True if the specification was realizable, false otherwise.
   bool computeWinningRegionPlain();
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Computes the winning region, exploiting temporary varibles of the tran. rel.
+///
+/// @note This method is experimalal.
+/// @return True if the specification was realizable, false otherwise.
+  bool computeWinningRegionPlainDep();
+  
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Exploits temporary varibles of the tran. rel. even more.
+///
+/// @note This method is experimalal.
+/// @return True if the specification was realizable, false otherwise.
+  bool computeWinningRegionPlainDep2();
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -300,6 +320,13 @@ protected:
 ///
 /// @brief The solver for generalizing counterexamples if optimization RG is endabled.
   SatSolver *solver_ctrl_ind_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The engine to use for circuit extraction.
+///
+/// It will be deleted by this class (in the destructor).
+  CNFImplExtractor *impl_extractor_;
 
 
 private:

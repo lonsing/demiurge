@@ -146,6 +146,21 @@ vector<int> Utils::extractNextAsPresent(const vector<int> &cube_or_clause)
 }
 
 // -------------------------------------------------------------------------------------------
+vector<int> Utils::extract(const vector<int> &cube_or_clause, const vector<int> &vars)
+{
+  vector<int> res;
+  res.reserve(cube_or_clause.size());
+  for(size_t cnt = 0; cnt < cube_or_clause.size(); ++cnt)
+  {
+    int lit = cube_or_clause[cnt];
+    int var = lit < 0 ? -lit : lit;
+    if(contains(vars, var))
+      res.push_back(lit);
+  }
+  return res;
+}
+
+// -------------------------------------------------------------------------------------------
 void Utils::randomize(vector<int> &vec)
 {
   random_shuffle(vec.begin(),vec.end());
@@ -283,7 +298,7 @@ bool Utils::compressStateCNF(CNF &cnf, bool hardcore)
 
   if(hardcore)
   {
-    // remove not only literals from clauses before we turn to removing clauses
+    // remove literals from clauses before we turn to removing clauses
     list<vector<int> > clauses = cnf.getClauses();
     vector<int> none;
     solver->startIncrementalSession(VarManager::instance().getVarsOfType(VarInfo::PRES_STATE),
@@ -335,6 +350,45 @@ bool Utils::compressStateCNF(CNF &cnf, bool hardcore)
 }
 
 // -------------------------------------------------------------------------------------------
+void Utils::negateStateCNF(CNF &cnf)
+{
+  CNF orig_cnf(cnf);
+  CNF cnf_to_learn(cnf);
+  VarManager::instance().push();
+  cnf_to_learn.negate();
+  cnf.clear();
+  const vector<int> &vars = VarManager::instance().getVarsOfType(VarInfo::PRES_STATE);
+
+  SatSolver *find_solver = Options::instance().getSATSolver(false, true);
+  find_solver->startIncrementalSession(vars, false);
+  find_solver->incAddCNF(orig_cnf);
+  SatSolver *gen_solver = Options::instance().getSATSolver(false, true);
+  gen_solver->startIncrementalSession(vars, false);
+  gen_solver->incAddCNF(cnf_to_learn);
+
+  vector<int> model;
+  vector<int> none;
+  while(true)
+  {
+    bool sat = find_solver->incIsSatModelOrCore(none, vars, model);
+    if(!sat)
+      break;
+    //Generalize model as long as model implies orig_cnf
+    //                 as long as model & cnf_to_learn is unsat
+    vector<int> core;
+    sat = gen_solver->incIsSatModelOrCore(model, vars, core);
+    MASSERT(!sat, "Impossible.");
+    cnf.addNegCubeAsClause(core);
+    find_solver->incAddNegCubeAsClause(core);
+  }
+  VarManager::instance().pop();
+  delete find_solver;
+  find_solver = NULL;
+  delete gen_solver;
+  gen_solver = NULL;
+}
+
+// -------------------------------------------------------------------------------------------
 void Utils::debugPrint(const vector<int> &vec, string prefix)
 {
   ostringstream oss;
@@ -379,24 +433,81 @@ void Utils::debugCheckWinReg(const CNF &winning_region, const CNF &neg_winning_r
 
   // from the winning region, we can enforce to stay in the winning region:
   // exists x,i: forall c: exists x': W(x) & T(x,i,c,x') & !W(x) must be unsat
-  QBFSolver *qbf_solver = Options::instance().getQBFSolver();
-  check.clear();
-  check.addCNF(neg_winning_region);
-  check.swapPresentToNext();
-  check.addCNF(winning_region);
-  check.addCNF(AIG2CNF::instance().getTrans());
-  vector<pair<VarInfo::VarKind, QBFSolver::Quant> > check_quant;
-  check_quant.push_back(make_pair(VarInfo::PRES_STATE, QBFSolver::E));
-  check_quant.push_back(make_pair(VarInfo::INPUT, QBFSolver::E));
-  check_quant.push_back(make_pair(VarInfo::CTRL, QBFSolver::A));
-  check_quant.push_back(make_pair(VarInfo::NEXT_STATE, QBFSolver::E));
-  check_quant.push_back(make_pair(VarInfo::TMP, QBFSolver::E));
-  MASSERT(!qbf_solver->isSat(check_quant, check), "Winning region is not inductive.");
+  bool check_with_qbf = false;
+  if(check_with_qbf)
+  {
+    QBFSolver *qbf_solver = Options::instance().getQBFSolver();
+    check.clear();
+    check.addCNF(neg_winning_region);
+    check.swapPresentToNext();
+    check.addCNF(winning_region);
+    check.addCNF(AIG2CNF::instance().getTrans());
+    vector<pair<VarInfo::VarKind, QBFSolver::Quant> > check_quant;
+    check_quant.push_back(make_pair(VarInfo::PRES_STATE, QBFSolver::E));
+    check_quant.push_back(make_pair(VarInfo::INPUT, QBFSolver::E));
+    check_quant.push_back(make_pair(VarInfo::CTRL, QBFSolver::A));
+    check_quant.push_back(make_pair(VarInfo::NEXT_STATE, QBFSolver::E));
+    check_quant.push_back(make_pair(VarInfo::TMP, QBFSolver::E));
+    MASSERT(!qbf_solver->isSat(check_quant, check), "Winning region is not inductive.");
+    delete qbf_solver;
+    qbf_solver = NULL;
+  }
+  else
+  {
+    // SAT-based check:
+    const vector<int> &in = VarManager::instance().getVarsOfType(VarInfo::INPUT);
+    const vector<int> &pres = VarManager::instance().getVarsOfType(VarInfo::PRES_STATE);
+    const vector<int> &ctrl = VarManager::instance().getVarsOfType(VarInfo::CTRL);
+    vector<int> sic;
+    sic.reserve(pres.size() + in.size() + ctrl.size());
+    sic.insert(sic.end(), pres.begin(), pres.end());
+    sic.insert(sic.end(), in.begin(), in.end());
+    sic.insert(sic.end(), ctrl.begin(), ctrl.end());
+    vector<int> si;
+    si.reserve(pres.size() + in.size());
+    si.insert(si.end(), pres.begin(), pres.end());
+    si.insert(si.end(), in.begin(), in.end());
+    CNF check_cnf(neg_winning_region);
+    check_cnf.swapPresentToNext();
+    check_cnf.addCNF(winning_region);
+    check_cnf.addCNF(AIG2CNF::instance().getTrans());
+    SatSolver *check_solver = Options::instance().getSATSolver(false, true);
+    check_solver->startIncrementalSession(sic, false);
+    check_solver->incAddCNF(check_cnf);
+    CNF gen_cnf(winning_region);
+    gen_cnf.swapPresentToNext();
+    gen_cnf.addCNF(winning_region);
+    gen_cnf.addCNF(AIG2CNF::instance().getTrans());
+    SatSolver *gen_solver = Options::instance().getSATSolver(false, true);
+    gen_solver->startIncrementalSession(sic, false);
+    gen_solver->incAddCNF(gen_cnf);
+
+    vector<int> model_or_core;
+    while(true)
+    {
+      bool sat = check_solver->incIsSatModelOrCore(vector<int>(), si, model_or_core);
+      if(!sat)
+        break;
+      vector<int> state_input = model_or_core;
+      vector<int> state = Utils::extract(state_input, VarInfo::PRES_STATE);
+      vector<int> input = Utils::extract(state_input, VarInfo::INPUT);
+
+      sat = gen_solver->incIsSatModelOrCore(state, input, ctrl, model_or_core);
+      MASSERT(sat, "Winning region is not inductive.");
+
+      vector<int> resp(model_or_core);
+      sat = check_solver->incIsSatModelOrCore(state_input, resp, vector<int>(), model_or_core);
+      MASSERT(sat == false, "Impossible.");
+      check_solver->incAddNegCubeAsClause(model_or_core);
+    }
+    delete check_solver;
+    check_solver = NULL;
+    delete gen_solver;
+    gen_solver = NULL;
+  }
 
   delete sat_solver;
   sat_solver = NULL;
-  delete qbf_solver;
-  qbf_solver = NULL;
 
   L_DBG("All checks passed.");
 #endif

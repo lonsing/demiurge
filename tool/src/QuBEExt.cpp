@@ -35,10 +35,8 @@
 // -------------------------------------------------------------------------------------------
 QuBEExt::QuBEExt() : ExtQBFSolver()
 {
-  const char *tp_env = getenv(Options::TP_VAR.c_str());
-  MASSERT(tp_env != NULL, "You have not set the variable " << Options::TP_VAR);
-  path_to_qube_ = string(tp_env) + "/qube/qube";
-  path_to_deqqbf_ = string(tp_env) + "/depqbf/depqbf";
+  path_to_qube_ = Options::instance().getTPDirName() + "/qube/qube";
+  path_to_deqqbf_ = Options::instance().getTPDirName() + "/depqbf/depqbf";
   struct stat st;
   MASSERT(stat(path_to_qube_.c_str(), &st) == 0, "QuBE executable not found.");
 }

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">demiurge
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A synthesis tool for safety specifications.</div>
   </td>
@@ -86,6 +86,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classQBFCertImplExtractor-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">QBFCertImplExtractor Class Reference</div>  </div>
@@ -96,6 +97,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
  <a href="classQBFCertImplExtractor.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="QBFCertImplExtractor_8h_source.html">QBFCertImplExtractor.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for QBFCertImplExtractor:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classQBFCertImplExtractor.png" usemap="#QBFCertImplExtractor_map" alt=""/>
+  <map id="QBFCertImplExtractor_map" name="QBFCertImplExtractor_map">
+<area href="classCNFImplExtractor.html" title="An interface for all classes that can construct circuits from a CNF winning region." alt="CNFImplExtractor" shape="rect" coords="0,0,135,24"/>
+</map>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -103,17 +113,40 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a1775a11abdad2797b0f7e7e1105bfb2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a1775a11abdad2797b0f7e7e1105bfb2b"></a><br/></td></tr>
 <tr class="memitem:a52dfc285e9b75484e500b21ff4c35919"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQBFCertImplExtractor.html#a52dfc285e9b75484e500b21ff4c35919">~QBFCertImplExtractor</a> ()</td></tr>
 <tr class="memdesc:a52dfc285e9b75484e500b21ff4c35919"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#a52dfc285e9b75484e500b21ff4c35919"></a><br/></td></tr>
-<tr class="memitem:a3ff8c8d92df6d7ed01fe193ca880c14e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQBFCertImplExtractor.html#a3ff8c8d92df6d7ed01fe193ca880c14e">extractCircuit</a> (const <a class="el" href="classCNF.html">CNF</a> &amp;winning_region)</td></tr>
-<tr class="memdesc:a3ff8c8d92df6d7ed01fe193ca880c14e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts a circuit from the winning region.  <a href="#a3ff8c8d92df6d7ed01fe193ca880c14e"></a><br/></td></tr>
-<tr class="memitem:a47577070a52f5d95b194a863e6b86893"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQBFCertImplExtractor.html#a47577070a52f5d95b194a863e6b86893">extractCircuit</a> (const <a class="el" href="classCNF.html">CNF</a> &amp;winning_region, const <a class="el" href="classCNF.html">CNF</a> &amp;neg_winning_region)</td></tr>
-<tr class="memdesc:a47577070a52f5d95b194a863e6b86893"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts a circuit from the winning region and its negation.  <a href="#a47577070a52f5d95b194a863e6b86893"></a><br/></td></tr>
+<tr class="memitem:a97cf27d520ea0057385e35bb762a3069"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQBFCertImplExtractor.html#a97cf27d520ea0057385e35bb762a3069">run</a> (const <a class="el" href="classCNF.html">CNF</a> &amp;winning_region, const <a class="el" href="classCNF.html">CNF</a> &amp;neg_winning_region)</td></tr>
+<tr class="memdesc:a97cf27d520ea0057385e35bb762a3069"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts a circuit from the winning region and its negation.  <a href="#a97cf27d520ea0057385e35bb762a3069"></a><br/></td></tr>
+<tr class="memitem:ad329eedd50e443f44edc99db8c2e2613"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCNFImplExtractor.html#ad329eedd50e443f44edc99db8c2e2613">extractCircuit</a> (const <a class="el" href="classCNF.html">CNF</a> &amp;winning_region)</td></tr>
+<tr class="memdesc:ad329eedd50e443f44edc99db8c2e2613"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts a circuit from the winning region.  <a href="#ad329eedd50e443f44edc99db8c2e2613"></a><br/></td></tr>
+<tr class="memitem:a5e9694425af3f1a76d8b21ace3c435d9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCNFImplExtractor.html#a5e9694425af3f1a76d8b21ace3c435d9">extractCircuit</a> (const <a class="el" href="classCNF.html">CNF</a> &amp;winning_region, const <a class="el" href="classCNF.html">CNF</a> &amp;neg_winning_region)</td></tr>
+<tr class="memdesc:a5e9694425af3f1a76d8b21ace3c435d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts a circuit from the winning region and its negation.  <a href="#a5e9694425af3f1a76d8b21ace3c435d9"></a><br/></td></tr>
+<tr class="memitem:aae098749e201b22294a70f6e0a4a58f0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCNFImplExtractor.html#aae098749e201b22294a70f6e0a4a58f0">logStatistics</a> ()</td></tr>
+<tr class="memdesc:aae098749e201b22294a70f6e0a4a58f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs statistical information about circuit extraction.  <a href="#aae098749e201b22294a70f6e0a4a58f0"></a><br/></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a30f9aea9a9cb3b2662cb4eee1ac73687"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQBFCertImplExtractor.html#a30f9aea9a9cb3b2662cb4eee1ac73687">parseQBFCertAnswer</a> (const string &amp;answer, vector&lt; vector&lt; int &gt; &gt; &amp;and_gates) const </td></tr>
-<tr class="memdesc:a30f9aea9a9cb3b2662cb4eee1ac73687"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses the answer of QBFCert.  <a href="#a30f9aea9a9cb3b2662cb4eee1ac73687"></a><br/></td></tr>
-<tr class="memitem:a86906e053e6a487037927c1e209ea473"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQBFCertImplExtractor.html#a86906e053e6a487037927c1e209ea473">dumpResAigerLib</a> (size_t max_var_idx, const vector&lt; vector&lt; int &gt; &gt; &amp;and_gates)</td></tr>
-<tr class="memdesc:a86906e053e6a487037927c1e209ea473"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dumps the final system into the output file specified by the user.  <a href="#a86906e053e6a487037927c1e209ea473"></a><br/></td></tr>
+<tr class="memitem:aa6a292ba4108e707f458c04d621a6d9e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQBFCertImplExtractor.html#aa6a292ba4108e707f458c04d621a6d9e">logDetailedStatistics</a> ()</td></tr>
+<tr class="memdesc:aa6a292ba4108e707f458c04d621a6d9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs some detailed statistics (time for QBFCert, ABC, circuit sizes, etc.).  <a href="#aa6a292ba4108e707f458c04d621a6d9e"></a><br/></td></tr>
+<tr class="memitem:a58a4e5021d0ef9c4190a5be74fb5a83e"><td class="memItemLeft" align="right" valign="top">aiger *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCNFImplExtractor.html#a58a4e5021d0ef9c4190a5be74fb5a83e">optimizeWithABC</a> (aiger *circuit) const </td></tr>
+<tr class="memdesc:a58a4e5021d0ef9c4190a5be74fb5a83e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optimizes a combinatorial AIGER circuit with ABC.  <a href="#a58a4e5021d0ef9c4190a5be74fb5a83e"></a><br/></td></tr>
+<tr class="memitem:a0970602635f3356712d57ebb28d12c0d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCNFImplExtractor.html#a0970602635f3356712d57ebb28d12c0d">insertIntoSpec</a> (aiger *standalone_circuit) const </td></tr>
+<tr class="memdesc:a0970602635f3356712d57ebb28d12c0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes a circuit defining the control signals and inserts it into the spec.  <a href="#a0970602635f3356712d57ebb28d12c0d"></a><br/></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a51eb6677e876d90d1b3763ca3e5457e7"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQBFCertImplExtractor.html#a51eb6677e876d90d1b3763ca3e5457e7">size_before_abc_</a></td></tr>
+<tr class="memdesc:a51eb6677e876d90d1b3763ca3e5457e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Statistics: the number of AND gates before optimization with ABC.  <a href="#a51eb6677e876d90d1b3763ca3e5457e7"></a><br/></td></tr>
+<tr class="memitem:a18a1c9ab317cada48d54b7006124190e"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQBFCertImplExtractor.html#a18a1c9ab317cada48d54b7006124190e">size_after_abc_</a></td></tr>
+<tr class="memdesc:a18a1c9ab317cada48d54b7006124190e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Statistics: the number of AND gates after optimization with ABC.  <a href="#a18a1c9ab317cada48d54b7006124190e"></a><br/></td></tr>
+<tr class="memitem:ab22c545849fc2f85a49a846a836a5ec6"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQBFCertImplExtractor.html#ab22c545849fc2f85a49a846a836a5ec6">size_final_</a></td></tr>
+<tr class="memdesc:ab22c545849fc2f85a49a846a836a5ec6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Statistics: the final number of additional AND gates.  <a href="#ab22c545849fc2f85a49a846a836a5ec6"></a><br/></td></tr>
+<tr class="memitem:ab596205af9db44f69af214adca44201c"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQBFCertImplExtractor.html#ab596205af9db44f69af214adca44201c">qbfcert_real_time_</a></td></tr>
+<tr class="memdesc:ab596205af9db44f69af214adca44201c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Statistics: the real time (in seconds) needed by QBFCert.  <a href="#ab596205af9db44f69af214adca44201c"></a><br/></td></tr>
+<tr class="memitem:a90be758f6fb963647db3aa9c384075d8"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQBFCertImplExtractor.html#a90be758f6fb963647db3aa9c384075d8">abc_real_time_</a></td></tr>
+<tr class="memdesc:a90be758f6fb963647db3aa9c384075d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Statistics: the real time (in seconds) needed for the optimization with ABC.  <a href="#a90be758f6fb963647db3aa9c384075d8"></a><br/></td></tr>
+<tr class="memitem:ab8be06d42fd3c4b569ec22cfcf2f508e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCNFImplExtractor.html#ab8be06d42fd3c4b569ec22cfcf2f508e">extraction_cpu_time_</a></td></tr>
+<tr class="memdesc:ab8be06d42fd3c4b569ec22cfcf2f508e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The circuit extraction time in CPU-seconds.  <a href="#ab8be06d42fd3c4b569ec22cfcf2f508e"></a><br/></td></tr>
+<tr class="memitem:ae06413cf08f868357d64545b3041aa18"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCNFImplExtractor.html#ae06413cf08f868357d64545b3041aa18">extraction_real_time_</a></td></tr>
+<tr class="memdesc:ae06413cf08f868357d64545b3041aa18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Like <a class="el" href="classCNFImplExtractor.html#ab8be06d42fd3c4b569ec22cfcf2f508e" title="The circuit extraction time in CPU-seconds.">extraction_cpu_time_</a> but real-time.  <a href="#ae06413cf08f868357d64545b3041aa18"></a><br/></td></tr>
 </table>
 <a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Given a winning region in <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a>, this method extracts a circuit using QBFCert. </p>
@@ -123,9 +156,9 @@ Protected Member Functions</h2></td></tr>
  &#160; exists x,i: forall c: exists x': W &amp; T &amp; !W' <br/>
  QBFCert outputs the result in AIGER format. Hence, all we have to do in order to obtain the final output of our tool is to embed this AIGER-circuits for the c-signals in the input AIGER file.</p>
 <dl class="section author"><dt>Author</dt><dd>Robert Koenighofer (<a href="#" onclick="location.href='mai'+'lto:'+'rob'+'er'+'t.k'+'oe'+'nig'+'ho'+'fer'+'@i'+'aik'+'.t'+'ugr'+'az'+'.at'; return false;">rober<span style="display: none;">.nosp@m.</span>t.ko<span style="display: none;">.nosp@m.</span>enigh<span style="display: none;">.nosp@m.</span>ofer<span style="display: none;">.nosp@m.</span>@iaik<span style="display: none;">.nosp@m.</span>.tug<span style="display: none;">.nosp@m.</span>raz.a<span style="display: none;">.nosp@m.</span>t</a>) </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>1.0.0 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.1.0 </dd></dl>
 
-<p>Definition at line <a class="el" href="QBFCertImplExtractor_8h_source.html#l00056">56</a> of file <a class="el" href="QBFCertImplExtractor_8h_source.html">QBFCertImplExtractor.h</a>.</p>
+<p>Definition at line <a class="el" href="QBFCertImplExtractor_8h_source.html#l00057">57</a> of file <a class="el" href="QBFCertImplExtractor_8h_source.html">QBFCertImplExtractor.h</a>.</p>
 </div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a1775a11abdad2797b0f7e7e1105bfb2b"></a>
 <div class="memitem">
@@ -142,7 +175,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Constructor. </p>
 
-<p>Definition at line <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00083">83</a> of file <a class="el" href="QBFCertImplExtractor_8cpp_source.html">QBFCertImplExtractor.cpp</a>.</p>
+<p>Definition at line <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00046">46</a> of file <a class="el" href="QBFCertImplExtractor_8cpp_source.html">QBFCertImplExtractor.cpp</a>.</p>
 
 </div>
 </div>
@@ -169,12 +202,12 @@ Protected Member Functions</h2></td></tr>
 
 <p>Destructor. </p>
 
-<p>Definition at line <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00089">89</a> of file <a class="el" href="QBFCertImplExtractor_8cpp_source.html">QBFCertImplExtractor.cpp</a>.</p>
+<p>Definition at line <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00057">57</a> of file <a class="el" href="QBFCertImplExtractor_8cpp_source.html">QBFCertImplExtractor.cpp</a>.</p>
 
 </div>
 </div>
 <h2>Member Function Documentation</h2>
-<a class="anchor" id="a86906e053e6a487037927c1e209ea473"></a>
+<a class="anchor" id="ad329eedd50e443f44edc99db8c2e2613"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -182,89 +215,48 @@ Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void QBFCertImplExtractor::dumpResAigerLib </td>
-          <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>max_var_idx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const vector&lt; vector&lt; int &gt; &gt; &amp;&#160;</td>
-          <td class="paramname"><em>and_gates</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Dumps the final system into the output file specified by the user. </p>
-<p>All we have to do in order to obtain the final output of our tool is to embed the AIGER-circuits returned by QBFCert into input AIGER file. That is, the c-inputs have to be removed and the AND-gates defining the c-signals have to be inserted. This is done by this method.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">max_var_idx</td><td>The maximal variable index that is used in the resulting AND gates (as returned by <a class="el" href="classQBFCertImplExtractor.html#a30f9aea9a9cb3b2662cb4eee1ac73687" title="Parses the answer of QBFCert.">parseQBFCertAnswer</a>). </td></tr>
-    <tr><td class="paramname">and_gates</td><td>An empty vector. This method writes the AND-gates to define the c-signals into this vector. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Definition at line <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00230">230</a> of file <a class="el" href="QBFCertImplExtractor_8cpp_source.html">QBFCertImplExtractor.cpp</a>.</p>
-
-<p>References <a class="el" href="Options_8cpp_source.html#l00239">Options::getAigInFileName()</a>, <a class="el" href="Options_8cpp_source.html#l00245">Options::getAigOutFileName()</a>, <a class="el" href="Options_8cpp_source.html#l00059">Options::instance()</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, and <a class="el" href="StringUtils_8cpp_source.html#l00064">StringUtils::toLowerCaseIn()</a>.</p>
-
-<p>Referenced by <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00105">extractCircuit()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a3ff8c8d92df6d7ed01fe193ca880c14e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void QBFCertImplExtractor::extractCircuit </td>
+          <td class="memname">void CNFImplExtractor::extractCircuit </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classCNF.html">CNF</a> &amp;&#160;</td>
           <td class="paramname"><em>winning_region</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Extracts a circuit from the winning region. </p>
-<p>The result is written into the output file specified by the user. This method uses QBFCert to compute a solution. QBFCert (see <a href="http://fmv.jku.at/qbfcert/">http://fmv.jku.at/qbfcert/</a>) is a framework for computing Skolem or Herbrand functions as witnesses for quantified Boolean formulas. We use it to compute circuits from a winning region. Let W be the winning region. Then we can compute a circuit as a skolem function for the c-signals in: <br/>
- &#160; forall x,i: exists c,x': (!W) | (T &amp; W') <br/>
- However, for performance reasons, we actually compute Herbrand functions for the c-signals in the formula: <br/>
- &#160; exists x,i: forall c: exists x': W &amp; T &amp; !W' <br/>
- QBFCert outputs the result in AIGER format. Hence, all we have to do in order to obtain the final output of our tool is to embed this AIGER-circuits for the c-signals in the input AIGER file.</p>
+<p>How this is done (interpolation, learning, etc.) depends on the concrete implementation of this abstract class. The result is written into the output file specified by the user.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">winning_region</td><td>The winning region from which the circuit should be extracted. For circuit extraction we need both the winning region and its negation. The negation is computed inside this function. If you already have a negation, use the other method. </td></tr>
+    <tr><td class="paramname">winning_region</td><td>The winning region from which the circuit should be extracted. For circuit extraction we need both the winning region and its negation. The negation is computed inside this function. If you already have a negation, use the other circuit extraction method of this class. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00095">95</a> of file <a class="el" href="QBFCertImplExtractor_8cpp_source.html">QBFCertImplExtractor.cpp</a>.</p>
+<p>Reimplemented in <a class="el" href="classStoreImplExtractor.html#a08437db801013d0b3208bbf099239fac">StoreImplExtractor</a>.</p>
 
-<p>References <a class="el" href="Utils_8cpp_source.html#l00272">Utils::compressStateCNF()</a>, and <a class="el" href="CNF_8cpp_source.html#l00217">CNF::negate()</a>.</p>
+<p>Definition at line <a class="el" href="CNFImplExtractor_8cpp_source.html#l00085">85</a> of file <a class="el" href="CNFImplExtractor_8cpp_source.html">CNFImplExtractor.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00069">LearnSynthQBFInc::run()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00117">IFM13Synth::run()</a>, <a class="el" href="TemplateSynth_8cpp_source.html#l00057">TemplateSynth::run()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00245">ParallelLearner::run()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00089">LearnSynthQBF::run()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00117">LearnSynthSAT::run()</a>, and <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00143">LearnSynthQBFInd::run()</a>.</p>
+<p>References <a class="el" href="Utils_8cpp_source.html#l00287">Utils::compressStateCNF()</a>, <a class="el" href="CNFImplExtractor_8h_source.html#l00145">CNFImplExtractor::extraction_cpu_time_</a>, <a class="el" href="CNFImplExtractor_8h_source.html#l00150">CNFImplExtractor::extraction_real_time_</a>, <a class="el" href="Stopwatch_8cpp_source.html#l00041">Stopwatch::getCPUTimeSec()</a>, <a class="el" href="Stopwatch_8cpp_source.html#l00055">Stopwatch::getRealTimeSec()</a>, <a class="el" href="CNF_8cpp_source.html#l00264">CNF::negate()</a>, <a class="el" href="classCNFImplExtractor.html#a8251ce58869f9f8ded159f1fa07ab334">CNFImplExtractor::run()</a>, and <a class="el" href="Stopwatch_8cpp_source.html#l00033">Stopwatch::start()</a>.</p>
+
+<p>Referenced by <a class="el" href="LoadSynth_8cpp_source.html#l00051">LoadSynth::run()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00073">LearnSynthQBFInc::run()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00121">IFM13Synth::run()</a>, <a class="el" href="TemplateSynth_8cpp_source.html#l00061">TemplateSynth::run()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00249">ParallelLearner::run()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00092">LearnSynthQBF::run()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00121">LearnSynthSAT::run()</a>, and <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00147">LearnSynthQBFInd::run()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a47577070a52f5d95b194a863e6b86893"></a>
+<a class="anchor" id="a5e9694425af3f1a76d8b21ace3c435d9"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void QBFCertImplExtractor::extractCircuit </td>
+          <td class="memname">void CNFImplExtractor::extractCircuit </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classCNF.html">CNF</a> &amp;&#160;</td>
           <td class="paramname"><em>winning_region</em>, </td>
@@ -281,6 +273,210 @@ Protected Member Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Extracts a circuit from the winning region and its negation. </p>
+<p>How this is done (interpolation, learning, etc.) depends on the concrete implementation of this abstract class. The result is written into the output file specified by the user.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">winning_region</td><td>The winning region from which the circuit should be extracted. </td></tr>
+    <tr><td class="paramname">neg_winning_region</td><td>The negation of the winning region. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="CNFImplExtractor_8cpp_source.html#l00102">102</a> of file <a class="el" href="CNFImplExtractor_8cpp_source.html">CNFImplExtractor.cpp</a>.</p>
+
+<p>References <a class="el" href="CNFImplExtractor_8h_source.html#l00145">CNFImplExtractor::extraction_cpu_time_</a>, <a class="el" href="CNFImplExtractor_8h_source.html#l00150">CNFImplExtractor::extraction_real_time_</a>, <a class="el" href="Stopwatch_8cpp_source.html#l00041">Stopwatch::getCPUTimeSec()</a>, <a class="el" href="Stopwatch_8cpp_source.html#l00055">Stopwatch::getRealTimeSec()</a>, <a class="el" href="classCNFImplExtractor.html#a8251ce58869f9f8ded159f1fa07ab334">CNFImplExtractor::run()</a>, and <a class="el" href="Stopwatch_8cpp_source.html#l00033">Stopwatch::start()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0970602635f3356712d57ebb28d12c0d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t CNFImplExtractor::insertIntoSpec </td>
+          <td>(</td>
+          <td class="paramtype">aiger *&#160;</td>
+          <td class="paramname"><em>standalone_circuit</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Takes a circuit defining the control signals and inserts it into the spec. </p>
+<p>This method takes as argument an aiger circuit of the following form: </p>
+<ul>
+<li>
+The circuit is combinational, i.e., has no latches. </li>
+<li>
+The inputs of the circuit are: the uncontrollable inputs from the spec (in the order in which they appear in the spec) followed by the state-signals (the output of the latches in the spec, in the order in which they appear in the spec). </li>
+<li>
+The outputs of the circuit are the controllable inputs in the order in which they are defined in the spec. </li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">standalone_circuit</td><td>A circuit defining the control signals. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The number of additional AND gates introduced into the spec. </dd></dl>
+
+<p>Definition at line <a class="el" href="CNFImplExtractor_8cpp_source.html#l00149">149</a> of file <a class="el" href="CNFImplExtractor_8cpp_source.html">CNFImplExtractor.cpp</a>.</p>
+
+<p>References <a class="el" href="VarInfo_8h_source.html#l00074">VarInfo::CTRL</a>, <a class="el" href="Options_8cpp_source.html#l00321">Options::getAigInFileName()</a>, <a class="el" href="Options_8cpp_source.html#l00340">Options::getAigOutFileName()</a>, <a class="el" href="VarManager_8cpp_source.html#l00267">VarManager::getInfo()</a>, <a class="el" href="VarInfo_8cpp_source.html#l00091">VarInfo::getLitInAIG()</a>, <a class="el" href="VarManager_8cpp_source.html#l00338">VarManager::getMaxAIGVar()</a>, <a class="el" href="VarManager_8cpp_source.html#l00320">VarManager::getPresErrorStateVar()</a>, <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, <a class="el" href="VarInfo_8h_source.html#l00069">VarInfo::INPUT</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="Options_8cpp_source.html#l00065">Options::instance()</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, and <a class="el" href="StringUtils_8cpp_source.html#l00064">StringUtils::toLowerCaseIn()</a>.</p>
+
+<p>Referenced by <a class="el" href="LearningImplExtractor_8cpp_source.html#l00128">LearningImplExtractor::run()</a>, and <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00063">run()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa6a292ba4108e707f458c04d621a6d9e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QBFCertImplExtractor::logDetailedStatistics </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Logs some detailed statistics (time for QBFCert, ABC, circuit sizes, etc.). </p>
+
+<p>Reimplemented from <a class="el" href="classCNFImplExtractor.html#abe790c767f6c71a52ef8b0a61ab39eaa">CNFImplExtractor</a>.</p>
+
+<p>Definition at line <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00147">147</a> of file <a class="el" href="QBFCertImplExtractor_8cpp_source.html">QBFCertImplExtractor.cpp</a>.</p>
+
+<p>References <a class="el" href="QBFCertImplExtractor_8h_source.html#l00127">abc_real_time_</a>, <a class="el" href="Logger_8h_source.html#l00336">L_LOG</a>, <a class="el" href="QBFCertImplExtractor_8h_source.html#l00122">qbfcert_real_time_</a>, <a class="el" href="QBFCertImplExtractor_8h_source.html#l00112">size_after_abc_</a>, <a class="el" href="QBFCertImplExtractor_8h_source.html#l00107">size_before_abc_</a>, and <a class="el" href="QBFCertImplExtractor_8h_source.html#l00117">size_final_</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aae098749e201b22294a70f6e0a4a58f0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CNFImplExtractor::logStatistics </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Logs statistical information about circuit extraction. </p>
+<p>This method logs the overall execution time plus whatever detailed information is collected by the concrete implementation of this class. </p>
+
+<p>Definition at line <a class="el" href="CNFImplExtractor_8cpp_source.html#l00290">290</a> of file <a class="el" href="CNFImplExtractor_8cpp_source.html">CNFImplExtractor.cpp</a>.</p>
+
+<p>References <a class="el" href="CNFImplExtractor_8h_source.html#l00145">CNFImplExtractor::extraction_cpu_time_</a>, <a class="el" href="CNFImplExtractor_8h_source.html#l00150">CNFImplExtractor::extraction_real_time_</a>, <a class="el" href="Logger_8h_source.html#l00336">L_LOG</a>, and <a class="el" href="CNFImplExtractor_8cpp_source.html#l00298">CNFImplExtractor::logDetailedStatistics()</a>.</p>
+
+<p>Referenced by <a class="el" href="LoadSynth_8cpp_source.html#l00051">LoadSynth::run()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00073">LearnSynthQBFInc::run()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00121">IFM13Synth::run()</a>, <a class="el" href="TemplateSynth_8cpp_source.html#l00061">TemplateSynth::run()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00249">ParallelLearner::run()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00092">LearnSynthQBF::run()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00121">LearnSynthSAT::run()</a>, and <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00147">LearnSynthQBFInd::run()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a58a4e5021d0ef9c4190a5be74fb5a83e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">aiger * CNFImplExtractor::optimizeWithABC </td>
+          <td>(</td>
+          <td class="paramtype">aiger *&#160;</td>
+          <td class="paramname"><em>circuit</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Optimizes a combinatorial AIGER circuit with ABC. </p>
+<dl class="section note"><dt>Note</dt><dd>The returned structure must be deleted by the caller. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">circuit</td><td>The circuit to optimize. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The optimized version of the circuit. The returned aiger structure must be deleted by the caller. </dd></dl>
+
+<p>Definition at line <a class="el" href="CNFImplExtractor_8cpp_source.html#l00112">112</a> of file <a class="el" href="CNFImplExtractor_8cpp_source.html">CNFImplExtractor.cpp</a>.</p>
+
+<p>References <a class="el" href="Options_8cpp_source.html#l00445">Options::getTPDirName()</a>, <a class="el" href="Options_8cpp_source.html#l00435">Options::getUniqueTmpFileName()</a>, <a class="el" href="Options_8cpp_source.html#l00065">Options::instance()</a>, and <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>.</p>
+
+<p>Referenced by <a class="el" href="LearningImplExtractor_8cpp_source.html#l00128">LearningImplExtractor::run()</a>, and <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00063">run()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a97cf27d520ea0057385e35bb762a3069"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QBFCertImplExtractor::run </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classCNF.html">CNF</a> &amp;&#160;</td>
+          <td class="paramname"><em>winning_region</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classCNF.html">CNF</a> &amp;&#160;</td>
+          <td class="paramname"><em>neg_winning_region</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Extracts a circuit from the winning region and its negation. </p>
@@ -298,13 +494,16 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00105">105</a> of file <a class="el" href="QBFCertImplExtractor_8cpp_source.html">QBFCertImplExtractor.cpp</a>.</p>
+<p>Implements <a class="el" href="classCNFImplExtractor.html#a8251ce58869f9f8ded159f1fa07ab334">CNFImplExtractor</a>.</p>
 
-<p>References <a class="el" href="QBFSolver_8h_source.html#l00067">QBFSolver::A</a>, <a class="el" href="CNF_8cpp_source.html#l00183">CNF::addCNF()</a>, <a class="el" href="VarInfo_8h_source.html#l00074">VarInfo::CTRL</a>, <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00230">dumpResAigerLib()</a>, <a class="el" href="QBFSolver_8h_source.html#l00062">QBFSolver::E</a>, <a class="el" href="VarInfo_8h_source.html#l00069">VarInfo::INPUT</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="ExtQBFSolver_8cpp_source.html#l00054">ExtQBFSolver::isSat()</a>, <a class="el" href="Logger_8h_source.html#l00302">L_INF</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="VarInfo_8h_source.html#l00064">VarInfo::NEXT_STATE</a>, <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00146">parseQBFCertAnswer()</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="DepQBFExt_8cpp_source.html#l00056">DepQBFExt::qbfCert()</a>, <a class="el" href="CNF_8cpp_source.html#l00189">CNF::swapPresentToNext()</a>, and <a class="el" href="VarInfo_8h_source.html#l00081">VarInfo::TMP</a>.</p>
+<p>Definition at line <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00063">63</a> of file <a class="el" href="QBFCertImplExtractor_8cpp_source.html">QBFCertImplExtractor.cpp</a>.</p>
+
+<p>References <a class="el" href="QBFSolver_8h_source.html#l00067">QBFSolver::A</a>, <a class="el" href="QBFCertImplExtractor_8h_source.html#l00127">abc_real_time_</a>, <a class="el" href="CNF_8cpp_source.html#l00230">CNF::addCNF()</a>, <a class="el" href="VarInfo_8h_source.html#l00074">VarInfo::CTRL</a>, <a class="el" href="QBFSolver_8h_source.html#l00062">QBFSolver::E</a>, <a class="el" href="Stopwatch_8cpp_source.html#l00055">Stopwatch::getRealTimeSec()</a>, <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, <a class="el" href="VarInfo_8h_source.html#l00069">VarInfo::INPUT</a>, <a class="el" href="CNFImplExtractor_8cpp_source.html#l00149">CNFImplExtractor::insertIntoSpec()</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="ExtQBFSolver_8cpp_source.html#l00054">ExtQBFSolver::isSat()</a>, <a class="el" href="Logger_8h_source.html#l00319">L_DBG</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="VarInfo_8h_source.html#l00064">VarInfo::NEXT_STATE</a>, <a class="el" href="CNFImplExtractor_8cpp_source.html#l00112">CNFImplExtractor::optimizeWithABC()</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="DepQBFExt_8cpp_source.html#l00058">DepQBFExt::qbfCert()</a>, <a class="el" href="QBFCertImplExtractor_8h_source.html#l00122">qbfcert_real_time_</a>, <a class="el" href="QBFCertImplExtractor_8h_source.html#l00112">size_after_abc_</a>, <a class="el" href="QBFCertImplExtractor_8h_source.html#l00107">size_before_abc_</a>, <a class="el" href="QBFCertImplExtractor_8h_source.html#l00117">size_final_</a>, <a class="el" href="Stopwatch_8cpp_source.html#l00033">Stopwatch::start()</a>, <a class="el" href="CNF_8cpp_source.html#l00236">CNF::swapPresentToNext()</a>, and <a class="el" href="VarInfo_8h_source.html#l00081">VarInfo::TMP</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a30f9aea9a9cb3b2662cb4eee1ac73687"></a>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="a90be758f6fb963647db3aa9c384075d8"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -312,21 +511,7 @@ Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">size_t QBFCertImplExtractor::parseQBFCertAnswer </td>
-          <td>(</td>
-          <td class="paramtype">const string &amp;&#160;</td>
-          <td class="paramname"><em>answer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">vector&lt; vector&lt; int &gt; &gt; &amp;&#160;</td>
-          <td class="paramname"><em>and_gates</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
+          <td class="memname">size_t QBFCertImplExtractor::abc_real_time_</td>
         </tr>
       </table>
   </td>
@@ -336,22 +521,167 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Parses the answer of QBFCert. </p>
-<p>QBFCert is called in an external process and produces a an AIGER file that contains the result (the circuits for the c-signals). This method parses the result. The main thing this method does is that it renames variables. The AIGER file returned by QBFCert uses the variable indices as they occur in the CNFs. We must map them back to the original variable indices that were used in the AIGER input file.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">answer</td><td>The string-representation of the AIGER file produced by QBFCert. </td></tr>
-    <tr><td class="paramname">and_gates</td><td>An empty vector. This method writes the AND-gates to define the c-signals into this vector. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The maximal variable index that is used in the resulting AND gates. </dd></dl>
+<p>Statistics: the real time (in seconds) needed for the optimization with ABC. </p>
 
-<p>Definition at line <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00146">146</a> of file <a class="el" href="QBFCertImplExtractor_8cpp_source.html">QBFCertImplExtractor.cpp</a>.</p>
+<p>Definition at line <a class="el" href="QBFCertImplExtractor_8h_source.html#l00127">127</a> of file <a class="el" href="QBFCertImplExtractor_8h_source.html">QBFCertImplExtractor.h</a>.</p>
 
-<p>References <a class="el" href="VarInfo_8h_source.html#l00074">VarInfo::CTRL</a>, <a class="el" href="VarManager_8cpp_source.html#l00267">VarManager::getInfo()</a>, <a class="el" href="VarInfo_8cpp_source.html#l00091">VarInfo::getLitInAIG()</a>, <a class="el" href="VarManager_8cpp_source.html#l00338">VarManager::getMaxAIGVar()</a>, <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="Logger_8h_source.html#l00319">L_DBG</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, and <a class="el" href="StringUtils_8cpp_source.html#l00173">StringUtils::splitLines()</a>.</p>
+<p>Referenced by <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00147">logDetailedStatistics()</a>, and <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00063">run()</a>.</p>
 
-<p>Referenced by <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00105">extractCircuit()</a>.</p>
+</div>
+</div>
+<a class="anchor" id="ab8be06d42fd3c4b569ec22cfcf2f508e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double CNFImplExtractor::extraction_cpu_time_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The circuit extraction time in CPU-seconds. </p>
+
+<p>Definition at line <a class="el" href="CNFImplExtractor_8h_source.html#l00145">145</a> of file <a class="el" href="CNFImplExtractor_8h_source.html">CNFImplExtractor.h</a>.</p>
+
+<p>Referenced by <a class="el" href="CNFImplExtractor_8cpp_source.html#l00085">CNFImplExtractor::extractCircuit()</a>, and <a class="el" href="CNFImplExtractor_8cpp_source.html#l00290">CNFImplExtractor::logStatistics()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae06413cf08f868357d64545b3041aa18"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t CNFImplExtractor::extraction_real_time_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Like <a class="el" href="classCNFImplExtractor.html#ab8be06d42fd3c4b569ec22cfcf2f508e" title="The circuit extraction time in CPU-seconds.">extraction_cpu_time_</a> but real-time. </p>
+
+<p>Definition at line <a class="el" href="CNFImplExtractor_8h_source.html#l00150">150</a> of file <a class="el" href="CNFImplExtractor_8h_source.html">CNFImplExtractor.h</a>.</p>
+
+<p>Referenced by <a class="el" href="CNFImplExtractor_8cpp_source.html#l00085">CNFImplExtractor::extractCircuit()</a>, and <a class="el" href="CNFImplExtractor_8cpp_source.html#l00290">CNFImplExtractor::logStatistics()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab596205af9db44f69af214adca44201c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t QBFCertImplExtractor::qbfcert_real_time_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Statistics: the real time (in seconds) needed by QBFCert. </p>
+
+<p>Definition at line <a class="el" href="QBFCertImplExtractor_8h_source.html#l00122">122</a> of file <a class="el" href="QBFCertImplExtractor_8h_source.html">QBFCertImplExtractor.h</a>.</p>
+
+<p>Referenced by <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00147">logDetailedStatistics()</a>, and <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00063">run()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a18a1c9ab317cada48d54b7006124190e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t QBFCertImplExtractor::size_after_abc_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Statistics: the number of AND gates after optimization with ABC. </p>
+
+<p>Definition at line <a class="el" href="QBFCertImplExtractor_8h_source.html#l00112">112</a> of file <a class="el" href="QBFCertImplExtractor_8h_source.html">QBFCertImplExtractor.h</a>.</p>
+
+<p>Referenced by <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00147">logDetailedStatistics()</a>, and <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00063">run()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a51eb6677e876d90d1b3763ca3e5457e7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t QBFCertImplExtractor::size_before_abc_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Statistics: the number of AND gates before optimization with ABC. </p>
+
+<p>Definition at line <a class="el" href="QBFCertImplExtractor_8h_source.html#l00107">107</a> of file <a class="el" href="QBFCertImplExtractor_8h_source.html">QBFCertImplExtractor.h</a>.</p>
+
+<p>Referenced by <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00147">logDetailedStatistics()</a>, and <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00063">run()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab22c545849fc2f85a49a846a836a5ec6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t QBFCertImplExtractor::size_final_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Statistics: the final number of additional AND gates. </p>
+
+<p>Definition at line <a class="el" href="QBFCertImplExtractor_8h_source.html#l00117">117</a> of file <a class="el" href="QBFCertImplExtractor_8h_source.html">QBFCertImplExtractor.h</a>.</p>
+
+<p>Referenced by <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00147">logDetailedStatistics()</a>, and <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00063">run()</a>.</p>
 
 </div>
 </div>
@@ -362,7 +692,7 @@ Protected Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 14 2013 15:15:46 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jul 15 2014 12:30:23 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

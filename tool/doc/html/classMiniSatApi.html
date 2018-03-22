@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">demiurge
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A synthesis tool for safety specifications.</div>
   </td>
@@ -191,7 +191,7 @@ Private Member Functions</h2></td></tr>
 <div class="textblock"><p>Interfaces the MiniSat SAT-solver via its API. </p>
 <p>This class represents an interface to the SAT-solver Minisat (see <a href="http://minisat.se">http://minisat.se</a>). It is a concrete implementation of the <a class="el" href="classSatSolver.html" title="An abstract interface for all SAT-solver implementations.">SatSolver</a> interface. For a given <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a>, this class is able to determine satisfiability. Furthermore, in case of satisfiability, it can extract satisfying assignments. In case of unsatisfiability, it can compute an unsatisfiable core. It can be used in two different ways. In the incremental usage scenario, all information the solver has learned so far is retained. Methods for incremental solving start with 'inc'. Other methods (like <a class="el" href="classMiniSatApi.html#a73b93ecb947723a96ef6fbd436640e12" title="Checks if a CNF is satisfiable.">isSat()</a> or <a class="el" href="classMiniSatApi.html#a7f846d8c4a5a652cb83460852c09dfb3" title="Checks if a CNF is satisfiable and extracts a model or an unsatisfiable core.">isSatModelOrCore()</a>) instantiate a fresh solver instance for every call.</p>
 <dl class="section author"><dt>Author</dt><dd>Robert Koenighofer (<a href="#" onclick="location.href='mai'+'lto:'+'rob'+'er'+'t.k'+'oe'+'nig'+'ho'+'fer'+'@i'+'aik'+'.t'+'ugr'+'az'+'.at'; return false;">rober<span style="display: none;">.nosp@m.</span>t.ko<span style="display: none;">.nosp@m.</span>enigh<span style="display: none;">.nosp@m.</span>ofer<span style="display: none;">.nosp@m.</span>@iaik<span style="display: none;">.nosp@m.</span>.tug<span style="display: none;">.nosp@m.</span>raz.a<span style="display: none;">.nosp@m.</span>t</a>) </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>1.0.0 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.1.0 </dd></dl>
 
 <p>Definition at line <a class="el" href="MiniSatApi_8h_source.html#l00058">58</a> of file <a class="el" href="MiniSatApi_8h_source.html">MiniSatApi.h</a>.</p>
 </div><h2>Member Typedef Documentation</h2>
@@ -459,7 +459,7 @@ Private Member Functions</h2></td></tr>
 
 <p>References <a class="el" href="SatSolver_8h_source.html#l00428">SatSolver::min_cores_</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00178">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00326">LearnSynthSAT::computeWinningRegionRG()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00510">LearnSynthSAT::computeWinningRegionRGRC()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00180">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00328">LearnSynthSAT::computeWinningRegionPlainDep()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00508">LearnSynthSAT::computeWinningRegionPlainDep2()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00759">LearnSynthSAT::computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00943">LearnSynthSAT::computeWinningRegionRGRC()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00359">LearningImplExtractor::runLearningJiangSAT()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l01172">LearningImplExtractor::runLearningJiangSATInc1()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l01379">LearningImplExtractor::runLearningJiangSATInc2()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00527">LearningImplExtractor::runLearningJiangSATTmp()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00715">LearningImplExtractor::runLearningJiangSATTmpCtrl()</a>, and <a class="el" href="LearningImplExtractor_8cpp_source.html#l00947">LearningImplExtractor::runLearningJiangSATTmpCtrlInc2()</a>.</p>
 
 </div>
 </div>
@@ -497,7 +497,7 @@ Private Member Functions</h2></td></tr>
 
 <p>References <a class="el" href="SatSolver_8h_source.html#l00433">SatSolver::rand_models_</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00178">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00326">LearnSynthSAT::computeWinningRegionRG()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00510">LearnSynthSAT::computeWinningRegionRGRC()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00180">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00328">LearnSynthSAT::computeWinningRegionPlainDep()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00508">LearnSynthSAT::computeWinningRegionPlainDep2()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00759">LearnSynthSAT::computeWinningRegionRG()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00943">LearnSynthSAT::computeWinningRegionRGRC()</a>.</p>
 
 </div>
 </div>
@@ -682,7 +682,7 @@ Private Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="MiniSatApi_8cpp_source.html#l00229">229</a> of file <a class="el" href="MiniSatApi_8cpp_source.html">MiniSatApi.cpp</a>.</p>
 
-<p>References <a class="el" href="MiniSatApi_8cpp_source.html#l00061">c2m()</a>, <a class="el" href="CNF_8cpp_source.html#l00273">CNF::getClauses()</a>, <a class="el" href="MiniSatApi_8h_source.html#l00398">incr_stack_</a>, <a class="el" href="MiniSatApi_8h_source.html#l00406">incr_stack_cnfs_</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, and <a class="el" href="MiniSatApi_8h_source.html#l00414">use_push_</a>.</p>
+<p>References <a class="el" href="MiniSatApi_8cpp_source.html#l00061">c2m()</a>, <a class="el" href="CNF_8cpp_source.html#l00346">CNF::getClauses()</a>, <a class="el" href="MiniSatApi_8h_source.html#l00398">incr_stack_</a>, <a class="el" href="MiniSatApi_8h_source.html#l00406">incr_stack_cnfs_</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, and <a class="el" href="MiniSatApi_8h_source.html#l00414">use_push_</a>.</p>
 
 </div>
 </div>
@@ -933,7 +933,7 @@ Private Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="MiniSatApi_8cpp_source.html#l00331">331</a> of file <a class="el" href="MiniSatApi_8cpp_source.html">MiniSatApi.cpp</a>.</p>
 
-<p>References <a class="el" href="MiniSatApi_8cpp_source.html#l00061">c2m()</a>, <a class="el" href="MiniSatApi_8h_source.html#l00398">incr_stack_</a>, <a class="el" href="MiniSatApi_8cpp_source.html#l00083">m2c()</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="SatSolver_8h_source.html#l00428">SatSolver::min_cores_</a>, <a class="el" href="SatSolver_8h_source.html#l00433">SatSolver::rand_models_</a>, <a class="el" href="MiniSatApi_8cpp_source.html#l00108">randModel()</a>, and <a class="el" href="Utils_8cpp_source.html#l00161">Utils::remove()</a>.</p>
+<p>References <a class="el" href="MiniSatApi_8cpp_source.html#l00061">c2m()</a>, <a class="el" href="MiniSatApi_8h_source.html#l00398">incr_stack_</a>, <a class="el" href="MiniSatApi_8cpp_source.html#l00083">m2c()</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="SatSolver_8h_source.html#l00428">SatSolver::min_cores_</a>, <a class="el" href="SatSolver_8h_source.html#l00433">SatSolver::rand_models_</a>, <a class="el" href="MiniSatApi_8cpp_source.html#l00108">randModel()</a>, and <a class="el" href="Utils_8cpp_source.html#l00176">Utils::remove()</a>.</p>
 
 </div>
 </div>
@@ -998,7 +998,7 @@ Private Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="MiniSatApi_8cpp_source.html#l00389">389</a> of file <a class="el" href="MiniSatApi_8cpp_source.html">MiniSatApi.cpp</a>.</p>
 
-<p>References <a class="el" href="MiniSatApi_8cpp_source.html#l00061">c2m()</a>, <a class="el" href="MiniSatApi_8h_source.html#l00398">incr_stack_</a>, <a class="el" href="MiniSatApi_8cpp_source.html#l00083">m2c()</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="SatSolver_8h_source.html#l00428">SatSolver::min_cores_</a>, <a class="el" href="SatSolver_8h_source.html#l00433">SatSolver::rand_models_</a>, <a class="el" href="MiniSatApi_8cpp_source.html#l00108">randModel()</a>, and <a class="el" href="Utils_8cpp_source.html#l00161">Utils::remove()</a>.</p>
+<p>References <a class="el" href="MiniSatApi_8cpp_source.html#l00061">c2m()</a>, <a class="el" href="MiniSatApi_8h_source.html#l00398">incr_stack_</a>, <a class="el" href="MiniSatApi_8cpp_source.html#l00083">m2c()</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="SatSolver_8h_source.html#l00428">SatSolver::min_cores_</a>, <a class="el" href="SatSolver_8h_source.html#l00433">SatSolver::rand_models_</a>, <a class="el" href="MiniSatApi_8cpp_source.html#l00108">randModel()</a>, and <a class="el" href="Utils_8cpp_source.html#l00176">Utils::remove()</a>.</p>
 
 </div>
 </div>
@@ -1056,7 +1056,7 @@ Private Member Functions</h2></td></tr>
 
 <p>Stores the current state of the incremental session on a stack. </p>
 <p>The state can be restored later by calling <a class="el" href="classMiniSatApi.html#af388f97db15f77baeb420a8fef74ca6a" title="Restores the incremental session back to the point where incPush() was called.">incPop()</a>. MiniSat does not support push and pop natively. Also, MiniSat does not allow to copy a a solver instance. Hence, we do a workaround: we create a new solver instance and feed it with the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> that has been fed into the original solver instance. Clauses learned by the original solver are not transferred. For this to work, we track all clauses that are added to the original solver. This means some computational overhead. We can save this overhead if we tell <a class="el" href="classMiniSatApi.html#afe6f184e440ffe7f9b3a86045c15b450" title="Starts a new incremental session.">startIncrementalSession()</a> that <a class="el" href="classMiniSatApi.html#a27013ace25320f68252bef5ba9f2e9ad" title="Stores the current state of the incremental session on a stack.">incPush()</a> will never be called.</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000005">Todo:</a></b></dt><dd>Try to improve this workaround with activation variables or by extracting the learned clauses from the original solver instance or by implementing a copy-function for MiniSat solver instances. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">Todo:</a></b></dt><dd>Try to improve this workaround with activation variables or by extracting the learned clauses from the original solver instance or by implementing a copy-function for MiniSat solver instances. </dd></dl>
 
 <p>Implements <a class="el" href="classSatSolver.html#a4da0dff7082a91429e3311d279605be4">SatSolver</a>.</p>
 
@@ -1102,7 +1102,7 @@ Private Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="MiniSatApi_8cpp_source.html#l00129">129</a> of file <a class="el" href="MiniSatApi_8cpp_source.html">MiniSatApi.cpp</a>.</p>
 
-<p>References <a class="el" href="MiniSatApi_8cpp_source.html#l00061">c2m()</a>, and <a class="el" href="CNF_8cpp_source.html#l00273">CNF::getClauses()</a>.</p>
+<p>References <a class="el" href="MiniSatApi_8cpp_source.html#l00061">c2m()</a>, and <a class="el" href="CNF_8cpp_source.html#l00346">CNF::getClauses()</a>.</p>
 
 <p>Referenced by <a class="el" href="MiniSatApi_8cpp_source.html#l00144">isSatModelOrCore()</a>.</p>
 
@@ -1169,7 +1169,7 @@ Private Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="MiniSatApi_8cpp_source.html#l00144">144</a> of file <a class="el" href="MiniSatApi_8cpp_source.html">MiniSatApi.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8cpp_source.html#l00122">CNF::add1LitClause()</a>, <a class="el" href="MiniSatApi_8cpp_source.html#l00061">c2m()</a>, <a class="el" href="CNF_8cpp_source.html#l00273">CNF::getClauses()</a>, <a class="el" href="MiniSatApi_8cpp_source.html#l00129">isSat()</a>, <a class="el" href="MiniSatApi_8cpp_source.html#l00083">m2c()</a>, <a class="el" href="SatSolver_8h_source.html#l00428">SatSolver::min_cores_</a>, <a class="el" href="SatSolver_8h_source.html#l00433">SatSolver::rand_models_</a>, <a class="el" href="MiniSatApi_8cpp_source.html#l00108">randModel()</a>, and <a class="el" href="Utils_8cpp_source.html#l00161">Utils::remove()</a>.</p>
+<p>References <a class="el" href="CNF_8cpp_source.html#l00169">CNF::add1LitClause()</a>, <a class="el" href="MiniSatApi_8cpp_source.html#l00061">c2m()</a>, <a class="el" href="CNF_8cpp_source.html#l00346">CNF::getClauses()</a>, <a class="el" href="MiniSatApi_8cpp_source.html#l00129">isSat()</a>, <a class="el" href="MiniSatApi_8cpp_source.html#l00083">m2c()</a>, <a class="el" href="SatSolver_8h_source.html#l00428">SatSolver::min_cores_</a>, <a class="el" href="SatSolver_8h_source.html#l00433">SatSolver::rand_models_</a>, <a class="el" href="MiniSatApi_8cpp_source.html#l00108">randModel()</a>, and <a class="el" href="Utils_8cpp_source.html#l00176">Utils::remove()</a>.</p>
 
 </div>
 </div>
@@ -1398,7 +1398,7 @@ Private Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 14 2013 15:15:46 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jul 15 2014 12:30:22 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

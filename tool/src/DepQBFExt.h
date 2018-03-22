@@ -33,6 +33,8 @@
 #include "defines.h"
 #include "ExtQBFSolver.h"
 
+class aiger;
+
 // -------------------------------------------------------------------------------------------
 ///
 /// @class DepQBFExt
@@ -51,7 +53,7 @@
 /// functions for QBFs.
 ///
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.0.0
+/// @version 1.1.0
 class DepQBFExt : public ExtQBFSolver
 {
 public:
@@ -78,8 +80,9 @@ public:
 ///        assign an existential or universal quantifier to every kind of variable that
 ///        occurs in the cnf.
 /// @param cnf A Boolean formula in CNF.
-/// @return A string representation of the resulting Skolem functions in AIGER format.
-  virtual string qbfCert(const vector<pair<VarInfo::VarKind, Quant> > &quantifier_prefix,
+/// @return The resulting Skolem functions in AIGER format. The returned AIGER structure must
+///         be deleted by the caller.
+  virtual aiger* qbfCert(const vector<pair<VarInfo::VarKind, Quant> > &quantifier_prefix,
                          const CNF& cnf);
 
 protected:

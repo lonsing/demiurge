@@ -5,7 +5,7 @@
 %%For: 
 %Magnification: 1.00
 %%Orientation: Portrait
-%%BoundingBox: 0 0 500 142.857143
+%%BoundingBox: 0 0 500 200.000000
 %%Pages: 0
 %%BeginSetup
 %%EndSetup
@@ -19,13 +19,13 @@
 /marginwidth 10 def
 /distx 20 def
 /disty 40 def
-/boundaspect 3.500000 def  % aspect ratio of the BoundingBox (width/height)
+/boundaspect 2.500000 def  % aspect ratio of the BoundingBox (width/height)
 /boundx 500 def
 /boundy boundx boundaspect div def
 /xspacing 0 def
 /yspacing 0 def
 /rows 3 def
-/cols 4 def
+/cols 3 def
 /scalefactor 0 def
 /boxfont /Times-Roman findfont fontheight scalefont def
 
@@ -175,7 +175,6 @@ boxfont setfont
 1 boundaspect scale
 (QBFSolver) cw
 (DepQBFApi) cw
-(DepQBFApiInc) cw
 (ExtQBFSolver) cw
 (DepQBFExt) cw
 (QuBEExt) cw
@@ -190,30 +189,27 @@ boundx scalefactor div boundy scalefactor div scale
 
 % ----- classes -----
 
- (QBFSolver) 1.000000 2.000000 box
+ (QBFSolver) 0.500000 2.000000 box
  (DepQBFApi) 0.000000 1.000000 box
- (DepQBFApiInc) 1.000000 1.000000 box
- (ExtQBFSolver) 2.000000 1.000000 box
- (DepQBFExt) 1.500000 0.000000 box
- (QuBEExt) 2.500000 0.000000 box
+ (ExtQBFSolver) 1.000000 1.000000 box
+ (DepQBFExt) 0.500000 0.000000 box
+ (QuBEExt) 1.500000 0.000000 box
 
 % ----- relations -----
 
 solid
-1 1.000000 1.250000 out
+1 0.500000 1.250000 out
 solid
-0.000000 2.000000 2.000000 conn
+0.000000 1.000000 2.000000 conn
 solid
 0 0.000000 1.750000 in
 solid
 0 1.000000 1.750000 in
 solid
-0 2.000000 1.750000 in
+1 1.000000 0.250000 out
 solid
-1 2.000000 0.250000 out
+0.500000 1.500000 1.000000 conn
 solid
-1.500000 2.500000 1.000000 conn
+0 0.500000 0.750000 in
 solid
 0 1.500000 0.750000 in
-solid
-0 2.500000 0.750000 in

@@ -55,7 +55,7 @@
 /// SAT- or QBF-solving time.
 ///
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.0.0
+/// @version 1.1.0
 class CNF
 {
 public:
@@ -66,6 +66,14 @@ public:
 ///
 /// After construction, the CNF represents the empty set of clauses, i.e., the formula TRUE.
   CNF();
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Constructor from DIMACS file.
+///
+/// @param filename The name (including path and extension) of the DIMACS file containing the
+///        definition of the CNF.
+  CNF(const string &filename);
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -263,6 +271,18 @@ public:
 
 // -------------------------------------------------------------------------------------------
 ///
+/// @brief Stores the CNF into a file in DIMACS format.
+///
+/// The CNF is stored in DIMACS format, i.e., you can pass this file directly on to
+/// SAT-solvers.
+/// DIMACS format means: every clause is printed as the list of its literals. Clauses are
+/// terminated by the special number '0' (which cannot be a literal).
+///
+/// @param filename The name of the file to write to.
+  void saveToFile(const string &filename) const;
+
+// -------------------------------------------------------------------------------------------
+///
 /// @brief Returns the clauses of the CNF as list of vectors.
 ///
 /// @return The clauses of the CNF as list of vectors.
@@ -301,6 +321,46 @@ public:
 ///        considered to be FALSE.
 /// @return True if the CNF is satisfied by the passed variable assignment, false otherwise.
   bool isSatBy(const vector<int> &cube) const;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Replaces a variable in the CNF by true or false.
+///
+/// @param var The variable to replace.
+/// @param value The truth value of this variable.
+  void setVarValue(int var, bool value);
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Renames all variables in a CNF.
+///
+/// @param rename_map A map containing the new names of the variables. Every occurrence of
+///        variable i is replaced by rename_map[i]. If a certain variable i should not be
+///        renamed, then set rename_map[i]=i. This rename_map must contain a new name for
+///        EVERY variable that may appear in the CNF.
+  void renameVars(const vector<int> rename_map);
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Returns true if this CNF contains a certain variable, and false otherwise.
+///
+/// @param var The variable to check for.
+/// @return True if this CNF contains var, and false otherwise.
+  bool contains(int var) const;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Returns the set of all variables that occur in the CNF.
+///
+/// @return The set of all variables that occur in the CNF.
+  vector<int> getVars() const;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Adds all variables that occur in the CNF to the given set.
+///
+/// @param var_set The set to which all variables in the CNF should be appended to.
+  void appendVarsTo(set<int> &var_set) const;
 
 // -------------------------------------------------------------------------------------------
 ///

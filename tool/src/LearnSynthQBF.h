@@ -38,6 +38,7 @@
 #include "BackEnd.h"
 
 class SatSolver;
+class CNFImplExtractor;
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -67,7 +68,7 @@ class SatSolver;
 /// Finally the QBFCertImplExtractor is used to extract a circuit.
 ///
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.0.0
+/// @version 1.1.0
 class LearnSynthQBF : public BackEnd
 {
 public:
@@ -75,7 +76,10 @@ public:
 // -------------------------------------------------------------------------------------------
 ///
 /// @brief Constructor.
-  LearnSynthQBF();
+///
+/// @param impl_extractor The engine to use for circuit extraction. It will be deleted by
+///        this class.
+  LearnSynthQBF(CNFImplExtractor *impl_extractor);
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -429,6 +433,13 @@ protected:
 /// not trust any unsatisfiability verdicts coming from solver_i_ (but need to update the
 /// next-state copy of the winning region instead).
   bool solver_i_precise_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The engine to use for circuit extraction.
+///
+/// It will be deleted by this class (in the destructor).
+  CNFImplExtractor *impl_extractor_;
 
 private:
 

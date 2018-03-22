@@ -32,18 +32,20 @@
 #include "Options.h"
 #include "AIG2CNF.h"
 #include "Logger.h"
-#include "QBFCertImplExtractor.h"
+#include "CNFImplExtractor.h"
+#include "LearningImplExtractor.h"
 #include "LingelingApi.h"
 #include "Utils.h"
 #include "DepQBFApi.h"
 
 // -------------------------------------------------------------------------------------------
-LearnSynthSAT::LearnSynthSAT() :
+LearnSynthSAT::LearnSynthSAT(CNFImplExtractor *impl_extractor) :
                BackEnd(),
                solver_i_(Options::instance().getSATSolver()),
                solver_ctrl_(Options::instance().getSATSolver()),
                solver_i_ind_(Options::instance().getSATSolver()),
-               solver_ctrl_ind_(Options::instance().getSATSolver())
+               solver_ctrl_ind_(Options::instance().getSATSolver()),
+               impl_extractor_(impl_extractor)
 {
 
   // build previous-state copy of the transition relation. We want to have it enabled
@@ -111,6 +113,8 @@ LearnSynthSAT::~LearnSynthSAT()
   solver_i_ind_ = NULL;
   delete solver_ctrl_ind_;
   solver_ctrl_ind_ = NULL;
+  delete impl_extractor_;
+  impl_extractor_ = NULL;
 }
 
 // -------------------------------------------------------------------------------------------
@@ -139,12 +143,10 @@ bool LearnSynthSAT::run()
 
   L_INF("Starting to extract a circuit ...");
   MASSERT(Options::instance().getBackEndMode() != 2, "Not yet implemented.");
-  statistics_.notifyRelDetStart();
-  QBFCertImplExtractor extractor;
-  extractor.extractCircuit(winning_region_);
-  statistics_.notifyRelDetEnd();
+  impl_extractor_->extractCircuit(winning_region_);
   L_INF("Synthesis done.");
   statistics_.logStatistics();
+  impl_extractor_->logStatistics();
   return true;
 }
 
@@ -186,7 +188,7 @@ bool LearnSynthSAT::computeWinningRegionPlain()
   const vector<int> &s = VM.getVarsOfType(VarInfo::PRES_STATE);
   const vector<int> &c = VM.getVarsOfType(VarInfo::CTRL);
   const vector<int> &i = VM.getVarsOfType(VarInfo::INPUT);
-  const vector<int> &n = VM.getVarsOfType(VarInfo::PRES_STATE);
+  const vector<int> &n = VM.getVarsOfType(VarInfo::NEXT_STATE);
   vector<int> si;
   si.reserve(s.size() + i.size());
   si.insert(si.end(), s.begin(), s.end());
@@ -318,6 +320,437 @@ bool LearnSynthSAT::computeWinningRegionPlain()
         model_or_core[cnt] = -model_or_core[cnt];
       solver_i_->incAddClause(model_or_core);
       statistics_.notifyAfterRefine(si.size(), model_or_core.size());
+    }
+  }
+}
+
+// -------------------------------------------------------------------------------------------
+bool LearnSynthSAT::computeWinningRegionPlainDep()
+{
+  AIG2CNF& A2C = AIG2CNF::instance();
+  VarManager &VM = VarManager::instance();
+  L_DBG("Nr. of state variables: " << VM.getVarsOfType(VarInfo::PRES_STATE).size());
+  L_DBG("Nr. of uncontrollable inputs: " << VM.getVarsOfType(VarInfo::INPUT).size());
+  L_DBG("Nr. of controllable inputs: " << VM.getVarsOfType(VarInfo::CTRL).size());
+
+  const vector<int> &s = VM.getVarsOfType(VarInfo::PRES_STATE);
+  const vector<int> &c = VM.getVarsOfType(VarInfo::CTRL);
+  const vector<int> &i = VM.getVarsOfType(VarInfo::INPUT);
+  const vector<int> &n = VM.getVarsOfType(VarInfo::NEXT_STATE);
+  //vector<int> si;
+  //si.reserve(s.size() + i.size());
+  //si.insert(si.end(), s.begin(), s.end());
+  //si.insert(si.end(), i.begin(), i.end());
+
+  const map<int, set<VarInfo> > &deps = AIG2CNF::instance().getTmpDepsTrans();
+  vector<int> ext_s;
+  ext_s.reserve(s.size() + deps.size());
+  ext_s.insert(ext_s.end(), s.begin(), s.end());
+  vector<int> ext_i;
+  ext_i.reserve(i.size() + deps.size());
+  ext_i.insert(ext_i.end(), i.begin(), i.end());
+  vector<int> ext_si;
+  ext_si.reserve(s.size() + i.size() + deps.size());
+  ext_si.insert(ext_si.end(), s.begin(), s.end());
+  ext_si.insert(ext_si.end(), i.begin(), i.end());
+  for(AIG2CNF::DepConstIter it = deps.begin(); it != deps.end(); ++it)
+  {
+    bool only_s = true;
+    bool only_i = true;
+    bool only_si = true;
+    for(set<VarInfo>::const_iterator i2 = it->second.begin(); i2 != it->second.end(); ++i2)
+    {
+      if(i2->getKind() != VarInfo::PRES_STATE)
+        only_s = false;
+      if(i2->getKind() != VarInfo::INPUT)
+        only_i = false;
+      if(i2->getKind() != VarInfo::PRES_STATE && i2->getKind() != VarInfo::INPUT)
+        only_si = false;
+    }
+    if(only_s)
+      ext_s.push_back(it->first);
+    if(only_i)
+      ext_i.push_back(it->first);
+    if(only_si)
+      ext_si.push_back(it->first);
+  }
+
+  vector<int> vars_to_keep;
+  vars_to_keep.reserve(ext_si.size() + c.size() + n.size());
+  vars_to_keep.insert(vars_to_keep.end(), ext_si.begin(), ext_si.end());
+  vars_to_keep.insert(vars_to_keep.end(), c.begin(), c.end());
+  vars_to_keep.insert(vars_to_keep.end(), n.begin(), n.end());
+
+  winning_region_.clear();
+  winning_region_ = A2C.getSafeStates();
+  winning_region_large_.clear();
+  winning_region_large_ = A2C.getSafeStates();
+
+  // solver_i_ contains F & T & !F':
+  solver_i_->doMinCores(true);
+  solver_i_->doRandModels(false);
+  solver_i_->startIncrementalSession(vars_to_keep, false);
+  solver_i_->incAddCNF(A2C.getNextUnsafeStates());
+  solver_i_->incAddCNF(A2C.getTrans());
+  solver_i_->incAddCNF(A2C.getSafeStates());
+
+  // solver_ctrl_ contains F & T & F':
+  solver_ctrl_->doMinCores(true);
+  solver_ctrl_->doRandModels(false);
+  solver_ctrl_->startIncrementalSession(vars_to_keep, false);
+  solver_ctrl_->incAddCNF(A2C.getNextSafeStates());
+  solver_ctrl_->incAddCNF(A2C.getTrans());
+  solver_ctrl_->incAddCNF(A2C.getSafeStates());
+  bool precise = true;
+
+  size_t it_cnt = 0;
+  vector<int> model_or_core;
+  while(true)
+  {
+    ++it_cnt;
+
+    // First, we check if there is some transition with some values for the inputs i and
+    // and c from F to !G' (G is a copy of F that is updated only lazily).
+    statistics_.notifyBeforeComputeCandidate();
+    bool sat = solver_i_->incIsSatModelOrCore(vector<int>(), ext_si, model_or_core);
+    statistics_.notifyAfterComputeCandidate();
+
+    if(!sat)
+    {
+      // No such transition exists.
+      if(precise)
+      {
+        // G = F. This means that there exists no possibility for the antagonist to leave F.
+        // Hence, F is a valid winning region. We can stop.
+        return true;
+      }
+      // G != F. Hence, the reason why no such transition exists could be that G is not up-to
+      // data. We set G:=F and start again. For that, we have to restart the incremental
+      // of session solver_i_.
+      statistics_.notifyRestart();
+      L_DBG("Need to restart with fresh U (iteration " << it_cnt << ")");
+      // get rid of all temporary variables introduced during negations:
+      VM.resetToLastPush();
+      solver_i_->startIncrementalSession(vars_to_keep, false);
+      Utils::compressStateCNF(winning_region_);
+      CNF leave_win(winning_region_);
+      leave_win.swapPresentToNext();
+      leave_win.negate();
+      leave_win.addCNF(AIG2CNF::instance().getTrans());
+      leave_win.addCNF(winning_region_);
+      //leave_win.addCNF(winning_region_large_);
+      solver_i_->incAddCNF(leave_win);
+      precise = true;
+      continue;
+    }
+
+    vector<int> state_input = model_or_core;
+    vector<int> state = Utils::extract(state_input, s);
+    vector<int> input = Utils::extract(state_input, ext_i);
+
+    // There exists a transition from F to !G' with some input i. Let's now see if the
+    // protagonist can find some c such that leaving F is avoided:
+    statistics_.notifyBeforeCheckCandidate();
+    sat = solver_ctrl_->incIsSatModelOrCore(state, input, c, model_or_core);
+    if(!sat)
+    {
+      // No such response exists. This means that we have found a counterexample-state.
+      // The solver solver_ctrl_ already computed a generalization of this
+      // counterexample-state in form of an unsatisfiable core. The unsatisfiable core
+      // represents the set of all state for which input i enforces that F is left.
+      // (This is weaker than what we compute with the QBF-solver in LearnSynthQBF, but
+      // it appears to be good enough in our experiments, and the computation is fast.)
+
+      // We can try to reduce it further (does not pay of):
+      //vector<int> first_core(model_or_core);
+      //solver_ctrl_->incAddNegCubeAsClause(model_or_core);
+      //Utils::swapPresentToNext(model_or_core);
+      //solver_ctrl_->incAddNegCubeAsClause(model_or_core);
+      //sat = solver_ctrl_->incIsSatModelOrCore(first_core, input, c, model_or_core);
+
+      if(Utils::containsInit(model_or_core))
+        return false;
+      // We compute the corresponding blocking clause, and update the winning region and the
+      // solvers:
+      vector<int> blocking_clause(model_or_core);
+      for(size_t cnt = 0; cnt < blocking_clause.size(); ++cnt)
+        blocking_clause[cnt] = -blocking_clause[cnt];
+      winning_region_.addClauseAndSimplify(blocking_clause);
+      winning_region_large_.addClauseAndSimplify(blocking_clause);
+      solver_i_->incAddClause(blocking_clause);
+      solver_ctrl_->incAddClause(blocking_clause);
+      Utils::swapPresentToNext(blocking_clause);
+      solver_ctrl_->incAddClause(blocking_clause);
+      precise = false;
+      statistics_.notifyAfterCheckCandidateFound(ext_s.size(), blocking_clause.size());
+    }
+    else
+    {
+      // There exists a response of the protagonist to this input vector. Hence, this input
+      // vector is useless for the antagonist in trying to go from F to !G'. We need to
+      // exclude it from solver_i_ so that the same state-input pair is not tried again.
+      // However, instead of excluding this one state-input pair only, we generalize it using
+      // an unsatisfiable core. The core gives us all state-input combinations for which
+      // the control vector found by solver_ctrl_ prevents that we go from F to !G'.
+      statistics_.notifyAfterCheckCandidateFailed();
+      vector<int> ctrl(model_or_core);
+      statistics_.notifyBeforeRefine();
+      //Utils::randomize(state_input);
+      sat = solver_i_->incIsSatModelOrCore(state_input, ctrl, vector<int>(), model_or_core);
+      MASSERT(sat == false, "Impossible.");
+      solver_i_->incAddNegCubeAsClause(model_or_core);
+      statistics_.notifyAfterRefine(ext_si.size(), model_or_core.size());
+    }
+  }
+}
+
+// -------------------------------------------------------------------------------------------
+bool LearnSynthSAT::computeWinningRegionPlainDep2()
+{
+  AIG2CNF& A2C = AIG2CNF::instance();
+  VarManager &VM = VarManager::instance();
+  L_DBG("Nr. of state variables: " << VM.getVarsOfType(VarInfo::PRES_STATE).size());
+  L_DBG("Nr. of uncontrollable inputs: " << VM.getVarsOfType(VarInfo::INPUT).size());
+  L_DBG("Nr. of controllable inputs: " << VM.getVarsOfType(VarInfo::CTRL).size());
+
+  const vector<int> &s = VM.getVarsOfType(VarInfo::PRES_STATE);
+  const vector<int> &c = VM.getVarsOfType(VarInfo::CTRL);
+  const vector<int> &i = VM.getVarsOfType(VarInfo::INPUT);
+  const vector<int> &n = VM.getVarsOfType(VarInfo::NEXT_STATE);
+  //vector<int> si;
+  //si.reserve(s.size() + i.size());
+  //si.insert(si.end(), s.begin(), s.end());
+  //si.insert(si.end(), i.begin(), i.end());
+
+  const map<int, set<VarInfo> > &deps = AIG2CNF::instance().getTmpDepsTrans();
+  vector<int> ext_s;
+  ext_s.reserve(s.size() + deps.size());
+  ext_s.insert(ext_s.end(), s.begin(), s.end());
+  vector<int> ext_i;
+  ext_i.reserve(i.size() + deps.size());
+  ext_i.insert(ext_i.end(), i.begin(), i.end());
+  vector<int> ext_si;
+  ext_si.reserve(s.size() + i.size() + deps.size());
+  ext_si.insert(ext_si.end(), s.begin(), s.end());
+  ext_si.insert(ext_si.end(), i.begin(), i.end());
+  set<int> miss;
+  list<int> analyze_further_queue;
+  for(AIG2CNF::DepConstIter it = deps.begin(); it != deps.end(); ++it)
+  {
+    if(it->first == 1)// The CNF var '1' is always the constant true and thus not interesting
+      continue;
+
+    bool only_s = true;
+    bool only_i = true;
+    bool only_si = true;
+    for(set<VarInfo>::const_iterator i2 = it->second.begin(); i2 != it->second.end(); ++i2)
+    {
+      if(i2->getKind() != VarInfo::PRES_STATE)
+        only_s = false;
+      if(i2->getKind() != VarInfo::INPUT)
+        only_i = false;
+      if(i2->getKind() != VarInfo::PRES_STATE && i2->getKind() != VarInfo::INPUT)
+        only_si = false;
+    }
+    if(only_s)
+    {
+      ext_s.push_back(it->first);
+      miss.insert(it->first);
+      analyze_further_queue.push_back(it->first);
+    }
+    if(only_i)
+      ext_i.push_back(it->first);
+    if(only_si)
+      ext_si.push_back(it->first);
+  }
+
+  // find the definition of all temporary variables that depend only on state vars:
+  CNF s_dep_defs;
+  const map<int, set<VarInfo> > &direct_deps = AIG2CNF::instance().getTmpDeps();
+  while(!analyze_further_queue.empty())
+  {
+    int analyze = analyze_further_queue.front();
+    analyze_further_queue.pop_front();
+    AIG2CNF::DepConstIter d = direct_deps.find(analyze);
+    MASSERT(d != direct_deps.end(), "Impossible.");
+    for(set<VarInfo>::const_iterator it = d->second.begin(); it != d->second.end(); ++it)
+    {
+      if(it->getKind() == VarInfo::TMP && miss.count(it->getLitInCNF()) == 0)
+      {
+        miss.insert(it->getLitInCNF());
+        analyze_further_queue.push_back(it->getLitInCNF());
+      }
+    }
+  }
+  set<int> to_find(miss);
+  const list<vector<int> > &all_clauses = AIG2CNF::instance().getTrans().getClauses();
+  for(CNF::ClauseConstIter it = all_clauses.begin(); it != all_clauses.end(); ++it)
+  {
+    const vector<int> &cl = *it;
+    if(cl.size() == 2 && to_find.count(-cl[0]))
+    {
+      int v = -cl[0];
+      s_dep_defs.addClause(cl);
+      ++it;
+      MASSERT(it != all_clauses.end(), "Impossible.");
+      const vector<int> &cl2 = *it;
+      DASSERT(cl2.size() == 2 && cl2[0] == -v, "Impossible.");
+      s_dep_defs.addClause(cl2);
+      ++it;
+      MASSERT(it != all_clauses.end(), "Impossible.");
+      const vector<int> &cl3 = *it;
+      DASSERT(cl3.size() == 3 && cl3[0] == v, "Impossible.");
+      s_dep_defs.addClause(cl3);
+      to_find.erase(v);
+    }
+    if(to_find.empty())
+      break;
+  }
+  int nr_of_vars = VarManager::instance().getMaxCNFVar() + 1;
+  vector<int> pres_to_next_map(nr_of_vars, 0);
+  for(int cnt = 1; cnt < nr_of_vars; ++cnt)
+    pres_to_next_map[cnt] = cnt;
+  for(size_t cnt = 0; cnt < s.size(); ++cnt)
+    pres_to_next_map[s[cnt]] = n[cnt];
+  for(set<int>::const_iterator it = miss.begin(); it != miss.end(); ++it)
+    pres_to_next_map[*it] = VarManager::instance().createFreshTmpVar();
+  CNF n_dep_defs(s_dep_defs);
+  n_dep_defs.renameVars(pres_to_next_map);
+
+  vector<int> vars_to_keep;
+  vars_to_keep.reserve(ext_si.size() + c.size() + n.size() + miss.size());
+  vars_to_keep.insert(vars_to_keep.end(), ext_si.begin(), ext_si.end());
+  vars_to_keep.insert(vars_to_keep.end(), c.begin(), c.end());
+  vars_to_keep.insert(vars_to_keep.end(), n.begin(), n.end());
+  for(set<int>::const_iterator it = miss.begin(); it != miss.end(); ++it)
+    vars_to_keep.push_back(pres_to_next_map[*it]);
+
+  VM.push();
+
+  winning_region_.clear();
+  winning_region_ = A2C.getSafeStates();
+  winning_region_large_.clear();
+  winning_region_large_ = A2C.getSafeStates();
+
+  // solver_i_ contains F & T & !F':
+  solver_i_->doMinCores(true);
+  solver_i_->doRandModels(false);
+  solver_i_->startIncrementalSession(vars_to_keep, false);
+  solver_i_->incAddCNF(A2C.getNextUnsafeStates());
+  solver_i_->incAddCNF(A2C.getTrans());
+  solver_i_->incAddCNF(A2C.getSafeStates());
+  solver_i_->incAddCNF(n_dep_defs);
+
+  // solver_ctrl_ contains F & T & F':
+  solver_ctrl_->doMinCores(true);
+  solver_ctrl_->doRandModels(false);
+  solver_ctrl_->startIncrementalSession(vars_to_keep, false);
+  solver_ctrl_->incAddCNF(A2C.getNextSafeStates());
+  solver_ctrl_->incAddCNF(A2C.getTrans());
+  solver_ctrl_->incAddCNF(A2C.getSafeStates());
+  solver_ctrl_->incAddCNF(n_dep_defs);
+  bool precise = true;
+
+  size_t it_cnt = 0;
+  vector<int> model_or_core;
+  while(true)
+  {
+    ++it_cnt;
+
+    // First, we check if there is some transition with some values for the inputs i and
+    // and c from F to !G' (G is a copy of F that is updated only lazily).
+    statistics_.notifyBeforeComputeCandidate();
+    bool sat = solver_i_->incIsSatModelOrCore(vector<int>(), ext_si, model_or_core);
+    statistics_.notifyAfterComputeCandidate();
+
+    if(!sat)
+    {
+      // No such transition exists.
+      if(precise)
+      {
+        // G = F. This means that there exists no possibility for the antagonist to leave F.
+        // Hence, F is a valid winning region. We can stop.
+        return true;
+      }
+      // G != F. Hence, the reason why no such transition exists could be that G is not up-to
+      // data. We set G:=F and start again. For that, we have to restart the incremental
+      // of session solver_i_.
+      statistics_.notifyRestart();
+      L_DBG("Need to restart with fresh U (iteration " << it_cnt << ")");
+      // get rid of all temporary variables introduced during negations:
+      VM.resetToLastPush();
+      solver_i_->startIncrementalSession(vars_to_keep, false);
+      Utils::compressStateCNF(winning_region_);
+      CNF leave_win(winning_region_);
+      leave_win.renameVars(pres_to_next_map);
+      leave_win.negate();
+      leave_win.addCNF(AIG2CNF::instance().getTrans());
+      leave_win.addCNF(winning_region_);
+      leave_win.addCNF(n_dep_defs);
+      //leave_win.addCNF(winning_region_large_);
+      solver_i_->incAddCNF(leave_win);
+      precise = true;
+      continue;
+    }
+
+    vector<int> state_input = model_or_core;
+    vector<int> state = Utils::extract(state_input, ext_s);
+    vector<int> input = Utils::extract(state_input, ext_i);
+
+    // There exists a transition from F to !G' with some input i. Let's now see if the
+    // protagonist can find some c such that leaving F is avoided:
+    statistics_.notifyBeforeCheckCandidate();
+    sat = solver_ctrl_->incIsSatModelOrCore(state, input, c, model_or_core);
+    if(!sat)
+    {
+      // No such response exists. This means that we have found a counterexample-state.
+      // The solver solver_ctrl_ already computed a generalization of this
+      // counterexample-state in form of an unsatisfiable core. The unsatisfiable core
+      // represents the set of all state for which input i enforces that F is left.
+      // (This is weaker than what we compute with the QBF-solver in LearnSynthQBF, but
+      // it appears to be good enough in our experiments, and the computation is fast.)
+
+      // We can try to reduce it further (does not pay of):
+      //vector<int> first_core(model_or_core);
+      //solver_ctrl_->incAddNegCubeAsClause(model_or_core);
+      //Utils::swapPresentToNext(model_or_core);
+      //solver_ctrl_->incAddNegCubeAsClause(model_or_core);
+      //sat = solver_ctrl_->incIsSatModelOrCore(first_core, input, c, model_or_core);
+
+      //if(Utils::containsInit(model_or_core))
+      //  return false;
+      // We compute the corresponding blocking clause, and update the winning region and the
+      // solvers:
+      vector<int> blocking_clause(model_or_core);
+      for(size_t cnt = 0; cnt < blocking_clause.size(); ++cnt)
+        blocking_clause[cnt] = -blocking_clause[cnt];
+      winning_region_.addClauseAndSimplify(blocking_clause);
+      winning_region_large_.addClauseAndSimplify(blocking_clause);
+      solver_i_->incAddClause(blocking_clause);
+      solver_ctrl_->incAddClause(blocking_clause);
+      CNF next_bl;
+      next_bl.addClause(blocking_clause);
+      next_bl.renameVars(pres_to_next_map);
+      solver_ctrl_->incAddCNF(next_bl);
+      precise = false;
+      statistics_.notifyAfterCheckCandidateFound(ext_s.size(), blocking_clause.size());
+    }
+    else
+    {
+      // There exists a response of the protagonist to this input vector. Hence, this input
+      // vector is useless for the antagonist in trying to go from F to !G'. We need to
+      // exclude it from solver_i_ so that the same state-input pair is not tried again.
+      // However, instead of excluding this one state-input pair only, we generalize it using
+      // an unsatisfiable core. The core gives us all state-input combinations for which
+      // the control vector found by solver_ctrl_ prevents that we go from F to !G'.
+      statistics_.notifyAfterCheckCandidateFailed();
+      vector<int> ctrl(model_or_core);
+      statistics_.notifyBeforeRefine();
+      //Utils::randomize(state_input);
+      sat = solver_i_->incIsSatModelOrCore(state_input, ctrl, vector<int>(), model_or_core);
+      MASSERT(sat == false, "Impossible.");
+      solver_i_->incAddNegCubeAsClause(model_or_core);
+      statistics_.notifyAfterRefine(ext_si.size(), model_or_core.size());
     }
   }
 }

@@ -89,6 +89,7 @@ void AIG2CNF::initFromAig(aiger *aig)
     }
   }
 
+
   // Step 2:
   // initialize the VarManager:
   VM.initFromAig(aig, refs);
@@ -96,7 +97,10 @@ void AIG2CNF::initFromAig(aiger *aig)
   // Step 3:
   // now we create the CNF for the transition relation:
   if (refs[0] || refs[1])
-    trans_.add1LitClause(VarManager::instance().aigLitToCnfLit(1));
+  {
+    trans_.add1LitClause(VM.aigLitToCnfLit(1));
+    trans_tmp_deps_[VM.aigLitToCnfLit(1)] = set<VarInfo>();
+  }
   // Step 3a:
   // clauses defining the outputs of the AND gates:
   for (unsigned i = 0; i < aig->num_ands; i++)
@@ -116,6 +120,11 @@ void AIG2CNF::initFromAig(aiger *aig)
       // (!lhs --> (!rhs1 OR !rhs0)
       trans_.add3LitClause(out_cnf_lit, -rhs1_cnf_lit, -rhs0_cnf_lit);
     }
+    set<VarInfo> deps;
+    deps.insert(VM.getInfo((rhs1_cnf_lit < 0) ? -rhs1_cnf_lit : rhs1_cnf_lit));
+    deps.insert(VM.getInfo((rhs0_cnf_lit < 0) ? -rhs0_cnf_lit : rhs0_cnf_lit));
+    trans_tmp_deps_[out_cnf_lit] = deps;
+
   }
   trans_eq_t_ = trans_;
 
@@ -243,6 +252,51 @@ const CNF& AIG2CNF::getNextUnsafeStates() const
 const CNF& AIG2CNF::getInitial() const
 {
   return initial_;
+}
+
+// -------------------------------------------------------------------------------------------
+const map<int, set<VarInfo> >& AIG2CNF::getTmpDeps() const
+{
+  return trans_tmp_deps_;
+}
+
+
+// -------------------------------------------------------------------------------------------
+const map<int, set<VarInfo> >& AIG2CNF::getTmpDepsTrans()
+{
+  // we compute the transitive dependencies only lazily:
+  typedef set<VarInfo>::const_iterator SetConstIter;
+  while(trans_tmp_deps_trans_.size() != trans_tmp_deps_.size())
+  {
+    for(DepConstIter it = trans_tmp_deps_.begin(); it != trans_tmp_deps_.end(); ++it)
+    {
+      if(trans_tmp_deps_trans_.count(it->first)) // already done
+        continue;
+      bool abort = false;
+      set<VarInfo> trans_dep;
+      for(SetConstIter it2 = it->second.begin(); it2 != it->second.end(); ++it2)
+      {
+        if(it2->getKind() == VarInfo::TMP)
+        {
+          DepConstIter d = trans_tmp_deps_trans_.find(it2->getLitInCNF());
+          if(d == trans_tmp_deps_trans_.end())
+          {
+            abort = true;
+            break;
+          }
+          else
+          {
+            trans_dep.insert(d->second.begin(), d->second.end());
+          }
+        }
+        else
+          trans_dep.insert(*it2);
+      }
+      if(!abort)
+        trans_tmp_deps_trans_[it->first] = trans_dep;
+    }
+  }
+  return trans_tmp_deps_trans_;
 }
 
 // -------------------------------------------------------------------------------------------

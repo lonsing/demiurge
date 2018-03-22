@@ -21,10 +21,6 @@ void \hyperlink{classLearnStatisticsSAT_ae75ccaa0f80d08aebfc98a953e997579}{notif
 \begin{DoxyCompactList}\small\item\em Called before the computation of the winning region starts. \end{DoxyCompactList}\item 
 void \hyperlink{classLearnStatisticsSAT_aef1a7fa18629a82aacde388741a2534c}{notify\-Win\-Reg\-End} ()
 \begin{DoxyCompactList}\small\item\em Called after the computation of the winning region is done. \end{DoxyCompactList}\item 
-void \hyperlink{classLearnStatisticsSAT_aa90c46fe634b5d230579c5f0cb0b96ad}{notify\-Rel\-Det\-Start} ()
-\begin{DoxyCompactList}\small\item\em Called before the relation determinization (the computation of circuits) starts. \end{DoxyCompactList}\item 
-void \hyperlink{classLearnStatisticsSAT_aa438b39955c3fc5079c27ad5df743ea8}{notify\-Rel\-Det\-End} ()
-\begin{DoxyCompactList}\small\item\em Called after the relation determinization (the computation of circuits) starts. \end{DoxyCompactList}\item 
 void \hyperlink{classLearnStatisticsSAT_aed53fb25ba247b25f867df76a71c95dd}{notify\-Before\-Compute\-Candidate} ()
 \begin{DoxyCompactList}\small\item\em Called before the S\-A\-T solver is called to compute a counterexample-\/candidate. \end{DoxyCompactList}\item 
 void \hyperlink{classLearnStatisticsSAT_a4bebe07e8978f3866867ecf7ef432035}{notify\-After\-Compute\-Candidate} ()
@@ -54,12 +50,6 @@ double \hyperlink{classLearnStatisticsSAT_af9823be5155743223790ae01b91b7ca8}{win
 \begin{DoxyCompactList}\small\item\em The winning region computation time in C\-P\-U-\/seconds. \end{DoxyCompactList}\item 
 size\-\_\-t \hyperlink{classLearnStatisticsSAT_a97f7a6ccfc2d6677ae8a6c16dddd6b71}{win\-\_\-reg\-\_\-real\-\_\-time\-\_\-}
 \begin{DoxyCompactList}\small\item\em Like \hyperlink{classLearnStatisticsSAT_af9823be5155743223790ae01b91b7ca8}{win\-\_\-reg\-\_\-cpu\-\_\-time\-\_\-} but real-\/time. \end{DoxyCompactList}\item 
-\hyperlink{Stopwatch_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{Point\-In\-Time} \hyperlink{classLearnStatisticsSAT_af02bb7ecbdb583b8c49191581dcbe607}{rel\-\_\-det\-\_\-start\-\_\-time\-\_\-}
-\begin{DoxyCompactList}\small\item\em The time when the computation of the circuits was started. \end{DoxyCompactList}\item 
-double \hyperlink{classLearnStatisticsSAT_aa7d1ca100b6ad0500931ca80d1439f28}{rel\-\_\-det\-\_\-cpu\-\_\-time\-\_\-}
-\begin{DoxyCompactList}\small\item\em circuit computation time in C\-P\-U-\/seconds. \end{DoxyCompactList}\item 
-size\-\_\-t \hyperlink{classLearnStatisticsSAT_a65bb33d1f5088fc9ed2f947b87e8d4cb}{rel\-\_\-det\-\_\-real\-\_\-time\-\_\-}
-\begin{DoxyCompactList}\small\item\em Like \hyperlink{classLearnStatisticsSAT_aa7d1ca100b6ad0500931ca80d1439f28}{rel\-\_\-det\-\_\-cpu\-\_\-time\-\_\-} but real-\/time. \end{DoxyCompactList}\item 
 size\-\_\-t \hyperlink{classLearnStatisticsSAT_a02de895c31e4c58396d5f07154e21561}{nr\-\_\-of\-\_\-cand\-\_\-comp\-\_\-}
 \begin{DoxyCompactList}\small\item\em The total number of candidate computations. \end{DoxyCompactList}\item 
 size\-\_\-t \hyperlink{classLearnStatisticsSAT_a07c8eee4a3c82762e3a94e38440f3adb}{nr\-\_\-of\-\_\-restarts\-\_\-}
@@ -143,7 +133,7 @@ Destructor.
 
 
 
-Definition at line 59 of file Learn\-Statistics\-S\-A\-T.\-cpp.
+Definition at line 57 of file Learn\-Statistics\-S\-A\-T.\-cpp.
 
 \hypertarget{classLearnStatisticsSAT_a7742a608e500e2b15a9a73b09653f4d7}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}}
 \index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
@@ -179,11 +169,11 @@ Writes the statistics to stdout as messages of type \hyperlink{classLogger_ac9e6
 
 If messages of type \hyperlink{classLogger_ac9e601f90bf326ce2088de52018861dca07be7495a7931bee16f5d94b3671f5de}{Logger\-::\-L\-O\-G} are disabled (see \hyperlink{classLogger}{Logger}), then nothing happens. 
 
-Definition at line 177 of file Learn\-Statistics\-S\-A\-T.\-cpp.
+Definition at line 159 of file Learn\-Statistics\-S\-A\-T.\-cpp.
 
 
 
-References cand\-\_\-check\-\_\-cpu\-\_\-time\-\_\-, cand\-\_\-check\-\_\-real\-\_\-time\-\_\-, cand\-\_\-comp\-\_\-cpu\-\_\-time\-\_\-, cand\-\_\-comp\-\_\-real\-\_\-time\-\_\-, L\-\_\-\-L\-O\-G, nr\-\_\-of\-\_\-cand\-\_\-checks\-\_\-, nr\-\_\-of\-\_\-cand\-\_\-comp\-\_\-, nr\-\_\-of\-\_\-refines\-\_\-, nr\-\_\-of\-\_\-restarts\-\_\-, nr\-\_\-of\-\_\-succ\-\_\-checks\-\_\-, refine\-\_\-cpu\-\_\-time\-\_\-, refine\-\_\-real\-\_\-time\-\_\-, rel\-\_\-det\-\_\-cpu\-\_\-time\-\_\-, rel\-\_\-det\-\_\-real\-\_\-time\-\_\-, sum\-\_\-check\-\_\-size\-\_\-from\-\_\-, sum\-\_\-check\-\_\-size\-\_\-to\-\_\-, sum\-\_\-refine\-\_\-size\-\_\-from\-\_\-, sum\-\_\-refine\-\_\-size\-\_\-to\-\_\-, win\-\_\-reg\-\_\-cpu\-\_\-time\-\_\-, and win\-\_\-reg\-\_\-real\-\_\-time\-\_\-.
+References cand\-\_\-check\-\_\-cpu\-\_\-time\-\_\-, cand\-\_\-check\-\_\-real\-\_\-time\-\_\-, cand\-\_\-comp\-\_\-cpu\-\_\-time\-\_\-, cand\-\_\-comp\-\_\-real\-\_\-time\-\_\-, L\-\_\-\-L\-O\-G, nr\-\_\-of\-\_\-cand\-\_\-checks\-\_\-, nr\-\_\-of\-\_\-cand\-\_\-comp\-\_\-, nr\-\_\-of\-\_\-refines\-\_\-, nr\-\_\-of\-\_\-restarts\-\_\-, nr\-\_\-of\-\_\-succ\-\_\-checks\-\_\-, refine\-\_\-cpu\-\_\-time\-\_\-, refine\-\_\-real\-\_\-time\-\_\-, sum\-\_\-check\-\_\-size\-\_\-from\-\_\-, sum\-\_\-check\-\_\-size\-\_\-to\-\_\-, sum\-\_\-refine\-\_\-size\-\_\-from\-\_\-, sum\-\_\-refine\-\_\-size\-\_\-to\-\_\-, win\-\_\-reg\-\_\-cpu\-\_\-time\-\_\-, and win\-\_\-reg\-\_\-real\-\_\-time\-\_\-.
 
 
 
@@ -207,11 +197,11 @@ This is done by summing all (corresponding) execution times and iteration counte
 \end{DoxyParams}
 
 
-Definition at line 153 of file Learn\-Statistics\-S\-A\-T.\-cpp.
+Definition at line 137 of file Learn\-Statistics\-S\-A\-T.\-cpp.
 
 
 
-References cand\-\_\-check\-\_\-cpu\-\_\-time\-\_\-, cand\-\_\-check\-\_\-real\-\_\-time\-\_\-, cand\-\_\-comp\-\_\-cpu\-\_\-time\-\_\-, cand\-\_\-comp\-\_\-real\-\_\-time\-\_\-, nr\-\_\-of\-\_\-cand\-\_\-checks\-\_\-, nr\-\_\-of\-\_\-cand\-\_\-comp\-\_\-, nr\-\_\-of\-\_\-refines\-\_\-, nr\-\_\-of\-\_\-restarts\-\_\-, nr\-\_\-of\-\_\-succ\-\_\-checks\-\_\-, refine\-\_\-cpu\-\_\-time\-\_\-, refine\-\_\-real\-\_\-time\-\_\-, rel\-\_\-det\-\_\-cpu\-\_\-time\-\_\-, rel\-\_\-det\-\_\-real\-\_\-time\-\_\-, sum\-\_\-check\-\_\-size\-\_\-from\-\_\-, sum\-\_\-check\-\_\-size\-\_\-to\-\_\-, sum\-\_\-refine\-\_\-size\-\_\-from\-\_\-, sum\-\_\-refine\-\_\-size\-\_\-to\-\_\-, win\-\_\-reg\-\_\-cpu\-\_\-time\-\_\-, and win\-\_\-reg\-\_\-real\-\_\-time\-\_\-.
+References cand\-\_\-check\-\_\-cpu\-\_\-time\-\_\-, cand\-\_\-check\-\_\-real\-\_\-time\-\_\-, cand\-\_\-comp\-\_\-cpu\-\_\-time\-\_\-, cand\-\_\-comp\-\_\-real\-\_\-time\-\_\-, nr\-\_\-of\-\_\-cand\-\_\-checks\-\_\-, nr\-\_\-of\-\_\-cand\-\_\-comp\-\_\-, nr\-\_\-of\-\_\-refines\-\_\-, nr\-\_\-of\-\_\-restarts\-\_\-, nr\-\_\-of\-\_\-succ\-\_\-checks\-\_\-, refine\-\_\-cpu\-\_\-time\-\_\-, refine\-\_\-real\-\_\-time\-\_\-, sum\-\_\-check\-\_\-size\-\_\-from\-\_\-, sum\-\_\-check\-\_\-size\-\_\-to\-\_\-, sum\-\_\-refine\-\_\-size\-\_\-from\-\_\-, sum\-\_\-refine\-\_\-size\-\_\-to\-\_\-, win\-\_\-reg\-\_\-cpu\-\_\-time\-\_\-, and win\-\_\-reg\-\_\-real\-\_\-time\-\_\-.
 
 
 
@@ -230,7 +220,7 @@ Called after the S\-A\-T solver unsuccessfully checked a counterexample-\/candid
 
 This method just reads out the \hyperlink{classStopwatch}{Stopwatch} and stores the execution time. 
 
-Definition at line 129 of file Learn\-Statistics\-S\-A\-T.\-cpp.
+Definition at line 113 of file Learn\-Statistics\-S\-A\-T.\-cpp.
 
 
 
@@ -238,7 +228,7 @@ References cand\-\_\-check\-\_\-cpu\-\_\-time\-\_\-, cand\-\_\-check\-\_\-real\-
 
 
 
-Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), and Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples().
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), and Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples().
 
 \hypertarget{classLearnStatisticsSAT_a229bd4450b739bc802dff5c43a8e212b}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!notify\-After\-Check\-Candidate\-Found@{notify\-After\-Check\-Candidate\-Found}}
 \index{notify\-After\-Check\-Candidate\-Found@{notify\-After\-Check\-Candidate\-Found}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
@@ -263,7 +253,7 @@ This method just reads out the \hyperlink{classStopwatch}{Stopwatch} and stores 
 \end{DoxyParams}
 
 
-Definition at line 118 of file Learn\-Statistics\-S\-A\-T.\-cpp.
+Definition at line 102 of file Learn\-Statistics\-S\-A\-T.\-cpp.
 
 
 
@@ -271,7 +261,7 @@ References cand\-\_\-check\-\_\-cpu\-\_\-time\-\_\-, cand\-\_\-check\-\_\-real\-
 
 
 
-Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), and Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples().
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), and Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples().
 
 \hypertarget{classLearnStatisticsSAT_a4bebe07e8978f3866867ecf7ef432035}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!notify\-After\-Compute\-Candidate@{notify\-After\-Compute\-Candidate}}
 \index{notify\-After\-Compute\-Candidate@{notify\-After\-Compute\-Candidate}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
@@ -286,7 +276,7 @@ Called after the S\-A\-T solver is done computing a counterexample-\/candidate.
 
 This method just reads out the \hyperlink{classStopwatch}{Stopwatch} and stores the execution time. 
 
-Definition at line 98 of file Learn\-Statistics\-S\-A\-T.\-cpp.
+Definition at line 82 of file Learn\-Statistics\-S\-A\-T.\-cpp.
 
 
 
@@ -294,7 +284,7 @@ References cand\-\_\-comp\-\_\-cpu\-\_\-time\-\_\-, cand\-\_\-comp\-\_\-real\-\_
 
 
 
-Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), and Clause\-Explorer\-S\-A\-T\-::explore\-Clauses().
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), and Clause\-Explorer\-S\-A\-T\-::explore\-Clauses().
 
 \hypertarget{classLearnStatisticsSAT_a0f5e0bc85daa6d051b1cd0144b1f5bda}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!notify\-After\-Refine@{notify\-After\-Refine}}
 \index{notify\-After\-Refine@{notify\-After\-Refine}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
@@ -319,7 +309,7 @@ This method just reads out the \hyperlink{classStopwatch}{Stopwatch} and stores 
 \end{DoxyParams}
 
 
-Definition at line 143 of file Learn\-Statistics\-S\-A\-T.\-cpp.
+Definition at line 127 of file Learn\-Statistics\-S\-A\-T.\-cpp.
 
 
 
@@ -327,7 +317,7 @@ References Stopwatch\-::get\-C\-P\-U\-Time\-Sec(), Stopwatch\-::get\-Real\-Time\
 
 
 
-Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), and Clause\-Explorer\-S\-A\-T\-::explore\-Clauses().
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), and Clause\-Explorer\-S\-A\-T\-::explore\-Clauses().
 
 \hypertarget{classLearnStatisticsSAT_aafb51499184443e1c38eeec61370b96a}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!notify\-Before\-Check\-Candidate@{notify\-Before\-Check\-Candidate}}
 \index{notify\-Before\-Check\-Candidate@{notify\-Before\-Check\-Candidate}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
@@ -342,7 +332,7 @@ Called before the S\-A\-T solver is called to check a counterexample-\/candidate
 
 This method just starts a \hyperlink{classStopwatch}{Stopwatch}. 
 
-Definition at line 112 of file Learn\-Statistics\-S\-A\-T.\-cpp.
+Definition at line 96 of file Learn\-Statistics\-S\-A\-T.\-cpp.
 
 
 
@@ -350,7 +340,7 @@ References cand\-\_\-check\-\_\-start\-\_\-time\-\_\-, and Stopwatch\-::start().
 
 
 
-Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), and Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples().
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), and Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples().
 
 \hypertarget{classLearnStatisticsSAT_aed53fb25ba247b25f867df76a71c95dd}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!notify\-Before\-Compute\-Candidate@{notify\-Before\-Compute\-Candidate}}
 \index{notify\-Before\-Compute\-Candidate@{notify\-Before\-Compute\-Candidate}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
@@ -365,7 +355,7 @@ Called before the S\-A\-T solver is called to compute a counterexample-\/candida
 
 This method just starts a \hyperlink{classStopwatch}{Stopwatch}. 
 
-Definition at line 92 of file Learn\-Statistics\-S\-A\-T.\-cpp.
+Definition at line 76 of file Learn\-Statistics\-S\-A\-T.\-cpp.
 
 
 
@@ -373,7 +363,7 @@ References cand\-\_\-comp\-\_\-start\-\_\-time\-\_\-, and Stopwatch\-::start().
 
 
 
-Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), and Clause\-Explorer\-S\-A\-T\-::explore\-Clauses().
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), and Clause\-Explorer\-S\-A\-T\-::explore\-Clauses().
 
 \hypertarget{classLearnStatisticsSAT_a2734b3bcda5ca2195ecdb174d98a1433}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!notify\-Before\-Refine@{notify\-Before\-Refine}}
 \index{notify\-Before\-Refine@{notify\-Before\-Refine}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
@@ -388,7 +378,7 @@ Called before the S\-A\-T solver is called to refine the U-\/set.
 
 Refining the U-\/set means computing an unsatisfiable core of a state-\/input cube that is useless for the antagonist in trying to break out of the winning region. This method just starts a \hyperlink{classStopwatch}{Stopwatch}. 
 
-Definition at line 137 of file Learn\-Statistics\-S\-A\-T.\-cpp.
+Definition at line 121 of file Learn\-Statistics\-S\-A\-T.\-cpp.
 
 
 
@@ -396,53 +386,7 @@ References refine\-\_\-start\-\_\-time\-\_\-, and Stopwatch\-::start().
 
 
 
-Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), and Clause\-Explorer\-S\-A\-T\-::explore\-Clauses().
-
-\hypertarget{classLearnStatisticsSAT_aa438b39955c3fc5079c27ad5df743ea8}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!notify\-Rel\-Det\-End@{notify\-Rel\-Det\-End}}
-\index{notify\-Rel\-Det\-End@{notify\-Rel\-Det\-End}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
-\subsubsection[{notify\-Rel\-Det\-End}]{\setlength{\rightskip}{0pt plus 5cm}void Learn\-Statistics\-S\-A\-T\-::notify\-Rel\-Det\-End (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}\label{classLearnStatisticsSAT_aa438b39955c3fc5079c27ad5df743ea8}
-
-
-Called after the relation determinization (the computation of circuits) starts. 
-
-This method just reads out the \hyperlink{classStopwatch}{Stopwatch} and stores the execution time. 
-
-Definition at line 84 of file Learn\-Statistics\-S\-A\-T.\-cpp.
-
-
-
-References Stopwatch\-::get\-C\-P\-U\-Time\-Sec(), Stopwatch\-::get\-Real\-Time\-Sec(), rel\-\_\-det\-\_\-cpu\-\_\-time\-\_\-, rel\-\_\-det\-\_\-real\-\_\-time\-\_\-, and rel\-\_\-det\-\_\-start\-\_\-time\-\_\-.
-
-
-
-Referenced by Parallel\-Learner\-::run(), and Learn\-Synth\-S\-A\-T\-::run().
-
-\hypertarget{classLearnStatisticsSAT_aa90c46fe634b5d230579c5f0cb0b96ad}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!notify\-Rel\-Det\-Start@{notify\-Rel\-Det\-Start}}
-\index{notify\-Rel\-Det\-Start@{notify\-Rel\-Det\-Start}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
-\subsubsection[{notify\-Rel\-Det\-Start}]{\setlength{\rightskip}{0pt plus 5cm}void Learn\-Statistics\-S\-A\-T\-::notify\-Rel\-Det\-Start (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}\label{classLearnStatisticsSAT_aa90c46fe634b5d230579c5f0cb0b96ad}
-
-
-Called before the relation determinization (the computation of circuits) starts. 
-
-This method just starts a \hyperlink{classStopwatch}{Stopwatch}. 
-
-Definition at line 78 of file Learn\-Statistics\-S\-A\-T.\-cpp.
-
-
-
-References rel\-\_\-det\-\_\-start\-\_\-time\-\_\-, and Stopwatch\-::start().
-
-
-
-Referenced by Parallel\-Learner\-::run(), and Learn\-Synth\-S\-A\-T\-::run().
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), and Clause\-Explorer\-S\-A\-T\-::explore\-Clauses().
 
 \hypertarget{classLearnStatisticsSAT_aecd9d61c097ec9209a19ee7dee5feff2}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!notify\-Restart@{notify\-Restart}}
 \index{notify\-Restart@{notify\-Restart}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
@@ -457,7 +401,7 @@ Called whenever the incremental session of the solver is restarted.
 
 This method is called to count the number of performed restarts. 
 
-Definition at line 106 of file Learn\-Statistics\-S\-A\-T.\-cpp.
+Definition at line 90 of file Learn\-Statistics\-S\-A\-T.\-cpp.
 
 
 
@@ -465,7 +409,7 @@ References nr\-\_\-of\-\_\-restarts\-\_\-.
 
 
 
-Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), and Clause\-Explorer\-S\-A\-T\-::consider\-New\-Info\-From\-Others().
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), and Clause\-Explorer\-S\-A\-T\-::consider\-New\-Info\-From\-Others().
 
 \hypertarget{classLearnStatisticsSAT_aef1a7fa18629a82aacde388741a2534c}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!notify\-Win\-Reg\-End@{notify\-Win\-Reg\-End}}
 \index{notify\-Win\-Reg\-End@{notify\-Win\-Reg\-End}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
@@ -480,7 +424,7 @@ Called after the computation of the winning region is done.
 
 This method just reads out the \hyperlink{classStopwatch}{Stopwatch} and stores the execution time. 
 
-Definition at line 71 of file Learn\-Statistics\-S\-A\-T.\-cpp.
+Definition at line 69 of file Learn\-Statistics\-S\-A\-T.\-cpp.
 
 
 
@@ -503,7 +447,7 @@ Called before the computation of the winning region starts.
 
 This method just starts a \hyperlink{classStopwatch}{Stopwatch}. 
 
-Definition at line 65 of file Learn\-Statistics\-S\-A\-T.\-cpp.
+Definition at line 63 of file Learn\-Statistics\-S\-A\-T.\-cpp.
 
 
 
@@ -546,7 +490,7 @@ The total candidate checking time in C\-P\-U-\/seconds.
 
 
 
-Definition at line 279 of file Learn\-Statistics\-S\-A\-T.\-h.
+Definition at line 250 of file Learn\-Statistics\-S\-A\-T.\-h.
 
 
 
@@ -561,7 +505,7 @@ Like \hyperlink{classLearnStatisticsSAT_a2ab5cd522b7a4d700a11c0bb430baa81}{cand\
 
 
 
-Definition at line 284 of file Learn\-Statistics\-S\-A\-T.\-h.
+Definition at line 255 of file Learn\-Statistics\-S\-A\-T.\-h.
 
 
 
@@ -576,7 +520,7 @@ The time when the last check of a counterexample-\/candidate was started.
 
 
 
-Definition at line 274 of file Learn\-Statistics\-S\-A\-T.\-h.
+Definition at line 245 of file Learn\-Statistics\-S\-A\-T.\-h.
 
 
 
@@ -591,7 +535,7 @@ The total candidate computation time in C\-P\-U-\/seconds.
 
 
 
-Definition at line 264 of file Learn\-Statistics\-S\-A\-T.\-h.
+Definition at line 235 of file Learn\-Statistics\-S\-A\-T.\-h.
 
 
 
@@ -606,7 +550,7 @@ Like \hyperlink{classLearnStatisticsSAT_af977c00fbf0f9978f92dd5c997577a06}{cand\
 
 
 
-Definition at line 269 of file Learn\-Statistics\-S\-A\-T.\-h.
+Definition at line 240 of file Learn\-Statistics\-S\-A\-T.\-h.
 
 
 
@@ -621,7 +565,7 @@ The time when the last computation of a counterexample-\/candidate was started.
 
 
 
-Definition at line 259 of file Learn\-Statistics\-S\-A\-T.\-h.
+Definition at line 230 of file Learn\-Statistics\-S\-A\-T.\-h.
 
 
 
@@ -636,7 +580,7 @@ The total number of candidate checks.
 
 
 
-Definition at line 216 of file Learn\-Statistics\-S\-A\-T.\-h.
+Definition at line 187 of file Learn\-Statistics\-S\-A\-T.\-h.
 
 
 
@@ -651,7 +595,7 @@ The total number of candidate computations.
 
 
 
-Definition at line 206 of file Learn\-Statistics\-S\-A\-T.\-h.
+Definition at line 177 of file Learn\-Statistics\-S\-A\-T.\-h.
 
 
 
@@ -666,7 +610,7 @@ The number of refinements of the useless state-\/input pairs.
 
 
 
-Definition at line 240 of file Learn\-Statistics\-S\-A\-T.\-h.
+Definition at line 211 of file Learn\-Statistics\-S\-A\-T.\-h.
 
 
 
@@ -681,7 +625,7 @@ The total number solver restarts (starting a new incremental session).
 
 
 
-Definition at line 211 of file Learn\-Statistics\-S\-A\-T.\-h.
+Definition at line 182 of file Learn\-Statistics\-S\-A\-T.\-h.
 
 
 
@@ -696,7 +640,7 @@ The total number of successful candidate checks.
 
 
 
-Definition at line 221 of file Learn\-Statistics\-S\-A\-T.\-h.
+Definition at line 192 of file Learn\-Statistics\-S\-A\-T.\-h.
 
 
 
@@ -711,7 +655,7 @@ The total useless state-\/input-\/cube generalization time in C\-P\-U-\/seconds.
 
 
 
-Definition at line 294 of file Learn\-Statistics\-S\-A\-T.\-h.
+Definition at line 265 of file Learn\-Statistics\-S\-A\-T.\-h.
 
 
 
@@ -726,7 +670,7 @@ Like \hyperlink{classLearnStatisticsSAT_a2ab5cd522b7a4d700a11c0bb430baa81}{cand\
 
 
 
-Definition at line 299 of file Learn\-Statistics\-S\-A\-T.\-h.
+Definition at line 270 of file Learn\-Statistics\-S\-A\-T.\-h.
 
 
 
@@ -741,56 +685,11 @@ The time when the last useless state-\/input-\/cube generalization was started.
 
 
 
-Definition at line 289 of file Learn\-Statistics\-S\-A\-T.\-h.
+Definition at line 260 of file Learn\-Statistics\-S\-A\-T.\-h.
 
 
 
 Referenced by notify\-After\-Refine(), and notify\-Before\-Refine().
-
-\hypertarget{classLearnStatisticsSAT_aa7d1ca100b6ad0500931ca80d1439f28}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!rel\-\_\-det\-\_\-cpu\-\_\-time\-\_\-@{rel\-\_\-det\-\_\-cpu\-\_\-time\-\_\-}}
-\index{rel\-\_\-det\-\_\-cpu\-\_\-time\-\_\-@{rel\-\_\-det\-\_\-cpu\-\_\-time\-\_\-}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
-\subsubsection[{rel\-\_\-det\-\_\-cpu\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double Learn\-Statistics\-S\-A\-T\-::rel\-\_\-det\-\_\-cpu\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsSAT_aa7d1ca100b6ad0500931ca80d1439f28}
-
-
-circuit computation time in C\-P\-U-\/seconds. 
-
-
-
-Definition at line 196 of file Learn\-Statistics\-S\-A\-T.\-h.
-
-
-
-Referenced by log\-Statistics(), merge\-With(), and notify\-Rel\-Det\-End().
-
-\hypertarget{classLearnStatisticsSAT_a65bb33d1f5088fc9ed2f947b87e8d4cb}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!rel\-\_\-det\-\_\-real\-\_\-time\-\_\-@{rel\-\_\-det\-\_\-real\-\_\-time\-\_\-}}
-\index{rel\-\_\-det\-\_\-real\-\_\-time\-\_\-@{rel\-\_\-det\-\_\-real\-\_\-time\-\_\-}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
-\subsubsection[{rel\-\_\-det\-\_\-real\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Learn\-Statistics\-S\-A\-T\-::rel\-\_\-det\-\_\-real\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsSAT_a65bb33d1f5088fc9ed2f947b87e8d4cb}
-
-
-Like \hyperlink{classLearnStatisticsSAT_aa7d1ca100b6ad0500931ca80d1439f28}{rel\-\_\-det\-\_\-cpu\-\_\-time\-\_\-} but real-\/time. 
-
-
-
-Definition at line 201 of file Learn\-Statistics\-S\-A\-T.\-h.
-
-
-
-Referenced by log\-Statistics(), merge\-With(), and notify\-Rel\-Det\-End().
-
-\hypertarget{classLearnStatisticsSAT_af02bb7ecbdb583b8c49191581dcbe607}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!rel\-\_\-det\-\_\-start\-\_\-time\-\_\-@{rel\-\_\-det\-\_\-start\-\_\-time\-\_\-}}
-\index{rel\-\_\-det\-\_\-start\-\_\-time\-\_\-@{rel\-\_\-det\-\_\-start\-\_\-time\-\_\-}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
-\subsubsection[{rel\-\_\-det\-\_\-start\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point\-In\-Time} Learn\-Statistics\-S\-A\-T\-::rel\-\_\-det\-\_\-start\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnStatisticsSAT_af02bb7ecbdb583b8c49191581dcbe607}
-
-
-The time when the computation of the circuits was started. 
-
-
-
-Definition at line 191 of file Learn\-Statistics\-S\-A\-T.\-h.
-
-
-
-Referenced by notify\-Rel\-Det\-End(), and notify\-Rel\-Det\-Start().
 
 \hypertarget{classLearnStatisticsSAT_a2d6735aa7c84c50967b3bb779d2a0a86}{\index{Learn\-Statistics\-S\-A\-T@{Learn\-Statistics\-S\-A\-T}!sum\-\_\-check\-\_\-size\-\_\-from\-\_\-@{sum\-\_\-check\-\_\-size\-\_\-from\-\_\-}}
 \index{sum\-\_\-check\-\_\-size\-\_\-from\-\_\-@{sum\-\_\-check\-\_\-size\-\_\-from\-\_\-}!LearnStatisticsSAT@{Learn\-Statistics\-S\-A\-T}}
@@ -801,7 +700,7 @@ The sum of the counterexample cube sizes (nr of literals) before minimization.
 
 This is tracked to assess the effectiveness of the minimization (=generalization). 
 
-Definition at line 228 of file Learn\-Statistics\-S\-A\-T.\-h.
+Definition at line 199 of file Learn\-Statistics\-S\-A\-T.\-h.
 
 
 
@@ -816,7 +715,7 @@ The sum of the counterexample cube sizes (nr of literals) after minimization.
 
 This is tracked to assess the effectiveness of the minimization (=generalization). 
 
-Definition at line 235 of file Learn\-Statistics\-S\-A\-T.\-h.
+Definition at line 206 of file Learn\-Statistics\-S\-A\-T.\-h.
 
 
 
@@ -831,7 +730,7 @@ The sum of the useless state-\/input-\/cube sizes (nr of literals) before minimi
 
 This is tracked to assess the effectiveness of the minimization (=generalization). 
 
-Definition at line 247 of file Learn\-Statistics\-S\-A\-T.\-h.
+Definition at line 218 of file Learn\-Statistics\-S\-A\-T.\-h.
 
 
 
@@ -846,7 +745,7 @@ The sum of the useless state-\/input-\/cube sizes (nr of literals) after minimiz
 
 This is tracked to assess the effectiveness of the minimization (=generalization). 
 
-Definition at line 254 of file Learn\-Statistics\-S\-A\-T.\-h.
+Definition at line 225 of file Learn\-Statistics\-S\-A\-T.\-h.
 
 
 
@@ -861,7 +760,7 @@ The winning region computation time in C\-P\-U-\/seconds.
 
 
 
-Definition at line 181 of file Learn\-Statistics\-S\-A\-T.\-h.
+Definition at line 167 of file Learn\-Statistics\-S\-A\-T.\-h.
 
 
 
@@ -876,7 +775,7 @@ Like \hyperlink{classLearnStatisticsSAT_af9823be5155743223790ae01b91b7ca8}{win\-
 
 
 
-Definition at line 186 of file Learn\-Statistics\-S\-A\-T.\-h.
+Definition at line 172 of file Learn\-Statistics\-S\-A\-T.\-h.
 
 
 
@@ -891,7 +790,7 @@ The time when the computation of the winning region was started.
 
 
 
-Definition at line 176 of file Learn\-Statistics\-S\-A\-T.\-h.
+Definition at line 162 of file Learn\-Statistics\-S\-A\-T.\-h.
 
 
 

@@ -38,7 +38,7 @@
 /// @brief TODO
 ///
 /// @author TODO
-/// @version 1.0.0
+/// @version 1.1.0
 class @ClassName@
 {
 public:
@@ -62,6 +62,8 @@ private:
 /// @brief Copy constructor.
 ///
 /// The copy constructor is disabled (set private) and not implemented.
+///
+/// @param other The source for creating the copy.
   @ClassName@(const @ClassName@ &other);
 
 // -------------------------------------------------------------------------------------------
@@ -69,6 +71,9 @@ private:
 /// @brief Assignment operator.
 ///
 /// The assignment operator is disabled (set private) and not implemented.
+///
+/// @param other The source for creating the copy.
+/// @return The result of the assignment, i.e, *this.
   @ClassName@& operator=(const @ClassName@ &other);
 
 };

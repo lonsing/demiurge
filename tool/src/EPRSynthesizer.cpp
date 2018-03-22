@@ -40,14 +40,9 @@ extern "C" {
 // -------------------------------------------------------------------------------------------
 EPRSynthesizer::EPRSynthesizer() : BackEnd(), next_clause_nr_(0)
 {
-  const char *tp_env = getenv(Options::TP_VAR.c_str());
-  MASSERT(tp_env != NULL, "You have not set the variable " << Options::TP_VAR);
-  path_to_iprover_ = string(tp_env) + "/iprover/iprover/iproveropt";
-  ostringstream unique_string;
-  unique_string << this;
-  string temp_dir = Options::instance().getTmpDirName();
-  in_file_name_ = temp_dir + "epr_query_" + unique_string.str() + ".tptp";
-  out_file_name_ = temp_dir + "epr_answer_" + unique_string.str() + ".out";
+  path_to_iprover_ = Options::instance().getTPDirName() + "/iprover/iprover/iproveropt";
+  in_file_name_ = Options::instance().getUniqueTmpFileName("epr_query") + ".tptp";
+  out_file_name_ = Options::instance().getUniqueTmpFileName("epr_answer") + ".out";
 }
 
 // -------------------------------------------------------------------------------------------

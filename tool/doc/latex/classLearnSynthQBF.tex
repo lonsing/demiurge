@@ -19,7 +19,7 @@ Inheritance diagram for Learn\-Synth\-Q\-B\-F\-:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classLearnSynthQBF_ae961d7172f13d52df1b2a7801eb0b0e9}{Learn\-Synth\-Q\-B\-F} ()
+\hyperlink{classLearnSynthQBF_ae7f4fe1f847d6af8ecebaa9a9f631b7c}{Learn\-Synth\-Q\-B\-F} (\hyperlink{classCNFImplExtractor}{C\-N\-F\-Impl\-Extractor} $\ast$impl\-\_\-extractor)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 virtual \hyperlink{classLearnSynthQBF_a692e516f27fd78a44884b715688bd7d9}{$\sim$\-Learn\-Synth\-Q\-B\-F} ()
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
@@ -82,7 +82,9 @@ vector$<$ pair$<$ \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cf}{Var
 vector$<$ int $>$ \hyperlink{classLearnSynthQBF_a227ff215ffb411e57686aa3d8e7f7026}{incremental\-\_\-vars\-\_\-to\-\_\-keep\-\_\-}
 \begin{DoxyCompactList}\small\item\em A list of variables the S\-A\-T-\/solver should not optimize away. \end{DoxyCompactList}\item 
 bool \hyperlink{classLearnSynthQBF_ae65774a2b9e6137d6ff45cbf755d4843}{solver\-\_\-i\-\_\-precise\-\_\-}
-\begin{DoxyCompactList}\small\item\em A flag indicating if solver\-\_\-i\-\_\- is precise. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A flag indicating if solver\-\_\-i\-\_\- is precise. \end{DoxyCompactList}\item 
+\hyperlink{classCNFImplExtractor}{C\-N\-F\-Impl\-Extractor} $\ast$ \hyperlink{classLearnSynthQBF_ad34b0c8db41c054eef617e7e9156fad8}{impl\-\_\-extractor\-\_\-}
+\begin{DoxyCompactList}\small\item\em The engine to use for circuit extraction. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -105,26 +107,31 @@ Finally the \hyperlink{classQBFCertImplExtractor}{Q\-B\-F\-Cert\-Impl\-Extractor
 Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\-0.\-0 
+1.\-1.\-0 
 \end{DoxyVersion}
 
 
-Definition at line 71 of file Learn\-Synth\-Q\-B\-F.\-h.
+Definition at line 72 of file Learn\-Synth\-Q\-B\-F.\-h.
 
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classLearnSynthQBF_ae961d7172f13d52df1b2a7801eb0b0e9}{\index{Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}!Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}}
+\hypertarget{classLearnSynthQBF_ae7f4fe1f847d6af8ecebaa9a9f631b7c}{\index{Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}!Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}}
 \index{Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}!LearnSynthQBF@{Learn\-Synth\-Q\-B\-F}}
 \subsubsection[{Learn\-Synth\-Q\-B\-F}]{\setlength{\rightskip}{0pt plus 5cm}Learn\-Synth\-Q\-B\-F\-::\-Learn\-Synth\-Q\-B\-F (
 \begin{DoxyParamCaption}
-{}
+\item[{{\bf C\-N\-F\-Impl\-Extractor} $\ast$}]{impl\-\_\-extractor}
 \end{DoxyParamCaption}
-)}}\label{classLearnSynthQBF_ae961d7172f13d52df1b2a7801eb0b0e9}
+)}}\label{classLearnSynthQBF_ae7f4fe1f847d6af8ecebaa9a9f631b7c}
 
 
 Constructor. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em impl\-\_\-extractor} & The engine to use for circuit extraction. It will be deleted by this class. \\
+\hline
+\end{DoxyParams}
 
 
 Definition at line 40 of file Learn\-Synth\-Q\-B\-F.\-cpp.
@@ -146,11 +153,11 @@ Destructor.
 
 
 
-Definition at line 78 of file Learn\-Synth\-Q\-B\-F.\-cpp.
+Definition at line 79 of file Learn\-Synth\-Q\-B\-F.\-cpp.
 
 
 
-References qbf\-\_\-solver\-\_\-, solver\-\_\-ctrl\-\_\-, and solver\-\_\-i\-\_\-.
+References impl\-\_\-extractor\-\_\-, qbf\-\_\-solver\-\_\-, solver\-\_\-ctrl\-\_\-, and solver\-\_\-i\-\_\-.
 
 \hypertarget{classLearnSynthQBF_ad8d67501811be3fc0366e19df7f8d10a}{\index{Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}!Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}}
 \index{Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}!LearnSynthQBF@{Learn\-Synth\-Q\-B\-F}}
@@ -200,7 +207,7 @@ False if one of the blocking clauses blocks the initial state. This means that t
 \end{DoxyReturn}
 
 
-Definition at line 449 of file Learn\-Synth\-Q\-B\-F.\-cpp.
+Definition at line 450 of file Learn\-Synth\-Q\-B\-F.\-cpp.
 
 
 
@@ -236,7 +243,7 @@ False if the blocking clause blocks the initial state. This means that the initi
 \end{DoxyReturn}
 
 
-Definition at line 431 of file Learn\-Synth\-Q\-B\-F.\-cpp.
+Definition at line 432 of file Learn\-Synth\-Q\-B\-F.\-cpp.
 
 
 
@@ -269,7 +276,7 @@ True if a counterexample was found, false if no counterexample exists.
 \end{DoxyReturn}
 
 
-Definition at line 332 of file Learn\-Synth\-Q\-B\-F.\-cpp.
+Definition at line 333 of file Learn\-Synth\-Q\-B\-F.\-cpp.
 
 
 
@@ -304,7 +311,7 @@ True if a counterexample was found, false if no counterexample exists.
 \end{DoxyReturn}
 
 
-Definition at line 344 of file Learn\-Synth\-Q\-B\-F.\-cpp.
+Definition at line 345 of file Learn\-Synth\-Q\-B\-F.\-cpp.
 
 
 
@@ -337,7 +344,7 @@ True if the specification was realizable, false otherwise.
 \end{DoxyReturn}
 
 
-Definition at line 124 of file Learn\-Synth\-Q\-B\-F.\-cpp.
+Definition at line 125 of file Learn\-Synth\-Q\-B\-F.\-cpp.
 
 
 
@@ -365,7 +372,7 @@ True if the specification was realizable, false otherwise.
 \end{DoxyReturn}
 
 
-Definition at line 266 of file Learn\-Synth\-Q\-B\-F.\-cpp.
+Definition at line 267 of file Learn\-Synth\-Q\-B\-F.\-cpp.
 
 
 
@@ -393,7 +400,7 @@ True if the specification was realizable, false otherwise.
 \end{DoxyReturn}
 
 
-Definition at line 134 of file Learn\-Synth\-Q\-B\-F.\-cpp.
+Definition at line 135 of file Learn\-Synth\-Q\-B\-F.\-cpp.
 
 
 
@@ -421,7 +428,7 @@ True if the specification was realizable, false otherwise.
 \end{DoxyReturn}
 
 
-Definition at line 203 of file Learn\-Synth\-Q\-B\-F.\-cpp.
+Definition at line 204 of file Learn\-Synth\-Q\-B\-F.\-cpp.
 
 
 
@@ -457,7 +464,7 @@ True if the passed vector is a valid (generalization of a) counterexample, or if
 \end{DoxyReturn}
 
 
-Definition at line 626 of file Learn\-Synth\-Q\-B\-F.\-cpp.
+Definition at line 627 of file Learn\-Synth\-Q\-B\-F.\-cpp.
 
 
 
@@ -508,7 +515,7 @@ The \hyperlink{classCNF}{C\-N\-F} used for computing counterexamples is F \& T \
 \end{DoxyParams}
 
 
-Definition at line 564 of file Learn\-Synth\-Q\-B\-F.\-cpp.
+Definition at line 565 of file Learn\-Synth\-Q\-B\-F.\-cpp.
 
 
 
@@ -538,7 +545,7 @@ The \hyperlink{classCNF}{C\-N\-F} used for generalizing counterexamples is F \& 
 \end{DoxyParams}
 
 
-Definition at line 587 of file Learn\-Synth\-Q\-B\-F.\-cpp.
+Definition at line 588 of file Learn\-Synth\-Q\-B\-F.\-cpp.
 
 
 
@@ -563,7 +570,7 @@ This method examines all clauses (in \hyperlink{classLearnSynthQBF_a9c6b41f7df5f
 
 The intuition behind this method is that, even if a literal could not be dropped before, it could be dropped at a later point in time because the winning region has been refined in the meantime. However, in practice, typically only very few additional literals can be dropped, so this method often does not pay off. 
 
-Definition at line 531 of file Learn\-Synth\-Q\-B\-F.\-cpp.
+Definition at line 532 of file Learn\-Synth\-Q\-B\-F.\-cpp.
 
 
 
@@ -593,7 +600,7 @@ That is, all literals that do not talk about present state variables are removed
 \end{DoxyParams}
 
 
-Definition at line 607 of file Learn\-Synth\-Q\-B\-F.\-cpp.
+Definition at line 608 of file Learn\-Synth\-Q\-B\-F.\-cpp.
 
 
 
@@ -632,11 +639,11 @@ Implements \hyperlink{classBackEnd_a099e717dc71e9cc2d838b1ca86340590}{Back\-End}
 
 
 
-Definition at line 89 of file Learn\-Synth\-Q\-B\-F.\-cpp.
+Definition at line 92 of file Learn\-Synth\-Q\-B\-F.\-cpp.
 
 
 
-References compute\-Winning\-Region(), Utils\-::debug\-Check\-Win\-Reg(), Q\-B\-F\-Cert\-Impl\-Extractor\-::extract\-Circuit(), Var\-Manager\-::instance(), Options\-::instance(), L\-\_\-\-I\-N\-F, L\-\_\-\-R\-E\-S, Learn\-Statistics\-Q\-B\-F\-::log\-Statistics(), Learn\-Statistics\-Q\-B\-F\-::notify\-Rel\-Det\-End(), Learn\-Statistics\-Q\-B\-F\-::notify\-Rel\-Det\-Start(), Learn\-Statistics\-Q\-B\-F\-::notify\-Win\-Reg\-End(), Learn\-Statistics\-Q\-B\-F\-::notify\-Win\-Reg\-Start(), Var\-Manager\-::push(), statistics\-\_\-, and winning\-\_\-region\-\_\-.
+References compute\-Winning\-Region(), Utils\-::debug\-Check\-Win\-Reg(), C\-N\-F\-Impl\-Extractor\-::extract\-Circuit(), impl\-\_\-extractor\-\_\-, Var\-Manager\-::instance(), Options\-::instance(), L\-\_\-\-I\-N\-F, L\-\_\-\-R\-E\-S, C\-N\-F\-Impl\-Extractor\-::log\-Statistics(), Learn\-Statistics\-Q\-B\-F\-::log\-Statistics(), Learn\-Statistics\-Q\-B\-F\-::notify\-Win\-Reg\-End(), Learn\-Statistics\-Q\-B\-F\-::notify\-Win\-Reg\-Start(), Var\-Manager\-::push(), statistics\-\_\-, and winning\-\_\-region\-\_\-.
 
 
 
@@ -650,7 +657,7 @@ The \hyperlink{classCNF}{C\-N\-F} matrix of the Q\-B\-F for computing counterexa
 
 This \hyperlink{classCNF}{C\-N\-F} is always F \& T \& !\-F', where F is the \hyperlink{classLearnSynthQBF_a9c6b41f7df5f4ed4bfc5930136fc1152}{winning\-\_\-region\-\_\-}. 
 
-Definition at line 382 of file Learn\-Synth\-Q\-B\-F.\-h.
+Definition at line 386 of file Learn\-Synth\-Q\-B\-F.\-h.
 
 
 
@@ -665,7 +672,7 @@ The quantifier prefix of the Q\-B\-F for computing counterexamples.
 
 This quantifier prefix is always exists x,i\-: forall c\-: exists x',tmp\-: 
 
-Definition at line 375 of file Learn\-Synth\-Q\-B\-F.\-h.
+Definition at line 379 of file Learn\-Synth\-Q\-B\-F.\-h.
 
 
 
@@ -680,7 +687,7 @@ The quantifier prefix of the Q\-B\-F for generalizing counterexamples.
 
 This quantifier prefix is always exists x\-: forall i\-: exists c,x',tmp\-: 
 
-Definition at line 390 of file Learn\-Synth\-Q\-B\-F.\-h.
+Definition at line 394 of file Learn\-Synth\-Q\-B\-F.\-h.
 
 
 
@@ -695,11 +702,26 @@ The \hyperlink{classCNF}{C\-N\-F} matrix of the Q\-B\-F for generalizing counter
 
 This \hyperlink{classCNF}{C\-N\-F} is always F \& T \& F', where F is the \hyperlink{classLearnSynthQBF_a9c6b41f7df5f4ed4bfc5930136fc1152}{winning\-\_\-region\-\_\-}. 
 
-Definition at line 397 of file Learn\-Synth\-Q\-B\-F.\-h.
+Definition at line 401 of file Learn\-Synth\-Q\-B\-F.\-h.
 
 
 
 Referenced by compute\-All\-Blocking\-Clauses(), compute\-Winning\-Region\-All(), compute\-Winning\-Region\-One(), compute\-Winning\-Region\-One\-S\-A\-T(), generalize\-Counterexample(), recompute\-Gen\-C\-N\-F(), and reduce\-Existing\-Clauses().
+
+\hypertarget{classLearnSynthQBF_ad34b0c8db41c054eef617e7e9156fad8}{\index{Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}!impl\-\_\-extractor\-\_\-@{impl\-\_\-extractor\-\_\-}}
+\index{impl\-\_\-extractor\-\_\-@{impl\-\_\-extractor\-\_\-}!LearnSynthQBF@{Learn\-Synth\-Q\-B\-F}}
+\subsubsection[{impl\-\_\-extractor\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F\-Impl\-Extractor}$\ast$ Learn\-Synth\-Q\-B\-F\-::impl\-\_\-extractor\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthQBF_ad34b0c8db41c054eef617e7e9156fad8}
+
+
+The engine to use for circuit extraction. 
+
+It will be deleted by this class (in the destructor). 
+
+Definition at line 442 of file Learn\-Synth\-Q\-B\-F.\-h.
+
+
+
+Referenced by run(), and $\sim$\-Learn\-Synth\-Q\-B\-F().
 
 \hypertarget{classLearnSynthQBF_a227ff215ffb411e57686aa3d8e7f7026}{\index{Learn\-Synth\-Q\-B\-F@{Learn\-Synth\-Q\-B\-F}!incremental\-\_\-vars\-\_\-to\-\_\-keep\-\_\-@{incremental\-\_\-vars\-\_\-to\-\_\-keep\-\_\-}}
 \index{incremental\-\_\-vars\-\_\-to\-\_\-keep\-\_\-@{incremental\-\_\-vars\-\_\-to\-\_\-keep\-\_\-}!LearnSynthQBF@{Learn\-Synth\-Q\-B\-F}}
@@ -710,7 +732,7 @@ A list of variables the S\-A\-T-\/solver should not optimize away.
 
 
 
-Definition at line 420 of file Learn\-Synth\-Q\-B\-F.\-h.
+Definition at line 424 of file Learn\-Synth\-Q\-B\-F.\-h.
 
 
 
@@ -725,7 +747,7 @@ The Q\-B\-F-\/solver used for all queries.
 
 The type of solver is selected with command-\/line arguments. 
 
-Definition at line 367 of file Learn\-Synth\-Q\-B\-F.\-h.
+Definition at line 371 of file Learn\-Synth\-Q\-B\-F.\-h.
 
 
 
@@ -740,7 +762,7 @@ The S\-A\-T-\/solver for protagonist moves when using \hyperlink{classLearnSynth
 
 It stores the \hyperlink{classCNF}{C\-N\-F} F \& T \& !\-F', where F is the \hyperlink{classLearnSynthQBF_a9c6b41f7df5f4ed4bfc5930136fc1152}{winning\-\_\-region\-\_\-}. However, !\-F' is only updated lazily for performance reasons (this way, incremental solving can be exploited better). 
 
-Definition at line 415 of file Learn\-Synth\-Q\-B\-F.\-h.
+Definition at line 419 of file Learn\-Synth\-Q\-B\-F.\-h.
 
 
 
@@ -755,7 +777,7 @@ The S\-A\-T-\/solver for antagonist moves when using \hyperlink{classLearnSynthQ
 
 It stores the \hyperlink{classCNF}{C\-N\-F} F \& T \& !\-F', where F is the \hyperlink{classLearnSynthQBF_a9c6b41f7df5f4ed4bfc5930136fc1152}{winning\-\_\-region\-\_\-}. However, !\-F' is only updated lazily for performance reasons (this way, incremental solving can be exploited better). 
 
-Definition at line 406 of file Learn\-Synth\-Q\-B\-F.\-h.
+Definition at line 410 of file Learn\-Synth\-Q\-B\-F.\-h.
 
 
 
@@ -770,7 +792,7 @@ A flag indicating if solver\-\_\-i\-\_\- is precise.
 
 We update the next-\/state copy of the winning region in solver\-\_\-i\-\_\- only lazily to better support incremental solving. If this flag is true, then this means that the next-\/state copy of the winning region is accurate in solver\-\_\-i\-\_\-. If this flag is false, then we must not trust any unsatisfiability verdicts coming from solver\-\_\-i\-\_\- (but need to update the next-\/state copy of the winning region instead). 
 
-Definition at line 431 of file Learn\-Synth\-Q\-B\-F.\-h.
+Definition at line 435 of file Learn\-Synth\-Q\-B\-F.\-h.
 
 
 
@@ -785,7 +807,7 @@ Stores and maintains statistics and performance measures.
 
 
 
-Definition at line 360 of file Learn\-Synth\-Q\-B\-F.\-h.
+Definition at line 364 of file Learn\-Synth\-Q\-B\-F.\-h.
 
 
 
@@ -800,7 +822,7 @@ The current over-\/approximation of the winning region.
 
 Only when \hyperlink{classLearnSynthQBF_ae8219ab3e4987775e1d6a006a9d38f4d}{compute\-Winning\-Region()} is done, this field will store the correct winning region. 
 
-Definition at line 343 of file Learn\-Synth\-Q\-B\-F.\-h.
+Definition at line 347 of file Learn\-Synth\-Q\-B\-F.\-h.
 
 
 
@@ -815,7 +837,7 @@ The current over-\/approximation of the winning region in an uncompressed form.
 
 This \hyperlink{classCNF}{C\-N\-F} is logically equivalent to \hyperlink{classLearnSynthQBF_a9c6b41f7df5f4ed4bfc5930136fc1152}{winning\-\_\-region\-\_\-}. However, \hyperlink{classLearnSynthQBF_a9c6b41f7df5f4ed4bfc5930136fc1152}{winning\-\_\-region\-\_\-} is 'compressed' from time to time by removing redundant clauses (clauses that are implied by other clauses in the winning region). This field stores the uncompressed version of the winning region. Having the uncompressed winning region can be good because throwing away redundant clauses is not always beneficial. The \hyperlink{classCNF}{C\-N\-F} get smaller, but the solver may have to re-\/discover the removed clauses. 
 
-Definition at line 355 of file Learn\-Synth\-Q\-B\-F.\-h.
+Definition at line 359 of file Learn\-Synth\-Q\-B\-F.\-h.
 
 
 

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">demiurge
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A synthesis tool for safety specifications.</div>
   </td>
@@ -135,11 +135,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="classLearnSynthQBFInd.html#a5a34501e485a063d8120a2a79c39d9c9">LearnSynthQBFInd</a>
 , <a class="el" href="classCounterGenSAT.html#a4d04e042ba7ec4b12bab4481fa3d6930">CounterGenSAT</a>
 </li>
+<li>generalizeCounterexampleFurther()
+: <a class="el" href="classLearnSynthQBFInc.html#aa3c592148a51356dd2eb59e2cef9cb6b">LearnSynthQBFInc</a>
+</li>
 <li>generalizeCounterexamples()
 : <a class="el" href="classCounterGenSAT.html#af8e756f76eaa958f461a760926a46875">CounterGenSAT</a>
 </li>
 <li>getAigInFileName()
 : <a class="el" href="classOptions.html#aaf9b09b226b91d4c2f9830624fd4182f">Options</a>
+</li>
+<li>getAigInFileNameOnly()
+: <a class="el" href="classOptions.html#a12a5530c59af8733b977434126ec36c6">Options</a>
 </li>
 <li>getAigOutFileName()
 : <a class="el" href="classOptions.html#ad7c543adeab5d10177f3a7a279f807e1">Options</a>
@@ -155,6 +161,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>getBackEndName()
 : <a class="el" href="classOptions.html#a2b7a4169cf0f3366e5035ec5b497e585">Options</a>
+</li>
+<li>getCircuitExtractionMode()
+: <a class="el" href="classOptions.html#a2a90aac3c96a8231fa72995e74cacd56">Options</a>
+</li>
+<li>getCircuitExtractionName()
+: <a class="el" href="classOptions.html#a7129bf456b716236df73007503c2e4a2">Options</a>
+</li>
+<li>getCircuitExtractor()
+: <a class="el" href="classOptions.html#ae4f8d0d19c04484d5a96c9baefc25663">Options</a>
 </li>
 <li>getClauses()
 : <a class="el" href="classCNF.html#a9532acac619c098668460a4c97cbbc0f">CNF</a>
@@ -243,22 +258,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>getSATSolver()
 : <a class="el" href="classOptions.html#aed3731b7c89433cd485cff35ca4bdcd7">Options</a>
 </li>
+<li>getSATSolverExtr()
+: <a class="el" href="classOptions.html#a5661af502922536b611a136d3f4c7281">Options</a>
+</li>
 <li>getSolverCommand()
 : <a class="el" href="classExtQBFSolver.html#aec4c2d830f72283e2fbabf4a3f62a640">ExtQBFSolver</a>
 , <a class="el" href="classQuBEExt.html#a2af26a63952d83a50a4bd3d72bfc572a">QuBEExt</a>
 , <a class="el" href="classDepQBFExt.html#a64f0c17958bd64cfd20a1f2478f68077">DepQBFExt</a>
 </li>
 <li>getSolverCommandModel()
-: <a class="el" href="classExtQBFSolver.html#ac2bc9e4817cfa1a54195d7d9f1c7d3bd">ExtQBFSolver</a>
+: <a class="el" href="classQuBEExt.html#a846ea873ec83e57213f1931d85cb8bd0">QuBEExt</a>
 , <a class="el" href="classDepQBFExt.html#a72321fcf85a52333c0f7e83004a3f119">DepQBFExt</a>
-, <a class="el" href="classQuBEExt.html#a846ea873ec83e57213f1931d85cb8bd0">QuBEExt</a>
+, <a class="el" href="classExtQBFSolver.html#ac2bc9e4817cfa1a54195d7d9f1c7d3bd">ExtQBFSolver</a>
 </li>
 <li>getState()
 : <a class="el" href="classIFMProofObligation.html#a75083a8658b5dbc8b7d824081876170e">IFMProofObligation</a>
 </li>
 <li>getStatistics()
-: <a class="el" href="classCounterGenSAT.html#aaa097494ceaf4670b20d90f6fa0f607d">CounterGenSAT</a>
-, <a class="el" href="classClauseExplorerSAT.html#a9798ab0d723cc896feef36e2fbf5311a">ClauseExplorerSAT</a>
+: <a class="el" href="classClauseExplorerSAT.html#a9798ab0d723cc896feef36e2fbf5311a">ClauseExplorerSAT</a>
+, <a class="el" href="classCounterGenSAT.html#aaa097494ceaf4670b20d90f6fa0f607d">CounterGenSAT</a>
 </li>
 <li>getT()
 : <a class="el" href="classAIG2CNF.html#a50f4e351f8d3f3f73b80e70849f00fe1">AIG2CNF</a>
@@ -266,8 +284,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>getTimeAsString()
 : <a class="el" href="classStopwatch.html#a4b6869082a043c822dc22944e4c1a5e2">Stopwatch</a>
 </li>
+<li>getTmpDeps()
+: <a class="el" href="classAIG2CNF.html#a3f4076dda7514fc3015867494be3aaac">AIG2CNF</a>
+</li>
+<li>getTmpDepsTrans()
+: <a class="el" href="classAIG2CNF.html#a87d64a22868a17f6c3cf8dd3af88f02b">AIG2CNF</a>
+</li>
 <li>getTmpDirName()
 : <a class="el" href="classOptions.html#a98edf8c11ffb864a98905ff47ed99652">Options</a>
+</li>
+<li>getTPDirName()
+: <a class="el" href="classOptions.html#a18e33479844f3b0bd7161c3f62166b14">Options</a>
 </li>
 <li>getTrans()
 : <a class="el" href="classAIG2CNF.html#a02f56e622e210868ffafcdee4ad9fea2">AIG2CNF</a>
@@ -276,11 +303,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="classAIG2CNF.html#add8899c00619a3c182e78d21b988d748">AIG2CNF</a>
 </li>
 <li>getU()
-: <a class="el" href="classIFM13Synth.html#a396e520b9db59b73a46a2315ee3123b4">IFM13Synth</a>
-, <a class="el" href="classIFM13Explorer.html#a2816b4c9f2cb02958e660a872f43fe4b">IFM13Explorer</a>
+: <a class="el" href="classIFM13Explorer.html#a2816b4c9f2cb02958e660a872f43fe4b">IFM13Explorer</a>
+, <a class="el" href="classIFM13Synth.html#a396e520b9db59b73a46a2315ee3123b4">IFM13Synth</a>
+</li>
+<li>getUniqueTmpFileName()
+: <a class="el" href="classOptions.html#a6dbe6ad8669ffb3ae3e9ab5201646210">Options</a>
 </li>
 <li>getUnsafeStates()
 : <a class="el" href="classAIG2CNF.html#a7e6e6af6ac83605669918008b12d30e7">AIG2CNF</a>
+</li>
+<li>getVars()
+: <a class="el" href="classCNF.html#a4847969cea924a74642e3d914135d8da">CNF</a>
 </li>
 <li>getVarsOfType()
 : <a class="el" href="classVarManager.html#a9da8cbfff80af5b7b8c2910fa815ee8a">VarManager</a>
@@ -289,7 +322,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 14 2013 15:15:46 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jul 15 2014 12:30:23 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

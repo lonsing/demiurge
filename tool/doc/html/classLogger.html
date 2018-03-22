@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">demiurge
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A synthesis tool for safety specifications.</div>
   </td>
@@ -159,7 +159,7 @@ Private Member Functions</h2></td></tr>
 <p>This utility class is able to print 6 different types of messages: ERRORs, WARNINGs RESULTs, INFOs, DEBUG messages and LOG messages. Every kind of message can be enabled and disabled. Do not directly print to stdout or stderr but use this class instead (except for special cases like printing messages before this <a class="el" href="classLogger.html" title="Prints messages of different kind, which can all be enabled and disabled.">Logger</a> has been initialized).</p>
 <p>This class is implemented as a Singleton. That is, you cannot instantiate objects of this class with the constructor. Use the method <a class="el" href="classLogger.html#a4aa4d7c3b98f6e12e7ea8253da5ea0cd">instance() </a> to obtain the one and only instance of this class.</p>
 <dl class="section author"><dt>Author</dt><dd>Robert Koenighofer (<a href="#" onclick="location.href='mai'+'lto:'+'rob'+'er'+'t.k'+'oe'+'nig'+'ho'+'fer'+'@i'+'aik'+'.t'+'ugr'+'az'+'.at'; return false;">rober<span style="display: none;">.nosp@m.</span>t.ko<span style="display: none;">.nosp@m.</span>enigh<span style="display: none;">.nosp@m.</span>ofer<span style="display: none;">.nosp@m.</span>@iaik<span style="display: none;">.nosp@m.</span>.tug<span style="display: none;">.nosp@m.</span>raz.a<span style="display: none;">.nosp@m.</span>t</a>) </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>1.0.0 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.1.0 </dd></dl>
 
 <p>Definition at line <a class="el" href="Logger_8h_source.html#l00052">52</a> of file <a class="el" href="Logger_8h_source.html">Logger.h</a>.</p>
 </div><h2>Member Enumeration Documentation</h2>
@@ -331,7 +331,7 @@ Private Member Functions</h2></td></tr>
 
 <p>References <a class="el" href="Logger_8h_source.html#l00201">enabled_</a>.</p>
 
-<p>Referenced by <a class="el" href="Options_8cpp_source.html#l00465">Options::initLogger()</a>.</p>
+<p>Referenced by <a class="el" href="Options_8cpp_source.html#l00756">Options::initLogger()</a>.</p>
 
 </div>
 </div>
@@ -362,7 +362,7 @@ Private Member Functions</h2></td></tr>
 
 <p>References <a class="el" href="Logger_8h_source.html#l00201">enabled_</a>.</p>
 
-<p>Referenced by <a class="el" href="Options_8cpp_source.html#l00465">Options::initLogger()</a>.</p>
+<p>Referenced by <a class="el" href="Options_8cpp_source.html#l00756">Options::initLogger()</a>.</p>
 
 </div>
 </div>
@@ -441,7 +441,7 @@ Private Member Functions</h2></td></tr>
 
 <p>References <a class="el" href="Logger_8h_source.html#l00171">instance_</a>, <a class="el" href="Logger_8cpp_source.html#l00045">Logger()</a>, and <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00192">LearnSynthQBFInc::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00266">LearnSynthQBF::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00267">LearnSynthQBFInd::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00112">LearnSynthQBFInc::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00134">LearnSynthQBF::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00195">LearnSynthQBFInd::computeWinningRegionOne()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00203">LearnSynthQBF::computeWinningRegionOneSAT()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00408">LearnSynthQBFInc::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00267">LearnSynthQBF::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00269">LearnSynthQBFInd::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00565">LearnSynthQBFInc::computeWinningRegionAllPool()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00488">LearnSynthQBFInc::computeWinningRegionAllPush()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00122">LearnSynthQBFInc::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00135">LearnSynthQBF::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00197">LearnSynthQBFInd::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00273">LearnSynthQBFInc::computeWinningRegionOnePool()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00199">LearnSynthQBFInc::computeWinningRegionOnePush()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00204">LearnSynthQBF::computeWinningRegionOneSAT()</a>.</p>
 
 </div>
 </div>
@@ -473,7 +473,7 @@ Private Member Functions</h2></td></tr>
 
 <p>References <a class="el" href="Logger_8h_source.html#l00201">enabled_</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00192">LearnSynthQBFInc::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00266">LearnSynthQBF::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00267">LearnSynthQBFInd::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00112">LearnSynthQBFInc::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00134">LearnSynthQBF::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00195">LearnSynthQBFInd::computeWinningRegionOne()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00203">LearnSynthQBF::computeWinningRegionOneSAT()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00408">LearnSynthQBFInc::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00267">LearnSynthQBF::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00269">LearnSynthQBFInd::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00565">LearnSynthQBFInc::computeWinningRegionAllPool()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00488">LearnSynthQBFInc::computeWinningRegionAllPush()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00122">LearnSynthQBFInc::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00135">LearnSynthQBF::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00197">LearnSynthQBFInd::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00273">LearnSynthQBFInc::computeWinningRegionOnePool()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00199">LearnSynthQBFInc::computeWinningRegionOnePush()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00204">LearnSynthQBF::computeWinningRegionOneSAT()</a>.</p>
 
 </div>
 </div>
@@ -627,7 +627,7 @@ streams_[5] is the output stream for log messages (Logtype::LOG) </li>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 14 2013 15:15:45 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jul 15 2014 12:30:22 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

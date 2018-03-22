@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">demiurge
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A synthesis tool for safety specifications.</div>
   </td>
@@ -199,10 +199,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;{</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <a class="code" href="classVarInfo.html#a82a85d0c811c2e5501401bd42463371b" title="The name of the variable.">name_</a> = name;</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="code" href="VarInfo_8h.html#a5e593b6ad8dc90291c9214cbbf246204">  115</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="VarInfo_8cpp.html#a5e593b6ad8dc90291c9214cbbf246204" title="Comparison operator such that VarInfo objects can be stored in sets.">operator&lt; </a>(<span class="keyword">const</span> <a class="code" href="classVarInfo.html" title="Stores additional information to a variable.">VarInfo</a> &amp;o1, <span class="keyword">const</span> <a class="code" href="classVarInfo.html" title="Stores additional information to a variable.">VarInfo</a> &amp;o2)</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;{</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <span class="keywordflow">return</span> o1.<a class="code" href="classVarInfo.html#aefe8fc94158fe9e4d05c091176f14232" title="Returns the index with which this variable occurs in the CNFs.">getLitInCNF</a>() &lt; o2.<a class="code" href="classVarInfo.html#aefe8fc94158fe9e4d05c091176f14232" title="Returns the index with which this variable occurs in the CNFs.">getLitInCNF</a>();</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 14 2013 15:15:43 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jul 15 2014 12:30:20 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

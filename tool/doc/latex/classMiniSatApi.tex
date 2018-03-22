@@ -106,7 +106,7 @@ This class represents an interface to the S\-A\-T-\/solver Minisat (see \href{ht
 Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\-0.\-0 
+1.\-1.\-0 
 \end{DoxyVersion}
 
 
@@ -278,7 +278,7 @@ References Sat\-Solver\-::min\-\_\-cores\-\_\-.
 
 
 
-Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), and Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C().
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), and Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2().
 
 \hypertarget{classSatSolver_ae229c5e277350710412fce0e867dc566}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!do\-Rand\-Models@{do\-Rand\-Models}}
 \index{do\-Rand\-Models@{do\-Rand\-Models}!MiniSatApi@{Mini\-Sat\-Api}}
@@ -306,7 +306,7 @@ References Sat\-Solver\-::rand\-\_\-models\-\_\-.
 
 
 
-Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), and Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C().
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), and Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C().
 
 \hypertarget{classMiniSatApi_a56c4758ee7466cd7fa48a682fee76fd3}{\index{Mini\-Sat\-Api@{Mini\-Sat\-Api}!inc\-Add2\-Lit\-Clause@{inc\-Add2\-Lit\-Clause}}
 \index{inc\-Add2\-Lit\-Clause@{inc\-Add2\-Lit\-Clause}!MiniSatApi@{Mini\-Sat\-Api}}
@@ -721,7 +721,7 @@ Stores the current state of the incremental session on a stack.
 The state can be restored later by calling \hyperlink{classMiniSatApi_af388f97db15f77baeb420a8fef74ca6a}{inc\-Pop()}. Mini\-Sat does not support push and pop natively. Also, Mini\-Sat does not allow to copy a a solver instance. Hence, we do a workaround\-: we create a new solver instance and feed it with the \hyperlink{classCNF}{C\-N\-F} that has been fed into the original solver instance. Clauses learned by the original solver are not transferred. For this to work, we track all clauses that are added to the original solver. This means some computational overhead. We can save this overhead if we tell \hyperlink{classMiniSatApi_afe6f184e440ffe7f9b3a86045c15b450}{start\-Incremental\-Session()} that \hyperlink{classMiniSatApi_a27013ace25320f68252bef5ba9f2e9ad}{inc\-Push()} will never be called.
 
 \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000005}{Todo}]Try to improve this workaround with activation variables or by extracting the learned clauses from the original solver instance or by implementing a copy-\/function for Mini\-Sat solver instances. \end{DoxyRefDesc}
+\item[\hyperlink{todo__todo000004}{Todo}]Try to improve this workaround with activation variables or by extracting the learned clauses from the original solver instance or by implementing a copy-\/function for Mini\-Sat solver instances. \end{DoxyRefDesc}
 
 
 Implements \hyperlink{classSatSolver_a4da0dff7082a91429e3311d279605be4}{Sat\-Solver}.

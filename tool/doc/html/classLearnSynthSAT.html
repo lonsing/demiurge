@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">demiurge
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A synthesis tool for safety specifications.</div>
   </td>
@@ -110,8 +110,8 @@ Inheritance diagram for LearnSynthSAT:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0d2a30dcdd8a601aaea8ddf689717bcc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLearnSynthSAT.html#a0d2a30dcdd8a601aaea8ddf689717bcc">LearnSynthSAT</a> ()</td></tr>
-<tr class="memdesc:a0d2a30dcdd8a601aaea8ddf689717bcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a0d2a30dcdd8a601aaea8ddf689717bcc"></a><br/></td></tr>
+<tr class="memitem:a5620cd59d05720b9a148077d86efa2a8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLearnSynthSAT.html#a5620cd59d05720b9a148077d86efa2a8">LearnSynthSAT</a> (<a class="el" href="classCNFImplExtractor.html">CNFImplExtractor</a> *impl_extractor)</td></tr>
+<tr class="memdesc:a5620cd59d05720b9a148077d86efa2a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a5620cd59d05720b9a148077d86efa2a8"></a><br/></td></tr>
 <tr class="memitem:a2cb64f16d981276fe946d0fa0cf0bd09"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLearnSynthSAT.html#a2cb64f16d981276fe946d0fa0cf0bd09">~LearnSynthSAT</a> ()</td></tr>
 <tr class="memdesc:a2cb64f16d981276fe946d0fa0cf0bd09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#a2cb64f16d981276fe946d0fa0cf0bd09"></a><br/></td></tr>
 <tr class="memitem:a13a50b2649f44d37761fdbff26e9c0c0"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLearnSynthSAT.html#a13a50b2649f44d37761fdbff26e9c0c0">run</a> ()</td></tr>
@@ -123,6 +123,10 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:a055b4699184d09bb7f6b15052ac684db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the winning region and stores the result in <a class="el" href="classLearnSynthSAT.html#aced2bce789c7a93ed4b5391dd0690616" title="The current over-approximation of the winning region.">winning_region_</a>.  <a href="#a055b4699184d09bb7f6b15052ac684db"></a><br/></td></tr>
 <tr class="memitem:a49541a9cff8002ca31e0044ae35546a2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLearnSynthSAT.html#a49541a9cff8002ca31e0044ae35546a2">computeWinningRegionPlain</a> ()</td></tr>
 <tr class="memdesc:a49541a9cff8002ca31e0044ae35546a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses the standard method to compute a winning region.  <a href="#a49541a9cff8002ca31e0044ae35546a2"></a><br/></td></tr>
+<tr class="memitem:a0d36fdd8180e9ba06e116b6ed3cb6a72"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLearnSynthSAT.html#a0d36fdd8180e9ba06e116b6ed3cb6a72">computeWinningRegionPlainDep</a> ()</td></tr>
+<tr class="memdesc:a0d36fdd8180e9ba06e116b6ed3cb6a72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the winning region, exploiting temporary varibles of the tran. rel.  <a href="#a0d36fdd8180e9ba06e116b6ed3cb6a72"></a><br/></td></tr>
+<tr class="memitem:a7190dabde3f24ddb94c0484f7df3b026"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLearnSynthSAT.html#a7190dabde3f24ddb94c0484f7df3b026">computeWinningRegionPlainDep2</a> ()</td></tr>
+<tr class="memdesc:a7190dabde3f24ddb94c0484f7df3b026"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exploits temporary varibles of the tran. rel. even more.  <a href="#a7190dabde3f24ddb94c0484f7df3b026"></a><br/></td></tr>
 <tr class="memitem:aa981048565f10183c30c4dc0576de6b6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLearnSynthSAT.html#aa981048565f10183c30c4dc0576de6b6">computeWinningRegionRG</a> ()</td></tr>
 <tr class="memdesc:aa981048565f10183c30c4dc0576de6b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute a winning region with optimization RG when generalizing counterexamples.  <a href="#aa981048565f10183c30c4dc0576de6b6"></a><br/></td></tr>
 <tr class="memitem:a2d54b84ce5e87b7b2d398226faa501b0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLearnSynthSAT.html#a2d54b84ce5e87b7b2d398226faa501b0">computeWinningRegionRGRC</a> ()</td></tr>
@@ -160,6 +164,8 @@ Protected Attributes</h2></td></tr>
 <tr class="memdesc:ae7f4a4e3546f46ad1256e203311226cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">The solver for computing counterexample-candidates if optimization RC is enabled.  <a href="#ae7f4a4e3546f46ad1256e203311226cf"></a><br/></td></tr>
 <tr class="memitem:ab81d5f53e078238feb1e948a5a5366ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSatSolver.html">SatSolver</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLearnSynthSAT.html#ab81d5f53e078238feb1e948a5a5366ff">solver_ctrl_ind_</a></td></tr>
 <tr class="memdesc:ab81d5f53e078238feb1e948a5a5366ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">The solver for generalizing counterexamples if optimization RG is endabled.  <a href="#ab81d5f53e078238feb1e948a5a5366ff"></a><br/></td></tr>
+<tr class="memitem:a1c7a39732a4ee3cd1ec877f2642046fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCNFImplExtractor.html">CNFImplExtractor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLearnSynthSAT.html#a1c7a39732a4ee3cd1ec877f2642046fc">impl_extractor_</a></td></tr>
+<tr class="memdesc:a1c7a39732a4ee3cd1ec877f2642046fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The engine to use for circuit extraction.  <a href="#a1c7a39732a4ee3cd1ec877f2642046fc"></a><br/></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -176,28 +182,35 @@ Synthesis Methods for Safety Specs".</p>
 <p>The procedure outlined above is implemented in <a class="el" href="classLearnSynthSAT.html#a49541a9cff8002ca31e0044ae35546a2" title="Uses the standard method to compute a winning region.">computeWinningRegionPlain()</a>. Some variants of this procedure are implemented in other methods of this class. The method <a class="el" href="classLearnSynthSAT.html#aa981048565f10183c30c4dc0576de6b6" title="Compute a winning region with optimization RG when generalizing counterexamples.">computeWinningRegionRG()</a> also uses inductive reachability reasoning in the generalization of counterexamples, just like <a class="el" href="classLearnSynthQBFInd.html" title="Implements a learning-based synthesis with inductive reachability reasoning.">LearnSynthQBFInd</a>. The method <a class="el" href="classLearnSynthSAT.html#a2d54b84ce5e87b7b2d398226faa501b0" title="Compute a winning region with optimization RG and RC enabled.">computeWinningRegionRGRC()</a> uses inductive reachability reasoning also during the computation or counterexamples. These extensions are described as optimization RG and optimization RC in the VMCAI'14 paper. Command-line parameters (&ndash;mode) decide which of these methods to use.</p>
 <p>Finally the <a class="el" href="classQBFCertImplExtractor.html" title="Given a winning region in CNF, this method extracts a circuit using QBFCert.">QBFCertImplExtractor</a> is used to extract a circuit.</p>
 <dl class="section author"><dt>Author</dt><dd>Robert Koenighofer (<a href="#" onclick="location.href='mai'+'lto:'+'rob'+'er'+'t.k'+'oe'+'nig'+'ho'+'fer'+'@i'+'aik'+'.t'+'ugr'+'az'+'.at'; return false;">rober<span style="display: none;">.nosp@m.</span>t.ko<span style="display: none;">.nosp@m.</span>enigh<span style="display: none;">.nosp@m.</span>ofer<span style="display: none;">.nosp@m.</span>@iaik<span style="display: none;">.nosp@m.</span>.tug<span style="display: none;">.nosp@m.</span>raz.a<span style="display: none;">.nosp@m.</span>t</a>) </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>1.0.0 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.1.0 </dd></dl>
 
-<p>Definition at line <a class="el" href="LearnSynthSAT_8h_source.html#l00084">84</a> of file <a class="el" href="LearnSynthSAT_8h_source.html">LearnSynthSAT.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthSAT_8h_source.html#l00085">85</a> of file <a class="el" href="LearnSynthSAT_8h_source.html">LearnSynthSAT.h</a>.</p>
 </div><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a0d2a30dcdd8a601aaea8ddf689717bcc"></a>
+<a class="anchor" id="a5620cd59d05720b9a148077d86efa2a8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">LearnSynthSAT::LearnSynthSAT </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="classCNFImplExtractor.html">CNFImplExtractor</a> *&#160;</td>
+          <td class="paramname"><em>impl_extractor</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">impl_extractor</td><td>The engine to use for circuit extraction. It will be deleted by this class. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Definition at line <a class="el" href="LearnSynthSAT_8cpp_source.html#l00041">41</a> of file <a class="el" href="LearnSynthSAT_8cpp_source.html">LearnSynthSAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthSAT_8cpp_source.html#l00042">42</a> of file <a class="el" href="LearnSynthSAT_8cpp_source.html">LearnSynthSAT.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8cpp_source.html#l00130">CNF::add2LitClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00139">CNF::add3LitClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00070">CNF::addClause()</a>, <a class="el" href="VarManager_8cpp_source.html#l00251">VarManager::createFreshPrevVar()</a>, <a class="el" href="VarManager_8cpp_source.html#l00219">VarManager::createFreshTmpVar()</a>, <a class="el" href="VarInfo_8h_source.html#l00074">VarInfo::CTRL</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00271">current_state_is_initial_</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00264">current_to_previous_map_</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00280">different_from_prev_or_initial_</a>, <a class="el" href="CNF_8cpp_source.html#l00273">CNF::getClauses()</a>, <a class="el" href="VarManager_8cpp_source.html#l00332">VarManager::getMaxCNFVar()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00201">AIG2CNF::getTrans()</a>, <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, <a class="el" href="VarInfo_8h_source.html#l00069">VarInfo::INPUT</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="VarInfo_8h_source.html#l00064">VarInfo::NEXT_STATE</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00723">presentToPrevious()</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00259">prev_trans_or_initial_</a>, <a class="el" href="CNF_8cpp_source.html#l00239">CNF::swapWith()</a>, and <a class="el" href="VarInfo_8h_source.html#l00081">VarInfo::TMP</a>.</p>
+<p>References <a class="el" href="CNF_8cpp_source.html#l00177">CNF::add2LitClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00186">CNF::add3LitClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00117">CNF::addClause()</a>, <a class="el" href="VarManager_8cpp_source.html#l00251">VarManager::createFreshPrevVar()</a>, <a class="el" href="VarManager_8cpp_source.html#l00219">VarManager::createFreshTmpVar()</a>, <a class="el" href="VarInfo_8h_source.html#l00074">VarInfo::CTRL</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00291">current_state_is_initial_</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00284">current_to_previous_map_</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00300">different_from_prev_or_initial_</a>, <a class="el" href="CNF_8cpp_source.html#l00346">CNF::getClauses()</a>, <a class="el" href="VarManager_8cpp_source.html#l00332">VarManager::getMaxCNFVar()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00210">AIG2CNF::getTrans()</a>, <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, <a class="el" href="VarInfo_8h_source.html#l00069">VarInfo::INPUT</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="VarInfo_8h_source.html#l00064">VarInfo::NEXT_STATE</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l01156">presentToPrevious()</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00279">prev_trans_or_initial_</a>, <a class="el" href="CNF_8cpp_source.html#l00286">CNF::swapWith()</a>, and <a class="el" href="VarInfo_8h_source.html#l00081">VarInfo::TMP</a>.</p>
 
 </div>
 </div>
@@ -224,9 +237,9 @@ Synthesis Methods for Safety Specs".</p>
 
 <p>Destructor. </p>
 
-<p>Definition at line <a class="el" href="LearnSynthSAT_8cpp_source.html#l00104">104</a> of file <a class="el" href="LearnSynthSAT_8cpp_source.html">LearnSynthSAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthSAT_8cpp_source.html#l00106">106</a> of file <a class="el" href="LearnSynthSAT_8cpp_source.html">LearnSynthSAT.cpp</a>.</p>
 
-<p>References <a class="el" href="LearnSynthSAT_8h_source.html#l00292">solver_ctrl_</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00302">solver_ctrl_ind_</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00285">solver_i_</a>, and <a class="el" href="LearnSynthSAT_8h_source.html#l00297">solver_i_ind_</a>.</p>
+<p>References <a class="el" href="LearnSynthSAT_8h_source.html#l00329">impl_extractor_</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00312">solver_ctrl_</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00322">solver_ctrl_ind_</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00305">solver_i_</a>, and <a class="el" href="LearnSynthSAT_8h_source.html#l00317">solver_i_ind_</a>.</p>
 
 </div>
 </div>
@@ -297,11 +310,11 @@ Synthesis Methods for Safety Specs".</p>
 </ul>
 <dl class="section return"><dt>Returns</dt><dd>True if the specification was realizable, false otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="LearnSynthSAT_8cpp_source.html#l00152">152</a> of file <a class="el" href="LearnSynthSAT_8cpp_source.html">LearnSynthSAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthSAT_8cpp_source.html#l00154">154</a> of file <a class="el" href="LearnSynthSAT_8cpp_source.html">LearnSynthSAT.cpp</a>.</p>
 
-<p>References <a class="el" href="LearnSynthSAT_8cpp_source.html#l00178">computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00326">computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00510">computeWinningRegionRGRC()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00753">debugCheckWinReg()</a>, <a class="el" href="Options_8cpp_source.html#l00292">Options::getBackEndMode()</a>, <a class="el" href="Options_8cpp_source.html#l00059">Options::instance()</a>, and <a class="el" href="LearnSynthSAT_8h_source.html#l00238">winning_region_</a>.</p>
+<p>References <a class="el" href="LearnSynthSAT_8cpp_source.html#l00180">computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00759">computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00943">computeWinningRegionRGRC()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l01186">debugCheckWinReg()</a>, <a class="el" href="Options_8cpp_source.html#l00390">Options::getBackEndMode()</a>, <a class="el" href="Options_8cpp_source.html#l00065">Options::instance()</a>, and <a class="el" href="LearnSynthSAT_8h_source.html#l00258">winning_region_</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00117">run()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00121">run()</a>.</p>
 
 </div>
 </div>
@@ -330,11 +343,73 @@ Synthesis Methods for Safety Specs".</p>
 <p>The standard method works as described in the class description.</p>
 <dl class="section return"><dt>Returns</dt><dd>True if the specification was realizable, false otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="LearnSynthSAT_8cpp_source.html#l00178">178</a> of file <a class="el" href="LearnSynthSAT_8cpp_source.html">LearnSynthSAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthSAT_8cpp_source.html#l00180">180</a> of file <a class="el" href="LearnSynthSAT_8cpp_source.html">LearnSynthSAT.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8cpp_source.html#l00099">CNF::addClauseAndSimplify()</a>, <a class="el" href="CNF_8cpp_source.html#l00183">CNF::addCNF()</a>, <a class="el" href="CNF_8cpp_source.html#l00064">CNF::clear()</a>, <a class="el" href="Utils_8cpp_source.html#l00272">Utils::compressStateCNF()</a>, <a class="el" href="Utils_8cpp_source.html#l00041">Utils::containsInit()</a>, <a class="el" href="VarInfo_8h_source.html#l00074">VarInfo::CTRL</a>, <a class="el" href="SatSolver_8cpp_source.html#l00047">SatSolver::doMinCores()</a>, <a class="el" href="SatSolver_8cpp_source.html#l00053">SatSolver::doRandModels()</a>, <a class="el" href="Utils_8cpp_source.html#l00063">Utils::extract()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00231">AIG2CNF::getNextSafeStates()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00237">AIG2CNF::getNextUnsafeStates()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00219">AIG2CNF::getSafeStates()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00201">AIG2CNF::getTrans()</a>, <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, <a class="el" href="classSatSolver.html#a9f91c104238b6e091513e0aa46970840">SatSolver::incAddClause()</a>, <a class="el" href="classSatSolver.html#ab2581b192cb2c39a81a416a9f7416c9e">SatSolver::incAddCNF()</a>, <a class="el" href="classSatSolver.html#ad387fc06bacf2d48847f779c9db8461a">SatSolver::incIsSatModelOrCore()</a>, <a class="el" href="VarInfo_8h_source.html#l00069">VarInfo::INPUT</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="Logger_8h_source.html#l00319">L_DBG</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="CNF_8cpp_source.html#l00217">CNF::negate()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00129">LearnStatisticsSAT::notifyAfterCheckCandidateFailed()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00118">LearnStatisticsSAT::notifyAfterCheckCandidateFound()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00098">LearnStatisticsSAT::notifyAfterComputeCandidate()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00143">LearnStatisticsSAT::notifyAfterRefine()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00112">LearnStatisticsSAT::notifyBeforeCheckCandidate()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00092">LearnStatisticsSAT::notifyBeforeComputeCandidate()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00137">LearnStatisticsSAT::notifyBeforeRefine()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00106">LearnStatisticsSAT::notifyRestart()</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="VarManager_8cpp_source.html#l00063">VarManager::resetToLastPush()</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00292">solver_ctrl_</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00285">solver_i_</a>, <a class="el" href="classSatSolver.html#a74603f84c3f2383a5fc44d5a8093cbea">SatSolver::startIncrementalSession()</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00230">statistics_</a>, <a class="el" href="Utils_8cpp_source.html#l00194">Utils::swapPresentToNext()</a>, <a class="el" href="CNF_8cpp_source.html#l00189">CNF::swapPresentToNext()</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00238">winning_region_</a>, and <a class="el" href="LearnSynthSAT_8h_source.html#l00250">winning_region_large_</a>.</p>
+<p>References <a class="el" href="CNF_8cpp_source.html#l00146">CNF::addClauseAndSimplify()</a>, <a class="el" href="CNF_8cpp_source.html#l00230">CNF::addCNF()</a>, <a class="el" href="CNF_8cpp_source.html#l00111">CNF::clear()</a>, <a class="el" href="Utils_8cpp_source.html#l00287">Utils::compressStateCNF()</a>, <a class="el" href="Utils_8cpp_source.html#l00041">Utils::containsInit()</a>, <a class="el" href="VarInfo_8h_source.html#l00074">VarInfo::CTRL</a>, <a class="el" href="SatSolver_8cpp_source.html#l00047">SatSolver::doMinCores()</a>, <a class="el" href="SatSolver_8cpp_source.html#l00053">SatSolver::doRandModels()</a>, <a class="el" href="Utils_8cpp_source.html#l00063">Utils::extract()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00240">AIG2CNF::getNextSafeStates()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00246">AIG2CNF::getNextUnsafeStates()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00228">AIG2CNF::getSafeStates()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00210">AIG2CNF::getTrans()</a>, <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, <a class="el" href="classSatSolver.html#a9f91c104238b6e091513e0aa46970840">SatSolver::incAddClause()</a>, <a class="el" href="classSatSolver.html#ab2581b192cb2c39a81a416a9f7416c9e">SatSolver::incAddCNF()</a>, <a class="el" href="classSatSolver.html#ad387fc06bacf2d48847f779c9db8461a">SatSolver::incIsSatModelOrCore()</a>, <a class="el" href="VarInfo_8h_source.html#l00069">VarInfo::INPUT</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="Logger_8h_source.html#l00319">L_DBG</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="CNF_8cpp_source.html#l00264">CNF::negate()</a>, <a class="el" href="VarInfo_8h_source.html#l00064">VarInfo::NEXT_STATE</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00113">LearnStatisticsSAT::notifyAfterCheckCandidateFailed()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00102">LearnStatisticsSAT::notifyAfterCheckCandidateFound()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00082">LearnStatisticsSAT::notifyAfterComputeCandidate()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00127">LearnStatisticsSAT::notifyAfterRefine()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00096">LearnStatisticsSAT::notifyBeforeCheckCandidate()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00076">LearnStatisticsSAT::notifyBeforeComputeCandidate()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00121">LearnStatisticsSAT::notifyBeforeRefine()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00090">LearnStatisticsSAT::notifyRestart()</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="VarManager_8cpp_source.html#l00063">VarManager::resetToLastPush()</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00312">solver_ctrl_</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00305">solver_i_</a>, <a class="el" href="classSatSolver.html#a74603f84c3f2383a5fc44d5a8093cbea">SatSolver::startIncrementalSession()</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00250">statistics_</a>, <a class="el" href="Utils_8cpp_source.html#l00209">Utils::swapPresentToNext()</a>, <a class="el" href="CNF_8cpp_source.html#l00236">CNF::swapPresentToNext()</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00258">winning_region_</a>, and <a class="el" href="LearnSynthSAT_8h_source.html#l00270">winning_region_large_</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00152">computeWinningRegion()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00154">computeWinningRegion()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0d36fdd8180e9ba06e116b6ed3cb6a72"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool LearnSynthSAT::computeWinningRegionPlainDep </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Computes the winning region, exploiting temporary varibles of the tran. rel. </p>
+<dl class="section note"><dt>Note</dt><dd>This method is experimalal. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the specification was realizable, false otherwise. </dd></dl>
+
+<p>Definition at line <a class="el" href="LearnSynthSAT_8cpp_source.html#l00328">328</a> of file <a class="el" href="LearnSynthSAT_8cpp_source.html">LearnSynthSAT.cpp</a>.</p>
+
+<p>References <a class="el" href="CNF_8cpp_source.html#l00146">CNF::addClauseAndSimplify()</a>, <a class="el" href="CNF_8cpp_source.html#l00230">CNF::addCNF()</a>, <a class="el" href="CNF_8cpp_source.html#l00111">CNF::clear()</a>, <a class="el" href="Utils_8cpp_source.html#l00287">Utils::compressStateCNF()</a>, <a class="el" href="Utils_8cpp_source.html#l00041">Utils::containsInit()</a>, <a class="el" href="VarInfo_8h_source.html#l00074">VarInfo::CTRL</a>, <a class="el" href="SatSolver_8cpp_source.html#l00047">SatSolver::doMinCores()</a>, <a class="el" href="SatSolver_8cpp_source.html#l00053">SatSolver::doRandModels()</a>, <a class="el" href="Utils_8cpp_source.html#l00063">Utils::extract()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00240">AIG2CNF::getNextSafeStates()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00246">AIG2CNF::getNextUnsafeStates()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00228">AIG2CNF::getSafeStates()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00265">AIG2CNF::getTmpDepsTrans()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00210">AIG2CNF::getTrans()</a>, <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, <a class="el" href="classSatSolver.html#a9f91c104238b6e091513e0aa46970840">SatSolver::incAddClause()</a>, <a class="el" href="classSatSolver.html#ab2581b192cb2c39a81a416a9f7416c9e">SatSolver::incAddCNF()</a>, <a class="el" href="classSatSolver.html#a6be2c564289a59057c4c6728a3aa9c2b">SatSolver::incAddNegCubeAsClause()</a>, <a class="el" href="classSatSolver.html#ad387fc06bacf2d48847f779c9db8461a">SatSolver::incIsSatModelOrCore()</a>, <a class="el" href="VarInfo_8h_source.html#l00069">VarInfo::INPUT</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="Logger_8h_source.html#l00319">L_DBG</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="CNF_8cpp_source.html#l00264">CNF::negate()</a>, <a class="el" href="VarInfo_8h_source.html#l00064">VarInfo::NEXT_STATE</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00113">LearnStatisticsSAT::notifyAfterCheckCandidateFailed()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00102">LearnStatisticsSAT::notifyAfterCheckCandidateFound()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00082">LearnStatisticsSAT::notifyAfterComputeCandidate()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00127">LearnStatisticsSAT::notifyAfterRefine()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00096">LearnStatisticsSAT::notifyBeforeCheckCandidate()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00076">LearnStatisticsSAT::notifyBeforeComputeCandidate()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00121">LearnStatisticsSAT::notifyBeforeRefine()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00090">LearnStatisticsSAT::notifyRestart()</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="VarManager_8cpp_source.html#l00063">VarManager::resetToLastPush()</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00312">solver_ctrl_</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00305">solver_i_</a>, <a class="el" href="classSatSolver.html#a74603f84c3f2383a5fc44d5a8093cbea">SatSolver::startIncrementalSession()</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00250">statistics_</a>, <a class="el" href="Utils_8cpp_source.html#l00209">Utils::swapPresentToNext()</a>, <a class="el" href="CNF_8cpp_source.html#l00236">CNF::swapPresentToNext()</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00258">winning_region_</a>, and <a class="el" href="LearnSynthSAT_8h_source.html#l00270">winning_region_large_</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7190dabde3f24ddb94c0484f7df3b026"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool LearnSynthSAT::computeWinningRegionPlainDep2 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Exploits temporary varibles of the tran. rel. even more. </p>
+<dl class="section note"><dt>Note</dt><dd>This method is experimalal. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the specification was realizable, false otherwise. </dd></dl>
+
+<p>Definition at line <a class="el" href="LearnSynthSAT_8cpp_source.html#l00508">508</a> of file <a class="el" href="LearnSynthSAT_8cpp_source.html">LearnSynthSAT.cpp</a>.</p>
+
+<p>References <a class="el" href="CNF_8cpp_source.html#l00117">CNF::addClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00146">CNF::addClauseAndSimplify()</a>, <a class="el" href="CNF_8cpp_source.html#l00230">CNF::addCNF()</a>, <a class="el" href="CNF_8cpp_source.html#l00111">CNF::clear()</a>, <a class="el" href="Utils_8cpp_source.html#l00287">Utils::compressStateCNF()</a>, <a class="el" href="VarManager_8cpp_source.html#l00219">VarManager::createFreshTmpVar()</a>, <a class="el" href="VarInfo_8h_source.html#l00074">VarInfo::CTRL</a>, <a class="el" href="defines_8h_source.html#l00081">DASSERT</a>, <a class="el" href="SatSolver_8cpp_source.html#l00047">SatSolver::doMinCores()</a>, <a class="el" href="SatSolver_8cpp_source.html#l00053">SatSolver::doRandModels()</a>, <a class="el" href="Utils_8cpp_source.html#l00063">Utils::extract()</a>, <a class="el" href="CNF_8cpp_source.html#l00346">CNF::getClauses()</a>, <a class="el" href="VarManager_8cpp_source.html#l00332">VarManager::getMaxCNFVar()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00240">AIG2CNF::getNextSafeStates()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00246">AIG2CNF::getNextUnsafeStates()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00228">AIG2CNF::getSafeStates()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00258">AIG2CNF::getTmpDeps()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00265">AIG2CNF::getTmpDepsTrans()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00210">AIG2CNF::getTrans()</a>, <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, <a class="el" href="classSatSolver.html#a9f91c104238b6e091513e0aa46970840">SatSolver::incAddClause()</a>, <a class="el" href="classSatSolver.html#ab2581b192cb2c39a81a416a9f7416c9e">SatSolver::incAddCNF()</a>, <a class="el" href="classSatSolver.html#a6be2c564289a59057c4c6728a3aa9c2b">SatSolver::incAddNegCubeAsClause()</a>, <a class="el" href="classSatSolver.html#ad387fc06bacf2d48847f779c9db8461a">SatSolver::incIsSatModelOrCore()</a>, <a class="el" href="VarInfo_8h_source.html#l00069">VarInfo::INPUT</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="Logger_8h_source.html#l00319">L_DBG</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="CNF_8cpp_source.html#l00264">CNF::negate()</a>, <a class="el" href="VarInfo_8h_source.html#l00064">VarInfo::NEXT_STATE</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00113">LearnStatisticsSAT::notifyAfterCheckCandidateFailed()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00102">LearnStatisticsSAT::notifyAfterCheckCandidateFound()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00082">LearnStatisticsSAT::notifyAfterComputeCandidate()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00127">LearnStatisticsSAT::notifyAfterRefine()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00096">LearnStatisticsSAT::notifyBeforeCheckCandidate()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00076">LearnStatisticsSAT::notifyBeforeComputeCandidate()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00121">LearnStatisticsSAT::notifyBeforeRefine()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00090">LearnStatisticsSAT::notifyRestart()</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="VarManager_8cpp_source.html#l00055">VarManager::push()</a>, <a class="el" href="CNF_8cpp_source.html#l00455">CNF::renameVars()</a>, <a class="el" href="VarManager_8cpp_source.html#l00063">VarManager::resetToLastPush()</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00312">solver_ctrl_</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00305">solver_i_</a>, <a class="el" href="classSatSolver.html#a74603f84c3f2383a5fc44d5a8093cbea">SatSolver::startIncrementalSession()</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00250">statistics_</a>, <a class="el" href="VarInfo_8h_source.html#l00081">VarInfo::TMP</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00258">winning_region_</a>, and <a class="el" href="LearnSynthSAT_8h_source.html#l00270">winning_region_large_</a>.</p>
 
 </div>
 </div>
@@ -363,11 +438,11 @@ Synthesis Methods for Safety Specs".</p>
 <p>Optimization RG is described in <a class="el" href="classLearnSynthQBFInd.html" title="Implements a learning-based synthesis with inductive reachability reasoning.">LearnSynthQBFInd</a> already. In a nutshell, the generalization query is modified so a state that prevents generalization must be either initial or have a predecessor in F. Otherwise it is unreachable and we do not care. This means that we can remove states that are winning for the protagonist from the winning region of they are unreachalbe in the final implementation.</p>
 <dl class="section return"><dt>Returns</dt><dd>True if the specification was realizable, false otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="LearnSynthSAT_8cpp_source.html#l00326">326</a> of file <a class="el" href="LearnSynthSAT_8cpp_source.html">LearnSynthSAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthSAT_8cpp_source.html#l00759">759</a> of file <a class="el" href="LearnSynthSAT_8cpp_source.html">LearnSynthSAT.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8cpp_source.html#l00099">CNF::addClauseAndSimplify()</a>, <a class="el" href="CNF_8cpp_source.html#l00183">CNF::addCNF()</a>, <a class="el" href="CNF_8cpp_source.html#l00064">CNF::clear()</a>, <a class="el" href="Utils_8cpp_source.html#l00272">Utils::compressStateCNF()</a>, <a class="el" href="Utils_8cpp_source.html#l00041">Utils::containsInit()</a>, <a class="el" href="VarInfo_8h_source.html#l00074">VarInfo::CTRL</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00271">current_state_is_initial_</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00264">current_to_previous_map_</a>, <a class="el" href="SatSolver_8cpp_source.html#l00047">SatSolver::doMinCores()</a>, <a class="el" href="SatSolver_8cpp_source.html#l00053">SatSolver::doRandModels()</a>, <a class="el" href="Utils_8cpp_source.html#l00063">Utils::extract()</a>, <a class="el" href="VarManager_8cpp_source.html#l00300">VarManager::getAllNonTempVars()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00231">AIG2CNF::getNextSafeStates()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00237">AIG2CNF::getNextUnsafeStates()</a>, <a class="el" href="VarManager_8cpp_source.html#l00320">VarManager::getPresErrorStateVar()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00219">AIG2CNF::getSafeStates()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00201">AIG2CNF::getTrans()</a>, <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, <a class="el" href="classSatSolver.html#a9f91c104238b6e091513e0aa46970840">SatSolver::incAddClause()</a>, <a class="el" href="classSatSolver.html#ab2581b192cb2c39a81a416a9f7416c9e">SatSolver::incAddCNF()</a>, <a class="el" href="classSatSolver.html#a1f04f34bb04174489ed18d0b62241004">SatSolver::incAddCube()</a>, <a class="el" href="classSatSolver.html#a6be2c564289a59057c4c6728a3aa9c2b">SatSolver::incAddNegCubeAsClause()</a>, <a class="el" href="classSatSolver.html#a5b39c45cd2a1abfe96c681515dfddb77">SatSolver::incAddUnitClause()</a>, <a class="el" href="classSatSolver.html#ab1aab4b96a36b2003450067a3799ae23">SatSolver::incIsSat()</a>, <a class="el" href="classSatSolver.html#ad387fc06bacf2d48847f779c9db8461a">SatSolver::incIsSatModelOrCore()</a>, <a class="el" href="classSatSolver.html#a436aae045eb04141c834df0b55947ee5">SatSolver::incPop()</a>, <a class="el" href="classSatSolver.html#a4da0dff7082a91429e3311d279605be4">SatSolver::incPush()</a>, <a class="el" href="VarInfo_8h_source.html#l00069">VarInfo::INPUT</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="Logger_8h_source.html#l00319">L_DBG</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="CNF_8cpp_source.html#l00217">CNF::negate()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00129">LearnStatisticsSAT::notifyAfterCheckCandidateFailed()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00118">LearnStatisticsSAT::notifyAfterCheckCandidateFound()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00098">LearnStatisticsSAT::notifyAfterComputeCandidate()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00143">LearnStatisticsSAT::notifyAfterRefine()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00112">LearnStatisticsSAT::notifyBeforeCheckCandidate()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00092">LearnStatisticsSAT::notifyBeforeComputeCandidate()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00137">LearnStatisticsSAT::notifyBeforeRefine()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00106">LearnStatisticsSAT::notifyRestart()</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00723">presentToPrevious()</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00259">prev_trans_or_initial_</a>, <a class="el" href="Utils_8cpp_source.html#l00161">Utils::remove()</a>, <a class="el" href="VarManager_8cpp_source.html#l00063">VarManager::resetToLastPush()</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00292">solver_ctrl_</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00302">solver_ctrl_ind_</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00285">solver_i_</a>, <a class="el" href="classSatSolver.html#a74603f84c3f2383a5fc44d5a8093cbea">SatSolver::startIncrementalSession()</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00230">statistics_</a>, <a class="el" href="Utils_8cpp_source.html#l00194">Utils::swapPresentToNext()</a>, <a class="el" href="CNF_8cpp_source.html#l00189">CNF::swapPresentToNext()</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00238">winning_region_</a>, and <a class="el" href="LearnSynthSAT_8h_source.html#l00250">winning_region_large_</a>.</p>
+<p>References <a class="el" href="CNF_8cpp_source.html#l00146">CNF::addClauseAndSimplify()</a>, <a class="el" href="CNF_8cpp_source.html#l00230">CNF::addCNF()</a>, <a class="el" href="CNF_8cpp_source.html#l00111">CNF::clear()</a>, <a class="el" href="Utils_8cpp_source.html#l00287">Utils::compressStateCNF()</a>, <a class="el" href="Utils_8cpp_source.html#l00041">Utils::containsInit()</a>, <a class="el" href="VarInfo_8h_source.html#l00074">VarInfo::CTRL</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00291">current_state_is_initial_</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00284">current_to_previous_map_</a>, <a class="el" href="SatSolver_8cpp_source.html#l00047">SatSolver::doMinCores()</a>, <a class="el" href="SatSolver_8cpp_source.html#l00053">SatSolver::doRandModels()</a>, <a class="el" href="Utils_8cpp_source.html#l00063">Utils::extract()</a>, <a class="el" href="VarManager_8cpp_source.html#l00300">VarManager::getAllNonTempVars()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00240">AIG2CNF::getNextSafeStates()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00246">AIG2CNF::getNextUnsafeStates()</a>, <a class="el" href="VarManager_8cpp_source.html#l00320">VarManager::getPresErrorStateVar()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00228">AIG2CNF::getSafeStates()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00210">AIG2CNF::getTrans()</a>, <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, <a class="el" href="classSatSolver.html#a9f91c104238b6e091513e0aa46970840">SatSolver::incAddClause()</a>, <a class="el" href="classSatSolver.html#ab2581b192cb2c39a81a416a9f7416c9e">SatSolver::incAddCNF()</a>, <a class="el" href="classSatSolver.html#a1f04f34bb04174489ed18d0b62241004">SatSolver::incAddCube()</a>, <a class="el" href="classSatSolver.html#a6be2c564289a59057c4c6728a3aa9c2b">SatSolver::incAddNegCubeAsClause()</a>, <a class="el" href="classSatSolver.html#a5b39c45cd2a1abfe96c681515dfddb77">SatSolver::incAddUnitClause()</a>, <a class="el" href="classSatSolver.html#ab1aab4b96a36b2003450067a3799ae23">SatSolver::incIsSat()</a>, <a class="el" href="classSatSolver.html#ad387fc06bacf2d48847f779c9db8461a">SatSolver::incIsSatModelOrCore()</a>, <a class="el" href="classSatSolver.html#a436aae045eb04141c834df0b55947ee5">SatSolver::incPop()</a>, <a class="el" href="classSatSolver.html#a4da0dff7082a91429e3311d279605be4">SatSolver::incPush()</a>, <a class="el" href="VarInfo_8h_source.html#l00069">VarInfo::INPUT</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="Logger_8h_source.html#l00319">L_DBG</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="CNF_8cpp_source.html#l00264">CNF::negate()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00113">LearnStatisticsSAT::notifyAfterCheckCandidateFailed()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00102">LearnStatisticsSAT::notifyAfterCheckCandidateFound()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00082">LearnStatisticsSAT::notifyAfterComputeCandidate()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00127">LearnStatisticsSAT::notifyAfterRefine()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00096">LearnStatisticsSAT::notifyBeforeCheckCandidate()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00076">LearnStatisticsSAT::notifyBeforeComputeCandidate()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00121">LearnStatisticsSAT::notifyBeforeRefine()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00090">LearnStatisticsSAT::notifyRestart()</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l01156">presentToPrevious()</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00279">prev_trans_or_initial_</a>, <a class="el" href="Utils_8cpp_source.html#l00176">Utils::remove()</a>, <a class="el" href="VarManager_8cpp_source.html#l00063">VarManager::resetToLastPush()</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00312">solver_ctrl_</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00322">solver_ctrl_ind_</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00305">solver_i_</a>, <a class="el" href="classSatSolver.html#a74603f84c3f2383a5fc44d5a8093cbea">SatSolver::startIncrementalSession()</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00250">statistics_</a>, <a class="el" href="Utils_8cpp_source.html#l00209">Utils::swapPresentToNext()</a>, <a class="el" href="CNF_8cpp_source.html#l00236">CNF::swapPresentToNext()</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00258">winning_region_</a>, and <a class="el" href="LearnSynthSAT_8h_source.html#l00270">winning_region_large_</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00152">computeWinningRegion()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00154">computeWinningRegion()</a>.</p>
 
 </div>
 </div>
@@ -396,11 +471,11 @@ Synthesis Methods for Safety Specs".</p>
 <p>In addition to optimization RG (see <a class="el" href="classLearnSynthSAT.html#aa981048565f10183c30c4dc0576de6b6" title="Compute a winning region with optimization RG when generalizing counterexamples.">computeWinningRegionRG()</a>), this method also applies optimization RC as described in <a class="el" href="classLearnSynthQBFInd.html" title="Implements a learning-based synthesis with inductive reachability reasoning.">LearnSynthQBFInd</a>. In a nutshell, the queries to compute counterexamples are modified in such a way that the counterexample-state is either initial or has a predecessor in the current over-approximation of the winning region. Otherwise, the state is unreachable and can be ignored.</p>
 <dl class="section return"><dt>Returns</dt><dd>True if the specification was realizable, false otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="LearnSynthSAT_8cpp_source.html#l00510">510</a> of file <a class="el" href="LearnSynthSAT_8cpp_source.html">LearnSynthSAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthSAT_8cpp_source.html#l00943">943</a> of file <a class="el" href="LearnSynthSAT_8cpp_source.html">LearnSynthSAT.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8cpp_source.html#l00099">CNF::addClauseAndSimplify()</a>, <a class="el" href="CNF_8cpp_source.html#l00183">CNF::addCNF()</a>, <a class="el" href="CNF_8cpp_source.html#l00064">CNF::clear()</a>, <a class="el" href="Utils_8cpp_source.html#l00272">Utils::compressStateCNF()</a>, <a class="el" href="Utils_8cpp_source.html#l00041">Utils::containsInit()</a>, <a class="el" href="VarInfo_8h_source.html#l00074">VarInfo::CTRL</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00271">current_state_is_initial_</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00264">current_to_previous_map_</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00280">different_from_prev_or_initial_</a>, <a class="el" href="SatSolver_8cpp_source.html#l00047">SatSolver::doMinCores()</a>, <a class="el" href="SatSolver_8cpp_source.html#l00053">SatSolver::doRandModels()</a>, <a class="el" href="Utils_8cpp_source.html#l00063">Utils::extract()</a>, <a class="el" href="VarManager_8cpp_source.html#l00300">VarManager::getAllNonTempVars()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00231">AIG2CNF::getNextSafeStates()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00237">AIG2CNF::getNextUnsafeStates()</a>, <a class="el" href="VarManager_8cpp_source.html#l00320">VarManager::getPresErrorStateVar()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00219">AIG2CNF::getSafeStates()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00201">AIG2CNF::getTrans()</a>, <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, <a class="el" href="classSatSolver.html#a9f91c104238b6e091513e0aa46970840">SatSolver::incAddClause()</a>, <a class="el" href="classSatSolver.html#ab2581b192cb2c39a81a416a9f7416c9e">SatSolver::incAddCNF()</a>, <a class="el" href="classSatSolver.html#a1f04f34bb04174489ed18d0b62241004">SatSolver::incAddCube()</a>, <a class="el" href="classSatSolver.html#a6be2c564289a59057c4c6728a3aa9c2b">SatSolver::incAddNegCubeAsClause()</a>, <a class="el" href="classSatSolver.html#a5b39c45cd2a1abfe96c681515dfddb77">SatSolver::incAddUnitClause()</a>, <a class="el" href="classSatSolver.html#ab1aab4b96a36b2003450067a3799ae23">SatSolver::incIsSat()</a>, <a class="el" href="classSatSolver.html#ad387fc06bacf2d48847f779c9db8461a">SatSolver::incIsSatModelOrCore()</a>, <a class="el" href="classSatSolver.html#a436aae045eb04141c834df0b55947ee5">SatSolver::incPop()</a>, <a class="el" href="classSatSolver.html#a4da0dff7082a91429e3311d279605be4">SatSolver::incPush()</a>, <a class="el" href="VarInfo_8h_source.html#l00069">VarInfo::INPUT</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="Logger_8h_source.html#l00319">L_DBG</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="CNF_8cpp_source.html#l00217">CNF::negate()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00129">LearnStatisticsSAT::notifyAfterCheckCandidateFailed()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00118">LearnStatisticsSAT::notifyAfterCheckCandidateFound()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00098">LearnStatisticsSAT::notifyAfterComputeCandidate()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00143">LearnStatisticsSAT::notifyAfterRefine()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00112">LearnStatisticsSAT::notifyBeforeCheckCandidate()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00092">LearnStatisticsSAT::notifyBeforeComputeCandidate()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00137">LearnStatisticsSAT::notifyBeforeRefine()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00106">LearnStatisticsSAT::notifyRestart()</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00723">presentToPrevious()</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00259">prev_trans_or_initial_</a>, <a class="el" href="Utils_8cpp_source.html#l00161">Utils::remove()</a>, <a class="el" href="VarManager_8cpp_source.html#l00063">VarManager::resetToLastPush()</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00292">solver_ctrl_</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00302">solver_ctrl_ind_</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00285">solver_i_</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00297">solver_i_ind_</a>, <a class="el" href="classSatSolver.html#a74603f84c3f2383a5fc44d5a8093cbea">SatSolver::startIncrementalSession()</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00230">statistics_</a>, <a class="el" href="Utils_8cpp_source.html#l00194">Utils::swapPresentToNext()</a>, <a class="el" href="CNF_8cpp_source.html#l00189">CNF::swapPresentToNext()</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00238">winning_region_</a>, and <a class="el" href="LearnSynthSAT_8h_source.html#l00250">winning_region_large_</a>.</p>
+<p>References <a class="el" href="CNF_8cpp_source.html#l00146">CNF::addClauseAndSimplify()</a>, <a class="el" href="CNF_8cpp_source.html#l00230">CNF::addCNF()</a>, <a class="el" href="CNF_8cpp_source.html#l00111">CNF::clear()</a>, <a class="el" href="Utils_8cpp_source.html#l00287">Utils::compressStateCNF()</a>, <a class="el" href="Utils_8cpp_source.html#l00041">Utils::containsInit()</a>, <a class="el" href="VarInfo_8h_source.html#l00074">VarInfo::CTRL</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00291">current_state_is_initial_</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00284">current_to_previous_map_</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00300">different_from_prev_or_initial_</a>, <a class="el" href="SatSolver_8cpp_source.html#l00047">SatSolver::doMinCores()</a>, <a class="el" href="SatSolver_8cpp_source.html#l00053">SatSolver::doRandModels()</a>, <a class="el" href="Utils_8cpp_source.html#l00063">Utils::extract()</a>, <a class="el" href="VarManager_8cpp_source.html#l00300">VarManager::getAllNonTempVars()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00240">AIG2CNF::getNextSafeStates()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00246">AIG2CNF::getNextUnsafeStates()</a>, <a class="el" href="VarManager_8cpp_source.html#l00320">VarManager::getPresErrorStateVar()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00228">AIG2CNF::getSafeStates()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00210">AIG2CNF::getTrans()</a>, <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, <a class="el" href="classSatSolver.html#a9f91c104238b6e091513e0aa46970840">SatSolver::incAddClause()</a>, <a class="el" href="classSatSolver.html#ab2581b192cb2c39a81a416a9f7416c9e">SatSolver::incAddCNF()</a>, <a class="el" href="classSatSolver.html#a1f04f34bb04174489ed18d0b62241004">SatSolver::incAddCube()</a>, <a class="el" href="classSatSolver.html#a6be2c564289a59057c4c6728a3aa9c2b">SatSolver::incAddNegCubeAsClause()</a>, <a class="el" href="classSatSolver.html#a5b39c45cd2a1abfe96c681515dfddb77">SatSolver::incAddUnitClause()</a>, <a class="el" href="classSatSolver.html#ab1aab4b96a36b2003450067a3799ae23">SatSolver::incIsSat()</a>, <a class="el" href="classSatSolver.html#ad387fc06bacf2d48847f779c9db8461a">SatSolver::incIsSatModelOrCore()</a>, <a class="el" href="classSatSolver.html#a436aae045eb04141c834df0b55947ee5">SatSolver::incPop()</a>, <a class="el" href="classSatSolver.html#a4da0dff7082a91429e3311d279605be4">SatSolver::incPush()</a>, <a class="el" href="VarInfo_8h_source.html#l00069">VarInfo::INPUT</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="Logger_8h_source.html#l00319">L_DBG</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="CNF_8cpp_source.html#l00264">CNF::negate()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00113">LearnStatisticsSAT::notifyAfterCheckCandidateFailed()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00102">LearnStatisticsSAT::notifyAfterCheckCandidateFound()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00082">LearnStatisticsSAT::notifyAfterComputeCandidate()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00127">LearnStatisticsSAT::notifyAfterRefine()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00096">LearnStatisticsSAT::notifyBeforeCheckCandidate()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00076">LearnStatisticsSAT::notifyBeforeComputeCandidate()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00121">LearnStatisticsSAT::notifyBeforeRefine()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00090">LearnStatisticsSAT::notifyRestart()</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l01156">presentToPrevious()</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00279">prev_trans_or_initial_</a>, <a class="el" href="Utils_8cpp_source.html#l00176">Utils::remove()</a>, <a class="el" href="VarManager_8cpp_source.html#l00063">VarManager::resetToLastPush()</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00312">solver_ctrl_</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00322">solver_ctrl_ind_</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00305">solver_i_</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00317">solver_i_ind_</a>, <a class="el" href="classSatSolver.html#a74603f84c3f2383a5fc44d5a8093cbea">SatSolver::startIncrementalSession()</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00250">statistics_</a>, <a class="el" href="Utils_8cpp_source.html#l00209">Utils::swapPresentToNext()</a>, <a class="el" href="CNF_8cpp_source.html#l00236">CNF::swapPresentToNext()</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00258">winning_region_</a>, and <a class="el" href="LearnSynthSAT_8h_source.html#l00270">winning_region_large_</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00152">computeWinningRegion()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00154">computeWinningRegion()</a>.</p>
 
 </div>
 </div>
@@ -428,11 +503,11 @@ Synthesis Methods for Safety Specs".</p>
 <p>Checks a winning region computed with optimization RC for correctness. </p>
 <p>We usually check the correctness of the winning region in debug-mode by calling <a class="el" href="classUtils.html#acc29602987b73022546a6d752a7e093f" title="Checks a winning region for correctness.">Utils::debugCheckWinReg()</a>. However, this method of <a class="el" href="classUtils.html" title="Contains utility functions that can be usful in various back-ends.">Utils</a> does not work for winning regions that have been computed with optimization RC enabled. In such cases we this method. </p>
 
-<p>Definition at line <a class="el" href="LearnSynthSAT_8cpp_source.html#l00753">753</a> of file <a class="el" href="LearnSynthSAT_8cpp_source.html">LearnSynthSAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthSAT_8cpp_source.html#l01186">1186</a> of file <a class="el" href="LearnSynthSAT_8cpp_source.html">LearnSynthSAT.cpp</a>.</p>
 
-<p>References <a class="el" href="QBFSolver_8h_source.html#l00067">QBFSolver::A</a>, <a class="el" href="CNF_8cpp_source.html#l00183">CNF::addCNF()</a>, <a class="el" href="CNF_8cpp_source.html#l00064">CNF::clear()</a>, <a class="el" href="VarInfo_8h_source.html#l00074">VarInfo::CTRL</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00280">different_from_prev_or_initial_</a>, <a class="el" href="QBFSolver_8h_source.html#l00062">QBFSolver::E</a>, <a class="el" href="VarInfo_8h_source.html#l00069">VarInfo::INPUT</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="DepQBFApi_8cpp_source.html#l00056">DepQBFApi::isSat()</a>, <a class="el" href="LingelingApi_8cpp_source.html#l00051">LingelingApi::isSat()</a>, <a class="el" href="Logger_8h_source.html#l00319">L_DBG</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="CNF_8cpp_source.html#l00217">CNF::negate()</a>, <a class="el" href="VarInfo_8h_source.html#l00064">VarInfo::NEXT_STATE</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00723">presentToPrevious()</a>, <a class="el" href="VarInfo_8h_source.html#l00097">VarInfo::PREV</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00259">prev_trans_or_initial_</a>, <a class="el" href="CNF_8cpp_source.html#l00189">CNF::swapPresentToNext()</a>, <a class="el" href="VarInfo_8h_source.html#l00081">VarInfo::TMP</a>, and <a class="el" href="LearnSynthSAT_8h_source.html#l00238">winning_region_</a>.</p>
+<p>References <a class="el" href="QBFSolver_8h_source.html#l00067">QBFSolver::A</a>, <a class="el" href="CNF_8cpp_source.html#l00230">CNF::addCNF()</a>, <a class="el" href="CNF_8cpp_source.html#l00111">CNF::clear()</a>, <a class="el" href="VarInfo_8h_source.html#l00074">VarInfo::CTRL</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00300">different_from_prev_or_initial_</a>, <a class="el" href="QBFSolver_8h_source.html#l00062">QBFSolver::E</a>, <a class="el" href="VarInfo_8h_source.html#l00069">VarInfo::INPUT</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="DepQBFApi_8cpp_source.html#l00059">DepQBFApi::isSat()</a>, <a class="el" href="LingelingApi_8cpp_source.html#l00051">LingelingApi::isSat()</a>, <a class="el" href="Logger_8h_source.html#l00319">L_DBG</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="CNF_8cpp_source.html#l00264">CNF::negate()</a>, <a class="el" href="VarInfo_8h_source.html#l00064">VarInfo::NEXT_STATE</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l01156">presentToPrevious()</a>, <a class="el" href="VarInfo_8h_source.html#l00097">VarInfo::PREV</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00279">prev_trans_or_initial_</a>, <a class="el" href="CNF_8cpp_source.html#l00236">CNF::swapPresentToNext()</a>, <a class="el" href="VarInfo_8h_source.html#l00081">VarInfo::TMP</a>, and <a class="el" href="LearnSynthSAT_8h_source.html#l00258">winning_region_</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00152">computeWinningRegion()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00154">computeWinningRegion()</a>.</p>
 
 </div>
 </div>
@@ -501,11 +576,11 @@ Synthesis Methods for Safety Specs".</p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The previous-state copy of a literal. </dd></dl>
 
-<p>Definition at line <a class="el" href="LearnSynthSAT_8cpp_source.html#l00723">723</a> of file <a class="el" href="LearnSynthSAT_8cpp_source.html">LearnSynthSAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthSAT_8cpp_source.html#l01156">1156</a> of file <a class="el" href="LearnSynthSAT_8cpp_source.html">LearnSynthSAT.cpp</a>.</p>
 
-<p>References <a class="el" href="LearnSynthSAT_8h_source.html#l00264">current_to_previous_map_</a>.</p>
+<p>References <a class="el" href="LearnSynthSAT_8h_source.html#l00284">current_to_previous_map_</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00326">computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00510">computeWinningRegionRGRC()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00753">debugCheckWinReg()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00041">LearnSynthSAT()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00733">presentToPrevious()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00759">computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00943">computeWinningRegionRGRC()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l01186">debugCheckWinReg()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00042">LearnSynthSAT()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l01166">presentToPrevious()</a>.</p>
 
 </div>
 </div>
@@ -539,9 +614,9 @@ Synthesis Methods for Safety Specs".</p>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="LearnSynthSAT_8cpp_source.html#l00733">733</a> of file <a class="el" href="LearnSynthSAT_8cpp_source.html">LearnSynthSAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthSAT_8cpp_source.html#l01166">1166</a> of file <a class="el" href="LearnSynthSAT_8cpp_source.html">LearnSynthSAT.cpp</a>.</p>
 
-<p>References <a class="el" href="LearnSynthSAT_8cpp_source.html#l00723">presentToPrevious()</a>.</p>
+<p>References <a class="el" href="LearnSynthSAT_8cpp_source.html#l01156">presentToPrevious()</a>.</p>
 
 </div>
 </div>
@@ -575,9 +650,9 @@ Synthesis Methods for Safety Specs".</p>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="LearnSynthSAT_8cpp_source.html#l00740">740</a> of file <a class="el" href="LearnSynthSAT_8cpp_source.html">LearnSynthSAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthSAT_8cpp_source.html#l01173">1173</a> of file <a class="el" href="LearnSynthSAT_8cpp_source.html">LearnSynthSAT.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8cpp_source.html#l00070">CNF::addClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00064">CNF::clear()</a>, <a class="el" href="CNF_8cpp_source.html#l00273">CNF::getClauses()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00723">presentToPrevious()</a>.</p>
+<p>References <a class="el" href="CNF_8cpp_source.html#l00117">CNF::addClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00111">CNF::clear()</a>, <a class="el" href="CNF_8cpp_source.html#l00346">CNF::getClauses()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l01156">presentToPrevious()</a>.</p>
 
 </div>
 </div>
@@ -618,9 +693,9 @@ a variant which uses inductive reachability reasoning also in the computation of
 
 <p>Implements <a class="el" href="classBackEnd.html#a099e717dc71e9cc2d838b1ca86340590">BackEnd</a>.</p>
 
-<p>Definition at line <a class="el" href="LearnSynthSAT_8cpp_source.html#l00117">117</a> of file <a class="el" href="LearnSynthSAT_8cpp_source.html">LearnSynthSAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthSAT_8cpp_source.html#l00121">121</a> of file <a class="el" href="LearnSynthSAT_8cpp_source.html">LearnSynthSAT.cpp</a>.</p>
 
-<p>References <a class="el" href="LearnSynthSAT_8cpp_source.html#l00152">computeWinningRegion()</a>, <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00095">QBFCertImplExtractor::extractCircuit()</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="Options_8cpp_source.html#l00059">Options::instance()</a>, <a class="el" href="Logger_8h_source.html#l00302">L_INF</a>, <a class="el" href="Logger_8h_source.html#l00285">L_RES</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00177">LearnStatisticsSAT::logStatistics()</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00084">LearnStatisticsSAT::notifyRelDetEnd()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00078">LearnStatisticsSAT::notifyRelDetStart()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00071">LearnStatisticsSAT::notifyWinRegEnd()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00065">LearnStatisticsSAT::notifyWinRegStart()</a>, <a class="el" href="VarManager_8cpp_source.html#l00055">VarManager::push()</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00230">statistics_</a>, and <a class="el" href="LearnSynthSAT_8h_source.html#l00238">winning_region_</a>.</p>
+<p>References <a class="el" href="LearnSynthSAT_8cpp_source.html#l00154">computeWinningRegion()</a>, <a class="el" href="CNFImplExtractor_8cpp_source.html#l00085">CNFImplExtractor::extractCircuit()</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00329">impl_extractor_</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="Options_8cpp_source.html#l00065">Options::instance()</a>, <a class="el" href="Logger_8h_source.html#l00302">L_INF</a>, <a class="el" href="Logger_8h_source.html#l00285">L_RES</a>, <a class="el" href="CNFImplExtractor_8cpp_source.html#l00290">CNFImplExtractor::logStatistics()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00159">LearnStatisticsSAT::logStatistics()</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00069">LearnStatisticsSAT::notifyWinRegEnd()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00063">LearnStatisticsSAT::notifyWinRegStart()</a>, <a class="el" href="VarManager_8cpp_source.html#l00055">VarManager::push()</a>, <a class="el" href="LearnSynthSAT_8h_source.html#l00250">statistics_</a>, and <a class="el" href="LearnSynthSAT_8h_source.html#l00258">winning_region_</a>.</p>
 
 </div>
 </div>
@@ -646,9 +721,9 @@ a variant which uses inductive reachability reasoning also in the computation of
 <p>A literal that is true if the current state is initial and false otherwise. </p>
 <p>The clauses assigning the literal are part of <a class="el" href="classLearnSynthSAT.html#a6289a4f041ca85ce44a33143fab42888" title="Says: the current state is initial or the previous transition relation holds.">prev_trans_or_initial_</a>. </p>
 
-<p>Definition at line <a class="el" href="LearnSynthSAT_8h_source.html#l00271">271</a> of file <a class="el" href="LearnSynthSAT_8h_source.html">LearnSynthSAT.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthSAT_8h_source.html#l00291">291</a> of file <a class="el" href="LearnSynthSAT_8h_source.html">LearnSynthSAT.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00326">computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00510">computeWinningRegionRGRC()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00041">LearnSynthSAT()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00759">computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00943">computeWinningRegionRGRC()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00042">LearnSynthSAT()</a>.</p>
 
 </div>
 </div>
@@ -672,9 +747,9 @@ a variant which uses inductive reachability reasoning also in the computation of
 
 <p>A map from present-state variables to their previous-state copy. </p>
 
-<p>Definition at line <a class="el" href="LearnSynthSAT_8h_source.html#l00264">264</a> of file <a class="el" href="LearnSynthSAT_8h_source.html">LearnSynthSAT.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthSAT_8h_source.html#l00284">284</a> of file <a class="el" href="LearnSynthSAT_8h_source.html">LearnSynthSAT.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00326">computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00510">computeWinningRegionRGRC()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00041">LearnSynthSAT()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00723">presentToPrevious()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00759">computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00943">computeWinningRegionRGRC()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00042">LearnSynthSAT()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l01156">presentToPrevious()</a>.</p>
 
 </div>
 </div>
@@ -699,9 +774,36 @@ a variant which uses inductive reachability reasoning also in the computation of
 <p>Says: the current state is different from the previous one. </p>
 <p>This <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> expresses that the current state is different from the previous state. This is an important building block for the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> to compute counterexamples if optimization RC is enabled. </p>
 
-<p>Definition at line <a class="el" href="LearnSynthSAT_8h_source.html#l00280">280</a> of file <a class="el" href="LearnSynthSAT_8h_source.html">LearnSynthSAT.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthSAT_8h_source.html#l00300">300</a> of file <a class="el" href="LearnSynthSAT_8h_source.html">LearnSynthSAT.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00510">computeWinningRegionRGRC()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00753">debugCheckWinReg()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00041">LearnSynthSAT()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00943">computeWinningRegionRGRC()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l01186">debugCheckWinReg()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00042">LearnSynthSAT()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1c7a39732a4ee3cd1ec877f2642046fc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCNFImplExtractor.html">CNFImplExtractor</a>* LearnSynthSAT::impl_extractor_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The engine to use for circuit extraction. </p>
+<p>It will be deleted by this class (in the destructor). </p>
+
+<p>Definition at line <a class="el" href="LearnSynthSAT_8h_source.html#l00329">329</a> of file <a class="el" href="LearnSynthSAT_8h_source.html">LearnSynthSAT.h</a>.</p>
+
+<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00121">run()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00106">~LearnSynthSAT()</a>.</p>
 
 </div>
 </div>
@@ -726,9 +828,9 @@ a variant which uses inductive reachability reasoning also in the computation of
 <p>Says: the current state is initial or the previous transition relation holds. </p>
 <p>This <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> expresses that the current state is initial or the previous-state copy of the transition relation holds. This is an important building block for the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> to compute or generalize counterexamples if optimization RG or RC is enabled. </p>
 
-<p>Definition at line <a class="el" href="LearnSynthSAT_8h_source.html#l00259">259</a> of file <a class="el" href="LearnSynthSAT_8h_source.html">LearnSynthSAT.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthSAT_8h_source.html#l00279">279</a> of file <a class="el" href="LearnSynthSAT_8h_source.html">LearnSynthSAT.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00326">computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00510">computeWinningRegionRGRC()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00753">debugCheckWinReg()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00041">LearnSynthSAT()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00759">computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00943">computeWinningRegionRGRC()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l01186">debugCheckWinReg()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00042">LearnSynthSAT()</a>.</p>
 
 </div>
 </div>
@@ -753,9 +855,9 @@ a variant which uses inductive reachability reasoning also in the computation of
 <p>The solver for checking counterexample-candidates. </p>
 <p>It is also used to generalize counterexamples if optimization RG is disabled. </p>
 
-<p>Definition at line <a class="el" href="LearnSynthSAT_8h_source.html#l00292">292</a> of file <a class="el" href="LearnSynthSAT_8h_source.html">LearnSynthSAT.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthSAT_8h_source.html#l00312">312</a> of file <a class="el" href="LearnSynthSAT_8h_source.html">LearnSynthSAT.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00178">computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00326">computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00510">computeWinningRegionRGRC()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00104">~LearnSynthSAT()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00180">computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00328">computeWinningRegionPlainDep()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00508">computeWinningRegionPlainDep2()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00759">computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00943">computeWinningRegionRGRC()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00106">~LearnSynthSAT()</a>.</p>
 
 </div>
 </div>
@@ -779,9 +881,9 @@ a variant which uses inductive reachability reasoning also in the computation of
 
 <p>The solver for generalizing counterexamples if optimization RG is endabled. </p>
 
-<p>Definition at line <a class="el" href="LearnSynthSAT_8h_source.html#l00302">302</a> of file <a class="el" href="LearnSynthSAT_8h_source.html">LearnSynthSAT.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthSAT_8h_source.html#l00322">322</a> of file <a class="el" href="LearnSynthSAT_8h_source.html">LearnSynthSAT.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00326">computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00510">computeWinningRegionRGRC()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00104">~LearnSynthSAT()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00759">computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00943">computeWinningRegionRGRC()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00106">~LearnSynthSAT()</a>.</p>
 
 </div>
 </div>
@@ -805,9 +907,9 @@ a variant which uses inductive reachability reasoning also in the computation of
 
 <p>The solver for computing counterexample-candidates if optimization RC is disabled. </p>
 
-<p>Definition at line <a class="el" href="LearnSynthSAT_8h_source.html#l00285">285</a> of file <a class="el" href="LearnSynthSAT_8h_source.html">LearnSynthSAT.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthSAT_8h_source.html#l00305">305</a> of file <a class="el" href="LearnSynthSAT_8h_source.html">LearnSynthSAT.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00178">computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00326">computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00510">computeWinningRegionRGRC()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00104">~LearnSynthSAT()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00180">computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00328">computeWinningRegionPlainDep()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00508">computeWinningRegionPlainDep2()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00759">computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00943">computeWinningRegionRGRC()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00106">~LearnSynthSAT()</a>.</p>
 
 </div>
 </div>
@@ -831,9 +933,9 @@ a variant which uses inductive reachability reasoning also in the computation of
 
 <p>The solver for computing counterexample-candidates if optimization RC is enabled. </p>
 
-<p>Definition at line <a class="el" href="LearnSynthSAT_8h_source.html#l00297">297</a> of file <a class="el" href="LearnSynthSAT_8h_source.html">LearnSynthSAT.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthSAT_8h_source.html#l00317">317</a> of file <a class="el" href="LearnSynthSAT_8h_source.html">LearnSynthSAT.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00510">computeWinningRegionRGRC()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00104">~LearnSynthSAT()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00943">computeWinningRegionRGRC()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00106">~LearnSynthSAT()</a>.</p>
 
 </div>
 </div>
@@ -857,9 +959,9 @@ a variant which uses inductive reachability reasoning also in the computation of
 
 <p>Stores and maintains statistics and performance measures. </p>
 
-<p>Definition at line <a class="el" href="LearnSynthSAT_8h_source.html#l00230">230</a> of file <a class="el" href="LearnSynthSAT_8h_source.html">LearnSynthSAT.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthSAT_8h_source.html#l00250">250</a> of file <a class="el" href="LearnSynthSAT_8h_source.html">LearnSynthSAT.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00178">computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00326">computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00510">computeWinningRegionRGRC()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00117">run()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00180">computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00328">computeWinningRegionPlainDep()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00508">computeWinningRegionPlainDep2()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00759">computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00943">computeWinningRegionRGRC()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00121">run()</a>.</p>
 
 </div>
 </div>
@@ -884,9 +986,9 @@ a variant which uses inductive reachability reasoning also in the computation of
 <p>The current over-approximation of the winning region. </p>
 <p>Only when <a class="el" href="classLearnSynthSAT.html#a055b4699184d09bb7f6b15052ac684db" title="Computes the winning region and stores the result in winning_region_.">computeWinningRegion()</a> is done, this field will store the correct winning region. </p>
 
-<p>Definition at line <a class="el" href="LearnSynthSAT_8h_source.html#l00238">238</a> of file <a class="el" href="LearnSynthSAT_8h_source.html">LearnSynthSAT.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthSAT_8h_source.html#l00258">258</a> of file <a class="el" href="LearnSynthSAT_8h_source.html">LearnSynthSAT.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00152">computeWinningRegion()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00178">computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00326">computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00510">computeWinningRegionRGRC()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00753">debugCheckWinReg()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00117">run()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00154">computeWinningRegion()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00180">computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00328">computeWinningRegionPlainDep()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00508">computeWinningRegionPlainDep2()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00759">computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00943">computeWinningRegionRGRC()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l01186">debugCheckWinReg()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00121">run()</a>.</p>
 
 </div>
 </div>
@@ -911,9 +1013,9 @@ a variant which uses inductive reachability reasoning also in the computation of
 <p>The current over-approximation of the winning region in an uncompressed form. </p>
 <p>This <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> is logically equivalent to <a class="el" href="classLearnSynthSAT.html#aced2bce789c7a93ed4b5391dd0690616" title="The current over-approximation of the winning region.">winning_region_</a>. However, <a class="el" href="classLearnSynthSAT.html#aced2bce789c7a93ed4b5391dd0690616" title="The current over-approximation of the winning region.">winning_region_</a> is 'compressed' from time to time by removing redundant clauses (clauses that are implied by other clauses in the winning region). This field stores the uncompressed version of the winning region. Having the uncompressed winning region can be good because throwing away redundant clauses is not always beneficial. The <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> get smaller, but the solver may have to re-discover the removed clauses. </p>
 
-<p>Definition at line <a class="el" href="LearnSynthSAT_8h_source.html#l00250">250</a> of file <a class="el" href="LearnSynthSAT_8h_source.html">LearnSynthSAT.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthSAT_8h_source.html#l00270">270</a> of file <a class="el" href="LearnSynthSAT_8h_source.html">LearnSynthSAT.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00178">computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00326">computeWinningRegionRG()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00510">computeWinningRegionRGRC()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00180">computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00328">computeWinningRegionPlainDep()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00508">computeWinningRegionPlainDep2()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00759">computeWinningRegionRG()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00943">computeWinningRegionRGRC()</a>.</p>
 
 </div>
 </div>
@@ -924,7 +1026,7 @@ a variant which uses inductive reachability reasoning also in the computation of
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 14 2013 15:15:45 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jul 15 2014 12:30:22 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

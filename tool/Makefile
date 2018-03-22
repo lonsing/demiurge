@@ -41,6 +41,14 @@ all: $(PROJECT_DONE)
 class:
 	(cd $(SRC_DIR)/templates; ant createclass)
 
+test :
+	(cd $(SRC_DIR)/templates; ant createtestclass)
+
+gcheck: GUI=--gui
+gcheck: check
+check: $(PROJECT_DONE)
+	@ cd $(SRC_DIR)/tests && \
+	  $(RUN) $(PROJECT_BUILD)/tests/demiurge-tester $(GUI) $(TEST)
 
 .PHONY: doc
 doc:

@@ -37,7 +37,7 @@
 #include "LingelingApi.h"
 #include "MiniSatApi.h"
 #include "PicoSatApi.h"
-#include "QBFCertImplExtractor.h"
+#include "CNFImplExtractor.h"
 #include "QBFSolver.h"
 #include "unistd.h"
 #include "IFMProofObligation.h"
@@ -113,10 +113,11 @@ mutex ParallelLearner::print_lock_;
 }
 
 // -------------------------------------------------------------------------------------------
-ParallelLearner::ParallelLearner(size_t nr_of_threads) :
+ParallelLearner::ParallelLearner(size_t nr_of_threads, CNFImplExtractor *impl_extractor) :
                  BackEnd(),
                  result_(0),
-                 nr_of_threads_(nr_of_threads)
+                 nr_of_threads_(nr_of_threads),
+                 impl_extractor_(impl_extractor)
 {
   use_ind_ = (Options::instance().getBackEndMode() == 1);
 
@@ -239,6 +240,9 @@ ParallelLearner::~ParallelLearner()
   for(size_t cnt = 0; cnt < clause_minimizers_.size(); ++cnt)
     delete clause_minimizers_[cnt];
   clause_minimizers_.clear();
+
+  delete impl_extractor_;
+  impl_extractor_ = NULL;
 }
 
 // -------------------------------------------------------------------------------------------
@@ -312,12 +316,10 @@ bool ParallelLearner::run()
   }
 
   L_INF("Starting to extract a circuit ...");
-  statistics_.notifyRelDetStart();
-  QBFCertImplExtractor extractor;
-  extractor.extractCircuit(winning_region_);
-  statistics_.notifyRelDetEnd();
+  impl_extractor_->extractCircuit(winning_region_);
   L_INF("Synthesis done.");
   statistics_.logStatistics();
+  impl_extractor_->logStatistics();
   return true;
 
 }

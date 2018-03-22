@@ -10,6 +10,12 @@ Transforms an A\-I\-G\-E\-R specification into \hyperlink{classCNF}{C\-N\-F}.
 
 {\ttfamily \#include $<$A\-I\-G2\-C\-N\-F.\-h$>$}
 
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef map$<$ int, set$<$ \hyperlink{classVarInfo}{Var\-Info} $>$\\*
+ $>$\-::const\-\_\-iterator \hyperlink{classAIG2CNF_a2f57817266c9a882dffc8c5dab1fd3c4}{Dep\-Const\-Iter}
+\begin{DoxyCompactList}\small\item\em A type for a const-\/iterator over the dependencies of temporary variables. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -32,7 +38,11 @@ const \hyperlink{classCNF}{C\-N\-F} \& \hyperlink{classAIG2CNF_af04a7275b64d96d7
 const \hyperlink{classCNF}{C\-N\-F} \& \hyperlink{classAIG2CNF_a1bec5428f2f5f6efa41810a308ebbe1f}{get\-Next\-Unsafe\-States} () const 
 \begin{DoxyCompactList}\small\item\em Returns a \hyperlink{classCNF}{C\-N\-F} saying that the next state is unsafe. \end{DoxyCompactList}\item 
 const \hyperlink{classCNF}{C\-N\-F} \& \hyperlink{classAIG2CNF_ae20be327c24ca3ed7493b56a254d6a63}{get\-Initial} () const 
-\begin{DoxyCompactList}\small\item\em Returns a \hyperlink{classCNF}{C\-N\-F} representing the initial state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns a \hyperlink{classCNF}{C\-N\-F} representing the initial state. \end{DoxyCompactList}\item 
+const map$<$ int, set$<$ \hyperlink{classVarInfo}{Var\-Info} $>$ $>$ \& \hyperlink{classAIG2CNF_a3f4076dda7514fc3015867494be3aaac}{get\-Tmp\-Deps} () const 
+\begin{DoxyCompactList}\small\item\em Returns dependencies of temporary variables in the transition relation. \end{DoxyCompactList}\item 
+const map$<$ int, set$<$ \hyperlink{classVarInfo}{Var\-Info} $>$ $>$ \& \hyperlink{classAIG2CNF_a87d64a22868a17f6c3cf8dd3af88f02b}{get\-Tmp\-Deps\-Trans} ()
+\begin{DoxyCompactList}\small\item\em Returns transitive dependencies of temporary variables in the transition relation. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -56,7 +66,11 @@ int \hyperlink{classAIG2CNF_af2a7f6ecdcec3b5b2f37a11b0adde65a}{t\-\_\-}
 \hyperlink{classCNF}{C\-N\-F} \hyperlink{classAIG2CNF_a0430b9b4ff38a7b0ae339fb0abd191c9}{next\-\_\-unsafe\-\_\-}
 \begin{DoxyCompactList}\small\item\em A \hyperlink{classCNF}{C\-N\-F} saying that the next state is unsafe. \end{DoxyCompactList}\item 
 \hyperlink{classCNF}{C\-N\-F} \hyperlink{classAIG2CNF_a83d0b27b61d672ecf2bd007e0d473439}{initial\-\_\-}
-\begin{DoxyCompactList}\small\item\em A \hyperlink{classCNF}{C\-N\-F} representing the initial state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A \hyperlink{classCNF}{C\-N\-F} representing the initial state. \end{DoxyCompactList}\item 
+map$<$ int, set$<$ \hyperlink{classVarInfo}{Var\-Info} $>$ $>$ \hyperlink{classAIG2CNF_a8617860055dfa8cbcc1f572676f57b84}{trans\-\_\-tmp\-\_\-deps\-\_\-}
+\begin{DoxyCompactList}\small\item\em The variables on which a temporary variable of the transition relation depends. \end{DoxyCompactList}\item 
+map$<$ int, set$<$ \hyperlink{classVarInfo}{Var\-Info} $>$ $>$ \hyperlink{classAIG2CNF_a7e3c2e9acc3357e837349e30447b93c3}{trans\-\_\-tmp\-\_\-deps\-\_\-trans\-\_\-}
+\begin{DoxyCompactList}\small\item\em Like trans\-\_\-tmp\-\_\-deps\-\_\-, but stores (transitive) dependencies non non-\/temporary vars. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -96,11 +110,25 @@ This class is implemented as a Singleton. That is, you cannot instantiate object
 Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\-0.\-0 
+1.\-1.\-0 
 \end{DoxyVersion}
 
 
 Definition at line 80 of file A\-I\-G2\-C\-N\-F.\-h.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classAIG2CNF_a2f57817266c9a882dffc8c5dab1fd3c4}{\index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}!Dep\-Const\-Iter@{Dep\-Const\-Iter}}
+\index{Dep\-Const\-Iter@{Dep\-Const\-Iter}!AIG2CNF@{A\-I\-G2\-C\-N\-F}}
+\subsubsection[{Dep\-Const\-Iter}]{\setlength{\rightskip}{0pt plus 5cm}map$<$ int, set$<$ {\bf Var\-Info} $>$ $>$\-::const\-\_\-iterator {\bf A\-I\-G2\-C\-N\-F\-::\-Dep\-Const\-Iter}}}\label{classAIG2CNF_a2f57817266c9a882dffc8c5dab1fd3c4}
+
+
+A type for a const-\/iterator over the dependencies of temporary variables. 
+
+
+
+Definition at line 279 of file A\-I\-G2\-C\-N\-F.\-h.
 
 
 
@@ -118,7 +146,7 @@ Constructor.
 
 The constructor is disabled (set private) as this method is implemented as a Singleton. Use the method \hyperlink{classAIG2CNF_a7a4db833018cb851ab608004b4e651e4}{instance() } to obtain the one and only instance of this class. 
 
-Definition at line 249 of file A\-I\-G2\-C\-N\-F.\-cpp.
+Definition at line 303 of file A\-I\-G2\-C\-N\-F.\-cpp.
 
 
 
@@ -137,7 +165,7 @@ Destructor.
 
 The destructor is disabled (set private) as this method is implemented as a Singleton. One cannot instantiate objects of this class, so there is no need to be able to delete them. 
 
-Definition at line 255 of file A\-I\-G2\-C\-N\-F.\-cpp.
+Definition at line 309 of file A\-I\-G2\-C\-N\-F.\-cpp.
 
 \hypertarget{classAIG2CNF_a2b3b1fac1ae78ff3c9dac99cd7b63d9d}{\index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}!A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}}
 \index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}!AIG2CNF@{A\-I\-G2\-C\-N\-F}}
@@ -173,7 +201,7 @@ Clears all the C\-N\-Fs constructed by \hyperlink{classAIG2CNF_aa872708acbdc2bcb
 
 
 
-Definition at line 188 of file A\-I\-G2\-C\-N\-F.\-cpp.
+Definition at line 197 of file A\-I\-G2\-C\-N\-F.\-cpp.
 
 
 
@@ -201,7 +229,7 @@ A \hyperlink{classCNF}{C\-N\-F} representing the initial state.
 \end{DoxyReturn}
 
 
-Definition at line 243 of file A\-I\-G2\-C\-N\-F.\-cpp.
+Definition at line 252 of file A\-I\-G2\-C\-N\-F.\-cpp.
 
 
 
@@ -225,7 +253,7 @@ A \hyperlink{classCNF}{C\-N\-F} saying that the next state is safe.
 \end{DoxyReturn}
 
 
-Definition at line 231 of file A\-I\-G2\-C\-N\-F.\-cpp.
+Definition at line 240 of file A\-I\-G2\-C\-N\-F.\-cpp.
 
 
 
@@ -233,7 +261,7 @@ References next\-\_\-safe\-\_\-.
 
 
 
-Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), and Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples().
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), and Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples().
 
 \hypertarget{classAIG2CNF_a1bec5428f2f5f6efa41810a308ebbe1f}{\index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}!get\-Next\-Unsafe\-States@{get\-Next\-Unsafe\-States}}
 \index{get\-Next\-Unsafe\-States@{get\-Next\-Unsafe\-States}!AIG2CNF@{A\-I\-G2\-C\-N\-F}}
@@ -253,7 +281,7 @@ A \hyperlink{classCNF}{C\-N\-F} saying that the next state is unsafe.
 \end{DoxyReturn}
 
 
-Definition at line 237 of file A\-I\-G2\-C\-N\-F.\-cpp.
+Definition at line 246 of file A\-I\-G2\-C\-N\-F.\-cpp.
 
 
 
@@ -261,7 +289,7 @@ References next\-\_\-unsafe\-\_\-.
 
 
 
-Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), and Clause\-Explorer\-S\-A\-T\-::explore\-Clauses().
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), and Clause\-Explorer\-S\-A\-T\-::explore\-Clauses().
 
 \hypertarget{classAIG2CNF_ac71ea2d9f9280c8bb3d20d109e892e2d}{\index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}!get\-Safe\-States@{get\-Safe\-States}}
 \index{get\-Safe\-States@{get\-Safe\-States}!AIG2CNF@{A\-I\-G2\-C\-N\-F}}
@@ -281,7 +309,7 @@ A \hyperlink{classCNF}{C\-N\-F} representing the set of safe states.
 \end{DoxyReturn}
 
 
-Definition at line 219 of file A\-I\-G2\-C\-N\-F.\-cpp.
+Definition at line 228 of file A\-I\-G2\-C\-N\-F.\-cpp.
 
 
 
@@ -289,7 +317,7 @@ References safe\-\_\-.
 
 
 
-Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One\-S\-A\-T(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), and Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples().
+Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Push(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Push(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One\-S\-A\-T(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), and Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples().
 
 \hypertarget{classAIG2CNF_a50f4e351f8d3f3f73b80e70849f00fe1}{\index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}!get\-T@{get\-T}}
 \index{get\-T@{get\-T}!AIG2CNF@{A\-I\-G2\-C\-N\-F}}
@@ -309,7 +337,7 @@ The literal assigned by \hyperlink{classAIG2CNF_add8899c00619a3c182e78d21b988d74
 \end{DoxyReturn}
 
 
-Definition at line 213 of file A\-I\-G2\-C\-N\-F.\-cpp.
+Definition at line 222 of file A\-I\-G2\-C\-N\-F.\-cpp.
 
 
 
@@ -318,6 +346,62 @@ References t\-\_\-.
 
 
 Referenced by Template\-Synth\-::find\-Win\-Reg\-C\-N\-F\-Templ().
+
+\hypertarget{classAIG2CNF_a3f4076dda7514fc3015867494be3aaac}{\index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}!get\-Tmp\-Deps@{get\-Tmp\-Deps}}
+\index{get\-Tmp\-Deps@{get\-Tmp\-Deps}!AIG2CNF@{A\-I\-G2\-C\-N\-F}}
+\subsubsection[{get\-Tmp\-Deps}]{\setlength{\rightskip}{0pt plus 5cm}const map$<$ int, set$<$ {\bf Var\-Info} $>$ $>$ \& A\-I\-G2\-C\-N\-F\-::get\-Tmp\-Deps (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classAIG2CNF_a3f4076dda7514fc3015867494be3aaac}
+
+
+Returns dependencies of temporary variables in the transition relation. 
+
+For each temporary variable that has been introduced when encoding the transition relation into \hyperlink{classCNF}{C\-N\-F}, the returned map stores on which other variables (state variables, inputs, or other temporary variables) a certain temporary C\-N\-F-\/variable depends on. This information can be useful in optimizations\-: For instance, if a certain temporary variable only depends on state-\/variables and uncontrollable inputs, the control signals can be allowed to depend on such a temporary variable during circuit extraction.
+
+\begin{DoxyReturn}{Returns}
+The dependencies of temporary variables in the transition relation as a map from temporary \hyperlink{classCNF}{C\-N\-F} variables to the set of other variables on which the respective variables depend. 
+\end{DoxyReturn}
+
+
+Definition at line 258 of file A\-I\-G2\-C\-N\-F.\-cpp.
+
+
+
+References trans\-\_\-tmp\-\_\-deps\-\_\-.
+
+
+
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), and Learning\-Impl\-Extractor\-::insert\-Missing\-And\-From\-Trans().
+
+\hypertarget{classAIG2CNF_a87d64a22868a17f6c3cf8dd3af88f02b}{\index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}!get\-Tmp\-Deps\-Trans@{get\-Tmp\-Deps\-Trans}}
+\index{get\-Tmp\-Deps\-Trans@{get\-Tmp\-Deps\-Trans}!AIG2CNF@{A\-I\-G2\-C\-N\-F}}
+\subsubsection[{get\-Tmp\-Deps\-Trans}]{\setlength{\rightskip}{0pt plus 5cm}const map$<$ int, set$<$ {\bf Var\-Info} $>$ $>$ \& A\-I\-G2\-C\-N\-F\-::get\-Tmp\-Deps\-Trans (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classAIG2CNF_a87d64a22868a17f6c3cf8dd3af88f02b}
+
+
+Returns transitive dependencies of temporary variables in the transition relation. 
+
+For each temporary variable that has been introduced when encoding the transition relation into \hyperlink{classCNF}{C\-N\-F}, the returned map stores on which other non-\/temporary variables (state variables, or controllable or uncontrollable inputs) a certain temporary C\-N\-F-\/variable depends on. That is, in contrast to \hyperlink{classAIG2CNF_a3f4076dda7514fc3015867494be3aaac}{get\-Tmp\-Deps}, dependencies on other temporary variables are represented by taking their dependencies on state variables and (uncontrollable and controllable) inputs. This information can be useful in optimizations\-: For instance, if a certain temporary variable only depends on state-\/variables and uncontrollable inputs, the control signals can be allowed to depend on such a temporary variable during circuit extraction.
+
+\begin{DoxyReturn}{Returns}
+The transitive dependencies of temporary variables in the transition relation as a which the respective variables depend. 
+\end{DoxyReturn}
+
+
+Definition at line 265 of file A\-I\-G2\-C\-N\-F.\-cpp.
+
+
+
+References Var\-Info\-::\-T\-M\-P, trans\-\_\-tmp\-\_\-deps\-\_\-, and trans\-\_\-tmp\-\_\-deps\-\_\-trans\-\_\-.
+
+
+
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learning\-Impl\-Extractor\-::\-Learning\-Impl\-Extractor(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), and Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2().
 
 \hypertarget{classAIG2CNF_a02f56e622e210868ffafcdee4ad9fea2}{\index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}!get\-Trans@{get\-Trans}}
 \index{get\-Trans@{get\-Trans}!AIG2CNF@{A\-I\-G2\-C\-N\-F}}
@@ -341,7 +425,7 @@ The transition relation in \hyperlink{classCNF}{C\-N\-F}.
 \end{DoxyReturn}
 
 
-Definition at line 201 of file A\-I\-G2\-C\-N\-F.\-cpp.
+Definition at line 210 of file A\-I\-G2\-C\-N\-F.\-cpp.
 
 
 
@@ -349,7 +433,7 @@ References trans\-\_\-.
 
 
 
-Referenced by Parallel\-Learner\-::compute\-Previous\-Trans(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), Learn\-Synth\-Q\-B\-F\-Ind\-::\-Learn\-Synth\-Q\-B\-F\-Ind(), and Learn\-Synth\-S\-A\-T\-::\-Learn\-Synth\-S\-A\-T().
+Referenced by Parallel\-Learner\-::compute\-Previous\-Trans(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), Learn\-Synth\-Q\-B\-F\-Ind\-::\-Learn\-Synth\-Q\-B\-F\-Ind(), Learn\-Synth\-S\-A\-T\-::\-Learn\-Synth\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), and Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2().
 
 \hypertarget{classAIG2CNF_add8899c00619a3c182e78d21b988d748}{\index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}!get\-Trans\-Eq\-T@{get\-Trans\-Eq\-T}}
 \index{get\-Trans\-Eq\-T@{get\-Trans\-Eq\-T}!AIG2CNF@{A\-I\-G2\-C\-N\-F}}
@@ -369,7 +453,7 @@ A \hyperlink{classCNF}{C\-N\-F} saying that the transition holds iff a certain l
 \end{DoxyReturn}
 
 
-Definition at line 207 of file A\-I\-G2\-C\-N\-F.\-cpp.
+Definition at line 216 of file A\-I\-G2\-C\-N\-F.\-cpp.
 
 
 
@@ -397,7 +481,7 @@ A \hyperlink{classCNF}{C\-N\-F} representing the set of unsafe states.
 \end{DoxyReturn}
 
 
-Definition at line 225 of file A\-I\-G2\-C\-N\-F.\-cpp.
+Definition at line 234 of file A\-I\-G2\-C\-N\-F.\-cpp.
 
 
 
@@ -444,7 +528,7 @@ Definition at line 50 of file A\-I\-G2\-C\-N\-F.\-cpp.
 
 
 
-References C\-N\-F\-::add1\-Lit\-Clause(), C\-N\-F\-::add2\-Lit\-Clause(), C\-N\-F\-::add3\-Lit\-Clause(), C\-N\-F\-::add\-Clause(), Var\-Manager\-::aig\-Lit\-To\-Cnf\-Lit(), clear(), Var\-Manager\-::create\-Fresh\-Tmp\-Var(), Var\-Manager\-::get\-Next\-Error\-State\-Var(), Var\-Manager\-::get\-Pres\-Error\-State\-Var(), Var\-Manager\-::get\-Vars\-Of\-Type(), Var\-Manager\-::init\-From\-Aig(), initial\-\_\-, Var\-Manager\-::instance(), instance(), next\-\_\-safe\-\_\-, Var\-Info\-::\-N\-E\-X\-T\-\_\-\-S\-T\-A\-T\-E, next\-\_\-unsafe\-\_\-, Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, safe\-\_\-, t\-\_\-, trans\-\_\-, trans\-\_\-eq\-\_\-t\-\_\-, and unsafe\-\_\-.
+References C\-N\-F\-::add1\-Lit\-Clause(), C\-N\-F\-::add2\-Lit\-Clause(), C\-N\-F\-::add3\-Lit\-Clause(), C\-N\-F\-::add\-Clause(), Var\-Manager\-::aig\-Lit\-To\-Cnf\-Lit(), clear(), Var\-Manager\-::create\-Fresh\-Tmp\-Var(), Var\-Manager\-::get\-Info(), Var\-Manager\-::get\-Next\-Error\-State\-Var(), Var\-Manager\-::get\-Pres\-Error\-State\-Var(), Var\-Manager\-::get\-Vars\-Of\-Type(), Var\-Manager\-::init\-From\-Aig(), initial\-\_\-, instance(), next\-\_\-safe\-\_\-, Var\-Info\-::\-N\-E\-X\-T\-\_\-\-S\-T\-A\-T\-E, next\-\_\-unsafe\-\_\-, Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, safe\-\_\-, t\-\_\-, trans\-\_\-, trans\-\_\-eq\-\_\-t\-\_\-, trans\-\_\-tmp\-\_\-deps\-\_\-, and unsafe\-\_\-.
 
 
 
@@ -476,7 +560,7 @@ References A\-I\-G2\-C\-N\-F(), instance\-\_\-, and M\-A\-S\-S\-E\-R\-T.
 
 
 
-Referenced by Counter\-Gen\-S\-A\-T\-::compress\-Bored(), Learn\-Synth\-Q\-B\-F\-::compute\-Counterexample\-S\-A\-T(), Parallel\-Learner\-::compute\-Previous\-Trans(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One\-S\-A\-T(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), I\-F\-M13\-Synth\-::debug\-Check\-Invariants(), Learn\-Synth\-S\-A\-T\-::debug\-Check\-Win\-Reg(), Utils\-::debug\-Check\-Win\-Reg(), Learn\-Synth\-Q\-B\-F\-Ind\-::debug\-Check\-Win\-Reg\-Reach(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), Q\-B\-F\-Cert\-Impl\-Extractor\-::extract\-Circuit(), Template\-Synth\-::find\-Win\-Reg\-C\-N\-F\-Templ(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), I\-F\-M13\-Synth\-::get\-Gen\-Block\-Trans\-Solver(), I\-F\-M13\-Explorer\-::get\-Gen\-Block\-Trans\-Solver(), I\-F\-M13\-Synth\-::get\-Goto\-Next\-Lower\-Solver(), I\-F\-M13\-Explorer\-::get\-Goto\-Next\-Lower\-Solver(), I\-F\-M13\-Explorer\-::\-I\-F\-M13\-Explorer(), I\-F\-M13\-Synth\-::\-I\-F\-M13\-Synth(), init\-From\-Aig(), Learn\-Synth\-Q\-B\-F\-::\-Learn\-Synth\-Q\-B\-F(), Learn\-Synth\-Q\-B\-F\-Ind\-::\-Learn\-Synth\-Q\-B\-F\-Ind(), Learn\-Synth\-S\-A\-T\-::\-Learn\-Synth\-S\-A\-T(), main(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses(), Learn\-Synth\-Q\-B\-F\-Inc\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Ind\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Inc\-::recompute\-Gen\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::recompute\-Gen\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Ind\-::recompute\-Gen\-C\-N\-F(), Parallel\-Learner\-::run(), and Parallel\-Learner\-::trigger\-Explorer\-Restart().
+Referenced by Counter\-Gen\-S\-A\-T\-::compress\-Bored(), Learn\-Synth\-Q\-B\-F\-::compute\-Counterexample\-S\-A\-T(), Parallel\-Learner\-::compute\-Previous\-Trans(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Push(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Push(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One\-S\-A\-T(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), I\-F\-M13\-Synth\-::debug\-Check\-Invariants(), Learn\-Synth\-S\-A\-T\-::debug\-Check\-Win\-Reg(), Utils\-::debug\-Check\-Win\-Reg(), Learn\-Synth\-Q\-B\-F\-Ind\-::debug\-Check\-Win\-Reg\-Reach(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), Template\-Synth\-::find\-Win\-Reg\-C\-N\-F\-Templ(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), I\-F\-M13\-Synth\-::get\-Gen\-Block\-Trans\-Solver(), I\-F\-M13\-Explorer\-::get\-Gen\-Block\-Trans\-Solver(), I\-F\-M13\-Synth\-::get\-Goto\-Next\-Lower\-Solver(), I\-F\-M13\-Explorer\-::get\-Goto\-Next\-Lower\-Solver(), I\-F\-M13\-Explorer\-::\-I\-F\-M13\-Explorer(), I\-F\-M13\-Synth\-::\-I\-F\-M13\-Synth(), init\-From\-Aig(), Learning\-Impl\-Extractor\-::insert\-Missing\-And\-From\-Trans(), Learning\-Impl\-Extractor\-::\-Learning\-Impl\-Extractor(), Learn\-Synth\-Q\-B\-F\-::\-Learn\-Synth\-Q\-B\-F(), Learn\-Synth\-Q\-B\-F\-Ind\-::\-Learn\-Synth\-Q\-B\-F\-Ind(), Learn\-Synth\-S\-A\-T\-::\-Learn\-Synth\-S\-A\-T(), main(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses(), Learn\-Synth\-Q\-B\-F\-Inc\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Ind\-::recompute\-Check\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Inc\-::recompute\-Gen\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-::recompute\-Gen\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Ind\-::recompute\-Gen\-C\-N\-F(), Q\-B\-F\-Cert\-Impl\-Extractor\-::run(), Parallel\-Learner\-::run(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F\-Inc(), and Parallel\-Learner\-::trigger\-Explorer\-Restart().
 
 \hypertarget{classAIG2CNF_a1ee82fcfe444616f35078957ec762489}{\index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}!operator=@{operator=}}
 \index{operator=@{operator=}!AIG2CNF@{A\-I\-G2\-C\-N\-F}}
@@ -511,7 +595,7 @@ A \hyperlink{classCNF}{C\-N\-F} representing the initial state.
 
 There is exactly one initial state (this is a restriction imposed by the A\-I\-G\-E\-R format which serves as input for our tool). Furthermore, the initial state is always characterized by having all state bits set to F\-A\-L\-S\-E. However, this may change with future A\-I\-G\-E\-R versions. 
 
-Definition at line 319 of file A\-I\-G2\-C\-N\-F.\-h.
+Definition at line 360 of file A\-I\-G2\-C\-N\-F.\-h.
 
 
 
@@ -526,7 +610,7 @@ The one and only instance of this class.
 
 
 
-Definition at line 363 of file A\-I\-G2\-C\-N\-F.\-h.
+Definition at line 426 of file A\-I\-G2\-C\-N\-F.\-h.
 
 
 
@@ -541,7 +625,7 @@ A \hyperlink{classCNF}{C\-N\-F} saying that the next state is safe.
 
 The set of safe next states is actually characterized by one single state bit, namely the next states where the variable \hyperlink{classVarManager_ac1a84b367c26dfc5ee9e612f7d61b288}{Var\-Manager\-::instance()}.get\-Next\-Error\-State\-Var() is F\-A\-L\-S\-E. This \hyperlink{classCNF}{C\-N\-F} asserts exactly this. 
 
-Definition at line 300 of file A\-I\-G2\-C\-N\-F.\-h.
+Definition at line 341 of file A\-I\-G2\-C\-N\-F.\-h.
 
 
 
@@ -556,7 +640,7 @@ A \hyperlink{classCNF}{C\-N\-F} saying that the next state is unsafe.
 
 The set of unsafe next states is actually characterized by one single state bit, namely the next states where the variable \hyperlink{classVarManager_ac1a84b367c26dfc5ee9e612f7d61b288}{Var\-Manager\-::instance()}.get\-Next\-Error\-State\-Var() is T\-R\-U\-E. This \hyperlink{classCNF}{C\-N\-F} asserts exactly this. 
 
-Definition at line 309 of file A\-I\-G2\-C\-N\-F.\-h.
+Definition at line 350 of file A\-I\-G2\-C\-N\-F.\-h.
 
 
 
@@ -571,7 +655,7 @@ A \hyperlink{classCNF}{C\-N\-F} representing the set of safe states.
 
 The set of safe states is actually characterized by one single state bit, namely the states where the variable \hyperlink{classVarManager_ac1a84b367c26dfc5ee9e612f7d61b288}{Var\-Manager\-::instance()}.get\-Pres\-Error\-State\-Var() is F\-A\-L\-S\-E. This \hyperlink{classCNF}{C\-N\-F} asserts exactly this. 
 
-Definition at line 282 of file A\-I\-G2\-C\-N\-F.\-h.
+Definition at line 323 of file A\-I\-G2\-C\-N\-F.\-h.
 
 
 
@@ -586,7 +670,7 @@ The literal assigned by \hyperlink{classAIG2CNF_af7e9b65092f626865a4aa541a48e4f1
 
 The \hyperlink{classCNF}{C\-N\-F} \hyperlink{classAIG2CNF_af7e9b65092f626865a4aa541a48e4f1b}{trans\-\_\-eq\-\_\-t\-\_\- } asserts T(x,i,c,x') $<$-\/$>$ \hyperlink{classAIG2CNF_af2a7f6ecdcec3b5b2f37a11b0adde65a}{t\-\_\- }. 
 
-Definition at line 273 of file A\-I\-G2\-C\-N\-F.\-h.
+Definition at line 314 of file A\-I\-G2\-C\-N\-F.\-h.
 
 
 
@@ -605,7 +689,7 @@ The transition relation is a \hyperlink{classCNF}{C\-N\-F} T(x,i,c,x') that talk
 \item deterministic, i.\-e., forall x,i,c,x1',x2'\-: (T(x,i,c,x1') A\-N\-D T(x,i,c,x2')) implies (x1' = x2') 
 \end{DoxyItemize}This means\-: for every state and input, the next state is uniquely defined. 
 
-Definition at line 255 of file A\-I\-G2\-C\-N\-F.\-h.
+Definition at line 296 of file A\-I\-G2\-C\-N\-F.\-h.
 
 
 
@@ -620,11 +704,41 @@ A \hyperlink{classCNF}{C\-N\-F} saying that the transition holds iff \hyperlink{
 
 This \hyperlink{classCNF}{C\-N\-F} asserts T(x,i,c,x') $<$-\/$>$ \hyperlink{classAIG2CNF_af2a7f6ecdcec3b5b2f37a11b0adde65a}{t\-\_\- }. This can be useful if you need the negated transition relation, if you want to use the the transition relation in some complicated formula, or if your formula should contain the transition relation several times (e.\-g. A \& T $|$ B \& !\-T) . 
 
-Definition at line 265 of file A\-I\-G2\-C\-N\-F.\-h.
+Definition at line 306 of file A\-I\-G2\-C\-N\-F.\-h.
 
 
 
 Referenced by clear(), get\-Trans\-Eq\-T(), and init\-From\-Aig().
+
+\hypertarget{classAIG2CNF_a8617860055dfa8cbcc1f572676f57b84}{\index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}!trans\-\_\-tmp\-\_\-deps\-\_\-@{trans\-\_\-tmp\-\_\-deps\-\_\-}}
+\index{trans\-\_\-tmp\-\_\-deps\-\_\-@{trans\-\_\-tmp\-\_\-deps\-\_\-}!AIG2CNF@{A\-I\-G2\-C\-N\-F}}
+\subsubsection[{trans\-\_\-tmp\-\_\-deps\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}map$<$int, set$<${\bf Var\-Info}$>$ $>$ A\-I\-G2\-C\-N\-F\-::trans\-\_\-tmp\-\_\-deps\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classAIG2CNF_a8617860055dfa8cbcc1f572676f57b84}
+
+
+The variables on which a temporary variable of the transition relation depends. 
+
+For each temporary variable that has been introduced when encoding the transition relation into \hyperlink{classCNF}{C\-N\-F}, this map stores on which other variables (state variables, inputs, or other temporary variables) a certain temporary C\-N\-F-\/variable depends. This information can be useful in optimizations\-: For instance, if a certain temporary variable only depends on state-\/variables and uncontrollable inputs, the the control signals can be allowed to depend on such a temporary variable during circuit extraction. 
+
+Definition at line 372 of file A\-I\-G2\-C\-N\-F.\-h.
+
+
+
+Referenced by get\-Tmp\-Deps(), get\-Tmp\-Deps\-Trans(), and init\-From\-Aig().
+
+\hypertarget{classAIG2CNF_a7e3c2e9acc3357e837349e30447b93c3}{\index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}!trans\-\_\-tmp\-\_\-deps\-\_\-trans\-\_\-@{trans\-\_\-tmp\-\_\-deps\-\_\-trans\-\_\-}}
+\index{trans\-\_\-tmp\-\_\-deps\-\_\-trans\-\_\-@{trans\-\_\-tmp\-\_\-deps\-\_\-trans\-\_\-}!AIG2CNF@{A\-I\-G2\-C\-N\-F}}
+\subsubsection[{trans\-\_\-tmp\-\_\-deps\-\_\-trans\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}map$<$int, set$<${\bf Var\-Info}$>$ $>$ A\-I\-G2\-C\-N\-F\-::trans\-\_\-tmp\-\_\-deps\-\_\-trans\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classAIG2CNF_a7e3c2e9acc3357e837349e30447b93c3}
+
+
+Like trans\-\_\-tmp\-\_\-deps\-\_\-, but stores (transitive) dependencies non non-\/temporary vars. 
+
+This map stores essentially the same information as trans\-\_\-tmp\-\_\-deps\-\_\-. However, it only contains (transitive) dependencies on state variables and (uncontrollable and controllable) inputs. Dependencies on other temporary variables are represented by taking their dependencies on state variables and (uncontrollable and controllable) inputs. 
+
+Definition at line 382 of file A\-I\-G2\-C\-N\-F.\-h.
+
+
+
+Referenced by get\-Tmp\-Deps\-Trans().
 
 \hypertarget{classAIG2CNF_afbfcf3a27261a2283a99362d2527d64f}{\index{A\-I\-G2\-C\-N\-F@{A\-I\-G2\-C\-N\-F}!unsafe\-\_\-@{unsafe\-\_\-}}
 \index{unsafe\-\_\-@{unsafe\-\_\-}!AIG2CNF@{A\-I\-G2\-C\-N\-F}}
@@ -635,7 +749,7 @@ A \hyperlink{classCNF}{C\-N\-F} representing the set of unsafe states.
 
 The set of unsafe states is actually characterized by one single state bit, namely the states where the variable \hyperlink{classVarManager_ac1a84b367c26dfc5ee9e612f7d61b288}{Var\-Manager\-::instance()}.get\-Pres\-Error\-State\-Var() is T\-R\-U\-E. This \hyperlink{classCNF}{C\-N\-F} asserts exactly this. 
 
-Definition at line 291 of file A\-I\-G2\-C\-N\-F.\-h.
+Definition at line 332 of file A\-I\-G2\-C\-N\-F.\-h.
 
 
 

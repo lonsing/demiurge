@@ -8,3 +8,6 @@ bash install_synt_check.sh
 bash install_minisat.sh
 bash install_picosat.sh
 bash install_bloqqer.sh
+bash install_abc.sh
+bash install_cppunit.sh
+bash install_ic3.sh

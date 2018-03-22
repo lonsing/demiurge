@@ -1,5 +1,28 @@
 <project name="TestclassGenerator" basedir=".">
 	<property name="template.Dir" value="."/>
+
+        <target name="createtestclass">
+                <property name="target.Dir" value="../tests"/>
+                <input
+                        message="Name for Testclass (without Test prefix i.e. ExternalSolver):"
+                        addproperty="testclass.Name"
+                />
+
+                <copy file="${template.Dir}/TemplateTestclass.h" tofile="${target.Dir}/Test${testclass.Name}.h">
+                        <filterset>
+                                <filter token="TestclassName" value="Test${testclass.Name}"/>
+                        </filterset>
+                </copy>
+                <copy file="${template.Dir}/TemplateTestclass.cpp" tofile="${target.Dir}/Test${testclass.Name}.cpp">
+                        <filterset>
+                                <filter token="TestclassName" value="Test${testclass.Name}"/>
+                        </filterset>
+                </copy>
+                <exec executable="./createExtrasources.pl">
+                    <arg value="Test.+\.cpp"/>
+                    <arg value="${target.Dir}"/>
+                </exec>
+        </target>
 	<target name="createclass">
 		<property name="target.Dir" value="../src"/>
                 <input

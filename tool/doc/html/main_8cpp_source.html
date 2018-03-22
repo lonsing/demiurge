@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">demiurge
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A synthesis tool for safety specifications.</div>
   </td>
@@ -164,12 +164,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  <span class="keywordtype">size_t</span> real_time = <a class="code" href="classStopwatch.html#a700dbdfb01479ece147c15d149eba157" title="Returns the elapsed real-time in seconds.">Stopwatch::getRealTimeSec</a>(start_time);</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  <a class="code" href="Logger_8h.html#a081139c373685d15bfc9f0afebe00542" title="Prints a log message if this message type is enabled.">L_LOG</a>(<span class="stringliteral">&quot;Overall execution time: &quot;</span> &lt;&lt; cpu_time &lt;&lt; <span class="stringliteral">&quot; sec CPU time.&quot;</span>);</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  <a class="code" href="Logger_8h.html#a081139c373685d15bfc9f0afebe00542" title="Prints a log message if this message type is enabled.">L_LOG</a>(<span class="stringliteral">&quot;Overall execution time: &quot;</span> &lt;&lt; real_time &lt;&lt; <span class="stringliteral">&quot; sec real time.&quot;</span>);</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  <span class="keywordflow">return</span> realizable ? 10 : 20;</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;}</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  <span class="comment">// The synthesis competition requires the following output:</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="classOptions.html#a3ee81ffdab9838ceb8f6f43fac679869" title="Returns the one and only instance of this class.">Options::instance</a>().doRealizabilityOnly())</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  {</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keywordflow">if</span>(realizable)</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;      cout &lt;&lt; <span class="stringliteral">&quot;REALIZABLE&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;      cout &lt;&lt; <span class="stringliteral">&quot;UNREALIZABLE&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  }</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span>(! realizable) <span class="comment">// if realizable, then only the circuit should be printed to stdout</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;UNREALIZABLE&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  <span class="keywordflow">return</span> realizable ? 10 : 20;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 14 2013 15:15:43 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jul 15 2014 12:30:19 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

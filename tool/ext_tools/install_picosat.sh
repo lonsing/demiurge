@@ -24,7 +24,7 @@ mv $DEMIURGETP/$PICOSAT $DEMIURGETP/picosat
 
 echo " Compiling PicoSAT ..."
 cd $DEMIURGETP/picosat
-./configure
+./configure -t
 make
 
 

@@ -1,6 +1,9 @@
 var searchData=
 [
   ['a',['A',['../classQBFSolver.html#ac091e263cb55286cc07b2451bcf4d3c7afd6518d5d985aa8346ac071e4c0d8ee0',1,'QBFSolver']]],
+  ['abc_5fcpu_5ftime_5f',['abc_cpu_time_',['../classLearningExtractorStatistics.html#a58056982bf57dbe69cff268d9a9d4a32',1,'LearningExtractorStatistics']]],
+  ['abc_5freal_5ftime_5f',['abc_real_time_',['../classLearningExtractorStatistics.html#a4bdc0c5fba7ef60dbf974f212b4b1f17',1,'LearningExtractorStatistics::abc_real_time_()'],['../classQBFCertImplExtractor.html#a90be758f6fb963647db3aa9c384075d8',1,'QBFCertImplExtractor::abc_real_time_()']]],
+  ['abc_5fstart_5ftime_5f',['abc_start_time_',['../classLearningExtractorStatistics.html#ac16b676d2eb3fe71af340233a37a9ca9',1,'LearningExtractorStatistics']]],
   ['add1litclause',['add1LitClause',['../classCNF.html#a8216b088c24fea1fd0cb1eecd16daabf',1,'CNF']]],
   ['add2litclause',['add2LitClause',['../classCNF.html#adf7334d8029d4882cfb5ee21b01ac668',1,'CNF']]],
   ['add3litclause',['add3LitClause',['../classCNF.html#a14154cae28b27dffc53239af7b39c4b4',1,'CNF']]],
@@ -14,12 +17,14 @@ var searchData=
   ['addlose',['addLose',['../classIFM13Synth.html#adf319a6748eda4aa29017a561752b262',1,'IFM13Synth::addLose()'],['../classIFM13Explorer.html#a14c5ca206f19c7c741f63e43d1470387',1,'IFM13Explorer::addLose()']]],
   ['addnegclauseascube',['addNegClauseAsCube',['../classCNF.html#a1e98842bbdcb8666d40289b15b943682',1,'CNF']]],
   ['addnegcubeasclause',['addNegCubeAsClause',['../classCNF.html#a84d01cd19e3032fb8d3bc7eaaaa40e34',1,'CNF']]],
+  ['addtostandaloneaiger',['addToStandAloneAiger',['../classLearningImplExtractor.html#a70515dea9636bbcd9fe3e31bdf47e110',1,'LearningImplExtractor']]],
   ['aig2cnf',['AIG2CNF',['../classAIG2CNF.html',1,'AIG2CNF'],['../classAIG2CNF.html#a2da966a41a8ff74e6ecebf0d1d3d3829',1,'AIG2CNF::AIG2CNF()'],['../classAIG2CNF.html#a2b3b1fac1ae78ff3c9dac99cd7b63d9d',1,'AIG2CNF::AIG2CNF(const AIG2CNF &amp;other)']]],
   ['aig2cnf_2ecpp',['AIG2CNF.cpp',['../AIG2CNF_8cpp.html',1,'']]],
   ['aig2cnf_2eh',['AIG2CNF.h',['../AIG2CNF_8h.html',1,'']]],
   ['aig_5fin_5ffile_5fname_5f',['aig_in_file_name_',['../classOptions.html#a334d015adb6fd67b0b1ce3663cd8ce02',1,'Options']]],
   ['aig_5fout_5ffile_5fname_5f',['aig_out_file_name_',['../classOptions.html#a35b7f590e9d752f297d3a99f855da970',1,'Options']]],
   ['aig_5fto_5fcnf_5flit_5fmap_5f',['aig_to_cnf_lit_map_',['../classVarManager.html#abaa6d10a62f138bdc932a8e76c709849',1,'VarManager']]],
-  ['aiger_5fprivate',['aiger_private',['../structaiger__private.html',1,'aiger_private'],['../QBFCertImplExtractor_8cpp.html#a2d4edc81747bf47d605a9ce514f14e92',1,'aiger_private():&#160;QBFCertImplExtractor.cpp']]],
-  ['aiglittocnflit',['aigLitToCnfLit',['../classVarManager.html#a9015ec7f557feb7619fdc0f7e18b57fa',1,'VarManager']]]
+  ['aiger_5fprivate',['aiger_private',['../structaiger__private.html',1,'']]],
+  ['aiglittocnflit',['aigLitToCnfLit',['../classVarManager.html#a9015ec7f557feb7619fdc0f7e18b57fa',1,'VarManager']]],
+  ['appendvarsto',['appendVarsTo',['../classCNF.html#a8a54b640d4fbb1da74979fc07536d4e9',1,'CNF']]]
 ];

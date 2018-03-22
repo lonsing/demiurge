@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">demiurge
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A synthesis tool for safety specifications.</div>
   </td>
@@ -99,12 +99,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <tr class="even"><td class="entry"><a class="el" href="classUtils.html#adeaccd2a53073b17e3409eab8e98db0c">debugPrint</a>(const vector&lt; int &gt; &amp;vec, string prefix=&quot;&quot;)</td><td class="entry"><a class="el" href="classUtils.html">Utils</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr><td class="entry"><a class="el" href="classUtils.html#af69b7f70358d1c1616aab1560c7363cd">debugPrintCurrentMemUsage</a>()</td><td class="entry"><a class="el" href="classUtils.html">Utils</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classUtils.html#a9eb9e182ca1da6a1050338928083f632">extract</a>(const vector&lt; int &gt; &amp;cube_or_clause, VarInfo::VarKind kind)</td><td class="entry"><a class="el" href="classUtils.html">Utils</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classUtils.html#a9251f04947864aaaac7e459987913429">extractNextAsPresent</a>(const vector&lt; int &gt; &amp;cube_or_clause)</td><td class="entry"><a class="el" href="classUtils.html">Utils</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classUtils.html#a9c060a97bf0e9e5e08bf33b512633ac3">extractPresIn</a>(const vector&lt; int &gt; &amp;cube_or_clause)</td><td class="entry"><a class="el" href="classUtils.html">Utils</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classUtils.html#aa6a513b0ad3b22b3b857060219c222d6">intersectionEmpty</a>(const vector&lt; int &gt; &amp;x, const set&lt; int &gt; &amp;y)</td><td class="entry"><a class="el" href="classUtils.html">Utils</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classUtils.html#ae957d76f82e729f9d127cf05cb61320d">intersectionEmpty</a>(const set&lt; int &gt; &amp;x, const set&lt; int &gt; &amp;y)</td><td class="entry"><a class="el" href="classUtils.html">Utils</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classUtils.html#ab5dca8125b6addaa1f0331664ab6142e">isSubset</a>(const vector&lt; int &gt; &amp;subset, const vector&lt; int &gt; &amp;superset)</td><td class="entry"><a class="el" href="classUtils.html">Utils</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classUtils.html#ae7584589e0d06005fe893fdb9244483a">negateLiterals</a>(vector&lt; int &gt; &amp;cube_or_clause)</td><td class="entry"><a class="el" href="classUtils.html">Utils</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classUtils.html#a21f2b014ac53ca027864c57e24a60195">extract</a>(const vector&lt; int &gt; &amp;cube_or_clause, const vector&lt; int &gt; &amp;vars)</td><td class="entry"><a class="el" href="classUtils.html">Utils</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classUtils.html#a9251f04947864aaaac7e459987913429">extractNextAsPresent</a>(const vector&lt; int &gt; &amp;cube_or_clause)</td><td class="entry"><a class="el" href="classUtils.html">Utils</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classUtils.html#a9c060a97bf0e9e5e08bf33b512633ac3">extractPresIn</a>(const vector&lt; int &gt; &amp;cube_or_clause)</td><td class="entry"><a class="el" href="classUtils.html">Utils</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classUtils.html#aa6a513b0ad3b22b3b857060219c222d6">intersectionEmpty</a>(const vector&lt; int &gt; &amp;x, const set&lt; int &gt; &amp;y)</td><td class="entry"><a class="el" href="classUtils.html">Utils</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classUtils.html#ae957d76f82e729f9d127cf05cb61320d">intersectionEmpty</a>(const set&lt; int &gt; &amp;x, const set&lt; int &gt; &amp;y)</td><td class="entry"><a class="el" href="classUtils.html">Utils</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classUtils.html#ab5dca8125b6addaa1f0331664ab6142e">isSubset</a>(const vector&lt; int &gt; &amp;subset, const vector&lt; int &gt; &amp;superset)</td><td class="entry"><a class="el" href="classUtils.html">Utils</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classUtils.html#ae7584589e0d06005fe893fdb9244483a">negateLiterals</a>(vector&lt; int &gt; &amp;cube_or_clause)</td><td class="entry"><a class="el" href="classUtils.html">Utils</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classUtils.html#ad6bc8cf6342b8f182597aa53cf72d9d3">negateStateCNF</a>(CNF &amp;cnf)</td><td class="entry"><a class="el" href="classUtils.html">Utils</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr><td class="entry"><a class="el" href="classUtils.html#a0ed61b802f94ec15000c458e9aae4f19">operator=</a>(const Utils &amp;other)</td><td class="entry"><a class="el" href="classUtils.html">Utils</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classUtils.html#a71efa1aa570b356a328e95008fb65ad8">randomize</a>(vector&lt; int &gt; &amp;vec)</td><td class="entry"><a class="el" href="classUtils.html">Utils</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr><td class="entry"><a class="el" href="classUtils.html#a15b142132eb40445f51b1f1bb89b85f3">remove</a>(vector&lt; int &gt; &amp;vec, int elem)</td><td class="entry"><a class="el" href="classUtils.html">Utils</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
@@ -116,7 +118,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 14 2013 15:15:46 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jul 15 2014 12:30:23 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

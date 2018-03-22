@@ -98,11 +98,11 @@ A counterexample is a state-\/input combination with which the antagonist can en
 Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\-0.\-0 
+1.\-1.\-0 
 \end{DoxyVersion}
 
 
-Definition at line 842 of file Parallel\-Learner.\-h.
+Definition at line 852 of file Parallel\-Learner.\-h.
 
 
 
@@ -125,7 +125,7 @@ Constructor if optimization R\-G is disabled.
 \end{DoxyParams}
 
 
-Definition at line 871 of file Parallel\-Learner.\-cpp.
+Definition at line 873 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -158,7 +158,7 @@ Constructor if optimization R\-G is enabled.
 \end{DoxyParams}
 
 
-Definition at line 887 of file Parallel\-Learner.\-cpp.
+Definition at line 889 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -177,7 +177,7 @@ Destructor.
 
 
 
-Definition at line 908 of file Parallel\-Learner.\-cpp.
+Definition at line 910 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -217,7 +217,7 @@ Called if there are no more counterexamples to generalize.
 
 We want to do something useful with the computation time nevertheless. And what this function does is the following\-: it takes counterexamples that have been generalized before and tries to generalize them further. This could be possible because the winning region has been refined in the meantime. 
 
-Definition at line 1121 of file Parallel\-Learner.\-cpp.
+Definition at line 1123 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -240,7 +240,7 @@ Reduces the counterexample that are considered for further generalization.
 
 The counterexamples considered for further generalization are stored in \hyperlink{classCounterGenSAT_ae4f7bf80b40a44580fde913f300ac4c1}{do\-\_\-if\-\_\-bored\-\_\-}. Similar to \hyperlink{classUtils_ac4e713aa386834b587e2695855fbc27a}{Utils\-::compress\-State\-C\-N\-F()} we remove all counterexamples that are implied by others anyway. 
 
-Definition at line 1150 of file Parallel\-Learner.\-cpp.
+Definition at line 1152 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -263,7 +263,7 @@ Considers new winning region clauses that have been found by other threads.
 
 
 
-Definition at line 1208 of file Parallel\-Learner.\-cpp.
+Definition at line 1210 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -294,7 +294,7 @@ Optimization R\-G is explained in \hyperlink{classLearnSynthQBFInd}{Learn\-Synth
 \end{DoxyParams}
 
 
-Definition at line 1078 of file Parallel\-Learner.\-cpp.
+Definition at line 1080 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -330,7 +330,7 @@ True if in\-\_\-cube ensures that the winning region is left from all states of 
 \end{DoxyReturn}
 
 
-Definition at line 1063 of file Parallel\-Learner.\-cpp.
+Definition at line 1065 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -353,7 +353,7 @@ The work-\/horse of this class.
 
 It Takes counterexamples found by other threads and computes all generalizations. A counterexample is a state-\/input combination with which the antagonist can enforce to leave the winning region. A generalization is a state-\/cube from which the antagonist can enforce to leave the winning region with this input. This class takes counterexamples found by other threads and computes all minimal generalizations. The negation of a generalization is a clause over the state-\/variables, which is added to the winning region. The counterexamples to generalize are read out of the \hyperlink{classParallelLearner}{Parallel\-Learner}'s database. If there are no more counterexamples left in this database (this class removes counterexamples after processing them), then this class is bored. When this class is bored, it takes counterexample generalizations that have been computed earlier and tries to generalize them further by dropping even more literals. In every iteration, this method also considers all new incoming clauses found by others. If it finds out that the specification is realizable or unrealizable, it sets the flag \hyperlink{classParallelLearner_a757f8817809cce5c0408cdc41d6db1b8}{Parallel\-Learner\-::result\-\_\-} accordingly. It also polls this flag regularly. If it has been set by some other thread, it quits. 
 
-Definition at line 919 of file Parallel\-Learner.\-cpp.
+Definition at line 921 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -381,7 +381,7 @@ The statistics and performance measures computed by this object.
 \end{DoxyReturn}
 
 
-Definition at line 1057 of file Parallel\-Learner.\-cpp.
+Definition at line 1059 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -408,7 +408,7 @@ Notifies this worker about a new winning region clause.
 \end{DoxyParams}
 
 
-Definition at line 1049 of file Parallel\-Learner.\-cpp.
+Definition at line 1051 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -456,7 +456,7 @@ The previous-\/state copy of a literal.
 \end{DoxyReturn}
 
 
-Definition at line 1233 of file Parallel\-Learner.\-cpp.
+Definition at line 1235 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -484,7 +484,7 @@ Computes the previous-\/state copy of a cube or clause.
 \end{DoxyParams}
 
 
-Definition at line 1243 of file Parallel\-Learner.\-cpp.
+Definition at line 1245 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -508,7 +508,7 @@ Computes the previous-\/state copy of a \hyperlink{classCNF}{C\-N\-F}.
 \end{DoxyParams}
 
 
-Definition at line 1250 of file Parallel\-Learner.\-cpp.
+Definition at line 1252 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -526,7 +526,7 @@ A reference to the coordinator.
 
 All communication to other worker-\/threads is done via the coordinator. 
 
-Definition at line 1020 of file Parallel\-Learner.\-h.
+Definition at line 1030 of file Parallel\-Learner.\-h.
 
 
 
@@ -541,7 +541,7 @@ Says\-: the current state is initial or the previous transition relation holds.
 
 This \hyperlink{classCNF}{C\-N\-F} expresses that the current state is initial or the previous-\/state copy of the transition relation holds. This is an important building block for the \hyperlink{classCNF}{C\-N\-F} to generalize counterexamples if optimization R\-G is enabled. If optimization R\-G is disabled, then this field is meaningless. 
 
-Definition at line 1082 of file Parallel\-Learner.\-h.
+Definition at line 1092 of file Parallel\-Learner.\-h.
 
 
 
@@ -556,7 +556,7 @@ A map from present-\/state variables to their previous-\/state copy.
 
 If optimization R\-G is disabled, then this \hyperlink{classCNF}{C\-N\-F} is empty. 
 
-Definition at line 1072 of file Parallel\-Learner.\-h.
+Definition at line 1082 of file Parallel\-Learner.\-h.
 
 
 
@@ -573,7 +573,7 @@ We are bored whenever the counterexample-\/database of the \hyperlink{classParal
 
 The first item of the pairs stored in this vectors is always the state-\/cube of the counterexample. The second item of the pair is the corresponding input-\/cube witnessing the fact that the successor state will be outside of the winning region. 
 
-Definition at line 1120 of file Parallel\-Learner.\-h.
+Definition at line 1130 of file Parallel\-Learner.\-h.
 
 
 
@@ -588,7 +588,7 @@ The size of do\-\_\-if\-\_\-bored\-\_\- when we compressed it the last time.
 
 This is just tracked for a heuristic that decides when to call \hyperlink{classCounterGenSAT_ae696c35988d55e29d5a54b3c71547c12}{compress\-Bored()} the next time. 
 
-Definition at line 1133 of file Parallel\-Learner.\-h.
+Definition at line 1143 of file Parallel\-Learner.\-h.
 
 
 
@@ -603,7 +603,7 @@ All new winning region clauses that have not been considered yet.
 
 
 
-Definition at line 1025 of file Parallel\-Learner.\-h.
+Definition at line 1035 of file Parallel\-Learner.\-h.
 
 
 
@@ -618,7 +618,7 @@ A lock that protects the \hyperlink{classCounterGenSAT_a5a379bda175a32e3d4ccc077
 
 Many worker-\/threads modify the \hyperlink{classCounterGenSAT_a5a379bda175a32e3d4ccc0771fde024d}{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-} (add new ones). This lock ensures that only one thread is modifying or reading the \hyperlink{classCounterGenSAT_a5a379bda175a32e3d4ccc0771fde024d}{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-} at one time. 
 
-Definition at line 1033 of file Parallel\-Learner.\-h.
+Definition at line 1043 of file Parallel\-Learner.\-h.
 
 
 
@@ -633,7 +633,7 @@ The index (in \hyperlink{classCounterGenSAT_ae4f7bf80b40a44580fde913f300ac4c1}{d
 
 
 
-Definition at line 1125 of file Parallel\-Learner.\-h.
+Definition at line 1135 of file Parallel\-Learner.\-h.
 
 
 
@@ -648,7 +648,7 @@ A literal saying that the previous-\/state is safe.
 
 We store this literal here and do not read it out of the \hyperlink{classVarManager}{Var\-Manager} again and again to avoid a concurrency issue. The \hyperlink{classVarManager}{Var\-Manager} is sometimes modified (new temporary variables are created). This does not affect the literal defining safe states. However, we do not want to lock reading-\/accesses to the variable manager and we do not want to read out the variable manager in an inconsistent state. Hence, we read it out once and store it. If optimization R\-G is disabled, then this field is meaningless. 
 
-Definition at line 1099 of file Parallel\-Learner.\-h.
+Definition at line 1109 of file Parallel\-Learner.\-h.
 
 
 
@@ -663,7 +663,7 @@ Says\-: the current state is initial or the previous transition relation holds.
 
 This \hyperlink{classCNF}{C\-N\-F} expresses that the current state is initial or the previous-\/state copy of the transition relation holds. This is an important building block for the \hyperlink{classCNF}{C\-N\-F} to generalize counterexamples if optimization R\-G is enabled. If optimization R\-G is disabled, then this \hyperlink{classCNF}{C\-N\-F} is empty. 
 
-Definition at line 1065 of file Parallel\-Learner.\-h.
+Definition at line 1075 of file Parallel\-Learner.\-h.
 
 
 
@@ -678,7 +678,7 @@ The solver for checking counterexample-\/candidates.
 
 It is also used to generalize counterexamples if optimization R\-G is disabled. 
 
-Definition at line 1047 of file Parallel\-Learner.\-h.
+Definition at line 1057 of file Parallel\-Learner.\-h.
 
 
 
@@ -693,7 +693,7 @@ The solver for generalizing counterexamples if optimization R\-G is enabled.
 
 
 
-Definition at line 1087 of file Parallel\-Learner.\-h.
+Definition at line 1097 of file Parallel\-Learner.\-h.
 
 
 
@@ -708,7 +708,7 @@ An incremental \hyperlink{classSatSolver}{Sat\-Solver} containing the winning re
 
 It is mainly used to check if new clauses found by this class are already implied by other clauses in the winning region. If so, then the new clauses are not added. 
 
-Definition at line 1055 of file Parallel\-Learner.\-h.
+Definition at line 1065 of file Parallel\-Learner.\-h.
 
 
 
@@ -723,7 +723,7 @@ Stores and maintains statistics and performance measures.
 
 Basically, this is a merge of the statistics from all worker-\/threads. 
 
-Definition at line 1106 of file Parallel\-Learner.\-h.
+Definition at line 1116 of file Parallel\-Learner.\-h.
 
 
 
@@ -738,7 +738,7 @@ A flag indicating if optimization R\-G should be used.
 
 See \hyperlink{classLearnSynthQBFInd}{Learn\-Synth\-Q\-B\-F\-Ind} for an explanation. 
 
-Definition at line 1013 of file Parallel\-Learner.\-h.
+Definition at line 1023 of file Parallel\-Learner.\-h.
 
 
 
@@ -753,7 +753,7 @@ A set of variables the solver should not optimize by the S\-A\-T-\/solver.
 
 These are all variables except for temporary ones (type \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cfa84a2d8d86f004930fe564dc5b395b29f}{Var\-Info\-::\-T\-M\-P}). 
 
-Definition at line 1040 of file Parallel\-Learner.\-h.
+Definition at line 1050 of file Parallel\-Learner.\-h.
 
 
 

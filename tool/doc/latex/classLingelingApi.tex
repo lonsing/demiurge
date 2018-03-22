@@ -101,7 +101,7 @@ This class represents an interface to the S\-A\-T-\/solver Lingeling (see \href{
 Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\-0.\-0 
+1.\-1.\-0 
 \end{DoxyVersion}
 
 
@@ -251,7 +251,7 @@ References Sat\-Solver\-::min\-\_\-cores\-\_\-.
 
 
 
-Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), and Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C().
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), and Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2().
 
 \hypertarget{classSatSolver_ae229c5e277350710412fce0e867dc566}{\index{Lingeling\-Api@{Lingeling\-Api}!do\-Rand\-Models@{do\-Rand\-Models}}
 \index{do\-Rand\-Models@{do\-Rand\-Models}!LingelingApi@{Lingeling\-Api}}
@@ -279,7 +279,7 @@ References Sat\-Solver\-::rand\-\_\-models\-\_\-.
 
 
 
-Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), and Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C().
+Referenced by Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), and Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C().
 
 \hypertarget{classLingelingApi_a54bf3198e6bb2dd3ebda768272337955}{\index{Lingeling\-Api@{Lingeling\-Api}!inc\-Add2\-Lit\-Clause@{inc\-Add2\-Lit\-Clause}}
 \index{inc\-Add2\-Lit\-Clause@{inc\-Add2\-Lit\-Clause}!LingelingApi@{Lingeling\-Api}}
@@ -446,10 +446,6 @@ Definition at line 213 of file Lingeling\-Api.\-cpp.
 
 
 References incr\-\_\-stack\-\_\-, and M\-A\-S\-S\-E\-R\-T.
-
-
-
-Referenced by inc\-Is\-Sat\-Model\-Or\-Core().
 
 \hypertarget{classLingelingApi_afefd24f97e49aed7cbaf25140a6b7741}{\index{Lingeling\-Api@{Lingeling\-Api}!inc\-Add\-Neg\-Cube\-As\-Clause@{inc\-Add\-Neg\-Cube\-As\-Clause}}
 \index{inc\-Add\-Neg\-Cube\-As\-Clause@{inc\-Add\-Neg\-Cube\-As\-Clause}!LingelingApi@{Lingeling\-Api}}
@@ -619,10 +615,6 @@ Definition at line 264 of file Lingeling\-Api.\-cpp.
 
 References incr\-\_\-stack\-\_\-, M\-A\-S\-S\-E\-R\-T, Sat\-Solver\-::min\-\_\-cores\-\_\-, Sat\-Solver\-::rand\-\_\-models\-\_\-, rand\-Model(), and Utils\-::remove().
 
-
-
-Referenced by inc\-Is\-Sat\-Model\-Or\-Core().
-
 \hypertarget{classLingelingApi_a95680a60e64dccddbe007ef7d4c8a960}{\index{Lingeling\-Api@{Lingeling\-Api}!inc\-Is\-Sat\-Model\-Or\-Core@{inc\-Is\-Sat\-Model\-Or\-Core}}
 \index{inc\-Is\-Sat\-Model\-Or\-Core@{inc\-Is\-Sat\-Model\-Or\-Core}!LingelingApi@{Lingeling\-Api}}
 \subsubsection[{inc\-Is\-Sat\-Model\-Or\-Core}]{\setlength{\rightskip}{0pt plus 5cm}bool Lingeling\-Api\-::inc\-Is\-Sat\-Model\-Or\-Core (
@@ -663,7 +655,7 @@ Definition at line 329 of file Lingeling\-Api.\-cpp.
 
 
 
-References inc\-Add\-Cube(), inc\-Is\-Sat\-Model\-Or\-Core(), inc\-Pop(), and inc\-Push().
+References incr\-\_\-stack\-\_\-, M\-A\-S\-S\-E\-R\-T, Sat\-Solver\-::min\-\_\-cores\-\_\-, Sat\-Solver\-::rand\-\_\-models\-\_\-, rand\-Model(), and Utils\-::remove().
 
 \hypertarget{classLingelingApi_afe43e1243338a332803fff470eedbf7a}{\index{Lingeling\-Api@{Lingeling\-Api}!inc\-Pop@{inc\-Pop}}
 \index{inc\-Pop@{inc\-Pop}!LingelingApi@{Lingeling\-Api}}
@@ -688,10 +680,6 @@ Definition at line 423 of file Lingeling\-Api.\-cpp.
 
 References incr\-\_\-stack\-\_\-, and M\-A\-S\-S\-E\-R\-T.
 
-
-
-Referenced by inc\-Is\-Sat\-Model\-Or\-Core().
-
 \hypertarget{classLingelingApi_a91c858d2a36a4fbe580909a793802a76}{\index{Lingeling\-Api@{Lingeling\-Api}!inc\-Push@{inc\-Push}}
 \index{inc\-Push@{inc\-Push}!LingelingApi@{Lingeling\-Api}}
 \subsubsection[{inc\-Push}]{\setlength{\rightskip}{0pt plus 5cm}void Lingeling\-Api\-::inc\-Push (
@@ -714,10 +702,6 @@ Definition at line 413 of file Lingeling\-Api.\-cpp.
 
 
 References incr\-\_\-stack\-\_\-, and M\-A\-S\-S\-E\-R\-T.
-
-
-
-Referenced by inc\-Is\-Sat\-Model\-Or\-Core().
 
 \hypertarget{classLingelingApi_a38358f64ded244e2e3d843d0565f0177}{\index{Lingeling\-Api@{Lingeling\-Api}!is\-Sat@{is\-Sat}}
 \index{is\-Sat@{is\-Sat}!LingelingApi@{Lingeling\-Api}}

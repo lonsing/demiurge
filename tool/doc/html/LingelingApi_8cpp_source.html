@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">demiurge
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A synthesis tool for safety specifications.</div>
   </td>
@@ -421,81 +421,81 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                                       vector&lt;int&gt; &amp;model_or_core)</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;{</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;  <a class="code" href="classLingelingApi.html#a91c858d2a36a4fbe580909a793802a76" title="Stores the current state of the incremental session on a stack.">incPush</a>();</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;  <a class="code" href="classLingelingApi.html#a6dc0eb0582d6afda381fc05a5820433c" title="Adds a new cube to the current incremental session.">incAddCube</a>(more_assumptions);</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;  <span class="keywordtype">bool</span> sat = <a class="code" href="classLingelingApi.html#a5f70806ab80cb622f4f7286f66284c4e" title="Checks the CNF in the incremental session and computes a model or unsat core.">incIsSatModelOrCore</a>(core_assumptions, vars_of_interest, model_or_core);</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;  <a class="code" href="classLingelingApi.html#afe43e1243338a332803fff470eedbf7a" title="Restores the incremental session back to the point where incPush() was called.">incPop</a>();</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;  <span class="keywordflow">return</span> sat;</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;<span class="comment">// Appears to be slower:</span></div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;<span class="comment">//  MASSERT(!incr_stack_.empty() &amp;&amp; incr_stack_.back() != NULL, &quot;No open session.&quot;);</span></div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;<span class="comment">//  LGL *lgl = incr_stack_.back();</span></div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;<span class="comment">//  for(size_t ass_cnt = 0; ass_cnt &lt; core_assumptions.size(); ++ass_cnt)</span></div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;<span class="comment">//    lglassume(lgl, core_assumptions[ass_cnt]);</span></div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;<span class="comment">//  for(size_t ass_cnt = 0; ass_cnt &lt; more_assumptions.size(); ++ass_cnt)</span></div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;<span class="comment">//    lglassume(lgl, more_assumptions[ass_cnt]);</span></div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;<span class="comment">//  int res = lglsat(lgl);</span></div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;<span class="comment">//  if(res == LGL_SATISFIABLE)</span></div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;<span class="comment">//  {</span></div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;<span class="comment">//    model_or_core.clear();</span></div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;<span class="comment">//    model_or_core.reserve(vars_of_interest.size());</span></div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;<span class="comment">//    for(size_t var_cnt = 0; var_cnt &lt; vars_of_interest.size(); ++var_cnt)</span></div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<span class="comment">//    {</span></div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;<span class="comment">//      if(lglderef(lgl, vars_of_interest[var_cnt]) &gt; 0)</span></div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;<span class="comment">//        model_or_core.push_back(vars_of_interest[var_cnt]);</span></div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;<span class="comment">//      else</span></div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;<span class="comment">//        model_or_core.push_back(-vars_of_interest[var_cnt]);</span></div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;<span class="comment">//    }</span></div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;<span class="comment">//    if(rand_models_)</span></div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;<span class="comment">//    {</span></div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;<span class="comment">//      vector&lt;int&gt; all_ass;</span></div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;<span class="comment">//      all_ass.reserve(core_assumptions.size() + more_assumptions.size());</span></div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<span class="comment">//      all_ass.insert(all_ass.end(), core_assumptions.begin(), core_assumptions.end());</span></div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;<span class="comment">//      all_ass.insert(all_ass.end(), more_assumptions.begin(), more_assumptions.end());</span></div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;<span class="comment">//      randModel(lgl, all_ass, model_or_core);</span></div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;<span class="comment">//    }</span></div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;<span class="comment">//    return true;</span></div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;<span class="comment">//  }</span></div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;<span class="comment">//  else if(res == LGL_UNSATISFIABLE)</span></div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;<span class="comment">//  {</span></div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;<span class="comment">//    model_or_core.clear();</span></div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;<span class="comment">//    model_or_core.reserve(core_assumptions.size());</span></div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;<span class="comment">//    for(size_t ass_cnt = 0; ass_cnt &lt; core_assumptions.size(); ++ass_cnt)</span></div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;<span class="comment">//    {</span></div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;<span class="comment">//      if(lglfailed(lgl, core_assumptions[ass_cnt]))</span></div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;<span class="comment">//        model_or_core.push_back(core_assumptions[ass_cnt]);</span></div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;<span class="comment">//    }</span></div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;<span class="comment">//    if(min_cores_)</span></div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;<span class="comment">//    {</span></div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;<span class="comment">//      vector&lt;int&gt; orig_core(model_or_core);</span></div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;<span class="comment">//      for(size_t lit_cnt = 0; lit_cnt &lt; orig_core.size(); ++lit_cnt)</span></div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;<span class="comment">//      {</span></div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;<span class="comment">//        vector&lt;int&gt; tmp(model_or_core);</span></div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;<span class="comment">//        bool found = Utils::remove(tmp, orig_core[lit_cnt]);</span></div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;<span class="comment">//        if(found)</span></div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;<span class="comment">//        {</span></div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;<span class="comment">//          for(size_t ass_cnt = 0; ass_cnt &lt; more_assumptions.size(); ++ass_cnt)</span></div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;<span class="comment">//            lglassume(lgl, more_assumptions[ass_cnt]);</span></div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;<span class="comment">//          for(size_t ass_cnt = 0; ass_cnt &lt; tmp.size(); ++ass_cnt)</span></div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;<span class="comment">//            lglassume(lgl, tmp[ass_cnt]);</span></div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;<span class="comment">//          if(lglsat(lgl) == LGL_UNSATISFIABLE)</span></div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;<span class="comment">//          {</span></div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;<span class="comment">//            model_or_core = tmp;</span></div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;<span class="comment">//            // using the core again seems to be slower:</span></div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;<span class="comment">//            // model_or_core.clear();</span></div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;<span class="comment">//            // for(size_t ass_cnt = 0; ass_cnt &lt; tmp.size(); ++ass_cnt)</span></div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;<span class="comment">//            // {</span></div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;<span class="comment">//            //   if(lglfailed(lgl, tmp[ass_cnt]))</span></div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;<span class="comment">//            //     model_or_core.push_back(tmp[ass_cnt]);</span></div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;<span class="comment">//            // }</span></div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;<span class="comment">//          }</span></div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;<span class="comment">//        }</span></div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;<span class="comment">//      }</span></div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;<span class="comment">//    }</span></div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;<span class="comment">//    return false;</span></div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;<span class="comment">//  }</span></div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;<span class="comment">//  MASSERT(false, &quot;Strange result from lingeling.&quot;);</span></div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;<span class="comment">//  return false;</span></div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<span class="comment">// was faster with the an old lingeling version, but seems slower now (?):</span></div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;<span class="comment">//  incPush();</span></div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;<span class="comment">//  incAddCube(more_assumptions);</span></div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;<span class="comment">//  bool sat = incIsSatModelOrCore(core_assumptions, vars_of_interest, model_or_core);</span></div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;<span class="comment">//  incPop();</span></div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;<span class="comment">//  return sat;</span></div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;  <a class="code" href="defines_8h.html#aad30151c28f3061eefc56c68da2fb96d" title="A macro for an assertion associated with an error message.">MASSERT</a>(!<a class="code" href="classLingelingApi.html#af9b5703f6611337668def5aaf6be465a" title="A stack of incremental session contexts.">incr_stack_</a>.empty() &amp;&amp; <a class="code" href="classLingelingApi.html#af9b5703f6611337668def5aaf6be465a" title="A stack of incremental session contexts.">incr_stack_</a>.back() != NULL, <span class="stringliteral">&quot;No open session.&quot;</span>);</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;  LGL *lgl = <a class="code" href="classLingelingApi.html#af9b5703f6611337668def5aaf6be465a" title="A stack of incremental session contexts.">incr_stack_</a>.back();</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> ass_cnt = 0; ass_cnt &lt; core_assumptions.size(); ++ass_cnt)</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    lglassume(lgl, core_assumptions[ass_cnt]);</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> ass_cnt = 0; ass_cnt &lt; more_assumptions.size(); ++ass_cnt)</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    lglassume(lgl, more_assumptions[ass_cnt]);</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;  <span class="keywordtype">int</span> res = lglsat(lgl);</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;  <span class="keywordflow">if</span>(res == LGL_SATISFIABLE)</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;  {</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    model_or_core.clear();</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    model_or_core.reserve(vars_of_interest.size());</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> var_cnt = 0; var_cnt &lt; vars_of_interest.size(); ++var_cnt)</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    {</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;      <span class="keywordflow">if</span>(lglderef(lgl, vars_of_interest[var_cnt]) &gt; 0)</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        model_or_core.push_back(vars_of_interest[var_cnt]);</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;      <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        model_or_core.push_back(-vars_of_interest[var_cnt]);</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    }</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="classSatSolver.html#a73fed24d8fb4da85ef82dc53ac5f28c7" title="Indicates if satisfying assignments should be randomized.">rand_models_</a>)</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    {</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;      vector&lt;int&gt; all_ass;</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;      all_ass.reserve(core_assumptions.size() + more_assumptions.size());</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;      all_ass.insert(all_ass.end(), core_assumptions.begin(), core_assumptions.end());</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;      all_ass.insert(all_ass.end(), more_assumptions.begin(), more_assumptions.end());</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;      <a class="code" href="classLingelingApi.html#a1b2cec409be65f2bf885593c83d73883" title="A helper to randomize a satisfying assignment after it has been computed.">randModel</a>(lgl, all_ass, model_or_core);</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    }</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;  }</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span>(res == LGL_UNSATISFIABLE)</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;  {</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    model_or_core.clear();</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    model_or_core.reserve(core_assumptions.size());</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> ass_cnt = 0; ass_cnt &lt; core_assumptions.size(); ++ass_cnt)</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    {</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;      <span class="keywordflow">if</span>(lglfailed(lgl, core_assumptions[ass_cnt]))</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        model_or_core.push_back(core_assumptions[ass_cnt]);</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    }</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="classSatSolver.html#adfeecebfd09606c82b5c57cfe5aad813" title="Indicates if the unsat cores returned by the solver should be minimized further.">min_cores_</a>)</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    {</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;      vector&lt;int&gt; orig_core(model_or_core);</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;      <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> lit_cnt = 0; lit_cnt &lt; orig_core.size(); ++lit_cnt)</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;      {</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        vector&lt;int&gt; tmp(model_or_core);</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        <span class="keywordtype">bool</span> found = <a class="code" href="classUtils.html#a15b142132eb40445f51b1f1bb89b85f3" title="Removes a certain element from a vector.">Utils::remove</a>(tmp, orig_core[lit_cnt]);</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        <span class="keywordflow">if</span>(found)</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        {</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;          <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> ass_cnt = 0; ass_cnt &lt; more_assumptions.size(); ++ass_cnt)</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            lglassume(lgl, more_assumptions[ass_cnt]);</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;          <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> ass_cnt = 0; ass_cnt &lt; tmp.size(); ++ass_cnt)</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;            lglassume(lgl, tmp[ass_cnt]);</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;          <span class="keywordflow">if</span>(lglsat(lgl) == LGL_UNSATISFIABLE)</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;          {</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;            model_or_core = tmp;</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;            <span class="comment">// using the core again seems to be slower:</span></div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;            <span class="comment">// model_or_core.clear();</span></div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;            <span class="comment">// for(size_t ass_cnt = 0; ass_cnt &lt; tmp.size(); ++ass_cnt)</span></div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;            <span class="comment">// {</span></div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;            <span class="comment">//   if(lglfailed(lgl, tmp[ass_cnt]))</span></div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;            <span class="comment">//     model_or_core.push_back(tmp[ass_cnt]);</span></div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;            <span class="comment">// }</span></div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;          }</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        }</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;      }</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    }</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;  }</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;  <a class="code" href="defines_8h.html#aad30151c28f3061eefc56c68da2fb96d" title="A macro for an assertion associated with an error message.">MASSERT</a>(<span class="keyword">false</span>, <span class="stringliteral">&quot;Strange result from lingeling.&quot;</span>);</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;}</div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;</div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
@@ -539,7 +539,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 14 2013 15:15:43 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jul 15 2014 12:30:19 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

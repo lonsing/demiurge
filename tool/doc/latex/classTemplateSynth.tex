@@ -19,7 +19,7 @@ Inheritance diagram for Template\-Synth\-:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classTemplateSynth_a157066a0bba6b543ac9cc6ff3a4223d7}{Template\-Synth} ()
+\hyperlink{classTemplateSynth_a56d5f285781e5871bf391acc38acb0aa}{Template\-Synth} (\hyperlink{classCNFImplExtractor}{C\-N\-F\-Impl\-Extractor} $\ast$impl\-\_\-extractor)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 virtual \hyperlink{classTemplateSynth_a5d540c9d4dc6696b53768a27ac74c569}{$\sim$\-Template\-Synth} ()
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
@@ -38,7 +38,9 @@ bool \hyperlink{classTemplateSynth_a499d1c0069b41ce11a6c7e7679fd4ece}{find\-Win\
 \hyperlink{classCNF}{C\-N\-F} \hyperlink{classTemplateSynth_a4e147629eae6a542dd87d72902df68c8}{winning\-\_\-region\-\_\-}
 \begin{DoxyCompactList}\small\item\em The resulting winning region. \end{DoxyCompactList}\item 
 \hyperlink{classQBFSolver}{Q\-B\-F\-Solver} $\ast$ \hyperlink{classTemplateSynth_a08ec20197bf16a10546a7e6cf3719727}{qbf\-\_\-solver\-\_\-}
-\begin{DoxyCompactList}\small\item\em The Q\-B\-F-\/solver to use for solving the queries. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The Q\-B\-F-\/solver to use for solving the queries. \end{DoxyCompactList}\item 
+\hyperlink{classCNFImplExtractor}{C\-N\-F\-Impl\-Extractor} $\ast$ \hyperlink{classTemplateSynth_acfa25deb001fb3b6d49c0261bba98347}{impl\-\_\-extractor\-\_\-}
+\begin{DoxyCompactList}\small\item\em The engine to use for circuit extraction. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -64,26 +66,31 @@ Finally the \hyperlink{classQBFCertImplExtractor}{Q\-B\-F\-Cert\-Impl\-Extractor
 Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\-0.\-0 
+1.\-1.\-0 
 \end{DoxyVersion}
 
 
-Definition at line 83 of file Template\-Synth.\-h.
+Definition at line 84 of file Template\-Synth.\-h.
 
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classTemplateSynth_a157066a0bba6b543ac9cc6ff3a4223d7}{\index{Template\-Synth@{Template\-Synth}!Template\-Synth@{Template\-Synth}}
+\hypertarget{classTemplateSynth_a56d5f285781e5871bf391acc38acb0aa}{\index{Template\-Synth@{Template\-Synth}!Template\-Synth@{Template\-Synth}}
 \index{Template\-Synth@{Template\-Synth}!TemplateSynth@{Template\-Synth}}
 \subsubsection[{Template\-Synth}]{\setlength{\rightskip}{0pt plus 5cm}Template\-Synth\-::\-Template\-Synth (
 \begin{DoxyParamCaption}
-{}
+\item[{{\bf C\-N\-F\-Impl\-Extractor} $\ast$}]{impl\-\_\-extractor}
 \end{DoxyParamCaption}
-)}}\label{classTemplateSynth_a157066a0bba6b543ac9cc6ff3a4223d7}
+)}}\label{classTemplateSynth_a56d5f285781e5871bf391acc38acb0aa}
 
 
 Constructor. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em impl\-\_\-extractor} & The engine to use for circuit extraction. It will be deleted by this class. \\
+\hline
+\end{DoxyParams}
 
 
 Definition at line 42 of file Template\-Synth.\-cpp.
@@ -101,11 +108,11 @@ Destructor.
 
 
 
-Definition at line 50 of file Template\-Synth.\-cpp.
+Definition at line 51 of file Template\-Synth.\-cpp.
 
 
 
-References qbf\-\_\-solver\-\_\-.
+References impl\-\_\-extractor\-\_\-, and qbf\-\_\-solver\-\_\-.
 
 
 
@@ -128,7 +135,7 @@ True if the specification was realizable, false otherwise.
 \end{DoxyReturn}
 
 
-Definition at line 82 of file Template\-Synth.\-cpp.
+Definition at line 86 of file Template\-Synth.\-cpp.
 
 
 
@@ -161,7 +168,7 @@ True if a solution is found with the given number of clauses, false otherwise. I
 \end{DoxyReturn}
 
 
-Definition at line 115 of file Template\-Synth.\-cpp.
+Definition at line 119 of file Template\-Synth.\-cpp.
 
 
 
@@ -193,15 +200,30 @@ Implements \hyperlink{classBackEnd_a099e717dc71e9cc2d838b1ca86340590}{Back\-End}
 
 
 
-Definition at line 57 of file Template\-Synth.\-cpp.
+Definition at line 61 of file Template\-Synth.\-cpp.
 
 
 
-References compute\-Winning\-Region(), Utils\-::debug\-Check\-Win\-Reg(), Q\-B\-F\-Cert\-Impl\-Extractor\-::extract\-Circuit(), Options\-::instance(), L\-\_\-\-I\-N\-F, L\-\_\-\-R\-E\-S, and winning\-\_\-region\-\_\-.
+References compute\-Winning\-Region(), Utils\-::debug\-Check\-Win\-Reg(), C\-N\-F\-Impl\-Extractor\-::extract\-Circuit(), impl\-\_\-extractor\-\_\-, Options\-::instance(), L\-\_\-\-I\-N\-F, L\-\_\-\-R\-E\-S, C\-N\-F\-Impl\-Extractor\-::log\-Statistics(), and winning\-\_\-region\-\_\-.
 
 
 
 \subsection{Member Data Documentation}
+\hypertarget{classTemplateSynth_acfa25deb001fb3b6d49c0261bba98347}{\index{Template\-Synth@{Template\-Synth}!impl\-\_\-extractor\-\_\-@{impl\-\_\-extractor\-\_\-}}
+\index{impl\-\_\-extractor\-\_\-@{impl\-\_\-extractor\-\_\-}!TemplateSynth@{Template\-Synth}}
+\subsubsection[{impl\-\_\-extractor\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F\-Impl\-Extractor}$\ast$ Template\-Synth\-::impl\-\_\-extractor\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTemplateSynth_acfa25deb001fb3b6d49c0261bba98347}
+
+
+The engine to use for circuit extraction. 
+
+It will be deleted by this class (in the destructor). 
+
+Definition at line 151 of file Template\-Synth.\-h.
+
+
+
+Referenced by run(), and $\sim$\-Template\-Synth().
+
 \hypertarget{classTemplateSynth_a08ec20197bf16a10546a7e6cf3719727}{\index{Template\-Synth@{Template\-Synth}!qbf\-\_\-solver\-\_\-@{qbf\-\_\-solver\-\_\-}}
 \index{qbf\-\_\-solver\-\_\-@{qbf\-\_\-solver\-\_\-}!TemplateSynth@{Template\-Synth}}
 \subsubsection[{qbf\-\_\-solver\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\-B\-F\-Solver}$\ast$ Template\-Synth\-::qbf\-\_\-solver\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTemplateSynth_a08ec20197bf16a10546a7e6cf3719727}
@@ -211,7 +233,7 @@ The Q\-B\-F-\/solver to use for solving the queries.
 
 
 
-Definition at line 140 of file Template\-Synth.\-h.
+Definition at line 144 of file Template\-Synth.\-h.
 
 
 
@@ -226,7 +248,7 @@ The resulting winning region.
 
 
 
-Definition at line 135 of file Template\-Synth.\-h.
+Definition at line 139 of file Template\-Synth.\-h.
 
 
 

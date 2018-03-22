@@ -42,7 +42,7 @@
 /// This class is mainly a container for all this information without any intelligence.
 ///
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.0.0
+/// @version 1.1.0
 class VarInfo
 {
 public:
@@ -206,5 +206,14 @@ protected:
 /// This can be an empty string if the variable has no name.
   string name_;
 };
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Comparison operator such that VarInfo objects can be stored in sets.
+///
+/// @param o1 The first object for the comparison.
+/// @param o2 The second object for the comparison.
+/// @return True if the former object stores a strictly smaller CNF variable, false otherwise.
+  bool operator< (const VarInfo &o1, const VarInfo &o2);
 
 #endif // VarInfo_H__

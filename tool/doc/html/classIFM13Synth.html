@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">demiurge
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A synthesis tool for safety specifications.</div>
   </td>
@@ -110,8 +110,8 @@ Inheritance diagram for IFM13Synth:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4df6eb2628d3a8fd6462434a2adea84b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIFM13Synth.html#a4df6eb2628d3a8fd6462434a2adea84b">IFM13Synth</a> ()</td></tr>
-<tr class="memdesc:a4df6eb2628d3a8fd6462434a2adea84b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a4df6eb2628d3a8fd6462434a2adea84b"></a><br/></td></tr>
+<tr class="memitem:ae01ff6a7fb118c2ebdc04818ef59726b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIFM13Synth.html#ae01ff6a7fb118c2ebdc04818ef59726b">IFM13Synth</a> (<a class="el" href="classCNFImplExtractor.html">CNFImplExtractor</a> *impl_extractor)</td></tr>
+<tr class="memdesc:ae01ff6a7fb118c2ebdc04818ef59726b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#ae01ff6a7fb118c2ebdc04818ef59726b"></a><br/></td></tr>
 <tr class="memitem:ad042200b1639e702af49e55088a52f52"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIFM13Synth.html#ad042200b1639e702af49e55088a52f52">~IFM13Synth</a> ()</td></tr>
 <tr class="memdesc:ad042200b1639e702af49e55088a52f52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#ad042200b1639e702af49e55088a52f52"></a><br/></td></tr>
 <tr class="memitem:a42adb4f76d88199d92b1bedb58a139f8"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIFM13Synth.html#a42adb4f76d88199d92b1bedb58a139f8">run</a> ()</td></tr>
@@ -174,6 +174,8 @@ Protected Attributes</h2></td></tr>
 <tr class="memdesc:ac35a6617ca45b2aa1823c99ae7c984a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The vector of present- and next-state variables, and uncontrollable inputs.  <a href="#ac35a6617ca45b2aa1823c99ae7c984a4"></a><br/></td></tr>
 <tr class="memitem:abb5b5fc0fe0db0e7aff06d22547e00bd"><td class="memItemLeft" align="right" valign="top">vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIFM13Synth.html#abb5b5fc0fe0db0e7aff06d22547e00bd">sicn_</a></td></tr>
 <tr class="memdesc:abb5b5fc0fe0db0e7aff06d22547e00bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The vector of present- and next-state variables, and all inputs.  <a href="#abb5b5fc0fe0db0e7aff06d22547e00bd"></a><br/></td></tr>
+<tr class="memitem:a1d87a79eab422a71fdc23f70d4279cbd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCNFImplExtractor.html">CNFImplExtractor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIFM13Synth.html#a1d87a79eab422a71fdc23f70d4279cbd">impl_extractor_</a></td></tr>
+<tr class="memdesc:a1d87a79eab422a71fdc23f70d4279cbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The engine to use for circuit extraction.  <a href="#a1d87a79eab422a71fdc23f70d4279cbd"></a><br/></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -190,28 +192,35 @@ directed reachability, FMCAD 2011, pages 125-134". All these optimizations are c
 <p>The IFM'13 publication only describes how to determine realizability, but not how extract a winning region from this computation. Our implementation also extracts a winning region (the set R[i] such that R[i] = R[i-1]).</p>
 <dl class="section note"><dt>Note</dt><dd>This is not the original implementation of the IFM'13 paper, it is a re-implementation. The re-implementation is based on the paper only. The original implementation may contain more optimizations. </dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Robert Koenighofer (<a href="#" onclick="location.href='mai'+'lto:'+'rob'+'er'+'t.k'+'oe'+'nig'+'ho'+'fer'+'@i'+'aik'+'.t'+'ugr'+'az'+'.at'; return false;">rober<span style="display: none;">.nosp@m.</span>t.ko<span style="display: none;">.nosp@m.</span>enigh<span style="display: none;">.nosp@m.</span>ofer<span style="display: none;">.nosp@m.</span>@iaik<span style="display: none;">.nosp@m.</span>.tug<span style="display: none;">.nosp@m.</span>raz.a<span style="display: none;">.nosp@m.</span>t</a>) </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>1.0.0 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.1.0 </dd></dl>
 
-<p>Definition at line <a class="el" href="IFM13Synth_8h_source.html#l00064">64</a> of file <a class="el" href="IFM13Synth_8h_source.html">IFM13Synth.h</a>.</p>
+<p>Definition at line <a class="el" href="IFM13Synth_8h_source.html#l00065">65</a> of file <a class="el" href="IFM13Synth_8h_source.html">IFM13Synth.h</a>.</p>
 </div><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a4df6eb2628d3a8fd6462434a2adea84b"></a>
+<a class="anchor" id="ae01ff6a7fb118c2ebdc04818ef59726b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">IFM13Synth::IFM13Synth </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="classCNFImplExtractor.html">CNFImplExtractor</a> *&#160;</td>
+          <td class="paramname"><em>impl_extractor</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">impl_extractor</td><td>The engine to use for circuit extraction. It will be deleted by this class. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Definition at line <a class="el" href="IFM13Synth_8cpp_source.html#l00054">54</a> of file <a class="el" href="IFM13Synth_8cpp_source.html">IFM13Synth.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8cpp_source.html#l00183">CNF::addCNF()</a>, <a class="el" href="VarInfo_8h_source.html#l00074">VarInfo::CTRL</a>, <a class="el" href="IFM13Synth_8h_source.html#l00329">gen_block_trans_solvers_</a>, <a class="el" href="Options_8cpp_source.html#l00326">Options::getSATSolver()</a>, <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, <a class="el" href="IFM13Synth_8h_source.html#l00320">goto_next_lower_solvers_</a>, <a class="el" href="IFM13Synth_8h_source.html#l00334">goto_win_solver_</a>, <a class="el" href="classSatSolver.html#ab2581b192cb2c39a81a416a9f7416c9e">SatSolver::incAddCNF()</a>, <a class="el" href="VarInfo_8h_source.html#l00069">VarInfo::INPUT</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="Options_8cpp_source.html#l00059">Options::instance()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="VarInfo_8h_source.html#l00064">VarInfo::NEXT_STATE</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="IFM13Synth_8h_source.html#l00294">r_</a>, <a class="el" href="IFM13Synth_8h_source.html#l00354">sicn_</a>, <a class="el" href="IFM13Synth_8h_source.html#l00349">sin_</a>, <a class="el" href="classSatSolver.html#a74603f84c3f2383a5fc44d5a8093cbea">SatSolver::startIncrementalSession()</a>, <a class="el" href="IFM13Synth_8h_source.html#l00304">u_</a>, and <a class="el" href="IFM13Synth_8h_source.html#l00309">win_</a>.</p>
+<p>References <a class="el" href="CNF_8cpp_source.html#l00230">CNF::addCNF()</a>, <a class="el" href="VarInfo_8h_source.html#l00074">VarInfo::CTRL</a>, <a class="el" href="IFM13Synth_8h_source.html#l00333">gen_block_trans_solvers_</a>, <a class="el" href="Options_8cpp_source.html#l00470">Options::getSATSolver()</a>, <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, <a class="el" href="IFM13Synth_8h_source.html#l00324">goto_next_lower_solvers_</a>, <a class="el" href="IFM13Synth_8h_source.html#l00338">goto_win_solver_</a>, <a class="el" href="classSatSolver.html#ab2581b192cb2c39a81a416a9f7416c9e">SatSolver::incAddCNF()</a>, <a class="el" href="VarInfo_8h_source.html#l00069">VarInfo::INPUT</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="Options_8cpp_source.html#l00065">Options::instance()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="VarInfo_8h_source.html#l00064">VarInfo::NEXT_STATE</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="IFM13Synth_8h_source.html#l00298">r_</a>, <a class="el" href="IFM13Synth_8h_source.html#l00358">sicn_</a>, <a class="el" href="IFM13Synth_8h_source.html#l00353">sin_</a>, <a class="el" href="classSatSolver.html#a74603f84c3f2383a5fc44d5a8093cbea">SatSolver::startIncrementalSession()</a>, <a class="el" href="IFM13Synth_8h_source.html#l00308">u_</a>, and <a class="el" href="IFM13Synth_8h_source.html#l00313">win_</a>.</p>
 
 </div>
 </div>
@@ -238,9 +247,9 @@ directed reachability, FMCAD 2011, pages 125-134". All these optimizations are c
 
 <p>Destructor. </p>
 
-<p>Definition at line <a class="el" href="IFM13Synth_8cpp_source.html#l00102">102</a> of file <a class="el" href="IFM13Synth_8cpp_source.html">IFM13Synth.cpp</a>.</p>
+<p>Definition at line <a class="el" href="IFM13Synth_8cpp_source.html#l00103">103</a> of file <a class="el" href="IFM13Synth_8cpp_source.html">IFM13Synth.cpp</a>.</p>
 
-<p>References <a class="el" href="IFM13Synth_8h_source.html#l00329">gen_block_trans_solvers_</a>, <a class="el" href="IFM13Synth_8h_source.html#l00320">goto_next_lower_solvers_</a>, and <a class="el" href="IFM13Synth_8h_source.html#l00334">goto_win_solver_</a>.</p>
+<p>References <a class="el" href="IFM13Synth_8h_source.html#l00333">gen_block_trans_solvers_</a>, <a class="el" href="IFM13Synth_8h_source.html#l00324">goto_next_lower_solvers_</a>, <a class="el" href="IFM13Synth_8h_source.html#l00338">goto_win_solver_</a>, and <a class="el" href="IFM13Synth_8h_source.html#l00365">impl_extractor_</a>.</p>
 
 </div>
 </div>
@@ -320,11 +329,11 @@ directed reachability, FMCAD 2011, pages 125-134". All these optimizations are c
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="IFM13Synth_8cpp_source.html#l00347">347</a> of file <a class="el" href="IFM13Synth_8cpp_source.html">IFM13Synth.cpp</a>.</p>
+<p>Definition at line <a class="el" href="IFM13Synth_8cpp_source.html#l00351">351</a> of file <a class="el" href="IFM13Synth_8cpp_source.html">IFM13Synth.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8cpp_source.html#l00070">CNF::addClause()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00459">getGenBlockTransSolver()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00447">getGotoNextLowerSolver()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00431">getR()</a>, <a class="el" href="classSatSolver.html#a9f91c104238b6e091513e0aa46970840">SatSolver::incAddClause()</a>, <a class="el" href="classSatSolver.html#ab1aab4b96a36b2003450067a3799ae23">SatSolver::incIsSat()</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="IFM13Synth_8h_source.html#l00294">r_</a>, and <a class="el" href="Utils_8cpp_source.html#l00194">Utils::swapPresentToNext()</a>.</p>
+<p>References <a class="el" href="CNF_8cpp_source.html#l00117">CNF::addClause()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00463">getGenBlockTransSolver()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00451">getGotoNextLowerSolver()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00435">getR()</a>, <a class="el" href="classSatSolver.html#a9f91c104238b6e091513e0aa46970840">SatSolver::incAddClause()</a>, <a class="el" href="classSatSolver.html#ab1aab4b96a36b2003450067a3799ae23">SatSolver::incIsSat()</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="IFM13Synth_8h_source.html#l00298">r_</a>, and <a class="el" href="Utils_8cpp_source.html#l00209">Utils::swapPresentToNext()</a>.</p>
 
-<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00225">recBlockCube()</a>.</p>
+<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00229">recBlockCube()</a>.</p>
 
 </div>
 </div>
@@ -370,11 +379,11 @@ directed reachability, FMCAD 2011, pages 125-134". All these optimizations are c
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="IFM13Synth_8cpp_source.html#l00332">332</a> of file <a class="el" href="IFM13Synth_8cpp_source.html">IFM13Synth.cpp</a>.</p>
+<p>Definition at line <a class="el" href="IFM13Synth_8cpp_source.html#l00336">336</a> of file <a class="el" href="IFM13Synth_8cpp_source.html">IFM13Synth.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8cpp_source.html#l00099">CNF::addClauseAndSimplify()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00447">getGotoNextLowerSolver()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00439">getU()</a>, and <a class="el" href="classSatSolver.html#a9f91c104238b6e091513e0aa46970840">SatSolver::incAddClause()</a>.</p>
+<p>References <a class="el" href="CNF_8cpp_source.html#l00146">CNF::addClauseAndSimplify()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00451">getGotoNextLowerSolver()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00443">getU()</a>, and <a class="el" href="classSatSolver.html#a9f91c104238b6e091513e0aa46970840">SatSolver::incAddClause()</a>.</p>
 
-<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00418">genAndBlockTrans()</a>.</p>
+<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00422">genAndBlockTrans()</a>.</p>
 
 </div>
 </div>
@@ -409,11 +418,11 @@ directed reachability, FMCAD 2011, pages 125-134". All these optimizations are c
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="IFM13Synth_8cpp_source.html#l00401">401</a> of file <a class="el" href="IFM13Synth_8cpp_source.html">IFM13Synth.cpp</a>.</p>
+<p>Definition at line <a class="el" href="IFM13Synth_8cpp_source.html#l00405">405</a> of file <a class="el" href="IFM13Synth_8cpp_source.html">IFM13Synth.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8cpp_source.html#l00099">CNF::addClauseAndSimplify()</a>, <a class="el" href="IFM13Synth_8h_source.html#l00334">goto_win_solver_</a>, <a class="el" href="classSatSolver.html#a9f91c104238b6e091513e0aa46970840">SatSolver::incAddClause()</a>, <a class="el" href="Utils_8cpp_source.html#l00194">Utils::swapPresentToNext()</a>, and <a class="el" href="IFM13Synth_8h_source.html#l00309">win_</a>.</p>
+<p>References <a class="el" href="CNF_8cpp_source.html#l00146">CNF::addClauseAndSimplify()</a>, <a class="el" href="IFM13Synth_8h_source.html#l00338">goto_win_solver_</a>, <a class="el" href="classSatSolver.html#a9f91c104238b6e091513e0aa46970840">SatSolver::incAddClause()</a>, <a class="el" href="Utils_8cpp_source.html#l00209">Utils::swapPresentToNext()</a>, and <a class="el" href="IFM13Synth_8h_source.html#l00313">win_</a>.</p>
 
-<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00225">recBlockCube()</a>.</p>
+<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00229">recBlockCube()</a>.</p>
 
 </div>
 </div>
@@ -441,11 +450,11 @@ directed reachability, FMCAD 2011, pages 125-134". All these optimizations are c
 <p>Computes the set of states from which the specification can be fulfilled. </p>
 <dl class="section return"><dt>Returns</dt><dd>True if the specification is realizable, false otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="IFM13Synth_8cpp_source.html#l00141">141</a> of file <a class="el" href="IFM13Synth_8cpp_source.html">IFM13Synth.cpp</a>.</p>
+<p>Definition at line <a class="el" href="IFM13Synth_8cpp_source.html#l00145">145</a> of file <a class="el" href="IFM13Synth_8cpp_source.html">IFM13Synth.cpp</a>.</p>
 
-<p>References <a class="el" href="IFM13Synth_8cpp_source.html#l00498">debugCheckInvariants()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00431">getR()</a>, <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00045">IS_LOSE</a>, <a class="el" href="Logger_8h_source.html#l00319">L_DBG</a>, <a class="el" href="Logger_8h_source.html#l00336">L_LOG</a>, <a class="el" href="IFM13Synth_8h_source.html#l00344">neg_winning_region_</a>, <a class="el" href="CNF_8cpp_source.html#l00217">CNF::negate()</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00173">propagateBlockedStates()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00225">recBlockCube()</a>, and <a class="el" href="IFM13Synth_8h_source.html#l00339">winning_region_</a>.</p>
+<p>References <a class="el" href="IFM13Synth_8cpp_source.html#l00502">debugCheckInvariants()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00435">getR()</a>, <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00045">IS_LOSE</a>, <a class="el" href="Logger_8h_source.html#l00319">L_DBG</a>, <a class="el" href="Logger_8h_source.html#l00336">L_LOG</a>, <a class="el" href="IFM13Synth_8h_source.html#l00348">neg_winning_region_</a>, <a class="el" href="CNF_8cpp_source.html#l00264">CNF::negate()</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00177">propagateBlockedStates()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00229">recBlockCube()</a>, and <a class="el" href="IFM13Synth_8h_source.html#l00343">winning_region_</a>.</p>
 
-<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00117">run()</a>.</p>
+<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00121">run()</a>.</p>
 
 </div>
 </div>
@@ -480,11 +489,11 @@ directed reachability, FMCAD 2011, pages 125-134". All these optimizations are c
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="IFM13Synth_8cpp_source.html#l00498">498</a> of file <a class="el" href="IFM13Synth_8cpp_source.html">IFM13Synth.cpp</a>.</p>
+<p>Definition at line <a class="el" href="IFM13Synth_8cpp_source.html#l00502">502</a> of file <a class="el" href="IFM13Synth_8cpp_source.html">IFM13Synth.cpp</a>.</p>
 
-<p>References <a class="el" href="QBFSolver_8h_source.html#l00067">QBFSolver::A</a>, <a class="el" href="CNF_8cpp_source.html#l00183">CNF::addCNF()</a>, <a class="el" href="CNF_8cpp_source.html#l00064">CNF::clear()</a>, <a class="el" href="VarInfo_8h_source.html#l00074">VarInfo::CTRL</a>, <a class="el" href="QBFSolver_8h_source.html#l00062">QBFSolver::E</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00431">getR()</a>, <a class="el" href="Options_8cpp_source.html#l00326">Options::getSATSolver()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00439">getU()</a>, <a class="el" href="VarInfo_8h_source.html#l00069">VarInfo::INPUT</a>, <a class="el" href="Options_8cpp_source.html#l00059">Options::instance()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="DepQBFApi_8cpp_source.html#l00056">DepQBFApi::isSat()</a>, <a class="el" href="classSatSolver.html#a82f60f60db464fbe5c66a20ad673a573">SatSolver::isSat()</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="CNF_8cpp_source.html#l00217">CNF::negate()</a>, <a class="el" href="VarInfo_8h_source.html#l00064">VarInfo::NEXT_STATE</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="CNF_8cpp_source.html#l00189">CNF::swapPresentToNext()</a>, <a class="el" href="VarInfo_8h_source.html#l00081">VarInfo::TMP</a>, and <a class="el" href="IFM13Synth_8h_source.html#l00309">win_</a>.</p>
+<p>References <a class="el" href="QBFSolver_8h_source.html#l00067">QBFSolver::A</a>, <a class="el" href="CNF_8cpp_source.html#l00230">CNF::addCNF()</a>, <a class="el" href="CNF_8cpp_source.html#l00111">CNF::clear()</a>, <a class="el" href="VarInfo_8h_source.html#l00074">VarInfo::CTRL</a>, <a class="el" href="QBFSolver_8h_source.html#l00062">QBFSolver::E</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00435">getR()</a>, <a class="el" href="Options_8cpp_source.html#l00470">Options::getSATSolver()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00443">getU()</a>, <a class="el" href="VarInfo_8h_source.html#l00069">VarInfo::INPUT</a>, <a class="el" href="Options_8cpp_source.html#l00065">Options::instance()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="DepQBFApi_8cpp_source.html#l00059">DepQBFApi::isSat()</a>, <a class="el" href="classSatSolver.html#a82f60f60db464fbe5c66a20ad673a573">SatSolver::isSat()</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="CNF_8cpp_source.html#l00264">CNF::negate()</a>, <a class="el" href="VarInfo_8h_source.html#l00064">VarInfo::NEXT_STATE</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="CNF_8cpp_source.html#l00236">CNF::swapPresentToNext()</a>, <a class="el" href="VarInfo_8h_source.html#l00081">VarInfo::TMP</a>, and <a class="el" href="IFM13Synth_8h_source.html#l00313">win_</a>.</p>
 
-<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00141">computeWinningRegion()</a>.</p>
+<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00145">computeWinningRegion()</a>.</p>
 
 </div>
 </div>
@@ -512,9 +521,9 @@ directed reachability, FMCAD 2011, pages 125-134". All these optimizations are c
 <p>A debugging utility to print all frames. </p>
 <p>Do this for small examples only. </p>
 
-<p>Definition at line <a class="el" href="IFM13Synth_8cpp_source.html#l00488">488</a> of file <a class="el" href="IFM13Synth_8cpp_source.html">IFM13Synth.cpp</a>.</p>
+<p>Definition at line <a class="el" href="IFM13Synth_8cpp_source.html#l00492">492</a> of file <a class="el" href="IFM13Synth_8cpp_source.html">IFM13Synth.cpp</a>.</p>
 
-<p>References <a class="el" href="Logger_8h_source.html#l00319">L_DBG</a>, and <a class="el" href="IFM13Synth_8h_source.html#l00294">r_</a>.</p>
+<p>References <a class="el" href="Logger_8h_source.html#l00319">L_DBG</a>, and <a class="el" href="IFM13Synth_8h_source.html#l00298">r_</a>.</p>
 
 </div>
 </div>
@@ -567,11 +576,11 @@ directed reachability, FMCAD 2011, pages 125-134". All these optimizations are c
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>False if state_cube satisfies W, true otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="IFM13Synth_8cpp_source.html#l00418">418</a> of file <a class="el" href="IFM13Synth_8cpp_source.html">IFM13Synth.cpp</a>.</p>
+<p>Definition at line <a class="el" href="IFM13Synth_8cpp_source.html#l00422">422</a> of file <a class="el" href="IFM13Synth_8cpp_source.html">IFM13Synth.cpp</a>.</p>
 
-<p>References <a class="el" href="IFM13Synth_8cpp_source.html#l00332">addBlockedTransition()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00459">getGenBlockTransSolver()</a>, <a class="el" href="classSatSolver.html#ad387fc06bacf2d48847f779c9db8461a">SatSolver::incIsSatModelOrCore()</a>, and <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>.</p>
+<p>References <a class="el" href="IFM13Synth_8cpp_source.html#l00336">addBlockedTransition()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00463">getGenBlockTransSolver()</a>, <a class="el" href="classSatSolver.html#ad387fc06bacf2d48847f779c9db8461a">SatSolver::incIsSatModelOrCore()</a>, and <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>.</p>
 
-<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00225">recBlockCube()</a>.</p>
+<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00229">recBlockCube()</a>.</p>
 
 </div>
 </div>
@@ -607,11 +616,11 @@ directed reachability, FMCAD 2011, pages 125-134". All these optimizations are c
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A solver with <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a>: T &amp; R[index-1]'. getGenBlockTransSolver(0) returns NULL. </dd></dl>
 
-<p>Definition at line <a class="el" href="IFM13Synth_8cpp_source.html#l00459">459</a> of file <a class="el" href="IFM13Synth_8cpp_source.html">IFM13Synth.cpp</a>.</p>
+<p>Definition at line <a class="el" href="IFM13Synth_8cpp_source.html#l00463">463</a> of file <a class="el" href="IFM13Synth_8cpp_source.html">IFM13Synth.cpp</a>.</p>
 
-<p>References <a class="el" href="IFM13Synth_8h_source.html#l00329">gen_block_trans_solvers_</a>, <a class="el" href="Options_8cpp_source.html#l00059">Options::instance()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, and <a class="el" href="IFM13Synth_8h_source.html#l00354">sicn_</a>.</p>
+<p>References <a class="el" href="IFM13Synth_8h_source.html#l00333">gen_block_trans_solvers_</a>, <a class="el" href="Options_8cpp_source.html#l00065">Options::instance()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, and <a class="el" href="IFM13Synth_8h_source.html#l00358">sicn_</a>.</p>
 
-<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00347">addBlockedState()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00418">genAndBlockTrans()</a>, and <a class="el" href="IFM13Synth_8cpp_source.html#l00173">propagateBlockedStates()</a>.</p>
+<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00351">addBlockedState()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00422">genAndBlockTrans()</a>, and <a class="el" href="IFM13Synth_8cpp_source.html#l00177">propagateBlockedStates()</a>.</p>
 
 </div>
 </div>
@@ -647,11 +656,11 @@ directed reachability, FMCAD 2011, pages 125-134". All these optimizations are c
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A solver with <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a>: U[index] &amp; T &amp; R[index-1]'. getGotoNextLowerSolver(0) returns NULL. </dd></dl>
 
-<p>Definition at line <a class="el" href="IFM13Synth_8cpp_source.html#l00447">447</a> of file <a class="el" href="IFM13Synth_8cpp_source.html">IFM13Synth.cpp</a>.</p>
+<p>Definition at line <a class="el" href="IFM13Synth_8cpp_source.html#l00451">451</a> of file <a class="el" href="IFM13Synth_8cpp_source.html">IFM13Synth.cpp</a>.</p>
 
-<p>References <a class="el" href="IFM13Synth_8h_source.html#l00320">goto_next_lower_solvers_</a>, <a class="el" href="Options_8cpp_source.html#l00059">Options::instance()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, and <a class="el" href="IFM13Synth_8h_source.html#l00354">sicn_</a>.</p>
+<p>References <a class="el" href="IFM13Synth_8h_source.html#l00324">goto_next_lower_solvers_</a>, <a class="el" href="Options_8cpp_source.html#l00065">Options::instance()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, and <a class="el" href="IFM13Synth_8h_source.html#l00358">sicn_</a>.</p>
 
-<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00347">addBlockedState()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00332">addBlockedTransition()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00173">propagateBlockedStates()</a>, and <a class="el" href="IFM13Synth_8cpp_source.html#l00225">recBlockCube()</a>.</p>
+<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00351">addBlockedState()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00336">addBlockedTransition()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00177">propagateBlockedStates()</a>, and <a class="el" href="IFM13Synth_8cpp_source.html#l00229">recBlockCube()</a>.</p>
 
 </div>
 </div>
@@ -687,11 +696,11 @@ directed reachability, FMCAD 2011, pages 125-134". All these optimizations are c
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The frame R[index] in <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a>. </dd></dl>
 
-<p>Definition at line <a class="el" href="IFM13Synth_8cpp_source.html#l00431">431</a> of file <a class="el" href="IFM13Synth_8cpp_source.html">IFM13Synth.cpp</a>.</p>
+<p>Definition at line <a class="el" href="IFM13Synth_8cpp_source.html#l00435">435</a> of file <a class="el" href="IFM13Synth_8cpp_source.html">IFM13Synth.cpp</a>.</p>
 
-<p>References <a class="el" href="IFM13Synth_8h_source.html#l00294">r_</a>.</p>
+<p>References <a class="el" href="IFM13Synth_8h_source.html#l00298">r_</a>.</p>
 
-<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00347">addBlockedState()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00141">computeWinningRegion()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00498">debugCheckInvariants()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00395">isBlocked()</a>, and <a class="el" href="IFM13Synth_8cpp_source.html#l00173">propagateBlockedStates()</a>.</p>
+<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00351">addBlockedState()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00145">computeWinningRegion()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00502">debugCheckInvariants()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00399">isBlocked()</a>, and <a class="el" href="IFM13Synth_8cpp_source.html#l00177">propagateBlockedStates()</a>.</p>
 
 </div>
 </div>
@@ -727,11 +736,11 @@ directed reachability, FMCAD 2011, pages 125-134". All these optimizations are c
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The set U[index] of blocked transitions in <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a>. </dd></dl>
 
-<p>Definition at line <a class="el" href="IFM13Synth_8cpp_source.html#l00439">439</a> of file <a class="el" href="IFM13Synth_8cpp_source.html">IFM13Synth.cpp</a>.</p>
+<p>Definition at line <a class="el" href="IFM13Synth_8cpp_source.html#l00443">443</a> of file <a class="el" href="IFM13Synth_8cpp_source.html">IFM13Synth.cpp</a>.</p>
 
-<p>References <a class="el" href="IFM13Synth_8h_source.html#l00304">u_</a>.</p>
+<p>References <a class="el" href="IFM13Synth_8h_source.html#l00308">u_</a>.</p>
 
-<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00332">addBlockedTransition()</a>, and <a class="el" href="IFM13Synth_8cpp_source.html#l00498">debugCheckInvariants()</a>.</p>
+<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00336">addBlockedTransition()</a>, and <a class="el" href="IFM13Synth_8cpp_source.html#l00502">debugCheckInvariants()</a>.</p>
 
 </div>
 </div>
@@ -778,11 +787,11 @@ directed reachability, FMCAD 2011, pages 125-134". All these optimizations are c
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>False if state_cube satisfies R[level], true otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="IFM13Synth_8cpp_source.html#l00395">395</a> of file <a class="el" href="IFM13Synth_8cpp_source.html">IFM13Synth.cpp</a>.</p>
+<p>Definition at line <a class="el" href="IFM13Synth_8cpp_source.html#l00399">399</a> of file <a class="el" href="IFM13Synth_8cpp_source.html">IFM13Synth.cpp</a>.</p>
 
-<p>References <a class="el" href="IFM13Synth_8cpp_source.html#l00431">getR()</a>, and <a class="el" href="CNF_8cpp_source.html#l00322">CNF::isSatBy()</a>.</p>
+<p>References <a class="el" href="IFM13Synth_8cpp_source.html#l00435">getR()</a>, and <a class="el" href="CNF_8cpp_source.html#l00395">CNF::isSatBy()</a>.</p>
 
-<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00225">recBlockCube()</a>.</p>
+<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00229">recBlockCube()</a>.</p>
 
 </div>
 </div>
@@ -818,11 +827,11 @@ directed reachability, FMCAD 2011, pages 125-134". All these optimizations are c
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>False if state_cube satisfies W, true otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="IFM13Synth_8cpp_source.html#l00412">412</a> of file <a class="el" href="IFM13Synth_8cpp_source.html">IFM13Synth.cpp</a>.</p>
+<p>Definition at line <a class="el" href="IFM13Synth_8cpp_source.html#l00416">416</a> of file <a class="el" href="IFM13Synth_8cpp_source.html">IFM13Synth.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8cpp_source.html#l00322">CNF::isSatBy()</a>, and <a class="el" href="IFM13Synth_8h_source.html#l00309">win_</a>.</p>
+<p>References <a class="el" href="CNF_8cpp_source.html#l00395">CNF::isSatBy()</a>, and <a class="el" href="IFM13Synth_8h_source.html#l00313">win_</a>.</p>
 
-<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00225">recBlockCube()</a>.</p>
+<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00229">recBlockCube()</a>.</p>
 
 </div>
 </div>
@@ -891,11 +900,11 @@ directed reachability, FMCAD 2011, pages 125-134". All these optimizations are c
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The element that has been removed from the list. It is always the element (among the elements) with minimal rank. </dd></dl>
 
-<p>Definition at line <a class="el" href="IFM13Synth_8cpp_source.html#l00471">471</a> of file <a class="el" href="IFM13Synth_8cpp_source.html">IFM13Synth.cpp</a>.</p>
+<p>Definition at line <a class="el" href="IFM13Synth_8cpp_source.html#l00475">475</a> of file <a class="el" href="IFM13Synth_8cpp_source.html">IFM13Synth.cpp</a>.</p>
 
 <p>References <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>.</p>
 
-<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00225">recBlockCube()</a>.</p>
+<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00229">recBlockCube()</a>.</p>
 
 </div>
 </div>
@@ -931,11 +940,11 @@ directed reachability, FMCAD 2011, pages 125-134". All these optimizations are c
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The number N returned by this method has the following meaning: N=0 means that no equal clause sets have been found. N &gt; 0 means that R[N] = R[N-1]. </dd></dl>
 
-<p>Definition at line <a class="el" href="IFM13Synth_8cpp_source.html#l00173">173</a> of file <a class="el" href="IFM13Synth_8cpp_source.html">IFM13Synth.cpp</a>.</p>
+<p>Definition at line <a class="el" href="IFM13Synth_8cpp_source.html#l00177">177</a> of file <a class="el" href="IFM13Synth_8cpp_source.html">IFM13Synth.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8cpp_source.html#l00273">CNF::getClauses()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00459">getGenBlockTransSolver()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00447">getGotoNextLowerSolver()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00431">getR()</a>, <a class="el" href="classSatSolver.html#a9f91c104238b6e091513e0aa46970840">SatSolver::incAddClause()</a>, <a class="el" href="classSatSolver.html#ab1aab4b96a36b2003450067a3799ae23">SatSolver::incIsSat()</a>, <a class="el" href="CNF_8cpp_source.html#l00311">CNF::removeDuplicates()</a>, <a class="el" href="Utils_8cpp_source.html#l00194">Utils::swapPresentToNext()</a>, and <a class="el" href="CNF_8cpp_source.html#l00239">CNF::swapWith()</a>.</p>
+<p>References <a class="el" href="CNF_8cpp_source.html#l00346">CNF::getClauses()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00463">getGenBlockTransSolver()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00451">getGotoNextLowerSolver()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00435">getR()</a>, <a class="el" href="classSatSolver.html#a9f91c104238b6e091513e0aa46970840">SatSolver::incAddClause()</a>, <a class="el" href="classSatSolver.html#ab1aab4b96a36b2003450067a3799ae23">SatSolver::incIsSat()</a>, <a class="el" href="CNF_8cpp_source.html#l00384">CNF::removeDuplicates()</a>, <a class="el" href="Utils_8cpp_source.html#l00209">Utils::swapPresentToNext()</a>, and <a class="el" href="CNF_8cpp_source.html#l00286">CNF::swapWith()</a>.</p>
 
-<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00141">computeWinningRegion()</a>.</p>
+<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00145">computeWinningRegion()</a>.</p>
 
 </div>
 </div>
@@ -982,11 +991,11 @@ directed reachability, FMCAD 2011, pages 125-134". All these optimizations are c
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>IS_GREATER (an alias for true) if the rank of the state is &gt; level. IS_LOSE (an alias for false) otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="IFM13Synth_8cpp_source.html#l00225">225</a> of file <a class="el" href="IFM13Synth_8cpp_source.html">IFM13Synth.cpp</a>.</p>
+<p>Definition at line <a class="el" href="IFM13Synth_8cpp_source.html#l00229">229</a> of file <a class="el" href="IFM13Synth_8cpp_source.html">IFM13Synth.cpp</a>.</p>
 
-<p>References <a class="el" href="IFM13Synth_8cpp_source.html#l00347">addBlockedState()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00401">addLose()</a>, <a class="el" href="Utils_8cpp_source.html#l00041">Utils::containsInit()</a>, <a class="el" href="VarInfo_8h_source.html#l00074">VarInfo::CTRL</a>, <a class="el" href="Utils_8cpp_source.html#l00063">Utils::extract()</a>, <a class="el" href="Utils_8cpp_source.html#l00124">Utils::extractNextAsPresent()</a>, <a class="el" href="Utils_8cpp_source.html#l00086">Utils::extractPresIn()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00418">genAndBlockTrans()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00447">getGotoNextLowerSolver()</a>, <a class="el" href="IFMProofObligation_8cpp_source.html#l00086">IFMProofObligation::getLevel()</a>, <a class="el" href="IFMProofObligation_8cpp_source.html#l00104">IFMProofObligation::getPreCtrlCube()</a>, <a class="el" href="IFMProofObligation_8cpp_source.html#l00098">IFMProofObligation::getPreStateInCube()</a>, <a class="el" href="IFMProofObligation_8cpp_source.html#l00080">IFMProofObligation::getState()</a>, <a class="el" href="IFM13Synth_8h_source.html#l00334">goto_win_solver_</a>, <a class="el" href="IFMProofObligation_8cpp_source.html#l00092">IFMProofObligation::hasPre()</a>, <a class="el" href="classSatSolver.html#ad387fc06bacf2d48847f779c9db8461a">SatSolver::incIsSatModelOrCore()</a>, <a class="el" href="VarInfo_8h_source.html#l00069">VarInfo::INPUT</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00051">IS_GREATER</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00045">IS_LOSE</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00395">isBlocked()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00412">isLose()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00471">popMin()</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="IFM13Synth_8h_source.html#l00354">sicn_</a>, and <a class="el" href="IFM13Synth_8h_source.html#l00349">sin_</a>.</p>
+<p>References <a class="el" href="IFM13Synth_8cpp_source.html#l00351">addBlockedState()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00405">addLose()</a>, <a class="el" href="Utils_8cpp_source.html#l00041">Utils::containsInit()</a>, <a class="el" href="VarInfo_8h_source.html#l00074">VarInfo::CTRL</a>, <a class="el" href="Utils_8cpp_source.html#l00063">Utils::extract()</a>, <a class="el" href="Utils_8cpp_source.html#l00124">Utils::extractNextAsPresent()</a>, <a class="el" href="Utils_8cpp_source.html#l00086">Utils::extractPresIn()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00422">genAndBlockTrans()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00451">getGotoNextLowerSolver()</a>, <a class="el" href="IFMProofObligation_8cpp_source.html#l00086">IFMProofObligation::getLevel()</a>, <a class="el" href="IFMProofObligation_8cpp_source.html#l00104">IFMProofObligation::getPreCtrlCube()</a>, <a class="el" href="IFMProofObligation_8cpp_source.html#l00098">IFMProofObligation::getPreStateInCube()</a>, <a class="el" href="IFMProofObligation_8cpp_source.html#l00080">IFMProofObligation::getState()</a>, <a class="el" href="IFM13Synth_8h_source.html#l00338">goto_win_solver_</a>, <a class="el" href="IFMProofObligation_8cpp_source.html#l00092">IFMProofObligation::hasPre()</a>, <a class="el" href="classSatSolver.html#ad387fc06bacf2d48847f779c9db8461a">SatSolver::incIsSatModelOrCore()</a>, <a class="el" href="VarInfo_8h_source.html#l00069">VarInfo::INPUT</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00051">IS_GREATER</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00045">IS_LOSE</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00399">isBlocked()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00416">isLose()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00475">popMin()</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="IFM13Synth_8h_source.html#l00358">sicn_</a>, and <a class="el" href="IFM13Synth_8h_source.html#l00353">sin_</a>.</p>
 
-<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00141">computeWinningRegion()</a>.</p>
+<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00145">computeWinningRegion()</a>.</p>
 
 </div>
 </div>
@@ -1020,9 +1029,9 @@ property directed reachability, FMCAD 2011, pages 125-134". All these optimizati
 
 <p>Implements <a class="el" href="classBackEnd.html#a099e717dc71e9cc2d838b1ca86340590">BackEnd</a>.</p>
 
-<p>Definition at line <a class="el" href="IFM13Synth_8cpp_source.html#l00117">117</a> of file <a class="el" href="IFM13Synth_8cpp_source.html">IFM13Synth.cpp</a>.</p>
+<p>Definition at line <a class="el" href="IFM13Synth_8cpp_source.html#l00121">121</a> of file <a class="el" href="IFM13Synth_8cpp_source.html">IFM13Synth.cpp</a>.</p>
 
-<p>References <a class="el" href="IFM13Synth_8cpp_source.html#l00141">computeWinningRegion()</a>, <a class="el" href="Utils_8cpp_source.html#l00353">Utils::debugCheckWinReg()</a>, <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00095">QBFCertImplExtractor::extractCircuit()</a>, <a class="el" href="Options_8cpp_source.html#l00059">Options::instance()</a>, <a class="el" href="Logger_8h_source.html#l00302">L_INF</a>, <a class="el" href="Logger_8h_source.html#l00285">L_RES</a>, <a class="el" href="IFM13Synth_8h_source.html#l00344">neg_winning_region_</a>, and <a class="el" href="IFM13Synth_8h_source.html#l00339">winning_region_</a>.</p>
+<p>References <a class="el" href="IFM13Synth_8cpp_source.html#l00145">computeWinningRegion()</a>, <a class="el" href="Utils_8cpp_source.html#l00407">Utils::debugCheckWinReg()</a>, <a class="el" href="CNFImplExtractor_8cpp_source.html#l00085">CNFImplExtractor::extractCircuit()</a>, <a class="el" href="IFM13Synth_8h_source.html#l00365">impl_extractor_</a>, <a class="el" href="Options_8cpp_source.html#l00065">Options::instance()</a>, <a class="el" href="Logger_8h_source.html#l00302">L_INF</a>, <a class="el" href="Logger_8h_source.html#l00285">L_RES</a>, <a class="el" href="CNFImplExtractor_8cpp_source.html#l00290">CNFImplExtractor::logStatistics()</a>, <a class="el" href="IFM13Synth_8h_source.html#l00348">neg_winning_region_</a>, and <a class="el" href="IFM13Synth_8h_source.html#l00343">winning_region_</a>.</p>
 
 </div>
 </div>
@@ -1048,9 +1057,9 @@ property directed reachability, FMCAD 2011, pages 125-134". All these optimizati
 <p>The solvers storing the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a>: T &amp; R[k-1]'. </p>
 <p>You should use <a class="el" href="classIFM13Synth.html#af087a4ddf9026bb48a752c03e539d9da">getGenBlockTransSolver() </a> to access these solvers. The reason is that this method initializes the solvers if they do not yet exist. gen_block_trans_solvers_[0] is always NULL. </p>
 
-<p>Definition at line <a class="el" href="IFM13Synth_8h_source.html#l00329">329</a> of file <a class="el" href="IFM13Synth_8h_source.html">IFM13Synth.h</a>.</p>
+<p>Definition at line <a class="el" href="IFM13Synth_8h_source.html#l00333">333</a> of file <a class="el" href="IFM13Synth_8h_source.html">IFM13Synth.h</a>.</p>
 
-<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00459">getGenBlockTransSolver()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00054">IFM13Synth()</a>, and <a class="el" href="IFM13Synth_8cpp_source.html#l00102">~IFM13Synth()</a>.</p>
+<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00463">getGenBlockTransSolver()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00054">IFM13Synth()</a>, and <a class="el" href="IFM13Synth_8cpp_source.html#l00103">~IFM13Synth()</a>.</p>
 
 </div>
 </div>
@@ -1075,9 +1084,9 @@ property directed reachability, FMCAD 2011, pages 125-134". All these optimizati
 <p>The solvers storing the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a>: U[k] &amp; T &amp; R[k-1]'. </p>
 <p>These solvers are used to search for moves the antagonist can make in order to reach R[k-1]. You should use <a class="el" href="classIFM13Synth.html#ae97c0b41568cf25e163ab9b309f0dcaa">getGotoNextLowerSolver() </a> to access these solvers. The reason is that this method initializes the solvers if they do not yet exist. goto_next_lower_solvers_[0] is always NULL. </p>
 
-<p>Definition at line <a class="el" href="IFM13Synth_8h_source.html#l00320">320</a> of file <a class="el" href="IFM13Synth_8h_source.html">IFM13Synth.h</a>.</p>
+<p>Definition at line <a class="el" href="IFM13Synth_8h_source.html#l00324">324</a> of file <a class="el" href="IFM13Synth_8h_source.html">IFM13Synth.h</a>.</p>
 
-<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00447">getGotoNextLowerSolver()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00054">IFM13Synth()</a>, and <a class="el" href="IFM13Synth_8cpp_source.html#l00102">~IFM13Synth()</a>.</p>
+<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00451">getGotoNextLowerSolver()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00054">IFM13Synth()</a>, and <a class="el" href="IFM13Synth_8cpp_source.html#l00103">~IFM13Synth()</a>.</p>
 
 </div>
 </div>
@@ -1101,9 +1110,36 @@ property directed reachability, FMCAD 2011, pages 125-134". All these optimizati
 
 <p>A solver that stores the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a>: T &amp; W'. </p>
 
-<p>Definition at line <a class="el" href="IFM13Synth_8h_source.html#l00334">334</a> of file <a class="el" href="IFM13Synth_8h_source.html">IFM13Synth.h</a>.</p>
+<p>Definition at line <a class="el" href="IFM13Synth_8h_source.html#l00338">338</a> of file <a class="el" href="IFM13Synth_8h_source.html">IFM13Synth.h</a>.</p>
 
-<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00401">addLose()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00054">IFM13Synth()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00225">recBlockCube()</a>, and <a class="el" href="IFM13Synth_8cpp_source.html#l00102">~IFM13Synth()</a>.</p>
+<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00405">addLose()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00054">IFM13Synth()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00229">recBlockCube()</a>, and <a class="el" href="IFM13Synth_8cpp_source.html#l00103">~IFM13Synth()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1d87a79eab422a71fdc23f70d4279cbd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCNFImplExtractor.html">CNFImplExtractor</a>* IFM13Synth::impl_extractor_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The engine to use for circuit extraction. </p>
+<p>It will be deleted by this class (in the destructor). </p>
+
+<p>Definition at line <a class="el" href="IFM13Synth_8h_source.html#l00365">365</a> of file <a class="el" href="IFM13Synth_8h_source.html">IFM13Synth.h</a>.</p>
+
+<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00121">run()</a>, and <a class="el" href="IFM13Synth_8cpp_source.html#l00103">~IFM13Synth()</a>.</p>
 
 </div>
 </div>
@@ -1127,9 +1163,9 @@ property directed reachability, FMCAD 2011, pages 125-134". All these optimizati
 
 <p>The negated winning region as computed by <a class="el" href="classIFM13Synth.html#a51c6831265e1daf7d0120c0dd954a0c4">computeWinningRegion</a>. </p>
 
-<p>Definition at line <a class="el" href="IFM13Synth_8h_source.html#l00344">344</a> of file <a class="el" href="IFM13Synth_8h_source.html">IFM13Synth.h</a>.</p>
+<p>Definition at line <a class="el" href="IFM13Synth_8h_source.html#l00348">348</a> of file <a class="el" href="IFM13Synth_8h_source.html">IFM13Synth.h</a>.</p>
 
-<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00141">computeWinningRegion()</a>, and <a class="el" href="IFM13Synth_8cpp_source.html#l00117">run()</a>.</p>
+<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00145">computeWinningRegion()</a>, and <a class="el" href="IFM13Synth_8cpp_source.html#l00121">run()</a>.</p>
 
 </div>
 </div>
@@ -1154,9 +1190,9 @@ property directed reachability, FMCAD 2011, pages 125-134". All these optimizati
 <p>The frames R[] of the algorithm. Each frame represents a set of states in <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a>. </p>
 <p>You should use <a class="el" href="classIFM13Synth.html#a050f0c3c5089ef6c5f793878bd60abc9">getR() </a> to access the frames. The reason is that this method initializes frames if they do not yet exist. </p>
 
-<p>Definition at line <a class="el" href="IFM13Synth_8h_source.html#l00294">294</a> of file <a class="el" href="IFM13Synth_8h_source.html">IFM13Synth.h</a>.</p>
+<p>Definition at line <a class="el" href="IFM13Synth_8h_source.html#l00298">298</a> of file <a class="el" href="IFM13Synth_8h_source.html">IFM13Synth.h</a>.</p>
 
-<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00347">addBlockedState()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00488">debugPrintRs()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00431">getR()</a>, and <a class="el" href="IFM13Synth_8cpp_source.html#l00054">IFM13Synth()</a>.</p>
+<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00351">addBlockedState()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00492">debugPrintRs()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00435">getR()</a>, and <a class="el" href="IFM13Synth_8cpp_source.html#l00054">IFM13Synth()</a>.</p>
 
 </div>
 </div>
@@ -1180,9 +1216,9 @@ property directed reachability, FMCAD 2011, pages 125-134". All these optimizati
 
 <p>The vector of present- and next-state variables, and all inputs. </p>
 
-<p>Definition at line <a class="el" href="IFM13Synth_8h_source.html#l00354">354</a> of file <a class="el" href="IFM13Synth_8h_source.html">IFM13Synth.h</a>.</p>
+<p>Definition at line <a class="el" href="IFM13Synth_8h_source.html#l00358">358</a> of file <a class="el" href="IFM13Synth_8h_source.html">IFM13Synth.h</a>.</p>
 
-<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00459">getGenBlockTransSolver()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00447">getGotoNextLowerSolver()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00054">IFM13Synth()</a>, and <a class="el" href="IFM13Synth_8cpp_source.html#l00225">recBlockCube()</a>.</p>
+<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00463">getGenBlockTransSolver()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00451">getGotoNextLowerSolver()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00054">IFM13Synth()</a>, and <a class="el" href="IFM13Synth_8cpp_source.html#l00229">recBlockCube()</a>.</p>
 
 </div>
 </div>
@@ -1206,9 +1242,9 @@ property directed reachability, FMCAD 2011, pages 125-134". All these optimizati
 
 <p>The vector of present- and next-state variables, and uncontrollable inputs. </p>
 
-<p>Definition at line <a class="el" href="IFM13Synth_8h_source.html#l00349">349</a> of file <a class="el" href="IFM13Synth_8h_source.html">IFM13Synth.h</a>.</p>
+<p>Definition at line <a class="el" href="IFM13Synth_8h_source.html#l00353">353</a> of file <a class="el" href="IFM13Synth_8h_source.html">IFM13Synth.h</a>.</p>
 
-<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00054">IFM13Synth()</a>, and <a class="el" href="IFM13Synth_8cpp_source.html#l00225">recBlockCube()</a>.</p>
+<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00054">IFM13Synth()</a>, and <a class="el" href="IFM13Synth_8cpp_source.html#l00229">recBlockCube()</a>.</p>
 
 </div>
 </div>
@@ -1233,9 +1269,9 @@ property directed reachability, FMCAD 2011, pages 125-134". All these optimizati
 <p>The blocked transitions U[] of the algorithm. </p>
 <p>These sets are maintained only in debug mode. In release-mode they are only present inside the goto_next_lower_solvers_. You should use <a class="el" href="classIFM13Synth.html#a396e520b9db59b73a46a2315ee3123b4">getU() </a> to access the frames. The reason is that this method initializes elements if they do not yet exist. </p>
 
-<p>Definition at line <a class="el" href="IFM13Synth_8h_source.html#l00304">304</a> of file <a class="el" href="IFM13Synth_8h_source.html">IFM13Synth.h</a>.</p>
+<p>Definition at line <a class="el" href="IFM13Synth_8h_source.html#l00308">308</a> of file <a class="el" href="IFM13Synth_8h_source.html">IFM13Synth.h</a>.</p>
 
-<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00439">getU()</a>, and <a class="el" href="IFM13Synth_8cpp_source.html#l00054">IFM13Synth()</a>.</p>
+<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00443">getU()</a>, and <a class="el" href="IFM13Synth_8cpp_source.html#l00054">IFM13Synth()</a>.</p>
 
 </div>
 </div>
@@ -1259,9 +1295,9 @@ property directed reachability, FMCAD 2011, pages 125-134". All these optimizati
 
 <p>The current over-approximation of the winning region W (for the protagonist). </p>
 
-<p>Definition at line <a class="el" href="IFM13Synth_8h_source.html#l00309">309</a> of file <a class="el" href="IFM13Synth_8h_source.html">IFM13Synth.h</a>.</p>
+<p>Definition at line <a class="el" href="IFM13Synth_8h_source.html#l00313">313</a> of file <a class="el" href="IFM13Synth_8h_source.html">IFM13Synth.h</a>.</p>
 
-<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00401">addLose()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00498">debugCheckInvariants()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00054">IFM13Synth()</a>, and <a class="el" href="IFM13Synth_8cpp_source.html#l00412">isLose()</a>.</p>
+<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00405">addLose()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00502">debugCheckInvariants()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00054">IFM13Synth()</a>, and <a class="el" href="IFM13Synth_8cpp_source.html#l00416">isLose()</a>.</p>
 
 </div>
 </div>
@@ -1285,9 +1321,9 @@ property directed reachability, FMCAD 2011, pages 125-134". All these optimizati
 
 <p>The final winning region as computed by <a class="el" href="classIFM13Synth.html#a51c6831265e1daf7d0120c0dd954a0c4">computeWinningRegion</a>. </p>
 
-<p>Definition at line <a class="el" href="IFM13Synth_8h_source.html#l00339">339</a> of file <a class="el" href="IFM13Synth_8h_source.html">IFM13Synth.h</a>.</p>
+<p>Definition at line <a class="el" href="IFM13Synth_8h_source.html#l00343">343</a> of file <a class="el" href="IFM13Synth_8h_source.html">IFM13Synth.h</a>.</p>
 
-<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00141">computeWinningRegion()</a>, and <a class="el" href="IFM13Synth_8cpp_source.html#l00117">run()</a>.</p>
+<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00145">computeWinningRegion()</a>, and <a class="el" href="IFM13Synth_8cpp_source.html#l00121">run()</a>.</p>
 
 </div>
 </div>
@@ -1298,7 +1334,7 @@ property directed reachability, FMCAD 2011, pages 125-134". All these optimizati
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 14 2013 15:15:45 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jul 15 2014 12:30:21 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

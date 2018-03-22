@@ -35,6 +35,7 @@
 class QBFSolver;
 class SatSolver;
 class BackEnd;
+class CNFImplExtractor;
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -51,7 +52,7 @@ class BackEnd;
 /// back-end can easily access this object without passing it around.
 ///
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.0.0
+/// @version 1.1.0
 class Options
 {
 public:
@@ -63,7 +64,7 @@ public:
 
 // -------------------------------------------------------------------------------------------
 ///
-/// @brief The directory in which all third-party software is installed.
+/// @brief The environment variable with the directory containing all third-party software.
 ///
 /// The third-party software includes SAT-solvers, QBF-solvers, etc.
   static const string TP_VAR;
@@ -98,6 +99,13 @@ public:
 
 // -------------------------------------------------------------------------------------------
 ///
+/// @brief Returns the name of the input file without path and extension.
+///
+/// @return The name of the input file without path and extension.
+  const string getAigInFileNameOnly() const;
+
+// -------------------------------------------------------------------------------------------
+///
 /// @brief Returns the name (including the path) of the AIGER output file.
 ///
 /// @return The name (including the path) of the AIGER output file.
@@ -109,7 +117,6 @@ public:
 ///
 /// @return The name of the back-end selected by the user.
   const string& getBackEndName() const;
-
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -134,6 +141,34 @@ public:
 
 // -------------------------------------------------------------------------------------------
 ///
+/// @brief Returns the name of the circuit extraction method that should be used.
+///
+/// @return The name of the circuit extraction method that should be used.
+  const string& getCircuitExtractionName() const;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Returns the mode of the selected circuit extraction method.
+///
+/// Some circuit extraction methods can be used in several modes (certain optimizations or
+/// heuristics enabled or disabled, etc.). This integer number selects a mode.
+///
+/// @return The mode of the circuit extraction method selected by the user.
+  int getCircuitExtractionMode() const;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief A factory method to construct circuit extractors, depending on the parameters.
+///
+/// This method returns the circuit extractor that has been selected by the user with
+/// command-line parameters.
+///
+/// @note The returned object has to be deleted by the caller.
+/// @return The circuit extractor selected by the user with commend-line options.
+  CNFImplExtractor* getCircuitExtractor() const;
+
+// -------------------------------------------------------------------------------------------
+///
 /// @brief Returns the name (including the path) of the directory for temporary files.
 ///
 /// Some back-ends or solvers produce temporary files. Store them in the directory returned
@@ -145,6 +180,26 @@ public:
 ///
 /// @return The mode of the back-end selected by the user.
   string getTmpDirName() const;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Returns the name (and path) of the directory containing the thirdparty tools.
+///
+/// The implementation of this method assumes that there is an environment variable named
+/// DEMIURGETP, which holds the name of the directory in which the third-party tools
+/// (SAT-solvers, QBF-solvers, logic optimizers, etc.) are installed.  This method returns
+/// the name of this directory (where the environment variable is already resolved).
+///
+/// @return The name (and path) of the directory containing the thirdparty tools.
+  string getTPDirName() const;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Returns a unique name of a temporary file in the directory of temporary files.
+///
+/// @param start An optional prefix for the file name.
+/// @return A unique name of a temporary file in the directory of temporary files.
+  string getUniqueTmpFileName(string start = "") const;
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -173,6 +228,27 @@ public:
 ///        then cores will be further minimized.
 /// @return A fresh instance of the SAT-solver selected by the user.
   SatSolver* getSATSolver(bool rand_models = false, bool min_cores = true) const;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Returns an instance of the SAT-solver selected by the user for circuit extraction.
+///
+/// This method is different from getSATSolver because the user can select a different SAT
+/// solver for circuit extraction than for computing the winning region.
+///
+/// Calling this method several times will give you different instances of the same solver.
+///
+/// @note The returned object instance must be deleted by the caller.
+/// @param rand_models A flag indicating if satisfying assignments should be randomized.
+///        This is done in a post-processing step (values are flipped randomly and then we
+///        check if this still constitutes a satisfying assignment). This is expensive.
+///        If this parameter is skipped, then satisfying assignments are not randomized.
+/// @param min_cores A flag indicating if unsatisfiable cores returned by the solver should
+///        be minimized further by trying to drop one literal after the other. This makes the
+///        calls slower but produces potentially smaller cubes. If this parameter is skipped,
+///        then cores will be further minimized.
+/// @return A fresh instance of the SAT-solver selected by the user.
+  SatSolver* getSATSolverExtr(bool rand_models = false, bool min_cores = true) const;
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -222,6 +298,11 @@ protected:
 
 // -------------------------------------------------------------------------------------------
 ///
+/// @brief The name of a directory for temporary files.
+  string tmp_dir_;
+
+// -------------------------------------------------------------------------------------------
+///
 /// @brief The name of the selected back-end.
   string back_end_;
 
@@ -235,6 +316,19 @@ protected:
 
 // -------------------------------------------------------------------------------------------
 ///
+/// @brief The name of the circuit extraction method that should be used.
+  string circuit_extraction_name_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The mode of the selected circuit extraction method.
+///
+/// Some circuit extraction methods can be used in several modes (certain optimizations or
+/// heuristics enabled or disabled, etc.). This integer number selects a mode.
+  int circuit_extraction_mode_;
+
+// -------------------------------------------------------------------------------------------
+///
 /// @brief The name of the selected QBF-solver.
   string qbf_solver_;
 
@@ -242,6 +336,14 @@ protected:
 ///
 /// @brief The name of the selected SAT-solver.
   string sat_solver_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The name of the SAT-solver to be used for circuit extraction.
+///
+/// This is different from sat_solver_ because the user may select a different solver for
+/// circuit extraction than for computing the winning region.
+  string circuit_sat_solver_;
 
 // -------------------------------------------------------------------------------------------
 ///

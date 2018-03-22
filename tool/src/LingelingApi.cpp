@@ -332,81 +332,81 @@ bool LingelingApi::incIsSatModelOrCore(const vector<int> &core_assumptions,
                                        vector<int> &model_or_core)
 {
 
-  incPush();
-  incAddCube(more_assumptions);
-  bool sat = incIsSatModelOrCore(core_assumptions, vars_of_interest, model_or_core);
-  incPop();
-  return sat;
+// was faster with the an old lingeling version, but seems slower now (?):
+//  incPush();
+//  incAddCube(more_assumptions);
+//  bool sat = incIsSatModelOrCore(core_assumptions, vars_of_interest, model_or_core);
+//  incPop();
+//  return sat;
 
-// Appears to be slower:
-//  MASSERT(!incr_stack_.empty() && incr_stack_.back() != NULL, "No open session.");
-//  LGL *lgl = incr_stack_.back();
-//  for(size_t ass_cnt = 0; ass_cnt < core_assumptions.size(); ++ass_cnt)
-//    lglassume(lgl, core_assumptions[ass_cnt]);
-//  for(size_t ass_cnt = 0; ass_cnt < more_assumptions.size(); ++ass_cnt)
-//    lglassume(lgl, more_assumptions[ass_cnt]);
-//  int res = lglsat(lgl);
-//  if(res == LGL_SATISFIABLE)
-//  {
-//    model_or_core.clear();
-//    model_or_core.reserve(vars_of_interest.size());
-//    for(size_t var_cnt = 0; var_cnt < vars_of_interest.size(); ++var_cnt)
-//    {
-//      if(lglderef(lgl, vars_of_interest[var_cnt]) > 0)
-//        model_or_core.push_back(vars_of_interest[var_cnt]);
-//      else
-//        model_or_core.push_back(-vars_of_interest[var_cnt]);
-//    }
-//    if(rand_models_)
-//    {
-//      vector<int> all_ass;
-//      all_ass.reserve(core_assumptions.size() + more_assumptions.size());
-//      all_ass.insert(all_ass.end(), core_assumptions.begin(), core_assumptions.end());
-//      all_ass.insert(all_ass.end(), more_assumptions.begin(), more_assumptions.end());
-//      randModel(lgl, all_ass, model_or_core);
-//    }
-//    return true;
-//  }
-//  else if(res == LGL_UNSATISFIABLE)
-//  {
-//    model_or_core.clear();
-//    model_or_core.reserve(core_assumptions.size());
-//    for(size_t ass_cnt = 0; ass_cnt < core_assumptions.size(); ++ass_cnt)
-//    {
-//      if(lglfailed(lgl, core_assumptions[ass_cnt]))
-//        model_or_core.push_back(core_assumptions[ass_cnt]);
-//    }
-//    if(min_cores_)
-//    {
-//      vector<int> orig_core(model_or_core);
-//      for(size_t lit_cnt = 0; lit_cnt < orig_core.size(); ++lit_cnt)
-//      {
-//        vector<int> tmp(model_or_core);
-//        bool found = Utils::remove(tmp, orig_core[lit_cnt]);
-//        if(found)
-//        {
-//          for(size_t ass_cnt = 0; ass_cnt < more_assumptions.size(); ++ass_cnt)
-//            lglassume(lgl, more_assumptions[ass_cnt]);
-//          for(size_t ass_cnt = 0; ass_cnt < tmp.size(); ++ass_cnt)
-//            lglassume(lgl, tmp[ass_cnt]);
-//          if(lglsat(lgl) == LGL_UNSATISFIABLE)
-//          {
-//            model_or_core = tmp;
-//            // using the core again seems to be slower:
-//            // model_or_core.clear();
-//            // for(size_t ass_cnt = 0; ass_cnt < tmp.size(); ++ass_cnt)
-//            // {
-//            //   if(lglfailed(lgl, tmp[ass_cnt]))
-//            //     model_or_core.push_back(tmp[ass_cnt]);
-//            // }
-//          }
-//        }
-//      }
-//    }
-//    return false;
-//  }
-//  MASSERT(false, "Strange result from lingeling.");
-//  return false;
+  MASSERT(!incr_stack_.empty() && incr_stack_.back() != NULL, "No open session.");
+  LGL *lgl = incr_stack_.back();
+  for(size_t ass_cnt = 0; ass_cnt < core_assumptions.size(); ++ass_cnt)
+    lglassume(lgl, core_assumptions[ass_cnt]);
+  for(size_t ass_cnt = 0; ass_cnt < more_assumptions.size(); ++ass_cnt)
+    lglassume(lgl, more_assumptions[ass_cnt]);
+  int res = lglsat(lgl);
+  if(res == LGL_SATISFIABLE)
+  {
+    model_or_core.clear();
+    model_or_core.reserve(vars_of_interest.size());
+    for(size_t var_cnt = 0; var_cnt < vars_of_interest.size(); ++var_cnt)
+    {
+      if(lglderef(lgl, vars_of_interest[var_cnt]) > 0)
+        model_or_core.push_back(vars_of_interest[var_cnt]);
+      else
+        model_or_core.push_back(-vars_of_interest[var_cnt]);
+    }
+    if(rand_models_)
+    {
+      vector<int> all_ass;
+      all_ass.reserve(core_assumptions.size() + more_assumptions.size());
+      all_ass.insert(all_ass.end(), core_assumptions.begin(), core_assumptions.end());
+      all_ass.insert(all_ass.end(), more_assumptions.begin(), more_assumptions.end());
+      randModel(lgl, all_ass, model_or_core);
+    }
+    return true;
+  }
+  else if(res == LGL_UNSATISFIABLE)
+  {
+    model_or_core.clear();
+    model_or_core.reserve(core_assumptions.size());
+    for(size_t ass_cnt = 0; ass_cnt < core_assumptions.size(); ++ass_cnt)
+    {
+      if(lglfailed(lgl, core_assumptions[ass_cnt]))
+        model_or_core.push_back(core_assumptions[ass_cnt]);
+    }
+    if(min_cores_)
+    {
+      vector<int> orig_core(model_or_core);
+      for(size_t lit_cnt = 0; lit_cnt < orig_core.size(); ++lit_cnt)
+      {
+        vector<int> tmp(model_or_core);
+        bool found = Utils::remove(tmp, orig_core[lit_cnt]);
+        if(found)
+        {
+          for(size_t ass_cnt = 0; ass_cnt < more_assumptions.size(); ++ass_cnt)
+            lglassume(lgl, more_assumptions[ass_cnt]);
+          for(size_t ass_cnt = 0; ass_cnt < tmp.size(); ++ass_cnt)
+            lglassume(lgl, tmp[ass_cnt]);
+          if(lglsat(lgl) == LGL_UNSATISFIABLE)
+          {
+            model_or_core = tmp;
+            // using the core again seems to be slower:
+            // model_or_core.clear();
+            // for(size_t ass_cnt = 0; ass_cnt < tmp.size(); ++ass_cnt)
+            // {
+            //   if(lglfailed(lgl, tmp[ass_cnt]))
+            //     model_or_core.push_back(tmp[ass_cnt]);
+            // }
+          }
+        }
+      }
+    }
+    return false;
+  }
+  MASSERT(false, "Strange result from lingeling.");
+  return false;
 }
 
 // -------------------------------------------------------------------------------------------

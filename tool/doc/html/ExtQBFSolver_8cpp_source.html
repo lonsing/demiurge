@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">demiurge
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A synthesis tool for safety specifications.</div>
   </td>
@@ -129,8 +129,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  ostringstream unique_string;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  unique_string &lt;&lt; <span class="keyword">this</span>;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordtype">string</span> temp_dir = <a class="code" href="classOptions.html#a3ee81ffdab9838ceb8f6f43fac679869" title="Returns the one and only instance of this class.">Options::instance</a>().<a class="code" href="classOptions.html#a98edf8c11ffb864a98905ff47ed99652" title="Returns the name (including the path) of the directory for temporary files.">getTmpDirName</a>();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="classExtQBFSolver.html#a04d2ff483c22a11344e46d66ae7e76b1" title="The name of the QDIMACS file containing the QBF to be solved.">in_file_name_</a> = temp_dir + <span class="stringliteral">&quot;query_&quot;</span> + unique_string.str() + <span class="stringliteral">&quot;.qdimacs&quot;</span>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="classExtQBFSolver.html#a0efb35aa9b807dec521ad3406eaf664d" title="The name of the file that is produced by the QBF-solver (containing the model).">out_file_name_</a> = temp_dir + <span class="stringliteral">&quot;answer_&quot;</span> + unique_string.str() + <span class="stringliteral">&quot;.out&quot;</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="classExtQBFSolver.html#a04d2ff483c22a11344e46d66ae7e76b1" title="The name of the QDIMACS file containing the QBF to be solved.">in_file_name_</a> = <a class="code" href="classOptions.html#a3ee81ffdab9838ceb8f6f43fac679869" title="Returns the one and only instance of this class.">Options::instance</a>().<a class="code" href="classOptions.html#a6dbe6ad8669ffb3ae3e9ab5201646210" title="Returns a unique name of a temporary file in the directory of temporary files.">getUniqueTmpFileName</a>(<span class="stringliteral">&quot;qbf_query&quot;</span>) + <span class="stringliteral">&quot;.qdimacs&quot;</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="classExtQBFSolver.html#a0efb35aa9b807dec521ad3406eaf664d" title="The name of the file that is produced by the QBF-solver (containing the model).">out_file_name_</a> = <a class="code" href="classOptions.html#a3ee81ffdab9838ceb8f6f43fac679869" title="Returns the one and only instance of this class.">Options::instance</a>().<a class="code" href="classOptions.html#a6dbe6ad8669ffb3ae3e9ab5201646210" title="Returns a unique name of a temporary file in the directory of temporary files.">getUniqueTmpFileName</a>(<span class="stringliteral">&quot;qbf_answer&quot;</span>) + <span class="stringliteral">&quot;.out&quot;</span>;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
@@ -309,7 +309,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 14 2013 15:15:43 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jul 15 2014 12:30:19 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

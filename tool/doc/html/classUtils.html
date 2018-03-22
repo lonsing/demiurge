@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">demiurge
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A synthesis tool for safety specifications.</div>
   </td>
@@ -109,6 +109,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a9c060a97bf0e9e5e08bf33b512633ac3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts present-state literals and input literals from a cube or clause.  <a href="#a9c060a97bf0e9e5e08bf33b512633ac3"></a><br/></td></tr>
 <tr class="memitem:a9251f04947864aaaac7e459987913429"><td class="memItemLeft" align="right" valign="top">static vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#a9251f04947864aaaac7e459987913429">extractNextAsPresent</a> (const vector&lt; int &gt; &amp;cube_or_clause)</td></tr>
 <tr class="memdesc:a9251f04947864aaaac7e459987913429"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts next-state literals and returns the present-state copy.  <a href="#a9251f04947864aaaac7e459987913429"></a><br/></td></tr>
+<tr class="memitem:a21f2b014ac53ca027864c57e24a60195"><td class="memItemLeft" align="right" valign="top">static vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#a21f2b014ac53ca027864c57e24a60195">extract</a> (const vector&lt; int &gt; &amp;cube_or_clause, const vector&lt; int &gt; &amp;vars)</td></tr>
+<tr class="memdesc:a21f2b014ac53ca027864c57e24a60195"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts certain literals from a cube or clause.  <a href="#a21f2b014ac53ca027864c57e24a60195"></a><br/></td></tr>
 <tr class="memitem:a71efa1aa570b356a328e95008fb65ad8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#a71efa1aa570b356a328e95008fb65ad8">randomize</a> (vector&lt; int &gt; &amp;vec)</td></tr>
 <tr class="memdesc:a71efa1aa570b356a328e95008fb65ad8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Randomizes the order (not the value) of a given vector of integers.  <a href="#a71efa1aa570b356a328e95008fb65ad8"></a><br/></td></tr>
 <tr class="memitem:a2843ae3d849c66ebd72baea26fbd7580"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#a2843ae3d849c66ebd72baea26fbd7580">sort</a> (vector&lt; int &gt; &amp;vec)</td></tr>
@@ -129,6 +131,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:ab5dca8125b6addaa1f0331664ab6142e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if one vector forms a subset of another one.  <a href="#ab5dca8125b6addaa1f0331664ab6142e"></a><br/></td></tr>
 <tr class="memitem:ac4e713aa386834b587e2695855fbc27a"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#ac4e713aa386834b587e2695855fbc27a">compressStateCNF</a> (<a class="el" href="classCNF.html">CNF</a> &amp;cnf, bool hardcore=false)</td></tr>
 <tr class="memdesc:ac4e713aa386834b587e2695855fbc27a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compresses a state-CNF by removing clauses that are implied by others.  <a href="#ac4e713aa386834b587e2695855fbc27a"></a><br/></td></tr>
+<tr class="memitem:ad6bc8cf6342b8f182597aa53cf72d9d3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#ad6bc8cf6342b8f182597aa53cf72d9d3">negateStateCNF</a> (<a class="el" href="classCNF.html">CNF</a> &amp;cnf)</td></tr>
+<tr class="memdesc:ad6bc8cf6342b8f182597aa53cf72d9d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Negates a <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> over the state-variables without introducing temporary variables.  <a href="#ad6bc8cf6342b8f182597aa53cf72d9d3"></a><br/></td></tr>
 <tr class="memitem:adeaccd2a53073b17e3409eab8e98db0c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#adeaccd2a53073b17e3409eab8e98db0c">debugPrint</a> (const vector&lt; int &gt; &amp;vec, string prefix=&quot;&quot;)</td></tr>
 <tr class="memdesc:adeaccd2a53073b17e3409eab8e98db0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a vector of literals (mainly for debugging purposes).  <a href="#adeaccd2a53073b17e3409eab8e98db0c"></a><br/></td></tr>
 <tr class="memitem:acc29602987b73022546a6d752a7e093f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#acc29602987b73022546a6d752a7e093f">debugCheckWinReg</a> (const <a class="el" href="classCNF.html">CNF</a> &amp;winning_region)</td></tr>
@@ -152,7 +156,7 @@ Private Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Contains utility functions that can be usful in various back-ends. </p>
 <dl class="section author"><dt>Author</dt><dd>Robert Koenighofer (<a href="#" onclick="location.href='mai'+'lto:'+'rob'+'er'+'t.k'+'oe'+'nig'+'ho'+'fer'+'@i'+'aik'+'.t'+'ugr'+'az'+'.at'; return false;">rober<span style="display: none;">.nosp@m.</span>t.ko<span style="display: none;">.nosp@m.</span>enigh<span style="display: none;">.nosp@m.</span>ofer<span style="display: none;">.nosp@m.</span>@iaik<span style="display: none;">.nosp@m.</span>.tug<span style="display: none;">.nosp@m.</span>raz.a<span style="display: none;">.nosp@m.</span>t</a>) </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>1.0.0 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.1.0 </dd></dl>
 
 <p>Definition at line <a class="el" href="Utils_8h_source.html#l00045">45</a> of file <a class="el" href="Utils_8h_source.html">Utils.h</a>.</p>
 </div><h2>Constructor &amp; Destructor Documentation</h2>
@@ -285,11 +289,11 @@ Private Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> was modified, false otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="Utils_8cpp_source.html#l00272">272</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Utils_8cpp_source.html#l00287">287</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8cpp_source.html#l00070">CNF::addClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00090">CNF::addNegCubeAsClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00064">CNF::clear()</a>, <a class="el" href="CNF_8cpp_source.html#l00273">CNF::getClauses()</a>, <a class="el" href="CNF_8cpp_source.html#l00245">CNF::getNrOfClauses()</a>, <a class="el" href="Options_8cpp_source.html#l00326">Options::getSATSolver()</a>, <a class="el" href="classSatSolver.html#a9f91c104238b6e091513e0aa46970840">SatSolver::incAddClause()</a>, <a class="el" href="classSatSolver.html#ab2581b192cb2c39a81a416a9f7416c9e">SatSolver::incAddCNF()</a>, <a class="el" href="classSatSolver.html#ab1aab4b96a36b2003450067a3799ae23">SatSolver::incIsSat()</a>, <a class="el" href="classSatSolver.html#ad387fc06bacf2d48847f779c9db8461a">SatSolver::incIsSatModelOrCore()</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="Options_8cpp_source.html#l00059">Options::instance()</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="Utils_8cpp_source.html#l00187">negateLiterals()</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="CNF_8cpp_source.html#l00160">CNF::removeSmallest()</a>, and <a class="el" href="classSatSolver.html#a74603f84c3f2383a5fc44d5a8093cbea">SatSolver::startIncrementalSession()</a>.</p>
+<p>References <a class="el" href="CNF_8cpp_source.html#l00117">CNF::addClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00137">CNF::addNegCubeAsClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00111">CNF::clear()</a>, <a class="el" href="CNF_8cpp_source.html#l00346">CNF::getClauses()</a>, <a class="el" href="CNF_8cpp_source.html#l00292">CNF::getNrOfClauses()</a>, <a class="el" href="Options_8cpp_source.html#l00470">Options::getSATSolver()</a>, <a class="el" href="classSatSolver.html#a9f91c104238b6e091513e0aa46970840">SatSolver::incAddClause()</a>, <a class="el" href="classSatSolver.html#ab2581b192cb2c39a81a416a9f7416c9e">SatSolver::incAddCNF()</a>, <a class="el" href="classSatSolver.html#ab1aab4b96a36b2003450067a3799ae23">SatSolver::incIsSat()</a>, <a class="el" href="classSatSolver.html#ad387fc06bacf2d48847f779c9db8461a">SatSolver::incIsSatModelOrCore()</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="Options_8cpp_source.html#l00065">Options::instance()</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="Utils_8cpp_source.html#l00202">negateLiterals()</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="CNF_8cpp_source.html#l00207">CNF::removeSmallest()</a>, and <a class="el" href="classSatSolver.html#a74603f84c3f2383a5fc44d5a8093cbea">SatSolver::startIncrementalSession()</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00344">LearnSynthQBF::computeCounterexampleSAT()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00192">LearnSynthQBFInc::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00266">LearnSynthQBF::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00267">LearnSynthQBFInd::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00112">LearnSynthQBFInc::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00134">LearnSynthQBF::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00195">LearnSynthQBFInd::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00178">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00326">LearnSynthSAT::computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00510">LearnSynthSAT::computeWinningRegionRGRC()</a>, <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00095">QBFCertImplExtractor::extractCircuit()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00379">ParallelLearner::triggerExplorerRestart()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00345">LearnSynthQBF::computeCounterexampleSAT()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00408">LearnSynthQBFInc::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00267">LearnSynthQBF::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00269">LearnSynthQBFInd::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00565">LearnSynthQBFInc::computeWinningRegionAllPool()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00122">LearnSynthQBFInc::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00135">LearnSynthQBF::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00197">LearnSynthQBFInd::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00273">LearnSynthQBFInc::computeWinningRegionOnePool()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00180">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00328">LearnSynthSAT::computeWinningRegionPlainDep()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00508">LearnSynthSAT::computeWinningRegionPlainDep2()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00759">LearnSynthSAT::computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00943">LearnSynthSAT::computeWinningRegionRGRC()</a>, <a class="el" href="CNFImplExtractor_8cpp_source.html#l00085">CNFImplExtractor::extractCircuit()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00381">ParallelLearner::triggerExplorerRestart()</a>.</p>
 
 </div>
 </div>
@@ -335,9 +339,9 @@ Private Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if the vector contains the element, false otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="Utils_8cpp_source.html#l00176">176</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Utils_8cpp_source.html#l00191">191</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l01668">IFM13Explorer::addBlockedState()</a>.</p>
+<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l01670">IFM13Explorer::addBlockedState()</a>, <a class="el" href="Utils_8cpp_source.html#l00149">extract()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00527">LearningImplExtractor::runLearningJiangSATTmp()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00715">LearningImplExtractor::runLearningJiangSATTmpCtrl()</a>, and <a class="el" href="LearningImplExtractor_8cpp_source.html#l00947">LearningImplExtractor::runLearningJiangSATTmpCtrlInc2()</a>.</p>
 
 </div>
 </div>
@@ -375,7 +379,7 @@ Private Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="Utils_8cpp_source.html#l00041">41</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00321">LearnSynthQBFInc::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00449">LearnSynthQBF::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00362">LearnSynthQBFInd::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00289">LearnSynthQBFInc::computeBlockingClause()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00431">LearnSynthQBF::computeBlockingClause()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00344">LearnSynthQBFInd::computeBlockingClause()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00178">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00326">LearnSynthSAT::computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00510">LearnSynthSAT::computeWinningRegionRGRC()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00578">ClauseExplorerSAT::exploreClauses()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00919">CounterGenSAT::generalizeCounterexamples()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01293">ClauseMinimizerQBF::minimizeClauses()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00225">IFM13Synth::recBlockCube()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l01529">IFM13Explorer::recBlockCube()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00765">LearnSynthQBFInc::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00450">LearnSynthQBF::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00364">LearnSynthQBFInd::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00733">LearnSynthQBFInc::computeBlockingClause()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00432">LearnSynthQBF::computeBlockingClause()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00346">LearnSynthQBFInd::computeBlockingClause()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00180">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00328">LearnSynthSAT::computeWinningRegionPlainDep()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00759">LearnSynthSAT::computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00943">LearnSynthSAT::computeWinningRegionRGRC()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00580">ClauseExplorerSAT::exploreClauses()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00921">CounterGenSAT::generalizeCounterexamples()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01295">ClauseMinimizerQBF::minimizeClauses()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00229">IFM13Synth::recBlockCube()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l01531">IFM13Explorer::recBlockCube()</a>.</p>
 
 </div>
 </div>
@@ -455,11 +459,11 @@ forall x,i: exists c,x': W(x) =&gt; (T(x,i,c,x') &amp; W(x')): from every state 
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Utils_8cpp_source.html#l00353">353</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Utils_8cpp_source.html#l00407">407</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8cpp_source.html#l00217">CNF::negate()</a>.</p>
+<p>References <a class="el" href="CNF_8cpp_source.html#l00264">CNF::negate()</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00176">LearnSynthQBFInd::computeWinningRegion()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00069">LearnSynthQBFInc::run()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00117">IFM13Synth::run()</a>, <a class="el" href="TemplateSynth_8cpp_source.html#l00057">TemplateSynth::run()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00245">ParallelLearner::run()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00089">LearnSynthQBF::run()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00178">LearnSynthQBFInd::computeWinningRegion()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00073">LearnSynthQBFInc::run()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00121">IFM13Synth::run()</a>, <a class="el" href="TemplateSynth_8cpp_source.html#l00061">TemplateSynth::run()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00249">ParallelLearner::run()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00092">LearnSynthQBF::run()</a>.</p>
 
 </div>
 </div>
@@ -515,9 +519,9 @@ forall x,i: exists c,x': W(x) =&gt; (T(x,i,c,x') &amp; W(x')): from every state 
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Utils_8cpp_source.html#l00363">363</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Utils_8cpp_source.html#l00417">417</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
 
-<p>References <a class="el" href="QBFSolver_8h_source.html#l00067">QBFSolver::A</a>, <a class="el" href="CNF_8cpp_source.html#l00183">CNF::addCNF()</a>, <a class="el" href="CNF_8cpp_source.html#l00064">CNF::clear()</a>, <a class="el" href="VarInfo_8h_source.html#l00074">VarInfo::CTRL</a>, <a class="el" href="QBFSolver_8h_source.html#l00062">QBFSolver::E</a>, <a class="el" href="Options_8cpp_source.html#l00311">Options::getQBFSolver()</a>, <a class="el" href="Options_8cpp_source.html#l00326">Options::getSATSolver()</a>, <a class="el" href="VarInfo_8h_source.html#l00069">VarInfo::INPUT</a>, <a class="el" href="Options_8cpp_source.html#l00059">Options::instance()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="classSatSolver.html#a82f60f60db464fbe5c66a20ad673a573">SatSolver::isSat()</a>, <a class="el" href="Logger_8h_source.html#l00319">L_DBG</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="VarInfo_8h_source.html#l00064">VarInfo::NEXT_STATE</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="CNF_8cpp_source.html#l00189">CNF::swapPresentToNext()</a>, and <a class="el" href="VarInfo_8h_source.html#l00081">VarInfo::TMP</a>.</p>
+<p>References <a class="el" href="QBFSolver_8h_source.html#l00067">QBFSolver::A</a>, <a class="el" href="CNF_8cpp_source.html#l00230">CNF::addCNF()</a>, <a class="el" href="CNF_8cpp_source.html#l00111">CNF::clear()</a>, <a class="el" href="VarInfo_8h_source.html#l00074">VarInfo::CTRL</a>, <a class="el" href="QBFSolver_8h_source.html#l00062">QBFSolver::E</a>, <a class="el" href="Utils_8cpp_source.html#l00063">extract()</a>, <a class="el" href="Options_8cpp_source.html#l00455">Options::getQBFSolver()</a>, <a class="el" href="Options_8cpp_source.html#l00470">Options::getSATSolver()</a>, <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, <a class="el" href="classSatSolver.html#ab2581b192cb2c39a81a416a9f7416c9e">SatSolver::incAddCNF()</a>, <a class="el" href="classSatSolver.html#a6be2c564289a59057c4c6728a3aa9c2b">SatSolver::incAddNegCubeAsClause()</a>, <a class="el" href="classSatSolver.html#ad387fc06bacf2d48847f779c9db8461a">SatSolver::incIsSatModelOrCore()</a>, <a class="el" href="VarInfo_8h_source.html#l00069">VarInfo::INPUT</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="Options_8cpp_source.html#l00065">Options::instance()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="classQBFSolver.html#a53ef157391b176dfbd2a77a1e31befc3">QBFSolver::isSat()</a>, <a class="el" href="classSatSolver.html#a82f60f60db464fbe5c66a20ad673a573">SatSolver::isSat()</a>, <a class="el" href="Logger_8h_source.html#l00319">L_DBG</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="VarInfo_8h_source.html#l00064">VarInfo::NEXT_STATE</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="classSatSolver.html#a74603f84c3f2383a5fc44d5a8093cbea">SatSolver::startIncrementalSession()</a>, <a class="el" href="CNF_8cpp_source.html#l00236">CNF::swapPresentToNext()</a>, and <a class="el" href="VarInfo_8h_source.html#l00081">VarInfo::TMP</a>.</p>
 
 </div>
 </div>
@@ -562,11 +566,11 @@ forall x,i: exists c,x': W(x) =&gt; (T(x,i,c,x') &amp; W(x')): from every state 
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Utils_8cpp_source.html#l00338">338</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Utils_8cpp_source.html#l00392">392</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
 
 <p>References <a class="el" href="Logger_8h_source.html#l00319">L_DBG</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00192">LearnSynthQBFInc::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00266">LearnSynthQBF::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00267">LearnSynthQBFInd::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00112">LearnSynthQBFInc::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00134">LearnSynthQBF::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00195">LearnSynthQBFInd::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00203">LearnSynthQBF::computeWinningRegionOneSAT()</a>, <a class="el" href="DepQBFApi_8cpp_source.html#l00492">DepQBFApi::debugCheckBloqqerModel()</a>, and <a class="el" href="DepQBFApiInc_8cpp_source.html#l00744">DepQBFApiInc::debugCheckBloqqerModel()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00408">LearnSynthQBFInc::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00267">LearnSynthQBF::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00269">LearnSynthQBFInd::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00565">LearnSynthQBFInc::computeWinningRegionAllPool()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00488">LearnSynthQBFInc::computeWinningRegionAllPush()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00122">LearnSynthQBFInc::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00135">LearnSynthQBF::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00197">LearnSynthQBFInd::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00273">LearnSynthQBFInc::computeWinningRegionOnePool()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00199">LearnSynthQBFInc::computeWinningRegionOnePush()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00204">LearnSynthQBF::computeWinningRegionOneSAT()</a>, and <a class="el" href="DepQBFApi_8cpp_source.html#l00931">DepQBFApi::debugCheckBloqqerModel()</a>.</p>
 
 </div>
 </div>
@@ -593,7 +597,7 @@ forall x,i: exists c,x': W(x) =&gt; (T(x,i,c,x') &amp; W(x')): from every state 
 
 <p>Prints the current memory usage as debug message. </p>
 
-<p>Definition at line <a class="el" href="Utils_8cpp_source.html#l00406">406</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Utils_8cpp_source.html#l00517">517</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
 
 <p>References <a class="el" href="Logger_8h_source.html#l00319">L_DBG</a>.</p>
 
@@ -646,7 +650,55 @@ forall x,i: exists c,x': W(x) =&gt; (T(x,i,c,x') &amp; W(x')): from every state 
 
 <p>References <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, and <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00344">LearnSynthQBF::computeCounterexampleSAT()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00178">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00326">LearnSynthSAT::computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00510">LearnSynthSAT::computeWinningRegionRGRC()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00578">ClauseExplorerSAT::exploreClauses()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00919">CounterGenSAT::generalizeCounterexamples()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00225">IFM13Synth::recBlockCube()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l01529">IFM13Explorer::recBlockCube()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00345">LearnSynthQBF::computeCounterexampleSAT()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00180">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00328">LearnSynthSAT::computeWinningRegionPlainDep()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00508">LearnSynthSAT::computeWinningRegionPlainDep2()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00759">LearnSynthSAT::computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00943">LearnSynthSAT::computeWinningRegionRGRC()</a>, <a class="el" href="Utils_8cpp_source.html#l00417">debugCheckWinReg()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00580">ClauseExplorerSAT::exploreClauses()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00921">CounterGenSAT::generalizeCounterexamples()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00229">IFM13Synth::recBlockCube()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l01531">IFM13Explorer::recBlockCube()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a21f2b014ac53ca027864c57e24a60195"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; int &gt; Utils::extract </td>
+          <td>(</td>
+          <td class="paramtype">const vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cube_or_clause</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vars</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Extracts certain literals from a cube or clause. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cube_or_clause</td><td>The cube or clause to analyze. </td></tr>
+    <tr><td class="paramname">vars</td><td>The variables to extract from cube_or_clause. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>All literals of cube_or_clause where the corresponding variable occurs in vars. </dd></dl>
+
+<p>Definition at line <a class="el" href="Utils_8cpp_source.html#l00149">149</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
+
+<p>References <a class="el" href="Utils_8cpp_source.html#l00191">contains()</a>.</p>
 
 </div>
 </div>
@@ -686,7 +738,7 @@ forall x,i: exists c,x': W(x) =&gt; (T(x,i,c,x') &amp; W(x')): from every state 
 
 <p>References <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="VarInfo_8h_source.html#l00064">VarInfo::NEXT_STATE</a>, and <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>.</p>
 
-<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00225">IFM13Synth::recBlockCube()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l01529">IFM13Explorer::recBlockCube()</a>.</p>
+<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00229">IFM13Synth::recBlockCube()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l01531">IFM13Explorer::recBlockCube()</a>.</p>
 
 </div>
 </div>
@@ -726,7 +778,7 @@ forall x,i: exists c,x': W(x) =&gt; (T(x,i,c,x') &amp; W(x')): from every state 
 
 <p>References <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, <a class="el" href="VarInfo_8h_source.html#l00069">VarInfo::INPUT</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, and <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>.</p>
 
-<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00225">IFM13Synth::recBlockCube()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l01529">IFM13Explorer::recBlockCube()</a>.</p>
+<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00229">IFM13Synth::recBlockCube()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l01531">IFM13Explorer::recBlockCube()</a>.</p>
 
 </div>
 </div>
@@ -772,9 +824,9 @@ forall x,i: exists c,x': W(x) =&gt; (T(x,i,c,x') &amp; W(x')): from every state 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if the intersection of the vector and the set is empty, false otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="Utils_8cpp_source.html#l00215">215</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Utils_8cpp_source.html#l00230">230</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00321">LearnSynthQBFInc::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00449">LearnSynthQBF::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00362">LearnSynthQBFInd::computeAllBlockingClauses()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00919">CounterGenSAT::generalizeCounterexamples()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00765">LearnSynthQBFInc::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00450">LearnSynthQBF::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00364">LearnSynthQBFInd::computeAllBlockingClauses()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00921">CounterGenSAT::generalizeCounterexamples()</a>.</p>
 
 </div>
 </div>
@@ -820,7 +872,7 @@ forall x,i: exists c,x': W(x) =&gt; (T(x,i,c,x') &amp; W(x')): from every state 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if the intersection is empty, false otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="Utils_8cpp_source.html#l00232">232</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Utils_8cpp_source.html#l00247">247</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
 
 </div>
 </div>
@@ -866,9 +918,9 @@ forall x,i: exists c,x': W(x) =&gt; (T(x,i,c,x') &amp; W(x')): from every state 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if 'subset' is really a subset of 'superset', false otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="Utils_8cpp_source.html#l00249">249</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Utils_8cpp_source.html#l00264">264</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="CNF_8cpp_source.html#l00099">CNF::addClauseAndSimplify()</a>, and <a class="el" href="CNF_8cpp_source.html#l00279">CNF::simplify()</a>.</p>
+<p>Referenced by <a class="el" href="CNF_8cpp_source.html#l00146">CNF::addClauseAndSimplify()</a>, and <a class="el" href="CNF_8cpp_source.html#l00352">CNF::simplify()</a>.</p>
 
 </div>
 </div>
@@ -902,9 +954,46 @@ forall x,i: exists c,x': W(x) =&gt; (T(x,i,c,x') &amp; W(x')): from every state 
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Utils_8cpp_source.html#l00187">187</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Utils_8cpp_source.html#l00202">202</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l01121">CounterGenSAT::bored()</a>, <a class="el" href="Utils_8cpp_source.html#l00272">compressStateCNF()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00321">LearnSynthQBFInc::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00449">LearnSynthQBF::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00362">LearnSynthQBFInd::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00289">LearnSynthQBFInc::computeBlockingClause()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00431">LearnSynthQBF::computeBlockingClause()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00344">LearnSynthQBFInd::computeBlockingClause()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00919">CounterGenSAT::generalizeCounterexamples()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01293">ClauseMinimizerQBF::minimizeClauses()</a>, and <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00424">LearnSynthQBFInc::reduceExistingClauses()</a>.</p>
+<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l01123">CounterGenSAT::bored()</a>, <a class="el" href="Utils_8cpp_source.html#l00287">compressStateCNF()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00765">LearnSynthQBFInc::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00450">LearnSynthQBF::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00364">LearnSynthQBFInd::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00733">LearnSynthQBFInc::computeBlockingClause()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00432">LearnSynthQBF::computeBlockingClause()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00346">LearnSynthQBFInd::computeBlockingClause()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00921">CounterGenSAT::generalizeCounterexamples()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01295">ClauseMinimizerQBF::minimizeClauses()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00865">LearnSynthQBFInc::reduceExistingClauses()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00359">LearningImplExtractor::runLearningJiangSAT()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l01172">LearningImplExtractor::runLearningJiangSATInc1()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l01379">LearningImplExtractor::runLearningJiangSATInc2()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00527">LearningImplExtractor::runLearningJiangSATTmp()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00715">LearningImplExtractor::runLearningJiangSATTmpCtrl()</a>, and <a class="el" href="LearningImplExtractor_8cpp_source.html#l00947">LearningImplExtractor::runLearningJiangSATTmpCtrlInc2()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad6bc8cf6342b8f182597aa53cf72d9d3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Utils::negateStateCNF </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classCNF.html">CNF</a> &amp;&#160;</td>
+          <td class="paramname"><em>cnf</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Negates a <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> over the state-variables without introducing temporary variables. </p>
+<p>The negation of the passed <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> is computed via computational learning. It uses a SAT solver in an incremental fashion. This is more expensive than simply calling cnf.negate(), but it does not introduce temporary variables, and hence may lead to a smaller <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cnf</td><td>The <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> formula to negate. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="Utils_8cpp_source.html#l00353">353</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
+
+<p>References <a class="el" href="CNF_8cpp_source.html#l00137">CNF::addNegCubeAsClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00111">CNF::clear()</a>, <a class="el" href="Options_8cpp_source.html#l00470">Options::getSATSolver()</a>, <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, <a class="el" href="classSatSolver.html#ab2581b192cb2c39a81a416a9f7416c9e">SatSolver::incAddCNF()</a>, <a class="el" href="classSatSolver.html#a6be2c564289a59057c4c6728a3aa9c2b">SatSolver::incAddNegCubeAsClause()</a>, <a class="el" href="classSatSolver.html#ad387fc06bacf2d48847f779c9db8461a">SatSolver::incIsSatModelOrCore()</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="Options_8cpp_source.html#l00065">Options::instance()</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="CNF_8cpp_source.html#l00264">CNF::negate()</a>, <a class="el" href="VarManager_8cpp_source.html#l00082">VarManager::pop()</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="VarManager_8cpp_source.html#l00055">VarManager::push()</a>, and <a class="el" href="classSatSolver.html#a74603f84c3f2383a5fc44d5a8093cbea">SatSolver::startIncrementalSession()</a>.</p>
 
 </div>
 </div>
@@ -972,9 +1061,9 @@ forall x,i: exists c,x': W(x) =&gt; (T(x,i,c,x') &amp; W(x')): from every state 
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Utils_8cpp_source.html#l00149">149</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Utils_8cpp_source.html#l00164">164</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00289">LearnSynthQBFInc::computeBlockingClause()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00431">LearnSynthQBF::computeBlockingClause()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00344">LearnSynthQBFInd::computeBlockingClause()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00578">ClauseExplorerSAT::exploreClauses()</a>, <a class="el" href="DepQBFApiInc_8cpp_source.html#l00638">DepQBFApiInc::extractCore()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l01293">ClauseMinimizerQBF::minimizeClauses()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00733">LearnSynthQBFInc::computeBlockingClause()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00432">LearnSynthQBF::computeBlockingClause()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00346">LearnSynthQBFInd::computeBlockingClause()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00580">ClauseExplorerSAT::exploreClauses()</a>, <a class="el" href="DepQBFApi_8cpp_source.html#l00825">DepQBFApi::extractCore()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01295">ClauseMinimizerQBF::minimizeClauses()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00527">LearningImplExtractor::runLearningJiangSATTmp()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00715">LearningImplExtractor::runLearningJiangSATTmpCtrl()</a>, and <a class="el" href="LearningImplExtractor_8cpp_source.html#l00947">LearningImplExtractor::runLearningJiangSATTmpCtrlInc2()</a>.</p>
 
 </div>
 </div>
@@ -1021,9 +1110,9 @@ forall x,i: exists c,x': W(x) =&gt; (T(x,i,c,x') &amp; W(x')): from every state 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if the element was removed, false otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="Utils_8cpp_source.html#l00161">161</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Utils_8cpp_source.html#l00176">176</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00321">LearnSynthQBFInc::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00449">LearnSynthQBF::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00362">LearnSynthQBFInd::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00326">LearnSynthSAT::computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00510">LearnSynthSAT::computeWinningRegionRGRC()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00578">ClauseExplorerSAT::exploreClauses()</a>, <a class="el" href="DepQBFApiInc_8cpp_source.html#l00638">DepQBFApiInc::extractCore()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01078">CounterGenSAT::generalizeCeFuther()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00626">LearnSynthQBF::generalizeCounterexample()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00567">LearnSynthQBFInd::generalizeCounterexample()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00919">CounterGenSAT::generalizeCounterexamples()</a>, <a class="el" href="LingelingApi_8cpp_source.html#l00264">LingelingApi::incIsSatModelOrCore()</a>, <a class="el" href="PicoSatApi_8cpp_source.html#l00255">PicoSatApi::incIsSatModelOrCore()</a>, <a class="el" href="MiniSatApi_8cpp_source.html#l00331">MiniSatApi::incIsSatModelOrCore()</a>, <a class="el" href="PicoSatApi_8cpp_source.html#l00073">PicoSatApi::isSatModelOrCore()</a>, <a class="el" href="LingelingApi_8cpp_source.html#l00072">LingelingApi::isSatModelOrCore()</a>, <a class="el" href="MiniSatApi_8cpp_source.html#l00144">MiniSatApi::isSatModelOrCore()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01293">ClauseMinimizerQBF::minimizeClauses()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00531">LearnSynthQBF::reduceExistingClauses()</a>, and <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00450">LearnSynthQBFInd::reduceExistingClauses()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00765">LearnSynthQBFInc::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00450">LearnSynthQBF::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00364">LearnSynthQBFInd::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00759">LearnSynthSAT::computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00943">LearnSynthSAT::computeWinningRegionRGRC()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00580">ClauseExplorerSAT::exploreClauses()</a>, <a class="el" href="DepQBFApi_8cpp_source.html#l00825">DepQBFApi::extractCore()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01080">CounterGenSAT::generalizeCeFuther()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00627">LearnSynthQBF::generalizeCounterexample()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00569">LearnSynthQBFInd::generalizeCounterexample()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00972">LearnSynthQBFInc::generalizeCounterexampleFurther()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00921">CounterGenSAT::generalizeCounterexamples()</a>, <a class="el" href="LingelingApi_8cpp_source.html#l00264">LingelingApi::incIsSatModelOrCore()</a>, <a class="el" href="PicoSatApi_8cpp_source.html#l00255">PicoSatApi::incIsSatModelOrCore()</a>, <a class="el" href="MiniSatApi_8cpp_source.html#l00331">MiniSatApi::incIsSatModelOrCore()</a>, <a class="el" href="LingelingApi_8cpp_source.html#l00072">LingelingApi::isSatModelOrCore()</a>, <a class="el" href="PicoSatApi_8cpp_source.html#l00073">PicoSatApi::isSatModelOrCore()</a>, <a class="el" href="MiniSatApi_8cpp_source.html#l00144">MiniSatApi::isSatModelOrCore()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01295">ClauseMinimizerQBF::minimizeClauses()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00532">LearnSynthQBF::reduceExistingClauses()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00452">LearnSynthQBFInd::reduceExistingClauses()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00359">LearningImplExtractor::runLearningJiangSAT()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l01172">LearningImplExtractor::runLearningJiangSATInc1()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l01379">LearningImplExtractor::runLearningJiangSATInc2()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00527">LearningImplExtractor::runLearningJiangSATTmp()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00715">LearningImplExtractor::runLearningJiangSATTmpCtrl()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00947">LearningImplExtractor::runLearningJiangSATTmpCtrlInc2()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00194">LearningImplExtractor::runLearningQBF()</a>, and <a class="el" href="LearningImplExtractor_8cpp_source.html#l00276">LearningImplExtractor::runLearningQBFInc()</a>.</p>
 
 </div>
 </div>
@@ -1057,9 +1146,9 @@ forall x,i: exists c,x': W(x) =&gt; (T(x,i,c,x') &amp; W(x')): from every state 
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Utils_8cpp_source.html#l00155">155</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Utils_8cpp_source.html#l00170">170</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00521">LearnSynthQBFInc::generalizeCounterexample()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00626">LearnSynthQBF::generalizeCounterexample()</a>, and <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00567">LearnSynthQBFInd::generalizeCounterexample()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00960">LearnSynthQBFInc::generalizeCounterexample()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00627">LearnSynthQBF::generalizeCounterexample()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00569">LearnSynthQBFInd::generalizeCounterexample()</a>, and <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00972">LearnSynthQBFInc::generalizeCounterexampleFurther()</a>.</p>
 
 </div>
 </div>
@@ -1094,11 +1183,11 @@ forall x,i: exists c,x': W(x) =&gt; (T(x,i,c,x') &amp; W(x')): from every state 
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Utils_8cpp_source.html#l00194">194</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Utils_8cpp_source.html#l00209">209</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
 
 <p>References <a class="el" href="VarManager_8cpp_source.html#l00332">VarManager::getMaxCNFVar()</a>, <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="VarInfo_8h_source.html#l00064">VarInfo::NEXT_STATE</a>, and <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>.</p>
 
-<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00347">IFM13Synth::addBlockedState()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01668">IFM13Explorer::addBlockedState()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00401">IFM13Synth::addLose()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00321">LearnSynthQBFInc::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00449">LearnSynthQBF::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00362">LearnSynthQBFInd::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00289">LearnSynthQBFInc::computeBlockingClause()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00134">LearnSynthQBF::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00195">LearnSynthQBFInd::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00203">LearnSynthQBF::computeWinningRegionOneSAT()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00178">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00326">LearnSynthSAT::computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00510">LearnSynthSAT::computeWinningRegionRGRC()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00578">ClauseExplorerSAT::exploreClauses()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01078">CounterGenSAT::generalizeCeFuther()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00626">LearnSynthQBF::generalizeCounterexample()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00567">LearnSynthQBFInd::generalizeCounterexample()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00173">IFM13Synth::propagateBlockedStates()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01472">IFM13Explorer::propagateBlockedStates()</a>, and <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00424">LearnSynthQBFInc::reduceExistingClauses()</a>.</p>
+<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00351">IFM13Synth::addBlockedState()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01670">IFM13Explorer::addBlockedState()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00405">IFM13Synth::addLose()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00765">LearnSynthQBFInc::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00450">LearnSynthQBF::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00364">LearnSynthQBFInd::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00733">LearnSynthQBFInc::computeBlockingClause()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00408">LearnSynthQBFInc::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00565">LearnSynthQBFInc::computeWinningRegionAllPool()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00488">LearnSynthQBFInc::computeWinningRegionAllPush()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00122">LearnSynthQBFInc::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00135">LearnSynthQBF::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00197">LearnSynthQBFInd::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00273">LearnSynthQBFInc::computeWinningRegionOnePool()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00199">LearnSynthQBFInc::computeWinningRegionOnePush()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00204">LearnSynthQBF::computeWinningRegionOneSAT()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00180">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00328">LearnSynthSAT::computeWinningRegionPlainDep()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00759">LearnSynthSAT::computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00943">LearnSynthSAT::computeWinningRegionRGRC()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00580">ClauseExplorerSAT::exploreClauses()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01080">CounterGenSAT::generalizeCeFuther()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00627">LearnSynthQBF::generalizeCounterexample()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00569">LearnSynthQBFInd::generalizeCounterexample()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00177">IFM13Synth::propagateBlockedStates()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01474">IFM13Explorer::propagateBlockedStates()</a>, and <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00865">LearnSynthQBFInc::reduceExistingClauses()</a>.</p>
 
 </div>
 </div>
@@ -1109,7 +1198,7 @@ forall x,i: exists c,x': W(x) =&gt; (T(x,i,c,x') &amp; W(x')): from every state 
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 14 2013 15:15:46 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jul 15 2014 12:30:23 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

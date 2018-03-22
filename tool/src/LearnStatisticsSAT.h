@@ -71,20 +71,6 @@ public:
 
 // -------------------------------------------------------------------------------------------
 ///
-/// @brief Called before the relation determinization (the computation of circuits) starts.
-///
-/// This method just starts a Stopwatch.
-  void notifyRelDetStart();
-
-// -------------------------------------------------------------------------------------------
-///
-/// @brief Called after the relation determinization (the computation of circuits) starts.
-///
-/// This method just reads out the Stopwatch and stores the execution time.
-  void notifyRelDetEnd();
-
-// -------------------------------------------------------------------------------------------
-///
 /// @brief Called before the SAT solver is called to compute a counterexample-candidate.
 ///
 /// This method just starts a Stopwatch.
@@ -184,21 +170,6 @@ protected:
 ///
 /// @brief Like #win_reg_cpu_time_ but real-time.
   size_t win_reg_real_time_;
-
-// -------------------------------------------------------------------------------------------
-///
-/// @brief The time when the computation of the circuits was started.
-  PointInTime rel_det_start_time_;
-
-// -------------------------------------------------------------------------------------------
-///
-/// @brief circuit computation time in CPU-seconds.
-  double rel_det_cpu_time_;
-
-// -------------------------------------------------------------------------------------------
-///
-/// @brief Like #rel_det_cpu_time_ but real-time.
-  size_t rel_det_real_time_;
 
 // -------------------------------------------------------------------------------------------
 ///

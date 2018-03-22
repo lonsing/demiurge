@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">demiurge
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A synthesis tool for safety specifications.</div>
   </td>
@@ -108,10 +108,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ae75ccaa0f80d08aebfc98a953e997579"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called before the computation of the winning region starts.  <a href="#ae75ccaa0f80d08aebfc98a953e997579"></a><br/></td></tr>
 <tr class="memitem:aef1a7fa18629a82aacde388741a2534c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLearnStatisticsSAT.html#aef1a7fa18629a82aacde388741a2534c">notifyWinRegEnd</a> ()</td></tr>
 <tr class="memdesc:aef1a7fa18629a82aacde388741a2534c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called after the computation of the winning region is done.  <a href="#aef1a7fa18629a82aacde388741a2534c"></a><br/></td></tr>
-<tr class="memitem:aa90c46fe634b5d230579c5f0cb0b96ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLearnStatisticsSAT.html#aa90c46fe634b5d230579c5f0cb0b96ad">notifyRelDetStart</a> ()</td></tr>
-<tr class="memdesc:aa90c46fe634b5d230579c5f0cb0b96ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called before the relation determinization (the computation of circuits) starts.  <a href="#aa90c46fe634b5d230579c5f0cb0b96ad"></a><br/></td></tr>
-<tr class="memitem:aa438b39955c3fc5079c27ad5df743ea8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLearnStatisticsSAT.html#aa438b39955c3fc5079c27ad5df743ea8">notifyRelDetEnd</a> ()</td></tr>
-<tr class="memdesc:aa438b39955c3fc5079c27ad5df743ea8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called after the relation determinization (the computation of circuits) starts.  <a href="#aa438b39955c3fc5079c27ad5df743ea8"></a><br/></td></tr>
 <tr class="memitem:aed53fb25ba247b25f867df76a71c95dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLearnStatisticsSAT.html#aed53fb25ba247b25f867df76a71c95dd">notifyBeforeComputeCandidate</a> ()</td></tr>
 <tr class="memdesc:aed53fb25ba247b25f867df76a71c95dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called before the SAT solver is called to compute a counterexample-candidate.  <a href="#aed53fb25ba247b25f867df76a71c95dd"></a><br/></td></tr>
 <tr class="memitem:a4bebe07e8978f3866867ecf7ef432035"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLearnStatisticsSAT.html#a4bebe07e8978f3866867ecf7ef432035">notifyAfterComputeCandidate</a> ()</td></tr>
@@ -141,12 +137,6 @@ Protected Attributes</h2></td></tr>
 <tr class="memdesc:af9823be5155743223790ae01b91b7ca8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The winning region computation time in CPU-seconds.  <a href="#af9823be5155743223790ae01b91b7ca8"></a><br/></td></tr>
 <tr class="memitem:a97f7a6ccfc2d6677ae8a6c16dddd6b71"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLearnStatisticsSAT.html#a97f7a6ccfc2d6677ae8a6c16dddd6b71">win_reg_real_time_</a></td></tr>
 <tr class="memdesc:a97f7a6ccfc2d6677ae8a6c16dddd6b71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Like <a class="el" href="classLearnStatisticsSAT.html#af9823be5155743223790ae01b91b7ca8" title="The winning region computation time in CPU-seconds.">win_reg_cpu_time_</a> but real-time.  <a href="#a97f7a6ccfc2d6677ae8a6c16dddd6b71"></a><br/></td></tr>
-<tr class="memitem:af02bb7ecbdb583b8c49191581dcbe607"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Stopwatch_8h.html#af3a9f634f27bed7e98dbc23e5c6f807d">PointInTime</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLearnStatisticsSAT.html#af02bb7ecbdb583b8c49191581dcbe607">rel_det_start_time_</a></td></tr>
-<tr class="memdesc:af02bb7ecbdb583b8c49191581dcbe607"><td class="mdescLeft">&#160;</td><td class="mdescRight">The time when the computation of the circuits was started.  <a href="#af02bb7ecbdb583b8c49191581dcbe607"></a><br/></td></tr>
-<tr class="memitem:aa7d1ca100b6ad0500931ca80d1439f28"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLearnStatisticsSAT.html#aa7d1ca100b6ad0500931ca80d1439f28">rel_det_cpu_time_</a></td></tr>
-<tr class="memdesc:aa7d1ca100b6ad0500931ca80d1439f28"><td class="mdescLeft">&#160;</td><td class="mdescRight">circuit computation time in CPU-seconds.  <a href="#aa7d1ca100b6ad0500931ca80d1439f28"></a><br/></td></tr>
-<tr class="memitem:a65bb33d1f5088fc9ed2f947b87e8d4cb"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLearnStatisticsSAT.html#a65bb33d1f5088fc9ed2f947b87e8d4cb">rel_det_real_time_</a></td></tr>
-<tr class="memdesc:a65bb33d1f5088fc9ed2f947b87e8d4cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Like <a class="el" href="classLearnStatisticsSAT.html#aa7d1ca100b6ad0500931ca80d1439f28" title="circuit computation time in CPU-seconds.">rel_det_cpu_time_</a> but real-time.  <a href="#a65bb33d1f5088fc9ed2f947b87e8d4cb"></a><br/></td></tr>
 <tr class="memitem:a02de895c31e4c58396d5f07154e21561"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLearnStatisticsSAT.html#a02de895c31e4c58396d5f07154e21561">nr_of_cand_comp_</a></td></tr>
 <tr class="memdesc:a02de895c31e4c58396d5f07154e21561"><td class="mdescLeft">&#160;</td><td class="mdescRight">The total number of candidate computations.  <a href="#a02de895c31e4c58396d5f07154e21561"></a><br/></td></tr>
 <tr class="memitem:a07c8eee4a3c82762e3a94e38440f3adb"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLearnStatisticsSAT.html#a07c8eee4a3c82762e3a94e38440f3adb">nr_of_restarts_</a></td></tr>
@@ -239,7 +229,7 @@ Private Member Functions</h2></td></tr>
 
 <p>Destructor. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00059">59</a> of file <a class="el" href="LearnStatisticsSAT_8cpp_source.html">LearnStatisticsSAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00057">57</a> of file <a class="el" href="LearnStatisticsSAT_8cpp_source.html">LearnStatisticsSAT.cpp</a>.</p>
 
 </div>
 </div>
@@ -293,11 +283,11 @@ Private Member Functions</h2></td></tr>
 <p>Writes the statistics to stdout as messages of type <a class="el" href="classLogger.html#ac9e601f90bf326ce2088de52018861dca07be7495a7931bee16f5d94b3671f5de" title="The value for printing log messages.">Logger::LOG</a>. </p>
 <p>If messages of type <a class="el" href="classLogger.html#ac9e601f90bf326ce2088de52018861dca07be7495a7931bee16f5d94b3671f5de" title="The value for printing log messages.">Logger::LOG</a> are disabled (see <a class="el" href="classLogger.html" title="Prints messages of different kind, which can all be enabled and disabled.">Logger</a>), then nothing happens. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00177">177</a> of file <a class="el" href="LearnStatisticsSAT_8cpp_source.html">LearnStatisticsSAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00159">159</a> of file <a class="el" href="LearnStatisticsSAT_8cpp_source.html">LearnStatisticsSAT.cpp</a>.</p>
 
-<p>References <a class="el" href="LearnStatisticsSAT_8h_source.html#l00279">cand_check_cpu_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00284">cand_check_real_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00264">cand_comp_cpu_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00269">cand_comp_real_time_</a>, <a class="el" href="Logger_8h_source.html#l00336">L_LOG</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00216">nr_of_cand_checks_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00206">nr_of_cand_comp_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00240">nr_of_refines_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00211">nr_of_restarts_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00221">nr_of_succ_checks_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00294">refine_cpu_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00299">refine_real_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00196">rel_det_cpu_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00201">rel_det_real_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00228">sum_check_size_from_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00235">sum_check_size_to_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00247">sum_refine_size_from_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00254">sum_refine_size_to_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00181">win_reg_cpu_time_</a>, and <a class="el" href="LearnStatisticsSAT_8h_source.html#l00186">win_reg_real_time_</a>.</p>
+<p>References <a class="el" href="LearnStatisticsSAT_8h_source.html#l00250">cand_check_cpu_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00255">cand_check_real_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00235">cand_comp_cpu_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00240">cand_comp_real_time_</a>, <a class="el" href="Logger_8h_source.html#l00336">L_LOG</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00187">nr_of_cand_checks_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00177">nr_of_cand_comp_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00211">nr_of_refines_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00182">nr_of_restarts_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00192">nr_of_succ_checks_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00265">refine_cpu_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00270">refine_real_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00199">sum_check_size_from_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00206">sum_check_size_to_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00218">sum_refine_size_from_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00225">sum_refine_size_to_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00167">win_reg_cpu_time_</a>, and <a class="el" href="LearnStatisticsSAT_8h_source.html#l00172">win_reg_real_time_</a>.</p>
 
-<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00245">ParallelLearner::run()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00117">LearnSynthSAT::run()</a>.</p>
+<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00249">ParallelLearner::run()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00121">LearnSynthSAT::run()</a>.</p>
 
 </div>
 </div>
@@ -324,11 +314,11 @@ Private Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00153">153</a> of file <a class="el" href="LearnStatisticsSAT_8cpp_source.html">LearnStatisticsSAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00137">137</a> of file <a class="el" href="LearnStatisticsSAT_8cpp_source.html">LearnStatisticsSAT.cpp</a>.</p>
 
-<p>References <a class="el" href="LearnStatisticsSAT_8h_source.html#l00279">cand_check_cpu_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00284">cand_check_real_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00264">cand_comp_cpu_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00269">cand_comp_real_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00216">nr_of_cand_checks_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00206">nr_of_cand_comp_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00240">nr_of_refines_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00211">nr_of_restarts_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00221">nr_of_succ_checks_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00294">refine_cpu_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00299">refine_real_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00196">rel_det_cpu_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00201">rel_det_real_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00228">sum_check_size_from_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00235">sum_check_size_to_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00247">sum_refine_size_from_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00254">sum_refine_size_to_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00181">win_reg_cpu_time_</a>, and <a class="el" href="LearnStatisticsSAT_8h_source.html#l00186">win_reg_real_time_</a>.</p>
+<p>References <a class="el" href="LearnStatisticsSAT_8h_source.html#l00250">cand_check_cpu_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00255">cand_check_real_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00235">cand_comp_cpu_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00240">cand_comp_real_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00187">nr_of_cand_checks_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00177">nr_of_cand_comp_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00211">nr_of_refines_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00182">nr_of_restarts_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00192">nr_of_succ_checks_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00265">refine_cpu_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00270">refine_real_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00199">sum_check_size_from_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00206">sum_check_size_to_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00218">sum_refine_size_from_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00225">sum_refine_size_to_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00167">win_reg_cpu_time_</a>, and <a class="el" href="LearnStatisticsSAT_8h_source.html#l00172">win_reg_real_time_</a>.</p>
 
-<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00245">ParallelLearner::run()</a>.</p>
+<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00249">ParallelLearner::run()</a>.</p>
 
 </div>
 </div>
@@ -348,11 +338,11 @@ Private Member Functions</h2></td></tr>
 <p>Called after the SAT solver unsuccessfully checked a counterexample-candidate. </p>
 <p>This method just reads out the <a class="el" href="classStopwatch.html" title="Implements a stopwatch that can be used to measure execution time.">Stopwatch</a> and stores the execution time. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00129">129</a> of file <a class="el" href="LearnStatisticsSAT_8cpp_source.html">LearnStatisticsSAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00113">113</a> of file <a class="el" href="LearnStatisticsSAT_8cpp_source.html">LearnStatisticsSAT.cpp</a>.</p>
 
-<p>References <a class="el" href="LearnStatisticsSAT_8h_source.html#l00279">cand_check_cpu_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00284">cand_check_real_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00274">cand_check_start_time_</a>, <a class="el" href="Stopwatch_8cpp_source.html#l00041">Stopwatch::getCPUTimeSec()</a>, <a class="el" href="Stopwatch_8cpp_source.html#l00055">Stopwatch::getRealTimeSec()</a>, and <a class="el" href="LearnStatisticsSAT_8h_source.html#l00216">nr_of_cand_checks_</a>.</p>
+<p>References <a class="el" href="LearnStatisticsSAT_8h_source.html#l00250">cand_check_cpu_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00255">cand_check_real_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00245">cand_check_start_time_</a>, <a class="el" href="Stopwatch_8cpp_source.html#l00041">Stopwatch::getCPUTimeSec()</a>, <a class="el" href="Stopwatch_8cpp_source.html#l00055">Stopwatch::getRealTimeSec()</a>, and <a class="el" href="LearnStatisticsSAT_8h_source.html#l00187">nr_of_cand_checks_</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00178">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00326">LearnSynthSAT::computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00510">LearnSynthSAT::computeWinningRegionRGRC()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00578">ClauseExplorerSAT::exploreClauses()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00919">CounterGenSAT::generalizeCounterexamples()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00180">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00328">LearnSynthSAT::computeWinningRegionPlainDep()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00508">LearnSynthSAT::computeWinningRegionPlainDep2()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00759">LearnSynthSAT::computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00943">LearnSynthSAT::computeWinningRegionRGRC()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00580">ClauseExplorerSAT::exploreClauses()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00921">CounterGenSAT::generalizeCounterexamples()</a>.</p>
 
 </div>
 </div>
@@ -390,11 +380,11 @@ Private Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00118">118</a> of file <a class="el" href="LearnStatisticsSAT_8cpp_source.html">LearnStatisticsSAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00102">102</a> of file <a class="el" href="LearnStatisticsSAT_8cpp_source.html">LearnStatisticsSAT.cpp</a>.</p>
 
-<p>References <a class="el" href="LearnStatisticsSAT_8h_source.html#l00279">cand_check_cpu_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00284">cand_check_real_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00274">cand_check_start_time_</a>, <a class="el" href="Stopwatch_8cpp_source.html#l00041">Stopwatch::getCPUTimeSec()</a>, <a class="el" href="Stopwatch_8cpp_source.html#l00055">Stopwatch::getRealTimeSec()</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00216">nr_of_cand_checks_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00221">nr_of_succ_checks_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00228">sum_check_size_from_</a>, and <a class="el" href="LearnStatisticsSAT_8h_source.html#l00235">sum_check_size_to_</a>.</p>
+<p>References <a class="el" href="LearnStatisticsSAT_8h_source.html#l00250">cand_check_cpu_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00255">cand_check_real_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00245">cand_check_start_time_</a>, <a class="el" href="Stopwatch_8cpp_source.html#l00041">Stopwatch::getCPUTimeSec()</a>, <a class="el" href="Stopwatch_8cpp_source.html#l00055">Stopwatch::getRealTimeSec()</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00187">nr_of_cand_checks_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00192">nr_of_succ_checks_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00199">sum_check_size_from_</a>, and <a class="el" href="LearnStatisticsSAT_8h_source.html#l00206">sum_check_size_to_</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00178">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00326">LearnSynthSAT::computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00510">LearnSynthSAT::computeWinningRegionRGRC()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00578">ClauseExplorerSAT::exploreClauses()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00919">CounterGenSAT::generalizeCounterexamples()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00180">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00328">LearnSynthSAT::computeWinningRegionPlainDep()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00508">LearnSynthSAT::computeWinningRegionPlainDep2()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00759">LearnSynthSAT::computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00943">LearnSynthSAT::computeWinningRegionRGRC()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00580">ClauseExplorerSAT::exploreClauses()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00921">CounterGenSAT::generalizeCounterexamples()</a>.</p>
 
 </div>
 </div>
@@ -414,11 +404,11 @@ Private Member Functions</h2></td></tr>
 <p>Called after the SAT solver is done computing a counterexample-candidate. </p>
 <p>This method just reads out the <a class="el" href="classStopwatch.html" title="Implements a stopwatch that can be used to measure execution time.">Stopwatch</a> and stores the execution time. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00098">98</a> of file <a class="el" href="LearnStatisticsSAT_8cpp_source.html">LearnStatisticsSAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00082">82</a> of file <a class="el" href="LearnStatisticsSAT_8cpp_source.html">LearnStatisticsSAT.cpp</a>.</p>
 
-<p>References <a class="el" href="LearnStatisticsSAT_8h_source.html#l00264">cand_comp_cpu_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00269">cand_comp_real_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00259">cand_comp_start_time_</a>, <a class="el" href="Stopwatch_8cpp_source.html#l00041">Stopwatch::getCPUTimeSec()</a>, <a class="el" href="Stopwatch_8cpp_source.html#l00055">Stopwatch::getRealTimeSec()</a>, and <a class="el" href="LearnStatisticsSAT_8h_source.html#l00206">nr_of_cand_comp_</a>.</p>
+<p>References <a class="el" href="LearnStatisticsSAT_8h_source.html#l00235">cand_comp_cpu_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00240">cand_comp_real_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00230">cand_comp_start_time_</a>, <a class="el" href="Stopwatch_8cpp_source.html#l00041">Stopwatch::getCPUTimeSec()</a>, <a class="el" href="Stopwatch_8cpp_source.html#l00055">Stopwatch::getRealTimeSec()</a>, and <a class="el" href="LearnStatisticsSAT_8h_source.html#l00177">nr_of_cand_comp_</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00178">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00326">LearnSynthSAT::computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00510">LearnSynthSAT::computeWinningRegionRGRC()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00578">ClauseExplorerSAT::exploreClauses()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00180">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00328">LearnSynthSAT::computeWinningRegionPlainDep()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00508">LearnSynthSAT::computeWinningRegionPlainDep2()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00759">LearnSynthSAT::computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00943">LearnSynthSAT::computeWinningRegionRGRC()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00580">ClauseExplorerSAT::exploreClauses()</a>.</p>
 
 </div>
 </div>
@@ -456,11 +446,11 @@ Private Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00143">143</a> of file <a class="el" href="LearnStatisticsSAT_8cpp_source.html">LearnStatisticsSAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00127">127</a> of file <a class="el" href="LearnStatisticsSAT_8cpp_source.html">LearnStatisticsSAT.cpp</a>.</p>
 
-<p>References <a class="el" href="Stopwatch_8cpp_source.html#l00041">Stopwatch::getCPUTimeSec()</a>, <a class="el" href="Stopwatch_8cpp_source.html#l00055">Stopwatch::getRealTimeSec()</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00240">nr_of_refines_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00294">refine_cpu_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00299">refine_real_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00289">refine_start_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00247">sum_refine_size_from_</a>, and <a class="el" href="LearnStatisticsSAT_8h_source.html#l00254">sum_refine_size_to_</a>.</p>
+<p>References <a class="el" href="Stopwatch_8cpp_source.html#l00041">Stopwatch::getCPUTimeSec()</a>, <a class="el" href="Stopwatch_8cpp_source.html#l00055">Stopwatch::getRealTimeSec()</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00211">nr_of_refines_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00265">refine_cpu_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00270">refine_real_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00260">refine_start_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00218">sum_refine_size_from_</a>, and <a class="el" href="LearnStatisticsSAT_8h_source.html#l00225">sum_refine_size_to_</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00178">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00326">LearnSynthSAT::computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00510">LearnSynthSAT::computeWinningRegionRGRC()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00578">ClauseExplorerSAT::exploreClauses()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00180">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00328">LearnSynthSAT::computeWinningRegionPlainDep()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00508">LearnSynthSAT::computeWinningRegionPlainDep2()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00759">LearnSynthSAT::computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00943">LearnSynthSAT::computeWinningRegionRGRC()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00580">ClauseExplorerSAT::exploreClauses()</a>.</p>
 
 </div>
 </div>
@@ -480,11 +470,11 @@ Private Member Functions</h2></td></tr>
 <p>Called before the SAT solver is called to check a counterexample-candidate. </p>
 <p>This method just starts a <a class="el" href="classStopwatch.html" title="Implements a stopwatch that can be used to measure execution time.">Stopwatch</a>. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00112">112</a> of file <a class="el" href="LearnStatisticsSAT_8cpp_source.html">LearnStatisticsSAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00096">96</a> of file <a class="el" href="LearnStatisticsSAT_8cpp_source.html">LearnStatisticsSAT.cpp</a>.</p>
 
-<p>References <a class="el" href="LearnStatisticsSAT_8h_source.html#l00274">cand_check_start_time_</a>, and <a class="el" href="Stopwatch_8cpp_source.html#l00033">Stopwatch::start()</a>.</p>
+<p>References <a class="el" href="LearnStatisticsSAT_8h_source.html#l00245">cand_check_start_time_</a>, and <a class="el" href="Stopwatch_8cpp_source.html#l00033">Stopwatch::start()</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00178">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00326">LearnSynthSAT::computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00510">LearnSynthSAT::computeWinningRegionRGRC()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00578">ClauseExplorerSAT::exploreClauses()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00919">CounterGenSAT::generalizeCounterexamples()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00180">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00328">LearnSynthSAT::computeWinningRegionPlainDep()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00508">LearnSynthSAT::computeWinningRegionPlainDep2()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00759">LearnSynthSAT::computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00943">LearnSynthSAT::computeWinningRegionRGRC()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00580">ClauseExplorerSAT::exploreClauses()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00921">CounterGenSAT::generalizeCounterexamples()</a>.</p>
 
 </div>
 </div>
@@ -504,11 +494,11 @@ Private Member Functions</h2></td></tr>
 <p>Called before the SAT solver is called to compute a counterexample-candidate. </p>
 <p>This method just starts a <a class="el" href="classStopwatch.html" title="Implements a stopwatch that can be used to measure execution time.">Stopwatch</a>. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00092">92</a> of file <a class="el" href="LearnStatisticsSAT_8cpp_source.html">LearnStatisticsSAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00076">76</a> of file <a class="el" href="LearnStatisticsSAT_8cpp_source.html">LearnStatisticsSAT.cpp</a>.</p>
 
-<p>References <a class="el" href="LearnStatisticsSAT_8h_source.html#l00259">cand_comp_start_time_</a>, and <a class="el" href="Stopwatch_8cpp_source.html#l00033">Stopwatch::start()</a>.</p>
+<p>References <a class="el" href="LearnStatisticsSAT_8h_source.html#l00230">cand_comp_start_time_</a>, and <a class="el" href="Stopwatch_8cpp_source.html#l00033">Stopwatch::start()</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00178">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00326">LearnSynthSAT::computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00510">LearnSynthSAT::computeWinningRegionRGRC()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00578">ClauseExplorerSAT::exploreClauses()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00180">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00328">LearnSynthSAT::computeWinningRegionPlainDep()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00508">LearnSynthSAT::computeWinningRegionPlainDep2()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00759">LearnSynthSAT::computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00943">LearnSynthSAT::computeWinningRegionRGRC()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00580">ClauseExplorerSAT::exploreClauses()</a>.</p>
 
 </div>
 </div>
@@ -528,59 +518,11 @@ Private Member Functions</h2></td></tr>
 <p>Called before the SAT solver is called to refine the U-set. </p>
 <p>Refining the U-set means computing an unsatisfiable core of a state-input cube that is useless for the antagonist in trying to break out of the winning region. This method just starts a <a class="el" href="classStopwatch.html" title="Implements a stopwatch that can be used to measure execution time.">Stopwatch</a>. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00137">137</a> of file <a class="el" href="LearnStatisticsSAT_8cpp_source.html">LearnStatisticsSAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00121">121</a> of file <a class="el" href="LearnStatisticsSAT_8cpp_source.html">LearnStatisticsSAT.cpp</a>.</p>
 
-<p>References <a class="el" href="LearnStatisticsSAT_8h_source.html#l00289">refine_start_time_</a>, and <a class="el" href="Stopwatch_8cpp_source.html#l00033">Stopwatch::start()</a>.</p>
+<p>References <a class="el" href="LearnStatisticsSAT_8h_source.html#l00260">refine_start_time_</a>, and <a class="el" href="Stopwatch_8cpp_source.html#l00033">Stopwatch::start()</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00178">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00326">LearnSynthSAT::computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00510">LearnSynthSAT::computeWinningRegionRGRC()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00578">ClauseExplorerSAT::exploreClauses()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aa438b39955c3fc5079c27ad5df743ea8"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void LearnStatisticsSAT::notifyRelDetEnd </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Called after the relation determinization (the computation of circuits) starts. </p>
-<p>This method just reads out the <a class="el" href="classStopwatch.html" title="Implements a stopwatch that can be used to measure execution time.">Stopwatch</a> and stores the execution time. </p>
-
-<p>Definition at line <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00084">84</a> of file <a class="el" href="LearnStatisticsSAT_8cpp_source.html">LearnStatisticsSAT.cpp</a>.</p>
-
-<p>References <a class="el" href="Stopwatch_8cpp_source.html#l00041">Stopwatch::getCPUTimeSec()</a>, <a class="el" href="Stopwatch_8cpp_source.html#l00055">Stopwatch::getRealTimeSec()</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00196">rel_det_cpu_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00201">rel_det_real_time_</a>, and <a class="el" href="LearnStatisticsSAT_8h_source.html#l00191">rel_det_start_time_</a>.</p>
-
-<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00245">ParallelLearner::run()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00117">LearnSynthSAT::run()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aa90c46fe634b5d230579c5f0cb0b96ad"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void LearnStatisticsSAT::notifyRelDetStart </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Called before the relation determinization (the computation of circuits) starts. </p>
-<p>This method just starts a <a class="el" href="classStopwatch.html" title="Implements a stopwatch that can be used to measure execution time.">Stopwatch</a>. </p>
-
-<p>Definition at line <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00078">78</a> of file <a class="el" href="LearnStatisticsSAT_8cpp_source.html">LearnStatisticsSAT.cpp</a>.</p>
-
-<p>References <a class="el" href="LearnStatisticsSAT_8h_source.html#l00191">rel_det_start_time_</a>, and <a class="el" href="Stopwatch_8cpp_source.html#l00033">Stopwatch::start()</a>.</p>
-
-<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00245">ParallelLearner::run()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00117">LearnSynthSAT::run()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00180">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00328">LearnSynthSAT::computeWinningRegionPlainDep()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00508">LearnSynthSAT::computeWinningRegionPlainDep2()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00759">LearnSynthSAT::computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00943">LearnSynthSAT::computeWinningRegionRGRC()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00580">ClauseExplorerSAT::exploreClauses()</a>.</p>
 
 </div>
 </div>
@@ -600,11 +542,11 @@ Private Member Functions</h2></td></tr>
 <p>Called whenever the incremental session of the solver is restarted. </p>
 <p>This method is called to count the number of performed restarts. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00106">106</a> of file <a class="el" href="LearnStatisticsSAT_8cpp_source.html">LearnStatisticsSAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00090">90</a> of file <a class="el" href="LearnStatisticsSAT_8cpp_source.html">LearnStatisticsSAT.cpp</a>.</p>
 
-<p>References <a class="el" href="LearnStatisticsSAT_8h_source.html#l00211">nr_of_restarts_</a>.</p>
+<p>References <a class="el" href="LearnStatisticsSAT_8h_source.html#l00182">nr_of_restarts_</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00178">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00326">LearnSynthSAT::computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00510">LearnSynthSAT::computeWinningRegionRGRC()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00773">ClauseExplorerSAT::considerNewInfoFromOthers()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00180">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00328">LearnSynthSAT::computeWinningRegionPlainDep()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00508">LearnSynthSAT::computeWinningRegionPlainDep2()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00759">LearnSynthSAT::computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00943">LearnSynthSAT::computeWinningRegionRGRC()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00775">ClauseExplorerSAT::considerNewInfoFromOthers()</a>.</p>
 
 </div>
 </div>
@@ -624,11 +566,11 @@ Private Member Functions</h2></td></tr>
 <p>Called after the computation of the winning region is done. </p>
 <p>This method just reads out the <a class="el" href="classStopwatch.html" title="Implements a stopwatch that can be used to measure execution time.">Stopwatch</a> and stores the execution time. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00071">71</a> of file <a class="el" href="LearnStatisticsSAT_8cpp_source.html">LearnStatisticsSAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00069">69</a> of file <a class="el" href="LearnStatisticsSAT_8cpp_source.html">LearnStatisticsSAT.cpp</a>.</p>
 
-<p>References <a class="el" href="Stopwatch_8cpp_source.html#l00041">Stopwatch::getCPUTimeSec()</a>, <a class="el" href="Stopwatch_8cpp_source.html#l00055">Stopwatch::getRealTimeSec()</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00181">win_reg_cpu_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00186">win_reg_real_time_</a>, and <a class="el" href="LearnStatisticsSAT_8h_source.html#l00176">win_reg_start_time_</a>.</p>
+<p>References <a class="el" href="Stopwatch_8cpp_source.html#l00041">Stopwatch::getCPUTimeSec()</a>, <a class="el" href="Stopwatch_8cpp_source.html#l00055">Stopwatch::getRealTimeSec()</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00167">win_reg_cpu_time_</a>, <a class="el" href="LearnStatisticsSAT_8h_source.html#l00172">win_reg_real_time_</a>, and <a class="el" href="LearnStatisticsSAT_8h_source.html#l00162">win_reg_start_time_</a>.</p>
 
-<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00245">ParallelLearner::run()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00117">LearnSynthSAT::run()</a>.</p>
+<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00249">ParallelLearner::run()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00121">LearnSynthSAT::run()</a>.</p>
 
 </div>
 </div>
@@ -648,11 +590,11 @@ Private Member Functions</h2></td></tr>
 <p>Called before the computation of the winning region starts. </p>
 <p>This method just starts a <a class="el" href="classStopwatch.html" title="Implements a stopwatch that can be used to measure execution time.">Stopwatch</a>. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00065">65</a> of file <a class="el" href="LearnStatisticsSAT_8cpp_source.html">LearnStatisticsSAT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00063">63</a> of file <a class="el" href="LearnStatisticsSAT_8cpp_source.html">LearnStatisticsSAT.cpp</a>.</p>
 
-<p>References <a class="el" href="Stopwatch_8cpp_source.html#l00033">Stopwatch::start()</a>, and <a class="el" href="LearnStatisticsSAT_8h_source.html#l00176">win_reg_start_time_</a>.</p>
+<p>References <a class="el" href="Stopwatch_8cpp_source.html#l00033">Stopwatch::start()</a>, and <a class="el" href="LearnStatisticsSAT_8h_source.html#l00162">win_reg_start_time_</a>.</p>
 
-<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00245">ParallelLearner::run()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00117">LearnSynthSAT::run()</a>.</p>
+<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00249">ParallelLearner::run()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00121">LearnSynthSAT::run()</a>.</p>
 
 </div>
 </div>
@@ -711,9 +653,9 @@ Private Member Functions</h2></td></tr>
 
 <p>The total candidate checking time in CPU-seconds. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00279">279</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00250">250</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00177">logStatistics()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00153">mergeWith()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00129">notifyAfterCheckCandidateFailed()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00118">notifyAfterCheckCandidateFound()</a>.</p>
+<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00159">logStatistics()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00137">mergeWith()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00113">notifyAfterCheckCandidateFailed()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00102">notifyAfterCheckCandidateFound()</a>.</p>
 
 </div>
 </div>
@@ -737,9 +679,9 @@ Private Member Functions</h2></td></tr>
 
 <p>Like <a class="el" href="classLearnStatisticsSAT.html#a2ab5cd522b7a4d700a11c0bb430baa81" title="The total candidate checking time in CPU-seconds.">cand_check_cpu_time_</a> but real-time. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00284">284</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00255">255</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00177">logStatistics()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00153">mergeWith()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00129">notifyAfterCheckCandidateFailed()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00118">notifyAfterCheckCandidateFound()</a>.</p>
+<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00159">logStatistics()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00137">mergeWith()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00113">notifyAfterCheckCandidateFailed()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00102">notifyAfterCheckCandidateFound()</a>.</p>
 
 </div>
 </div>
@@ -763,9 +705,9 @@ Private Member Functions</h2></td></tr>
 
 <p>The time when the last check of a counterexample-candidate was started. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00274">274</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00245">245</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00129">notifyAfterCheckCandidateFailed()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00118">notifyAfterCheckCandidateFound()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00112">notifyBeforeCheckCandidate()</a>.</p>
+<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00113">notifyAfterCheckCandidateFailed()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00102">notifyAfterCheckCandidateFound()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00096">notifyBeforeCheckCandidate()</a>.</p>
 
 </div>
 </div>
@@ -789,9 +731,9 @@ Private Member Functions</h2></td></tr>
 
 <p>The total candidate computation time in CPU-seconds. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00264">264</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00235">235</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00177">logStatistics()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00153">mergeWith()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00098">notifyAfterComputeCandidate()</a>.</p>
+<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00159">logStatistics()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00137">mergeWith()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00082">notifyAfterComputeCandidate()</a>.</p>
 
 </div>
 </div>
@@ -815,9 +757,9 @@ Private Member Functions</h2></td></tr>
 
 <p>Like <a class="el" href="classLearnStatisticsSAT.html#af977c00fbf0f9978f92dd5c997577a06" title="The total candidate computation time in CPU-seconds.">cand_comp_cpu_time_</a> but real-time. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00269">269</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00240">240</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00177">logStatistics()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00153">mergeWith()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00098">notifyAfterComputeCandidate()</a>.</p>
+<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00159">logStatistics()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00137">mergeWith()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00082">notifyAfterComputeCandidate()</a>.</p>
 
 </div>
 </div>
@@ -841,9 +783,9 @@ Private Member Functions</h2></td></tr>
 
 <p>The time when the last computation of a counterexample-candidate was started. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00259">259</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00230">230</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00098">notifyAfterComputeCandidate()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00092">notifyBeforeComputeCandidate()</a>.</p>
+<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00082">notifyAfterComputeCandidate()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00076">notifyBeforeComputeCandidate()</a>.</p>
 
 </div>
 </div>
@@ -867,9 +809,9 @@ Private Member Functions</h2></td></tr>
 
 <p>The total number of candidate checks. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00216">216</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00187">187</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00177">logStatistics()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00153">mergeWith()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00129">notifyAfterCheckCandidateFailed()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00118">notifyAfterCheckCandidateFound()</a>.</p>
+<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00159">logStatistics()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00137">mergeWith()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00113">notifyAfterCheckCandidateFailed()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00102">notifyAfterCheckCandidateFound()</a>.</p>
 
 </div>
 </div>
@@ -893,9 +835,9 @@ Private Member Functions</h2></td></tr>
 
 <p>The total number of candidate computations. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00206">206</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00177">177</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00177">logStatistics()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00153">mergeWith()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00098">notifyAfterComputeCandidate()</a>.</p>
+<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00159">logStatistics()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00137">mergeWith()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00082">notifyAfterComputeCandidate()</a>.</p>
 
 </div>
 </div>
@@ -919,9 +861,9 @@ Private Member Functions</h2></td></tr>
 
 <p>The number of refinements of the useless state-input pairs. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00240">240</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00211">211</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00177">logStatistics()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00153">mergeWith()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00143">notifyAfterRefine()</a>.</p>
+<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00159">logStatistics()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00137">mergeWith()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00127">notifyAfterRefine()</a>.</p>
 
 </div>
 </div>
@@ -945,9 +887,9 @@ Private Member Functions</h2></td></tr>
 
 <p>The total number solver restarts (starting a new incremental session). </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00211">211</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00182">182</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00177">logStatistics()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00153">mergeWith()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00106">notifyRestart()</a>.</p>
+<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00159">logStatistics()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00137">mergeWith()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00090">notifyRestart()</a>.</p>
 
 </div>
 </div>
@@ -971,9 +913,9 @@ Private Member Functions</h2></td></tr>
 
 <p>The total number of successful candidate checks. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00221">221</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00192">192</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00177">logStatistics()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00153">mergeWith()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00118">notifyAfterCheckCandidateFound()</a>.</p>
+<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00159">logStatistics()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00137">mergeWith()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00102">notifyAfterCheckCandidateFound()</a>.</p>
 
 </div>
 </div>
@@ -997,9 +939,9 @@ Private Member Functions</h2></td></tr>
 
 <p>The total useless state-input-cube generalization time in CPU-seconds. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00294">294</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00265">265</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00177">logStatistics()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00153">mergeWith()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00143">notifyAfterRefine()</a>.</p>
+<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00159">logStatistics()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00137">mergeWith()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00127">notifyAfterRefine()</a>.</p>
 
 </div>
 </div>
@@ -1023,9 +965,9 @@ Private Member Functions</h2></td></tr>
 
 <p>Like <a class="el" href="classLearnStatisticsSAT.html#a2ab5cd522b7a4d700a11c0bb430baa81" title="The total candidate checking time in CPU-seconds.">cand_check_cpu_time_</a> but real-time. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00299">299</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00270">270</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00177">logStatistics()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00153">mergeWith()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00143">notifyAfterRefine()</a>.</p>
+<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00159">logStatistics()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00137">mergeWith()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00127">notifyAfterRefine()</a>.</p>
 
 </div>
 </div>
@@ -1049,87 +991,9 @@ Private Member Functions</h2></td></tr>
 
 <p>The time when the last useless state-input-cube generalization was started. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00289">289</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00260">260</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00143">notifyAfterRefine()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00137">notifyBeforeRefine()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aa7d1ca100b6ad0500931ca80d1439f28"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double LearnStatisticsSAT::rel_det_cpu_time_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>circuit computation time in CPU-seconds. </p>
-
-<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00196">196</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
-
-<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00177">logStatistics()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00153">mergeWith()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00084">notifyRelDetEnd()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a65bb33d1f5088fc9ed2f947b87e8d4cb"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">size_t LearnStatisticsSAT::rel_det_real_time_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Like <a class="el" href="classLearnStatisticsSAT.html#aa7d1ca100b6ad0500931ca80d1439f28" title="circuit computation time in CPU-seconds.">rel_det_cpu_time_</a> but real-time. </p>
-
-<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00201">201</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
-
-<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00177">logStatistics()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00153">mergeWith()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00084">notifyRelDetEnd()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="af02bb7ecbdb583b8c49191581dcbe607"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="Stopwatch_8h.html#af3a9f634f27bed7e98dbc23e5c6f807d">PointInTime</a> LearnStatisticsSAT::rel_det_start_time_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>The time when the computation of the circuits was started. </p>
-
-<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00191">191</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
-
-<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00084">notifyRelDetEnd()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00078">notifyRelDetStart()</a>.</p>
+<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00127">notifyAfterRefine()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00121">notifyBeforeRefine()</a>.</p>
 
 </div>
 </div>
@@ -1154,9 +1018,9 @@ Private Member Functions</h2></td></tr>
 <p>The sum of the counterexample cube sizes (nr of literals) before minimization. </p>
 <p>This is tracked to assess the effectiveness of the minimization (=generalization). </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00228">228</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00199">199</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00177">logStatistics()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00153">mergeWith()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00118">notifyAfterCheckCandidateFound()</a>.</p>
+<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00159">logStatistics()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00137">mergeWith()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00102">notifyAfterCheckCandidateFound()</a>.</p>
 
 </div>
 </div>
@@ -1181,9 +1045,9 @@ Private Member Functions</h2></td></tr>
 <p>The sum of the counterexample cube sizes (nr of literals) after minimization. </p>
 <p>This is tracked to assess the effectiveness of the minimization (=generalization). </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00235">235</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00206">206</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00177">logStatistics()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00153">mergeWith()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00118">notifyAfterCheckCandidateFound()</a>.</p>
+<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00159">logStatistics()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00137">mergeWith()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00102">notifyAfterCheckCandidateFound()</a>.</p>
 
 </div>
 </div>
@@ -1208,9 +1072,9 @@ Private Member Functions</h2></td></tr>
 <p>The sum of the useless state-input-cube sizes (nr of literals) before minimization. </p>
 <p>This is tracked to assess the effectiveness of the minimization (=generalization). </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00247">247</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00218">218</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00177">logStatistics()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00153">mergeWith()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00143">notifyAfterRefine()</a>.</p>
+<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00159">logStatistics()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00137">mergeWith()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00127">notifyAfterRefine()</a>.</p>
 
 </div>
 </div>
@@ -1235,9 +1099,9 @@ Private Member Functions</h2></td></tr>
 <p>The sum of the useless state-input-cube sizes (nr of literals) after minimization. </p>
 <p>This is tracked to assess the effectiveness of the minimization (=generalization). </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00254">254</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00225">225</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00177">logStatistics()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00153">mergeWith()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00143">notifyAfterRefine()</a>.</p>
+<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00159">logStatistics()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00137">mergeWith()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00127">notifyAfterRefine()</a>.</p>
 
 </div>
 </div>
@@ -1261,9 +1125,9 @@ Private Member Functions</h2></td></tr>
 
 <p>The winning region computation time in CPU-seconds. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00181">181</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00167">167</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00177">logStatistics()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00153">mergeWith()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00071">notifyWinRegEnd()</a>.</p>
+<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00159">logStatistics()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00137">mergeWith()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00069">notifyWinRegEnd()</a>.</p>
 
 </div>
 </div>
@@ -1287,9 +1151,9 @@ Private Member Functions</h2></td></tr>
 
 <p>Like <a class="el" href="classLearnStatisticsSAT.html#af9823be5155743223790ae01b91b7ca8" title="The winning region computation time in CPU-seconds.">win_reg_cpu_time_</a> but real-time. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00186">186</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00172">172</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00177">logStatistics()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00153">mergeWith()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00071">notifyWinRegEnd()</a>.</p>
+<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00159">logStatistics()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00137">mergeWith()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00069">notifyWinRegEnd()</a>.</p>
 
 </div>
 </div>
@@ -1313,9 +1177,9 @@ Private Member Functions</h2></td></tr>
 
 <p>The time when the computation of the winning region was started. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00176">176</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsSAT_8h_source.html#l00162">162</a> of file <a class="el" href="LearnStatisticsSAT_8h_source.html">LearnStatisticsSAT.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00071">notifyWinRegEnd()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00065">notifyWinRegStart()</a>.</p>
+<p>Referenced by <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00069">notifyWinRegEnd()</a>, and <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00063">notifyWinRegStart()</a>.</p>
 
 </div>
 </div>
@@ -1326,7 +1190,7 @@ Private Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 14 2013 15:15:45 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jul 15 2014 12:30:21 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

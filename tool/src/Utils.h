@@ -41,7 +41,7 @@ class CNF;
 /// @brief Contains utility functions that can be usful in various back-ends.
 ///
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.0.0
+/// @version 1.1.0
 class Utils
 {
 public:
@@ -116,6 +116,15 @@ public:
 ///        next-state literals should be extracted.
 /// @return current-state copy of the next-state literals in cube_or_clause.
   static vector<int> extractNextAsPresent(const vector<int> &cube_or_clause);
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Extracts certain literals from a cube or clause.
+///
+/// @param cube_or_clause The cube or clause to analyze.
+/// @param vars The variables to extract from cube_or_clause.
+/// @return All literals of cube_or_clause where the corresponding variable occurs in vars.
+  static vector<int> extract(const vector<int> &cube_or_clause, const vector<int> &vars);
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -209,6 +218,18 @@ public:
 ///        representations.
 /// @return True if the CNF was modified, false otherwise.
   static bool compressStateCNF(CNF &cnf, bool hardcore = false);
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief Negates a CNF over the state-variables without introducing temporary variables.
+///
+/// The negation of the passed CNF is computed via computational learning. It uses a SAT
+/// solver in an incremental fashion. This is more expensive than simply calling
+/// cnf.negate(), but it does not introduce temporary variables, and hence may lead to a
+/// smaller CNF.
+///
+/// @param cnf The CNF formula to negate.
+  static void negateStateCNF(CNF &cnf);
 
 // -------------------------------------------------------------------------------------------
 ///

@@ -32,18 +32,19 @@
 #include "Options.h"
 #include "AIG2CNF.h"
 #include "Logger.h"
-#include "QBFCertImplExtractor.h"
+#include "CNFImplExtractor.h"
 #include "Utils.h"
 #include "SatSolver.h"
 
 // -------------------------------------------------------------------------------------------
-LearnSynthQBF::LearnSynthQBF() :
+LearnSynthQBF::LearnSynthQBF(CNFImplExtractor *impl_extractor) :
                BackEnd(),
                qbf_solver_(Options::instance().getQBFSolver()),
                solver_i_(Options::instance().getSATSolver()),
                solver_ctrl_(Options::instance().getSATSolver()),
                incremental_vars_to_keep_(VarManager::instance().getAllNonTempVars()),
-               solver_i_precise_(true)
+               solver_i_precise_(true),
+               impl_extractor_(impl_extractor)
 {
   // build the quantifier prefix for checking for counterexamples:
   //   check_quant_ = exists x,i: forall c: exists x',tmp:
@@ -83,6 +84,8 @@ LearnSynthQBF::~LearnSynthQBF()
   solver_i_ = NULL;
   delete solver_ctrl_;
   solver_ctrl_ = NULL;
+  delete impl_extractor_;
+  impl_extractor_ = 0;
 }
 
 // -------------------------------------------------------------------------------------------
@@ -111,12 +114,10 @@ bool LearnSynthQBF::run()
   }
 
   L_INF("Starting to extract a circuit ...");
-  statistics_.notifyRelDetStart();
-  QBFCertImplExtractor extractor;
-  extractor.extractCircuit(winning_region_);
-  statistics_.notifyRelDetEnd();
+  impl_extractor_->extractCircuit(winning_region_);
   L_INF("Synthesis done.");
   statistics_.logStatistics();
+  impl_extractor_->logStatistics();
   return true;
 }
 

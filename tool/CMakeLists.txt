@@ -1,6 +1,6 @@
 project(demiurge)
 set (PROJECT demiurge)
-set(VERSION 1.0.0)
+set(VERSION 1.1.0)
 cmake_minimum_required(VERSION 2.6)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -pthread")
@@ -17,8 +17,12 @@ set(MINISAT_INCLUDE_DIR  $ENV{DEMIURGETP}/minisat/)
 set(MINISAT_LIBRARIES  $ENV{DEMIURGETP}/minisat/core/lib.a)
 set(PICOSAT_INCLUDE_DIR  $ENV{DEMIURGETP}/picosat/)
 set(PICOSAT_LIBRARIES  $ENV{DEMIURGETP}/picosat/libpicosat.a)
+set(cppunit_BIN_DIRS     $ENV{DEMIURGETP}/cppunit-1.12.1/bin/ )
+set(cppunit_INCLUDE_DIRS $ENV{DEMIURGETP}/cppunit-1.12.1/include/ )
+set(cppunit_LIBRARIES   $ENV{DEMIURGETP}/cppunit-1.12.1/lib/libcppunit.so )
 
 add_subdirectory(src)
+add_subdirectory(tests)
 
 ## how are shared libraries found ?
 if(APPLE)

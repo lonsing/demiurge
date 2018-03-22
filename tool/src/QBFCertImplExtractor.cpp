@@ -36,51 +36,19 @@
 #include "Options.h"
 #include "Logger.h"
 #include "FileUtils.h"
+#include "Stopwatch.h"
 
 extern "C" {
   #include "aiger.h"
-
-// -------------------------------------------------------------------------------------------
-///
-/// @struct aiger_private
-/// @brief Redefinition of the aiger_private struct to be able to modify it.
-///
-/// Modifying the read AIGER structure (removing inputs, adding AND gates)
-/// requires modifying the private AIGER structure in the back-ground in
-/// order not to corrupt the memory. In order not to modify the original AIGER
-/// sources, we re-define the structure here.
-  struct aiger_private
-  {
-    aiger publ;
-    void *types;            /* [0..maxvar] */
-    unsigned size_types;
-    unsigned char * coi;
-    unsigned size_coi;
-    unsigned size_inputs;
-    unsigned size_latches;
-    unsigned size_outputs;
-    unsigned size_ands;
-    unsigned size_bad;
-    unsigned size_constraints;
-    unsigned size_justice;
-    unsigned size_fairness;
-    unsigned num_comments;
-    unsigned size_comments;
-    void *memory_mgr;
-    void* malloc_callback;
-    void* free_callback;
-    char *error;
-  };
-
-// -------------------------------------------------------------------------------------------
-///
-/// @typedef struct aiger_private aiger_private
-/// @brief An alias for aiger_private structs.
-  typedef struct aiger_private aiger_private;
 }
 
 // -------------------------------------------------------------------------------------------
-QBFCertImplExtractor::QBFCertImplExtractor()
+QBFCertImplExtractor::QBFCertImplExtractor() :
+    size_before_abc_(0),
+    size_after_abc_(0),
+    size_final_(0),
+    qbfcert_real_time_(0),
+    abc_real_time_(0)
 {
   // nothing to do
 }
@@ -92,18 +60,7 @@ QBFCertImplExtractor::~QBFCertImplExtractor()
 }
 
 // -------------------------------------------------------------------------------------------
-void QBFCertImplExtractor::extractCircuit(const CNF &winning_region)
-{
-  CNF simplified_winning_region(winning_region);
-  Utils::compressStateCNF(simplified_winning_region, true);
-  CNF neg_winning_region(simplified_winning_region);
-  neg_winning_region.negate();
-  extractCircuit(simplified_winning_region, neg_winning_region);
-}
-
-// -------------------------------------------------------------------------------------------
-void QBFCertImplExtractor::extractCircuit(const CNF &winning_region,
-                                          const CNF &neg_winning_region)
+void QBFCertImplExtractor::run(const CNF &winning_region, const CNF &neg_winning_region)
 {
   // We would like to find skolem functions for the c signals in:
   // forall x,i: exists c,x': (NOT W(x)) OR ( T(x,i,c,x') AND W(x')),
@@ -120,8 +77,8 @@ void QBFCertImplExtractor::extractCircuit(const CNF &winning_region,
 
   // build the quantifier prefix:
   vector<pair<VarInfo::VarKind, DepQBFExt::Quant> > quant;
-  quant.push_back(make_pair(VarInfo::PRES_STATE, DepQBFExt::E));
   quant.push_back(make_pair(VarInfo::INPUT, DepQBFExt::E));
+  quant.push_back(make_pair(VarInfo::PRES_STATE, DepQBFExt::E));
   quant.push_back(make_pair(VarInfo::CTRL, DepQBFExt::A));
   quant.push_back(make_pair(VarInfo::NEXT_STATE, DepQBFExt::E));
   quant.push_back(make_pair(VarInfo::TMP, DepQBFExt::E));
@@ -131,148 +88,67 @@ void QBFCertImplExtractor::extractCircuit(const CNF &winning_region,
 #ifndef NDEBUG
   MASSERT(solver.isSat(quant,strategy) == false, "Error in winning region.");
 #endif
-  string answer = solver.qbfCert(quant, strategy);
 
-  // now, we only need to parse the returned aiger file:
-  vector<vector<int> > and_gates;
-  size_t max_idx = parseQBFCertAnswer(answer, and_gates);
+  PointInTime qbfcert_start_time = Stopwatch::start();
+  aiger* answer = solver.qbfCert(quant, strategy);
+  qbfcert_real_time_ = Stopwatch::getRealTimeSec(qbfcert_start_time);
 
-  L_INF("Writing the result file ...");
-  dumpResAigerLib(max_idx, and_gates);
+  // The answer contains all existentially quantified variables
+  // (INPUT, PRES_STATE, NEXT_STATE, TMP) as inputs (in this order). We need to remove them.
+  // We also need to remove the error-state variable as input.
+  size_t nr_in = VarManager::instance().getVarsOfType(VarInfo::INPUT).size();
+  nr_in += VarManager::instance().getVarsOfType(VarInfo::PRES_STATE).size() - 1;
 
+  // remove error-state from inputs:
+  size_t err_idx = VarManager::instance().getVarsOfType(VarInfo::INPUT).size();
+  unsigned error_state_in_aig = answer->inputs[err_idx].lit;
+  unsigned neg_error_state_in_aig = error_state_in_aig + 1;
+  for(; err_idx < nr_in + 1; ++err_idx)
+    answer->inputs[err_idx].lit = answer->inputs[err_idx+1].lit;
+  // remove all other inputs:
+  answer->num_inputs = nr_in;
+
+  // make sure the error-state does not occur as input to any AND gate:
+  for(unsigned cnt = 0; cnt < answer->num_ands; ++cnt)
+  {
+    if(answer->ands[cnt].rhs0 == error_state_in_aig)
+      answer->ands[cnt].rhs0 = 0;
+    if(answer->ands[cnt].rhs1 == error_state_in_aig)
+      answer->ands[cnt].rhs1 = 0;
+    if(answer->ands[cnt].rhs0 == neg_error_state_in_aig)
+      answer->ands[cnt].rhs0 = 1;
+    if(answer->ands[cnt].rhs1 == neg_error_state_in_aig)
+      answer->ands[cnt].rhs1 = 1;
+  }
+
+  // if ctrl-variables are not assigned by the aiger-circuit (this happens sometimes)
+  // they must be irrelevant, and are assigned to FALSE:
+  unsigned nr_ctrl = VarManager::instance().getVarsOfType(VarInfo::CTRL).size();
+  if(answer->num_outputs < nr_ctrl)
+  {
+    L_DBG("QBFCert did not assign all ctrl-signals. Setting them to 0.");
+  }
+  while(answer->num_outputs < nr_ctrl)
+    aiger_add_output(answer, 0, NULL);
+
+  aiger_reencode(answer);
+  size_before_abc_ = answer->num_ands;
+  PointInTime abc_start_time = Stopwatch::start();
+  aiger *optimized = optimizeWithABC(answer);
+  abc_real_time_ = Stopwatch::getRealTimeSec(abc_start_time);
+  size_after_abc_ = optimized->num_ands;
+  aiger_reset(answer);
+  size_final_ = insertIntoSpec(optimized);
+  aiger_reset(optimized);
 }
 
-// -------------------------------------------------------------------------------------------
-size_t QBFCertImplExtractor::parseQBFCertAnswer(const string &answer,
-                                                vector<vector<int> > &and_gates) const
-{
-  vector<string> lines;
-  StringUtils::splitLines(answer, lines, false);
-  MASSERT(lines.size() > 0, "QBFCert parse error.");
-  istringstream header(lines[0]);
-  size_t max_idx = 0, nr_in = 0, nr_l = 0, nr_out = 0, nr_gates = 0;
-  string aag;
-  header >> aag >> max_idx  >> nr_in >> nr_l >> nr_out >> nr_gates;
-  MASSERT(lines.size() >= nr_in + nr_out + nr_gates, "QBFCert parse error.");
-  MASSERT(nr_l == 0, "QBFCert parse error.");
-
-  // let's build up a map to rename the variable indices:
-  vector<int> rename_map(2*(max_idx + 1), -1);
-  rename_map[0] = 0;
-  rename_map[1] = 1;
-
-  VarManager& VM = VarManager::instance();
-  size_t next_line = 1;
-  for(size_t cnt = 0; cnt < nr_in + nr_out; ++cnt)
-  {
-    istringstream nr(lines[next_line++]);
-    int old_nr = 0;
-    nr >> old_nr;
-    int new_nr = VM.getInfo(old_nr >> 1).getLitInAIG();
-    rename_map[old_nr] = new_nr;
-    rename_map[old_nr+1] = new_nr + 1;
-  }
-
-  // now we are applying the map:
-  const vector<int> &ctrl_cnf_vars = VM.getVarsOfType(VarInfo::CTRL);
-  and_gates.reserve(nr_gates + ctrl_cnf_vars.size());
-  int next_free_aig_var = VM.getMaxAIGVar()*2 + 2;
-  L_DBG("Resulting AND gates:");
-  for(size_t cnt = 0; cnt < nr_gates; ++cnt)
-  {
-    istringstream triple(lines[next_line++]);
-    vector<int> and_gate(3,0);
-    triple >> and_gate[0] >> and_gate[1] >> and_gate[2];
-    for(size_t val_cnt = 0; val_cnt < 3; ++val_cnt)
-    {
-      int var_to_rename = and_gate[val_cnt];
-      if(rename_map[var_to_rename] == -1)
-      {
-        if((var_to_rename & 1) != 0)
-          var_to_rename -= 1;
-        rename_map[var_to_rename] = next_free_aig_var;
-        rename_map[var_to_rename+1] = next_free_aig_var+1;
-        next_free_aig_var += 2;
-      }
-      and_gate[val_cnt] = rename_map[and_gate[val_cnt]];
-    }
-    and_gates.push_back(and_gate);
-    L_DBG(and_gate[0] << " " << and_gate[1] << " " << and_gate[2]);
-  }
-
-  // if certain control signals are not defined by AND gates, then this means
-  // that we can set them arbitrarily:
-  for(size_t cnt = 0; cnt < ctrl_cnf_vars.size(); ++cnt)
-  {
-    int aig_var = VM.getInfo(ctrl_cnf_vars[cnt]).getLitInAIG();
-    bool found = false;
-    for(size_t cnt2 = 0; cnt2 < and_gates.size(); ++cnt2)
-    {
-      if(and_gates[cnt2][0] == aig_var)
-      {
-        found = true;
-        break;
-      }
-    }
-    if(!found)
-    {
-      L_DBG("AIGER-literal " << aig_var << " could be chosen arbitrarily.");
-      vector<int> and_gate(3,0);
-      and_gate[0] = aig_var;
-      and_gates.push_back(and_gate);
-    }
-  }
-
-  return (next_free_aig_var - 2) >> 1;
-}
 
 // -------------------------------------------------------------------------------------------
-void QBFCertImplExtractor::dumpResAigerLib(size_t max_var_idx,
-                                           const vector<vector<int> > &and_gates)
+void QBFCertImplExtractor::logDetailedStatistics()
 {
-  const string &in_file = Options::instance().getAigInFileName();
-  const string &out_file = Options::instance().getAigOutFileName();
-  const char *error = NULL;
-  aiger *aig = aiger_init();
-  error = aiger_open_and_read_from_file (aig, in_file.c_str());
-  MASSERT(error == NULL, "Could not open AIGER file " << in_file << " (" << error << ").");
-
-  // remove controllable inputs:
-  aiger_private * priv = (aiger_private*) (aig);
-  for(unsigned cnt = 0; cnt < aig->num_inputs; ++cnt)
-  {
-    string name;
-    if(aig->inputs[cnt].name != NULL)
-      name = string(aig->inputs[cnt].name);
-    StringUtils::toLowerCaseIn(name);
-    if(name.find("controllable_") == 0)
-    {
-      free(aig->inputs[cnt].name);
-      for(unsigned cnt2 = cnt; cnt2+1 < aig->num_inputs; ++cnt2)
-        aig->inputs[cnt2] = aig->inputs[cnt2+1];
-      aig->num_inputs--;
-      priv->size_inputs--;
-      cnt--;
-    }
-  }
-
-  // add AND gates:
-  unsigned new_size = aig->num_ands + and_gates.size();
-  aig->ands = static_cast<aiger_and*>(realloc(aig->ands, new_size * sizeof(aiger_and)));
-  for(unsigned cnt = 0; cnt < and_gates.size(); ++cnt)
-  {
-    unsigned idx = aig->num_ands + cnt;
-    aig->ands[idx].lhs = and_gates[cnt][0];
-    aig->ands[idx].rhs0 = and_gates[cnt][1];
-    aig->ands[idx].rhs1 = and_gates[cnt][2];
-  }
-  aig->num_ands = new_size;
-  priv->size_ands = new_size;
-  unsigned new_max_v = aig->num_inputs + aig->num_latches + aig->num_ands;
-  MASSERT(max_var_idx == new_max_v, "Error in max var index.");
-  aig->maxvar = new_max_v;
-
-  int success = aiger_open_and_write_to_file(aig, out_file.c_str());
-  MASSERT(success, "Could not write result file.");
-  aiger_reset(aig);
+  L_LOG("Final circuit size: " << size_final_ << " new AND gates.");
+  L_LOG("Size before ABC: " << size_before_abc_ << " AND gates.");
+  L_LOG("Size after ABC: " << size_after_abc_ << " AND gates.");
+  L_LOG("Time for QBFCert: " << qbfcert_real_time_ << " seconds.");
+  L_LOG("Time for optimizing with ABC: " << abc_real_time_ << " seconds.");
 }

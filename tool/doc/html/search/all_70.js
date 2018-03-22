@@ -1,12 +1,11 @@
 var searchData=
 [
-  ['parallellearner',['ParallelLearner',['../classParallelLearner.html',1,'ParallelLearner'],['../classParallelLearner.html#a469e826d756c7c1a932128cfb17ce380',1,'ParallelLearner::ParallelLearner(size_t nr_of_threads)'],['../classParallelLearner.html#a7857993d63e497f5c946030c3127a578',1,'ParallelLearner::ParallelLearner(const ParallelLearner &amp;other)']]],
+  ['parallellearner',['ParallelLearner',['../classParallelLearner.html',1,'ParallelLearner'],['../classParallelLearner.html#af19878077a2dff8ade1de01be095137d',1,'ParallelLearner::ParallelLearner(size_t nr_of_threads, CNFImplExtractor *impl_extractor)'],['../classParallelLearner.html#a7857993d63e497f5c946030c3127a578',1,'ParallelLearner::ParallelLearner(const ParallelLearner &amp;other)']]],
   ['parallellearner_2ecpp',['ParallelLearner.cpp',['../ParallelLearner_8cpp.html',1,'']]],
   ['parallellearner_2eh',['ParallelLearner.h',['../ParallelLearner_8h.html',1,'']]],
   ['parse',['parse',['../classOptions.html#ade5d49fc467ba040926341daa1d9a06f',1,'Options']]],
   ['parseanswer',['parseAnswer',['../classExtQBFSolver.html#a11ddbf3980824453238071e8a036f804',1,'ExtQBFSolver']]],
   ['parsemodel',['parseModel',['../classExtQBFSolver.html#a3b43f437ee9286b62be1de73932b6636',1,'ExtQBFSolver']]],
-  ['parseqbfcertanswer',['parseQBFCertAnswer',['../classQBFCertImplExtractor.html#a30f9aea9a9cb3b2662cb4eee1ac73687',1,'QBFCertImplExtractor']]],
   ['path_5fto_5fdeqqbf_5f',['path_to_deqqbf_',['../classDepQBFExt.html#a4c952a6d69e93efc5cd6c5491f85c5b3',1,'DepQBFExt::path_to_deqqbf_()'],['../classQuBEExt.html#aed89db58647a80a6204798720ec136df',1,'QuBEExt::path_to_deqqbf_()']]],
   ['path_5fto_5fiprover_5f',['path_to_iprover_',['../classEPRSynthesizer.html#ac7fc7beb51f9c27e42941e8e20882540',1,'EPRSynthesizer']]],
   ['path_5fto_5fqbfcert_5f',['path_to_qbfcert_',['../classDepQBFExt.html#a05676410e9b70c5e83cb13b708e2f178',1,'DepQBFExt']]],

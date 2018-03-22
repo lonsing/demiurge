@@ -51,7 +51,7 @@ class PicoSAT;
 /// every call.
 ///
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.0.0
+/// @version 1.1.0
 class PicoSatApi : public SatSolver
 {
 public:

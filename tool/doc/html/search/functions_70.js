@@ -1,10 +1,9 @@
 var searchData=
 [
-  ['parallellearner',['ParallelLearner',['../classParallelLearner.html#a469e826d756c7c1a932128cfb17ce380',1,'ParallelLearner::ParallelLearner(size_t nr_of_threads)'],['../classParallelLearner.html#a7857993d63e497f5c946030c3127a578',1,'ParallelLearner::ParallelLearner(const ParallelLearner &amp;other)']]],
+  ['parallellearner',['ParallelLearner',['../classParallelLearner.html#af19878077a2dff8ade1de01be095137d',1,'ParallelLearner::ParallelLearner(size_t nr_of_threads, CNFImplExtractor *impl_extractor)'],['../classParallelLearner.html#a7857993d63e497f5c946030c3127a578',1,'ParallelLearner::ParallelLearner(const ParallelLearner &amp;other)']]],
   ['parse',['parse',['../classOptions.html#ade5d49fc467ba040926341daa1d9a06f',1,'Options']]],
   ['parseanswer',['parseAnswer',['../classExtQBFSolver.html#a11ddbf3980824453238071e8a036f804',1,'ExtQBFSolver']]],
   ['parsemodel',['parseModel',['../classExtQBFSolver.html#a3b43f437ee9286b62be1de73932b6636',1,'ExtQBFSolver']]],
-  ['parseqbfcertanswer',['parseQBFCertAnswer',['../classQBFCertImplExtractor.html#a30f9aea9a9cb3b2662cb4eee1ac73687',1,'QBFCertImplExtractor']]],
   ['picosatapi',['PicoSatApi',['../classPicoSatApi.html#a8d9525989ce86f149019a16a9ab665da',1,'PicoSatApi::PicoSatApi(bool rand_models=false, bool min_cores=true)'],['../classPicoSatApi.html#a1d8cc76c346d85c8188db98793da93f9',1,'PicoSatApi::PicoSatApi(const PicoSatApi &amp;other)']]],
   ['pop',['pop',['../classVarManager.html#a6f2350621a62b97ca06d3469dc9d65f1',1,'VarManager']]],
   ['popmin',['popMin',['../classIFM13Synth.html#a6bd825fad36c8cd64afbc2b17fff8b69',1,'IFM13Synth::popMin()'],['../classIFM13Explorer.html#a629b19d6716974b5239dd296de915167',1,'IFM13Explorer::popMin()']]],

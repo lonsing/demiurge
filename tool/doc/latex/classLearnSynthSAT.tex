@@ -19,7 +19,7 @@ Inheritance diagram for Learn\-Synth\-S\-A\-T\-:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classLearnSynthSAT_a0d2a30dcdd8a601aaea8ddf689717bcc}{Learn\-Synth\-S\-A\-T} ()
+\hyperlink{classLearnSynthSAT_a5620cd59d05720b9a148077d86efa2a8}{Learn\-Synth\-S\-A\-T} (\hyperlink{classCNFImplExtractor}{C\-N\-F\-Impl\-Extractor} $\ast$impl\-\_\-extractor)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 virtual \hyperlink{classLearnSynthSAT_a2cb64f16d981276fe946d0fa0cf0bd09}{$\sim$\-Learn\-Synth\-S\-A\-T} ()
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
@@ -32,6 +32,10 @@ bool \hyperlink{classLearnSynthSAT_a055b4699184d09bb7f6b15052ac684db}{compute\-W
 \begin{DoxyCompactList}\small\item\em Computes the winning region and stores the result in \hyperlink{classLearnSynthSAT_aced2bce789c7a93ed4b5391dd0690616}{winning\-\_\-region\-\_\-}. \end{DoxyCompactList}\item 
 bool \hyperlink{classLearnSynthSAT_a49541a9cff8002ca31e0044ae35546a2}{compute\-Winning\-Region\-Plain} ()
 \begin{DoxyCompactList}\small\item\em Uses the standard method to compute a winning region. \end{DoxyCompactList}\item 
+bool \hyperlink{classLearnSynthSAT_a0d36fdd8180e9ba06e116b6ed3cb6a72}{compute\-Winning\-Region\-Plain\-Dep} ()
+\begin{DoxyCompactList}\small\item\em Computes the winning region, exploiting temporary varibles of the tran. rel. \end{DoxyCompactList}\item 
+bool \hyperlink{classLearnSynthSAT_a7190dabde3f24ddb94c0484f7df3b026}{compute\-Winning\-Region\-Plain\-Dep2} ()
+\begin{DoxyCompactList}\small\item\em Exploits temporary varibles of the tran. rel. even more. \end{DoxyCompactList}\item 
 bool \hyperlink{classLearnSynthSAT_aa981048565f10183c30c4dc0576de6b6}{compute\-Winning\-Region\-R\-G} ()
 \begin{DoxyCompactList}\small\item\em Compute a winning region with optimization R\-G when generalizing counterexamples. \end{DoxyCompactList}\item 
 bool \hyperlink{classLearnSynthSAT_a2d54b84ce5e87b7b2d398226faa501b0}{compute\-Winning\-Region\-R\-G\-R\-C} ()
@@ -68,7 +72,9 @@ int \hyperlink{classLearnSynthSAT_ace0511849ad0020364743f54dd75afee}{current\-\_
 \hyperlink{classSatSolver}{Sat\-Solver} $\ast$ \hyperlink{classLearnSynthSAT_ae7f4a4e3546f46ad1256e203311226cf}{solver\-\_\-i\-\_\-ind\-\_\-}
 \begin{DoxyCompactList}\small\item\em The solver for computing counterexample-\/candidates if optimization R\-C is enabled. \end{DoxyCompactList}\item 
 \hyperlink{classSatSolver}{Sat\-Solver} $\ast$ \hyperlink{classLearnSynthSAT_ab81d5f53e078238feb1e948a5a5366ff}{solver\-\_\-ctrl\-\_\-ind\-\_\-}
-\begin{DoxyCompactList}\small\item\em The solver for generalizing counterexamples if optimization R\-G is endabled. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The solver for generalizing counterexamples if optimization R\-G is endabled. \end{DoxyCompactList}\item 
+\hyperlink{classCNFImplExtractor}{C\-N\-F\-Impl\-Extractor} $\ast$ \hyperlink{classLearnSynthSAT_a1c7a39732a4ee3cd1ec877f2642046fc}{impl\-\_\-extractor\-\_\-}
+\begin{DoxyCompactList}\small\item\em The engine to use for circuit extraction. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -94,29 +100,34 @@ Finally the \hyperlink{classQBFCertImplExtractor}{Q\-B\-F\-Cert\-Impl\-Extractor
 Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\-0.\-0 
+1.\-1.\-0 
 \end{DoxyVersion}
 
 
-Definition at line 84 of file Learn\-Synth\-S\-A\-T.\-h.
+Definition at line 85 of file Learn\-Synth\-S\-A\-T.\-h.
 
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classLearnSynthSAT_a0d2a30dcdd8a601aaea8ddf689717bcc}{\index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}!Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}}
+\hypertarget{classLearnSynthSAT_a5620cd59d05720b9a148077d86efa2a8}{\index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}!Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}}
 \index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}!LearnSynthSAT@{Learn\-Synth\-S\-A\-T}}
 \subsubsection[{Learn\-Synth\-S\-A\-T}]{\setlength{\rightskip}{0pt plus 5cm}Learn\-Synth\-S\-A\-T\-::\-Learn\-Synth\-S\-A\-T (
 \begin{DoxyParamCaption}
-{}
+\item[{{\bf C\-N\-F\-Impl\-Extractor} $\ast$}]{impl\-\_\-extractor}
 \end{DoxyParamCaption}
-)}}\label{classLearnSynthSAT_a0d2a30dcdd8a601aaea8ddf689717bcc}
+)}}\label{classLearnSynthSAT_a5620cd59d05720b9a148077d86efa2a8}
 
 
 Constructor. 
 
 
+\begin{DoxyParams}{Parameters}
+{\em impl\-\_\-extractor} & The engine to use for circuit extraction. It will be deleted by this class. \\
+\hline
+\end{DoxyParams}
 
-Definition at line 41 of file Learn\-Synth\-S\-A\-T.\-cpp.
+
+Definition at line 42 of file Learn\-Synth\-S\-A\-T.\-cpp.
 
 
 
@@ -135,11 +146,11 @@ Destructor.
 
 
 
-Definition at line 104 of file Learn\-Synth\-S\-A\-T.\-cpp.
+Definition at line 106 of file Learn\-Synth\-S\-A\-T.\-cpp.
 
 
 
-References solver\-\_\-ctrl\-\_\-, solver\-\_\-ctrl\-\_\-ind\-\_\-, solver\-\_\-i\-\_\-, and solver\-\_\-i\-\_\-ind\-\_\-.
+References impl\-\_\-extractor\-\_\-, solver\-\_\-ctrl\-\_\-, solver\-\_\-ctrl\-\_\-ind\-\_\-, solver\-\_\-i\-\_\-, and solver\-\_\-i\-\_\-ind\-\_\-.
 
 \hypertarget{classLearnSynthSAT_ae4a63ec1333eb53c2026f4e170dc12e1}{\index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}!Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}}
 \index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}!LearnSynthSAT@{Learn\-Synth\-S\-A\-T}}
@@ -185,7 +196,7 @@ True if the specification was realizable, false otherwise.
 \end{DoxyReturn}
 
 
-Definition at line 152 of file Learn\-Synth\-S\-A\-T.\-cpp.
+Definition at line 154 of file Learn\-Synth\-S\-A\-T.\-cpp.
 
 
 
@@ -213,15 +224,65 @@ True if the specification was realizable, false otherwise.
 \end{DoxyReturn}
 
 
-Definition at line 178 of file Learn\-Synth\-S\-A\-T.\-cpp.
+Definition at line 180 of file Learn\-Synth\-S\-A\-T.\-cpp.
 
 
 
-References C\-N\-F\-::add\-Clause\-And\-Simplify(), C\-N\-F\-::add\-C\-N\-F(), C\-N\-F\-::clear(), Utils\-::compress\-State\-C\-N\-F(), Utils\-::contains\-Init(), Var\-Info\-::\-C\-T\-R\-L, Sat\-Solver\-::do\-Min\-Cores(), Sat\-Solver\-::do\-Rand\-Models(), Utils\-::extract(), A\-I\-G2\-C\-N\-F\-::get\-Next\-Safe\-States(), A\-I\-G2\-C\-N\-F\-::get\-Next\-Unsafe\-States(), A\-I\-G2\-C\-N\-F\-::get\-Safe\-States(), A\-I\-G2\-C\-N\-F\-::get\-Trans(), Var\-Manager\-::get\-Vars\-Of\-Type(), Sat\-Solver\-::inc\-Add\-Clause(), Sat\-Solver\-::inc\-Add\-C\-N\-F(), Sat\-Solver\-::inc\-Is\-Sat\-Model\-Or\-Core(), Var\-Info\-::\-I\-N\-P\-U\-T, Var\-Manager\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), L\-\_\-\-D\-B\-G, M\-A\-S\-S\-E\-R\-T, C\-N\-F\-::negate(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Check\-Candidate\-Failed(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Check\-Candidate\-Found(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Compute\-Candidate(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Refine(), Learn\-Statistics\-S\-A\-T\-::notify\-Before\-Check\-Candidate(), Learn\-Statistics\-S\-A\-T\-::notify\-Before\-Compute\-Candidate(), Learn\-Statistics\-S\-A\-T\-::notify\-Before\-Refine(), Learn\-Statistics\-S\-A\-T\-::notify\-Restart(), Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, Var\-Manager\-::reset\-To\-Last\-Push(), solver\-\_\-ctrl\-\_\-, solver\-\_\-i\-\_\-, Sat\-Solver\-::start\-Incremental\-Session(), statistics\-\_\-, Utils\-::swap\-Present\-To\-Next(), C\-N\-F\-::swap\-Present\-To\-Next(), winning\-\_\-region\-\_\-, and winning\-\_\-region\-\_\-large\-\_\-.
+References C\-N\-F\-::add\-Clause\-And\-Simplify(), C\-N\-F\-::add\-C\-N\-F(), C\-N\-F\-::clear(), Utils\-::compress\-State\-C\-N\-F(), Utils\-::contains\-Init(), Var\-Info\-::\-C\-T\-R\-L, Sat\-Solver\-::do\-Min\-Cores(), Sat\-Solver\-::do\-Rand\-Models(), Utils\-::extract(), A\-I\-G2\-C\-N\-F\-::get\-Next\-Safe\-States(), A\-I\-G2\-C\-N\-F\-::get\-Next\-Unsafe\-States(), A\-I\-G2\-C\-N\-F\-::get\-Safe\-States(), A\-I\-G2\-C\-N\-F\-::get\-Trans(), Var\-Manager\-::get\-Vars\-Of\-Type(), Sat\-Solver\-::inc\-Add\-Clause(), Sat\-Solver\-::inc\-Add\-C\-N\-F(), Sat\-Solver\-::inc\-Is\-Sat\-Model\-Or\-Core(), Var\-Info\-::\-I\-N\-P\-U\-T, Var\-Manager\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), L\-\_\-\-D\-B\-G, M\-A\-S\-S\-E\-R\-T, C\-N\-F\-::negate(), Var\-Info\-::\-N\-E\-X\-T\-\_\-\-S\-T\-A\-T\-E, Learn\-Statistics\-S\-A\-T\-::notify\-After\-Check\-Candidate\-Failed(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Check\-Candidate\-Found(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Compute\-Candidate(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Refine(), Learn\-Statistics\-S\-A\-T\-::notify\-Before\-Check\-Candidate(), Learn\-Statistics\-S\-A\-T\-::notify\-Before\-Compute\-Candidate(), Learn\-Statistics\-S\-A\-T\-::notify\-Before\-Refine(), Learn\-Statistics\-S\-A\-T\-::notify\-Restart(), Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, Var\-Manager\-::reset\-To\-Last\-Push(), solver\-\_\-ctrl\-\_\-, solver\-\_\-i\-\_\-, Sat\-Solver\-::start\-Incremental\-Session(), statistics\-\_\-, Utils\-::swap\-Present\-To\-Next(), C\-N\-F\-::swap\-Present\-To\-Next(), winning\-\_\-region\-\_\-, and winning\-\_\-region\-\_\-large\-\_\-.
 
 
 
 Referenced by compute\-Winning\-Region().
+
+\hypertarget{classLearnSynthSAT_a0d36fdd8180e9ba06e116b6ed3cb6a72}{\index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}!compute\-Winning\-Region\-Plain\-Dep@{compute\-Winning\-Region\-Plain\-Dep}}
+\index{compute\-Winning\-Region\-Plain\-Dep@{compute\-Winning\-Region\-Plain\-Dep}!LearnSynthSAT@{Learn\-Synth\-S\-A\-T}}
+\subsubsection[{compute\-Winning\-Region\-Plain\-Dep}]{\setlength{\rightskip}{0pt plus 5cm}bool Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthSAT_a0d36fdd8180e9ba06e116b6ed3cb6a72}
+
+
+Computes the winning region, exploiting temporary varibles of the tran. rel. 
+
+\begin{DoxyNote}{Note}
+This method is experimalal. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+True if the specification was realizable, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 328 of file Learn\-Synth\-S\-A\-T.\-cpp.
+
+
+
+References C\-N\-F\-::add\-Clause\-And\-Simplify(), C\-N\-F\-::add\-C\-N\-F(), C\-N\-F\-::clear(), Utils\-::compress\-State\-C\-N\-F(), Utils\-::contains\-Init(), Var\-Info\-::\-C\-T\-R\-L, Sat\-Solver\-::do\-Min\-Cores(), Sat\-Solver\-::do\-Rand\-Models(), Utils\-::extract(), A\-I\-G2\-C\-N\-F\-::get\-Next\-Safe\-States(), A\-I\-G2\-C\-N\-F\-::get\-Next\-Unsafe\-States(), A\-I\-G2\-C\-N\-F\-::get\-Safe\-States(), A\-I\-G2\-C\-N\-F\-::get\-Tmp\-Deps\-Trans(), A\-I\-G2\-C\-N\-F\-::get\-Trans(), Var\-Manager\-::get\-Vars\-Of\-Type(), Sat\-Solver\-::inc\-Add\-Clause(), Sat\-Solver\-::inc\-Add\-C\-N\-F(), Sat\-Solver\-::inc\-Add\-Neg\-Cube\-As\-Clause(), Sat\-Solver\-::inc\-Is\-Sat\-Model\-Or\-Core(), Var\-Info\-::\-I\-N\-P\-U\-T, Var\-Manager\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), L\-\_\-\-D\-B\-G, M\-A\-S\-S\-E\-R\-T, C\-N\-F\-::negate(), Var\-Info\-::\-N\-E\-X\-T\-\_\-\-S\-T\-A\-T\-E, Learn\-Statistics\-S\-A\-T\-::notify\-After\-Check\-Candidate\-Failed(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Check\-Candidate\-Found(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Compute\-Candidate(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Refine(), Learn\-Statistics\-S\-A\-T\-::notify\-Before\-Check\-Candidate(), Learn\-Statistics\-S\-A\-T\-::notify\-Before\-Compute\-Candidate(), Learn\-Statistics\-S\-A\-T\-::notify\-Before\-Refine(), Learn\-Statistics\-S\-A\-T\-::notify\-Restart(), Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, Var\-Manager\-::reset\-To\-Last\-Push(), solver\-\_\-ctrl\-\_\-, solver\-\_\-i\-\_\-, Sat\-Solver\-::start\-Incremental\-Session(), statistics\-\_\-, Utils\-::swap\-Present\-To\-Next(), C\-N\-F\-::swap\-Present\-To\-Next(), winning\-\_\-region\-\_\-, and winning\-\_\-region\-\_\-large\-\_\-.
+
+\hypertarget{classLearnSynthSAT_a7190dabde3f24ddb94c0484f7df3b026}{\index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}!compute\-Winning\-Region\-Plain\-Dep2@{compute\-Winning\-Region\-Plain\-Dep2}}
+\index{compute\-Winning\-Region\-Plain\-Dep2@{compute\-Winning\-Region\-Plain\-Dep2}!LearnSynthSAT@{Learn\-Synth\-S\-A\-T}}
+\subsubsection[{compute\-Winning\-Region\-Plain\-Dep2}]{\setlength{\rightskip}{0pt plus 5cm}bool Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthSAT_a7190dabde3f24ddb94c0484f7df3b026}
+
+
+Exploits temporary varibles of the tran. rel. even more. 
+
+\begin{DoxyNote}{Note}
+This method is experimalal. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+True if the specification was realizable, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 508 of file Learn\-Synth\-S\-A\-T.\-cpp.
+
+
+
+References C\-N\-F\-::add\-Clause(), C\-N\-F\-::add\-Clause\-And\-Simplify(), C\-N\-F\-::add\-C\-N\-F(), C\-N\-F\-::clear(), Utils\-::compress\-State\-C\-N\-F(), Var\-Manager\-::create\-Fresh\-Tmp\-Var(), Var\-Info\-::\-C\-T\-R\-L, D\-A\-S\-S\-E\-R\-T, Sat\-Solver\-::do\-Min\-Cores(), Sat\-Solver\-::do\-Rand\-Models(), Utils\-::extract(), C\-N\-F\-::get\-Clauses(), Var\-Manager\-::get\-Max\-C\-N\-F\-Var(), A\-I\-G2\-C\-N\-F\-::get\-Next\-Safe\-States(), A\-I\-G2\-C\-N\-F\-::get\-Next\-Unsafe\-States(), A\-I\-G2\-C\-N\-F\-::get\-Safe\-States(), A\-I\-G2\-C\-N\-F\-::get\-Tmp\-Deps(), A\-I\-G2\-C\-N\-F\-::get\-Tmp\-Deps\-Trans(), A\-I\-G2\-C\-N\-F\-::get\-Trans(), Var\-Manager\-::get\-Vars\-Of\-Type(), Sat\-Solver\-::inc\-Add\-Clause(), Sat\-Solver\-::inc\-Add\-C\-N\-F(), Sat\-Solver\-::inc\-Add\-Neg\-Cube\-As\-Clause(), Sat\-Solver\-::inc\-Is\-Sat\-Model\-Or\-Core(), Var\-Info\-::\-I\-N\-P\-U\-T, Var\-Manager\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), L\-\_\-\-D\-B\-G, M\-A\-S\-S\-E\-R\-T, C\-N\-F\-::negate(), Var\-Info\-::\-N\-E\-X\-T\-\_\-\-S\-T\-A\-T\-E, Learn\-Statistics\-S\-A\-T\-::notify\-After\-Check\-Candidate\-Failed(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Check\-Candidate\-Found(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Compute\-Candidate(), Learn\-Statistics\-S\-A\-T\-::notify\-After\-Refine(), Learn\-Statistics\-S\-A\-T\-::notify\-Before\-Check\-Candidate(), Learn\-Statistics\-S\-A\-T\-::notify\-Before\-Compute\-Candidate(), Learn\-Statistics\-S\-A\-T\-::notify\-Before\-Refine(), Learn\-Statistics\-S\-A\-T\-::notify\-Restart(), Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, Var\-Manager\-::push(), C\-N\-F\-::rename\-Vars(), Var\-Manager\-::reset\-To\-Last\-Push(), solver\-\_\-ctrl\-\_\-, solver\-\_\-i\-\_\-, Sat\-Solver\-::start\-Incremental\-Session(), statistics\-\_\-, Var\-Info\-::\-T\-M\-P, winning\-\_\-region\-\_\-, and winning\-\_\-region\-\_\-large\-\_\-.
 
 \hypertarget{classLearnSynthSAT_aa981048565f10183c30c4dc0576de6b6}{\index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}!compute\-Winning\-Region\-R\-G@{compute\-Winning\-Region\-R\-G}}
 \index{compute\-Winning\-Region\-R\-G@{compute\-Winning\-Region\-R\-G}!LearnSynthSAT@{Learn\-Synth\-S\-A\-T}}
@@ -241,7 +302,7 @@ True if the specification was realizable, false otherwise.
 \end{DoxyReturn}
 
 
-Definition at line 326 of file Learn\-Synth\-S\-A\-T.\-cpp.
+Definition at line 759 of file Learn\-Synth\-S\-A\-T.\-cpp.
 
 
 
@@ -269,7 +330,7 @@ True if the specification was realizable, false otherwise.
 \end{DoxyReturn}
 
 
-Definition at line 510 of file Learn\-Synth\-S\-A\-T.\-cpp.
+Definition at line 943 of file Learn\-Synth\-S\-A\-T.\-cpp.
 
 
 
@@ -292,7 +353,7 @@ Checks a winning region computed with optimization R\-C for correctness.
 
 We usually check the correctness of the winning region in debug-\/mode by calling \hyperlink{classUtils_acc29602987b73022546a6d752a7e093f}{Utils\-::debug\-Check\-Win\-Reg()}. However, this method of \hyperlink{classUtils}{Utils} does not work for winning regions that have been computed with optimization R\-C enabled. In such cases we this method. 
 
-Definition at line 753 of file Learn\-Synth\-S\-A\-T.\-cpp.
+Definition at line 1186 of file Learn\-Synth\-S\-A\-T.\-cpp.
 
 
 
@@ -344,7 +405,7 @@ The previous-\/state copy of a literal.
 \end{DoxyReturn}
 
 
-Definition at line 723 of file Learn\-Synth\-S\-A\-T.\-cpp.
+Definition at line 1156 of file Learn\-Synth\-S\-A\-T.\-cpp.
 
 
 
@@ -372,7 +433,7 @@ Computes the previous-\/state copy of a cube or clause.
 \end{DoxyParams}
 
 
-Definition at line 733 of file Learn\-Synth\-S\-A\-T.\-cpp.
+Definition at line 1166 of file Learn\-Synth\-S\-A\-T.\-cpp.
 
 
 
@@ -396,7 +457,7 @@ Computes the previous-\/state copy of a \hyperlink{classCNF}{C\-N\-F}.
 \end{DoxyParams}
 
 
-Definition at line 740 of file Learn\-Synth\-S\-A\-T.\-cpp.
+Definition at line 1173 of file Learn\-Synth\-S\-A\-T.\-cpp.
 
 
 
@@ -432,11 +493,11 @@ Implements \hyperlink{classBackEnd_a099e717dc71e9cc2d838b1ca86340590}{Back\-End}
 
 
 
-Definition at line 117 of file Learn\-Synth\-S\-A\-T.\-cpp.
+Definition at line 121 of file Learn\-Synth\-S\-A\-T.\-cpp.
 
 
 
-References compute\-Winning\-Region(), Q\-B\-F\-Cert\-Impl\-Extractor\-::extract\-Circuit(), Var\-Manager\-::instance(), Options\-::instance(), L\-\_\-\-I\-N\-F, L\-\_\-\-R\-E\-S, Learn\-Statistics\-S\-A\-T\-::log\-Statistics(), M\-A\-S\-S\-E\-R\-T, Learn\-Statistics\-S\-A\-T\-::notify\-Rel\-Det\-End(), Learn\-Statistics\-S\-A\-T\-::notify\-Rel\-Det\-Start(), Learn\-Statistics\-S\-A\-T\-::notify\-Win\-Reg\-End(), Learn\-Statistics\-S\-A\-T\-::notify\-Win\-Reg\-Start(), Var\-Manager\-::push(), statistics\-\_\-, and winning\-\_\-region\-\_\-.
+References compute\-Winning\-Region(), C\-N\-F\-Impl\-Extractor\-::extract\-Circuit(), impl\-\_\-extractor\-\_\-, Var\-Manager\-::instance(), Options\-::instance(), L\-\_\-\-I\-N\-F, L\-\_\-\-R\-E\-S, C\-N\-F\-Impl\-Extractor\-::log\-Statistics(), Learn\-Statistics\-S\-A\-T\-::log\-Statistics(), M\-A\-S\-S\-E\-R\-T, Learn\-Statistics\-S\-A\-T\-::notify\-Win\-Reg\-End(), Learn\-Statistics\-S\-A\-T\-::notify\-Win\-Reg\-Start(), Var\-Manager\-::push(), statistics\-\_\-, and winning\-\_\-region\-\_\-.
 
 
 
@@ -450,7 +511,7 @@ A literal that is true if the current state is initial and false otherwise.
 
 The clauses assigning the literal are part of \hyperlink{classLearnSynthSAT_a6289a4f041ca85ce44a33143fab42888}{prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-}. 
 
-Definition at line 271 of file Learn\-Synth\-S\-A\-T.\-h.
+Definition at line 291 of file Learn\-Synth\-S\-A\-T.\-h.
 
 
 
@@ -465,7 +526,7 @@ A map from present-\/state variables to their previous-\/state copy.
 
 
 
-Definition at line 264 of file Learn\-Synth\-S\-A\-T.\-h.
+Definition at line 284 of file Learn\-Synth\-S\-A\-T.\-h.
 
 
 
@@ -480,11 +541,26 @@ Says\-: the current state is different from the previous one.
 
 This \hyperlink{classCNF}{C\-N\-F} expresses that the current state is different from the previous state. This is an important building block for the \hyperlink{classCNF}{C\-N\-F} to compute counterexamples if optimization R\-C is enabled. 
 
-Definition at line 280 of file Learn\-Synth\-S\-A\-T.\-h.
+Definition at line 300 of file Learn\-Synth\-S\-A\-T.\-h.
 
 
 
 Referenced by compute\-Winning\-Region\-R\-G\-R\-C(), debug\-Check\-Win\-Reg(), and Learn\-Synth\-S\-A\-T().
+
+\hypertarget{classLearnSynthSAT_a1c7a39732a4ee3cd1ec877f2642046fc}{\index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}!impl\-\_\-extractor\-\_\-@{impl\-\_\-extractor\-\_\-}}
+\index{impl\-\_\-extractor\-\_\-@{impl\-\_\-extractor\-\_\-}!LearnSynthSAT@{Learn\-Synth\-S\-A\-T}}
+\subsubsection[{impl\-\_\-extractor\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F\-Impl\-Extractor}$\ast$ Learn\-Synth\-S\-A\-T\-::impl\-\_\-extractor\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearnSynthSAT_a1c7a39732a4ee3cd1ec877f2642046fc}
+
+
+The engine to use for circuit extraction. 
+
+It will be deleted by this class (in the destructor). 
+
+Definition at line 329 of file Learn\-Synth\-S\-A\-T.\-h.
+
+
+
+Referenced by run(), and $\sim$\-Learn\-Synth\-S\-A\-T().
 
 \hypertarget{classLearnSynthSAT_a6289a4f041ca85ce44a33143fab42888}{\index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}!prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-@{prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-}}
 \index{prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-@{prev\-\_\-trans\-\_\-or\-\_\-initial\-\_\-}!LearnSynthSAT@{Learn\-Synth\-S\-A\-T}}
@@ -495,7 +571,7 @@ Says\-: the current state is initial or the previous transition relation holds.
 
 This \hyperlink{classCNF}{C\-N\-F} expresses that the current state is initial or the previous-\/state copy of the transition relation holds. This is an important building block for the \hyperlink{classCNF}{C\-N\-F} to compute or generalize counterexamples if optimization R\-G or R\-C is enabled. 
 
-Definition at line 259 of file Learn\-Synth\-S\-A\-T.\-h.
+Definition at line 279 of file Learn\-Synth\-S\-A\-T.\-h.
 
 
 
@@ -510,11 +586,11 @@ The solver for checking counterexample-\/candidates.
 
 It is also used to generalize counterexamples if optimization R\-G is disabled. 
 
-Definition at line 292 of file Learn\-Synth\-S\-A\-T.\-h.
+Definition at line 312 of file Learn\-Synth\-S\-A\-T.\-h.
 
 
 
-Referenced by compute\-Winning\-Region\-Plain(), compute\-Winning\-Region\-R\-G(), compute\-Winning\-Region\-R\-G\-R\-C(), and $\sim$\-Learn\-Synth\-S\-A\-T().
+Referenced by compute\-Winning\-Region\-Plain(), compute\-Winning\-Region\-Plain\-Dep(), compute\-Winning\-Region\-Plain\-Dep2(), compute\-Winning\-Region\-R\-G(), compute\-Winning\-Region\-R\-G\-R\-C(), and $\sim$\-Learn\-Synth\-S\-A\-T().
 
 \hypertarget{classLearnSynthSAT_ab81d5f53e078238feb1e948a5a5366ff}{\index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}!solver\-\_\-ctrl\-\_\-ind\-\_\-@{solver\-\_\-ctrl\-\_\-ind\-\_\-}}
 \index{solver\-\_\-ctrl\-\_\-ind\-\_\-@{solver\-\_\-ctrl\-\_\-ind\-\_\-}!LearnSynthSAT@{Learn\-Synth\-S\-A\-T}}
@@ -525,7 +601,7 @@ The solver for generalizing counterexamples if optimization R\-G is endabled.
 
 
 
-Definition at line 302 of file Learn\-Synth\-S\-A\-T.\-h.
+Definition at line 322 of file Learn\-Synth\-S\-A\-T.\-h.
 
 
 
@@ -540,11 +616,11 @@ The solver for computing counterexample-\/candidates if optimization R\-C is dis
 
 
 
-Definition at line 285 of file Learn\-Synth\-S\-A\-T.\-h.
+Definition at line 305 of file Learn\-Synth\-S\-A\-T.\-h.
 
 
 
-Referenced by compute\-Winning\-Region\-Plain(), compute\-Winning\-Region\-R\-G(), compute\-Winning\-Region\-R\-G\-R\-C(), and $\sim$\-Learn\-Synth\-S\-A\-T().
+Referenced by compute\-Winning\-Region\-Plain(), compute\-Winning\-Region\-Plain\-Dep(), compute\-Winning\-Region\-Plain\-Dep2(), compute\-Winning\-Region\-R\-G(), compute\-Winning\-Region\-R\-G\-R\-C(), and $\sim$\-Learn\-Synth\-S\-A\-T().
 
 \hypertarget{classLearnSynthSAT_ae7f4a4e3546f46ad1256e203311226cf}{\index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}!solver\-\_\-i\-\_\-ind\-\_\-@{solver\-\_\-i\-\_\-ind\-\_\-}}
 \index{solver\-\_\-i\-\_\-ind\-\_\-@{solver\-\_\-i\-\_\-ind\-\_\-}!LearnSynthSAT@{Learn\-Synth\-S\-A\-T}}
@@ -555,7 +631,7 @@ The solver for computing counterexample-\/candidates if optimization R\-C is ena
 
 
 
-Definition at line 297 of file Learn\-Synth\-S\-A\-T.\-h.
+Definition at line 317 of file Learn\-Synth\-S\-A\-T.\-h.
 
 
 
@@ -570,11 +646,11 @@ Stores and maintains statistics and performance measures.
 
 
 
-Definition at line 230 of file Learn\-Synth\-S\-A\-T.\-h.
+Definition at line 250 of file Learn\-Synth\-S\-A\-T.\-h.
 
 
 
-Referenced by compute\-Winning\-Region\-Plain(), compute\-Winning\-Region\-R\-G(), compute\-Winning\-Region\-R\-G\-R\-C(), and run().
+Referenced by compute\-Winning\-Region\-Plain(), compute\-Winning\-Region\-Plain\-Dep(), compute\-Winning\-Region\-Plain\-Dep2(), compute\-Winning\-Region\-R\-G(), compute\-Winning\-Region\-R\-G\-R\-C(), and run().
 
 \hypertarget{classLearnSynthSAT_aced2bce789c7a93ed4b5391dd0690616}{\index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}!winning\-\_\-region\-\_\-@{winning\-\_\-region\-\_\-}}
 \index{winning\-\_\-region\-\_\-@{winning\-\_\-region\-\_\-}!LearnSynthSAT@{Learn\-Synth\-S\-A\-T}}
@@ -585,11 +661,11 @@ The current over-\/approximation of the winning region.
 
 Only when \hyperlink{classLearnSynthSAT_a055b4699184d09bb7f6b15052ac684db}{compute\-Winning\-Region()} is done, this field will store the correct winning region. 
 
-Definition at line 238 of file Learn\-Synth\-S\-A\-T.\-h.
+Definition at line 258 of file Learn\-Synth\-S\-A\-T.\-h.
 
 
 
-Referenced by compute\-Winning\-Region(), compute\-Winning\-Region\-Plain(), compute\-Winning\-Region\-R\-G(), compute\-Winning\-Region\-R\-G\-R\-C(), debug\-Check\-Win\-Reg(), and run().
+Referenced by compute\-Winning\-Region(), compute\-Winning\-Region\-Plain(), compute\-Winning\-Region\-Plain\-Dep(), compute\-Winning\-Region\-Plain\-Dep2(), compute\-Winning\-Region\-R\-G(), compute\-Winning\-Region\-R\-G\-R\-C(), debug\-Check\-Win\-Reg(), and run().
 
 \hypertarget{classLearnSynthSAT_aaa79e8772e9ce8e59dc14e3bb1784256}{\index{Learn\-Synth\-S\-A\-T@{Learn\-Synth\-S\-A\-T}!winning\-\_\-region\-\_\-large\-\_\-@{winning\-\_\-region\-\_\-large\-\_\-}}
 \index{winning\-\_\-region\-\_\-large\-\_\-@{winning\-\_\-region\-\_\-large\-\_\-}!LearnSynthSAT@{Learn\-Synth\-S\-A\-T}}
@@ -600,11 +676,11 @@ The current over-\/approximation of the winning region in an uncompressed form.
 
 This \hyperlink{classCNF}{C\-N\-F} is logically equivalent to \hyperlink{classLearnSynthSAT_aced2bce789c7a93ed4b5391dd0690616}{winning\-\_\-region\-\_\-}. However, \hyperlink{classLearnSynthSAT_aced2bce789c7a93ed4b5391dd0690616}{winning\-\_\-region\-\_\-} is 'compressed' from time to time by removing redundant clauses (clauses that are implied by other clauses in the winning region). This field stores the uncompressed version of the winning region. Having the uncompressed winning region can be good because throwing away redundant clauses is not always beneficial. The \hyperlink{classCNF}{C\-N\-F} get smaller, but the solver may have to re-\/discover the removed clauses. 
 
-Definition at line 250 of file Learn\-Synth\-S\-A\-T.\-h.
+Definition at line 270 of file Learn\-Synth\-S\-A\-T.\-h.
 
 
 
-Referenced by compute\-Winning\-Region\-Plain(), compute\-Winning\-Region\-R\-G(), and compute\-Winning\-Region\-R\-G\-R\-C().
+Referenced by compute\-Winning\-Region\-Plain(), compute\-Winning\-Region\-Plain\-Dep(), compute\-Winning\-Region\-Plain\-Dep2(), compute\-Winning\-Region\-R\-G(), and compute\-Winning\-Region\-R\-G\-R\-C().
 
 
 

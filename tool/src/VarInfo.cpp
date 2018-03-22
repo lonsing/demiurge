@@ -110,3 +110,9 @@ void VarInfo::setName(const string &name)
 {
   name_ = name;
 }
+
+// -------------------------------------------------------------------------------------------
+bool operator< (const VarInfo &o1, const VarInfo &o2)
+{
+  return o1.getLitInCNF() < o2.getLitInCNF();
+}

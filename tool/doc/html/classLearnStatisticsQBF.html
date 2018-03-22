@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">demiurge
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A synthesis tool for safety specifications.</div>
   </td>
@@ -108,10 +108,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a89cb7bd50255ee97dc040c4a48439dea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called before the computation of the winning region starts.  <a href="#a89cb7bd50255ee97dc040c4a48439dea"></a><br/></td></tr>
 <tr class="memitem:afa94736042d6e23e3042517d8db00a50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLearnStatisticsQBF.html#afa94736042d6e23e3042517d8db00a50">notifyWinRegEnd</a> ()</td></tr>
 <tr class="memdesc:afa94736042d6e23e3042517d8db00a50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called after the computation of the winning region is done.  <a href="#afa94736042d6e23e3042517d8db00a50"></a><br/></td></tr>
-<tr class="memitem:ae88030461fe06f198b596054bf31ce64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLearnStatisticsQBF.html#ae88030461fe06f198b596054bf31ce64">notifyRelDetStart</a> ()</td></tr>
-<tr class="memdesc:ae88030461fe06f198b596054bf31ce64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called before the relation determinization (the computation of circuits) starts.  <a href="#ae88030461fe06f198b596054bf31ce64"></a><br/></td></tr>
-<tr class="memitem:ac00e3d7a0cc77573c2dca94460bbb354"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLearnStatisticsQBF.html#ac00e3d7a0cc77573c2dca94460bbb354">notifyRelDetEnd</a> ()</td></tr>
-<tr class="memdesc:ac00e3d7a0cc77573c2dca94460bbb354"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called after the relation determinization (the computation of circuits) starts.  <a href="#ac00e3d7a0cc77573c2dca94460bbb354"></a><br/></td></tr>
 <tr class="memitem:a6aff1d90b24d33dccf27af13f9376ee1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLearnStatisticsQBF.html#a6aff1d90b24d33dccf27af13f9376ee1">notifyBeforeComputeCube</a> ()</td></tr>
 <tr class="memdesc:a6aff1d90b24d33dccf27af13f9376ee1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called before the QBF solver is called to compute a counterexample-state.  <a href="#a6aff1d90b24d33dccf27af13f9376ee1"></a><br/></td></tr>
 <tr class="memitem:acb35168104b3c8d3d529c93967c8ebbc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLearnStatisticsQBF.html#acb35168104b3c8d3d529c93967c8ebbc">notifyAfterComputeCube</a> ()</td></tr>
@@ -135,12 +131,6 @@ Protected Attributes</h2></td></tr>
 <tr class="memdesc:a679a221c1cbf3330572f93d850976289"><td class="mdescLeft">&#160;</td><td class="mdescRight">The winning region computation time in CPU-seconds.  <a href="#a679a221c1cbf3330572f93d850976289"></a><br/></td></tr>
 <tr class="memitem:a58013212d789d3c025b521cd150dc12d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLearnStatisticsQBF.html#a58013212d789d3c025b521cd150dc12d">win_reg_real_time_</a></td></tr>
 <tr class="memdesc:a58013212d789d3c025b521cd150dc12d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Like <a class="el" href="classLearnStatisticsQBF.html#a679a221c1cbf3330572f93d850976289" title="The winning region computation time in CPU-seconds.">win_reg_cpu_time_</a> but real-time.  <a href="#a58013212d789d3c025b521cd150dc12d"></a><br/></td></tr>
-<tr class="memitem:a11e1295e566e5456cdb2aca0034bf306"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Stopwatch_8h.html#af3a9f634f27bed7e98dbc23e5c6f807d">PointInTime</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLearnStatisticsQBF.html#a11e1295e566e5456cdb2aca0034bf306">rel_det_start_time_</a></td></tr>
-<tr class="memdesc:a11e1295e566e5456cdb2aca0034bf306"><td class="mdescLeft">&#160;</td><td class="mdescRight">The time when the computation of the circuits was started.  <a href="#a11e1295e566e5456cdb2aca0034bf306"></a><br/></td></tr>
-<tr class="memitem:a38d959613268b6a6aa0decfcbe5d631c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLearnStatisticsQBF.html#a38d959613268b6a6aa0decfcbe5d631c">rel_det_cpu_time_</a></td></tr>
-<tr class="memdesc:a38d959613268b6a6aa0decfcbe5d631c"><td class="mdescLeft">&#160;</td><td class="mdescRight">circuit computation time in CPU-seconds.  <a href="#a38d959613268b6a6aa0decfcbe5d631c"></a><br/></td></tr>
-<tr class="memitem:a2de1d6eb803d78fdf775b8d703adda69"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLearnStatisticsQBF.html#a2de1d6eb803d78fdf775b8d703adda69">rel_det_real_time_</a></td></tr>
-<tr class="memdesc:a2de1d6eb803d78fdf775b8d703adda69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Like <a class="el" href="classLearnStatisticsQBF.html#a38d959613268b6a6aa0decfcbe5d631c" title="circuit computation time in CPU-seconds.">rel_det_cpu_time_</a> but real-time.  <a href="#a2de1d6eb803d78fdf775b8d703adda69"></a><br/></td></tr>
 <tr class="memitem:a857dac1670c551b3dcf935860651143b"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLearnStatisticsQBF.html#a857dac1670c551b3dcf935860651143b">nr_of_cube_computations_</a></td></tr>
 <tr class="memdesc:a857dac1670c551b3dcf935860651143b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The total number of counterexample-cube computations.  <a href="#a857dac1670c551b3dcf935860651143b"></a><br/></td></tr>
 <tr class="memitem:a820d051dbab21cb8df1ad673b04a0c92"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Stopwatch_8h.html#af3a9f634f27bed7e98dbc23e5c6f807d">PointInTime</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLearnStatisticsQBF.html#a820d051dbab21cb8df1ad673b04a0c92">compute_start_time_</a></td></tr>
@@ -171,9 +161,11 @@ Private Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Collects statistics and performance data for <a class="el" href="classLearnSynthQBF.html" title="Implements a learning-based synthesis using a QBF solver.">LearnSynthQBF</a> (and all its variants). </p>
-<p>This class collects statistics and performance data for the learning-based synthesis method implemented with a QBF-solver (implemented in the class <a class="el" href="classLearnSynthQBF.html" title="Implements a learning-based synthesis using a QBF solver.">LearnSynthQBF</a>). </p>
+<p>This class collects statistics and performance data for the learning-based synthesis method implemented with a QBF-solver (implemented in the class <a class="el" href="classLearnSynthQBF.html" title="Implements a learning-based synthesis using a QBF solver.">LearnSynthQBF</a>).</p>
+<dl class="section author"><dt>Author</dt><dd>Robert Koenighofer (<a href="#" onclick="location.href='mai'+'lto:'+'rob'+'er'+'t.k'+'oe'+'nig'+'ho'+'fer'+'@i'+'aik'+'.t'+'ugr'+'az'+'.at'; return false;">rober<span style="display: none;">.nosp@m.</span>t.ko<span style="display: none;">.nosp@m.</span>enigh<span style="display: none;">.nosp@m.</span>ofer<span style="display: none;">.nosp@m.</span>@iaik<span style="display: none;">.nosp@m.</span>.tug<span style="display: none;">.nosp@m.</span>raz.a<span style="display: none;">.nosp@m.</span>t</a>) </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.1.0 </dd></dl>
 
-<p>Definition at line <a class="el" href="LearnStatisticsQBF_8h_source.html#l00043">43</a> of file <a class="el" href="LearnStatisticsQBF_8h_source.html">LearnStatisticsQBF.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsQBF_8h_source.html#l00046">46</a> of file <a class="el" href="LearnStatisticsQBF_8h_source.html">LearnStatisticsQBF.h</a>.</p>
 </div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a9e98cf8a5d7507e3d2a6026f1369e383"></a>
 <div class="memitem">
@@ -217,7 +209,7 @@ Private Member Functions</h2></td></tr>
 
 <p>Destructor. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00052">52</a> of file <a class="el" href="LearnStatisticsQBF_8cpp_source.html">LearnStatisticsQBF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00050">50</a> of file <a class="el" href="LearnStatisticsQBF_8cpp_source.html">LearnStatisticsQBF.cpp</a>.</p>
 
 </div>
 </div>
@@ -271,11 +263,11 @@ Private Member Functions</h2></td></tr>
 <p>Writes the statistics to stdout as messages of type <a class="el" href="classLogger.html#ac9e601f90bf326ce2088de52018861dca07be7495a7931bee16f5d94b3671f5de" title="The value for printing log messages.">Logger::LOG</a>. </p>
 <p>If messages of type <a class="el" href="classLogger.html#ac9e601f90bf326ce2088de52018861dca07be7495a7931bee16f5d94b3671f5de" title="The value for printing log messages.">Logger::LOG</a> are disabled (see <a class="el" href="classLogger.html" title="Prints messages of different kind, which can all be enabled and disabled.">Logger</a>), then nothing happens. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00129">129</a> of file <a class="el" href="LearnStatisticsQBF_8cpp_source.html">LearnStatisticsQBF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00114">114</a> of file <a class="el" href="LearnStatisticsQBF_8cpp_source.html">LearnStatisticsQBF.cpp</a>.</p>
 
-<p>References <a class="el" href="Logger_8h_source.html#l00336">L_LOG</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00182">nr_of_cube_computations_</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00202">nr_of_cube_min_</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00172">rel_det_cpu_time_</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00177">rel_det_real_time_</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00192">sum_compute_cpu_time_</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00197">sum_compute_real_time_</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00224">sum_cube_size_from_</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00231">sum_cube_size_to_</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00212">sum_min_cpu_time_</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00217">sum_min_real_time_</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00157">win_reg_cpu_time_</a>, and <a class="el" href="LearnStatisticsQBF_8h_source.html#l00162">win_reg_real_time_</a>.</p>
+<p>References <a class="el" href="Logger_8h_source.html#l00336">L_LOG</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00156">nr_of_cube_computations_</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00176">nr_of_cube_min_</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00166">sum_compute_cpu_time_</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00171">sum_compute_real_time_</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00198">sum_cube_size_from_</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00205">sum_cube_size_to_</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00186">sum_min_cpu_time_</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00191">sum_min_real_time_</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00146">win_reg_cpu_time_</a>, and <a class="el" href="LearnStatisticsQBF_8h_source.html#l00151">win_reg_real_time_</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00192">LearnSynthQBFInc::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00266">LearnSynthQBF::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00267">LearnSynthQBFInd::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00112">LearnSynthQBFInc::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00134">LearnSynthQBF::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00195">LearnSynthQBFInd::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00203">LearnSynthQBF::computeWinningRegionOneSAT()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00069">LearnSynthQBFInc::run()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00089">LearnSynthQBF::run()</a>, and <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00143">LearnSynthQBFInd::run()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00408">LearnSynthQBFInc::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00267">LearnSynthQBF::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00269">LearnSynthQBFInd::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00565">LearnSynthQBFInc::computeWinningRegionAllPool()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00488">LearnSynthQBFInc::computeWinningRegionAllPush()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00122">LearnSynthQBFInc::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00135">LearnSynthQBF::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00197">LearnSynthQBFInd::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00273">LearnSynthQBFInc::computeWinningRegionOnePool()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00199">LearnSynthQBFInc::computeWinningRegionOnePush()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00204">LearnSynthQBF::computeWinningRegionOneSAT()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00073">LearnSynthQBFInc::run()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00092">LearnSynthQBF::run()</a>, and <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00147">LearnSynthQBFInd::run()</a>.</p>
 
 </div>
 </div>
@@ -295,11 +287,11 @@ Private Member Functions</h2></td></tr>
 <p>Called after the QBF solver is done computing a counterexample-state. </p>
 <p>This method just reads out the <a class="el" href="classStopwatch.html" title="Implements a stopwatch that can be used to measure execution time.">Stopwatch</a> and stores the execution time. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00090">90</a> of file <a class="el" href="LearnStatisticsQBF_8cpp_source.html">LearnStatisticsQBF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00075">75</a> of file <a class="el" href="LearnStatisticsQBF_8cpp_source.html">LearnStatisticsQBF.cpp</a>.</p>
 
-<p>References <a class="el" href="LearnStatisticsQBF_8h_source.html#l00187">compute_start_time_</a>, <a class="el" href="Stopwatch_8cpp_source.html#l00041">Stopwatch::getCPUTimeSec()</a>, <a class="el" href="Stopwatch_8cpp_source.html#l00055">Stopwatch::getRealTimeSec()</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00182">nr_of_cube_computations_</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00192">sum_compute_cpu_time_</a>, and <a class="el" href="LearnStatisticsQBF_8h_source.html#l00197">sum_compute_real_time_</a>.</p>
+<p>References <a class="el" href="LearnStatisticsQBF_8h_source.html#l00161">compute_start_time_</a>, <a class="el" href="Stopwatch_8cpp_source.html#l00041">Stopwatch::getCPUTimeSec()</a>, <a class="el" href="Stopwatch_8cpp_source.html#l00055">Stopwatch::getRealTimeSec()</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00156">nr_of_cube_computations_</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00166">sum_compute_cpu_time_</a>, and <a class="el" href="LearnStatisticsQBF_8h_source.html#l00171">sum_compute_real_time_</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00277">LearnSynthQBFInc::computeCounterexampleQBF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00332">LearnSynthQBF::computeCounterexampleQBF()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00333">LearnSynthQBFInd::computeCounterexampleQBF()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00344">LearnSynthQBF::computeCounterexampleSAT()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00710">LearnSynthQBFInc::computeCounterexampleQBF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00333">LearnSynthQBF::computeCounterexampleQBF()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00335">LearnSynthQBFInd::computeCounterexampleQBF()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00722">LearnSynthQBFInc::computeCounterexampleQBFPool()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00345">LearnSynthQBF::computeCounterexampleSAT()</a>.</p>
 
 </div>
 </div>
@@ -337,11 +329,11 @@ Private Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00104">104</a> of file <a class="el" href="LearnStatisticsQBF_8cpp_source.html">LearnStatisticsQBF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00089">89</a> of file <a class="el" href="LearnStatisticsQBF_8cpp_source.html">LearnStatisticsQBF.cpp</a>.</p>
 
-<p>References <a class="el" href="Stopwatch_8cpp_source.html#l00041">Stopwatch::getCPUTimeSec()</a>, <a class="el" href="Stopwatch_8cpp_source.html#l00055">Stopwatch::getRealTimeSec()</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00207">min_start_time_</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00202">nr_of_cube_min_</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00224">sum_cube_size_from_</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00231">sum_cube_size_to_</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00212">sum_min_cpu_time_</a>, and <a class="el" href="LearnStatisticsQBF_8h_source.html#l00217">sum_min_real_time_</a>.</p>
+<p>References <a class="el" href="Stopwatch_8cpp_source.html#l00041">Stopwatch::getCPUTimeSec()</a>, <a class="el" href="Stopwatch_8cpp_source.html#l00055">Stopwatch::getRealTimeSec()</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00181">min_start_time_</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00176">nr_of_cube_min_</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00198">sum_cube_size_from_</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00205">sum_cube_size_to_</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00186">sum_min_cpu_time_</a>, and <a class="el" href="LearnStatisticsQBF_8h_source.html#l00191">sum_min_real_time_</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00321">LearnSynthQBFInc::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00449">LearnSynthQBF::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00362">LearnSynthQBFInd::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00289">LearnSynthQBFInc::computeBlockingClause()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00431">LearnSynthQBF::computeBlockingClause()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00344">LearnSynthQBFInd::computeBlockingClause()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00424">LearnSynthQBFInc::reduceExistingClauses()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00531">LearnSynthQBF::reduceExistingClauses()</a>, and <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00450">LearnSynthQBFInd::reduceExistingClauses()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00765">LearnSynthQBFInc::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00450">LearnSynthQBF::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00364">LearnSynthQBFInd::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00733">LearnSynthQBFInc::computeBlockingClause()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00432">LearnSynthQBF::computeBlockingClause()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00346">LearnSynthQBFInd::computeBlockingClause()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00865">LearnSynthQBFInc::reduceExistingClauses()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00532">LearnSynthQBF::reduceExistingClauses()</a>, and <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00452">LearnSynthQBFInd::reduceExistingClauses()</a>.</p>
 
 </div>
 </div>
@@ -361,9 +353,9 @@ Private Member Functions</h2></td></tr>
 <p>Called after the generalization of the counterexample-state is done. </p>
 <p>This method just reads out the <a class="el" href="classStopwatch.html" title="Implements a stopwatch that can be used to measure execution time.">Stopwatch</a> and stores the execution time. It does not store the results of generalizing the counterexample. This can be done with a call to <a class="el" href="classLearnStatisticsQBF.html#a4c17af33270921d54e425cd6d14b1a78">notifyCubeMin() </a>. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00114">114</a> of file <a class="el" href="LearnStatisticsQBF_8cpp_source.html">LearnStatisticsQBF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00099">99</a> of file <a class="el" href="LearnStatisticsQBF_8cpp_source.html">LearnStatisticsQBF.cpp</a>.</p>
 
-<p>References <a class="el" href="Stopwatch_8cpp_source.html#l00041">Stopwatch::getCPUTimeSec()</a>, <a class="el" href="Stopwatch_8cpp_source.html#l00055">Stopwatch::getRealTimeSec()</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00207">min_start_time_</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00212">sum_min_cpu_time_</a>, and <a class="el" href="LearnStatisticsQBF_8h_source.html#l00217">sum_min_real_time_</a>.</p>
+<p>References <a class="el" href="Stopwatch_8cpp_source.html#l00041">Stopwatch::getCPUTimeSec()</a>, <a class="el" href="Stopwatch_8cpp_source.html#l00055">Stopwatch::getRealTimeSec()</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00181">min_start_time_</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00186">sum_min_cpu_time_</a>, and <a class="el" href="LearnStatisticsQBF_8h_source.html#l00191">sum_min_real_time_</a>.</p>
 
 </div>
 </div>
@@ -383,11 +375,11 @@ Private Member Functions</h2></td></tr>
 <p>Called before the QBF solver is called to compute a counterexample-state. </p>
 <p>This method just starts a <a class="el" href="classStopwatch.html" title="Implements a stopwatch that can be used to measure execution time.">Stopwatch</a>. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00084">84</a> of file <a class="el" href="LearnStatisticsQBF_8cpp_source.html">LearnStatisticsQBF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00069">69</a> of file <a class="el" href="LearnStatisticsQBF_8cpp_source.html">LearnStatisticsQBF.cpp</a>.</p>
 
-<p>References <a class="el" href="LearnStatisticsQBF_8h_source.html#l00187">compute_start_time_</a>, and <a class="el" href="Stopwatch_8cpp_source.html#l00033">Stopwatch::start()</a>.</p>
+<p>References <a class="el" href="LearnStatisticsQBF_8h_source.html#l00161">compute_start_time_</a>, and <a class="el" href="Stopwatch_8cpp_source.html#l00033">Stopwatch::start()</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00277">LearnSynthQBFInc::computeCounterexampleQBF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00332">LearnSynthQBF::computeCounterexampleQBF()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00333">LearnSynthQBFInd::computeCounterexampleQBF()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00344">LearnSynthQBF::computeCounterexampleSAT()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00710">LearnSynthQBFInc::computeCounterexampleQBF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00333">LearnSynthQBF::computeCounterexampleQBF()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00335">LearnSynthQBFInd::computeCounterexampleQBF()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00722">LearnSynthQBFInc::computeCounterexampleQBFPool()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00345">LearnSynthQBF::computeCounterexampleSAT()</a>.</p>
 
 </div>
 </div>
@@ -407,11 +399,11 @@ Private Member Functions</h2></td></tr>
 <p>Called before the generalization of the counterexample-state starts. </p>
 <p>This method just starts a <a class="el" href="classStopwatch.html" title="Implements a stopwatch that can be used to measure execution time.">Stopwatch</a>. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00098">98</a> of file <a class="el" href="LearnStatisticsQBF_8cpp_source.html">LearnStatisticsQBF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00083">83</a> of file <a class="el" href="LearnStatisticsQBF_8cpp_source.html">LearnStatisticsQBF.cpp</a>.</p>
 
-<p>References <a class="el" href="LearnStatisticsQBF_8h_source.html#l00207">min_start_time_</a>, and <a class="el" href="Stopwatch_8cpp_source.html#l00033">Stopwatch::start()</a>.</p>
+<p>References <a class="el" href="LearnStatisticsQBF_8h_source.html#l00181">min_start_time_</a>, and <a class="el" href="Stopwatch_8cpp_source.html#l00033">Stopwatch::start()</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00321">LearnSynthQBFInc::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00449">LearnSynthQBF::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00362">LearnSynthQBFInd::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00289">LearnSynthQBFInc::computeBlockingClause()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00431">LearnSynthQBF::computeBlockingClause()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00344">LearnSynthQBFInd::computeBlockingClause()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00424">LearnSynthQBFInc::reduceExistingClauses()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00531">LearnSynthQBF::reduceExistingClauses()</a>, and <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00450">LearnSynthQBFInd::reduceExistingClauses()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00765">LearnSynthQBFInc::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00450">LearnSynthQBF::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00364">LearnSynthQBFInd::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00733">LearnSynthQBFInc::computeBlockingClause()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00432">LearnSynthQBF::computeBlockingClause()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00346">LearnSynthQBFInd::computeBlockingClause()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00865">LearnSynthQBFInc::reduceExistingClauses()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00532">LearnSynthQBF::reduceExistingClauses()</a>, and <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00452">LearnSynthQBFInd::reduceExistingClauses()</a>.</p>
 
 </div>
 </div>
@@ -449,59 +441,11 @@ Private Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00121">121</a> of file <a class="el" href="LearnStatisticsQBF_8cpp_source.html">LearnStatisticsQBF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00106">106</a> of file <a class="el" href="LearnStatisticsQBF_8cpp_source.html">LearnStatisticsQBF.cpp</a>.</p>
 
-<p>References <a class="el" href="LearnStatisticsQBF_8h_source.html#l00202">nr_of_cube_min_</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00224">sum_cube_size_from_</a>, and <a class="el" href="LearnStatisticsQBF_8h_source.html#l00231">sum_cube_size_to_</a>.</p>
+<p>References <a class="el" href="LearnStatisticsQBF_8h_source.html#l00176">nr_of_cube_min_</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00198">sum_cube_size_from_</a>, and <a class="el" href="LearnStatisticsQBF_8h_source.html#l00205">sum_cube_size_to_</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00321">LearnSynthQBFInc::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00449">LearnSynthQBF::computeAllBlockingClauses()</a>, and <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00362">LearnSynthQBFInd::computeAllBlockingClauses()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ac00e3d7a0cc77573c2dca94460bbb354"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void LearnStatisticsQBF::notifyRelDetEnd </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Called after the relation determinization (the computation of circuits) starts. </p>
-<p>This method just reads out the <a class="el" href="classStopwatch.html" title="Implements a stopwatch that can be used to measure execution time.">Stopwatch</a> and stores the execution time. </p>
-
-<p>Definition at line <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00077">77</a> of file <a class="el" href="LearnStatisticsQBF_8cpp_source.html">LearnStatisticsQBF.cpp</a>.</p>
-
-<p>References <a class="el" href="Stopwatch_8cpp_source.html#l00041">Stopwatch::getCPUTimeSec()</a>, <a class="el" href="Stopwatch_8cpp_source.html#l00055">Stopwatch::getRealTimeSec()</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00172">rel_det_cpu_time_</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00177">rel_det_real_time_</a>, and <a class="el" href="LearnStatisticsQBF_8h_source.html#l00167">rel_det_start_time_</a>.</p>
-
-<p>Referenced by <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00069">LearnSynthQBFInc::run()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00089">LearnSynthQBF::run()</a>, and <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00143">LearnSynthQBFInd::run()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ae88030461fe06f198b596054bf31ce64"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void LearnStatisticsQBF::notifyRelDetStart </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Called before the relation determinization (the computation of circuits) starts. </p>
-<p>This method just starts a <a class="el" href="classStopwatch.html" title="Implements a stopwatch that can be used to measure execution time.">Stopwatch</a>. </p>
-
-<p>Definition at line <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00071">71</a> of file <a class="el" href="LearnStatisticsQBF_8cpp_source.html">LearnStatisticsQBF.cpp</a>.</p>
-
-<p>References <a class="el" href="LearnStatisticsQBF_8h_source.html#l00167">rel_det_start_time_</a>, and <a class="el" href="Stopwatch_8cpp_source.html#l00033">Stopwatch::start()</a>.</p>
-
-<p>Referenced by <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00069">LearnSynthQBFInc::run()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00089">LearnSynthQBF::run()</a>, and <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00143">LearnSynthQBFInd::run()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00765">LearnSynthQBFInc::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00450">LearnSynthQBF::computeAllBlockingClauses()</a>, and <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00364">LearnSynthQBFInd::computeAllBlockingClauses()</a>.</p>
 
 </div>
 </div>
@@ -521,11 +465,11 @@ Private Member Functions</h2></td></tr>
 <p>Called after the computation of the winning region is done. </p>
 <p>This method just reads out the <a class="el" href="classStopwatch.html" title="Implements a stopwatch that can be used to measure execution time.">Stopwatch</a> and stores the execution time. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00064">64</a> of file <a class="el" href="LearnStatisticsQBF_8cpp_source.html">LearnStatisticsQBF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00062">62</a> of file <a class="el" href="LearnStatisticsQBF_8cpp_source.html">LearnStatisticsQBF.cpp</a>.</p>
 
-<p>References <a class="el" href="Stopwatch_8cpp_source.html#l00041">Stopwatch::getCPUTimeSec()</a>, <a class="el" href="Stopwatch_8cpp_source.html#l00055">Stopwatch::getRealTimeSec()</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00157">win_reg_cpu_time_</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00162">win_reg_real_time_</a>, and <a class="el" href="LearnStatisticsQBF_8h_source.html#l00152">win_reg_start_time_</a>.</p>
+<p>References <a class="el" href="Stopwatch_8cpp_source.html#l00041">Stopwatch::getCPUTimeSec()</a>, <a class="el" href="Stopwatch_8cpp_source.html#l00055">Stopwatch::getRealTimeSec()</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00146">win_reg_cpu_time_</a>, <a class="el" href="LearnStatisticsQBF_8h_source.html#l00151">win_reg_real_time_</a>, and <a class="el" href="LearnStatisticsQBF_8h_source.html#l00141">win_reg_start_time_</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00069">LearnSynthQBFInc::run()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00089">LearnSynthQBF::run()</a>, and <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00143">LearnSynthQBFInd::run()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00073">LearnSynthQBFInc::run()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00092">LearnSynthQBF::run()</a>, and <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00147">LearnSynthQBFInd::run()</a>.</p>
 
 </div>
 </div>
@@ -545,11 +489,11 @@ Private Member Functions</h2></td></tr>
 <p>Called before the computation of the winning region starts. </p>
 <p>This method just starts a <a class="el" href="classStopwatch.html" title="Implements a stopwatch that can be used to measure execution time.">Stopwatch</a>. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00058">58</a> of file <a class="el" href="LearnStatisticsQBF_8cpp_source.html">LearnStatisticsQBF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00056">56</a> of file <a class="el" href="LearnStatisticsQBF_8cpp_source.html">LearnStatisticsQBF.cpp</a>.</p>
 
-<p>References <a class="el" href="Stopwatch_8cpp_source.html#l00033">Stopwatch::start()</a>, and <a class="el" href="LearnStatisticsQBF_8h_source.html#l00152">win_reg_start_time_</a>.</p>
+<p>References <a class="el" href="Stopwatch_8cpp_source.html#l00033">Stopwatch::start()</a>, and <a class="el" href="LearnStatisticsQBF_8h_source.html#l00141">win_reg_start_time_</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00069">LearnSynthQBFInc::run()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00089">LearnSynthQBF::run()</a>, and <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00143">LearnSynthQBFInd::run()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00073">LearnSynthQBFInc::run()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00092">LearnSynthQBF::run()</a>, and <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00147">LearnSynthQBFInd::run()</a>.</p>
 
 </div>
 </div>
@@ -608,9 +552,9 @@ Private Member Functions</h2></td></tr>
 
 <p>The time when the last computation of a counterexample-cube was started. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsQBF_8h_source.html#l00187">187</a> of file <a class="el" href="LearnStatisticsQBF_8h_source.html">LearnStatisticsQBF.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsQBF_8h_source.html#l00161">161</a> of file <a class="el" href="LearnStatisticsQBF_8h_source.html">LearnStatisticsQBF.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00090">notifyAfterComputeCube()</a>, and <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00084">notifyBeforeComputeCube()</a>.</p>
+<p>Referenced by <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00075">notifyAfterComputeCube()</a>, and <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00069">notifyBeforeComputeCube()</a>.</p>
 
 </div>
 </div>
@@ -634,9 +578,9 @@ Private Member Functions</h2></td></tr>
 
 <p>The time when the last generalization of a counterexample-cube was started. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsQBF_8h_source.html#l00207">207</a> of file <a class="el" href="LearnStatisticsQBF_8h_source.html">LearnStatisticsQBF.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsQBF_8h_source.html#l00181">181</a> of file <a class="el" href="LearnStatisticsQBF_8h_source.html">LearnStatisticsQBF.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00104">notifyAfterCubeMin()</a>, and <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00098">notifyBeforeCubeMin()</a>.</p>
+<p>Referenced by <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00089">notifyAfterCubeMin()</a>, and <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00083">notifyBeforeCubeMin()</a>.</p>
 
 </div>
 </div>
@@ -660,9 +604,9 @@ Private Member Functions</h2></td></tr>
 
 <p>The total number of counterexample-cube computations. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsQBF_8h_source.html#l00182">182</a> of file <a class="el" href="LearnStatisticsQBF_8h_source.html">LearnStatisticsQBF.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsQBF_8h_source.html#l00156">156</a> of file <a class="el" href="LearnStatisticsQBF_8h_source.html">LearnStatisticsQBF.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00129">logStatistics()</a>, and <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00090">notifyAfterComputeCube()</a>.</p>
+<p>Referenced by <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00114">logStatistics()</a>, and <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00075">notifyAfterComputeCube()</a>.</p>
 
 </div>
 </div>
@@ -686,87 +630,9 @@ Private Member Functions</h2></td></tr>
 
 <p>The total number of counterexample-cube generalizations. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsQBF_8h_source.html#l00202">202</a> of file <a class="el" href="LearnStatisticsQBF_8h_source.html">LearnStatisticsQBF.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsQBF_8h_source.html#l00176">176</a> of file <a class="el" href="LearnStatisticsQBF_8h_source.html">LearnStatisticsQBF.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00129">logStatistics()</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00104">notifyAfterCubeMin()</a>, and <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00121">notifyCubeMin()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a38d959613268b6a6aa0decfcbe5d631c"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double LearnStatisticsQBF::rel_det_cpu_time_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>circuit computation time in CPU-seconds. </p>
-
-<p>Definition at line <a class="el" href="LearnStatisticsQBF_8h_source.html#l00172">172</a> of file <a class="el" href="LearnStatisticsQBF_8h_source.html">LearnStatisticsQBF.h</a>.</p>
-
-<p>Referenced by <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00129">logStatistics()</a>, and <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00077">notifyRelDetEnd()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a2de1d6eb803d78fdf775b8d703adda69"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">size_t LearnStatisticsQBF::rel_det_real_time_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Like <a class="el" href="classLearnStatisticsQBF.html#a38d959613268b6a6aa0decfcbe5d631c" title="circuit computation time in CPU-seconds.">rel_det_cpu_time_</a> but real-time. </p>
-
-<p>Definition at line <a class="el" href="LearnStatisticsQBF_8h_source.html#l00177">177</a> of file <a class="el" href="LearnStatisticsQBF_8h_source.html">LearnStatisticsQBF.h</a>.</p>
-
-<p>Referenced by <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00129">logStatistics()</a>, and <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00077">notifyRelDetEnd()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a11e1295e566e5456cdb2aca0034bf306"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="Stopwatch_8h.html#af3a9f634f27bed7e98dbc23e5c6f807d">PointInTime</a> LearnStatisticsQBF::rel_det_start_time_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>The time when the computation of the circuits was started. </p>
-
-<p>Definition at line <a class="el" href="LearnStatisticsQBF_8h_source.html#l00167">167</a> of file <a class="el" href="LearnStatisticsQBF_8h_source.html">LearnStatisticsQBF.h</a>.</p>
-
-<p>Referenced by <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00077">notifyRelDetEnd()</a>, and <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00071">notifyRelDetStart()</a>.</p>
+<p>Referenced by <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00114">logStatistics()</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00089">notifyAfterCubeMin()</a>, and <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00106">notifyCubeMin()</a>.</p>
 
 </div>
 </div>
@@ -790,9 +656,9 @@ Private Member Functions</h2></td></tr>
 
 <p>The total counterexample computation time in CPU-seconds. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsQBF_8h_source.html#l00192">192</a> of file <a class="el" href="LearnStatisticsQBF_8h_source.html">LearnStatisticsQBF.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsQBF_8h_source.html#l00166">166</a> of file <a class="el" href="LearnStatisticsQBF_8h_source.html">LearnStatisticsQBF.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00129">logStatistics()</a>, and <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00090">notifyAfterComputeCube()</a>.</p>
+<p>Referenced by <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00114">logStatistics()</a>, and <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00075">notifyAfterComputeCube()</a>.</p>
 
 </div>
 </div>
@@ -816,9 +682,9 @@ Private Member Functions</h2></td></tr>
 
 <p>Like <a class="el" href="classLearnStatisticsQBF.html#a4caf75f422eed77570e5592ce35c9bd0" title="The total counterexample computation time in CPU-seconds.">sum_compute_cpu_time_</a> but real-time. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsQBF_8h_source.html#l00197">197</a> of file <a class="el" href="LearnStatisticsQBF_8h_source.html">LearnStatisticsQBF.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsQBF_8h_source.html#l00171">171</a> of file <a class="el" href="LearnStatisticsQBF_8h_source.html">LearnStatisticsQBF.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00129">logStatistics()</a>, and <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00090">notifyAfterComputeCube()</a>.</p>
+<p>Referenced by <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00114">logStatistics()</a>, and <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00075">notifyAfterComputeCube()</a>.</p>
 
 </div>
 </div>
@@ -843,9 +709,9 @@ Private Member Functions</h2></td></tr>
 <p>The sum of the counterexample cube sizes (nr of literals) before generalization. </p>
 <p>This is tracked to assess the effectiveness of the generalization. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsQBF_8h_source.html#l00224">224</a> of file <a class="el" href="LearnStatisticsQBF_8h_source.html">LearnStatisticsQBF.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsQBF_8h_source.html#l00198">198</a> of file <a class="el" href="LearnStatisticsQBF_8h_source.html">LearnStatisticsQBF.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00129">logStatistics()</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00104">notifyAfterCubeMin()</a>, and <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00121">notifyCubeMin()</a>.</p>
+<p>Referenced by <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00114">logStatistics()</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00089">notifyAfterCubeMin()</a>, and <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00106">notifyCubeMin()</a>.</p>
 
 </div>
 </div>
@@ -870,9 +736,9 @@ Private Member Functions</h2></td></tr>
 <p>The sum of the counterexample cube sizes (nr of literals) after generalization. </p>
 <p>This is tracked to assess the effectiveness of the generalization. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsQBF_8h_source.html#l00231">231</a> of file <a class="el" href="LearnStatisticsQBF_8h_source.html">LearnStatisticsQBF.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsQBF_8h_source.html#l00205">205</a> of file <a class="el" href="LearnStatisticsQBF_8h_source.html">LearnStatisticsQBF.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00129">logStatistics()</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00104">notifyAfterCubeMin()</a>, and <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00121">notifyCubeMin()</a>.</p>
+<p>Referenced by <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00114">logStatistics()</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00089">notifyAfterCubeMin()</a>, and <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00106">notifyCubeMin()</a>.</p>
 
 </div>
 </div>
@@ -896,9 +762,9 @@ Private Member Functions</h2></td></tr>
 
 <p>The total counterexample generalization time in CPU-seconds. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsQBF_8h_source.html#l00212">212</a> of file <a class="el" href="LearnStatisticsQBF_8h_source.html">LearnStatisticsQBF.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsQBF_8h_source.html#l00186">186</a> of file <a class="el" href="LearnStatisticsQBF_8h_source.html">LearnStatisticsQBF.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00129">logStatistics()</a>, and <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00104">notifyAfterCubeMin()</a>.</p>
+<p>Referenced by <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00114">logStatistics()</a>, and <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00089">notifyAfterCubeMin()</a>.</p>
 
 </div>
 </div>
@@ -922,9 +788,9 @@ Private Member Functions</h2></td></tr>
 
 <p>Like <a class="el" href="classLearnStatisticsQBF.html#a8fcce1bc5593631429c86bd3a1376e86" title="The total counterexample generalization time in CPU-seconds.">sum_min_cpu_time_</a> but real-time. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsQBF_8h_source.html#l00217">217</a> of file <a class="el" href="LearnStatisticsQBF_8h_source.html">LearnStatisticsQBF.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsQBF_8h_source.html#l00191">191</a> of file <a class="el" href="LearnStatisticsQBF_8h_source.html">LearnStatisticsQBF.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00129">logStatistics()</a>, and <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00104">notifyAfterCubeMin()</a>.</p>
+<p>Referenced by <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00114">logStatistics()</a>, and <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00089">notifyAfterCubeMin()</a>.</p>
 
 </div>
 </div>
@@ -948,9 +814,9 @@ Private Member Functions</h2></td></tr>
 
 <p>The winning region computation time in CPU-seconds. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsQBF_8h_source.html#l00157">157</a> of file <a class="el" href="LearnStatisticsQBF_8h_source.html">LearnStatisticsQBF.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsQBF_8h_source.html#l00146">146</a> of file <a class="el" href="LearnStatisticsQBF_8h_source.html">LearnStatisticsQBF.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00129">logStatistics()</a>, and <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00064">notifyWinRegEnd()</a>.</p>
+<p>Referenced by <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00114">logStatistics()</a>, and <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00062">notifyWinRegEnd()</a>.</p>
 
 </div>
 </div>
@@ -974,9 +840,9 @@ Private Member Functions</h2></td></tr>
 
 <p>Like <a class="el" href="classLearnStatisticsQBF.html#a679a221c1cbf3330572f93d850976289" title="The winning region computation time in CPU-seconds.">win_reg_cpu_time_</a> but real-time. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsQBF_8h_source.html#l00162">162</a> of file <a class="el" href="LearnStatisticsQBF_8h_source.html">LearnStatisticsQBF.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsQBF_8h_source.html#l00151">151</a> of file <a class="el" href="LearnStatisticsQBF_8h_source.html">LearnStatisticsQBF.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00129">logStatistics()</a>, and <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00064">notifyWinRegEnd()</a>.</p>
+<p>Referenced by <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00114">logStatistics()</a>, and <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00062">notifyWinRegEnd()</a>.</p>
 
 </div>
 </div>
@@ -1000,9 +866,9 @@ Private Member Functions</h2></td></tr>
 
 <p>The time when the computation of the winning region was started. </p>
 
-<p>Definition at line <a class="el" href="LearnStatisticsQBF_8h_source.html#l00152">152</a> of file <a class="el" href="LearnStatisticsQBF_8h_source.html">LearnStatisticsQBF.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnStatisticsQBF_8h_source.html#l00141">141</a> of file <a class="el" href="LearnStatisticsQBF_8h_source.html">LearnStatisticsQBF.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00064">notifyWinRegEnd()</a>, and <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00058">notifyWinRegStart()</a>.</p>
+<p>Referenced by <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00062">notifyWinRegEnd()</a>, and <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00056">notifyWinRegStart()</a>.</p>
 
 </div>
 </div>
@@ -1013,7 +879,7 @@ Private Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 14 2013 15:15:45 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jul 15 2014 12:30:21 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">demiurge
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A synthesis tool for safety specifications.</div>
   </td>
@@ -108,8 +108,9 @@ Inheritance diagram for BackEnd:</div>
 <area href="classLearnSynthQBFInc.html" title="Implements a learning-based synthesis with incremental QBF solving." alt="LearnSynthQBFInc" shape="rect" coords="130,224,250,248"/>
 <area href="classLearnSynthQBFInd.html" title="Implements a learning-based synthesis with inductive reachability reasoning." alt="LearnSynthQBFInd" shape="rect" coords="130,280,250,304"/>
 <area href="classLearnSynthSAT.html" title="Implements a learning-based synthesis using two SAT solvers." alt="LearnSynthSAT" shape="rect" coords="130,336,250,360"/>
-<area href="classParallelLearner.html" title="The coordinator of the parallelized implementation." alt="ParallelLearner" shape="rect" coords="130,392,250,416"/>
-<area href="classTemplateSynth.html" title="Implements a template-based synthesis using a QBF solver." alt="TemplateSynth" shape="rect" coords="130,448,250,472"/>
+<area href="classLoadSynth.html" title="A dummy back-end which loads the winning region from a file." alt="LoadSynth" shape="rect" coords="130,392,250,416"/>
+<area href="classParallelLearner.html" title="The coordinator of the parallelized implementation." alt="ParallelLearner" shape="rect" coords="130,448,250,472"/>
+<area href="classTemplateSynth.html" title="Implements a template-based synthesis using a QBF solver." alt="TemplateSynth" shape="rect" coords="130,504,250,528"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -132,11 +133,11 @@ Private Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>An interface for the back-ends. </p>
 <p>This class provides an interface for all back-ends. Every back-end implements a different synthesis algorithm. This class is abstract, i.e., objects of this class cannot be instantiated. Instantiate one of the derived classes instead.</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>In the future we may want to go for two different kinds of back-ends: WinRegBackEnds computing a winning region (in <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a>), and RelDetBackEnds for computing a circuit from the winning region. The idea is that every WinRegBackEnd can be combined with every RelDetBackEnd. However, at the moment we only have one method for extracting a circuit. </dd></dl>
+<p>Many back-ends can be parameterized with a circuit extraction engine that extracts a circuit from the winning region once the winning region has been computed.</p>
 <dl class="section author"><dt>Author</dt><dd>Robert Koenighofer (<a href="#" onclick="location.href='mai'+'lto:'+'rob'+'er'+'t.k'+'oe'+'nig'+'ho'+'fer'+'@i'+'aik'+'.t'+'ugr'+'az'+'.at'; return false;">rober<span style="display: none;">.nosp@m.</span>t.ko<span style="display: none;">.nosp@m.</span>enigh<span style="display: none;">.nosp@m.</span>ofer<span style="display: none;">.nosp@m.</span>@iaik<span style="display: none;">.nosp@m.</span>.tug<span style="display: none;">.nosp@m.</span>raz.a<span style="display: none;">.nosp@m.</span>t</a>) </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>1.0.0 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.1.0 </dd></dl>
 
-<p>Definition at line <a class="el" href="BackEnd_8h_source.html#l00051">51</a> of file <a class="el" href="BackEnd_8h_source.html">BackEnd.h</a>.</p>
+<p>Definition at line <a class="el" href="BackEnd_8h_source.html#l00049">49</a> of file <a class="el" href="BackEnd_8h_source.html">BackEnd.h</a>.</p>
 </div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="afc7f71992574b71328373706917f2613"></a>
 <div class="memitem">
@@ -278,7 +279,7 @@ Private Member Functions</h2></td></tr>
 <p>This method is abstract, which means that it has to be implemented in the derived classes, i.e., in all classes actually implementing this interface.</p>
 <dl class="section return"><dt>Returns</dt><dd>True if the specification was realizable, false otherwise. </dd></dl>
 
-<p>Implemented in <a class="el" href="classLearnSynthQBFInd.html#a6709343a109f82c427dcbc4a576d9c03">LearnSynthQBFInd</a>, <a class="el" href="classLearnSynthSAT.html#a13a50b2649f44d37761fdbff26e9c0c0">LearnSynthSAT</a>, <a class="el" href="classEPRSynthesizer.html#ab5eb613a7e5e4f8d408938531f745e4e">EPRSynthesizer</a>, <a class="el" href="classLearnSynthQBF.html#aed85bb2fe317a5fdc7eef71fe598c606">LearnSynthQBF</a>, <a class="el" href="classParallelLearner.html#a93acb74e7c8504d0ef2bd3697441b745">ParallelLearner</a>, <a class="el" href="classTemplateSynth.html#a5ad9855736c7d4dfdec08280d2424f80">TemplateSynth</a>, <a class="el" href="classIFM13Synth.html#a42adb4f76d88199d92b1bedb58a139f8">IFM13Synth</a>, and <a class="el" href="classLearnSynthQBFInc.html#af9563d1f3c657ed4730ee49e041bc300">LearnSynthQBFInc</a>.</p>
+<p>Implemented in <a class="el" href="classLearnSynthQBFInd.html#a6709343a109f82c427dcbc4a576d9c03">LearnSynthQBFInd</a>, <a class="el" href="classLearnSynthSAT.html#a13a50b2649f44d37761fdbff26e9c0c0">LearnSynthSAT</a>, <a class="el" href="classEPRSynthesizer.html#ab5eb613a7e5e4f8d408938531f745e4e">EPRSynthesizer</a>, <a class="el" href="classLearnSynthQBF.html#aed85bb2fe317a5fdc7eef71fe598c606">LearnSynthQBF</a>, <a class="el" href="classParallelLearner.html#a93acb74e7c8504d0ef2bd3697441b745">ParallelLearner</a>, <a class="el" href="classTemplateSynth.html#a5ad9855736c7d4dfdec08280d2424f80">TemplateSynth</a>, <a class="el" href="classIFM13Synth.html#a42adb4f76d88199d92b1bedb58a139f8">IFM13Synth</a>, <a class="el" href="classLearnSynthQBFInc.html#af9563d1f3c657ed4730ee49e041bc300">LearnSynthQBFInc</a>, and <a class="el" href="classLoadSynth.html#a555ce9c74ad3143254f7a1d1cce094b0">LoadSynth</a>.</p>
 
 <p>Referenced by <a class="el" href="main_8cpp_source.html#l00163">main()</a>.</p>
 
@@ -291,7 +292,7 @@ Private Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 14 2013 15:15:44 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jul 15 2014 12:30:20 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

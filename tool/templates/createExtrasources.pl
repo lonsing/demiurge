@@ -27,9 +27,9 @@ foreach my $entry (@entries) {
   if ($entry =~ /^$filter$/) {
       #print "found: $entry\n";
       push(@selected, $entry);
-  } elsif (-d "$dir/$entry") {
-      addSubDir($dir, $entry, $filter, \@selected);
-  }
+  } #elsif (-d "$dir/$entry") {
+    #  addSubDir($dir, $entry, $filter, \@selected);
+  #}
 }
 
 

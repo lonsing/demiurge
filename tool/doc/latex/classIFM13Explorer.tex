@@ -102,11 +102,11 @@ This class basically implements the same method as \hyperlink{classIFM13Synth}{I
 Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\-0.\-0 
+1.\-1.\-0 
 \end{DoxyVersion}
 
 
-Definition at line 1266 of file Parallel\-Learner.\-h.
+Definition at line 1276 of file Parallel\-Learner.\-h.
 
 
 
@@ -129,7 +129,7 @@ Constructor.
 \end{DoxyParams}
 
 
-Definition at line 1354 of file Parallel\-Learner.\-cpp.
+Definition at line 1356 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -148,7 +148,7 @@ Destructor.
 
 
 
-Definition at line 1406 of file Parallel\-Learner.\-cpp.
+Definition at line 1408 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -198,7 +198,7 @@ This method updates R\mbox{[}level\mbox{]} \-:= R\mbox{[}level\mbox{]} \& !state
 \end{DoxyParams}
 
 
-Definition at line 1668 of file Parallel\-Learner.\-cpp.
+Definition at line 1670 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -231,7 +231,7 @@ The meaning is\-: we want to store the fact that a certain state-\/input pair is
 \end{DoxyParams}
 
 
-Definition at line 1653 of file Parallel\-Learner.\-cpp.
+Definition at line 1655 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -261,7 +261,7 @@ This method updates W \-:= W \& !state\-\_\-cube. state\-\_\-cube is a potential
 \end{DoxyParams}
 
 
-Definition at line 1724 of file Parallel\-Learner.\-cpp.
+Definition at line 1726 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -284,7 +284,7 @@ Considers new winning region clauses that have been found by other threads.
 
 
 
-Definition at line 1461 of file Parallel\-Learner.\-cpp.
+Definition at line 1463 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -307,7 +307,7 @@ The work-\/horse of this class.
 
 It basically implements the same method as \hyperlink{classIFM13Synth}{I\-F\-M13\-Synth}. However, it also communicates with other threads\-: Whenever it finds a new clause of the winning region (of the protagonist not the antagonist), it communicates this clause to all other worker-\/threads (via the \hyperlink{classParallelLearner}{Parallel\-Learner}, which acts as a coordinator). On the other hand, it also considers refinements of the winning region done by other threads. If it finds out that the specification is realizable or unrealizable, it sets the flag \hyperlink{classParallelLearner_a757f8817809cce5c0408cdc41d6db1b8}{Parallel\-Learner\-::result\-\_\-} accordingly. It also polls this flag regularly. If it has been set by some other thread, it quits. 
 
-Definition at line 1421 of file Parallel\-Learner.\-cpp.
+Definition at line 1423 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -344,7 +344,7 @@ False if state\-\_\-cube satisfies W, true otherwise.
 \end{DoxyReturn}
 
 
-Definition at line 1741 of file Parallel\-Learner.\-cpp.
+Definition at line 1743 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -377,7 +377,7 @@ A solver with \hyperlink{classCNF}{C\-N\-F}\-: T \& R\mbox{[}index-\/1\mbox{]}'.
 \end{DoxyReturn}
 
 
-Definition at line 1782 of file Parallel\-Learner.\-cpp.
+Definition at line 1784 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -410,7 +410,7 @@ A solver with \hyperlink{classCNF}{C\-N\-F}\-: U\mbox{[}index\mbox{]} \& T \& R\
 \end{DoxyReturn}
 
 
-Definition at line 1770 of file Parallel\-Learner.\-cpp.
+Definition at line 1772 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -443,7 +443,7 @@ The frame R\mbox{[}index\mbox{]} in \hyperlink{classCNF}{C\-N\-F}.
 \end{DoxyReturn}
 
 
-Definition at line 1754 of file Parallel\-Learner.\-cpp.
+Definition at line 1756 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -476,7 +476,7 @@ The set U\mbox{[}index\mbox{]} of blocked transitions in \hyperlink{classCNF}{C\
 \end{DoxyReturn}
 
 
-Definition at line 1762 of file Parallel\-Learner.\-cpp.
+Definition at line 1764 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -512,7 +512,7 @@ False if state\-\_\-cube satisfies R\mbox{[}level\mbox{]}, true otherwise.
 \end{DoxyReturn}
 
 
-Definition at line 1718 of file Parallel\-Learner.\-cpp.
+Definition at line 1720 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -545,7 +545,7 @@ False if state\-\_\-cube satisfies W, true otherwise.
 \end{DoxyReturn}
 
 
-Definition at line 1734 of file Parallel\-Learner.\-cpp.
+Definition at line 1736 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -576,7 +576,7 @@ Notifies this worker about a new winning region clause.
 \end{DoxyParams}
 
 
-Definition at line 1453 of file Parallel\-Learner.\-cpp.
+Definition at line 1455 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -624,7 +624,7 @@ The element that has been removed from the list. It is always the element (among
 \end{DoxyReturn}
 
 
-Definition at line 1794 of file Parallel\-Learner.\-cpp.
+Definition at line 1796 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -657,7 +657,7 @@ The number N returned by this method has the following meaning\-: N=0 means that
 \end{DoxyReturn}
 
 
-Definition at line 1472 of file Parallel\-Learner.\-cpp.
+Definition at line 1474 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -693,7 +693,7 @@ I\-S\-\_\-\-G\-R\-E\-A\-T\-E\-R (an alias for true) if the rank of the state is 
 \end{DoxyReturn}
 
 
-Definition at line 1529 of file Parallel\-Learner.\-cpp.
+Definition at line 1531 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -715,7 +715,7 @@ A reference to the coordinator.
 
 All communication to other worker-\/threads is done via the coordinator. 
 
-Definition at line 1482 of file Parallel\-Learner.\-h.
+Definition at line 1492 of file Parallel\-Learner.\-h.
 
 
 
@@ -730,7 +730,7 @@ The literal saying that we are in an unsafe state.
 
 We cache it so that we do not have to get it from the \hyperlink{classVarManager}{Var\-Manager} every time. We may of lock the \hyperlink{classVarManager}{Var\-Manager} otherwise. 
 
-Definition at line 1566 of file Parallel\-Learner.\-h.
+Definition at line 1576 of file Parallel\-Learner.\-h.
 
 
 
@@ -745,7 +745,7 @@ The solvers storing the \hyperlink{classCNF}{C\-N\-F}\-: T \& R\mbox{[}k-\/1\mbo
 
 You should use \hyperlink{classIFM13Explorer_a04ebb206acd0dcf2d02f2e705eaec358}{get\-Gen\-Block\-Trans\-Solver() } to access these solvers. The reason is that this method initializes the solvers if they do not yet exist. gen\-\_\-block\-\_\-trans\-\_\-solvers\-\_\-\mbox{[}0\mbox{]} is always N\-U\-L\-L. 
 
-Definition at line 1538 of file Parallel\-Learner.\-h.
+Definition at line 1548 of file Parallel\-Learner.\-h.
 
 
 
@@ -760,7 +760,7 @@ The solvers storing the \hyperlink{classCNF}{C\-N\-F}\-: U\mbox{[}k\mbox{]} \& T
 
 These solvers are used to search for moves the antagonist can make in order to reach R\mbox{[}k-\/1\mbox{]}. You should use \hyperlink{classIFM13Explorer_abdf350f2df8a77579df3da7ecb3de8e4}{get\-Goto\-Next\-Lower\-Solver() } to access these solvers. The reason is that this method initializes the solvers if they do not yet exist. goto\-\_\-next\-\_\-lower\-\_\-solvers\-\_\-\mbox{[}0\mbox{]} is always N\-U\-L\-L. 
 
-Definition at line 1529 of file Parallel\-Learner.\-h.
+Definition at line 1539 of file Parallel\-Learner.\-h.
 
 
 
@@ -775,7 +775,7 @@ A solver that stores the \hyperlink{classCNF}{C\-N\-F}\-: T \& W'.
 
 
 
-Definition at line 1543 of file Parallel\-Learner.\-h.
+Definition at line 1553 of file Parallel\-Learner.\-h.
 
 
 
@@ -790,7 +790,7 @@ The cube encoding the initial state.
 
 
 
-Definition at line 1558 of file Parallel\-Learner.\-h.
+Definition at line 1568 of file Parallel\-Learner.\-h.
 
 
 
@@ -805,7 +805,7 @@ All new winning region clauses that have not been considered yet.
 
 
 
-Definition at line 1487 of file Parallel\-Learner.\-h.
+Definition at line 1497 of file Parallel\-Learner.\-h.
 
 
 
@@ -820,7 +820,7 @@ A lock that protects the \hyperlink{classIFM13Explorer_a712b3dc6c099b1e3697e7b88
 
 Many worker-\/threads modify the \hyperlink{classIFM13Explorer_a712b3dc6c099b1e3697e7b8877e0cd90}{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-} (add new ones). This lock ensures that only one thread is modifying or reading the \hyperlink{classIFM13Explorer_a712b3dc6c099b1e3697e7b8877e0cd90}{new\-\_\-win\-\_\-reg\-\_\-clauses\-\_\-} at one time. 
 
-Definition at line 1495 of file Parallel\-Learner.\-h.
+Definition at line 1505 of file Parallel\-Learner.\-h.
 
 
 
@@ -835,7 +835,7 @@ The frames R\mbox{[}\mbox{]} of the algorithm. Each frame represents a set of st
 
 You should use \hyperlink{classIFM13Explorer_a75a0b20fe6d76b6d1fa52d447fa24d10}{get\-R() } to access the frames. The reason is that this method initializes frames if they do not yet exist. 
 
-Definition at line 1503 of file Parallel\-Learner.\-h.
+Definition at line 1513 of file Parallel\-Learner.\-h.
 
 
 
@@ -850,7 +850,7 @@ The vector of present-\/ and next-\/state variables, and all inputs.
 
 
 
-Definition at line 1553 of file Parallel\-Learner.\-h.
+Definition at line 1563 of file Parallel\-Learner.\-h.
 
 
 
@@ -865,7 +865,7 @@ The vector of present-\/ and next-\/state variables, and uncontrollable inputs.
 
 
 
-Definition at line 1548 of file Parallel\-Learner.\-h.
+Definition at line 1558 of file Parallel\-Learner.\-h.
 
 
 
@@ -880,7 +880,7 @@ The blocked transitions U\mbox{[}\mbox{]} of the algorithm.
 
 These sets are maintained only in debug mode. In release-\/mode they are only present inside the goto\-\_\-next\-\_\-lower\-\_\-solvers\-\_\-. You should use \hyperlink{classIFM13Explorer_a2816b4c9f2cb02958e660a872f43fe4b}{get\-U() } to access the frames. The reason is that this method initializes elements if they do not yet exist. 
 
-Definition at line 1513 of file Parallel\-Learner.\-h.
+Definition at line 1523 of file Parallel\-Learner.\-h.
 
 
 
@@ -895,7 +895,7 @@ The current over-\/approximation of the winning region W (for the protagonist).
 
 
 
-Definition at line 1518 of file Parallel\-Learner.\-h.
+Definition at line 1528 of file Parallel\-Learner.\-h.
 
 
 

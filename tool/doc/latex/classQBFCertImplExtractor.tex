@@ -10,6 +10,12 @@ Given a winning region in \hyperlink{classCNF}{C\-N\-F}, this method extracts a 
 
 {\ttfamily \#include $<$Q\-B\-F\-Cert\-Impl\-Extractor.\-h$>$}
 
+Inheritance diagram for Q\-B\-F\-Cert\-Impl\-Extractor\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classQBFCertImplExtractor}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -17,17 +23,40 @@ Given a winning region in \hyperlink{classCNF}{C\-N\-F}, this method extracts a 
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 virtual \hyperlink{classQBFCertImplExtractor_a52dfc285e9b75484e500b21ff4c35919}{$\sim$\-Q\-B\-F\-Cert\-Impl\-Extractor} ()
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
-void \hyperlink{classQBFCertImplExtractor_a3ff8c8d92df6d7ed01fe193ca880c14e}{extract\-Circuit} (const \hyperlink{classCNF}{C\-N\-F} \&winning\-\_\-region)
+virtual void \hyperlink{classQBFCertImplExtractor_a97cf27d520ea0057385e35bb762a3069}{run} (const \hyperlink{classCNF}{C\-N\-F} \&winning\-\_\-region, const \hyperlink{classCNF}{C\-N\-F} \&neg\-\_\-winning\-\_\-region)
+\begin{DoxyCompactList}\small\item\em Extracts a circuit from the winning region and its negation. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCNFImplExtractor_ad329eedd50e443f44edc99db8c2e2613}{extract\-Circuit} (const \hyperlink{classCNF}{C\-N\-F} \&winning\-\_\-region)
 \begin{DoxyCompactList}\small\item\em Extracts a circuit from the winning region. \end{DoxyCompactList}\item 
-void \hyperlink{classQBFCertImplExtractor_a47577070a52f5d95b194a863e6b86893}{extract\-Circuit} (const \hyperlink{classCNF}{C\-N\-F} \&winning\-\_\-region, const \hyperlink{classCNF}{C\-N\-F} \&neg\-\_\-winning\-\_\-region)
-\begin{DoxyCompactList}\small\item\em Extracts a circuit from the winning region and its negation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+virtual void \hyperlink{classCNFImplExtractor_a5e9694425af3f1a76d8b21ace3c435d9}{extract\-Circuit} (const \hyperlink{classCNF}{C\-N\-F} \&winning\-\_\-region, const \hyperlink{classCNF}{C\-N\-F} \&neg\-\_\-winning\-\_\-region)
+\begin{DoxyCompactList}\small\item\em Extracts a circuit from the winning region and its negation. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCNFImplExtractor_aae098749e201b22294a70f6e0a4a58f0}{log\-Statistics} ()
+\begin{DoxyCompactList}\small\item\em Logs statistical information about circuit extraction. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-size\-\_\-t \hyperlink{classQBFCertImplExtractor_a30f9aea9a9cb3b2662cb4eee1ac73687}{parse\-Q\-B\-F\-Cert\-Answer} (const string \&answer, vector$<$ vector$<$ int $>$ $>$ \&and\-\_\-gates) const 
-\begin{DoxyCompactList}\small\item\em Parses the answer of Q\-B\-F\-Cert. \end{DoxyCompactList}\item 
-void \hyperlink{classQBFCertImplExtractor_a86906e053e6a487037927c1e209ea473}{dump\-Res\-Aiger\-Lib} (size\-\_\-t max\-\_\-var\-\_\-idx, const vector$<$ vector$<$ int $>$ $>$ \&and\-\_\-gates)
-\begin{DoxyCompactList}\small\item\em Dumps the final system into the output file specified by the user. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \hyperlink{classQBFCertImplExtractor_aa6a292ba4108e707f458c04d621a6d9e}{log\-Detailed\-Statistics} ()
+\begin{DoxyCompactList}\small\item\em Logs some detailed statistics (time for Q\-B\-F\-Cert, A\-B\-C, circuit sizes, etc.). \end{DoxyCompactList}\item 
+aiger $\ast$ \hyperlink{classCNFImplExtractor_a58a4e5021d0ef9c4190a5be74fb5a83e}{optimize\-With\-A\-B\-C} (aiger $\ast$circuit) const 
+\begin{DoxyCompactList}\small\item\em Optimizes a combinatorial A\-I\-G\-E\-R circuit with A\-B\-C. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classCNFImplExtractor_a0970602635f3356712d57ebb28d12c0d}{insert\-Into\-Spec} (aiger $\ast$standalone\-\_\-circuit) const 
+\begin{DoxyCompactList}\small\item\em Takes a circuit defining the control signals and inserts it into the spec. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\-\_\-t \hyperlink{classQBFCertImplExtractor_a51eb6677e876d90d1b3763ca3e5457e7}{size\-\_\-before\-\_\-abc\-\_\-}
+\begin{DoxyCompactList}\small\item\em Statistics\-: the number of A\-N\-D gates before optimization with A\-B\-C. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classQBFCertImplExtractor_a18a1c9ab317cada48d54b7006124190e}{size\-\_\-after\-\_\-abc\-\_\-}
+\begin{DoxyCompactList}\small\item\em Statistics\-: the number of A\-N\-D gates after optimization with A\-B\-C. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classQBFCertImplExtractor_ab22c545849fc2f85a49a846a836a5ec6}{size\-\_\-final\-\_\-}
+\begin{DoxyCompactList}\small\item\em Statistics\-: the final number of additional A\-N\-D gates. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classQBFCertImplExtractor_ab596205af9db44f69af214adca44201c}{qbfcert\-\_\-real\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em Statistics\-: the real time (in seconds) needed by Q\-B\-F\-Cert. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classQBFCertImplExtractor_a90be758f6fb963647db3aa9c384075d8}{abc\-\_\-real\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em Statistics\-: the real time (in seconds) needed for the optimization with A\-B\-C. \end{DoxyCompactList}\item 
+double \hyperlink{classCNFImplExtractor_ab8be06d42fd3c4b569ec22cfcf2f508e}{extraction\-\_\-cpu\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em The circuit extraction time in C\-P\-U-\/seconds. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classCNFImplExtractor_ae06413cf08f868357d64545b3041aa18}{extraction\-\_\-real\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em Like \hyperlink{classCNFImplExtractor_ab8be06d42fd3c4b569ec22cfcf2f508e}{extraction\-\_\-cpu\-\_\-time\-\_\-} but real-\/time. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -43,11 +72,11 @@ Q\-B\-F\-Cert (see \href{http://fmv.jku.at/qbfcert/}{\tt http\-://fmv.\-jku.\-at
 Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\-0.\-0 
+1.\-1.\-0 
 \end{DoxyVersion}
 
 
-Definition at line 56 of file Q\-B\-F\-Cert\-Impl\-Extractor.\-h.
+Definition at line 57 of file Q\-B\-F\-Cert\-Impl\-Extractor.\-h.
 
 
 
@@ -65,7 +94,7 @@ Constructor.
 
 
 
-Definition at line 83 of file Q\-B\-F\-Cert\-Impl\-Extractor.\-cpp.
+Definition at line 46 of file Q\-B\-F\-Cert\-Impl\-Extractor.\-cpp.
 
 \hypertarget{classQBFCertImplExtractor_a52dfc285e9b75484e500b21ff4c35919}{\index{Q\-B\-F\-Cert\-Impl\-Extractor@{Q\-B\-F\-Cert\-Impl\-Extractor}!$\sim$\-Q\-B\-F\-Cert\-Impl\-Extractor@{$\sim$\-Q\-B\-F\-Cert\-Impl\-Extractor}}
 \index{$\sim$\-Q\-B\-F\-Cert\-Impl\-Extractor@{$\sim$\-Q\-B\-F\-Cert\-Impl\-Extractor}!QBFCertImplExtractor@{Q\-B\-F\-Cert\-Impl\-Extractor}}
@@ -80,86 +109,198 @@ Destructor.
 
 
 
-Definition at line 89 of file Q\-B\-F\-Cert\-Impl\-Extractor.\-cpp.
+Definition at line 57 of file Q\-B\-F\-Cert\-Impl\-Extractor.\-cpp.
 
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classQBFCertImplExtractor_a86906e053e6a487037927c1e209ea473}{\index{Q\-B\-F\-Cert\-Impl\-Extractor@{Q\-B\-F\-Cert\-Impl\-Extractor}!dump\-Res\-Aiger\-Lib@{dump\-Res\-Aiger\-Lib}}
-\index{dump\-Res\-Aiger\-Lib@{dump\-Res\-Aiger\-Lib}!QBFCertImplExtractor@{Q\-B\-F\-Cert\-Impl\-Extractor}}
-\subsubsection[{dump\-Res\-Aiger\-Lib}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-B\-F\-Cert\-Impl\-Extractor\-::dump\-Res\-Aiger\-Lib (
-\begin{DoxyParamCaption}
-\item[{size\-\_\-t}]{max\-\_\-var\-\_\-idx, }
-\item[{const vector$<$ vector$<$ int $>$ $>$ \&}]{and\-\_\-gates}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classQBFCertImplExtractor_a86906e053e6a487037927c1e209ea473}
-
-
-Dumps the final system into the output file specified by the user. 
-
-All we have to do in order to obtain the final output of our tool is to embed the A\-I\-G\-E\-R-\/circuits returned by Q\-B\-F\-Cert into input A\-I\-G\-E\-R file. That is, the c-\/inputs have to be removed and the A\-N\-D-\/gates defining the c-\/signals have to be inserted. This is done by this method.
-
-
-\begin{DoxyParams}{Parameters}
-{\em max\-\_\-var\-\_\-idx} & The maximal variable index that is used in the resulting A\-N\-D gates (as returned by \hyperlink{classQBFCertImplExtractor_a30f9aea9a9cb3b2662cb4eee1ac73687}{parse\-Q\-B\-F\-Cert\-Answer}). \\
-\hline
-{\em and\-\_\-gates} & An empty vector. This method writes the A\-N\-D-\/gates to define the c-\/signals into this vector. \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 230 of file Q\-B\-F\-Cert\-Impl\-Extractor.\-cpp.
-
-
-
-References Options\-::get\-Aig\-In\-File\-Name(), Options\-::get\-Aig\-Out\-File\-Name(), Options\-::instance(), M\-A\-S\-S\-E\-R\-T, and String\-Utils\-::to\-Lower\-Case\-In().
-
-
-
-Referenced by extract\-Circuit().
-
-\hypertarget{classQBFCertImplExtractor_a3ff8c8d92df6d7ed01fe193ca880c14e}{\index{Q\-B\-F\-Cert\-Impl\-Extractor@{Q\-B\-F\-Cert\-Impl\-Extractor}!extract\-Circuit@{extract\-Circuit}}
+\hypertarget{classCNFImplExtractor_ad329eedd50e443f44edc99db8c2e2613}{\index{Q\-B\-F\-Cert\-Impl\-Extractor@{Q\-B\-F\-Cert\-Impl\-Extractor}!extract\-Circuit@{extract\-Circuit}}
 \index{extract\-Circuit@{extract\-Circuit}!QBFCertImplExtractor@{Q\-B\-F\-Cert\-Impl\-Extractor}}
-\subsubsection[{extract\-Circuit}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-B\-F\-Cert\-Impl\-Extractor\-::extract\-Circuit (
+\subsubsection[{extract\-Circuit}]{\setlength{\rightskip}{0pt plus 5cm}void C\-N\-F\-Impl\-Extractor\-::extract\-Circuit (
 \begin{DoxyParamCaption}
 \item[{const {\bf C\-N\-F} \&}]{winning\-\_\-region}
 \end{DoxyParamCaption}
-)}}\label{classQBFCertImplExtractor_a3ff8c8d92df6d7ed01fe193ca880c14e}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}}\label{classCNFImplExtractor_ad329eedd50e443f44edc99db8c2e2613}
 
 
 Extracts a circuit from the winning region. 
 
-The result is written into the output file specified by the user. This method uses Q\-B\-F\-Cert to compute a solution. Q\-B\-F\-Cert (see \href{http://fmv.jku.at/qbfcert/}{\tt http\-://fmv.\-jku.\-at/qbfcert/}) is a framework for computing Skolem or Herbrand functions as witnesses for quantified Boolean formulas. We use it to compute circuits from a winning region. Let W be the winning region. Then we can compute a circuit as a skolem function for the c-\/signals in\-: \par
- ~ forall x,i\-: exists c,x'\-: (!\-W) $|$ (T \& W') \par
- However, for performance reasons, we actually compute Herbrand functions for the c-\/signals in the formula\-: \par
- ~ exists x,i\-: forall c\-: exists x'\-: W \& T \& !\-W' \par
- Q\-B\-F\-Cert outputs the result in A\-I\-G\-E\-R format. Hence, all we have to do in order to obtain the final output of our tool is to embed this A\-I\-G\-E\-R-\/circuits for the c-\/signals in the input A\-I\-G\-E\-R file.
+How this is done (interpolation, learning, etc.) depends on the concrete implementation of this abstract class. The result is written into the output file specified by the user.
 
 
 \begin{DoxyParams}{Parameters}
-{\em winning\-\_\-region} & The winning region from which the circuit should be extracted. For circuit extraction we need both the winning region and its negation. The negation is computed inside this function. If you already have a negation, use the other method. \\
+{\em winning\-\_\-region} & The winning region from which the circuit should be extracted. For circuit extraction we need both the winning region and its negation. The negation is computed inside this function. If you already have a negation, use the other circuit extraction method of this class. \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 95 of file Q\-B\-F\-Cert\-Impl\-Extractor.\-cpp.
+Reimplemented in \hyperlink{classStoreImplExtractor_a08437db801013d0b3208bbf099239fac}{Store\-Impl\-Extractor}.
 
 
 
-References Utils\-::compress\-State\-C\-N\-F(), and C\-N\-F\-::negate().
+Definition at line 85 of file C\-N\-F\-Impl\-Extractor.\-cpp.
 
 
 
-Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::run(), I\-F\-M13\-Synth\-::run(), Template\-Synth\-::run(), Parallel\-Learner\-::run(), Learn\-Synth\-Q\-B\-F\-::run(), Learn\-Synth\-S\-A\-T\-::run(), and Learn\-Synth\-Q\-B\-F\-Ind\-::run().
+References Utils\-::compress\-State\-C\-N\-F(), C\-N\-F\-Impl\-Extractor\-::extraction\-\_\-cpu\-\_\-time\-\_\-, C\-N\-F\-Impl\-Extractor\-::extraction\-\_\-real\-\_\-time\-\_\-, Stopwatch\-::get\-C\-P\-U\-Time\-Sec(), Stopwatch\-::get\-Real\-Time\-Sec(), C\-N\-F\-::negate(), C\-N\-F\-Impl\-Extractor\-::run(), and Stopwatch\-::start().
 
-\hypertarget{classQBFCertImplExtractor_a47577070a52f5d95b194a863e6b86893}{\index{Q\-B\-F\-Cert\-Impl\-Extractor@{Q\-B\-F\-Cert\-Impl\-Extractor}!extract\-Circuit@{extract\-Circuit}}
+
+
+Referenced by Load\-Synth\-::run(), Learn\-Synth\-Q\-B\-F\-Inc\-::run(), I\-F\-M13\-Synth\-::run(), Template\-Synth\-::run(), Parallel\-Learner\-::run(), Learn\-Synth\-Q\-B\-F\-::run(), Learn\-Synth\-S\-A\-T\-::run(), and Learn\-Synth\-Q\-B\-F\-Ind\-::run().
+
+\hypertarget{classCNFImplExtractor_a5e9694425af3f1a76d8b21ace3c435d9}{\index{Q\-B\-F\-Cert\-Impl\-Extractor@{Q\-B\-F\-Cert\-Impl\-Extractor}!extract\-Circuit@{extract\-Circuit}}
 \index{extract\-Circuit@{extract\-Circuit}!QBFCertImplExtractor@{Q\-B\-F\-Cert\-Impl\-Extractor}}
-\subsubsection[{extract\-Circuit}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-B\-F\-Cert\-Impl\-Extractor\-::extract\-Circuit (
+\subsubsection[{extract\-Circuit}]{\setlength{\rightskip}{0pt plus 5cm}void C\-N\-F\-Impl\-Extractor\-::extract\-Circuit (
 \begin{DoxyParamCaption}
 \item[{const {\bf C\-N\-F} \&}]{winning\-\_\-region, }
 \item[{const {\bf C\-N\-F} \&}]{neg\-\_\-winning\-\_\-region}
 \end{DoxyParamCaption}
-)}}\label{classQBFCertImplExtractor_a47577070a52f5d95b194a863e6b86893}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}}\label{classCNFImplExtractor_a5e9694425af3f1a76d8b21ace3c435d9}
+
+
+Extracts a circuit from the winning region and its negation. 
+
+How this is done (interpolation, learning, etc.) depends on the concrete implementation of this abstract class. The result is written into the output file specified by the user.
+
+
+\begin{DoxyParams}{Parameters}
+{\em winning\-\_\-region} & The winning region from which the circuit should be extracted. \\
+\hline
+{\em neg\-\_\-winning\-\_\-region} & The negation of the winning region. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 102 of file C\-N\-F\-Impl\-Extractor.\-cpp.
+
+
+
+References C\-N\-F\-Impl\-Extractor\-::extraction\-\_\-cpu\-\_\-time\-\_\-, C\-N\-F\-Impl\-Extractor\-::extraction\-\_\-real\-\_\-time\-\_\-, Stopwatch\-::get\-C\-P\-U\-Time\-Sec(), Stopwatch\-::get\-Real\-Time\-Sec(), C\-N\-F\-Impl\-Extractor\-::run(), and Stopwatch\-::start().
+
+\hypertarget{classCNFImplExtractor_a0970602635f3356712d57ebb28d12c0d}{\index{Q\-B\-F\-Cert\-Impl\-Extractor@{Q\-B\-F\-Cert\-Impl\-Extractor}!insert\-Into\-Spec@{insert\-Into\-Spec}}
+\index{insert\-Into\-Spec@{insert\-Into\-Spec}!QBFCertImplExtractor@{Q\-B\-F\-Cert\-Impl\-Extractor}}
+\subsubsection[{insert\-Into\-Spec}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t C\-N\-F\-Impl\-Extractor\-::insert\-Into\-Spec (
+\begin{DoxyParamCaption}
+\item[{aiger $\ast$}]{standalone\-\_\-circuit}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classCNFImplExtractor_a0970602635f3356712d57ebb28d12c0d}
+
+
+Takes a circuit defining the control signals and inserts it into the spec. 
+
+This method takes as argument an aiger circuit of the following form\-: 
+\begin{DoxyItemize}
+\item The circuit is combinational, i.\-e., has no latches. 
+\item The inputs of the circuit are\-: the uncontrollable inputs from the spec (in the order in which they appear in the spec) followed by the state-\/signals (the output of the latches in the spec, in the order in which they appear in the spec). 
+\item The outputs of the circuit are the controllable inputs in the order in which they are defined in the spec. 
+\end{DoxyItemize}
+\begin{DoxyParams}{Parameters}
+{\em standalone\-\_\-circuit} & A circuit defining the control signals. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of additional A\-N\-D gates introduced into the spec. 
+\end{DoxyReturn}
+
+
+Definition at line 149 of file C\-N\-F\-Impl\-Extractor.\-cpp.
+
+
+
+References Var\-Info\-::\-C\-T\-R\-L, Options\-::get\-Aig\-In\-File\-Name(), Options\-::get\-Aig\-Out\-File\-Name(), Var\-Manager\-::get\-Info(), Var\-Info\-::get\-Lit\-In\-A\-I\-G(), Var\-Manager\-::get\-Max\-A\-I\-G\-Var(), Var\-Manager\-::get\-Pres\-Error\-State\-Var(), Var\-Manager\-::get\-Vars\-Of\-Type(), Var\-Info\-::\-I\-N\-P\-U\-T, Var\-Manager\-::instance(), Options\-::instance(), M\-A\-S\-S\-E\-R\-T, Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, and String\-Utils\-::to\-Lower\-Case\-In().
+
+
+
+Referenced by Learning\-Impl\-Extractor\-::run(), and run().
+
+\hypertarget{classQBFCertImplExtractor_aa6a292ba4108e707f458c04d621a6d9e}{\index{Q\-B\-F\-Cert\-Impl\-Extractor@{Q\-B\-F\-Cert\-Impl\-Extractor}!log\-Detailed\-Statistics@{log\-Detailed\-Statistics}}
+\index{log\-Detailed\-Statistics@{log\-Detailed\-Statistics}!QBFCertImplExtractor@{Q\-B\-F\-Cert\-Impl\-Extractor}}
+\subsubsection[{log\-Detailed\-Statistics}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-B\-F\-Cert\-Impl\-Extractor\-::log\-Detailed\-Statistics (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classQBFCertImplExtractor_aa6a292ba4108e707f458c04d621a6d9e}
+
+
+Logs some detailed statistics (time for Q\-B\-F\-Cert, A\-B\-C, circuit sizes, etc.). 
+
+
+
+Reimplemented from \hyperlink{classCNFImplExtractor_abe790c767f6c71a52ef8b0a61ab39eaa}{C\-N\-F\-Impl\-Extractor}.
+
+
+
+Definition at line 147 of file Q\-B\-F\-Cert\-Impl\-Extractor.\-cpp.
+
+
+
+References abc\-\_\-real\-\_\-time\-\_\-, L\-\_\-\-L\-O\-G, qbfcert\-\_\-real\-\_\-time\-\_\-, size\-\_\-after\-\_\-abc\-\_\-, size\-\_\-before\-\_\-abc\-\_\-, and size\-\_\-final\-\_\-.
+
+\hypertarget{classCNFImplExtractor_aae098749e201b22294a70f6e0a4a58f0}{\index{Q\-B\-F\-Cert\-Impl\-Extractor@{Q\-B\-F\-Cert\-Impl\-Extractor}!log\-Statistics@{log\-Statistics}}
+\index{log\-Statistics@{log\-Statistics}!QBFCertImplExtractor@{Q\-B\-F\-Cert\-Impl\-Extractor}}
+\subsubsection[{log\-Statistics}]{\setlength{\rightskip}{0pt plus 5cm}void C\-N\-F\-Impl\-Extractor\-::log\-Statistics (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}}\label{classCNFImplExtractor_aae098749e201b22294a70f6e0a4a58f0}
+
+
+Logs statistical information about circuit extraction. 
+
+This method logs the overall execution time plus whatever detailed information is collected by the concrete implementation of this class. 
+
+Definition at line 290 of file C\-N\-F\-Impl\-Extractor.\-cpp.
+
+
+
+References C\-N\-F\-Impl\-Extractor\-::extraction\-\_\-cpu\-\_\-time\-\_\-, C\-N\-F\-Impl\-Extractor\-::extraction\-\_\-real\-\_\-time\-\_\-, L\-\_\-\-L\-O\-G, and C\-N\-F\-Impl\-Extractor\-::log\-Detailed\-Statistics().
+
+
+
+Referenced by Load\-Synth\-::run(), Learn\-Synth\-Q\-B\-F\-Inc\-::run(), I\-F\-M13\-Synth\-::run(), Template\-Synth\-::run(), Parallel\-Learner\-::run(), Learn\-Synth\-Q\-B\-F\-::run(), Learn\-Synth\-S\-A\-T\-::run(), and Learn\-Synth\-Q\-B\-F\-Ind\-::run().
+
+\hypertarget{classCNFImplExtractor_a58a4e5021d0ef9c4190a5be74fb5a83e}{\index{Q\-B\-F\-Cert\-Impl\-Extractor@{Q\-B\-F\-Cert\-Impl\-Extractor}!optimize\-With\-A\-B\-C@{optimize\-With\-A\-B\-C}}
+\index{optimize\-With\-A\-B\-C@{optimize\-With\-A\-B\-C}!QBFCertImplExtractor@{Q\-B\-F\-Cert\-Impl\-Extractor}}
+\subsubsection[{optimize\-With\-A\-B\-C}]{\setlength{\rightskip}{0pt plus 5cm}aiger $\ast$ C\-N\-F\-Impl\-Extractor\-::optimize\-With\-A\-B\-C (
+\begin{DoxyParamCaption}
+\item[{aiger $\ast$}]{circuit}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classCNFImplExtractor_a58a4e5021d0ef9c4190a5be74fb5a83e}
+
+
+Optimizes a combinatorial A\-I\-G\-E\-R circuit with A\-B\-C. 
+
+\begin{DoxyNote}{Note}
+The returned structure must be deleted by the caller. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em circuit} & The circuit to optimize. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The optimized version of the circuit. The returned aiger structure must be deleted by the caller. 
+\end{DoxyReturn}
+
+
+Definition at line 112 of file C\-N\-F\-Impl\-Extractor.\-cpp.
+
+
+
+References Options\-::get\-T\-P\-Dir\-Name(), Options\-::get\-Unique\-Tmp\-File\-Name(), Options\-::instance(), and M\-A\-S\-S\-E\-R\-T.
+
+
+
+Referenced by Learning\-Impl\-Extractor\-::run(), and run().
+
+\hypertarget{classQBFCertImplExtractor_a97cf27d520ea0057385e35bb762a3069}{\index{Q\-B\-F\-Cert\-Impl\-Extractor@{Q\-B\-F\-Cert\-Impl\-Extractor}!run@{run}}
+\index{run@{run}!QBFCertImplExtractor@{Q\-B\-F\-Cert\-Impl\-Extractor}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-B\-F\-Cert\-Impl\-Extractor\-::run (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{winning\-\_\-region, }
+\item[{const {\bf C\-N\-F} \&}]{neg\-\_\-winning\-\_\-region}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classQBFCertImplExtractor_a97cf27d520ea0057385e35bb762a3069}
 
 
 Extracts a circuit from the winning region and its negation. 
@@ -181,47 +322,123 @@ This method uses Q\-B\-F\-Cert to compute a solution. Q\-B\-F\-Cert (see \href{h
 \end{DoxyParams}
 
 
-Definition at line 105 of file Q\-B\-F\-Cert\-Impl\-Extractor.\-cpp.
+Implements \hyperlink{classCNFImplExtractor_a8251ce58869f9f8ded159f1fa07ab334}{C\-N\-F\-Impl\-Extractor}.
 
 
 
-References Q\-B\-F\-Solver\-::\-A, C\-N\-F\-::add\-C\-N\-F(), Var\-Info\-::\-C\-T\-R\-L, dump\-Res\-Aiger\-Lib(), Q\-B\-F\-Solver\-::\-E, Var\-Info\-::\-I\-N\-P\-U\-T, A\-I\-G2\-C\-N\-F\-::instance(), Ext\-Q\-B\-F\-Solver\-::is\-Sat(), L\-\_\-\-I\-N\-F, M\-A\-S\-S\-E\-R\-T, Var\-Info\-::\-N\-E\-X\-T\-\_\-\-S\-T\-A\-T\-E, parse\-Q\-B\-F\-Cert\-Answer(), Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, Dep\-Q\-B\-F\-Ext\-::qbf\-Cert(), C\-N\-F\-::swap\-Present\-To\-Next(), and Var\-Info\-::\-T\-M\-P.
-
-\hypertarget{classQBFCertImplExtractor_a30f9aea9a9cb3b2662cb4eee1ac73687}{\index{Q\-B\-F\-Cert\-Impl\-Extractor@{Q\-B\-F\-Cert\-Impl\-Extractor}!parse\-Q\-B\-F\-Cert\-Answer@{parse\-Q\-B\-F\-Cert\-Answer}}
-\index{parse\-Q\-B\-F\-Cert\-Answer@{parse\-Q\-B\-F\-Cert\-Answer}!QBFCertImplExtractor@{Q\-B\-F\-Cert\-Impl\-Extractor}}
-\subsubsection[{parse\-Q\-B\-F\-Cert\-Answer}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Q\-B\-F\-Cert\-Impl\-Extractor\-::parse\-Q\-B\-F\-Cert\-Answer (
-\begin{DoxyParamCaption}
-\item[{const string \&}]{answer, }
-\item[{vector$<$ vector$<$ int $>$ $>$ \&}]{and\-\_\-gates}
-\end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{classQBFCertImplExtractor_a30f9aea9a9cb3b2662cb4eee1ac73687}
-
-
-Parses the answer of Q\-B\-F\-Cert. 
-
-Q\-B\-F\-Cert is called in an external process and produces a an A\-I\-G\-E\-R file that contains the result (the circuits for the c-\/signals). This method parses the result. The main thing this method does is that it renames variables. The A\-I\-G\-E\-R file returned by Q\-B\-F\-Cert uses the variable indices as they occur in the C\-N\-Fs. We must map them back to the original variable indices that were used in the A\-I\-G\-E\-R input file.
-
-
-\begin{DoxyParams}{Parameters}
-{\em answer} & The string-\/representation of the A\-I\-G\-E\-R file produced by Q\-B\-F\-Cert. \\
-\hline
-{\em and\-\_\-gates} & An empty vector. This method writes the A\-N\-D-\/gates to define the c-\/signals into this vector. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-The maximal variable index that is used in the resulting A\-N\-D gates. 
-\end{DoxyReturn}
-
-
-Definition at line 146 of file Q\-B\-F\-Cert\-Impl\-Extractor.\-cpp.
+Definition at line 63 of file Q\-B\-F\-Cert\-Impl\-Extractor.\-cpp.
 
 
 
-References Var\-Info\-::\-C\-T\-R\-L, Var\-Manager\-::get\-Info(), Var\-Info\-::get\-Lit\-In\-A\-I\-G(), Var\-Manager\-::get\-Max\-A\-I\-G\-Var(), Var\-Manager\-::get\-Vars\-Of\-Type(), Var\-Manager\-::instance(), L\-\_\-\-D\-B\-G, M\-A\-S\-S\-E\-R\-T, and String\-Utils\-::split\-Lines().
+References Q\-B\-F\-Solver\-::\-A, abc\-\_\-real\-\_\-time\-\_\-, C\-N\-F\-::add\-C\-N\-F(), Var\-Info\-::\-C\-T\-R\-L, Q\-B\-F\-Solver\-::\-E, Stopwatch\-::get\-Real\-Time\-Sec(), Var\-Manager\-::get\-Vars\-Of\-Type(), Var\-Info\-::\-I\-N\-P\-U\-T, C\-N\-F\-Impl\-Extractor\-::insert\-Into\-Spec(), Var\-Manager\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), Ext\-Q\-B\-F\-Solver\-::is\-Sat(), L\-\_\-\-D\-B\-G, M\-A\-S\-S\-E\-R\-T, Var\-Info\-::\-N\-E\-X\-T\-\_\-\-S\-T\-A\-T\-E, C\-N\-F\-Impl\-Extractor\-::optimize\-With\-A\-B\-C(), Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, Dep\-Q\-B\-F\-Ext\-::qbf\-Cert(), qbfcert\-\_\-real\-\_\-time\-\_\-, size\-\_\-after\-\_\-abc\-\_\-, size\-\_\-before\-\_\-abc\-\_\-, size\-\_\-final\-\_\-, Stopwatch\-::start(), C\-N\-F\-::swap\-Present\-To\-Next(), and Var\-Info\-::\-T\-M\-P.
 
 
 
-Referenced by extract\-Circuit().
+\subsection{Member Data Documentation}
+\hypertarget{classQBFCertImplExtractor_a90be758f6fb963647db3aa9c384075d8}{\index{Q\-B\-F\-Cert\-Impl\-Extractor@{Q\-B\-F\-Cert\-Impl\-Extractor}!abc\-\_\-real\-\_\-time\-\_\-@{abc\-\_\-real\-\_\-time\-\_\-}}
+\index{abc\-\_\-real\-\_\-time\-\_\-@{abc\-\_\-real\-\_\-time\-\_\-}!QBFCertImplExtractor@{Q\-B\-F\-Cert\-Impl\-Extractor}}
+\subsubsection[{abc\-\_\-real\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Q\-B\-F\-Cert\-Impl\-Extractor\-::abc\-\_\-real\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classQBFCertImplExtractor_a90be758f6fb963647db3aa9c384075d8}
+
+
+Statistics\-: the real time (in seconds) needed for the optimization with A\-B\-C. 
+
+
+
+Definition at line 127 of file Q\-B\-F\-Cert\-Impl\-Extractor.\-h.
+
+
+
+Referenced by log\-Detailed\-Statistics(), and run().
+
+\hypertarget{classCNFImplExtractor_ab8be06d42fd3c4b569ec22cfcf2f508e}{\index{Q\-B\-F\-Cert\-Impl\-Extractor@{Q\-B\-F\-Cert\-Impl\-Extractor}!extraction\-\_\-cpu\-\_\-time\-\_\-@{extraction\-\_\-cpu\-\_\-time\-\_\-}}
+\index{extraction\-\_\-cpu\-\_\-time\-\_\-@{extraction\-\_\-cpu\-\_\-time\-\_\-}!QBFCertImplExtractor@{Q\-B\-F\-Cert\-Impl\-Extractor}}
+\subsubsection[{extraction\-\_\-cpu\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double C\-N\-F\-Impl\-Extractor\-::extraction\-\_\-cpu\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classCNFImplExtractor_ab8be06d42fd3c4b569ec22cfcf2f508e}
+
+
+The circuit extraction time in C\-P\-U-\/seconds. 
+
+
+
+Definition at line 145 of file C\-N\-F\-Impl\-Extractor.\-h.
+
+
+
+Referenced by C\-N\-F\-Impl\-Extractor\-::extract\-Circuit(), and C\-N\-F\-Impl\-Extractor\-::log\-Statistics().
+
+\hypertarget{classCNFImplExtractor_ae06413cf08f868357d64545b3041aa18}{\index{Q\-B\-F\-Cert\-Impl\-Extractor@{Q\-B\-F\-Cert\-Impl\-Extractor}!extraction\-\_\-real\-\_\-time\-\_\-@{extraction\-\_\-real\-\_\-time\-\_\-}}
+\index{extraction\-\_\-real\-\_\-time\-\_\-@{extraction\-\_\-real\-\_\-time\-\_\-}!QBFCertImplExtractor@{Q\-B\-F\-Cert\-Impl\-Extractor}}
+\subsubsection[{extraction\-\_\-real\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t C\-N\-F\-Impl\-Extractor\-::extraction\-\_\-real\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classCNFImplExtractor_ae06413cf08f868357d64545b3041aa18}
+
+
+Like \hyperlink{classCNFImplExtractor_ab8be06d42fd3c4b569ec22cfcf2f508e}{extraction\-\_\-cpu\-\_\-time\-\_\-} but real-\/time. 
+
+
+
+Definition at line 150 of file C\-N\-F\-Impl\-Extractor.\-h.
+
+
+
+Referenced by C\-N\-F\-Impl\-Extractor\-::extract\-Circuit(), and C\-N\-F\-Impl\-Extractor\-::log\-Statistics().
+
+\hypertarget{classQBFCertImplExtractor_ab596205af9db44f69af214adca44201c}{\index{Q\-B\-F\-Cert\-Impl\-Extractor@{Q\-B\-F\-Cert\-Impl\-Extractor}!qbfcert\-\_\-real\-\_\-time\-\_\-@{qbfcert\-\_\-real\-\_\-time\-\_\-}}
+\index{qbfcert\-\_\-real\-\_\-time\-\_\-@{qbfcert\-\_\-real\-\_\-time\-\_\-}!QBFCertImplExtractor@{Q\-B\-F\-Cert\-Impl\-Extractor}}
+\subsubsection[{qbfcert\-\_\-real\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Q\-B\-F\-Cert\-Impl\-Extractor\-::qbfcert\-\_\-real\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classQBFCertImplExtractor_ab596205af9db44f69af214adca44201c}
+
+
+Statistics\-: the real time (in seconds) needed by Q\-B\-F\-Cert. 
+
+
+
+Definition at line 122 of file Q\-B\-F\-Cert\-Impl\-Extractor.\-h.
+
+
+
+Referenced by log\-Detailed\-Statistics(), and run().
+
+\hypertarget{classQBFCertImplExtractor_a18a1c9ab317cada48d54b7006124190e}{\index{Q\-B\-F\-Cert\-Impl\-Extractor@{Q\-B\-F\-Cert\-Impl\-Extractor}!size\-\_\-after\-\_\-abc\-\_\-@{size\-\_\-after\-\_\-abc\-\_\-}}
+\index{size\-\_\-after\-\_\-abc\-\_\-@{size\-\_\-after\-\_\-abc\-\_\-}!QBFCertImplExtractor@{Q\-B\-F\-Cert\-Impl\-Extractor}}
+\subsubsection[{size\-\_\-after\-\_\-abc\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Q\-B\-F\-Cert\-Impl\-Extractor\-::size\-\_\-after\-\_\-abc\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classQBFCertImplExtractor_a18a1c9ab317cada48d54b7006124190e}
+
+
+Statistics\-: the number of A\-N\-D gates after optimization with A\-B\-C. 
+
+
+
+Definition at line 112 of file Q\-B\-F\-Cert\-Impl\-Extractor.\-h.
+
+
+
+Referenced by log\-Detailed\-Statistics(), and run().
+
+\hypertarget{classQBFCertImplExtractor_a51eb6677e876d90d1b3763ca3e5457e7}{\index{Q\-B\-F\-Cert\-Impl\-Extractor@{Q\-B\-F\-Cert\-Impl\-Extractor}!size\-\_\-before\-\_\-abc\-\_\-@{size\-\_\-before\-\_\-abc\-\_\-}}
+\index{size\-\_\-before\-\_\-abc\-\_\-@{size\-\_\-before\-\_\-abc\-\_\-}!QBFCertImplExtractor@{Q\-B\-F\-Cert\-Impl\-Extractor}}
+\subsubsection[{size\-\_\-before\-\_\-abc\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Q\-B\-F\-Cert\-Impl\-Extractor\-::size\-\_\-before\-\_\-abc\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classQBFCertImplExtractor_a51eb6677e876d90d1b3763ca3e5457e7}
+
+
+Statistics\-: the number of A\-N\-D gates before optimization with A\-B\-C. 
+
+
+
+Definition at line 107 of file Q\-B\-F\-Cert\-Impl\-Extractor.\-h.
+
+
+
+Referenced by log\-Detailed\-Statistics(), and run().
+
+\hypertarget{classQBFCertImplExtractor_ab22c545849fc2f85a49a846a836a5ec6}{\index{Q\-B\-F\-Cert\-Impl\-Extractor@{Q\-B\-F\-Cert\-Impl\-Extractor}!size\-\_\-final\-\_\-@{size\-\_\-final\-\_\-}}
+\index{size\-\_\-final\-\_\-@{size\-\_\-final\-\_\-}!QBFCertImplExtractor@{Q\-B\-F\-Cert\-Impl\-Extractor}}
+\subsubsection[{size\-\_\-final\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Q\-B\-F\-Cert\-Impl\-Extractor\-::size\-\_\-final\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classQBFCertImplExtractor_ab22c545849fc2f85a49a846a836a5ec6}
+
+
+Statistics\-: the final number of additional A\-N\-D gates. 
+
+
+
+Definition at line 117 of file Q\-B\-F\-Cert\-Impl\-Extractor.\-h.
+
+
+
+Referenced by log\-Detailed\-Statistics(), and run().
 
 
 

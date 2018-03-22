@@ -35,7 +35,7 @@
 #include "SatSolver.h"
 #include "DepQBFApi.h"
 #include "Utils.h"
-#include "QBFCertImplExtractor.h"
+#include "CNFImplExtractor.h"
 
 
 // -------------------------------------------------------------------------------------------
@@ -51,8 +51,9 @@
 #define IS_GREATER true
 
 // -------------------------------------------------------------------------------------------
-IFM13Synth::IFM13Synth() :
-            BackEnd()
+IFM13Synth::IFM13Synth(CNFImplExtractor *impl_extractor) :
+            BackEnd(),
+            impl_extractor_(impl_extractor)
 {
 
   const vector<int> &s = VarManager::instance().getVarsOfType(VarInfo::PRES_STATE);
@@ -111,6 +112,9 @@ IFM13Synth::~IFM13Synth()
   for(size_t cnt = 0; cnt < gen_block_trans_solvers_.size(); ++cnt)
     delete gen_block_trans_solvers_[cnt];
   gen_block_trans_solvers_.clear();
+
+  delete impl_extractor_;
+  impl_extractor_ = NULL;
 }
 
 // -------------------------------------------------------------------------------------------
@@ -131,8 +135,8 @@ bool IFM13Synth::run()
     return true;
 
   L_INF("Starting to extract a circuit ...");
-  QBFCertImplExtractor extractor;
-  extractor.extractCircuit(winning_region_, neg_winning_region_);
+  impl_extractor_->extractCircuit(winning_region_, neg_winning_region_);
+  impl_extractor_->logStatistics();
   L_INF("Synthesis done.");
   return true;
 }

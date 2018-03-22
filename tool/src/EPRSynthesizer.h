@@ -69,7 +69,7 @@
 ///        signals remains to be done. (The iProver page promises to release a new version
 ///        with more output formats soon.)
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.0.0
+/// @version 1.1.0
 class EPRSynthesizer : public BackEnd
 {
 public:

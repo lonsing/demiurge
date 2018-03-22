@@ -30,7 +30,7 @@ enum \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} \{ \hyp
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 virtual \hyperlink{classDepQBFExt_a6425c670e11fb6f2315171e27f850954}{$\sim$\-Dep\-Q\-B\-F\-Ext} ()
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
-virtual string \hyperlink{classDepQBFExt_a18ef56586e1d2d06048cd8aadeeacc74}{qbf\-Cert} (const vector$<$ pair$<$ \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cf}{Var\-Info\-::\-Var\-Kind}, \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} $>$ $>$ \&quantifier\-\_\-prefix, const \hyperlink{classCNF}{C\-N\-F} \&cnf)
+virtual aiger $\ast$ \hyperlink{classDepQBFExt_a9de37d00363d5ad71eaf03c011314b31}{qbf\-Cert} (const vector$<$ pair$<$ \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cf}{Var\-Info\-::\-Var\-Kind}, \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} $>$ $>$ \&quantifier\-\_\-prefix, const \hyperlink{classCNF}{C\-N\-F} \&cnf)
 \begin{DoxyCompactList}\small\item\em Executes the Q\-B\-F-\/\-Cert framework to compute Skolem functions for Q\-B\-Fs. \end{DoxyCompactList}\item 
 virtual bool \hyperlink{classExtQBFSolver_abec25b97170b79b42b85d1d4ec825a39}{is\-Sat} (const vector$<$ pair$<$ \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cf}{Var\-Info\-::\-Var\-Kind}, \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} $>$ $>$ \&quantifier\-\_\-prefix, const \hyperlink{classCNF}{C\-N\-F} \&cnf)
 \begin{DoxyCompactList}\small\item\em Checks if a given Q\-B\-F is satisfiable (with quantification over variable kinds). \end{DoxyCompactList}\item 
@@ -91,11 +91,11 @@ Most of work is actually implemented in the base class \hyperlink{classExtQBFSol
 Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\-0.\-0 
+1.\-1.\-0 
 \end{DoxyVersion}
 
 
-Definition at line 55 of file Dep\-Q\-B\-F\-Ext.\-h.
+Definition at line 57 of file Dep\-Q\-B\-F\-Ext.\-h.
 
 
 
@@ -137,11 +137,11 @@ Constructor.
 
 
 
-Definition at line 38 of file Dep\-Q\-B\-F\-Ext.\-cpp.
+Definition at line 42 of file Dep\-Q\-B\-F\-Ext.\-cpp.
 
 
 
-References M\-A\-S\-S\-E\-R\-T, path\-\_\-to\-\_\-deqqbf\-\_\-, path\-\_\-to\-\_\-qbfcert\-\_\-, and Options\-::\-T\-P\-\_\-\-V\-A\-R.
+References Options\-::get\-T\-P\-Dir\-Name(), Options\-::instance(), M\-A\-S\-S\-E\-R\-T, path\-\_\-to\-\_\-deqqbf\-\_\-, and path\-\_\-to\-\_\-qbfcert\-\_\-.
 
 \hypertarget{classDepQBFExt_a6425c670e11fb6f2315171e27f850954}{\index{Dep\-Q\-B\-F\-Ext@{Dep\-Q\-B\-F\-Ext}!$\sim$\-Dep\-Q\-B\-F\-Ext@{$\sim$\-Dep\-Q\-B\-F\-Ext}}
 \index{$\sim$\-Dep\-Q\-B\-F\-Ext@{$\sim$\-Dep\-Q\-B\-F\-Ext}!DepQBFExt@{Dep\-Q\-B\-F\-Ext}}
@@ -156,7 +156,7 @@ Destructor.
 
 
 
-Definition at line 50 of file Dep\-Q\-B\-F\-Ext.\-cpp.
+Definition at line 52 of file Dep\-Q\-B\-F\-Ext.\-cpp.
 
 \hypertarget{classDepQBFExt_ae711230c91a8990450466d085a34bcc2}{\index{Dep\-Q\-B\-F\-Ext@{Dep\-Q\-B\-F\-Ext}!Dep\-Q\-B\-F\-Ext@{Dep\-Q\-B\-F\-Ext}}
 \index{Dep\-Q\-B\-F\-Ext@{Dep\-Q\-B\-F\-Ext}!DepQBFExt@{Dep\-Q\-B\-F\-Ext}}
@@ -234,7 +234,7 @@ References Q\-B\-F\-Solver\-::\-E, Var\-Manager\-::get\-Max\-C\-N\-F\-Var(), C\-
 
 
 
-Referenced by Dep\-Q\-B\-F\-Api\-::debug\-Check\-Bloqqer\-Model(), Dep\-Q\-B\-F\-Api\-Inc\-::debug\-Check\-Bloqqer\-Model(), Dep\-Q\-B\-F\-Api\-::debug\-Check\-Bloqqer\-Verdict(), Dep\-Q\-B\-F\-Api\-Inc\-::debug\-Check\-Bloqqer\-Verdict(), Ext\-Q\-B\-F\-Solver\-::is\-Sat(), Ext\-Q\-B\-F\-Solver\-::is\-Sat\-Model(), and qbf\-Cert().
+Referenced by Dep\-Q\-B\-F\-Api\-::debug\-Check\-Bloqqer\-Model(), Dep\-Q\-B\-F\-Api\-::debug\-Check\-Bloqqer\-Verdict(), Ext\-Q\-B\-F\-Solver\-::is\-Sat(), Ext\-Q\-B\-F\-Solver\-::is\-Sat\-Model(), and qbf\-Cert().
 
 \hypertarget{classExtQBFSolver_a7e329d1fdce2cf65390930b01cf3a32b}{\index{Dep\-Q\-B\-F\-Ext@{Dep\-Q\-B\-F\-Ext}!dump\-Q\-B\-F@{dump\-Q\-B\-F}}
 \index{dump\-Q\-B\-F@{dump\-Q\-B\-F}!DepQBFExt@{Dep\-Q\-B\-F\-Ext}}
@@ -286,7 +286,7 @@ Implements \hyperlink{classExtQBFSolver_aec4c2d830f72283e2fbabf4a3f62a640}{Ext\-
 
 
 
-Definition at line 75 of file Dep\-Q\-B\-F\-Ext.\-cpp.
+Definition at line 77 of file Dep\-Q\-B\-F\-Ext.\-cpp.
 
 
 
@@ -312,7 +312,7 @@ Implements \hyperlink{classExtQBFSolver_ac2bc9e4817cfa1a54195d7d9f1c7d3bd}{Ext\-
 
 
 
-Definition at line 81 of file Dep\-Q\-B\-F\-Ext.\-cpp.
+Definition at line 83 of file Dep\-Q\-B\-F\-Ext.\-cpp.
 
 
 
@@ -356,7 +356,7 @@ References Ext\-Q\-B\-F\-Solver\-::cleanup(), Ext\-Q\-B\-F\-Solver\-::dump\-Q\-B
 
 
 
-Referenced by Q\-B\-F\-Cert\-Impl\-Extractor\-::extract\-Circuit().
+Referenced by Q\-B\-F\-Cert\-Impl\-Extractor\-::run().
 
 \hypertarget{classExtQBFSolver_adc1bacec3307200dd90b260789e4c808}{\index{Dep\-Q\-B\-F\-Ext@{Dep\-Q\-B\-F\-Ext}!is\-Sat@{is\-Sat}}
 \index{is\-Sat@{is\-Sat}!DepQBFExt@{Dep\-Q\-B\-F\-Ext}}
@@ -558,14 +558,14 @@ References M\-A\-S\-S\-E\-R\-T, Ext\-Q\-B\-F\-Solver\-::out\-\_\-file\-\_\-name\
 
 Referenced by Ext\-Q\-B\-F\-Solver\-::is\-Sat\-Model().
 
-\hypertarget{classDepQBFExt_a18ef56586e1d2d06048cd8aadeeacc74}{\index{Dep\-Q\-B\-F\-Ext@{Dep\-Q\-B\-F\-Ext}!qbf\-Cert@{qbf\-Cert}}
+\hypertarget{classDepQBFExt_a9de37d00363d5ad71eaf03c011314b31}{\index{Dep\-Q\-B\-F\-Ext@{Dep\-Q\-B\-F\-Ext}!qbf\-Cert@{qbf\-Cert}}
 \index{qbf\-Cert@{qbf\-Cert}!DepQBFExt@{Dep\-Q\-B\-F\-Ext}}
-\subsubsection[{qbf\-Cert}]{\setlength{\rightskip}{0pt plus 5cm}string Dep\-Q\-B\-F\-Ext\-::qbf\-Cert (
+\subsubsection[{qbf\-Cert}]{\setlength{\rightskip}{0pt plus 5cm}aiger $\ast$ Dep\-Q\-B\-F\-Ext\-::qbf\-Cert (
 \begin{DoxyParamCaption}
 \item[{const vector$<$ pair$<$ {\bf Var\-Info\-::\-Var\-Kind}, {\bf Quant} $>$ $>$ \&}]{quantifier\-\_\-prefix, }
 \item[{const {\bf C\-N\-F} \&}]{cnf}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDepQBFExt_a18ef56586e1d2d06048cd8aadeeacc74}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDepQBFExt_a9de37d00363d5ad71eaf03c011314b31}
 
 
 Executes the Q\-B\-F-\/\-Cert framework to compute Skolem functions for Q\-B\-Fs. 
@@ -580,19 +580,19 @@ The Q\-B\-F consists of a quantifier prefix and a Boolean formula in \hyperlink{
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-A string representation of the resulting Skolem functions in A\-I\-G\-E\-R format. 
+The resulting Skolem functions in A\-I\-G\-E\-R format. The returned A\-I\-G\-E\-R structure must be deleted by the caller. 
 \end{DoxyReturn}
 
 
-Definition at line 56 of file Dep\-Q\-B\-F\-Ext.\-cpp.
+Definition at line 58 of file Dep\-Q\-B\-F\-Ext.\-cpp.
 
 
 
-References Ext\-Q\-B\-F\-Solver\-::cleanup(), Ext\-Q\-B\-F\-Solver\-::dump\-Q\-B\-F(), Ext\-Q\-B\-F\-Solver\-::in\-\_\-file\-\_\-name\-\_\-, M\-A\-S\-S\-E\-R\-T, path\-\_\-to\-\_\-qbfcert\-\_\-, and File\-Utils\-::read\-File().
+References Ext\-Q\-B\-F\-Solver\-::cleanup(), Ext\-Q\-B\-F\-Solver\-::dump\-Q\-B\-F(), Ext\-Q\-B\-F\-Solver\-::in\-\_\-file\-\_\-name\-\_\-, M\-A\-S\-S\-E\-R\-T, and path\-\_\-to\-\_\-qbfcert\-\_\-.
 
 
 
-Referenced by Q\-B\-F\-Cert\-Impl\-Extractor\-::extract\-Circuit().
+Referenced by Q\-B\-F\-Cert\-Impl\-Extractor\-::run().
 
 
 
@@ -636,7 +636,7 @@ The path to the Dep\-Q\-B\-F executable.
 
 
 
-Definition at line 104 of file Dep\-Q\-B\-F\-Ext.\-h.
+Definition at line 107 of file Dep\-Q\-B\-F\-Ext.\-h.
 
 
 
@@ -651,7 +651,7 @@ The path to the Q\-B\-F-\/\-Cert script.
 
 
 
-Definition at line 109 of file Dep\-Q\-B\-F\-Ext.\-h.
+Definition at line 112 of file Dep\-Q\-B\-F\-Ext.\-h.
 
 
 

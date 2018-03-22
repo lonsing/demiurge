@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">demiurge
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A synthesis tool for safety specifications.</div>
   </td>
@@ -178,7 +178,7 @@ Private Member Functions</h2></td></tr>
 <div class="textblock"><p>Interfaces the PicoSat SAT-solver via its API. </p>
 <p>This class represents an interface to the SAT-solver PicoSat (see <a href="http://fmv.jku.at/picosat/">http://fmv.jku.at/picosat/</a>). It is a concrete implementation of the <a class="el" href="classSatSolver.html" title="An abstract interface for all SAT-solver implementations.">SatSolver</a> interface. For a given <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a>, this class is able to determine satisfiability. Furthermore, in case of satisfiability, it can extract satisfying assignments. In case of unsatisfiability, it can compute an unsatisfiable core. It can be used in two different ways. In the incremental usage scenario, all information the solver has learned so far is retained. Methods for incremental solving start with 'inc'. Other methods (like <a class="el" href="classPicoSatApi.html#a46ea721c61e298d87403476607ba9fe6" title="Checks if a CNF is satisfiable.">isSat()</a> or <a class="el" href="classPicoSatApi.html#a00dda1bd348d46bbfbf506f7735946da" title="Checks if a CNF is satisfiable and extracts a model or an unsatisfiable core.">isSatModelOrCore()</a>) instantiate a fresh solver instance for every call.</p>
 <dl class="section author"><dt>Author</dt><dd>Robert Koenighofer (<a href="#" onclick="location.href='mai'+'lto:'+'rob'+'er'+'t.k'+'oe'+'nig'+'ho'+'fer'+'@i'+'aik'+'.t'+'ugr'+'az'+'.at'; return false;">rober<span style="display: none;">.nosp@m.</span>t.ko<span style="display: none;">.nosp@m.</span>enigh<span style="display: none;">.nosp@m.</span>ofer<span style="display: none;">.nosp@m.</span>@iaik<span style="display: none;">.nosp@m.</span>.tug<span style="display: none;">.nosp@m.</span>raz.a<span style="display: none;">.nosp@m.</span>t</a>) </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>1.0.0 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.1.0 </dd></dl>
 
 <p>Definition at line <a class="el" href="PicoSatApi_8h_source.html#l00055">55</a> of file <a class="el" href="PicoSatApi_8h_source.html">PicoSatApi.h</a>.</p>
 </div><h2>Constructor &amp; Destructor Documentation</h2>
@@ -349,7 +349,7 @@ Private Member Functions</h2></td></tr>
 
 <p>References <a class="el" href="SatSolver_8h_source.html#l00428">SatSolver::min_cores_</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00178">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00326">LearnSynthSAT::computeWinningRegionRG()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00510">LearnSynthSAT::computeWinningRegionRGRC()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00180">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00328">LearnSynthSAT::computeWinningRegionPlainDep()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00508">LearnSynthSAT::computeWinningRegionPlainDep2()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00759">LearnSynthSAT::computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00943">LearnSynthSAT::computeWinningRegionRGRC()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00359">LearningImplExtractor::runLearningJiangSAT()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l01172">LearningImplExtractor::runLearningJiangSATInc1()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l01379">LearningImplExtractor::runLearningJiangSATInc2()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00527">LearningImplExtractor::runLearningJiangSATTmp()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00715">LearningImplExtractor::runLearningJiangSATTmpCtrl()</a>, and <a class="el" href="LearningImplExtractor_8cpp_source.html#l00947">LearningImplExtractor::runLearningJiangSATTmpCtrlInc2()</a>.</p>
 
 </div>
 </div>
@@ -387,7 +387,7 @@ Private Member Functions</h2></td></tr>
 
 <p>References <a class="el" href="SatSolver_8h_source.html#l00433">SatSolver::rand_models_</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00178">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00326">LearnSynthSAT::computeWinningRegionRG()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00510">LearnSynthSAT::computeWinningRegionRGRC()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00180">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00328">LearnSynthSAT::computeWinningRegionPlainDep()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00508">LearnSynthSAT::computeWinningRegionPlainDep2()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00759">LearnSynthSAT::computeWinningRegionRG()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00943">LearnSynthSAT::computeWinningRegionRGRC()</a>.</p>
 
 </div>
 </div>
@@ -572,7 +572,7 @@ Private Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="PicoSatApi_8cpp_source.html#l00158">158</a> of file <a class="el" href="PicoSatApi_8cpp_source.html">PicoSatApi.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8cpp_source.html#l00273">CNF::getClauses()</a>, <a class="el" href="PicoSatApi_8h_source.html#l00401">incr_</a>, and <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>.</p>
+<p>References <a class="el" href="CNF_8cpp_source.html#l00346">CNF::getClauses()</a>, <a class="el" href="PicoSatApi_8h_source.html#l00401">incr_</a>, and <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>.</p>
 
 </div>
 </div>
@@ -823,7 +823,7 @@ Private Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="PicoSatApi_8cpp_source.html#l00255">255</a> of file <a class="el" href="PicoSatApi_8cpp_source.html">PicoSatApi.cpp</a>.</p>
 
-<p>References <a class="el" href="PicoSatApi_8h_source.html#l00401">incr_</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="SatSolver_8h_source.html#l00428">SatSolver::min_cores_</a>, <a class="el" href="SatSolver_8h_source.html#l00433">SatSolver::rand_models_</a>, <a class="el" href="PicoSatApi_8cpp_source.html#l00408">randModel()</a>, and <a class="el" href="Utils_8cpp_source.html#l00161">Utils::remove()</a>.</p>
+<p>References <a class="el" href="PicoSatApi_8h_source.html#l00401">incr_</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="SatSolver_8h_source.html#l00428">SatSolver::min_cores_</a>, <a class="el" href="SatSolver_8h_source.html#l00433">SatSolver::rand_models_</a>, <a class="el" href="PicoSatApi_8cpp_source.html#l00408">randModel()</a>, and <a class="el" href="Utils_8cpp_source.html#l00176">Utils::remove()</a>.</p>
 
 </div>
 </div>
@@ -888,7 +888,7 @@ Private Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="PicoSatApi_8cpp_source.html#l00319">319</a> of file <a class="el" href="PicoSatApi_8cpp_source.html">PicoSatApi.cpp</a>.</p>
 
-<p>References <a class="el" href="PicoSatApi_8h_source.html#l00401">incr_</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="SatSolver_8h_source.html#l00428">SatSolver::min_cores_</a>, <a class="el" href="SatSolver_8h_source.html#l00433">SatSolver::rand_models_</a>, <a class="el" href="PicoSatApi_8cpp_source.html#l00408">randModel()</a>, and <a class="el" href="Utils_8cpp_source.html#l00161">Utils::remove()</a>.</p>
+<p>References <a class="el" href="PicoSatApi_8h_source.html#l00401">incr_</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="SatSolver_8h_source.html#l00428">SatSolver::min_cores_</a>, <a class="el" href="SatSolver_8h_source.html#l00433">SatSolver::rand_models_</a>, <a class="el" href="PicoSatApi_8cpp_source.html#l00408">randModel()</a>, and <a class="el" href="Utils_8cpp_source.html#l00176">Utils::remove()</a>.</p>
 
 </div>
 </div>
@@ -991,7 +991,7 @@ Private Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="PicoSatApi_8cpp_source.html#l00052">52</a> of file <a class="el" href="PicoSatApi_8cpp_source.html">PicoSatApi.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8cpp_source.html#l00273">CNF::getClauses()</a>, and <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>.</p>
+<p>References <a class="el" href="CNF_8cpp_source.html#l00346">CNF::getClauses()</a>, and <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>.</p>
 
 <p>Referenced by <a class="el" href="PicoSatApi_8cpp_source.html#l00073">isSatModelOrCore()</a>.</p>
 
@@ -1058,7 +1058,7 @@ Private Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="PicoSatApi_8cpp_source.html#l00073">73</a> of file <a class="el" href="PicoSatApi_8cpp_source.html">PicoSatApi.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8cpp_source.html#l00122">CNF::add1LitClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00273">CNF::getClauses()</a>, <a class="el" href="PicoSatApi_8cpp_source.html#l00052">isSat()</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="SatSolver_8h_source.html#l00428">SatSolver::min_cores_</a>, <a class="el" href="SatSolver_8h_source.html#l00433">SatSolver::rand_models_</a>, <a class="el" href="PicoSatApi_8cpp_source.html#l00408">randModel()</a>, and <a class="el" href="Utils_8cpp_source.html#l00161">Utils::remove()</a>.</p>
+<p>References <a class="el" href="CNF_8cpp_source.html#l00169">CNF::add1LitClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00346">CNF::getClauses()</a>, <a class="el" href="PicoSatApi_8cpp_source.html#l00052">isSat()</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="SatSolver_8h_source.html#l00428">SatSolver::min_cores_</a>, <a class="el" href="SatSolver_8h_source.html#l00433">SatSolver::rand_models_</a>, <a class="el" href="PicoSatApi_8cpp_source.html#l00408">randModel()</a>, and <a class="el" href="Utils_8cpp_source.html#l00176">Utils::remove()</a>.</p>
 
 </div>
 </div>
@@ -1291,7 +1291,7 @@ Private Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 14 2013 15:15:46 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jul 15 2014 12:30:23 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

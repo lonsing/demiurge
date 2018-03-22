@@ -13,6 +13,8 @@ var searchData=
   ['addlose',['addLose',['../classIFM13Synth.html#adf319a6748eda4aa29017a561752b262',1,'IFM13Synth::addLose()'],['../classIFM13Explorer.html#a14c5ca206f19c7c741f63e43d1470387',1,'IFM13Explorer::addLose()']]],
   ['addnegclauseascube',['addNegClauseAsCube',['../classCNF.html#a1e98842bbdcb8666d40289b15b943682',1,'CNF']]],
   ['addnegcubeasclause',['addNegCubeAsClause',['../classCNF.html#a84d01cd19e3032fb8d3bc7eaaaa40e34',1,'CNF']]],
+  ['addtostandaloneaiger',['addToStandAloneAiger',['../classLearningImplExtractor.html#a70515dea9636bbcd9fe3e31bdf47e110',1,'LearningImplExtractor']]],
   ['aig2cnf',['AIG2CNF',['../classAIG2CNF.html#a2da966a41a8ff74e6ecebf0d1d3d3829',1,'AIG2CNF::AIG2CNF()'],['../classAIG2CNF.html#a2b3b1fac1ae78ff3c9dac99cd7b63d9d',1,'AIG2CNF::AIG2CNF(const AIG2CNF &amp;other)']]],
-  ['aiglittocnflit',['aigLitToCnfLit',['../classVarManager.html#a9015ec7f557feb7619fdc0f7e18b57fa',1,'VarManager']]]
+  ['aiglittocnflit',['aigLitToCnfLit',['../classVarManager.html#a9015ec7f557feb7619fdc0f7e18b57fa',1,'VarManager']]],
+  ['appendvarsto',['appendVarsTo',['../classCNF.html#a8a54b640d4fbb1da74979fc07536d4e9',1,'CNF']]]
 ];

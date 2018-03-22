@@ -40,8 +40,8 @@ ExtQBFSolver::ExtQBFSolver() : QBFSolver()
   ostringstream unique_string;
   unique_string << this;
   string temp_dir = Options::instance().getTmpDirName();
-  in_file_name_ = temp_dir + "query_" + unique_string.str() + ".qdimacs";
-  out_file_name_ = temp_dir + "answer_" + unique_string.str() + ".out";
+  in_file_name_ = Options::instance().getUniqueTmpFileName("qbf_query") + ".qdimacs";
+  out_file_name_ = Options::instance().getUniqueTmpFileName("qbf_answer") + ".out";
 }
 
 // -------------------------------------------------------------------------------------------

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">demiurge
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A synthesis tool for safety specifications.</div>
   </td>
@@ -124,36 +124,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="classQuBEExt.html#ab433b787109ae43f6e42dbed855bc6fa">   36</a></span>&#160;<a class="code" href="classQuBEExt.html#ab433b787109ae43f6e42dbed855bc6fa" title="Constructor.">QuBEExt::QuBEExt</a>() : <a class="code" href="classExtQBFSolver.html" title="A generic interface to QBF-solvers started as external processes.">ExtQBFSolver</a>()</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span> *tp_env = getenv(<a class="code" href="classOptions.html#ad3285bfd4c5984cd79988ddce49ee507" title="The directory in which all third-party software is installed.">Options::TP_VAR</a>.c_str());</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="defines_8h.html#aad30151c28f3061eefc56c68da2fb96d" title="A macro for an assertion associated with an error message.">MASSERT</a>(tp_env != NULL, <span class="stringliteral">&quot;You have not set the variable &quot;</span> &lt;&lt; <a class="code" href="classOptions.html#ad3285bfd4c5984cd79988ddce49ee507" title="The directory in which all third-party software is installed.">Options::TP_VAR</a>);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="classQuBEExt.html#a02646118beb978edff16fc0094a798f8" title="The path to the QuBE executable.">path_to_qube_</a> = string(tp_env) + <span class="stringliteral">&quot;/qube/qube&quot;</span>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="classQuBEExt.html#aed89db58647a80a6204798720ec136df" title="The path to the DepQBF executable.">path_to_deqqbf_</a> = string(tp_env) + <span class="stringliteral">&quot;/depqbf/depqbf&quot;</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">struct </span>stat st;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="defines_8h.html#aad30151c28f3061eefc56c68da2fb96d" title="A macro for an assertion associated with an error message.">MASSERT</a>(stat(<a class="code" href="classQuBEExt.html#a02646118beb978edff16fc0094a798f8" title="The path to the QuBE executable.">path_to_qube_</a>.c_str(), &amp;st) == 0, <span class="stringliteral">&quot;QuBE executable not found.&quot;</span>);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="code" href="classQuBEExt.html#a0e070d528067724a14f2835b751d41cd">   47</a></span>&#160;<a class="code" href="classQuBEExt.html#a0e070d528067724a14f2835b751d41cd" title="Destructor.">QuBEExt::~QuBEExt</a>()</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="comment">// nothing to do</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="code" href="classQuBEExt.html#a2af26a63952d83a50a4bd3d72bfc572a">   53</a></span>&#160;<span class="keywordtype">string</span> <a class="code" href="classQuBEExt.html#a2af26a63952d83a50a4bd3d72bfc572a" title="Returns the command to execute QuBE.">QuBEExt::getSolverCommand</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classQuBEExt.html#a02646118beb978edff16fc0094a798f8" title="The path to the QuBE executable.">path_to_qube_</a> + <span class="stringliteral">&quot; &quot;</span> + <a class="code" href="classExtQBFSolver.html#a04d2ff483c22a11344e46d66ae7e76b1" title="The name of the QDIMACS file containing the QBF to be solved.">in_file_name_</a> + <span class="stringliteral">&quot; -solve &gt; &quot;</span> + <a class="code" href="classExtQBFSolver.html#a0efb35aa9b807dec521ad3406eaf664d" title="The name of the file that is produced by the QBF-solver (containing the model).">out_file_name_</a>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="code" href="classQuBEExt.html#a846ea873ec83e57213f1931d85cb8bd0">   59</a></span>&#160;<span class="keywordtype">string</span> <a class="code" href="classQuBEExt.html#a846ea873ec83e57213f1931d85cb8bd0" title="Returns the command to execute DepQBF such that it produces models.">QuBEExt::getSolverCommandModel</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classQuBEExt.html#aed89db58647a80a6204798720ec136df" title="The path to the DepQBF executable.">path_to_deqqbf_</a> + <span class="stringliteral">&quot; --qdo &quot;</span> + <a class="code" href="classExtQBFSolver.html#a04d2ff483c22a11344e46d66ae7e76b1" title="The name of the QDIMACS file containing the QBF to be solved.">in_file_name_</a> + <span class="stringliteral">&quot; &gt; &quot;</span> + <a class="code" href="classExtQBFSolver.html#a0efb35aa9b807dec521ad3406eaf664d" title="The name of the file that is produced by the QBF-solver (containing the model).">out_file_name_</a>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <a class="code" href="classQuBEExt.html#a02646118beb978edff16fc0094a798f8" title="The path to the QuBE executable.">path_to_qube_</a> = <a class="code" href="classOptions.html#a3ee81ffdab9838ceb8f6f43fac679869" title="Returns the one and only instance of this class.">Options::instance</a>().<a class="code" href="classOptions.html#a18e33479844f3b0bd7161c3f62166b14" title="Returns the name (and path) of the directory containing the thirdparty tools.">getTPDirName</a>() + <span class="stringliteral">&quot;/qube/qube&quot;</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="classQuBEExt.html#aed89db58647a80a6204798720ec136df" title="The path to the DepQBF executable.">path_to_deqqbf_</a> = <a class="code" href="classOptions.html#a3ee81ffdab9838ceb8f6f43fac679869" title="Returns the one and only instance of this class.">Options::instance</a>().<a class="code" href="classOptions.html#a18e33479844f3b0bd7161c3f62166b14" title="Returns the name (and path) of the directory containing the thirdparty tools.">getTPDirName</a>() + <span class="stringliteral">&quot;/depqbf/depqbf&quot;</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keyword">struct </span>stat st;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="defines_8h.html#aad30151c28f3061eefc56c68da2fb96d" title="A macro for an assertion associated with an error message.">MASSERT</a>(stat(<a class="code" href="classQuBEExt.html#a02646118beb978edff16fc0094a798f8" title="The path to the QuBE executable.">path_to_qube_</a>.c_str(), &amp;st) == 0, <span class="stringliteral">&quot;QuBE executable not found.&quot;</span>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="code" href="classQuBEExt.html#a0e070d528067724a14f2835b751d41cd">   45</a></span>&#160;<a class="code" href="classQuBEExt.html#a0e070d528067724a14f2835b751d41cd" title="Destructor.">QuBEExt::~QuBEExt</a>()</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="comment">// nothing to do</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="code" href="classQuBEExt.html#a2af26a63952d83a50a4bd3d72bfc572a">   51</a></span>&#160;<span class="keywordtype">string</span> <a class="code" href="classQuBEExt.html#a2af26a63952d83a50a4bd3d72bfc572a" title="Returns the command to execute QuBE.">QuBEExt::getSolverCommand</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classQuBEExt.html#a02646118beb978edff16fc0094a798f8" title="The path to the QuBE executable.">path_to_qube_</a> + <span class="stringliteral">&quot; &quot;</span> + <a class="code" href="classExtQBFSolver.html#a04d2ff483c22a11344e46d66ae7e76b1" title="The name of the QDIMACS file containing the QBF to be solved.">in_file_name_</a> + <span class="stringliteral">&quot; -solve &gt; &quot;</span> + <a class="code" href="classExtQBFSolver.html#a0efb35aa9b807dec521ad3406eaf664d" title="The name of the file that is produced by the QBF-solver (containing the model).">out_file_name_</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="code" href="classQuBEExt.html#a846ea873ec83e57213f1931d85cb8bd0">   57</a></span>&#160;<span class="keywordtype">string</span> <a class="code" href="classQuBEExt.html#a846ea873ec83e57213f1931d85cb8bd0" title="Returns the command to execute DepQBF such that it produces models.">QuBEExt::getSolverCommandModel</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classQuBEExt.html#aed89db58647a80a6204798720ec136df" title="The path to the DepQBF executable.">path_to_deqqbf_</a> + <span class="stringliteral">&quot; --qdo &quot;</span> + <a class="code" href="classExtQBFSolver.html#a04d2ff483c22a11344e46d66ae7e76b1" title="The name of the QDIMACS file containing the QBF to be solved.">in_file_name_</a> + <span class="stringliteral">&quot; &gt; &quot;</span> + <a class="code" href="classExtQBFSolver.html#a0efb35aa9b807dec521ad3406eaf664d" title="The name of the file that is produced by the QBF-solver (containing the model).">out_file_name_</a>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 14 2013 15:15:43 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jul 15 2014 12:30:20 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

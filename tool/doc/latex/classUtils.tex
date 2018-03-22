@@ -23,6 +23,8 @@ static vector$<$ int $>$ \hyperlink{classUtils_a9c060a97bf0e9e5e08bf33b512633ac3
 \begin{DoxyCompactList}\small\item\em Extracts present-\/state literals and input literals from a cube or clause. \end{DoxyCompactList}\item 
 static vector$<$ int $>$ \hyperlink{classUtils_a9251f04947864aaaac7e459987913429}{extract\-Next\-As\-Present} (const vector$<$ int $>$ \&cube\-\_\-or\-\_\-clause)
 \begin{DoxyCompactList}\small\item\em Extracts next-\/state literals and returns the present-\/state copy. \end{DoxyCompactList}\item 
+static vector$<$ int $>$ \hyperlink{classUtils_a21f2b014ac53ca027864c57e24a60195}{extract} (const vector$<$ int $>$ \&cube\-\_\-or\-\_\-clause, const vector$<$ int $>$ \&vars)
+\begin{DoxyCompactList}\small\item\em Extracts certain literals from a cube or clause. \end{DoxyCompactList}\item 
 static void \hyperlink{classUtils_a71efa1aa570b356a328e95008fb65ad8}{randomize} (vector$<$ int $>$ \&vec)
 \begin{DoxyCompactList}\small\item\em Randomizes the order (not the value) of a given vector of integers. \end{DoxyCompactList}\item 
 static void \hyperlink{classUtils_a2843ae3d849c66ebd72baea26fbd7580}{sort} (vector$<$ int $>$ \&vec)
@@ -43,6 +45,8 @@ static bool \hyperlink{classUtils_ab5dca8125b6addaa1f0331664ab6142e}{is\-Subset}
 \begin{DoxyCompactList}\small\item\em Checks if one vector forms a subset of another one. \end{DoxyCompactList}\item 
 static bool \hyperlink{classUtils_ac4e713aa386834b587e2695855fbc27a}{compress\-State\-C\-N\-F} (\hyperlink{classCNF}{C\-N\-F} \&cnf, bool hardcore=false)
 \begin{DoxyCompactList}\small\item\em Compresses a state-\/\-C\-N\-F by removing clauses that are implied by others. \end{DoxyCompactList}\item 
+static void \hyperlink{classUtils_ad6bc8cf6342b8f182597aa53cf72d9d3}{negate\-State\-C\-N\-F} (\hyperlink{classCNF}{C\-N\-F} \&cnf)
+\begin{DoxyCompactList}\small\item\em Negates a \hyperlink{classCNF}{C\-N\-F} over the state-\/variables without introducing temporary variables. \end{DoxyCompactList}\item 
 static void \hyperlink{classUtils_adeaccd2a53073b17e3409eab8e98db0c}{debug\-Print} (const vector$<$ int $>$ \&vec, string prefix=\char`\"{}\char`\"{})
 \begin{DoxyCompactList}\small\item\em Prints a vector of literals (mainly for debugging purposes). \end{DoxyCompactList}\item 
 static void \hyperlink{classUtils_acc29602987b73022546a6d752a7e093f}{debug\-Check\-Win\-Reg} (const \hyperlink{classCNF}{C\-N\-F} \&winning\-\_\-region)
@@ -71,7 +75,7 @@ Contains utility functions that can be usful in various back-\/ends.
 Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\-0.\-0 
+1.\-1.\-0 
 \end{DoxyVersion}
 
 
@@ -149,7 +153,7 @@ True if the \hyperlink{classCNF}{C\-N\-F} was modified, false otherwise.
 \end{DoxyReturn}
 
 
-Definition at line 272 of file Utils.\-cpp.
+Definition at line 287 of file Utils.\-cpp.
 
 
 
@@ -157,7 +161,7 @@ References C\-N\-F\-::add\-Clause(), C\-N\-F\-::add\-Neg\-Cube\-As\-Clause(), C\
 
 
 
-Referenced by Learn\-Synth\-Q\-B\-F\-::compute\-Counterexample\-S\-A\-T(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-One(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Q\-B\-F\-Cert\-Impl\-Extractor\-::extract\-Circuit(), and Parallel\-Learner\-::trigger\-Explorer\-Restart().
+Referenced by Learn\-Synth\-Q\-B\-F\-::compute\-Counterexample\-S\-A\-T(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Pool(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), C\-N\-F\-Impl\-Extractor\-::extract\-Circuit(), and Parallel\-Learner\-::trigger\-Explorer\-Restart().
 
 \hypertarget{classUtils_a84611c8a027ac12426219cb4d59765aa}{\index{Utils@{Utils}!contains@{contains}}
 \index{contains@{contains}!Utils@{Utils}}
@@ -183,11 +187,11 @@ True if the vector contains the element, false otherwise.
 \end{DoxyReturn}
 
 
-Definition at line 176 of file Utils.\-cpp.
+Definition at line 191 of file Utils.\-cpp.
 
 
 
-Referenced by I\-F\-M13\-Explorer\-::add\-Blocked\-State().
+Referenced by I\-F\-M13\-Explorer\-::add\-Blocked\-State(), extract(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), and Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2().
 
 \hypertarget{classUtils_adef5db58221c7a04397de10ec0b13fb6}{\index{Utils@{Utils}!contains\-Init@{contains\-Init}}
 \index{contains\-Init@{contains\-Init}!Utils@{Utils}}
@@ -216,7 +220,7 @@ Definition at line 41 of file Utils.\-cpp.
 
 
 
-Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-All\-Blocking\-Clauses(), Learn\-Synth\-Q\-B\-F\-::compute\-All\-Blocking\-Clauses(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-All\-Blocking\-Clauses(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Blocking\-Clause(), Learn\-Synth\-Q\-B\-F\-::compute\-Blocking\-Clause(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Blocking\-Clause(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses(), I\-F\-M13\-Synth\-::rec\-Block\-Cube(), and I\-F\-M13\-Explorer\-::rec\-Block\-Cube().
+Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-All\-Blocking\-Clauses(), Learn\-Synth\-Q\-B\-F\-::compute\-All\-Blocking\-Clauses(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-All\-Blocking\-Clauses(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Blocking\-Clause(), Learn\-Synth\-Q\-B\-F\-::compute\-Blocking\-Clause(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Blocking\-Clause(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses(), I\-F\-M13\-Synth\-::rec\-Block\-Cube(), and I\-F\-M13\-Explorer\-::rec\-Block\-Cube().
 
 \hypertarget{classUtils_a02ae74e9866b8ca0863c9507e46df007}{\index{Utils@{Utils}!contains\-Init@{contains\-Init}}
 \index{contains\-Init@{contains\-Init}!Utils@{Utils}}
@@ -268,7 +272,7 @@ The check is only done in debug-\/mode. In release-\/mode this method does nothi
 \end{DoxyParams}
 
 
-Definition at line 353 of file Utils.\-cpp.
+Definition at line 407 of file Utils.\-cpp.
 
 
 
@@ -308,11 +312,11 @@ The check is only done in debug-\/mode. In release-\/mode this method does nothi
 \end{DoxyParams}
 
 
-Definition at line 363 of file Utils.\-cpp.
+Definition at line 417 of file Utils.\-cpp.
 
 
 
-References Q\-B\-F\-Solver\-::\-A, C\-N\-F\-::add\-C\-N\-F(), C\-N\-F\-::clear(), Var\-Info\-::\-C\-T\-R\-L, Q\-B\-F\-Solver\-::\-E, Options\-::get\-Q\-B\-F\-Solver(), Options\-::get\-S\-A\-T\-Solver(), Var\-Info\-::\-I\-N\-P\-U\-T, Options\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), Sat\-Solver\-::is\-Sat(), L\-\_\-\-D\-B\-G, M\-A\-S\-S\-E\-R\-T, Var\-Info\-::\-N\-E\-X\-T\-\_\-\-S\-T\-A\-T\-E, Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, C\-N\-F\-::swap\-Present\-To\-Next(), and Var\-Info\-::\-T\-M\-P.
+References Q\-B\-F\-Solver\-::\-A, C\-N\-F\-::add\-C\-N\-F(), C\-N\-F\-::clear(), Var\-Info\-::\-C\-T\-R\-L, Q\-B\-F\-Solver\-::\-E, extract(), Options\-::get\-Q\-B\-F\-Solver(), Options\-::get\-S\-A\-T\-Solver(), Var\-Manager\-::get\-Vars\-Of\-Type(), Sat\-Solver\-::inc\-Add\-C\-N\-F(), Sat\-Solver\-::inc\-Add\-Neg\-Cube\-As\-Clause(), Sat\-Solver\-::inc\-Is\-Sat\-Model\-Or\-Core(), Var\-Info\-::\-I\-N\-P\-U\-T, Var\-Manager\-::instance(), Options\-::instance(), A\-I\-G2\-C\-N\-F\-::instance(), Q\-B\-F\-Solver\-::is\-Sat(), Sat\-Solver\-::is\-Sat(), L\-\_\-\-D\-B\-G, M\-A\-S\-S\-E\-R\-T, Var\-Info\-::\-N\-E\-X\-T\-\_\-\-S\-T\-A\-T\-E, Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, Sat\-Solver\-::start\-Incremental\-Session(), C\-N\-F\-::swap\-Present\-To\-Next(), and Var\-Info\-::\-T\-M\-P.
 
 \hypertarget{classUtils_adeaccd2a53073b17e3409eab8e98db0c}{\index{Utils@{Utils}!debug\-Print@{debug\-Print}}
 \index{debug\-Print@{debug\-Print}!Utils@{Utils}}
@@ -335,7 +339,7 @@ Prints a vector of literals (mainly for debugging purposes).
 \end{DoxyParams}
 
 
-Definition at line 338 of file Utils.\-cpp.
+Definition at line 392 of file Utils.\-cpp.
 
 
 
@@ -343,7 +347,7 @@ References L\-\_\-\-D\-B\-G.
 
 
 
-Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One\-S\-A\-T(), Dep\-Q\-B\-F\-Api\-::debug\-Check\-Bloqqer\-Model(), and Dep\-Q\-B\-F\-Api\-Inc\-::debug\-Check\-Bloqqer\-Model().
+Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Push(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Push(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One\-S\-A\-T(), and Dep\-Q\-B\-F\-Api\-::debug\-Check\-Bloqqer\-Model().
 
 \hypertarget{classUtils_af69b7f70358d1c1616aab1560c7363cd}{\index{Utils@{Utils}!debug\-Print\-Current\-Mem\-Usage@{debug\-Print\-Current\-Mem\-Usage}}
 \index{debug\-Print\-Current\-Mem\-Usage@{debug\-Print\-Current\-Mem\-Usage}!Utils@{Utils}}
@@ -358,7 +362,7 @@ Prints the current memory usage as debug message.
 
 
 
-Definition at line 406 of file Utils.\-cpp.
+Definition at line 517 of file Utils.\-cpp.
 
 
 
@@ -398,7 +402,37 @@ References Var\-Manager\-::get\-Vars\-Of\-Type(), and Var\-Manager\-::instance()
 
 
 
-Referenced by Learn\-Synth\-Q\-B\-F\-::compute\-Counterexample\-S\-A\-T(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), I\-F\-M13\-Synth\-::rec\-Block\-Cube(), and I\-F\-M13\-Explorer\-::rec\-Block\-Cube().
+Referenced by Learn\-Synth\-Q\-B\-F\-::compute\-Counterexample\-S\-A\-T(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep2(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), debug\-Check\-Win\-Reg(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), I\-F\-M13\-Synth\-::rec\-Block\-Cube(), and I\-F\-M13\-Explorer\-::rec\-Block\-Cube().
+
+\hypertarget{classUtils_a21f2b014ac53ca027864c57e24a60195}{\index{Utils@{Utils}!extract@{extract}}
+\index{extract@{extract}!Utils@{Utils}}
+\subsubsection[{extract}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ int $>$ Utils\-::extract (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{cube\-\_\-or\-\_\-clause, }
+\item[{const vector$<$ int $>$ \&}]{vars}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classUtils_a21f2b014ac53ca027864c57e24a60195}
+
+
+Extracts certain literals from a cube or clause. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cube\-\_\-or\-\_\-clause} & The cube or clause to analyze. \\
+\hline
+{\em vars} & The variables to extract from cube\-\_\-or\-\_\-clause. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+All literals of cube\-\_\-or\-\_\-clause where the corresponding variable occurs in vars. 
+\end{DoxyReturn}
+
+
+Definition at line 149 of file Utils.\-cpp.
+
+
+
+References contains().
 
 \hypertarget{classUtils_a9251f04947864aaaac7e459987913429}{\index{Utils@{Utils}!extract\-Next\-As\-Present@{extract\-Next\-As\-Present}}
 \index{extract\-Next\-As\-Present@{extract\-Next\-As\-Present}!Utils@{Utils}}
@@ -490,7 +524,7 @@ True if the intersection of the vector and the set is empty, false otherwise.
 \end{DoxyReturn}
 
 
-Definition at line 215 of file Utils.\-cpp.
+Definition at line 230 of file Utils.\-cpp.
 
 
 
@@ -520,7 +554,7 @@ True if the intersection is empty, false otherwise.
 \end{DoxyReturn}
 
 
-Definition at line 232 of file Utils.\-cpp.
+Definition at line 247 of file Utils.\-cpp.
 
 \hypertarget{classUtils_ab5dca8125b6addaa1f0331664ab6142e}{\index{Utils@{Utils}!is\-Subset@{is\-Subset}}
 \index{is\-Subset@{is\-Subset}!Utils@{Utils}}
@@ -546,7 +580,7 @@ True if 'subset' is really a subset of 'superset', false otherwise.
 \end{DoxyReturn}
 
 
-Definition at line 249 of file Utils.\-cpp.
+Definition at line 264 of file Utils.\-cpp.
 
 
 
@@ -570,11 +604,37 @@ Negates all literals in a cube or clause.
 \end{DoxyParams}
 
 
-Definition at line 187 of file Utils.\-cpp.
+Definition at line 202 of file Utils.\-cpp.
 
 
 
-Referenced by Counter\-Gen\-S\-A\-T\-::bored(), compress\-State\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-All\-Blocking\-Clauses(), Learn\-Synth\-Q\-B\-F\-::compute\-All\-Blocking\-Clauses(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-All\-Blocking\-Clauses(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Blocking\-Clause(), Learn\-Synth\-Q\-B\-F\-::compute\-Blocking\-Clause(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Blocking\-Clause(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses(), and Learn\-Synth\-Q\-B\-F\-Inc\-::reduce\-Existing\-Clauses().
+Referenced by Counter\-Gen\-S\-A\-T\-::bored(), compress\-State\-C\-N\-F(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-All\-Blocking\-Clauses(), Learn\-Synth\-Q\-B\-F\-::compute\-All\-Blocking\-Clauses(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-All\-Blocking\-Clauses(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Blocking\-Clause(), Learn\-Synth\-Q\-B\-F\-::compute\-Blocking\-Clause(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Blocking\-Clause(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses(), Learn\-Synth\-Q\-B\-F\-Inc\-::reduce\-Existing\-Clauses(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), and Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2().
+
+\hypertarget{classUtils_ad6bc8cf6342b8f182597aa53cf72d9d3}{\index{Utils@{Utils}!negate\-State\-C\-N\-F@{negate\-State\-C\-N\-F}}
+\index{negate\-State\-C\-N\-F@{negate\-State\-C\-N\-F}!Utils@{Utils}}
+\subsubsection[{negate\-State\-C\-N\-F}]{\setlength{\rightskip}{0pt plus 5cm}void Utils\-::negate\-State\-C\-N\-F (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-N\-F} \&}]{cnf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classUtils_ad6bc8cf6342b8f182597aa53cf72d9d3}
+
+
+Negates a \hyperlink{classCNF}{C\-N\-F} over the state-\/variables without introducing temporary variables. 
+
+The negation of the passed \hyperlink{classCNF}{C\-N\-F} is computed via computational learning. It uses a S\-A\-T solver in an incremental fashion. This is more expensive than simply calling cnf.\-negate(), but it does not introduce temporary variables, and hence may lead to a smaller \hyperlink{classCNF}{C\-N\-F}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cnf} & The \hyperlink{classCNF}{C\-N\-F} formula to negate. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 353 of file Utils.\-cpp.
+
+
+
+References C\-N\-F\-::add\-Neg\-Cube\-As\-Clause(), C\-N\-F\-::clear(), Options\-::get\-S\-A\-T\-Solver(), Var\-Manager\-::get\-Vars\-Of\-Type(), Sat\-Solver\-::inc\-Add\-C\-N\-F(), Sat\-Solver\-::inc\-Add\-Neg\-Cube\-As\-Clause(), Sat\-Solver\-::inc\-Is\-Sat\-Model\-Or\-Core(), Var\-Manager\-::instance(), Options\-::instance(), M\-A\-S\-S\-E\-R\-T, C\-N\-F\-::negate(), Var\-Manager\-::pop(), Var\-Info\-::\-P\-R\-E\-S\-\_\-\-S\-T\-A\-T\-E, Var\-Manager\-::push(), and Sat\-Solver\-::start\-Incremental\-Session().
 
 \hypertarget{classUtils_a0ed61b802f94ec15000c458e9aae4f19}{\index{Utils@{Utils}!operator=@{operator=}}
 \index{operator=@{operator=}!Utils@{Utils}}
@@ -615,11 +675,11 @@ Randomizes the order (not the value) of a given vector of integers.
 \end{DoxyParams}
 
 
-Definition at line 149 of file Utils.\-cpp.
+Definition at line 164 of file Utils.\-cpp.
 
 
 
-Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Blocking\-Clause(), Learn\-Synth\-Q\-B\-F\-::compute\-Blocking\-Clause(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Blocking\-Clause(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), Dep\-Q\-B\-F\-Api\-Inc\-::extract\-Core(), and Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses().
+Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Blocking\-Clause(), Learn\-Synth\-Q\-B\-F\-::compute\-Blocking\-Clause(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Blocking\-Clause(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), Dep\-Q\-B\-F\-Api\-::extract\-Core(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), and Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2().
 
 \hypertarget{classUtils_a15b142132eb40445f51b1f1bb89b85f3}{\index{Utils@{Utils}!remove@{remove}}
 \index{remove@{remove}!Utils@{Utils}}
@@ -647,11 +707,11 @@ True if the element was removed, false otherwise.
 \end{DoxyReturn}
 
 
-Definition at line 161 of file Utils.\-cpp.
+Definition at line 176 of file Utils.\-cpp.
 
 
 
-Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-All\-Blocking\-Clauses(), Learn\-Synth\-Q\-B\-F\-::compute\-All\-Blocking\-Clauses(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-All\-Blocking\-Clauses(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), Dep\-Q\-B\-F\-Api\-Inc\-::extract\-Core(), Counter\-Gen\-S\-A\-T\-::generalize\-Ce\-Futher(), Learn\-Synth\-Q\-B\-F\-::generalize\-Counterexample(), Learn\-Synth\-Q\-B\-F\-Ind\-::generalize\-Counterexample(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), Lingeling\-Api\-::inc\-Is\-Sat\-Model\-Or\-Core(), Pico\-Sat\-Api\-::inc\-Is\-Sat\-Model\-Or\-Core(), Mini\-Sat\-Api\-::inc\-Is\-Sat\-Model\-Or\-Core(), Pico\-Sat\-Api\-::is\-Sat\-Model\-Or\-Core(), Lingeling\-Api\-::is\-Sat\-Model\-Or\-Core(), Mini\-Sat\-Api\-::is\-Sat\-Model\-Or\-Core(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses(), Learn\-Synth\-Q\-B\-F\-::reduce\-Existing\-Clauses(), and Learn\-Synth\-Q\-B\-F\-Ind\-::reduce\-Existing\-Clauses().
+Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-All\-Blocking\-Clauses(), Learn\-Synth\-Q\-B\-F\-::compute\-All\-Blocking\-Clauses(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-All\-Blocking\-Clauses(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), Dep\-Q\-B\-F\-Api\-::extract\-Core(), Counter\-Gen\-S\-A\-T\-::generalize\-Ce\-Futher(), Learn\-Synth\-Q\-B\-F\-::generalize\-Counterexample(), Learn\-Synth\-Q\-B\-F\-Ind\-::generalize\-Counterexample(), Learn\-Synth\-Q\-B\-F\-Inc\-::generalize\-Counterexample\-Further(), Counter\-Gen\-S\-A\-T\-::generalize\-Counterexamples(), Lingeling\-Api\-::inc\-Is\-Sat\-Model\-Or\-Core(), Pico\-Sat\-Api\-::inc\-Is\-Sat\-Model\-Or\-Core(), Mini\-Sat\-Api\-::inc\-Is\-Sat\-Model\-Or\-Core(), Lingeling\-Api\-::is\-Sat\-Model\-Or\-Core(), Pico\-Sat\-Api\-::is\-Sat\-Model\-Or\-Core(), Mini\-Sat\-Api\-::is\-Sat\-Model\-Or\-Core(), Clause\-Minimizer\-Q\-B\-F\-::minimize\-Clauses(), Learn\-Synth\-Q\-B\-F\-::reduce\-Existing\-Clauses(), Learn\-Synth\-Q\-B\-F\-Ind\-::reduce\-Existing\-Clauses(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F(), and Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F\-Inc().
 
 \hypertarget{classUtils_a2843ae3d849c66ebd72baea26fbd7580}{\index{Utils@{Utils}!sort@{sort}}
 \index{sort@{sort}!Utils@{Utils}}
@@ -671,11 +731,11 @@ Sorts a vector of integers in ascending order.
 \end{DoxyParams}
 
 
-Definition at line 155 of file Utils.\-cpp.
+Definition at line 170 of file Utils.\-cpp.
 
 
 
-Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::generalize\-Counterexample(), Learn\-Synth\-Q\-B\-F\-::generalize\-Counterexample(), and Learn\-Synth\-Q\-B\-F\-Ind\-::generalize\-Counterexample().
+Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::generalize\-Counterexample(), Learn\-Synth\-Q\-B\-F\-::generalize\-Counterexample(), Learn\-Synth\-Q\-B\-F\-Ind\-::generalize\-Counterexample(), and Learn\-Synth\-Q\-B\-F\-Inc\-::generalize\-Counterexample\-Further().
 
 \hypertarget{classUtils_a8e0d236cf00a61a34ef5c48bcb08a1ec}{\index{Utils@{Utils}!swap\-Present\-To\-Next@{swap\-Present\-To\-Next}}
 \index{swap\-Present\-To\-Next@{swap\-Present\-To\-Next}!Utils@{Utils}}
@@ -698,7 +758,7 @@ The passed vector of literals must only contain current-\/state literals.
 \end{DoxyParams}
 
 
-Definition at line 194 of file Utils.\-cpp.
+Definition at line 209 of file Utils.\-cpp.
 
 
 
@@ -706,7 +766,7 @@ References Var\-Manager\-::get\-Max\-C\-N\-F\-Var(), Var\-Manager\-::get\-Vars\-
 
 
 
-Referenced by I\-F\-M13\-Synth\-::add\-Blocked\-State(), I\-F\-M13\-Explorer\-::add\-Blocked\-State(), I\-F\-M13\-Synth\-::add\-Lose(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-All\-Blocking\-Clauses(), Learn\-Synth\-Q\-B\-F\-::compute\-All\-Blocking\-Clauses(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-All\-Blocking\-Clauses(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Blocking\-Clause(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One\-S\-A\-T(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), Counter\-Gen\-S\-A\-T\-::generalize\-Ce\-Futher(), Learn\-Synth\-Q\-B\-F\-::generalize\-Counterexample(), Learn\-Synth\-Q\-B\-F\-Ind\-::generalize\-Counterexample(), I\-F\-M13\-Synth\-::propagate\-Blocked\-States(), I\-F\-M13\-Explorer\-::propagate\-Blocked\-States(), and Learn\-Synth\-Q\-B\-F\-Inc\-::reduce\-Existing\-Clauses().
+Referenced by I\-F\-M13\-Synth\-::add\-Blocked\-State(), I\-F\-M13\-Explorer\-::add\-Blocked\-State(), I\-F\-M13\-Synth\-::add\-Lose(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-All\-Blocking\-Clauses(), Learn\-Synth\-Q\-B\-F\-::compute\-All\-Blocking\-Clauses(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-All\-Blocking\-Clauses(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Blocking\-Clause(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Push(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Ind\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Push(), Learn\-Synth\-Q\-B\-F\-::compute\-Winning\-Region\-One\-S\-A\-T(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-Plain\-Dep(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G(), Learn\-Synth\-S\-A\-T\-::compute\-Winning\-Region\-R\-G\-R\-C(), Clause\-Explorer\-S\-A\-T\-::explore\-Clauses(), Counter\-Gen\-S\-A\-T\-::generalize\-Ce\-Futher(), Learn\-Synth\-Q\-B\-F\-::generalize\-Counterexample(), Learn\-Synth\-Q\-B\-F\-Ind\-::generalize\-Counterexample(), I\-F\-M13\-Synth\-::propagate\-Blocked\-States(), I\-F\-M13\-Explorer\-::propagate\-Blocked\-States(), and Learn\-Synth\-Q\-B\-F\-Inc\-::reduce\-Existing\-Clauses().
 
 
 

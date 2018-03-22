@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">demiurge
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A synthesis tool for safety specifications.</div>
   </td>
@@ -110,8 +110,8 @@ Inheritance diagram for LearnSynthQBF:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae961d7172f13d52df1b2a7801eb0b0e9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLearnSynthQBF.html#ae961d7172f13d52df1b2a7801eb0b0e9">LearnSynthQBF</a> ()</td></tr>
-<tr class="memdesc:ae961d7172f13d52df1b2a7801eb0b0e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#ae961d7172f13d52df1b2a7801eb0b0e9"></a><br/></td></tr>
+<tr class="memitem:ae7f4fe1f847d6af8ecebaa9a9f631b7c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLearnSynthQBF.html#ae7f4fe1f847d6af8ecebaa9a9f631b7c">LearnSynthQBF</a> (<a class="el" href="classCNFImplExtractor.html">CNFImplExtractor</a> *impl_extractor)</td></tr>
+<tr class="memdesc:ae7f4fe1f847d6af8ecebaa9a9f631b7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#ae7f4fe1f847d6af8ecebaa9a9f631b7c"></a><br/></td></tr>
 <tr class="memitem:a692e516f27fd78a44884b715688bd7d9"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLearnSynthQBF.html#a692e516f27fd78a44884b715688bd7d9">~LearnSynthQBF</a> ()</td></tr>
 <tr class="memdesc:a692e516f27fd78a44884b715688bd7d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#a692e516f27fd78a44884b715688bd7d9"></a><br/></td></tr>
 <tr class="memitem:aed85bb2fe317a5fdc7eef71fe598c606"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLearnSynthQBF.html#aed85bb2fe317a5fdc7eef71fe598c606">run</a> ()</td></tr>
@@ -174,6 +174,8 @@ Protected Attributes</h2></td></tr>
 <tr class="memdesc:a227ff215ffb411e57686aa3d8e7f7026"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of variables the SAT-solver should not optimize away.  <a href="#a227ff215ffb411e57686aa3d8e7f7026"></a><br/></td></tr>
 <tr class="memitem:ae65774a2b9e6137d6ff45cbf755d4843"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLearnSynthQBF.html#ae65774a2b9e6137d6ff45cbf755d4843">solver_i_precise_</a></td></tr>
 <tr class="memdesc:ae65774a2b9e6137d6ff45cbf755d4843"><td class="mdescLeft">&#160;</td><td class="mdescRight">A flag indicating if solver_i_ is precise.  <a href="#ae65774a2b9e6137d6ff45cbf755d4843"></a><br/></td></tr>
+<tr class="memitem:ad34b0c8db41c054eef617e7e9156fad8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCNFImplExtractor.html">CNFImplExtractor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLearnSynthQBF.html#ad34b0c8db41c054eef617e7e9156fad8">impl_extractor_</a></td></tr>
+<tr class="memdesc:ad34b0c8db41c054eef617e7e9156fad8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The engine to use for circuit extraction.  <a href="#ad34b0c8db41c054eef617e7e9156fad8"></a><br/></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -188,28 +190,35 @@ Private Member Functions</h2></td></tr>
 <p>This procedure is implemented in <a class="el" href="classLearnSynthQBF.html#ac538cd53082bad1c8c45a7e178dfa4cb" title="Uses the standard method to compute the winning region.">computeWinningRegionOne()</a>. Some variants of this procedure are implemented in other methods of this class. The method <a class="el" href="classLearnSynthQBF.html#af8c897056a5018ff1717ea2d76f6cd8f" title="Computes the winning region, using two SAT-solvers to compute counterexamples.">computeWinningRegionOneSAT()</a> uses two SAT solvers instead of a QBF solver to compute a counterexample-state. The method <a class="el" href="classLearnSynthQBF.html#a09a9ecb2b77c540cdcc327a35cd15c18" title="Computes the winning region, always computing all counterexample generalizations.">computeWinningRegionAll()</a> computes (and excludes) not only one generalization of the counterexample but all generalizations. Command-line parameters (&ndash;mode) decide which of these methods to use.</p>
 <p>Finally the <a class="el" href="classQBFCertImplExtractor.html" title="Given a winning region in CNF, this method extracts a circuit using QBFCert.">QBFCertImplExtractor</a> is used to extract a circuit.</p>
 <dl class="section author"><dt>Author</dt><dd>Robert Koenighofer (<a href="#" onclick="location.href='mai'+'lto:'+'rob'+'er'+'t.k'+'oe'+'nig'+'ho'+'fer'+'@i'+'aik'+'.t'+'ugr'+'az'+'.at'; return false;">rober<span style="display: none;">.nosp@m.</span>t.ko<span style="display: none;">.nosp@m.</span>enigh<span style="display: none;">.nosp@m.</span>ofer<span style="display: none;">.nosp@m.</span>@iaik<span style="display: none;">.nosp@m.</span>.tug<span style="display: none;">.nosp@m.</span>raz.a<span style="display: none;">.nosp@m.</span>t</a>) </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>1.0.0 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.1.0 </dd></dl>
 
-<p>Definition at line <a class="el" href="LearnSynthQBF_8h_source.html#l00071">71</a> of file <a class="el" href="LearnSynthQBF_8h_source.html">LearnSynthQBF.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthQBF_8h_source.html#l00072">72</a> of file <a class="el" href="LearnSynthQBF_8h_source.html">LearnSynthQBF.h</a>.</p>
 </div><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ae961d7172f13d52df1b2a7801eb0b0e9"></a>
+<a class="anchor" id="ae7f4fe1f847d6af8ecebaa9a9f631b7c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">LearnSynthQBF::LearnSynthQBF </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="classCNFImplExtractor.html">CNFImplExtractor</a> *&#160;</td>
+          <td class="paramname"><em>impl_extractor</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">impl_extractor</td><td>The engine to use for circuit extraction. It will be deleted by this class. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Definition at line <a class="el" href="LearnSynthQBF_8cpp_source.html#l00040">40</a> of file <a class="el" href="LearnSynthQBF_8cpp_source.html">LearnSynthQBF.cpp</a>.</p>
 
-<p>References <a class="el" href="QBFSolver_8h_source.html#l00067">QBFSolver::A</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00375">check_quant_</a>, <a class="el" href="VarInfo_8h_source.html#l00074">VarInfo::CTRL</a>, <a class="el" href="QBFSolver_8h_source.html#l00062">QBFSolver::E</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00390">gen_quant_</a>, <a class="el" href="classSatSolver.html#ab2581b192cb2c39a81a416a9f7416c9e">SatSolver::incAddCNF()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00420">incremental_vars_to_keep_</a>, <a class="el" href="VarInfo_8h_source.html#l00069">VarInfo::INPUT</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="VarInfo_8h_source.html#l00064">VarInfo::NEXT_STATE</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00415">solver_ctrl_</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00406">solver_i_</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00431">solver_i_precise_</a>, <a class="el" href="classSatSolver.html#a74603f84c3f2383a5fc44d5a8093cbea">SatSolver::startIncrementalSession()</a>, and <a class="el" href="VarInfo_8h_source.html#l00081">VarInfo::TMP</a>.</p>
+<p>References <a class="el" href="QBFSolver_8h_source.html#l00067">QBFSolver::A</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00379">check_quant_</a>, <a class="el" href="VarInfo_8h_source.html#l00074">VarInfo::CTRL</a>, <a class="el" href="QBFSolver_8h_source.html#l00062">QBFSolver::E</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00394">gen_quant_</a>, <a class="el" href="classSatSolver.html#ab2581b192cb2c39a81a416a9f7416c9e">SatSolver::incAddCNF()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00424">incremental_vars_to_keep_</a>, <a class="el" href="VarInfo_8h_source.html#l00069">VarInfo::INPUT</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="VarInfo_8h_source.html#l00064">VarInfo::NEXT_STATE</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00419">solver_ctrl_</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00410">solver_i_</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00435">solver_i_precise_</a>, <a class="el" href="classSatSolver.html#a74603f84c3f2383a5fc44d5a8093cbea">SatSolver::startIncrementalSession()</a>, and <a class="el" href="VarInfo_8h_source.html#l00081">VarInfo::TMP</a>.</p>
 
 </div>
 </div>
@@ -236,9 +245,9 @@ Private Member Functions</h2></td></tr>
 
 <p>Destructor. </p>
 
-<p>Definition at line <a class="el" href="LearnSynthQBF_8cpp_source.html#l00078">78</a> of file <a class="el" href="LearnSynthQBF_8cpp_source.html">LearnSynthQBF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthQBF_8cpp_source.html#l00079">79</a> of file <a class="el" href="LearnSynthQBF_8cpp_source.html">LearnSynthQBF.cpp</a>.</p>
 
-<p>References <a class="el" href="LearnSynthQBF_8h_source.html#l00367">qbf_solver_</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00415">solver_ctrl_</a>, and <a class="el" href="LearnSynthQBF_8h_source.html#l00406">solver_i_</a>.</p>
+<p>References <a class="el" href="LearnSynthQBF_8h_source.html#l00442">impl_extractor_</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00371">qbf_solver_</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00419">solver_ctrl_</a>, and <a class="el" href="LearnSynthQBF_8h_source.html#l00410">solver_i_</a>.</p>
 
 </div>
 </div>
@@ -320,11 +329,11 @@ from First Principles. Artif. Intell. 32(1): 57-95 (1987)".</p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>False if one of the blocking clauses blocks the initial state. This means that the initial state is removed from the winning region, i.e., the specification is unrealizable. True is returned otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="LearnSynthQBF_8cpp_source.html#l00449">449</a> of file <a class="el" href="LearnSynthQBF_8cpp_source.html">LearnSynthQBF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthQBF_8cpp_source.html#l00450">450</a> of file <a class="el" href="LearnSynthQBF_8cpp_source.html">LearnSynthQBF.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8cpp_source.html#l00070">CNF::addClause()</a>, <a class="el" href="Utils_8cpp_source.html#l00041">Utils::containsInit()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00397">generalize_clause_cnf_</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00626">generalizeCounterexample()</a>, <a class="el" href="Utils_8cpp_source.html#l00215">Utils::intersectionEmpty()</a>, <a class="el" href="Utils_8cpp_source.html#l00187">Utils::negateLiterals()</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00104">LearnStatisticsQBF::notifyAfterCubeMin()</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00098">LearnStatisticsQBF::notifyBeforeCubeMin()</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00121">LearnStatisticsQBF::notifyCubeMin()</a>, <a class="el" href="Utils_8cpp_source.html#l00161">Utils::remove()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00360">statistics_</a>, and <a class="el" href="Utils_8cpp_source.html#l00194">Utils::swapPresentToNext()</a>.</p>
+<p>References <a class="el" href="CNF_8cpp_source.html#l00117">CNF::addClause()</a>, <a class="el" href="Utils_8cpp_source.html#l00041">Utils::containsInit()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00401">generalize_clause_cnf_</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00627">generalizeCounterexample()</a>, <a class="el" href="Utils_8cpp_source.html#l00230">Utils::intersectionEmpty()</a>, <a class="el" href="Utils_8cpp_source.html#l00202">Utils::negateLiterals()</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00089">LearnStatisticsQBF::notifyAfterCubeMin()</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00083">LearnStatisticsQBF::notifyBeforeCubeMin()</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00106">LearnStatisticsQBF::notifyCubeMin()</a>, <a class="el" href="Utils_8cpp_source.html#l00176">Utils::remove()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00364">statistics_</a>, and <a class="el" href="Utils_8cpp_source.html#l00209">Utils::swapPresentToNext()</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00266">computeWinningRegionAll()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00267">computeWinningRegionAll()</a>.</p>
 
 </div>
 </div>
@@ -371,11 +380,11 @@ from First Principles. Artif. Intell. 32(1): 57-95 (1987)".</p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>False if the blocking clause blocks the initial state. This means that the initial state is removed from the winning region, i.e., the specification is unrealizable. True is returned otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="LearnSynthQBF_8cpp_source.html#l00431">431</a> of file <a class="el" href="LearnSynthQBF_8cpp_source.html">LearnSynthQBF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthQBF_8cpp_source.html#l00432">432</a> of file <a class="el" href="LearnSynthQBF_8cpp_source.html">LearnSynthQBF.cpp</a>.</p>
 
-<p>References <a class="el" href="Utils_8cpp_source.html#l00041">Utils::containsInit()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00626">generalizeCounterexample()</a>, <a class="el" href="Logger_8h_source.html#l00319">L_DBG</a>, <a class="el" href="Utils_8cpp_source.html#l00187">Utils::negateLiterals()</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00104">LearnStatisticsQBF::notifyAfterCubeMin()</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00098">LearnStatisticsQBF::notifyBeforeCubeMin()</a>, <a class="el" href="Utils_8cpp_source.html#l00149">Utils::randomize()</a>, and <a class="el" href="LearnSynthQBF_8h_source.html#l00360">statistics_</a>.</p>
+<p>References <a class="el" href="Utils_8cpp_source.html#l00041">Utils::containsInit()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00627">generalizeCounterexample()</a>, <a class="el" href="Logger_8h_source.html#l00319">L_DBG</a>, <a class="el" href="Utils_8cpp_source.html#l00202">Utils::negateLiterals()</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00089">LearnStatisticsQBF::notifyAfterCubeMin()</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00083">LearnStatisticsQBF::notifyBeforeCubeMin()</a>, <a class="el" href="Utils_8cpp_source.html#l00164">Utils::randomize()</a>, and <a class="el" href="LearnSynthQBF_8h_source.html#l00364">statistics_</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00134">computeWinningRegionOne()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00203">computeWinningRegionOneSAT()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00135">computeWinningRegionOne()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00204">computeWinningRegionOneSAT()</a>.</p>
 
 </div>
 </div>
@@ -411,11 +420,11 @@ from First Principles. Artif. Intell. 32(1): 57-95 (1987)".</p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if a counterexample was found, false if no counterexample exists. </dd></dl>
 
-<p>Definition at line <a class="el" href="LearnSynthQBF_8cpp_source.html#l00332">332</a> of file <a class="el" href="LearnSynthQBF_8cpp_source.html">LearnSynthQBF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthQBF_8cpp_source.html#l00333">333</a> of file <a class="el" href="LearnSynthQBF_8cpp_source.html">LearnSynthQBF.cpp</a>.</p>
 
-<p>References <a class="el" href="LearnSynthQBF_8h_source.html#l00382">check_cnf_</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00375">check_quant_</a>, <a class="el" href="classQBFSolver.html#a76fc0c757a2c039816e3e06547f06d5c">QBFSolver::isSatModel()</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00090">LearnStatisticsQBF::notifyAfterComputeCube()</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00084">LearnStatisticsQBF::notifyBeforeComputeCube()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00367">qbf_solver_</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00607">restrictToStates()</a>, and <a class="el" href="LearnSynthQBF_8h_source.html#l00360">statistics_</a>.</p>
+<p>References <a class="el" href="LearnSynthQBF_8h_source.html#l00386">check_cnf_</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00379">check_quant_</a>, <a class="el" href="classQBFSolver.html#a76fc0c757a2c039816e3e06547f06d5c">QBFSolver::isSatModel()</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00075">LearnStatisticsQBF::notifyAfterComputeCube()</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00069">LearnStatisticsQBF::notifyBeforeComputeCube()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00371">qbf_solver_</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00608">restrictToStates()</a>, and <a class="el" href="LearnSynthQBF_8h_source.html#l00364">statistics_</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00266">computeWinningRegionAll()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00134">computeWinningRegionOne()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00267">computeWinningRegionAll()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00135">computeWinningRegionOne()</a>.</p>
 
 </div>
 </div>
@@ -452,11 +461,11 @@ from First Principles. Artif. Intell. 32(1): 57-95 (1987)".</p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if a counterexample was found, false if no counterexample exists. </dd></dl>
 
-<p>Definition at line <a class="el" href="LearnSynthQBF_8cpp_source.html#l00344">344</a> of file <a class="el" href="LearnSynthQBF_8cpp_source.html">LearnSynthQBF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthQBF_8cpp_source.html#l00345">345</a> of file <a class="el" href="LearnSynthQBF_8cpp_source.html">LearnSynthQBF.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8cpp_source.html#l00183">CNF::addCNF()</a>, <a class="el" href="Utils_8cpp_source.html#l00272">Utils::compressStateCNF()</a>, <a class="el" href="VarInfo_8h_source.html#l00074">VarInfo::CTRL</a>, <a class="el" href="Utils_8cpp_source.html#l00063">Utils::extract()</a>, <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, <a class="el" href="classSatSolver.html#a9f91c104238b6e091513e0aa46970840">SatSolver::incAddClause()</a>, <a class="el" href="classSatSolver.html#ab2581b192cb2c39a81a416a9f7416c9e">SatSolver::incAddCNF()</a>, <a class="el" href="classSatSolver.html#ad387fc06bacf2d48847f779c9db8461a">SatSolver::incIsSatModelOrCore()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00420">incremental_vars_to_keep_</a>, <a class="el" href="VarInfo_8h_source.html#l00069">VarInfo::INPUT</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="Logger_8h_source.html#l00319">L_DBG</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="CNF_8cpp_source.html#l00217">CNF::negate()</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00090">LearnStatisticsQBF::notifyAfterComputeCube()</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00084">LearnStatisticsQBF::notifyBeforeComputeCube()</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00415">solver_ctrl_</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00406">solver_i_</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00431">solver_i_precise_</a>, <a class="el" href="classSatSolver.html#a74603f84c3f2383a5fc44d5a8093cbea">SatSolver::startIncrementalSession()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00360">statistics_</a>, <a class="el" href="CNF_8cpp_source.html#l00189">CNF::swapPresentToNext()</a>, and <a class="el" href="LearnSynthQBF_8h_source.html#l00343">winning_region_</a>.</p>
+<p>References <a class="el" href="CNF_8cpp_source.html#l00230">CNF::addCNF()</a>, <a class="el" href="Utils_8cpp_source.html#l00287">Utils::compressStateCNF()</a>, <a class="el" href="VarInfo_8h_source.html#l00074">VarInfo::CTRL</a>, <a class="el" href="Utils_8cpp_source.html#l00063">Utils::extract()</a>, <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, <a class="el" href="classSatSolver.html#a9f91c104238b6e091513e0aa46970840">SatSolver::incAddClause()</a>, <a class="el" href="classSatSolver.html#ab2581b192cb2c39a81a416a9f7416c9e">SatSolver::incAddCNF()</a>, <a class="el" href="classSatSolver.html#ad387fc06bacf2d48847f779c9db8461a">SatSolver::incIsSatModelOrCore()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00424">incremental_vars_to_keep_</a>, <a class="el" href="VarInfo_8h_source.html#l00069">VarInfo::INPUT</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="Logger_8h_source.html#l00319">L_DBG</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="CNF_8cpp_source.html#l00264">CNF::negate()</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00075">LearnStatisticsQBF::notifyAfterComputeCube()</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00069">LearnStatisticsQBF::notifyBeforeComputeCube()</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00419">solver_ctrl_</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00410">solver_i_</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00435">solver_i_precise_</a>, <a class="el" href="classSatSolver.html#a74603f84c3f2383a5fc44d5a8093cbea">SatSolver::startIncrementalSession()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00364">statistics_</a>, <a class="el" href="CNF_8cpp_source.html#l00236">CNF::swapPresentToNext()</a>, and <a class="el" href="LearnSynthQBF_8h_source.html#l00347">winning_region_</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00203">computeWinningRegionOneSAT()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00204">computeWinningRegionOneSAT()</a>.</p>
 
 </div>
 </div>
@@ -493,11 +502,11 @@ from First Principles. Artif. Intell. 32(1): 57-95 (1987)".</p>
 </ul>
 <dl class="section return"><dt>Returns</dt><dd>True if the specification was realizable, false otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="LearnSynthQBF_8cpp_source.html#l00124">124</a> of file <a class="el" href="LearnSynthQBF_8cpp_source.html">LearnSynthQBF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthQBF_8cpp_source.html#l00125">125</a> of file <a class="el" href="LearnSynthQBF_8cpp_source.html">LearnSynthQBF.cpp</a>.</p>
 
-<p>References <a class="el" href="LearnSynthQBF_8cpp_source.html#l00266">computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00134">computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00203">computeWinningRegionOneSAT()</a>, and <a class="el" href="Options_8cpp_source.html#l00059">Options::instance()</a>.</p>
+<p>References <a class="el" href="LearnSynthQBF_8cpp_source.html#l00267">computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00135">computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00204">computeWinningRegionOneSAT()</a>, and <a class="el" href="Options_8cpp_source.html#l00065">Options::instance()</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00089">run()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00092">run()</a>.</p>
 
 </div>
 </div>
@@ -526,11 +535,11 @@ from First Principles. Artif. Intell. 32(1): 57-95 (1987)".</p>
 <p>The working principle is the same as for <a class="el" href="classLearnSynthQBF.html#ac538cd53082bad1c8c45a7e178dfa4cb" title="Uses the standard method to compute the winning region.">computeWinningRegionOne()</a>. The only difference is that this method computes and excludes all counterexample generalizations instead of just one.</p>
 <dl class="section return"><dt>Returns</dt><dd>True if the specification was realizable, false otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="LearnSynthQBF_8cpp_source.html#l00266">266</a> of file <a class="el" href="LearnSynthQBF_8cpp_source.html">LearnSynthQBF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthQBF_8cpp_source.html#l00267">267</a> of file <a class="el" href="LearnSynthQBF_8cpp_source.html">LearnSynthQBF.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8cpp_source.html#l00099">CNF::addClauseAndSimplify()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00382">check_cnf_</a>, <a class="el" href="CNF_8cpp_source.html#l00064">CNF::clear()</a>, <a class="el" href="Utils_8cpp_source.html#l00272">Utils::compressStateCNF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00449">computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00332">computeCounterexampleQBF()</a>, <a class="el" href="VarInfo_8h_source.html#l00074">VarInfo::CTRL</a>, <a class="el" href="Logger_8h_source.html#l00105">Logger::DBG</a>, <a class="el" href="Utils_8cpp_source.html#l00338">Utils::debugPrint()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00397">generalize_clause_cnf_</a>, <a class="el" href="CNF_8cpp_source.html#l00245">CNF::getNrOfClauses()</a>, <a class="el" href="CNF_8cpp_source.html#l00251">CNF::getNrOfLits()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00219">AIG2CNF::getSafeStates()</a>, <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, <a class="el" href="VarInfo_8h_source.html#l00069">VarInfo::INPUT</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="Logger_8cpp_source.html#l00036">Logger::instance()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="Logger_8cpp_source.html#l00085">Logger::isEnabled()</a>, <a class="el" href="Logger_8h_source.html#l00319">L_DBG</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00129">LearnStatisticsQBF::logStatistics()</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00564">recomputeCheckCNF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00587">recomputeGenCNF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00531">reduceExistingClauses()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00360">statistics_</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00343">winning_region_</a>, and <a class="el" href="LearnSynthQBF_8h_source.html#l00355">winning_region_large_</a>.</p>
+<p>References <a class="el" href="CNF_8cpp_source.html#l00146">CNF::addClauseAndSimplify()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00386">check_cnf_</a>, <a class="el" href="CNF_8cpp_source.html#l00111">CNF::clear()</a>, <a class="el" href="Utils_8cpp_source.html#l00287">Utils::compressStateCNF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00450">computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00333">computeCounterexampleQBF()</a>, <a class="el" href="VarInfo_8h_source.html#l00074">VarInfo::CTRL</a>, <a class="el" href="Logger_8h_source.html#l00105">Logger::DBG</a>, <a class="el" href="Utils_8cpp_source.html#l00392">Utils::debugPrint()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00401">generalize_clause_cnf_</a>, <a class="el" href="CNF_8cpp_source.html#l00292">CNF::getNrOfClauses()</a>, <a class="el" href="CNF_8cpp_source.html#l00298">CNF::getNrOfLits()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00228">AIG2CNF::getSafeStates()</a>, <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, <a class="el" href="VarInfo_8h_source.html#l00069">VarInfo::INPUT</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="Logger_8cpp_source.html#l00036">Logger::instance()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="Logger_8cpp_source.html#l00085">Logger::isEnabled()</a>, <a class="el" href="Logger_8h_source.html#l00319">L_DBG</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00114">LearnStatisticsQBF::logStatistics()</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00565">recomputeCheckCNF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00588">recomputeGenCNF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00532">reduceExistingClauses()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00364">statistics_</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00347">winning_region_</a>, and <a class="el" href="LearnSynthQBF_8h_source.html#l00359">winning_region_large_</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00124">computeWinningRegion()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00125">computeWinningRegion()</a>.</p>
 
 </div>
 </div>
@@ -559,11 +568,11 @@ from First Principles. Artif. Intell. 32(1): 57-95 (1987)".</p>
 <p>This standard method works as follows. We start with the initial guess that the winning region F is the set of all state states P. In a loop, we first compute a counterexample to the correctness of this guess in form of a state from which the antagonist (controlling the uncontrollable inputs i) can enforce to leave F. The state is represented as a cube over all state-variables. Next, this state-cube is generalized into a larger region of states by dropping literals as long as the cube contains only states that are winning for the antagonist (and hence must be removed or have already been removed from F). Finally, the generalized cube is removed from F. The next iteration checks for counterexample-state on the refined F. This is repeated until no more counterexample-states exist (then the specification is realizable and F is a winning region) or the initial state has been removed from F (in which case the specification is unrealizable).</p>
 <dl class="section return"><dt>Returns</dt><dd>True if the specification was realizable, false otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="LearnSynthQBF_8cpp_source.html#l00134">134</a> of file <a class="el" href="LearnSynthQBF_8cpp_source.html">LearnSynthQBF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthQBF_8cpp_source.html#l00135">135</a> of file <a class="el" href="LearnSynthQBF_8cpp_source.html">LearnSynthQBF.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8cpp_source.html#l00099">CNF::addClauseAndSimplify()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00382">check_cnf_</a>, <a class="el" href="CNF_8cpp_source.html#l00064">CNF::clear()</a>, <a class="el" href="Utils_8cpp_source.html#l00272">Utils::compressStateCNF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00431">computeBlockingClause()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00332">computeCounterexampleQBF()</a>, <a class="el" href="VarInfo_8h_source.html#l00074">VarInfo::CTRL</a>, <a class="el" href="Logger_8h_source.html#l00105">Logger::DBG</a>, <a class="el" href="Utils_8cpp_source.html#l00338">Utils::debugPrint()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00397">generalize_clause_cnf_</a>, <a class="el" href="CNF_8cpp_source.html#l00245">CNF::getNrOfClauses()</a>, <a class="el" href="CNF_8cpp_source.html#l00251">CNF::getNrOfLits()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00219">AIG2CNF::getSafeStates()</a>, <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, <a class="el" href="VarInfo_8h_source.html#l00069">VarInfo::INPUT</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="Logger_8cpp_source.html#l00036">Logger::instance()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="Logger_8cpp_source.html#l00085">Logger::isEnabled()</a>, <a class="el" href="Logger_8h_source.html#l00319">L_DBG</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00129">LearnStatisticsQBF::logStatistics()</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00564">recomputeCheckCNF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00587">recomputeGenCNF()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00360">statistics_</a>, <a class="el" href="Utils_8cpp_source.html#l00194">Utils::swapPresentToNext()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00343">winning_region_</a>, and <a class="el" href="LearnSynthQBF_8h_source.html#l00355">winning_region_large_</a>.</p>
+<p>References <a class="el" href="CNF_8cpp_source.html#l00146">CNF::addClauseAndSimplify()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00386">check_cnf_</a>, <a class="el" href="CNF_8cpp_source.html#l00111">CNF::clear()</a>, <a class="el" href="Utils_8cpp_source.html#l00287">Utils::compressStateCNF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00432">computeBlockingClause()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00333">computeCounterexampleQBF()</a>, <a class="el" href="VarInfo_8h_source.html#l00074">VarInfo::CTRL</a>, <a class="el" href="Logger_8h_source.html#l00105">Logger::DBG</a>, <a class="el" href="Utils_8cpp_source.html#l00392">Utils::debugPrint()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00401">generalize_clause_cnf_</a>, <a class="el" href="CNF_8cpp_source.html#l00292">CNF::getNrOfClauses()</a>, <a class="el" href="CNF_8cpp_source.html#l00298">CNF::getNrOfLits()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00228">AIG2CNF::getSafeStates()</a>, <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, <a class="el" href="VarInfo_8h_source.html#l00069">VarInfo::INPUT</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="Logger_8cpp_source.html#l00036">Logger::instance()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="Logger_8cpp_source.html#l00085">Logger::isEnabled()</a>, <a class="el" href="Logger_8h_source.html#l00319">L_DBG</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00114">LearnStatisticsQBF::logStatistics()</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00565">recomputeCheckCNF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00588">recomputeGenCNF()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00364">statistics_</a>, <a class="el" href="Utils_8cpp_source.html#l00209">Utils::swapPresentToNext()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00347">winning_region_</a>, and <a class="el" href="LearnSynthQBF_8h_source.html#l00359">winning_region_large_</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00124">computeWinningRegion()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00125">computeWinningRegion()</a>.</p>
 
 </div>
 </div>
@@ -592,11 +601,11 @@ from First Principles. Artif. Intell. 32(1): 57-95 (1987)".</p>
 <p>The working principle is the same as for <a class="el" href="classLearnSynthQBF.html#ac538cd53082bad1c8c45a7e178dfa4cb" title="Uses the standard method to compute the winning region.">computeWinningRegionOne()</a>. The only difference is that counterexample-states (states from which the antagonist controlling the inputs i can enforce to leave the winning region) are computed using two competing SAT-solvers instead of a QBF-solver.</p>
 <dl class="section return"><dt>Returns</dt><dd>True if the specification was realizable, false otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="LearnSynthQBF_8cpp_source.html#l00203">203</a> of file <a class="el" href="LearnSynthQBF_8cpp_source.html">LearnSynthQBF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthQBF_8cpp_source.html#l00204">204</a> of file <a class="el" href="LearnSynthQBF_8cpp_source.html">LearnSynthQBF.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8cpp_source.html#l00099">CNF::addClauseAndSimplify()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00382">check_cnf_</a>, <a class="el" href="CNF_8cpp_source.html#l00064">CNF::clear()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00431">computeBlockingClause()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00344">computeCounterexampleSAT()</a>, <a class="el" href="VarInfo_8h_source.html#l00074">VarInfo::CTRL</a>, <a class="el" href="Logger_8h_source.html#l00105">Logger::DBG</a>, <a class="el" href="Utils_8cpp_source.html#l00338">Utils::debugPrint()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00397">generalize_clause_cnf_</a>, <a class="el" href="CNF_8cpp_source.html#l00245">CNF::getNrOfClauses()</a>, <a class="el" href="CNF_8cpp_source.html#l00251">CNF::getNrOfLits()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00219">AIG2CNF::getSafeStates()</a>, <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, <a class="el" href="classSatSolver.html#a9f91c104238b6e091513e0aa46970840">SatSolver::incAddClause()</a>, <a class="el" href="VarInfo_8h_source.html#l00069">VarInfo::INPUT</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="Logger_8cpp_source.html#l00036">Logger::instance()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="Logger_8cpp_source.html#l00085">Logger::isEnabled()</a>, <a class="el" href="Logger_8h_source.html#l00319">L_DBG</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00129">LearnStatisticsQBF::logStatistics()</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00587">recomputeGenCNF()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00415">solver_ctrl_</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00406">solver_i_</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00360">statistics_</a>, <a class="el" href="Utils_8cpp_source.html#l00194">Utils::swapPresentToNext()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00343">winning_region_</a>, and <a class="el" href="LearnSynthQBF_8h_source.html#l00355">winning_region_large_</a>.</p>
+<p>References <a class="el" href="CNF_8cpp_source.html#l00146">CNF::addClauseAndSimplify()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00386">check_cnf_</a>, <a class="el" href="CNF_8cpp_source.html#l00111">CNF::clear()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00432">computeBlockingClause()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00345">computeCounterexampleSAT()</a>, <a class="el" href="VarInfo_8h_source.html#l00074">VarInfo::CTRL</a>, <a class="el" href="Logger_8h_source.html#l00105">Logger::DBG</a>, <a class="el" href="Utils_8cpp_source.html#l00392">Utils::debugPrint()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00401">generalize_clause_cnf_</a>, <a class="el" href="CNF_8cpp_source.html#l00292">CNF::getNrOfClauses()</a>, <a class="el" href="CNF_8cpp_source.html#l00298">CNF::getNrOfLits()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00228">AIG2CNF::getSafeStates()</a>, <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, <a class="el" href="classSatSolver.html#a9f91c104238b6e091513e0aa46970840">SatSolver::incAddClause()</a>, <a class="el" href="VarInfo_8h_source.html#l00069">VarInfo::INPUT</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="Logger_8cpp_source.html#l00036">Logger::instance()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="Logger_8cpp_source.html#l00085">Logger::isEnabled()</a>, <a class="el" href="Logger_8h_source.html#l00319">L_DBG</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00114">LearnStatisticsQBF::logStatistics()</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00588">recomputeGenCNF()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00419">solver_ctrl_</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00410">solver_i_</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00364">statistics_</a>, <a class="el" href="Utils_8cpp_source.html#l00209">Utils::swapPresentToNext()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00347">winning_region_</a>, and <a class="el" href="LearnSynthQBF_8h_source.html#l00359">winning_region_large_</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00124">computeWinningRegion()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00125">computeWinningRegion()</a>.</p>
 
 </div>
 </div>
@@ -643,11 +652,11 @@ from First Principles. Artif. Intell. 32(1): 57-95 (1987)".</p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if the passed vector is a valid (generalization of a) counterexample, or if the check was skipped by setting check_sat = false. False is returned only if the check was performed (check_sat = true) and the passed vector is not a valid counterexample. </dd></dl>
 
-<p>Definition at line <a class="el" href="LearnSynthQBF_8cpp_source.html#l00626">626</a> of file <a class="el" href="LearnSynthQBF_8cpp_source.html">LearnSynthQBF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthQBF_8cpp_source.html#l00627">627</a> of file <a class="el" href="LearnSynthQBF_8cpp_source.html">LearnSynthQBF.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8cpp_source.html#l00083">CNF::addCube()</a>, <a class="el" href="CNF_8cpp_source.html#l00090">CNF::addNegCubeAsClause()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00390">gen_quant_</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00397">generalize_clause_cnf_</a>, <a class="el" href="classQBFSolver.html#a53ef157391b176dfbd2a77a1e31befc3">QBFSolver::isSat()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00367">qbf_solver_</a>, <a class="el" href="Utils_8cpp_source.html#l00161">Utils::remove()</a>, <a class="el" href="Utils_8cpp_source.html#l00155">Utils::sort()</a>, and <a class="el" href="Utils_8cpp_source.html#l00194">Utils::swapPresentToNext()</a>.</p>
+<p>References <a class="el" href="CNF_8cpp_source.html#l00130">CNF::addCube()</a>, <a class="el" href="CNF_8cpp_source.html#l00137">CNF::addNegCubeAsClause()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00394">gen_quant_</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00401">generalize_clause_cnf_</a>, <a class="el" href="classQBFSolver.html#a53ef157391b176dfbd2a77a1e31befc3">QBFSolver::isSat()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00371">qbf_solver_</a>, <a class="el" href="Utils_8cpp_source.html#l00176">Utils::remove()</a>, <a class="el" href="Utils_8cpp_source.html#l00170">Utils::sort()</a>, and <a class="el" href="Utils_8cpp_source.html#l00209">Utils::swapPresentToNext()</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00449">computeAllBlockingClauses()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00431">computeBlockingClause()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00450">computeAllBlockingClauses()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00432">computeBlockingClause()</a>.</p>
 
 </div>
 </div>
@@ -716,11 +725,11 @@ from First Principles. Artif. Intell. 32(1): 57-95 (1987)".</p>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="LearnSynthQBF_8cpp_source.html#l00564">564</a> of file <a class="el" href="LearnSynthQBF_8cpp_source.html">LearnSynthQBF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthQBF_8cpp_source.html#l00565">565</a> of file <a class="el" href="LearnSynthQBF_8cpp_source.html">LearnSynthQBF.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8cpp_source.html#l00183">CNF::addCNF()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00382">check_cnf_</a>, <a class="el" href="CNF_8cpp_source.html#l00064">CNF::clear()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="CNF_8cpp_source.html#l00217">CNF::negate()</a>, <a class="el" href="VarManager_8cpp_source.html#l00063">VarManager::resetToLastPush()</a>, <a class="el" href="CNF_8cpp_source.html#l00189">CNF::swapPresentToNext()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00343">winning_region_</a>, and <a class="el" href="LearnSynthQBF_8h_source.html#l00355">winning_region_large_</a>.</p>
+<p>References <a class="el" href="CNF_8cpp_source.html#l00230">CNF::addCNF()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00386">check_cnf_</a>, <a class="el" href="CNF_8cpp_source.html#l00111">CNF::clear()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="CNF_8cpp_source.html#l00264">CNF::negate()</a>, <a class="el" href="VarManager_8cpp_source.html#l00063">VarManager::resetToLastPush()</a>, <a class="el" href="CNF_8cpp_source.html#l00236">CNF::swapPresentToNext()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00347">winning_region_</a>, and <a class="el" href="LearnSynthQBF_8h_source.html#l00359">winning_region_large_</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00266">computeWinningRegionAll()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00134">computeWinningRegionOne()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00267">computeWinningRegionAll()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00135">computeWinningRegionOne()</a>.</p>
 
 </div>
 </div>
@@ -755,11 +764,11 @@ from First Principles. Artif. Intell. 32(1): 57-95 (1987)".</p>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="LearnSynthQBF_8cpp_source.html#l00587">587</a> of file <a class="el" href="LearnSynthQBF_8cpp_source.html">LearnSynthQBF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthQBF_8cpp_source.html#l00588">588</a> of file <a class="el" href="LearnSynthQBF_8cpp_source.html">LearnSynthQBF.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8cpp_source.html#l00183">CNF::addCNF()</a>, <a class="el" href="CNF_8cpp_source.html#l00064">CNF::clear()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00397">generalize_clause_cnf_</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="CNF_8cpp_source.html#l00189">CNF::swapPresentToNext()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00343">winning_region_</a>, and <a class="el" href="LearnSynthQBF_8h_source.html#l00355">winning_region_large_</a>.</p>
+<p>References <a class="el" href="CNF_8cpp_source.html#l00230">CNF::addCNF()</a>, <a class="el" href="CNF_8cpp_source.html#l00111">CNF::clear()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00401">generalize_clause_cnf_</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="CNF_8cpp_source.html#l00236">CNF::swapPresentToNext()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00347">winning_region_</a>, and <a class="el" href="LearnSynthQBF_8h_source.html#l00359">winning_region_large_</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00266">computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00134">computeWinningRegionOne()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00203">computeWinningRegionOneSAT()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00267">computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00135">computeWinningRegionOne()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00204">computeWinningRegionOneSAT()</a>.</p>
 
 </div>
 </div>
@@ -788,11 +797,11 @@ from First Principles. Artif. Intell. 32(1): 57-95 (1987)".</p>
 <p>This method examines all clauses (in <a class="el" href="classLearnSynthQBF.html#a9c6b41f7df5f4ed4bfc5930136fc1152" title="The current over-approximation of the winning region.">winning_region_</a>) that have already been computed and checks if more literals can be dropped. This is done in the same way as for dropping literals when generalizing a counterexample.</p>
 <p>The intuition behind this method is that, even if a literal could not be dropped before, it could be dropped at a later point in time because the winning region has been refined in the meantime. However, in practice, typically only very few additional literals can be dropped, so this method often does not pay off. </p>
 
-<p>Definition at line <a class="el" href="LearnSynthQBF_8cpp_source.html#l00531">531</a> of file <a class="el" href="LearnSynthQBF_8cpp_source.html">LearnSynthQBF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthQBF_8cpp_source.html#l00532">532</a> of file <a class="el" href="LearnSynthQBF_8cpp_source.html">LearnSynthQBF.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8cpp_source.html#l00099">CNF::addClauseAndSimplify()</a>, <a class="el" href="CNF_8cpp_source.html#l00076">CNF::addNegClauseAsCube()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00390">gen_quant_</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00397">generalize_clause_cnf_</a>, <a class="el" href="CNF_8cpp_source.html#l00273">CNF::getClauses()</a>, <a class="el" href="CNF_8cpp_source.html#l00245">CNF::getNrOfClauses()</a>, <a class="el" href="CNF_8cpp_source.html#l00251">CNF::getNrOfLits()</a>, <a class="el" href="classQBFSolver.html#a53ef157391b176dfbd2a77a1e31befc3">QBFSolver::isSat()</a>, <a class="el" href="Logger_8h_source.html#l00319">L_DBG</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00104">LearnStatisticsQBF::notifyAfterCubeMin()</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00098">LearnStatisticsQBF::notifyBeforeCubeMin()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00367">qbf_solver_</a>, <a class="el" href="Utils_8cpp_source.html#l00161">Utils::remove()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00360">statistics_</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00343">winning_region_</a>, and <a class="el" href="LearnSynthQBF_8h_source.html#l00355">winning_region_large_</a>.</p>
+<p>References <a class="el" href="CNF_8cpp_source.html#l00146">CNF::addClauseAndSimplify()</a>, <a class="el" href="CNF_8cpp_source.html#l00123">CNF::addNegClauseAsCube()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00394">gen_quant_</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00401">generalize_clause_cnf_</a>, <a class="el" href="CNF_8cpp_source.html#l00346">CNF::getClauses()</a>, <a class="el" href="CNF_8cpp_source.html#l00292">CNF::getNrOfClauses()</a>, <a class="el" href="CNF_8cpp_source.html#l00298">CNF::getNrOfLits()</a>, <a class="el" href="classQBFSolver.html#a53ef157391b176dfbd2a77a1e31befc3">QBFSolver::isSat()</a>, <a class="el" href="Logger_8h_source.html#l00319">L_DBG</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00089">LearnStatisticsQBF::notifyAfterCubeMin()</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00083">LearnStatisticsQBF::notifyBeforeCubeMin()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00371">qbf_solver_</a>, <a class="el" href="Utils_8cpp_source.html#l00176">Utils::remove()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00364">statistics_</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00347">winning_region_</a>, and <a class="el" href="LearnSynthQBF_8h_source.html#l00359">winning_region_large_</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00266">computeWinningRegionAll()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00267">computeWinningRegionAll()</a>.</p>
 
 </div>
 </div>
@@ -827,11 +836,11 @@ from First Principles. Artif. Intell. 32(1): 57-95 (1987)".</p>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="LearnSynthQBF_8cpp_source.html#l00607">607</a> of file <a class="el" href="LearnSynthQBF_8cpp_source.html">LearnSynthQBF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthQBF_8cpp_source.html#l00608">608</a> of file <a class="el" href="LearnSynthQBF_8cpp_source.html">LearnSynthQBF.cpp</a>.</p>
 
 <p>References <a class="el" href="VarManager_8cpp_source.html#l00267">VarManager::getInfo()</a>, <a class="el" href="VarInfo_8cpp_source.html#l00079">VarInfo::getKind()</a>, <a class="el" href="VarManager_8cpp_source.html#l00320">VarManager::getPresErrorStateVar()</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, and <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00332">computeCounterexampleQBF()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00333">computeCounterexampleQBF()</a>.</p>
 
 </div>
 </div>
@@ -871,9 +880,9 @@ a variant which computes and excludes all counterexample-generalizations instead
 
 <p>Implements <a class="el" href="classBackEnd.html#a099e717dc71e9cc2d838b1ca86340590">BackEnd</a>.</p>
 
-<p>Definition at line <a class="el" href="LearnSynthQBF_8cpp_source.html#l00089">89</a> of file <a class="el" href="LearnSynthQBF_8cpp_source.html">LearnSynthQBF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthQBF_8cpp_source.html#l00092">92</a> of file <a class="el" href="LearnSynthQBF_8cpp_source.html">LearnSynthQBF.cpp</a>.</p>
 
-<p>References <a class="el" href="LearnSynthQBF_8cpp_source.html#l00124">computeWinningRegion()</a>, <a class="el" href="Utils_8cpp_source.html#l00353">Utils::debugCheckWinReg()</a>, <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00095">QBFCertImplExtractor::extractCircuit()</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="Options_8cpp_source.html#l00059">Options::instance()</a>, <a class="el" href="Logger_8h_source.html#l00302">L_INF</a>, <a class="el" href="Logger_8h_source.html#l00285">L_RES</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00129">LearnStatisticsQBF::logStatistics()</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00077">LearnStatisticsQBF::notifyRelDetEnd()</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00071">LearnStatisticsQBF::notifyRelDetStart()</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00064">LearnStatisticsQBF::notifyWinRegEnd()</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00058">LearnStatisticsQBF::notifyWinRegStart()</a>, <a class="el" href="VarManager_8cpp_source.html#l00055">VarManager::push()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00360">statistics_</a>, and <a class="el" href="LearnSynthQBF_8h_source.html#l00343">winning_region_</a>.</p>
+<p>References <a class="el" href="LearnSynthQBF_8cpp_source.html#l00125">computeWinningRegion()</a>, <a class="el" href="Utils_8cpp_source.html#l00407">Utils::debugCheckWinReg()</a>, <a class="el" href="CNFImplExtractor_8cpp_source.html#l00085">CNFImplExtractor::extractCircuit()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00442">impl_extractor_</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="Options_8cpp_source.html#l00065">Options::instance()</a>, <a class="el" href="Logger_8h_source.html#l00302">L_INF</a>, <a class="el" href="Logger_8h_source.html#l00285">L_RES</a>, <a class="el" href="CNFImplExtractor_8cpp_source.html#l00290">CNFImplExtractor::logStatistics()</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00114">LearnStatisticsQBF::logStatistics()</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00062">LearnStatisticsQBF::notifyWinRegEnd()</a>, <a class="el" href="LearnStatisticsQBF_8cpp_source.html#l00056">LearnStatisticsQBF::notifyWinRegStart()</a>, <a class="el" href="VarManager_8cpp_source.html#l00055">VarManager::push()</a>, <a class="el" href="LearnSynthQBF_8h_source.html#l00364">statistics_</a>, and <a class="el" href="LearnSynthQBF_8h_source.html#l00347">winning_region_</a>.</p>
 
 </div>
 </div>
@@ -899,9 +908,9 @@ a variant which computes and excludes all counterexample-generalizations instead
 <p>The <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> matrix of the QBF for computing counterexamples. </p>
 <p>This <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> is always F &amp; T &amp; !F', where F is the <a class="el" href="classLearnSynthQBF.html#a9c6b41f7df5f4ed4bfc5930136fc1152" title="The current over-approximation of the winning region.">winning_region_</a>. </p>
 
-<p>Definition at line <a class="el" href="LearnSynthQBF_8h_source.html#l00382">382</a> of file <a class="el" href="LearnSynthQBF_8h_source.html">LearnSynthQBF.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthQBF_8h_source.html#l00386">386</a> of file <a class="el" href="LearnSynthQBF_8h_source.html">LearnSynthQBF.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00332">computeCounterexampleQBF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00266">computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00134">computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00203">computeWinningRegionOneSAT()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00564">recomputeCheckCNF()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00333">computeCounterexampleQBF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00267">computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00135">computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00204">computeWinningRegionOneSAT()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00565">recomputeCheckCNF()</a>.</p>
 
 </div>
 </div>
@@ -926,9 +935,9 @@ a variant which computes and excludes all counterexample-generalizations instead
 <p>The quantifier prefix of the QBF for computing counterexamples. </p>
 <p>This quantifier prefix is always exists x,i: forall c: exists x',tmp: </p>
 
-<p>Definition at line <a class="el" href="LearnSynthQBF_8h_source.html#l00375">375</a> of file <a class="el" href="LearnSynthQBF_8h_source.html">LearnSynthQBF.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthQBF_8h_source.html#l00379">379</a> of file <a class="el" href="LearnSynthQBF_8h_source.html">LearnSynthQBF.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00332">computeCounterexampleQBF()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00040">LearnSynthQBF()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00333">computeCounterexampleQBF()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00040">LearnSynthQBF()</a>.</p>
 
 </div>
 </div>
@@ -953,9 +962,9 @@ a variant which computes and excludes all counterexample-generalizations instead
 <p>The quantifier prefix of the QBF for generalizing counterexamples. </p>
 <p>This quantifier prefix is always exists x: forall i: exists c,x',tmp: </p>
 
-<p>Definition at line <a class="el" href="LearnSynthQBF_8h_source.html#l00390">390</a> of file <a class="el" href="LearnSynthQBF_8h_source.html">LearnSynthQBF.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthQBF_8h_source.html#l00394">394</a> of file <a class="el" href="LearnSynthQBF_8h_source.html">LearnSynthQBF.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00626">generalizeCounterexample()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00040">LearnSynthQBF()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00531">reduceExistingClauses()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00627">generalizeCounterexample()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00040">LearnSynthQBF()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00532">reduceExistingClauses()</a>.</p>
 
 </div>
 </div>
@@ -980,9 +989,36 @@ a variant which computes and excludes all counterexample-generalizations instead
 <p>The <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> matrix of the QBF for generalizing counterexamples. </p>
 <p>This <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> is always F &amp; T &amp; F', where F is the <a class="el" href="classLearnSynthQBF.html#a9c6b41f7df5f4ed4bfc5930136fc1152" title="The current over-approximation of the winning region.">winning_region_</a>. </p>
 
-<p>Definition at line <a class="el" href="LearnSynthQBF_8h_source.html#l00397">397</a> of file <a class="el" href="LearnSynthQBF_8h_source.html">LearnSynthQBF.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthQBF_8h_source.html#l00401">401</a> of file <a class="el" href="LearnSynthQBF_8h_source.html">LearnSynthQBF.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00449">computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00266">computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00134">computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00203">computeWinningRegionOneSAT()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00626">generalizeCounterexample()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00587">recomputeGenCNF()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00531">reduceExistingClauses()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00450">computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00267">computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00135">computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00204">computeWinningRegionOneSAT()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00627">generalizeCounterexample()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00588">recomputeGenCNF()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00532">reduceExistingClauses()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad34b0c8db41c054eef617e7e9156fad8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCNFImplExtractor.html">CNFImplExtractor</a>* LearnSynthQBF::impl_extractor_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The engine to use for circuit extraction. </p>
+<p>It will be deleted by this class (in the destructor). </p>
+
+<p>Definition at line <a class="el" href="LearnSynthQBF_8h_source.html#l00442">442</a> of file <a class="el" href="LearnSynthQBF_8h_source.html">LearnSynthQBF.h</a>.</p>
+
+<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00092">run()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00079">~LearnSynthQBF()</a>.</p>
 
 </div>
 </div>
@@ -1006,9 +1042,9 @@ a variant which computes and excludes all counterexample-generalizations instead
 
 <p>A list of variables the SAT-solver should not optimize away. </p>
 
-<p>Definition at line <a class="el" href="LearnSynthQBF_8h_source.html#l00420">420</a> of file <a class="el" href="LearnSynthQBF_8h_source.html">LearnSynthQBF.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthQBF_8h_source.html#l00424">424</a> of file <a class="el" href="LearnSynthQBF_8h_source.html">LearnSynthQBF.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00344">computeCounterexampleSAT()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00040">LearnSynthQBF()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00345">computeCounterexampleSAT()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00040">LearnSynthQBF()</a>.</p>
 
 </div>
 </div>
@@ -1033,9 +1069,9 @@ a variant which computes and excludes all counterexample-generalizations instead
 <p>The QBF-solver used for all queries. </p>
 <p>The type of solver is selected with command-line arguments. </p>
 
-<p>Definition at line <a class="el" href="LearnSynthQBF_8h_source.html#l00367">367</a> of file <a class="el" href="LearnSynthQBF_8h_source.html">LearnSynthQBF.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthQBF_8h_source.html#l00371">371</a> of file <a class="el" href="LearnSynthQBF_8h_source.html">LearnSynthQBF.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00332">computeCounterexampleQBF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00626">generalizeCounterexample()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00531">reduceExistingClauses()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00078">~LearnSynthQBF()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00333">computeCounterexampleQBF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00627">generalizeCounterexample()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00532">reduceExistingClauses()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00079">~LearnSynthQBF()</a>.</p>
 
 </div>
 </div>
@@ -1060,9 +1096,9 @@ a variant which computes and excludes all counterexample-generalizations instead
 <p>The SAT-solver for protagonist moves when using <a class="el" href="classLearnSynthQBF.html#a3221800bf3f040b66b8a790bab4c82b5" title="Computes a counterexample-state using two competing SAT-solvers.">computeCounterexampleSAT()</a>. </p>
 <p>It stores the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> F &amp; T &amp; !F', where F is the <a class="el" href="classLearnSynthQBF.html#a9c6b41f7df5f4ed4bfc5930136fc1152" title="The current over-approximation of the winning region.">winning_region_</a>. However, !F' is only updated lazily for performance reasons (this way, incremental solving can be exploited better). </p>
 
-<p>Definition at line <a class="el" href="LearnSynthQBF_8h_source.html#l00415">415</a> of file <a class="el" href="LearnSynthQBF_8h_source.html">LearnSynthQBF.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthQBF_8h_source.html#l00419">419</a> of file <a class="el" href="LearnSynthQBF_8h_source.html">LearnSynthQBF.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00344">computeCounterexampleSAT()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00203">computeWinningRegionOneSAT()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00040">LearnSynthQBF()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00078">~LearnSynthQBF()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00345">computeCounterexampleSAT()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00204">computeWinningRegionOneSAT()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00040">LearnSynthQBF()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00079">~LearnSynthQBF()</a>.</p>
 
 </div>
 </div>
@@ -1087,9 +1123,9 @@ a variant which computes and excludes all counterexample-generalizations instead
 <p>The SAT-solver for antagonist moves when using <a class="el" href="classLearnSynthQBF.html#a3221800bf3f040b66b8a790bab4c82b5" title="Computes a counterexample-state using two competing SAT-solvers.">computeCounterexampleSAT()</a>. </p>
 <p>It stores the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> F &amp; T &amp; !F', where F is the <a class="el" href="classLearnSynthQBF.html#a9c6b41f7df5f4ed4bfc5930136fc1152" title="The current over-approximation of the winning region.">winning_region_</a>. However, !F' is only updated lazily for performance reasons (this way, incremental solving can be exploited better). </p>
 
-<p>Definition at line <a class="el" href="LearnSynthQBF_8h_source.html#l00406">406</a> of file <a class="el" href="LearnSynthQBF_8h_source.html">LearnSynthQBF.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthQBF_8h_source.html#l00410">410</a> of file <a class="el" href="LearnSynthQBF_8h_source.html">LearnSynthQBF.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00344">computeCounterexampleSAT()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00203">computeWinningRegionOneSAT()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00040">LearnSynthQBF()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00078">~LearnSynthQBF()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00345">computeCounterexampleSAT()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00204">computeWinningRegionOneSAT()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00040">LearnSynthQBF()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00079">~LearnSynthQBF()</a>.</p>
 
 </div>
 </div>
@@ -1114,9 +1150,9 @@ a variant which computes and excludes all counterexample-generalizations instead
 <p>A flag indicating if solver_i_ is precise. </p>
 <p>We update the next-state copy of the winning region in solver_i_ only lazily to better support incremental solving. If this flag is true, then this means that the next-state copy of the winning region is accurate in solver_i_. If this flag is false, then we must not trust any unsatisfiability verdicts coming from solver_i_ (but need to update the next-state copy of the winning region instead). </p>
 
-<p>Definition at line <a class="el" href="LearnSynthQBF_8h_source.html#l00431">431</a> of file <a class="el" href="LearnSynthQBF_8h_source.html">LearnSynthQBF.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthQBF_8h_source.html#l00435">435</a> of file <a class="el" href="LearnSynthQBF_8h_source.html">LearnSynthQBF.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00344">computeCounterexampleSAT()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00040">LearnSynthQBF()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00345">computeCounterexampleSAT()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00040">LearnSynthQBF()</a>.</p>
 
 </div>
 </div>
@@ -1140,9 +1176,9 @@ a variant which computes and excludes all counterexample-generalizations instead
 
 <p>Stores and maintains statistics and performance measures. </p>
 
-<p>Definition at line <a class="el" href="LearnSynthQBF_8h_source.html#l00360">360</a> of file <a class="el" href="LearnSynthQBF_8h_source.html">LearnSynthQBF.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthQBF_8h_source.html#l00364">364</a> of file <a class="el" href="LearnSynthQBF_8h_source.html">LearnSynthQBF.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00449">computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00431">computeBlockingClause()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00332">computeCounterexampleQBF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00344">computeCounterexampleSAT()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00266">computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00134">computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00203">computeWinningRegionOneSAT()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00531">reduceExistingClauses()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00089">run()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00450">computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00432">computeBlockingClause()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00333">computeCounterexampleQBF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00345">computeCounterexampleSAT()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00267">computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00135">computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00204">computeWinningRegionOneSAT()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00532">reduceExistingClauses()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00092">run()</a>.</p>
 
 </div>
 </div>
@@ -1167,9 +1203,9 @@ a variant which computes and excludes all counterexample-generalizations instead
 <p>The current over-approximation of the winning region. </p>
 <p>Only when <a class="el" href="classLearnSynthQBF.html#ae8219ab3e4987775e1d6a006a9d38f4d" title="Computes the winning region and stores the result in winning_region_.">computeWinningRegion()</a> is done, this field will store the correct winning region. </p>
 
-<p>Definition at line <a class="el" href="LearnSynthQBF_8h_source.html#l00343">343</a> of file <a class="el" href="LearnSynthQBF_8h_source.html">LearnSynthQBF.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthQBF_8h_source.html#l00347">347</a> of file <a class="el" href="LearnSynthQBF_8h_source.html">LearnSynthQBF.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00344">computeCounterexampleSAT()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00266">computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00134">computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00203">computeWinningRegionOneSAT()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00564">recomputeCheckCNF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00587">recomputeGenCNF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00531">reduceExistingClauses()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00089">run()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00345">computeCounterexampleSAT()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00267">computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00135">computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00204">computeWinningRegionOneSAT()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00565">recomputeCheckCNF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00588">recomputeGenCNF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00532">reduceExistingClauses()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00092">run()</a>.</p>
 
 </div>
 </div>
@@ -1194,9 +1230,9 @@ a variant which computes and excludes all counterexample-generalizations instead
 <p>The current over-approximation of the winning region in an uncompressed form. </p>
 <p>This <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> is logically equivalent to <a class="el" href="classLearnSynthQBF.html#a9c6b41f7df5f4ed4bfc5930136fc1152" title="The current over-approximation of the winning region.">winning_region_</a>. However, <a class="el" href="classLearnSynthQBF.html#a9c6b41f7df5f4ed4bfc5930136fc1152" title="The current over-approximation of the winning region.">winning_region_</a> is 'compressed' from time to time by removing redundant clauses (clauses that are implied by other clauses in the winning region). This field stores the uncompressed version of the winning region. Having the uncompressed winning region can be good because throwing away redundant clauses is not always beneficial. The <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> get smaller, but the solver may have to re-discover the removed clauses. </p>
 
-<p>Definition at line <a class="el" href="LearnSynthQBF_8h_source.html#l00355">355</a> of file <a class="el" href="LearnSynthQBF_8h_source.html">LearnSynthQBF.h</a>.</p>
+<p>Definition at line <a class="el" href="LearnSynthQBF_8h_source.html#l00359">359</a> of file <a class="el" href="LearnSynthQBF_8h_source.html">LearnSynthQBF.h</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00266">computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00134">computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00203">computeWinningRegionOneSAT()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00564">recomputeCheckCNF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00587">recomputeGenCNF()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00531">reduceExistingClauses()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00267">computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00135">computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00204">computeWinningRegionOneSAT()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00565">recomputeCheckCNF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00588">recomputeGenCNF()</a>, and <a class="el" href="LearnSynthQBF_8cpp_source.html#l00532">reduceExistingClauses()</a>.</p>
 
 </div>
 </div>
@@ -1207,7 +1243,7 @@ a variant which computes and excludes all counterexample-generalizations instead
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 14 2013 15:15:45 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jul 15 2014 12:30:22 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

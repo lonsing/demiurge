@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">demiurge
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A synthesis tool for safety specifications.</div>
   </td>
@@ -124,8 +124,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a4544322ebc125d28e583106baf2c71cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a4544322ebc125d28e583106baf2c71cb"></a><br/></td></tr>
 <tr class="memitem:a6425c670e11fb6f2315171e27f850954"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDepQBFExt.html#a6425c670e11fb6f2315171e27f850954">~DepQBFExt</a> ()</td></tr>
 <tr class="memdesc:a6425c670e11fb6f2315171e27f850954"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#a6425c670e11fb6f2315171e27f850954"></a><br/></td></tr>
-<tr class="memitem:a18ef56586e1d2d06048cd8aadeeacc74"><td class="memItemLeft" align="right" valign="top">virtual string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDepQBFExt.html#a18ef56586e1d2d06048cd8aadeeacc74">qbfCert</a> (const vector&lt; pair&lt; <a class="el" href="classVarInfo.html#a64d1da76cf84fe674e5fef9764ef11cf">VarInfo::VarKind</a>, <a class="el" href="classQBFSolver.html#ac091e263cb55286cc07b2451bcf4d3c7">Quant</a> &gt; &gt; &amp;quantifier_prefix, const <a class="el" href="classCNF.html">CNF</a> &amp;cnf)</td></tr>
-<tr class="memdesc:a18ef56586e1d2d06048cd8aadeeacc74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the QBF-Cert framework to compute Skolem functions for QBFs.  <a href="#a18ef56586e1d2d06048cd8aadeeacc74"></a><br/></td></tr>
+<tr class="memitem:a9de37d00363d5ad71eaf03c011314b31"><td class="memItemLeft" align="right" valign="top">virtual aiger *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDepQBFExt.html#a9de37d00363d5ad71eaf03c011314b31">qbfCert</a> (const vector&lt; pair&lt; <a class="el" href="classVarInfo.html#a64d1da76cf84fe674e5fef9764ef11cf">VarInfo::VarKind</a>, <a class="el" href="classQBFSolver.html#ac091e263cb55286cc07b2451bcf4d3c7">Quant</a> &gt; &gt; &amp;quantifier_prefix, const <a class="el" href="classCNF.html">CNF</a> &amp;cnf)</td></tr>
+<tr class="memdesc:a9de37d00363d5ad71eaf03c011314b31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the QBF-Cert framework to compute Skolem functions for QBFs.  <a href="#a9de37d00363d5ad71eaf03c011314b31"></a><br/></td></tr>
 <tr class="memitem:abec25b97170b79b42b85d1d4ec825a39"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classExtQBFSolver.html#abec25b97170b79b42b85d1d4ec825a39">isSat</a> (const vector&lt; pair&lt; <a class="el" href="classVarInfo.html#a64d1da76cf84fe674e5fef9764ef11cf">VarInfo::VarKind</a>, <a class="el" href="classQBFSolver.html#ac091e263cb55286cc07b2451bcf4d3c7">Quant</a> &gt; &gt; &amp;quantifier_prefix, const <a class="el" href="classCNF.html">CNF</a> &amp;cnf)</td></tr>
 <tr class="memdesc:abec25b97170b79b42b85d1d4ec825a39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a given QBF is satisfiable (with quantification over variable kinds).  <a href="#abec25b97170b79b42b85d1d4ec825a39"></a><br/></td></tr>
 <tr class="memitem:adc1bacec3307200dd90b260789e4c808"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classExtQBFSolver.html#adc1bacec3307200dd90b260789e4c808">isSat</a> (const vector&lt; pair&lt; vector&lt; int &gt;, <a class="el" href="classQBFSolver.html#ac091e263cb55286cc07b2451bcf4d3c7">Quant</a> &gt; &gt; &amp;quantifier_prefix, const <a class="el" href="classCNF.html">CNF</a> &amp;cnf)</td></tr>
@@ -178,9 +178,9 @@ Private Member Functions</h2></td></tr>
 <p>This class represents an interface to the QBF-solver DepQBF (see <a href="https://github.com/lonsing/depqbf">https://github.com/lonsing/depqbf</a>). For a given Quantified Boolean formula (a <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> with a quantifier prefix), this class is able to determine satisfiability. Furthermore, in case of satisfiability, it can extract satisfying assignments for variables quantified existentially on the outermost level. The DepQBF solver is executed in a separate process. Communication with this process works via files.</p>
 <p>Most of work is actually implemented in the base class <a class="el" href="classExtQBFSolver.html" title="A generic interface to QBF-solvers started as external processes.">ExtQBFSolver</a>. This class mainly overrides some methods which are specific for DepQBF. However, it also interfaces the QBF-Cert framework (see <a href="http://fmv.jku.at/qbfcert/">http://fmv.jku.at/qbfcert/</a>), which uses DepQBF to extract Skolem functions for QBFs.</p>
 <dl class="section author"><dt>Author</dt><dd>Robert Koenighofer (<a href="#" onclick="location.href='mai'+'lto:'+'rob'+'er'+'t.k'+'oe'+'nig'+'ho'+'fer'+'@i'+'aik'+'.t'+'ugr'+'az'+'.at'; return false;">rober<span style="display: none;">.nosp@m.</span>t.ko<span style="display: none;">.nosp@m.</span>enigh<span style="display: none;">.nosp@m.</span>ofer<span style="display: none;">.nosp@m.</span>@iaik<span style="display: none;">.nosp@m.</span>.tug<span style="display: none;">.nosp@m.</span>raz.a<span style="display: none;">.nosp@m.</span>t</a>) </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>1.0.0 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.1.0 </dd></dl>
 
-<p>Definition at line <a class="el" href="DepQBFExt_8h_source.html#l00055">55</a> of file <a class="el" href="DepQBFExt_8h_source.html">DepQBFExt.h</a>.</p>
+<p>Definition at line <a class="el" href="DepQBFExt_8h_source.html#l00057">57</a> of file <a class="el" href="DepQBFExt_8h_source.html">DepQBFExt.h</a>.</p>
 </div><h2>Member Enumeration Documentation</h2>
 <a class="anchor" id="ac091e263cb55286cc07b2451bcf4d3c7"></a>
 <div class="memitem">
@@ -232,9 +232,9 @@ Private Member Functions</h2></td></tr>
 
 <p>Constructor. </p>
 
-<p>Definition at line <a class="el" href="DepQBFExt_8cpp_source.html#l00038">38</a> of file <a class="el" href="DepQBFExt_8cpp_source.html">DepQBFExt.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DepQBFExt_8cpp_source.html#l00042">42</a> of file <a class="el" href="DepQBFExt_8cpp_source.html">DepQBFExt.cpp</a>.</p>
 
-<p>References <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="DepQBFExt_8h_source.html#l00104">path_to_deqqbf_</a>, <a class="el" href="DepQBFExt_8h_source.html#l00109">path_to_qbfcert_</a>, and <a class="el" href="Options_8h_source.html#l00069">Options::TP_VAR</a>.</p>
+<p>References <a class="el" href="Options_8cpp_source.html#l00445">Options::getTPDirName()</a>, <a class="el" href="Options_8cpp_source.html#l00065">Options::instance()</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="DepQBFExt_8h_source.html#l00107">path_to_deqqbf_</a>, and <a class="el" href="DepQBFExt_8h_source.html#l00112">path_to_qbfcert_</a>.</p>
 
 </div>
 </div>
@@ -261,7 +261,7 @@ Private Member Functions</h2></td></tr>
 
 <p>Destructor. </p>
 
-<p>Definition at line <a class="el" href="DepQBFExt_8cpp_source.html#l00050">50</a> of file <a class="el" href="DepQBFExt_8cpp_source.html">DepQBFExt.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DepQBFExt_8cpp_source.html#l00052">52</a> of file <a class="el" href="DepQBFExt_8cpp_source.html">DepQBFExt.cpp</a>.</p>
 
 </div>
 </div>
@@ -326,7 +326,7 @@ Private Member Functions</h2></td></tr>
 
 <p>References <a class="el" href="ExtQBFSolver_8h_source.html#l00225">ExtQBFSolver::in_file_name_</a>, and <a class="el" href="ExtQBFSolver_8h_source.html#l00230">ExtQBFSolver::out_file_name_</a>.</p>
 
-<p>Referenced by <a class="el" href="ExtQBFSolver_8cpp_source.html#l00054">ExtQBFSolver::isSat()</a>, <a class="el" href="ExtQBFSolver_8cpp_source.html#l00078">ExtQBFSolver::isSatModel()</a>, and <a class="el" href="DepQBFExt_8cpp_source.html#l00056">qbfCert()</a>.</p>
+<p>Referenced by <a class="el" href="ExtQBFSolver_8cpp_source.html#l00054">ExtQBFSolver::isSat()</a>, <a class="el" href="ExtQBFSolver_8cpp_source.html#l00078">ExtQBFSolver::isSatModel()</a>, and <a class="el" href="DepQBFExt_8cpp_source.html#l00058">qbfCert()</a>.</p>
 
 </div>
 </div>
@@ -380,9 +380,9 @@ Private Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="ExtQBFSolver_8cpp_source.html#l00104">104</a> of file <a class="el" href="ExtQBFSolver_8cpp_source.html">ExtQBFSolver.cpp</a>.</p>
 
-<p>References <a class="el" href="QBFSolver_8h_source.html#l00062">QBFSolver::E</a>, <a class="el" href="VarManager_8cpp_source.html#l00332">VarManager::getMaxCNFVar()</a>, <a class="el" href="CNF_8cpp_source.html#l00245">CNF::getNrOfClauses()</a>, <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, and <a class="el" href="CNF_8cpp_source.html#l00260">CNF::toString()</a>.</p>
+<p>References <a class="el" href="QBFSolver_8h_source.html#l00062">QBFSolver::E</a>, <a class="el" href="VarManager_8cpp_source.html#l00332">VarManager::getMaxCNFVar()</a>, <a class="el" href="CNF_8cpp_source.html#l00292">CNF::getNrOfClauses()</a>, <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, and <a class="el" href="CNF_8cpp_source.html#l00307">CNF::toString()</a>.</p>
 
-<p>Referenced by <a class="el" href="DepQBFApi_8cpp_source.html#l00492">DepQBFApi::debugCheckBloqqerModel()</a>, <a class="el" href="DepQBFApiInc_8cpp_source.html#l00744">DepQBFApiInc::debugCheckBloqqerModel()</a>, <a class="el" href="DepQBFApi_8cpp_source.html#l00434">DepQBFApi::debugCheckBloqqerVerdict()</a>, <a class="el" href="DepQBFApiInc_8cpp_source.html#l00686">DepQBFApiInc::debugCheckBloqqerVerdict()</a>, <a class="el" href="ExtQBFSolver_8cpp_source.html#l00054">ExtQBFSolver::isSat()</a>, <a class="el" href="ExtQBFSolver_8cpp_source.html#l00078">ExtQBFSolver::isSatModel()</a>, and <a class="el" href="DepQBFExt_8cpp_source.html#l00056">qbfCert()</a>.</p>
+<p>Referenced by <a class="el" href="DepQBFApi_8cpp_source.html#l00931">DepQBFApi::debugCheckBloqqerModel()</a>, <a class="el" href="DepQBFApi_8cpp_source.html#l00873">DepQBFApi::debugCheckBloqqerVerdict()</a>, <a class="el" href="ExtQBFSolver_8cpp_source.html#l00054">ExtQBFSolver::isSat()</a>, <a class="el" href="ExtQBFSolver_8cpp_source.html#l00078">ExtQBFSolver::isSatModel()</a>, and <a class="el" href="DepQBFExt_8cpp_source.html#l00058">qbfCert()</a>.</p>
 
 </div>
 </div>
@@ -436,7 +436,7 @@ Private Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="ExtQBFSolver_8cpp_source.html#l00137">137</a> of file <a class="el" href="ExtQBFSolver_8cpp_source.html">ExtQBFSolver.cpp</a>.</p>
 
-<p>References <a class="el" href="QBFSolver_8h_source.html#l00062">QBFSolver::E</a>, <a class="el" href="CNF_8cpp_source.html#l00245">CNF::getNrOfClauses()</a>, and <a class="el" href="CNF_8cpp_source.html#l00260">CNF::toString()</a>.</p>
+<p>References <a class="el" href="QBFSolver_8h_source.html#l00062">QBFSolver::E</a>, <a class="el" href="CNF_8cpp_source.html#l00292">CNF::getNrOfClauses()</a>, and <a class="el" href="CNF_8cpp_source.html#l00307">CNF::toString()</a>.</p>
 
 </div>
 </div>
@@ -466,9 +466,9 @@ Private Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="classExtQBFSolver.html#aec4c2d830f72283e2fbabf4a3f62a640">ExtQBFSolver</a>.</p>
 
-<p>Definition at line <a class="el" href="DepQBFExt_8cpp_source.html#l00075">75</a> of file <a class="el" href="DepQBFExt_8cpp_source.html">DepQBFExt.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DepQBFExt_8cpp_source.html#l00077">77</a> of file <a class="el" href="DepQBFExt_8cpp_source.html">DepQBFExt.cpp</a>.</p>
 
-<p>References <a class="el" href="ExtQBFSolver_8h_source.html#l00225">ExtQBFSolver::in_file_name_</a>, <a class="el" href="ExtQBFSolver_8h_source.html#l00230">ExtQBFSolver::out_file_name_</a>, and <a class="el" href="DepQBFExt_8h_source.html#l00104">path_to_deqqbf_</a>.</p>
+<p>References <a class="el" href="ExtQBFSolver_8h_source.html#l00225">ExtQBFSolver::in_file_name_</a>, <a class="el" href="ExtQBFSolver_8h_source.html#l00230">ExtQBFSolver::out_file_name_</a>, and <a class="el" href="DepQBFExt_8h_source.html#l00107">path_to_deqqbf_</a>.</p>
 
 </div>
 </div>
@@ -498,9 +498,9 @@ Private Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="classExtQBFSolver.html#ac2bc9e4817cfa1a54195d7d9f1c7d3bd">ExtQBFSolver</a>.</p>
 
-<p>Definition at line <a class="el" href="DepQBFExt_8cpp_source.html#l00081">81</a> of file <a class="el" href="DepQBFExt_8cpp_source.html">DepQBFExt.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DepQBFExt_8cpp_source.html#l00083">83</a> of file <a class="el" href="DepQBFExt_8cpp_source.html">DepQBFExt.cpp</a>.</p>
 
-<p>References <a class="el" href="ExtQBFSolver_8h_source.html#l00225">ExtQBFSolver::in_file_name_</a>, <a class="el" href="ExtQBFSolver_8h_source.html#l00230">ExtQBFSolver::out_file_name_</a>, and <a class="el" href="DepQBFExt_8h_source.html#l00104">path_to_deqqbf_</a>.</p>
+<p>References <a class="el" href="ExtQBFSolver_8h_source.html#l00225">ExtQBFSolver::in_file_name_</a>, <a class="el" href="ExtQBFSolver_8h_source.html#l00230">ExtQBFSolver::out_file_name_</a>, and <a class="el" href="DepQBFExt_8h_source.html#l00107">path_to_deqqbf_</a>.</p>
 
 </div>
 </div>
@@ -553,7 +553,7 @@ Private Member Functions</h2></td></tr>
 
 <p>References <a class="el" href="ExtQBFSolver_8cpp_source.html#l00214">ExtQBFSolver::cleanup()</a>, <a class="el" href="ExtQBFSolver_8cpp_source.html#l00104">ExtQBFSolver::dumpQBF()</a>, <a class="el" href="classExtQBFSolver.html#aec4c2d830f72283e2fbabf4a3f62a640">ExtQBFSolver::getSolverCommand()</a>, <a class="el" href="ExtQBFSolver_8h_source.html#l00225">ExtQBFSolver::in_file_name_</a>, and <a class="el" href="ExtQBFSolver_8cpp_source.html#l00179">ExtQBFSolver::parseAnswer()</a>.</p>
 
-<p>Referenced by <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00105">QBFCertImplExtractor::extractCircuit()</a>.</p>
+<p>Referenced by <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00063">QBFCertImplExtractor::run()</a>.</p>
 
 </div>
 </div>
@@ -847,7 +847,7 @@ Private Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a18ef56586e1d2d06048cd8aadeeacc74"></a>
+<a class="anchor" id="a9de37d00363d5ad71eaf03c011314b31"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -855,7 +855,7 @@ Private Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string DepQBFExt::qbfCert </td>
+          <td class="memname">aiger * DepQBFExt::qbfCert </td>
           <td>(</td>
           <td class="paramtype">const vector&lt; pair&lt; <a class="el" href="classVarInfo.html#a64d1da76cf84fe674e5fef9764ef11cf">VarInfo::VarKind</a>, <a class="el" href="classQBFSolver.html#ac091e263cb55286cc07b2451bcf4d3c7">Quant</a> &gt; &gt; &amp;&#160;</td>
           <td class="paramname"><em>quantifier_prefix</em>, </td>
@@ -888,13 +888,13 @@ Private Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A string representation of the resulting Skolem functions in AIGER format. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The resulting Skolem functions in AIGER format. The returned AIGER structure must be deleted by the caller. </dd></dl>
 
-<p>Definition at line <a class="el" href="DepQBFExt_8cpp_source.html#l00056">56</a> of file <a class="el" href="DepQBFExt_8cpp_source.html">DepQBFExt.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DepQBFExt_8cpp_source.html#l00058">58</a> of file <a class="el" href="DepQBFExt_8cpp_source.html">DepQBFExt.cpp</a>.</p>
 
-<p>References <a class="el" href="ExtQBFSolver_8cpp_source.html#l00214">ExtQBFSolver::cleanup()</a>, <a class="el" href="ExtQBFSolver_8cpp_source.html#l00104">ExtQBFSolver::dumpQBF()</a>, <a class="el" href="ExtQBFSolver_8h_source.html#l00225">ExtQBFSolver::in_file_name_</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="DepQBFExt_8h_source.html#l00109">path_to_qbfcert_</a>, and <a class="el" href="FileUtils_8cpp_source.html#l00042">FileUtils::readFile()</a>.</p>
+<p>References <a class="el" href="ExtQBFSolver_8cpp_source.html#l00214">ExtQBFSolver::cleanup()</a>, <a class="el" href="ExtQBFSolver_8cpp_source.html#l00104">ExtQBFSolver::dumpQBF()</a>, <a class="el" href="ExtQBFSolver_8h_source.html#l00225">ExtQBFSolver::in_file_name_</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, and <a class="el" href="DepQBFExt_8h_source.html#l00112">path_to_qbfcert_</a>.</p>
 
-<p>Referenced by <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00105">QBFCertImplExtractor::extractCircuit()</a>.</p>
+<p>Referenced by <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00063">QBFCertImplExtractor::run()</a>.</p>
 
 </div>
 </div>
@@ -921,7 +921,7 @@ Private Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="ExtQBFSolver_8h_source.html#l00225">225</a> of file <a class="el" href="ExtQBFSolver_8h_source.html">ExtQBFSolver.h</a>.</p>
 
-<p>Referenced by <a class="el" href="ExtQBFSolver_8cpp_source.html#l00214">ExtQBFSolver::cleanup()</a>, <a class="el" href="ExtQBFSolver_8cpp_source.html#l00038">ExtQBFSolver::ExtQBFSolver()</a>, <a class="el" href="QuBEExt_8cpp_source.html#l00053">QuBEExt::getSolverCommand()</a>, <a class="el" href="DepQBFExt_8cpp_source.html#l00075">getSolverCommand()</a>, <a class="el" href="QuBEExt_8cpp_source.html#l00059">QuBEExt::getSolverCommandModel()</a>, <a class="el" href="DepQBFExt_8cpp_source.html#l00081">getSolverCommandModel()</a>, <a class="el" href="ExtQBFSolver_8cpp_source.html#l00054">ExtQBFSolver::isSat()</a>, <a class="el" href="ExtQBFSolver_8cpp_source.html#l00078">ExtQBFSolver::isSatModel()</a>, and <a class="el" href="DepQBFExt_8cpp_source.html#l00056">qbfCert()</a>.</p>
+<p>Referenced by <a class="el" href="ExtQBFSolver_8cpp_source.html#l00214">ExtQBFSolver::cleanup()</a>, <a class="el" href="ExtQBFSolver_8cpp_source.html#l00038">ExtQBFSolver::ExtQBFSolver()</a>, <a class="el" href="QuBEExt_8cpp_source.html#l00051">QuBEExt::getSolverCommand()</a>, <a class="el" href="DepQBFExt_8cpp_source.html#l00077">getSolverCommand()</a>, <a class="el" href="QuBEExt_8cpp_source.html#l00057">QuBEExt::getSolverCommandModel()</a>, <a class="el" href="DepQBFExt_8cpp_source.html#l00083">getSolverCommandModel()</a>, <a class="el" href="ExtQBFSolver_8cpp_source.html#l00054">ExtQBFSolver::isSat()</a>, <a class="el" href="ExtQBFSolver_8cpp_source.html#l00078">ExtQBFSolver::isSatModel()</a>, and <a class="el" href="DepQBFExt_8cpp_source.html#l00058">qbfCert()</a>.</p>
 
 </div>
 </div>
@@ -947,7 +947,7 @@ Private Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="ExtQBFSolver_8h_source.html#l00230">230</a> of file <a class="el" href="ExtQBFSolver_8h_source.html">ExtQBFSolver.h</a>.</p>
 
-<p>Referenced by <a class="el" href="ExtQBFSolver_8cpp_source.html#l00214">ExtQBFSolver::cleanup()</a>, <a class="el" href="ExtQBFSolver_8cpp_source.html#l00038">ExtQBFSolver::ExtQBFSolver()</a>, <a class="el" href="QuBEExt_8cpp_source.html#l00053">QuBEExt::getSolverCommand()</a>, <a class="el" href="DepQBFExt_8cpp_source.html#l00075">getSolverCommand()</a>, <a class="el" href="QuBEExt_8cpp_source.html#l00059">QuBEExt::getSolverCommandModel()</a>, <a class="el" href="DepQBFExt_8cpp_source.html#l00081">getSolverCommandModel()</a>, and <a class="el" href="ExtQBFSolver_8cpp_source.html#l00188">ExtQBFSolver::parseModel()</a>.</p>
+<p>Referenced by <a class="el" href="ExtQBFSolver_8cpp_source.html#l00214">ExtQBFSolver::cleanup()</a>, <a class="el" href="ExtQBFSolver_8cpp_source.html#l00038">ExtQBFSolver::ExtQBFSolver()</a>, <a class="el" href="QuBEExt_8cpp_source.html#l00051">QuBEExt::getSolverCommand()</a>, <a class="el" href="DepQBFExt_8cpp_source.html#l00077">getSolverCommand()</a>, <a class="el" href="QuBEExt_8cpp_source.html#l00057">QuBEExt::getSolverCommandModel()</a>, <a class="el" href="DepQBFExt_8cpp_source.html#l00083">getSolverCommandModel()</a>, and <a class="el" href="ExtQBFSolver_8cpp_source.html#l00188">ExtQBFSolver::parseModel()</a>.</p>
 
 </div>
 </div>
@@ -971,9 +971,9 @@ Private Member Functions</h2></td></tr>
 
 <p>The path to the DepQBF executable. </p>
 
-<p>Definition at line <a class="el" href="DepQBFExt_8h_source.html#l00104">104</a> of file <a class="el" href="DepQBFExt_8h_source.html">DepQBFExt.h</a>.</p>
+<p>Definition at line <a class="el" href="DepQBFExt_8h_source.html#l00107">107</a> of file <a class="el" href="DepQBFExt_8h_source.html">DepQBFExt.h</a>.</p>
 
-<p>Referenced by <a class="el" href="DepQBFExt_8cpp_source.html#l00038">DepQBFExt()</a>, <a class="el" href="DepQBFExt_8cpp_source.html#l00075">getSolverCommand()</a>, and <a class="el" href="DepQBFExt_8cpp_source.html#l00081">getSolverCommandModel()</a>.</p>
+<p>Referenced by <a class="el" href="DepQBFExt_8cpp_source.html#l00042">DepQBFExt()</a>, <a class="el" href="DepQBFExt_8cpp_source.html#l00077">getSolverCommand()</a>, and <a class="el" href="DepQBFExt_8cpp_source.html#l00083">getSolverCommandModel()</a>.</p>
 
 </div>
 </div>
@@ -997,9 +997,9 @@ Private Member Functions</h2></td></tr>
 
 <p>The path to the QBF-Cert script. </p>
 
-<p>Definition at line <a class="el" href="DepQBFExt_8h_source.html#l00109">109</a> of file <a class="el" href="DepQBFExt_8h_source.html">DepQBFExt.h</a>.</p>
+<p>Definition at line <a class="el" href="DepQBFExt_8h_source.html#l00112">112</a> of file <a class="el" href="DepQBFExt_8h_source.html">DepQBFExt.h</a>.</p>
 
-<p>Referenced by <a class="el" href="DepQBFExt_8cpp_source.html#l00038">DepQBFExt()</a>, and <a class="el" href="DepQBFExt_8cpp_source.html#l00056">qbfCert()</a>.</p>
+<p>Referenced by <a class="el" href="DepQBFExt_8cpp_source.html#l00042">DepQBFExt()</a>, and <a class="el" href="DepQBFExt_8cpp_source.html#l00058">qbfCert()</a>.</p>
 
 </div>
 </div>
@@ -1010,7 +1010,7 @@ Private Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 14 2013 15:15:44 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jul 15 2014 12:30:21 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

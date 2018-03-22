@@ -8,7 +8,7 @@ fi
 
 echo "Installing DepQBF ..."
 
-DEPQBF_ACHRIVE="lonsing-depqbf-version-2.0-0-gb79050a.zip"
+DEPQBF_ACHRIVE="version-3.02.tar.gz"
 
 if [ ! -e "$DEPQBF_ACHRIVE" ];
 then
@@ -18,8 +18,9 @@ fi
 
 echo " Unpacking DepQBF ..."
 rm -rf $DEMIURGETP/depqbf
-unzip -d $DEMIURGETP $DEPQBF_ACHRIVE
-mv $DEMIURGETP/depqbf-b79050aebc3fed2c0c8344bfe5155bac6a047bb4 $DEMIURGETP/depqbf
+tar -xzf $DEPQBF_ACHRIVE -C $DEMIURGETP
 
+mv $DEMIURGETP/depqbf-version-3.02 $DEMIURGETP/depqbf
+ 
 echo " Compiling DepQBF ..."
 (cd $DEMIURGETP/depqbf; make)

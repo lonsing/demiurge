@@ -34,6 +34,7 @@
 #include "BackEnd.h"
 
 class QBFSolver;
+class CNFImplExtractor;
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -79,7 +80,7 @@ class QBFSolver;
 /// Finally the QBFCertImplExtractor is used to extract a circuit from the winning region.
 ///
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.0.0
+/// @version 1.1.0
 class TemplateSynth : public BackEnd
 {
 public:
@@ -87,7 +88,10 @@ public:
 // -------------------------------------------------------------------------------------------
 ///
 /// @brief Constructor.
-  TemplateSynth();
+///
+/// @param impl_extractor The engine to use for circuit extraction. It will be deleted by
+///        this class.
+  TemplateSynth(CNFImplExtractor *impl_extractor);
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -138,6 +142,13 @@ protected:
 ///
 /// @brief The QBF-solver to use for solving the queries.
   QBFSolver *qbf_solver_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The engine to use for circuit extraction.
+///
+/// It will be deleted by this class (in the destructor).
+  CNFImplExtractor *impl_extractor_;
 
 };
 

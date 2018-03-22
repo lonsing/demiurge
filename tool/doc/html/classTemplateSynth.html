@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">demiurge
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A synthesis tool for safety specifications.</div>
   </td>
@@ -109,8 +109,8 @@ Inheritance diagram for TemplateSynth:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a157066a0bba6b543ac9cc6ff3a4223d7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTemplateSynth.html#a157066a0bba6b543ac9cc6ff3a4223d7">TemplateSynth</a> ()</td></tr>
-<tr class="memdesc:a157066a0bba6b543ac9cc6ff3a4223d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a157066a0bba6b543ac9cc6ff3a4223d7"></a><br/></td></tr>
+<tr class="memitem:a56d5f285781e5871bf391acc38acb0aa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTemplateSynth.html#a56d5f285781e5871bf391acc38acb0aa">TemplateSynth</a> (<a class="el" href="classCNFImplExtractor.html">CNFImplExtractor</a> *impl_extractor)</td></tr>
+<tr class="memdesc:a56d5f285781e5871bf391acc38acb0aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a56d5f285781e5871bf391acc38acb0aa"></a><br/></td></tr>
 <tr class="memitem:a5d540c9d4dc6696b53768a27ac74c569"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTemplateSynth.html#a5d540c9d4dc6696b53768a27ac74c569">~TemplateSynth</a> ()</td></tr>
 <tr class="memdesc:a5d540c9d4dc6696b53768a27ac74c569"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#a5d540c9d4dc6696b53768a27ac74c569"></a><br/></td></tr>
 <tr class="memitem:a5ad9855736c7d4dfdec08280d2424f80"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTemplateSynth.html#a5ad9855736c7d4dfdec08280d2424f80">run</a> ()</td></tr>
@@ -129,6 +129,8 @@ Protected Attributes</h2></td></tr>
 <tr class="memdesc:a4e147629eae6a542dd87d72902df68c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The resulting winning region.  <a href="#a4e147629eae6a542dd87d72902df68c8"></a><br/></td></tr>
 <tr class="memitem:a08ec20197bf16a10546a7e6cf3719727"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classQBFSolver.html">QBFSolver</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTemplateSynth.html#a08ec20197bf16a10546a7e6cf3719727">qbf_solver_</a></td></tr>
 <tr class="memdesc:a08ec20197bf16a10546a7e6cf3719727"><td class="mdescLeft">&#160;</td><td class="mdescRight">The QBF-solver to use for solving the queries.  <a href="#a08ec20197bf16a10546a7e6cf3719727"></a><br/></td></tr>
+<tr class="memitem:acfa25deb001fb3b6d49c0261bba98347"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCNFImplExtractor.html">CNFImplExtractor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTemplateSynth.html#acfa25deb001fb3b6d49c0261bba98347">impl_extractor_</a></td></tr>
+<tr class="memdesc:acfa25deb001fb3b6d49c0261bba98347"><td class="mdescLeft">&#160;</td><td class="mdescRight">The engine to use for circuit extraction.  <a href="#acfa25deb001fb3b6d49c0261bba98347"></a><br/></td></tr>
 </table>
 <a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Implements a template-based synthesis using a QBF solver. </p>
@@ -155,24 +157,31 @@ The parameters kn[i][j] (with 1 &lt;= i &lt;= N, 1 &lt;= j &lt;= |x|) define if 
 <p>The union of all these parameters forms k. Concrete values for all k define a concrete <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> formula over the state variables x (i.e., a concrete winning region). We chose N in the following way: we start with N=1. On failure, we increase N (multiply by 4).</p>
 <p>Finally the <a class="el" href="classQBFCertImplExtractor.html" title="Given a winning region in CNF, this method extracts a circuit using QBFCert.">QBFCertImplExtractor</a> is used to extract a circuit from the winning region.</p>
 <dl class="section author"><dt>Author</dt><dd>Robert Koenighofer (<a href="#" onclick="location.href='mai'+'lto:'+'rob'+'er'+'t.k'+'oe'+'nig'+'ho'+'fer'+'@i'+'aik'+'.t'+'ugr'+'az'+'.at'; return false;">rober<span style="display: none;">.nosp@m.</span>t.ko<span style="display: none;">.nosp@m.</span>enigh<span style="display: none;">.nosp@m.</span>ofer<span style="display: none;">.nosp@m.</span>@iaik<span style="display: none;">.nosp@m.</span>.tug<span style="display: none;">.nosp@m.</span>raz.a<span style="display: none;">.nosp@m.</span>t</a>) </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>1.0.0 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.1.0 </dd></dl>
 
-<p>Definition at line <a class="el" href="TemplateSynth_8h_source.html#l00083">83</a> of file <a class="el" href="TemplateSynth_8h_source.html">TemplateSynth.h</a>.</p>
+<p>Definition at line <a class="el" href="TemplateSynth_8h_source.html#l00084">84</a> of file <a class="el" href="TemplateSynth_8h_source.html">TemplateSynth.h</a>.</p>
 </div><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a157066a0bba6b543ac9cc6ff3a4223d7"></a>
+<a class="anchor" id="a56d5f285781e5871bf391acc38acb0aa"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">TemplateSynth::TemplateSynth </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="classCNFImplExtractor.html">CNFImplExtractor</a> *&#160;</td>
+          <td class="paramname"><em>impl_extractor</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">impl_extractor</td><td>The engine to use for circuit extraction. It will be deleted by this class. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Definition at line <a class="el" href="TemplateSynth_8cpp_source.html#l00042">42</a> of file <a class="el" href="TemplateSynth_8cpp_source.html">TemplateSynth.cpp</a>.</p>
 
@@ -201,9 +210,9 @@ The parameters kn[i][j] (with 1 &lt;= i &lt;= N, 1 &lt;= j &lt;= |x|) define if 
 
 <p>Destructor. </p>
 
-<p>Definition at line <a class="el" href="TemplateSynth_8cpp_source.html#l00050">50</a> of file <a class="el" href="TemplateSynth_8cpp_source.html">TemplateSynth.cpp</a>.</p>
+<p>Definition at line <a class="el" href="TemplateSynth_8cpp_source.html#l00051">51</a> of file <a class="el" href="TemplateSynth_8cpp_source.html">TemplateSynth.cpp</a>.</p>
 
-<p>References <a class="el" href="TemplateSynth_8h_source.html#l00140">qbf_solver_</a>.</p>
+<p>References <a class="el" href="TemplateSynth_8h_source.html#l00151">impl_extractor_</a>, and <a class="el" href="TemplateSynth_8h_source.html#l00144">qbf_solver_</a>.</p>
 
 </div>
 </div>
@@ -233,11 +242,11 @@ The parameters kn[i][j] (with 1 &lt;= i &lt;= N, 1 &lt;= j &lt;= |x|) define if 
 <p>This works as explained in the description of the class.</p>
 <dl class="section return"><dt>Returns</dt><dd>True if the specification was realizable, false otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="TemplateSynth_8cpp_source.html#l00082">82</a> of file <a class="el" href="TemplateSynth_8cpp_source.html">TemplateSynth.cpp</a>.</p>
+<p>Definition at line <a class="el" href="TemplateSynth_8cpp_source.html#l00086">86</a> of file <a class="el" href="TemplateSynth_8cpp_source.html">TemplateSynth.cpp</a>.</p>
 
-<p>References <a class="el" href="TemplateSynth_8cpp_source.html#l00115">findWinRegCNFTempl()</a>, <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="Logger_8h_source.html#l00302">L_INF</a>, <a class="el" href="Logger_8h_source.html#l00336">L_LOG</a>, <a class="el" href="VarManager_8cpp_source.html#l00082">VarManager::pop()</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, and <a class="el" href="VarManager_8cpp_source.html#l00055">VarManager::push()</a>.</p>
+<p>References <a class="el" href="TemplateSynth_8cpp_source.html#l00119">findWinRegCNFTempl()</a>, <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="Logger_8h_source.html#l00302">L_INF</a>, <a class="el" href="Logger_8h_source.html#l00336">L_LOG</a>, <a class="el" href="VarManager_8cpp_source.html#l00082">VarManager::pop()</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, and <a class="el" href="VarManager_8cpp_source.html#l00055">VarManager::push()</a>.</p>
 
-<p>Referenced by <a class="el" href="TemplateSynth_8cpp_source.html#l00057">run()</a>.</p>
+<p>Referenced by <a class="el" href="TemplateSynth_8cpp_source.html#l00061">run()</a>.</p>
 
 </div>
 </div>
@@ -273,11 +282,11 @@ The parameters kn[i][j] (with 1 &lt;= i &lt;= N, 1 &lt;= j &lt;= |x|) define if 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if a solution is found with the given number of clauses, false otherwise. If this method returns false, then this does not mean that the specification is unrealizable. It may be that nr_of_clauses has been chosen too low. </dd></dl>
 
-<p>Definition at line <a class="el" href="TemplateSynth_8cpp_source.html#l00115">115</a> of file <a class="el" href="TemplateSynth_8cpp_source.html">TemplateSynth.cpp</a>.</p>
+<p>Definition at line <a class="el" href="TemplateSynth_8cpp_source.html#l00119">119</a> of file <a class="el" href="TemplateSynth_8cpp_source.html">TemplateSynth.cpp</a>.</p>
 
-<p>References <a class="el" href="QBFSolver_8h_source.html#l00067">QBFSolver::A</a>, <a class="el" href="CNF_8cpp_source.html#l00122">CNF::add1LitClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00130">CNF::add2LitClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00149">CNF::add4LitClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00070">CNF::addClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00183">CNF::addCNF()</a>, <a class="el" href="VarManager_8cpp_source.html#l00235">VarManager::createFreshTemplParam()</a>, <a class="el" href="VarManager_8cpp_source.html#l00219">VarManager::createFreshTmpVar()</a>, <a class="el" href="VarInfo_8h_source.html#l00074">VarInfo::CTRL</a>, <a class="el" href="QBFSolver_8h_source.html#l00062">QBFSolver::E</a>, <a class="el" href="VarManager_8cpp_source.html#l00332">VarManager::getMaxCNFVar()</a>, <a class="el" href="VarManager_8cpp_source.html#l00326">VarManager::getNextErrorStateVar()</a>, <a class="el" href="VarManager_8cpp_source.html#l00320">VarManager::getPresErrorStateVar()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00213">AIG2CNF::getT()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00207">AIG2CNF::getTransEqT()</a>, <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, <a class="el" href="VarInfo_8h_source.html#l00069">VarInfo::INPUT</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="classQBFSolver.html#a76fc0c757a2c039816e3e06547f06d5c">QBFSolver::isSatModel()</a>, <a class="el" href="VarInfo_8h_source.html#l00064">VarInfo::NEXT_STATE</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="TemplateSynth_8h_source.html#l00140">qbf_solver_</a>, <a class="el" href="VarInfo_8h_source.html#l00088">VarInfo::TEMPL_PARAMS</a>, <a class="el" href="VarInfo_8h_source.html#l00081">VarInfo::TMP</a>, and <a class="el" href="TemplateSynth_8h_source.html#l00135">winning_region_</a>.</p>
+<p>References <a class="el" href="QBFSolver_8h_source.html#l00067">QBFSolver::A</a>, <a class="el" href="CNF_8cpp_source.html#l00169">CNF::add1LitClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00177">CNF::add2LitClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00196">CNF::add4LitClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00117">CNF::addClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00230">CNF::addCNF()</a>, <a class="el" href="VarManager_8cpp_source.html#l00235">VarManager::createFreshTemplParam()</a>, <a class="el" href="VarManager_8cpp_source.html#l00219">VarManager::createFreshTmpVar()</a>, <a class="el" href="VarInfo_8h_source.html#l00074">VarInfo::CTRL</a>, <a class="el" href="QBFSolver_8h_source.html#l00062">QBFSolver::E</a>, <a class="el" href="VarManager_8cpp_source.html#l00332">VarManager::getMaxCNFVar()</a>, <a class="el" href="VarManager_8cpp_source.html#l00326">VarManager::getNextErrorStateVar()</a>, <a class="el" href="VarManager_8cpp_source.html#l00320">VarManager::getPresErrorStateVar()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00222">AIG2CNF::getT()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00216">AIG2CNF::getTransEqT()</a>, <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, <a class="el" href="VarInfo_8h_source.html#l00069">VarInfo::INPUT</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="classQBFSolver.html#a76fc0c757a2c039816e3e06547f06d5c">QBFSolver::isSatModel()</a>, <a class="el" href="VarInfo_8h_source.html#l00064">VarInfo::NEXT_STATE</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="TemplateSynth_8h_source.html#l00144">qbf_solver_</a>, <a class="el" href="VarInfo_8h_source.html#l00088">VarInfo::TEMPL_PARAMS</a>, <a class="el" href="VarInfo_8h_source.html#l00081">VarInfo::TMP</a>, and <a class="el" href="TemplateSynth_8h_source.html#l00139">winning_region_</a>.</p>
 
-<p>Referenced by <a class="el" href="TemplateSynth_8cpp_source.html#l00082">computeWinningRegion()</a>.</p>
+<p>Referenced by <a class="el" href="TemplateSynth_8cpp_source.html#l00086">computeWinningRegion()</a>.</p>
 
 </div>
 </div>
@@ -308,13 +317,40 @@ The parameters kn[i][j] (with 1 &lt;= i &lt;= N, 1 &lt;= j &lt;= |x|) define if 
 
 <p>Implements <a class="el" href="classBackEnd.html#a099e717dc71e9cc2d838b1ca86340590">BackEnd</a>.</p>
 
-<p>Definition at line <a class="el" href="TemplateSynth_8cpp_source.html#l00057">57</a> of file <a class="el" href="TemplateSynth_8cpp_source.html">TemplateSynth.cpp</a>.</p>
+<p>Definition at line <a class="el" href="TemplateSynth_8cpp_source.html#l00061">61</a> of file <a class="el" href="TemplateSynth_8cpp_source.html">TemplateSynth.cpp</a>.</p>
 
-<p>References <a class="el" href="TemplateSynth_8cpp_source.html#l00082">computeWinningRegion()</a>, <a class="el" href="Utils_8cpp_source.html#l00353">Utils::debugCheckWinReg()</a>, <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00095">QBFCertImplExtractor::extractCircuit()</a>, <a class="el" href="Options_8cpp_source.html#l00059">Options::instance()</a>, <a class="el" href="Logger_8h_source.html#l00302">L_INF</a>, <a class="el" href="Logger_8h_source.html#l00285">L_RES</a>, and <a class="el" href="TemplateSynth_8h_source.html#l00135">winning_region_</a>.</p>
+<p>References <a class="el" href="TemplateSynth_8cpp_source.html#l00086">computeWinningRegion()</a>, <a class="el" href="Utils_8cpp_source.html#l00407">Utils::debugCheckWinReg()</a>, <a class="el" href="CNFImplExtractor_8cpp_source.html#l00085">CNFImplExtractor::extractCircuit()</a>, <a class="el" href="TemplateSynth_8h_source.html#l00151">impl_extractor_</a>, <a class="el" href="Options_8cpp_source.html#l00065">Options::instance()</a>, <a class="el" href="Logger_8h_source.html#l00302">L_INF</a>, <a class="el" href="Logger_8h_source.html#l00285">L_RES</a>, <a class="el" href="CNFImplExtractor_8cpp_source.html#l00290">CNFImplExtractor::logStatistics()</a>, and <a class="el" href="TemplateSynth_8h_source.html#l00139">winning_region_</a>.</p>
 
 </div>
 </div>
 <h2>Member Data Documentation</h2>
+<a class="anchor" id="acfa25deb001fb3b6d49c0261bba98347"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCNFImplExtractor.html">CNFImplExtractor</a>* TemplateSynth::impl_extractor_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The engine to use for circuit extraction. </p>
+<p>It will be deleted by this class (in the destructor). </p>
+
+<p>Definition at line <a class="el" href="TemplateSynth_8h_source.html#l00151">151</a> of file <a class="el" href="TemplateSynth_8h_source.html">TemplateSynth.h</a>.</p>
+
+<p>Referenced by <a class="el" href="TemplateSynth_8cpp_source.html#l00061">run()</a>, and <a class="el" href="TemplateSynth_8cpp_source.html#l00051">~TemplateSynth()</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a08ec20197bf16a10546a7e6cf3719727"></a>
 <div class="memitem">
 <div class="memproto">
@@ -335,9 +371,9 @@ The parameters kn[i][j] (with 1 &lt;= i &lt;= N, 1 &lt;= j &lt;= |x|) define if 
 
 <p>The QBF-solver to use for solving the queries. </p>
 
-<p>Definition at line <a class="el" href="TemplateSynth_8h_source.html#l00140">140</a> of file <a class="el" href="TemplateSynth_8h_source.html">TemplateSynth.h</a>.</p>
+<p>Definition at line <a class="el" href="TemplateSynth_8h_source.html#l00144">144</a> of file <a class="el" href="TemplateSynth_8h_source.html">TemplateSynth.h</a>.</p>
 
-<p>Referenced by <a class="el" href="TemplateSynth_8cpp_source.html#l00115">findWinRegCNFTempl()</a>, and <a class="el" href="TemplateSynth_8cpp_source.html#l00050">~TemplateSynth()</a>.</p>
+<p>Referenced by <a class="el" href="TemplateSynth_8cpp_source.html#l00119">findWinRegCNFTempl()</a>, and <a class="el" href="TemplateSynth_8cpp_source.html#l00051">~TemplateSynth()</a>.</p>
 
 </div>
 </div>
@@ -361,9 +397,9 @@ The parameters kn[i][j] (with 1 &lt;= i &lt;= N, 1 &lt;= j &lt;= |x|) define if 
 
 <p>The resulting winning region. </p>
 
-<p>Definition at line <a class="el" href="TemplateSynth_8h_source.html#l00135">135</a> of file <a class="el" href="TemplateSynth_8h_source.html">TemplateSynth.h</a>.</p>
+<p>Definition at line <a class="el" href="TemplateSynth_8h_source.html#l00139">139</a> of file <a class="el" href="TemplateSynth_8h_source.html">TemplateSynth.h</a>.</p>
 
-<p>Referenced by <a class="el" href="TemplateSynth_8cpp_source.html#l00115">findWinRegCNFTempl()</a>, and <a class="el" href="TemplateSynth_8cpp_source.html#l00057">run()</a>.</p>
+<p>Referenced by <a class="el" href="TemplateSynth_8cpp_source.html#l00119">findWinRegCNFTempl()</a>, and <a class="el" href="TemplateSynth_8cpp_source.html#l00061">run()</a>.</p>
 
 </div>
 </div>
@@ -374,7 +410,7 @@ The parameters kn[i][j] (with 1 &lt;= i &lt;= N, 1 &lt;= j &lt;= |x|) define if 
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 14 2013 15:15:46 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jul 15 2014 12:30:23 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

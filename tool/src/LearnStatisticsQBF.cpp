@@ -34,8 +34,6 @@
 LearnStatisticsQBF::LearnStatisticsQBF() :
   win_reg_cpu_time_(0.0),
   win_reg_real_time_(0),
-  rel_det_cpu_time_(0.0),
-  rel_det_real_time_(0),
   nr_of_cube_computations_(0),
   sum_compute_cpu_time_(0.0),
   sum_compute_real_time_(0),
@@ -65,19 +63,6 @@ void LearnStatisticsQBF::notifyWinRegEnd()
 {
   win_reg_cpu_time_ += Stopwatch::getCPUTimeSec(win_reg_start_time_);
   win_reg_real_time_ += Stopwatch::getRealTimeSec(win_reg_start_time_);
-}
-
-// -------------------------------------------------------------------------------------------
-void LearnStatisticsQBF::notifyRelDetStart()
-{
-  rel_det_start_time_ = Stopwatch::start();
-}
-
-// -------------------------------------------------------------------------------------------
-void LearnStatisticsQBF::notifyRelDetEnd()
-{
-  rel_det_cpu_time_ += Stopwatch::getCPUTimeSec(rel_det_start_time_);
-  rel_det_real_time_ += Stopwatch::getRealTimeSec(rel_det_start_time_);
 }
 
 // -------------------------------------------------------------------------------------------
@@ -167,7 +152,5 @@ void LearnStatisticsQBF::logStatistics() const
   L_LOG("Average cube size reduction: " << avg_size_from  << " --> " << avg_size_to);
   L_LOG("Winning region computation time: " << win_reg_cpu_time_ << " sec CPU time.");
   L_LOG("Winning region computation time: " << win_reg_real_time_ << " sec real time.");
-  L_LOG("Relation determinization time: " << rel_det_cpu_time_ << " sec CPU time.");
-  L_LOG("Relation determinization time: " << rel_det_real_time_ << " sec real time.");
 }
 

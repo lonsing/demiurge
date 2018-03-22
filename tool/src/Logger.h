@@ -48,7 +48,7 @@
 /// obtain the one and only instance of this class.
 ///
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.0.0
+/// @version 1.1.0
 class Logger
 {
 public:

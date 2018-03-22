@@ -49,11 +49,11 @@ This class is very simple\-: it just takes clauses from the winning region and t
 Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\-0.\-0 
+1.\-1.\-0 
 \end{DoxyVersion}
 
 
-Definition at line 1170 of file Parallel\-Learner.\-h.
+Definition at line 1180 of file Parallel\-Learner.\-h.
 
 
 
@@ -76,7 +76,7 @@ Constructor.
 \end{DoxyParams}
 
 
-Definition at line 1263 of file Parallel\-Learner.\-cpp.
+Definition at line 1265 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -95,7 +95,7 @@ Destructor.
 
 
 
-Definition at line 1283 of file Parallel\-Learner.\-cpp.
+Definition at line 1285 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -135,7 +135,7 @@ The work-\/horse of this class.
 
 It takes clauses from the winning region and tries to minimize them further using a Q\-B\-F-\/solver. The minimization is done in the very same way in \hyperlink{classLearnSynthQBF}{Learn\-Synth\-Q\-B\-F}. In every iteration, this method also considers all new incoming clauses found by others. If it finds out that the specification is realizable or unrealizable, it sets the flag \hyperlink{classParallelLearner_a757f8817809cce5c0408cdc41d6db1b8}{Parallel\-Learner\-::result\-\_\-} accordingly. It also polls this flag regularly. If it has been set by some other thread, it quits. 
 
-Definition at line 1293 of file Parallel\-Learner.\-cpp.
+Definition at line 1295 of file Parallel\-Learner.\-cpp.
 
 
 
@@ -178,7 +178,7 @@ A reference to the coordinator.
 
 All communication to other worker-\/threads is done via the coordinator. 
 
-Definition at line 1206 of file Parallel\-Learner.\-h.
+Definition at line 1216 of file Parallel\-Learner.\-h.
 
 
 
@@ -193,7 +193,7 @@ The quantifier prefix of the Q\-B\-F for generalizing clauses.
 
 This quantifier prefix is always exists x\-: forall i\-: exists c,x',tmp\-: 
 
-Definition at line 1214 of file Parallel\-Learner.\-h.
+Definition at line 1224 of file Parallel\-Learner.\-h.
 
 
 
@@ -208,7 +208,7 @@ The Q\-B\-F-\/solver used for the generalization queries.
 
 The type of solver is selected with command-\/line arguments. 
 
-Definition at line 1221 of file Parallel\-Learner.\-h.
+Definition at line 1231 of file Parallel\-Learner.\-h.
 
 
 
@@ -223,7 +223,7 @@ A \hyperlink{classSatSolver}{Sat\-Solver} to check if minimized clauses are alre
 
 
 
-Definition at line 1226 of file Parallel\-Learner.\-h.
+Definition at line 1236 of file Parallel\-Learner.\-h.
 
 
 

@@ -37,6 +37,8 @@
 #include "QBFSolver.h"
 #include "BackEnd.h"
 
+class CNFImplExtractor;
+
 // -------------------------------------------------------------------------------------------
 ///
 /// @class LearnSynthQBFInd
@@ -94,7 +96,7 @@
 ///       not work out well.
 /// @note This class is experimental.
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.0.0
+/// @version 1.1.0
 class LearnSynthQBFInd : public BackEnd
 {
 public:
@@ -102,7 +104,10 @@ public:
 // -------------------------------------------------------------------------------------------
 ///
 /// @brief Constructor.
-  LearnSynthQBFInd();
+///
+/// @param impl_extractor The engine to use for circuit extraction. It will be deleted by
+///        this class.
+  LearnSynthQBFInd(CNFImplExtractor *impl_extractor);
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -504,6 +509,13 @@ protected:
 /// Optimization RC (inductive reachability checks during the computation of counterexamples)
 /// is enabled if this flag is true, otherwise it is disabled.
   bool do_reach_check_;
+
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The engine to use for circuit extraction.
+///
+/// It will be deleted by this class (in the destructor).
+  CNFImplExtractor *impl_extractor_;
 
 private:
 

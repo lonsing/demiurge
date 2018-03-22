@@ -1,0 +1,3247 @@
+=====================  unr.aag =====================
+=====================  eq1.aag =====================
+=====================  ex1.aag =====================
+=====================  ex2.aag =====================
+=====================  add2n.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 9 new AND gates.
+[LOG] Size before ABC: 24 AND gates.
+[LOG] Size after ABC: 9 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 10 (3, 7 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 58 --> 24 (16 --> 4, 42 --> 20 )
+[LOG] Average clause size reduction: 5.8 --> 2.4 (5.33333 --> 1.33333, 6 --> 2.85714 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.19 sec (Real time) / 0.13 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 31 6 2 1 23
+Raw AIGER output size: aag 40 4 2 1 32
+=====================  add2y.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 9 new AND gates.
+[LOG] Size before ABC: 24 AND gates.
+[LOG] Size after ABC: 9 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 10 (3, 7 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 58 --> 24 (16 --> 4, 42 --> 20 )
+[LOG] Average clause size reduction: 5.8 --> 2.4 (5.33333 --> 1.33333, 6 --> 2.85714 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.18 sec (Real time) / 0.14 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 25 6 2 1 17
+Raw AIGER output size: aag 34 4 2 1 26
+=====================  add4n.aag =====================
+[LOG] Relation determinization time: 0.01 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 88 new AND gates.
+[LOG] Size before ABC: 276 AND gates.
+[LOG] Size after ABC: 86 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 64 (3, 7, 17, 37 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 694 --> 276 (28 --> 4, 78 --> 20, 192 --> 68, 396 --> 184 )
+[LOG] Average clause size reduction: 10.8438 --> 4.3125 (9.33333 --> 1.33333, 11.1429 --> 2.85714, 11.2941 --> 4, 10.7027 --> 4.97297 )
+[LOG] Overall execution time: 0.01 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.20 sec (Real time) / 0.15 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 75 12 2 1 61
+Raw AIGER output size: aag 161 8 2 1 149
+=====================  add4y.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 100 new AND gates.
+[LOG] Size before ABC: 276 AND gates.
+[LOG] Size after ABC: 98 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 64 (3, 7, 17, 37 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 694 --> 276 (28 --> 4, 78 --> 20, 192 --> 68, 396 --> 184 )
+[LOG] Average clause size reduction: 10.8438 --> 4.3125 (9.33333 --> 1.33333, 11.1429 --> 2.85714, 11.2941 --> 4, 10.7027 --> 4.97297 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.20 sec (Real time) / 0.16 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 59 12 2 1 45
+Raw AIGER output size: aag 157 8 2 1 145
+=====================  add6n.aag =====================
+[LOG] Relation determinization time: 0.83 sec CPU time.
+[LOG] Relation determinization time: 1 sec real time.
+[LOG] Final circuit size: 676 new AND gates.
+[LOG] Size before ABC: 1812 AND gates.
+[LOG] Size after ABC: 674 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0.82/1 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0.06/0 sec, 0.76/1 sec )
+[LOG] Nr of iterations: 298 (3, 7, 17, 37, 77, 157 )
+[LOG] Total clause computation time: 0.81/1 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0.06/0.06 sec, 0.75/0.75 sec )
+[LOG] Total clause minimization time: 0.01/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0.01/0.01 sec )
+[LOG] Total clause size reduction: 4610 --> 1812 (40 --> 4, 114 --> 20, 288 --> 68, 612 --> 184, 1216 --> 456, 2340 --> 1080 )
+[LOG] Average clause size reduction: 15.4698 --> 6.08054 (13.3333 --> 1.33333, 16.2857 --> 2.85714, 16.9412 --> 4, 16.5405 --> 4.97297, 15.7922 --> 5.92208, 14.9045 --> 6.87898 )
+[LOG] Overall execution time: 0.83 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 1.15 sec (Real time) / 1.03 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.27 sec (Real time) / 0.27 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.03 sec (Real time) / 0.03 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 119 18 2 1 99
+Raw AIGER output size: aag 793 12 2 1 775
+=====================  add6y.aag =====================
+[LOG] Relation determinization time: 0.77 sec CPU time.
+[LOG] Relation determinization time: 1 sec real time.
+[LOG] Final circuit size: 666 new AND gates.
+[LOG] Size before ABC: 1812 AND gates.
+[LOG] Size after ABC: 664 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0.77/1 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0.06/0 sec, 0.71/1 sec )
+[LOG] Nr of iterations: 298 (3, 7, 17, 37, 77, 157 )
+[LOG] Total clause computation time: 0.75/1 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0.06/0.06 sec, 0.69/0.69 sec )
+[LOG] Total clause minimization time: 0.01/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0.01/0.01 sec )
+[LOG] Total clause size reduction: 4610 --> 1812 (40 --> 4, 114 --> 20, 288 --> 68, 612 --> 184, 1216 --> 456, 2340 --> 1080 )
+[LOG] Average clause size reduction: 15.4698 --> 6.08054 (13.3333 --> 1.33333, 16.2857 --> 2.85714, 16.9412 --> 4, 16.5405 --> 4.97297, 15.7922 --> 5.92208, 14.9045 --> 6.87898 )
+[LOG] Overall execution time: 0.77 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 1.07 sec (Real time) / 0.99 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.23 sec (Real time) / 0.23 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.03 sec (Real time) / 0.02 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 93 18 2 1 73
+Raw AIGER output size: aag 757 12 2 1 739
+=====================  add8n.aag =====================
+[LOG] Relation determinization time: 3.75 sec CPU time.
+[LOG] Relation determinization time: 4 sec real time.
+[LOG] Final circuit size: 3593 new AND gates.
+[LOG] Size before ABC: 10004 AND gates.
+[LOG] Size after ABC: 3591 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 3.74/4 sec (0/0 sec, 0/0 sec, 0.01/0 sec, 0/0 sec, 0.06/0 sec, 0.66/1 sec, 1.39/1 sec, 1.62/2 sec )
+[LOG] Nr of iterations: 1252 (3, 7, 17, 37, 77, 157, 317, 637 )
+[LOG] Total clause computation time: 3.54/4 sec (0/0 sec, 0/0 sec, 0.01/0.01 sec, 0/0 sec, 0.05/0.05 sec, 0.66/0.66 sec, 1.33/1.33 sec, 1.49/1.49 sec )
+[LOG] Total clause minimization time: 0.18/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0.01/0.01 sec, 0/0 sec, 0.06/0.06 sec, 0.11/0.11 sec )
+[LOG] Total clause size reduction: 24766 --> 10004 (52 --> 4, 150 --> 20, 384 --> 68, 828 --> 184, 1672 --> 456, 3276 --> 1080, 6320 --> 2488, 12084 --> 5704 )
+[LOG] Average clause size reduction: 19.7812 --> 7.99042 (17.3333 --> 1.33333, 21.4286 --> 2.85714, 22.5882 --> 4, 22.3784 --> 4.97297, 21.7143 --> 5.92208, 20.8662 --> 6.87898, 19.9369 --> 7.84858, 18.9702 --> 8.95447 )
+[LOG] Overall execution time: 3.75 sec CPU time.
+[LOG] Overall execution time: 4 sec real time.
+Synthesis time: 4.51 sec (Real time) / 4.30 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 1.37 sec (Real time) / 1.37 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.43 sec (Real time) / 0.41 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 163 24 2 1 137
+Raw AIGER output size: aag 3754 16 2 1 3730
+=====================  add8y.aag =====================
+[LOG] Relation determinization time: 3.45 sec CPU time.
+[LOG] Relation determinization time: 4 sec real time.
+[LOG] Final circuit size: 3583 new AND gates.
+[LOG] Size before ABC: 9924 AND gates.
+[LOG] Size after ABC: 3582 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 3.44/4 sec (0/0 sec, 0/0 sec, 0.01/0 sec, 0/0 sec, 0.07/0 sec, 0.52/1 sec, 1.26/1 sec, 1.58/2 sec )
+[LOG] Nr of iterations: 1252 (3, 7, 17, 37, 77, 157, 317, 637 )
+[LOG] Total clause computation time: 3.23/4 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0.07/0.07 sec, 0.52/0.52 sec, 1.19/1.19 sec, 1.45/1.45 sec )
+[LOG] Total clause minimization time: 0.16/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0.06/0.06 sec, 0.1/0.1 sec )
+[LOG] Total clause size reduction: 24766 --> 9924 (52 --> 4, 150 --> 20, 384 --> 68, 828 --> 184, 1672 --> 456, 3276 --> 1080, 6320 --> 2488, 12084 --> 5624 )
+[LOG] Average clause size reduction: 19.7812 --> 7.92652 (17.3333 --> 1.33333, 21.4286 --> 2.85714, 22.5882 --> 4, 22.3784 --> 4.97297, 21.7143 --> 5.92208, 20.8662 --> 6.87898, 19.9369 --> 7.84858, 18.9702 --> 8.82889 )
+[LOG] Overall execution time: 3.45 sec CPU time.
+[LOG] Overall execution time: 5 sec real time.
+Synthesis time: 4.22 sec (Real time) / 3.95 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 1.38 sec (Real time) / 1.38 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.50 sec (Real time) / 0.49 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 127 24 2 1 101
+Raw AIGER output size: aag 3709 16 2 1 3684
+=====================  add10n.aag =====================
+[LOG] Relation determinization time: 14.04 sec CPU time.
+[LOG] Relation determinization time: 18 sec real time.
+[LOG] Final circuit size: 15702 new AND gates.
+[LOG] Size before ABC: 50100 AND gates.
+[LOG] Size after ABC: 15700 AND gates.
+[LOG] Time for optimizing with ABC: 3 seconds.
+[LOG] Total time for all control signals: 13.99/14 sec (0/0 sec, 0/0 sec, 0.01/0 sec, 0/0 sec, 0.06/0 sec, 0.73/0 sec, 1.41/2 sec, 1.58/1 sec, 2.93/3 sec, 7.27/8 sec )
+[LOG] Nr of iterations: 5086 (3, 7, 17, 37, 77, 157, 317, 637, 1277, 2557 )
+[LOG] Total clause computation time: 10.65/9 sec (0/0 sec, 0/0 sec, 0.01/0.01 sec, 0/0 sec, 0.06/0.06 sec, 0.71/0.71 sec, 1.36/1.36 sec, 1.42/1.42 sec, 2.21/2.21 sec, 4.88/4.88 sec )
+[LOG] Total clause minimization time: 2.64/4 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0.01/0.01 sec, 0.03/0.03 sec, 0.11/0.11 sec, 0.57/0.57 sec, 1.92/1.92 sec )
+[LOG] Total clause size reduction: 121642 --> 50100 (64 --> 4, 186 --> 20, 480 --> 68, 1044 --> 184, 2128 --> 456, 4212 --> 1080, 8216 --> 2488, 15900 --> 5624, 30624 --> 12536, 58788 --> 27640 )
+[LOG] Average clause size reduction: 23.917 --> 9.85057 (21.3333 --> 1.33333, 26.5714 --> 2.85714, 28.2353 --> 4, 28.2162 --> 4.97297, 27.6364 --> 5.92208, 26.828 --> 6.87898, 25.918 --> 7.84858, 24.9608 --> 8.82889, 23.9812 --> 9.81676, 22.991 --> 10.8095 )
+[LOG] Overall execution time: 14.04 sec CPU time.
+[LOG] Overall execution time: 18 sec real time.
+Synthesis time: 17.08 sec (Real time) / 15.98 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 3.13 sec (Real time) / 3.12 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 10.32 sec (Real time) / 10.28 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 207 30 2 1 175
+Raw AIGER output size: aag 15907 20 2 1 15877
+=====================  add10y.aag =====================
+[LOG] Relation determinization time: 13.97 sec CPU time.
+[LOG] Relation determinization time: 17 sec real time.
+[LOG] Final circuit size: 15575 new AND gates.
+[LOG] Size before ABC: 50100 AND gates.
+[LOG] Size after ABC: 15573 AND gates.
+[LOG] Time for optimizing with ABC: 3 seconds.
+[LOG] Total time for all control signals: 13.93/14 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0.07/0 sec, 0.61/1 sec, 1.33/1 sec, 1.62/2 sec, 2.99/3 sec, 7.31/7 sec )
+[LOG] Nr of iterations: 5086 (3, 7, 17, 37, 77, 157, 317, 637, 1277, 2557 )
+[LOG] Total clause computation time: 10.73/11 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0.07/0.07 sec, 0.61/0.61 sec, 1.28/1.28 sec, 1.52/1.52 sec, 2.38/2.38 sec, 4.87/4.87 sec )
+[LOG] Total clause minimization time: 2.44/2 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0.04/0.04 sec, 0.05/0.05 sec, 0.47/0.47 sec, 1.88/1.88 sec )
+[LOG] Total clause size reduction: 121642 --> 50100 (64 --> 4, 186 --> 20, 480 --> 68, 1044 --> 184, 2128 --> 456, 4212 --> 1080, 8216 --> 2488, 15900 --> 5624, 30624 --> 12536, 58788 --> 27640 )
+[LOG] Average clause size reduction: 23.917 --> 9.85057 (21.3333 --> 1.33333, 26.5714 --> 2.85714, 28.2353 --> 4, 28.2162 --> 4.97297, 27.6364 --> 5.92208, 26.828 --> 6.87898, 25.918 --> 7.84858, 24.9608 --> 8.82889, 23.9812 --> 9.81676, 22.991 --> 10.8095 )
+[LOG] Overall execution time: 13.97 sec CPU time.
+[LOG] Overall execution time: 17 sec real time.
+Synthesis time: 16.98 sec (Real time) / 15.88 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 3.14 sec (Real time) / 3.11 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 6.52 sec (Real time) / 6.46 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 161 30 2 1 129
+Raw AIGER output size: aag 15734 20 2 1 15704
+=====================  add12n.aag =====================
+[LOG] Relation determinization time: 169.66 sec CPU time.
+[LOG] Relation determinization time: 179 sec real time.
+[LOG] Final circuit size: 71693 new AND gates.
+[LOG] Size before ABC: 259117 AND gates.
+[LOG] Size after ABC: 71691 AND gates.
+[LOG] Time for optimizing with ABC: 9 seconds.
+[LOG] Total time for all control signals: 169.39/169 sec (0/0 sec, 0/0 sec, 0/0 sec, 0.01/0 sec, 0.07/0 sec, 0.84/1 sec, 1.49/2 sec, 1.67/1 sec, 3.07/3 sec, 7.48/8 sec, 28.74/28 sec, 126.02/126 sec )
+[LOG] Nr of iterations: 21312 (3, 7, 17, 37, 77, 157, 317, 638, 1277, 2557, 5409, 10816 )
+[LOG] Total clause computation time: 108.24/116 sec (0/0 sec, 0/0 sec, 0/0 sec, 0.01/0.01 sec, 0.07/0.07 sec, 0.84/0.84 sec, 1.45/1.45 sec, 1.52/1.52 sec, 2.41/2.41 sec, 5.25/5.25 sec, 18.61/18.61 sec, 78.08/78.08 sec )
+[LOG] Total clause minimization time: 44.3/38 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0.03/0.03 sec, 0.12/0.12 sec, 0.51/0.51 sec, 1.67/1.67 sec, 7.85/7.85 sec, 34.12/34.12 sec )
+[LOG] Total clause size reduction: 595558 --> 259117 (76 --> 4, 222 --> 20, 576 --> 74, 1260 --> 196, 2584 --> 480, 5148 --> 1128, 10112 --> 2584, 19747 --> 5827, 38280 --> 12920, 74124 --> 28408, 151424 --> 65576, 292005 --> 141900 )
+[LOG] Average clause size reduction: 27.9447 --> 12.1583 (25.3333 --> 1.33333, 31.7143 --> 2.85714, 33.8824 --> 4.35294, 34.0541 --> 5.2973, 33.5584 --> 6.23377, 32.7898 --> 7.18471, 31.8991 --> 8.15142, 30.9514 --> 9.13323, 29.9765 --> 10.1175, 28.9887 --> 11.1099, 27.9948 --> 12.1235, 26.9975 --> 13.1195 )
+[LOG] Overall execution time: 169.66 sec CPU time.
+[LOG] Overall execution time: 179 sec real time.
+Synthesis time: 179.39 sec (Real time) / 164.36 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 13.07 sec (Real time) / 12.95 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 203.10 sec (Real time) / 202.79 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 251 36 2 1 213
+Raw AIGER output size: aag 71942 24 2 1 71906
+=====================  add12y.aag =====================
+[LOG] Relation determinization time: 154.35 sec CPU time.
+[LOG] Relation determinization time: 164 sec real time.
+[LOG] Final circuit size: 68524 new AND gates.
+[LOG] Size before ABC: 242180 AND gates.
+[LOG] Size after ABC: 68522 AND gates.
+[LOG] Time for optimizing with ABC: 10 seconds.
+[LOG] Total time for all control signals: 154.08/154 sec (0/0 sec, 0/0 sec, 0.01/0 sec, 0/0 sec, 0.07/0 sec, 0.69/1 sec, 1.23/1 sec, 1.6/2 sec, 2.99/3 sec, 7.31/7 sec, 27.06/27 sec, 113.12/113 sec )
+[LOG] Nr of iterations: 20491 (3, 7, 17, 37, 77, 157, 317, 637, 1277, 2557, 5168, 10237 )
+[LOG] Total clause computation time: 99.23/95 sec (0/0 sec, 0/0 sec, 0.01/0.01 sec, 0/0 sec, 0.06/0.06 sec, 0.68/0.68 sec, 1.18/1.18 sec, 1.45/1.45 sec, 2.4/2.4 sec, 4.99/4.99 sec, 17.61/17.61 sec, 70.85/70.85 sec )
+[LOG] Total clause minimization time: 39.25/46 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0.04/0.04 sec, 0.09/0.09 sec, 0.45/0.45 sec, 1.84/1.84 sec, 7.26/7.26 sec, 29.57/29.57 sec )
+[LOG] Total clause size reduction: 573146 --> 242180 (76 --> 4, 222 --> 20, 576 --> 68, 1260 --> 184, 2584 --> 456, 5148 --> 1080, 10112 --> 2488, 19716 --> 5624, 38280 --> 12536, 74124 --> 27640, 144676 --> 61016, 276372 --> 131064 )
+[LOG] Average clause size reduction: 27.9706 --> 11.8188 (25.3333 --> 1.33333, 31.7143 --> 2.85714, 33.8824 --> 4, 34.0541 --> 4.97297, 33.5584 --> 5.92208, 32.7898 --> 6.87898, 31.8991 --> 7.84858, 30.9513 --> 8.82889, 29.9765 --> 9.81676, 28.9887 --> 10.8095, 27.9946 --> 11.8065, 26.9974 --> 12.803 )
+[LOG] Overall execution time: 154.35 sec CPU time.
+[LOG] Overall execution time: 164 sec real time.
+Synthesis time: 163.52 sec (Real time) / 149.88 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 12.17 sec (Real time) / 12.05 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 196.65 sec (Real time) / 196.46 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 195 36 2 1 157
+Raw AIGER output size: aag 68717 24 2 1 68681
+=====================  add14n.aag =====================
+[LOG] Relation determinization time: 3526.85 sec CPU time.
+[LOG] Relation determinization time: 3577 sec real time.
+[LOG] Final circuit size: 293345 new AND gates.
+[LOG] Size before ABC: 1149752 AND gates.
+[LOG] Size after ABC: 293342 AND gates.
+[LOG] Time for optimizing with ABC: 50 seconds.
+[LOG] Total time for all control signals: 3525.45/3524 sec (0/0 sec, 0/0 sec, 0/0 sec, 0.01/0 sec, 0.07/0 sec, 0.81/1 sec, 1.38/1 sec, 1.62/2 sec, 3.06/3 sec, 7.45/7 sec, 26.8/27 sec, 112.31/112 sec, 657.47/657 sec, 2714.47/2714 sec )
+[LOG] Nr of iterations: 83187 (3, 7, 17, 37, 77, 157, 317, 637, 1277, 2557, 5117, 10237, 20477, 42270 )
+[LOG] Total clause computation time: 2083.07/1997 sec (0/0 sec, 0/0 sec, 0/0 sec, 0.01/0.01 sec, 0.07/0.07 sec, 0.8/0.8 sec, 1.32/1.32 sec, 1.48/1.48 sec, 2.38/2.38 sec, 5.31/5.31 sec, 17.35/17.35 sec, 69.48/69.48 sec, 431.74/431.74 sec, 1553.13/1553.13 sec )
+[LOG] Total clause minimization time: 850.92/888 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0.03/0.03 sec, 0.08/0.08 sec, 0.51/0.51 sec, 1.67/1.67 sec, 7.33/7.33 sec, 30.45/30.45 sec, 138.42/138.42 sec, 672.43/672.43 sec )
+[LOG] Total clause size reduction: 2659857 --> 1149752 (88 --> 4, 258 --> 20, 672 --> 68, 1476 --> 184, 3040 --> 456, 6084 --> 1080, 12008 --> 2488, 23532 --> 5624, 45936 --> 12536, 89460 --> 27640, 173944 --> 60408, 337788 --> 131064, 655232 --> 282616, 1310339 --> 625564 )
+[LOG] Average clause size reduction: 31.9744 --> 13.8213 (29.3333 --> 1.33333, 36.8571 --> 2.85714, 39.5294 --> 4, 39.8919 --> 4.97297, 39.4805 --> 5.92208, 38.7516 --> 6.87898, 37.8801 --> 7.84858, 36.9419 --> 8.82889, 35.9718 --> 9.81676, 34.9863 --> 10.8095, 33.9934 --> 11.8054, 32.9968 --> 12.803, 31.9984 --> 13.8016, 30.9993 --> 14.7992 )
+[LOG] Overall execution time: 3526.85 sec CPU time.
+[LOG] Overall execution time: 3577 sec real time.
+Synthesis time: 3576.61 sec (Real time) / 3261.71 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 89.35 sec (Real time) / 88.86 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 5338.92 sec (Real time) / 5337.60 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 295 42 2 1 251
+Raw AIGER output size: aag 293637 28 2 1 293596
+=====================  add14y.aag =====================
+[LOG] Relation determinization time: 3442.27 sec CPU time.
+[LOG] Relation determinization time: 3496 sec real time.
+[LOG] Final circuit size: 292813 new AND gates.
+[LOG] Size before ABC: 1146077 AND gates.
+[LOG] Size after ABC: 292811 AND gates.
+[LOG] Time for optimizing with ABC: 55 seconds.
+[LOG] Total time for all control signals: 3440.95/3440 sec (0/0 sec, 0/0 sec, 0/0 sec, 0.01/0 sec, 0.07/0 sec, 0.51/0 sec, 1.27/2 sec, 1.6/1 sec, 2.95/3 sec, 7.33/8 sec, 26.53/26 sec, 114.08/114 sec, 673.19/673 sec, 2613.41/2613 sec )
+[LOG] Nr of iterations: 82952 (3, 7, 17, 37, 77, 157, 317, 637, 1277, 2557, 5117, 10310, 20812, 41627 )
+[LOG] Total clause computation time: 2051.96/2068 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0.06/0.06 sec, 0.5/0.5 sec, 1.24/1.24 sec, 1.41/1.41 sec, 2.33/2.33 sec, 4.92/4.92 sec, 16.92/16.92 sec, 70.86/70.86 sec, 442.03/442.03 sec, 1511.69/1511.69 sec )
+[LOG] Total clause minimization time: 824.81/817 sec (0/0 sec, 0/0 sec, 0/0 sec, 0.01/0.01 sec, 0/0 sec, 0/0 sec, 0.03/0.03 sec, 0.15/0.15 sec, 0.39/0.39 sec, 1.95/1.95 sec, 7.54/7.54 sec, 30.52/30.52 sec, 139.81/139.81 sec, 644.41/644.41 sec )
+[LOG] Total clause size reduction: 2653053 --> 1146077 (88 --> 4, 258 --> 20, 672 --> 68, 1476 --> 184, 3040 --> 456, 6084 --> 1080, 12008 --> 2488, 23532 --> 5624, 45936 --> 12536, 89460 --> 27640, 173944 --> 60408, 340197 --> 132013, 665952 --> 287306, 1290406 --> 616250 )
+[LOG] Average clause size reduction: 31.983 --> 13.8161 (29.3333 --> 1.33333, 36.8571 --> 2.85714, 39.5294 --> 4, 39.8919 --> 4.97297, 39.4805 --> 5.92208, 38.7516 --> 6.87898, 37.8801 --> 7.84858, 36.9419 --> 8.82889, 35.9718 --> 9.81676, 34.9863 --> 10.8095, 33.9934 --> 11.8054, 32.9968 --> 12.8044, 31.9985 --> 13.8048, 30.9993 --> 14.8041 )
+[LOG] Overall execution time: 3442.27 sec CPU time.
+[LOG] Overall execution time: 3496 sec real time.
+Synthesis time: 3496.52 sec (Real time) / 3191.30 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 92.56 sec (Real time) / 92.19 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 8240.68 sec (Real time) / 8238.99 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 229 42 2 1 185
+Raw AIGER output size: aag 293040 28 2 1 292998
+=====================  add16n.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.05 sec (Real time) / 9143.29 sec (User CPU time)
+Timeout: 1
+=====================  add16y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.04 sec (Real time) / 9110.92 sec (User CPU time)
+Timeout: 1
+=====================  add18n.aag =====================
+=====================  add18y.aag =====================
+=====================  add20n.aag =====================
+=====================  add20y.aag =====================
+=====================  cnt2n.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec )
+[LOG] Nr of iterations: 1 (1 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Average clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.18 sec (Real time) / 0.12 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 35 2 3 1 30
+Raw AIGER output size: aag 35 1 3 1 31
+=====================  cnt2y.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec )
+[LOG] Nr of iterations: 1 (1 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Average clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.17 sec (Real time) / 0.13 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 16 2 3 1 11
+Raw AIGER output size: aag 16 1 3 1 12
+=====================  cnt3n.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 1 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec )
+[LOG] Nr of iterations: 1 (1 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Average clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.17 sec (Real time) / 0.12 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 51 2 4 1 45
+Raw AIGER output size: aag 51 1 4 1 46
+=====================  cnt3y.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec )
+[LOG] Nr of iterations: 1 (1 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Average clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.17 sec (Real time) / 0.12 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 23 2 4 1 17
+Raw AIGER output size: aag 23 1 4 1 18
+=====================  cnt4n.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec )
+[LOG] Nr of iterations: 1 (1 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Average clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.18 sec (Real time) / 0.12 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 67 2 5 1 60
+Raw AIGER output size: aag 67 1 5 1 61
+=====================  cnt4y.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec )
+[LOG] Nr of iterations: 1 (1 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Average clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.23 sec (Real time) / 0.13 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 30 2 5 1 23
+Raw AIGER output size: aag 30 1 5 1 24
+=====================  cnt5n.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 1 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec )
+[LOG] Nr of iterations: 1 (1 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Average clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.17 sec (Real time) / 0.13 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 83 2 6 1 75
+Raw AIGER output size: aag 83 1 6 1 76
+=====================  cnt5y.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec )
+[LOG] Nr of iterations: 1 (1 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Average clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.17 sec (Real time) / 0.12 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 37 2 6 1 29
+Raw AIGER output size: aag 37 1 6 1 30
+=====================  cnt6n.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec )
+[LOG] Nr of iterations: 1 (1 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Average clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.17 sec (Real time) / 0.12 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 99 2 7 1 90
+Raw AIGER output size: aag 99 1 7 1 91
+=====================  cnt6y.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec )
+[LOG] Nr of iterations: 1 (1 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Average clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.17 sec (Real time) / 0.13 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 44 2 7 1 35
+Raw AIGER output size: aag 44 1 7 1 36
+=====================  cnt7n.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec )
+[LOG] Nr of iterations: 1 (1 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Average clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.17 sec (Real time) / 0.14 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.06 sec (Real time) / 0.05 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 115 2 8 1 105
+Raw AIGER output size: aag 115 1 8 1 106
+=====================  cnt7y.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec )
+[LOG] Nr of iterations: 1 (1 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Average clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.17 sec (Real time) / 0.13 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.04 sec (Real time) / 0.04 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 51 2 8 1 41
+Raw AIGER output size: aag 51 1 8 1 42
+=====================  cnt8n.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec )
+[LOG] Nr of iterations: 1 (1 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Average clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.17 sec (Real time) / 0.12 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.17 sec (Real time) / 0.15 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 131 2 9 1 120
+Raw AIGER output size: aag 131 1 9 1 121
+=====================  cnt8y.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec )
+[LOG] Nr of iterations: 1 (1 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Average clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.17 sec (Real time) / 0.13 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.13 sec (Real time) / 0.12 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 58 2 9 1 47
+Raw AIGER output size: aag 58 1 9 1 48
+=====================  cnt9n.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec )
+[LOG] Nr of iterations: 1 (1 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Average clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.17 sec (Real time) / 0.13 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.60 sec (Real time) / 0.58 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 147 2 10 1 135
+Raw AIGER output size: aag 147 1 10 1 136
+=====================  cnt9y.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec )
+[LOG] Nr of iterations: 1 (1 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Average clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.17 sec (Real time) / 0.14 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.35 sec (Real time) / 0.34 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 65 2 10 1 53
+Raw AIGER output size: aag 65 1 10 1 54
+=====================  cnt10n.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 1 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec )
+[LOG] Nr of iterations: 1 (1 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Average clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.18 sec (Real time) / 0.13 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 1.76 sec (Real time) / 1.70 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 163 2 11 1 150
+Raw AIGER output size: aag 163 1 11 1 151
+=====================  cnt10y.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec )
+[LOG] Nr of iterations: 1 (1 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Average clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.18 sec (Real time) / 0.13 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 1.24 sec (Real time) / 1.16 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 72 2 11 1 59
+Raw AIGER output size: aag 72 1 11 1 60
+=====================  cnt11n.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec )
+[LOG] Nr of iterations: 1 (1 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Average clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.18 sec (Real time) / 0.12 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 6.85 sec (Real time) / 6.70 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 179 2 12 1 165
+Raw AIGER output size: aag 179 1 12 1 166
+=====================  cnt11y.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec )
+[LOG] Nr of iterations: 1 (1 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Average clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.22 sec (Real time) / 0.13 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 4.42 sec (Real time) / 4.26 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 79 2 12 1 65
+Raw AIGER output size: aag 79 1 12 1 66
+=====================  cnt15n.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec )
+[LOG] Nr of iterations: 1 (1 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Average clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.18 sec (Real time) / 0.12 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 1170.68 sec (Real time) / 1162.72 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 243 2 16 1 225
+Raw AIGER output size: aag 243 1 16 1 226
+=====================  cnt15y.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec )
+[LOG] Nr of iterations: 1 (1 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Average clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.18 sec (Real time) / 0.11 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 1908.11 sec (Real time) / 1898.28 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 107 2 16 1 89
+Raw AIGER output size: aag 107 1 16 1 90
+=====================  cnt20n.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec )
+[LOG] Nr of iterations: 1 (1 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Average clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.18 sec (Real time) / 0.12 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 1.21 sec (Real time) / 1.18 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 323 2 21 1 300
+Raw AIGER output size: aag 323 1 21 1 301
+=====================  cnt20y.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec )
+[LOG] Nr of iterations: 1 (1 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Average clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.18 sec (Real time) / 0.13 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+Command terminated by signal 9
+IC3 Model-checking time: 10000.29 sec (Real time) / 9965.47 sec (User CPU time)
+IC3-Model-checking: 0 (exit code: 137)
+Raw AIGER input size: aag 142 2 21 1 119
+Raw AIGER output size: aag 142 1 21 1 120
+=====================  cnt25n.aag =====================
+[LOG] Relation determinization time: 0.01 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec )
+[LOG] Nr of iterations: 1 (1 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Average clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Overall execution time: 0.01 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.19 sec (Real time) / 0.14 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.04 sec (Real time) / 0.04 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 2.23 sec (Real time) / 2.18 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 403 2 26 1 375
+Raw AIGER output size: aag 403 1 26 1 376
+=====================  cnt25y.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec )
+[LOG] Nr of iterations: 1 (1 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Average clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.18 sec (Real time) / 0.12 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+Command terminated by signal 9
+IC3 Model-checking time: 10000.27 sec (Real time) / 9967.43 sec (User CPU time)
+IC3-Model-checking: 0 (exit code: 137)
+Raw AIGER input size: aag 177 2 26 1 149
+Raw AIGER output size: aag 177 1 26 1 150
+=====================  cnt30n.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec )
+[LOG] Nr of iterations: 1 (1 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Average clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.19 sec (Real time) / 0.13 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.05 sec (Real time) / 0.05 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 1021.65 sec (Real time) / 1015.29 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 483 2 31 1 450
+Raw AIGER output size: aag 483 1 31 1 451
+=====================  cnt30y.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec )
+[LOG] Nr of iterations: 1 (1 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Average clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.18 sec (Real time) / 0.14 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.03 sec (Real time) / 0.03 sec (User CPU time)
+BLIMC-Model-checking: 1
+Command terminated by signal 9
+IC3 Model-checking time: 10000.23 sec (Real time) / 9970.34 sec (User CPU time)
+IC3-Model-checking: 0 (exit code: 137)
+Raw AIGER input size: aag 212 2 31 1 179
+Raw AIGER output size: aag 212 1 31 1 180
+=====================  mv2n.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 1 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec )
+[LOG] Nr of iterations: 1 (1 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Average clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.17 sec (Real time) / 0.13 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 24 2 3 1 19
+Raw AIGER output size: aag 24 1 3 1 20
+=====================  mv2y.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec )
+[LOG] Nr of iterations: 1 (1 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Average clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.18 sec (Real time) / 0.13 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 18 2 3 1 13
+Raw AIGER output size: aag 18 1 3 1 14
+=====================  mvs2n.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec )
+[LOG] Nr of iterations: 1 (1 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Average clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.17 sec (Real time) / 0.13 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 31 2 3 1 26
+Raw AIGER output size: aag 31 1 3 1 27
+=====================  mvs2y.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec )
+[LOG] Nr of iterations: 1 (1 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Average clause size reduction: 0 --> 0 (0 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.17 sec (Real time) / 0.13 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 15 2 3 1 10
+Raw AIGER output size: aag 15 1 3 1 11
+=====================  mv4n.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 1 sec real time.
+[LOG] Final circuit size: 3 new AND gates.
+[LOG] Size before ABC: 6 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 5 (3, 1, 1 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 22 --> 4 (22 --> 4, 0 --> 0, 0 --> 0 )
+[LOG] Average clause size reduction: 4.4 --> 0.8 (7.33333 --> 1.33333, 0 --> 0, 0 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.19 sec (Real time) / 0.12 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 80 6 5 1 69
+Raw AIGER output size: aag 80 3 5 1 72
+=====================  mv4y.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 3 new AND gates.
+[LOG] Size before ABC: 6 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 5 (3, 1, 1 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 22 --> 4 (22 --> 4, 0 --> 0, 0 --> 0 )
+[LOG] Average clause size reduction: 4.4 --> 0.8 (7.33333 --> 1.33333, 0 --> 0, 0 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.18 sec (Real time) / 0.13 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 52 6 5 1 41
+Raw AIGER output size: aag 52 3 5 1 44
+=====================  mvs4n.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 3 new AND gates.
+[LOG] Size before ABC: 6 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 5 (3, 1, 1 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 22 --> 4 (22 --> 4, 0 --> 0, 0 --> 0 )
+[LOG] Average clause size reduction: 4.4 --> 0.8 (7.33333 --> 1.33333, 0 --> 0, 0 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.17 sec (Real time) / 0.12 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 69 6 5 1 58
+Raw AIGER output size: aag 69 3 5 1 61
+=====================  mvs4y.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 3 new AND gates.
+[LOG] Size before ABC: 6 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 5 (3, 1, 1 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 22 --> 4 (22 --> 4, 0 --> 0, 0 --> 0 )
+[LOG] Average clause size reduction: 4.4 --> 0.8 (7.33333 --> 1.33333, 0 --> 0, 0 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.19 sec (Real time) / 0.12 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 37 6 5 1 26
+Raw AIGER output size: aag 37 3 5 1 29
+=====================  mv8n.aag =====================
+[LOG] Relation determinization time: 0.02 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 7 new AND gates.
+[LOG] Size before ABC: 198 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0.02/0 sec (0.01/0 sec, 0.01/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 39 (33, 1, 1, 1, 1, 1, 1 )
+[LOG] Total clause computation time: 0.02/0 sec (0.01/0.01 sec, 0.01/0.01 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 736 --> 192 (736 --> 192, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0 )
+[LOG] Average clause size reduction: 18.8718 --> 4.92308 (22.303 --> 5.81818, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0 )
+[LOG] Overall execution time: 0.02 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.20 sec (Real time) / 0.15 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 192 14 9 1 169
+Raw AIGER output size: aag 192 7 9 1 176
+=====================  mv8y.aag =====================
+[LOG] Relation determinization time: 0.02 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 7 new AND gates.
+[LOG] Size before ABC: 198 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0.02/0 sec (0/0 sec, 0.02/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 39 (33, 1, 1, 1, 1, 1, 1 )
+[LOG] Total clause computation time: 0.02/0 sec (0/0 sec, 0.02/0.02 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 736 --> 192 (736 --> 192, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0 )
+[LOG] Average clause size reduction: 18.8718 --> 4.92308 (22.303 --> 5.81818, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0 )
+[LOG] Overall execution time: 0.02 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.19 sec (Real time) / 0.14 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 120 14 9 1 97
+Raw AIGER output size: aag 120 7 9 1 104
+=====================  mvs8n.aag =====================
+[LOG] Relation determinization time: 0.02 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 7 new AND gates.
+[LOG] Size before ABC: 198 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0.02/0 sec (0/0 sec, 0.02/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 39 (33, 1, 1, 1, 1, 1, 1 )
+[LOG] Total clause computation time: 0.02/0 sec (0/0 sec, 0.02/0.02 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 736 --> 192 (736 --> 192, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0 )
+[LOG] Average clause size reduction: 18.8718 --> 4.92308 (22.303 --> 5.81818, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0 )
+[LOG] Overall execution time: 0.02 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.19 sec (Real time) / 0.15 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 145 14 9 1 122
+Raw AIGER output size: aag 145 7 9 1 129
+=====================  mvs8y.aag =====================
+[LOG] Relation determinization time: 0.02 sec CPU time.
+[LOG] Relation determinization time: 1 sec real time.
+[LOG] Final circuit size: 7 new AND gates.
+[LOG] Size before ABC: 198 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Total time for all control signals: 0.01/0 sec (0/0 sec, 0.01/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 39 (33, 1, 1, 1, 1, 1, 1 )
+[LOG] Total clause computation time: 0.01/0 sec (0/0 sec, 0.01/0.01 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 736 --> 192 (736 --> 192, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0 )
+[LOG] Average clause size reduction: 18.8718 --> 4.92308 (22.303 --> 5.81818, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0 )
+[LOG] Overall execution time: 0.02 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.19 sec (Real time) / 0.15 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 81 14 9 1 58
+Raw AIGER output size: aag 81 7 9 1 65
+=====================  mv12n.aag =====================
+[LOG] Relation determinization time: 0.15 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 11 new AND gates.
+[LOG] Size before ABC: 5130 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0.15/0 sec (0.07/0 sec, 0.07/0 sec, 0.01/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 523 (513, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 )
+[LOG] Total clause computation time: 0.13/0 sec (0.05/0.05 sec, 0.07/0.07 sec, 0.01/0.01 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0.01/0 sec (0.01/0.01 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 17920 --> 5120 (17920 --> 5120, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0 )
+[LOG] Average clause size reduction: 34.2639 --> 9.78967 (34.9318 --> 9.98051, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0 )
+[LOG] Overall execution time: 0.15 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.33 sec (Real time) / 0.26 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 304 22 13 1 269
+Raw AIGER output size: aag 304 11 13 1 280
+=====================  mv12y.aag =====================
+[LOG] Relation determinization time: 0.12 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 11 new AND gates.
+[LOG] Size before ABC: 5130 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0.12/0 sec (0.07/0 sec, 0.04/0 sec, 0.01/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 523 (513, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 )
+[LOG] Total clause computation time: 0.09/0 sec (0.04/0.04 sec, 0.04/0.04 sec, 0.01/0.01 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0.01/0 sec (0.01/0.01 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 17920 --> 5120 (17920 --> 5120, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0 )
+[LOG] Average clause size reduction: 34.2639 --> 9.78967 (34.9318 --> 9.98051, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0 )
+[LOG] Overall execution time: 0.12 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.32 sec (Real time) / 0.22 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 188 22 13 1 153
+Raw AIGER output size: aag 188 11 13 1 164
+=====================  mvs12n.aag =====================
+[LOG] Relation determinization time: 0.13 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 11 new AND gates.
+[LOG] Size before ABC: 5130 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0.12/0 sec (0.06/0 sec, 0.05/0 sec, 0.01/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 523 (513, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 )
+[LOG] Total clause computation time: 0.1/0 sec (0.04/0.04 sec, 0.05/0.05 sec, 0.01/0.01 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0.01/0 sec (0.01/0.01 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 17920 --> 5120 (17920 --> 5120, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0 )
+[LOG] Average clause size reduction: 34.2639 --> 9.78967 (34.9318 --> 9.98051, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0 )
+[LOG] Overall execution time: 0.13 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.30 sec (Real time) / 0.22 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 221 22 13 1 186
+Raw AIGER output size: aag 221 11 13 1 197
+=====================  mvs12y.aag =====================
+[LOG] Relation determinization time: 0.11 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 11 new AND gates.
+[LOG] Size before ABC: 5130 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0.11/0 sec (0.05/0 sec, 0.06/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 523 (513, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 )
+[LOG] Total clause computation time: 0.09/0 sec (0.03/0.03 sec, 0.06/0.06 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0.01/0 sec (0.01/0.01 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 17920 --> 5120 (17920 --> 5120, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0 )
+[LOG] Average clause size reduction: 34.2639 --> 9.78967 (34.9318 --> 9.98051, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0 )
+[LOG] Overall execution time: 0.11 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.30 sec (Real time) / 0.21 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 125 22 13 1 90
+Raw AIGER output size: aag 125 11 13 1 101
+=====================  mv16n.aag =====================
+[LOG] Relation determinization time: 20.34 sec CPU time.
+[LOG] Relation determinization time: 21 sec real time.
+[LOG] Final circuit size: 15 new AND gates.
+[LOG] Size before ABC: 114702 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 20.26/21 sec (2.81/3 sec, 12.69/13 sec, 2.95/3 sec, 1.62/1 sec, 0.17/1 sec, 0.02/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 8207 (8193, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 )
+[LOG] Total clause computation time: 18.77/20 sec (1.32/1.32 sec, 12.69/12.69 sec, 2.95/2.95 sec, 1.62/1.62 sec, 0.17/0.17 sec, 0.02/0.02 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0.5/0 sec (0.5/0.5 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 385024 --> 114688 (385024 --> 114688, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0 )
+[LOG] Average clause size reduction: 46.9141 --> 13.9744 (46.9943 --> 13.9983, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0 )
+[LOG] Overall execution time: 20.34 sec CPU time.
+[LOG] Overall execution time: 21 sec real time.
+Synthesis time: 20.92 sec (Real time) / 18.86 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 416 30 17 1 369
+Raw AIGER output size: aag 416 15 17 1 384
+=====================  mv16y.aag =====================
+[LOG] Relation determinization time: 18.49 sec CPU time.
+[LOG] Relation determinization time: 19 sec real time.
+[LOG] Final circuit size: 15 new AND gates.
+[LOG] Size before ABC: 114702 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 18.4/19 sec (3.3/4 sec, 12.32/12 sec, 2.14/2 sec, 0.55/1 sec, 0.09/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 8207 (8193, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 )
+[LOG] Total clause computation time: 16.62/16 sec (1.52/1.52 sec, 12.32/12.32 sec, 2.14/2.14 sec, 0.55/0.55 sec, 0.09/0.09 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0.82/1 sec (0.82/0.82 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 385024 --> 114688 (385024 --> 114688, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0 )
+[LOG] Average clause size reduction: 46.9141 --> 13.9744 (46.9943 --> 13.9983, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0 )
+[LOG] Overall execution time: 18.49 sec CPU time.
+[LOG] Overall execution time: 19 sec real time.
+Synthesis time: 18.70 sec (Real time) / 17.37 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 256 30 17 1 209
+Raw AIGER output size: aag 256 15 17 1 224
+=====================  mvs16n.aag =====================
+[LOG] Relation determinization time: 14.31 sec CPU time.
+[LOG] Relation determinization time: 15 sec real time.
+[LOG] Final circuit size: 15 new AND gates.
+[LOG] Size before ABC: 114702 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Total time for all control signals: 14.23/14 sec (2.7/3 sec, 9.05/9 sec, 1.95/2 sec, 0.46/0 sec, 0.06/0 sec, 0.01/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 8207 (8193, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 )
+[LOG] Total clause computation time: 12.79/13 sec (1.26/1.26 sec, 9.05/9.05 sec, 1.95/1.95 sec, 0.46/0.46 sec, 0.06/0.06 sec, 0.01/0.01 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0.43/0 sec (0.43/0.43 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 385024 --> 114688 (385024 --> 114688, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0 )
+[LOG] Average clause size reduction: 46.9141 --> 13.9744 (46.9943 --> 13.9983, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0 )
+[LOG] Overall execution time: 14.31 sec CPU time.
+[LOG] Overall execution time: 15 sec real time.
+Synthesis time: 14.53 sec (Real time) / 13.30 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 297 30 17 1 250
+Raw AIGER output size: aag 297 15 17 1 265
+=====================  mvs16y.aag =====================
+[LOG] Relation determinization time: 15.06 sec CPU time.
+[LOG] Relation determinization time: 15 sec real time.
+[LOG] Final circuit size: 15 new AND gates.
+[LOG] Size before ABC: 114702 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 14.97/15 sec (2.62/2 sec, 9.06/10 sec, 2.56/2 sec, 0.66/1 sec, 0.07/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 8207 (8193, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 )
+[LOG] Total clause computation time: 13.63/14 sec (1.28/1.28 sec, 9.06/9.06 sec, 2.56/2.56 sec, 0.66/0.66 sec, 0.07/0.07 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0.43/0 sec (0.43/0.43 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 385024 --> 114688 (385024 --> 114688, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0 )
+[LOG] Average clause size reduction: 46.9141 --> 13.9744 (46.9943 --> 13.9983, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0 )
+[LOG] Overall execution time: 15.06 sec CPU time.
+[LOG] Overall execution time: 15 sec real time.
+Synthesis time: 15.27 sec (Real time) / 13.95 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 169 30 17 1 122
+Raw AIGER output size: aag 169 15 17 1 137
+=====================  mvs18n.aag =====================
+[LOG] Relation determinization time: 357.47 sec CPU time.
+[LOG] Relation determinization time: 358 sec real time.
+[LOG] Final circuit size: 17 new AND gates.
+[LOG] Size before ABC: 524304 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Total time for all control signals: 356.92/357 sec (41.76/42 sec, 226.31/226 sec, 68.55/69 sec, 14.33/14 sec, 4.2/5 sec, 1.48/1 sec, 0.28/0 sec, 0.01/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 32785 (32769, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 )
+[LOG] Total clause computation time: 331.92/330 sec (16.78/16.78 sec, 226.29/226.29 sec, 68.55/68.55 sec, 14.33/14.33 sec, 4.2/4.2 sec, 1.48/1.48 sec, 0.28/0.28 sec, 0.01/0.01 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 4.04/2 sec (4.04/4.04 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 1736704 --> 524288 (1736704 --> 524288, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0 )
+[LOG] Average clause size reduction: 52.9725 --> 15.9917 (52.9984 --> 15.9995, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0 )
+[LOG] Overall execution time: 357.47 sec CPU time.
+[LOG] Overall execution time: 358 sec real time.
+Synthesis time: 357.78 sec (Real time) / 329.75 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 335 34 19 1 282
+Raw AIGER output size: aag 335 17 19 1 299
+=====================  mvs18y.aag =====================
+[LOG] Relation determinization time: 360.47 sec CPU time.
+[LOG] Relation determinization time: 361 sec real time.
+[LOG] Final circuit size: 17 new AND gates.
+[LOG] Size before ABC: 524304 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Total time for all control signals: 359.94/360 sec (39.96/40 sec, 219.08/219 sec, 71.88/72 sec, 22.12/22 sec, 5.83/6 sec, 0.79/1 sec, 0.22/0 sec, 0.02/0 sec, 0.03/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0.01/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 32785 (32769, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 )
+[LOG] Total clause computation time: 334.69/340 sec (14.72/14.72 sec, 219.07/219.07 sec, 71.88/71.88 sec, 22.12/22.12 sec, 5.83/5.83 sec, 0.79/0.79 sec, 0.22/0.22 sec, 0.02/0.02 sec, 0.03/0.03 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0.01/0.01 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 3.98/2 sec (3.98/3.98 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 1736704 --> 524288 (1736704 --> 524288, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0 )
+[LOG] Average clause size reduction: 52.9725 --> 15.9917 (52.9984 --> 15.9995, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0 )
+[LOG] Overall execution time: 360.47 sec CPU time.
+[LOG] Overall execution time: 361 sec real time.
+Synthesis time: 360.78 sec (Real time) / 334.82 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 191 34 19 1 138
+Raw AIGER output size: aag 191 17 19 1 155
+=====================  mv20n.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.25 sec (Real time) / 9222.00 sec (User CPU time)
+Timeout: 1
+=====================  mv20y.aag =====================
+[LOG] Relation determinization time: 9433.98 sec CPU time.
+[LOG] Relation determinization time: 9434 sec real time.
+[LOG] Final circuit size: 19 new AND gates.
+[LOG] Size before ABC: 2359314 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Total time for all control signals: 9431.56/9431 sec (1798.82/1799 sec, 5899.18/5899 sec, 1241.66/1242 sec, 432.98/432 sec, 43.85/44 sec, 11.22/12 sec, 3.18/3 sec, 0.47/0 sec, 0.1/0 sec, 0.07/0 sec, 0.02/0 sec, 0/0 sec, 0/0 sec, 0.01/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 131091 (131073, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 )
+[LOG] Total clause computation time: 8252.49/8241 sec (619.82/619.82 sec, 5899.17/5899.17 sec, 1241.66/1241.66 sec, 432.97/432.97 sec, 43.85/43.85 sec, 11.21/11.21 sec, 3.17/3.17 sec, 0.46/0.46 sec, 0.09/0.09 sec, 0.06/0.06 sec, 0.02/0.02 sec, 0/0 sec, 0/0 sec, 0.01/0.01 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 338.61/342 sec (338.61/338.61 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 7733248 --> 2359296 (7733248 --> 2359296, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0 )
+[LOG] Average clause size reduction: 58.9914 --> 17.9974 (58.9995 --> 17.9999, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0 )
+[LOG] Overall execution time: 9433.98 sec CPU time.
+[LOG] Overall execution time: 9434 sec real time.
+Synthesis time: 9434.31 sec (Real time) / 8740.82 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.03 sec (Real time) / 0.04 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 324 38 21 1 265
+Raw AIGER output size: aag 324 19 21 1 284
+=====================  mvs20n.aag =====================
+=====================  mvs20y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.16 sec (Real time) / 9279.96 sec (User CPU time)
+Timeout: 1
+=====================  mvs22n.aag =====================
+=====================  mvs22y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.02 sec (Real time) / 5339.12 sec (User CPU time)
+Timeout: 1
+=====================  mvs24n.aag =====================
+=====================  mvs24y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 5017.48 sec (User CPU time)
+Timeout: 1
+=====================  mvs28n.aag =====================
+=====================  mvs28y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 4982.37 sec (User CPU time)
+Timeout: 1
+=====================  mult2.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 8 new AND gates.
+[LOG] Size before ABC: 24 AND gates.
+[LOG] Size after ABC: 8 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 18 (3, 6, 4, 5 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 89 --> 24 (16 --> 2, 35 --> 12, 18 --> 6, 20 --> 4 )
+[LOG] Average clause size reduction: 4.94444 --> 1.33333 (5.33333 --> 0.666667, 5.83333 --> 2, 4.5 --> 1.5, 4 --> 0.8 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.18 sec (Real time) / 0.13 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 32 8 0 1 24
+Raw AIGER output size: aag 40 4 0 1 32
+=====================  mult4.aag =====================
+[LOG] Relation determinization time: 2.43 sec CPU time.
+[LOG] Relation determinization time: 3 sec real time.
+[LOG] Final circuit size: 559 new AND gates.
+[LOG] Size before ABC: 1839 AND gates.
+[LOG] Size after ABC: 559 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 2.43/3 sec (0/0 sec, 0/0 sec, 0.01/0 sec, 0/0 sec, 0.1/0 sec, 0.56/1 sec, 0.01/0 sec, 1.75/2 sec )
+[LOG] Nr of iterations: 303 (3, 6, 15, 51, 73, 74, 56, 25 )
+[LOG] Total clause computation time: 2.41/3 sec (0/0 sec, 0/0 sec, 0.01/0.01 sec, 0/0 sec, 0.1/0.1 sec, 0.56/0.56 sec, 0/0 sec, 1.74/1.74 sec )
+[LOG] Total clause minimization time: 0.02/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0.01/0.01 sec, 0.01/0.01 sec )
+[LOG] Total clause size reduction: 3386 --> 1839 (32 --> 2, 75 --> 12, 196 --> 56, 650 --> 309, 864 --> 476, 803 --> 488, 550 --> 359, 216 --> 137 )
+[LOG] Average clause size reduction: 11.1749 --> 6.06931 (10.6667 --> 0.666667, 12.5 --> 2, 13.0667 --> 3.73333, 12.7451 --> 6.05882, 11.8356 --> 6.52055, 10.8514 --> 6.59459, 9.82143 --> 6.41071, 8.64 --> 5.48 )
+[LOG] Overall execution time: 2.43 sec CPU time.
+[LOG] Overall execution time: 3 sec real time.
+Synthesis time: 2.71 sec (Real time) / 2.63 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.41 sec (Real time) / 0.41 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.04 sec (Real time) / 0.04 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 144 16 0 1 128
+Raw AIGER output size: aag 703 8 0 1 687
+=====================  mult5.aag =====================
+[LOG] Relation determinization time: 4.81 sec CPU time.
+[LOG] Relation determinization time: 5 sec real time.
+[LOG] Final circuit size: 2926 new AND gates.
+[LOG] Size before ABC: 13579 AND gates.
+[LOG] Size after ABC: 2926 AND gates.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Total time for all control signals: 4.8/4 sec (0/0 sec, 0/0 sec, 0/0 sec, 0.01/0 sec, 0.19/0 sec, 0.1/0 sec, 1.98/2 sec, 0.24/0 sec, 2.19/2 sec, 0.09/0 sec )
+[LOG] Nr of iterations: 1581 (3, 6, 15, 55, 203, 304, 344, 375, 176, 100 )
+[LOG] Total clause computation time: 4.55/4 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0.19/0.19 sec, 0.06/0.06 sec, 1.92/1.92 sec, 0.2/0.2 sec, 2.13/2.13 sec, 0.05/0.05 sec )
+[LOG] Total clause minimization time: 0.2/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0.01/0.01 sec, 0/0 sec, 0.03/0.03 sec, 0.04/0.04 sec, 0.03/0.03 sec, 0.06/0.06 sec, 0.03/0.03 sec )
+[LOG] Total clause size reduction: 21935 --> 13579 (40 --> 2, 95 --> 12, 252 --> 56, 918 --> 338, 3232 --> 1686, 4545 --> 2726, 4802 --> 3123, 4862 --> 3366, 2100 --> 1470, 1089 --> 800 )
+[LOG] Average clause size reduction: 13.8741 --> 8.58887 (13.3333 --> 0.666667, 15.8333 --> 2, 16.8 --> 3.73333, 16.6909 --> 6.14545, 15.9212 --> 8.30542, 14.9507 --> 8.96711, 13.9593 --> 9.07849, 12.9653 --> 8.976, 11.9318 --> 8.35227, 10.89 --> 8 )
+[LOG] Overall execution time: 4.81 sec CPU time.
+[LOG] Overall execution time: 5 sec real time.
+Synthesis time: 5.47 sec (Real time) / 5.29 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 1.50 sec (Real time) / 1.49 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.46 sec (Real time) / 0.45 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 237 20 0 1 217
+Raw AIGER output size: aag 3163 10 0 1 3143
+=====================  mult6.aag =====================
+[LOG] Relation determinization time: 24.16 sec CPU time.
+[LOG] Relation determinization time: 27 sec real time.
+[LOG] Final circuit size: 14888 new AND gates.
+[LOG] Size before ABC: 94230 AND gates.
+[LOG] Size after ABC: 14887 AND gates.
+[LOG] Time for optimizing with ABC: 3 seconds.
+[LOG] Total time for all control signals: 24.09/24 sec (0.01/0 sec, 0/0 sec, 0/0 sec, 0.01/0 sec, 0.38/1 sec, 0.32/0 sec, 2.96/3 sec, 2.87/3 sec, 3.69/3 sec, 5/5 sec, 6.11/7 sec, 2.74/2 sec )
+[LOG] Nr of iterations: 8438 (3, 6, 18, 67, 198, 847, 1198, 1412, 1421, 1423, 1332, 513 )
+[LOG] Total clause computation time: 14.88/18 sec (0.01/0.01 sec, 0/0 sec, 0/0 sec, 0.01/0.01 sec, 0.37/0.37 sec, 0.22/0.22 sec, 2.55/2.55 sec, 1.85/1.85 sec, 2.09/2.09 sec, 2.75/2.75 sec, 3.44/3.44 sec, 1.59/1.59 sec )
+[LOG] Total clause minimization time: 7.16/6 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0.01/0.01 sec, 0.07/0.07 sec, 0.28/0.28 sec, 0.79/0.79 sec, 1.31/1.31 sec, 1.81/1.81 sec, 1.98/1.98 sec, 0.91/0.91 sec )
+[LOG] Total clause size reduction: 136810 --> 94230 (48 --> 2, 115 --> 12, 374 --> 70, 1386 --> 483, 3940 --> 1694, 16074 --> 8973, 21546 --> 13185, 23987 --> 15931, 22720 --> 16079, 21330 --> 16386, 18634 --> 15552, 6656 --> 5863 )
+[LOG] Average clause size reduction: 16.2136 --> 11.1673 (16 --> 0.666667, 19.1667 --> 2, 20.7778 --> 3.88889, 20.6866 --> 7.20896, 19.899 --> 8.55556, 18.9776 --> 10.5939, 17.985 --> 11.0058, 16.988 --> 11.2826, 15.9887 --> 11.3153, 14.9895 --> 11.5151, 13.9895 --> 11.6757, 12.9747 --> 11.4288 )
+[LOG] Overall execution time: 24.16 sec CPU time.
+[LOG] Overall execution time: 27 sec real time.
+Synthesis time: 27.05 sec (Real time) / 25.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 6.03 sec (Real time) / 5.97 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 5.31 sec (Real time) / 5.26 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 346 24 0 1 322
+Raw AIGER output size: aag 15233 12 0 1 15210
+=====================  mult7.aag =====================
+[LOG] Relation determinization time: 859.5 sec CPU time.
+[LOG] Relation determinization time: 868 sec real time.
+[LOG] Final circuit size: 71028 new AND gates.
+[LOG] Size before ABC: 569941 AND gates.
+[LOG] Size after ABC: 71028 AND gates.
+[LOG] Time for optimizing with ABC: 9 seconds.
+[LOG] Total time for all control signals: 858.89/858 sec (0.01/0 sec, 0/0 sec, 0/0 sec, 0.02/0 sec, 0.22/0 sec, 0.33/0 sec, 5.28/6 sec, 19.16/19 sec, 60.31/60 sec, 88.8/89 sec, 126.54/126 sec, 151.43/151 sec, 174.45/174 sec, 232.34/233 sec )
+[LOG] Nr of iterations: 42647 (3, 6, 16, 54, 188, 811, 3341, 4981, 5785, 5871, 5879, 5078, 4906, 5728 )
+[LOG] Total clause computation time: 443.27/462 sec (0.01/0.01 sec, 0/0 sec, 0/0 sec, 0.02/0.02 sec, 0.22/0.22 sec, 0.2/0.2 sec, 3.91/3.91 sec, 11.92/11.92 sec, 39.74/39.74 sec, 48.57/48.57 sec, 69.16/69.16 sec, 75.24/75.24 sec, 84/84 sec, 110.28/110.28 sec )
+[LOG] Total clause minimization time: 248.04/249 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0.1/0.1 sec, 1.03/1.03 sec, 5.41/5.41 sec, 14.56/14.56 sec, 26.28/26.28 sec, 38.48/38.48 sec, 43.59/43.59 sec, 51.01/51.01 sec, 67.58/67.58 sec )
+[LOG] Total clause size reduction: 786792 --> 569941 (56 --> 2, 135 --> 12, 390 --> 62, 1325 --> 334, 4488 --> 1566, 18630 --> 8585, 73480 --> 42867, 104580 --> 65710, 115680 --> 77471, 111530 --> 78621, 105804 --> 80148, 86309 --> 69255, 78480 --> 66980, 85905 --> 78328 )
+[LOG] Average clause size reduction: 18.4489 --> 13.3642 (18.6667 --> 0.666667, 22.5 --> 2, 24.375 --> 3.875, 24.537 --> 6.18519, 23.8723 --> 8.32979, 22.9716 --> 10.5857, 21.9934 --> 12.8306, 20.9958 --> 13.1921, 19.9965 --> 13.3917, 18.9968 --> 13.3914, 17.9969 --> 13.6329, 16.9967 --> 13.6382, 15.9967 --> 13.6527, 14.9974 --> 13.6746 )
+[LOG] Overall execution time: 859.5 sec CPU time.
+[LOG] Overall execution time: 868 sec real time.
+Synthesis time: 868.44 sec (Real time) / 771.77 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 56.89 sec (Real time) / 56.63 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 128.48 sec (Real time) / 128.25 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 483 28 0 1 455
+Raw AIGER output size: aag 71511 14 0 1 71483
+=====================  mult8.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.06 sec (Real time) / 9013.15 sec (User CPU time)
+Timeout: 1
+=====================  mult9.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.07 sec (Real time) / 8767.81 sec (User CPU time)
+Timeout: 1
+=====================  mult10.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.04 sec (Real time) / 8798.72 sec (User CPU time)
+Timeout: 1
+=====================  mult11.aag =====================
+=====================  mult12.aag =====================
+=====================  mult13.aag =====================
+=====================  mult14.aag =====================
+=====================  mult15.aag =====================
+=====================  mult16.aag =====================
+=====================  bs8n.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 1 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec )
+[LOG] Nr of iterations: 2 (2 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 12 --> 0 (12 --> 0 )
+[LOG] Average clause size reduction: 6 --> 0 (6 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.19 sec (Real time) / 0.14 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 95 4 9 1 82
+Raw AIGER output size: aag 95 3 9 1 83
+=====================  bs8y.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec )
+[LOG] Nr of iterations: 2 (2 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 12 --> 0 (12 --> 0 )
+[LOG] Average clause size reduction: 6 --> 0 (6 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.18 sec (Real time) / 0.14 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 93 4 9 1 80
+Raw AIGER output size: aag 93 3 9 1 81
+=====================  bs16n.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec )
+[LOG] Nr of iterations: 2 (2 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 22 --> 0 (22 --> 0 )
+[LOG] Average clause size reduction: 11 --> 0 (11 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.18 sec (Real time) / 0.13 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 280 5 17 1 258
+Raw AIGER output size: aag 280 4 17 1 259
+=====================  bs16y.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec )
+[LOG] Nr of iterations: 2 (2 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 22 --> 0 (22 --> 0 )
+[LOG] Average clause size reduction: 11 --> 0 (11 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.19 sec (Real time) / 0.14 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 278 5 17 1 256
+Raw AIGER output size: aag 278 4 17 1 257
+=====================  bs32n.aag =====================
+[LOG] Relation determinization time: 0.02 sec CPU time.
+[LOG] Relation determinization time: 1 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Total time for all control signals: 0.02/0 sec (0.02/0 sec )
+[LOG] Nr of iterations: 2 (2 )
+[LOG] Total clause computation time: 0.02/0 sec (0.02/0.02 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 39 --> 0 (39 --> 0 )
+[LOG] Average clause size reduction: 19.5 --> 0 (19.5 --> 0 )
+[LOG] Overall execution time: 0.02 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.20 sec (Real time) / 0.16 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 649 6 33 1 610
+Raw AIGER output size: aag 649 5 33 1 611
+=====================  bs32y.aag =====================
+[LOG] Relation determinization time: 0.02 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0.02/0 sec (0.02/0 sec )
+[LOG] Nr of iterations: 2 (2 )
+[LOG] Total clause computation time: 0.02/0 sec (0.02/0.02 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 39 --> 0 (39 --> 0 )
+[LOG] Average clause size reduction: 19.5 --> 0 (19.5 --> 0 )
+[LOG] Overall execution time: 0.02 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.20 sec (Real time) / 0.15 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 647 6 33 1 608
+Raw AIGER output size: aag 647 5 33 1 609
+=====================  bs64n.aag =====================
+[LOG] Relation determinization time: 0.07 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0.06/0 sec (0.06/0 sec )
+[LOG] Nr of iterations: 2 (2 )
+[LOG] Total clause computation time: 0.06/0 sec (0.06/0.06 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 72 --> 0 (72 --> 0 )
+[LOG] Average clause size reduction: 36 --> 0 (36 --> 0 )
+[LOG] Overall execution time: 0.07 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.24 sec (Real time) / 0.19 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 1482 7 65 1 1410
+Raw AIGER output size: aag 1482 6 65 1 1411
+=====================  bs64y.aag =====================
+[LOG] Relation determinization time: 0.06 sec CPU time.
+[LOG] Relation determinization time: 1 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0.06/1 sec (0.06/1 sec )
+[LOG] Nr of iterations: 2 (2 )
+[LOG] Total clause computation time: 0.06/1 sec (0.06/0.06 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 72 --> 0 (72 --> 0 )
+[LOG] Average clause size reduction: 36 --> 0 (36 --> 0 )
+[LOG] Overall execution time: 0.06 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.25 sec (Real time) / 0.20 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 1480 7 65 1 1408
+Raw AIGER output size: aag 1480 6 65 1 1409
+=====================  bs128n.aag =====================
+[LOG] Relation determinization time: 0.24 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0.21/0 sec (0.21/0 sec )
+[LOG] Nr of iterations: 2 (2 )
+[LOG] Total clause computation time: 0.21/0 sec (0.21/0.21 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 137 --> 0 (137 --> 0 )
+[LOG] Average clause size reduction: 68.5 --> 0 (68.5 --> 0 )
+[LOG] Overall execution time: 0.24 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.44 sec (Real time) / 0.37 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.06 sec (Real time) / 0.06 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.02 sec (Real time) / 0.01 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 3339 8 129 1 3202
+Raw AIGER output size: aag 3339 7 129 1 3203
+=====================  bs128y.aag =====================
+[LOG] Relation determinization time: 0.24 sec CPU time.
+[LOG] Relation determinization time: 1 sec real time.
+[LOG] Final circuit size: 1 new AND gates.
+[LOG] Size before ABC: 1 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0.21/0 sec (0.21/0 sec )
+[LOG] Nr of iterations: 2 (2 )
+[LOG] Total clause computation time: 0.21/0 sec (0.21/0.21 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec )
+[LOG] Total clause size reduction: 137 --> 0 (137 --> 0 )
+[LOG] Average clause size reduction: 68.5 --> 0 (68.5 --> 0 )
+[LOG] Overall execution time: 0.24 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.43 sec (Real time) / 0.37 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.06 sec (Real time) / 0.06 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 3337 8 129 1 3200
+Raw AIGER output size: aag 3337 7 129 1 3201
+=====================  stay2n.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 3 new AND gates.
+[LOG] Size before ABC: 3 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 4 (1, 1, 2 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 7 --> 0 (0 --> 0, 0 --> 0, 7 --> 0 )
+[LOG] Average clause size reduction: 1.75 --> 0 (0 --> 0, 0 --> 0, 3.5 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.17 sec (Real time) / 0.12 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 40 5 4 1 31
+Raw AIGER output size: aag 40 2 4 1 34
+=====================  stay2y.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 1 sec real time.
+[LOG] Final circuit size: 3 new AND gates.
+[LOG] Size before ABC: 3 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 4 (1, 1, 2 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 7 --> 0 (0 --> 0, 0 --> 0, 7 --> 0 )
+[LOG] Average clause size reduction: 1.75 --> 0 (0 --> 0, 0 --> 0, 3.5 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.17 sec (Real time) / 0.11 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 26 5 4 1 17
+Raw AIGER output size: aag 26 2 4 1 20
+=====================  stay4n.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 5 new AND gates.
+[LOG] Size before ABC: 5 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 6 (1, 1, 1, 1, 2 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 11 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 11 --> 0 )
+[LOG] Average clause size reduction: 1.83333 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 5.5 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.17 sec (Real time) / 0.13 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 99 9 6 1 84
+Raw AIGER output size: aag 99 4 6 1 89
+=====================  stay4y.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 5 new AND gates.
+[LOG] Size before ABC: 5 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 6 (1, 1, 1, 1, 2 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 11 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 11 --> 0 )
+[LOG] Average clause size reduction: 1.83333 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 5.5 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.18 sec (Real time) / 0.12 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 72 9 6 1 57
+Raw AIGER output size: aag 72 4 6 1 62
+=====================  stay6n.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 7 new AND gates.
+[LOG] Size before ABC: 7 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 8 (1, 1, 1, 1, 1, 1, 2 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 15 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 15 --> 0 )
+[LOG] Average clause size reduction: 1.875 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 7.5 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.18 sec (Real time) / 0.13 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 219 13 8 1 198
+Raw AIGER output size: aag 219 6 8 1 205
+=====================  stay6y.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 1 sec real time.
+[LOG] Final circuit size: 7 new AND gates.
+[LOG] Size before ABC: 7 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 8 (1, 1, 1, 1, 1, 1, 2 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 15 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 15 --> 0 )
+[LOG] Average clause size reduction: 1.875 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 7.5 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.18 sec (Real time) / 0.13 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 149 13 8 1 128
+Raw AIGER output size: aag 149 6 8 1 135
+=====================  stay8n.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 9 new AND gates.
+[LOG] Size before ABC: 9 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 10 (1, 1, 1, 1, 1, 1, 1, 1, 2 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 19 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 19 --> 0 )
+[LOG] Average clause size reduction: 1.9 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 9.5 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.19 sec (Real time) / 0.13 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 403 17 10 1 376
+Raw AIGER output size: aag 403 8 10 1 385
+=====================  stay8y.aag =====================
+[LOG] Relation determinization time: 0 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 9 new AND gates.
+[LOG] Size before ABC: 9 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 10 (1, 1, 1, 1, 1, 1, 1, 1, 2 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 19 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 19 --> 0 )
+[LOG] Average clause size reduction: 1.9 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 9.5 --> 0 )
+[LOG] Overall execution time: 0 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.18 sec (Real time) / 0.13 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 264 17 10 1 237
+Raw AIGER output size: aag 264 8 10 1 246
+=====================  stay10n.aag =====================
+[LOG] Relation determinization time: 0.01 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 11 new AND gates.
+[LOG] Size before ABC: 11 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0.01/0 sec (0.01/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 12 (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2 )
+[LOG] Total clause computation time: 0.01/0 sec (0.01/0.01 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 23 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 23 --> 0 )
+[LOG] Average clause size reduction: 1.91667 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 11.5 --> 0 )
+[LOG] Overall execution time: 0.01 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.20 sec (Real time) / 0.14 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 651 21 12 1 618
+Raw AIGER output size: aag 651 10 12 1 629
+=====================  stay10y.aag =====================
+[LOG] Relation determinization time: 0.01 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 11 new AND gates.
+[LOG] Size before ABC: 11 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 12 (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2 )
+[LOG] Total clause computation time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 23 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 23 --> 0 )
+[LOG] Average clause size reduction: 1.91667 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 11.5 --> 0 )
+[LOG] Overall execution time: 0.01 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.18 sec (Real time) / 0.13 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 415 21 12 1 382
+Raw AIGER output size: aag 415 10 12 1 393
+=====================  stay12n.aag =====================
+[LOG] Relation determinization time: 0.02 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 13 new AND gates.
+[LOG] Size before ABC: 13 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0.01/0 sec (0.01/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 14 (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2 )
+[LOG] Total clause computation time: 0.01/0 sec (0.01/0.01 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 27 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 27 --> 0 )
+[LOG] Average clause size reduction: 1.92857 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 13.5 --> 0 )
+[LOG] Overall execution time: 0.02 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.20 sec (Real time) / 0.14 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 963 25 14 1 924
+Raw AIGER output size: aag 963 12 14 1 937
+=====================  stay12y.aag =====================
+[LOG] Relation determinization time: 0.01 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 13 new AND gates.
+[LOG] Size before ABC: 13 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0.01/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0.01/0 sec )
+[LOG] Nr of iterations: 14 (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2 )
+[LOG] Total clause computation time: 0.01/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0.01/0.01 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 27 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 27 --> 0 )
+[LOG] Average clause size reduction: 1.92857 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 13.5 --> 0 )
+[LOG] Overall execution time: 0.01 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.20 sec (Real time) / 0.14 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 602 25 14 1 563
+Raw AIGER output size: aag 602 12 14 1 576
+=====================  stay14n.aag =====================
+[LOG] Relation determinization time: 0.02 sec CPU time.
+[LOG] Relation determinization time: 1 sec real time.
+[LOG] Final circuit size: 15 new AND gates.
+[LOG] Size before ABC: 15 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0.02/0 sec (0.02/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 16 (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2 )
+[LOG] Total clause computation time: 0.02/0 sec (0.02/0.02 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 31 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 31 --> 0 )
+[LOG] Average clause size reduction: 1.9375 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 15.5 --> 0 )
+[LOG] Overall execution time: 0.02 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.21 sec (Real time) / 0.15 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 1339 29 16 1 1294
+Raw AIGER output size: aag 1339 14 16 1 1309
+=====================  stay14y.aag =====================
+[LOG] Relation determinization time: 0.01 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 15 new AND gates.
+[LOG] Size before ABC: 15 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0.01/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0.01/0 sec )
+[LOG] Nr of iterations: 16 (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2 )
+[LOG] Total clause computation time: 0.01/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0.01/0.01 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 31 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 31 --> 0 )
+[LOG] Average clause size reduction: 1.9375 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 15.5 --> 0 )
+[LOG] Overall execution time: 0.01 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.22 sec (Real time) / 0.14 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 825 29 16 1 780
+Raw AIGER output size: aag 825 14 16 1 795
+=====================  stay16n.aag =====================
+[LOG] Relation determinization time: 0.04 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 17 new AND gates.
+[LOG] Size before ABC: 17 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0.03/0 sec (0.03/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 18 (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2 )
+[LOG] Total clause computation time: 0.03/0 sec (0.03/0.03 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 35 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 35 --> 0 )
+[LOG] Average clause size reduction: 1.94444 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 17.5 --> 0 )
+[LOG] Overall execution time: 0.04 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.22 sec (Real time) / 0.17 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.03 sec (Real time) / 0.03 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 1779 33 18 1 1728
+Raw AIGER output size: aag 1779 16 18 1 1745
+=====================  stay16y.aag =====================
+[LOG] Relation determinization time: 0.02 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 17 new AND gates.
+[LOG] Size before ABC: 17 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0.02/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0.02/0 sec )
+[LOG] Nr of iterations: 18 (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2 )
+[LOG] Total clause computation time: 0.02/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0.02/0.02 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 35 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 35 --> 0 )
+[LOG] Average clause size reduction: 1.94444 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 17.5 --> 0 )
+[LOG] Overall execution time: 0.02 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.21 sec (Real time) / 0.15 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.01 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 1084 33 18 1 1033
+Raw AIGER output size: aag 1084 16 18 1 1050
+=====================  stay18n.aag =====================
+[LOG] Relation determinization time: 0.05 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 19 new AND gates.
+[LOG] Size before ABC: 19 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0.03/0 sec (0.03/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 20 (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2 )
+[LOG] Total clause computation time: 0.03/0 sec (0.03/0.03 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 39 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 39 --> 0 )
+[LOG] Average clause size reduction: 1.95 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 19.5 --> 0 )
+[LOG] Overall execution time: 0.05 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.24 sec (Real time) / 0.19 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.04 sec (Real time) / 0.04 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.01 sec (Real time) / 0.02 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 2283 37 20 1 2226
+Raw AIGER output size: aag 2283 18 20 1 2245
+=====================  stay18y.aag =====================
+[LOG] Relation determinization time: 0.03 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 19 new AND gates.
+[LOG] Size before ABC: 19 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0.03/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0.03/0 sec )
+[LOG] Nr of iterations: 20 (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2 )
+[LOG] Total clause computation time: 0.03/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0.03/0.03 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 39 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 39 --> 0 )
+[LOG] Average clause size reduction: 1.95 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 19.5 --> 0 )
+[LOG] Overall execution time: 0.03 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.22 sec (Real time) / 0.17 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 1379 37 20 1 1322
+Raw AIGER output size: aag 1379 18 20 1 1341
+=====================  stay20n.aag =====================
+[LOG] Relation determinization time: 0.07 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 21 new AND gates.
+[LOG] Size before ABC: 21 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0.06/0 sec (0.06/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 22 (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2 )
+[LOG] Total clause computation time: 0.06/0 sec (0.06/0.06 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 43 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 43 --> 0 )
+[LOG] Average clause size reduction: 1.95455 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 21.5 --> 0 )
+[LOG] Overall execution time: 0.07 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.25 sec (Real time) / 0.20 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.04 sec (Real time) / 0.04 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.02 sec (Real time) / 0.01 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 2851 41 22 1 2788
+Raw AIGER output size: aag 2851 20 22 1 2809
+=====================  stay20y.aag =====================
+[LOG] Relation determinization time: 0.03 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 21 new AND gates.
+[LOG] Size before ABC: 21 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0.03/0 sec (0.03/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 22 (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2 )
+[LOG] Total clause computation time: 0.03/0 sec (0.03/0.03 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 43 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 43 --> 0 )
+[LOG] Average clause size reduction: 1.95455 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 21.5 --> 0 )
+[LOG] Overall execution time: 0.03 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.22 sec (Real time) / 0.16 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.03 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 1710 41 22 1 1647
+Raw AIGER output size: aag 1710 20 22 1 1668
+=====================  stay22n.aag =====================
+[LOG] Relation determinization time: 0.08 sec CPU time.
+[LOG] Relation determinization time: 1 sec real time.
+[LOG] Final circuit size: 23 new AND gates.
+[LOG] Size before ABC: 23 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0.06/1 sec (0.06/1 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 24 (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2 )
+[LOG] Total clause computation time: 0.06/1 sec (0.06/0.06 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 47 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 47 --> 0 )
+[LOG] Average clause size reduction: 1.95833 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 23.5 --> 0 )
+[LOG] Overall execution time: 0.08 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.27 sec (Real time) / 0.20 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.05 sec (Real time) / 0.06 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 3483 45 24 1 3414
+Raw AIGER output size: aag 3483 22 24 1 3437
+=====================  stay22y.aag =====================
+[LOG] Relation determinization time: 0.05 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 23 new AND gates.
+[LOG] Size before ABC: 23 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0.05/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0.05/0 sec )
+[LOG] Nr of iterations: 24 (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2 )
+[LOG] Total clause computation time: 0.05/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0.05/0.05 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 47 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 47 --> 0 )
+[LOG] Average clause size reduction: 1.95833 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 23.5 --> 0 )
+[LOG] Overall execution time: 0.05 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.24 sec (Real time) / 0.18 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.03 sec (Real time) / 0.03 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 2077 45 24 1 2008
+Raw AIGER output size: aag 2077 22 24 1 2031
+=====================  stay24n.aag =====================
+[LOG] Relation determinization time: 0.1 sec CPU time.
+[LOG] Relation determinization time: 1 sec real time.
+[LOG] Final circuit size: 25 new AND gates.
+[LOG] Size before ABC: 25 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Total time for all control signals: 0.07/0 sec (0.06/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0.01/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 26 (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2 )
+[LOG] Total clause computation time: 0.07/0 sec (0.06/0.06 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0.01/0.01 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 51 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 51 --> 0 )
+[LOG] Average clause size reduction: 1.96154 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 25.5 --> 0 )
+[LOG] Overall execution time: 0.1 sec CPU time.
+[LOG] Overall execution time: 1 sec real time.
+Synthesis time: 0.30 sec (Real time) / 0.22 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.06 sec (Real time) / 0.06 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.02 sec (Real time) / 0.03 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 4179 49 26 1 4104
+Raw AIGER output size: aag 4179 24 26 1 4129
+=====================  stay24y.aag =====================
+[LOG] Relation determinization time: 0.07 sec CPU time.
+[LOG] Relation determinization time: 0 sec real time.
+[LOG] Final circuit size: 25 new AND gates.
+[LOG] Size before ABC: 25 AND gates.
+[LOG] Size after ABC: 0 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 0.05/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0.05/0 sec )
+[LOG] Nr of iterations: 26 (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2 )
+[LOG] Total clause computation time: 0.05/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0.05/0.05 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 51 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 51 --> 0 )
+[LOG] Average clause size reduction: 1.96154 --> 0 (0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 0 --> 0, 25.5 --> 0 )
+[LOG] Overall execution time: 0.07 sec CPU time.
+[LOG] Overall execution time: 0 sec real time.
+Synthesis time: 0.25 sec (Real time) / 0.18 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.03 sec (Real time) / 0.04 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.01 sec (Real time) / 0.02 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 2480 49 26 1 2405
+Raw AIGER output size: aag 2480 24 26 1 2430
+=====================  genbuf1c3y.aag =====================
+[LOG] Relation determinization time: 2.35 sec CPU time.
+[LOG] Relation determinization time: 3 sec real time.
+[LOG] Final circuit size: 577 new AND gates.
+[LOG] Size before ABC: 1820 AND gates.
+[LOG] Size after ABC: 576 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 2.33/3 sec (0.07/0 sec, 1.12/1 sec, 1/1 sec, 0.13/1 sec, 0.01/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 175 (78, 57, 15, 2, 15, 8 )
+[LOG] Total clause computation time: 2.33/3 sec (0.07/0.07 sec, 1.12/1.12 sec, 1/1 sec, 0.13/0.13 sec, 0.01/0.01 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0/0 sec (0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 5230 --> 1820 (2464 --> 1019, 1736 --> 630, 420 --> 87, 29 --> 1, 392 --> 70, 189 --> 13 )
+[LOG] Average clause size reduction: 29.8857 --> 10.4 (31.5897 --> 13.0641, 30.4561 --> 11.0526, 28 --> 5.8, 14.5 --> 0.5, 26.1333 --> 4.66667, 23.625 --> 1.625 )
+[LOG] Overall execution time: 2.35 sec CPU time.
+[LOG] Overall execution time: 3 sec real time.
+Synthesis time: 2.65 sec (Real time) / 2.55 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.22 sec (Real time) / 0.22 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.95 sec (Real time) / 0.93 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 166 11 21 1 134
+Raw AIGER output size: aag 742 5 21 1 711
+=====================  genbuf2c3y.aag =====================
+[LOG] Relation determinization time: 5.09 sec CPU time.
+[LOG] Relation determinization time: 6 sec real time.
+[LOG] Final circuit size: 1805 new AND gates.
+[LOG] Size before ABC: 6699 AND gates.
+[LOG] Size after ABC: 1805 AND gates.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Total time for all control signals: 5.03/5 sec (0.48/1 sec, 2.62/2 sec, 0.02/0 sec, 0.02/0 sec, 0.02/0 sec, 0.07/0 sec, 1.8/2 sec )
+[LOG] Nr of iterations: 501 (167, 191, 22, 18, 26, 70, 7 )
+[LOG] Total clause computation time: 4.95/5 sec (0.45/0.45 sec, 2.61/2.61 sec, 0.02/0.02 sec, 0.01/0.01 sec, 0.02/0.02 sec, 0.04/0.04 sec, 1.8/1.8 sec )
+[LOG] Total clause minimization time: 0.08/0 sec (0.03/0.03 sec, 0.01/0.01 sec, 0/0 sec, 0.01/0.01 sec, 0/0 sec, 0.03/0.03 sec, 0/0 sec )
+[LOG] Total clause size reduction: 17514 --> 6699 (6142 --> 2666, 6840 --> 2664, 735 --> 192, 578 --> 135, 825 --> 260, 2208 --> 761, 186 --> 21 )
+[LOG] Average clause size reduction: 34.9581 --> 13.3713 (36.7784 --> 15.9641, 35.8115 --> 13.9476, 33.4091 --> 8.72727, 32.1111 --> 7.5, 31.7308 --> 10, 31.5429 --> 10.8714, 26.5714 --> 3 )
+[LOG] Overall execution time: 5.09 sec CPU time.
+[LOG] Overall execution time: 6 sec real time.
+Synthesis time: 5.63 sec (Real time) / 5.46 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 1.01 sec (Real time) / 1.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 2.45 sec (Real time) / 2.44 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 206 13 24 1 169
+Raw AIGER output size: aag 2011 6 24 1 1974
+=====================  genbuf3c3y.aag =====================
+[LOG] Relation determinization time: 23.58 sec CPU time.
+[LOG] Relation determinization time: 32 sec real time.
+[LOG] Final circuit size: 6637 new AND gates.
+[LOG] Size before ABC: 153051 AND gates.
+[LOG] Size after ABC: 6637 AND gates.
+[LOG] Time for optimizing with ABC: 8 seconds.
+[LOG] Total time for all control signals: 23.32/23 sec (2/2 sec, 0.42/0 sec, 0.07/0 sec, 0.06/0 sec, 0.06/0 sec, 11.98/12 sec, 6.95/7 sec, 1.71/2 sec, 0.07/0 sec )
+[LOG] Nr of iterations: 8185 (395, 476, 18, 17, 24, 7008, 95, 142, 10 )
+[LOG] Total clause computation time: 18.28/16 sec (1.94/1.94 sec, 0.28/0.28 sec, 0.06/0.06 sec, 0.04/0.04 sec, 0.05/0.05 sec, 8.1/8.1 sec, 6.59/6.59 sec, 1.18/1.18 sec, 0.04/0.04 sec )
+[LOG] Total clause minimization time: 3.15/4 sec (0.05/0.05 sec, 0.08/0.08 sec, 0.01/0.01 sec, 0/0 sec, 0.01/0.01 sec, 2.32/2.32 sec, 0.28/0.28 sec, 0.37/0.37 sec, 0.03/0.03 sec )
+[LOG] Total clause size reduction: 314261 --> 153051 (16942 --> 8004, 19950 --> 9182, 697 --> 120, 640 --> 97, 897 --> 170, 266266 --> 132505, 3478 --> 1078, 5076 --> 1873, 315 --> 22 )
+[LOG] Average clause size reduction: 38.3947 --> 18.699 (42.8911 --> 20.2633, 41.9118 --> 19.2899, 38.7222 --> 6.66667, 37.6471 --> 5.70588, 37.375 --> 7.08333, 37.9946 --> 18.9077, 36.6105 --> 11.3474, 35.7465 --> 13.1901, 31.5 --> 2.2 )
+[LOG] Overall execution time: 23.58 sec CPU time.
+[LOG] Overall execution time: 32 sec real time.
+Synthesis time: 31.13 sec (Real time) / 28.80 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 1.70 sec (Real time) / 1.70 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 20.70 sec (Real time) / 20.62 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 245 16 27 1 202
+Raw AIGER output size: aag 6882 7 27 1 6839
+=====================  genbuf4c3y.aag =====================
+[LOG] Relation determinization time: 333.8 sec CPU time.
+[LOG] Relation determinization time: 350 sec real time.
+[LOG] Final circuit size: 79098 new AND gates.
+[LOG] Size before ABC: 653792 AND gates.
+[LOG] Size after ABC: 79098 AND gates.
+[LOG] Time for optimizing with ABC: 16 seconds.
+[LOG] Total time for all control signals: 332.68/332 sec (1.43/1 sec, 4.03/4 sec, 53.14/53 sec, 63.94/64 sec, 1.38/2 sec, 1.64/1 sec, 161.91/162 sec, 11.92/12 sec, 33.08/33 sec, 0.21/0 sec )
+[LOG] Nr of iterations: 27503 (497, 959, 19518, 29, 29, 29, 5608, 259, 568, 7 )
+[LOG] Total clause computation time: 206.57/212 sec (1.32/1.32 sec, 3.65/3.65 sec, 24.77/24.77 sec, 63.53/63.53 sec, 1.02/1.02 sec, 1.32/1.32 sec, 81.59/81.59 sec, 7.08/7.08 sec, 22.14/22.14 sec, 0.15/0.15 sec )
+[LOG] Total clause minimization time: 62.72/51 sec (0.09/0.09 sec, 0.31/0.31 sec, 14.16/14.16 sec, 0.19/0.19 sec, 0.21/0.21 sec, 0.16/0.16 sec, 39.84/39.84 sec, 2.33/2.33 sec, 5.38/5.38 sec, 0.05/0.05 sec )
+[LOG] Total clause size reduction: 1239298 --> 653792 (23808 --> 11871, 45026 --> 18675, 897782 --> 478119, 1260 --> 267, 1232 --> 231, 1204 --> 271, 235494 --> 131991, 10578 --> 3990, 22680 --> 8367, 234 --> 10 )
+[LOG] Average clause size reduction: 45.0605 --> 23.7717 (47.9034 --> 23.8853, 46.951 --> 19.4734, 45.9976 --> 24.4963, 43.4483 --> 9.2069, 42.4828 --> 7.96552, 41.5172 --> 9.34483, 41.9925 --> 23.5362, 40.8417 --> 15.4054, 39.9296 --> 14.7306, 33.4286 --> 1.42857 )
+[LOG] Overall execution time: 333.81 sec CPU time.
+[LOG] Overall execution time: 350 sec real time.
+Synthesis time: 350.33 sec (Real time) / 305.30 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 12.01 sec (Real time) / 11.84 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 748.31 sec (Real time) / 747.72 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 290 18 30 1 242
+Raw AIGER output size: aag 79388 8 30 1 79340
+=====================  genbuf5c3y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 4682.60 sec (User CPU time)
+Timeout: 1
+=====================  genbuf6c3y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.12 sec (Real time) / 8125.05 sec (User CPU time)
+Timeout: 1
+=====================  genbuf7c3y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 4917.66 sec (User CPU time)
+Timeout: 1
+=====================  genbuf8c3y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.05 sec (Real time) / 8138.44 sec (User CPU time)
+Timeout: 1
+=====================  genbuf9c3y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.10 sec (Real time) / 8490.99 sec (User CPU time)
+Timeout: 1
+=====================  genbuf10c3y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.17 sec (Real time) / 7563.68 sec (User CPU time)
+Timeout: 1
+=====================  genbuf11c3y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.02 sec (Real time) / 4605.25 sec (User CPU time)
+Timeout: 1
+=====================  genbuf12c3y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.02 sec (Real time) / 4602.91 sec (User CPU time)
+Timeout: 1
+=====================  genbuf13c3y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 4483.57 sec (User CPU time)
+Timeout: 1
+=====================  genbuf14c3y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 4583.72 sec (User CPU time)
+Timeout: 1
+=====================  genbuf15c3y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 4545.27 sec (User CPU time)
+Timeout: 1
+=====================  genbuf16c3y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 4547.28 sec (User CPU time)
+Timeout: 1
+=====================  genbuf1b4y.aag =====================
+[LOG] Relation determinization time: 2.62 sec CPU time.
+[LOG] Relation determinization time: 3 sec real time.
+[LOG] Final circuit size: 809 new AND gates.
+[LOG] Size before ABC: 2557 AND gates.
+[LOG] Size after ABC: 809 AND gates.
+[LOG] Time for optimizing with ABC: 0 seconds.
+[LOG] Total time for all control signals: 2.61/3 sec (0.11/0 sec, 0.97/1 sec, 0.01/0 sec, 1.51/2 sec, 0.01/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 265 (105, 106, 24, 3, 20, 7 )
+[LOG] Total clause computation time: 2.58/3 sec (0.11/0.11 sec, 0.95/0.95 sec, 0.01/0.01 sec, 1.51/1.51 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0.02/0 sec (0/0 sec, 0.01/0.01 sec, 0/0 sec, 0/0 sec, 0.01/0.01 sec, 0/0 sec )
+[LOG] Total clause size reduction: 8543 --> 2557 (3536 --> 1202, 3465 --> 993, 736 --> 184, 62 --> 4, 570 --> 163, 174 --> 11 )
+[LOG] Average clause size reduction: 32.2377 --> 9.64906 (33.6762 --> 11.4476, 32.6887 --> 9.36792, 30.6667 --> 7.66667, 20.6667 --> 1.33333, 28.5 --> 8.15, 24.8571 --> 1.57143 )
+[LOG] Overall execution time: 2.62 sec CPU time.
+[LOG] Overall execution time: 3 sec real time.
+Synthesis time: 2.98 sec (Real time) / 2.85 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.37 sec (Real time) / 0.37 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.58 sec (Real time) / 0.57 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 175 11 23 1 141
+Raw AIGER output size: aag 984 5 23 1 950
+=====================  genbuf2b4y.aag =====================
+[LOG] Relation determinization time: 9.13 sec CPU time.
+[LOG] Relation determinization time: 12 sec real time.
+[LOG] Final circuit size: 8484 new AND gates.
+[LOG] Size before ABC: 48138 AND gates.
+[LOG] Size after ABC: 8484 AND gates.
+[LOG] Time for optimizing with ABC: 3 seconds.
+[LOG] Total time for all control signals: 9.06/9 sec (0.3/1 sec, 2.61/2 sec, 3.63/4 sec, 1.83/2 sec, 0.4/0 sec, 0.27/0 sec, 0.02/0 sec )
+[LOG] Nr of iterations: 2860 (215, 272, 2047, 83, 166, 69, 8 )
+[LOG] Total clause computation time: 8.15/8 sec (0.28/0.28 sec, 2.58/2.58 sec, 3.05/3.05 sec, 1.78/1.78 sec, 0.23/0.23 sec, 0.22/0.22 sec, 0.01/0.01 sec )
+[LOG] Total clause minimization time: 0.7/1 sec (0.02/0.02 sec, 0.02/0.02 sec, 0.42/0.42 sec, 0.05/0.05 sec, 0.15/0.15 sec, 0.04/0.04 sec, 0/0 sec )
+[LOG] Total clause size reduction: 105616 --> 48138 (8346 --> 3225, 10298 --> 3835, 75702 --> 36524, 2952 --> 1089, 5775 --> 2748, 2312 --> 702, 231 --> 15 )
+[LOG] Average clause size reduction: 36.9287 --> 16.8315 (38.8186 --> 15, 37.8603 --> 14.0993, 36.9819 --> 17.8427, 35.5663 --> 13.1205, 34.7892 --> 16.5542, 33.5072 --> 10.1739, 28.875 --> 1.875 )
+[LOG] Overall execution time: 9.13 sec CPU time.
+[LOG] Overall execution time: 12 sec real time.
+Synthesis time: 11.61 sec (Real time) / 10.79 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 2.04 sec (Real time) / 2.03 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 26.49 sec (Real time) / 26.43 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 213 13 26 1 174
+Raw AIGER output size: aag 8697 6 26 1 8658
+=====================  genbuf3b4y.aag =====================
+[LOG] Relation determinization time: 36.59 sec CPU time.
+[LOG] Relation determinization time: 43 sec real time.
+[LOG] Final circuit size: 47171 new AND gates.
+[LOG] Size before ABC: 285730 AND gates.
+[LOG] Size after ABC: 47171 AND gates.
+[LOG] Time for optimizing with ABC: 7 seconds.
+[LOG] Total time for all control signals: 36.34/36 sec (1.17/1 sec, 0.26/0 sec, 13.34/13 sec, 7.95/8 sec, 1.73/2 sec, 3.47/4 sec, 4.81/4 sec, 3.53/4 sec, 0.08/0 sec )
+[LOG] Nr of iterations: 13585 (144, 517, 11790, 268, 134, 276, 259, 190, 7 )
+[LOG] Total clause computation time: 24.37/28 sec (1.16/1.16 sec, 0.16/0.16 sec, 7.06/7.06 sec, 6.71/6.71 sec, 1.11/1.11 sec, 2.06/2.06 sec, 3.53/3.53 sec, 2.52/2.52 sec, 0.06/0.06 sec )
+[LOG] Total clause minimization time: 7.4/4 sec (0/0 sec, 0.07/0.07 sec, 3.26/3.26 sec, 0.9/0.9 sec, 0.41/0.41 sec, 1.04/1.04 sec, 0.94/0.94 sec, 0.76/0.76 sec, 0.02/0.02 sec )
+[LOG] Total clause size reduction: 594775 --> 285730 (6578 --> 2504, 23220 --> 9717, 518716 --> 256211, 11481 --> 4412, 5586 --> 1669, 11275 --> 4562, 10320 --> 4134, 7371 --> 2511, 228 --> 10 )
+[LOG] Average clause size reduction: 43.7817 --> 21.0328 (45.6806 --> 17.3889, 44.913 --> 18.795, 43.9963 --> 21.7312, 42.8396 --> 16.4627, 41.6866 --> 12.4552, 40.8514 --> 16.529, 39.8456 --> 15.9614, 38.7947 --> 13.2158, 32.5714 --> 1.42857 )
+[LOG] Overall execution time: 36.59 sec CPU time.
+[LOG] Overall execution time: 43 sec real time.
+Synthesis time: 43.23 sec (Real time) / 38.40 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 6.95 sec (Real time) / 6.90 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 203.26 sec (Real time) / 203.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 254 16 30 1 208
+Raw AIGER output size: aag 47425 7 30 1 47379
+=====================  genbuf4b4y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.17 sec (Real time) / 8434.13 sec (User CPU time)
+Timeout: 1
+=====================  genbuf5b4y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 4676.58 sec (User CPU time)
+Timeout: 1
+=====================  genbuf6b4y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 4542.46 sec (User CPU time)
+Timeout: 1
+=====================  genbuf7b4y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.11 sec (Real time) / 8488.89 sec (User CPU time)
+Timeout: 1
+=====================  genbuf8b4y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 4407.73 sec (User CPU time)
+Timeout: 1
+=====================  genbuf9b4y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 4493.66 sec (User CPU time)
+Timeout: 1
+=====================  genbuf10b4y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 4571.82 sec (User CPU time)
+Timeout: 1
+=====================  genbuf11b4y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 4379.59 sec (User CPU time)
+Timeout: 1
+=====================  genbuf12b4y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 4477.21 sec (User CPU time)
+Timeout: 1
+=====================  genbuf13b4y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 4410.72 sec (User CPU time)
+Timeout: 1
+=====================  genbuf14b4y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.18 sec (Real time) / 7935.06 sec (User CPU time)
+Timeout: 1
+=====================  genbuf15b4y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.19 sec (Real time) / 7797.06 sec (User CPU time)
+Timeout: 1
+=====================  genbuf16b4y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 4732.57 sec (User CPU time)
+Timeout: 1
+=====================  genbuf1f4y.aag =====================
+[LOG] Relation determinization time: 2.63 sec CPU time.
+[LOG] Relation determinization time: 3 sec real time.
+[LOG] Final circuit size: 636 new AND gates.
+[LOG] Size before ABC: 1821 AND gates.
+[LOG] Size after ABC: 635 AND gates.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Total time for all control signals: 2.61/2 sec (0.04/0 sec, 1.29/1 sec, 0.01/0 sec, 1.26/1 sec, 0.01/0 sec, 0/0 sec )
+[LOG] Nr of iterations: 181 (93, 49, 13, 2, 14, 10 )
+[LOG] Total clause computation time: 2.59/2 sec (0.03/0.03 sec, 1.28/1.28 sec, 0.01/0.01 sec, 1.26/1.26 sec, 0.01/0.01 sec, 0/0 sec )
+[LOG] Total clause minimization time: 0.02/0 sec (0.01/0.01 sec, 0.01/0.01 sec, 0/0 sec, 0/0 sec, 0/0 sec, 0/0 sec )
+[LOG] Total clause size reduction: 5778 --> 1821 (3128 --> 1254, 1584 --> 407, 384 --> 70, 31 --> 1, 390 --> 70, 261 --> 19 )
+[LOG] Average clause size reduction: 31.9227 --> 10.0608 (33.6344 --> 13.4839, 32.3265 --> 8.30612, 29.5385 --> 5.38462, 15.5 --> 0.5, 27.8571 --> 5, 26.1 --> 1.9 )
+[LOG] Overall execution time: 2.63 sec CPU time.
+[LOG] Overall execution time: 3 sec real time.
+Synthesis time: 2.91 sec (Real time) / 2.82 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.26 sec (Real time) / 0.26 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.65 sec (Real time) / 0.63 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 172 11 23 1 138
+Raw AIGER output size: aag 807 5 23 1 774
+=====================  genbuf2f4y.aag =====================
+[LOG] Relation determinization time: 5.51 sec CPU time.
+[LOG] Relation determinization time: 6 sec real time.
+[LOG] Final circuit size: 2595 new AND gates.
+[LOG] Size before ABC: 10404 AND gates.
+[LOG] Size after ABC: 2595 AND gates.
+[LOG] Time for optimizing with ABC: 1 seconds.
+[LOG] Total time for all control signals: 5.48/5 sec (0.35/0 sec, 2.95/3 sec, 0.03/0 sec, 0.03/0 sec, 0.07/0 sec, 2.04/2 sec, 0.01/0 sec )
+[LOG] Nr of iterations: 763 (264, 268, 29, 31, 87, 74, 10 )
+[LOG] Total clause computation time: 5.36/5 sec (0.33/0.33 sec, 2.93/2.93 sec, 0/0 sec, 0.03/0.03 sec, 0.04/0.04 sec, 2.02/2.02 sec, 0.01/0.01 sec )
+[LOG] Total clause minimization time: 0.1/0 sec (0.01/0.01 sec, 0.02/0.02 sec, 0.03/0.03 sec, 0/0 sec, 0.02/0.02 sec, 0.02/0.02 sec, 0/0 sec )
+[LOG] Total clause size reduction: 28308 --> 10404 (10257 --> 4312, 10146 --> 3548, 1036 --> 213, 1080 --> 265, 3010 --> 1208, 2482 --> 835, 297 --> 23 )
+[LOG] Average clause size reduction: 37.1009 --> 13.6356 (38.8523 --> 16.3333, 37.8582 --> 13.2388, 35.7241 --> 7.34483, 34.8387 --> 8.54839, 34.5977 --> 13.8851, 33.5405 --> 11.2838, 29.7 --> 2.3 )
+[LOG] Overall execution time: 5.51 sec CPU time.
+[LOG] Overall execution time: 6 sec real time.
+Synthesis time: 6.21 sec (Real time) / 5.97 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 1.49 sec (Real time) / 1.48 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 2.76 sec (Real time) / 2.73 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 207 13 26 1 168
+Raw AIGER output size: aag 2802 6 26 1 2763
+=====================  genbuf3f4y.aag =====================
+[LOG] Relation determinization time: 6.76 sec CPU time.
+[LOG] Relation determinization time: 10 sec real time.
+[LOG] Final circuit size: 9258 new AND gates.
+[LOG] Size before ABC: 48513 AND gates.
+[LOG] Size after ABC: 9258 AND gates.
+[LOG] Time for optimizing with ABC: 3 seconds.
+[LOG] Total time for all control signals: 6.66/7 sec (0.64/1 sec, 0.99/1 sec, 2.48/2 sec, 0.21/1 sec, 0.07/0 sec, 0.62/0 sec, 0.92/1 sec, 0.71/1 sec, 0.02/0 sec )
+[LOG] Nr of iterations: 2632 (681, 1012, 21, 101, 20, 317, 332, 139, 9 )
+[LOG] Total clause computation time: 5.49/6 sec (0.52/0.52 sec, 0.61/0.61 sec, 2.48/2.48 sec, 0.17/0.17 sec, 0.05/0.05 sec, 0.38/0.38 sec, 0.7/0.7 sec, 0.57/0.57 sec, 0.01/0.01 sec )
+[LOG] Total clause minimization time: 0.98/1 sec (0.07/0.07 sec, 0.3/0.3 sec, 0/0 sec, 0.03/0.03 sec, 0.02/0.02 sec, 0.23/0.23 sec, 0.2/0.2 sec, 0.12/0.12 sec, 0.01/0.01 sec )
+[LOG] Total clause size reduction: 114635 --> 48513 (31280 --> 15072, 45495 --> 20231, 880 --> 117, 4300 --> 1652, 798 --> 119, 12956 --> 4803, 13240 --> 4939, 5382 --> 1560, 304 --> 20 )
+[LOG] Average clause size reduction: 43.5543 --> 18.432 (45.9325 --> 22.1322, 44.9555 --> 19.9911, 41.9048 --> 5.57143, 42.5743 --> 16.3564, 39.9 --> 5.95, 40.8707 --> 15.1514, 39.8795 --> 14.8765, 38.7194 --> 11.223, 33.7778 --> 2.22222 )
+[LOG] Overall execution time: 6.76 sec CPU time.
+[LOG] Overall execution time: 10 sec real time.
+Synthesis time: 9.86 sec (Real time) / 9.28 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 1.93 sec (Real time) / 1.94 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 39.61 sec (Real time) / 39.52 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 246 16 30 1 200
+Raw AIGER output size: aag 9504 7 30 1 9458
+=====================  genbuf4f4y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.14 sec (Real time) / 8064.90 sec (User CPU time)
+Timeout: 1
+=====================  genbuf5f5y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 6075.19 sec (User CPU time)
+Timeout: 1
+=====================  genbuf6f6y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 6716.40 sec (User CPU time)
+Timeout: 1
+=====================  genbuf7f7y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.02 sec (Real time) / 7659.41 sec (User CPU time)
+Timeout: 1
+=====================  genbuf8f8y.aag =====================
+=====================  genbuf9f9y.aag =====================
+=====================  genbuf10f10y.aag =====================
+=====================  genbuf11f11y.aag =====================
+=====================  genbuf12f12y.aag =====================
+=====================  genbuf13f13y.aag =====================
+=====================  genbuf14f14y.aag =====================
+=====================  genbuf15f15y.aag =====================
+=====================  genbuf16f16y.aag =====================
+=====================  amba2c7y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.07 sec (Real time) / 8876.46 sec (User CPU time)
+Timeout: 1
+=====================  amba3c5y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 4829.93 sec (User CPU time)
+Timeout: 1
+=====================  amba4c7y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.02 sec (Real time) / 8536.72 sec (User CPU time)
+Timeout: 1
+=====================  amba5c5y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 4718.14 sec (User CPU time)
+Timeout: 1
+=====================  amba6c5y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 4971.25 sec (User CPU time)
+Timeout: 1
+=====================  amba7c5y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 4733.84 sec (User CPU time)
+Timeout: 1
+=====================  amba8c7y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 5008.16 sec (User CPU time)
+Timeout: 1
+=====================  amba9c5y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 4583.56 sec (User CPU time)
+Timeout: 1
+=====================  amba10c5y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.02 sec (Real time) / 4685.17 sec (User CPU time)
+Timeout: 1
+=====================  amba2b9y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.05 sec (Real time) / 9005.98 sec (User CPU time)
+Timeout: 1
+=====================  amba3b5y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.00 sec (Real time) / 4800.52 sec (User CPU time)
+Timeout: 1
+=====================  amba4b9y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 5186.20 sec (User CPU time)
+Timeout: 1
+=====================  amba5b5y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 4531.34 sec (User CPU time)
+Timeout: 1
+=====================  amba6b5y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 4791.89 sec (User CPU time)
+Timeout: 1
+=====================  amba7b5y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 4729.68 sec (User CPU time)
+Timeout: 1
+=====================  amba8b6y.aag =====================
+Command terminated by signal 6
+Synthesis time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 1 (Exit code: 134)
+=====================  amba9b5y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 4577.49 sec (User CPU time)
+Timeout: 1
+=====================  amba10b5y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 4623.12 sec (User CPU time)
+Timeout: 1
+=====================  amba2f9y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.15 sec (Real time) / 8159.95 sec (User CPU time)
+Timeout: 1
+=====================  amba3f9y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 4815.26 sec (User CPU time)
+Timeout: 1
+=====================  amba4f25y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.04 sec (Real time) / 8943.61 sec (User CPU time)
+Timeout: 1
+=====================  amba5f17y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.01 sec (Real time) / 5184.50 sec (User CPU time)
+Timeout: 1
+=====================  amba6f21y.aag =====================
+Command terminated by signal 9
+Synthesis time: 10000.02 sec (Real time) / 5605.31 sec (User CPU time)
+Timeout: 1
+=====================  amba7f25y.aag =====================
+=====================  amba8f57y.aag =====================
+=====================  amba9f33y.aag =====================
+=====================  amba10f37y.aag =====================

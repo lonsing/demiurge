@@ -65,4 +65,29 @@ using namespace std;
   }                                                                          \
 }
 
+// -------------------------------------------------------------------------------------------
+///
+/// @def DASSERT(condition, message)
+/// @brief A macro for an assertion that is only enabled in debug mode.
+///
+/// In debug mode, if the condition evaluates to false, the error message is printed and the
+/// program terminates. If not in debug mode, the statement is ignored (the condition is not
+/// even evaluated).
+///
+/// @param condition The condition of the assertion. If we are in debug mode, and if this
+///        condition evaluates to false, then the error message is printed.
+/// @param message The error message to be printed upon assertion violation.
+#ifndef NDEBUG
+#define DASSERT(condition, message)                                          \
+{                                                                            \
+  if(!(condition))                                                           \
+  {                                                                          \
+    std::cerr << __FILE__ << " (" << __LINE__ << ") : " << message << endl;  \
+    abort();                                                                 \
+  }                                                                          \
+}
+#else
+#define DASSERT(condition, message) {}
+#endif
+
 #endif // CNF_H__

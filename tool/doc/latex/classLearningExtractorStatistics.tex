@@ -1,0 +1,724 @@
+\hypertarget{classLearningExtractorStatistics}{\section{Learning\-Extractor\-Statistics Class Reference}
+\label{classLearningExtractorStatistics}\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}}
+}
+
+
+A class to collect performance measures for the \hyperlink{classLearningImplExtractor}{Learning\-Impl\-Extractor}.  
+
+
+
+
+{\ttfamily \#include $<$Learning\-Extractor\-Statistics.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLearningExtractorStatistics_a84c53f157498c9fd56b945b084430acc}{Learning\-Extractor\-Statistics} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classLearningExtractorStatistics_a74d894e52bb6855a2f98877a80024d7c}{$\sim$\-Learning\-Extractor\-Statistics} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classLearningExtractorStatistics_a9b82a38db644813eb1d648b026010d6d}{notify\-Before\-Ctrl\-Signal} ()
+\begin{DoxyCompactList}\small\item\em Called before the computation of the next control signal. \end{DoxyCompactList}\item 
+void \hyperlink{classLearningExtractorStatistics_aad5a2bfb3925bf3645c663a76616ffef}{notify\-After\-Ctrl\-Signal} ()
+\begin{DoxyCompactList}\small\item\em Called after the computation of the next control signal is done. \end{DoxyCompactList}\item 
+void \hyperlink{classLearningExtractorStatistics_a277b5df115b10544ad922347b777b836}{notify\-Before\-Clause\-Comp} ()
+\begin{DoxyCompactList}\small\item\em Called before the computation of the next counterexample situation. \end{DoxyCompactList}\item 
+void \hyperlink{classLearningExtractorStatistics_aa353eb06b4a228d4558d181479a146b1}{notify\-After\-Clause\-Comp} ()
+\begin{DoxyCompactList}\small\item\em Called after the computation of the next counterexample situation is done. \end{DoxyCompactList}\item 
+void \hyperlink{classLearningExtractorStatistics_a93d1b6c361f8e0a4b33e3660691790e4}{notify\-Before\-Clause\-Min} ()
+\begin{DoxyCompactList}\small\item\em Called before the generalization of the next counterexample situation. \end{DoxyCompactList}\item 
+void \hyperlink{classLearningExtractorStatistics_afb94f9819de27d6110eebae020461c13}{notify\-After\-Clause\-Min} (size\-\_\-t size\-\_\-from, size\-\_\-t size\-\_\-to)
+\begin{DoxyCompactList}\small\item\em Called after the generalization of the next counterexample situation is done. \end{DoxyCompactList}\item 
+void \hyperlink{classLearningExtractorStatistics_ab8c8b1c3832a79f055d45dca58e71725}{notify\-Before\-A\-B\-C} (size\-\_\-t nr\-\_\-of\-\_\-and\-\_\-gates)
+\begin{DoxyCompactList}\small\item\em Called before optimizing the resulting circuit with A\-B\-C. \end{DoxyCompactList}\item 
+void \hyperlink{classLearningExtractorStatistics_a5e81951534c5a246f31fc4214b6c138c}{notify\-After\-A\-B\-C} (size\-\_\-t nr\-\_\-of\-\_\-and\-\_\-gates)
+\begin{DoxyCompactList}\small\item\em Called after optimizing the resulting circuit with A\-B\-C is done. \end{DoxyCompactList}\item 
+void \hyperlink{classLearningExtractorStatistics_af537e9d8d93bec157dddda73cd05a891}{notify\-Final\-Size} (size\-\_\-t nr\-\_\-of\-\_\-new\-\_\-and\-\_\-gates)
+\begin{DoxyCompactList}\small\item\em Logs the number of new A\-N\-D gates that have been added to the specification. \end{DoxyCompactList}\item 
+void \hyperlink{classLearningExtractorStatistics_a1938df334b6ec4b80f2d7240a6a6fa49}{log\-Statistics} (bool include\-\_\-details=true) const 
+\begin{DoxyCompactList}\small\item\em Writes the statistics to stdout as messages of type \hyperlink{classLogger_ac9e601f90bf326ce2088de52018861dca07be7495a7931bee16f5d94b3671f5de}{Logger\-::\-L\-O\-G}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Stopwatch_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{Point\-In\-Time} \hyperlink{classLearningExtractorStatistics_ac16b676d2eb3fe71af340233a37a9ca9}{abc\-\_\-start\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em The time when the circuit optimization with A\-B\-C was started. \end{DoxyCompactList}\item 
+double \hyperlink{classLearningExtractorStatistics_a58056982bf57dbe69cff268d9a9d4a32}{abc\-\_\-cpu\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em The time for optimizing the circuit with A\-B\-C in C\-P\-U-\/seconds. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classLearningExtractorStatistics_a4bdc0c5fba7ef60dbf974f212b4b1f17}{abc\-\_\-real\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em Like \hyperlink{classLearningExtractorStatistics_a58056982bf57dbe69cff268d9a9d4a32}{abc\-\_\-cpu\-\_\-time\-\_\-} but real-\/time. \end{DoxyCompactList}\item 
+\hyperlink{Stopwatch_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{Point\-In\-Time} \hyperlink{classLearningExtractorStatistics_a476eba034e9e2004d0fe0b2bdeafbd1e}{clause\-\_\-comp\-\_\-start\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em The time when the computation of a counterexample-\/situation was started. \end{DoxyCompactList}\item 
+\hyperlink{Stopwatch_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{Point\-In\-Time} \hyperlink{classLearningExtractorStatistics_aad8e031085a746b5fc30b8185bf5dabf}{clause\-\_\-min\-\_\-start\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em The time when the generalization of a counterexample-\/situation was started. \end{DoxyCompactList}\item 
+\hyperlink{Stopwatch_8h_af3a9f634f27bed7e98dbc23e5c6f807d}{Point\-In\-Time} \hyperlink{classLearningExtractorStatistics_aaf7283a491c91200e03e0ca29f7bcd93}{ctrl\-\_\-signal\-\_\-start\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em The time when the computation of the next control signal was started. \end{DoxyCompactList}\item 
+vector$<$ size\-\_\-t $>$ \hyperlink{classLearningExtractorStatistics_a20b2771dd74bd0e2e08d7568149bef14}{nr\-\_\-of\-\_\-clause\-\_\-computations\-\_\-}
+\begin{DoxyCompactList}\small\item\em The number of counterexample-\/situations that had to be computed per control signal. \end{DoxyCompactList}\item 
+vector$<$ size\-\_\-t $>$ \hyperlink{classLearningExtractorStatistics_a2a7ac5da4b46b9366430f6934579ade7}{sum\-\_\-clause\-\_\-size\-\_\-from\-\_\-}
+\begin{DoxyCompactList}\small\item\em The sum of the clause size before generalization per control signal. \end{DoxyCompactList}\item 
+vector$<$ size\-\_\-t $>$ \hyperlink{classLearningExtractorStatistics_ac503db6146780edd0fd6316777d251cf}{sum\-\_\-clause\-\_\-size\-\_\-to\-\_\-}
+\begin{DoxyCompactList}\small\item\em The sum of the clause size after generalization per control signal. \end{DoxyCompactList}\item 
+vector$<$ double $>$ \hyperlink{classLearningExtractorStatistics_a3e3c198d4480eb0b74410126bc2040e9}{sum\-\_\-clause\-\_\-comp\-\_\-cpu\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em The total counterexample computation time per control signal. \end{DoxyCompactList}\item 
+vector$<$ size\-\_\-t $>$ \hyperlink{classLearningExtractorStatistics_a505c22ba13094231793f0d5aeaf362f6}{sum\-\_\-clause\-\_\-comp\-\_\-real\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em Like \hyperlink{classLearningExtractorStatistics_a3e3c198d4480eb0b74410126bc2040e9}{sum\-\_\-clause\-\_\-comp\-\_\-cpu\-\_\-time\-\_\-} but real-\/time. \end{DoxyCompactList}\item 
+vector$<$ double $>$ \hyperlink{classLearningExtractorStatistics_a61118ceb2f3bd2072ce584971fb37ae2}{sum\-\_\-clause\-\_\-min\-\_\-cpu\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em The total counterexample generalization time per control signal. \end{DoxyCompactList}\item 
+vector$<$ size\-\_\-t $>$ \hyperlink{classLearningExtractorStatistics_a552f8b12efb9b8460efd32d805e66eac}{sum\-\_\-clause\-\_\-min\-\_\-real\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em Like \hyperlink{classLearningExtractorStatistics_a61118ceb2f3bd2072ce584971fb37ae2}{sum\-\_\-clause\-\_\-min\-\_\-cpu\-\_\-time\-\_\-} but real-\/time. \end{DoxyCompactList}\item 
+vector$<$ double $>$ \hyperlink{classLearningExtractorStatistics_a836a3f1d0bdf023577056a8b05f769ca}{ctrl\-\_\-signal\-\_\-cpu\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em The total time per control signal. \end{DoxyCompactList}\item 
+vector$<$ size\-\_\-t $>$ \hyperlink{classLearningExtractorStatistics_ae75aebbe85e3b916e922b9472cb5474f}{ctrl\-\_\-signal\-\_\-real\-\_\-time\-\_\-}
+\begin{DoxyCompactList}\small\item\em Like \hyperlink{classLearningExtractorStatistics_a836a3f1d0bdf023577056a8b05f769ca}{ctrl\-\_\-signal\-\_\-cpu\-\_\-time\-\_\-} but real-\/time. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classLearningExtractorStatistics_ae1dfe12c84dc72fd7b8f664ebe069103}{size\-\_\-before\-\_\-abc\-\_\-}
+\begin{DoxyCompactList}\small\item\em The circuit size before optimization with A\-B\-C. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classLearningExtractorStatistics_a6684883b2634d0ea619aaf145eb86b8d}{size\-\_\-after\-\_\-abc\-\_\-}
+\begin{DoxyCompactList}\small\item\em The circuit size after optimization with A\-B\-C. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classLearningExtractorStatistics_a4b09852748af7edc14a8a884dac6efce}{size\-\_\-final\-\_\-}
+\begin{DoxyCompactList}\small\item\em The number of new A\-N\-D gates that have been added to the specification. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLearningExtractorStatistics_a08a5699815cf32793642c241ffccc766}{Learning\-Extractor\-Statistics} (const \hyperlink{classLearningExtractorStatistics}{Learning\-Extractor\-Statistics} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classLearningExtractorStatistics}{Learning\-Extractor\-Statistics} \& \hyperlink{classLearningExtractorStatistics_a53e255629b25f52edb36cb82ca8d3a9d}{operator=} (const \hyperlink{classLearningExtractorStatistics}{Learning\-Extractor\-Statistics} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class to collect performance measures for the \hyperlink{classLearningImplExtractor}{Learning\-Impl\-Extractor}. 
+
+\begin{DoxyAuthor}{Author}
+Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-1.\-0
+\end{DoxyVersion}
+This class collects statistics and performance data for the learning-\/based synthesis circuit extraction method implemented using Q\-B\-F or S\-A\-T solving (implemented in the class \hyperlink{classLearningImplExtractor}{Learning\-Impl\-Extractor}). 
+
+Definition at line 47 of file Learning\-Extractor\-Statistics.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classLearningExtractorStatistics_a84c53f157498c9fd56b945b084430acc}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}}
+\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
+\subsubsection[{Learning\-Extractor\-Statistics}]{\setlength{\rightskip}{0pt plus 5cm}Learning\-Extractor\-Statistics\-::\-Learning\-Extractor\-Statistics (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLearningExtractorStatistics_a84c53f157498c9fd56b945b084430acc}
+
+
+Constructor. 
+
+
+
+Definition at line 35 of file Learning\-Extractor\-Statistics.\-cpp.
+
+
+
+References Var\-Info\-::\-C\-T\-R\-L, ctrl\-\_\-signal\-\_\-cpu\-\_\-time\-\_\-, ctrl\-\_\-signal\-\_\-real\-\_\-time\-\_\-, Var\-Manager\-::get\-Vars\-Of\-Type(), Var\-Manager\-::instance(), nr\-\_\-of\-\_\-clause\-\_\-computations\-\_\-, sum\-\_\-clause\-\_\-comp\-\_\-cpu\-\_\-time\-\_\-, sum\-\_\-clause\-\_\-comp\-\_\-real\-\_\-time\-\_\-, sum\-\_\-clause\-\_\-min\-\_\-cpu\-\_\-time\-\_\-, sum\-\_\-clause\-\_\-min\-\_\-real\-\_\-time\-\_\-, sum\-\_\-clause\-\_\-size\-\_\-from\-\_\-, and sum\-\_\-clause\-\_\-size\-\_\-to\-\_\-.
+
+\hypertarget{classLearningExtractorStatistics_a74d894e52bb6855a2f98877a80024d7c}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!$\sim$\-Learning\-Extractor\-Statistics@{$\sim$\-Learning\-Extractor\-Statistics}}
+\index{$\sim$\-Learning\-Extractor\-Statistics@{$\sim$\-Learning\-Extractor\-Statistics}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
+\subsubsection[{$\sim$\-Learning\-Extractor\-Statistics}]{\setlength{\rightskip}{0pt plus 5cm}Learning\-Extractor\-Statistics\-::$\sim$\-Learning\-Extractor\-Statistics (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classLearningExtractorStatistics_a74d894e52bb6855a2f98877a80024d7c}
+
+
+Destructor. 
+
+
+
+Definition at line 53 of file Learning\-Extractor\-Statistics.\-cpp.
+
+\hypertarget{classLearningExtractorStatistics_a08a5699815cf32793642c241ffccc766}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}}
+\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
+\subsubsection[{Learning\-Extractor\-Statistics}]{\setlength{\rightskip}{0pt plus 5cm}Learning\-Extractor\-Statistics\-::\-Learning\-Extractor\-Statistics (
+\begin{DoxyParamCaption}
+\item[{const {\bf Learning\-Extractor\-Statistics} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classLearningExtractorStatistics_a08a5699815cf32793642c241ffccc766}
+
+
+Copy constructor. 
+
+The copy constructor is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classLearningExtractorStatistics_a1938df334b6ec4b80f2d7240a6a6fa49}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!log\-Statistics@{log\-Statistics}}
+\index{log\-Statistics@{log\-Statistics}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
+\subsubsection[{log\-Statistics}]{\setlength{\rightskip}{0pt plus 5cm}void Learning\-Extractor\-Statistics\-::log\-Statistics (
+\begin{DoxyParamCaption}
+\item[{bool}]{include\-\_\-details = {\ttfamily true}}
+\end{DoxyParamCaption}
+) const}}\label{classLearningExtractorStatistics_a1938df334b6ec4b80f2d7240a6a6fa49}
+
+
+Writes the statistics to stdout as messages of type \hyperlink{classLogger_ac9e601f90bf326ce2088de52018861dca07be7495a7931bee16f5d94b3671f5de}{Logger\-::\-L\-O\-G}. 
+
+If messages of type \hyperlink{classLogger_ac9e601f90bf326ce2088de52018861dca07be7495a7931bee16f5d94b3671f5de}{Logger\-::\-L\-O\-G} are disabled (see \hyperlink{classLogger}{Logger}), then nothing happens.
+
+
+\begin{DoxyParams}{Parameters}
+{\em include\-\_\-details} & True if more detailed information should be printed, false if only basic statistics and performance measures should be printed. If this parameter is omitted, then detailed info will be printed. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 129 of file Learning\-Extractor\-Statistics.\-cpp.
+
+
+
+References abc\-\_\-real\-\_\-time\-\_\-, ctrl\-\_\-signal\-\_\-cpu\-\_\-time\-\_\-, ctrl\-\_\-signal\-\_\-real\-\_\-time\-\_\-, L\-\_\-\-L\-O\-G, nr\-\_\-of\-\_\-clause\-\_\-computations\-\_\-, size\-\_\-after\-\_\-abc\-\_\-, size\-\_\-before\-\_\-abc\-\_\-, size\-\_\-final\-\_\-, sum\-\_\-clause\-\_\-comp\-\_\-cpu\-\_\-time\-\_\-, sum\-\_\-clause\-\_\-comp\-\_\-real\-\_\-time\-\_\-, sum\-\_\-clause\-\_\-min\-\_\-cpu\-\_\-time\-\_\-, sum\-\_\-clause\-\_\-min\-\_\-real\-\_\-time\-\_\-, sum\-\_\-clause\-\_\-size\-\_\-from\-\_\-, and sum\-\_\-clause\-\_\-size\-\_\-to\-\_\-.
+
+
+
+Referenced by Learning\-Impl\-Extractor\-::log\-Detailed\-Statistics().
+
+\hypertarget{classLearningExtractorStatistics_a5e81951534c5a246f31fc4214b6c138c}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!notify\-After\-A\-B\-C@{notify\-After\-A\-B\-C}}
+\index{notify\-After\-A\-B\-C@{notify\-After\-A\-B\-C}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
+\subsubsection[{notify\-After\-A\-B\-C}]{\setlength{\rightskip}{0pt plus 5cm}void Learning\-Extractor\-Statistics\-::notify\-After\-A\-B\-C (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{nr\-\_\-of\-\_\-and\-\_\-gates}
+\end{DoxyParamCaption}
+)}}\label{classLearningExtractorStatistics_a5e81951534c5a246f31fc4214b6c138c}
+
+
+Called after optimizing the resulting circuit with A\-B\-C is done. 
+
+This method just reads out the \hyperlink{classStopwatch}{Stopwatch} and stores the execution time. It also logs the circuit size after optimization.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nr\-\_\-of\-\_\-and\-\_\-gates} & The number of A\-N\-D gates in the A\-I\-G\-E\-R circuit after optimization with A\-B\-C. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 115 of file Learning\-Extractor\-Statistics.\-cpp.
+
+
+
+References abc\-\_\-cpu\-\_\-time\-\_\-, abc\-\_\-real\-\_\-time\-\_\-, abc\-\_\-start\-\_\-time\-\_\-, Stopwatch\-::get\-C\-P\-U\-Time\-Sec(), Stopwatch\-::get\-Real\-Time\-Sec(), and size\-\_\-after\-\_\-abc\-\_\-.
+
+
+
+Referenced by Learning\-Impl\-Extractor\-::run().
+
+\hypertarget{classLearningExtractorStatistics_aa353eb06b4a228d4558d181479a146b1}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!notify\-After\-Clause\-Comp@{notify\-After\-Clause\-Comp}}
+\index{notify\-After\-Clause\-Comp@{notify\-After\-Clause\-Comp}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
+\subsubsection[{notify\-After\-Clause\-Comp}]{\setlength{\rightskip}{0pt plus 5cm}void Learning\-Extractor\-Statistics\-::notify\-After\-Clause\-Comp (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLearningExtractorStatistics_aa353eb06b4a228d4558d181479a146b1}
+
+
+Called after the computation of the next counterexample situation is done. 
+
+This method just reads out the \hyperlink{classStopwatch}{Stopwatch} and stores the execution time. 
+
+Definition at line 85 of file Learning\-Extractor\-Statistics.\-cpp.
+
+
+
+References clause\-\_\-comp\-\_\-start\-\_\-time\-\_\-, Stopwatch\-::get\-C\-P\-U\-Time\-Sec(), Stopwatch\-::get\-Real\-Time\-Sec(), nr\-\_\-of\-\_\-clause\-\_\-computations\-\_\-, sum\-\_\-clause\-\_\-comp\-\_\-cpu\-\_\-time\-\_\-, and sum\-\_\-clause\-\_\-comp\-\_\-real\-\_\-time\-\_\-.
+
+
+
+Referenced by Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F(), and Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F\-Inc().
+
+\hypertarget{classLearningExtractorStatistics_afb94f9819de27d6110eebae020461c13}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!notify\-After\-Clause\-Min@{notify\-After\-Clause\-Min}}
+\index{notify\-After\-Clause\-Min@{notify\-After\-Clause\-Min}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
+\subsubsection[{notify\-After\-Clause\-Min}]{\setlength{\rightskip}{0pt plus 5cm}void Learning\-Extractor\-Statistics\-::notify\-After\-Clause\-Min (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{size\-\_\-from, }
+\item[{size\-\_\-t}]{size\-\_\-to}
+\end{DoxyParamCaption}
+)}}\label{classLearningExtractorStatistics_afb94f9819de27d6110eebae020461c13}
+
+
+Called after the generalization of the next counterexample situation is done. 
+
+This method just reads out the \hyperlink{classStopwatch}{Stopwatch} and stores the execution time. It also logs the reduction of the clause size.
+
+
+\begin{DoxyParams}{Parameters}
+{\em size\-\_\-from} & The size of the clause before the generalization. \\
+\hline
+{\em size\-\_\-to} & The size of the clause after the generalization. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 99 of file Learning\-Extractor\-Statistics.\-cpp.
+
+
+
+References clause\-\_\-min\-\_\-start\-\_\-time\-\_\-, Stopwatch\-::get\-C\-P\-U\-Time\-Sec(), Stopwatch\-::get\-Real\-Time\-Sec(), sum\-\_\-clause\-\_\-min\-\_\-cpu\-\_\-time\-\_\-, sum\-\_\-clause\-\_\-min\-\_\-real\-\_\-time\-\_\-, sum\-\_\-clause\-\_\-size\-\_\-from\-\_\-, and sum\-\_\-clause\-\_\-size\-\_\-to\-\_\-.
+
+
+
+Referenced by Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F(), and Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F\-Inc().
+
+\hypertarget{classLearningExtractorStatistics_aad5a2bfb3925bf3645c663a76616ffef}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!notify\-After\-Ctrl\-Signal@{notify\-After\-Ctrl\-Signal}}
+\index{notify\-After\-Ctrl\-Signal@{notify\-After\-Ctrl\-Signal}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
+\subsubsection[{notify\-After\-Ctrl\-Signal}]{\setlength{\rightskip}{0pt plus 5cm}void Learning\-Extractor\-Statistics\-::notify\-After\-Ctrl\-Signal (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLearningExtractorStatistics_aad5a2bfb3925bf3645c663a76616ffef}
+
+
+Called after the computation of the next control signal is done. 
+
+This method just reads out the \hyperlink{classStopwatch}{Stopwatch} and stores the execution time. 
+
+Definition at line 72 of file Learning\-Extractor\-Statistics.\-cpp.
+
+
+
+References ctrl\-\_\-signal\-\_\-cpu\-\_\-time\-\_\-, ctrl\-\_\-signal\-\_\-real\-\_\-time\-\_\-, ctrl\-\_\-signal\-\_\-start\-\_\-time\-\_\-, Stopwatch\-::get\-C\-P\-U\-Time\-Sec(), and Stopwatch\-::get\-Real\-Time\-Sec().
+
+
+
+Referenced by Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F(), and Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F\-Inc().
+
+\hypertarget{classLearningExtractorStatistics_ab8c8b1c3832a79f055d45dca58e71725}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!notify\-Before\-A\-B\-C@{notify\-Before\-A\-B\-C}}
+\index{notify\-Before\-A\-B\-C@{notify\-Before\-A\-B\-C}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
+\subsubsection[{notify\-Before\-A\-B\-C}]{\setlength{\rightskip}{0pt plus 5cm}void Learning\-Extractor\-Statistics\-::notify\-Before\-A\-B\-C (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{nr\-\_\-of\-\_\-and\-\_\-gates}
+\end{DoxyParamCaption}
+)}}\label{classLearningExtractorStatistics_ab8c8b1c3832a79f055d45dca58e71725}
+
+
+Called before optimizing the resulting circuit with A\-B\-C. 
+
+This method just starts a \hyperlink{classStopwatch}{Stopwatch} and logs the circuit size before optimization.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nr\-\_\-of\-\_\-and\-\_\-gates} & The number of A\-N\-D gates in the A\-I\-G\-E\-R circuit before optimization with A\-B\-C. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 108 of file Learning\-Extractor\-Statistics.\-cpp.
+
+
+
+References abc\-\_\-start\-\_\-time\-\_\-, size\-\_\-before\-\_\-abc\-\_\-, and Stopwatch\-::start().
+
+
+
+Referenced by Learning\-Impl\-Extractor\-::run().
+
+\hypertarget{classLearningExtractorStatistics_a277b5df115b10544ad922347b777b836}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!notify\-Before\-Clause\-Comp@{notify\-Before\-Clause\-Comp}}
+\index{notify\-Before\-Clause\-Comp@{notify\-Before\-Clause\-Comp}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
+\subsubsection[{notify\-Before\-Clause\-Comp}]{\setlength{\rightskip}{0pt plus 5cm}void Learning\-Extractor\-Statistics\-::notify\-Before\-Clause\-Comp (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLearningExtractorStatistics_a277b5df115b10544ad922347b777b836}
+
+
+Called before the computation of the next counterexample situation. 
+
+This method just starts a \hyperlink{classStopwatch}{Stopwatch}. 
+
+Definition at line 79 of file Learning\-Extractor\-Statistics.\-cpp.
+
+
+
+References clause\-\_\-comp\-\_\-start\-\_\-time\-\_\-, and Stopwatch\-::start().
+
+
+
+Referenced by Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F(), and Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F\-Inc().
+
+\hypertarget{classLearningExtractorStatistics_a93d1b6c361f8e0a4b33e3660691790e4}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!notify\-Before\-Clause\-Min@{notify\-Before\-Clause\-Min}}
+\index{notify\-Before\-Clause\-Min@{notify\-Before\-Clause\-Min}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
+\subsubsection[{notify\-Before\-Clause\-Min}]{\setlength{\rightskip}{0pt plus 5cm}void Learning\-Extractor\-Statistics\-::notify\-Before\-Clause\-Min (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLearningExtractorStatistics_a93d1b6c361f8e0a4b33e3660691790e4}
+
+
+Called before the generalization of the next counterexample situation. 
+
+This method just starts a \hyperlink{classStopwatch}{Stopwatch}. 
+
+Definition at line 93 of file Learning\-Extractor\-Statistics.\-cpp.
+
+
+
+References clause\-\_\-min\-\_\-start\-\_\-time\-\_\-, and Stopwatch\-::start().
+
+
+
+Referenced by Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F(), and Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F\-Inc().
+
+\hypertarget{classLearningExtractorStatistics_a9b82a38db644813eb1d648b026010d6d}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!notify\-Before\-Ctrl\-Signal@{notify\-Before\-Ctrl\-Signal}}
+\index{notify\-Before\-Ctrl\-Signal@{notify\-Before\-Ctrl\-Signal}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
+\subsubsection[{notify\-Before\-Ctrl\-Signal}]{\setlength{\rightskip}{0pt plus 5cm}void Learning\-Extractor\-Statistics\-::notify\-Before\-Ctrl\-Signal (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLearningExtractorStatistics_a9b82a38db644813eb1d648b026010d6d}
+
+
+Called before the computation of the next control signal. 
+
+This method just starts a \hyperlink{classStopwatch}{Stopwatch}. 
+
+Definition at line 59 of file Learning\-Extractor\-Statistics.\-cpp.
+
+
+
+References ctrl\-\_\-signal\-\_\-start\-\_\-time\-\_\-, nr\-\_\-of\-\_\-clause\-\_\-computations\-\_\-, Stopwatch\-::start(), sum\-\_\-clause\-\_\-comp\-\_\-cpu\-\_\-time\-\_\-, sum\-\_\-clause\-\_\-comp\-\_\-real\-\_\-time\-\_\-, sum\-\_\-clause\-\_\-min\-\_\-cpu\-\_\-time\-\_\-, sum\-\_\-clause\-\_\-min\-\_\-real\-\_\-time\-\_\-, sum\-\_\-clause\-\_\-size\-\_\-from\-\_\-, and sum\-\_\-clause\-\_\-size\-\_\-to\-\_\-.
+
+
+
+Referenced by Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc1(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl(), Learning\-Impl\-Extractor\-::run\-Learning\-Jiang\-S\-A\-T\-Tmp\-Ctrl\-Inc2(), Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F(), and Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F\-Inc().
+
+\hypertarget{classLearningExtractorStatistics_af537e9d8d93bec157dddda73cd05a891}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!notify\-Final\-Size@{notify\-Final\-Size}}
+\index{notify\-Final\-Size@{notify\-Final\-Size}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
+\subsubsection[{notify\-Final\-Size}]{\setlength{\rightskip}{0pt plus 5cm}void Learning\-Extractor\-Statistics\-::notify\-Final\-Size (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{nr\-\_\-of\-\_\-new\-\_\-and\-\_\-gates}
+\end{DoxyParamCaption}
+)}}\label{classLearningExtractorStatistics_af537e9d8d93bec157dddda73cd05a891}
+
+
+Logs the number of new A\-N\-D gates that have been added to the specification. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nr\-\_\-of\-\_\-new\-\_\-and\-\_\-gates} & The number of new A\-N\-D gates that have been added to the specification. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 123 of file Learning\-Extractor\-Statistics.\-cpp.
+
+
+
+References size\-\_\-final\-\_\-.
+
+
+
+Referenced by Learning\-Impl\-Extractor\-::run().
+
+\hypertarget{classLearningExtractorStatistics_a53e255629b25f52edb36cb82ca8d3a9d}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!operator=@{operator=}}
+\index{operator=@{operator=}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Learning\-Extractor\-Statistics}\& Learning\-Extractor\-Statistics\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Learning\-Extractor\-Statistics} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classLearningExtractorStatistics_a53e255629b25f52edb36cb82ca8d3a9d}
+
+
+Assignment operator. 
+
+The assignment operator is disabled (set private) and not implemented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The source for creating the copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the assignment, i.\-e, $\ast$this. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classLearningExtractorStatistics_a58056982bf57dbe69cff268d9a9d4a32}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!abc\-\_\-cpu\-\_\-time\-\_\-@{abc\-\_\-cpu\-\_\-time\-\_\-}}
+\index{abc\-\_\-cpu\-\_\-time\-\_\-@{abc\-\_\-cpu\-\_\-time\-\_\-}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
+\subsubsection[{abc\-\_\-cpu\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}double Learning\-Extractor\-Statistics\-::abc\-\_\-cpu\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearningExtractorStatistics_a58056982bf57dbe69cff268d9a9d4a32}
+
+
+The time for optimizing the circuit with A\-B\-C in C\-P\-U-\/seconds. 
+
+
+
+Definition at line 157 of file Learning\-Extractor\-Statistics.\-h.
+
+
+
+Referenced by notify\-After\-A\-B\-C().
+
+\hypertarget{classLearningExtractorStatistics_a4bdc0c5fba7ef60dbf974f212b4b1f17}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!abc\-\_\-real\-\_\-time\-\_\-@{abc\-\_\-real\-\_\-time\-\_\-}}
+\index{abc\-\_\-real\-\_\-time\-\_\-@{abc\-\_\-real\-\_\-time\-\_\-}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
+\subsubsection[{abc\-\_\-real\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Learning\-Extractor\-Statistics\-::abc\-\_\-real\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearningExtractorStatistics_a4bdc0c5fba7ef60dbf974f212b4b1f17}
+
+
+Like \hyperlink{classLearningExtractorStatistics_a58056982bf57dbe69cff268d9a9d4a32}{abc\-\_\-cpu\-\_\-time\-\_\-} but real-\/time. 
+
+
+
+Definition at line 162 of file Learning\-Extractor\-Statistics.\-h.
+
+
+
+Referenced by log\-Statistics(), and notify\-After\-A\-B\-C().
+
+\hypertarget{classLearningExtractorStatistics_ac16b676d2eb3fe71af340233a37a9ca9}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!abc\-\_\-start\-\_\-time\-\_\-@{abc\-\_\-start\-\_\-time\-\_\-}}
+\index{abc\-\_\-start\-\_\-time\-\_\-@{abc\-\_\-start\-\_\-time\-\_\-}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
+\subsubsection[{abc\-\_\-start\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point\-In\-Time} Learning\-Extractor\-Statistics\-::abc\-\_\-start\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearningExtractorStatistics_ac16b676d2eb3fe71af340233a37a9ca9}
+
+
+The time when the circuit optimization with A\-B\-C was started. 
+
+
+
+Definition at line 152 of file Learning\-Extractor\-Statistics.\-h.
+
+
+
+Referenced by notify\-After\-A\-B\-C(), and notify\-Before\-A\-B\-C().
+
+\hypertarget{classLearningExtractorStatistics_a476eba034e9e2004d0fe0b2bdeafbd1e}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!clause\-\_\-comp\-\_\-start\-\_\-time\-\_\-@{clause\-\_\-comp\-\_\-start\-\_\-time\-\_\-}}
+\index{clause\-\_\-comp\-\_\-start\-\_\-time\-\_\-@{clause\-\_\-comp\-\_\-start\-\_\-time\-\_\-}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
+\subsubsection[{clause\-\_\-comp\-\_\-start\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point\-In\-Time} Learning\-Extractor\-Statistics\-::clause\-\_\-comp\-\_\-start\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearningExtractorStatistics_a476eba034e9e2004d0fe0b2bdeafbd1e}
+
+
+The time when the computation of a counterexample-\/situation was started. 
+
+
+
+Definition at line 167 of file Learning\-Extractor\-Statistics.\-h.
+
+
+
+Referenced by notify\-After\-Clause\-Comp(), and notify\-Before\-Clause\-Comp().
+
+\hypertarget{classLearningExtractorStatistics_aad8e031085a746b5fc30b8185bf5dabf}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!clause\-\_\-min\-\_\-start\-\_\-time\-\_\-@{clause\-\_\-min\-\_\-start\-\_\-time\-\_\-}}
+\index{clause\-\_\-min\-\_\-start\-\_\-time\-\_\-@{clause\-\_\-min\-\_\-start\-\_\-time\-\_\-}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
+\subsubsection[{clause\-\_\-min\-\_\-start\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point\-In\-Time} Learning\-Extractor\-Statistics\-::clause\-\_\-min\-\_\-start\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearningExtractorStatistics_aad8e031085a746b5fc30b8185bf5dabf}
+
+
+The time when the generalization of a counterexample-\/situation was started. 
+
+
+
+Definition at line 172 of file Learning\-Extractor\-Statistics.\-h.
+
+
+
+Referenced by notify\-After\-Clause\-Min(), and notify\-Before\-Clause\-Min().
+
+\hypertarget{classLearningExtractorStatistics_a836a3f1d0bdf023577056a8b05f769ca}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!ctrl\-\_\-signal\-\_\-cpu\-\_\-time\-\_\-@{ctrl\-\_\-signal\-\_\-cpu\-\_\-time\-\_\-}}
+\index{ctrl\-\_\-signal\-\_\-cpu\-\_\-time\-\_\-@{ctrl\-\_\-signal\-\_\-cpu\-\_\-time\-\_\-}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
+\subsubsection[{ctrl\-\_\-signal\-\_\-cpu\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$double$>$ Learning\-Extractor\-Statistics\-::ctrl\-\_\-signal\-\_\-cpu\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearningExtractorStatistics_a836a3f1d0bdf023577056a8b05f769ca}
+
+
+The total time per control signal. 
+
+ctrl\-\_\-signal\-\_\-cpu\-\_\-time\-\_\-\mbox{[}i\mbox{]} contains the total time for computing the output function of control signal i. This should be roughly sum\-\_\-clause\-\_\-comp\-\_\-cpu\-\_\-time\-\_\-\mbox{[}i\mbox{]} + sum\-\_\-clause\-\_\-min\-\_\-cpu\-\_\-time\-\_\-\mbox{[}i\mbox{]}. 
+
+Definition at line 238 of file Learning\-Extractor\-Statistics.\-h.
+
+
+
+Referenced by Learning\-Extractor\-Statistics(), log\-Statistics(), and notify\-After\-Ctrl\-Signal().
+
+\hypertarget{classLearningExtractorStatistics_ae75aebbe85e3b916e922b9472cb5474f}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!ctrl\-\_\-signal\-\_\-real\-\_\-time\-\_\-@{ctrl\-\_\-signal\-\_\-real\-\_\-time\-\_\-}}
+\index{ctrl\-\_\-signal\-\_\-real\-\_\-time\-\_\-@{ctrl\-\_\-signal\-\_\-real\-\_\-time\-\_\-}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
+\subsubsection[{ctrl\-\_\-signal\-\_\-real\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$size\-\_\-t$>$ Learning\-Extractor\-Statistics\-::ctrl\-\_\-signal\-\_\-real\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearningExtractorStatistics_ae75aebbe85e3b916e922b9472cb5474f}
+
+
+Like \hyperlink{classLearningExtractorStatistics_a836a3f1d0bdf023577056a8b05f769ca}{ctrl\-\_\-signal\-\_\-cpu\-\_\-time\-\_\-} but real-\/time. 
+
+
+
+Definition at line 243 of file Learning\-Extractor\-Statistics.\-h.
+
+
+
+Referenced by Learning\-Extractor\-Statistics(), log\-Statistics(), and notify\-After\-Ctrl\-Signal().
+
+\hypertarget{classLearningExtractorStatistics_aaf7283a491c91200e03e0ca29f7bcd93}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!ctrl\-\_\-signal\-\_\-start\-\_\-time\-\_\-@{ctrl\-\_\-signal\-\_\-start\-\_\-time\-\_\-}}
+\index{ctrl\-\_\-signal\-\_\-start\-\_\-time\-\_\-@{ctrl\-\_\-signal\-\_\-start\-\_\-time\-\_\-}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
+\subsubsection[{ctrl\-\_\-signal\-\_\-start\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point\-In\-Time} Learning\-Extractor\-Statistics\-::ctrl\-\_\-signal\-\_\-start\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearningExtractorStatistics_aaf7283a491c91200e03e0ca29f7bcd93}
+
+
+The time when the computation of the next control signal was started. 
+
+
+
+Definition at line 177 of file Learning\-Extractor\-Statistics.\-h.
+
+
+
+Referenced by notify\-After\-Ctrl\-Signal(), and notify\-Before\-Ctrl\-Signal().
+
+\hypertarget{classLearningExtractorStatistics_a20b2771dd74bd0e2e08d7568149bef14}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!nr\-\_\-of\-\_\-clause\-\_\-computations\-\_\-@{nr\-\_\-of\-\_\-clause\-\_\-computations\-\_\-}}
+\index{nr\-\_\-of\-\_\-clause\-\_\-computations\-\_\-@{nr\-\_\-of\-\_\-clause\-\_\-computations\-\_\-}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
+\subsubsection[{nr\-\_\-of\-\_\-clause\-\_\-computations\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$size\-\_\-t$>$ Learning\-Extractor\-Statistics\-::nr\-\_\-of\-\_\-clause\-\_\-computations\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearningExtractorStatistics_a20b2771dd74bd0e2e08d7568149bef14}
+
+
+The number of counterexample-\/situations that had to be computed per control signal. 
+
+nr\-\_\-of\-\_\-clause\-\_\-computations\-\_\-\mbox{[}i\mbox{]} contains the number of counterexample-\/situations that had to be computed during the computation of an output function for control signal i. 
+
+Definition at line 185 of file Learning\-Extractor\-Statistics.\-h.
+
+
+
+Referenced by Learning\-Extractor\-Statistics(), log\-Statistics(), notify\-After\-Clause\-Comp(), and notify\-Before\-Ctrl\-Signal().
+
+\hypertarget{classLearningExtractorStatistics_a6684883b2634d0ea619aaf145eb86b8d}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!size\-\_\-after\-\_\-abc\-\_\-@{size\-\_\-after\-\_\-abc\-\_\-}}
+\index{size\-\_\-after\-\_\-abc\-\_\-@{size\-\_\-after\-\_\-abc\-\_\-}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
+\subsubsection[{size\-\_\-after\-\_\-abc\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Learning\-Extractor\-Statistics\-::size\-\_\-after\-\_\-abc\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearningExtractorStatistics_a6684883b2634d0ea619aaf145eb86b8d}
+
+
+The circuit size after optimization with A\-B\-C. 
+
+
+
+Definition at line 253 of file Learning\-Extractor\-Statistics.\-h.
+
+
+
+Referenced by log\-Statistics(), and notify\-After\-A\-B\-C().
+
+\hypertarget{classLearningExtractorStatistics_ae1dfe12c84dc72fd7b8f664ebe069103}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!size\-\_\-before\-\_\-abc\-\_\-@{size\-\_\-before\-\_\-abc\-\_\-}}
+\index{size\-\_\-before\-\_\-abc\-\_\-@{size\-\_\-before\-\_\-abc\-\_\-}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
+\subsubsection[{size\-\_\-before\-\_\-abc\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Learning\-Extractor\-Statistics\-::size\-\_\-before\-\_\-abc\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearningExtractorStatistics_ae1dfe12c84dc72fd7b8f664ebe069103}
+
+
+The circuit size before optimization with A\-B\-C. 
+
+
+
+Definition at line 248 of file Learning\-Extractor\-Statistics.\-h.
+
+
+
+Referenced by log\-Statistics(), and notify\-Before\-A\-B\-C().
+
+\hypertarget{classLearningExtractorStatistics_a4b09852748af7edc14a8a884dac6efce}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!size\-\_\-final\-\_\-@{size\-\_\-final\-\_\-}}
+\index{size\-\_\-final\-\_\-@{size\-\_\-final\-\_\-}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
+\subsubsection[{size\-\_\-final\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Learning\-Extractor\-Statistics\-::size\-\_\-final\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearningExtractorStatistics_a4b09852748af7edc14a8a884dac6efce}
+
+
+The number of new A\-N\-D gates that have been added to the specification. 
+
+
+
+Definition at line 258 of file Learning\-Extractor\-Statistics.\-h.
+
+
+
+Referenced by log\-Statistics(), and notify\-Final\-Size().
+
+\hypertarget{classLearningExtractorStatistics_a3e3c198d4480eb0b74410126bc2040e9}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!sum\-\_\-clause\-\_\-comp\-\_\-cpu\-\_\-time\-\_\-@{sum\-\_\-clause\-\_\-comp\-\_\-cpu\-\_\-time\-\_\-}}
+\index{sum\-\_\-clause\-\_\-comp\-\_\-cpu\-\_\-time\-\_\-@{sum\-\_\-clause\-\_\-comp\-\_\-cpu\-\_\-time\-\_\-}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
+\subsubsection[{sum\-\_\-clause\-\_\-comp\-\_\-cpu\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$double$>$ Learning\-Extractor\-Statistics\-::sum\-\_\-clause\-\_\-comp\-\_\-cpu\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearningExtractorStatistics_a3e3c198d4480eb0b74410126bc2040e9}
+
+
+The total counterexample computation time per control signal. 
+
+sum\-\_\-clause\-\_\-comp\-\_\-cpu\-\_\-time\-\_\-\mbox{[}i\mbox{]} contains the total counterexample computation time for control signal i. 
+
+Definition at line 211 of file Learning\-Extractor\-Statistics.\-h.
+
+
+
+Referenced by Learning\-Extractor\-Statistics(), log\-Statistics(), notify\-After\-Clause\-Comp(), and notify\-Before\-Ctrl\-Signal().
+
+\hypertarget{classLearningExtractorStatistics_a505c22ba13094231793f0d5aeaf362f6}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!sum\-\_\-clause\-\_\-comp\-\_\-real\-\_\-time\-\_\-@{sum\-\_\-clause\-\_\-comp\-\_\-real\-\_\-time\-\_\-}}
+\index{sum\-\_\-clause\-\_\-comp\-\_\-real\-\_\-time\-\_\-@{sum\-\_\-clause\-\_\-comp\-\_\-real\-\_\-time\-\_\-}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
+\subsubsection[{sum\-\_\-clause\-\_\-comp\-\_\-real\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$size\-\_\-t$>$ Learning\-Extractor\-Statistics\-::sum\-\_\-clause\-\_\-comp\-\_\-real\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearningExtractorStatistics_a505c22ba13094231793f0d5aeaf362f6}
+
+
+Like \hyperlink{classLearningExtractorStatistics_a3e3c198d4480eb0b74410126bc2040e9}{sum\-\_\-clause\-\_\-comp\-\_\-cpu\-\_\-time\-\_\-} but real-\/time. 
+
+
+
+Definition at line 216 of file Learning\-Extractor\-Statistics.\-h.
+
+
+
+Referenced by Learning\-Extractor\-Statistics(), log\-Statistics(), notify\-After\-Clause\-Comp(), and notify\-Before\-Ctrl\-Signal().
+
+\hypertarget{classLearningExtractorStatistics_a61118ceb2f3bd2072ce584971fb37ae2}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!sum\-\_\-clause\-\_\-min\-\_\-cpu\-\_\-time\-\_\-@{sum\-\_\-clause\-\_\-min\-\_\-cpu\-\_\-time\-\_\-}}
+\index{sum\-\_\-clause\-\_\-min\-\_\-cpu\-\_\-time\-\_\-@{sum\-\_\-clause\-\_\-min\-\_\-cpu\-\_\-time\-\_\-}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
+\subsubsection[{sum\-\_\-clause\-\_\-min\-\_\-cpu\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$double$>$ Learning\-Extractor\-Statistics\-::sum\-\_\-clause\-\_\-min\-\_\-cpu\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearningExtractorStatistics_a61118ceb2f3bd2072ce584971fb37ae2}
+
+
+The total counterexample generalization time per control signal. 
+
+sum\-\_\-clause\-\_\-min\-\_\-cpu\-\_\-time\-\_\-\mbox{[}i\mbox{]} contains the total counterexample minimization time for control signal i. 
+
+Definition at line 224 of file Learning\-Extractor\-Statistics.\-h.
+
+
+
+Referenced by Learning\-Extractor\-Statistics(), log\-Statistics(), notify\-After\-Clause\-Min(), and notify\-Before\-Ctrl\-Signal().
+
+\hypertarget{classLearningExtractorStatistics_a552f8b12efb9b8460efd32d805e66eac}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!sum\-\_\-clause\-\_\-min\-\_\-real\-\_\-time\-\_\-@{sum\-\_\-clause\-\_\-min\-\_\-real\-\_\-time\-\_\-}}
+\index{sum\-\_\-clause\-\_\-min\-\_\-real\-\_\-time\-\_\-@{sum\-\_\-clause\-\_\-min\-\_\-real\-\_\-time\-\_\-}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
+\subsubsection[{sum\-\_\-clause\-\_\-min\-\_\-real\-\_\-time\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$size\-\_\-t$>$ Learning\-Extractor\-Statistics\-::sum\-\_\-clause\-\_\-min\-\_\-real\-\_\-time\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearningExtractorStatistics_a552f8b12efb9b8460efd32d805e66eac}
+
+
+Like \hyperlink{classLearningExtractorStatistics_a61118ceb2f3bd2072ce584971fb37ae2}{sum\-\_\-clause\-\_\-min\-\_\-cpu\-\_\-time\-\_\-} but real-\/time. 
+
+
+
+Definition at line 229 of file Learning\-Extractor\-Statistics.\-h.
+
+
+
+Referenced by Learning\-Extractor\-Statistics(), log\-Statistics(), notify\-After\-Clause\-Min(), and notify\-Before\-Ctrl\-Signal().
+
+\hypertarget{classLearningExtractorStatistics_a2a7ac5da4b46b9366430f6934579ade7}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!sum\-\_\-clause\-\_\-size\-\_\-from\-\_\-@{sum\-\_\-clause\-\_\-size\-\_\-from\-\_\-}}
+\index{sum\-\_\-clause\-\_\-size\-\_\-from\-\_\-@{sum\-\_\-clause\-\_\-size\-\_\-from\-\_\-}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
+\subsubsection[{sum\-\_\-clause\-\_\-size\-\_\-from\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$size\-\_\-t$>$ Learning\-Extractor\-Statistics\-::sum\-\_\-clause\-\_\-size\-\_\-from\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearningExtractorStatistics_a2a7ac5da4b46b9366430f6934579ade7}
+
+
+The sum of the clause size before generalization per control signal. 
+
+sum\-\_\-clause\-\_\-size\-\_\-from\-\_\-\mbox{[}i\mbox{]} contains the sum of the clause sizes before generalization that had to be computed during the computation of an output function for control signal i. 
+
+Definition at line 194 of file Learning\-Extractor\-Statistics.\-h.
+
+
+
+Referenced by Learning\-Extractor\-Statistics(), log\-Statistics(), notify\-After\-Clause\-Min(), and notify\-Before\-Ctrl\-Signal().
+
+\hypertarget{classLearningExtractorStatistics_ac503db6146780edd0fd6316777d251cf}{\index{Learning\-Extractor\-Statistics@{Learning\-Extractor\-Statistics}!sum\-\_\-clause\-\_\-size\-\_\-to\-\_\-@{sum\-\_\-clause\-\_\-size\-\_\-to\-\_\-}}
+\index{sum\-\_\-clause\-\_\-size\-\_\-to\-\_\-@{sum\-\_\-clause\-\_\-size\-\_\-to\-\_\-}!LearningExtractorStatistics@{Learning\-Extractor\-Statistics}}
+\subsubsection[{sum\-\_\-clause\-\_\-size\-\_\-to\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$size\-\_\-t$>$ Learning\-Extractor\-Statistics\-::sum\-\_\-clause\-\_\-size\-\_\-to\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLearningExtractorStatistics_ac503db6146780edd0fd6316777d251cf}
+
+
+The sum of the clause size after generalization per control signal. 
+
+sum\-\_\-clause\-\_\-size\-\_\-to\-\_\-\mbox{[}i\mbox{]} contains the sum of the clause sizes after generalization that had to be computed during the computation of an output function for control signal i. 
+
+Definition at line 203 of file Learning\-Extractor\-Statistics.\-h.
+
+
+
+Referenced by Learning\-Extractor\-Statistics(), log\-Statistics(), notify\-After\-Clause\-Min(), and notify\-Before\-Ctrl\-Signal().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{LearningExtractorStatistics_8h}{Learning\-Extractor\-Statistics.\-h}\item 
+src/\hyperlink{LearningExtractorStatistics_8cpp}{Learning\-Extractor\-Statistics.\-cpp}\end{DoxyCompactItemize}

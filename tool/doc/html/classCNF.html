@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">demiurge
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A synthesis tool for safety specifications.</div>
   </td>
@@ -111,6 +111,8 @@ Public Types</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a69a2e604fd0dc79be4799ff90c7ef362"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCNF.html#a69a2e604fd0dc79be4799ff90c7ef362">CNF</a> ()</td></tr>
 <tr class="memdesc:a69a2e604fd0dc79be4799ff90c7ef362"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a69a2e604fd0dc79be4799ff90c7ef362"></a><br/></td></tr>
+<tr class="memitem:aa3bf8a4f0ea5c96c9833f34028e00347"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCNF.html#aa3bf8a4f0ea5c96c9833f34028e00347">CNF</a> (const string &amp;filename)</td></tr>
+<tr class="memdesc:aa3bf8a4f0ea5c96c9833f34028e00347"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor from DIMACS file.  <a href="#aa3bf8a4f0ea5c96c9833f34028e00347"></a><br/></td></tr>
 <tr class="memitem:acdf16631121bace295ef4440f8a38777"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCNF.html#acdf16631121bace295ef4440f8a38777">CNF</a> (const <a class="el" href="classCNF.html">CNF</a> &amp;other)</td></tr>
 <tr class="memdesc:acdf16631121bace295ef4440f8a38777"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor.  <a href="#acdf16631121bace295ef4440f8a38777"></a><br/></td></tr>
 <tr class="memitem:aa61ef2c2b49d4182993ccbd0e7877322"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classCNF.html">CNF</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCNF.html#aa61ef2c2b49d4182993ccbd0e7877322">operator=</a> (const <a class="el" href="classCNF.html">CNF</a> &amp;other)</td></tr>
@@ -155,6 +157,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a4fafd0324a1c4c7f345b8df7f931aafa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the sum of the sizes of all clauses in the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a>.  <a href="#a4fafd0324a1c4c7f345b8df7f931aafa"></a><br/></td></tr>
 <tr class="memitem:ae15ec06cc22d6cda868febd1708d331b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCNF.html#ae15ec06cc22d6cda868febd1708d331b">toString</a> () const </td></tr>
 <tr class="memdesc:ae15ec06cc22d6cda868febd1708d331b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string representation of the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> in DIMACS format.  <a href="#ae15ec06cc22d6cda868febd1708d331b"></a><br/></td></tr>
+<tr class="memitem:aefe201cf4139e1ed2f4dfdcb2f8efdae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCNF.html#aefe201cf4139e1ed2f4dfdcb2f8efdae">saveToFile</a> (const string &amp;filename) const </td></tr>
+<tr class="memdesc:aefe201cf4139e1ed2f4dfdcb2f8efdae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> into a file in DIMACS format.  <a href="#aefe201cf4139e1ed2f4dfdcb2f8efdae"></a><br/></td></tr>
 <tr class="memitem:a9532acac619c098668460a4c97cbbc0f"><td class="memItemLeft" align="right" valign="top">const list&lt; vector&lt; int &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCNF.html#a9532acac619c098668460a4c97cbbc0f">getClauses</a> () const </td></tr>
 <tr class="memdesc:a9532acac619c098668460a4c97cbbc0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the clauses of the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> as list of vectors.  <a href="#a9532acac619c098668460a4c97cbbc0f"></a><br/></td></tr>
 <tr class="memitem:a7a3345272f6c5332aa5118e80284f61f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCNF.html#a7a3345272f6c5332aa5118e80284f61f">simplify</a> ()</td></tr>
@@ -163,6 +167,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a08cf05fc87ad59d65b0b03d8d3f61029"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all duplicates from the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a>.  <a href="#a08cf05fc87ad59d65b0b03d8d3f61029"></a><br/></td></tr>
 <tr class="memitem:ac0fc121fe92bc190aeeaf351703fe111"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCNF.html#ac0fc121fe92bc190aeeaf351703fe111">isSatBy</a> (const vector&lt; int &gt; &amp;cube) const </td></tr>
 <tr class="memdesc:ac0fc121fe92bc190aeeaf351703fe111"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> is satisfied by a certain variable assignment.  <a href="#ac0fc121fe92bc190aeeaf351703fe111"></a><br/></td></tr>
+<tr class="memitem:a6fe7640aa2a65579cf8364092f26c126"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCNF.html#a6fe7640aa2a65579cf8364092f26c126">setVarValue</a> (int var, bool value)</td></tr>
+<tr class="memdesc:a6fe7640aa2a65579cf8364092f26c126"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces a variable in the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> by true or false.  <a href="#a6fe7640aa2a65579cf8364092f26c126"></a><br/></td></tr>
+<tr class="memitem:ac34e02c39a762ad696449a8c75d4e115"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCNF.html#ac34e02c39a762ad696449a8c75d4e115">renameVars</a> (const vector&lt; int &gt; rename_map)</td></tr>
+<tr class="memdesc:ac34e02c39a762ad696449a8c75d4e115"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renames all variables in a <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a>.  <a href="#ac34e02c39a762ad696449a8c75d4e115"></a><br/></td></tr>
+<tr class="memitem:aa450a94a6161936d1a3cdffd083a0e42"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCNF.html#aa450a94a6161936d1a3cdffd083a0e42">contains</a> (int var) const </td></tr>
+<tr class="memdesc:aa450a94a6161936d1a3cdffd083a0e42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if this <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> contains a certain variable, and false otherwise.  <a href="#aa450a94a6161936d1a3cdffd083a0e42"></a><br/></td></tr>
+<tr class="memitem:a4847969cea924a74642e3d914135d8da"><td class="memItemLeft" align="right" valign="top">vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCNF.html#a4847969cea924a74642e3d914135d8da">getVars</a> () const </td></tr>
+<tr class="memdesc:a4847969cea924a74642e3d914135d8da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the set of all variables that occur in the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a>.  <a href="#a4847969cea924a74642e3d914135d8da"></a><br/></td></tr>
+<tr class="memitem:a8a54b640d4fbb1da74979fc07536d4e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCNF.html#a8a54b640d4fbb1da74979fc07536d4e9">appendVarsTo</a> (set&lt; int &gt; &amp;var_set) const </td></tr>
+<tr class="memdesc:a8a54b640d4fbb1da74979fc07536d4e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds all variables that occur in the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> to the given set.  <a href="#a8a54b640d4fbb1da74979fc07536d4e9"></a><br/></td></tr>
 <tr class="memitem:a5ce0741b551948faff1d3365871b2218"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCNF.html#a5ce0741b551948faff1d3365871b2218">operator==</a> (const <a class="el" href="classCNF.html">CNF</a> &amp;other) const </td></tr>
 <tr class="memdesc:a5ce0741b551948faff1d3365871b2218"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two CNFs syntactically.  <a href="#a5ce0741b551948faff1d3365871b2218"></a><br/></td></tr>
 </table><table class="memberdecls">
@@ -177,7 +191,7 @@ Protected Attributes</h2></td></tr>
 <p>A Conjunctive Normal Form formula is a conjunction of clauses. Each clause is a disjunction of literals. A literal is a Boolean variable or its negation. Internally, every literal is represented as integer number (0 is not used). Every clause is a vector of literals. A <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> is a list of clauses. This representation was chosen for pragmatic reasons: we often manipulate clauses, so we chose a simple representation which can be manipulated efficiently. The <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> is a list (and no vector) of clauses because we often append clauses, which can be inefficient with vectors. Furthermore, we usually do not need random access to individual clauses.</p>
 <p>Other options would be (a) to sort the literals in the clauses, (b) represent clauses as sets, (c) represent a <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> as set of sets of integers, etc. So far, we considered these options an over-kill because the time for manipulating CNFs is negligable compared to SAT- or QBF-solving time.</p>
 <dl class="section author"><dt>Author</dt><dd>Robert Koenighofer (<a href="#" onclick="location.href='mai'+'lto:'+'rob'+'er'+'t.k'+'oe'+'nig'+'ho'+'fer'+'@i'+'aik'+'.t'+'ugr'+'az'+'.at'; return false;">rober<span style="display: none;">.nosp@m.</span>t.ko<span style="display: none;">.nosp@m.</span>enigh<span style="display: none;">.nosp@m.</span>ofer<span style="display: none;">.nosp@m.</span>@iaik<span style="display: none;">.nosp@m.</span>.tug<span style="display: none;">.nosp@m.</span>raz.a<span style="display: none;">.nosp@m.</span>t</a>) </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>1.0.0 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.1.0 </dd></dl>
 
 <p>Definition at line <a class="el" href="CNF_8h_source.html#l00059">59</a> of file <a class="el" href="CNF_8h_source.html">CNF.h</a>.</p>
 </div><h2>Member Typedef Documentation</h2>
@@ -193,7 +207,7 @@ Protected Attributes</h2></td></tr>
 
 <p>A type for a const-iterator over the clauses. </p>
 
-<p>Definition at line <a class="el" href="CNF_8h_source.html#l00322">322</a> of file <a class="el" href="CNF_8h_source.html">CNF.h</a>.</p>
+<p>Definition at line <a class="el" href="CNF_8h_source.html#l00382">382</a> of file <a class="el" href="CNF_8h_source.html">CNF.h</a>.</p>
 
 </div>
 </div>
@@ -209,7 +223,7 @@ Protected Attributes</h2></td></tr>
 
 <p>A type for an iterator over the clauses. </p>
 
-<p>Definition at line <a class="el" href="CNF_8h_source.html#l00328">328</a> of file <a class="el" href="CNF_8h_source.html">CNF.h</a>.</p>
+<p>Definition at line <a class="el" href="CNF_8h_source.html#l00388">388</a> of file <a class="el" href="CNF_8h_source.html">CNF.h</a>.</p>
 
 </div>
 </div>
@@ -231,6 +245,34 @@ Protected Attributes</h2></td></tr>
 <p>After construction, the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> represents the empty set of clauses, i.e., the formula TRUE. </p>
 
 <p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00039">39</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa3bf8a4f0ea5c96c9833f34028e00347"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CNF::CNF </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor from DIMACS file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>The name (including path and extension) of the DIMACS file containing the definition of the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00045">45</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
+
+<p>References <a class="el" href="CNF_8h_source.html#l00395">clauses_</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, and <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>.</p>
 
 </div>
 </div>
@@ -257,7 +299,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00045">45</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00092">92</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
 
 </div>
 </div>
@@ -284,7 +326,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Destructor. </p>
 
-<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00058">58</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00105">105</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
 
 </div>
 </div>
@@ -311,11 +353,11 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00122">122</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00169">169</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8h_source.html#l00335">clauses_</a>.</p>
+<p>References <a class="el" href="CNF_8h_source.html#l00395">clauses_</a>.</p>
 
-<p>Referenced by <a class="el" href="CNF_8cpp_source.html#l00083">addCube()</a>, <a class="el" href="CNF_8cpp_source.html#l00076">addNegClauseAsCube()</a>, <a class="el" href="TemplateSynth_8cpp_source.html#l00115">TemplateSynth::findWinRegCNFTempl()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00050">AIG2CNF::initFromAig()</a>, <a class="el" href="LingelingApi_8cpp_source.html#l00072">LingelingApi::isSatModelOrCore()</a>, <a class="el" href="PicoSatApi_8cpp_source.html#l00073">PicoSatApi::isSatModelOrCore()</a>, and <a class="el" href="MiniSatApi_8cpp_source.html#l00144">MiniSatApi::isSatModelOrCore()</a>.</p>
+<p>Referenced by <a class="el" href="CNF_8cpp_source.html#l00130">addCube()</a>, <a class="el" href="CNF_8cpp_source.html#l00123">addNegClauseAsCube()</a>, <a class="el" href="TemplateSynth_8cpp_source.html#l00119">TemplateSynth::findWinRegCNFTempl()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00050">AIG2CNF::initFromAig()</a>, <a class="el" href="LingelingApi_8cpp_source.html#l00072">LingelingApi::isSatModelOrCore()</a>, <a class="el" href="PicoSatApi_8cpp_source.html#l00073">PicoSatApi::isSatModelOrCore()</a>, and <a class="el" href="MiniSatApi_8cpp_source.html#l00144">MiniSatApi::isSatModelOrCore()</a>.</p>
 
 </div>
 </div>
@@ -352,11 +394,11 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00130">130</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00177">177</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8h_source.html#l00335">clauses_</a>.</p>
+<p>References <a class="el" href="CNF_8h_source.html#l00395">clauses_</a>.</p>
 
-<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00405">ParallelLearner::computePreviousTrans()</a>, <a class="el" href="TemplateSynth_8cpp_source.html#l00115">TemplateSynth::findWinRegCNFTempl()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00050">AIG2CNF::initFromAig()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00040">LearnSynthQBFInd::LearnSynthQBFInd()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00041">LearnSynthSAT::LearnSynthSAT()</a>, and <a class="el" href="CNF_8cpp_source.html#l00217">negate()</a>.</p>
+<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00407">ParallelLearner::computePreviousTrans()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00565">LearnSynthQBFInc::computeWinningRegionAllPool()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00273">LearnSynthQBFInc::computeWinningRegionOnePool()</a>, <a class="el" href="TemplateSynth_8cpp_source.html#l00119">TemplateSynth::findWinRegCNFTempl()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00050">AIG2CNF::initFromAig()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00040">LearnSynthQBFInd::LearnSynthQBFInd()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00042">LearnSynthSAT::LearnSynthSAT()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l01614">LearningImplExtractor::makeEq2()</a>, <a class="el" href="CNF_8cpp_source.html#l00264">negate()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l01172">LearningImplExtractor::runLearningJiangSATInc1()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l01379">LearningImplExtractor::runLearningJiangSATInc2()</a>, and <a class="el" href="LearningImplExtractor_8cpp_source.html#l00947">LearningImplExtractor::runLearningJiangSATTmpCtrlInc2()</a>.</p>
 
 </div>
 </div>
@@ -400,11 +442,11 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00139">139</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00186">186</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8h_source.html#l00335">clauses_</a>.</p>
+<p>References <a class="el" href="CNF_8h_source.html#l00395">clauses_</a>.</p>
 
-<p>Referenced by <a class="el" href="AIG2CNF_8cpp_source.html#l00050">AIG2CNF::initFromAig()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00040">LearnSynthQBFInd::LearnSynthQBFInd()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00041">LearnSynthSAT::LearnSynthSAT()</a>.</p>
+<p>Referenced by <a class="el" href="AIG2CNF_8cpp_source.html#l00050">AIG2CNF::initFromAig()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00040">LearnSynthQBFInd::LearnSynthQBFInd()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00042">LearnSynthSAT::LearnSynthSAT()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l01614">LearningImplExtractor::makeEq2()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l01172">LearningImplExtractor::runLearningJiangSATInc1()</a>, and <a class="el" href="LearningImplExtractor_8cpp_source.html#l01379">LearningImplExtractor::runLearningJiangSATInc2()</a>.</p>
 
 </div>
 </div>
@@ -455,11 +497,11 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00149">149</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00196">196</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8h_source.html#l00335">clauses_</a>.</p>
+<p>References <a class="el" href="CNF_8h_source.html#l00395">clauses_</a>.</p>
 
-<p>Referenced by <a class="el" href="TemplateSynth_8cpp_source.html#l00115">TemplateSynth::findWinRegCNFTempl()</a>.</p>
+<p>Referenced by <a class="el" href="TemplateSynth_8cpp_source.html#l00119">TemplateSynth::findWinRegCNFTempl()</a>.</p>
 
 </div>
 </div>
@@ -485,11 +527,11 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00070">70</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00117">117</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8h_source.html#l00335">clauses_</a>.</p>
+<p>References <a class="el" href="CNF_8h_source.html#l00395">clauses_</a>.</p>
 
-<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00347">IFM13Synth::addBlockedState()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01668">IFM13Explorer::addBlockedState()</a>, <a class="el" href="Utils_8cpp_source.html#l00272">Utils::compressStateCNF()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00321">LearnSynthQBFInc::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00449">LearnSynthQBF::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00362">LearnSynthQBFInd::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00289">LearnSynthQBFInc::computeBlockingClause()</a>, <a class="el" href="TemplateSynth_8cpp_source.html#l00115">TemplateSynth::findWinRegCNFTempl()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00050">AIG2CNF::initFromAig()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00040">LearnSynthQBFInd::LearnSynthQBFInd()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00041">LearnSynthSAT::LearnSynthSAT()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00745">ClauseExplorerSAT::notifyNewUselessInputClause()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00326">ParallelLearner::notifyNewWinRegClause()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00730">ClauseExplorerSAT::notifyNewWinRegClause()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01049">CounterGenSAT::notifyNewWinRegClause()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01453">IFM13Explorer::notifyNewWinRegClause()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00740">LearnSynthSAT::presentToPrevious()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00459">ParallelLearner::presentToPrevious()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00618">LearnSynthQBFInd::presentToPrevious()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00858">ClauseExplorerSAT::presentToPrevious()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01250">CounterGenSAT::presentToPrevious()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00424">LearnSynthQBFInc::reduceExistingClauses()</a>, and <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00450">LearnSynthQBFInd::reduceExistingClauses()</a>.</p>
+<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00351">IFM13Synth::addBlockedState()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01670">IFM13Explorer::addBlockedState()</a>, <a class="el" href="Utils_8cpp_source.html#l00287">Utils::compressStateCNF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00450">LearnSynthQBF::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00364">LearnSynthQBFInd::computeAllBlockingClauses()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00565">LearnSynthQBFInc::computeWinningRegionAllPool()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00488">LearnSynthQBFInc::computeWinningRegionAllPush()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00273">LearnSynthQBFInc::computeWinningRegionOnePool()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00199">LearnSynthQBFInc::computeWinningRegionOnePush()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00508">LearnSynthSAT::computeWinningRegionPlainDep2()</a>, <a class="el" href="TemplateSynth_8cpp_source.html#l00119">TemplateSynth::findWinRegCNFTempl()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00050">AIG2CNF::initFromAig()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00040">LearnSynthQBFInd::LearnSynthQBFInd()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00042">LearnSynthSAT::LearnSynthSAT()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l01577">LearningImplExtractor::makeEq()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l01614">LearningImplExtractor::makeEq2()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00747">ClauseExplorerSAT::notifyNewUselessInputClause()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00328">ParallelLearner::notifyNewWinRegClause()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00732">ClauseExplorerSAT::notifyNewWinRegClause()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01051">CounterGenSAT::notifyNewWinRegClause()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01455">IFM13Explorer::notifyNewWinRegClause()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l01173">LearnSynthSAT::presentToPrevious()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00461">ParallelLearner::presentToPrevious()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00620">LearnSynthQBFInd::presentToPrevious()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00860">ClauseExplorerSAT::presentToPrevious()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01252">CounterGenSAT::presentToPrevious()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00452">LearnSynthQBFInd::reduceExistingClauses()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l01172">LearningImplExtractor::runLearningJiangSATInc1()</a>, and <a class="el" href="LearningImplExtractor_8cpp_source.html#l01379">LearningImplExtractor::runLearningJiangSATInc2()</a>.</p>
 
 </div>
 </div>
@@ -517,11 +559,11 @@ Protected Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if some clauses were removed due to simplification, false otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00099">99</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00146">146</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8h_source.html#l00335">clauses_</a>, and <a class="el" href="Utils_8cpp_source.html#l00249">Utils::isSubset()</a>.</p>
+<p>References <a class="el" href="CNF_8h_source.html#l00395">clauses_</a>, and <a class="el" href="Utils_8cpp_source.html#l00264">Utils::isSubset()</a>.</p>
 
-<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00332">IFM13Synth::addBlockedTransition()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01653">IFM13Explorer::addBlockedTransition()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00401">IFM13Synth::addLose()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00192">LearnSynthQBFInc::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00266">LearnSynthQBF::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00267">LearnSynthQBFInd::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00112">LearnSynthQBFInc::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00134">LearnSynthQBF::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00195">LearnSynthQBFInd::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00203">LearnSynthQBF::computeWinningRegionOneSAT()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00178">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00326">LearnSynthSAT::computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00510">LearnSynthSAT::computeWinningRegionRGRC()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00326">ParallelLearner::notifyNewWinRegClause()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00424">LearnSynthQBFInc::reduceExistingClauses()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00531">LearnSynthQBF::reduceExistingClauses()</a>, and <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00450">LearnSynthQBFInd::reduceExistingClauses()</a>.</p>
+<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00336">IFM13Synth::addBlockedTransition()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01655">IFM13Explorer::addBlockedTransition()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00405">IFM13Synth::addLose()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00408">LearnSynthQBFInc::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00267">LearnSynthQBF::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00269">LearnSynthQBFInd::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00565">LearnSynthQBFInc::computeWinningRegionAllPool()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00122">LearnSynthQBFInc::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00135">LearnSynthQBF::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00197">LearnSynthQBFInd::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00273">LearnSynthQBFInc::computeWinningRegionOnePool()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00204">LearnSynthQBF::computeWinningRegionOneSAT()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00180">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00328">LearnSynthSAT::computeWinningRegionPlainDep()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00508">LearnSynthSAT::computeWinningRegionPlainDep2()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00759">LearnSynthSAT::computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00943">LearnSynthSAT::computeWinningRegionRGRC()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00328">ParallelLearner::notifyNewWinRegClause()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00865">LearnSynthQBFInc::reduceExistingClauses()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00532">LearnSynthQBF::reduceExistingClauses()</a>, and <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00452">LearnSynthQBFInd::reduceExistingClauses()</a>.</p>
 
 </div>
 </div>
@@ -548,11 +590,11 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00183">183</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00230">230</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8h_source.html#l00335">clauses_</a>.</p>
+<p>References <a class="el" href="CNF_8h_source.html#l00395">clauses_</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00344">LearnSynthQBF::computeCounterexampleSAT()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00178">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00326">LearnSynthSAT::computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00510">LearnSynthSAT::computeWinningRegionRGRC()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01461">IFM13Explorer::considerNewInfoFromOthers()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00498">IFM13Synth::debugCheckInvariants()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00753">LearnSynthSAT::debugCheckWinReg()</a>, <a class="el" href="Utils_8cpp_source.html#l00363">Utils::debugCheckWinReg()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00631">LearnSynthQBFInd::debugCheckWinRegReach()</a>, <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00105">QBFCertImplExtractor::extractCircuit()</a>, <a class="el" href="TemplateSynth_8cpp_source.html#l00115">TemplateSynth::findWinRegCNFTempl()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01354">IFM13Explorer::IFM13Explorer()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00054">IFM13Synth::IFM13Synth()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00040">LearnSynthQBFInd::LearnSynthQBFInd()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01293">ClauseMinimizerQBF::minimizeClauses()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00458">LearnSynthQBFInc::recomputeCheckCNF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00564">LearnSynthQBF::recomputeCheckCNF()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00488">LearnSynthQBFInd::recomputeCheckCNF()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00481">LearnSynthQBFInc::recomputeGenCNF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00587">LearnSynthQBF::recomputeGenCNF()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00520">LearnSynthQBFInd::recomputeGenCNF()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00245">ParallelLearner::run()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00379">ParallelLearner::triggerExplorerRestart()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00345">LearnSynthQBF::computeCounterexampleSAT()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00565">LearnSynthQBFInc::computeWinningRegionAllPool()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00273">LearnSynthQBFInc::computeWinningRegionOnePool()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00180">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00328">LearnSynthSAT::computeWinningRegionPlainDep()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00508">LearnSynthSAT::computeWinningRegionPlainDep2()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00759">LearnSynthSAT::computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00943">LearnSynthSAT::computeWinningRegionRGRC()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01463">IFM13Explorer::considerNewInfoFromOthers()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00502">IFM13Synth::debugCheckInvariants()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l01186">LearnSynthSAT::debugCheckWinReg()</a>, <a class="el" href="Utils_8cpp_source.html#l00417">Utils::debugCheckWinReg()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00633">LearnSynthQBFInd::debugCheckWinRegReach()</a>, <a class="el" href="TemplateSynth_8cpp_source.html#l00119">TemplateSynth::findWinRegCNFTempl()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01356">IFM13Explorer::IFM13Explorer()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00054">IFM13Synth::IFM13Synth()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00040">LearnSynthQBFInd::LearnSynthQBFInd()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l01577">LearningImplExtractor::makeEq()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01295">ClauseMinimizerQBF::minimizeClauses()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00897">LearnSynthQBFInc::recomputeCheckCNF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00565">LearnSynthQBF::recomputeCheckCNF()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00490">LearnSynthQBFInd::recomputeCheckCNF()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00920">LearnSynthQBFInc::recomputeGenCNF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00588">LearnSynthQBF::recomputeGenCNF()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00522">LearnSynthQBFInd::recomputeGenCNF()</a>, <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00063">QBFCertImplExtractor::run()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00249">ParallelLearner::run()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00359">LearningImplExtractor::runLearningJiangSAT()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l01172">LearningImplExtractor::runLearningJiangSATInc1()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l01379">LearningImplExtractor::runLearningJiangSATInc2()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00527">LearningImplExtractor::runLearningJiangSATTmp()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00715">LearningImplExtractor::runLearningJiangSATTmpCtrl()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00947">LearningImplExtractor::runLearningJiangSATTmpCtrlInc2()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00194">LearningImplExtractor::runLearningQBF()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00276">LearningImplExtractor::runLearningQBFInc()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00381">ParallelLearner::triggerExplorerRestart()</a>.</p>
 
 </div>
 </div>
@@ -579,11 +621,11 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00083">83</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00130">130</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8cpp_source.html#l00122">add1LitClause()</a>.</p>
+<p>References <a class="el" href="CNF_8cpp_source.html#l00169">add1LitClause()</a>.</p>
 
-<p>Referenced by <a class="el" href="DepQBFApi_8cpp_source.html#l00492">DepQBFApi::debugCheckBloqqerModel()</a>, <a class="el" href="DepQBFApiInc_8cpp_source.html#l00744">DepQBFApiInc::debugCheckBloqqerModel()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00626">LearnSynthQBF::generalizeCounterexample()</a>, and <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00567">LearnSynthQBFInd::generalizeCounterexample()</a>.</p>
+<p>Referenced by <a class="el" href="DepQBFApi_8cpp_source.html#l00931">DepQBFApi::debugCheckBloqqerModel()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00627">LearnSynthQBF::generalizeCounterexample()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00569">LearnSynthQBFInd::generalizeCounterexample()</a>, and <a class="el" href="LearningImplExtractor_8cpp_source.html#l00194">LearningImplExtractor::runLearningQBF()</a>.</p>
 
 </div>
 </div>
@@ -610,11 +652,11 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00076">76</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00123">123</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8cpp_source.html#l00122">add1LitClause()</a>.</p>
+<p>References <a class="el" href="CNF_8cpp_source.html#l00169">add1LitClause()</a>.</p>
 
-<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l01293">ClauseMinimizerQBF::minimizeClauses()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00531">LearnSynthQBF::reduceExistingClauses()</a>, and <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00450">LearnSynthQBFInd::reduceExistingClauses()</a>.</p>
+<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l01295">ClauseMinimizerQBF::minimizeClauses()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00532">LearnSynthQBF::reduceExistingClauses()</a>, and <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00452">LearnSynthQBFInd::reduceExistingClauses()</a>.</p>
 
 </div>
 </div>
@@ -641,11 +683,41 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00090">90</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00137">137</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8h_source.html#l00335">clauses_</a>.</p>
+<p>References <a class="el" href="CNF_8h_source.html#l00395">clauses_</a>.</p>
 
-<p>Referenced by <a class="el" href="Utils_8cpp_source.html#l00272">Utils::compressStateCNF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00626">LearnSynthQBF::generalizeCounterexample()</a>, and <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00567">LearnSynthQBFInd::generalizeCounterexample()</a>.</p>
+<p>Referenced by <a class="el" href="Utils_8cpp_source.html#l00287">Utils::compressStateCNF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00627">LearnSynthQBF::generalizeCounterexample()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00569">LearnSynthQBFInd::generalizeCounterexample()</a>, <a class="el" href="Utils_8cpp_source.html#l00353">Utils::negateStateCNF()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00359">LearningImplExtractor::runLearningJiangSAT()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l01172">LearningImplExtractor::runLearningJiangSATInc1()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l01379">LearningImplExtractor::runLearningJiangSATInc2()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00527">LearningImplExtractor::runLearningJiangSATTmp()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00715">LearningImplExtractor::runLearningJiangSATTmpCtrl()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00947">LearningImplExtractor::runLearningJiangSATTmpCtrlInc2()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00194">LearningImplExtractor::runLearningQBF()</a>, and <a class="el" href="LearningImplExtractor_8cpp_source.html#l00276">LearningImplExtractor::runLearningQBFInc()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8a54b640d4fbb1da74979fc07536d4e9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CNF::appendVarsTo </td>
+          <td>(</td>
+          <td class="paramtype">set&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>var_set</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds all variables that occur in the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> to the given set. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">var_set</td><td>The set to which all variables in the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> should be appended to. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00498">498</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
+
+<p>References <a class="el" href="CNF_8h_source.html#l00395">clauses_</a>.</p>
+
+<p>Referenced by <a class="el" href="CNF_8cpp_source.html#l00487">getVars()</a>.</p>
 
 </div>
 </div>
@@ -664,11 +736,42 @@ Protected Attributes</h2></td></tr>
 
 <p>Clears the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a>, i.e., sets the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> back to TRUE (the empty set of clauses). </p>
 
-<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00064">64</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00111">111</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8h_source.html#l00335">clauses_</a>.</p>
+<p>References <a class="el" href="CNF_8h_source.html#l00395">clauses_</a>.</p>
 
-<p>Referenced by <a class="el" href="AIG2CNF_8cpp_source.html#l00188">AIG2CNF::clear()</a>, <a class="el" href="Utils_8cpp_source.html#l00272">Utils::compressStateCNF()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00192">LearnSynthQBFInc::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00266">LearnSynthQBF::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00267">LearnSynthQBFInd::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00112">LearnSynthQBFInc::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00134">LearnSynthQBF::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00195">LearnSynthQBFInd::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00203">LearnSynthQBF::computeWinningRegionOneSAT()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00178">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00326">LearnSynthSAT::computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00510">LearnSynthSAT::computeWinningRegionRGRC()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00773">ClauseExplorerSAT::considerNewInfoFromOthers()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01208">CounterGenSAT::considerNewInfoFromOthers()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01461">IFM13Explorer::considerNewInfoFromOthers()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00498">IFM13Synth::debugCheckInvariants()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00753">LearnSynthSAT::debugCheckWinReg()</a>, <a class="el" href="Utils_8cpp_source.html#l00363">Utils::debugCheckWinReg()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00631">LearnSynthQBFInd::debugCheckWinRegReach()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00745">ClauseExplorerSAT::notifyNewUselessInputClause()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00757">ClauseExplorerSAT::notifyRestart()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00740">LearnSynthSAT::presentToPrevious()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00459">ParallelLearner::presentToPrevious()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00618">LearnSynthQBFInd::presentToPrevious()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00858">ClauseExplorerSAT::presentToPrevious()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01250">CounterGenSAT::presentToPrevious()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00458">LearnSynthQBFInc::recomputeCheckCNF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00564">LearnSynthQBF::recomputeCheckCNF()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00488">LearnSynthQBFInd::recomputeCheckCNF()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00481">LearnSynthQBFInc::recomputeGenCNF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00587">LearnSynthQBF::recomputeGenCNF()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00520">LearnSynthQBFInd::recomputeGenCNF()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00245">ParallelLearner::run()</a>.</p>
+<p>Referenced by <a class="el" href="AIG2CNF_8cpp_source.html#l00197">AIG2CNF::clear()</a>, <a class="el" href="Utils_8cpp_source.html#l00287">Utils::compressStateCNF()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00408">LearnSynthQBFInc::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00267">LearnSynthQBF::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00269">LearnSynthQBFInd::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00565">LearnSynthQBFInc::computeWinningRegionAllPool()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00488">LearnSynthQBFInc::computeWinningRegionAllPush()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00122">LearnSynthQBFInc::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00135">LearnSynthQBF::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00197">LearnSynthQBFInd::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00273">LearnSynthQBFInc::computeWinningRegionOnePool()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00199">LearnSynthQBFInc::computeWinningRegionOnePush()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00204">LearnSynthQBF::computeWinningRegionOneSAT()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00180">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00328">LearnSynthSAT::computeWinningRegionPlainDep()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00508">LearnSynthSAT::computeWinningRegionPlainDep2()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00759">LearnSynthSAT::computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00943">LearnSynthSAT::computeWinningRegionRGRC()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00775">ClauseExplorerSAT::considerNewInfoFromOthers()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01210">CounterGenSAT::considerNewInfoFromOthers()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01463">IFM13Explorer::considerNewInfoFromOthers()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00502">IFM13Synth::debugCheckInvariants()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l01186">LearnSynthSAT::debugCheckWinReg()</a>, <a class="el" href="Utils_8cpp_source.html#l00417">Utils::debugCheckWinReg()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00633">LearnSynthQBFInd::debugCheckWinRegReach()</a>, <a class="el" href="Utils_8cpp_source.html#l00353">Utils::negateStateCNF()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00747">ClauseExplorerSAT::notifyNewUselessInputClause()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00759">ClauseExplorerSAT::notifyRestart()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l01173">LearnSynthSAT::presentToPrevious()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00461">ParallelLearner::presentToPrevious()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00620">LearnSynthQBFInd::presentToPrevious()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00860">ClauseExplorerSAT::presentToPrevious()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01252">CounterGenSAT::presentToPrevious()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00897">LearnSynthQBFInc::recomputeCheckCNF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00565">LearnSynthQBF::recomputeCheckCNF()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00490">LearnSynthQBFInd::recomputeCheckCNF()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00920">LearnSynthQBFInc::recomputeGenCNF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00588">LearnSynthQBF::recomputeGenCNF()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00522">LearnSynthQBFInd::recomputeGenCNF()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00249">ParallelLearner::run()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa450a94a6161936d1a3cdffd083a0e42"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CNF::contains </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>var</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns true if this <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> contains a certain variable, and false otherwise. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">var</td><td>The variable to check for. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if this <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> contains var, and false otherwise. </dd></dl>
+
+<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00471">471</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
+
+<p>References <a class="el" href="CNF_8h_source.html#l00395">clauses_</a>.</p>
+
+<p>Referenced by <a class="el" href="LearningImplExtractor_8cpp_source.html#l00715">LearningImplExtractor::runLearningJiangSATTmpCtrl()</a>, and <a class="el" href="LearningImplExtractor_8cpp_source.html#l00947">LearningImplExtractor::runLearningJiangSATTmpCtrlInc2()</a>.</p>
 
 </div>
 </div>
@@ -688,11 +791,11 @@ Protected Attributes</h2></td></tr>
 <p>Returns the clauses of the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> as list of vectors. </p>
 <dl class="section return"><dt>Returns</dt><dd>The clauses of the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> as list of vectors. </dd></dl>
 
-<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00273">273</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00346">346</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8h_source.html#l00335">clauses_</a>.</p>
+<p>References <a class="el" href="CNF_8h_source.html#l00395">clauses_</a>.</p>
 
-<p>Referenced by <a class="el" href="Utils_8cpp_source.html#l00272">Utils::compressStateCNF()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00405">ParallelLearner::computePreviousTrans()</a>, <a class="el" href="LingelingApi_8cpp_source.html#l00159">LingelingApi::incAddCNF()</a>, <a class="el" href="PicoSatApi_8cpp_source.html#l00158">PicoSatApi::incAddCNF()</a>, <a class="el" href="MiniSatApi_8cpp_source.html#l00229">MiniSatApi::incAddCNF()</a>, <a class="el" href="DepQBFApiInc_8cpp_source.html#l00385">DepQBFApiInc::incAddCNF()</a>, <a class="el" href="DepQBFApi_8cpp_source.html#l00307">DepQBFApi::initBloqqer()</a>, <a class="el" href="DepQBFApiInc_8cpp_source.html#l00511">DepQBFApiInc::initBloqqer()</a>, <a class="el" href="DepQBFApi_8cpp_source.html#l00371">DepQBFApi::initDepQBF()</a>, <a class="el" href="DepQBFApiInc_8cpp_source.html#l00575">DepQBFApiInc::initDepQBF()</a>, <a class="el" href="PicoSatApi_8cpp_source.html#l00052">PicoSatApi::isSat()</a>, <a class="el" href="LingelingApi_8cpp_source.html#l00051">LingelingApi::isSat()</a>, <a class="el" href="MiniSatApi_8cpp_source.html#l00129">MiniSatApi::isSat()</a>, <a class="el" href="PicoSatApi_8cpp_source.html#l00073">PicoSatApi::isSatModelOrCore()</a>, <a class="el" href="LingelingApi_8cpp_source.html#l00072">LingelingApi::isSatModelOrCore()</a>, <a class="el" href="MiniSatApi_8cpp_source.html#l00144">MiniSatApi::isSatModelOrCore()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00040">LearnSynthQBFInd::LearnSynthQBFInd()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00041">LearnSynthSAT::LearnSynthSAT()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00740">LearnSynthSAT::presentToPrevious()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00459">ParallelLearner::presentToPrevious()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00618">LearnSynthQBFInd::presentToPrevious()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00858">ClauseExplorerSAT::presentToPrevious()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01250">CounterGenSAT::presentToPrevious()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00173">IFM13Synth::propagateBlockedStates()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01472">IFM13Explorer::propagateBlockedStates()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00424">LearnSynthQBFInc::reduceExistingClauses()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00531">LearnSynthQBF::reduceExistingClauses()</a>, and <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00450">LearnSynthQBFInd::reduceExistingClauses()</a>.</p>
+<p>Referenced by <a class="el" href="LearningImplExtractor_8cpp_source.html#l01665">LearningImplExtractor::addToStandAloneAiger()</a>, <a class="el" href="Utils_8cpp_source.html#l00287">Utils::compressStateCNF()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00407">ParallelLearner::computePreviousTrans()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00565">LearnSynthQBFInc::computeWinningRegionAllPool()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00273">LearnSynthQBFInc::computeWinningRegionOnePool()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00508">LearnSynthSAT::computeWinningRegionPlainDep2()</a>, <a class="el" href="LingelingApi_8cpp_source.html#l00159">LingelingApi::incAddCNF()</a>, <a class="el" href="PicoSatApi_8cpp_source.html#l00158">PicoSatApi::incAddCNF()</a>, <a class="el" href="MiniSatApi_8cpp_source.html#l00229">MiniSatApi::incAddCNF()</a>, <a class="el" href="DepQBFApi_8cpp_source.html#l00423">DepQBFApi::incAddCNF()</a>, <a class="el" href="DepQBFApi_8cpp_source.html#l00698">DepQBFApi::initBloqqer()</a>, <a class="el" href="DepQBFApi_8cpp_source.html#l00762">DepQBFApi::initDepQBF()</a>, <a class="el" href="LingelingApi_8cpp_source.html#l00051">LingelingApi::isSat()</a>, <a class="el" href="PicoSatApi_8cpp_source.html#l00052">PicoSatApi::isSat()</a>, <a class="el" href="MiniSatApi_8cpp_source.html#l00129">MiniSatApi::isSat()</a>, <a class="el" href="LingelingApi_8cpp_source.html#l00072">LingelingApi::isSatModelOrCore()</a>, <a class="el" href="PicoSatApi_8cpp_source.html#l00073">PicoSatApi::isSatModelOrCore()</a>, <a class="el" href="MiniSatApi_8cpp_source.html#l00144">MiniSatApi::isSatModelOrCore()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00040">LearnSynthQBFInd::LearnSynthQBFInd()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00042">LearnSynthSAT::LearnSynthSAT()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l01577">LearningImplExtractor::makeEq()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l01614">LearningImplExtractor::makeEq2()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l01173">LearnSynthSAT::presentToPrevious()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00461">ParallelLearner::presentToPrevious()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00620">LearnSynthQBFInd::presentToPrevious()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00860">ClauseExplorerSAT::presentToPrevious()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01252">CounterGenSAT::presentToPrevious()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00177">IFM13Synth::propagateBlockedStates()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01474">IFM13Explorer::propagateBlockedStates()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00865">LearnSynthQBFInc::reduceExistingClauses()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00532">LearnSynthQBF::reduceExistingClauses()</a>, and <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00452">LearnSynthQBFInd::reduceExistingClauses()</a>.</p>
 
 </div>
 </div>
@@ -712,11 +815,11 @@ Protected Attributes</h2></td></tr>
 <p>Returns the number of clauses in this <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>The number of clauses in this <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a>. </dd></dl>
 
-<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00245">245</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00292">292</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8h_source.html#l00335">clauses_</a>.</p>
+<p>References <a class="el" href="CNF_8h_source.html#l00395">clauses_</a>.</p>
 
-<p>Referenced by <a class="el" href="Utils_8cpp_source.html#l00272">Utils::compressStateCNF()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00192">LearnSynthQBFInc::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00266">LearnSynthQBF::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00267">LearnSynthQBFInd::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00112">LearnSynthQBFInc::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00134">LearnSynthQBF::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00195">LearnSynthQBFInd::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00203">LearnSynthQBF::computeWinningRegionOneSAT()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00773">ClauseExplorerSAT::considerNewInfoFromOthers()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01208">CounterGenSAT::considerNewInfoFromOthers()</a>, <a class="el" href="ExtQBFSolver_8cpp_source.html#l00104">ExtQBFSolver::dumpQBF()</a>, <a class="el" href="DepQBFApi_8cpp_source.html#l00307">DepQBFApi::initBloqqer()</a>, <a class="el" href="DepQBFApiInc_8cpp_source.html#l00511">DepQBFApiInc::initBloqqer()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01293">ClauseMinimizerQBF::minimizeClauses()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00424">LearnSynthQBFInc::reduceExistingClauses()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00531">LearnSynthQBF::reduceExistingClauses()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00450">LearnSynthQBFInd::reduceExistingClauses()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00827">ClauseExplorerSAT::waitUntilOngoingRestartDone()</a>.</p>
+<p>Referenced by <a class="el" href="Utils_8cpp_source.html#l00287">Utils::compressStateCNF()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00408">LearnSynthQBFInc::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00267">LearnSynthQBF::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00269">LearnSynthQBFInd::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00565">LearnSynthQBFInc::computeWinningRegionAllPool()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00488">LearnSynthQBFInc::computeWinningRegionAllPush()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00122">LearnSynthQBFInc::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00135">LearnSynthQBF::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00197">LearnSynthQBFInd::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00273">LearnSynthQBFInc::computeWinningRegionOnePool()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00199">LearnSynthQBFInc::computeWinningRegionOnePush()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00204">LearnSynthQBF::computeWinningRegionOneSAT()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00775">ClauseExplorerSAT::considerNewInfoFromOthers()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01210">CounterGenSAT::considerNewInfoFromOthers()</a>, <a class="el" href="ExtQBFSolver_8cpp_source.html#l00104">ExtQBFSolver::dumpQBF()</a>, <a class="el" href="DepQBFApi_8cpp_source.html#l00698">DepQBFApi::initBloqqer()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01295">ClauseMinimizerQBF::minimizeClauses()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00865">LearnSynthQBFInc::reduceExistingClauses()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00532">LearnSynthQBF::reduceExistingClauses()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00452">LearnSynthQBFInd::reduceExistingClauses()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00829">ClauseExplorerSAT::waitUntilOngoingRestartDone()</a>.</p>
 
 </div>
 </div>
@@ -737,11 +840,33 @@ Protected Attributes</h2></td></tr>
 <p>That is, if a literal is contained in several clauses then it is counted several times. This is a measure of the size of the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a>.</p>
 <dl class="section return"><dt>Returns</dt><dd>The sum of the sizes of all clauses in the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a>. </dd></dl>
 
-<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00251">251</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00298">298</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8h_source.html#l00335">clauses_</a>.</p>
+<p>References <a class="el" href="CNF_8h_source.html#l00395">clauses_</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00192">LearnSynthQBFInc::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00266">LearnSynthQBF::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00267">LearnSynthQBFInd::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00112">LearnSynthQBFInc::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00134">LearnSynthQBF::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00195">LearnSynthQBFInd::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00203">LearnSynthQBF::computeWinningRegionOneSAT()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00424">LearnSynthQBFInc::reduceExistingClauses()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00531">LearnSynthQBF::reduceExistingClauses()</a>, and <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00450">LearnSynthQBFInd::reduceExistingClauses()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00408">LearnSynthQBFInc::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00267">LearnSynthQBF::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00269">LearnSynthQBFInd::computeWinningRegionAll()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00565">LearnSynthQBFInc::computeWinningRegionAllPool()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00488">LearnSynthQBFInc::computeWinningRegionAllPush()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00122">LearnSynthQBFInc::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00135">LearnSynthQBF::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00197">LearnSynthQBFInd::computeWinningRegionOne()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00273">LearnSynthQBFInc::computeWinningRegionOnePool()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00199">LearnSynthQBFInc::computeWinningRegionOnePush()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00204">LearnSynthQBF::computeWinningRegionOneSAT()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00865">LearnSynthQBFInc::reduceExistingClauses()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00532">LearnSynthQBF::reduceExistingClauses()</a>, and <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00452">LearnSynthQBFInd::reduceExistingClauses()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4847969cea924a74642e3d914135d8da"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; int &gt; CNF::getVars </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the set of all variables that occur in the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>The set of all variables that occur in the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a>. </dd></dl>
+
+<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00487">487</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
+
+<p>References <a class="el" href="CNF_8cpp_source.html#l00498">appendVarsTo()</a>.</p>
 
 </div>
 </div>
@@ -769,11 +894,11 @@ Protected Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> is satisfied by the passed variable assignment, false otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00322">322</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00395">395</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8h_source.html#l00335">clauses_</a>.</p>
+<p>References <a class="el" href="CNF_8h_source.html#l00395">clauses_</a>.</p>
 
-<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00395">IFM13Synth::isBlocked()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01718">IFM13Explorer::isBlocked()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00412">IFM13Synth::isLose()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l01734">IFM13Explorer::isLose()</a>.</p>
+<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00399">IFM13Synth::isBlocked()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01720">IFM13Explorer::isBlocked()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00416">IFM13Synth::isLose()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l01736">IFM13Explorer::isLose()</a>.</p>
 
 </div>
 </div>
@@ -793,11 +918,11 @@ Protected Attributes</h2></td></tr>
 <p>Negates this <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a>. </p>
 <p>Be careful: this is an 'expensive' operation in the sense that the resulting <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> can be significantly larger. This method introduces fresh temporary variables (Tseitin variables) The freshly introduced variables are of type VarKind::TMP. Hence, this method also modifies the state of the <a class="el" href="classVarManager.html" title="Stores and maintains all Boolean variables that have (ever) been created.">VarManager</a>. If you call <a class="el" href="classCNF.html#a1d4371fd3b970bde2e8542ab5ad0f881" title="Negates this CNF.">negate()</a> twice you will end up with a formula that is equisatisfiable to the original formula, but potentially much much larger. </p>
 
-<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00217">217</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00264">264</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8cpp_source.html#l00130">add2LitClause()</a>, <a class="el" href="CNF_8h_source.html#l00335">clauses_</a>, <a class="el" href="VarManager_8cpp_source.html#l00219">VarManager::createFreshTmpVar()</a>, and <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>.</p>
+<p>References <a class="el" href="CNF_8cpp_source.html#l00177">add2LitClause()</a>, <a class="el" href="CNF_8h_source.html#l00395">clauses_</a>, <a class="el" href="VarManager_8cpp_source.html#l00219">VarManager::createFreshTmpVar()</a>, and <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00344">LearnSynthQBF::computeCounterexampleSAT()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00141">IFM13Synth::computeWinningRegion()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00178">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00326">LearnSynthSAT::computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00510">LearnSynthSAT::computeWinningRegionRGRC()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00498">IFM13Synth::debugCheckInvariants()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00753">LearnSynthSAT::debugCheckWinReg()</a>, <a class="el" href="Utils_8cpp_source.html#l00353">Utils::debugCheckWinReg()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00631">LearnSynthQBFInd::debugCheckWinRegReach()</a>, <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00095">QBFCertImplExtractor::extractCircuit()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00458">LearnSynthQBFInc::recomputeCheckCNF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00564">LearnSynthQBF::recomputeCheckCNF()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00488">LearnSynthQBFInd::recomputeCheckCNF()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00379">ParallelLearner::triggerExplorerRestart()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00345">LearnSynthQBF::computeCounterexampleSAT()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00145">IFM13Synth::computeWinningRegion()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00180">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00328">LearnSynthSAT::computeWinningRegionPlainDep()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00508">LearnSynthSAT::computeWinningRegionPlainDep2()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00759">LearnSynthSAT::computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00943">LearnSynthSAT::computeWinningRegionRGRC()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00502">IFM13Synth::debugCheckInvariants()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l01186">LearnSynthSAT::debugCheckWinReg()</a>, <a class="el" href="Utils_8cpp_source.html#l00407">Utils::debugCheckWinReg()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00633">LearnSynthQBFInd::debugCheckWinRegReach()</a>, <a class="el" href="CNFImplExtractor_8cpp_source.html#l00085">CNFImplExtractor::extractCircuit()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l01577">LearningImplExtractor::makeEq()</a>, <a class="el" href="Utils_8cpp_source.html#l00353">Utils::negateStateCNF()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00897">LearnSynthQBFInc::recomputeCheckCNF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00565">LearnSynthQBF::recomputeCheckCNF()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00490">LearnSynthQBFInd::recomputeCheckCNF()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00381">ParallelLearner::triggerExplorerRestart()</a>.</p>
 
 </div>
 </div>
@@ -833,9 +958,9 @@ Protected Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result of the assignment, i.e, *this. </dd></dl>
 
-<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00051">51</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00098">98</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8h_source.html#l00335">clauses_</a>.</p>
+<p>References <a class="el" href="CNF_8h_source.html#l00395">clauses_</a>.</p>
 
 </div>
 </div>
@@ -863,9 +988,9 @@ Protected Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if the two CNFs are syntactically equivalent, False otherwise. If false is returned, then the two CNFs can still be equivalent. </dd></dl>
 
-<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00346">346</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00512">512</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8h_source.html#l00335">clauses_</a>.</p>
+<p>References <a class="el" href="CNF_8h_source.html#l00395">clauses_</a>.</p>
 
 </div>
 </div>
@@ -885,11 +1010,11 @@ Protected Attributes</h2></td></tr>
 <p>Removes all duplicates from the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a>. </p>
 <p>This method does even more: it transforms the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> into a set of sets, and back. This means that all clauses and literals in clauses will be sorted according to a certain criterion after executing this method. The reason for this method is: sometimes we would actually prefer a representation of clauses as sets of sets. </p>
 
-<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00311">311</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00384">384</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8h_source.html#l00335">clauses_</a>.</p>
+<p>References <a class="el" href="CNF_8h_source.html#l00395">clauses_</a>.</p>
 
-<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00173">IFM13Synth::propagateBlockedStates()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l01472">IFM13Explorer::propagateBlockedStates()</a>.</p>
+<p>Referenced by <a class="el" href="IFM13Synth_8cpp_source.html#l00177">IFM13Synth::propagateBlockedStates()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l01474">IFM13Explorer::propagateBlockedStates()</a>.</p>
 
 </div>
 </div>
@@ -910,11 +1035,11 @@ Protected Attributes</h2></td></tr>
 <p>It is guaranteed that the removed clause is among the clauses with the lowest cardinality. If there are more such clauses, an arbitrary one is chosen.</p>
 <dl class="section return"><dt>Returns</dt><dd>The clause that has been removed from the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a>. </dd></dl>
 
-<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00160">160</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00207">207</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8h_source.html#l00335">clauses_</a>, and <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>.</p>
+<p>References <a class="el" href="CNF_8h_source.html#l00395">clauses_</a>, and <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>.</p>
 
-<p>Referenced by <a class="el" href="Utils_8cpp_source.html#l00272">Utils::compressStateCNF()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l01293">ClauseMinimizerQBF::minimizeClauses()</a>.</p>
+<p>Referenced by <a class="el" href="Utils_8cpp_source.html#l00287">Utils::compressStateCNF()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l01295">ClauseMinimizerQBF::minimizeClauses()</a>.</p>
 
 </div>
 </div>
@@ -934,9 +1059,111 @@ Protected Attributes</h2></td></tr>
 <p>Removes and returns some clause. </p>
 <dl class="section return"><dt>Returns</dt><dd>The clause that has been removed from the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a>. </dd></dl>
 
-<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00175">175</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00222">222</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8h_source.html#l00335">clauses_</a>.</p>
+<p>References <a class="el" href="CNF_8h_source.html#l00395">clauses_</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac34e02c39a762ad696449a8c75d4e115"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CNF::renameVars </td>
+          <td>(</td>
+          <td class="paramtype">const vector&lt; int &gt;&#160;</td>
+          <td class="paramname"><em>rename_map</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renames all variables in a <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rename_map</td><td>A map containing the new names of the variables. Every occurrence of variable i is replaced by rename_map[i]. If a certain variable i should not be renamed, then set rename_map[i]=i. This rename_map must contain a new name for EVERY variable that may appear in the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00455">455</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
+
+<p>References <a class="el" href="CNF_8h_source.html#l00395">clauses_</a>.</p>
+
+<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00508">LearnSynthSAT::computeWinningRegionPlainDep2()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00359">LearningImplExtractor::runLearningJiangSAT()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l01172">LearningImplExtractor::runLearningJiangSATInc1()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l01379">LearningImplExtractor::runLearningJiangSATInc2()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00527">LearningImplExtractor::runLearningJiangSATTmp()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00715">LearningImplExtractor::runLearningJiangSATTmpCtrl()</a>, and <a class="el" href="LearningImplExtractor_8cpp_source.html#l00947">LearningImplExtractor::runLearningJiangSATTmpCtrlInc2()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aefe201cf4139e1ed2f4dfdcb2f8efdae"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CNF::saveToFile </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Stores the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> into a file in DIMACS format. </p>
+<p>The <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> is stored in DIMACS format, i.e., you can pass this file directly on to SAT-solvers. DIMACS format means: every clause is printed as the list of its literals. Clauses are terminated by the special number '0' (which cannot be a literal).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>The name of the file to write to. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00320">320</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
+
+<p>References <a class="el" href="CNF_8h_source.html#l00395">clauses_</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, and <a class="el" href="CNF_8cpp_source.html#l00307">toString()</a>.</p>
+
+<p>Referenced by <a class="el" href="StoreImplExtractor_8cpp_source.html#l00049">StoreImplExtractor::extractCircuit()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6fe7640aa2a65579cf8364092f26c126"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CNF::setVarValue </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>var</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Replaces a variable in the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> by true or false. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">var</td><td>The variable to replace. </td></tr>
+    <tr><td class="paramname">value</td><td>The truth value of this variable. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00419">419</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
+
+<p>References <a class="el" href="CNF_8h_source.html#l00395">clauses_</a>.</p>
+
+<p>Referenced by <a class="el" href="LearningImplExtractor_8cpp_source.html#l00359">LearningImplExtractor::runLearningJiangSAT()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l01172">LearningImplExtractor::runLearningJiangSATInc1()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l01379">LearningImplExtractor::runLearningJiangSATInc2()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00527">LearningImplExtractor::runLearningJiangSATTmp()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00715">LearningImplExtractor::runLearningJiangSATTmpCtrl()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00947">LearningImplExtractor::runLearningJiangSATTmpCtrlInc2()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00194">LearningImplExtractor::runLearningQBF()</a>, and <a class="el" href="LearningImplExtractor_8cpp_source.html#l00276">LearningImplExtractor::runLearningQBFInc()</a>.</p>
 
 </div>
 </div>
@@ -956,9 +1183,9 @@ Protected Attributes</h2></td></tr>
 <p>Simplifies the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> syntactically. </p>
 <p>The only simplification we do is to remove all clauses which form a superset of other clauses. </p>
 
-<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00279">279</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00352">352</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8h_source.html#l00335">clauses_</a>, <a class="el" href="Utils_8cpp_source.html#l00249">Utils::isSubset()</a>, and <a class="el" href="Logger_8h_source.html#l00319">L_DBG</a>.</p>
+<p>References <a class="el" href="CNF_8h_source.html#l00395">clauses_</a>, <a class="el" href="Utils_8cpp_source.html#l00264">Utils::isSubset()</a>, and <a class="el" href="Logger_8h_source.html#l00319">L_DBG</a>.</p>
 
 </div>
 </div>
@@ -977,11 +1204,11 @@ Protected Attributes</h2></td></tr>
 
 <p>Replaces all current-state variables in the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> with their next-state copy. </p>
 
-<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00189">189</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00236">236</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8h_source.html#l00335">clauses_</a>, <a class="el" href="VarManager_8cpp_source.html#l00332">VarManager::getMaxCNFVar()</a>, <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="VarInfo_8h_source.html#l00064">VarInfo::NEXT_STATE</a>, and <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>.</p>
+<p>References <a class="el" href="CNF_8h_source.html#l00395">clauses_</a>, <a class="el" href="VarManager_8cpp_source.html#l00332">VarManager::getMaxCNFVar()</a>, <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="VarInfo_8h_source.html#l00064">VarInfo::NEXT_STATE</a>, and <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00344">LearnSynthQBF::computeCounterexampleSAT()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00178">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00326">LearnSynthSAT::computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00510">LearnSynthSAT::computeWinningRegionRGRC()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00773">ClauseExplorerSAT::considerNewInfoFromOthers()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01208">CounterGenSAT::considerNewInfoFromOthers()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01461">IFM13Explorer::considerNewInfoFromOthers()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00498">IFM13Synth::debugCheckInvariants()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00753">LearnSynthSAT::debugCheckWinReg()</a>, <a class="el" href="Utils_8cpp_source.html#l00363">Utils::debugCheckWinReg()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00631">LearnSynthQBFInd::debugCheckWinRegReach()</a>, <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00105">QBFCertImplExtractor::extractCircuit()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01293">ClauseMinimizerQBF::minimizeClauses()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00458">LearnSynthQBFInc::recomputeCheckCNF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00564">LearnSynthQBF::recomputeCheckCNF()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00488">LearnSynthQBFInd::recomputeCheckCNF()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00481">LearnSynthQBFInc::recomputeGenCNF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00587">LearnSynthQBF::recomputeGenCNF()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00520">LearnSynthQBFInd::recomputeGenCNF()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00379">ParallelLearner::triggerExplorerRestart()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthQBF_8cpp_source.html#l00345">LearnSynthQBF::computeCounterexampleSAT()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00565">LearnSynthQBFInc::computeWinningRegionAllPool()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00273">LearnSynthQBFInc::computeWinningRegionOnePool()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00180">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00328">LearnSynthSAT::computeWinningRegionPlainDep()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00759">LearnSynthSAT::computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00943">LearnSynthSAT::computeWinningRegionRGRC()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00775">ClauseExplorerSAT::considerNewInfoFromOthers()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01210">CounterGenSAT::considerNewInfoFromOthers()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01463">IFM13Explorer::considerNewInfoFromOthers()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00502">IFM13Synth::debugCheckInvariants()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l01186">LearnSynthSAT::debugCheckWinReg()</a>, <a class="el" href="Utils_8cpp_source.html#l00417">Utils::debugCheckWinReg()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00633">LearnSynthQBFInd::debugCheckWinRegReach()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01295">ClauseMinimizerQBF::minimizeClauses()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00897">LearnSynthQBFInc::recomputeCheckCNF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00565">LearnSynthQBF::recomputeCheckCNF()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00490">LearnSynthQBFInd::recomputeCheckCNF()</a>, <a class="el" href="LearnSynthQBFInc_8cpp_source.html#l00920">LearnSynthQBFInc::recomputeGenCNF()</a>, <a class="el" href="LearnSynthQBF_8cpp_source.html#l00588">LearnSynthQBF::recomputeGenCNF()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00522">LearnSynthQBFInd::recomputeGenCNF()</a>, <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00063">QBFCertImplExtractor::run()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00359">LearningImplExtractor::runLearningJiangSAT()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l01172">LearningImplExtractor::runLearningJiangSATInc1()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l01379">LearningImplExtractor::runLearningJiangSATInc2()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00527">LearningImplExtractor::runLearningJiangSATTmp()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00715">LearningImplExtractor::runLearningJiangSATTmpCtrl()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00947">LearningImplExtractor::runLearningJiangSATTmpCtrlInc2()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00194">LearningImplExtractor::runLearningQBF()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00276">LearningImplExtractor::runLearningQBFInc()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00381">ParallelLearner::triggerExplorerRestart()</a>.</p>
 
 </div>
 </div>
@@ -1008,11 +1235,11 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00239">239</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00286">286</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8h_source.html#l00335">clauses_</a>.</p>
+<p>References <a class="el" href="CNF_8h_source.html#l00395">clauses_</a>.</p>
 
-<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00405">ParallelLearner::computePreviousTrans()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00040">LearnSynthQBFInd::LearnSynthQBFInd()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00041">LearnSynthSAT::LearnSynthSAT()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00173">IFM13Synth::propagateBlockedStates()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l01472">IFM13Explorer::propagateBlockedStates()</a>.</p>
+<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00407">ParallelLearner::computePreviousTrans()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00040">LearnSynthQBFInd::LearnSynthQBFInd()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00042">LearnSynthSAT::LearnSynthSAT()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l01577">LearningImplExtractor::makeEq()</a>, <a class="el" href="IFM13Synth_8cpp_source.html#l00177">IFM13Synth::propagateBlockedStates()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l01474">IFM13Explorer::propagateBlockedStates()</a>.</p>
 
 </div>
 </div>
@@ -1033,11 +1260,11 @@ Protected Attributes</h2></td></tr>
 <p>The string is returned in DIMACS format, i.e., you can pass this string directly on to SAT- and QBF-solvers. DIMACS format means: every clause is printed as the list of its literals. Clauses are terminated by the special number '0' (which cannot be a literal).</p>
 <dl class="section return"><dt>Returns</dt><dd>A string representation of the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> in DIMACS format. </dd></dl>
 
-<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00260">260</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
+<p>Definition at line <a class="el" href="CNF_8cpp_source.html#l00307">307</a> of file <a class="el" href="CNF_8cpp_source.html">CNF.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8h_source.html#l00335">clauses_</a>.</p>
+<p>References <a class="el" href="CNF_8h_source.html#l00395">clauses_</a>.</p>
 
-<p>Referenced by <a class="el" href="ExtQBFSolver_8cpp_source.html#l00104">ExtQBFSolver::dumpQBF()</a>.</p>
+<p>Referenced by <a class="el" href="ExtQBFSolver_8cpp_source.html#l00104">ExtQBFSolver::dumpQBF()</a>, and <a class="el" href="CNF_8cpp_source.html#l00320">saveToFile()</a>.</p>
 
 </div>
 </div>
@@ -1062,9 +1289,9 @@ Protected Attributes</h2></td></tr>
 
 <p>The <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> represented as list of clauses (in turn being vectors of literals). </p>
 
-<p>Definition at line <a class="el" href="CNF_8h_source.html#l00335">335</a> of file <a class="el" href="CNF_8h_source.html">CNF.h</a>.</p>
+<p>Definition at line <a class="el" href="CNF_8h_source.html#l00395">395</a> of file <a class="el" href="CNF_8h_source.html">CNF.h</a>.</p>
 
-<p>Referenced by <a class="el" href="CNF_8cpp_source.html#l00122">add1LitClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00130">add2LitClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00139">add3LitClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00149">add4LitClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00070">addClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00099">addClauseAndSimplify()</a>, <a class="el" href="CNF_8cpp_source.html#l00183">addCNF()</a>, <a class="el" href="CNF_8cpp_source.html#l00090">addNegCubeAsClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00064">clear()</a>, <a class="el" href="CNF_8cpp_source.html#l00273">getClauses()</a>, <a class="el" href="CNF_8cpp_source.html#l00245">getNrOfClauses()</a>, <a class="el" href="CNF_8cpp_source.html#l00251">getNrOfLits()</a>, <a class="el" href="CNF_8cpp_source.html#l00322">isSatBy()</a>, <a class="el" href="CNF_8cpp_source.html#l00217">negate()</a>, <a class="el" href="CNF_8cpp_source.html#l00051">operator=()</a>, <a class="el" href="CNF_8cpp_source.html#l00346">operator==()</a>, <a class="el" href="CNF_8cpp_source.html#l00311">removeDuplicates()</a>, <a class="el" href="CNF_8cpp_source.html#l00160">removeSmallest()</a>, <a class="el" href="CNF_8cpp_source.html#l00175">removeSomeClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00279">simplify()</a>, <a class="el" href="CNF_8cpp_source.html#l00189">swapPresentToNext()</a>, <a class="el" href="CNF_8cpp_source.html#l00239">swapWith()</a>, and <a class="el" href="CNF_8cpp_source.html#l00260">toString()</a>.</p>
+<p>Referenced by <a class="el" href="CNF_8cpp_source.html#l00169">add1LitClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00177">add2LitClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00186">add3LitClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00196">add4LitClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00117">addClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00146">addClauseAndSimplify()</a>, <a class="el" href="CNF_8cpp_source.html#l00230">addCNF()</a>, <a class="el" href="CNF_8cpp_source.html#l00137">addNegCubeAsClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00498">appendVarsTo()</a>, <a class="el" href="CNF_8cpp_source.html#l00111">clear()</a>, <a class="el" href="CNF_8cpp_source.html#l00045">CNF()</a>, <a class="el" href="CNF_8cpp_source.html#l00471">contains()</a>, <a class="el" href="CNF_8cpp_source.html#l00346">getClauses()</a>, <a class="el" href="CNF_8cpp_source.html#l00292">getNrOfClauses()</a>, <a class="el" href="CNF_8cpp_source.html#l00298">getNrOfLits()</a>, <a class="el" href="CNF_8cpp_source.html#l00395">isSatBy()</a>, <a class="el" href="CNF_8cpp_source.html#l00264">negate()</a>, <a class="el" href="CNF_8cpp_source.html#l00098">operator=()</a>, <a class="el" href="CNF_8cpp_source.html#l00512">operator==()</a>, <a class="el" href="CNF_8cpp_source.html#l00384">removeDuplicates()</a>, <a class="el" href="CNF_8cpp_source.html#l00207">removeSmallest()</a>, <a class="el" href="CNF_8cpp_source.html#l00222">removeSomeClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00455">renameVars()</a>, <a class="el" href="CNF_8cpp_source.html#l00320">saveToFile()</a>, <a class="el" href="CNF_8cpp_source.html#l00419">setVarValue()</a>, <a class="el" href="CNF_8cpp_source.html#l00352">simplify()</a>, <a class="el" href="CNF_8cpp_source.html#l00236">swapPresentToNext()</a>, <a class="el" href="CNF_8cpp_source.html#l00286">swapWith()</a>, and <a class="el" href="CNF_8cpp_source.html#l00307">toString()</a>.</p>
 
 </div>
 </div>
@@ -1075,7 +1302,7 @@ Protected Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 14 2013 15:15:44 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jul 15 2014 12:30:20 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

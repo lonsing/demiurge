@@ -8,7 +8,7 @@ fi
 
 echo "Installing the Lingeling SAT-solver ..."
 
-LINGELING="lingeling-ala-b02aa1a-121013"
+LINGELING="lingeling-ats-57807c8-131016"
 LINGELING_ACHRIVE="$LINGELING.tar.gz"
 
 if [ ! -e "$LINGELING_ACHRIVE" ];
@@ -24,7 +24,7 @@ mv $DEMIURGETP/$LINGELING $DEMIURGETP/lingeling
 
 echo " Compiling Lingeling ..."
 cd $DEMIURGETP/lingeling
-./configure
+./configure.sh
 cp $DEMIURGETP/lingeling/makefile $DEMIURGETP/lingeling/makefile_orig
 sed 's/AIGER=/AIGER=$(DEMIURGETP)\/aiger-1.9.4/' $DEMIURGETP/lingeling/makefile_orig > $DEMIURGETP/lingeling/makefile
 make

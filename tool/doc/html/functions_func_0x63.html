@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">demiurge
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A synthesis tool for safety specifications.</div>
   </td>
@@ -137,14 +137,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="classAIG2CNF.html#a4e3be4d76137eb30a6bed5885f709f29">AIG2CNF</a>
 </li>
 <li>clearIncrementalSession()
-: <a class="el" href="classDepQBFApiInc.html#a352b4620501803cc6a267d458ee9c57d">DepQBFApiInc</a>
+: <a class="el" href="classDepQBFApi.html#a4cacfbb0e933d8a66bd24ce5b71ea623">DepQBFApi</a>
 , <a class="el" href="classLingelingApi.html#a4200b2ca7b1694898434ae9764f5baf6">LingelingApi</a>
 , <a class="el" href="classMiniSatApi.html#a237754c78357ed0a84894e811806b618">MiniSatApi</a>
 , <a class="el" href="classPicoSatApi.html#ae53598723725fd3203e2e32411392dab">PicoSatApi</a>
 , <a class="el" href="classSatSolver.html#a8118d2900f7acf31497cd2a27ad3b713">SatSolver</a>
 </li>
 <li>CNF()
-: <a class="el" href="classCNF.html#acdf16631121bace295ef4440f8a38777">CNF</a>
+: <a class="el" href="classCNF.html#aa3bf8a4f0ea5c96c9833f34028e00347">CNF</a>
+</li>
+<li>CNFImplExtractor()
+: <a class="el" href="classCNFImplExtractor.html#a85fadc5cccc76524d9317041c1be1744">CNFImplExtractor</a>
+</li>
+<li>cnfToAig()
+: <a class="el" href="classLearningImplExtractor.html#a88143aa67de5be8848f643cfb2947834">LearningImplExtractor</a>
 </li>
 <li>compressBored()
 : <a class="el" href="classCounterGenSAT.html#ae696c35988d55e29d5a54b3c71547c12">CounterGenSAT</a>
@@ -167,6 +173,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="classLearnSynthQBFInc.html#ac30a0ff65a78a651d7760c4802485355">LearnSynthQBFInc</a>
 , <a class="el" href="classLearnSynthQBFInd.html#a1a771069bb5352236c509593e8f18426">LearnSynthQBFInd</a>
 </li>
+<li>computeCounterexampleQBFPool()
+: <a class="el" href="classLearnSynthQBFInc.html#aae6b6352969975d113b88ff706e3b334">LearnSynthQBFInc</a>
+</li>
 <li>computeCounterexampleSAT()
 : <a class="el" href="classLearnSynthQBF.html#a3221800bf3f040b66b8a790bab4c82b5">LearnSynthQBF</a>
 </li>
@@ -174,28 +183,46 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="classParallelLearner.html#a2b87f1f2526786a4402d695026272d33">ParallelLearner</a>
 </li>
 <li>computeWinningRegion()
-: <a class="el" href="classLearnSynthQBFInc.html#a2dc9fff9a414a40059a1d89e19b48252">LearnSynthQBFInc</a>
+: <a class="el" href="classIFM13Synth.html#a51c6831265e1daf7d0120c0dd954a0c4">IFM13Synth</a>
+, <a class="el" href="classLearnSynthQBF.html#ae8219ab3e4987775e1d6a006a9d38f4d">LearnSynthQBF</a>
+, <a class="el" href="classLearnSynthQBFInc.html#a2dc9fff9a414a40059a1d89e19b48252">LearnSynthQBFInc</a>
 , <a class="el" href="classLearnSynthQBFInd.html#a41593ccf692af8948f4b1255fb13ffe5">LearnSynthQBFInd</a>
 , <a class="el" href="classLearnSynthSAT.html#a055b4699184d09bb7f6b15052ac684db">LearnSynthSAT</a>
 , <a class="el" href="classTemplateSynth.html#ae334e4a6c30a324cfd4d0c05a32b191c">TemplateSynth</a>
-, <a class="el" href="classIFM13Synth.html#a51c6831265e1daf7d0120c0dd954a0c4">IFM13Synth</a>
-, <a class="el" href="classLearnSynthQBF.html#ae8219ab3e4987775e1d6a006a9d38f4d">LearnSynthQBF</a>
 </li>
 <li>computeWinningRegionAll()
-: <a class="el" href="classLearnSynthQBF.html#a09a9ecb2b77c540cdcc327a35cd15c18">LearnSynthQBF</a>
+: <a class="el" href="classLearnSynthQBFInd.html#a1665e16ff8fa78f696b1e3373db96edb">LearnSynthQBFInd</a>
+, <a class="el" href="classLearnSynthQBF.html#a09a9ecb2b77c540cdcc327a35cd15c18">LearnSynthQBF</a>
 , <a class="el" href="classLearnSynthQBFInc.html#a796673a80bbba7c8b4b7b5b9e4c8332a">LearnSynthQBFInc</a>
-, <a class="el" href="classLearnSynthQBFInd.html#a1665e16ff8fa78f696b1e3373db96edb">LearnSynthQBFInd</a>
+</li>
+<li>computeWinningRegionAllPool()
+: <a class="el" href="classLearnSynthQBFInc.html#a0e2b88077ae43be99392420608c0305d">LearnSynthQBFInc</a>
+</li>
+<li>computeWinningRegionAllPush()
+: <a class="el" href="classLearnSynthQBFInc.html#a9ae3d567a90c3bac5f8504117b8d034e">LearnSynthQBFInc</a>
 </li>
 <li>computeWinningRegionOne()
-: <a class="el" href="classLearnSynthQBFInc.html#ab1090850d850dfcc0dacbf43426910ca">LearnSynthQBFInc</a>
+: <a class="el" href="classLearnSynthQBF.html#ac538cd53082bad1c8c45a7e178dfa4cb">LearnSynthQBF</a>
 , <a class="el" href="classLearnSynthQBFInd.html#a9a48eb17721b9c941689795e0913dc0b">LearnSynthQBFInd</a>
-, <a class="el" href="classLearnSynthQBF.html#ac538cd53082bad1c8c45a7e178dfa4cb">LearnSynthQBF</a>
+, <a class="el" href="classLearnSynthQBFInc.html#ab1090850d850dfcc0dacbf43426910ca">LearnSynthQBFInc</a>
+</li>
+<li>computeWinningRegionOnePool()
+: <a class="el" href="classLearnSynthQBFInc.html#a671276f22c5ff7a037adb7ca000d7ddb">LearnSynthQBFInc</a>
+</li>
+<li>computeWinningRegionOnePush()
+: <a class="el" href="classLearnSynthQBFInc.html#a01665d8227fb5c919b28c62c5a21f7df">LearnSynthQBFInc</a>
 </li>
 <li>computeWinningRegionOneSAT()
 : <a class="el" href="classLearnSynthQBF.html#af8c897056a5018ff1717ea2d76f6cd8f">LearnSynthQBF</a>
 </li>
 <li>computeWinningRegionPlain()
 : <a class="el" href="classLearnSynthSAT.html#a49541a9cff8002ca31e0044ae35546a2">LearnSynthSAT</a>
+</li>
+<li>computeWinningRegionPlainDep()
+: <a class="el" href="classLearnSynthSAT.html#a0d36fdd8180e9ba06e116b6ed3cb6a72">LearnSynthSAT</a>
+</li>
+<li>computeWinningRegionPlainDep2()
+: <a class="el" href="classLearnSynthSAT.html#a7190dabde3f24ddb94c0484f7df3b026">LearnSynthSAT</a>
 </li>
 <li>computeWinningRegionRG()
 : <a class="el" href="classLearnSynthSAT.html#aa981048565f10183c30c4dc0576de6b6">LearnSynthSAT</a>
@@ -204,15 +231,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="classLearnSynthSAT.html#a2d54b84ce5e87b7b2d398226faa501b0">LearnSynthSAT</a>
 </li>
 <li>considerNewInfoFromOthers()
-: <a class="el" href="classCounterGenSAT.html#a53ed27c0ed65807b1ef6b5180354a0b9">CounterGenSAT</a>
+: <a class="el" href="classClauseExplorerSAT.html#aca3490db608f1c3a4a832e67654dd246">ClauseExplorerSAT</a>
 , <a class="el" href="classIFM13Explorer.html#ae2e510e5b13e7166c5d6170a286a7295">IFM13Explorer</a>
-, <a class="el" href="classClauseExplorerSAT.html#aca3490db608f1c3a4a832e67654dd246">ClauseExplorerSAT</a>
+, <a class="el" href="classCounterGenSAT.html#a53ed27c0ed65807b1ef6b5180354a0b9">CounterGenSAT</a>
 </li>
 <li>contains()
-: <a class="el" href="classUtils.html#a84611c8a027ac12426219cb4d59765aa">Utils</a>
+: <a class="el" href="classCNF.html#aa450a94a6161936d1a3cdffd083a0e42">CNF</a>
+, <a class="el" href="classUtils.html#a84611c8a027ac12426219cb4d59765aa">Utils</a>
 </li>
 <li>containsInit()
-: <a class="el" href="classUtils.html#a02ae74e9866b8ca0863c9507e46df007">Utils</a>
+: <a class="el" href="classUtils.html#adef5db58221c7a04397de10ec0b13fb6">Utils</a>
 </li>
 <li>count()
 : <a class="el" href="classStringUtils.html#af14cd8f802ac50d860961e17f0b5a690">StringUtils</a>
@@ -221,19 +249,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="classCounterGenSAT.html#a670e3f81bd0fbb28bf5fa043561f7651">CounterGenSAT</a>
 </li>
 <li>createFreshPrevVar()
-: <a class="el" href="classVarManager.html#adf8ceeecece1626b6570a4741639a25f">VarManager</a>
+: <a class="el" href="classVarManager.html#a9ba4164cf6fce6ca6f0311f2c820686a">VarManager</a>
 </li>
 <li>createFreshTemplParam()
-: <a class="el" href="classVarManager.html#ad05222a9e211e348c0d24224f6aa9e30">VarManager</a>
+: <a class="el" href="classVarManager.html#af06342ed30ae9ef3440ceea268821c39">VarManager</a>
 </li>
 <li>createFreshTmpVar()
-: <a class="el" href="classVarManager.html#a0474d06bb55484941de3407d0d35a1ec">VarManager</a>
+: <a class="el" href="classVarManager.html#aa718b7329981e7e5cd845190ef487b7d">VarManager</a>
 </li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 14 2013 15:15:46 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jul 15 2014 12:30:23 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

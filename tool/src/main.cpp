@@ -191,5 +191,17 @@ int main (int argc, char **argv)
   size_t real_time = Stopwatch::getRealTimeSec(start_time);
   L_LOG("Overall execution time: " << cpu_time << " sec CPU time.");
   L_LOG("Overall execution time: " << real_time << " sec real time.");
+
+  // The synthesis competition requires the following output:
+  if(Options::instance().doRealizabilityOnly())
+  {
+    if(realizable)
+      cout << "REALIZABLE" << endl;
+    else
+      cout << "UNREALIZABLE" << endl;
+  }
+  else if(! realizable) // if realizable, then only the circuit should be printed to stdout
+    cout << "UNREALIZABLE" << endl;
+
   return realizable ? 10 : 20;
 }

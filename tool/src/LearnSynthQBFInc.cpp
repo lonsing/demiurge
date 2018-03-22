@@ -32,16 +32,19 @@
 #include "Options.h"
 #include "AIG2CNF.h"
 #include "Logger.h"
-#include "QBFCertImplExtractor.h"
+#include "CNFImplExtractor.h"
 #include "Utils.h"
 
 
 // -------------------------------------------------------------------------------------------
-LearnSynthQBFInc::LearnSynthQBFInc() :
-               BackEnd()
+LearnSynthQBFInc::LearnSynthQBFInc(CNFImplExtractor *impl_extractor) :
+               BackEnd(),
+               impl_extractor_(impl_extractor)
 {
   // build the quantifier prefix for checking for counterexamples:
   //   check_quant_ = exists x,i: forall c: exists x',tmp:
+  // (we misuse the type TEMPL_PARAMS for activation variables we may use)
+  check_quant_.push_back(make_pair(VarInfo::TEMPL_PARAMS, QBFSolver::E));
   check_quant_.push_back(make_pair(VarInfo::PRES_STATE, QBFSolver::E));
   check_quant_.push_back(make_pair(VarInfo::INPUT, QBFSolver::E));
   check_quant_.push_back(make_pair(VarInfo::CTRL, QBFSolver::A));
@@ -62,7 +65,8 @@ LearnSynthQBFInc::LearnSynthQBFInc() :
 // -------------------------------------------------------------------------------------------
 LearnSynthQBFInc::~LearnSynthQBFInc()
 {
-  // nothing to do
+  delete impl_extractor_;
+  impl_extractor_ = 0;
 }
 
 // -------------------------------------------------------------------------------------------
@@ -91,12 +95,10 @@ bool LearnSynthQBFInc::run()
   }
 
   L_INF("Starting to extract a circuit ...");
-  statistics_.notifyRelDetStart();
-  QBFCertImplExtractor extractor;
-  extractor.extractCircuit(winning_region_);
-  statistics_.notifyRelDetEnd();
+  impl_extractor_->extractCircuit(winning_region_);
   L_INF("Synthesis done.");
   statistics_.logStatistics();
+  impl_extractor_->logStatistics();
   return true;
 }
 
@@ -105,7 +107,15 @@ bool LearnSynthQBFInc::computeWinningRegion()
 {
   if(Options::instance().getBackEndMode() == 7)
     return computeWinningRegionOne();
-  return computeWinningRegionAll(); // mode = 8
+  if(Options::instance().getBackEndMode() == 8)
+    return computeWinningRegionOnePush();
+  if(Options::instance().getBackEndMode() == 9)
+    return computeWinningRegionOnePool();
+  if(Options::instance().getBackEndMode() == 10)
+    return computeWinningRegionAll();
+  if(Options::instance().getBackEndMode() == 11)
+    return computeWinningRegionAllPush();
+  return computeWinningRegionAllPool(); // mode = 12
 }
 
 // -------------------------------------------------------------------------------------------
@@ -127,10 +137,12 @@ bool LearnSynthQBFInc::computeWinningRegionOne()
   recomputeCheckCNF();
   solver_check_.startIncrementalSession(check_quant_);
   solver_check_.incAddCNF(check_cnf_);
+  solver_check_.doMinCores(false);
   // build generalize_clause_cnf = P(x) AND T(x,i,c,x') AND P(x')
   recomputeGenCNF();
   solver_gen_.startIncrementalSession(gen_quant_);
   solver_gen_.incAddCNF(generalize_clause_cnf_);
+  solver_gen_.doMinCores(false);
 
   vector<int> counterexample;
   vector<int> blocking_clause;
@@ -149,9 +161,6 @@ bool LearnSynthQBFInc::computeWinningRegionOne()
       recomputeCheckCNF();
       solver_check_.startIncrementalSession(check_quant_);
       solver_check_.incAddCNF(check_cnf_);
-      recomputeGenCNF();
-      solver_gen_.startIncrementalSession(gen_quant_);
-      solver_gen_.incAddCNF(generalize_clause_cnf_);
       precise = true;
       continue;
     }
@@ -166,11 +175,10 @@ bool LearnSynthQBFInc::computeWinningRegionOne()
     winning_region_.addClauseAndSimplify(blocking_clause);
     winning_region_large_.addClauseAndSimplify(blocking_clause);
     solver_check_.incAddClause(blocking_clause);
-    //solver_gen_.incAddClause(blocking_clause);
-    Utils::compressStateCNF(winning_region_);
-    recomputeGenCNF();
-    solver_gen_.startIncrementalSession(gen_quant_);
-    solver_gen_.incAddCNF(generalize_clause_cnf_);
+    solver_gen_.incAddClause(blocking_clause);
+    Utils::swapPresentToNext(blocking_clause);
+    solver_gen_.incAddClause(blocking_clause);
+
     precise = false;
 
     if(count % 100 == 0)
@@ -184,7 +192,215 @@ bool LearnSynthQBFInc::computeWinningRegionOne()
         statistics_.logStatistics();
     }
   }
-  //reduceExistingClauses();
+  return true;
+}
+
+// -------------------------------------------------------------------------------------------
+bool LearnSynthQBFInc::computeWinningRegionOnePush()
+{
+  AIG2CNF& A2C = AIG2CNF::instance();
+  VarManager &VM = VarManager::instance();
+  L_DBG("Nr. of state variables: " << VM.getVarsOfType(VarInfo::PRES_STATE).size());
+  L_DBG("Nr. of uncontrollable inputs: " << VM.getVarsOfType(VarInfo::INPUT).size());
+  L_DBG("Nr. of controllable inputs: " << VM.getVarsOfType(VarInfo::CTRL).size());
+
+  winning_region_.clear();
+  winning_region_ = A2C.getSafeStates();
+  winning_region_large_.clear();
+  winning_region_large_ = A2C.getSafeStates();
+
+  // build check_cnf = P(x) AND T(x,i,c,x') AND NOT P(x')
+  solver_check_.startIncrementalSession(check_quant_);
+  solver_check_.incAddCNF(AIG2CNF::instance().getTrans());
+  solver_check_.incAddUnitClause(-VM.getPresErrorStateVar());
+  vector<int> next_unsafe;
+  next_unsafe.reserve(10000);
+  next_unsafe.push_back(VM.getNextErrorStateVar());
+  // build generalize_clause_cnf = P(x) AND T(x,i,c,x') AND P(x')
+  solver_gen_.startIncrementalSession(gen_quant_);
+  solver_gen_.incAddCNF(AIG2CNF::instance().getTrans());
+  solver_gen_.incAddUnitClause(-VM.getPresErrorStateVar());
+  solver_gen_.incAddUnitClause(-VM.getNextErrorStateVar());
+  solver_gen_.doMinCores(false);
+
+  vector<int> counterexample;
+  vector<int> blocking_clause;
+  blocking_clause.reserve(VM.getVarsOfType(VarInfo::PRES_STATE).size());
+
+  size_t count = 0;
+  while(true)
+  {
+    count++;
+    solver_check_.incPush();
+    solver_check_.incAddClause(next_unsafe);
+    bool ce_found = computeCounterexampleQBF(counterexample);
+    if(!ce_found)
+      return true;
+    solver_check_.incPop();
+
+    L_DBG("Found bad state (nr " << count << "), excluding it from the winning region.");
+    bool realizable = computeBlockingClause(counterexample, blocking_clause);
+    if(!realizable)
+      return false;
+
+    // update the CNFs:
+    Utils::debugPrint(blocking_clause, "Blocking clause: ");
+    winning_region_.addClause(blocking_clause);
+    solver_check_.incAddClause(blocking_clause);
+    solver_gen_.incAddClause(blocking_clause);
+    Utils::swapPresentToNext(blocking_clause);
+    solver_gen_.incAddClause(blocking_clause);
+    int clause_is_false = VarManager::instance().createFreshTmpVar();
+    solver_check_.incAddVarAtInnermostQuant(clause_is_false);
+    next_unsafe.push_back(clause_is_false);
+    for(size_t cnt = 0; cnt < blocking_clause.size(); ++cnt)
+      solver_check_.incAdd2LitClause(-clause_is_false, -blocking_clause[cnt]);
+
+    if(count % 100 == 0)
+    {
+      L_DBG("Statistics at count=" << count);
+      L_DBG("Winning region clauses: " << winning_region_.getNrOfClauses());
+      L_DBG("Winning region lits: " << winning_region_.getNrOfLits());
+      if(Logger::instance().isEnabled(Logger::DBG))
+        statistics_.logStatistics();
+    }
+  }
+  return true;
+}
+
+
+// -------------------------------------------------------------------------------------------
+bool LearnSynthQBFInc::computeWinningRegionOnePool()
+{
+  AIG2CNF& A2C = AIG2CNF::instance();
+  VarManager &VM = VarManager::instance();
+  L_DBG("Nr. of state variables: " << VM.getVarsOfType(VarInfo::PRES_STATE).size());
+  L_DBG("Nr. of uncontrollable inputs: " << VM.getVarsOfType(VarInfo::INPUT).size());
+  L_DBG("Nr. of controllable inputs: " << VM.getVarsOfType(VarInfo::CTRL).size());
+
+  winning_region_.clear();
+  winning_region_ = A2C.getSafeStates();
+  winning_region_large_.clear();
+  winning_region_large_ = A2C.getSafeStates();
+
+  // build check_cnf = P(x) AND T(x,i,c,x') AND NOT P(x')
+  int pool_size = 20;
+  negcl_var_pool_.clear();
+  negcl_var_pool_.reserve(pool_size);
+  negcl_var_pool_act_.clear();
+  negcl_var_pool_act_.reserve(pool_size);
+  for(int cnt = 0; cnt < pool_size; ++cnt)
+  {
+    negcl_var_pool_.push_back(VM.createFreshTmpVar());
+    negcl_var_pool_act_.push_back(VM.createFreshTemplParam());
+  }
+  solver_check_.startIncrementalSession(check_quant_);
+  solver_check_.incAddCNF(AIG2CNF::instance().getTrans());
+  solver_check_.incAddUnitClause(-VM.getPresErrorStateVar());
+  for(size_t cnt = 0; cnt < negcl_var_pool_act_.size(); ++cnt)
+    solver_check_.incAdd2LitClause(-negcl_var_pool_act_[cnt], -negcl_var_pool_[cnt]);
+  vector<int> next_unsafe;
+  next_unsafe.reserve(negcl_var_pool_.size() + 1);
+  next_unsafe.push_back(VM.getNextErrorStateVar());
+  next_unsafe.insert(next_unsafe.end(), negcl_var_pool_.begin(), negcl_var_pool_.end());
+  solver_check_.incAddClause(next_unsafe);
+
+
+  // build generalize_clause_cnf = P(x) AND T(x,i,c,x') AND P(x')
+  solver_gen_.startIncrementalSession(gen_quant_);
+  solver_gen_.incAddCNF(AIG2CNF::instance().getTrans());
+  solver_gen_.incAddUnitClause(-VM.getPresErrorStateVar());
+  solver_gen_.incAddUnitClause(-VM.getNextErrorStateVar());
+  solver_gen_.doMinCores(false);
+
+  vector<int> counterexample;
+  vector<int> blocking_clause;
+  blocking_clause.reserve(VM.getVarsOfType(VarInfo::PRES_STATE).size());
+
+  size_t count = 0;
+  while(true)
+  {
+    count++;
+
+    bool ce_found = computeCounterexampleQBFPool(counterexample);
+
+    if(!ce_found)
+      return true;
+
+    L_DBG("Found bad state (nr " << count << "), excluding it from the winning region.");
+    bool realizable = computeBlockingClause(counterexample, blocking_clause);
+    if(!realizable)
+      return false;
+
+    // update the CNFs:
+    Utils::debugPrint(blocking_clause, "Blocking clause: ");
+    winning_region_.addClauseAndSimplify(blocking_clause);
+    winning_region_large_.addClauseAndSimplify(blocking_clause);
+    vector<int> next_blocking_clause(blocking_clause);
+    Utils::swapPresentToNext(next_blocking_clause);
+    solver_gen_.incAddClause(blocking_clause);
+    solver_gen_.incAddClause(next_blocking_clause);
+    if(negcl_var_pool_.empty())
+    {
+      VM.resetToLastPush();
+      Utils::compressStateCNF(winning_region_);
+      negcl_var_pool_.clear();
+      negcl_var_pool_.reserve(pool_size);
+      negcl_var_pool_act_.clear();
+      negcl_var_pool_act_.reserve(pool_size);
+      for(int cnt = 0; cnt < pool_size; ++cnt)
+      {
+        negcl_var_pool_.push_back(VM.createFreshTmpVar());
+        negcl_var_pool_act_.push_back(VM.createFreshTemplParam());
+      }
+      vector<int> next_unsafe;
+      next_unsafe.reserve(negcl_var_pool_.size() + winning_region_.getNrOfClauses());
+      next_unsafe.insert(next_unsafe.end(), negcl_var_pool_.begin(), negcl_var_pool_.end());
+
+      CNF check_cnf(AIG2CNF::instance().getTrans());
+      check_cnf.addCNF(winning_region_);
+      CNF next_win_reg(winning_region_);
+      next_win_reg.swapPresentToNext();
+      const list<vector<int> >& cl = next_win_reg.getClauses();
+      for(CNF::ClauseConstIter it = cl.begin(); it != cl.end(); ++it)
+      {
+        if(it->size() == 1)
+          next_unsafe.push_back(-(*it)[0]);
+        else
+        {
+          int clause_false_lit = VarManager::instance().createFreshTmpVar();
+          next_unsafe.push_back(clause_false_lit);
+          for(size_t lit_cnt = 0; lit_cnt < it->size(); ++lit_cnt)
+            check_cnf.add2LitClause(-clause_false_lit, -((*it)[lit_cnt]));
+        }
+      }
+      for(size_t cnt = 0; cnt < negcl_var_pool_act_.size(); ++cnt)
+        check_cnf.add2LitClause(-negcl_var_pool_act_[cnt], -negcl_var_pool_[cnt]);
+      check_cnf.addClause(next_unsafe);
+      solver_check_.startIncrementalSession(check_quant_);
+      solver_check_.incAddCNF(check_cnf);
+    }
+    else
+    {
+      solver_check_.incAddClause(blocking_clause);
+      int not_cl = negcl_var_pool_.back();
+      negcl_var_pool_.pop_back();
+      negcl_var_pool_act_.pop_back();
+      for(size_t lit_cnt = 0; lit_cnt < next_blocking_clause.size(); ++lit_cnt)
+        solver_check_.incAdd2LitClause(-not_cl, -next_blocking_clause[lit_cnt]);
+    }
+
+    if(count % 100 == 0)
+    {
+      L_DBG("Statistics at count=" << count);
+      L_DBG("Winning region clauses: " << winning_region_.getNrOfClauses());
+      L_DBG("Winning region lits: " << winning_region_.getNrOfLits());
+      L_DBG("Winning region full clauses: " << winning_region_large_.getNrOfClauses());
+      L_DBG("Winning region full lits: " << winning_region_large_.getNrOfLits());
+      if(Logger::instance().isEnabled(Logger::DBG))
+        statistics_.logStatistics();
+    }
+  }
   return true;
 }
 
@@ -211,6 +427,7 @@ bool LearnSynthQBFInc::computeWinningRegionAll()
   recomputeGenCNF();
   solver_gen_.startIncrementalSession(gen_quant_);
   solver_gen_.incAddCNF(generalize_clause_cnf_);
+  solver_gen_.doMinCores(true);
 
   vector<int> counterexample;
   vector<vector<int> > all_blocking_clauses;
@@ -231,9 +448,6 @@ bool LearnSynthQBFInc::computeWinningRegionAll()
       recomputeCheckCNF();
       solver_check_.startIncrementalSession(check_quant_);
       solver_check_.incAddCNF(check_cnf_);
-      recomputeGenCNF();
-      solver_gen_.startIncrementalSession(gen_quant_);
-      solver_gen_.incAddCNF(generalize_clause_cnf_);
       precise = true;
       continue;
     }
@@ -251,14 +465,11 @@ bool LearnSynthQBFInc::computeWinningRegionAll()
       winning_region_.addClauseAndSimplify(blocking_clause);
       winning_region_large_.addClauseAndSimplify(blocking_clause);
       solver_check_.incAddClause(blocking_clause);
-      //solver_gen_.incAddClause(blocking_clause);
+      solver_gen_.incAddClause(blocking_clause);
+      Utils::swapPresentToNext(blocking_clause);
+      solver_gen_.incAddClause(blocking_clause);
       precise = false;
     }
-
-    Utils::compressStateCNF(winning_region_);
-    recomputeGenCNF();
-    solver_gen_.startIncrementalSession(gen_quant_);
-    solver_gen_.incAddCNF(generalize_clause_cnf_);
 
     if(count % 100 == 0)
     {
@@ -274,12 +485,245 @@ bool LearnSynthQBFInc::computeWinningRegionAll()
 }
 
 // -------------------------------------------------------------------------------------------
+bool LearnSynthQBFInc::computeWinningRegionAllPush()
+{
+  AIG2CNF& A2C = AIG2CNF::instance();
+  VarManager &VM = VarManager::instance();
+  L_DBG("Nr. of state variables: " << VM.getVarsOfType(VarInfo::PRES_STATE).size());
+  L_DBG("Nr. of uncontrollable inputs: " << VM.getVarsOfType(VarInfo::INPUT).size());
+  L_DBG("Nr. of controllable inputs: " << VM.getVarsOfType(VarInfo::CTRL).size());
+
+  winning_region_.clear();
+  winning_region_ = A2C.getSafeStates();
+  winning_region_large_.clear();
+  winning_region_large_ = A2C.getSafeStates();
+
+  // build check_cnf = P(x) AND T(x,i,c,x') AND NOT P(x')
+  solver_check_.startIncrementalSession(check_quant_);
+  solver_check_.incAddCNF(AIG2CNF::instance().getTrans());
+  solver_check_.incAddUnitClause(-VM.getPresErrorStateVar());
+  vector<int> next_unsafe;
+  next_unsafe.reserve(10000);
+  next_unsafe.push_back(VM.getNextErrorStateVar());
+  // build generalize_clause_cnf = P(x) AND T(x,i,c,x') AND P(x')
+  solver_gen_.startIncrementalSession(gen_quant_);
+  solver_gen_.incAddCNF(AIG2CNF::instance().getTrans());
+  solver_gen_.incAddUnitClause(-VM.getPresErrorStateVar());
+  solver_gen_.incAddUnitClause(-VM.getNextErrorStateVar());
+  solver_gen_.doMinCores(true);
+
+  vector<int> counterexample;
+  vector<vector<int> > all_blocking_clauses;
+  all_blocking_clauses.reserve(1000);
+
+
+  size_t count = 0;
+  while(true)
+  {
+    count++;
+    solver_check_.incPush();
+    solver_check_.incAddClause(next_unsafe);
+    bool ce_found = computeCounterexampleQBF(counterexample);
+    if(!ce_found)
+      return true;
+    solver_check_.incPop();
+
+    L_DBG("Found bad state (nr " << count << "), excluding it from the winning region.");
+    bool realizable = computeAllBlockingClauses(counterexample, all_blocking_clauses);
+    if(!realizable)
+      return false;
+
+    for(size_t clause_count = 0; clause_count < all_blocking_clauses.size(); ++clause_count)
+    {
+      vector<int> &blocking_clause = all_blocking_clauses[clause_count];
+      // update the CNFs:
+      Utils::debugPrint(blocking_clause, "Blocking clause: ");
+      winning_region_.addClause(blocking_clause);
+      solver_check_.incAddClause(blocking_clause);
+      solver_gen_.incAddClause(blocking_clause);
+      Utils::swapPresentToNext(blocking_clause);
+      solver_gen_.incAddClause(blocking_clause);
+      int clause_is_false = VarManager::instance().createFreshTmpVar();
+      solver_check_.incAddVarAtInnermostQuant(clause_is_false);
+      next_unsafe.push_back(clause_is_false);
+      for(size_t cnt = 0; cnt < blocking_clause.size(); ++cnt)
+        solver_check_.incAdd2LitClause(-clause_is_false, -blocking_clause[cnt]);
+    }
+
+    if(count % 100 == 0)
+    {
+      L_DBG("Statistics at count=" << count);
+      L_DBG("Winning region clauses: " << winning_region_.getNrOfClauses());
+      L_DBG("Winning region lits: " << winning_region_.getNrOfLits());
+      if(Logger::instance().isEnabled(Logger::DBG))
+        statistics_.logStatistics();
+    }
+  }
+}
+
+// -------------------------------------------------------------------------------------------
+bool LearnSynthQBFInc::computeWinningRegionAllPool()
+{
+  AIG2CNF& A2C = AIG2CNF::instance();
+  VarManager &VM = VarManager::instance();
+  L_DBG("Nr. of state variables: " << VM.getVarsOfType(VarInfo::PRES_STATE).size());
+  L_DBG("Nr. of uncontrollable inputs: " << VM.getVarsOfType(VarInfo::INPUT).size());
+  L_DBG("Nr. of controllable inputs: " << VM.getVarsOfType(VarInfo::CTRL).size());
+
+  winning_region_.clear();
+  winning_region_ = A2C.getSafeStates();
+  winning_region_large_.clear();
+  winning_region_large_ = A2C.getSafeStates();
+
+  // build check_cnf = P(x) AND T(x,i,c,x') AND NOT P(x')
+  int pool_size = 50;
+  negcl_var_pool_.clear();
+  negcl_var_pool_.reserve(pool_size);
+  negcl_var_pool_act_.clear();
+  negcl_var_pool_act_.reserve(pool_size);
+  for(int cnt = 0; cnt < pool_size; ++cnt)
+  {
+    negcl_var_pool_.push_back(VM.createFreshTmpVar());
+    negcl_var_pool_act_.push_back(VM.createFreshTemplParam());
+  }
+  solver_check_.startIncrementalSession(check_quant_);
+  solver_check_.incAddCNF(AIG2CNF::instance().getTrans());
+  solver_check_.incAddUnitClause(-VM.getPresErrorStateVar());
+  for(size_t cnt = 0; cnt < negcl_var_pool_act_.size(); ++cnt)
+    solver_check_.incAdd2LitClause(-negcl_var_pool_act_[cnt], -negcl_var_pool_[cnt]);
+  vector<int> next_unsafe;
+  next_unsafe.reserve(negcl_var_pool_.size() + 1);
+  next_unsafe.push_back(VM.getNextErrorStateVar());
+  next_unsafe.insert(next_unsafe.end(), negcl_var_pool_.begin(), negcl_var_pool_.end());
+  solver_check_.incAddClause(next_unsafe);
+
+  // build generalize_clause_cnf = P(x) AND T(x,i,c,x') AND P(x')
+  solver_gen_.startIncrementalSession(gen_quant_);
+  solver_gen_.incAddCNF(AIG2CNF::instance().getTrans());
+  solver_gen_.incAddUnitClause(-VM.getPresErrorStateVar());
+  solver_gen_.incAddUnitClause(-VM.getNextErrorStateVar());
+  solver_gen_.doMinCores(true);
+
+  vector<int> counterexample;
+  vector<vector<int> > all_blocking_clauses;
+  all_blocking_clauses.reserve(1000);
+
+  size_t count = 0;
+  while(true)
+  {
+    count++;
+    bool ce_found = computeCounterexampleQBFPool(counterexample);
+    if(!ce_found)
+      return true;
+
+    L_DBG("Found bad state (nr " << count << "), excluding it from the winning region.");
+    bool realizable = computeAllBlockingClauses(counterexample, all_blocking_clauses);
+    if(!realizable)
+      return false;
+
+    // update the CNFs and the solver_gen_:
+    for(size_t clause_count = 0; clause_count < all_blocking_clauses.size(); ++clause_count)
+    {
+      vector<int> &blocking_clause = all_blocking_clauses[clause_count];
+      Utils::debugPrint(blocking_clause, "Blocking clause: ");
+      winning_region_.addClauseAndSimplify(blocking_clause);
+      winning_region_large_.addClauseAndSimplify(blocking_clause);
+      vector<int> next_blocking_clause(blocking_clause);
+      Utils::swapPresentToNext(next_blocking_clause);
+      solver_gen_.incAddClause(blocking_clause);
+      solver_gen_.incAddClause(next_blocking_clause);
+    }
+
+    // update the solver_check_:
+    if(negcl_var_pool_.size() < all_blocking_clauses.size())
+    {
+      VM.resetToLastPush();
+      reduceExistingClauses();
+      Utils::compressStateCNF(winning_region_);
+      negcl_var_pool_.clear();
+      negcl_var_pool_.reserve(pool_size);
+      negcl_var_pool_act_.clear();
+      negcl_var_pool_act_.reserve(pool_size);
+      for(int cnt = 0; cnt < pool_size; ++cnt)
+      {
+        negcl_var_pool_.push_back(VM.createFreshTmpVar());
+        negcl_var_pool_act_.push_back(VM.createFreshTemplParam());
+      }
+      vector<int> next_unsafe;
+      next_unsafe.reserve(negcl_var_pool_.size() + winning_region_.getNrOfClauses());
+      next_unsafe.insert(next_unsafe.end(), negcl_var_pool_.begin(), negcl_var_pool_.end());
+
+      CNF check_cnf(AIG2CNF::instance().getTrans());
+      check_cnf.addCNF(winning_region_);
+      CNF next_win_reg(winning_region_);
+      next_win_reg.swapPresentToNext();
+      const list<vector<int> >& cl = next_win_reg.getClauses();
+      for(CNF::ClauseConstIter it = cl.begin(); it != cl.end(); ++it)
+      {
+        if(it->size() == 1)
+          next_unsafe.push_back(-(*it)[0]);
+        else
+        {
+          int clause_false_lit = VarManager::instance().createFreshTmpVar();
+          next_unsafe.push_back(clause_false_lit);
+          for(size_t lit_cnt = 0; lit_cnt < it->size(); ++lit_cnt)
+            check_cnf.add2LitClause(-clause_false_lit, -((*it)[lit_cnt]));
+        }
+      }
+      for(size_t cnt = 0; cnt < negcl_var_pool_act_.size(); ++cnt)
+        check_cnf.add2LitClause(-negcl_var_pool_act_[cnt], -negcl_var_pool_[cnt]);
+      check_cnf.addClause(next_unsafe);
+      solver_check_.startIncrementalSession(check_quant_);
+      solver_check_.incAddCNF(check_cnf);
+    }
+    else
+    {
+      for(size_t clause_count = 0; clause_count < all_blocking_clauses.size(); ++clause_count)
+      {
+        vector<int> &blocking_clause = all_blocking_clauses[clause_count];
+        vector<int> next_blocking_clause(blocking_clause);
+        Utils::swapPresentToNext(next_blocking_clause);
+        solver_check_.incAddClause(blocking_clause);
+        int not_cl = negcl_var_pool_.back();
+        negcl_var_pool_.pop_back();
+        negcl_var_pool_act_.pop_back();
+        for(size_t lit_cnt = 0; lit_cnt < next_blocking_clause.size(); ++lit_cnt)
+          solver_check_.incAdd2LitClause(-not_cl, -next_blocking_clause[lit_cnt]);
+      }
+    }
+
+    if(count % 100 == 0)
+    {
+      L_DBG("Statistics at count=" << count);
+      L_DBG("Winning region clauses: " << winning_region_.getNrOfClauses());
+      L_DBG("Winning region lits: " << winning_region_.getNrOfLits());
+      L_DBG("Winning region full clauses: " << winning_region_large_.getNrOfClauses());
+      L_DBG("Winning region full lits: " << winning_region_large_.getNrOfLits());
+      if(Logger::instance().isEnabled(Logger::DBG))
+        statistics_.logStatistics();
+    }
+  }
+  return true;
+}
+
+// -------------------------------------------------------------------------------------------
 bool LearnSynthQBFInc::computeCounterexampleQBF(vector<int> &ce)
 {
   ce.clear();
   vector<int> none;
   statistics_.notifyBeforeComputeCube();
-  bool found = solver_check_.incIsSatModelOrCore(none, ce);
+  bool found = solver_check_.incIsSatModel(none, ce);
+  restrictToStates(ce);
+  statistics_.notifyAfterComputeCube();
+  return found;
+}
+
+// -------------------------------------------------------------------------------------------
+bool LearnSynthQBFInc::computeCounterexampleQBFPool(vector<int> &ce)
+{
+  statistics_.notifyBeforeComputeCube();
+  ce.clear();
+  bool found = solver_check_.incIsSatModel(negcl_var_pool_act_, ce);
   restrictToStates(ce);
   statistics_.notifyAfterComputeCube();
   return found;
@@ -293,7 +737,8 @@ bool LearnSynthQBFInc::computeBlockingClause(vector<int> &ce, vector<int> &block
   if(Utils::containsInit(ce))
     return false;
   size_t orig_size = ce.size();
-  generalizeCounterexample(ce);
+  bool worked = generalizeCounterexample(ce);
+  MASSERT(worked, "Impossible.");
   if(Utils::containsInit(ce))
     return false;
   // BEGIN minimize further
@@ -301,12 +746,11 @@ bool LearnSynthQBFInc::computeBlockingClause(vector<int> &ce, vector<int> &block
   // iteration:
   blocking_clause = ce;
   Utils::negateLiterals(blocking_clause);
-  generalize_clause_cnf_.addClause(blocking_clause);
+  solver_gen_.incAddClause(blocking_clause);
   Utils::swapPresentToNext(blocking_clause);
-  generalize_clause_cnf_.addClause(blocking_clause);
-  solver_gen_.startIncrementalSession(gen_quant_);
-  solver_gen_.incAddCNF(generalize_clause_cnf_);
-  generalizeCounterexample(ce);
+  solver_gen_.incAddClause(blocking_clause);
+  // TODO: maybe no core but explicit loop instead of the next line:
+  generalizeCounterexampleFurther(ce);
   if(Utils::containsInit(ce))
     return false;
   // END minimize further
@@ -326,7 +770,8 @@ bool LearnSynthQBFInc::computeAllBlockingClauses(vector<int> &ce,
   list<vector<int> > gen_ces;
   vector<int> orig_ce(ce);
   vector<int> first_ce(orig_ce);
-  generalizeCounterexample(first_ce);
+  bool worked = generalizeCounterexample(first_ce);
+  MASSERT(worked, "Impossible");
   statistics_.notifyCubeMin(orig_ce.size(), first_ce.size());
   if(Utils::containsInit(first_ce))
     return false;
@@ -387,25 +832,23 @@ bool LearnSynthQBFInc::computeAllBlockingClauses(vector<int> &ce,
   }
 
   // BEGIN minimize further
-  // This is all we could do with the current incremental session of solver_gen_.
-  // However, in order to reduce the size of the clauses further, we can add all we have
+  // In order to reduce the size of the clauses further, we can add all we have
   // learned meanwhile to solver_gen_ and see if we can reduce the clauses
   // further:
   for(size_t cl_cnt = 0; cl_cnt < blocking_clauses.size(); ++cl_cnt)
   {
     vector<int> new_blocking_clause(blocking_clauses[cl_cnt]);
-    generalize_clause_cnf_.addClause(new_blocking_clause);
+    solver_gen_.incAddClause(new_blocking_clause);
     Utils::swapPresentToNext(new_blocking_clause);
-    generalize_clause_cnf_.addClause(new_blocking_clause);
+    solver_gen_.incAddClause(new_blocking_clause);
   }
-  solver_gen_.startIncrementalSession(gen_quant_);
-  solver_gen_.incAddCNF(generalize_clause_cnf_);
   for(size_t cl_cnt = 0; cl_cnt < blocking_clauses.size(); ++cl_cnt)
   {
     vector<int> min_ce(blocking_clauses[cl_cnt]);
     Utils::negateLiterals(min_ce);
     size_t size_before_min = min_ce.size();
-    generalizeCounterexample(min_ce);
+    // TODO: maybe no core but explicit loop instead of the next line:
+    generalizeCounterexampleFurther(min_ce);
     if(min_ce.size() < size_before_min)
     {
       Utils::negateLiterals(min_ce);
@@ -413,8 +856,6 @@ bool LearnSynthQBFInc::computeAllBlockingClauses(vector<int> &ce,
     }
   }
   // END minimize further
-
-
   statistics_.notifyAfterCubeMin();
 
   return true;
@@ -433,18 +874,16 @@ void LearnSynthQBFInc::reduceExistingClauses()
     vector<int> counterexample(*it);
     Utils::negateLiterals(counterexample);
     size_t size_before = counterexample.size();
-    generalizeCounterexample(counterexample);
+    generalizeCounterexampleFurther(counterexample);
     if(counterexample.size() < size_before)
     {
       vector<int> clause(counterexample);
       Utils::negateLiterals(clause);
       winning_region_.addClauseAndSimplify(clause);
       winning_region_large_.addClauseAndSimplify(clause);
-      generalize_clause_cnf_.addClause(clause);
+      solver_gen_.incAddClause(clause);
       Utils::swapPresentToNext(clause);
-      generalize_clause_cnf_.addClause(clause);
-      solver_gen_.startIncrementalSession(gen_quant_);
-      solver_gen_.incAddCNF(generalize_clause_cnf_);
+      solver_gen_.incAddClause(clause);
     }
   }
   size_t new_cl = winning_region_.getNrOfClauses();
@@ -521,10 +960,25 @@ void LearnSynthQBFInc::restrictToStates(vector<int> &vec) const
 bool LearnSynthQBFInc::generalizeCounterexample(vector<int> &ce)
 {
   vector<int> gen_ce;
-  bool is_sat = solver_gen_.incIsSatModelOrCore(ce, gen_ce);
+  bool is_sat = solver_gen_.incIsSatCore(ce, gen_ce);
   if(is_sat)
     return false;
   ce = gen_ce;
   Utils::sort(ce);
   return true;
+}
+
+// -------------------------------------------------------------------------------------------
+void LearnSynthQBFInc::generalizeCounterexampleFurther(vector<int> &ce)
+{
+  Utils::sort(ce);
+  vector<int> orig_ce(ce);
+  for(size_t lit_cnt = 0; lit_cnt < orig_ce.size(); ++lit_cnt)
+  {
+    vector<int> tmp(ce);
+    Utils::remove(tmp, orig_ce[lit_cnt]);
+    if(!solver_gen_.incIsSat(tmp))
+      ce = tmp;
+  }
+  Utils::sort(ce);
 }

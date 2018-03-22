@@ -42,6 +42,53 @@ CNF::CNF() : clauses_()
 }
 
 // -------------------------------------------------------------------------------------------
+CNF::CNF(const string &filename)
+{
+  ifstream in_file(filename.c_str());
+  MASSERT(!in_file.fail(), "Could not open DIAMCS file '" + filename + "'.");
+  size_t nr_of_clauses = 0;
+
+  in_file >> std::ws; // consume all whitespaces
+
+  char c = 0;
+  while(in_file.good())
+  {
+    c = in_file.peek();
+    // skipping comments:
+    if(c == 'c')
+      while(in_file.good() && in_file.get() != '\n');
+    else if(c == 'p')
+    {
+      // parsing the header:
+      int max_var = 0;
+      string buf1, buf2;
+      in_file >> buf1 >> buf2 >> max_var >> nr_of_clauses;
+      MASSERT(!in_file.fail(), "Syntax error in header of DIMACS file.");
+      MASSERT(buf1 == "p" && buf2 == "cnf", "Syntax error in header of DIMACS file.");
+      MASSERT(max_var <= VarManager::instance().getMaxCNFVar(), "CNF contains unknown var.");
+    }
+    else
+    {
+      // parsing a clause:
+      vector<int> clause;
+      int literal = 0;
+      MASSERT(in_file.good(), "Unexpected end-of-file.");
+      in_file >> literal;
+      while(literal != 0)
+      {
+        clause.push_back(literal);
+        MASSERT(in_file.good(), "Unexpected end-of-file.");
+        in_file >> literal;
+      }
+      clauses_.push_back(clause);
+    }
+    in_file >> std::ws; // consume all whitespaces
+  }
+  in_file.close();
+  MASSERT(clauses_.size() == nr_of_clauses, "Mismatch in nr of clauses");
+}
+
+// -------------------------------------------------------------------------------------------
 CNF::CNF(const CNF &other): clauses_(other.clauses_)
 {
   // nothing to be done
@@ -270,6 +317,32 @@ string CNF::toString() const
 }
 
 // -------------------------------------------------------------------------------------------
+void CNF::saveToFile(const string &filename) const
+{
+  // We have to find out the maximum variable index:
+  int max_var = 0;
+  for(ClauseConstIter it = clauses_.begin(); it != clauses_.end(); ++it)
+  {
+    for(size_t cnt = 0; cnt < it->size(); ++cnt)
+    {
+      int var = (*it)[cnt];
+      if(var < 0)
+        var = - var;
+      if(var > max_var)
+        max_var = var;
+    }
+  }
+
+  ofstream outfile;
+  outfile.open(filename.c_str(), ofstream::out | ofstream::trunc);
+  MASSERT(!outfile.fail(), "Cannot open file '" + filename + "' for writing.");
+  outfile << "p cnf " << max_var << " " << clauses_.size() << endl;
+  outfile << toString();
+  MASSERT(!outfile.fail(), "Failed to write file '" + filename + "'.");
+  outfile.close();
+}
+
+// -------------------------------------------------------------------------------------------
 const list<vector<int> >& CNF::getClauses() const
 {
   return clauses_;
@@ -340,6 +413,99 @@ bool CNF::isSatBy(const vector<int> &cube) const
       return false;
   }
   return true;
+}
+
+// -------------------------------------------------------------------------------------------
+void CNF::setVarValue(int var, bool value)
+{
+  // The following code assumes that every variable appears at most once in a clause:
+  for(ClauseIter it = clauses_.begin(); it != clauses_.end();)
+  {
+    bool clause_removed = false;
+    for(size_t lit_cnt = 0; lit_cnt < it->size(); ++lit_cnt)
+    {
+      int lit = (*it)[lit_cnt];
+      if((lit == var && value == false) || (-lit == var && value == true))
+      {
+        // the literal is replaced by false, i.e., removed from the clause
+        (*it)[lit_cnt] = it->back();
+        it->pop_back();
+        if(it->empty()) // if a clause gets empty, then the entire CNF is false:
+        {
+          clauses_.clear();
+          clauses_.push_back(vector<int>());
+          return;
+        }
+        break;
+      }
+      else if ((lit == var && value == true) || (-lit == var && value == false))
+      {
+        // the literal is replaced by true, i.e., the clause is removed
+        it = clauses_.erase(it);
+        clause_removed = true;
+        break;
+      }
+    }
+    if(!clause_removed)
+      ++it;
+  }
+}
+
+// -------------------------------------------------------------------------------------------
+void CNF::renameVars(const vector<int> rename_map)
+{
+  for(ClauseIter it = clauses_.begin(); it != clauses_.end(); ++it)
+  {
+    for(size_t lit_cnt = 0; lit_cnt < it->size(); ++lit_cnt)
+    {
+      int lit = (*it)[lit_cnt];
+      if(lit < 0)
+        (*it)[lit_cnt] = -rename_map[-lit];
+      else
+        (*it)[lit_cnt] = rename_map[lit];
+    }
+  }
+}
+
+// -------------------------------------------------------------------------------------------
+bool CNF::contains(int var) const
+{
+  for(ClauseConstIter it = clauses_.begin(); it != clauses_.end(); ++it)
+  {
+    for(size_t lit_cnt = 0; lit_cnt < it->size(); ++lit_cnt)
+    {
+      int cnf_lit = (*it)[lit_cnt];
+      int cnf_var = cnf_lit < 0 ? -cnf_lit : cnf_lit;
+      if(cnf_var == var)
+        return true;
+    }
+  }
+  return false;
+}
+
+// -------------------------------------------------------------------------------------------
+vector<int> CNF::getVars() const
+{
+  set<int> var_set;
+  appendVarsTo(var_set);
+  vector<int> res;
+  res.reserve(var_set.size());
+  res.insert(res.end(), var_set.begin(), var_set.end());
+  return res;
+}
+
+// -------------------------------------------------------------------------------------------
+void CNF::appendVarsTo(set<int> &var_set) const
+{
+  for(ClauseConstIter it = clauses_.begin(); it != clauses_.end(); ++it)
+  {
+    for(size_t lit_cnt = 0; lit_cnt < it->size(); ++lit_cnt)
+    {
+      int cnf_lit = (*it)[lit_cnt];
+      int cnf_var = cnf_lit < 0 ? -cnf_lit : cnf_lit;
+      var_set.insert(cnf_var);
+    }
+  }
 }
 
 // -------------------------------------------------------------------------------------------

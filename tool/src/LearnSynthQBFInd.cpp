@@ -32,16 +32,17 @@
 #include "Options.h"
 #include "AIG2CNF.h"
 #include "Logger.h"
-#include "QBFCertImplExtractor.h"
+#include "CNFImplExtractor.h"
 #include "Utils.h"
 #include "LingelingApi.h"
 
 // -------------------------------------------------------------------------------------------
-LearnSynthQBFInd::LearnSynthQBFInd() :
+LearnSynthQBFInd::LearnSynthQBFInd(CNFImplExtractor *impl_extractor) :
                   BackEnd(),
                   qbf_solver_(Options::instance().getQBFSolver()),
                   current_state_is_initial_(0),
-                  do_reach_check_(false)
+                  do_reach_check_(false),
+                  impl_extractor_(impl_extractor)
 {
 
   if(Options::instance().getBackEndMode() == 3 || Options::instance().getBackEndMode() == 6)
@@ -137,6 +138,9 @@ LearnSynthQBFInd::~LearnSynthQBFInd()
 {
   delete qbf_solver_;
   qbf_solver_ = NULL;
+
+  delete impl_extractor_;
+  impl_extractor_ = 0;
 }
 
 // -------------------------------------------------------------------------------------------
@@ -163,12 +167,10 @@ bool LearnSynthQBFInd::run()
   MASSERT(!do_reach_check_, "Not yet implemented.");
 
   L_INF("Starting to extract a circuit ...");
-  statistics_.notifyRelDetStart();
-  QBFCertImplExtractor extractor;
-  extractor.extractCircuit(winning_region_);
-  statistics_.notifyRelDetEnd();
+  impl_extractor_->extractCircuit(winning_region_);
   L_INF("Synthesis done.");
   statistics_.logStatistics();
+  impl_extractor_->logStatistics();
   return true;
 }
 

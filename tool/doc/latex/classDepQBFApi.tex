@@ -37,7 +37,47 @@ virtual bool \hyperlink{classDepQBFApi_a8b220fef622b400b37d8298f29826938}{is\-Sa
 virtual bool \hyperlink{classDepQBFApi_af70faa0b2136fe04e2a22743f2ca7c8e}{is\-Sat\-Model} (const vector$<$ pair$<$ \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cf}{Var\-Info\-::\-Var\-Kind}, \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} $>$ $>$ \&quantifier\-\_\-prefix, const \hyperlink{classCNF}{C\-N\-F} \&cnf, vector$<$ int $>$ \&model)
 \begin{DoxyCompactList}\small\item\em Checks satisfiability and extracts a model (quantifying over variable kinds). \end{DoxyCompactList}\item 
 virtual bool \hyperlink{classDepQBFApi_a4278bfb0cf01f21e9aa6333e14e4f5af}{is\-Sat\-Model} (const vector$<$ pair$<$ vector$<$ int $>$, \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} $>$ $>$ \&quantifier\-\_\-prefix, const \hyperlink{classCNF}{C\-N\-F} \&cnf, vector$<$ int $>$ \&model)
-\begin{DoxyCompactList}\small\item\em Checks satisfiability and extracts a model (quantifying over variable sets). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Checks satisfiability and extracts a model (quantifying over variable sets). \end{DoxyCompactList}\item 
+virtual void \hyperlink{classDepQBFApi_a35fa14f374a196a2270baa1945e33050}{start\-Incremental\-Session} (const vector$<$ pair$<$ \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cf}{Var\-Info\-::\-Var\-Kind}, \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} $>$ $>$ \&quantifier\-\_\-prefix)
+\begin{DoxyCompactList}\small\item\em Starts an incremental session with a quantifier prefix over variable kinds. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classDepQBFApi_add8abd2d970c037034012ebc21982c7e}{start\-Incremental\-Session} (const vector$<$ pair$<$ vector$<$ int $>$, \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} $>$ $>$ \&quantifier\-\_\-prefix)
+\begin{DoxyCompactList}\small\item\em Starts an incremental session with a quantifier prefix over variable sets. \end{DoxyCompactList}\item 
+void \hyperlink{classDepQBFApi_a27bd21f37d83710250f9efeaeb9ad339}{do\-Min\-Cores} (bool min\-\_\-cores=true)
+\begin{DoxyCompactList}\small\item\em Enables or disables the computation of M\-I\-N\-I\-M\-A\-L unsatisfiable cores. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classDepQBFApi_a4cacfbb0e933d8a66bd24ce5b71ea623}{clear\-Incremental\-Session} ()
+\begin{DoxyCompactList}\small\item\em Closes a previously opened incremental session and frees all resources. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classDepQBFApi_ade58f545f2718850946391be977a6f9c}{inc\-Add\-Var\-At\-Innermost\-Quant} (int var)
+\begin{DoxyCompactList}\small\item\em Declares a new variable in the innermost quantifier nesting. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classDepQBFApi_a1b3d100b4d70dd1200c8feb2d39accc6}{inc\-Add\-C\-N\-F} (const \hyperlink{classCNF}{C\-N\-F} \&cnf)
+\begin{DoxyCompactList}\small\item\em Adds (conjuncts) a new \hyperlink{classCNF}{C\-N\-F} to the current incremental session. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classDepQBFApi_a76e51267fbf2c2a127ad874187bcf29a}{inc\-Add\-Clause} (const vector$<$ int $>$ \&clause)
+\begin{DoxyCompactList}\small\item\em Adds (conjuncts) a new clause to the current incremental session. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classDepQBFApi_aa5755c46502a6016c48d6764ff087781}{inc\-Add\-Unit\-Clause} (int lit)
+\begin{DoxyCompactList}\small\item\em Adds a new unit clause to the current incremental session. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classDepQBFApi_ab8e5a5e0adb6644ae6100afb07800dc3}{inc\-Add2\-Lit\-Clause} (int lit1, int lit2)
+\begin{DoxyCompactList}\small\item\em Adds a new clause consisting of 2 literals to the current incremental session. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classDepQBFApi_a7300b61f89a10da1e6a679a3fd6ba9bc}{inc\-Add3\-Lit\-Clause} (int lit1, int lit2, int lit3)
+\begin{DoxyCompactList}\small\item\em Adds a new clause consisting of 3 literals to the current incremental session. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classDepQBFApi_a97e3e631830a5fcdf351ae4bfbb336c5}{inc\-Add\-Cube} (const vector$<$ int $>$ \&cube)
+\begin{DoxyCompactList}\small\item\em Adds (conjuncts) a new cube to the current incremental session. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classDepQBFApi_ad519a83a3e70e0224329f9e4a534a01f}{inc\-Add\-Neg\-Cube\-As\-Clause} (const vector$<$ int $>$ \&cube)
+\begin{DoxyCompactList}\small\item\em Adds the negation of a given cube (which is a clause) to the incremental session. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classDepQBFApi_abb9f9d11ceb7f5528efd374a4fb3a7e9}{inc\-Push} ()
+\begin{DoxyCompactList}\small\item\em Stores the current state of the incremental session on a stack. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classDepQBFApi_ac70d54cdcd3be4bc80dc84dd14e4a8c1}{inc\-Pop} ()
+\begin{DoxyCompactList}\small\item\em Restores the incremental session back to the point where \hyperlink{classDepQBFApi_abb9f9d11ceb7f5528efd374a4fb3a7e9}{inc\-Push()} was called. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classDepQBFApi_a8687c635b0d7f6413baca131ae9628ca}{inc\-Is\-Sat} ()
+\begin{DoxyCompactList}\small\item\em Checks if the Q\-B\-F in the current incremental session is satisfiable. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classDepQBFApi_a9dc678ea88f60ea0d69bddeb47f56f80}{inc\-Is\-Sat} (const vector$<$ int $>$ \&assumptions)
+\begin{DoxyCompactList}\small\item\em Checks if the Q\-B\-F in the incremental session is satisfiable under assumptions. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classDepQBFApi_ab2129624aca73b877c16a5fc7b17f95f}{inc\-Is\-Sat\-Model\-Or\-Core} (const vector$<$ int $>$ \&assumptions, vector$<$ int $>$ \&model\-\_\-or\-\_\-core)
+\begin{DoxyCompactList}\small\item\em Checks if the incremental session is satisfiable and computes a model or core. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classDepQBFApi_a218feb52145bd715dc07fa2b765662f4}{inc\-Is\-Sat\-Model} (const vector$<$ int $>$ \&assumptions, vector$<$ int $>$ \&model)
+\begin{DoxyCompactList}\small\item\em Checks if the incremental session is satisfiable and computes a model. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classDepQBFApi_a4290fa5559f2ba9663bdb158c384cc92}{inc\-Is\-Sat\-Core} (const vector$<$ int $>$ \&assumptions, vector$<$ int $>$ \&core)
+\begin{DoxyCompactList}\small\item\em Checks if the incremental session is satisfiable and computes a core. \end{DoxyCompactList}\item 
+void \hyperlink{classDepQBFApi_ae90857fc6480bec580154f878731f740}{debug\-Dump\-Inc\-Solver\-State} ()
+\begin{DoxyCompactList}\small\item\em Dumps the incremental solver state for debugging purposes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -49,6 +89,8 @@ void \hyperlink{classDepQBFApi_a2f99baf1fb6759458979e799ce706bc4}{init\-Dep\-Q\-
 \begin{DoxyCompactList}\small\item\em Initializes a Dep\-Q\-B\-F instance with a Q\-B\-F (quantifying over variable kinds). \end{DoxyCompactList}\item 
 void \hyperlink{classDepQBFApi_af1e78176cae55e6a76e193d216b5a3dc}{init\-Dep\-Q\-B\-F} (Q\-D\-P\-L\-L $\ast$solver, const vector$<$ pair$<$ vector$<$ int $>$, \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} $>$ $>$ \&quantifier\-\_\-prefix, const \hyperlink{classCNF}{C\-N\-F} \&cnf)
 \begin{DoxyCompactList}\small\item\em Initializes a Dep\-Q\-B\-F instance with a Q\-B\-F (quantifying over variable sets). \end{DoxyCompactList}\item 
+void \hyperlink{classDepQBFApi_ad65a2e0366a4af8e3a436cf3b8ef5721}{extract\-Core} (Q\-D\-P\-L\-L $\ast$solver, vector$<$ int $>$ \&core)
+\begin{DoxyCompactList}\small\item\em Extracts an unsatisfiable core after unsatisfiability has been shown. \end{DoxyCompactList}\item 
 void \hyperlink{classDepQBFApi_a3a24cd04a3ddc626f2933429dda4e3b9}{debug\-Check\-Bloqqer\-Verdict} (int bloqqer\-\_\-verdict, const vector$<$ pair$<$ \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cf}{Var\-Info\-::\-Var\-Kind}, \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} $>$ $>$ \&quantifier\-\_\-prefix, const \hyperlink{classCNF}{C\-N\-F} \&cnf)
 \begin{DoxyCompactList}\small\item\em A debug function to cross-\/check bloqqer verdicts (S\-A\-T or U\-N\-S\-A\-T). \end{DoxyCompactList}\item 
 void \hyperlink{classDepQBFApi_afe717cb04d4bd6223bca3e52ba2c7e1f}{debug\-Check\-Bloqqer\-Verdict} (int bloqqer\-\_\-verdict, const vector$<$ pair$<$ vector$<$ int $>$, \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} $>$ $>$ \&quantifier\-\_\-prefix, const \hyperlink{classCNF}{C\-N\-F} \&cnf)
@@ -56,12 +98,22 @@ void \hyperlink{classDepQBFApi_afe717cb04d4bd6223bca3e52ba2c7e1f}{debug\-Check\-
 void \hyperlink{classDepQBFApi_a55a75bae106e42f6df73fb129a18b4bb}{debug\-Check\-Bloqqer\-Model} (const vector$<$ int $>$ \&model, const vector$<$ pair$<$ \hyperlink{classVarInfo_a64d1da76cf84fe674e5fef9764ef11cf}{Var\-Info\-::\-Var\-Kind}, \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} $>$ $>$ \&quantifier\-\_\-prefix, const \hyperlink{classCNF}{C\-N\-F} \&cnf)
 \begin{DoxyCompactList}\small\item\em A debug function to cross-\/check models produced by bloqqer. \end{DoxyCompactList}\item 
 void \hyperlink{classDepQBFApi_ab8f1fa3fa93a7c6877b22579305f22f5}{debug\-Check\-Bloqqer\-Model} (const vector$<$ int $>$ \&model, const vector$<$ pair$<$ vector$<$ int $>$, \hyperlink{classQBFSolver_ac091e263cb55286cc07b2451bcf4d3c7}{Quant} $>$ $>$ \&quantifier\-\_\-prefix, const \hyperlink{classCNF}{C\-N\-F} \&cnf)
-\begin{DoxyCompactList}\small\item\em A debug function to cross-\/check models produced by bloqqer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A debug function to cross-\/check models produced by bloqqer. \end{DoxyCompactList}\item 
+void \hyperlink{classDepQBFApi_a6731d3b5e3c5d89f2b3d9e2056ca93f6}{debug\-Assert\-Is\-Declared\-Inc} (int lit) const 
+\begin{DoxyCompactList}\small\item\em Asserts that a literal has been declared in the current incremental session. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 bool \hyperlink{classDepQBFApi_a04798225c77a19a1d2f415e50b93cfb1}{use\-\_\-bloqqer\-\_\-}
-\begin{DoxyCompactList}\small\item\em A flag indicating whether or not the pre-\/processor bloqqer should be used. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A flag indicating whether or not the pre-\/processor bloqqer should be used. \end{DoxyCompactList}\item 
+bool \hyperlink{classDepQBFApi_aeba411424d6185767325936d2ccf11de}{min\-\_\-cores\-\_\-}
+\begin{DoxyCompactList}\small\item\em A flag indicating whether or not unsatisfiable cores should be further minimized. \end{DoxyCompactList}\item 
+Q\-D\-P\-L\-L $\ast$ \hyperlink{classDepQBFApi_a22f9645648890b1997e702743fc2e8fe}{inc\-\_\-solver\-\_\-}
+\begin{DoxyCompactList}\small\item\em The solver instance to use in the incremental session. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classDepQBFApi_a45305a0f7bb106f43eb7d12554e71564}{inc\-\_\-model\-\_\-vars\-\_\-}
+\begin{DoxyCompactList}\small\item\em The variables for which a satisfying assignment can be constructed. \end{DoxyCompactList}\item 
+set$<$ int $>$ \hyperlink{classDepQBFApi_a28c913cc99ac6671a2f86dafe1c9f55a}{inc\-\_\-decl\-\_\-vars\-\_\-}
+\begin{DoxyCompactList}\small\item\em The variables which have been declared in the current incremental session. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -82,7 +134,7 @@ This interface to Dep\-Q\-B\-F can operated in two modes\-: with and without Blo
 Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\-0.\-0 
+1.\-1.\-0 
 \end{DoxyVersion}
 
 
@@ -128,7 +180,7 @@ Constructor.
 
 
 \begin{DoxyParams}{Parameters}
-{\em use\-\_\-bloqqer} & True if bloqqer should be used as pre-\/processor, false if no pre-\/processing should be used. If this parameter is omitted, no pre-\/processing is used. \\
+{\em use\-\_\-bloqqer} & True if bloqqer should be used as pre-\/processor, false if no pre-\/processing should be used. If this parameter is omitted, no pre-\/processing is used. At the moment, incremental solving is always done without any pre-\/processing. \\
 \hline
 \end{DoxyParams}
 
@@ -148,7 +200,11 @@ Destructor.
 
 
 
-Definition at line 50 of file Dep\-Q\-B\-F\-Api.\-cpp.
+Definition at line 53 of file Dep\-Q\-B\-F\-Api.\-cpp.
+
+
+
+References clear\-Incremental\-Session().
 
 \hypertarget{classDepQBFApi_ab7f7fe54d8ebfd6dc49296e10efada92}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}}
 \index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
@@ -171,6 +227,59 @@ The copy constructor is disabled (set private) and not implemented.
 
 
 \subsection{Member Function Documentation}
+\hypertarget{classDepQBFApi_a4cacfbb0e933d8a66bd24ce5b71ea623}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!clear\-Incremental\-Session@{clear\-Incremental\-Session}}
+\index{clear\-Incremental\-Session@{clear\-Incremental\-Session}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{clear\-Incremental\-Session}]{\setlength{\rightskip}{0pt plus 5cm}void Dep\-Q\-B\-F\-Api\-::clear\-Incremental\-Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDepQBFApi_a4cacfbb0e933d8a66bd24ce5b71ea623}
+
+
+Closes a previously opened incremental session and frees all resources. 
+
+If no incremental session is open, then this method has no effect at all. 
+
+Definition at line 400 of file Dep\-Q\-B\-F\-Api.\-cpp.
+
+
+
+References inc\-\_\-decl\-\_\-vars\-\_\-, inc\-\_\-model\-\_\-vars\-\_\-, and inc\-\_\-solver\-\_\-.
+
+
+
+Referenced by $\sim$\-Dep\-Q\-B\-F\-Api().
+
+\hypertarget{classDepQBFApi_a6731d3b5e3c5d89f2b3d9e2056ca93f6}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!debug\-Assert\-Is\-Declared\-Inc@{debug\-Assert\-Is\-Declared\-Inc}}
+\index{debug\-Assert\-Is\-Declared\-Inc@{debug\-Assert\-Is\-Declared\-Inc}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{debug\-Assert\-Is\-Declared\-Inc}]{\setlength{\rightskip}{0pt plus 5cm}void Dep\-Q\-B\-F\-Api\-::debug\-Assert\-Is\-Declared\-Inc (
+\begin{DoxyParamCaption}
+\item[{int}]{lit}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{classDepQBFApi_a6731d3b5e3c5d89f2b3d9e2056ca93f6}
+
+
+Asserts that a literal has been declared in the current incremental session. 
+
+Asserts that a certain literal has been declared in the quantifier prefix of the current incremental session. This check is done in the debug mode only.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lit} & The literal to check. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1024 of file Dep\-Q\-B\-F\-Api.\-cpp.
+
+
+
+References D\-A\-S\-S\-E\-R\-T, and inc\-\_\-decl\-\_\-vars\-\_\-.
+
+
+
+Referenced by inc\-Add2\-Lit\-Clause(), inc\-Add3\-Lit\-Clause(), inc\-Add\-Clause(), inc\-Add\-C\-N\-F(), inc\-Add\-Cube(), inc\-Add\-Neg\-Cube\-As\-Clause(), inc\-Add\-Unit\-Clause(), inc\-Is\-Sat(), inc\-Is\-Sat\-Core(), inc\-Is\-Sat\-Model(), and inc\-Is\-Sat\-Model\-Or\-Core().
+
 \hypertarget{classDepQBFApi_a55a75bae106e42f6df73fb129a18b4bb}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!debug\-Check\-Bloqqer\-Model@{debug\-Check\-Bloqqer\-Model}}
 \index{debug\-Check\-Bloqqer\-Model@{debug\-Check\-Bloqqer\-Model}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
 \subsubsection[{debug\-Check\-Bloqqer\-Model}]{\setlength{\rightskip}{0pt plus 5cm}void Dep\-Q\-B\-F\-Api\-::debug\-Check\-Bloqqer\-Model (
@@ -197,7 +306,7 @@ Dep\-Q\-B\-F without preprocessing is used to check if the model found by bloqqe
 \end{DoxyParams}
 
 
-Definition at line 492 of file Dep\-Q\-B\-F\-Api.\-cpp.
+Definition at line 931 of file Dep\-Q\-B\-F\-Api.\-cpp.
 
 
 
@@ -229,7 +338,7 @@ Dep\-Q\-B\-F without preprocessing is used to check if the model found by bloqqe
 \end{DoxyParams}
 
 
-Definition at line 539 of file Dep\-Q\-B\-F\-Api.\-cpp.
+Definition at line 978 of file Dep\-Q\-B\-F\-Api.\-cpp.
 
 
 
@@ -261,7 +370,7 @@ The Q\-B\-F is also solved with Dep\-Q\-B\-F without pre-\/processing and the tw
 \end{DoxyParams}
 
 
-Definition at line 434 of file Dep\-Q\-B\-F\-Api.\-cpp.
+Definition at line 873 of file Dep\-Q\-B\-F\-Api.\-cpp.
 
 
 
@@ -297,11 +406,540 @@ The Q\-B\-F is also solved with Dep\-Q\-B\-F without pre-\/processing and the tw
 \end{DoxyParams}
 
 
-Definition at line 463 of file Dep\-Q\-B\-F\-Api.\-cpp.
+Definition at line 902 of file Dep\-Q\-B\-F\-Api.\-cpp.
 
 
 
 References Ext\-Q\-B\-F\-Solver\-::dump\-Q\-B\-F(), is\-Sat(), L\-\_\-\-E\-R\-R, and M\-A\-S\-S\-E\-R\-T.
+
+\hypertarget{classDepQBFApi_ae90857fc6480bec580154f878731f740}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!debug\-Dump\-Inc\-Solver\-State@{debug\-Dump\-Inc\-Solver\-State}}
+\index{debug\-Dump\-Inc\-Solver\-State@{debug\-Dump\-Inc\-Solver\-State}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{debug\-Dump\-Inc\-Solver\-State}]{\setlength{\rightskip}{0pt plus 5cm}void Dep\-Q\-B\-F\-Api\-::debug\-Dump\-Inc\-Solver\-State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDepQBFApi_ae90857fc6480bec580154f878731f740}
+
+
+Dumps the incremental solver state for debugging purposes. 
+
+
+
+Definition at line 691 of file Dep\-Q\-B\-F\-Api.\-cpp.
+
+
+
+References inc\-\_\-solver\-\_\-, and M\-A\-S\-S\-E\-R\-T.
+
+\hypertarget{classDepQBFApi_a27bd21f37d83710250f9efeaeb9ad339}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!do\-Min\-Cores@{do\-Min\-Cores}}
+\index{do\-Min\-Cores@{do\-Min\-Cores}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{do\-Min\-Cores}]{\setlength{\rightskip}{0pt plus 5cm}void Dep\-Q\-B\-F\-Api\-::do\-Min\-Cores (
+\begin{DoxyParamCaption}
+\item[{bool}]{min\-\_\-cores = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}\label{classDepQBFApi_a27bd21f37d83710250f9efeaeb9ad339}
+
+
+Enables or disables the computation of M\-I\-N\-I\-M\-A\-L unsatisfiable cores. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min\-\_\-cores} & A flag indicating if unsatisfiable cores returned by the solver should be minimized further by trying to drop one literal after the other. This makes the calls slower but produces potentially smaller cubes. If the parameter is skipped the computation of minimal cores is enabled. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 394 of file Dep\-Q\-B\-F\-Api.\-cpp.
+
+
+
+References min\-\_\-cores\-\_\-.
+
+
+
+Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Push(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Pool(), and Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Push().
+
+\hypertarget{classDepQBFApi_ad65a2e0366a4af8e3a436cf3b8ef5721}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!extract\-Core@{extract\-Core}}
+\index{extract\-Core@{extract\-Core}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{extract\-Core}]{\setlength{\rightskip}{0pt plus 5cm}void Dep\-Q\-B\-F\-Api\-::extract\-Core (
+\begin{DoxyParamCaption}
+\item[{Q\-D\-P\-L\-L $\ast$}]{solver, }
+\item[{vector$<$ int $>$ \&}]{core}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classDepQBFApi_ad65a2e0366a4af8e3a436cf3b8ef5721}
+
+
+Extracts an unsatisfiable core after unsatisfiability has been shown. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em solver} & The Dep\-Q\-B\-F solver instance to extract the core from. \\
+\hline
+{\em core} & The vector into which the resulting unsatisfiable core will be stored. It is a subset of the used assumptions. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 825 of file Dep\-Q\-B\-F\-Api.\-cpp.
+
+
+
+References min\-\_\-cores\-\_\-, Utils\-::randomize(), and Utils\-::remove().
+
+
+
+Referenced by inc\-Is\-Sat\-Core(), and inc\-Is\-Sat\-Model\-Or\-Core().
+
+\hypertarget{classDepQBFApi_ab8e5a5e0adb6644ae6100afb07800dc3}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!inc\-Add2\-Lit\-Clause@{inc\-Add2\-Lit\-Clause}}
+\index{inc\-Add2\-Lit\-Clause@{inc\-Add2\-Lit\-Clause}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{inc\-Add2\-Lit\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}void Dep\-Q\-B\-F\-Api\-::inc\-Add2\-Lit\-Clause (
+\begin{DoxyParamCaption}
+\item[{int}]{lit1, }
+\item[{int}]{lit2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDepQBFApi_ab8e5a5e0adb6644ae6100afb07800dc3}
+
+
+Adds a new clause consisting of 2 literals to the current incremental session. 
+
+\begin{DoxyPrecond}{Precondition}
+\hyperlink{classDepQBFApi_a35fa14f374a196a2270baa1945e33050}{start\-Incremental\-Session()} must have been called before. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em lit1} & The first literal of the clause to add to the currently open incremental session. \\
+\hline
+{\em lit2} & The second literal of the clause to add to the currently open incremental session. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 460 of file Dep\-Q\-B\-F\-Api.\-cpp.
+
+
+
+References debug\-Assert\-Is\-Declared\-Inc(), inc\-\_\-solver\-\_\-, and M\-A\-S\-S\-E\-R\-T.
+
+
+
+Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Push(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Pool(), and Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Push().
+
+\hypertarget{classDepQBFApi_a7300b61f89a10da1e6a679a3fd6ba9bc}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!inc\-Add3\-Lit\-Clause@{inc\-Add3\-Lit\-Clause}}
+\index{inc\-Add3\-Lit\-Clause@{inc\-Add3\-Lit\-Clause}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{inc\-Add3\-Lit\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}void Dep\-Q\-B\-F\-Api\-::inc\-Add3\-Lit\-Clause (
+\begin{DoxyParamCaption}
+\item[{int}]{lit1, }
+\item[{int}]{lit2, }
+\item[{int}]{lit3}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDepQBFApi_a7300b61f89a10da1e6a679a3fd6ba9bc}
+
+
+Adds a new clause consisting of 3 literals to the current incremental session. 
+
+\begin{DoxyPrecond}{Precondition}
+\hyperlink{classDepQBFApi_a35fa14f374a196a2270baa1945e33050}{start\-Incremental\-Session()} must have been called before. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em lit1} & The first literal of the clause to add to the currently open incremental session. \\
+\hline
+{\em lit2} & The second literal of the clause to add to the currently open incremental session. \\
+\hline
+{\em lit3} & The third literal of the clause to add to the currently open incremental session. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 471 of file Dep\-Q\-B\-F\-Api.\-cpp.
+
+
+
+References debug\-Assert\-Is\-Declared\-Inc(), inc\-\_\-solver\-\_\-, and M\-A\-S\-S\-E\-R\-T.
+
+\hypertarget{classDepQBFApi_a76e51267fbf2c2a127ad874187bcf29a}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!inc\-Add\-Clause@{inc\-Add\-Clause}}
+\index{inc\-Add\-Clause@{inc\-Add\-Clause}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{inc\-Add\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}void Dep\-Q\-B\-F\-Api\-::inc\-Add\-Clause (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{clause}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDepQBFApi_a76e51267fbf2c2a127ad874187bcf29a}
+
+
+Adds (conjuncts) a new clause to the current incremental session. 
+
+\begin{DoxyPrecond}{Precondition}
+\hyperlink{classDepQBFApi_a35fa14f374a196a2270baa1945e33050}{start\-Incremental\-Session() } must have been called before. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em clause} & The clause which shall be conjuncted to the \hyperlink{classCNF}{C\-N\-F} in the currently open incremental session. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 439 of file Dep\-Q\-B\-F\-Api.\-cpp.
+
+
+
+References debug\-Assert\-Is\-Declared\-Inc(), inc\-\_\-solver\-\_\-, and M\-A\-S\-S\-E\-R\-T.
+
+
+
+Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-All\-Blocking\-Clauses(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Blocking\-Clause(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Push(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Push(), and Learn\-Synth\-Q\-B\-F\-Inc\-::reduce\-Existing\-Clauses().
+
+\hypertarget{classDepQBFApi_a1b3d100b4d70dd1200c8feb2d39accc6}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!inc\-Add\-C\-N\-F@{inc\-Add\-C\-N\-F}}
+\index{inc\-Add\-C\-N\-F@{inc\-Add\-C\-N\-F}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{inc\-Add\-C\-N\-F}]{\setlength{\rightskip}{0pt plus 5cm}void Dep\-Q\-B\-F\-Api\-::inc\-Add\-C\-N\-F (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-N\-F} \&}]{cnf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDepQBFApi_a1b3d100b4d70dd1200c8feb2d39accc6}
+
+
+Adds (conjuncts) a new \hyperlink{classCNF}{C\-N\-F} to the current incremental session. 
+
+\begin{DoxyPrecond}{Precondition}
+\hyperlink{classDepQBFApi_a35fa14f374a196a2270baa1945e33050}{start\-Incremental\-Session() } must have been called before. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em cnf} & A Boolean formula in \hyperlink{classCNF}{C\-N\-F}. It is conjuncted to the \hyperlink{classCNF}{C\-N\-F} in the currently open incremental session. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 423 of file Dep\-Q\-B\-F\-Api.\-cpp.
+
+
+
+References debug\-Assert\-Is\-Declared\-Inc(), C\-N\-F\-::get\-Clauses(), inc\-\_\-solver\-\_\-, and M\-A\-S\-S\-E\-R\-T.
+
+
+
+Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Push(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Push(), and Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F\-Inc().
+
+\hypertarget{classDepQBFApi_a97e3e631830a5fcdf351ae4bfbb336c5}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!inc\-Add\-Cube@{inc\-Add\-Cube}}
+\index{inc\-Add\-Cube@{inc\-Add\-Cube}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{inc\-Add\-Cube}]{\setlength{\rightskip}{0pt plus 5cm}void Dep\-Q\-B\-F\-Api\-::inc\-Add\-Cube (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{cube}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDepQBFApi_a97e3e631830a5fcdf351ae4bfbb336c5}
+
+
+Adds (conjuncts) a new cube to the current incremental session. 
+
+\begin{DoxyPrecond}{Precondition}
+\hyperlink{classDepQBFApi_a35fa14f374a196a2270baa1945e33050}{start\-Incremental\-Session() } must have been called before. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em cube} & The cube which shall be conjuncted to the \hyperlink{classCNF}{C\-N\-F} in the currently open incremental session. All literals of the cube are added as unit clauses to the \hyperlink{classCNF}{C\-N\-F} of the currently open session. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 484 of file Dep\-Q\-B\-F\-Api.\-cpp.
+
+
+
+References debug\-Assert\-Is\-Declared\-Inc(), inc\-\_\-solver\-\_\-, and M\-A\-S\-S\-E\-R\-T.
+
+\hypertarget{classDepQBFApi_ad519a83a3e70e0224329f9e4a534a01f}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!inc\-Add\-Neg\-Cube\-As\-Clause@{inc\-Add\-Neg\-Cube\-As\-Clause}}
+\index{inc\-Add\-Neg\-Cube\-As\-Clause@{inc\-Add\-Neg\-Cube\-As\-Clause}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{inc\-Add\-Neg\-Cube\-As\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}void Dep\-Q\-B\-F\-Api\-::inc\-Add\-Neg\-Cube\-As\-Clause (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{cube}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDepQBFApi_ad519a83a3e70e0224329f9e4a534a01f}
+
+
+Adds the negation of a given cube (which is a clause) to the incremental session. 
+
+For instance, if the cube \mbox{[}2, -\/4, 8\mbox{]} is passed as argument, then this method adds the clauses \mbox{[}-\/2, 4, -\/8\mbox{]} to the current incremental session.
+
+\begin{DoxyPrecond}{Precondition}
+\hyperlink{classDepQBFApi_a35fa14f374a196a2270baa1945e33050}{start\-Incremental\-Session() } must have been called before. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em cube} & The cube (a conjunction of literals) to negate and add (conjunct) to the currently open incremental session. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 496 of file Dep\-Q\-B\-F\-Api.\-cpp.
+
+
+
+References debug\-Assert\-Is\-Declared\-Inc(), inc\-\_\-solver\-\_\-, and M\-A\-S\-S\-E\-R\-T.
+
+
+
+Referenced by Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F\-Inc().
+
+\hypertarget{classDepQBFApi_aa5755c46502a6016c48d6764ff087781}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!inc\-Add\-Unit\-Clause@{inc\-Add\-Unit\-Clause}}
+\index{inc\-Add\-Unit\-Clause@{inc\-Add\-Unit\-Clause}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{inc\-Add\-Unit\-Clause}]{\setlength{\rightskip}{0pt plus 5cm}void Dep\-Q\-B\-F\-Api\-::inc\-Add\-Unit\-Clause (
+\begin{DoxyParamCaption}
+\item[{int}]{lit}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDepQBFApi_aa5755c46502a6016c48d6764ff087781}
+
+
+Adds a new unit clause to the current incremental session. 
+
+\begin{DoxyPrecond}{Precondition}
+\hyperlink{classDepQBFApi_a35fa14f374a196a2270baa1945e33050}{start\-Incremental\-Session()} must have been called before. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em lit} & The (one and only) literal of the unit clause to add to the currently open incremental session. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 451 of file Dep\-Q\-B\-F\-Api.\-cpp.
+
+
+
+References debug\-Assert\-Is\-Declared\-Inc(), inc\-\_\-solver\-\_\-, and M\-A\-S\-S\-E\-R\-T.
+
+
+
+Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Push(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Pool(), and Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Push().
+
+\hypertarget{classDepQBFApi_ade58f545f2718850946391be977a6f9c}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!inc\-Add\-Var\-At\-Innermost\-Quant@{inc\-Add\-Var\-At\-Innermost\-Quant}}
+\index{inc\-Add\-Var\-At\-Innermost\-Quant@{inc\-Add\-Var\-At\-Innermost\-Quant}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{inc\-Add\-Var\-At\-Innermost\-Quant}]{\setlength{\rightskip}{0pt plus 5cm}void Dep\-Q\-B\-F\-Api\-::inc\-Add\-Var\-At\-Innermost\-Quant (
+\begin{DoxyParamCaption}
+\item[{int}]{var}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDepQBFApi_ade58f545f2718850946391be977a6f9c}
+
+
+Declares a new variable in the innermost quantifier nesting. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var} & The variable to declare in the innermost nesting. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 412 of file Dep\-Q\-B\-F\-Api.\-cpp.
+
+
+
+References inc\-\_\-decl\-\_\-vars\-\_\-, inc\-\_\-solver\-\_\-, and M\-A\-S\-S\-E\-R\-T.
+
+
+
+Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Push(), and Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Push().
+
+\hypertarget{classDepQBFApi_a8687c635b0d7f6413baca131ae9628ca}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!inc\-Is\-Sat@{inc\-Is\-Sat}}
+\index{inc\-Is\-Sat@{inc\-Is\-Sat}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{inc\-Is\-Sat}]{\setlength{\rightskip}{0pt plus 5cm}bool Dep\-Q\-B\-F\-Api\-::inc\-Is\-Sat (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDepQBFApi_a8687c635b0d7f6413baca131ae9628ca}
+
+
+Checks if the Q\-B\-F in the current incremental session is satisfiable. 
+
+\begin{DoxyReturn}{Returns}
+True if the Q\-B\-F in the current incremental session is satisfiable, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 522 of file Dep\-Q\-B\-F\-Api.\-cpp.
+
+
+
+References inc\-\_\-solver\-\_\-, and M\-A\-S\-S\-E\-R\-T.
+
+
+
+Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::generalize\-Counterexample\-Further().
+
+\hypertarget{classDepQBFApi_a9dc678ea88f60ea0d69bddeb47f56f80}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!inc\-Is\-Sat@{inc\-Is\-Sat}}
+\index{inc\-Is\-Sat@{inc\-Is\-Sat}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{inc\-Is\-Sat}]{\setlength{\rightskip}{0pt plus 5cm}bool Dep\-Q\-B\-F\-Api\-::inc\-Is\-Sat (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{assumptions}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDepQBFApi_a9dc678ea88f60ea0d69bddeb47f56f80}
+
+
+Checks if the Q\-B\-F in the incremental session is satisfiable under assumptions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em assumptions} & The assumptions under which the Q\-B\-F in the current incremental session should be solved. The assumptions are interpreted as a cube of literals. Every literal is added temporarily as a unit clause to the Q\-B\-F. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the Q\-B\-F in the current incremental session is satisfiable under the assumptions, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 535 of file Dep\-Q\-B\-F\-Api.\-cpp.
+
+
+
+References debug\-Assert\-Is\-Declared\-Inc(), inc\-\_\-solver\-\_\-, and M\-A\-S\-S\-E\-R\-T.
+
+\hypertarget{classDepQBFApi_a4290fa5559f2ba9663bdb158c384cc92}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!inc\-Is\-Sat\-Core@{inc\-Is\-Sat\-Core}}
+\index{inc\-Is\-Sat\-Core@{inc\-Is\-Sat\-Core}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{inc\-Is\-Sat\-Core}]{\setlength{\rightskip}{0pt plus 5cm}bool Dep\-Q\-B\-F\-Api\-::inc\-Is\-Sat\-Core (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{assumptions, }
+\item[{vector$<$ int $>$ \&}]{core}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDepQBFApi_a4290fa5559f2ba9663bdb158c384cc92}
+
+
+Checks if the incremental session is satisfiable and computes a core. 
+
+This method first checks if the Q\-B\-F in the incremental session is satisfiable under a given set of assumptions. If no, then an unsatisfiable core is computed over the assumption variables.
+
+
+\begin{DoxyParams}{Parameters}
+{\em assumptions} & The assumptions under which the Q\-B\-F in the current incremental session should be solved. The assumptions are interpreted as a cube of literals. Every literal is added temporarily as a unit clause to the Q\-B\-F. \\
+\hline
+{\em core} & If this method returns false, a subset of the passed assumptions is stored in this vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the Q\-B\-F in the current incremental session is satisfiable under the assumptions, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 652 of file Dep\-Q\-B\-F\-Api.\-cpp.
+
+
+
+References debug\-Assert\-Is\-Declared\-Inc(), extract\-Core(), inc\-\_\-solver\-\_\-, and M\-A\-S\-S\-E\-R\-T.
+
+
+
+Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::generalize\-Counterexample(), and Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F\-Inc().
+
+\hypertarget{classDepQBFApi_a218feb52145bd715dc07fa2b765662f4}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!inc\-Is\-Sat\-Model@{inc\-Is\-Sat\-Model}}
+\index{inc\-Is\-Sat\-Model@{inc\-Is\-Sat\-Model}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{inc\-Is\-Sat\-Model}]{\setlength{\rightskip}{0pt plus 5cm}bool Dep\-Q\-B\-F\-Api\-::inc\-Is\-Sat\-Model (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{assumptions, }
+\item[{vector$<$ int $>$ \&}]{model}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDepQBFApi_a218feb52145bd715dc07fa2b765662f4}
+
+
+Checks if the incremental session is satisfiable and computes a model. 
+
+This method first checks if the Q\-B\-F in the incremental session is satisfiable under a given set of assumptions. If yes, then a satisfying assignment for the variables quantified existentially on the outermost level is computed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em assumptions} & The assumptions under which the Q\-B\-F in the current incremental session should be solved. The assumptions are interpreted as a cube of literals. Every literal is added temporarily as a unit clause to the Q\-B\-F. \\
+\hline
+{\em model} & The vector into which the resulting model will be stored. In case of satisfiability a satisfying assignment (a cube of literals; negated ones are false, unnegated ones are true) is stored in this vector. Otherwise, this vector remains untouched. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the Q\-B\-F in the current incremental session is satisfiable under the assumptions, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 608 of file Dep\-Q\-B\-F\-Api.\-cpp.
+
+
+
+References debug\-Assert\-Is\-Declared\-Inc(), inc\-\_\-model\-\_\-vars\-\_\-, inc\-\_\-solver\-\_\-, and M\-A\-S\-S\-E\-R\-T.
+
+
+
+Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Counterexample\-Q\-B\-F(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Counterexample\-Q\-B\-F\-Pool(), and Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F\-Inc().
+
+\hypertarget{classDepQBFApi_ab2129624aca73b877c16a5fc7b17f95f}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!inc\-Is\-Sat\-Model\-Or\-Core@{inc\-Is\-Sat\-Model\-Or\-Core}}
+\index{inc\-Is\-Sat\-Model\-Or\-Core@{inc\-Is\-Sat\-Model\-Or\-Core}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{inc\-Is\-Sat\-Model\-Or\-Core}]{\setlength{\rightskip}{0pt plus 5cm}bool Dep\-Q\-B\-F\-Api\-::inc\-Is\-Sat\-Model\-Or\-Core (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{assumptions, }
+\item[{vector$<$ int $>$ \&}]{model\-\_\-or\-\_\-core}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDepQBFApi_ab2129624aca73b877c16a5fc7b17f95f}
+
+
+Checks if the incremental session is satisfiable and computes a model or core. 
+
+This method first checks if the Q\-B\-F in the incremental session is satisfiable under a given set of assumptions. If yes, then a satisfying assignment for the variables quantified existentially on the outermost level is computed. Otherwise, an unsatisfiable core is computed. An unsatisfiable core is a subset of the assumptions under which the Q\-B\-F is still unsatisfiable.
+
+
+\begin{DoxyParams}{Parameters}
+{\em assumptions} & The assumptions under which the Q\-B\-F in the current incremental session should be solved. The assumptions are interpreted as a cube of literals. Every literal is added temporarily as a unit clause to the Q\-B\-F. \\
+\hline
+{\em model\-\_\-or\-\_\-core} & The vector into which the resulting model or core will be stored. In case of satisfiability a satisfying assignment (a cube of literals; negated ones are false, unnegated ones are true) is stored in this vector. Otherwise, if this method returns false, a subset of the passed assumptions is stored in this vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the Q\-B\-F in the current incremental session is satisfiable under the assumptions, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 557 of file Dep\-Q\-B\-F\-Api.\-cpp.
+
+
+
+References debug\-Assert\-Is\-Declared\-Inc(), extract\-Core(), inc\-\_\-model\-\_\-vars\-\_\-, inc\-\_\-solver\-\_\-, and M\-A\-S\-S\-E\-R\-T.
+
+\hypertarget{classDepQBFApi_ac70d54cdcd3be4bc80dc84dd14e4a8c1}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!inc\-Pop@{inc\-Pop}}
+\index{inc\-Pop@{inc\-Pop}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{inc\-Pop}]{\setlength{\rightskip}{0pt plus 5cm}void Dep\-Q\-B\-F\-Api\-::inc\-Pop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDepQBFApi_ac70d54cdcd3be4bc80dc84dd14e4a8c1}
+
+
+Restores the incremental session back to the point where \hyperlink{classDepQBFApi_abb9f9d11ceb7f5528efd374a4fb3a7e9}{inc\-Push()} was called. 
+
+
+
+Definition at line 515 of file Dep\-Q\-B\-F\-Api.\-cpp.
+
+
+
+References inc\-\_\-solver\-\_\-, and M\-A\-S\-S\-E\-R\-T.
+
+
+
+Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Push(), and Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Push().
+
+\hypertarget{classDepQBFApi_abb9f9d11ceb7f5528efd374a4fb3a7e9}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!inc\-Push@{inc\-Push}}
+\index{inc\-Push@{inc\-Push}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{inc\-Push}]{\setlength{\rightskip}{0pt plus 5cm}void Dep\-Q\-B\-F\-Api\-::inc\-Push (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDepQBFApi_abb9f9d11ceb7f5528efd374a4fb3a7e9}
+
+
+Stores the current state of the incremental session on a stack. 
+
+The state can be restored later by calling \hyperlink{classDepQBFApi_ac70d54cdcd3be4bc80dc84dd14e4a8c1}{inc\-Pop()}. 
+
+Definition at line 508 of file Dep\-Q\-B\-F\-Api.\-cpp.
+
+
+
+References inc\-\_\-solver\-\_\-, and M\-A\-S\-S\-E\-R\-T.
+
+
+
+Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Push(), and Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Push().
 
 \hypertarget{classDepQBFApi_ac6a024dbf9355b9d7b17f8181642e469}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!init\-Bloqqer@{init\-Bloqqer}}
 \index{init\-Bloqqer@{init\-Bloqqer}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
@@ -324,7 +962,7 @@ Initializes the pre-\/processor with a Q\-B\-F (quantifying over variable kinds)
 \end{DoxyParams}
 
 
-Definition at line 307 of file Dep\-Q\-B\-F\-Api.\-cpp.
+Definition at line 698 of file Dep\-Q\-B\-F\-Api.\-cpp.
 
 
 
@@ -355,7 +993,7 @@ Initializes the pre-\/processor with a Q\-B\-F (quantifying over variable sets).
 \end{DoxyParams}
 
 
-Definition at line 335 of file Dep\-Q\-B\-F\-Api.\-cpp.
+Definition at line 726 of file Dep\-Q\-B\-F\-Api.\-cpp.
 
 
 
@@ -385,7 +1023,7 @@ Initializes a Dep\-Q\-B\-F instance with a Q\-B\-F (quantifying over variable ki
 \end{DoxyParams}
 
 
-Definition at line 371 of file Dep\-Q\-B\-F\-Api.\-cpp.
+Definition at line 762 of file Dep\-Q\-B\-F\-Api.\-cpp.
 
 
 
@@ -393,7 +1031,7 @@ References Q\-B\-F\-Solver\-::\-E, C\-N\-F\-::get\-Clauses(), Var\-Manager\-::ge
 
 
 
-Referenced by is\-Sat(), and is\-Sat\-Model().
+Referenced by is\-Sat(), is\-Sat\-Model(), and start\-Incremental\-Session().
 
 \hypertarget{classDepQBFApi_af1e78176cae55e6a76e193d216b5a3dc}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!init\-Dep\-Q\-B\-F@{init\-Dep\-Q\-B\-F}}
 \index{init\-Dep\-Q\-B\-F@{init\-Dep\-Q\-B\-F}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
@@ -419,7 +1057,7 @@ Initializes a Dep\-Q\-B\-F instance with a Q\-B\-F (quantifying over variable se
 \end{DoxyParams}
 
 
-Definition at line 398 of file Dep\-Q\-B\-F\-Api.\-cpp.
+Definition at line 789 of file Dep\-Q\-B\-F\-Api.\-cpp.
 
 
 
@@ -455,7 +1093,7 @@ Implements \hyperlink{classQBFSolver_a53ef157391b176dfbd2a77a1e31befc3}{Q\-B\-F\
 
 
 
-Definition at line 56 of file Dep\-Q\-B\-F\-Api.\-cpp.
+Definition at line 59 of file Dep\-Q\-B\-F\-Api.\-cpp.
 
 
 
@@ -495,7 +1133,7 @@ Implements \hyperlink{classQBFSolver_aca37de5801e36d4749b80b6c8c2023a9}{Q\-B\-F\
 
 
 
-Definition at line 88 of file Dep\-Q\-B\-F\-Api.\-cpp.
+Definition at line 91 of file Dep\-Q\-B\-F\-Api.\-cpp.
 
 
 
@@ -534,7 +1172,7 @@ Implements \hyperlink{classQBFSolver_a76fc0c757a2c039816e3e06547f06d5c}{Q\-B\-F\
 
 
 
-Definition at line 120 of file Dep\-Q\-B\-F\-Api.\-cpp.
+Definition at line 123 of file Dep\-Q\-B\-F\-Api.\-cpp.
 
 
 
@@ -573,7 +1211,7 @@ Implements \hyperlink{classQBFSolver_a12f2ce57b778b9efe729d63bf881493d}{Q\-B\-F\
 
 
 
-Definition at line 210 of file Dep\-Q\-B\-F\-Api.\-cpp.
+Definition at line 216 of file Dep\-Q\-B\-F\-Api.\-cpp.
 
 
 
@@ -600,9 +1238,125 @@ The assignment operator is disabled (set private) and not implemented.
 \begin{DoxyReturn}{Returns}
 The result of the assignment, i.\-e, $\ast$this. 
 \end{DoxyReturn}
+\hypertarget{classDepQBFApi_a35fa14f374a196a2270baa1945e33050}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!start\-Incremental\-Session@{start\-Incremental\-Session}}
+\index{start\-Incremental\-Session@{start\-Incremental\-Session}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{start\-Incremental\-Session}]{\setlength{\rightskip}{0pt plus 5cm}void Dep\-Q\-B\-F\-Api\-::start\-Incremental\-Session (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ pair$<$ {\bf Var\-Info\-::\-Var\-Kind}, {\bf Quant} $>$ $>$ \&}]{quantifier\-\_\-prefix}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDepQBFApi_a35fa14f374a196a2270baa1945e33050}
+
+
+Starts an incremental session with a quantifier prefix over variable kinds. 
+
+Every \hyperlink{classDepQBFApi}{Dep\-Q\-B\-F\-Api} instance can only have one open incremental session. If you call this method twice, the old incremental session (if any) will be deleted (just like calling \hyperlink{classDepQBFApi_a4cacfbb0e933d8a66bd24ce5b71ea623}{clear\-Incremental\-Session() }) and a new one will be opened.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantifier\-\_\-prefix} & The quantifier prefix as a vector of pairs. vector\mbox{[}0\mbox{]} is the leftmost (i.\-e., outermost) quantifier block. The pairs in the quantifier\-\_\-prefix assign an existential or universal quantifier to every kind of variable that occurs in the cnf. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 316 of file Dep\-Q\-B\-F\-Api.\-cpp.
+
+
+
+References Q\-B\-F\-Solver\-::\-E, Var\-Manager\-::get\-Max\-C\-N\-F\-Var(), Var\-Manager\-::get\-Vars\-Of\-Type(), inc\-\_\-decl\-\_\-vars\-\_\-, inc\-\_\-model\-\_\-vars\-\_\-, inc\-\_\-solver\-\_\-, init\-Dep\-Q\-B\-F(), and Var\-Manager\-::instance().
+
+
+
+Referenced by Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-All\-Push(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Pool(), Learn\-Synth\-Q\-B\-F\-Inc\-::compute\-Winning\-Region\-One\-Push(), and Learning\-Impl\-Extractor\-::run\-Learning\-Q\-B\-F\-Inc().
+
+\hypertarget{classDepQBFApi_add8abd2d970c037034012ebc21982c7e}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!start\-Incremental\-Session@{start\-Incremental\-Session}}
+\index{start\-Incremental\-Session@{start\-Incremental\-Session}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{start\-Incremental\-Session}]{\setlength{\rightskip}{0pt plus 5cm}void Dep\-Q\-B\-F\-Api\-::start\-Incremental\-Session (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ pair$<$ vector$<$ int $>$, {\bf Quant} $>$ $>$ \&}]{quantifier\-\_\-prefix}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDepQBFApi_add8abd2d970c037034012ebc21982c7e}
+
+
+Starts an incremental session with a quantifier prefix over variable sets. 
+
+Every \hyperlink{classDepQBFApi}{Dep\-Q\-B\-F\-Api} instance can only have one open incremental session. If you call this method twice, the old incremental session (if any) will be deleted (just like calling \hyperlink{classDepQBFApi_a4cacfbb0e933d8a66bd24ce5b71ea623}{clear\-Incremental\-Session() }) and a new one will be opened.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantifier\-\_\-prefix} & The quantifier prefix as a vector of pairs. vector\mbox{[}0\mbox{]} is the leftmost (i.\-e., outermost) quantifier block. The pairs in the quantifier\-\_\-prefix assign an existential or universal quantifier to different sets of variables occurring in the cnf. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 355 of file Dep\-Q\-B\-F\-Api.\-cpp.
+
+
+
+References Q\-B\-F\-Solver\-::\-E, Var\-Manager\-::get\-Max\-C\-N\-F\-Var(), inc\-\_\-decl\-\_\-vars\-\_\-, inc\-\_\-model\-\_\-vars\-\_\-, inc\-\_\-solver\-\_\-, init\-Dep\-Q\-B\-F(), and Var\-Manager\-::instance().
+
 
 
 \subsection{Member Data Documentation}
+\hypertarget{classDepQBFApi_a28c913cc99ac6671a2f86dafe1c9f55a}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!inc\-\_\-decl\-\_\-vars\-\_\-@{inc\-\_\-decl\-\_\-vars\-\_\-}}
+\index{inc\-\_\-decl\-\_\-vars\-\_\-@{inc\-\_\-decl\-\_\-vars\-\_\-}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{inc\-\_\-decl\-\_\-vars\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}set$<$int$>$ Dep\-Q\-B\-F\-Api\-::inc\-\_\-decl\-\_\-vars\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classDepQBFApi_a28c913cc99ac6671a2f86dafe1c9f55a}
+
+
+The variables which have been declared in the current incremental session. 
+
+This set is only used in debug mode to check if all the variables in the matrix of the Q\-B\-F are mentioned in the quantifier prefix. 
+
+Definition at line 557 of file Dep\-Q\-B\-F\-Api.\-h.
+
+
+
+Referenced by clear\-Incremental\-Session(), debug\-Assert\-Is\-Declared\-Inc(), inc\-Add\-Var\-At\-Innermost\-Quant(), and start\-Incremental\-Session().
+
+\hypertarget{classDepQBFApi_a45305a0f7bb106f43eb7d12554e71564}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!inc\-\_\-model\-\_\-vars\-\_\-@{inc\-\_\-model\-\_\-vars\-\_\-}}
+\index{inc\-\_\-model\-\_\-vars\-\_\-@{inc\-\_\-model\-\_\-vars\-\_\-}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{inc\-\_\-model\-\_\-vars\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ Dep\-Q\-B\-F\-Api\-::inc\-\_\-model\-\_\-vars\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classDepQBFApi_a45305a0f7bb106f43eb7d12554e71564}
+
+
+The variables for which a satisfying assignment can be constructed. 
+
+
+
+Definition at line 549 of file Dep\-Q\-B\-F\-Api.\-h.
+
+
+
+Referenced by clear\-Incremental\-Session(), inc\-Is\-Sat\-Model(), inc\-Is\-Sat\-Model\-Or\-Core(), and start\-Incremental\-Session().
+
+\hypertarget{classDepQBFApi_a22f9645648890b1997e702743fc2e8fe}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!inc\-\_\-solver\-\_\-@{inc\-\_\-solver\-\_\-}}
+\index{inc\-\_\-solver\-\_\-@{inc\-\_\-solver\-\_\-}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{inc\-\_\-solver\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}Q\-D\-P\-L\-L$\ast$ Dep\-Q\-B\-F\-Api\-::inc\-\_\-solver\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classDepQBFApi_a22f9645648890b1997e702743fc2e8fe}
+
+
+The solver instance to use in the incremental session. 
+
+
+
+Definition at line 544 of file Dep\-Q\-B\-F\-Api.\-h.
+
+
+
+Referenced by clear\-Incremental\-Session(), debug\-Dump\-Inc\-Solver\-State(), inc\-Add2\-Lit\-Clause(), inc\-Add3\-Lit\-Clause(), inc\-Add\-Clause(), inc\-Add\-C\-N\-F(), inc\-Add\-Cube(), inc\-Add\-Neg\-Cube\-As\-Clause(), inc\-Add\-Unit\-Clause(), inc\-Add\-Var\-At\-Innermost\-Quant(), inc\-Is\-Sat(), inc\-Is\-Sat\-Core(), inc\-Is\-Sat\-Model(), inc\-Is\-Sat\-Model\-Or\-Core(), inc\-Pop(), inc\-Push(), and start\-Incremental\-Session().
+
+\hypertarget{classDepQBFApi_aeba411424d6185767325936d2ccf11de}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!min\-\_\-cores\-\_\-@{min\-\_\-cores\-\_\-}}
+\index{min\-\_\-cores\-\_\-@{min\-\_\-cores\-\_\-}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
+\subsubsection[{min\-\_\-cores\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}bool Dep\-Q\-B\-F\-Api\-::min\-\_\-cores\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classDepQBFApi_aeba411424d6185767325936d2ccf11de}
+
+
+A flag indicating whether or not unsatisfiable cores should be further minimized. 
+
+If this flag is false, then we take the core as returned by the solver. If it is true, then we try to further minimize the core by trying to drop one remaining assumption after the other in a loop. This is then guaranteed to result in an unsatisfiable core which is a local minimum subset of the assumptions. 
+
+Definition at line 539 of file Dep\-Q\-B\-F\-Api.\-h.
+
+
+
+Referenced by do\-Min\-Cores(), and extract\-Core().
+
 \hypertarget{classDepQBFApi_a04798225c77a19a1d2f415e50b93cfb1}{\index{Dep\-Q\-B\-F\-Api@{Dep\-Q\-B\-F\-Api}!use\-\_\-bloqqer\-\_\-@{use\-\_\-bloqqer\-\_\-}}
 \index{use\-\_\-bloqqer\-\_\-@{use\-\_\-bloqqer\-\_\-}!DepQBFApi@{Dep\-Q\-B\-F\-Api}}
 \subsubsection[{use\-\_\-bloqqer\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}bool Dep\-Q\-B\-F\-Api\-::use\-\_\-bloqqer\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classDepQBFApi_a04798225c77a19a1d2f415e50b93cfb1}
@@ -612,7 +1366,7 @@ A flag indicating whether or not the pre-\/processor bloqqer should be used.
 
 
 
-Definition at line 279 of file Dep\-Q\-B\-F\-Api.\-h.
+Definition at line 529 of file Dep\-Q\-B\-F\-Api.\-h.
 
 
 

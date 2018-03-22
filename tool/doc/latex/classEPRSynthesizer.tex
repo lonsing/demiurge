@@ -62,12 +62,12 @@ E\-P\-R (Effectively Propositional Logic) is a subset of first-\/order logic. E\
 This class creates the following E\-P\-R formula\-: forall x,i,x'\-: (I(x) =$>$ W(x)) A\-N\-D (W(x) =$>$ P(x)) A\-N\-D (W(x) A\-N\-D T(x,i,C(x,i),x') =$>$ W(x')) Here, x,i, and x' are actually domain variables (and not Boolean variables), but there is a one-\/to-\/one mapping. W is a fresh predicate over the state variables. It represents the winning region. C(x,i) is a set of predicates, one for each control signal. These predicates represent the implementation of the control signals. The challenging part in constructing this E\-P\-R formula is actually an efficient encoding of the transition relation T in E\-P\-R. In the A\-I\-G\-E\-R representation (and also in the \hyperlink{classCNF}{C\-N\-F} representation) the transition relation T uses many temporary variables. The problem is that they are all quantified existentially, which means that they have to be skolemized with predicates to get a valid E\-P\-R formula. We analyze the structure of the A\-I\-G\-E\-R graph in order to find out the minimal dependencies for all these predicates. This is supposed to increase the performance. Then the class uses i\-Prover (\href{http://www.cs.man.ac.uk/~korovink/iprover/}{\tt http\-://www.\-cs.\-man.\-ac.\-uk/$\sim$korovink/iprover/}) to solve the formula. i\-Prover cannot only give a Y\-E\-S/\-No answer for the satisfiability question. It can also construct functions for the predicates. That is, i\-Prover gives us the winning region together with implementations for all control signals. It solves the synthesis problem completely (and does not only compute a winning region).
 
 \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000002}{Todo}]\-: At the moment we only construct the formula, and parse back the answer to the realizability question. Parsing back the implementation for the controllable signals remains to be done. (The i\-Prover page promises to release a new version with more output formats soon.) \end{DoxyRefDesc}
+\item[\hyperlink{todo__todo000001}{Todo}]\-: At the moment we only construct the formula, and parse back the answer to the realizability question. Parsing back the implementation for the controllable signals remains to be done. (The i\-Prover page promises to release a new version with more output formats soon.) \end{DoxyRefDesc}
 \begin{DoxyAuthor}{Author}
 Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\-0.\-0 
+1.\-1.\-0 
 \end{DoxyVersion}
 
 
@@ -93,7 +93,7 @@ Definition at line 41 of file E\-P\-R\-Synthesizer.\-cpp.
 
 
 
-References Options\-::get\-Tmp\-Dir\-Name(), in\-\_\-file\-\_\-name\-\_\-, Options\-::instance(), M\-A\-S\-S\-E\-R\-T, out\-\_\-file\-\_\-name\-\_\-, path\-\_\-to\-\_\-iprover\-\_\-, and Options\-::\-T\-P\-\_\-\-V\-A\-R.
+References Options\-::get\-T\-P\-Dir\-Name(), Options\-::get\-Unique\-Tmp\-File\-Name(), in\-\_\-file\-\_\-name\-\_\-, Options\-::instance(), out\-\_\-file\-\_\-name\-\_\-, and path\-\_\-to\-\_\-iprover\-\_\-.
 
 \hypertarget{classEPRSynthesizer_a0299d7f7b8dcc26c13ab0b6268e9f974}{\index{E\-P\-R\-Synthesizer@{E\-P\-R\-Synthesizer}!$\sim$\-E\-P\-R\-Synthesizer@{$\sim$\-E\-P\-R\-Synthesizer}}
 \index{$\sim$\-E\-P\-R\-Synthesizer@{$\sim$\-E\-P\-R\-Synthesizer}!EPRSynthesizer@{E\-P\-R\-Synthesizer}}
@@ -108,7 +108,7 @@ Destructor.
 
 
 
-Definition at line 54 of file E\-P\-R\-Synthesizer.\-cpp.
+Definition at line 49 of file E\-P\-R\-Synthesizer.\-cpp.
 
 \hypertarget{classEPRSynthesizer_a50010185f31a7d17a2082d2fe81a0aa9}{\index{E\-P\-R\-Synthesizer@{E\-P\-R\-Synthesizer}!E\-P\-R\-Synthesizer@{E\-P\-R\-Synthesizer}}
 \index{E\-P\-R\-Synthesizer@{E\-P\-R\-Synthesizer}!EPRSynthesizer@{E\-P\-R\-Synthesizer}}
@@ -154,7 +154,7 @@ The clause is assigned a unique I\-D, and is added to the tptp\-\_\-query\-\_\- 
 \end{DoxyParams}
 
 
-Definition at line 337 of file E\-P\-R\-Synthesizer.\-cpp.
+Definition at line 332 of file E\-P\-R\-Synthesizer.\-cpp.
 
 
 
@@ -185,7 +185,7 @@ The negation of the passed A\-I\-G\-E\-R literal.
 \end{DoxyReturn}
 
 
-Definition at line 349 of file E\-P\-R\-Synthesizer.\-cpp.
+Definition at line 344 of file E\-P\-R\-Synthesizer.\-cpp.
 
 
 
@@ -226,7 +226,7 @@ Executes the back-\/end (constructs an E\-P\-R formula an passes it to i\-Prover
 This method is the workhorse of this class. It constructs the following E\-P\-R formula in T\-P\-T\-P format\-: forall x,i,x'\-: (I(x) =$>$ W(x)) A\-N\-D (W(x) =$>$ P(x)) A\-N\-D (W(x) A\-N\-D T(x,i,C(x,i),x') =$>$ W(x')) Here, x,i, and x' are actually domain variables (and not Boolean variables), but there is a one-\/to-\/one mapping. W is a fresh predicate over the state variables. It represents the winning region. C(x,i) is a set of predicates, one for each control signal. These predicates represent the implementation of the control signals. The challenging part in constructing this E\-P\-R formula is actually an efficient encoding of the transition relation T in E\-P\-R. In the A\-I\-G\-E\-R representation (and also in the \hyperlink{classCNF}{C\-N\-F} representation) the transition relation T uses many temporary variables. The problem is that they are all quantified existentially, which means that they have to be skolemized with predicates to get a valid E\-P\-R formula. We analyze the structure of the A\-I\-G\-E\-R graph in order to find out the minimal dependencies for all these predicates. This is supposed to increase the performance. After constructing the E\-P\-R formula this method then calls i\-Prover (\href{http://www.cs.man.ac.uk/~korovink/iprover/}{\tt http\-://www.\-cs.\-man.\-ac.\-uk/$\sim$korovink/iprover/}) to solve it. i\-Prover cannot only give a Y\-E\-S/\-No answer for the satisfiability question. It can also construct functions for the predicates. That is, i\-Prover gives us the winning region together with implementations for all control signals. It solves the synthesis problem completely (and does not only compute a winning region).
 
 \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000003}{Todo}]\-: At the moment we only construct the formula, and parse back the answer to the realizability question. Parsing back the implementation for the controllable signals remains to be done. (The i\-Prover page promises to release a new version with more output formats soon.) \end{DoxyRefDesc}
+\item[\hyperlink{todo__todo000002}{Todo}]\-: At the moment we only construct the formula, and parse back the answer to the realizability question. Parsing back the implementation for the controllable signals remains to be done. (The i\-Prover page promises to release a new version with more output formats soon.) \end{DoxyRefDesc}
 \begin{DoxyReturn}{Returns}
 True if the specification was realizable, false otherwise. 
 \end{DoxyReturn}
@@ -236,7 +236,7 @@ Implements \hyperlink{classBackEnd_a099e717dc71e9cc2d838b1ca86340590}{Back\-End}
 
 
 
-Definition at line 60 of file E\-P\-R\-Synthesizer.\-cpp.
+Definition at line 55 of file E\-P\-R\-Synthesizer.\-cpp.
 
 
 

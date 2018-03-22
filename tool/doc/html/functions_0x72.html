@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">demiurge
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A synthesis tool for safety specifications.</div>
   </td>
@@ -170,18 +170,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>refine_start_time_
 : <a class="el" href="classLearnStatisticsSAT.html#af358ee7d57095acbb602d9b9e1329dd2">LearnStatisticsSAT</a>
 </li>
-<li>rel_det_cpu_time_
-: <a class="el" href="classLearnStatisticsQBF.html#a38d959613268b6a6aa0decfcbe5d631c">LearnStatisticsQBF</a>
-, <a class="el" href="classLearnStatisticsSAT.html#aa7d1ca100b6ad0500931ca80d1439f28">LearnStatisticsSAT</a>
-</li>
-<li>rel_det_real_time_
-: <a class="el" href="classLearnStatisticsQBF.html#a2de1d6eb803d78fdf775b8d703adda69">LearnStatisticsQBF</a>
-, <a class="el" href="classLearnStatisticsSAT.html#a65bb33d1f5088fc9ed2f947b87e8d4cb">LearnStatisticsSAT</a>
-</li>
-<li>rel_det_start_time_
-: <a class="el" href="classLearnStatisticsQBF.html#a11e1295e566e5456cdb2aca0034bf306">LearnStatisticsQBF</a>
-, <a class="el" href="classLearnStatisticsSAT.html#af02bb7ecbdb583b8c49191581dcbe607">LearnStatisticsSAT</a>
-</li>
 <li>remove()
 : <a class="el" href="classUtils.html#a15b142132eb40445f51b1f1bb89b85f3">Utils</a>
 </li>
@@ -193,6 +181,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>removeSomeClause()
 : <a class="el" href="classCNF.html#ac7fef61f8d052bfca0f5cd8f80ca8e1d">CNF</a>
+</li>
+<li>renameVars()
+: <a class="el" href="classCNF.html#ac34e02c39a762ad696449a8c75d4e115">CNF</a>
 </li>
 <li>replaceAll()
 : <a class="el" href="classStringUtils.html#ad679eae97101f4683e992b54aa28ffb0">StringUtils</a>
@@ -213,9 +204,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="classClauseExplorerSAT.html#a1a9dc7f76967c8164e9625df34dec172">ClauseExplorerSAT</a>
 </li>
 <li>restrictToStates()
-: <a class="el" href="classLearnSynthQBFInd.html#a75417fbbe8b1bedbd1ef158299606929">LearnSynthQBFInd</a>
+: <a class="el" href="classLearnSynthQBF.html#a704edaade039b09520815b581fe98b47">LearnSynthQBF</a>
 , <a class="el" href="classLearnSynthQBFInc.html#acefbf03dca5bf13532c6fc3209a21e69">LearnSynthQBFInc</a>
-, <a class="el" href="classLearnSynthQBF.html#a704edaade039b09520815b581fe98b47">LearnSynthQBF</a>
+, <a class="el" href="classLearnSynthQBFInd.html#a75417fbbe8b1bedbd1ef158299606929">LearnSynthQBFInd</a>
 </li>
 <li>result_
 : <a class="el" href="classParallelLearner.html#a757f8817809cce5c0408cdc41d6db1b8">ParallelLearner</a>
@@ -227,21 +218,51 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="classStringUtils.html#a5996e64ebc6d91ecf0fdaaf12bcbb51c">StringUtils</a>
 </li>
 <li>run()
-: <a class="el" href="classIFM13Synth.html#a42adb4f76d88199d92b1bedb58a139f8">IFM13Synth</a>
-, <a class="el" href="classLearnSynthQBFInd.html#a6709343a109f82c427dcbc4a576d9c03">LearnSynthQBFInd</a>
-, <a class="el" href="classEPRSynthesizer.html#ab5eb613a7e5e4f8d408938531f745e4e">EPRSynthesizer</a>
-, <a class="el" href="classLearnSynthQBF.html#aed85bb2fe317a5fdc7eef71fe598c606">LearnSynthQBF</a>
-, <a class="el" href="classLearnSynthQBFInc.html#af9563d1f3c657ed4730ee49e041bc300">LearnSynthQBFInc</a>
-, <a class="el" href="classLearnSynthSAT.html#a13a50b2649f44d37761fdbff26e9c0c0">LearnSynthSAT</a>
-, <a class="el" href="classTemplateSynth.html#a5ad9855736c7d4dfdec08280d2424f80">TemplateSynth</a>
+: <a class="el" href="classLearnSynthQBF.html#aed85bb2fe317a5fdc7eef71fe598c606">LearnSynthQBF</a>
 , <a class="el" href="classParallelLearner.html#a93acb74e7c8504d0ef2bd3697441b745">ParallelLearner</a>
+, <a class="el" href="classInterpolImplExtractor.html#af4eb9c158e982276edf403d86bc339e2">InterpolImplExtractor</a>
+, <a class="el" href="classTemplateSynth.html#a5ad9855736c7d4dfdec08280d2424f80">TemplateSynth</a>
+, <a class="el" href="classEPRSynthesizer.html#ab5eb613a7e5e4f8d408938531f745e4e">EPRSynthesizer</a>
+, <a class="el" href="classLearningImplExtractor.html#ad13a1fc00465f95812df4673743e16eb">LearningImplExtractor</a>
 , <a class="el" href="classBackEnd.html#a099e717dc71e9cc2d838b1ca86340590">BackEnd</a>
+, <a class="el" href="classIFM13Synth.html#a42adb4f76d88199d92b1bedb58a139f8">IFM13Synth</a>
+, <a class="el" href="classLoadSynth.html#a555ce9c74ad3143254f7a1d1cce094b0">LoadSynth</a>
+, <a class="el" href="classCNFImplExtractor.html#a8251ce58869f9f8ded159f1fa07ab334">CNFImplExtractor</a>
+, <a class="el" href="classLearnSynthSAT.html#a13a50b2649f44d37761fdbff26e9c0c0">LearnSynthSAT</a>
+, <a class="el" href="classQBFCertImplExtractor.html#a97cf27d520ea0057385e35bb762a3069">QBFCertImplExtractor</a>
+, <a class="el" href="classStoreImplExtractor.html#a69c775e70973cbd4b6a69775f25367cd">StoreImplExtractor</a>
+, <a class="el" href="classLearnSynthQBFInd.html#a6709343a109f82c427dcbc4a576d9c03">LearnSynthQBFInd</a>
+, <a class="el" href="classLearnSynthQBFInc.html#af9563d1f3c657ed4730ee49e041bc300">LearnSynthQBFInc</a>
+</li>
+<li>runLearningJiangSAT()
+: <a class="el" href="classLearningImplExtractor.html#a39668b94568dde5459d979684d99253f">LearningImplExtractor</a>
+</li>
+<li>runLearningJiangSATInc1()
+: <a class="el" href="classLearningImplExtractor.html#a036ab2a3921696d31fb55139427d2114">LearningImplExtractor</a>
+</li>
+<li>runLearningJiangSATInc2()
+: <a class="el" href="classLearningImplExtractor.html#a2ee6e07a5c9907195c1af8cba613dbd1">LearningImplExtractor</a>
+</li>
+<li>runLearningJiangSATTmp()
+: <a class="el" href="classLearningImplExtractor.html#ad214c79ae2c0e56a47ad97ad2e5c3765">LearningImplExtractor</a>
+</li>
+<li>runLearningJiangSATTmpCtrl()
+: <a class="el" href="classLearningImplExtractor.html#ad41484b6bb6da18e50d31830a18e63e9">LearningImplExtractor</a>
+</li>
+<li>runLearningJiangSATTmpCtrlInc2()
+: <a class="el" href="classLearningImplExtractor.html#a5ce27f574afbb4504b7acd82196314d7">LearningImplExtractor</a>
+</li>
+<li>runLearningQBF()
+: <a class="el" href="classLearningImplExtractor.html#a009b5382cc9a65cd7c7dfbbc73815bac">LearningImplExtractor</a>
+</li>
+<li>runLearningQBFInc()
+: <a class="el" href="classLearningImplExtractor.html#a3edc5671d6f56dea4145512385063681">LearningImplExtractor</a>
 </li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 14 2013 15:15:46 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jul 15 2014 12:30:23 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

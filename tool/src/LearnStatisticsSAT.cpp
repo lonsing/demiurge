@@ -34,8 +34,6 @@
 LearnStatisticsSAT::LearnStatisticsSAT() :
                        win_reg_cpu_time_(0.0),
                        win_reg_real_time_(0),
-                       rel_det_cpu_time_(0.0),
-                       rel_det_real_time_(0),
                        nr_of_cand_comp_(0),
                        nr_of_restarts_(0),
                        nr_of_cand_checks_(0),
@@ -73,20 +71,6 @@ void LearnStatisticsSAT::notifyWinRegEnd()
   win_reg_cpu_time_ += Stopwatch::getCPUTimeSec(win_reg_start_time_);
   win_reg_real_time_ += Stopwatch::getRealTimeSec(win_reg_start_time_);
 }
-
-// -------------------------------------------------------------------------------------------
-void LearnStatisticsSAT::notifyRelDetStart()
-{
-  rel_det_start_time_ = Stopwatch::start();
-}
-
-// -------------------------------------------------------------------------------------------
-void LearnStatisticsSAT::notifyRelDetEnd()
-{
-  rel_det_cpu_time_ += Stopwatch::getCPUTimeSec(rel_det_start_time_);
-  rel_det_real_time_ += Stopwatch::getRealTimeSec(rel_det_start_time_);
-}
-
 
 // -------------------------------------------------------------------------------------------
 void LearnStatisticsSAT::notifyBeforeComputeCandidate()
@@ -154,8 +138,6 @@ void LearnStatisticsSAT::mergeWith(const LearnStatisticsSAT &other)
 {
   win_reg_cpu_time_ += other.win_reg_cpu_time_;
   win_reg_real_time_ += other.win_reg_real_time_;
-  rel_det_cpu_time_ += other.rel_det_cpu_time_;
-  rel_det_real_time_ += other.rel_det_real_time_;
   nr_of_cand_comp_ += other.nr_of_cand_comp_;
   nr_of_restarts_ += other.nr_of_restarts_;
   nr_of_cand_checks_ += other.nr_of_cand_checks_;
@@ -246,6 +228,4 @@ void LearnStatisticsSAT::logStatistics() const
         << avg_refine_from  << " --> " << avg_refine_to);
   L_LOG("Winning region computation time: " << win_reg_cpu_time_ << " sec CPU time.");
   L_LOG("Winning region computation time: " << win_reg_real_time_ << " sec real time.");
-  L_LOG("Relation determinization time: " << rel_det_cpu_time_ << " sec CPU time.");
-  L_LOG("Relation determinization time: " << rel_det_real_time_ << " sec real time.");
 }

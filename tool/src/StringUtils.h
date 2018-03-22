@@ -38,7 +38,7 @@
 /// @brief Contains utility functions on strings.
 ///
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.0.0
+/// @version 1.1.0
 class StringUtils
 {
 public:

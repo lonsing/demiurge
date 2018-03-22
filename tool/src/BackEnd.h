@@ -41,13 +41,11 @@
 /// synthesis algorithm. This class is abstract, i.e., objects of this class cannot be
 /// instantiated. Instantiate one of the derived classes instead.
 ///
-/// @todo In the future we may want to go for two different kinds of back-ends:
-///       WinRegBackEnds computing a winning region (in CNF), and RelDetBackEnds for
-///       computing a circuit from the winning region. The idea is that every WinRegBackEnd
-///       can be combined with every RelDetBackEnd. However, at the moment we only have one
-///       method for extracting a circuit.
+/// Many back-ends can be parameterized with a circuit extraction engine that extracts a
+/// circuit from the winning region once the winning region has been computed.
+///
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.0.0
+/// @version 1.1.0
 class BackEnd
 {
 public:

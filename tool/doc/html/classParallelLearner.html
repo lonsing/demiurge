@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">demiurge
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A synthesis tool for safety specifications.</div>
   </td>
@@ -112,8 +112,8 @@ Inheritance diagram for ParallelLearner:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a469e826d756c7c1a932128cfb17ce380"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParallelLearner.html#a469e826d756c7c1a932128cfb17ce380">ParallelLearner</a> (size_t nr_of_threads)</td></tr>
-<tr class="memdesc:a469e826d756c7c1a932128cfb17ce380"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a469e826d756c7c1a932128cfb17ce380"></a><br/></td></tr>
+<tr class="memitem:af19878077a2dff8ade1de01be095137d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParallelLearner.html#af19878077a2dff8ade1de01be095137d">ParallelLearner</a> (size_t nr_of_threads, <a class="el" href="classCNFImplExtractor.html">CNFImplExtractor</a> *impl_extractor)</td></tr>
+<tr class="memdesc:af19878077a2dff8ade1de01be095137d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#af19878077a2dff8ade1de01be095137d"></a><br/></td></tr>
 <tr class="memitem:a42d85a531cab28bdcb345c37a0b08730"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParallelLearner.html#a42d85a531cab28bdcb345c37a0b08730">~ParallelLearner</a> ()</td></tr>
 <tr class="memdesc:a42d85a531cab28bdcb345c37a0b08730"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desctructor.  <a href="#a42d85a531cab28bdcb345c37a0b08730"></a><br/></td></tr>
 <tr class="memitem:a93acb74e7c8504d0ef2bd3697441b745"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParallelLearner.html#a93acb74e7c8504d0ef2bd3697441b745">run</a> ()</td></tr>
@@ -185,6 +185,8 @@ Protected Attributes</h2></td></tr>
 <tr class="memdesc:a6f8dfda6aa8640345057023ed85882b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">A map from present-state variables to their previous-state copy.  <a href="#a6f8dfda6aa8640345057023ed85882b9"></a><br/></td></tr>
 <tr class="memitem:ae9293a4afd3c52690bcac2ad03884121"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParallelLearner.html#ae9293a4afd3c52690bcac2ad03884121">current_state_is_initial_</a></td></tr>
 <tr class="memdesc:ae9293a4afd3c52690bcac2ad03884121"><td class="mdescLeft">&#160;</td><td class="mdescRight">A literal that is true if the current state is initial and false otherwise.  <a href="#ae9293a4afd3c52690bcac2ad03884121"></a><br/></td></tr>
+<tr class="memitem:a58b6113b54eb7c91bbf15546d575f5e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCNFImplExtractor.html">CNFImplExtractor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParallelLearner.html#a58b6113b54eb7c91bbf15546d575f5e8">impl_extractor_</a></td></tr>
+<tr class="memdesc:a58b6113b54eb7c91bbf15546d575f5e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The engine to use for circuit extraction.  <a href="#a58b6113b54eb7c91bbf15546d575f5e8"></a><br/></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -199,11 +201,11 @@ Private Member Functions</h2></td></tr>
 <p>The parallel implementation has two advantages. First, it exploits hardware parallelism (modern CPUs have many cores), which means (potentially) shorter computation times. Second, it is an easy way of combining different methods. With one thread, one would have come up with points where to switch from one method to the other and back. Hence, it may also be useful to use the parallelized implementation even if only one core is available.</p>
 <p>The question which methods we should combine how in order to achieve the best speed-up is not yet fully solved. This class is just one attempt, and can be seen as a playground for combining different methods.</p>
 <dl class="section author"><dt>Author</dt><dd>Robert Koenighofer (<a href="#" onclick="location.href='mai'+'lto:'+'rob'+'er'+'t.k'+'oe'+'nig'+'ho'+'fer'+'@i'+'aik'+'.t'+'ugr'+'az'+'.at'; return false;">rober<span style="display: none;">.nosp@m.</span>t.ko<span style="display: none;">.nosp@m.</span>enigh<span style="display: none;">.nosp@m.</span>ofer<span style="display: none;">.nosp@m.</span>@iaik<span style="display: none;">.nosp@m.</span>.tug<span style="display: none;">.nosp@m.</span>raz.a<span style="display: none;">.nosp@m.</span>t</a>) </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>1.0.0 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.1.0 </dd></dl>
 
-<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00077">77</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
+<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00078">78</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
 </div><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a469e826d756c7c1a932128cfb17ce380"></a>
+<a class="anchor" id="af19878077a2dff8ade1de01be095137d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -211,8 +213,18 @@ Private Member Functions</h2></td></tr>
           <td class="memname">ParallelLearner::ParallelLearner </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>nr_of_threads</em></td><td>)</td>
+          <td class="paramname"><em>nr_of_threads</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="classCNFImplExtractor.html">CNFImplExtractor</a> *&#160;</td>
+          <td class="paramname"><em>impl_extractor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -221,13 +233,14 @@ Private Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">nr_of_threads</td><td>The number of threads to create. This does not have to be the number of cores in your CPU. It can also make sense to combine several methods running in several threads on one single core. The methods can complement each other and achieve a speedup compared to one single method in isolation. </td></tr>
+    <tr><td class="paramname">impl_extractor</td><td>The engine to use for circuit extraction. It will be deleted by this class. </td></tr>
   </table>
   </dd>
 </dl>
 
 <p>Definition at line <a class="el" href="ParallelLearner_8cpp_source.html#l00116">116</a> of file <a class="el" href="ParallelLearner_8cpp_source.html">ParallelLearner.cpp</a>.</p>
 
-<p>References <a class="el" href="ParallelLearner_8h_source.html#l00330">ce_generalizers_</a>, <a class="el" href="ParallelLearner_8h_source.html#l00315">clause_explorers_</a>, <a class="el" href="ParallelLearner_8h_source.html#l00325">clause_minimizers_</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00405">computePreviousTrans()</a>, <a class="el" href="ParallelLearner_8h_source.html#l00358">current_state_is_initial_</a>, <a class="el" href="ParallelLearner_8h_source.html#l00351">current_to_previous_map_</a>, <a class="el" href="Options_8cpp_source.html#l00292">Options::getBackEndMode()</a>, <a class="el" href="ParallelLearner_8h_source.html#l00320">ifm_explorers_</a>, <a class="el" href="Options_8cpp_source.html#l00059">Options::instance()</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="ParallelLearner_8h_source.html#l00346">prev_trans_or_initial_</a>, and <a class="el" href="ParallelLearner_8h_source.html#l00305">use_ind_</a>.</p>
+<p>References <a class="el" href="ParallelLearner_8h_source.html#l00333">ce_generalizers_</a>, <a class="el" href="ParallelLearner_8h_source.html#l00318">clause_explorers_</a>, <a class="el" href="ParallelLearner_8h_source.html#l00328">clause_minimizers_</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00407">computePreviousTrans()</a>, <a class="el" href="ParallelLearner_8h_source.html#l00361">current_state_is_initial_</a>, <a class="el" href="ParallelLearner_8h_source.html#l00354">current_to_previous_map_</a>, <a class="el" href="Options_8cpp_source.html#l00390">Options::getBackEndMode()</a>, <a class="el" href="ParallelLearner_8h_source.html#l00323">ifm_explorers_</a>, <a class="el" href="Options_8cpp_source.html#l00065">Options::instance()</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="ParallelLearner_8h_source.html#l00349">prev_trans_or_initial_</a>, and <a class="el" href="ParallelLearner_8h_source.html#l00308">use_ind_</a>.</p>
 
 </div>
 </div>
@@ -254,9 +267,9 @@ Private Member Functions</h2></td></tr>
 
 <p>Desctructor. </p>
 
-<p>Definition at line <a class="el" href="ParallelLearner_8cpp_source.html#l00225">225</a> of file <a class="el" href="ParallelLearner_8cpp_source.html">ParallelLearner.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ParallelLearner_8cpp_source.html#l00226">226</a> of file <a class="el" href="ParallelLearner_8cpp_source.html">ParallelLearner.cpp</a>.</p>
 
-<p>References <a class="el" href="ParallelLearner_8h_source.html#l00330">ce_generalizers_</a>, <a class="el" href="ParallelLearner_8h_source.html#l00315">clause_explorers_</a>, <a class="el" href="ParallelLearner_8h_source.html#l00325">clause_minimizers_</a>, and <a class="el" href="ParallelLearner_8h_source.html#l00320">ifm_explorers_</a>.</p>
+<p>References <a class="el" href="ParallelLearner_8h_source.html#l00333">ce_generalizers_</a>, <a class="el" href="ParallelLearner_8h_source.html#l00318">clause_explorers_</a>, <a class="el" href="ParallelLearner_8h_source.html#l00328">clause_minimizers_</a>, <a class="el" href="ParallelLearner_8h_source.html#l00323">ifm_explorers_</a>, and <a class="el" href="ParallelLearner_8h_source.html#l00368">impl_extractor_</a>.</p>
 
 </div>
 </div>
@@ -318,9 +331,9 @@ Private Member Functions</h2></td></tr>
 <p>A helper function to compute the previous-state copy of the transition relation. </p>
 <p>This is needed if optimization RG is enabled (see <a class="el" href="classLearnSynthQBFInd.html" title="Implements a learning-based synthesis with inductive reachability reasoning.">LearnSynthQBFInd</a>). </p>
 
-<p>Definition at line <a class="el" href="ParallelLearner_8cpp_source.html#l00405">405</a> of file <a class="el" href="ParallelLearner_8cpp_source.html">ParallelLearner.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ParallelLearner_8cpp_source.html#l00407">407</a> of file <a class="el" href="ParallelLearner_8cpp_source.html">ParallelLearner.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8cpp_source.html#l00130">CNF::add2LitClause()</a>, <a class="el" href="VarManager_8cpp_source.html#l00251">VarManager::createFreshPrevVar()</a>, <a class="el" href="VarManager_8cpp_source.html#l00219">VarManager::createFreshTmpVar()</a>, <a class="el" href="VarInfo_8h_source.html#l00074">VarInfo::CTRL</a>, <a class="el" href="ParallelLearner_8h_source.html#l00358">current_state_is_initial_</a>, <a class="el" href="ParallelLearner_8h_source.html#l00351">current_to_previous_map_</a>, <a class="el" href="CNF_8cpp_source.html#l00273">CNF::getClauses()</a>, <a class="el" href="VarManager_8cpp_source.html#l00332">VarManager::getMaxCNFVar()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00201">AIG2CNF::getTrans()</a>, <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, <a class="el" href="VarInfo_8h_source.html#l00069">VarInfo::INPUT</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="VarInfo_8h_source.html#l00064">VarInfo::NEXT_STATE</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00442">presentToPrevious()</a>, <a class="el" href="ParallelLearner_8h_source.html#l00346">prev_trans_or_initial_</a>, <a class="el" href="CNF_8cpp_source.html#l00239">CNF::swapWith()</a>, and <a class="el" href="VarInfo_8h_source.html#l00081">VarInfo::TMP</a>.</p>
+<p>References <a class="el" href="CNF_8cpp_source.html#l00177">CNF::add2LitClause()</a>, <a class="el" href="VarManager_8cpp_source.html#l00251">VarManager::createFreshPrevVar()</a>, <a class="el" href="VarManager_8cpp_source.html#l00219">VarManager::createFreshTmpVar()</a>, <a class="el" href="VarInfo_8h_source.html#l00074">VarInfo::CTRL</a>, <a class="el" href="ParallelLearner_8h_source.html#l00361">current_state_is_initial_</a>, <a class="el" href="ParallelLearner_8h_source.html#l00354">current_to_previous_map_</a>, <a class="el" href="CNF_8cpp_source.html#l00346">CNF::getClauses()</a>, <a class="el" href="VarManager_8cpp_source.html#l00332">VarManager::getMaxCNFVar()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00210">AIG2CNF::getTrans()</a>, <a class="el" href="VarManager_8cpp_source.html#l00281">VarManager::getVarsOfType()</a>, <a class="el" href="VarInfo_8h_source.html#l00069">VarInfo::INPUT</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="VarInfo_8h_source.html#l00064">VarInfo::NEXT_STATE</a>, <a class="el" href="VarInfo_8h_source.html#l00059">VarInfo::PRES_STATE</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00444">presentToPrevious()</a>, <a class="el" href="ParallelLearner_8h_source.html#l00349">prev_trans_or_initial_</a>, <a class="el" href="CNF_8cpp_source.html#l00286">CNF::swapWith()</a>, and <a class="el" href="VarInfo_8h_source.html#l00081">VarInfo::TMP</a>.</p>
 
 <p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00116">ParallelLearner()</a>.</p>
 
@@ -360,11 +373,11 @@ Private Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="ParallelLearner_8cpp_source.html#l00368">368</a> of file <a class="el" href="ParallelLearner_8cpp_source.html">ParallelLearner.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ParallelLearner_8cpp_source.html#l00370">370</a> of file <a class="el" href="ParallelLearner_8cpp_source.html">ParallelLearner.cpp</a>.</p>
 
-<p>References <a class="el" href="ParallelLearner_8h_source.html#l00330">ce_generalizers_</a>, <a class="el" href="ParallelLearner_8h_source.html#l00236">counterexamples_</a>, and <a class="el" href="ParallelLearner_8h_source.html#l00244">counterexamples_lock_</a>.</p>
+<p>References <a class="el" href="ParallelLearner_8h_source.html#l00333">ce_generalizers_</a>, <a class="el" href="ParallelLearner_8h_source.html#l00239">counterexamples_</a>, and <a class="el" href="ParallelLearner_8h_source.html#l00247">counterexamples_lock_</a>.</p>
 
-<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00578">ClauseExplorerSAT::exploreClauses()</a>.</p>
+<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00580">ClauseExplorerSAT::exploreClauses()</a>.</p>
 
 </div>
 </div>
@@ -402,11 +415,11 @@ Private Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="ParallelLearner_8cpp_source.html#l00356">356</a> of file <a class="el" href="ParallelLearner_8cpp_source.html">ParallelLearner.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ParallelLearner_8cpp_source.html#l00358">358</a> of file <a class="el" href="ParallelLearner_8cpp_source.html">ParallelLearner.cpp</a>.</p>
 
-<p>References <a class="el" href="ParallelLearner_8h_source.html#l00315">clause_explorers_</a>.</p>
+<p>References <a class="el" href="ParallelLearner_8h_source.html#l00318">clause_explorers_</a>.</p>
 
-<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00578">ClauseExplorerSAT::exploreClauses()</a>.</p>
+<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00580">ClauseExplorerSAT::exploreClauses()</a>.</p>
 
 </div>
 </div>
@@ -444,11 +457,11 @@ Private Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="ParallelLearner_8cpp_source.html#l00326">326</a> of file <a class="el" href="ParallelLearner_8cpp_source.html">ParallelLearner.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ParallelLearner_8cpp_source.html#l00328">328</a> of file <a class="el" href="ParallelLearner_8cpp_source.html">ParallelLearner.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8cpp_source.html#l00070">CNF::addClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00099">CNF::addClauseAndSimplify()</a>, <a class="el" href="ParallelLearner_8h_source.html#l00330">ce_generalizers_</a>, <a class="el" href="ParallelLearner_8h_source.html#l00315">clause_explorers_</a>, <a class="el" href="ParallelLearner_8h_source.html#l00325">clause_minimizers_</a>, <a class="el" href="ParallelLearner_8h_source.html#l00320">ifm_explorers_</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00091">MIN</a>, <a class="el" href="ParallelLearner_8h_source.html#l00215">unminimized_clauses_</a>, <a class="el" href="ParallelLearner_8h_source.html#l00223">unminimized_clauses_lock_</a>, <a class="el" href="ParallelLearner_8h_source.html#l00197">winning_region_</a>, and <a class="el" href="ParallelLearner_8h_source.html#l00205">winning_region_lock_</a>.</p>
+<p>References <a class="el" href="CNF_8cpp_source.html#l00117">CNF::addClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00146">CNF::addClauseAndSimplify()</a>, <a class="el" href="ParallelLearner_8h_source.html#l00333">ce_generalizers_</a>, <a class="el" href="ParallelLearner_8h_source.html#l00318">clause_explorers_</a>, <a class="el" href="ParallelLearner_8h_source.html#l00328">clause_minimizers_</a>, <a class="el" href="ParallelLearner_8h_source.html#l00323">ifm_explorers_</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00091">MIN</a>, <a class="el" href="ParallelLearner_8h_source.html#l00218">unminimized_clauses_</a>, <a class="el" href="ParallelLearner_8h_source.html#l00226">unminimized_clauses_lock_</a>, <a class="el" href="ParallelLearner_8h_source.html#l00200">winning_region_</a>, and <a class="el" href="ParallelLearner_8h_source.html#l00208">winning_region_lock_</a>.</p>
 
-<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l01724">IFM13Explorer::addLose()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01121">CounterGenSAT::bored()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00578">ClauseExplorerSAT::exploreClauses()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00919">CounterGenSAT::generalizeCounterexamples()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l01293">ClauseMinimizerQBF::minimizeClauses()</a>.</p>
+<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l01726">IFM13Explorer::addLose()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01123">CounterGenSAT::bored()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00580">ClauseExplorerSAT::exploreClauses()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00921">CounterGenSAT::generalizeCounterexamples()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l01295">ClauseMinimizerQBF::minimizeClauses()</a>.</p>
 
 </div>
 </div>
@@ -517,11 +530,11 @@ Private Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The previous-state copy of a literal. </dd></dl>
 
-<p>Definition at line <a class="el" href="ParallelLearner_8cpp_source.html#l00442">442</a> of file <a class="el" href="ParallelLearner_8cpp_source.html">ParallelLearner.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ParallelLearner_8cpp_source.html#l00444">444</a> of file <a class="el" href="ParallelLearner_8cpp_source.html">ParallelLearner.cpp</a>.</p>
 
-<p>References <a class="el" href="ParallelLearner_8h_source.html#l00351">current_to_previous_map_</a>.</p>
+<p>References <a class="el" href="ParallelLearner_8h_source.html#l00354">current_to_previous_map_</a>.</p>
 
-<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00405">computePreviousTrans()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00452">presentToPrevious()</a>.</p>
+<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00407">computePreviousTrans()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00454">presentToPrevious()</a>.</p>
 
 </div>
 </div>
@@ -555,9 +568,9 @@ Private Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="ParallelLearner_8cpp_source.html#l00452">452</a> of file <a class="el" href="ParallelLearner_8cpp_source.html">ParallelLearner.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ParallelLearner_8cpp_source.html#l00454">454</a> of file <a class="el" href="ParallelLearner_8cpp_source.html">ParallelLearner.cpp</a>.</p>
 
-<p>References <a class="el" href="ParallelLearner_8cpp_source.html#l00442">presentToPrevious()</a>.</p>
+<p>References <a class="el" href="ParallelLearner_8cpp_source.html#l00444">presentToPrevious()</a>.</p>
 
 </div>
 </div>
@@ -591,9 +604,9 @@ Private Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="ParallelLearner_8cpp_source.html#l00459">459</a> of file <a class="el" href="ParallelLearner_8cpp_source.html">ParallelLearner.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ParallelLearner_8cpp_source.html#l00461">461</a> of file <a class="el" href="ParallelLearner_8cpp_source.html">ParallelLearner.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8cpp_source.html#l00070">CNF::addClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00064">CNF::clear()</a>, <a class="el" href="CNF_8cpp_source.html#l00273">CNF::getClauses()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00442">presentToPrevious()</a>.</p>
+<p>References <a class="el" href="CNF_8cpp_source.html#l00117">CNF::addClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00111">CNF::clear()</a>, <a class="el" href="CNF_8cpp_source.html#l00346">CNF::getClauses()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00444">presentToPrevious()</a>.</p>
 
 </div>
 </div>
@@ -624,9 +637,9 @@ Private Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="classBackEnd.html#a099e717dc71e9cc2d838b1ca86340590">BackEnd</a>.</p>
 
-<p>Definition at line <a class="el" href="ParallelLearner_8cpp_source.html#l00245">245</a> of file <a class="el" href="ParallelLearner_8cpp_source.html">ParallelLearner.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ParallelLearner_8cpp_source.html#l00249">249</a> of file <a class="el" href="ParallelLearner_8cpp_source.html">ParallelLearner.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8cpp_source.html#l00183">CNF::addCNF()</a>, <a class="el" href="ParallelLearner_8h_source.html#l00330">ce_generalizers_</a>, <a class="el" href="ParallelLearner_8h_source.html#l00315">clause_explorers_</a>, <a class="el" href="ParallelLearner_8h_source.html#l00325">clause_minimizers_</a>, <a class="el" href="CNF_8cpp_source.html#l00064">CNF::clear()</a>, <a class="el" href="Utils_8cpp_source.html#l00353">Utils::debugCheckWinReg()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00578">ClauseExplorerSAT::exploreClauses()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01421">IFM13Explorer::exploreClauses()</a>, <a class="el" href="QBFCertImplExtractor_8cpp_source.html#l00095">QBFCertImplExtractor::extractCircuit()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00919">CounterGenSAT::generalizeCounterexamples()</a>, <a class="el" href="ParallelLearner_8h_source.html#l00320">ifm_explorers_</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="Options_8cpp_source.html#l00059">Options::instance()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="Logger_8h_source.html#l00302">L_INF</a>, <a class="el" href="Logger_8h_source.html#l00285">L_RES</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00177">LearnStatisticsSAT::logStatistics()</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00153">LearnStatisticsSAT::mergeWith()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01293">ClauseMinimizerQBF::minimizeClauses()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00084">LearnStatisticsSAT::notifyRelDetEnd()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00078">LearnStatisticsSAT::notifyRelDetStart()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00071">LearnStatisticsSAT::notifyWinRegEnd()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00065">LearnStatisticsSAT::notifyWinRegStart()</a>, <a class="el" href="ParallelLearner_8h_source.html#l00310">nr_of_threads_</a>, <a class="el" href="VarManager_8cpp_source.html#l00055">VarManager::push()</a>, <a class="el" href="ParallelLearner_8h_source.html#l00189">result_</a>, <a class="el" href="ParallelLearner_8h_source.html#l00337">statistics_</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00061">UNREALIZABLE</a>, and <a class="el" href="ParallelLearner_8h_source.html#l00197">winning_region_</a>.</p>
+<p>References <a class="el" href="CNF_8cpp_source.html#l00230">CNF::addCNF()</a>, <a class="el" href="ParallelLearner_8h_source.html#l00333">ce_generalizers_</a>, <a class="el" href="ParallelLearner_8h_source.html#l00318">clause_explorers_</a>, <a class="el" href="ParallelLearner_8h_source.html#l00328">clause_minimizers_</a>, <a class="el" href="CNF_8cpp_source.html#l00111">CNF::clear()</a>, <a class="el" href="Utils_8cpp_source.html#l00407">Utils::debugCheckWinReg()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00580">ClauseExplorerSAT::exploreClauses()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01423">IFM13Explorer::exploreClauses()</a>, <a class="el" href="CNFImplExtractor_8cpp_source.html#l00085">CNFImplExtractor::extractCircuit()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00921">CounterGenSAT::generalizeCounterexamples()</a>, <a class="el" href="ParallelLearner_8h_source.html#l00323">ifm_explorers_</a>, <a class="el" href="ParallelLearner_8h_source.html#l00368">impl_extractor_</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="Options_8cpp_source.html#l00065">Options::instance()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="Logger_8h_source.html#l00302">L_INF</a>, <a class="el" href="Logger_8h_source.html#l00285">L_RES</a>, <a class="el" href="CNFImplExtractor_8cpp_source.html#l00290">CNFImplExtractor::logStatistics()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00159">LearnStatisticsSAT::logStatistics()</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00137">LearnStatisticsSAT::mergeWith()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01295">ClauseMinimizerQBF::minimizeClauses()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00069">LearnStatisticsSAT::notifyWinRegEnd()</a>, <a class="el" href="LearnStatisticsSAT_8cpp_source.html#l00063">LearnStatisticsSAT::notifyWinRegStart()</a>, <a class="el" href="ParallelLearner_8h_source.html#l00313">nr_of_threads_</a>, <a class="el" href="VarManager_8cpp_source.html#l00055">VarManager::push()</a>, <a class="el" href="ParallelLearner_8h_source.html#l00192">result_</a>, <a class="el" href="ParallelLearner_8h_source.html#l00340">statistics_</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00061">UNREALIZABLE</a>, and <a class="el" href="ParallelLearner_8h_source.html#l00200">winning_region_</a>.</p>
 
 </div>
 </div>
@@ -646,11 +659,11 @@ Private Member Functions</h2></td></tr>
 <p>Computes a new restart point and notifies it to all ClauseExplorerSAT-instances. </p>
 <p>The <a class="el" href="classClauseExplorerSAT.html" title="Implements the method of LearnSynthSAT in a parallelized way.">ClauseExplorerSAT</a> update their next-state copy of the winning region only in a lazy manner. This allows them to use incremental SAT-solving more effectively. See <a class="el" href="classLearnSynthSAT.html" title="Implements a learning-based synthesis using two SAT solvers.">LearnSynthSAT</a> for a description. If no more solutions exists with one next-state copy of the winning region, it must be updated to the newest version. This is done by this method. A new next-state copy of the winning region is computed and communicated to all ClauseExplorerSAT-instances. It is absolutely important that all <a class="el" href="classClauseExplorerSAT.html" title="Implements the method of LearnSynthSAT in a parallelized way.">ClauseExplorerSAT</a> instances work with the same next-state copy of the winning region. Otherwise, they could not exchange U-clauses (or rather, the U-clause discovered by one thread would not make sense for the other). See also <a class="el" href="classParallelLearner.html#a0a8405e4fb7331f3f3df2711fdaebdab" title="Notifies all ClauseExplorerSAT-threads that a new U-clause is available.">notifyNewUselessInputClause()</a>. </p>
 
-<p>Definition at line <a class="el" href="ParallelLearner_8cpp_source.html#l00379">379</a> of file <a class="el" href="ParallelLearner_8cpp_source.html">ParallelLearner.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ParallelLearner_8cpp_source.html#l00381">381</a> of file <a class="el" href="ParallelLearner_8cpp_source.html">ParallelLearner.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8cpp_source.html#l00183">CNF::addCNF()</a>, <a class="el" href="ParallelLearner_8h_source.html#l00315">clause_explorers_</a>, <a class="el" href="Utils_8cpp_source.html#l00272">Utils::compressStateCNF()</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="CNF_8cpp_source.html#l00217">CNF::negate()</a>, <a class="el" href="VarManager_8cpp_source.html#l00063">VarManager::resetToLastPush()</a>, <a class="el" href="CNF_8cpp_source.html#l00189">CNF::swapPresentToNext()</a>, <a class="el" href="ParallelLearner_8h_source.html#l00262">var_man_lock_</a>, <a class="el" href="ParallelLearner_8h_source.html#l00197">winning_region_</a>, and <a class="el" href="ParallelLearner_8h_source.html#l00205">winning_region_lock_</a>.</p>
+<p>References <a class="el" href="CNF_8cpp_source.html#l00230">CNF::addCNF()</a>, <a class="el" href="ParallelLearner_8h_source.html#l00318">clause_explorers_</a>, <a class="el" href="Utils_8cpp_source.html#l00287">Utils::compressStateCNF()</a>, <a class="el" href="VarManager_8cpp_source.html#l00041">VarManager::instance()</a>, <a class="el" href="AIG2CNF_8cpp_source.html#l00041">AIG2CNF::instance()</a>, <a class="el" href="CNF_8cpp_source.html#l00264">CNF::negate()</a>, <a class="el" href="VarManager_8cpp_source.html#l00063">VarManager::resetToLastPush()</a>, <a class="el" href="CNF_8cpp_source.html#l00236">CNF::swapPresentToNext()</a>, <a class="el" href="ParallelLearner_8h_source.html#l00265">var_man_lock_</a>, <a class="el" href="ParallelLearner_8h_source.html#l00200">winning_region_</a>, and <a class="el" href="ParallelLearner_8h_source.html#l00208">winning_region_lock_</a>.</p>
 
-<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00578">ClauseExplorerSAT::exploreClauses()</a>.</p>
+<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00580">ClauseExplorerSAT::exploreClauses()</a>.</p>
 
 </div>
 </div>
@@ -675,9 +688,9 @@ Private Member Functions</h2></td></tr>
 
 <p>The CounterGenSAT-instances to execute in a separate thread. </p>
 
-<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00330">330</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
+<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00333">333</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
 
-<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00368">notifyNewCounterexample()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00326">notifyNewWinRegClause()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00116">ParallelLearner()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00245">run()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00225">~ParallelLearner()</a>.</p>
+<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00370">notifyNewCounterexample()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00328">notifyNewWinRegClause()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00116">ParallelLearner()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00249">run()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00226">~ParallelLearner()</a>.</p>
 
 </div>
 </div>
@@ -701,9 +714,9 @@ Private Member Functions</h2></td></tr>
 
 <p>The ClauseExplorerSAT-instances to execute in a separate thread. </p>
 
-<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00315">315</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
+<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00318">318</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
 
-<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00356">notifyNewUselessInputClause()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00326">notifyNewWinRegClause()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00116">ParallelLearner()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00245">run()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00379">triggerExplorerRestart()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00225">~ParallelLearner()</a>.</p>
+<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00358">notifyNewUselessInputClause()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00328">notifyNewWinRegClause()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00116">ParallelLearner()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00249">run()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00381">triggerExplorerRestart()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00226">~ParallelLearner()</a>.</p>
 
 </div>
 </div>
@@ -727,9 +740,9 @@ Private Member Functions</h2></td></tr>
 
 <p>The ClauseMinimizerQBF-instances to execute in a separate thread. </p>
 
-<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00325">325</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
+<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00328">328</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
 
-<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00326">notifyNewWinRegClause()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00116">ParallelLearner()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00245">run()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00225">~ParallelLearner()</a>.</p>
+<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00328">notifyNewWinRegClause()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00116">ParallelLearner()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00249">run()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00226">~ParallelLearner()</a>.</p>
 
 </div>
 </div>
@@ -747,9 +760,9 @@ Private Member Functions</h2></td></tr>
 <p>The first item of the pairs stored in this list is always the counterexample itself. The second item of the pair is the generalization that has already been computed.</p>
 <p>A counterexample is a state-input combination with which the antagonist can enforce to leave the winning region. The generalization is a sub-cube of the counterexample. This information can then be used by CounterGenSAT-threads. They take such a counterexample and compute all other generalizations. </p>
 
-<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00236">236</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
+<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00239">239</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
 
-<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00919">CounterGenSAT::generalizeCounterexamples()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00368">notifyNewCounterexample()</a>.</p>
+<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00921">CounterGenSAT::generalizeCounterexamples()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00370">notifyNewCounterexample()</a>.</p>
 
 </div>
 </div>
@@ -766,9 +779,9 @@ Private Member Functions</h2></td></tr>
 <p>A lock that protects the <a class="el" href="classParallelLearner.html#a974943e3e2145b3407f689b64acdd33f" title="The counterexample-cubes together with their computed generalizations.">counterexamples_</a> from race-conditions. </p>
 <p>Many worker-threads modify the <a class="el" href="classParallelLearner.html#a974943e3e2145b3407f689b64acdd33f" title="The counterexample-cubes together with their computed generalizations.">counterexamples_</a> (add new ones). This lock ensures that only one thread is modifying the <a class="el" href="classParallelLearner.html#a974943e3e2145b3407f689b64acdd33f" title="The counterexample-cubes together with their computed generalizations.">counterexamples_</a> at one time. </p>
 
-<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00244">244</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
+<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00247">247</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
 
-<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00919">CounterGenSAT::generalizeCounterexamples()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00368">notifyNewCounterexample()</a>.</p>
+<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00921">CounterGenSAT::generalizeCounterexamples()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00370">notifyNewCounterexample()</a>.</p>
 
 </div>
 </div>
@@ -793,9 +806,9 @@ Private Member Functions</h2></td></tr>
 <p>A literal that is true if the current state is initial and false otherwise. </p>
 <p>The clauses assigning the literal are part of <a class="el" href="classParallelLearner.html#ac73d9338262855f61f23a65d1df0647c" title="Says: the current state is initial or the previous transition relation holds.">prev_trans_or_initial_</a>. </p>
 
-<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00358">358</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
+<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00361">361</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
 
-<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00405">computePreviousTrans()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00116">ParallelLearner()</a>.</p>
+<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00407">computePreviousTrans()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00116">ParallelLearner()</a>.</p>
 
 </div>
 </div>
@@ -819,9 +832,9 @@ Private Member Functions</h2></td></tr>
 
 <p>A map from present-state variables to their previous-state copy. </p>
 
-<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00351">351</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
+<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00354">354</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
 
-<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00405">computePreviousTrans()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00116">ParallelLearner()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00442">presentToPrevious()</a>.</p>
+<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00407">computePreviousTrans()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00116">ParallelLearner()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00444">presentToPrevious()</a>.</p>
 
 </div>
 </div>
@@ -845,9 +858,36 @@ Private Member Functions</h2></td></tr>
 
 <p>The IFM13Explorer-instances to execute in a separate thread. </p>
 
-<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00320">320</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
+<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00323">323</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
 
-<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00326">notifyNewWinRegClause()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00116">ParallelLearner()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00245">run()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00225">~ParallelLearner()</a>.</p>
+<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00328">notifyNewWinRegClause()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00116">ParallelLearner()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00249">run()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00226">~ParallelLearner()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a58b6113b54eb7c91bbf15546d575f5e8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCNFImplExtractor.html">CNFImplExtractor</a>* ParallelLearner::impl_extractor_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The engine to use for circuit extraction. </p>
+<p>It will be deleted by this class (in the destructor). </p>
+
+<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00368">368</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
+
+<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00249">run()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00226">~ParallelLearner()</a>.</p>
 
 </div>
 </div>
@@ -871,9 +911,9 @@ Private Member Functions</h2></td></tr>
 
 <p>The number of threads to instantiate and execute. </p>
 
-<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00310">310</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
+<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00313">313</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
 
-<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00245">run()</a>.</p>
+<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00249">run()</a>.</p>
 
 </div>
 </div>
@@ -898,9 +938,9 @@ Private Member Functions</h2></td></tr>
 <p>Says: the current state is initial or the previous transition relation holds. </p>
 <p>This <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> expresses that the current state is initial or the previous-state copy of the transition relation holds. This is an important building block for the <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> to generalize counterexamples if optimization RG is enabled. </p>
 
-<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00346">346</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
+<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00349">349</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
 
-<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00405">computePreviousTrans()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00116">ParallelLearner()</a>.</p>
+<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00407">computePreviousTrans()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00116">ParallelLearner()</a>.</p>
 
 </div>
 </div>
@@ -925,7 +965,7 @@ Private Member Functions</h2></td></tr>
 <p>A lock used to synchronize the printing of debugging messages. </p>
 <p>Debugging race conditions or other bugs in this implementation is tough. In order to prevent debugging messages from being interleaved strangely, this lock is used. It makes debug messages printed with the PLOG macro appear one after the other. </p>
 
-<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00253">253</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
+<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00256">256</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
 
 </div>
 </div>
@@ -951,9 +991,9 @@ UNREALIZABLE = 2: used if some thread concludes that the spec must be unrealizab
 </ul>
 <p>All worker-threads poll this flag from time to time. If the value is still UNKNOWN they continue to work. If they see that the values is not UNKNOWN anymore they stop assuming that some other thread has already found the solution. If one thread finds an answer to the realizability question it sets the flag (the <a class="el" href="classParallelLearner.html#a7c8383543ff98d7a0356a237756dcdd6" title="The current version of the winning region.">winning_region_</a> must be precise enough then already). </p>
 
-<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00189">189</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
+<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00192">192</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
 
-<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l01121">CounterGenSAT::bored()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01150">CounterGenSAT::compressBored()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00578">ClauseExplorerSAT::exploreClauses()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01421">IFM13Explorer::exploreClauses()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00919">CounterGenSAT::generalizeCounterexamples()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01293">ClauseMinimizerQBF::minimizeClauses()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01472">IFM13Explorer::propagateBlockedStates()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01529">IFM13Explorer::recBlockCube()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00245">run()</a>.</p>
+<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l01123">CounterGenSAT::bored()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01152">CounterGenSAT::compressBored()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00580">ClauseExplorerSAT::exploreClauses()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01423">IFM13Explorer::exploreClauses()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00921">CounterGenSAT::generalizeCounterexamples()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01295">ClauseMinimizerQBF::minimizeClauses()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01474">IFM13Explorer::propagateBlockedStates()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l01531">IFM13Explorer::recBlockCube()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00249">run()</a>.</p>
 
 </div>
 </div>
@@ -978,9 +1018,9 @@ UNREALIZABLE = 2: used if some thread concludes that the spec must be unrealizab
 <p>Stores and maintains statistics and performance measures. </p>
 <p>Basically, this is a merge of the statistics from all worker-threads. </p>
 
-<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00337">337</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
+<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00340">340</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
 
-<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00245">run()</a>.</p>
+<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00249">run()</a>.</p>
 
 </div>
 </div>
@@ -997,9 +1037,9 @@ UNREALIZABLE = 2: used if some thread concludes that the spec must be unrealizab
 <p>All clauses of the winning region that have not yet been minimized. </p>
 <p>Whenever a clause is added to <a class="el" href="classParallelLearner.html#a7c8383543ff98d7a0356a237756dcdd6" title="The current version of the winning region.">winning_region_</a>, it is also added to this field. ClauseMinimizerQBF-instances then take clauses from <a class="el" href="classParallelLearner.html#aba6b363071d9a39d7b368cec5b629c25" title="All clauses of the winning region that have not yet been minimized.">unminimized_clauses_</a> and try to minimize them further. This is done to prevent that clauses are minimized twice or multiple times. </p>
 
-<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00215">215</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
+<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00218">218</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
 
-<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l01293">ClauseMinimizerQBF::minimizeClauses()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00326">notifyNewWinRegClause()</a>.</p>
+<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l01295">ClauseMinimizerQBF::minimizeClauses()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00328">notifyNewWinRegClause()</a>.</p>
 
 </div>
 </div>
@@ -1016,9 +1056,9 @@ UNREALIZABLE = 2: used if some thread concludes that the spec must be unrealizab
 <p>A lock that protects the <a class="el" href="classParallelLearner.html#aba6b363071d9a39d7b368cec5b629c25" title="All clauses of the winning region that have not yet been minimized.">unminimized_clauses_</a> from race-conditions. </p>
 <p>Many worker-threads refine the <a class="el" href="classParallelLearner.html#aba6b363071d9a39d7b368cec5b629c25" title="All clauses of the winning region that have not yet been minimized.">unminimized_clauses_</a> (add new clauses). This lock ensures that only one thread is modifying the <a class="el" href="classParallelLearner.html#aba6b363071d9a39d7b368cec5b629c25" title="All clauses of the winning region that have not yet been minimized.">unminimized_clauses_</a> at one time. </p>
 
-<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00223">223</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
+<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00226">226</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
 
-<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l01293">ClauseMinimizerQBF::minimizeClauses()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00326">notifyNewWinRegClause()</a>.</p>
+<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l01295">ClauseMinimizerQBF::minimizeClauses()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00328">notifyNewWinRegClause()</a>.</p>
 
 </div>
 </div>
@@ -1043,7 +1083,7 @@ UNREALIZABLE = 2: used if some thread concludes that the spec must be unrealizab
 <p>A flag indicating if optimization RG should be used. </p>
 <p>See <a class="el" href="classLearnSynthQBFInd.html" title="Implements a learning-based synthesis with inductive reachability reasoning.">LearnSynthQBFInd</a> for an explanation. </p>
 
-<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00305">305</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
+<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00308">308</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
 
 <p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00116">ParallelLearner()</a>.</p>
 
@@ -1062,9 +1102,9 @@ UNREALIZABLE = 2: used if some thread concludes that the spec must be unrealizab
 <p>A lock that must be hold when the <a class="el" href="classVarManager.html" title="Stores and maintains all Boolean variables that have (ever) been created.">VarManager</a> is modified. </p>
 <p>Sometimes (at the moment only when doing restarts in <a class="el" href="classParallelLearner.html#a2b8e4330afb7e99c19d2d7da15c30cc3" title="Computes a new restart point and notifies it to all ClauseExplorerSAT-instances.">triggerExplorerRestart()</a>) we need to modify the <a class="el" href="classVarManager.html" title="Stores and maintains all Boolean variables that have (ever) been created.">VarManager</a>, e.g., if we create new variables. This lock is used to prevent race-conditions in these operations. It must be held whenever the <a class="el" href="classVarManager.html" title="Stores and maintains all Boolean variables that have (ever) been created.">VarManager</a> is modified. </p>
 
-<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00262">262</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
+<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00265">265</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
 
-<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00379">triggerExplorerRestart()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00827">ClauseExplorerSAT::waitUntilOngoingRestartDone()</a>.</p>
+<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l00381">triggerExplorerRestart()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00829">ClauseExplorerSAT::waitUntilOngoingRestartDone()</a>.</p>
 
 </div>
 </div>
@@ -1081,9 +1121,9 @@ UNREALIZABLE = 2: used if some thread concludes that the spec must be unrealizab
 <p>The current version of the winning region. </p>
 <p>All worker-threads discover or minimize clauses of the winning region. This is the current version of the winning region. </p>
 
-<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00197">197</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
+<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00200">200</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
 
-<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l01293">ClauseMinimizerQBF::minimizeClauses()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00326">notifyNewWinRegClause()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00245">run()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00379">triggerExplorerRestart()</a>.</p>
+<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l01295">ClauseMinimizerQBF::minimizeClauses()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00328">notifyNewWinRegClause()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00249">run()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00381">triggerExplorerRestart()</a>.</p>
 
 </div>
 </div>
@@ -1100,9 +1140,9 @@ UNREALIZABLE = 2: used if some thread concludes that the spec must be unrealizab
 <p>A lock that protects the <a class="el" href="classParallelLearner.html#a7c8383543ff98d7a0356a237756dcdd6" title="The current version of the winning region.">winning_region_</a> from race-conditions. </p>
 <p>Many worker-threads refine the <a class="el" href="classParallelLearner.html#a7c8383543ff98d7a0356a237756dcdd6" title="The current version of the winning region.">winning_region_</a> (add new clauses). This lock ensures that only one thread is modifying the <a class="el" href="classParallelLearner.html#a7c8383543ff98d7a0356a237756dcdd6" title="The current version of the winning region.">winning_region_</a> at one time. </p>
 
-<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00205">205</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
+<p>Definition at line <a class="el" href="ParallelLearner_8h_source.html#l00208">208</a> of file <a class="el" href="ParallelLearner_8h_source.html">ParallelLearner.h</a>.</p>
 
-<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l01293">ClauseMinimizerQBF::minimizeClauses()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00326">notifyNewWinRegClause()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00379">triggerExplorerRestart()</a>.</p>
+<p>Referenced by <a class="el" href="ParallelLearner_8cpp_source.html#l01295">ClauseMinimizerQBF::minimizeClauses()</a>, <a class="el" href="ParallelLearner_8cpp_source.html#l00328">notifyNewWinRegClause()</a>, and <a class="el" href="ParallelLearner_8cpp_source.html#l00381">triggerExplorerRestart()</a>.</p>
 
 </div>
 </div>
@@ -1113,7 +1153,7 @@ UNREALIZABLE = 2: used if some thread concludes that the spec must be unrealizab
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 14 2013 15:15:46 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jul 15 2014 12:30:22 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

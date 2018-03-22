@@ -19,7 +19,7 @@ Inheritance diagram for I\-F\-M13\-Synth\-:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classIFM13Synth_a4df6eb2628d3a8fd6462434a2adea84b}{I\-F\-M13\-Synth} ()
+\hyperlink{classIFM13Synth_ae01ff6a7fb118c2ebdc04818ef59726b}{I\-F\-M13\-Synth} (\hyperlink{classCNFImplExtractor}{C\-N\-F\-Impl\-Extractor} $\ast$impl\-\_\-extractor)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 virtual \hyperlink{classIFM13Synth_ad042200b1639e702af49e55088a52f52}{$\sim$\-I\-F\-M13\-Synth} ()
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
@@ -82,7 +82,9 @@ vector$<$ \hyperlink{classSatSolver}{Sat\-Solver} $\ast$ $>$ \hyperlink{classIFM
 vector$<$ int $>$ \hyperlink{classIFM13Synth_ac35a6617ca45b2aa1823c99ae7c984a4}{sin\-\_\-}
 \begin{DoxyCompactList}\small\item\em The vector of present-\/ and next-\/state variables, and uncontrollable inputs. \end{DoxyCompactList}\item 
 vector$<$ int $>$ \hyperlink{classIFM13Synth_abb5b5fc0fe0db0e7aff06d22547e00bd}{sicn\-\_\-}
-\begin{DoxyCompactList}\small\item\em The vector of present-\/ and next-\/state variables, and all inputs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The vector of present-\/ and next-\/state variables, and all inputs. \end{DoxyCompactList}\item 
+\hyperlink{classCNFImplExtractor}{C\-N\-F\-Impl\-Extractor} $\ast$ \hyperlink{classIFM13Synth_a1d87a79eab422a71fdc23f70d4279cbd}{impl\-\_\-extractor\-\_\-}
+\begin{DoxyCompactList}\small\item\em The engine to use for circuit extraction. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -108,26 +110,31 @@ This is not the original implementation of the I\-F\-M'13 paper, it is a re-\/im
 Robert Koenighofer (\href{mailto:robert.koenighofer@iaik.tugraz.at}{\tt robert.\-koenighofer@iaik.\-tugraz.\-at}) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\-0.\-0 
+1.\-1.\-0 
 \end{DoxyVersion}
 
 
-Definition at line 64 of file I\-F\-M13\-Synth.\-h.
+Definition at line 65 of file I\-F\-M13\-Synth.\-h.
 
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classIFM13Synth_a4df6eb2628d3a8fd6462434a2adea84b}{\index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}!I\-F\-M13\-Synth@{I\-F\-M13\-Synth}}
+\hypertarget{classIFM13Synth_ae01ff6a7fb118c2ebdc04818ef59726b}{\index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}!I\-F\-M13\-Synth@{I\-F\-M13\-Synth}}
 \index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}!IFM13Synth@{I\-F\-M13\-Synth}}
 \subsubsection[{I\-F\-M13\-Synth}]{\setlength{\rightskip}{0pt plus 5cm}I\-F\-M13\-Synth\-::\-I\-F\-M13\-Synth (
 \begin{DoxyParamCaption}
-{}
+\item[{{\bf C\-N\-F\-Impl\-Extractor} $\ast$}]{impl\-\_\-extractor}
 \end{DoxyParamCaption}
-)}}\label{classIFM13Synth_a4df6eb2628d3a8fd6462434a2adea84b}
+)}}\label{classIFM13Synth_ae01ff6a7fb118c2ebdc04818ef59726b}
 
 
 Constructor. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em impl\-\_\-extractor} & The engine to use for circuit extraction. It will be deleted by this class. \\
+\hline
+\end{DoxyParams}
 
 
 Definition at line 54 of file I\-F\-M13\-Synth.\-cpp.
@@ -149,11 +156,11 @@ Destructor.
 
 
 
-Definition at line 102 of file I\-F\-M13\-Synth.\-cpp.
+Definition at line 103 of file I\-F\-M13\-Synth.\-cpp.
 
 
 
-References gen\-\_\-block\-\_\-trans\-\_\-solvers\-\_\-, goto\-\_\-next\-\_\-lower\-\_\-solvers\-\_\-, and goto\-\_\-win\-\_\-solver\-\_\-.
+References gen\-\_\-block\-\_\-trans\-\_\-solvers\-\_\-, goto\-\_\-next\-\_\-lower\-\_\-solvers\-\_\-, goto\-\_\-win\-\_\-solver\-\_\-, and impl\-\_\-extractor\-\_\-.
 
 \hypertarget{classIFM13Synth_aaa3a0095cffcd56cc6f13ba80362a589}{\index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}!I\-F\-M13\-Synth@{I\-F\-M13\-Synth}}
 \index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}!IFM13Synth@{I\-F\-M13\-Synth}}
@@ -199,7 +206,7 @@ This method updates R\mbox{[}level\mbox{]} \-:= R\mbox{[}level\mbox{]} \& !state
 \end{DoxyParams}
 
 
-Definition at line 347 of file I\-F\-M13\-Synth.\-cpp.
+Definition at line 351 of file I\-F\-M13\-Synth.\-cpp.
 
 
 
@@ -232,7 +239,7 @@ The meaning is\-: we want to store the fact that a certain state-\/input pair is
 \end{DoxyParams}
 
 
-Definition at line 332 of file I\-F\-M13\-Synth.\-cpp.
+Definition at line 336 of file I\-F\-M13\-Synth.\-cpp.
 
 
 
@@ -262,7 +269,7 @@ This method updates W \-:= W \& !state\-\_\-cube. state\-\_\-cube is a potential
 \end{DoxyParams}
 
 
-Definition at line 401 of file I\-F\-M13\-Synth.\-cpp.
+Definition at line 405 of file I\-F\-M13\-Synth.\-cpp.
 
 
 
@@ -288,7 +295,7 @@ True if the specification is realizable, false otherwise.
 \end{DoxyReturn}
 
 
-Definition at line 141 of file I\-F\-M13\-Synth.\-cpp.
+Definition at line 145 of file I\-F\-M13\-Synth.\-cpp.
 
 
 
@@ -318,7 +325,7 @@ The checks are only performed in debug-\/mode. In release-\/mode, this function 
 \end{DoxyParams}
 
 
-Definition at line 498 of file I\-F\-M13\-Synth.\-cpp.
+Definition at line 502 of file I\-F\-M13\-Synth.\-cpp.
 
 
 
@@ -341,7 +348,7 @@ A debugging utility to print all frames.
 
 Do this for small examples only. 
 
-Definition at line 488 of file I\-F\-M13\-Synth.\-cpp.
+Definition at line 492 of file I\-F\-M13\-Synth.\-cpp.
 
 
 
@@ -374,7 +381,7 @@ False if state\-\_\-cube satisfies W, true otherwise.
 \end{DoxyReturn}
 
 
-Definition at line 418 of file I\-F\-M13\-Synth.\-cpp.
+Definition at line 422 of file I\-F\-M13\-Synth.\-cpp.
 
 
 
@@ -407,7 +414,7 @@ A solver with \hyperlink{classCNF}{C\-N\-F}\-: T \& R\mbox{[}index-\/1\mbox{]}'.
 \end{DoxyReturn}
 
 
-Definition at line 459 of file I\-F\-M13\-Synth.\-cpp.
+Definition at line 463 of file I\-F\-M13\-Synth.\-cpp.
 
 
 
@@ -440,7 +447,7 @@ A solver with \hyperlink{classCNF}{C\-N\-F}\-: U\mbox{[}index\mbox{]} \& T \& R\
 \end{DoxyReturn}
 
 
-Definition at line 447 of file I\-F\-M13\-Synth.\-cpp.
+Definition at line 451 of file I\-F\-M13\-Synth.\-cpp.
 
 
 
@@ -473,7 +480,7 @@ The frame R\mbox{[}index\mbox{]} in \hyperlink{classCNF}{C\-N\-F}.
 \end{DoxyReturn}
 
 
-Definition at line 431 of file I\-F\-M13\-Synth.\-cpp.
+Definition at line 435 of file I\-F\-M13\-Synth.\-cpp.
 
 
 
@@ -506,7 +513,7 @@ The set U\mbox{[}index\mbox{]} of blocked transitions in \hyperlink{classCNF}{C\
 \end{DoxyReturn}
 
 
-Definition at line 439 of file I\-F\-M13\-Synth.\-cpp.
+Definition at line 443 of file I\-F\-M13\-Synth.\-cpp.
 
 
 
@@ -542,7 +549,7 @@ False if state\-\_\-cube satisfies R\mbox{[}level\mbox{]}, true otherwise.
 \end{DoxyReturn}
 
 
-Definition at line 395 of file I\-F\-M13\-Synth.\-cpp.
+Definition at line 399 of file I\-F\-M13\-Synth.\-cpp.
 
 
 
@@ -575,7 +582,7 @@ False if state\-\_\-cube satisfies W, true otherwise.
 \end{DoxyReturn}
 
 
-Definition at line 412 of file I\-F\-M13\-Synth.\-cpp.
+Definition at line 416 of file I\-F\-M13\-Synth.\-cpp.
 
 
 
@@ -627,7 +634,7 @@ The element that has been removed from the list. It is always the element (among
 \end{DoxyReturn}
 
 
-Definition at line 471 of file I\-F\-M13\-Synth.\-cpp.
+Definition at line 475 of file I\-F\-M13\-Synth.\-cpp.
 
 
 
@@ -660,7 +667,7 @@ The number N returned by this method has the following meaning\-: N=0 means that
 \end{DoxyReturn}
 
 
-Definition at line 173 of file I\-F\-M13\-Synth.\-cpp.
+Definition at line 177 of file I\-F\-M13\-Synth.\-cpp.
 
 
 
@@ -696,7 +703,7 @@ I\-S\-\_\-\-G\-R\-E\-A\-T\-E\-R (an alias for true) if the rank of the state is 
 \end{DoxyReturn}
 
 
-Definition at line 225 of file I\-F\-M13\-Synth.\-cpp.
+Definition at line 229 of file I\-F\-M13\-Synth.\-cpp.
 
 
 
@@ -732,11 +739,11 @@ Implements \hyperlink{classBackEnd_a099e717dc71e9cc2d838b1ca86340590}{Back\-End}
 
 
 
-Definition at line 117 of file I\-F\-M13\-Synth.\-cpp.
+Definition at line 121 of file I\-F\-M13\-Synth.\-cpp.
 
 
 
-References compute\-Winning\-Region(), Utils\-::debug\-Check\-Win\-Reg(), Q\-B\-F\-Cert\-Impl\-Extractor\-::extract\-Circuit(), Options\-::instance(), L\-\_\-\-I\-N\-F, L\-\_\-\-R\-E\-S, neg\-\_\-winning\-\_\-region\-\_\-, and winning\-\_\-region\-\_\-.
+References compute\-Winning\-Region(), Utils\-::debug\-Check\-Win\-Reg(), C\-N\-F\-Impl\-Extractor\-::extract\-Circuit(), impl\-\_\-extractor\-\_\-, Options\-::instance(), L\-\_\-\-I\-N\-F, L\-\_\-\-R\-E\-S, C\-N\-F\-Impl\-Extractor\-::log\-Statistics(), neg\-\_\-winning\-\_\-region\-\_\-, and winning\-\_\-region\-\_\-.
 
 
 
@@ -750,7 +757,7 @@ The solvers storing the \hyperlink{classCNF}{C\-N\-F}\-: T \& R\mbox{[}k-\/1\mbo
 
 You should use \hyperlink{classIFM13Synth_af087a4ddf9026bb48a752c03e539d9da}{get\-Gen\-Block\-Trans\-Solver() } to access these solvers. The reason is that this method initializes the solvers if they do not yet exist. gen\-\_\-block\-\_\-trans\-\_\-solvers\-\_\-\mbox{[}0\mbox{]} is always N\-U\-L\-L. 
 
-Definition at line 329 of file I\-F\-M13\-Synth.\-h.
+Definition at line 333 of file I\-F\-M13\-Synth.\-h.
 
 
 
@@ -765,7 +772,7 @@ The solvers storing the \hyperlink{classCNF}{C\-N\-F}\-: U\mbox{[}k\mbox{]} \& T
 
 These solvers are used to search for moves the antagonist can make in order to reach R\mbox{[}k-\/1\mbox{]}. You should use \hyperlink{classIFM13Synth_ae97c0b41568cf25e163ab9b309f0dcaa}{get\-Goto\-Next\-Lower\-Solver() } to access these solvers. The reason is that this method initializes the solvers if they do not yet exist. goto\-\_\-next\-\_\-lower\-\_\-solvers\-\_\-\mbox{[}0\mbox{]} is always N\-U\-L\-L. 
 
-Definition at line 320 of file I\-F\-M13\-Synth.\-h.
+Definition at line 324 of file I\-F\-M13\-Synth.\-h.
 
 
 
@@ -780,11 +787,26 @@ A solver that stores the \hyperlink{classCNF}{C\-N\-F}\-: T \& W'.
 
 
 
-Definition at line 334 of file I\-F\-M13\-Synth.\-h.
+Definition at line 338 of file I\-F\-M13\-Synth.\-h.
 
 
 
 Referenced by add\-Lose(), I\-F\-M13\-Synth(), rec\-Block\-Cube(), and $\sim$\-I\-F\-M13\-Synth().
+
+\hypertarget{classIFM13Synth_a1d87a79eab422a71fdc23f70d4279cbd}{\index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}!impl\-\_\-extractor\-\_\-@{impl\-\_\-extractor\-\_\-}}
+\index{impl\-\_\-extractor\-\_\-@{impl\-\_\-extractor\-\_\-}!IFM13Synth@{I\-F\-M13\-Synth}}
+\subsubsection[{impl\-\_\-extractor\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-N\-F\-Impl\-Extractor}$\ast$ I\-F\-M13\-Synth\-::impl\-\_\-extractor\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classIFM13Synth_a1d87a79eab422a71fdc23f70d4279cbd}
+
+
+The engine to use for circuit extraction. 
+
+It will be deleted by this class (in the destructor). 
+
+Definition at line 365 of file I\-F\-M13\-Synth.\-h.
+
+
+
+Referenced by run(), and $\sim$\-I\-F\-M13\-Synth().
 
 \hypertarget{classIFM13Synth_a334e8e6b638c8c57da3db0c3d161231b}{\index{I\-F\-M13\-Synth@{I\-F\-M13\-Synth}!neg\-\_\-winning\-\_\-region\-\_\-@{neg\-\_\-winning\-\_\-region\-\_\-}}
 \index{neg\-\_\-winning\-\_\-region\-\_\-@{neg\-\_\-winning\-\_\-region\-\_\-}!IFM13Synth@{I\-F\-M13\-Synth}}
@@ -795,7 +817,7 @@ The negated winning region as computed by \hyperlink{classIFM13Synth_a51c6831265
 
 
 
-Definition at line 344 of file I\-F\-M13\-Synth.\-h.
+Definition at line 348 of file I\-F\-M13\-Synth.\-h.
 
 
 
@@ -810,7 +832,7 @@ The frames R\mbox{[}\mbox{]} of the algorithm. Each frame represents a set of st
 
 You should use \hyperlink{classIFM13Synth_a050f0c3c5089ef6c5f793878bd60abc9}{get\-R() } to access the frames. The reason is that this method initializes frames if they do not yet exist. 
 
-Definition at line 294 of file I\-F\-M13\-Synth.\-h.
+Definition at line 298 of file I\-F\-M13\-Synth.\-h.
 
 
 
@@ -825,7 +847,7 @@ The vector of present-\/ and next-\/state variables, and all inputs.
 
 
 
-Definition at line 354 of file I\-F\-M13\-Synth.\-h.
+Definition at line 358 of file I\-F\-M13\-Synth.\-h.
 
 
 
@@ -840,7 +862,7 @@ The vector of present-\/ and next-\/state variables, and uncontrollable inputs.
 
 
 
-Definition at line 349 of file I\-F\-M13\-Synth.\-h.
+Definition at line 353 of file I\-F\-M13\-Synth.\-h.
 
 
 
@@ -855,7 +877,7 @@ The blocked transitions U\mbox{[}\mbox{]} of the algorithm.
 
 These sets are maintained only in debug mode. In release-\/mode they are only present inside the goto\-\_\-next\-\_\-lower\-\_\-solvers\-\_\-. You should use \hyperlink{classIFM13Synth_a396e520b9db59b73a46a2315ee3123b4}{get\-U() } to access the frames. The reason is that this method initializes elements if they do not yet exist. 
 
-Definition at line 304 of file I\-F\-M13\-Synth.\-h.
+Definition at line 308 of file I\-F\-M13\-Synth.\-h.
 
 
 
@@ -870,7 +892,7 @@ The current over-\/approximation of the winning region W (for the protagonist).
 
 
 
-Definition at line 309 of file I\-F\-M13\-Synth.\-h.
+Definition at line 313 of file I\-F\-M13\-Synth.\-h.
 
 
 
@@ -885,7 +907,7 @@ The final winning region as computed by \hyperlink{classIFM13Synth_a51c6831265e1
 
 
 
-Definition at line 339 of file I\-F\-M13\-Synth.\-h.
+Definition at line 343 of file I\-F\-M13\-Synth.\-h.
 
 
 

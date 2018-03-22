@@ -45,6 +45,7 @@ class IFM13Explorer;
 class IFMProofObligation;
 class ClauseMinimizerQBF;
 class CounterGenSAT;
+class CNFImplExtractor;
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -73,7 +74,7 @@ class CounterGenSAT;
 /// combining different methods.
 ///
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.0.0
+/// @version 1.1.0
 class ParallelLearner : public BackEnd
 {
 public:
@@ -86,7 +87,9 @@ public:
 ///        of cores in your CPU. It can also make sense to combine several methods running in
 ///        several threads on one single core. The methods can complement each other and
 ///        achieve a speedup compared to one single method in isolation.
-  ParallelLearner(size_t nr_of_threads);
+/// @param impl_extractor The engine to use for circuit extraction. It will be deleted by
+///        this class.
+  ParallelLearner(size_t nr_of_threads, CNFImplExtractor *impl_extractor);
 
 // -------------------------------------------------------------------------------------------
 ///
@@ -357,6 +360,13 @@ protected:
 /// The clauses assigning the literal are part of #prev_trans_or_initial_.
   int current_state_is_initial_;
 
+// -------------------------------------------------------------------------------------------
+///
+/// @brief The engine to use for circuit extraction.
+///
+/// It will be deleted by this class (in the destructor).
+  CNFImplExtractor *impl_extractor_;
+
 private:
 
 // -------------------------------------------------------------------------------------------
@@ -397,7 +407,7 @@ private:
 /// coordinating and communicating solver restarts via the ParallelLearner.
 ///
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.0.0
+/// @version 1.1.0
 class ClauseExplorerSAT
 {
 public:
@@ -838,7 +848,7 @@ private:
 /// to generalize them further by dropping even more literals.
 ///
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.0.0
+/// @version 1.1.0
 class CounterGenSAT
 {
 public:
@@ -1166,7 +1176,7 @@ private:
 /// in LearnSynthQBF.
 ///
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.0.0
+/// @version 1.1.0
 class ClauseMinimizerQBF
 {
 public:
@@ -1262,7 +1272,7 @@ private:
 /// @see IFM13Synth
 ///
 /// @author Robert Koenighofer (robert.koenighofer@iaik.tugraz.at)
-/// @version 1.0.0
+/// @version 1.1.0
 class IFM13Explorer
 {
 public:

@@ -2,11 +2,12 @@ var searchData=
 [
   ['t_5f',['t_',['../classAIG2CNF.html#af2a7f6ecdcec3b5b2f37a11b0adde65a',1,'AIG2CNF']]],
   ['templ_5fparams',['TEMPL_PARAMS',['../classVarInfo.html#a64d1da76cf84fe674e5fef9764ef11cfa5df778a9d0a12c26b1725f2440d66ff4',1,'VarInfo']]],
-  ['templatesynth',['TemplateSynth',['../classTemplateSynth.html',1,'TemplateSynth'],['../classTemplateSynth.html#a157066a0bba6b543ac9cc6ff3a4223d7',1,'TemplateSynth::TemplateSynth()']]],
+  ['templatesynth',['TemplateSynth',['../classTemplateSynth.html',1,'TemplateSynth'],['../classTemplateSynth.html#a56d5f285781e5871bf391acc38acb0aa',1,'TemplateSynth::TemplateSynth()']]],
   ['templatesynth_2ecpp',['TemplateSynth.cpp',['../TemplateSynth_8cpp.html',1,'']]],
   ['templatesynth_2eh',['TemplateSynth.h',['../TemplateSynth_8h.html',1,'']]],
   ['templs_5fparams_5f',['templs_params_',['../classVarManager.html#aea1a2e16d5a0ff433d47a4f28cc2ae3b',1,'VarManager']]],
   ['tmp',['TMP',['../classVarInfo.html#a64d1da76cf84fe674e5fef9764ef11cfa84a2d8d86f004930fe564dc5b395b29f',1,'VarInfo']]],
+  ['tmp_5fdir_5f',['tmp_dir_',['../classOptions.html#a9428fdd0bd5f4f256c18a4d7db9c0647',1,'Options']]],
   ['tmp_5fvars_5f',['tmp_vars_',['../classVarManager.html#aa22f9522aa27237a2dee30503c20e45f',1,'VarManager']]],
   ['todo_20list',['Todo List',['../todo.html',1,'']]],
   ['tokenize',['tokenize',['../classStringUtils.html#a5460a1950dad8272b36ba35a2435f0a1',1,'StringUtils']]],
@@ -19,6 +20,8 @@ var searchData=
   ['tptp_5fquery_5f',['tptp_query_',['../classEPRSynthesizer.html#a5b9074e1ca3d1a12150c6ae639f475fa',1,'EPRSynthesizer']]],
   ['trans_5f',['trans_',['../classAIG2CNF.html#aedcb9a8efe69fe03721fdc17c5d11bfc',1,'AIG2CNF']]],
   ['trans_5feq_5ft_5f',['trans_eq_t_',['../classAIG2CNF.html#af7e9b65092f626865a4aa541a48e4f1b',1,'AIG2CNF']]],
+  ['trans_5ftmp_5fdeps_5f',['trans_tmp_deps_',['../classAIG2CNF.html#a8617860055dfa8cbcc1f572676f57b84',1,'AIG2CNF']]],
+  ['trans_5ftmp_5fdeps_5ftrans_5f',['trans_tmp_deps_trans_',['../classAIG2CNF.html#a7e3c2e9acc3357e837349e30447b93c3',1,'AIG2CNF']]],
   ['triggerexplorerrestart',['triggerExplorerRestart',['../classParallelLearner.html#a2b8e4330afb7e99c19d2d7da15c30cc3',1,'ParallelLearner']]],
   ['trim',['trim',['../classStringUtils.html#afea8320e4d8b1725634faf46e27e9453',1,'StringUtils']]],
   ['trimin',['trimIn',['../classStringUtils.html#a04fe6c34d3425e8726712163ebb99fbf',1,'StringUtils']]]

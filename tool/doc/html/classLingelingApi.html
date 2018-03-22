@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">demiurge
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A synthesis tool for safety specifications.</div>
   </td>
@@ -187,7 +187,7 @@ Private Member Functions</h2></td></tr>
 <div class="textblock"><p>Interfaces the Lingeling SAT-solver via its API. </p>
 <p>This class represents an interface to the SAT-solver Lingeling (see <a href="http://fmv.jku.at/lingeling/">http://fmv.jku.at/lingeling/</a>). It is a concrete implementation of the <a class="el" href="classSatSolver.html" title="An abstract interface for all SAT-solver implementations.">SatSolver</a> interface. For a given <a class="el" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a>, this class is able to determine satisfiability. Furthermore, in case of satisfiability, it can extract satisfying assignments. In case of unsatisfiability, it can compute an unsatisfiable core. It can be used in two different ways. In the incremental usage scenario, all information the solver has learned so far is retained. Methods for incremental solving start with 'inc'. Other methods (like <a class="el" href="classLingelingApi.html#a38358f64ded244e2e3d843d0565f0177" title="Checks if a CNF is satisfiable.">isSat()</a> or <a class="el" href="classLingelingApi.html#a8f147b59f0ebabc35a20d295f28d499f" title="Checks if a CNF is satisfiable and extracts a model or an unsatisfiable core.">isSatModelOrCore()</a>) instantiate a fresh solver instance for every call.</p>
 <dl class="section author"><dt>Author</dt><dd>Robert Koenighofer (<a href="#" onclick="location.href='mai'+'lto:'+'rob'+'er'+'t.k'+'oe'+'nig'+'ho'+'fer'+'@i'+'aik'+'.t'+'ugr'+'az'+'.at'; return false;">rober<span style="display: none;">.nosp@m.</span>t.ko<span style="display: none;">.nosp@m.</span>enigh<span style="display: none;">.nosp@m.</span>ofer<span style="display: none;">.nosp@m.</span>@iaik<span style="display: none;">.nosp@m.</span>.tug<span style="display: none;">.nosp@m.</span>raz.a<span style="display: none;">.nosp@m.</span>t</a>) </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>1.0.0 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.1.0 </dd></dl>
 
 <p>Definition at line <a class="el" href="LingelingApi_8h_source.html#l00055">55</a> of file <a class="el" href="LingelingApi_8h_source.html">LingelingApi.h</a>.</p>
 </div><h2>Member Typedef Documentation</h2>
@@ -407,7 +407,7 @@ Private Member Functions</h2></td></tr>
 
 <p>References <a class="el" href="SatSolver_8h_source.html#l00428">SatSolver::min_cores_</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00178">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00326">LearnSynthSAT::computeWinningRegionRG()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00510">LearnSynthSAT::computeWinningRegionRGRC()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00180">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00328">LearnSynthSAT::computeWinningRegionPlainDep()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00508">LearnSynthSAT::computeWinningRegionPlainDep2()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00759">LearnSynthSAT::computeWinningRegionRG()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00943">LearnSynthSAT::computeWinningRegionRGRC()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00359">LearningImplExtractor::runLearningJiangSAT()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l01172">LearningImplExtractor::runLearningJiangSATInc1()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l01379">LearningImplExtractor::runLearningJiangSATInc2()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00527">LearningImplExtractor::runLearningJiangSATTmp()</a>, <a class="el" href="LearningImplExtractor_8cpp_source.html#l00715">LearningImplExtractor::runLearningJiangSATTmpCtrl()</a>, and <a class="el" href="LearningImplExtractor_8cpp_source.html#l00947">LearningImplExtractor::runLearningJiangSATTmpCtrlInc2()</a>.</p>
 
 </div>
 </div>
@@ -445,7 +445,7 @@ Private Member Functions</h2></td></tr>
 
 <p>References <a class="el" href="SatSolver_8h_source.html#l00433">SatSolver::rand_models_</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00178">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00326">LearnSynthSAT::computeWinningRegionRG()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00510">LearnSynthSAT::computeWinningRegionRGRC()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00180">LearnSynthSAT::computeWinningRegionPlain()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00328">LearnSynthSAT::computeWinningRegionPlainDep()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00508">LearnSynthSAT::computeWinningRegionPlainDep2()</a>, <a class="el" href="LearnSynthSAT_8cpp_source.html#l00759">LearnSynthSAT::computeWinningRegionRG()</a>, and <a class="el" href="LearnSynthSAT_8cpp_source.html#l00943">LearnSynthSAT::computeWinningRegionRGRC()</a>.</p>
 
 </div>
 </div>
@@ -630,7 +630,7 @@ Private Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="LingelingApi_8cpp_source.html#l00159">159</a> of file <a class="el" href="LingelingApi_8cpp_source.html">LingelingApi.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8cpp_source.html#l00273">CNF::getClauses()</a>, <a class="el" href="LingelingApi_8h_source.html#l00384">incr_stack_</a>, and <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>.</p>
+<p>References <a class="el" href="CNF_8cpp_source.html#l00346">CNF::getClauses()</a>, <a class="el" href="LingelingApi_8h_source.html#l00384">incr_stack_</a>, and <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>.</p>
 
 </div>
 </div>
@@ -671,8 +671,6 @@ Private Member Functions</h2></td></tr>
 <p>Definition at line <a class="el" href="LingelingApi_8cpp_source.html#l00213">213</a> of file <a class="el" href="LingelingApi_8cpp_source.html">LingelingApi.cpp</a>.</p>
 
 <p>References <a class="el" href="LingelingApi_8h_source.html#l00384">incr_stack_</a>, and <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>.</p>
-
-<p>Referenced by <a class="el" href="LingelingApi_8cpp_source.html#l00329">incIsSatModelOrCore()</a>.</p>
 
 </div>
 </div>
@@ -883,9 +881,7 @@ Private Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="LingelingApi_8cpp_source.html#l00264">264</a> of file <a class="el" href="LingelingApi_8cpp_source.html">LingelingApi.cpp</a>.</p>
 
-<p>References <a class="el" href="LingelingApi_8h_source.html#l00384">incr_stack_</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="SatSolver_8h_source.html#l00428">SatSolver::min_cores_</a>, <a class="el" href="SatSolver_8h_source.html#l00433">SatSolver::rand_models_</a>, <a class="el" href="LingelingApi_8cpp_source.html#l00432">randModel()</a>, and <a class="el" href="Utils_8cpp_source.html#l00161">Utils::remove()</a>.</p>
-
-<p>Referenced by <a class="el" href="LingelingApi_8cpp_source.html#l00329">incIsSatModelOrCore()</a>.</p>
+<p>References <a class="el" href="LingelingApi_8h_source.html#l00384">incr_stack_</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="SatSolver_8h_source.html#l00428">SatSolver::min_cores_</a>, <a class="el" href="SatSolver_8h_source.html#l00433">SatSolver::rand_models_</a>, <a class="el" href="LingelingApi_8cpp_source.html#l00432">randModel()</a>, and <a class="el" href="Utils_8cpp_source.html#l00176">Utils::remove()</a>.</p>
 
 </div>
 </div>
@@ -950,7 +946,7 @@ Private Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="LingelingApi_8cpp_source.html#l00329">329</a> of file <a class="el" href="LingelingApi_8cpp_source.html">LingelingApi.cpp</a>.</p>
 
-<p>References <a class="el" href="LingelingApi_8cpp_source.html#l00213">incAddCube()</a>, <a class="el" href="LingelingApi_8cpp_source.html#l00264">incIsSatModelOrCore()</a>, <a class="el" href="LingelingApi_8cpp_source.html#l00423">incPop()</a>, and <a class="el" href="LingelingApi_8cpp_source.html#l00413">incPush()</a>.</p>
+<p>References <a class="el" href="LingelingApi_8h_source.html#l00384">incr_stack_</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="SatSolver_8h_source.html#l00428">SatSolver::min_cores_</a>, <a class="el" href="SatSolver_8h_source.html#l00433">SatSolver::rand_models_</a>, <a class="el" href="LingelingApi_8cpp_source.html#l00432">randModel()</a>, and <a class="el" href="Utils_8cpp_source.html#l00176">Utils::remove()</a>.</p>
 
 </div>
 </div>
@@ -983,8 +979,6 @@ Private Member Functions</h2></td></tr>
 
 <p>References <a class="el" href="LingelingApi_8h_source.html#l00384">incr_stack_</a>, and <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>.</p>
 
-<p>Referenced by <a class="el" href="LingelingApi_8cpp_source.html#l00329">incIsSatModelOrCore()</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a91c858d2a36a4fbe580909a793802a76"></a>
@@ -1016,8 +1010,6 @@ Private Member Functions</h2></td></tr>
 <p>Definition at line <a class="el" href="LingelingApi_8cpp_source.html#l00413">413</a> of file <a class="el" href="LingelingApi_8cpp_source.html">LingelingApi.cpp</a>.</p>
 
 <p>References <a class="el" href="LingelingApi_8h_source.html#l00384">incr_stack_</a>, and <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>.</p>
-
-<p>Referenced by <a class="el" href="LingelingApi_8cpp_source.html#l00329">incIsSatModelOrCore()</a>.</p>
 
 </div>
 </div>
@@ -1057,9 +1049,9 @@ Private Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="LingelingApi_8cpp_source.html#l00051">51</a> of file <a class="el" href="LingelingApi_8cpp_source.html">LingelingApi.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8cpp_source.html#l00273">CNF::getClauses()</a>, and <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>.</p>
+<p>References <a class="el" href="CNF_8cpp_source.html#l00346">CNF::getClauses()</a>, and <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>.</p>
 
-<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l00753">LearnSynthSAT::debugCheckWinReg()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00631">LearnSynthQBFInd::debugCheckWinRegReach()</a>, and <a class="el" href="LingelingApi_8cpp_source.html#l00072">isSatModelOrCore()</a>.</p>
+<p>Referenced by <a class="el" href="LearnSynthSAT_8cpp_source.html#l01186">LearnSynthSAT::debugCheckWinReg()</a>, <a class="el" href="LearnSynthQBFInd_8cpp_source.html#l00633">LearnSynthQBFInd::debugCheckWinRegReach()</a>, and <a class="el" href="LingelingApi_8cpp_source.html#l00072">isSatModelOrCore()</a>.</p>
 
 </div>
 </div>
@@ -1124,7 +1116,7 @@ Private Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="LingelingApi_8cpp_source.html#l00072">72</a> of file <a class="el" href="LingelingApi_8cpp_source.html">LingelingApi.cpp</a>.</p>
 
-<p>References <a class="el" href="CNF_8cpp_source.html#l00122">CNF::add1LitClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00273">CNF::getClauses()</a>, <a class="el" href="LingelingApi_8cpp_source.html#l00051">isSat()</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="SatSolver_8h_source.html#l00428">SatSolver::min_cores_</a>, <a class="el" href="SatSolver_8h_source.html#l00433">SatSolver::rand_models_</a>, <a class="el" href="LingelingApi_8cpp_source.html#l00432">randModel()</a>, and <a class="el" href="Utils_8cpp_source.html#l00161">Utils::remove()</a>.</p>
+<p>References <a class="el" href="CNF_8cpp_source.html#l00169">CNF::add1LitClause()</a>, <a class="el" href="CNF_8cpp_source.html#l00346">CNF::getClauses()</a>, <a class="el" href="LingelingApi_8cpp_source.html#l00051">isSat()</a>, <a class="el" href="defines_8h_source.html#l00059">MASSERT</a>, <a class="el" href="SatSolver_8h_source.html#l00428">SatSolver::min_cores_</a>, <a class="el" href="SatSolver_8h_source.html#l00433">SatSolver::rand_models_</a>, <a class="el" href="LingelingApi_8cpp_source.html#l00432">randModel()</a>, and <a class="el" href="Utils_8cpp_source.html#l00176">Utils::remove()</a>.</p>
 
 </div>
 </div>
@@ -1357,7 +1349,7 @@ Private Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 14 2013 15:15:45 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jul 15 2014 12:30:22 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

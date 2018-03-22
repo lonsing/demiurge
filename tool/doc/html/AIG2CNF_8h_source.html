@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">demiurge
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A synthesis tool for safety specifications.</div>
   </td>
@@ -162,56 +162,72 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="comment"></span>  <span class="keyword">const</span> <a class="code" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a>&amp; <a class="code" href="classAIG2CNF.html#ae20be327c24ca3ed7493b56a254d6a63" title="Returns a CNF representing the initial state.">getInitial</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00255"></a><span class="lineno"><a class="code" href="classAIG2CNF.html#aedcb9a8efe69fe03721fdc17c5d11bfc">  255</a></span>&#160;<span class="comment"></span>  <a class="code" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> <a class="code" href="classAIG2CNF.html#aedcb9a8efe69fe03721fdc17c5d11bfc" title="The transition relation in CNF.">trans_</a>;</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00265"></a><span class="lineno"><a class="code" href="classAIG2CNF.html#af7e9b65092f626865a4aa541a48e4f1b">  265</a></span>&#160;<span class="comment"></span>  <a class="code" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> <a class="code" href="classAIG2CNF.html#af7e9b65092f626865a4aa541a48e4f1b" title="A CNF saying that the transition holds iff t_  is true.">trans_eq_t_</a>;</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00273"></a><span class="lineno"><a class="code" href="classAIG2CNF.html#af2a7f6ecdcec3b5b2f37a11b0adde65a">  273</a></span>&#160;<span class="comment"></span>  <span class="keywordtype">int</span> <a class="code" href="classAIG2CNF.html#af2a7f6ecdcec3b5b2f37a11b0adde65a" title="The literal assigned by trans_eq_t_ .">t_</a>;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;<span class="comment"></span>  <span class="keyword">const</span> map&lt;int, set&lt;VarInfo&gt; &gt;&amp; <a class="code" href="classAIG2CNF.html#a3f4076dda7514fc3015867494be3aaac" title="Returns dependencies of temporary variables in the transition relation.">getTmpDeps</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="comment"></span><span class="comment">//          map from temporary CNF variables to the set of other non-temporary variables on</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="comment"></span>  <span class="keyword">const</span> map&lt;int, set&lt;VarInfo&gt; &gt;&amp; <a class="code" href="classAIG2CNF.html#a87d64a22868a17f6c3cf8dd3af88f02b" title="Returns transitive dependencies of temporary variables in the transition relation.">getTmpDepsTrans</a>();</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00282"></a><span class="lineno"><a class="code" href="classAIG2CNF.html#a394d2a3600bc3bec864cf08acac61437">  282</a></span>&#160;<span class="comment"></span>  <a class="code" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> <a class="code" href="classAIG2CNF.html#a394d2a3600bc3bec864cf08acac61437" title="A CNF representing the set of safe states.">safe_</a>;</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00291"></a><span class="lineno"><a class="code" href="classAIG2CNF.html#afbfcf3a27261a2283a99362d2527d64f">  291</a></span>&#160;<span class="comment"></span>  <a class="code" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> <a class="code" href="classAIG2CNF.html#afbfcf3a27261a2283a99362d2527d64f" title="A CNF representing the set of unsafe states.">unsafe_</a>;</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00300"></a><span class="lineno"><a class="code" href="classAIG2CNF.html#a057c6a3159253267c99f115b7d724ee2">  300</a></span>&#160;<span class="comment"></span>  <a class="code" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> <a class="code" href="classAIG2CNF.html#a057c6a3159253267c99f115b7d724ee2" title="A CNF saying that the next state is safe.">next_safe_</a>;</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00309"></a><span class="lineno"><a class="code" href="classAIG2CNF.html#a0430b9b4ff38a7b0ae339fb0abd191c9">  309</a></span>&#160;<span class="comment"></span>  <a class="code" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> <a class="code" href="classAIG2CNF.html#a0430b9b4ff38a7b0ae339fb0abd191c9" title="A CNF saying that the next state is unsafe.">next_unsafe_</a>;</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00319"></a><span class="lineno"><a class="code" href="classAIG2CNF.html#a83d0b27b61d672ecf2bd007e0d473439">  319</a></span>&#160;<span class="comment"></span>  <a class="code" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> <a class="code" href="classAIG2CNF.html#a83d0b27b61d672ecf2bd007e0d473439" title="A CNF representing the initial state.">initial_</a>;</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;<span class="comment"></span>  <a class="code" href="classAIG2CNF.html#a2da966a41a8ff74e6ecebf0d1d3d3829" title="Constructor.">AIG2CNF</a>();</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> <a class="code" href="classAIG2CNF.html#ab97283bcce3d32f458ed7717b452e931" title="Destructor.">~AIG2CNF</a>();</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;<span class="comment"></span>  <a class="code" href="classAIG2CNF.html#a2da966a41a8ff74e6ecebf0d1d3d3829" title="Constructor.">AIG2CNF</a>(<span class="keyword">const</span> <a class="code" href="classAIG2CNF.html" title="Transforms an AIGER specification into CNF.">AIG2CNF</a> &amp;other);</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;<span class="comment"></span>  <a class="code" href="classAIG2CNF.html" title="Transforms an AIGER specification into CNF.">AIG2CNF</a> &amp;<a class="code" href="classAIG2CNF.html#a1ee82fcfe444616f35078957ec762489" title="Assignment operator.">operator= </a>(<span class="keyword">const</span> <a class="code" href="classAIG2CNF.html" title="Transforms an AIGER specification into CNF.">AIG2CNF</a> &amp;other);</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00363"></a><span class="lineno"><a class="code" href="classAIG2CNF.html#ae298ae4804c63f5bac4dfab7528d35ad">  363</a></span>&#160;<span class="comment"></span>  <span class="keyword">static</span> <a class="code" href="classAIG2CNF.html" title="Transforms an AIGER specification into CNF.">AIG2CNF</a> *<a class="code" href="classAIG2CNF.html#ae298ae4804c63f5bac4dfab7528d35ad" title="The one and only instance of this class.">instance_</a>;</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;};</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;<span class="preprocessor">#endif // AIG2CNF_H__</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno"><a class="code" href="classAIG2CNF.html#a2f57817266c9a882dffc8c5dab1fd3c4">  279</a></span>&#160;<span class="comment"></span>  <span class="keyword">typedef</span> map&lt;int, set&lt;VarInfo&gt; &gt;::const_iterator <a class="code" href="classAIG2CNF.html#a2f57817266c9a882dffc8c5dab1fd3c4" title="A type for a const-iterator over the dependencies of temporary variables.">DepConstIter</a>;</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00296"></a><span class="lineno"><a class="code" href="classAIG2CNF.html#aedcb9a8efe69fe03721fdc17c5d11bfc">  296</a></span>&#160;<span class="comment"></span>  <a class="code" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> <a class="code" href="classAIG2CNF.html#aedcb9a8efe69fe03721fdc17c5d11bfc" title="The transition relation in CNF.">trans_</a>;</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00306"></a><span class="lineno"><a class="code" href="classAIG2CNF.html#af7e9b65092f626865a4aa541a48e4f1b">  306</a></span>&#160;<span class="comment"></span>  <a class="code" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> <a class="code" href="classAIG2CNF.html#af7e9b65092f626865a4aa541a48e4f1b" title="A CNF saying that the transition holds iff t_  is true.">trans_eq_t_</a>;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00314"></a><span class="lineno"><a class="code" href="classAIG2CNF.html#af2a7f6ecdcec3b5b2f37a11b0adde65a">  314</a></span>&#160;<span class="comment"></span>  <span class="keywordtype">int</span> <a class="code" href="classAIG2CNF.html#af2a7f6ecdcec3b5b2f37a11b0adde65a" title="The literal assigned by trans_eq_t_ .">t_</a>;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00323"></a><span class="lineno"><a class="code" href="classAIG2CNF.html#a394d2a3600bc3bec864cf08acac61437">  323</a></span>&#160;<span class="comment"></span>  <a class="code" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> <a class="code" href="classAIG2CNF.html#a394d2a3600bc3bec864cf08acac61437" title="A CNF representing the set of safe states.">safe_</a>;</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00332"></a><span class="lineno"><a class="code" href="classAIG2CNF.html#afbfcf3a27261a2283a99362d2527d64f">  332</a></span>&#160;<span class="comment"></span>  <a class="code" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> <a class="code" href="classAIG2CNF.html#afbfcf3a27261a2283a99362d2527d64f" title="A CNF representing the set of unsafe states.">unsafe_</a>;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00341"></a><span class="lineno"><a class="code" href="classAIG2CNF.html#a057c6a3159253267c99f115b7d724ee2">  341</a></span>&#160;<span class="comment"></span>  <a class="code" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> <a class="code" href="classAIG2CNF.html#a057c6a3159253267c99f115b7d724ee2" title="A CNF saying that the next state is safe.">next_safe_</a>;</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00350"></a><span class="lineno"><a class="code" href="classAIG2CNF.html#a0430b9b4ff38a7b0ae339fb0abd191c9">  350</a></span>&#160;<span class="comment"></span>  <a class="code" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> <a class="code" href="classAIG2CNF.html#a0430b9b4ff38a7b0ae339fb0abd191c9" title="A CNF saying that the next state is unsafe.">next_unsafe_</a>;</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00360"></a><span class="lineno"><a class="code" href="classAIG2CNF.html#a83d0b27b61d672ecf2bd007e0d473439">  360</a></span>&#160;<span class="comment"></span>  <a class="code" href="classCNF.html" title="Represents a propositional formula in Conjunctive Normal Form.">CNF</a> <a class="code" href="classAIG2CNF.html#a83d0b27b61d672ecf2bd007e0d473439" title="A CNF representing the initial state.">initial_</a>;</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00372"></a><span class="lineno"><a class="code" href="classAIG2CNF.html#a8617860055dfa8cbcc1f572676f57b84">  372</a></span>&#160;<span class="comment"></span>  map&lt;int, set&lt;VarInfo&gt; &gt; <a class="code" href="classAIG2CNF.html#a8617860055dfa8cbcc1f572676f57b84" title="The variables on which a temporary variable of the transition relation depends.">trans_tmp_deps_</a>;</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00382"></a><span class="lineno"><a class="code" href="classAIG2CNF.html#a7e3c2e9acc3357e837349e30447b93c3">  382</a></span>&#160;<span class="comment"></span>  map&lt;int, set&lt;VarInfo&gt; &gt; <a class="code" href="classAIG2CNF.html#a7e3c2e9acc3357e837349e30447b93c3" title="Like trans_tmp_deps_, but stores (transitive) dependencies non non-temporary vars.">trans_tmp_deps_trans_</a>;</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;<span class="comment"></span>  <a class="code" href="classAIG2CNF.html#a2da966a41a8ff74e6ecebf0d1d3d3829" title="Constructor.">AIG2CNF</a>();</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> <a class="code" href="classAIG2CNF.html#ab97283bcce3d32f458ed7717b452e931" title="Destructor.">~AIG2CNF</a>();</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;<span class="comment"></span>  <a class="code" href="classAIG2CNF.html#a2da966a41a8ff74e6ecebf0d1d3d3829" title="Constructor.">AIG2CNF</a>(<span class="keyword">const</span> <a class="code" href="classAIG2CNF.html" title="Transforms an AIGER specification into CNF.">AIG2CNF</a> &amp;other);</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;<span class="comment"></span>  <a class="code" href="classAIG2CNF.html" title="Transforms an AIGER specification into CNF.">AIG2CNF</a> &amp;<a class="code" href="classAIG2CNF.html#a1ee82fcfe444616f35078957ec762489" title="Assignment operator.">operator= </a>(<span class="keyword">const</span> <a class="code" href="classAIG2CNF.html" title="Transforms an AIGER specification into CNF.">AIG2CNF</a> &amp;other);</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;<span class="comment">// -------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00426"></a><span class="lineno"><a class="code" href="classAIG2CNF.html#ae298ae4804c63f5bac4dfab7528d35ad">  426</a></span>&#160;<span class="comment"></span>  <span class="keyword">static</span> <a class="code" href="classAIG2CNF.html" title="Transforms an AIGER specification into CNF.">AIG2CNF</a> *<a class="code" href="classAIG2CNF.html#ae298ae4804c63f5bac4dfab7528d35ad" title="The one and only instance of this class.">instance_</a>;</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;};</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;<span class="preprocessor">#endif // AIG2CNF_H__</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 14 2013 15:15:43 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jul 15 2014 12:30:19 for demiurge by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

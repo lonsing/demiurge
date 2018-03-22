@@ -1,0 +1,2310 @@
+=====================  unr.aag =====================
+=====================  eq1.aag =====================
+=====================  ex1.aag =====================
+=====================  ex2.aag =====================
+=====================  add2n.aag =====================
+Time for relation determinization: 0.00 (0.03)
+Synthesis time: 0.42 sec (Real time) / 0.04 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 31 6 2 1 23
+Raw AIGER output size: aag 31 4 2 1 25
+=====================  add2y.aag =====================
+Time for relation determinization: 0.00 (0.01)
+Synthesis time: 0.09 sec (Real time) / 0.05 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 25 6 2 1 17
+Raw AIGER output size: aag 25 4 2 1 19
+=====================  add4n.aag =====================
+Time for relation determinization: 0.02 (0.02)
+Synthesis time: 0.09 sec (Real time) / 0.04 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 75 12 2 1 61
+Raw AIGER output size: aag 75 8 2 1 65
+=====================  add4y.aag =====================
+Time for relation determinization: 0.02 (0.01)
+Synthesis time: 0.09 sec (Real time) / 0.04 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 59 12 2 1 45
+Raw AIGER output size: aag 59 8 2 1 49
+=====================  add6n.aag =====================
+Time for relation determinization: 0.03 (0.03)
+Synthesis time: 0.11 sec (Real time) / 0.06 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 119 18 2 1 99
+Raw AIGER output size: aag 119 12 2 1 105
+=====================  add6y.aag =====================
+Time for relation determinization: 0.03 (0.03)
+Synthesis time: 0.11 sec (Real time) / 0.06 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 93 18 2 1 73
+Raw AIGER output size: aag 93 12 2 1 79
+=====================  add8n.aag =====================
+Time for relation determinization: 0.03 (0.04)
+Synthesis time: 0.14 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 163 24 2 1 137
+Raw AIGER output size: aag 163 16 2 1 145
+=====================  add8y.aag =====================
+Time for relation determinization: 0.02 (0.03)
+Synthesis time: 0.14 sec (Real time) / 0.09 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 127 24 2 1 101
+Raw AIGER output size: aag 127 16 2 1 109
+=====================  add10n.aag =====================
+Time for relation determinization: 0.07 (0.07)
+Synthesis time: 0.18 sec (Real time) / 0.13 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 207 30 2 1 175
+Raw AIGER output size: aag 207 20 2 1 185
+=====================  add10y.aag =====================
+Time for relation determinization: 0.03 (0.04)
+Synthesis time: 0.15 sec (Real time) / 0.10 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 161 30 2 1 129
+Raw AIGER output size: aag 161 20 2 1 139
+=====================  add12n.aag =====================
+Time for relation determinization: 0.11 (0.11)
+Synthesis time: 0.21 sec (Real time) / 0.16 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 251 36 2 1 213
+Raw AIGER output size: aag 251 24 2 1 225
+=====================  add12y.aag =====================
+Time for relation determinization: 0.04 (0.05)
+Synthesis time: 0.17 sec (Real time) / 0.14 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 195 36 2 1 157
+Raw AIGER output size: aag 195 24 2 1 169
+=====================  add14n.aag =====================
+Time for relation determinization: 0.07 (0.11)
+Synthesis time: 0.24 sec (Real time) / 0.17 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 295 42 2 1 251
+Raw AIGER output size: aag 295 28 2 1 265
+=====================  add14y.aag =====================
+Time for relation determinization: 0.07 (0.11)
+Synthesis time: 0.24 sec (Real time) / 0.18 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 229 42 2 1 185
+Raw AIGER output size: aag 229 28 2 1 199
+=====================  add16n.aag =====================
+Time for relation determinization: 0.10 (0.11)
+Synthesis time: 0.25 sec (Real time) / 0.20 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 339 48 2 1 289
+Raw AIGER output size: aag 339 32 2 1 305
+=====================  add16y.aag =====================
+Time for relation determinization: 0.08 (0.09)
+Synthesis time: 0.26 sec (Real time) / 0.20 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 263 48 2 1 213
+Raw AIGER output size: aag 263 32 2 1 229
+=====================  add18n.aag =====================
+Time for relation determinization: 0.13 (0.14)
+Synthesis time: 0.35 sec (Real time) / 0.26 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 383 54 2 1 327
+Raw AIGER output size: aag 383 36 2 1 345
+=====================  add18y.aag =====================
+Time for relation determinization: 0.09 (0.10)
+Synthesis time: 0.27 sec (Real time) / 0.21 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 297 54 2 1 241
+Raw AIGER output size: aag 297 36 2 1 259
+=====================  add20n.aag =====================
+Time for relation determinization: 0.16 (0.18)
+Synthesis time: 0.39 sec (Real time) / 0.28 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 427 60 2 1 365
+Raw AIGER output size: aag 427 40 2 1 385
+=====================  add20y.aag =====================
+Time for relation determinization: 0.17 (0.18)
+Synthesis time: 0.39 sec (Real time) / 0.31 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 331 60 2 1 269
+Raw AIGER output size: aag 331 40 2 1 289
+=====================  cnt2n.aag =====================
+Time for relation determinization: 0.02 (0.01)
+Synthesis time: 0.10 sec (Real time) / 0.04 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 35 2 3 1 30
+Raw AIGER output size: aag 37 1 3 1 33
+=====================  cnt2y.aag =====================
+Time for relation determinization: 0.00 (0.01)
+Synthesis time: 0.09 sec (Real time) / 0.05 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 16 2 3 1 11
+Raw AIGER output size: aag 16 1 3 1 12
+=====================  cnt3n.aag =====================
+Time for relation determinization: 0.02 (0.01)
+Synthesis time: 0.08 sec (Real time) / 0.04 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 51 2 4 1 45
+Raw AIGER output size: aag 53 1 4 1 48
+=====================  cnt3y.aag =====================
+Time for relation determinization: 0.01 (0.01)
+Synthesis time: 0.08 sec (Real time) / 0.04 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 23 2 4 1 17
+Raw AIGER output size: aag 25 1 4 1 20
+=====================  cnt4n.aag =====================
+Time for relation determinization: 0.01 (0.01)
+Synthesis time: 0.08 sec (Real time) / 0.04 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 67 2 5 1 60
+Raw AIGER output size: aag 69 1 5 1 63
+=====================  cnt4y.aag =====================
+Time for relation determinization: 0.01 (0.01)
+Synthesis time: 0.08 sec (Real time) / 0.03 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 30 2 5 1 23
+Raw AIGER output size: aag 30 1 5 1 24
+=====================  cnt5n.aag =====================
+Time for relation determinization: 0.01 (0.02)
+Synthesis time: 0.09 sec (Real time) / 0.05 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 83 2 6 1 75
+Raw AIGER output size: aag 85 1 6 1 78
+=====================  cnt5y.aag =====================
+Time for relation determinization: 0.01 (0.01)
+Synthesis time: 0.08 sec (Real time) / 0.04 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 37 2 6 1 29
+Raw AIGER output size: aag 37 1 6 1 30
+=====================  cnt6n.aag =====================
+Time for relation determinization: 0.01 (0.02)
+Synthesis time: 0.09 sec (Real time) / 0.04 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 99 2 7 1 90
+Raw AIGER output size: aag 101 1 7 1 93
+=====================  cnt6y.aag =====================
+Time for relation determinization: 0.01 (0.01)
+Synthesis time: 0.09 sec (Real time) / 0.04 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 44 2 7 1 35
+Raw AIGER output size: aag 44 1 7 1 36
+=====================  cnt7n.aag =====================
+Time for relation determinization: 0.02 (0.02)
+Synthesis time: 0.11 sec (Real time) / 0.07 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.06 sec (Real time) / 0.06 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 115 2 8 1 105
+Raw AIGER output size: aag 117 1 8 1 108
+=====================  cnt7y.aag =====================
+Time for relation determinization: 0.01 (0.02)
+Synthesis time: 0.10 sec (Real time) / 0.07 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.04 sec (Real time) / 0.04 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 51 2 8 1 41
+Raw AIGER output size: aag 51 1 8 1 42
+=====================  cnt8n.aag =====================
+Time for relation determinization: 0.01 (0.02)
+Synthesis time: 0.13 sec (Real time) / 0.09 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.17 sec (Real time) / 0.17 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 131 2 9 1 120
+Raw AIGER output size: aag 133 1 9 1 123
+=====================  cnt8y.aag =====================
+Time for relation determinization: 0.01 (0.02)
+Synthesis time: 0.12 sec (Real time) / 0.09 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.13 sec (Real time) / 0.13 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 58 2 9 1 47
+Raw AIGER output size: aag 58 1 9 1 48
+=====================  cnt9n.aag =====================
+Time for relation determinization: 0.02 (0.02)
+Synthesis time: 0.18 sec (Real time) / 0.14 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.61 sec (Real time) / 0.57 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 147 2 10 1 135
+Raw AIGER output size: aag 149 1 10 1 138
+=====================  cnt9y.aag =====================
+Time for relation determinization: 0.02 (0.02)
+Synthesis time: 0.18 sec (Real time) / 0.12 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.40 sec (Real time) / 0.38 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 65 2 10 1 53
+Raw AIGER output size: aag 65 1 10 1 54
+=====================  cnt10n.aag =====================
+Time for relation determinization: 0.03 (0.04)
+Synthesis time: 0.30 sec (Real time) / 0.25 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 2.27 sec (Real time) / 2.19 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 163 2 11 1 150
+Raw AIGER output size: aag 165 1 11 1 153
+=====================  cnt10y.aag =====================
+Time for relation determinization: 0.03 (0.03)
+Synthesis time: 0.29 sec (Real time) / 0.23 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 1.33 sec (Real time) / 1.26 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 72 2 11 1 59
+Raw AIGER output size: aag 72 1 11 1 60
+=====================  cnt11n.aag =====================
+Time for relation determinization: 0.03 (0.03)
+Synthesis time: 0.53 sec (Real time) / 0.48 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 6.71 sec (Real time) / 6.60 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 179 2 12 1 165
+Raw AIGER output size: aag 181 1 12 1 168
+=====================  cnt11y.aag =====================
+Time for relation determinization: 0.02 (0.03)
+Synthesis time: 0.51 sec (Real time) / 0.46 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 5.25 sec (Real time) / 5.08 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 79 2 12 1 65
+Raw AIGER output size: aag 79 1 12 1 66
+=====================  cnt15n.aag =====================
+Time for relation determinization: 0.05 (0.06)
+Synthesis time: 8.00 sec (Real time) / 7.94 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 44.74 sec (Real time) / 44.26 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 243 2 16 1 225
+Raw AIGER output size: aag 245 1 16 1 228
+=====================  cnt15y.aag =====================
+Time for relation determinization: 0.05 (0.06)
+Synthesis time: 8.34 sec (Real time) / 8.27 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 2046.92 sec (Real time) / 2036.93 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 107 2 16 1 89
+Raw AIGER output size: aag 107 1 16 1 90
+=====================  cnt20n.aag =====================
+Time for relation determinization: 0.12 (0.13)
+Synthesis time: 310.97 sec (Real time) / 310.78 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.03 sec (Real time) / 0.03 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 28756.78 sec (Real time) / 28684.28 sec (User CPU time)
+IC3-Model-checking: 0 (exit code: 134)
+Raw AIGER input size: aag 323 2 21 1 300
+Raw AIGER output size: aag 325 1 21 1 303
+=====================  cnt20y.aag =====================
+Time for relation determinization: 0.08 (0.08)
+Synthesis time: 298.28 sec (Real time) / 298.21 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 45446.31 sec (Real time) / 45374.79 sec (User CPU time)
+IC3-Model-checking: 0 (exit code: 134)
+Raw AIGER input size: aag 142 2 21 1 119
+Raw AIGER output size: aag 142 1 21 1 120
+=====================  cnt25n.aag =====================
+Time for relation determinization: 0.18 (0.23)
+Synthesis time: 11043.07 sec (Real time) / 11043.38 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.04 sec (Real time) / 0.04 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 44826.40 sec (Real time) / 44753.14 sec (User CPU time)
+IC3-Model-checking: 0 (exit code: 134)
+Raw AIGER input size: aag 403 2 26 1 375
+Raw AIGER output size: aag 405 1 26 1 378
+=====================  cnt25y.aag =====================
+Time for relation determinization: 0.10 (0.12)
+Synthesis time: 10830.03 sec (Real time) / 10830.47 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 42437.08 sec (Real time) / 42376.78 sec (User CPU time)
+IC3-Model-checking: 0 (exit code: 134)
+Raw AIGER input size: aag 177 2 26 1 149
+Raw AIGER output size: aag 177 1 26 1 150
+=====================  cnt30n.aag =====================
+Command terminated by signal 9
+Synthesis time: 50000.02 sec (Real time) / 50002.29 sec (User CPU time)
+Timeout: 1
+=====================  cnt30y.aag =====================
+Command terminated by signal 9
+Synthesis time: 50000.01 sec (Real time) / 50001.37 sec (User CPU time)
+Timeout: 1
+=====================  mv2n.aag =====================
+Time for relation determinization: 0.01 (0.01)
+Synthesis time: 0.12 sec (Real time) / 0.03 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 24 2 3 1 19
+Raw AIGER output size: aag 28 1 3 1 24
+=====================  mv2y.aag =====================
+Time for relation determinization: 0.01 (0.01)
+Synthesis time: 0.07 sec (Real time) / 0.04 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 18 2 3 1 13
+Raw AIGER output size: aag 22 1 3 1 18
+=====================  mvs2n.aag =====================
+Time for relation determinization: 0.00 (0.01)
+Synthesis time: 0.07 sec (Real time) / 0.03 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 31 2 3 1 26
+Raw AIGER output size: aag 33 1 3 1 29
+=====================  mvs2y.aag =====================
+Time for relation determinization: 0.00 (0.01)
+Synthesis time: 0.07 sec (Real time) / 0.04 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 15 2 3 1 10
+Raw AIGER output size: aag 19 1 3 1 15
+=====================  mv4n.aag =====================
+Time for relation determinization: 0.02 (0.02)
+Synthesis time: 0.08 sec (Real time) / 0.04 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 80 6 5 1 69
+Raw AIGER output size: aag 110 3 5 1 102
+=====================  mv4y.aag =====================
+Time for relation determinization: 0.01 (0.01)
+Synthesis time: 0.07 sec (Real time) / 0.05 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 52 6 5 1 41
+Raw AIGER output size: aag 88 3 5 1 80
+=====================  mvs4n.aag =====================
+Time for relation determinization: 0.01 (0.02)
+Synthesis time: 0.07 sec (Real time) / 0.04 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 69 6 5 1 58
+Raw AIGER output size: aag 77 3 5 1 69
+=====================  mvs4y.aag =====================
+Time for relation determinization: 0.01 (0.02)
+Synthesis time: 0.07 sec (Real time) / 0.04 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 37 6 5 1 26
+Raw AIGER output size: aag 47 3 5 1 39
+=====================  mv8n.aag =====================
+Time for relation determinization: 0.03 (0.04)
+Synthesis time: 0.12 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 192 14 9 1 169
+Raw AIGER output size: aag 268 7 9 1 252
+=====================  mv8y.aag =====================
+Time for relation determinization: 0.04 (0.04)
+Synthesis time: 0.12 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 120 14 9 1 97
+Raw AIGER output size: aag 199 7 9 1 183
+=====================  mvs8n.aag =====================
+Time for relation determinization: 0.03 (0.04)
+Synthesis time: 0.13 sec (Real time) / 0.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 145 14 9 1 122
+Raw AIGER output size: aag 161 7 9 1 145
+=====================  mvs8y.aag =====================
+Time for relation determinization: 0.02 (0.02)
+Synthesis time: 0.10 sec (Real time) / 0.06 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 81 14 9 1 58
+Raw AIGER output size: aag 97 7 9 1 81
+=====================  mv12n.aag =====================
+Time for relation determinization: 0.12 (0.13)
+Synthesis time: 0.26 sec (Real time) / 0.22 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.03 sec (Real time) / 0.03 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 304 22 13 1 269
+Raw AIGER output size: aag 430 11 13 1 406
+=====================  mv12y.aag =====================
+Time for relation determinization: 0.07 (0.08)
+Synthesis time: 0.19 sec (Real time) / 0.15 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 188 22 13 1 153
+Raw AIGER output size: aag 317 11 13 1 293
+=====================  mvs12n.aag =====================
+Time for relation determinization: 0.14 (0.16)
+Synthesis time: 0.26 sec (Real time) / 0.20 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 221 22 13 1 186
+Raw AIGER output size: aag 246 11 13 1 222
+=====================  mvs12y.aag =====================
+Time for relation determinization: 0.02 (0.03)
+Synthesis time: 0.12 sec (Real time) / 0.10 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 125 22 13 1 90
+Raw AIGER output size: aag 149 11 13 1 125
+=====================  mv16n.aag =====================
+Time for relation determinization: 0.22 (0.24)
+Synthesis time: 0.42 sec (Real time) / 0.38 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.04 sec (Real time) / 0.04 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 416 30 17 1 369
+Raw AIGER output size: aag 590 15 17 1 558
+=====================  mv16y.aag =====================
+Time for relation determinization: 0.13 (0.14)
+Synthesis time: 0.30 sec (Real time) / 0.24 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.04 sec (Real time) / 0.04 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 256 30 17 1 209
+Raw AIGER output size: aag 428 15 17 1 396
+=====================  mvs16n.aag =====================
+Time for relation determinization: 0.09 (0.10)
+Synthesis time: 0.21 sec (Real time) / 0.17 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 297 30 17 1 250
+Raw AIGER output size: aag 327 15 17 1 295
+=====================  mvs16y.aag =====================
+Time for relation determinization: 0.04 (0.05)
+Synthesis time: 0.16 sec (Real time) / 0.13 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 169 30 17 1 122
+Raw AIGER output size: aag 201 15 17 1 169
+=====================  mvs18n.aag =====================
+Time for relation determinization: 0.13 (0.14)
+Synthesis time: 0.30 sec (Real time) / 0.23 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 335 34 19 1 282
+Raw AIGER output size: aag 369 17 19 1 333
+=====================  mvs18y.aag =====================
+Time for relation determinization: 0.09 (0.09)
+Synthesis time: 0.21 sec (Real time) / 0.18 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 191 34 19 1 138
+Raw AIGER output size: aag 227 17 19 1 191
+=====================  mv20n.aag =====================
+Time for relation determinization: 0.29 (0.29)
+Synthesis time: 0.56 sec (Real time) / 0.52 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.06 sec (Real time) / 0.06 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.01 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 528 38 21 1 469
+Raw AIGER output size: aag 750 19 21 1 710
+=====================  mv20y.aag =====================
+Time for relation determinization: 0.20 (0.20)
+Synthesis time: 0.42 sec (Real time) / 0.39 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.07 sec (Real time) / 0.07 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 324 38 21 1 265
+Raw AIGER output size: aag 544 19 21 1 504
+=====================  mvs20n.aag =====================
+Time for relation determinization: 0.12 (0.12)
+Synthesis time: 0.28 sec (Real time) / 0.24 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 373 38 21 1 314
+Raw AIGER output size: aag 411 19 21 1 371
+=====================  mvs20y.aag =====================
+Time for relation determinization: 0.10 (0.11)
+Synthesis time: 0.25 sec (Real time) / 0.21 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 213 38 21 1 154
+Raw AIGER output size: aag 253 19 21 1 213
+=====================  mvs22n.aag =====================
+Time for relation determinization: 0.17 (0.18)
+Synthesis time: 0.33 sec (Real time) / 0.28 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 411 42 23 1 346
+Raw AIGER output size: aag 453 21 23 1 409
+=====================  mvs22y.aag =====================
+Time for relation determinization: 0.12 (0.13)
+Synthesis time: 0.28 sec (Real time) / 0.24 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 235 42 23 1 170
+Raw AIGER output size: aag 279 21 23 1 235
+=====================  mvs24n.aag =====================
+Time for relation determinization: 0.16 (0.16)
+Synthesis time: 0.37 sec (Real time) / 0.34 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 449 46 25 1 378
+Raw AIGER output size: aag 495 23 25 1 447
+=====================  mvs24y.aag =====================
+Time for relation determinization: 0.14 (0.16)
+Synthesis time: 0.32 sec (Real time) / 0.28 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 257 46 25 1 186
+Raw AIGER output size: aag 305 23 25 1 257
+=====================  mvs28n.aag =====================
+Time for relation determinization: 0.25 (0.26)
+Synthesis time: 0.53 sec (Real time) / 0.50 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 525 54 29 1 442
+Raw AIGER output size: aag 579 27 29 1 523
+=====================  mvs28y.aag =====================
+Time for relation determinization: 0.11 (0.12)
+Synthesis time: 0.32 sec (Real time) / 0.27 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 301 54 29 1 218
+Raw AIGER output size: aag 357 27 29 1 301
+=====================  mult2.aag =====================
+Time for relation determinization: 0.01 (0.01)
+Synthesis time: 0.14 sec (Real time) / 0.03 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: skipped
+BLIMC-Model-checking: 1
+IC3 Model-checking time: skipped
+IC3-Model-checking: 1
+Raw AIGER input size: aag 32 8 0 1 24
+Raw AIGER output size: aag 32 4 0 1 28
+=====================  mult4.aag =====================
+Time for relation determinization: 0.04 (0.03)
+Synthesis time: 0.12 sec (Real time) / 0.09 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: skipped
+BLIMC-Model-checking: 1
+IC3 Model-checking time: skipped
+IC3-Model-checking: 1
+Raw AIGER input size: aag 144 16 0 1 128
+Raw AIGER output size: aag 144 8 0 1 136
+=====================  mult5.aag =====================
+Time for relation determinization: 0.17 (0.18)
+Synthesis time: 0.31 sec (Real time) / 0.26 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: skipped
+BLIMC-Model-checking: 1
+IC3 Model-checking time: skipped
+IC3-Model-checking: 1
+Raw AIGER input size: aag 237 20 0 1 217
+Raw AIGER output size: aag 237 10 0 1 227
+=====================  mult6.aag =====================
+Time for relation determinization: 1.11 (1.11)
+Synthesis time: 1.70 sec (Real time) / 1.65 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: skipped
+BLIMC-Model-checking: 1
+IC3 Model-checking time: skipped
+IC3-Model-checking: 1
+Raw AIGER input size: aag 346 24 0 1 322
+Raw AIGER output size: aag 346 12 0 1 334
+=====================  mult7.aag =====================
+Time for relation determinization: 3.24 (3.26)
+Synthesis time: 4.82 sec (Real time) / 4.75 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: skipped
+BLIMC-Model-checking: 1
+IC3 Model-checking time: skipped
+IC3-Model-checking: 1
+Raw AIGER input size: aag 483 28 0 1 455
+Raw AIGER output size: aag 483 14 0 1 469
+=====================  mult8.aag =====================
+Time for relation determinization: 208.89 (208.89)
+Synthesis time: 288.69 sec (Real time) / 288.54 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: skipped
+BLIMC-Model-checking: 1
+IC3 Model-checking time: skipped
+IC3-Model-checking: 1
+Raw AIGER input size: aag 636 32 0 1 604
+Raw AIGER output size: aag 636 16 0 1 620
+=====================  mult9.aag =====================
+Time for relation determinization: 1913.16 (1913.09)
+Synthesis time: 2760.62 sec (Real time) / 2760.12 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: skipped
+BLIMC-Model-checking: 1
+IC3 Model-checking time: skipped
+IC3-Model-checking: 1
+Raw AIGER input size: aag 795 36 0 1 759
+Raw AIGER output size: aag 795 18 0 1 777
+=====================  mult10.aag =====================
+Time for relation determinization: 16441.48 (16440.71)
+Synthesis time: 22185.82 sec (Real time) / 22184.98 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: skipped
+BLIMC-Model-checking: 1
+IC3 Model-checking time: skipped
+IC3-Model-checking: 1
+Raw AIGER input size: aag 1004 40 0 1 964
+Raw AIGER output size: aag 1004 20 0 1 984
+=====================  mult11.aag =====================
+Command terminated by signal 9
+Synthesis time: 50000.01 sec (Real time) / 50001.19 sec (User CPU time)
+Timeout: 1
+=====================  mult12.aag =====================
+=====================  mult13.aag =====================
+=====================  mult14.aag =====================
+=====================  mult15.aag =====================
+=====================  mult16.aag =====================
+=====================  bs8n.aag =====================
+Time for relation determinization: 0.04 (0.04)
+Synthesis time: 0.17 sec (Real time) / 0.06 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 95 4 9 1 82
+Raw AIGER output size: aag 95 3 9 1 83
+=====================  bs8y.aag =====================
+Time for relation determinization: 0.04 (0.03)
+Synthesis time: 0.09 sec (Real time) / 0.06 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 93 4 9 1 80
+Raw AIGER output size: aag 93 3 9 1 81
+=====================  bs16n.aag =====================
+Time for relation determinization: 2.20 (2.21)
+Synthesis time: 4.25 sec (Real time) / 4.19 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 280 5 17 1 258
+Raw AIGER output size: aag 280 4 17 1 259
+=====================  bs16y.aag =====================
+Time for relation determinization: 2.84 (2.86)
+Synthesis time: 4.87 sec (Real time) / 4.81 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 278 5 17 1 256
+Raw AIGER output size: aag 278 4 17 1 257
+=====================  bs32n.aag =====================
+Command terminated by signal 9
+Synthesis time: 50000.08 sec (Real time) / 50001.43 sec (User CPU time)
+Timeout: 1
+=====================  bs32y.aag =====================
+Command terminated by signal 9
+Synthesis time: 50000.14 sec (Real time) / 50001.31 sec (User CPU time)
+Timeout: 1
+=====================  bs64n.aag =====================
+=====================  bs64y.aag =====================
+=====================  bs128n.aag =====================
+=====================  bs128y.aag =====================
+=====================  stay2n.aag =====================
+Time for relation determinization: 0.01 (0.01)
+Synthesis time: 0.07 sec (Real time) / 0.04 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 40 5 4 1 31
+Raw AIGER output size: aag 40 2 4 1 34
+=====================  stay2y.aag =====================
+Time for relation determinization: 0.00 (0.01)
+Synthesis time: 0.07 sec (Real time) / 0.03 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 26 5 4 1 17
+Raw AIGER output size: aag 26 2 4 1 20
+=====================  stay4n.aag =====================
+Time for relation determinization: 0.02 (0.03)
+Synthesis time: 0.09 sec (Real time) / 0.05 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 99 9 6 1 84
+Raw AIGER output size: aag 99 4 6 1 89
+=====================  stay4y.aag =====================
+Time for relation determinization: 0.02 (0.02)
+Synthesis time: 0.08 sec (Real time) / 0.04 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 72 9 6 1 57
+Raw AIGER output size: aag 72 4 6 1 62
+=====================  stay6n.aag =====================
+Time for relation determinization: 0.09 (0.09)
+Synthesis time: 0.19 sec (Real time) / 0.16 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 219 13 8 1 198
+Raw AIGER output size: aag 219 6 8 1 205
+=====================  stay6y.aag =====================
+Time for relation determinization: 0.05 (0.05)
+Synthesis time: 0.15 sec (Real time) / 0.12 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 149 13 8 1 128
+Raw AIGER output size: aag 149 6 8 1 135
+=====================  stay8n.aag =====================
+Time for relation determinization: 0.22 (0.24)
+Synthesis time: 0.48 sec (Real time) / 0.43 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 403 17 10 1 376
+Raw AIGER output size: aag 403 8 10 1 385
+=====================  stay8y.aag =====================
+Time for relation determinization: 0.25 (0.27)
+Synthesis time: 0.51 sec (Real time) / 0.45 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 264 17 10 1 237
+Raw AIGER output size: aag 264 8 10 1 246
+=====================  stay10n.aag =====================
+Time for relation determinization: 0.66 (0.68)
+Synthesis time: 1.64 sec (Real time) / 1.54 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 651 21 12 1 618
+Raw AIGER output size: aag 651 10 12 1 629
+=====================  stay10y.aag =====================
+Time for relation determinization: 0.71 (0.73)
+Synthesis time: 1.63 sec (Real time) / 1.58 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 415 21 12 1 382
+Raw AIGER output size: aag 415 10 12 1 393
+=====================  stay12n.aag =====================
+Time for relation determinization: 8.16 (8.17)
+Synthesis time: 15.14 sec (Real time) / 15.01 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 963 25 14 1 924
+Raw AIGER output size: aag 963 12 14 1 937
+=====================  stay12y.aag =====================
+Time for relation determinization: 5.70 (5.71)
+Synthesis time: 10.75 sec (Real time) / 10.65 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 602 25 14 1 563
+Raw AIGER output size: aag 602 12 14 1 576
+=====================  stay14n.aag =====================
+Time for relation determinization: 185.21 (185.22)
+Synthesis time: 243.33 sec (Real time) / 243.08 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 1339 29 16 1 1294
+Raw AIGER output size: aag 1339 14 16 1 1309
+=====================  stay14y.aag =====================
+Time for relation determinization: 246.02 (246.03)
+Synthesis time: 334.52 sec (Real time) / 334.22 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 825 29 16 1 780
+Raw AIGER output size: aag 825 14 16 1 795
+=====================  stay16n.aag =====================
+Time for relation determinization: 4515.34 (4515.12)
+Synthesis time: 6404.45 sec (Real time) / 6403.57 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.02 sec (Real time) / 0.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 1779 33 18 1 1728
+Raw AIGER output size: aag 1779 16 18 1 1745
+=====================  stay16y.aag =====================
+Time for relation determinization: 4016.15 (4022.22)
+Synthesis time: 5430.92 sec (Real time) / 5423.66 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.01 sec (Real time) / 0.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 0.00 sec (Real time) / 0.00 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 1084 33 18 1 1033
+Raw AIGER output size: aag 1084 16 18 1 1050
+=====================  stay18n.aag =====================
+Command terminated by signal 9
+Synthesis time: 50000.10 sec (Real time) / 50001.16 sec (User CPU time)
+Timeout: 1
+=====================  stay18y.aag =====================
+Command terminated by signal 9
+Synthesis time: 50000.13 sec (Real time) / 50000.59 sec (User CPU time)
+Timeout: 1
+=====================  stay20n.aag =====================
+Command terminated by signal 9
+Synthesis time: 50000.10 sec (Real time) / 50000.99 sec (User CPU time)
+Timeout: 1
+=====================  stay20y.aag =====================
+=====================  stay22n.aag =====================
+=====================  stay22y.aag =====================
+=====================  stay24n.aag =====================
+=====================  stay24y.aag =====================
+=====================  genbuf1c3y.aag =====================
+Time for relation determinization: 0.45 (0.46)
+Synthesis time: 0.84 sec (Real time) / 0.65 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.21 sec (Real time) / 0.21 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 1.95 sec (Real time) / 1.93 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 166 11 21 1 134
+Raw AIGER output size: aag 1913 5 21 1 1887
+=====================  genbuf2c3y.aag =====================
+Time for relation determinization: 1.62 (1.64)
+Synthesis time: 2.08 sec (Real time) / 2.02 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 1.11 sec (Real time) / 1.10 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 12.12 sec (Real time) / 12.07 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 206 13 24 1 169
+Raw AIGER output size: aag 5018 6 24 1 4988
+=====================  genbuf3c3y.aag =====================
+Time for relation determinization: 6.09 (6.11)
+Synthesis time: 6.85 sec (Real time) / 6.75 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 6.47 sec (Real time) / 6.46 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 35.04 sec (Real time) / 34.95 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 245 16 27 1 202
+Raw AIGER output size: aag 11198 7 27 1 11164
+=====================  genbuf4c3y.aag =====================
+Time for relation determinization: 12.37 (12.40)
+Synthesis time: 15.38 sec (Real time) / 15.26 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 9.04 sec (Real time) / 9.03 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 56.31 sec (Real time) / 56.19 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 290 18 30 1 242
+Raw AIGER output size: aag 15106 8 30 1 15068
+=====================  genbuf5c3y.aag =====================
+Time for relation determinization: 21.31 (21.34)
+Synthesis time: 24.09 sec (Real time) / 23.97 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 34.74 sec (Real time) / 34.73 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 201.72 sec (Real time) / 201.48 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 338 21 33 1 284
+Raw AIGER output size: aag 21382 9 33 1 21340
+=====================  genbuf6c3y.aag =====================
+Time for relation determinization: 35.97 (36.00)
+Synthesis time: 38.66 sec (Real time) / 38.46 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 66.84 sec (Real time) / 66.74 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 848.85 sec (Real time) / 848.30 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 381 23 35 1 323
+Raw AIGER output size: aag 36692 10 35 1 36647
+=====================  genbuf7c3y.aag =====================
+Time for relation determinization: 38.67 (38.73)
+Synthesis time: 47.54 sec (Real time) / 47.30 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 69.96 sec (Real time) / 69.86 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 1367.06 sec (Real time) / 1366.27 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 423 25 37 1 361
+Raw AIGER output size: aag 49692 11 37 1 49644
+=====================  genbuf8c3y.aag =====================
+Time for relation determinization: 281.85 (281.92)
+Synthesis time: 294.10 sec (Real time) / 293.64 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 72.04 sec (Real time) / 71.91 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 2497.68 sec (Real time) / 2496.68 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 473 27 40 1 406
+Raw AIGER output size: aag 61450 12 40 1 61398
+=====================  genbuf9c3y.aag =====================
+Time for relation determinization: 153.38 (153.44)
+Synthesis time: 172.92 sec (Real time) / 172.51 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 71.39 sec (Real time) / 71.32 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 2478.54 sec (Real time) / 2477.46 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 536 30 43 1 463
+Raw AIGER output size: aag 58392 13 43 1 58336
+=====================  genbuf10c3y.aag =====================
+Time for relation determinization: 155.27 (155.36)
+Synthesis time: 168.53 sec (Real time) / 167.88 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 68.20 sec (Real time) / 68.03 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 6243.63 sec (Real time) / 6241.88 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 571 32 45 1 494
+Raw AIGER output size: aag 100522 14 45 1 100463
+=====================  genbuf11c3y.aag =====================
+Time for relation determinization: 128.92 (129.02)
+Synthesis time: 159.02 sec (Real time) / 158.52 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 63.25 sec (Real time) / 63.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 6603.66 sec (Real time) / 6601.53 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 612 34 47 1 531
+Raw AIGER output size: aag 135333 15 47 1 135271
+=====================  genbuf12c3y.aag =====================
+Time for relation determinization: 265.58 (265.71)
+Synthesis time: 299.10 sec (Real time) / 298.63 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 77.35 sec (Real time) / 77.08 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 12795.24 sec (Real time) / 12792.15 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 646 36 49 1 561
+Raw AIGER output size: aag 154469 16 49 1 154404
+=====================  genbuf13c3y.aag =====================
+Time for relation determinization: 420.82 (420.95)
+Synthesis time: 464.93 sec (Real time) / 464.11 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 74.57 sec (Real time) / 74.34 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 13385.31 sec (Real time) / 13380.38 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 691 38 51 1 602
+Raw AIGER output size: aag 150451 17 51 1 150383
+=====================  genbuf14c3y.aag =====================
+Time for relation determinization: 347.24 (347.83)
+Synthesis time: 429.84 sec (Real time) / 428.56 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 68.88 sec (Real time) / 68.61 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 16750.90 sec (Real time) / 16747.27 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 732 40 53 1 639
+Raw AIGER output size: aag 196802 18 53 1 196731
+=====================  genbuf15c3y.aag =====================
+Time for relation determinization: 385.70 (385.84)
+Synthesis time: 437.46 sec (Real time) / 436.67 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 71.27 sec (Real time) / 71.02 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 19975.60 sec (Real time) / 19971.64 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 782 42 55 1 685
+Raw AIGER output size: aag 184991 19 55 1 184917
+=====================  genbuf16c3y.aag =====================
+Time for relation determinization: 464.61 (464.76)
+Synthesis time: 542.88 sec (Real time) / 542.02 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 68.50 sec (Real time) / 68.21 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 21206.71 sec (Real time) / 21202.13 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 835 44 58 1 733
+Raw AIGER output size: aag 203818 20 58 1 203740
+=====================  genbuf1b4y.aag =====================
+Time for relation determinization: 0.79 (0.80)
+Synthesis time: 1.06 sec (Real time) / 1.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.35 sec (Real time) / 0.35 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 2.35 sec (Real time) / 2.33 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 175 11 23 1 141
+Raw AIGER output size: aag 2426 5 23 1 2398
+=====================  genbuf2b4y.aag =====================
+Time for relation determinization: 6.18 (6.19)
+Synthesis time: 6.80 sec (Real time) / 6.70 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 1.83 sec (Real time) / 1.82 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 11.66 sec (Real time) / 11.60 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 213 13 26 1 174
+Raw AIGER output size: aag 6662 6 26 1 6630
+=====================  genbuf3b4y.aag =====================
+Time for relation determinization: 7.84 (7.85)
+Synthesis time: 9.38 sec (Real time) / 9.32 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 4.46 sec (Real time) / 4.44 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 38.61 sec (Real time) / 38.47 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 254 16 30 1 208
+Raw AIGER output size: aag 10752 7 30 1 10715
+=====================  genbuf4b4y.aag =====================
+Time for relation determinization: 33.83 (33.86)
+Synthesis time: 35.29 sec (Real time) / 35.07 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 27.41 sec (Real time) / 27.39 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 255.07 sec (Real time) / 254.76 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 296 18 33 1 245
+Raw AIGER output size: aag 25922 8 33 1 25881
+=====================  genbuf5b4y.aag =====================
+Time for relation determinization: 52.04 (52.07)
+Synthesis time: 58.75 sec (Real time) / 58.53 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 40.77 sec (Real time) / 40.72 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 281.75 sec (Real time) / 281.42 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 340 21 37 1 282
+Raw AIGER output size: aag 29392 9 37 1 29346
+=====================  genbuf6b4y.aag =====================
+Time for relation determinization: 26.65 (26.68)
+Synthesis time: 30.94 sec (Real time) / 30.80 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 13.99 sec (Real time) / 13.95 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 132.04 sec (Real time) / 131.82 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 385 23 40 1 322
+Raw AIGER output size: aag 23214 10 40 1 23164
+=====================  genbuf7b4y.aag =====================
+Time for relation determinization: 25.26 (25.31)
+Synthesis time: 30.18 sec (Real time) / 29.95 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 15.76 sec (Real time) / 15.71 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 183.29 sec (Real time) / 183.04 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 426 25 43 1 358
+Raw AIGER output size: aag 28605 11 43 1 28551
+=====================  genbuf8b4y.aag =====================
+Time for relation determinization: 61.07 (61.13)
+Synthesis time: 64.93 sec (Real time) / 64.59 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 72.43 sec (Real time) / 72.35 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 943.14 sec (Real time) / 942.49 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 468 27 46 1 395
+Raw AIGER output size: aag 51160 12 46 1 51102
+=====================  genbuf9b4y.aag =====================
+Time for relation determinization: 46.57 (46.62)
+Synthesis time: 52.31 sec (Real time) / 51.96 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 78.82 sec (Real time) / 78.74 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 1248.77 sec (Real time) / 1248.15 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 523 30 50 1 443
+Raw AIGER output size: aag 55111 13 50 1 55048
+=====================  genbuf10b4y.aag =====================
+Time for relation determinization: 118.34 (118.42)
+Synthesis time: 143.85 sec (Real time) / 143.12 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 73.29 sec (Real time) / 73.18 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 2292.25 sec (Real time) / 2291.39 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 560 32 53 1 475
+Raw AIGER output size: aag 80277 14 53 1 80210
+=====================  genbuf11b4y.aag =====================
+Time for relation determinization: 79.91 (79.99)
+Synthesis time: 86.53 sec (Real time) / 86.10 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 73.03 sec (Real time) / 72.91 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 5501.84 sec (Real time) / 5500.34 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 600 34 56 1 510
+Raw AIGER output size: aag 93113 15 56 1 93042
+=====================  genbuf12b4y.aag =====================
+Time for relation determinization: 31.49 (31.55)
+Synthesis time: 35.53 sec (Real time) / 35.15 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 70.78 sec (Real time) / 70.66 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 3911.12 sec (Real time) / 3910.04 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 642 36 59 1 547
+Raw AIGER output size: aag 74482 16 59 1 74407
+=====================  genbuf13b4y.aag =====================
+Time for relation determinization: 30.57 (30.63)
+Synthesis time: 34.63 sec (Real time) / 34.32 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 65.12 sec (Real time) / 65.01 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 3393.96 sec (Real time) / 3392.98 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 682 38 62 1 582
+Raw AIGER output size: aag 81413 17 62 1 81334
+=====================  genbuf14b4y.aag =====================
+Time for relation determinization: 57.89 (58.00)
+Synthesis time: 63.83 sec (Real time) / 63.39 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 75.46 sec (Real time) / 75.34 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 19678.61 sec (Real time) / 19675.09 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 722 40 65 1 617
+Raw AIGER output size: aag 120318 18 65 1 120235
+=====================  genbuf15b4y.aag =====================
+Time for relation determinization: 72.13 (72.23)
+Synthesis time: 78.03 sec (Real time) / 77.58 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 81.14 sec (Real time) / 80.92 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 40809.13 sec (Real time) / 40803.26 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 762 42 68 1 652
+Raw AIGER output size: aag 123598 19 68 1 123511
+=====================  genbuf16b4y.aag =====================
+Time for relation determinization: 44.20 (44.28)
+Synthesis time: 50.12 sec (Real time) / 49.69 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 70.28 sec (Real time) / 70.12 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 16120.68 sec (Real time) / 16117.45 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 802 44 71 1 687
+Raw AIGER output size: aag 107024 20 71 1 106933
+=====================  genbuf1f4y.aag =====================
+Time for relation determinization: 1.27 (1.28)
+Synthesis time: 1.64 sec (Real time) / 1.59 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 0.33 sec (Real time) / 0.33 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 2.23 sec (Real time) / 2.19 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 172 11 23 1 138
+Raw AIGER output size: aag 2198 5 23 1 2170
+=====================  genbuf2f4y.aag =====================
+Time for relation determinization: 1.93 (1.94)
+Synthesis time: 2.31 sec (Real time) / 2.22 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 1.54 sec (Real time) / 1.52 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 16.09 sec (Real time) / 16.04 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 207 13 26 1 168
+Raw AIGER output size: aag 6301 6 26 1 6269
+=====================  genbuf3f4y.aag =====================
+Time for relation determinization: 81.67 (81.70)
+Synthesis time: 83.95 sec (Real time) / 83.68 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 4.50 sec (Real time) / 4.47 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 109.73 sec (Real time) / 109.59 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 246 16 30 1 200
+Raw AIGER output size: aag 12074 7 30 1 12037
+=====================  genbuf4f4y.aag =====================
+Time for relation determinization: 15.33 (15.35)
+Synthesis time: 17.18 sec (Real time) / 17.06 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 7.41 sec (Real time) / 7.39 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 381.16 sec (Real time) / 380.86 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 286 18 33 1 235
+Raw AIGER output size: aag 17272 8 33 1 17231
+=====================  genbuf5f5y.aag =====================
+Time for relation determinization: 46.58 (46.63)
+Synthesis time: 52.15 sec (Real time) / 51.93 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 77.18 sec (Real time) / 77.06 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 2809.63 sec (Real time) / 2808.73 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 330 21 37 1 272
+Raw AIGER output size: aag 46775 9 37 1 46729
+=====================  genbuf6f6y.aag =====================
+Time for relation determinization: 52.63 (52.67)
+Synthesis time: 58.19 sec (Real time) / 57.96 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 72.80 sec (Real time) / 72.73 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 9478.50 sec (Real time) / 9475.70 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 372 23 40 1 309
+Raw AIGER output size: aag 42661 10 40 1 42611
+=====================  genbuf7f7y.aag =====================
+Time for relation determinization: 385.55 (385.68)
+Synthesis time: 391.23 sec (Real time) / 390.50 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 67.58 sec (Real time) / 67.45 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 26813.92 sec (Real time) / 26809.19 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 412 25 43 1 344
+Raw AIGER output size: aag 112437 11 43 1 112383
+=====================  genbuf8f8y.aag =====================
+Time for relation determinization: 387.15 (387.23)
+Synthesis time: 392.40 sec (Real time) / 392.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 67.64 sec (Real time) / 67.38 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 50000.08 sec (Real time) / 49998.00 sec (User CPU time)
+IC3-Model-checking: 0 (exit code: 137)
+Raw AIGER input size: aag 458 27 47 1 384
+Raw AIGER output size: aag 142408 12 47 1 142349
+=====================  genbuf9f9y.aag =====================
+Time for relation determinization: 184.89 (185.05)
+Synthesis time: 188.74 sec (Real time) / 188.02 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 61.67 sec (Real time) / 61.42 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 50000.10 sec (Real time) / 49998.18 sec (User CPU time)
+IC3-Model-checking: 0 (exit code: 137)
+Raw AIGER input size: aag 514 30 51 1 433
+Raw AIGER output size: aag 142274 13 51 1 142210
+=====================  genbuf10f10y.aag =====================
+Time for relation determinization: 170.46 (170.57)
+Synthesis time: 177.73 sec (Real time) / 177.15 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: skipped
+BLIMC-Model-checking: 1
+IC3 Model-checking time: skipped
+IC3-Model-checking: 1
+Raw AIGER input size: aag 548 32 54 1 462
+Raw AIGER output size: aag 160770 14 54 1 160702
+=====================  genbuf11f11y.aag =====================
+Time for relation determinization: 14447.42 (14446.82)
+Synthesis time: 14455.51 sec (Real time) / 14455.31 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: skipped
+BLIMC-Model-checking: 1
+IC3 Model-checking time: skipped
+IC3-Model-checking: 1
+Raw AIGER input size: aag 586 34 57 1 495
+Raw AIGER output size: aag 198380 15 57 1 198308
+=====================  genbuf12f12y.aag =====================
+Time for relation determinization: 254.22 (254.36)
+Synthesis time: 258.28 sec (Real time) / 257.75 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: skipped
+BLIMC-Model-checking: 1
+IC3 Model-checking time: skipped
+IC3-Model-checking: 1
+Raw AIGER input size: aag 625 36 60 1 529
+Raw AIGER output size: aag 233630 16 60 1 233554
+=====================  genbuf13f13y.aag =====================
+Time for relation determinization: 249.99 (250.22)
+Synthesis time: 258.03 sec (Real time) / 257.03 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: skipped
+BLIMC-Model-checking: 1
+IC3 Model-checking time: skipped
+IC3-Model-checking: 1
+Raw AIGER input size: aag 665 38 63 1 564
+Raw AIGER output size: aag 370679 17 63 1 370599
+=====================  genbuf14f14y.aag =====================
+Time for relation determinization: 378.38 (378.61)
+Synthesis time: 384.07 sec (Real time) / 383.11 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: skipped
+BLIMC-Model-checking: 1
+IC3 Model-checking time: skipped
+IC3-Model-checking: 1
+Raw AIGER input size: aag 702 40 66 1 596
+Raw AIGER output size: aag 358559 18 66 1 358475
+=====================  genbuf15f15y.aag =====================
+Time for relation determinization: 374.24 (374.49)
+Synthesis time: 381.97 sec (Real time) / 380.99 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: skipped
+BLIMC-Model-checking: 1
+IC3 Model-checking time: skipped
+IC3-Model-checking: 1
+Raw AIGER input size: aag 740 42 69 1 629
+Raw AIGER output size: aag 419799 19 69 1 419711
+=====================  genbuf16f16y.aag =====================
+Time for relation determinization: 399.52 (399.82)
+Synthesis time: 406.72 sec (Real time) / 405.69 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: skipped
+BLIMC-Model-checking: 1
+IC3 Model-checking time: skipped
+IC3-Model-checking: 1
+Raw AIGER input size: aag 784 44 73 1 667
+Raw AIGER output size: aag 490011 20 73 1 489918
+=====================  amba2c7y.aag =====================
+Time for relation determinization: 1.32 (1.35)
+Synthesis time: 2.12 sec (Real time) / 2.00 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 1.49 sec (Real time) / 1.48 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 12.04 sec (Real time) / 12.01 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 220 15 28 1 177
+Raw AIGER output size: aag 5402 7 28 1 5367
+=====================  amba3c5y.aag =====================
+Time for relation determinization: 10.39 (10.43)
+Synthesis time: 14.31 sec (Real time) / 14.19 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 6.32 sec (Real time) / 6.30 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 88.36 sec (Real time) / 88.19 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 290 19 34 1 237
+Raw AIGER output size: aag 15645 9 34 1 15602
+=====================  amba4c7y.aag =====================
+Time for relation determinization: 228.69 (228.78)
+Synthesis time: 256.83 sec (Real time) / 256.40 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 71.99 sec (Real time) / 71.76 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 14071.66 sec (Real time) / 14070.07 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 339 22 38 1 279
+Raw AIGER output size: aag 128842 11 38 1 128793
+=====================  amba5c5y.aag =====================
+Time for relation determinization: 1664.25 (1664.28)
+Synthesis time: 2250.62 sec (Real time) / 2249.56 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 70.34 sec (Real time) / 70.10 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 15875.46 sec (Real time) / 15874.29 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 414 26 43 1 345
+Raw AIGER output size: aag 166096 13 43 1 166040
+=====================  amba6c5y.aag =====================
+Time for relation determinization: 5125.63 (5125.51)
+Synthesis time: 5472.27 sec (Real time) / 5471.12 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 74.17 sec (Real time) / 73.94 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 8468.02 sec (Real time) / 8467.10 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 471 29 47 1 395
+Raw AIGER output size: aag 131942 15 47 1 131880
+=====================  amba7c5y.aag =====================
+Time for relation determinization: 6802.66 (6802.49)
+Synthesis time: 7434.44 sec (Real time) / 7430.34 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 78.83 sec (Real time) / 78.57 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 10372.97 sec (Real time) / 10371.98 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 533 32 52 1 449
+Raw AIGER output size: aag 138367 17 52 1 138298
+=====================  amba8c7y.aag =====================
+Time for relation determinization: 5230.79 (5230.88)
+Synthesis time: 5812.61 sec (Real time) / 5811.10 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 78.46 sec (Real time) / 77.83 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 50000.35 sec (Real time) / 49998.02 sec (User CPU time)
+IC3-Model-checking: 0 (exit code: 137)
+Raw AIGER input size: aag 602 35 56 1 511
+Raw AIGER output size: aag 530905 19 56 1 530830
+=====================  amba9c5y.aag =====================
+Time for relation determinization: 14791.66 (14791.04)
+Synthesis time: 22175.14 sec (Real time) / 22174.07 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 71.78 sec (Real time) / 71.48 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 14053.25 sec (Real time) / 14051.93 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 683 39 61 1 583
+Raw AIGER output size: aag 178377 21 61 1 178295
+=====================  amba10c5y.aag =====================
+Time for relation determinization: 1590.93 (1591.02)
+Synthesis time: 1809.66 sec (Real time) / 1808.90 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 69.86 sec (Real time) / 69.60 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 32797.65 sec (Real time) / 32796.03 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 737 42 65 1 630
+Raw AIGER output size: aag 212816 23 65 1 212728
+=====================  amba2b9y.aag =====================
+Time for relation determinization: 14.72 (14.75)
+Synthesis time: 16.85 sec (Real time) / 16.73 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 4.25 sec (Real time) / 4.24 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 25.93 sec (Real time) / 25.86 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 235 15 31 1 189
+Raw AIGER output size: aag 12226 7 31 1 12188
+=====================  amba3b5y.aag =====================
+Time for relation determinization: 83.20 (83.25)
+Synthesis time: 100.59 sec (Real time) / 100.22 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 76.39 sec (Real time) / 76.28 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 1521.88 sec (Real time) / 1521.47 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 286 19 36 1 231
+Raw AIGER output size: aag 74376 9 36 1 74331
+=====================  amba4b9y.aag =====================
+Time for relation determinization: 8331.09 (8337.14)
+Synthesis time: 8471.91 sec (Real time) / 8464.48 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: 68.85 sec (Real time) / 68.46 sec (User CPU time)
+BLIMC-Model-checking: 1
+IC3 Model-checking time: 48983.13 sec (Real time) / 48980.94 sec (User CPU time)
+IC3-Model-checking: 1
+Raw AIGER input size: aag 350 22 42 1 286
+Raw AIGER output size: aag 314119 11 42 1 314066
+=====================  amba5b5y.aag =====================
+Time for relation determinization: 6610.03 (6616.33)
+Synthesis time: 7306.89 sec (Real time) / 7298.66 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: skipped
+BLIMC-Model-checking: 1
+IC3 Model-checking time: skipped
+IC3-Model-checking: 1
+Raw AIGER input size: aag 417 26 47 1 344
+Raw AIGER output size: aag 574337 13 47 1 574277
+=====================  amba6b5y.aag =====================
+Command terminated by signal 9
+Synthesis time: 50000.37 sec (Real time) / 49995.46 sec (User CPU time)
+Timeout: 1
+=====================  amba7b5y.aag =====================
+Command terminated by signal 9
+Synthesis time: 50000.25 sec (Real time) / 49998.18 sec (User CPU time)
+Timeout: 1
+=====================  amba8b6y.aag =====================
+Command terminated by signal 9
+Synthesis time: 50000.23 sec (Real time) / 49998.87 sec (User CPU time)
+Timeout: 1
+=====================  amba9b5y.aag =====================
+Command terminated by signal 9
+Synthesis time: 50000.24 sec (Real time) / 49999.12 sec (User CPU time)
+Timeout: 1
+=====================  amba10b5y.aag =====================
+=====================  amba2f9y.aag =====================
+Time for relation determinization: 4.13 (4.16)
+Synthesis time: 5.32 sec (Real time) / 5.12 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: skipped
+BLIMC-Model-checking: 1
+IC3 Model-checking time: skipped
+IC3-Model-checking: 1
+Raw AIGER input size: aag 227 15 31 1 181
+Raw AIGER output size: aag 12381 7 31 1 12343
+=====================  amba3f9y.aag =====================
+Time for relation determinization: 101.38 (101.41)
+Synthesis time: 109.00 sec (Real time) / 108.81 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: skipped
+BLIMC-Model-checking: 1
+IC3 Model-checking time: skipped
+IC3-Model-checking: 1
+Raw AIGER input size: aag 285 19 37 1 229
+Raw AIGER output size: aag 35841 9 37 1 35795
+=====================  amba4f25y.aag =====================
+Time for relation determinization: 1266.83 (1266.96)
+Synthesis time: 1301.28 sec (Real time) / 1300.54 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: skipped
+BLIMC-Model-checking: 1
+IC3 Model-checking time: skipped
+IC3-Model-checking: 1
+Raw AIGER input size: aag 347 22 43 1 282
+Raw AIGER output size: aag 292977 11 43 1 292923
+=====================  amba5f17y.aag =====================
+Time for relation determinization: 18897.98 (18897.16)
+Synthesis time: 19045.92 sec (Real time) / 19044.91 sec (User CPU time)
+Timeout: 0
+Crash or out-of-mem: 0
+Realizability correct: 1 (realizable)
+Output file OK: 1
+BLIMC Model-checking time: skipped
+BLIMC-Model-checking: 1
+IC3 Model-checking time: skipped
+IC3-Model-checking: 1
+Raw AIGER input size: aag 421 26 49 1 346
+Raw AIGER output size: aag 182482 13 49 1 182420
+=====================  amba6f21y.aag =====================
+Command terminated by signal 9
+Synthesis time: 50000.11 sec (Real time) / 50000.57 sec (User CPU time)
+Timeout: 1
+=====================  amba7f25y.aag =====================
+Command terminated by signal 9
+Synthesis time: 50000.12 sec (Real time) / 49999.97 sec (User CPU time)
+Timeout: 1
+=====================  amba8f57y.aag =====================
+Command terminated by signal 9
+Synthesis time: 50000.12 sec (Real time) / 50000.17 sec (User CPU time)
+Timeout: 1
+=====================  amba9f33y.aag =====================
+Command terminated by signal 9
+Synthesis time: 50000.13 sec (Real time) / 49999.93 sec (User CPU time)
+Timeout: 1
+=====================  amba10f37y.aag =====================
+Command terminated by signal 9
+Synthesis time: 50000.13 sec (Real time) / 50000.02 sec (User CPU time)
+Timeout: 1
